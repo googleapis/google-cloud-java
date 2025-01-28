@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -266,6 +266,61 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The bytes for podSelectorLabel.
      */
     com.google.protobuf.ByteString getPodSelectorLabelBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+     * to be deployed to additional clusters. This option is available for
+     * multi-cluster service mesh set ups that require the route to exist in the
+     * clusters that call the service. If unspecified, the HTTPRoute will only
+     * be deployed to the Target cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the routeDestinations field is set.
+     */
+    boolean hasRouteDestinations();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+     * to be deployed to additional clusters. This option is available for
+     * multi-cluster service mesh set ups that require the route to exist in the
+     * clusters that call the service. If unspecified, the HTTPRoute will only
+     * be deployed to the Target cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routeDestinations.
+     */
+    com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+        getRouteDestinations();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+     * to be deployed to additional clusters. This option is available for
+     * multi-cluster service mesh set ups that require the route to exist in the
+     * clusters that call the service. If unspecified, the HTTPRoute will only
+     * be deployed to the Target cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinationsOrBuilder
+        getRouteDestinationsOrBuilder();
   }
   /**
    *
@@ -312,6 +367,994 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           .ensureFieldAccessorsInitialized(
               com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.class,
               com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.Builder.class);
+    }
+
+    public interface RouteDestinationsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the destinationIds.
+       */
+      java.util.List<java.lang.String> getDestinationIdsList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of destinationIds.
+       */
+      int getDestinationIdsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The destinationIds at the given index.
+       */
+      java.lang.String getDestinationIds(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the destinationIds at the given index.
+       */
+      com.google.protobuf.ByteString getDestinationIdsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to propagate the Kubernetes Service to the route
+       * destination clusters. The Service will always be deployed to the Target
+       * cluster even if the HTTPRoute is not. This option may be used to
+       * facilitiate successful DNS lookup in the route destination clusters.
+       * Can only be set to true if destinations are specified.
+       * </pre>
+       *
+       * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The propagateService.
+       */
+      boolean getPropagateService();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about route destinations for the Gateway API service mesh.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations}
+     */
+    public static final class RouteDestinations extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)
+        RouteDestinationsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RouteDestinations.newBuilder() to construct.
+      private RouteDestinations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RouteDestinations() {
+        destinationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RouteDestinations();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                    .class,
+                com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                    .Builder.class);
+      }
+
+      public static final int DESTINATION_IDS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList destinationIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the destinationIds.
+       */
+      public com.google.protobuf.ProtocolStringList getDestinationIdsList() {
+        return destinationIds_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of destinationIds.
+       */
+      public int getDestinationIdsCount() {
+        return destinationIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The destinationIds at the given index.
+       */
+      public java.lang.String getDestinationIds(int index) {
+        return destinationIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The clusters where the Gateway API HTTPRoute resource will be
+       * deployed to. Valid entries include the associated entities IDs
+       * configured in the Target resource and "&#64;self" to include the Target
+       * cluster.
+       * </pre>
+       *
+       * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the destinationIds at the given index.
+       */
+      public com.google.protobuf.ByteString getDestinationIdsBytes(int index) {
+        return destinationIds_.getByteString(index);
+      }
+
+      public static final int PROPAGATE_SERVICE_FIELD_NUMBER = 2;
+      private boolean propagateService_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to propagate the Kubernetes Service to the route
+       * destination clusters. The Service will always be deployed to the Target
+       * cluster even if the HTTPRoute is not. This option may be used to
+       * facilitiate successful DNS lookup in the route destination clusters.
+       * Can only be set to true if destinations are specified.
+       * </pre>
+       *
+       * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The propagateService.
+       */
+      @java.lang.Override
+      public boolean getPropagateService() {
+        return propagateService_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < destinationIds_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, destinationIds_.getRaw(i));
+        }
+        if (propagateService_ != false) {
+          output.writeBool(2, propagateService_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < destinationIds_.size(); i++) {
+            dataSize += computeStringSizeNoTag(destinationIds_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getDestinationIdsList().size();
+        }
+        if (propagateService_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, propagateService_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations other =
+            (com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations) obj;
+
+        if (!getDestinationIdsList().equals(other.getDestinationIdsList())) return false;
+        if (getPropagateService() != other.getPropagateService()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getDestinationIdsCount() > 0) {
+          hash = (37 * hash) + DESTINATION_IDS_FIELD_NUMBER;
+          hash = (53 * hash) + getDestinationIdsList().hashCode();
+        }
+        hash = (37 * hash) + PROPAGATE_SERVICE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPropagateService());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about route destinations for the Gateway API service mesh.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)
+          com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
+              .RouteDestinationsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.deploy.v1.CloudDeployProto
+              .internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.deploy.v1.CloudDeployProto
+              .internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                      .class,
+                  com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          destinationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          propagateService_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.deploy.v1.CloudDeployProto
+              .internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+            getDefaultInstanceForType() {
+          return com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+            build() {
+          com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+            buildPartial() {
+          com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations result =
+              new com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            destinationIds_.makeImmutable();
+            result.destinationIds_ = destinationIds_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.propagateService_ = propagateService_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations) {
+            return mergeFrom(
+                (com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                other) {
+          if (other
+              == com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                  .getDefaultInstance()) return this;
+          if (!other.destinationIds_.isEmpty()) {
+            if (destinationIds_.isEmpty()) {
+              destinationIds_ = other.destinationIds_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureDestinationIdsIsMutable();
+              destinationIds_.addAll(other.destinationIds_);
+            }
+            onChanged();
+          }
+          if (other.getPropagateService() != false) {
+            setPropagateService(other.getPropagateService());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureDestinationIdsIsMutable();
+                    destinationIds_.add(s);
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    propagateService_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList destinationIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureDestinationIdsIsMutable() {
+          if (!destinationIds_.isModifiable()) {
+            destinationIds_ = new com.google.protobuf.LazyStringArrayList(destinationIds_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return A list containing the destinationIds.
+         */
+        public com.google.protobuf.ProtocolStringList getDestinationIdsList() {
+          destinationIds_.makeImmutable();
+          return destinationIds_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The count of destinationIds.
+         */
+        public int getDestinationIdsCount() {
+          return destinationIds_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The destinationIds at the given index.
+         */
+        public java.lang.String getDestinationIds(int index) {
+          return destinationIds_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the destinationIds at the given index.
+         */
+        public com.google.protobuf.ByteString getDestinationIdsBytes(int index) {
+          return destinationIds_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The destinationIds to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDestinationIds(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDestinationIdsIsMutable();
+          destinationIds_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The destinationIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addDestinationIds(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDestinationIdsIsMutable();
+          destinationIds_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param values The destinationIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllDestinationIds(java.lang.Iterable<java.lang.String> values) {
+          ensureDestinationIdsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destinationIds_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDestinationIds() {
+          destinationIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The clusters where the Gateway API HTTPRoute resource will be
+         * deployed to. Valid entries include the associated entities IDs
+         * configured in the Target resource and "&#64;self" to include the Target
+         * cluster.
+         * </pre>
+         *
+         * <code>repeated string destination_ids = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The bytes of the destinationIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addDestinationIdsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureDestinationIdsIsMutable();
+          destinationIds_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private boolean propagateService_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether to propagate the Kubernetes Service to the route
+         * destination clusters. The Service will always be deployed to the Target
+         * cluster even if the HTTPRoute is not. This option may be used to
+         * facilitiate successful DNS lookup in the route destination clusters.
+         * Can only be set to true if destinations are specified.
+         * </pre>
+         *
+         * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The propagateService.
+         */
+        @java.lang.Override
+        public boolean getPropagateService() {
+          return propagateService_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether to propagate the Kubernetes Service to the route
+         * destination clusters. The Service will always be deployed to the Target
+         * cluster even if the HTTPRoute is not. This option may be used to
+         * facilitiate successful DNS lookup in the route destination clusters.
+         * Can only be set to true if destinations are specified.
+         * </pre>
+         *
+         * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The propagateService to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPropagateService(boolean value) {
+
+          propagateService_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether to propagate the Kubernetes Service to the route
+         * destination clusters. The Service will always be deployed to the Target
+         * cluster even if the HTTPRoute is not. This option may be used to
+         * facilitiate successful DNS lookup in the route destination clusters.
+         * Can only be set to true if destinations are specified.
+         * </pre>
+         *
+         * <code>bool propagate_service = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPropagateService() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          propagateService_ = false;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)
+      private static final com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
+              .RouteDestinations
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations();
+      }
+
+      public static com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RouteDestinations> PARSER =
+          new com.google.protobuf.AbstractParser<RouteDestinations>() {
+            @java.lang.Override
+            public RouteDestinations parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RouteDestinations> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RouteDestinations> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     private int bitField0_;
@@ -650,6 +1693,79 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int ROUTE_DESTINATIONS_FIELD_NUMBER = 8;
+    private com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+        routeDestinations_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+     * to be deployed to additional clusters. This option is available for
+     * multi-cluster service mesh set ups that require the route to exist in the
+     * clusters that call the service. If unspecified, the HTTPRoute will only
+     * be deployed to the Target cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the routeDestinations field is set.
+     */
+    @java.lang.Override
+    public boolean hasRouteDestinations() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+     * to be deployed to additional clusters. This option is available for
+     * multi-cluster service mesh set ups that require the route to exist in the
+     * clusters that call the service. If unspecified, the HTTPRoute will only
+     * be deployed to the Target cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routeDestinations.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+        getRouteDestinations() {
+      return routeDestinations_ == null
+          ? com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+              .getDefaultInstance()
+          : routeDestinations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+     * to be deployed to additional clusters. This option is available for
+     * multi-cluster service mesh set ups that require the route to exist in the
+     * clusters that call the service. If unspecified, the HTTPRoute will only
+     * be deployed to the Target cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinationsOrBuilder
+        getRouteDestinationsOrBuilder() {
+      return routeDestinations_ == null
+          ? com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+              .getDefaultInstance()
+          : routeDestinations_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -682,6 +1798,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podSelectorLabel_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, podSelectorLabel_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(8, getRouteDestinations());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -711,6 +1830,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podSelectorLabel_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, podSelectorLabel_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRouteDestinations());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -739,6 +1861,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         if (!getStableCutbackDuration().equals(other.getStableCutbackDuration())) return false;
       }
       if (!getPodSelectorLabel().equals(other.getPodSelectorLabel())) return false;
+      if (hasRouteDestinations() != other.hasRouteDestinations()) return false;
+      if (hasRouteDestinations()) {
+        if (!getRouteDestinations().equals(other.getRouteDestinations())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -766,6 +1892,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
       hash = (37 * hash) + POD_SELECTOR_LABEL_FIELD_NUMBER;
       hash = (53 * hash) + getPodSelectorLabel().hashCode();
+      if (hasRouteDestinations()) {
+        hash = (37 * hash) + ROUTE_DESTINATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteDestinations().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -911,6 +2041,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getRouteUpdateWaitTimeFieldBuilder();
           getStableCutbackDurationFieldBuilder();
+          getRouteDestinationsFieldBuilder();
         }
       }
 
@@ -932,6 +2063,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           stableCutbackDurationBuilder_ = null;
         }
         podSelectorLabel_ = "";
+        routeDestinations_ = null;
+        if (routeDestinationsBuilder_ != null) {
+          routeDestinationsBuilder_.dispose();
+          routeDestinationsBuilder_ = null;
+        }
         return this;
       }
 
@@ -996,6 +2132,13 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.podSelectorLabel_ = podSelectorLabel_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.routeDestinations_ =
+              routeDestinationsBuilder_ == null
+                  ? routeDestinations_
+                  : routeDestinationsBuilder_.build();
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1076,6 +2219,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000020;
           onChanged();
         }
+        if (other.hasRouteDestinations()) {
+          mergeRouteDestinations(other.getRouteDestinations());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1140,6 +2286,13 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 50
+              case 66:
+                {
+                  input.readMessage(
+                      getRouteDestinationsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2043,6 +3196,265 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          routeDestinations_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations,
+              com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                  .Builder,
+              com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
+                  .RouteDestinationsOrBuilder>
+          routeDestinationsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the routeDestinations field is set.
+       */
+      public boolean hasRouteDestinations() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The routeDestinations.
+       */
+      public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+          getRouteDestinations() {
+        if (routeDestinationsBuilder_ == null) {
+          return routeDestinations_ == null
+              ? com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                  .getDefaultInstance()
+              : routeDestinations_;
+        } else {
+          return routeDestinationsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRouteDestinations(
+          com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations value) {
+        if (routeDestinationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          routeDestinations_ = value;
+        } else {
+          routeDestinationsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRouteDestinations(
+          com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations.Builder
+              builderForValue) {
+        if (routeDestinationsBuilder_ == null) {
+          routeDestinations_ = builderForValue.build();
+        } else {
+          routeDestinationsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRouteDestinations(
+          com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations value) {
+        if (routeDestinationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && routeDestinations_ != null
+              && routeDestinations_
+                  != com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
+                      .RouteDestinations.getDefaultInstance()) {
+            getRouteDestinationsBuilder().mergeFrom(value);
+          } else {
+            routeDestinations_ = value;
+          }
+        } else {
+          routeDestinationsBuilder_.mergeFrom(value);
+        }
+        if (routeDestinations_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRouteDestinations() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        routeDestinations_ = null;
+        if (routeDestinationsBuilder_ != null) {
+          routeDestinationsBuilder_.dispose();
+          routeDestinationsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+              .Builder
+          getRouteDestinationsBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getRouteDestinationsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
+              .RouteDestinationsOrBuilder
+          getRouteDestinationsOrBuilder() {
+        if (routeDestinationsBuilder_ != null) {
+          return routeDestinationsBuilder_.getMessageOrBuilder();
+        } else {
+          return routeDestinations_ == null
+              ? com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                  .getDefaultInstance()
+              : routeDestinations_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Route destinations allow configuring the Gateway API HTTPRoute
+       * to be deployed to additional clusters. This option is available for
+       * multi-cluster service mesh set ups that require the route to exist in the
+       * clusters that call the service. If unspecified, the HTTPRoute will only
+       * be deployed to the Target cluster.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations route_destinations = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations,
+              com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                  .Builder,
+              com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
+                  .RouteDestinationsOrBuilder>
+          getRouteDestinationsFieldBuilder() {
+        if (routeDestinationsBuilder_ == null) {
+          routeDestinationsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations,
+                  com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
+                      .Builder,
+                  com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
+                      .RouteDestinationsOrBuilder>(
+                  getRouteDestinations(), getParentForChildren(), isClean());
+          routeDestinations_ = null;
+        }
+        return routeDestinationsBuilder_;
       }
 
       @java.lang.Override

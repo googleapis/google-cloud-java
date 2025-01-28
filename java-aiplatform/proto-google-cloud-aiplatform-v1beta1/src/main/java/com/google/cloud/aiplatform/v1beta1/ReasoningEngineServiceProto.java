@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,7 +93,7 @@ public final class ReasoningEngineServiceProto {
           + "uest\022O\n\020reasoning_engine\030\001 \001(\01320.google."
           + "cloud.aiplatform.v1beta1.ReasoningEngine"
           + "B\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.prot"
-          + "obuf.FieldMaskB\003\340A\002\"}\n&UpdateReasoningEn"
+          + "obuf.FieldMaskB\003\340A\001\"}\n&UpdateReasoningEn"
           + "gineOperationMetadata\022S\n\020generic_metadat"
           + "a\030\001 \001(\01329.google.cloud.aiplatform.v1beta"
           + "1.GenericOperationMetadata\"\236\001\n\033ListReaso"

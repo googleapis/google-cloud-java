@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -283,6 +283,52 @@ public interface RemoteRepositoryConfigOrBuilder
    *
    *
    * <pre>
+   * Common remote repository settings.
+   * Used as the remote repository upstream URL.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+   * </code>
+   *
+   * @return Whether the commonRepository field is set.
+   */
+  boolean hasCommonRepository();
+  /**
+   *
+   *
+   * <pre>
+   * Common remote repository settings.
+   * Used as the remote repository upstream URL.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+   * </code>
+   *
+   * @return The commonRepository.
+   */
+  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+      getCommonRepository();
+  /**
+   *
+   *
+   * <pre>
+   * Common remote repository settings.
+   * Used as the remote repository upstream URL.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepositoryOrBuilder
+      getCommonRepositoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The description of the remote source.
    * </pre>
    *
@@ -346,6 +392,20 @@ public interface RemoteRepositoryConfigOrBuilder
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentialsOrBuilder
       getUpstreamCredentialsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. A create/update remote repo option to avoid making a HEAD/GET
+   * request to validate a remote repo and any supplied upstream credentials.
+   * </pre>
+   *
+   * <code>bool disable_upstream_validation = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The disableUpstreamValidation.
+   */
+  boolean getDisableUpstreamValidation();
 
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.RemoteSourceCase
       getRemoteSourceCase();

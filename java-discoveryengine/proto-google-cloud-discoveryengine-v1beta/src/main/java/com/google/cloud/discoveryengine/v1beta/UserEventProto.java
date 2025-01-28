@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,7 +79,7 @@ public final class UserEventProto {
           + "roto\032\031google/api/resource.proto\0320google/"
           + "cloud/discoveryengine/v1beta/common.prot"
           + "o\032\036google/protobuf/duration.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\342\010\n\tUserEvent"
+          + "e/protobuf/timestamp.proto\"\247\t\n\tUserEvent"
           + "\022\027\n\nevent_type\030\001 \001(\tB\003\340A\002\022\033\n\016user_pseudo"
           + "_id\030\002 \001(\tB\003\340A\002\022:\n\006engine\030\023 \001(\tB*\372A\'\n%dis"
           + "coveryengine.googleapis.com/Engine\022A\n\nda"
@@ -105,40 +105,44 @@ public final class UserEventProto {
           + "gle.cloud.discoveryengine.v1beta.UserEve"
           + "nt.AttributesEntry\022B\n\nmedia_info\030\022 \001(\0132."
           + ".google.cloud.discoveryengine.v1beta.Med"
-          + "iaInfo\032g\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022C"
-          + "\n\005value\030\002 \001(\01324.google.cloud.discoveryen"
-          + "gine.v1beta.CustomAttribute:\0028\001\"Y\n\010PageI"
-          + "nfo\022\023\n\013pageview_id\030\001 \001(\t\022\025\n\rpage_categor"
-          + "y\030\002 \001(\t\022\013\n\003uri\030\003 \001(\t\022\024\n\014referrer_uri\030\004 \001"
-          + "(\t\"T\n\nSearchInfo\022\024\n\014search_query\030\001 \001(\t\022\020"
-          + "\n\010order_by\030\002 \001(\t\022\023\n\006offset\030\003 \001(\005H\000\210\001\001B\t\n"
-          + "\007_offset\"H\n\016CompletionInfo\022\033\n\023selected_s"
-          + "uggestion\030\001 \001(\t\022\031\n\021selected_position\030\002 \001"
-          + "(\005\"\311\001\n\017TransactionInfo\022\027\n\005value\030\001 \001(\002B\003\340"
-          + "A\002H\000\210\001\001\022\025\n\010currency\030\002 \001(\tB\003\340A\002\022\026\n\016transa"
-          + "ction_id\030\003 \001(\t\022\020\n\003tax\030\004 \001(\002H\001\210\001\001\022\021\n\004cost"
-          + "\030\005 \001(\002H\002\210\001\001\022\033\n\016discount_value\030\006 \001(\002H\003\210\001\001"
-          + "B\010\n\006_valueB\006\n\004_taxB\007\n\005_costB\021\n\017_discount"
-          + "_value\"\320\001\n\014DocumentInfo\022\014\n\002id\030\001 \001(\tH\000\022<\n"
-          + "\004name\030\002 \001(\tB,\372A)\n\'discoveryengine.google"
-          + "apis.com/DocumentH\000\022\r\n\003uri\030\006 \001(\tH\000\022\025\n\010qu"
-          + "antity\030\003 \001(\005H\001\210\001\001\022\025\n\rpromotion_ids\030\004 \003(\t"
-          + "\022\023\n\006joined\030\005 \001(\010B\003\340A\003B\025\n\023document_descri"
-          + "ptorB\013\n\t_quantity\"\224\001\n\tPanelInfo\022\025\n\010panel"
-          + "_id\030\002 \001(\tB\003\340A\002\022\024\n\014display_name\030\003 \001(\t\022\033\n\016"
-          + "panel_position\030\004 \001(\005H\000\210\001\001\022\031\n\014total_panel"
-          + "s\030\005 \001(\005H\001\210\001\001B\021\n\017_panel_positionB\017\n\r_tota"
-          + "l_panels\"\215\001\n\tMediaInfo\022:\n\027media_progress"
-          + "_duration\030\001 \001(\0132\031.google.protobuf.Durati"
-          + "on\022&\n\031media_progress_percentage\030\002 \001(\002H\000\210"
-          + "\001\001B\034\n\032_media_progress_percentageB\225\002\n\'com"
-          + ".google.cloud.discoveryengine.v1betaB\016Us"
-          + "erEventProtoP\001ZQcloud.google.com/go/disc"
-          + "overyengine/apiv1beta/discoveryenginepb;"
-          + "discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#Go"
-          + "ogle.Cloud.DiscoveryEngine.V1Beta\312\002#Goog"
-          + "le\\Cloud\\DiscoveryEngine\\V1beta\352\002&Google"
-          + "::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "iaInfo\022C\n\006panels\030\026 \003(\0132..google.cloud.di"
+          + "scoveryengine.v1beta.PanelInfoB\003\340A\001\032g\n\017A"
+          + "ttributesEntry\022\013\n\003key\030\001 \001(\t\022C\n\005value\030\002 \001"
+          + "(\01324.google.cloud.discoveryengine.v1beta"
+          + ".CustomAttribute:\0028\001\"Y\n\010PageInfo\022\023\n\013page"
+          + "view_id\030\001 \001(\t\022\025\n\rpage_category\030\002 \001(\t\022\013\n\003"
+          + "uri\030\003 \001(\t\022\024\n\014referrer_uri\030\004 \001(\t\"T\n\nSearc"
+          + "hInfo\022\024\n\014search_query\030\001 \001(\t\022\020\n\010order_by\030"
+          + "\002 \001(\t\022\023\n\006offset\030\003 \001(\005H\000\210\001\001B\t\n\007_offset\"H\n"
+          + "\016CompletionInfo\022\033\n\023selected_suggestion\030\001"
+          + " \001(\t\022\031\n\021selected_position\030\002 \001(\005\"\311\001\n\017Tran"
+          + "sactionInfo\022\027\n\005value\030\001 \001(\002B\003\340A\002H\000\210\001\001\022\025\n\010"
+          + "currency\030\002 \001(\tB\003\340A\002\022\026\n\016transaction_id\030\003 "
+          + "\001(\t\022\020\n\003tax\030\004 \001(\002H\001\210\001\001\022\021\n\004cost\030\005 \001(\002H\002\210\001\001"
+          + "\022\033\n\016discount_value\030\006 \001(\002H\003\210\001\001B\010\n\006_valueB"
+          + "\006\n\004_taxB\007\n\005_costB\021\n\017_discount_value\"\320\001\n\014"
+          + "DocumentInfo\022\014\n\002id\030\001 \001(\tH\000\022<\n\004name\030\002 \001(\t"
+          + "B,\372A)\n\'discoveryengine.googleapis.com/Do"
+          + "cumentH\000\022\r\n\003uri\030\006 \001(\tH\000\022\025\n\010quantity\030\003 \001("
+          + "\005H\001\210\001\001\022\025\n\rpromotion_ids\030\004 \003(\t\022\023\n\006joined\030"
+          + "\005 \001(\010B\003\340A\003B\025\n\023document_descriptorB\013\n\t_qu"
+          + "antity\"\337\001\n\tPanelInfo\022\025\n\010panel_id\030\002 \001(\tB\003"
+          + "\340A\002\022\024\n\014display_name\030\003 \001(\t\022\033\n\016panel_posit"
+          + "ion\030\004 \001(\005H\000\210\001\001\022\031\n\014total_panels\030\005 \001(\005H\001\210\001"
+          + "\001\022I\n\tdocuments\030\006 \003(\01321.google.cloud.disc"
+          + "overyengine.v1beta.DocumentInfoB\003\340A\001B\021\n\017"
+          + "_panel_positionB\017\n\r_total_panels\"\215\001\n\tMed"
+          + "iaInfo\022:\n\027media_progress_duration\030\001 \001(\0132"
+          + "\031.google.protobuf.Duration\022&\n\031media_prog"
+          + "ress_percentage\030\002 \001(\002H\000\210\001\001B\034\n\032_media_pro"
+          + "gress_percentageB\225\002\n\'com.google.cloud.di"
+          + "scoveryengine.v1betaB\016UserEventProtoP\001ZQ"
+          + "cloud.google.com/go/discoveryengine/apiv"
+          + "1beta/discoveryenginepb;discoveryenginep"
+          + "b\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Disco"
+          + "veryEngine.V1Beta\312\002#Google\\Cloud\\Discove"
+          + "ryEngine\\V1beta\352\002&Google::Cloud::Discove"
+          + "ryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -176,6 +180,7 @@ public final class UserEventProto {
               "PromotionIds",
               "Attributes",
               "MediaInfo",
+              "Panels",
             });
     internal_static_google_cloud_discoveryengine_v1beta_UserEvent_AttributesEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_UserEvent_descriptor
@@ -233,7 +238,7 @@ public final class UserEventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_PanelInfo_descriptor,
             new java.lang.String[] {
-              "PanelId", "DisplayName", "PanelPosition", "TotalPanels",
+              "PanelId", "DisplayName", "PanelPosition", "TotalPanels", "Documents",
             });
     internal_static_google_cloud_discoveryengine_v1beta_MediaInfo_descriptor =
         getDescriptor().getMessageTypes().get(7);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,6 +173,16 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * <code>NONE = 2402104;</code>
      */
     NONE(2402104),
+    /**
+     *
+     *
+     * <pre>
+     * Strong cookie-based affinity. Connections bearing the same cookie will be served by the same backend VM while that VM remains healthy, as long as the cookie has not expired.
+     * </pre>
+     *
+     * <code>STRONG_COOKIE_AFFINITY = 438628091;</code>
+     */
+    STRONG_COOKIE_AFFINITY(438628091),
     UNRECOGNIZED(-1),
     ;
 
@@ -266,6 +276,16 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * <code>NONE = 2402104;</code>
      */
     public static final int NONE_VALUE = 2402104;
+    /**
+     *
+     *
+     * <pre>
+     * Strong cookie-based affinity. Connections bearing the same cookie will be served by the same backend VM while that VM remains healthy, as long as the cookie has not expired.
+     * </pre>
+     *
+     * <code>STRONG_COOKIE_AFFINITY = 438628091;</code>
+     */
+    public static final int STRONG_COOKIE_AFFINITY_VALUE = 438628091;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -309,6 +329,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
           return HTTP_COOKIE;
         case 2402104:
           return NONE;
+        case 438628091:
+          return STRONG_COOKIE_AFFINITY;
         default:
           return null;
       }

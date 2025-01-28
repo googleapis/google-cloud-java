@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,6 +135,83 @@ public class CompletionServiceClientHttpJsonTest {
               .setIncludeTailSuggestions(true)
               .build();
       client.completeQuery(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void advancedCompleteQueryTest() throws Exception {
+    AdvancedCompleteQueryResponse expectedResponse =
+        AdvancedCompleteQueryResponse.newBuilder()
+            .addAllQuerySuggestions(new ArrayList<AdvancedCompleteQueryResponse.QuerySuggestion>())
+            .setTailMatchTriggered(true)
+            .addAllPeopleSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.PersonSuggestion>())
+            .addAllContentSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.ContentSuggestion>())
+            .addAllRecentSearchSuggestions(
+                new ArrayList<AdvancedCompleteQueryResponse.RecentSearchSuggestion>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AdvancedCompleteQueryRequest request =
+        AdvancedCompleteQueryRequest.newBuilder()
+            .setCompletionConfig(
+                CompletionConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setQuery("query107944136")
+            .setQueryModel("queryModel-184930495")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .setUserInfo(UserInfo.newBuilder().build())
+            .setIncludeTailSuggestions(true)
+            .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+            .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+            .build();
+
+    AdvancedCompleteQueryResponse actualResponse = client.advancedCompleteQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void advancedCompleteQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AdvancedCompleteQueryRequest request =
+          AdvancedCompleteQueryRequest.newBuilder()
+              .setCompletionConfig(
+                  CompletionConfigName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
+              .setQuery("query107944136")
+              .setQueryModel("queryModel-184930495")
+              .setUserPseudoId("userPseudoId-1155274652")
+              .setUserInfo(UserInfo.newBuilder().build())
+              .setIncludeTailSuggestions(true)
+              .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
+              .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+              .build();
+      client.advancedCompleteQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

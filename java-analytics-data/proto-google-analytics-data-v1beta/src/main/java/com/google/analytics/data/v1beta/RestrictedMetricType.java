@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.analytics.data.v1beta;
  *
  *
  * <pre>
- * Categories of data that you may be restricted from viewing on certain GA4
- * properties.
+ * Categories of data that you may be restricted from viewing on certain
+ * Google Analytics properties.
  * </pre>
  *
  * Protobuf enum {@code google.analytics.data.v1beta.RestrictedMetricType}

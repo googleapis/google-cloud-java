@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -293,15 +293,15 @@ public final class RegistrationServiceProto {
           + "ojects/*/locations/*/namespaces/*/worklo"
           + "ads/*}:testIamPermissions:\001*\032S\312A\037service"
           + "directory.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\234\002\n)co"
+          + "oogleapis.com/auth/cloud-platformB\231\002\n)co"
           + "m.google.cloud.servicedirectory.v1beta1B"
           + "\030RegistrationServiceProtoP\001ZUcloud.googl"
           + "e.com/go/servicedirectory/apiv1beta1/ser"
-          + "vicedirectorypb;servicedirectorypb\370\001\001\252\002%"
-          + "Google.Cloud.ServiceDirectory.V1Beta1\312\002%"
-          + "Google\\Cloud\\ServiceDirectory\\V1beta1\352\002("
-          + "Google::Cloud::ServiceDirectory::V1beta1"
-          + "b\006proto3"
+          + "vicedirectorypb;servicedirectorypb\252\002%Goo"
+          + "gle.Cloud.ServiceDirectory.V1Beta1\312\002%Goo"
+          + "gle\\Cloud\\ServiceDirectory\\V1beta1\352\002(Goo"
+          + "gle::Cloud::ServiceDirectory::V1beta1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

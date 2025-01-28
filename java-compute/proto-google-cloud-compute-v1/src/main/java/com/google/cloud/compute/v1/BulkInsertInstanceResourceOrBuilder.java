@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Policy for chosing target zone. For more information, see Create VMs in bulk .
+   * Policy for choosing target zone. For more information, see Create VMs in bulk.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -103,7 +103,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Policy for chosing target zone. For more information, see Create VMs in bulk .
+   * Policy for choosing target zone. For more information, see Create VMs in bulk.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -115,7 +115,7 @@ public interface BulkInsertInstanceResourceOrBuilder
    *
    *
    * <pre>
-   * Policy for chosing target zone. For more information, see Create VMs in bulk .
+   * Policy for choosing target zone. For more information, see Create VMs in bulk.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>

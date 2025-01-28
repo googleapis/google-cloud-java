@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -5153,17 +5153,32 @@ public final class TransferProto {
      *
      * <pre>
      * Required. A list of query parameters specified as JSON text in the form of:
-     * `{"projectId":"my_project_id",
-     *  "jobNames":["jobid1","jobid2",...],
-     *  "jobStatuses":["status1","status2",...]}`
      *
-     * Since `jobNames` and `jobStatuses` support multiple values, their values
-     * must be specified with array notation. `projectId` is required.
-     * `jobNames` and `jobStatuses` are optional.  The valid values for
-     * `jobStatuses` are case-insensitive:
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * ```
+     * {
+     *   "projectId":"my_project_id",
+     *   "jobNames":["jobid1","jobid2",...],
+     *   "jobStatuses":["status1","status2",...],
+     *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+     *   "sourceBucket":"source-bucket-name",
+     *   "sinkBucket":"sink-bucket-name",
+     * }
+     * ```
+     *
+     * The JSON formatting in the example is for display only; provide the
+     * query parameters without spaces or line breaks.
+     *
+     * * `projectId` is required.
+     * * Since `jobNames` and `jobStatuses` support multiple values, their values
+     *   must be specified with array notation. `jobNames` and `jobStatuses` are
+     *   optional. Valid values are case-insensitive:
+     *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+     *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+     *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+     * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+     *   cross-bucket replication jobs.
+     * * Limit the results to jobs from a particular bucket with `sourceBucket`
+     *   and/or to a particular bucket with `sinkBucket`.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5176,17 +5191,32 @@ public final class TransferProto {
      *
      * <pre>
      * Required. A list of query parameters specified as JSON text in the form of:
-     * `{"projectId":"my_project_id",
-     *  "jobNames":["jobid1","jobid2",...],
-     *  "jobStatuses":["status1","status2",...]}`
      *
-     * Since `jobNames` and `jobStatuses` support multiple values, their values
-     * must be specified with array notation. `projectId` is required.
-     * `jobNames` and `jobStatuses` are optional.  The valid values for
-     * `jobStatuses` are case-insensitive:
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * ```
+     * {
+     *   "projectId":"my_project_id",
+     *   "jobNames":["jobid1","jobid2",...],
+     *   "jobStatuses":["status1","status2",...],
+     *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+     *   "sourceBucket":"source-bucket-name",
+     *   "sinkBucket":"sink-bucket-name",
+     * }
+     * ```
+     *
+     * The JSON formatting in the example is for display only; provide the
+     * query parameters without spaces or line breaks.
+     *
+     * * `projectId` is required.
+     * * Since `jobNames` and `jobStatuses` support multiple values, their values
+     *   must be specified with array notation. `jobNames` and `jobStatuses` are
+     *   optional. Valid values are case-insensitive:
+     *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+     *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+     *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+     * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+     *   cross-bucket replication jobs.
+     * * Limit the results to jobs from a particular bucket with `sourceBucket`
+     *   and/or to a particular bucket with `sinkBucket`.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5289,17 +5319,32 @@ public final class TransferProto {
      *
      * <pre>
      * Required. A list of query parameters specified as JSON text in the form of:
-     * `{"projectId":"my_project_id",
-     *  "jobNames":["jobid1","jobid2",...],
-     *  "jobStatuses":["status1","status2",...]}`
      *
-     * Since `jobNames` and `jobStatuses` support multiple values, their values
-     * must be specified with array notation. `projectId` is required.
-     * `jobNames` and `jobStatuses` are optional.  The valid values for
-     * `jobStatuses` are case-insensitive:
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * ```
+     * {
+     *   "projectId":"my_project_id",
+     *   "jobNames":["jobid1","jobid2",...],
+     *   "jobStatuses":["status1","status2",...],
+     *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+     *   "sourceBucket":"source-bucket-name",
+     *   "sinkBucket":"sink-bucket-name",
+     * }
+     * ```
+     *
+     * The JSON formatting in the example is for display only; provide the
+     * query parameters without spaces or line breaks.
+     *
+     * * `projectId` is required.
+     * * Since `jobNames` and `jobStatuses` support multiple values, their values
+     *   must be specified with array notation. `jobNames` and `jobStatuses` are
+     *   optional. Valid values are case-insensitive:
+     *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+     *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+     *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+     * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+     *   cross-bucket replication jobs.
+     * * Limit the results to jobs from a particular bucket with `sourceBucket`
+     *   and/or to a particular bucket with `sinkBucket`.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5323,17 +5368,32 @@ public final class TransferProto {
      *
      * <pre>
      * Required. A list of query parameters specified as JSON text in the form of:
-     * `{"projectId":"my_project_id",
-     *  "jobNames":["jobid1","jobid2",...],
-     *  "jobStatuses":["status1","status2",...]}`
      *
-     * Since `jobNames` and `jobStatuses` support multiple values, their values
-     * must be specified with array notation. `projectId` is required.
-     * `jobNames` and `jobStatuses` are optional.  The valid values for
-     * `jobStatuses` are case-insensitive:
-     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * ```
+     * {
+     *   "projectId":"my_project_id",
+     *   "jobNames":["jobid1","jobid2",...],
+     *   "jobStatuses":["status1","status2",...],
+     *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+     *   "sourceBucket":"source-bucket-name",
+     *   "sinkBucket":"sink-bucket-name",
+     * }
+     * ```
+     *
+     * The JSON formatting in the example is for display only; provide the
+     * query parameters without spaces or line breaks.
+     *
+     * * `projectId` is required.
+     * * Since `jobNames` and `jobStatuses` support multiple values, their values
+     *   must be specified with array notation. `jobNames` and `jobStatuses` are
+     *   optional. Valid values are case-insensitive:
+     *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+     *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+     *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+     * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+     *   cross-bucket replication jobs.
+     * * Limit the results to jobs from a particular bucket with `sourceBucket`
+     *   and/or to a particular bucket with `sinkBucket`.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5840,17 +5900,32 @@ public final class TransferProto {
        *
        * <pre>
        * Required. A list of query parameters specified as JSON text in the form of:
-       * `{"projectId":"my_project_id",
-       *  "jobNames":["jobid1","jobid2",...],
-       *  "jobStatuses":["status1","status2",...]}`
        *
-       * Since `jobNames` and `jobStatuses` support multiple values, their values
-       * must be specified with array notation. `projectId` is required.
-       * `jobNames` and `jobStatuses` are optional.  The valid values for
-       * `jobStatuses` are case-insensitive:
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+       * ```
+       * {
+       *   "projectId":"my_project_id",
+       *   "jobNames":["jobid1","jobid2",...],
+       *   "jobStatuses":["status1","status2",...],
+       *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+       *   "sourceBucket":"source-bucket-name",
+       *   "sinkBucket":"sink-bucket-name",
+       * }
+       * ```
+       *
+       * The JSON formatting in the example is for display only; provide the
+       * query parameters without spaces or line breaks.
+       *
+       * * `projectId` is required.
+       * * Since `jobNames` and `jobStatuses` support multiple values, their values
+       *   must be specified with array notation. `jobNames` and `jobStatuses` are
+       *   optional. Valid values are case-insensitive:
+       *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+       *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+       *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+       * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+       *   cross-bucket replication jobs.
+       * * Limit the results to jobs from a particular bucket with `sourceBucket`
+       *   and/or to a particular bucket with `sinkBucket`.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5873,17 +5948,32 @@ public final class TransferProto {
        *
        * <pre>
        * Required. A list of query parameters specified as JSON text in the form of:
-       * `{"projectId":"my_project_id",
-       *  "jobNames":["jobid1","jobid2",...],
-       *  "jobStatuses":["status1","status2",...]}`
        *
-       * Since `jobNames` and `jobStatuses` support multiple values, their values
-       * must be specified with array notation. `projectId` is required.
-       * `jobNames` and `jobStatuses` are optional.  The valid values for
-       * `jobStatuses` are case-insensitive:
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+       * ```
+       * {
+       *   "projectId":"my_project_id",
+       *   "jobNames":["jobid1","jobid2",...],
+       *   "jobStatuses":["status1","status2",...],
+       *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+       *   "sourceBucket":"source-bucket-name",
+       *   "sinkBucket":"sink-bucket-name",
+       * }
+       * ```
+       *
+       * The JSON formatting in the example is for display only; provide the
+       * query parameters without spaces or line breaks.
+       *
+       * * `projectId` is required.
+       * * Since `jobNames` and `jobStatuses` support multiple values, their values
+       *   must be specified with array notation. `jobNames` and `jobStatuses` are
+       *   optional. Valid values are case-insensitive:
+       *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+       *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+       *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+       * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+       *   cross-bucket replication jobs.
+       * * Limit the results to jobs from a particular bucket with `sourceBucket`
+       *   and/or to a particular bucket with `sinkBucket`.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5906,17 +5996,32 @@ public final class TransferProto {
        *
        * <pre>
        * Required. A list of query parameters specified as JSON text in the form of:
-       * `{"projectId":"my_project_id",
-       *  "jobNames":["jobid1","jobid2",...],
-       *  "jobStatuses":["status1","status2",...]}`
        *
-       * Since `jobNames` and `jobStatuses` support multiple values, their values
-       * must be specified with array notation. `projectId` is required.
-       * `jobNames` and `jobStatuses` are optional.  The valid values for
-       * `jobStatuses` are case-insensitive:
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+       * ```
+       * {
+       *   "projectId":"my_project_id",
+       *   "jobNames":["jobid1","jobid2",...],
+       *   "jobStatuses":["status1","status2",...],
+       *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+       *   "sourceBucket":"source-bucket-name",
+       *   "sinkBucket":"sink-bucket-name",
+       * }
+       * ```
+       *
+       * The JSON formatting in the example is for display only; provide the
+       * query parameters without spaces or line breaks.
+       *
+       * * `projectId` is required.
+       * * Since `jobNames` and `jobStatuses` support multiple values, their values
+       *   must be specified with array notation. `jobNames` and `jobStatuses` are
+       *   optional. Valid values are case-insensitive:
+       *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+       *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+       *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+       * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+       *   cross-bucket replication jobs.
+       * * Limit the results to jobs from a particular bucket with `sourceBucket`
+       *   and/or to a particular bucket with `sinkBucket`.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5938,17 +6043,32 @@ public final class TransferProto {
        *
        * <pre>
        * Required. A list of query parameters specified as JSON text in the form of:
-       * `{"projectId":"my_project_id",
-       *  "jobNames":["jobid1","jobid2",...],
-       *  "jobStatuses":["status1","status2",...]}`
        *
-       * Since `jobNames` and `jobStatuses` support multiple values, their values
-       * must be specified with array notation. `projectId` is required.
-       * `jobNames` and `jobStatuses` are optional.  The valid values for
-       * `jobStatuses` are case-insensitive:
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+       * ```
+       * {
+       *   "projectId":"my_project_id",
+       *   "jobNames":["jobid1","jobid2",...],
+       *   "jobStatuses":["status1","status2",...],
+       *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+       *   "sourceBucket":"source-bucket-name",
+       *   "sinkBucket":"sink-bucket-name",
+       * }
+       * ```
+       *
+       * The JSON formatting in the example is for display only; provide the
+       * query parameters without spaces or line breaks.
+       *
+       * * `projectId` is required.
+       * * Since `jobNames` and `jobStatuses` support multiple values, their values
+       *   must be specified with array notation. `jobNames` and `jobStatuses` are
+       *   optional. Valid values are case-insensitive:
+       *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+       *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+       *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+       * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+       *   cross-bucket replication jobs.
+       * * Limit the results to jobs from a particular bucket with `sourceBucket`
+       *   and/or to a particular bucket with `sinkBucket`.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5966,17 +6086,32 @@ public final class TransferProto {
        *
        * <pre>
        * Required. A list of query parameters specified as JSON text in the form of:
-       * `{"projectId":"my_project_id",
-       *  "jobNames":["jobid1","jobid2",...],
-       *  "jobStatuses":["status1","status2",...]}`
        *
-       * Since `jobNames` and `jobStatuses` support multiple values, their values
-       * must be specified with array notation. `projectId` is required.
-       * `jobNames` and `jobStatuses` are optional.  The valid values for
-       * `jobStatuses` are case-insensitive:
-       * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED],
-       * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], and
-       * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+       * ```
+       * {
+       *   "projectId":"my_project_id",
+       *   "jobNames":["jobid1","jobid2",...],
+       *   "jobStatuses":["status1","status2",...],
+       *   "dataBackend":"QUERY_REPLICATION_CONFIGS",
+       *   "sourceBucket":"source-bucket-name",
+       *   "sinkBucket":"sink-bucket-name",
+       * }
+       * ```
+       *
+       * The JSON formatting in the example is for display only; provide the
+       * query parameters without spaces or line breaks.
+       *
+       * * `projectId` is required.
+       * * Since `jobNames` and `jobStatuses` support multiple values, their values
+       *   must be specified with array notation. `jobNames` and `jobStatuses` are
+       *   optional. Valid values are case-insensitive:
+       *     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]
+       *     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED]
+       *     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED]
+       * * Specify `"dataBackend":"QUERY_REPLICATION_CONFIGS"` to return a list of
+       *   cross-bucket replication jobs.
+       * * Limit the results to jobs from a particular bucket with `sourceBucket`
+       *   and/or to a particular bucket with `sinkBucket`.
        * </pre>
        *
        * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -16355,14 +16490,14 @@ public final class TransferProto {
           + ".google.protobuf.Empty\"1\332A\004name\202\323\344\223\002$*\"/"
           + "v1/{name=projects/*/agentPools/*}\032R\312A\036st"
           + "oragetransfer.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\357\001"
+          + "ww.googleapis.com/auth/cloud-platformB\354\001"
           + "\n#com.google.storagetransfer.v1.protoB\rT"
           + "ransferProtoZMcloud.google.com/go/storag"
           + "etransfer/apiv1/storagetransferpb;storag"
-          + "etransferpb\370\001\001\252\002\037Google.Cloud.StorageTra"
-          + "nsfer.V1\312\002\037Google\\Cloud\\StorageTransfer\\"
-          + "V1\352\002\"Google::Cloud::StorageTransfer::V1b"
-          + "\006proto3"
+          + "etransferpb\252\002\037Google.Cloud.StorageTransf"
+          + "er.V1\312\002\037Google\\Cloud\\StorageTransfer\\V1\352"
+          + "\002\"Google::Cloud::StorageTransfer::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

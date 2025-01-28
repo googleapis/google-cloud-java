@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,8 +88,8 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Default model behavior, model decides to predict either a function call
-     * or a natural language response.
+     * Default model behavior, model decides to predict either function calls
+     * or natural language response.
      * </pre>
      *
      * <code>AUTO = 1;</code>
@@ -99,10 +99,10 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Model is constrained to always predicting a function call only.
-     * If "allowed_function_names" are set, the predicted function call will be
+     * Model is constrained to always predicting function calls only.
+     * If "allowed_function_names" are set, the predicted function calls will be
      * limited to any one of "allowed_function_names", else the predicted
-     * function call will be any one of the provided "function_declarations".
+     * function calls will be any one of the provided "function_declarations".
      * </pre>
      *
      * <code>ANY = 2;</code>
@@ -112,7 +112,7 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Model will not predict any function call. Model behavior is same as when
+     * Model will not predict any function calls. Model behavior is same as when
      * not passing any function declarations.
      * </pre>
      *
@@ -136,8 +136,8 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Default model behavior, model decides to predict either a function call
-     * or a natural language response.
+     * Default model behavior, model decides to predict either function calls
+     * or natural language response.
      * </pre>
      *
      * <code>AUTO = 1;</code>
@@ -147,10 +147,10 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Model is constrained to always predicting a function call only.
-     * If "allowed_function_names" are set, the predicted function call will be
+     * Model is constrained to always predicting function calls only.
+     * If "allowed_function_names" are set, the predicted function calls will be
      * limited to any one of "allowed_function_names", else the predicted
-     * function call will be any one of the provided "function_declarations".
+     * function calls will be any one of the provided "function_declarations".
      * </pre>
      *
      * <code>ANY = 2;</code>
@@ -160,7 +160,7 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Model will not predict any function call. Model behavior is same as when
+     * Model will not predict any function calls. Model behavior is same as when
      * not passing any function declarations.
      * </pre>
      *

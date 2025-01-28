@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,77 @@ public interface RepairRolloutRuleOrBuilder
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Phases within which jobs are subject to automatic repair actions
+   * on failure. Proceeds only after phase name matched any one in the list, or
+   * for all phases if unspecified. This value must consist of lower-case
+   * letters, numbers, and hyphens, start with a letter and end with a letter or
+   * a number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>repeated string phases = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the phases.
+   */
+  java.util.List<java.lang.String> getPhasesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Phases within which jobs are subject to automatic repair actions
+   * on failure. Proceeds only after phase name matched any one in the list, or
+   * for all phases if unspecified. This value must consist of lower-case
+   * letters, numbers, and hyphens, start with a letter and end with a letter or
+   * a number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>repeated string phases = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of phases.
+   */
+  int getPhasesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Phases within which jobs are subject to automatic repair actions
+   * on failure. Proceeds only after phase name matched any one in the list, or
+   * for all phases if unspecified. This value must consist of lower-case
+   * letters, numbers, and hyphens, start with a letter and end with a letter or
+   * a number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>repeated string phases = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phases at the given index.
+   */
+  java.lang.String getPhases(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Phases within which jobs are subject to automatic repair actions
+   * on failure. Proceeds only after phase name matched any one in the list, or
+   * for all phases if unspecified. This value must consist of lower-case
+   * letters, numbers, and hyphens, start with a letter and end with a letter or
+   * a number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>repeated string phases = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phases at the given index.
+   */
+  com.google.protobuf.ByteString getPhasesBytes(int index);
 
   /**
    *
@@ -168,4 +239,66 @@ public interface RepairRolloutRuleOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.AutomationRuleConditionOrBuilder getConditionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Defines the types of automatic repair phases for failed jobs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.RepairPhaseConfig repair_phases = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<com.google.cloud.deploy.v1.RepairPhaseConfig> getRepairPhasesList();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Defines the types of automatic repair phases for failed jobs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.RepairPhaseConfig repair_phases = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.RepairPhaseConfig getRepairPhases(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Required. Defines the types of automatic repair phases for failed jobs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.RepairPhaseConfig repair_phases = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  int getRepairPhasesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Defines the types of automatic repair phases for failed jobs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.RepairPhaseConfig repair_phases = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.deploy.v1.RepairPhaseConfigOrBuilder>
+      getRepairPhasesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Defines the types of automatic repair phases for failed jobs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.RepairPhaseConfig repair_phases = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.RepairPhaseConfigOrBuilder getRepairPhasesOrBuilder(int index);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -333,12 +333,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int IGNORE_CHILD_EXEMPTIONS_FIELD_NUMBER = 70141850;
   private boolean ignoreChildExemptions_ = false;
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return Whether the ignoreChildExemptions field is set.
@@ -348,12 +342,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return The ignoreChildExemptions.
@@ -1025,12 +1013,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
 
     private boolean ignoreChildExemptions_;
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool ignore_child_exemptions = 70141850;</code>
      *
      * @return Whether the ignoreChildExemptions field is set.
@@ -1040,12 +1022,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool ignore_child_exemptions = 70141850;</code>
      *
      * @return The ignoreChildExemptions.
@@ -1055,12 +1031,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
       return ignoreChildExemptions_;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool ignore_child_exemptions = 70141850;</code>
      *
      * @param value The ignoreChildExemptions to set.
@@ -1074,12 +1044,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
      * <code>optional bool ignore_child_exemptions = 70141850;</code>
      *
      * @return This builder for chaining.

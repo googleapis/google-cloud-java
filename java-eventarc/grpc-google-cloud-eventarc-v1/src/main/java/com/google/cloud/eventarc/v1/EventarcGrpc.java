@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -842,6 +842,941 @@ public final class EventarcGrpc {
     return getUpdateGoogleChannelConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetMessageBusRequest,
+          com.google.cloud.eventarc.v1.MessageBus>
+      getGetMessageBusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMessageBus",
+      requestType = com.google.cloud.eventarc.v1.GetMessageBusRequest.class,
+      responseType = com.google.cloud.eventarc.v1.MessageBus.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetMessageBusRequest,
+          com.google.cloud.eventarc.v1.MessageBus>
+      getGetMessageBusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetMessageBusRequest,
+            com.google.cloud.eventarc.v1.MessageBus>
+        getGetMessageBusMethod;
+    if ((getGetMessageBusMethod = EventarcGrpc.getGetMessageBusMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetMessageBusMethod = EventarcGrpc.getGetMessageBusMethod) == null) {
+          EventarcGrpc.getGetMessageBusMethod =
+              getGetMessageBusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetMessageBusRequest,
+                          com.google.cloud.eventarc.v1.MessageBus>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMessageBus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetMessageBusRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.MessageBus.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("GetMessageBus"))
+                      .build();
+        }
+      }
+    }
+    return getGetMessageBusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListMessageBusesRequest,
+          com.google.cloud.eventarc.v1.ListMessageBusesResponse>
+      getListMessageBusesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMessageBuses",
+      requestType = com.google.cloud.eventarc.v1.ListMessageBusesRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListMessageBusesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListMessageBusesRequest,
+          com.google.cloud.eventarc.v1.ListMessageBusesResponse>
+      getListMessageBusesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListMessageBusesRequest,
+            com.google.cloud.eventarc.v1.ListMessageBusesResponse>
+        getListMessageBusesMethod;
+    if ((getListMessageBusesMethod = EventarcGrpc.getListMessageBusesMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListMessageBusesMethod = EventarcGrpc.getListMessageBusesMethod) == null) {
+          EventarcGrpc.getListMessageBusesMethod =
+              getListMessageBusesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListMessageBusesRequest,
+                          com.google.cloud.eventarc.v1.ListMessageBusesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMessageBuses"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListMessageBusesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListMessageBusesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("ListMessageBuses"))
+                      .build();
+        }
+      }
+    }
+    return getListMessageBusesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest,
+          com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>
+      getListMessageBusEnrollmentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMessageBusEnrollments",
+      requestType = com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest,
+          com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>
+      getListMessageBusEnrollmentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest,
+            com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>
+        getListMessageBusEnrollmentsMethod;
+    if ((getListMessageBusEnrollmentsMethod = EventarcGrpc.getListMessageBusEnrollmentsMethod)
+        == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListMessageBusEnrollmentsMethod = EventarcGrpc.getListMessageBusEnrollmentsMethod)
+            == null) {
+          EventarcGrpc.getListMessageBusEnrollmentsMethod =
+              getListMessageBusEnrollmentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest,
+                          com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListMessageBusEnrollments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("ListMessageBusEnrollments"))
+                      .build();
+        }
+      }
+    }
+    return getListMessageBusEnrollmentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateMessageBusRequest, com.google.longrunning.Operation>
+      getCreateMessageBusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMessageBus",
+      requestType = com.google.cloud.eventarc.v1.CreateMessageBusRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateMessageBusRequest, com.google.longrunning.Operation>
+      getCreateMessageBusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.CreateMessageBusRequest, com.google.longrunning.Operation>
+        getCreateMessageBusMethod;
+    if ((getCreateMessageBusMethod = EventarcGrpc.getCreateMessageBusMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getCreateMessageBusMethod = EventarcGrpc.getCreateMessageBusMethod) == null) {
+          EventarcGrpc.getCreateMessageBusMethod =
+              getCreateMessageBusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.CreateMessageBusRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMessageBus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.CreateMessageBusRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("CreateMessageBus"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMessageBusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateMessageBusRequest, com.google.longrunning.Operation>
+      getUpdateMessageBusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMessageBus",
+      requestType = com.google.cloud.eventarc.v1.UpdateMessageBusRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateMessageBusRequest, com.google.longrunning.Operation>
+      getUpdateMessageBusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.UpdateMessageBusRequest, com.google.longrunning.Operation>
+        getUpdateMessageBusMethod;
+    if ((getUpdateMessageBusMethod = EventarcGrpc.getUpdateMessageBusMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getUpdateMessageBusMethod = EventarcGrpc.getUpdateMessageBusMethod) == null) {
+          EventarcGrpc.getUpdateMessageBusMethod =
+              getUpdateMessageBusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.UpdateMessageBusRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMessageBus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.UpdateMessageBusRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("UpdateMessageBus"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMessageBusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteMessageBusRequest, com.google.longrunning.Operation>
+      getDeleteMessageBusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMessageBus",
+      requestType = com.google.cloud.eventarc.v1.DeleteMessageBusRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteMessageBusRequest, com.google.longrunning.Operation>
+      getDeleteMessageBusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.DeleteMessageBusRequest, com.google.longrunning.Operation>
+        getDeleteMessageBusMethod;
+    if ((getDeleteMessageBusMethod = EventarcGrpc.getDeleteMessageBusMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getDeleteMessageBusMethod = EventarcGrpc.getDeleteMessageBusMethod) == null) {
+          EventarcGrpc.getDeleteMessageBusMethod =
+              getDeleteMessageBusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.DeleteMessageBusRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMessageBus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.DeleteMessageBusRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("DeleteMessageBus"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMessageBusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetEnrollmentRequest,
+          com.google.cloud.eventarc.v1.Enrollment>
+      getGetEnrollmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEnrollment",
+      requestType = com.google.cloud.eventarc.v1.GetEnrollmentRequest.class,
+      responseType = com.google.cloud.eventarc.v1.Enrollment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetEnrollmentRequest,
+          com.google.cloud.eventarc.v1.Enrollment>
+      getGetEnrollmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetEnrollmentRequest,
+            com.google.cloud.eventarc.v1.Enrollment>
+        getGetEnrollmentMethod;
+    if ((getGetEnrollmentMethod = EventarcGrpc.getGetEnrollmentMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetEnrollmentMethod = EventarcGrpc.getGetEnrollmentMethod) == null) {
+          EventarcGrpc.getGetEnrollmentMethod =
+              getGetEnrollmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetEnrollmentRequest,
+                          com.google.cloud.eventarc.v1.Enrollment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEnrollment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetEnrollmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.Enrollment.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("GetEnrollment"))
+                      .build();
+        }
+      }
+    }
+    return getGetEnrollmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListEnrollmentsRequest,
+          com.google.cloud.eventarc.v1.ListEnrollmentsResponse>
+      getListEnrollmentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEnrollments",
+      requestType = com.google.cloud.eventarc.v1.ListEnrollmentsRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListEnrollmentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListEnrollmentsRequest,
+          com.google.cloud.eventarc.v1.ListEnrollmentsResponse>
+      getListEnrollmentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListEnrollmentsRequest,
+            com.google.cloud.eventarc.v1.ListEnrollmentsResponse>
+        getListEnrollmentsMethod;
+    if ((getListEnrollmentsMethod = EventarcGrpc.getListEnrollmentsMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListEnrollmentsMethod = EventarcGrpc.getListEnrollmentsMethod) == null) {
+          EventarcGrpc.getListEnrollmentsMethod =
+              getListEnrollmentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListEnrollmentsRequest,
+                          com.google.cloud.eventarc.v1.ListEnrollmentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEnrollments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListEnrollmentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListEnrollmentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("ListEnrollments"))
+                      .build();
+        }
+      }
+    }
+    return getListEnrollmentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateEnrollmentRequest, com.google.longrunning.Operation>
+      getCreateEnrollmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEnrollment",
+      requestType = com.google.cloud.eventarc.v1.CreateEnrollmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateEnrollmentRequest, com.google.longrunning.Operation>
+      getCreateEnrollmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.CreateEnrollmentRequest, com.google.longrunning.Operation>
+        getCreateEnrollmentMethod;
+    if ((getCreateEnrollmentMethod = EventarcGrpc.getCreateEnrollmentMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getCreateEnrollmentMethod = EventarcGrpc.getCreateEnrollmentMethod) == null) {
+          EventarcGrpc.getCreateEnrollmentMethod =
+              getCreateEnrollmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.CreateEnrollmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateEnrollment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.CreateEnrollmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("CreateEnrollment"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEnrollmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateEnrollmentRequest, com.google.longrunning.Operation>
+      getUpdateEnrollmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEnrollment",
+      requestType = com.google.cloud.eventarc.v1.UpdateEnrollmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateEnrollmentRequest, com.google.longrunning.Operation>
+      getUpdateEnrollmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.UpdateEnrollmentRequest, com.google.longrunning.Operation>
+        getUpdateEnrollmentMethod;
+    if ((getUpdateEnrollmentMethod = EventarcGrpc.getUpdateEnrollmentMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getUpdateEnrollmentMethod = EventarcGrpc.getUpdateEnrollmentMethod) == null) {
+          EventarcGrpc.getUpdateEnrollmentMethod =
+              getUpdateEnrollmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.UpdateEnrollmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEnrollment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.UpdateEnrollmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("UpdateEnrollment"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEnrollmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteEnrollmentRequest, com.google.longrunning.Operation>
+      getDeleteEnrollmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEnrollment",
+      requestType = com.google.cloud.eventarc.v1.DeleteEnrollmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteEnrollmentRequest, com.google.longrunning.Operation>
+      getDeleteEnrollmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.DeleteEnrollmentRequest, com.google.longrunning.Operation>
+        getDeleteEnrollmentMethod;
+    if ((getDeleteEnrollmentMethod = EventarcGrpc.getDeleteEnrollmentMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getDeleteEnrollmentMethod = EventarcGrpc.getDeleteEnrollmentMethod) == null) {
+          EventarcGrpc.getDeleteEnrollmentMethod =
+              getDeleteEnrollmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.DeleteEnrollmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteEnrollment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.DeleteEnrollmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("DeleteEnrollment"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEnrollmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetPipelineRequest, com.google.cloud.eventarc.v1.Pipeline>
+      getGetPipelineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPipeline",
+      requestType = com.google.cloud.eventarc.v1.GetPipelineRequest.class,
+      responseType = com.google.cloud.eventarc.v1.Pipeline.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetPipelineRequest, com.google.cloud.eventarc.v1.Pipeline>
+      getGetPipelineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetPipelineRequest, com.google.cloud.eventarc.v1.Pipeline>
+        getGetPipelineMethod;
+    if ((getGetPipelineMethod = EventarcGrpc.getGetPipelineMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetPipelineMethod = EventarcGrpc.getGetPipelineMethod) == null) {
+          EventarcGrpc.getGetPipelineMethod =
+              getGetPipelineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetPipelineRequest,
+                          com.google.cloud.eventarc.v1.Pipeline>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPipeline"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetPipelineRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.Pipeline.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("GetPipeline"))
+                      .build();
+        }
+      }
+    }
+    return getGetPipelineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListPipelinesRequest,
+          com.google.cloud.eventarc.v1.ListPipelinesResponse>
+      getListPipelinesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPipelines",
+      requestType = com.google.cloud.eventarc.v1.ListPipelinesRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListPipelinesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListPipelinesRequest,
+          com.google.cloud.eventarc.v1.ListPipelinesResponse>
+      getListPipelinesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListPipelinesRequest,
+            com.google.cloud.eventarc.v1.ListPipelinesResponse>
+        getListPipelinesMethod;
+    if ((getListPipelinesMethod = EventarcGrpc.getListPipelinesMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListPipelinesMethod = EventarcGrpc.getListPipelinesMethod) == null) {
+          EventarcGrpc.getListPipelinesMethod =
+              getListPipelinesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListPipelinesRequest,
+                          com.google.cloud.eventarc.v1.ListPipelinesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPipelines"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListPipelinesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListPipelinesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("ListPipelines"))
+                      .build();
+        }
+      }
+    }
+    return getListPipelinesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreatePipelineRequest, com.google.longrunning.Operation>
+      getCreatePipelineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePipeline",
+      requestType = com.google.cloud.eventarc.v1.CreatePipelineRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreatePipelineRequest, com.google.longrunning.Operation>
+      getCreatePipelineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.CreatePipelineRequest, com.google.longrunning.Operation>
+        getCreatePipelineMethod;
+    if ((getCreatePipelineMethod = EventarcGrpc.getCreatePipelineMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getCreatePipelineMethod = EventarcGrpc.getCreatePipelineMethod) == null) {
+          EventarcGrpc.getCreatePipelineMethod =
+              getCreatePipelineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.CreatePipelineRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePipeline"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.CreatePipelineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("CreatePipeline"))
+                      .build();
+        }
+      }
+    }
+    return getCreatePipelineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdatePipelineRequest, com.google.longrunning.Operation>
+      getUpdatePipelineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePipeline",
+      requestType = com.google.cloud.eventarc.v1.UpdatePipelineRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdatePipelineRequest, com.google.longrunning.Operation>
+      getUpdatePipelineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.UpdatePipelineRequest, com.google.longrunning.Operation>
+        getUpdatePipelineMethod;
+    if ((getUpdatePipelineMethod = EventarcGrpc.getUpdatePipelineMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getUpdatePipelineMethod = EventarcGrpc.getUpdatePipelineMethod) == null) {
+          EventarcGrpc.getUpdatePipelineMethod =
+              getUpdatePipelineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.UpdatePipelineRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePipeline"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.UpdatePipelineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("UpdatePipeline"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePipelineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeletePipelineRequest, com.google.longrunning.Operation>
+      getDeletePipelineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePipeline",
+      requestType = com.google.cloud.eventarc.v1.DeletePipelineRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeletePipelineRequest, com.google.longrunning.Operation>
+      getDeletePipelineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.DeletePipelineRequest, com.google.longrunning.Operation>
+        getDeletePipelineMethod;
+    if ((getDeletePipelineMethod = EventarcGrpc.getDeletePipelineMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getDeletePipelineMethod = EventarcGrpc.getDeletePipelineMethod) == null) {
+          EventarcGrpc.getDeletePipelineMethod =
+              getDeletePipelineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.DeletePipelineRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeletePipeline"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.DeletePipelineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("DeletePipeline"))
+                      .build();
+        }
+      }
+    }
+    return getDeletePipelineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest,
+          com.google.cloud.eventarc.v1.GoogleApiSource>
+      getGetGoogleApiSourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetGoogleApiSource",
+      requestType = com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest.class,
+      responseType = com.google.cloud.eventarc.v1.GoogleApiSource.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest,
+          com.google.cloud.eventarc.v1.GoogleApiSource>
+      getGetGoogleApiSourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest,
+            com.google.cloud.eventarc.v1.GoogleApiSource>
+        getGetGoogleApiSourceMethod;
+    if ((getGetGoogleApiSourceMethod = EventarcGrpc.getGetGoogleApiSourceMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetGoogleApiSourceMethod = EventarcGrpc.getGetGoogleApiSourceMethod) == null) {
+          EventarcGrpc.getGetGoogleApiSourceMethod =
+              getGetGoogleApiSourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest,
+                          com.google.cloud.eventarc.v1.GoogleApiSource>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetGoogleApiSource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GoogleApiSource.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("GetGoogleApiSource"))
+                      .build();
+        }
+      }
+    }
+    return getGetGoogleApiSourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest,
+          com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>
+      getListGoogleApiSourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListGoogleApiSources",
+      requestType = com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest,
+          com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>
+      getListGoogleApiSourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest,
+            com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>
+        getListGoogleApiSourcesMethod;
+    if ((getListGoogleApiSourcesMethod = EventarcGrpc.getListGoogleApiSourcesMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListGoogleApiSourcesMethod = EventarcGrpc.getListGoogleApiSourcesMethod) == null) {
+          EventarcGrpc.getListGoogleApiSourcesMethod =
+              getListGoogleApiSourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest,
+                          com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListGoogleApiSources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("ListGoogleApiSources"))
+                      .build();
+        }
+      }
+    }
+    return getListGoogleApiSourcesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest,
+          com.google.longrunning.Operation>
+      getCreateGoogleApiSourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateGoogleApiSource",
+      requestType = com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest,
+          com.google.longrunning.Operation>
+      getCreateGoogleApiSourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest,
+            com.google.longrunning.Operation>
+        getCreateGoogleApiSourceMethod;
+    if ((getCreateGoogleApiSourceMethod = EventarcGrpc.getCreateGoogleApiSourceMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getCreateGoogleApiSourceMethod = EventarcGrpc.getCreateGoogleApiSourceMethod)
+            == null) {
+          EventarcGrpc.getCreateGoogleApiSourceMethod =
+              getCreateGoogleApiSourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateGoogleApiSource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("CreateGoogleApiSource"))
+                      .build();
+        }
+      }
+    }
+    return getCreateGoogleApiSourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoogleApiSourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoogleApiSource",
+      requestType = com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest,
+          com.google.longrunning.Operation>
+      getUpdateGoogleApiSourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest,
+            com.google.longrunning.Operation>
+        getUpdateGoogleApiSourceMethod;
+    if ((getUpdateGoogleApiSourceMethod = EventarcGrpc.getUpdateGoogleApiSourceMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getUpdateGoogleApiSourceMethod = EventarcGrpc.getUpdateGoogleApiSourceMethod)
+            == null) {
+          EventarcGrpc.getUpdateGoogleApiSourceMethod =
+              getUpdateGoogleApiSourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateGoogleApiSource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("UpdateGoogleApiSource"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGoogleApiSourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest,
+          com.google.longrunning.Operation>
+      getDeleteGoogleApiSourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteGoogleApiSource",
+      requestType = com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest,
+          com.google.longrunning.Operation>
+      getDeleteGoogleApiSourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest,
+            com.google.longrunning.Operation>
+        getDeleteGoogleApiSourceMethod;
+    if ((getDeleteGoogleApiSourceMethod = EventarcGrpc.getDeleteGoogleApiSourceMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getDeleteGoogleApiSourceMethod = EventarcGrpc.getDeleteGoogleApiSourceMethod)
+            == null) {
+          EventarcGrpc.getDeleteGoogleApiSourceMethod =
+              getDeleteGoogleApiSourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteGoogleApiSource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("DeleteGoogleApiSource"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteGoogleApiSourceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EventarcStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EventarcStub> factory =
@@ -1147,6 +2082,306 @@ public final class EventarcGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateGoogleChannelConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single MessageBus.
+     * </pre>
+     */
+    default void getMessageBus(
+        com.google.cloud.eventarc.v1.GetMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.MessageBus> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMessageBusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message buses.
+     * </pre>
+     */
+    default void listMessageBuses(
+        com.google.cloud.eventarc.v1.ListMessageBusesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListMessageBusesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMessageBusesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message bus enrollments.
+     * </pre>
+     */
+    default void listMessageBusEnrollments(
+        com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMessageBusEnrollmentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new MessageBus in a particular project and location.
+     * </pre>
+     */
+    default void createMessageBus(
+        com.google.cloud.eventarc.v1.CreateMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMessageBusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single message bus.
+     * </pre>
+     */
+    default void updateMessageBus(
+        com.google.cloud.eventarc.v1.UpdateMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMessageBusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single message bus.
+     * </pre>
+     */
+    default void deleteMessageBus(
+        com.google.cloud.eventarc.v1.DeleteMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMessageBusMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Enrollment.
+     * </pre>
+     */
+    default void getEnrollment(
+        com.google.cloud.eventarc.v1.GetEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Enrollment> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEnrollmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Enrollments.
+     * </pre>
+     */
+    default void listEnrollments(
+        com.google.cloud.eventarc.v1.ListEnrollmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListEnrollmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEnrollmentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Enrollment in a particular project and location.
+     * </pre>
+     */
+    default void createEnrollment(
+        com.google.cloud.eventarc.v1.CreateEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEnrollmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single Enrollment.
+     * </pre>
+     */
+    default void updateEnrollment(
+        com.google.cloud.eventarc.v1.UpdateEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEnrollmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single Enrollment.
+     * </pre>
+     */
+    default void deleteEnrollment(
+        com.google.cloud.eventarc.v1.DeleteEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEnrollmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Pipeline.
+     * </pre>
+     */
+    default void getPipeline(
+        com.google.cloud.eventarc.v1.GetPipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Pipeline> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPipelineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List pipelines.
+     * </pre>
+     */
+    default void listPipelines(
+        com.google.cloud.eventarc.v1.ListPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListPipelinesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPipelinesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Pipeline in a particular project and location.
+     * </pre>
+     */
+    default void createPipeline(
+        com.google.cloud.eventarc.v1.CreatePipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePipelineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single pipeline.
+     * </pre>
+     */
+    default void updatePipeline(
+        com.google.cloud.eventarc.v1.UpdatePipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePipelineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single pipeline.
+     * </pre>
+     */
+    default void deletePipeline(
+        com.google.cloud.eventarc.v1.DeletePipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePipelineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single GoogleApiSource.
+     * </pre>
+     */
+    default void getGoogleApiSource(
+        com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleApiSource>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGoogleApiSourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GoogleApiSources.
+     * </pre>
+     */
+    default void listGoogleApiSources(
+        com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListGoogleApiSourcesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new GoogleApiSource in a particular project and location.
+     * </pre>
+     */
+    default void createGoogleApiSource(
+        com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateGoogleApiSourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleApiSource.
+     * </pre>
+     */
+    default void updateGoogleApiSource(
+        com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGoogleApiSourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single GoogleApiSource.
+     * </pre>
+     */
+    default void deleteGoogleApiSource(
+        com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteGoogleApiSourceMethod(), responseObserver);
     }
   }
 
@@ -1474,6 +2709,348 @@ public final class EventarcGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single MessageBus.
+     * </pre>
+     */
+    public void getMessageBus(
+        com.google.cloud.eventarc.v1.GetMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.MessageBus> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMessageBusMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message buses.
+     * </pre>
+     */
+    public void listMessageBuses(
+        com.google.cloud.eventarc.v1.ListMessageBusesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListMessageBusesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMessageBusesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message bus enrollments.
+     * </pre>
+     */
+    public void listMessageBusEnrollments(
+        com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMessageBusEnrollmentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new MessageBus in a particular project and location.
+     * </pre>
+     */
+    public void createMessageBus(
+        com.google.cloud.eventarc.v1.CreateMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMessageBusMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single message bus.
+     * </pre>
+     */
+    public void updateMessageBus(
+        com.google.cloud.eventarc.v1.UpdateMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMessageBusMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single message bus.
+     * </pre>
+     */
+    public void deleteMessageBus(
+        com.google.cloud.eventarc.v1.DeleteMessageBusRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMessageBusMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Enrollment.
+     * </pre>
+     */
+    public void getEnrollment(
+        com.google.cloud.eventarc.v1.GetEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Enrollment> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEnrollmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Enrollments.
+     * </pre>
+     */
+    public void listEnrollments(
+        com.google.cloud.eventarc.v1.ListEnrollmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListEnrollmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEnrollmentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Enrollment in a particular project and location.
+     * </pre>
+     */
+    public void createEnrollment(
+        com.google.cloud.eventarc.v1.CreateEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEnrollmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single Enrollment.
+     * </pre>
+     */
+    public void updateEnrollment(
+        com.google.cloud.eventarc.v1.UpdateEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEnrollmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single Enrollment.
+     * </pre>
+     */
+    public void deleteEnrollment(
+        com.google.cloud.eventarc.v1.DeleteEnrollmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEnrollmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Pipeline.
+     * </pre>
+     */
+    public void getPipeline(
+        com.google.cloud.eventarc.v1.GetPipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Pipeline> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPipelineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List pipelines.
+     * </pre>
+     */
+    public void listPipelines(
+        com.google.cloud.eventarc.v1.ListPipelinesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListPipelinesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPipelinesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Pipeline in a particular project and location.
+     * </pre>
+     */
+    public void createPipeline(
+        com.google.cloud.eventarc.v1.CreatePipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePipelineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single pipeline.
+     * </pre>
+     */
+    public void updatePipeline(
+        com.google.cloud.eventarc.v1.UpdatePipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePipelineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single pipeline.
+     * </pre>
+     */
+    public void deletePipeline(
+        com.google.cloud.eventarc.v1.DeletePipelineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePipelineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single GoogleApiSource.
+     * </pre>
+     */
+    public void getGoogleApiSource(
+        com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleApiSource>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetGoogleApiSourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GoogleApiSources.
+     * </pre>
+     */
+    public void listGoogleApiSources(
+        com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListGoogleApiSourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new GoogleApiSource in a particular project and location.
+     * </pre>
+     */
+    public void createGoogleApiSource(
+        com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateGoogleApiSourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleApiSource.
+     * </pre>
+     */
+    public void updateGoogleApiSource(
+        com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoogleApiSourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single GoogleApiSource.
+     * </pre>
+     */
+    public void deleteGoogleApiSource(
+        com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteGoogleApiSourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1727,6 +3304,279 @@ public final class EventarcGrpc {
         com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGoogleChannelConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single MessageBus.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.MessageBus getMessageBus(
+        com.google.cloud.eventarc.v1.GetMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message buses.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListMessageBusesResponse listMessageBuses(
+        com.google.cloud.eventarc.v1.ListMessageBusesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMessageBusesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message bus enrollments.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse listMessageBusEnrollments(
+        com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMessageBusEnrollmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new MessageBus in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMessageBus(
+        com.google.cloud.eventarc.v1.CreateMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single message bus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMessageBus(
+        com.google.cloud.eventarc.v1.UpdateMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single message bus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMessageBus(
+        com.google.cloud.eventarc.v1.DeleteMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Enrollment.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Enrollment getEnrollment(
+        com.google.cloud.eventarc.v1.GetEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Enrollments.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListEnrollmentsResponse listEnrollments(
+        com.google.cloud.eventarc.v1.ListEnrollmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEnrollmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Enrollment in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEnrollment(
+        com.google.cloud.eventarc.v1.CreateEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single Enrollment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEnrollment(
+        com.google.cloud.eventarc.v1.UpdateEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single Enrollment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEnrollment(
+        com.google.cloud.eventarc.v1.DeleteEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Pipeline.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Pipeline getPipeline(
+        com.google.cloud.eventarc.v1.GetPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List pipelines.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListPipelinesResponse listPipelines(
+        com.google.cloud.eventarc.v1.ListPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Pipeline in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPipeline(
+        com.google.cloud.eventarc.v1.CreatePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single pipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePipeline(
+        com.google.cloud.eventarc.v1.UpdatePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single pipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePipeline(
+        com.google.cloud.eventarc.v1.DeletePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.GoogleApiSource getGoogleApiSource(
+        com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGoogleApiSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GoogleApiSources.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse listGoogleApiSources(
+        com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGoogleApiSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new GoogleApiSource in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGoogleApiSource(
+        com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGoogleApiSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoogleApiSource(
+        com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleApiSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGoogleApiSource(
+        com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGoogleApiSourceMethod(), getCallOptions(), request);
     }
   }
 
@@ -1992,6 +3842,288 @@ public final class EventarcGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGoogleChannelConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single MessageBus.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.MessageBus>
+        getMessageBus(com.google.cloud.eventarc.v1.GetMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMessageBusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message buses.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListMessageBusesResponse>
+        listMessageBuses(com.google.cloud.eventarc.v1.ListMessageBusesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMessageBusesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message bus enrollments.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>
+        listMessageBusEnrollments(
+            com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMessageBusEnrollmentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new MessageBus in a particular project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMessageBus(com.google.cloud.eventarc.v1.CreateMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMessageBusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single message bus.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateMessageBus(com.google.cloud.eventarc.v1.UpdateMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMessageBusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single message bus.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteMessageBus(com.google.cloud.eventarc.v1.DeleteMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMessageBusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Enrollment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.Enrollment>
+        getEnrollment(com.google.cloud.eventarc.v1.GetEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEnrollmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Enrollments.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListEnrollmentsResponse>
+        listEnrollments(com.google.cloud.eventarc.v1.ListEnrollmentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEnrollmentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Enrollment in a particular project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createEnrollment(com.google.cloud.eventarc.v1.CreateEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEnrollmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single Enrollment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateEnrollment(com.google.cloud.eventarc.v1.UpdateEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEnrollmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single Enrollment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteEnrollment(com.google.cloud.eventarc.v1.DeleteEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEnrollmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Pipeline.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.eventarc.v1.Pipeline>
+        getPipeline(com.google.cloud.eventarc.v1.GetPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPipelineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List pipelines.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListPipelinesResponse>
+        listPipelines(com.google.cloud.eventarc.v1.ListPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPipelinesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Pipeline in a particular project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createPipeline(com.google.cloud.eventarc.v1.CreatePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePipelineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single pipeline.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updatePipeline(com.google.cloud.eventarc.v1.UpdatePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePipelineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single pipeline.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deletePipeline(com.google.cloud.eventarc.v1.DeletePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePipelineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.GoogleApiSource>
+        getGoogleApiSource(com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetGoogleApiSourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GoogleApiSources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>
+        listGoogleApiSources(com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListGoogleApiSourcesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new GoogleApiSource in a particular project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createGoogleApiSource(com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateGoogleApiSourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateGoogleApiSource(com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoogleApiSourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteGoogleApiSource(com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteGoogleApiSourceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_TRIGGER = 0;
@@ -2012,6 +4144,27 @@ public final class EventarcGrpc {
   private static final int METHODID_DELETE_CHANNEL_CONNECTION = 15;
   private static final int METHODID_GET_GOOGLE_CHANNEL_CONFIG = 16;
   private static final int METHODID_UPDATE_GOOGLE_CHANNEL_CONFIG = 17;
+  private static final int METHODID_GET_MESSAGE_BUS = 18;
+  private static final int METHODID_LIST_MESSAGE_BUSES = 19;
+  private static final int METHODID_LIST_MESSAGE_BUS_ENROLLMENTS = 20;
+  private static final int METHODID_CREATE_MESSAGE_BUS = 21;
+  private static final int METHODID_UPDATE_MESSAGE_BUS = 22;
+  private static final int METHODID_DELETE_MESSAGE_BUS = 23;
+  private static final int METHODID_GET_ENROLLMENT = 24;
+  private static final int METHODID_LIST_ENROLLMENTS = 25;
+  private static final int METHODID_CREATE_ENROLLMENT = 26;
+  private static final int METHODID_UPDATE_ENROLLMENT = 27;
+  private static final int METHODID_DELETE_ENROLLMENT = 28;
+  private static final int METHODID_GET_PIPELINE = 29;
+  private static final int METHODID_LIST_PIPELINES = 30;
+  private static final int METHODID_CREATE_PIPELINE = 31;
+  private static final int METHODID_UPDATE_PIPELINE = 32;
+  private static final int METHODID_DELETE_PIPELINE = 33;
+  private static final int METHODID_GET_GOOGLE_API_SOURCE = 34;
+  private static final int METHODID_LIST_GOOGLE_API_SOURCES = 35;
+  private static final int METHODID_CREATE_GOOGLE_API_SOURCE = 36;
+  private static final int METHODID_UPDATE_GOOGLE_API_SOURCE = 37;
+  private static final int METHODID_DELETE_GOOGLE_API_SOURCE = 38;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2128,6 +4281,122 @@ public final class EventarcGrpc {
               (com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleChannelConfig>)
                   responseObserver);
+          break;
+        case METHODID_GET_MESSAGE_BUS:
+          serviceImpl.getMessageBus(
+              (com.google.cloud.eventarc.v1.GetMessageBusRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.MessageBus>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MESSAGE_BUSES:
+          serviceImpl.listMessageBuses(
+              (com.google.cloud.eventarc.v1.ListMessageBusesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListMessageBusesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MESSAGE_BUS_ENROLLMENTS:
+          serviceImpl.listMessageBusEnrollments(
+              (com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_MESSAGE_BUS:
+          serviceImpl.createMessageBus(
+              (com.google.cloud.eventarc.v1.CreateMessageBusRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_MESSAGE_BUS:
+          serviceImpl.updateMessageBus(
+              (com.google.cloud.eventarc.v1.UpdateMessageBusRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MESSAGE_BUS:
+          serviceImpl.deleteMessageBus(
+              (com.google.cloud.eventarc.v1.DeleteMessageBusRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_ENROLLMENT:
+          serviceImpl.getEnrollment(
+              (com.google.cloud.eventarc.v1.GetEnrollmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Enrollment>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ENROLLMENTS:
+          serviceImpl.listEnrollments(
+              (com.google.cloud.eventarc.v1.ListEnrollmentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListEnrollmentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ENROLLMENT:
+          serviceImpl.createEnrollment(
+              (com.google.cloud.eventarc.v1.CreateEnrollmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_ENROLLMENT:
+          serviceImpl.updateEnrollment(
+              (com.google.cloud.eventarc.v1.UpdateEnrollmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ENROLLMENT:
+          serviceImpl.deleteEnrollment(
+              (com.google.cloud.eventarc.v1.DeleteEnrollmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_PIPELINE:
+          serviceImpl.getPipeline(
+              (com.google.cloud.eventarc.v1.GetPipelineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Pipeline>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PIPELINES:
+          serviceImpl.listPipelines(
+              (com.google.cloud.eventarc.v1.ListPipelinesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListPipelinesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_PIPELINE:
+          serviceImpl.createPipeline(
+              (com.google.cloud.eventarc.v1.CreatePipelineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_PIPELINE:
+          serviceImpl.updatePipeline(
+              (com.google.cloud.eventarc.v1.UpdatePipelineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_PIPELINE:
+          serviceImpl.deletePipeline(
+              (com.google.cloud.eventarc.v1.DeletePipelineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_GOOGLE_API_SOURCE:
+          serviceImpl.getGoogleApiSource(
+              (com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleApiSource>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_GOOGLE_API_SOURCES:
+          serviceImpl.listGoogleApiSources(
+              (com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_GOOGLE_API_SOURCE:
+          serviceImpl.createGoogleApiSource(
+              (com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_GOOGLE_API_SOURCE:
+          serviceImpl.updateGoogleApiSource(
+              (com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_GOOGLE_API_SOURCE:
+          serviceImpl.deleteGoogleApiSource(
+              (com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2262,6 +4531,138 @@ public final class EventarcGrpc {
                     com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest,
                     com.google.cloud.eventarc.v1.GoogleChannelConfig>(
                     service, METHODID_UPDATE_GOOGLE_CHANNEL_CONFIG)))
+        .addMethod(
+            getGetMessageBusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.GetMessageBusRequest,
+                    com.google.cloud.eventarc.v1.MessageBus>(service, METHODID_GET_MESSAGE_BUS)))
+        .addMethod(
+            getListMessageBusesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.ListMessageBusesRequest,
+                    com.google.cloud.eventarc.v1.ListMessageBusesResponse>(
+                    service, METHODID_LIST_MESSAGE_BUSES)))
+        .addMethod(
+            getListMessageBusEnrollmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest,
+                    com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse>(
+                    service, METHODID_LIST_MESSAGE_BUS_ENROLLMENTS)))
+        .addMethod(
+            getCreateMessageBusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.CreateMessageBusRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MESSAGE_BUS)))
+        .addMethod(
+            getUpdateMessageBusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.UpdateMessageBusRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MESSAGE_BUS)))
+        .addMethod(
+            getDeleteMessageBusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.DeleteMessageBusRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MESSAGE_BUS)))
+        .addMethod(
+            getGetEnrollmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.GetEnrollmentRequest,
+                    com.google.cloud.eventarc.v1.Enrollment>(service, METHODID_GET_ENROLLMENT)))
+        .addMethod(
+            getListEnrollmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.ListEnrollmentsRequest,
+                    com.google.cloud.eventarc.v1.ListEnrollmentsResponse>(
+                    service, METHODID_LIST_ENROLLMENTS)))
+        .addMethod(
+            getCreateEnrollmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.CreateEnrollmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENROLLMENT)))
+        .addMethod(
+            getUpdateEnrollmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.UpdateEnrollmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ENROLLMENT)))
+        .addMethod(
+            getDeleteEnrollmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.DeleteEnrollmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ENROLLMENT)))
+        .addMethod(
+            getGetPipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.GetPipelineRequest,
+                    com.google.cloud.eventarc.v1.Pipeline>(service, METHODID_GET_PIPELINE)))
+        .addMethod(
+            getListPipelinesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.ListPipelinesRequest,
+                    com.google.cloud.eventarc.v1.ListPipelinesResponse>(
+                    service, METHODID_LIST_PIPELINES)))
+        .addMethod(
+            getCreatePipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.CreatePipelineRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PIPELINE)))
+        .addMethod(
+            getUpdatePipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.UpdatePipelineRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_PIPELINE)))
+        .addMethod(
+            getDeletePipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.DeletePipelineRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PIPELINE)))
+        .addMethod(
+            getGetGoogleApiSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest,
+                    com.google.cloud.eventarc.v1.GoogleApiSource>(
+                    service, METHODID_GET_GOOGLE_API_SOURCE)))
+        .addMethod(
+            getListGoogleApiSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest,
+                    com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse>(
+                    service, METHODID_LIST_GOOGLE_API_SOURCES)))
+        .addMethod(
+            getCreateGoogleApiSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_GOOGLE_API_SOURCE)))
+        .addMethod(
+            getUpdateGoogleApiSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_GOOGLE_API_SOURCE)))
+        .addMethod(
+            getDeleteGoogleApiSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_GOOGLE_API_SOURCE)))
         .build();
   }
 
@@ -2329,6 +4730,27 @@ public final class EventarcGrpc {
                       .addMethod(getDeleteChannelConnectionMethod())
                       .addMethod(getGetGoogleChannelConfigMethod())
                       .addMethod(getUpdateGoogleChannelConfigMethod())
+                      .addMethod(getGetMessageBusMethod())
+                      .addMethod(getListMessageBusesMethod())
+                      .addMethod(getListMessageBusEnrollmentsMethod())
+                      .addMethod(getCreateMessageBusMethod())
+                      .addMethod(getUpdateMessageBusMethod())
+                      .addMethod(getDeleteMessageBusMethod())
+                      .addMethod(getGetEnrollmentMethod())
+                      .addMethod(getListEnrollmentsMethod())
+                      .addMethod(getCreateEnrollmentMethod())
+                      .addMethod(getUpdateEnrollmentMethod())
+                      .addMethod(getDeleteEnrollmentMethod())
+                      .addMethod(getGetPipelineMethod())
+                      .addMethod(getListPipelinesMethod())
+                      .addMethod(getCreatePipelineMethod())
+                      .addMethod(getUpdatePipelineMethod())
+                      .addMethod(getDeletePipelineMethod())
+                      .addMethod(getGetGoogleApiSourceMethod())
+                      .addMethod(getListGoogleApiSourcesMethod())
+                      .addMethod(getCreateGoogleApiSourceMethod())
+                      .addMethod(getUpdateGoogleApiSourceMethod())
+                      .addMethod(getDeleteGoogleApiSourceMethod())
                       .build();
         }
       }

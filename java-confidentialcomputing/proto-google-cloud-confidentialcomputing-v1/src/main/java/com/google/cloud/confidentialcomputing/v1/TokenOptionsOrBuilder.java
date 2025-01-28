@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,49 @@ public interface TokenOptionsOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.confidentialcomputing.v1.TokenOptions)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsPrincipalTagsOptions field is set.
+   */
+  boolean hasAwsPrincipalTagsOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsPrincipalTagsOptions.
+   */
+  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+      getAwsPrincipalTagsOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder
+      getAwsPrincipalTagsOptionsOrBuilder();
 
   /**
    *
@@ -138,4 +181,7 @@ public interface TokenOptionsOrBuilder
    * @return The tokenType.
    */
   com.google.cloud.confidentialcomputing.v1.TokenType getTokenType();
+
+  com.google.cloud.confidentialcomputing.v1.TokenOptions.TokenTypeOptionsCase
+      getTokenTypeOptionsCase();
 }

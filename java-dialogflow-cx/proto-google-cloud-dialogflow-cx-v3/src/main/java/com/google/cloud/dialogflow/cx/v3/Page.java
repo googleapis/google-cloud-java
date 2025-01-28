@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,8 +97,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage] method.
    * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -126,8 +126,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage] method.
    * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -371,11 +371,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -404,11 +403,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -437,11 +435,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -471,11 +468,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
    * *   If multiple transition route groups within a page contain the same
    *     intent, then the first group in the ordered list takes precedence.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 11 [(.google.api.resource_reference) = { ... }
@@ -1601,8 +1597,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage] method.
      * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1629,8 +1625,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage] method.
      * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1657,8 +1653,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage] method.
      * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1684,8 +1680,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage] method.
      * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1707,8 +1703,8 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage] method.
      * [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2344,11 +2340,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2379,11 +2374,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2413,11 +2407,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2448,11 +2441,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2483,11 +2475,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2526,11 +2517,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2568,11 +2558,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2607,11 +2596,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -2645,11 +2633,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * *   If multiple transition route groups within a page contain the same
      *     intent, then the first group in the ordered list takes precedence.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:`projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>

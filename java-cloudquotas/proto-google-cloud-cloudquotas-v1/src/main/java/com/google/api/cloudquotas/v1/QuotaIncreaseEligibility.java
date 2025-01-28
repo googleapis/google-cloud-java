@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,26 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      *
      *
      * <pre>
+     * Quota increase is not supported for the quota.
+     * </pre>
+     *
+     * <code>NOT_SUPPORTED = 3;</code>
+     */
+    NOT_SUPPORTED(3),
+    /**
+     *
+     *
+     * <pre>
+     * There is not enough usage history to determine the eligibility.
+     * </pre>
+     *
+     * <code>NOT_ENOUGH_USAGE_HISTORY = 4;</code>
+     */
+    NOT_ENOUGH_USAGE_HISTORY(4),
+    /**
+     *
+     *
+     * <pre>
      * Other reasons.
      * </pre>
      *
@@ -127,6 +147,26 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      * <code>NO_VALID_BILLING_ACCOUNT = 1;</code>
      */
     public static final int NO_VALID_BILLING_ACCOUNT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Quota increase is not supported for the quota.
+     * </pre>
+     *
+     * <code>NOT_SUPPORTED = 3;</code>
+     */
+    public static final int NOT_SUPPORTED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * There is not enough usage history to determine the eligibility.
+     * </pre>
+     *
+     * <code>NOT_ENOUGH_USAGE_HISTORY = 4;</code>
+     */
+    public static final int NOT_ENOUGH_USAGE_HISTORY_VALUE = 4;
     /**
      *
      *
@@ -166,6 +206,10 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
           return INELIGIBILITY_REASON_UNSPECIFIED;
         case 1:
           return NO_VALID_BILLING_ACCOUNT;
+        case 3:
+          return NOT_SUPPORTED;
+        case 4:
+          return NOT_ENOUGH_USAGE_HISTORY;
         case 2:
           return OTHER;
         default:

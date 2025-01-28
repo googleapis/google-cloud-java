@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListInstancesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListRepositoriesPagedResponse;
@@ -118,7 +119,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * secureSourceManagerSettingsBuilder
@@ -213,6 +214,54 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsRepoSettings() {
     return ((SecureSourceManagerStubSettings) getStubSettings()).testIamPermissionsRepoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBranchRule. */
+  public UnaryCallSettings<CreateBranchRuleRequest, Operation> createBranchRuleSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).createBranchRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBranchRule. */
+  public OperationCallSettings<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .createBranchRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBranchRules. */
+  public PagedCallSettings<
+          ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>
+      listBranchRulesSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).listBranchRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBranchRule. */
+  public UnaryCallSettings<GetBranchRuleRequest, BranchRule> getBranchRuleSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).getBranchRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBranchRule. */
+  public UnaryCallSettings<UpdateBranchRuleRequest, Operation> updateBranchRuleSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).updateBranchRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBranchRule. */
+  public OperationCallSettings<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .updateBranchRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBranchRule. */
+  public UnaryCallSettings<DeleteBranchRuleRequest, Operation> deleteBranchRuleSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).deleteBranchRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBranchRule. */
+  public OperationCallSettings<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings())
+        .deleteBranchRuleOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -438,6 +487,54 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsRepoSettings() {
       return getStubSettingsBuilder().testIamPermissionsRepoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBranchRule. */
+    public UnaryCallSettings.Builder<CreateBranchRuleRequest, Operation>
+        createBranchRuleSettings() {
+      return getStubSettingsBuilder().createBranchRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBranchRule. */
+    public OperationCallSettings.Builder<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+        createBranchRuleOperationSettings() {
+      return getStubSettingsBuilder().createBranchRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBranchRules. */
+    public PagedCallSettings.Builder<
+            ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>
+        listBranchRulesSettings() {
+      return getStubSettingsBuilder().listBranchRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBranchRule. */
+    public UnaryCallSettings.Builder<GetBranchRuleRequest, BranchRule> getBranchRuleSettings() {
+      return getStubSettingsBuilder().getBranchRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBranchRule. */
+    public UnaryCallSettings.Builder<UpdateBranchRuleRequest, Operation>
+        updateBranchRuleSettings() {
+      return getStubSettingsBuilder().updateBranchRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBranchRule. */
+    public OperationCallSettings.Builder<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+        updateBranchRuleOperationSettings() {
+      return getStubSettingsBuilder().updateBranchRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBranchRule. */
+    public UnaryCallSettings.Builder<DeleteBranchRuleRequest, Operation>
+        deleteBranchRuleSettings() {
+      return getStubSettingsBuilder().deleteBranchRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBranchRule. */
+    public OperationCallSettings.Builder<DeleteBranchRuleRequest, Empty, OperationMetadata>
+        deleteBranchRuleOperationSettings() {
+      return getStubSettingsBuilder().deleteBranchRuleOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

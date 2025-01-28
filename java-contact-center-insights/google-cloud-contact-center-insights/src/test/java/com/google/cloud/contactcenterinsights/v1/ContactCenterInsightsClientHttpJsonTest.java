@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,15 @@
 
 package com.google.cloud.contactcenterinsights.v1;
 
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAllFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysisRulesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaQuestionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardRevisionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -91,7 +97,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void createConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -156,7 +165,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void createConversationTest2() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -221,7 +233,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void uploadConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -301,7 +316,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void updateConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -324,7 +342,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     Conversation conversation =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -373,7 +394,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
     try {
       Conversation conversation =
           Conversation.newBuilder()
-              .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+              .setName(
+                  ConversationName.ofProjectLocationConversationName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                      .toString())
               .setDataSource(ConversationDataSource.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
@@ -404,7 +428,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void getConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -425,7 +452,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName name =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     Conversation actualResponse = client.getConversation(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -453,7 +482,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName name =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.getConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -465,7 +496,10 @@ public class ContactCenterInsightsClientHttpJsonTest {
   public void getConversationTest2() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
-            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .setName(
+                ConversationName.ofProjectLocationConversationName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+                    .toString())
             .setDataSource(ConversationDataSource.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -627,7 +661,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName name =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     client.deleteConversation(name);
 
@@ -654,7 +690,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName name =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.deleteConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -707,7 +745,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -722,7 +761,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
     Analysis analysis = Analysis.newBuilder().build();
 
     Analysis actualResponse = client.createAnalysisAsync(parent, analysis).get();
@@ -751,7 +792,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       Analysis analysis = Analysis.newBuilder().build();
       client.createAnalysisAsync(parent, analysis).get();
       Assert.fail("No exception raised");
@@ -764,7 +807,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -822,7 +866,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -831,7 +876,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    AnalysisName name = AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+    AnalysisName name =
+        AnalysisName.ofProjectLocationConversationAnalysisName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
 
     Analysis actualResponse = client.getAnalysis(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -860,7 +907,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     try {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       client.getAnalysis(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -873,7 +921,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Analysis expectedResponse =
         Analysis.newBuilder()
             .setName(
-                AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+                AnalysisName.ofProjectLocationConversationAnalysisName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
                     .toString())
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -930,7 +979,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
 
     ListAnalysesPagedResponse pagedListResponse = client.listAnalyses(parent);
 
@@ -962,7 +1013,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
       client.listAnalyses(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1026,7 +1079,9 @@ public class ContactCenterInsightsClientHttpJsonTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    AnalysisName name = AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+    AnalysisName name =
+        AnalysisName.ofProjectLocationConversationAnalysisName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
 
     client.deleteAnalysis(name);
 
@@ -1054,7 +1109,8 @@ public class ContactCenterInsightsClientHttpJsonTest {
 
     try {
       AnalysisName name =
-          AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+          AnalysisName.ofProjectLocationConversationAnalysisName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
       client.deleteAnalysis(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3508,6 +3564,467 @@ public class ContactCenterInsightsClientHttpJsonTest {
   }
 
   @Test
+  public void createAnalysisRuleTest() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+
+    AnalysisRule actualResponse = client.createAnalysisRule(parent, analysisRule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAnalysisRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+      client.createAnalysisRule(parent, analysisRule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAnalysisRuleTest2() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+
+    AnalysisRule actualResponse = client.createAnalysisRule(parent, analysisRule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAnalysisRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+      client.createAnalysisRule(parent, analysisRule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAnalysisRuleTest() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+
+    AnalysisRule actualResponse = client.getAnalysisRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAnalysisRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+      client.getAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAnalysisRuleTest2() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1295/locations/location-1295/analysisRules/analysisRule-1295";
+
+    AnalysisRule actualResponse = client.getAnalysisRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAnalysisRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1295/locations/location-1295/analysisRules/analysisRule-1295";
+      client.getAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAnalysisRulesTest() throws Exception {
+    AnalysisRule responsesElement = AnalysisRule.newBuilder().build();
+    ListAnalysisRulesResponse expectedResponse =
+        ListAnalysisRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAnalysisRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAnalysisRulesPagedResponse pagedListResponse = client.listAnalysisRules(parent);
+
+    List<AnalysisRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAnalysisRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAnalysisRulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAnalysisRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAnalysisRulesTest2() throws Exception {
+    AnalysisRule responsesElement = AnalysisRule.newBuilder().build();
+    ListAnalysisRulesResponse expectedResponse =
+        ListAnalysisRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAnalysisRules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAnalysisRulesPagedResponse pagedListResponse = client.listAnalysisRules(parent);
+
+    List<AnalysisRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAnalysisRulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAnalysisRulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAnalysisRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAnalysisRuleTest() throws Exception {
+    AnalysisRule expectedResponse =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AnalysisRule analysisRule =
+        AnalysisRule.newBuilder()
+            .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setConversationFilter("conversationFilter1283909083")
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+            .setAnalysisPercentage(1609757661)
+            .setActive(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AnalysisRule actualResponse = client.updateAnalysisRule(analysisRule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAnalysisRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AnalysisRule analysisRule =
+          AnalysisRule.newBuilder()
+              .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDisplayName("displayName1714148973")
+              .setConversationFilter("conversationFilter1283909083")
+              .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+              .setAnalysisPercentage(1609757661)
+              .setActive(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAnalysisRule(analysisRule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAnalysisRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+
+    client.deleteAnalysisRule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAnalysisRuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+      client.deleteAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAnalysisRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1295/locations/location-1295/analysisRules/analysisRule-1295";
+
+    client.deleteAnalysisRule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAnalysisRuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1295/locations/location-1295/analysisRules/analysisRule-1295";
+      client.deleteAnalysisRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getEncryptionSpecTest() throws Exception {
     EncryptionSpec expectedResponse =
         EncryptionSpec.newBuilder()
@@ -4090,6 +4607,2451 @@ public class ContactCenterInsightsClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryMetricsTest() throws Exception {
+    QueryMetricsResponse expectedResponse =
+        QueryMetricsResponse.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSlices(new ArrayList<QueryMetricsResponse.Slice>())
+            .setMacroAverageSlice(QueryMetricsResponse.Slice.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("queryMetricsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    QueryMetricsRequest request =
+        QueryMetricsRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setFilter("filter-1274492040")
+            .addAllDimensions(new ArrayList<Dimension>())
+            .setMeasureMask(FieldMask.newBuilder().build())
+            .build();
+
+    QueryMetricsResponse actualResponse = client.queryMetricsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void queryMetricsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryMetricsRequest request =
+          QueryMetricsRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setFilter("filter-1274492040")
+              .addAllDimensions(new ArrayList<Dimension>())
+              .setMeasureMask(FieldMask.newBuilder().build())
+              .build();
+      client.queryMetricsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createQaQuestionTest() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardRevisionName parent =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+    QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+    String qaQuestionId = "qaQuestionId1774614993";
+
+    QaQuestion actualResponse = client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQaQuestionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardRevisionName parent =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+      String qaQuestionId = "qaQuestionId1774614993";
+      client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaQuestionTest2() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2630/locations/location-2630/qaScorecards/qaScorecard-2630/revisions/revision-2630";
+    QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+    String qaQuestionId = "qaQuestionId1774614993";
+
+    QaQuestion actualResponse = client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQaQuestionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2630/locations/location-2630/qaScorecards/qaScorecard-2630/revisions/revision-2630";
+      QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+      String qaQuestionId = "qaQuestionId1774614993";
+      client.createQaQuestion(parent, qaQuestion, qaQuestionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaQuestionTest() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaQuestionName name =
+        QaQuestionName.of(
+            "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+
+    QaQuestion actualResponse = client.getQaQuestion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQaQuestionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaQuestionName name =
+          QaQuestionName.of(
+              "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+      client.getQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaQuestionTest2() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5730/locations/location-5730/qaScorecards/qaScorecard-5730/revisions/revision-5730/qaQuestions/qaQuestion-5730";
+
+    QaQuestion actualResponse = client.getQaQuestion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQaQuestionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5730/locations/location-5730/qaScorecards/qaScorecard-5730/revisions/revision-5730/qaQuestions/qaQuestion-5730";
+      client.getQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateQaQuestionTest() throws Exception {
+    QaQuestion expectedResponse =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaQuestion qaQuestion =
+        QaQuestion.newBuilder()
+            .setName(
+                QaQuestionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+                    .toString())
+            .setAbbreviation("abbreviation-1960645810")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setQuestionBody("questionBody-172652888")
+            .setAnswerInstructions("answerInstructions-946697085")
+            .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+            .addAllTags(new ArrayList<String>())
+            .setOrder(106006350)
+            .setMetrics(QaQuestion.Metrics.newBuilder().build())
+            .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    QaQuestion actualResponse = client.updateQaQuestion(qaQuestion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateQaQuestionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaQuestion qaQuestion =
+          QaQuestion.newBuilder()
+              .setName(
+                  QaQuestionName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[QA_SCORECARD]",
+                          "[REVISION]",
+                          "[QA_QUESTION]")
+                      .toString())
+              .setAbbreviation("abbreviation-1960645810")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setQuestionBody("questionBody-172652888")
+              .setAnswerInstructions("answerInstructions-946697085")
+              .addAllAnswerChoices(new ArrayList<QaQuestion.AnswerChoice>())
+              .addAllTags(new ArrayList<String>())
+              .setOrder(106006350)
+              .setMetrics(QaQuestion.Metrics.newBuilder().build())
+              .setTuningMetadata(QaQuestion.TuningMetadata.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateQaQuestion(qaQuestion, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaQuestionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    QaQuestionName name =
+        QaQuestionName.of(
+            "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+
+    client.deleteQaQuestion(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQaQuestionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaQuestionName name =
+          QaQuestionName.of(
+              "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+      client.deleteQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaQuestionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5730/locations/location-5730/qaScorecards/qaScorecard-5730/revisions/revision-5730/qaQuestions/qaQuestion-5730";
+
+    client.deleteQaQuestion(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQaQuestionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5730/locations/location-5730/qaScorecards/qaScorecard-5730/revisions/revision-5730/qaQuestions/qaQuestion-5730";
+      client.deleteQaQuestion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaQuestionsTest() throws Exception {
+    QaQuestion responsesElement = QaQuestion.newBuilder().build();
+    ListQaQuestionsResponse expectedResponse =
+        ListQaQuestionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaQuestions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardRevisionName parent =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+
+    ListQaQuestionsPagedResponse pagedListResponse = client.listQaQuestions(parent);
+
+    List<QaQuestion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaQuestionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQaQuestionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardRevisionName parent =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      client.listQaQuestions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaQuestionsTest2() throws Exception {
+    QaQuestion responsesElement = QaQuestion.newBuilder().build();
+    ListQaQuestionsResponse expectedResponse =
+        ListQaQuestionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaQuestions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2630/locations/location-2630/qaScorecards/qaScorecard-2630/revisions/revision-2630";
+
+    ListQaQuestionsPagedResponse pagedListResponse = client.listQaQuestions(parent);
+
+    List<QaQuestion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaQuestionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQaQuestionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2630/locations/location-2630/qaScorecards/qaScorecard-2630/revisions/revision-2630";
+      client.listQaQuestions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardTest() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+    String qaScorecardId = "qaScorecardId167098669";
+
+    QaScorecard actualResponse = client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQaScorecardExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+      String qaScorecardId = "qaScorecardId167098669";
+      client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardTest2() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+    String qaScorecardId = "qaScorecardId167098669";
+
+    QaScorecard actualResponse = client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQaScorecardExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+      String qaScorecardId = "qaScorecardId167098669";
+      client.createQaScorecard(parent, qaScorecard, qaScorecardId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardTest() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+
+    QaScorecard actualResponse = client.getQaScorecard(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQaScorecardExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      client.getQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardTest2() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7375/locations/location-7375/qaScorecards/qaScorecard-7375";
+
+    QaScorecard actualResponse = client.getQaScorecard(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQaScorecardExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7375/locations/location-7375/qaScorecards/qaScorecard-7375";
+      client.getQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateQaScorecardTest() throws Exception {
+    QaScorecard expectedResponse =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecard qaScorecard =
+        QaScorecard.newBuilder()
+            .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    QaScorecard actualResponse = client.updateQaScorecard(qaScorecard, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateQaScorecardExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecard qaScorecard =
+          QaScorecard.newBuilder()
+              .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateQaScorecard(qaScorecard, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+
+    client.deleteQaScorecard(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQaScorecardExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      client.deleteQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7375/locations/location-7375/qaScorecards/qaScorecard-7375";
+
+    client.deleteQaScorecard(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQaScorecardExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7375/locations/location-7375/qaScorecards/qaScorecard-7375";
+      client.deleteQaScorecard(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardsTest() throws Exception {
+    QaScorecard responsesElement = QaScorecard.newBuilder().build();
+    ListQaScorecardsResponse expectedResponse =
+        ListQaScorecardsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecards(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListQaScorecardsPagedResponse pagedListResponse = client.listQaScorecards(parent);
+
+    List<QaScorecard> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQaScorecardsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listQaScorecards(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardsTest2() throws Exception {
+    QaScorecard responsesElement = QaScorecard.newBuilder().build();
+    ListQaScorecardsResponse expectedResponse =
+        ListQaScorecardsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecards(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListQaScorecardsPagedResponse pagedListResponse = client.listQaScorecards(parent);
+
+    List<QaScorecard> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQaScorecardsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listQaScorecards(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+    QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+    String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+
+    QaScorecardRevision actualResponse =
+        client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQaScorecardRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+      String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+      client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQaScorecardRevisionTest2() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1550/locations/location-1550/qaScorecards/qaScorecard-1550";
+    QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+    String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+
+    QaScorecardRevision actualResponse =
+        client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQaScorecardRevisionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1550/locations/location-1550/qaScorecards/qaScorecard-1550";
+      QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+      String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+      client.createQaScorecardRevision(parent, qaScorecardRevision, qaScorecardRevisionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardRevisionName name =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+
+    QaScorecardRevision actualResponse = client.getQaScorecardRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQaScorecardRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardRevisionName name =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      client.getQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQaScorecardRevisionTest2() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7899/locations/location-7899/qaScorecards/qaScorecard-7899/revisions/revision-7899";
+
+    QaScorecardRevision actualResponse = client.getQaScorecardRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQaScorecardRevisionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7899/locations/location-7899/qaScorecards/qaScorecard-7899/revisions/revision-7899";
+      client.getQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionTest() throws Exception {
+    TuneQaScorecardRevisionResponse expectedResponse =
+        TuneQaScorecardRevisionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("tuneQaScorecardRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    QaScorecardRevisionName parent =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+    String filter = "filter-1274492040";
+    boolean validateOnly = true;
+
+    TuneQaScorecardRevisionResponse actualResponse =
+        client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardRevisionName parent =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      String filter = "filter-1274492040";
+      boolean validateOnly = true;
+      client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionTest2() throws Exception {
+    TuneQaScorecardRevisionResponse expectedResponse =
+        TuneQaScorecardRevisionResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("tuneQaScorecardRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-2630/locations/location-2630/qaScorecards/qaScorecard-2630/revisions/revision-2630";
+    String filter = "filter-1274492040";
+    boolean validateOnly = true;
+
+    TuneQaScorecardRevisionResponse actualResponse =
+        client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void tuneQaScorecardRevisionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2630/locations/location-2630/qaScorecards/qaScorecard-2630/revisions/revision-2630";
+      String filter = "filter-1274492040";
+      boolean validateOnly = true;
+      client.tuneQaScorecardRevisionAsync(parent, filter, validateOnly).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deployQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DeployQaScorecardRevisionRequest request =
+        DeployQaScorecardRevisionRequest.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .build();
+
+    QaScorecardRevision actualResponse = client.deployQaScorecardRevision(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deployQaScorecardRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DeployQaScorecardRevisionRequest request =
+          DeployQaScorecardRevisionRequest.newBuilder()
+              .setName(
+                  QaScorecardRevisionName.of(
+                          "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                      .toString())
+              .build();
+      client.deployQaScorecardRevision(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void undeployQaScorecardRevisionTest() throws Exception {
+    QaScorecardRevision expectedResponse =
+        QaScorecardRevision.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .setSnapshot(QaScorecard.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAlternateIds(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UndeployQaScorecardRevisionRequest request =
+        UndeployQaScorecardRevisionRequest.newBuilder()
+            .setName(
+                QaScorecardRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                    .toString())
+            .build();
+
+    QaScorecardRevision actualResponse = client.undeployQaScorecardRevision(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void undeployQaScorecardRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UndeployQaScorecardRevisionRequest request =
+          UndeployQaScorecardRevisionRequest.newBuilder()
+              .setName(
+                  QaScorecardRevisionName.of(
+                          "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+                      .toString())
+              .build();
+      client.undeployQaScorecardRevision(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardRevisionName name =
+        QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+
+    client.deleteQaScorecardRevision(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardRevisionName name =
+          QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+      client.deleteQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7899/locations/location-7899/qaScorecards/qaScorecard-7899/revisions/revision-7899";
+
+    client.deleteQaScorecardRevision(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQaScorecardRevisionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7899/locations/location-7899/qaScorecards/qaScorecard-7899/revisions/revision-7899";
+      client.deleteQaScorecardRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardRevisionsTest() throws Exception {
+    QaScorecardRevision responsesElement = QaScorecardRevision.newBuilder().build();
+    ListQaScorecardRevisionsResponse expectedResponse =
+        ListQaScorecardRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecardRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+
+    ListQaScorecardRevisionsPagedResponse pagedListResponse =
+        client.listQaScorecardRevisions(parent);
+
+    List<QaScorecardRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQaScorecardRevisionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+      client.listQaScorecardRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQaScorecardRevisionsTest2() throws Exception {
+    QaScorecardRevision responsesElement = QaScorecardRevision.newBuilder().build();
+    ListQaScorecardRevisionsResponse expectedResponse =
+        ListQaScorecardRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQaScorecardRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1550/locations/location-1550/qaScorecards/qaScorecard-1550";
+
+    ListQaScorecardRevisionsPagedResponse pagedListResponse =
+        client.listQaScorecardRevisions(parent);
+
+    List<QaScorecardRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQaScorecardRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQaScorecardRevisionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1550/locations/location-1550/qaScorecards/qaScorecard-1550";
+      client.listQaScorecardRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFeedbackLabelTest() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+    FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+    String feedbackLabelId = "feedbackLabelId-1251198998";
+
+    FeedbackLabel actualResponse =
+        client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createFeedbackLabelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+      String feedbackLabelId = "feedbackLabelId-1251198998";
+      client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFeedbackLabelTest2() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-8053/locations/location-8053/conversations/conversation-8053";
+    FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+    String feedbackLabelId = "feedbackLabelId-1251198998";
+
+    FeedbackLabel actualResponse =
+        client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createFeedbackLabelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-8053/locations/location-8053/conversations/conversation-8053";
+      FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+      String feedbackLabelId = "feedbackLabelId-1251198998";
+      client.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedbackLabelsTest() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListFeedbackLabelsResponse expectedResponse =
+        ListFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ConversationName parent =
+        ConversationName.ofProjectLocationConversationName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+
+    ListFeedbackLabelsPagedResponse pagedListResponse = client.listFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFeedbackLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConversationName parent =
+          ConversationName.ofProjectLocationConversationName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      client.listFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedbackLabelsTest2() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListFeedbackLabelsResponse expectedResponse =
+        ListFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-8053/locations/location-8053/conversations/conversation-8053";
+
+    ListFeedbackLabelsPagedResponse pagedListResponse = client.listFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFeedbackLabelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-8053/locations/location-8053/conversations/conversation-8053";
+      client.listFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedbackLabelTest() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FeedbackLabelName name =
+        FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+
+    FeedbackLabel actualResponse = client.getFeedbackLabel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFeedbackLabelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FeedbackLabelName name =
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+      client.getFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedbackLabelTest2() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5400/locations/location-5400/conversations/conversation-5400/feedbackLabels/feedbackLabel-5400";
+
+    FeedbackLabel actualResponse = client.getFeedbackLabel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFeedbackLabelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5400/locations/location-5400/conversations/conversation-5400/feedbackLabels/feedbackLabel-5400";
+      client.getFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateFeedbackLabelTest() throws Exception {
+    FeedbackLabel expectedResponse =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FeedbackLabel feedbackLabel =
+        FeedbackLabel.newBuilder()
+            .setName(
+                FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                    .toString())
+            .setLabeledResource("labeledResource-527465535")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    FeedbackLabel actualResponse = client.updateFeedbackLabel(feedbackLabel, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateFeedbackLabelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FeedbackLabel feedbackLabel =
+          FeedbackLabel.newBuilder()
+              .setName(
+                  FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+                          "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+                      .toString())
+              .setLabeledResource("labeledResource-527465535")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFeedbackLabel(feedbackLabel, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFeedbackLabelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    FeedbackLabelName name =
+        FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+            "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+
+    client.deleteFeedbackLabel(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFeedbackLabelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FeedbackLabelName name =
+          FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+              "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+      client.deleteFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFeedbackLabelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5400/locations/location-5400/conversations/conversation-5400/feedbackLabels/feedbackLabel-5400";
+
+    client.deleteFeedbackLabel(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFeedbackLabelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5400/locations/location-5400/conversations/conversation-5400/feedbackLabels/feedbackLabel-5400";
+      client.deleteFeedbackLabel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAllFeedbackLabelsTest() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListAllFeedbackLabelsResponse expectedResponse =
+        ListAllFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAllFeedbackLabelsPagedResponse pagedListResponse = client.listAllFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAllFeedbackLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAllFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAllFeedbackLabelsTest2() throws Exception {
+    FeedbackLabel responsesElement = FeedbackLabel.newBuilder().build();
+    ListAllFeedbackLabelsResponse expectedResponse =
+        ListAllFeedbackLabelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedbackLabels(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAllFeedbackLabelsPagedResponse pagedListResponse = client.listAllFeedbackLabels(parent);
+
+    List<FeedbackLabel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedbackLabelsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAllFeedbackLabelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAllFeedbackLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsTest() throws Exception {
+    BulkUploadFeedbackLabelsResponse expectedResponse =
+        BulkUploadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkUploadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    BulkUploadFeedbackLabelsResponse actualResponse =
+        client.bulkUploadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.bulkUploadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsTest2() throws Exception {
+    BulkUploadFeedbackLabelsResponse expectedResponse =
+        BulkUploadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkUploadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    BulkUploadFeedbackLabelsResponse actualResponse =
+        client.bulkUploadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void bulkUploadFeedbackLabelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.bulkUploadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsTest() throws Exception {
+    BulkDownloadFeedbackLabelsResponse expectedResponse =
+        BulkDownloadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkDownloadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    BulkDownloadFeedbackLabelsResponse actualResponse =
+        client.bulkDownloadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.bulkDownloadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsTest2() throws Exception {
+    BulkDownloadFeedbackLabelsResponse expectedResponse =
+        BulkDownloadFeedbackLabelsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkDownloadFeedbackLabelsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    BulkDownloadFeedbackLabelsResponse actualResponse =
+        client.bulkDownloadFeedbackLabelsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void bulkDownloadFeedbackLabelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.bulkDownloadFeedbackLabelsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 }

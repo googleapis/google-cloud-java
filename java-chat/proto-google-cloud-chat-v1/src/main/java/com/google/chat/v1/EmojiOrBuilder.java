@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,10 @@ public interface EmojiOrBuilder
    *
    *
    * <pre>
-   * A basic emoji represented by a unicode string.
+   * Optional. A basic emoji represented by a unicode string.
    * </pre>
    *
-   * <code>string unicode = 1;</code>
+   * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the unicode field is set.
    */
@@ -40,10 +40,10 @@ public interface EmojiOrBuilder
    *
    *
    * <pre>
-   * A basic emoji represented by a unicode string.
+   * Optional. A basic emoji represented by a unicode string.
    * </pre>
    *
-   * <code>string unicode = 1;</code>
+   * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The unicode.
    */
@@ -52,10 +52,10 @@ public interface EmojiOrBuilder
    *
    *
    * <pre>
-   * A basic emoji represented by a unicode string.
+   * Optional. A basic emoji represented by a unicode string.
    * </pre>
    *
-   * <code>string unicode = 1;</code>
+   * <code>string unicode = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for unicode.
    */

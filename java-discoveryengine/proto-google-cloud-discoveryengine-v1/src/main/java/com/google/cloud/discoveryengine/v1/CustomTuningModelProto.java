@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ public final class CustomTuningModelProto {
           + "_tuning_model.proto\022\037google.cloud.discov"
           + "eryengine.v1\032\037google/api/field_behavior."
           + "proto\032\031google/api/resource.proto\032\037google"
-          + "/protobuf/timestamp.proto\"\266\007\n\021CustomTuni"
+          + "/protobuf/timestamp.proto\"\315\007\n\021CustomTuni"
           + "ngModel\022F\n\004name\030\001 \001(\tB8\340A\002\372A2\n0discovery"
           + "engine.googleapis.com/CustomTuningModel\022"
           + "\024\n\014display_name\030\002 \001(\t\022\025\n\rmodel_version\030\003"
@@ -60,27 +60,27 @@ public final class CustomTuningModelProto {
           + "time\030\006 \001(\0132\032.google.protobuf.Timestamp\022P"
           + "\n\007metrics\030\007 \003(\0132?.google.cloud.discovery"
           + "engine.v1.CustomTuningModel.MetricsEntry"
-          + "\032.\n\014MetricsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\001:\0028\001\"\300\001\n\nModelState\022\033\n\027MODEL_STATE_U"
-          + "NSPECIFIED\020\000\022\023\n\017TRAINING_PAUSED\020\001\022\014\n\010TRA"
-          + "INING\020\002\022\025\n\021TRAINING_COMPLETE\020\003\022\025\n\021READY_"
-          + "FOR_SERVING\020\004\022\023\n\017TRAINING_FAILED\020\005\022\022\n\016NO"
-          + "_IMPROVEMENT\020\006\022\033\n\027INPUT_VALIDATION_FAILE"
-          + "D\020\007:\244\002\352A\240\002\n0discoveryengine.googleapis.c"
-          + "om/CustomTuningModel\022hprojects/{project}"
-          + "/locations/{location}/dataStores/{data_s"
-          + "tore}/customTuningModels/{custom_tuning_"
-          + "model}\022\201\001projects/{project}/locations/{l"
-          + "ocation}/collections/{collection}/dataSt"
-          + "ores/{data_store}/customTuningModels/{cu"
-          + "stom_tuning_model}B\211\002\n#com.google.cloud."
-          + "discoveryengine.v1B\026CustomTuningModelPro"
-          + "toP\001ZMcloud.google.com/go/discoveryengin"
-          + "e/apiv1/discoveryenginepb;discoveryengin"
-          + "epb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Dis"
-          + "coveryEngine.V1\312\002\037Google\\Cloud\\Discovery"
-          + "Engine\\V1\352\002\"Google::Cloud::DiscoveryEngi"
-          + "ne::V1b\006proto3"
+          + "\022\025\n\rerror_message\030\010 \001(\t\032.\n\014MetricsEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\"\300\001\n\nMode"
+          + "lState\022\033\n\027MODEL_STATE_UNSPECIFIED\020\000\022\023\n\017T"
+          + "RAINING_PAUSED\020\001\022\014\n\010TRAINING\020\002\022\025\n\021TRAINI"
+          + "NG_COMPLETE\020\003\022\025\n\021READY_FOR_SERVING\020\004\022\023\n\017"
+          + "TRAINING_FAILED\020\005\022\022\n\016NO_IMPROVEMENT\020\006\022\033\n"
+          + "\027INPUT_VALIDATION_FAILED\020\007:\244\002\352A\240\002\n0disco"
+          + "veryengine.googleapis.com/CustomTuningMo"
+          + "del\022hprojects/{project}/locations/{locat"
+          + "ion}/dataStores/{data_store}/customTunin"
+          + "gModels/{custom_tuning_model}\022\201\001projects"
+          + "/{project}/locations/{location}/collecti"
+          + "ons/{collection}/dataStores/{data_store}"
+          + "/customTuningModels/{custom_tuning_model"
+          + "}B\211\002\n#com.google.cloud.discoveryengine.v"
+          + "1B\026CustomTuningModelProtoP\001ZMcloud.googl"
+          + "e.com/go/discoveryengine/apiv1/discovery"
+          + "enginepb;discoveryenginepb\242\002\017DISCOVERYEN"
+          + "GINE\252\002\037Google.Cloud.DiscoveryEngine.V1\312\002"
+          + "\037Google\\Cloud\\DiscoveryEngine\\V1\352\002\"Googl"
+          + "e::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,6 +103,7 @@ public final class CustomTuningModelProto {
               "CreateTime",
               "TrainingStartTime",
               "Metrics",
+              "ErrorMessage",
             });
     internal_static_google_cloud_discoveryengine_v1_CustomTuningModel_MetricsEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1_CustomTuningModel_descriptor

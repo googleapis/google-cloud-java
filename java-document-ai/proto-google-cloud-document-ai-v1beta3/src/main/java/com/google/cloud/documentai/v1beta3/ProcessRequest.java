@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -371,7 +371,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=452
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -392,7 +392,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=452
    * @return The document.
    */
   @java.lang.Override
@@ -2182,7 +2182,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=452
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -2202,7 +2202,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=451
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=452
      * @return The document.
      */
     @java.lang.Deprecated

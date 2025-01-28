@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,12 +87,12 @@ public final class FulfillmentProto {
           + "loud.dialogflow.cx.v3.ResponseMessageH\000\022"
           + "W\n\020additional_cases\030\002 \001(\0132;.google.cloud"
           + ".dialogflow.cx.v3.Fulfillment.Conditiona"
-          + "lCasesH\000B\022\n\020cases_or_messageB\266\001\n!com.goo"
+          + "lCasesH\000B\022\n\020cases_or_messageB\263\001\n!com.goo"
           + "gle.cloud.dialogflow.cx.v3B\020FulfillmentP"
           + "rotoP\001Z1cloud.google.com/go/dialogflow/c"
-          + "x/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud"
-          + ".Dialogflow.Cx.V3\352\002!Google::Cloud::Dialo"
-          + "gflow::CX::V3b\006proto3"
+          + "x/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.Di"
+          + "alogflow.Cx.V3\352\002!Google::Cloud::Dialogfl"
+          + "ow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

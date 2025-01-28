@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,12 +59,13 @@ public final class CustomTargetingValueMessagesProto {
           + "k_code}/customTargetingKeys/{custom_targ"
           + "eting_key}/customTargetingValues/{custom"
           + "_targeting_value}*\025customTargetingValues"
-          + "2\024customTargetingValueB\270\001\n\033com.google.ad"
+          + "2\024customTargetingValueB\325\001\n\033com.google.ad"
           + "s.admanager.v1B!CustomTargetingValueMess"
           + "agesProtoP\001Z@google.golang.org/genproto/"
           + "googleapis/ads/admanager/v1;admanager\252\002\027"
           + "Google.Ads.AdManager.V1\312\002\027Google\\Ads\\AdM"
-          + "anager\\V1b\006proto3"
+          + "anager\\V1\352\002\032Google::Ads::AdManager::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -334,9 +334,8 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The flow to list all transition route groups for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`
+   *     or `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTransitionRouteGroupsPagedResponse listTransitionRouteGroups(AgentName parent) {
@@ -370,9 +369,8 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The flow to list all transition route groups for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`
+   *     or `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTransitionRouteGroupsPagedResponse listTransitionRouteGroups(FlowName parent) {
@@ -406,9 +404,8 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The flow to list all transition route groups for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`
+   *     or `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTransitionRouteGroupsPagedResponse listTransitionRouteGroups(String parent) {
@@ -555,10 +552,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   *     or
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransitionRouteGroup getTransitionRouteGroup(TransitionRouteGroupName name) {
@@ -594,10 +590,9 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   *     or
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransitionRouteGroup getTransitionRouteGroup(String name) {
@@ -711,9 +706,10 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *
    * @param parent Required. The flow to create an
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] for.
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;` for agent-level groups.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`
+   *     or `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;` for
+   *     agent-level groups.
    * @param transitionRouteGroup Required. The transition route group to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -754,9 +750,10 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *
    * @param parent Required. The flow to create an
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] for.
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;` for agent-level groups.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`
+   *     or `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;` for
+   *     agent-level groups.
    * @param transitionRouteGroup Required. The transition route group to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -797,9 +794,10 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *
    * @param parent Required. The flow to create an
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] for.
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;` for agent-level groups.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`
+   *     or `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;` for
+   *     agent-level groups.
    * @param transitionRouteGroup Required. The transition route group to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1025,10 +1023,10 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] to delete.
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   *     or
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTransitionRouteGroup(TransitionRouteGroupName name) {
@@ -1067,10 +1065,10 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] to delete.
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;` or
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   *     or
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteTransitionRouteGroup(String name) {

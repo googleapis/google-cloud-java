@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,12 +43,12 @@ public final class PolylineProto {
     java.lang.String[] descriptorData = {
       "\n$google/maps/places/v1/polyline.proto\022\025"
           + "google.maps.places.v1\"7\n\010Polyline\022\032\n\020enc"
-          + "oded_polyline\030\001 \001(\tH\000B\017\n\rpolyline_typeB\241"
+          + "oded_polyline\030\001 \001(\tH\000B\017\n\rpolyline_typeB\236"
           + "\001\n\031com.google.maps.places.v1B\rPolylinePr"
           + "otoP\001Z7cloud.google.com/go/maps/places/a"
-          + "piv1/placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025Goo"
-          + "gle.Maps.Places.V1\312\002\025Google\\Maps\\Places\\"
-          + "V1b\006proto3"
+          + "piv1/placespb;placespb\242\002\006GMPSV1\252\002\025Google"
+          + ".Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

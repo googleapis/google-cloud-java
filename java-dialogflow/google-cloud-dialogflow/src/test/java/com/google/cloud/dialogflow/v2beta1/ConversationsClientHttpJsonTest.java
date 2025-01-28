@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1065,6 +1066,9 @@ public class ConversationsClientHttpJsonTest {
                 MessageName.ofProjectConversationMessageName(
                         "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                     .toString())
+            .setEndUserMetadata(Struct.newBuilder().build())
+            .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+            .setExactSearch(true)
             .build();
 
     SearchKnowledgeResponse actualResponse = client.searchKnowledge(request);
@@ -1109,6 +1113,9 @@ public class ConversationsClientHttpJsonTest {
                   MessageName.ofProjectConversationMessageName(
                           "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                       .toString())
+              .setEndUserMetadata(Struct.newBuilder().build())
+              .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+              .setExactSearch(true)
               .build();
       client.searchKnowledge(request);
       Assert.fail("No exception raised");

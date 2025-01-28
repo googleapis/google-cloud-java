@@ -190,6 +190,19 @@ enum DirectoryStripeLevel {
   DIRECTORY_STRIPE_LEVEL_MAX = 3;
 }
 
+// Represents the deployment type for the instance.
+enum DeploymentType {
+  // Default Deployment Type
+  // It is equivalent to SCRATCH
+  DEPLOYMENT_TYPE_UNSPECIFIED = 0;
+
+  // Scratch
+  SCRATCH = 1;
+
+  // Persistent
+  PERSISTENT = 2;
+}
+
 // A Parallelstore instance.
 message Instance {
   option (google.api.resource) = {
@@ -307,6 +320,12 @@ message Instance {
   //   number of files.
   DirectoryStripeLevel directory_stripe_level = 16
       [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The deployment type of the instance. Allowed values are:
+  //
+  // * `SCRATCH`: the instance is a scratch instance.
+  // * `PERSISTENT`: the instance is a persistent instance.
+  DeploymentType deployment_type = 17 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // List instances request.
@@ -477,7 +496,7 @@ message OperationMetadata {
 
   // Output only. Identifies whether the user has requested cancellation
   // of the operation. Operations that have been cancelled successfully
-  // have [Operation.error][] value with a
+  // have [Operation.error][google.longrunning.Operation.error] value with a
   // [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
   // `Code.CANCELLED`.
   bool requested_cancellation = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -660,7 +679,7 @@ message ImportDataMetadata {
 
   // Output only. Identifies whether the user has requested cancellation
   // of the operation. Operations that have successfully been cancelled
-  // have [Operation.error][] value with a
+  // have [Operation.error][google.longrunning.Operation.error] value with a
   // [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
   // `Code.CANCELLED`.
   bool requested_cancellation = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
@@ -696,7 +715,7 @@ message ExportDataMetadata {
 
   // Output only. Identifies whether the user has requested cancellation
   // of the operation. Operations that have successfully been cancelled
-  // have [Operation.error][] value with a
+  // have [Operation.error][google.longrunning.Operation.error] value with a
   // [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
   // `Code.CANCELLED`.
   bool requested_cancellation = 7 [(google.api.field_behavior) = OUTPUT_ONLY];

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,12 +48,12 @@ public final class FrequencyCapProto {
           + "\210\001\001\022\030\n\013time_amount\030\002 \001(\003H\001\210\001\001\022F\n\ttime_un"
           + "it\030\003 \001(\0162..google.ads.admanager.v1.TimeU"
           + "nitEnum.TimeUnitH\002\210\001\001B\022\n\020_max_impression"
-          + "sB\016\n\014_time_amountB\014\n\n_time_unitB\250\001\n\033com."
+          + "sB\016\n\014_time_amountB\014\n\n_time_unitB\305\001\n\033com."
           + "google.ads.admanager.v1B\021FrequencyCapPro"
           + "toP\001Z@google.golang.org/genproto/googlea"
           + "pis/ads/admanager/v1;admanager\252\002\027Google."
           + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
-          + "V1b\006proto3"
+          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

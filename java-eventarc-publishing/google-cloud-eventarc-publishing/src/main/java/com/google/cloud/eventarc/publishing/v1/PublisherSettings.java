@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,6 +95,11 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
   /** Returns the object with the settings used for calls to publishEvents. */
   public UnaryCallSettings<PublishEventsRequest, PublishEventsResponse> publishEventsSettings() {
     return ((PublisherStubSettings) getStubSettings()).publishEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to publish. */
+  public UnaryCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return ((PublisherStubSettings) getStubSettings()).publishSettings();
   }
 
   public static final PublisherSettings create(PublisherStubSettings stub) throws IOException {
@@ -219,6 +224,11 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
     public UnaryCallSettings.Builder<PublishEventsRequest, PublishEventsResponse>
         publishEventsSettings() {
       return getStubSettingsBuilder().publishEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to publish. */
+    public UnaryCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+      return getStubSettingsBuilder().publishSettings();
     }
 
     @Override

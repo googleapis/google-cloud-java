@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,6 +93,16 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    * <code>OUTPUT_AUDIO_ENCODING_MULAW = 5;</code>
    */
   OUTPUT_AUDIO_ENCODING_MULAW(5),
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+   * </pre>
+   *
+   * <code>OUTPUT_AUDIO_ENCODING_ALAW = 6;</code>
+   */
+  OUTPUT_AUDIO_ENCODING_ALAW(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -160,6 +170,16 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    * <code>OUTPUT_AUDIO_ENCODING_MULAW = 5;</code>
    */
   public static final int OUTPUT_AUDIO_ENCODING_MULAW_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+   * </pre>
+   *
+   * <code>OUTPUT_AUDIO_ENCODING_ALAW = 6;</code>
+   */
+  public static final int OUTPUT_AUDIO_ENCODING_ALAW_VALUE = 6;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -197,6 +217,8 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
         return OUTPUT_AUDIO_ENCODING_OGG_OPUS;
       case 5:
         return OUTPUT_AUDIO_ENCODING_MULAW;
+      case 6:
+        return OUTPUT_AUDIO_ENCODING_ALAW;
       default:
         return null;
     }

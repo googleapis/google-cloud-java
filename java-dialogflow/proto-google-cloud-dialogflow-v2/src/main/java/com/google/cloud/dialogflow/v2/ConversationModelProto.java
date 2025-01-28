@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -345,11 +345,11 @@ public final class ConversationModelProto {
           + "ons:\001*\032x\312A\031dialogflow.googleapis.com\322AYh"
           + "ttps://www.googleapis.com/auth/cloud-pla"
           + "tform,https://www.googleapis.com/auth/di"
-          + "alogflowB\237\001\n\036com.google.cloud.dialogflow"
+          + "alogflowB\234\001\n\036com.google.cloud.dialogflow"
           + ".v2B\026ConversationModelProtoP\001Z>cloud.goo"
           + "gle.com/go/dialogflow/apiv2/dialogflowpb"
-          + ";dialogflowpb\370\001\001\242\002\002DF\252\002\032Google.Cloud.Dia"
-          + "logflow.V2b\006proto3"
+          + ";dialogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialog"
+          + "flow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

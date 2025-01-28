@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,34 +216,50 @@ public interface ImportRagFilesConfigOrBuilder
    *
    * <pre>
    * The Cloud Storage path to write partial failures to.
+   * Deprecated. Prefer to use `import_result_gcs_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
    * @return Whether the partialFailureGcsSink field is set.
    */
+  @java.lang.Deprecated
   boolean hasPartialFailureGcsSink();
   /**
    *
    *
    * <pre>
    * The Cloud Storage path to write partial failures to.
+   * Deprecated. Prefer to use `import_result_gcs_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
    * @return The partialFailureGcsSink.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.GcsDestination getPartialFailureGcsSink();
   /**
    *
    *
    * <pre>
    * The Cloud Storage path to write partial failures to.
+   * Deprecated. Prefer to use `import_result_gcs_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder getPartialFailureGcsSinkOrBuilder();
 
   /**
@@ -252,17 +268,22 @@ public interface ImportRagFilesConfigOrBuilder
    * <pre>
    * The BigQuery destination to write partial failures to. It should be a
    * bigquery table resource name (e.g.
-   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-   * exist, it will be created. If the table does not exist, it will be
-   * created with the expected schema. If the table exists, the schema will be
-   * validated and data will be added to this existing table.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * Deprecated. Prefer to use `import_result_bq_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=523
    * @return Whether the partialFailureBigquerySink field is set.
    */
+  @java.lang.Deprecated
   boolean hasPartialFailureBigquerySink();
   /**
    *
@@ -270,17 +291,22 @@ public interface ImportRagFilesConfigOrBuilder
    * <pre>
    * The BigQuery destination to write partial failures to. It should be a
    * bigquery table resource name (e.g.
-   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-   * exist, it will be created. If the table does not exist, it will be
-   * created with the expected schema. If the table exists, the schema will be
-   * validated and data will be added to this existing table.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * Deprecated. Prefer to use `import_result_bq_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=523
    * @return The partialFailureBigquerySink.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.BigQueryDestination getPartialFailureBigquerySink();
   /**
    *
@@ -288,15 +314,18 @@ public interface ImportRagFilesConfigOrBuilder
    * <pre>
    * The BigQuery destination to write partial failures to. It should be a
    * bigquery table resource name (e.g.
-   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-   * exist, it will be created. If the table does not exist, it will be
-   * created with the expected schema. If the table exists, the schema will be
-   * validated and data will be added to this existing table.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * Deprecated. Prefer to use `import_result_bq_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
       getPartialFailureBigquerySinkOrBuilder();
 
@@ -307,11 +336,15 @@ public interface ImportRagFilesConfigOrBuilder
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=527
    * @return Whether the ragFileChunkingConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasRagFileChunkingConfig();
   /**
    *
@@ -320,11 +353,15 @@ public interface ImportRagFilesConfigOrBuilder
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=527
    * @return The ragFileChunkingConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig();
   /**
    *
@@ -333,9 +370,11 @@ public interface ImportRagFilesConfigOrBuilder
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder
       getRagFileChunkingConfigOrBuilder();
 
@@ -343,10 +382,55 @@ public interface ImportRagFilesConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the parsing config for RagFiles.
+   * Specifies the transformation config for RagFiles.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+   * </code>
+   *
+   * @return Whether the ragFileTransformationConfig field is set.
+   */
+  boolean hasRagFileTransformationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+   * </code>
+   *
+   * @return The ragFileTransformationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig getRagFileTransformationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder
+      getRagFileTransformationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the ragFileParsingConfig field is set.
    */
@@ -355,10 +439,13 @@ public interface ImportRagFilesConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the parsing config for RagFiles.
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ragFileParsingConfig.
    */
@@ -367,10 +454,13 @@ public interface ImportRagFilesConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the parsing config for RagFiles.
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.aiplatform.v1beta1.RagFileParsingConfigOrBuilder
       getRagFileParsingConfigOrBuilder();

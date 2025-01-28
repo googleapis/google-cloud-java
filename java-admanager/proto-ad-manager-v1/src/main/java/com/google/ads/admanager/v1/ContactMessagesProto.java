@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,12 @@ public final class ContactMessagesProto {
           + "\003\340A\010\022\027\n\ncontact_id\030\002 \001(\003B\003\340A\003:d\352Aa\n adma"
           + "nager.googleapis.com/Contact\022*networks/{"
           + "network_code}/contacts/{contact}*\010contac"
-          + "ts2\007contactB\253\001\n\033com.google.ads.admanager"
+          + "ts2\007contactB\310\001\n\033com.google.ads.admanager"
           + ".v1B\024ContactMessagesProtoP\001Z@google.gola"
           + "ng.org/genproto/googleapis/ads/admanager"
           + "/v1;admanager\252\002\027Google.Ads.AdManager.V1\312"
-          + "\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads:"
+          + ":AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -171,4 +171,51 @@ public interface VoiceSelectionParamsOrBuilder
    * <code>.google.cloud.texttospeech.v1.CustomVoiceParams custom_voice = 4;</code>
    */
   com.google.cloud.texttospeech.v1.CustomVoiceParamsOrBuilder getCustomVoiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a voice clone. If
+   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+   * voice clone matching the specified configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the voiceClone field is set.
+   */
+  boolean hasVoiceClone();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a voice clone. If
+   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+   * voice clone matching the specified configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The voiceClone.
+   */
+  com.google.cloud.texttospeech.v1.VoiceCloneParams getVoiceClone();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a voice clone. If
+   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+   * voice clone matching the specified configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1.VoiceCloneParamsOrBuilder getVoiceCloneOrBuilder();
 }

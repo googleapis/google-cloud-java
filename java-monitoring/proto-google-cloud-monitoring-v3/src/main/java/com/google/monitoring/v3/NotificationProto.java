@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,60 +54,62 @@ public final class NotificationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/monitoring/v3/notification.prot"
-          + "o\022\024google.monitoring.v3\032\026google/api/labe"
-          + "l.proto\032\035google/api/launch_stage.proto\032\031"
-          + "google/api/resource.proto\032!google/monito"
-          + "ring/v3/common.proto\032*google/monitoring/"
-          + "v3/mutation_record.proto\032\036google/protobu"
-          + "f/wrappers.proto\"\245\004\n\035NotificationChannel"
-          + "Descriptor\022\014\n\004name\030\006 \001(\t\022\014\n\004type\030\001 \001(\t\022\024"
-          + "\n\014display_name\030\002 \001(\t\022\023\n\013description\030\003 \001("
-          + "\t\022+\n\006labels\030\004 \003(\0132\033.google.api.LabelDesc"
-          + "riptor\022>\n\017supported_tiers\030\005 \003(\0162!.google"
-          + ".monitoring.v3.ServiceTierB\002\030\001\022-\n\014launch"
-          + "_stage\030\007 \001(\0162\027.google.api.LaunchStage:\240\002"
-          + "\352A\234\002\n7monitoring.googleapis.com/Notifica"
-          + "tionChannelDescriptor\022Fprojects/{project"
-          + "}/notificationChannelDescriptors/{channe"
-          + "l_descriptor}\022Porganizations/{organizati"
-          + "on}/notificationChannelDescriptors/{chan"
-          + "nel_descriptor}\022Dfolders/{folder}/notifi"
-          + "cationChannelDescriptors/{channel_descri"
-          + "ptor}\022\001*\"\266\007\n\023NotificationChannel\022\014\n\004type"
-          + "\030\001 \001(\t\022\014\n\004name\030\006 \001(\t\022\024\n\014display_name\030\003 \001"
-          + "(\t\022\023\n\013description\030\004 \001(\t\022E\n\006labels\030\005 \003(\0132"
-          + "5.google.monitoring.v3.NotificationChann"
-          + "el.LabelsEntry\022N\n\013user_labels\030\010 \003(\01329.go"
-          + "ogle.monitoring.v3.NotificationChannel.U"
-          + "serLabelsEntry\022Y\n\023verification_status\030\t "
-          + "\001(\0162<.google.monitoring.v3.NotificationC"
-          + "hannel.VerificationStatus\022+\n\007enabled\030\013 \001"
-          + "(\0132\032.google.protobuf.BoolValue\022=\n\017creati"
-          + "on_record\030\014 \001(\0132$.google.monitoring.v3.M"
-          + "utationRecord\022>\n\020mutation_records\030\r \003(\0132"
-          + "$.google.monitoring.v3.MutationRecord\032-\n"
-          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
-          + ":\0028\001\0321\n\017UserLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001\"W\n\022VerificationStatus\022#\n"
-          + "\037VERIFICATION_STATUS_UNSPECIFIED\020\000\022\016\n\nUN"
-          + "VERIFIED\020\001\022\014\n\010VERIFIED\020\002:\376\001\352A\372\001\n-monitor"
-          + "ing.googleapis.com/NotificationChannel\022>"
-          + "projects/{project}/notificationChannels/"
-          + "{notification_channel}\022Horganizations/{o"
-          + "rganization}/notificationChannels/{notif"
-          + "ication_channel}\022<folders/{folder}/notif"
-          + "icationChannels/{notification_channel}\022\001"
-          + "*B\314\001\n\030com.google.monitoring.v3B\021Notifica"
-          + "tionProtoP\001ZAcloud.google.com/go/monitor"
-          + "ing/apiv3/v2/monitoringpb;monitoringpb\252\002"
-          + "\032Google.Cloud.Monitoring.V3\312\002\032Google\\Clo"
-          + "ud\\Monitoring\\V3\352\002\035Google::Cloud::Monito"
-          + "ring::V3b\006proto3"
+          + "o\022\024google.monitoring.v3\032\037google/api/fiel"
+          + "d_behavior.proto\032\026google/api/label.proto"
+          + "\032\035google/api/launch_stage.proto\032\031google/"
+          + "api/resource.proto\032!google/monitoring/v3"
+          + "/common.proto\032*google/monitoring/v3/muta"
+          + "tion_record.proto\032\036google/protobuf/wrapp"
+          + "ers.proto\"\245\004\n\035NotificationChannelDescrip"
+          + "tor\022\014\n\004name\030\006 \001(\t\022\014\n\004type\030\001 \001(\t\022\024\n\014displ"
+          + "ay_name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022+\n\006la"
+          + "bels\030\004 \003(\0132\033.google.api.LabelDescriptor\022"
+          + ">\n\017supported_tiers\030\005 \003(\0162!.google.monito"
+          + "ring.v3.ServiceTierB\002\030\001\022-\n\014launch_stage\030"
+          + "\007 \001(\0162\027.google.api.LaunchStage:\240\002\352A\234\002\n7m"
+          + "onitoring.googleapis.com/NotificationCha"
+          + "nnelDescriptor\022Fprojects/{project}/notif"
+          + "icationChannelDescriptors/{channel_descr"
+          + "iptor}\022Porganizations/{organization}/not"
+          + "ificationChannelDescriptors/{channel_des"
+          + "criptor}\022Dfolders/{folder}/notificationC"
+          + "hannelDescriptors/{channel_descriptor}\022\001"
+          + "*\"\273\007\n\023NotificationChannel\022\014\n\004type\030\001 \001(\t\022"
+          + "\021\n\004name\030\006 \001(\tB\003\340A\010\022\024\n\014display_name\030\003 \001(\t"
+          + "\022\023\n\013description\030\004 \001(\t\022E\n\006labels\030\005 \003(\01325."
+          + "google.monitoring.v3.NotificationChannel"
+          + ".LabelsEntry\022N\n\013user_labels\030\010 \003(\01329.goog"
+          + "le.monitoring.v3.NotificationChannel.Use"
+          + "rLabelsEntry\022Y\n\023verification_status\030\t \001("
+          + "\0162<.google.monitoring.v3.NotificationCha"
+          + "nnel.VerificationStatus\022+\n\007enabled\030\013 \001(\013"
+          + "2\032.google.protobuf.BoolValue\022=\n\017creation"
+          + "_record\030\014 \001(\0132$.google.monitoring.v3.Mut"
+          + "ationRecord\022>\n\020mutation_records\030\r \003(\0132$."
+          + "google.monitoring.v3.MutationRecord\032-\n\013L"
+          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\0321\n\017UserLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001\"W\n\022VerificationStatus\022#\n\037V"
+          + "ERIFICATION_STATUS_UNSPECIFIED\020\000\022\016\n\nUNVE"
+          + "RIFIED\020\001\022\014\n\010VERIFIED\020\002:\376\001\352A\372\001\n-monitorin"
+          + "g.googleapis.com/NotificationChannel\022>pr"
+          + "ojects/{project}/notificationChannels/{n"
+          + "otification_channel}\022Horganizations/{org"
+          + "anization}/notificationChannels/{notific"
+          + "ation_channel}\022<folders/{folder}/notific"
+          + "ationChannels/{notification_channel}\022\001*B"
+          + "\314\001\n\030com.google.monitoring.v3B\021Notificati"
+          + "onProtoP\001ZAcloud.google.com/go/monitorin"
+          + "g/apiv3/v2/monitoringpb;monitoringpb\252\002\032G"
+          + "oogle.Cloud.Monitoring.V3\312\002\032Google\\Cloud"
+          + "\\Monitoring\\V3\352\002\035Google::Cloud::Monitori"
+          + "ng::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.LabelProto.getDescriptor(),
               com.google.api.LaunchStageProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
@@ -164,9 +166,11 @@ public final class NotificationProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.LabelProto.getDescriptor();
     com.google.api.LaunchStageProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();

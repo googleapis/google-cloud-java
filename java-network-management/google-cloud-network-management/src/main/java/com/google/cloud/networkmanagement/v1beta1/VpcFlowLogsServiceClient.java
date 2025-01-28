@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1465,7 +1465,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1497,7 +1497,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1528,7 +1528,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = vpcFlowLogsServiceClient.getIamPolicy(request);
@@ -1558,7 +1558,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1592,7 +1592,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = vpcFlowLogsServiceClient.testIamPermissions(request);
@@ -1626,7 +1626,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

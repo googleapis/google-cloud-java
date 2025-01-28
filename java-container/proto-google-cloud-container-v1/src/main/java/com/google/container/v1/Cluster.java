@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -492,7 +492,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1775
+   *     google/container/v1/cluster_service.proto;l=1877
    * @return The initialNodeCount.
    */
   @java.lang.Override
@@ -523,7 +523,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1788
+   *     google/container/v1/cluster_service.proto;l=1890
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Override
@@ -551,7 +551,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1788
+   *     google/container/v1/cluster_service.proto;l=1890
    * @return The nodeConfig.
    */
   @java.lang.Override
@@ -1535,15 +1535,22 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1992
    * @return Whether the masterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasMasterAuthorizedNetworksConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
@@ -1552,15 +1559,22 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1992
    * @return The masterAuthorizedNetworksConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.MasterAuthorizedNetworksConfig
       getMasterAuthorizedNetworksConfig() {
     return masterAuthorizedNetworksConfig_ == null
@@ -1572,13 +1586,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The configuration options for master authorized networks feature.
+   *
+   * Deprecated: Use
+   * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+   * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
       getMasterAuthorizedNetworksConfigOrBuilder() {
     return masterAuthorizedNetworksConfig_ == null
@@ -2591,7 +2610,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1959
+   *     google/container/v1/cluster_service.proto;l=2066
    * @return The zone.
    */
   @java.lang.Override
@@ -2619,7 +2638,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 101 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Cluster.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1959
+   *     google/container/v1/cluster_service.proto;l=2066
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -2843,7 +2862,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1994
+   *     google/container/v1/cluster_service.proto;l=2101
    * @return The currentNodeVersion.
    */
   @java.lang.Override
@@ -2875,7 +2894,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1994
+   *     google/container/v1/cluster_service.proto;l=2101
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Override
@@ -3002,7 +3021,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2007
+   *     google/container/v1/cluster_service.proto;l=2114
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -3032,7 +3051,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2007
+   *     google/container/v1/cluster_service.proto;l=2114
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -3146,7 +3165,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2131
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3165,7 +3184,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2131
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -3184,7 +3203,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2131
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -3204,7 +3223,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2024
+   *     google/container/v1/cluster_service.proto;l=2131
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -3228,7 +3247,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2029
+   *     google/container/v1/cluster_service.proto;l=2136
    * @return The currentNodeCount.
    */
   @java.lang.Override
@@ -3948,6 +3967,60 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : securityPostureConfig_;
   }
 
+  public static final int CONTROL_PLANE_ENDPOINTS_CONFIG_FIELD_NUMBER = 146;
+  private com.google.container.v1.ControlPlaneEndpointsConfig controlPlaneEndpointsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   *
+   * @return Whether the controlPlaneEndpointsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasControlPlaneEndpointsConfig() {
+    return ((bitField1_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   *
+   * @return The controlPlaneEndpointsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ControlPlaneEndpointsConfig getControlPlaneEndpointsConfig() {
+    return controlPlaneEndpointsConfig_ == null
+        ? com.google.container.v1.ControlPlaneEndpointsConfig.getDefaultInstance()
+        : controlPlaneEndpointsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for all cluster's control plane endpoints.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ControlPlaneEndpointsConfigOrBuilder
+      getControlPlaneEndpointsConfigOrBuilder() {
+    return controlPlaneEndpointsConfig_ == null
+        ? com.google.container.v1.ControlPlaneEndpointsConfig.getDefaultInstance()
+        : controlPlaneEndpointsConfig_;
+  }
+
   public static final int ENABLE_K8S_BETA_APIS_FIELD_NUMBER = 143;
   private com.google.container.v1.K8sBetaAPIConfig enableK8SBetaApis_;
   /**
@@ -3963,7 +4036,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnableK8SBetaApis() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
   /**
    *
@@ -4013,7 +4086,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnterpriseConfig() {
-    return ((bitField1_ & 0x00000002) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
   /**
    *
@@ -4048,6 +4121,107 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : enterpriseConfig_;
   }
 
+  public static final int SECRET_MANAGER_CONFIG_FIELD_NUMBER = 150;
+  private com.google.container.v1.SecretManagerConfig secretManagerConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return Whether the secretManagerConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecretManagerConfig() {
+    return ((bitField1_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return The secretManagerConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.SecretManagerConfig getSecretManagerConfig() {
+    return secretManagerConfig_ == null
+        ? com.google.container.v1.SecretManagerConfig.getDefaultInstance()
+        : secretManagerConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.SecretManagerConfigOrBuilder getSecretManagerConfigOrBuilder() {
+    return secretManagerConfig_ == null
+        ? com.google.container.v1.SecretManagerConfig.getDefaultInstance()
+        : secretManagerConfig_;
+  }
+
+  public static final int COMPLIANCE_POSTURE_CONFIG_FIELD_NUMBER = 151;
+  private com.google.container.v1.CompliancePostureConfig compliancePostureConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   *
+   * @return Whether the compliancePostureConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompliancePostureConfig() {
+    return ((bitField1_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   *
+   * @return The compliancePostureConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.CompliancePostureConfig getCompliancePostureConfig() {
+    return compliancePostureConfig_ == null
+        ? com.google.container.v1.CompliancePostureConfig.getDefaultInstance()
+        : compliancePostureConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Compliance Posture features for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.CompliancePostureConfigOrBuilder
+      getCompliancePostureConfigOrBuilder() {
+    return compliancePostureConfig_ == null
+        ? com.google.container.v1.CompliancePostureConfig.getDefaultInstance()
+        : compliancePostureConfig_;
+  }
+
   public static final int SATISFIES_PZS_FIELD_NUMBER = 152;
   private boolean satisfiesPzs_ = false;
   /**
@@ -4063,7 +4237,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField1_ & 0x00000004) != 0);
+    return ((bitField1_ & 0x00000020) != 0);
   }
   /**
    *
@@ -4096,7 +4270,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzi() {
-    return ((bitField1_ & 0x00000008) != 0);
+    return ((bitField1_ & 0x00000040) != 0);
   }
   /**
    *
@@ -4112,6 +4286,113 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getSatisfiesPzi() {
     return satisfiesPzi_;
+  }
+
+  public static final int USER_MANAGED_KEYS_CONFIG_FIELD_NUMBER = 154;
+  private com.google.container.v1.UserManagedKeysConfig userManagedKeysConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   *
+   * @return Whether the userManagedKeysConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserManagedKeysConfig() {
+    return ((bitField1_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   *
+   * @return The userManagedKeysConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.UserManagedKeysConfig getUserManagedKeysConfig() {
+    return userManagedKeysConfig_ == null
+        ? com.google.container.v1.UserManagedKeysConfig.getDefaultInstance()
+        : userManagedKeysConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Custom keys configuration for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.UserManagedKeysConfigOrBuilder
+      getUserManagedKeysConfigOrBuilder() {
+    return userManagedKeysConfig_ == null
+        ? com.google.container.v1.UserManagedKeysConfig.getDefaultInstance()
+        : userManagedKeysConfig_;
+  }
+
+  public static final int RBAC_BINDING_CONFIG_FIELD_NUMBER = 156;
+  private com.google.container.v1.RBACBindingConfig rbacBindingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+   *
+   * @return Whether the rbacBindingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRbacBindingConfig() {
+    return ((bitField1_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+   *
+   * @return The rbacBindingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.RBACBindingConfig getRbacBindingConfig() {
+    return rbacBindingConfig_ == null
+        ? com.google.container.v1.RBACBindingConfig.getDefaultInstance()
+        : rbacBindingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+   * RoleBindings that can be created.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.RBACBindingConfigOrBuilder getRbacBindingConfigOrBuilder() {
+    return rbacBindingConfig_ == null
+        ? com.google.container.v1.RBACBindingConfig.getDefaultInstance()
+        : rbacBindingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4319,20 +4600,35 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x40000000) != 0)) {
       output.writeMessage(140, getFleet());
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       output.writeMessage(143, getEnableK8SBetaApis());
     }
     if (((bitField0_ & 0x80000000) != 0)) {
       output.writeMessage(145, getSecurityPostureConfig());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
-      output.writeMessage(149, getEnterpriseConfig());
+    if (((bitField1_ & 0x00000001) != 0)) {
+      output.writeMessage(146, getControlPlaneEndpointsConfig());
     }
     if (((bitField1_ & 0x00000004) != 0)) {
-      output.writeBool(152, satisfiesPzs_);
+      output.writeMessage(149, getEnterpriseConfig());
     }
     if (((bitField1_ & 0x00000008) != 0)) {
+      output.writeMessage(150, getSecretManagerConfig());
+    }
+    if (((bitField1_ & 0x00000010) != 0)) {
+      output.writeMessage(151, getCompliancePostureConfig());
+    }
+    if (((bitField1_ & 0x00000020) != 0)) {
+      output.writeBool(152, satisfiesPzs_);
+    }
+    if (((bitField1_ & 0x00000040) != 0)) {
       output.writeBool(153, satisfiesPzi_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      output.writeMessage(154, getUserManagedKeysConfig());
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      output.writeMessage(156, getRbacBindingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4567,21 +4863,42 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(140, getFleet());
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(143, getEnableK8SBetaApis());
     }
     if (((bitField0_ & 0x80000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(145, getSecurityPostureConfig());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(149, getEnterpriseConfig());
+    if (((bitField1_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              146, getControlPlaneEndpointsConfig());
     }
     if (((bitField1_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(152, satisfiesPzs_);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(149, getEnterpriseConfig());
     }
     if (((bitField1_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(150, getSecretManagerConfig());
+    }
+    if (((bitField1_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              151, getCompliancePostureConfig());
+    }
+    if (((bitField1_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(152, satisfiesPzs_);
+    }
+    if (((bitField1_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(153, satisfiesPzi_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(154, getUserManagedKeysConfig());
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(156, getRbacBindingConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4763,6 +5080,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasSecurityPostureConfig()) {
       if (!getSecurityPostureConfig().equals(other.getSecurityPostureConfig())) return false;
     }
+    if (hasControlPlaneEndpointsConfig() != other.hasControlPlaneEndpointsConfig()) return false;
+    if (hasControlPlaneEndpointsConfig()) {
+      if (!getControlPlaneEndpointsConfig().equals(other.getControlPlaneEndpointsConfig()))
+        return false;
+    }
     if (hasEnableK8SBetaApis() != other.hasEnableK8SBetaApis()) return false;
     if (hasEnableK8SBetaApis()) {
       if (!getEnableK8SBetaApis().equals(other.getEnableK8SBetaApis())) return false;
@@ -4771,6 +5093,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEnterpriseConfig()) {
       if (!getEnterpriseConfig().equals(other.getEnterpriseConfig())) return false;
     }
+    if (hasSecretManagerConfig() != other.hasSecretManagerConfig()) return false;
+    if (hasSecretManagerConfig()) {
+      if (!getSecretManagerConfig().equals(other.getSecretManagerConfig())) return false;
+    }
+    if (hasCompliancePostureConfig() != other.hasCompliancePostureConfig()) return false;
+    if (hasCompliancePostureConfig()) {
+      if (!getCompliancePostureConfig().equals(other.getCompliancePostureConfig())) return false;
+    }
     if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
     if (hasSatisfiesPzs()) {
       if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
@@ -4778,6 +5108,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
     if (hasSatisfiesPzi()) {
       if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    }
+    if (hasUserManagedKeysConfig() != other.hasUserManagedKeysConfig()) return false;
+    if (hasUserManagedKeysConfig()) {
+      if (!getUserManagedKeysConfig().equals(other.getUserManagedKeysConfig())) return false;
+    }
+    if (hasRbacBindingConfig() != other.hasRbacBindingConfig()) return false;
+    if (hasRbacBindingConfig()) {
+      if (!getRbacBindingConfig().equals(other.getRbacBindingConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -4994,6 +5332,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SECURITY_POSTURE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityPostureConfig().hashCode();
     }
+    if (hasControlPlaneEndpointsConfig()) {
+      hash = (37 * hash) + CONTROL_PLANE_ENDPOINTS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getControlPlaneEndpointsConfig().hashCode();
+    }
     if (hasEnableK8SBetaApis()) {
       hash = (37 * hash) + ENABLE_K8S_BETA_APIS_FIELD_NUMBER;
       hash = (53 * hash) + getEnableK8SBetaApis().hashCode();
@@ -5002,6 +5344,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENTERPRISE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEnterpriseConfig().hashCode();
     }
+    if (hasSecretManagerConfig()) {
+      hash = (37 * hash) + SECRET_MANAGER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretManagerConfig().hashCode();
+    }
+    if (hasCompliancePostureConfig()) {
+      hash = (37 * hash) + COMPLIANCE_POSTURE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCompliancePostureConfig().hashCode();
+    }
     if (hasSatisfiesPzs()) {
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
@@ -5009,6 +5359,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzi()) {
       hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
+    if (hasUserManagedKeysConfig()) {
+      hash = (37 * hash) + USER_MANAGED_KEYS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getUserManagedKeysConfig().hashCode();
+    }
+    if (hasRbacBindingConfig()) {
+      hash = (37 * hash) + RBAC_BINDING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRbacBindingConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -5204,8 +5562,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getNodePoolAutoConfigFieldBuilder();
         getFleetFieldBuilder();
         getSecurityPostureConfigFieldBuilder();
+        getControlPlaneEndpointsConfigFieldBuilder();
         getEnableK8SBetaApisFieldBuilder();
         getEnterpriseConfigFieldBuilder();
+        getSecretManagerConfigFieldBuilder();
+        getCompliancePostureConfigFieldBuilder();
+        getUserManagedKeysConfigFieldBuilder();
+        getRbacBindingConfigFieldBuilder();
       }
     }
 
@@ -5420,6 +5783,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         securityPostureConfigBuilder_.dispose();
         securityPostureConfigBuilder_ = null;
       }
+      controlPlaneEndpointsConfig_ = null;
+      if (controlPlaneEndpointsConfigBuilder_ != null) {
+        controlPlaneEndpointsConfigBuilder_.dispose();
+        controlPlaneEndpointsConfigBuilder_ = null;
+      }
       enableK8SBetaApis_ = null;
       if (enableK8SBetaApisBuilder_ != null) {
         enableK8SBetaApisBuilder_.dispose();
@@ -5430,8 +5798,28 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         enterpriseConfigBuilder_.dispose();
         enterpriseConfigBuilder_ = null;
       }
+      secretManagerConfig_ = null;
+      if (secretManagerConfigBuilder_ != null) {
+        secretManagerConfigBuilder_.dispose();
+        secretManagerConfigBuilder_ = null;
+      }
+      compliancePostureConfig_ = null;
+      if (compliancePostureConfigBuilder_ != null) {
+        compliancePostureConfigBuilder_.dispose();
+        compliancePostureConfigBuilder_ = null;
+      }
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      userManagedKeysConfig_ = null;
+      if (userManagedKeysConfigBuilder_ != null) {
+        userManagedKeysConfigBuilder_.dispose();
+        userManagedKeysConfigBuilder_ = null;
+      }
+      rbacBindingConfig_ = null;
+      if (rbacBindingConfigBuilder_ != null) {
+        rbacBindingConfigBuilder_.dispose();
+        rbacBindingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -5795,24 +6183,59 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       int to_bitField1_ = 0;
       if (((from_bitField2_ & 0x00000002) != 0)) {
+        result.controlPlaneEndpointsConfig_ =
+            controlPlaneEndpointsConfigBuilder_ == null
+                ? controlPlaneEndpointsConfig_
+                : controlPlaneEndpointsConfigBuilder_.build();
+        to_bitField1_ |= 0x00000001;
+      }
+      if (((from_bitField2_ & 0x00000004) != 0)) {
         result.enableK8SBetaApis_ =
             enableK8SBetaApisBuilder_ == null
                 ? enableK8SBetaApis_
                 : enableK8SBetaApisBuilder_.build();
-        to_bitField1_ |= 0x00000001;
-      }
-      if (((from_bitField2_ & 0x00000004) != 0)) {
-        result.enterpriseConfig_ =
-            enterpriseConfigBuilder_ == null ? enterpriseConfig_ : enterpriseConfigBuilder_.build();
         to_bitField1_ |= 0x00000002;
       }
       if (((from_bitField2_ & 0x00000008) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.enterpriseConfig_ =
+            enterpriseConfigBuilder_ == null ? enterpriseConfig_ : enterpriseConfigBuilder_.build();
         to_bitField1_ |= 0x00000004;
       }
       if (((from_bitField2_ & 0x00000010) != 0)) {
-        result.satisfiesPzi_ = satisfiesPzi_;
+        result.secretManagerConfig_ =
+            secretManagerConfigBuilder_ == null
+                ? secretManagerConfig_
+                : secretManagerConfigBuilder_.build();
         to_bitField1_ |= 0x00000008;
+      }
+      if (((from_bitField2_ & 0x00000020) != 0)) {
+        result.compliancePostureConfig_ =
+            compliancePostureConfigBuilder_ == null
+                ? compliancePostureConfig_
+                : compliancePostureConfigBuilder_.build();
+        to_bitField1_ |= 0x00000010;
+      }
+      if (((from_bitField2_ & 0x00000040) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField1_ |= 0x00000020;
+      }
+      if (((from_bitField2_ & 0x00000080) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField1_ |= 0x00000040;
+      }
+      if (((from_bitField2_ & 0x00000100) != 0)) {
+        result.userManagedKeysConfig_ =
+            userManagedKeysConfigBuilder_ == null
+                ? userManagedKeysConfig_
+                : userManagedKeysConfigBuilder_.build();
+        to_bitField1_ |= 0x00000080;
+      }
+      if (((from_bitField2_ & 0x00000200) != 0)) {
+        result.rbacBindingConfig_ =
+            rbacBindingConfigBuilder_ == null
+                ? rbacBindingConfig_
+                : rbacBindingConfigBuilder_.build();
+        to_bitField1_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -6163,17 +6586,32 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSecurityPostureConfig()) {
         mergeSecurityPostureConfig(other.getSecurityPostureConfig());
       }
+      if (other.hasControlPlaneEndpointsConfig()) {
+        mergeControlPlaneEndpointsConfig(other.getControlPlaneEndpointsConfig());
+      }
       if (other.hasEnableK8SBetaApis()) {
         mergeEnableK8SBetaApis(other.getEnableK8SBetaApis());
       }
       if (other.hasEnterpriseConfig()) {
         mergeEnterpriseConfig(other.getEnterpriseConfig());
       }
+      if (other.hasSecretManagerConfig()) {
+        mergeSecretManagerConfig(other.getSecretManagerConfig());
+      }
+      if (other.hasCompliancePostureConfig()) {
+        mergeCompliancePostureConfig(other.getCompliancePostureConfig());
+      }
       if (other.hasSatisfiesPzs()) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
       if (other.hasSatisfiesPzi()) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (other.hasUserManagedKeysConfig()) {
+        mergeUserManagedKeysConfig(other.getUserManagedKeysConfig());
+      }
+      if (other.hasRbacBindingConfig()) {
+        mergeRbacBindingConfig(other.getRbacBindingConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6630,7 +7068,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getEnableK8SBetaApisFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000002;
+                bitField2_ |= 0x00000004;
                 break;
               } // case 1146
             case 1162:
@@ -6640,25 +7078,60 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField2_ |= 0x00000001;
                 break;
               } // case 1162
+            case 1170:
+              {
+                input.readMessage(
+                    getControlPlaneEndpointsConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000002;
+                break;
+              } // case 1170
             case 1194:
               {
                 input.readMessage(
                     getEnterpriseConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000004;
+                bitField2_ |= 0x00000008;
                 break;
               } // case 1194
+            case 1202:
+              {
+                input.readMessage(
+                    getSecretManagerConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000010;
+                break;
+              } // case 1202
+            case 1210:
+              {
+                input.readMessage(
+                    getCompliancePostureConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000020;
+                break;
+              } // case 1210
             case 1216:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField2_ |= 0x00000008;
+                bitField2_ |= 0x00000040;
                 break;
               } // case 1216
             case 1224:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField2_ |= 0x00000010;
+                bitField2_ |= 0x00000080;
                 break;
               } // case 1224
+            case 1234:
+              {
+                input.readMessage(
+                    getUserManagedKeysConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000100;
+                break;
+              } // case 1234
+            case 1250:
+              {
+                input.readMessage(
+                    getRbacBindingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000200;
+                break;
+              } // case 1250
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6942,7 +7415,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1775
+     *     google/container/v1/cluster_service.proto;l=1877
      * @return The initialNodeCount.
      */
     @java.lang.Override
@@ -6969,7 +7442,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1775
+     *     google/container/v1/cluster_service.proto;l=1877
      * @param value The initialNodeCount to set.
      * @return This builder for chaining.
      */
@@ -7000,7 +7473,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 initial_node_count = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.initial_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1775
+     *     google/container/v1/cluster_service.proto;l=1877
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -7037,7 +7510,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1788
+     *     google/container/v1/cluster_service.proto;l=1890
      * @return Whether the nodeConfig field is set.
      */
     @java.lang.Deprecated
@@ -7064,7 +7537,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.NodeConfig node_config = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.Cluster.node_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1788
+     *     google/container/v1/cluster_service.proto;l=1890
      * @return The nodeConfig.
      */
     @java.lang.Deprecated
@@ -9937,14 +10410,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1992
      * @return Whether the masterAuthorizedNetworksConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasMasterAuthorizedNetworksConfig() {
       return ((bitField0_ & 0x00080000) != 0);
     }
@@ -9953,14 +10433,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.Cluster.master_authorized_networks_config is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1992
      * @return The masterAuthorizedNetworksConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1.MasterAuthorizedNetworksConfig
         getMasterAuthorizedNetworksConfig() {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
@@ -9976,12 +10463,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setMasterAuthorizedNetworksConfig(
         com.google.container.v1.MasterAuthorizedNetworksConfig value) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
@@ -10001,12 +10493,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setMasterAuthorizedNetworksConfig(
         com.google.container.v1.MasterAuthorizedNetworksConfig.Builder builderForValue) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
@@ -10023,12 +10520,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeMasterAuthorizedNetworksConfig(
         com.google.container.v1.MasterAuthorizedNetworksConfig value) {
       if (masterAuthorizedNetworksConfigBuilder_ == null) {
@@ -10054,12 +10556,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearMasterAuthorizedNetworksConfig() {
       bitField0_ = (bitField0_ & ~0x00080000);
       masterAuthorizedNetworksConfig_ = null;
@@ -10075,12 +10582,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.MasterAuthorizedNetworksConfig.Builder
         getMasterAuthorizedNetworksConfigBuilder() {
       bitField0_ |= 0x00080000;
@@ -10092,12 +10604,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
         getMasterAuthorizedNetworksConfigOrBuilder() {
       if (masterAuthorizedNetworksConfigBuilder_ != null) {
@@ -10113,10 +10630,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration options for master authorized networks feature.
+     *
+     * Deprecated: Use
+     * [ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config][google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22;
+     * .google.container.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 22 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -13741,7 +14262,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1959
+     *     google/container/v1/cluster_service.proto;l=2066
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -13769,7 +14290,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1959
+     *     google/container/v1/cluster_service.proto;l=2066
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -13797,7 +14318,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1959
+     *     google/container/v1/cluster_service.proto;l=2066
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -13824,7 +14345,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1959
+     *     google/container/v1/cluster_service.proto;l=2066
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13847,7 +14368,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1959
+     *     google/container/v1/cluster_service.proto;l=2066
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -14288,7 +14809,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1994
+     *     google/container/v1/cluster_service.proto;l=2101
      * @return The currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -14319,7 +14840,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1994
+     *     google/container/v1/cluster_service.proto;l=2101
      * @return The bytes for currentNodeVersion.
      */
     @java.lang.Deprecated
@@ -14350,7 +14871,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1994
+     *     google/container/v1/cluster_service.proto;l=2101
      * @param value The currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -14380,7 +14901,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1994
+     *     google/container/v1/cluster_service.proto;l=2101
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -14406,7 +14927,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_version is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1994
+     *     google/container/v1/cluster_service.proto;l=2101
      * @param value The bytes for currentNodeVersion to set.
      * @return This builder for chaining.
      */
@@ -14648,7 +15169,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2114
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -14677,7 +15198,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2114
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -14706,7 +15227,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2114
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -14734,7 +15255,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2114
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -14758,7 +15279,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2114
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -14983,7 +15504,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @return A list containing the instanceGroupUrls.
      */
     @java.lang.Deprecated
@@ -15003,7 +15524,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @return The count of instanceGroupUrls.
      */
     @java.lang.Deprecated
@@ -15022,7 +15543,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @param index The index of the element to return.
      * @return The instanceGroupUrls at the given index.
      */
@@ -15042,7 +15563,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @param index The index of the value to return.
      * @return The bytes of the instanceGroupUrls at the given index.
      */
@@ -15062,7 +15583,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @param index The index to set the value at.
      * @param value The instanceGroupUrls to set.
      * @return This builder for chaining.
@@ -15090,7 +15611,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @param value The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -15117,7 +15638,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @param values The instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -15141,7 +15662,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -15164,7 +15685,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.instance_group_urls is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2024
+     *     google/container/v1/cluster_service.proto;l=2131
      * @param value The bytes of the instanceGroupUrls to add.
      * @return This builder for chaining.
      */
@@ -15195,7 +15716,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2029
+     *     google/container/v1/cluster_service.proto;l=2136
      * @return The currentNodeCount.
      */
     @java.lang.Override
@@ -15216,7 +15737,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2029
+     *     google/container/v1/cluster_service.proto;l=2136
      * @param value The currentNodeCount to set.
      * @return This builder for chaining.
      */
@@ -15241,7 +15762,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1.Cluster.current_node_count is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2029
+     *     google/container/v1/cluster_service.proto;l=2136
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17545,6 +18066,206 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return securityPostureConfigBuilder_;
     }
 
+    private com.google.container.v1.ControlPlaneEndpointsConfig controlPlaneEndpointsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ControlPlaneEndpointsConfig,
+            com.google.container.v1.ControlPlaneEndpointsConfig.Builder,
+            com.google.container.v1.ControlPlaneEndpointsConfigOrBuilder>
+        controlPlaneEndpointsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     *
+     * @return Whether the controlPlaneEndpointsConfig field is set.
+     */
+    public boolean hasControlPlaneEndpointsConfig() {
+      return ((bitField2_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     *
+     * @return The controlPlaneEndpointsConfig.
+     */
+    public com.google.container.v1.ControlPlaneEndpointsConfig getControlPlaneEndpointsConfig() {
+      if (controlPlaneEndpointsConfigBuilder_ == null) {
+        return controlPlaneEndpointsConfig_ == null
+            ? com.google.container.v1.ControlPlaneEndpointsConfig.getDefaultInstance()
+            : controlPlaneEndpointsConfig_;
+      } else {
+        return controlPlaneEndpointsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     */
+    public Builder setControlPlaneEndpointsConfig(
+        com.google.container.v1.ControlPlaneEndpointsConfig value) {
+      if (controlPlaneEndpointsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        controlPlaneEndpointsConfig_ = value;
+      } else {
+        controlPlaneEndpointsConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     */
+    public Builder setControlPlaneEndpointsConfig(
+        com.google.container.v1.ControlPlaneEndpointsConfig.Builder builderForValue) {
+      if (controlPlaneEndpointsConfigBuilder_ == null) {
+        controlPlaneEndpointsConfig_ = builderForValue.build();
+      } else {
+        controlPlaneEndpointsConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     */
+    public Builder mergeControlPlaneEndpointsConfig(
+        com.google.container.v1.ControlPlaneEndpointsConfig value) {
+      if (controlPlaneEndpointsConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000002) != 0)
+            && controlPlaneEndpointsConfig_ != null
+            && controlPlaneEndpointsConfig_
+                != com.google.container.v1.ControlPlaneEndpointsConfig.getDefaultInstance()) {
+          getControlPlaneEndpointsConfigBuilder().mergeFrom(value);
+        } else {
+          controlPlaneEndpointsConfig_ = value;
+        }
+      } else {
+        controlPlaneEndpointsConfigBuilder_.mergeFrom(value);
+      }
+      if (controlPlaneEndpointsConfig_ != null) {
+        bitField2_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     */
+    public Builder clearControlPlaneEndpointsConfig() {
+      bitField2_ = (bitField2_ & ~0x00000002);
+      controlPlaneEndpointsConfig_ = null;
+      if (controlPlaneEndpointsConfigBuilder_ != null) {
+        controlPlaneEndpointsConfigBuilder_.dispose();
+        controlPlaneEndpointsConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     */
+    public com.google.container.v1.ControlPlaneEndpointsConfig.Builder
+        getControlPlaneEndpointsConfigBuilder() {
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return getControlPlaneEndpointsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     */
+    public com.google.container.v1.ControlPlaneEndpointsConfigOrBuilder
+        getControlPlaneEndpointsConfigOrBuilder() {
+      if (controlPlaneEndpointsConfigBuilder_ != null) {
+        return controlPlaneEndpointsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return controlPlaneEndpointsConfig_ == null
+            ? com.google.container.v1.ControlPlaneEndpointsConfig.getDefaultInstance()
+            : controlPlaneEndpointsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for all cluster's control plane endpoints.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEndpointsConfig control_plane_endpoints_config = 146;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ControlPlaneEndpointsConfig,
+            com.google.container.v1.ControlPlaneEndpointsConfig.Builder,
+            com.google.container.v1.ControlPlaneEndpointsConfigOrBuilder>
+        getControlPlaneEndpointsConfigFieldBuilder() {
+      if (controlPlaneEndpointsConfigBuilder_ == null) {
+        controlPlaneEndpointsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ControlPlaneEndpointsConfig,
+                com.google.container.v1.ControlPlaneEndpointsConfig.Builder,
+                com.google.container.v1.ControlPlaneEndpointsConfigOrBuilder>(
+                getControlPlaneEndpointsConfig(), getParentForChildren(), isClean());
+        controlPlaneEndpointsConfig_ = null;
+      }
+      return controlPlaneEndpointsConfigBuilder_;
+    }
+
     private com.google.container.v1.K8sBetaAPIConfig enableK8SBetaApis_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.K8sBetaAPIConfig,
@@ -17563,7 +18284,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the enableK8sBetaApis field is set.
      */
     public boolean hasEnableK8SBetaApis() {
-      return ((bitField2_ & 0x00000002) != 0);
+      return ((bitField2_ & 0x00000004) != 0);
     }
     /**
      *
@@ -17603,7 +18324,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         enableK8SBetaApisBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -17623,7 +18344,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         enableK8SBetaApisBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -17638,7 +18359,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnableK8SBetaApis(com.google.container.v1.K8sBetaAPIConfig value) {
       if (enableK8SBetaApisBuilder_ == null) {
-        if (((bitField2_ & 0x00000002) != 0)
+        if (((bitField2_ & 0x00000004) != 0)
             && enableK8SBetaApis_ != null
             && enableK8SBetaApis_
                 != com.google.container.v1.K8sBetaAPIConfig.getDefaultInstance()) {
@@ -17650,7 +18371,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         enableK8SBetaApisBuilder_.mergeFrom(value);
       }
       if (enableK8SBetaApis_ != null) {
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -17665,7 +18386,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
      */
     public Builder clearEnableK8SBetaApis() {
-      bitField2_ = (bitField2_ & ~0x00000002);
+      bitField2_ = (bitField2_ & ~0x00000004);
       enableK8SBetaApis_ = null;
       if (enableK8SBetaApisBuilder_ != null) {
         enableK8SBetaApisBuilder_.dispose();
@@ -17684,7 +18405,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
      */
     public com.google.container.v1.K8sBetaAPIConfig.Builder getEnableK8SBetaApisBuilder() {
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return getEnableK8SBetaApisFieldBuilder().getBuilder();
     }
@@ -17750,7 +18471,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the enterpriseConfig field is set.
      */
     public boolean hasEnterpriseConfig() {
-      return ((bitField2_ & 0x00000004) != 0);
+      return ((bitField2_ & 0x00000008) != 0);
     }
     /**
      *
@@ -17790,7 +18511,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         enterpriseConfigBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000004;
+      bitField2_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -17810,7 +18531,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         enterpriseConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000004;
+      bitField2_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -17825,7 +18546,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnterpriseConfig(com.google.container.v1.EnterpriseConfig value) {
       if (enterpriseConfigBuilder_ == null) {
-        if (((bitField2_ & 0x00000004) != 0)
+        if (((bitField2_ & 0x00000008) != 0)
             && enterpriseConfig_ != null
             && enterpriseConfig_ != com.google.container.v1.EnterpriseConfig.getDefaultInstance()) {
           getEnterpriseConfigBuilder().mergeFrom(value);
@@ -17836,7 +18557,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         enterpriseConfigBuilder_.mergeFrom(value);
       }
       if (enterpriseConfig_ != null) {
-        bitField2_ |= 0x00000004;
+        bitField2_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -17851,7 +18572,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
      */
     public Builder clearEnterpriseConfig() {
-      bitField2_ = (bitField2_ & ~0x00000004);
+      bitField2_ = (bitField2_ & ~0x00000008);
       enterpriseConfig_ = null;
       if (enterpriseConfigBuilder_ != null) {
         enterpriseConfigBuilder_.dispose();
@@ -17870,7 +18591,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
      */
     public com.google.container.v1.EnterpriseConfig.Builder getEnterpriseConfigBuilder() {
-      bitField2_ |= 0x00000004;
+      bitField2_ |= 0x00000008;
       onChanged();
       return getEnterpriseConfigFieldBuilder().getBuilder();
     }
@@ -17918,6 +18639,384 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return enterpriseConfigBuilder_;
     }
 
+    private com.google.container.v1.SecretManagerConfig secretManagerConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SecretManagerConfig,
+            com.google.container.v1.SecretManagerConfig.Builder,
+            com.google.container.v1.SecretManagerConfigOrBuilder>
+        secretManagerConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     *
+     * @return Whether the secretManagerConfig field is set.
+     */
+    public boolean hasSecretManagerConfig() {
+      return ((bitField2_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     *
+     * @return The secretManagerConfig.
+     */
+    public com.google.container.v1.SecretManagerConfig getSecretManagerConfig() {
+      if (secretManagerConfigBuilder_ == null) {
+        return secretManagerConfig_ == null
+            ? com.google.container.v1.SecretManagerConfig.getDefaultInstance()
+            : secretManagerConfig_;
+      } else {
+        return secretManagerConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder setSecretManagerConfig(com.google.container.v1.SecretManagerConfig value) {
+      if (secretManagerConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        secretManagerConfig_ = value;
+      } else {
+        secretManagerConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder setSecretManagerConfig(
+        com.google.container.v1.SecretManagerConfig.Builder builderForValue) {
+      if (secretManagerConfigBuilder_ == null) {
+        secretManagerConfig_ = builderForValue.build();
+      } else {
+        secretManagerConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder mergeSecretManagerConfig(com.google.container.v1.SecretManagerConfig value) {
+      if (secretManagerConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000010) != 0)
+            && secretManagerConfig_ != null
+            && secretManagerConfig_
+                != com.google.container.v1.SecretManagerConfig.getDefaultInstance()) {
+          getSecretManagerConfigBuilder().mergeFrom(value);
+        } else {
+          secretManagerConfig_ = value;
+        }
+      } else {
+        secretManagerConfigBuilder_.mergeFrom(value);
+      }
+      if (secretManagerConfig_ != null) {
+        bitField2_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder clearSecretManagerConfig() {
+      bitField2_ = (bitField2_ & ~0x00000010);
+      secretManagerConfig_ = null;
+      if (secretManagerConfigBuilder_ != null) {
+        secretManagerConfigBuilder_.dispose();
+        secretManagerConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public com.google.container.v1.SecretManagerConfig.Builder getSecretManagerConfigBuilder() {
+      bitField2_ |= 0x00000010;
+      onChanged();
+      return getSecretManagerConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public com.google.container.v1.SecretManagerConfigOrBuilder getSecretManagerConfigOrBuilder() {
+      if (secretManagerConfigBuilder_ != null) {
+        return secretManagerConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return secretManagerConfig_ == null
+            ? com.google.container.v1.SecretManagerConfig.getDefaultInstance()
+            : secretManagerConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.SecretManagerConfig,
+            com.google.container.v1.SecretManagerConfig.Builder,
+            com.google.container.v1.SecretManagerConfigOrBuilder>
+        getSecretManagerConfigFieldBuilder() {
+      if (secretManagerConfigBuilder_ == null) {
+        secretManagerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.SecretManagerConfig,
+                com.google.container.v1.SecretManagerConfig.Builder,
+                com.google.container.v1.SecretManagerConfigOrBuilder>(
+                getSecretManagerConfig(), getParentForChildren(), isClean());
+        secretManagerConfig_ = null;
+      }
+      return secretManagerConfigBuilder_;
+    }
+
+    private com.google.container.v1.CompliancePostureConfig compliancePostureConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.CompliancePostureConfig,
+            com.google.container.v1.CompliancePostureConfig.Builder,
+            com.google.container.v1.CompliancePostureConfigOrBuilder>
+        compliancePostureConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     *
+     * @return Whether the compliancePostureConfig field is set.
+     */
+    public boolean hasCompliancePostureConfig() {
+      return ((bitField2_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     *
+     * @return The compliancePostureConfig.
+     */
+    public com.google.container.v1.CompliancePostureConfig getCompliancePostureConfig() {
+      if (compliancePostureConfigBuilder_ == null) {
+        return compliancePostureConfig_ == null
+            ? com.google.container.v1.CompliancePostureConfig.getDefaultInstance()
+            : compliancePostureConfig_;
+      } else {
+        return compliancePostureConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     */
+    public Builder setCompliancePostureConfig(
+        com.google.container.v1.CompliancePostureConfig value) {
+      if (compliancePostureConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        compliancePostureConfig_ = value;
+      } else {
+        compliancePostureConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     */
+    public Builder setCompliancePostureConfig(
+        com.google.container.v1.CompliancePostureConfig.Builder builderForValue) {
+      if (compliancePostureConfigBuilder_ == null) {
+        compliancePostureConfig_ = builderForValue.build();
+      } else {
+        compliancePostureConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     */
+    public Builder mergeCompliancePostureConfig(
+        com.google.container.v1.CompliancePostureConfig value) {
+      if (compliancePostureConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000020) != 0)
+            && compliancePostureConfig_ != null
+            && compliancePostureConfig_
+                != com.google.container.v1.CompliancePostureConfig.getDefaultInstance()) {
+          getCompliancePostureConfigBuilder().mergeFrom(value);
+        } else {
+          compliancePostureConfig_ = value;
+        }
+      } else {
+        compliancePostureConfigBuilder_.mergeFrom(value);
+      }
+      if (compliancePostureConfig_ != null) {
+        bitField2_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     */
+    public Builder clearCompliancePostureConfig() {
+      bitField2_ = (bitField2_ & ~0x00000020);
+      compliancePostureConfig_ = null;
+      if (compliancePostureConfigBuilder_ != null) {
+        compliancePostureConfigBuilder_.dispose();
+        compliancePostureConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     */
+    public com.google.container.v1.CompliancePostureConfig.Builder
+        getCompliancePostureConfigBuilder() {
+      bitField2_ |= 0x00000020;
+      onChanged();
+      return getCompliancePostureConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     */
+    public com.google.container.v1.CompliancePostureConfigOrBuilder
+        getCompliancePostureConfigOrBuilder() {
+      if (compliancePostureConfigBuilder_ != null) {
+        return compliancePostureConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return compliancePostureConfig_ == null
+            ? com.google.container.v1.CompliancePostureConfig.getDefaultInstance()
+            : compliancePostureConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Compliance Posture features for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.CompliancePostureConfig compliance_posture_config = 151;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.CompliancePostureConfig,
+            com.google.container.v1.CompliancePostureConfig.Builder,
+            com.google.container.v1.CompliancePostureConfigOrBuilder>
+        getCompliancePostureConfigFieldBuilder() {
+      if (compliancePostureConfigBuilder_ == null) {
+        compliancePostureConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.CompliancePostureConfig,
+                com.google.container.v1.CompliancePostureConfig.Builder,
+                com.google.container.v1.CompliancePostureConfigOrBuilder>(
+                getCompliancePostureConfig(), getParentForChildren(), isClean());
+        compliancePostureConfig_ = null;
+      }
+      return compliancePostureConfigBuilder_;
+    }
+
     private boolean satisfiesPzs_;
     /**
      *
@@ -17932,7 +19031,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField2_ & 0x00000008) != 0);
+      return ((bitField2_ & 0x00000040) != 0);
     }
     /**
      *
@@ -17964,7 +19063,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -17980,7 +19079,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField2_ = (bitField2_ & ~0x00000008);
+      bitField2_ = (bitField2_ & ~0x00000040);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -18000,7 +19099,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzi() {
-      return ((bitField2_ & 0x00000010) != 0);
+      return ((bitField2_ & 0x00000080) != 0);
     }
     /**
      *
@@ -18032,7 +19131,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -18048,10 +19147,403 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField2_ = (bitField2_ & ~0x00000010);
+      bitField2_ = (bitField2_ & ~0x00000080);
       satisfiesPzi_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.UserManagedKeysConfig userManagedKeysConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.UserManagedKeysConfig,
+            com.google.container.v1.UserManagedKeysConfig.Builder,
+            com.google.container.v1.UserManagedKeysConfigOrBuilder>
+        userManagedKeysConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     *
+     * @return Whether the userManagedKeysConfig field is set.
+     */
+    public boolean hasUserManagedKeysConfig() {
+      return ((bitField2_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     *
+     * @return The userManagedKeysConfig.
+     */
+    public com.google.container.v1.UserManagedKeysConfig getUserManagedKeysConfig() {
+      if (userManagedKeysConfigBuilder_ == null) {
+        return userManagedKeysConfig_ == null
+            ? com.google.container.v1.UserManagedKeysConfig.getDefaultInstance()
+            : userManagedKeysConfig_;
+      } else {
+        return userManagedKeysConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     */
+    public Builder setUserManagedKeysConfig(com.google.container.v1.UserManagedKeysConfig value) {
+      if (userManagedKeysConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userManagedKeysConfig_ = value;
+      } else {
+        userManagedKeysConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     */
+    public Builder setUserManagedKeysConfig(
+        com.google.container.v1.UserManagedKeysConfig.Builder builderForValue) {
+      if (userManagedKeysConfigBuilder_ == null) {
+        userManagedKeysConfig_ = builderForValue.build();
+      } else {
+        userManagedKeysConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     */
+    public Builder mergeUserManagedKeysConfig(com.google.container.v1.UserManagedKeysConfig value) {
+      if (userManagedKeysConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000100) != 0)
+            && userManagedKeysConfig_ != null
+            && userManagedKeysConfig_
+                != com.google.container.v1.UserManagedKeysConfig.getDefaultInstance()) {
+          getUserManagedKeysConfigBuilder().mergeFrom(value);
+        } else {
+          userManagedKeysConfig_ = value;
+        }
+      } else {
+        userManagedKeysConfigBuilder_.mergeFrom(value);
+      }
+      if (userManagedKeysConfig_ != null) {
+        bitField2_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     */
+    public Builder clearUserManagedKeysConfig() {
+      bitField2_ = (bitField2_ & ~0x00000100);
+      userManagedKeysConfig_ = null;
+      if (userManagedKeysConfigBuilder_ != null) {
+        userManagedKeysConfigBuilder_.dispose();
+        userManagedKeysConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     */
+    public com.google.container.v1.UserManagedKeysConfig.Builder getUserManagedKeysConfigBuilder() {
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return getUserManagedKeysConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     */
+    public com.google.container.v1.UserManagedKeysConfigOrBuilder
+        getUserManagedKeysConfigOrBuilder() {
+      if (userManagedKeysConfigBuilder_ != null) {
+        return userManagedKeysConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return userManagedKeysConfig_ == null
+            ? com.google.container.v1.UserManagedKeysConfig.getDefaultInstance()
+            : userManagedKeysConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Custom keys configuration for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 154;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.UserManagedKeysConfig,
+            com.google.container.v1.UserManagedKeysConfig.Builder,
+            com.google.container.v1.UserManagedKeysConfigOrBuilder>
+        getUserManagedKeysConfigFieldBuilder() {
+      if (userManagedKeysConfigBuilder_ == null) {
+        userManagedKeysConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.UserManagedKeysConfig,
+                com.google.container.v1.UserManagedKeysConfig.Builder,
+                com.google.container.v1.UserManagedKeysConfigOrBuilder>(
+                getUserManagedKeysConfig(), getParentForChildren(), isClean());
+        userManagedKeysConfig_ = null;
+      }
+      return userManagedKeysConfigBuilder_;
+    }
+
+    private com.google.container.v1.RBACBindingConfig rbacBindingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.RBACBindingConfig,
+            com.google.container.v1.RBACBindingConfig.Builder,
+            com.google.container.v1.RBACBindingConfigOrBuilder>
+        rbacBindingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     *
+     * @return Whether the rbacBindingConfig field is set.
+     */
+    public boolean hasRbacBindingConfig() {
+      return ((bitField2_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     *
+     * @return The rbacBindingConfig.
+     */
+    public com.google.container.v1.RBACBindingConfig getRbacBindingConfig() {
+      if (rbacBindingConfigBuilder_ == null) {
+        return rbacBindingConfig_ == null
+            ? com.google.container.v1.RBACBindingConfig.getDefaultInstance()
+            : rbacBindingConfig_;
+      } else {
+        return rbacBindingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     */
+    public Builder setRbacBindingConfig(com.google.container.v1.RBACBindingConfig value) {
+      if (rbacBindingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rbacBindingConfig_ = value;
+      } else {
+        rbacBindingConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     */
+    public Builder setRbacBindingConfig(
+        com.google.container.v1.RBACBindingConfig.Builder builderForValue) {
+      if (rbacBindingConfigBuilder_ == null) {
+        rbacBindingConfig_ = builderForValue.build();
+      } else {
+        rbacBindingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     */
+    public Builder mergeRbacBindingConfig(com.google.container.v1.RBACBindingConfig value) {
+      if (rbacBindingConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000200) != 0)
+            && rbacBindingConfig_ != null
+            && rbacBindingConfig_
+                != com.google.container.v1.RBACBindingConfig.getDefaultInstance()) {
+          getRbacBindingConfigBuilder().mergeFrom(value);
+        } else {
+          rbacBindingConfig_ = value;
+        }
+      } else {
+        rbacBindingConfigBuilder_.mergeFrom(value);
+      }
+      if (rbacBindingConfig_ != null) {
+        bitField2_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     */
+    public Builder clearRbacBindingConfig() {
+      bitField2_ = (bitField2_ & ~0x00000200);
+      rbacBindingConfig_ = null;
+      if (rbacBindingConfigBuilder_ != null) {
+        rbacBindingConfigBuilder_.dispose();
+        rbacBindingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     */
+    public com.google.container.v1.RBACBindingConfig.Builder getRbacBindingConfigBuilder() {
+      bitField2_ |= 0x00000200;
+      onChanged();
+      return getRbacBindingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     */
+    public com.google.container.v1.RBACBindingConfigOrBuilder getRbacBindingConfigOrBuilder() {
+      if (rbacBindingConfigBuilder_ != null) {
+        return rbacBindingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return rbacBindingConfig_ == null
+            ? com.google.container.v1.RBACBindingConfig.getDefaultInstance()
+            : rbacBindingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * RBACBindingConfig allows user to restrict ClusterRoleBindings an
+     * RoleBindings that can be created.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.RBACBindingConfig rbac_binding_config = 156;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.RBACBindingConfig,
+            com.google.container.v1.RBACBindingConfig.Builder,
+            com.google.container.v1.RBACBindingConfigOrBuilder>
+        getRbacBindingConfigFieldBuilder() {
+      if (rbacBindingConfigBuilder_ == null) {
+        rbacBindingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.RBACBindingConfig,
+                com.google.container.v1.RBACBindingConfig.Builder,
+                com.google.container.v1.RBACBindingConfigOrBuilder>(
+                getRbacBindingConfig(), getParentForChildren(), isClean());
+        rbacBindingConfig_ = null;
+      }
+      return rbacBindingConfigBuilder_;
     }
 
     @java.lang.Override

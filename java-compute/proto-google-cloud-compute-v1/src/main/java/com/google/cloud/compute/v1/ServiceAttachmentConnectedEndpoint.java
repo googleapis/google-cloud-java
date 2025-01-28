@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -430,6 +430,39 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     }
   }
 
+  public static final int PROPAGATED_CONNECTION_COUNT_FIELD_NUMBER = 324594130;
+  private int propagatedConnectionCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_count = 324594130;</code>
+   *
+   * @return Whether the propagatedConnectionCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPropagatedConnectionCount() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_count = 324594130;</code>
+   *
+   * @return The propagatedConnectionCount.
+   */
+  @java.lang.Override
+  public int getPropagatedConnectionCount() {
+    return propagatedConnectionCount_;
+  }
+
   public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 292082397;
   private long pscConnectionId_ = 0L;
   /**
@@ -445,7 +478,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasPscConnectionId() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -481,7 +514,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -549,14 +582,17 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 130489749, endpoint_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 254357221, consumerNetwork_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeUInt64(292082397, pscConnectionId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeUInt32(324594130, propagatedConnectionCount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -570,14 +606,19 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(130489749, endpoint_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(254357221, consumerNetwork_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(292082397, pscConnectionId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeUInt32Size(
+              324594130, propagatedConnectionCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -602,6 +643,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (hasEndpoint() != other.hasEndpoint()) return false;
     if (hasEndpoint()) {
       if (!getEndpoint().equals(other.getEndpoint())) return false;
+    }
+    if (hasPropagatedConnectionCount() != other.hasPropagatedConnectionCount()) return false;
+    if (hasPropagatedConnectionCount()) {
+      if (getPropagatedConnectionCount() != other.getPropagatedConnectionCount()) return false;
     }
     if (hasPscConnectionId() != other.hasPscConnectionId()) return false;
     if (hasPscConnectionId()) {
@@ -629,6 +674,10 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     if (hasEndpoint()) {
       hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
       hash = (53 * hash) + getEndpoint().hashCode();
+    }
+    if (hasPropagatedConnectionCount()) {
+      hash = (37 * hash) + PROPAGATED_CONNECTION_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPropagatedConnectionCount();
     }
     if (hasPscConnectionId()) {
       hash = (37 * hash) + PSC_CONNECTION_ID_FIELD_NUMBER;
@@ -780,6 +829,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       bitField0_ = 0;
       consumerNetwork_ = "";
       endpoint_ = "";
+      propagatedConnectionCount_ = 0;
       pscConnectionId_ = 0L;
       status_ = "";
       return this;
@@ -830,12 +880,16 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.pscConnectionId_ = pscConnectionId_;
+        result.propagatedConnectionCount_ = propagatedConnectionCount_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.status_ = status_;
+        result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -897,12 +951,15 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasPropagatedConnectionCount()) {
+        setPropagatedConnectionCount(other.getPropagatedConnectionCount());
+      }
       if (other.hasPscConnectionId()) {
         setPscConnectionId(other.getPscConnectionId());
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -940,7 +997,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1450082194
             case 2034857770:
@@ -952,9 +1009,15 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
             case -1958308120:
               {
                 pscConnectionId_ = input.readUInt64();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1958308120
+            case -1698214256:
+              {
+                propagatedConnectionCount_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1698214256
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1214,6 +1277,74 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       return this;
     }
 
+    private int propagatedConnectionCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_count = 324594130;</code>
+     *
+     * @return Whether the propagatedConnectionCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasPropagatedConnectionCount() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_count = 324594130;</code>
+     *
+     * @return The propagatedConnectionCount.
+     */
+    @java.lang.Override
+    public int getPropagatedConnectionCount() {
+      return propagatedConnectionCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_count = 324594130;</code>
+     *
+     * @param value The propagatedConnectionCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropagatedConnectionCount(int value) {
+
+      propagatedConnectionCount_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_count = 324594130;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPropagatedConnectionCount() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      propagatedConnectionCount_ = 0;
+      onChanged();
+      return this;
+    }
+
     private long pscConnectionId_;
     /**
      *
@@ -1228,7 +1359,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     @java.lang.Override
     public boolean hasPscConnectionId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1260,7 +1391,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
     public Builder setPscConnectionId(long value) {
 
       pscConnectionId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1276,7 +1407,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       pscConnectionId_ = 0L;
       onChanged();
       return this;
@@ -1296,7 +1427,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1362,7 +1493,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1380,7 +1511,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1403,7 +1534,7 @@ public final class ServiceAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

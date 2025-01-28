@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -382,6 +382,41 @@ public interface ConnectionProfileOrBuilder
    * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
    */
   com.google.cloud.datastream.v1.PostgresqlProfileOrBuilder getPostgresqlProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
+   *
+   * @return Whether the sqlServerProfile field is set.
+   */
+  boolean hasSqlServerProfile();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
+   *
+   * @return The sqlServerProfile.
+   */
+  com.google.cloud.datastream.v1.SqlServerProfile getSqlServerProfile();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
+   */
+  com.google.cloud.datastream.v1.SqlServerProfileOrBuilder getSqlServerProfileOrBuilder();
 
   /**
    *

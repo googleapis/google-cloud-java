@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -401,7 +401,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -413,7 +413,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -425,7 +425,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -475,6 +475,31 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
+   * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+   *
+   * @return Whether the nextHopInterRegionCost field is set.
+   */
+  boolean hasNextHopInterRegionCost();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+   *
+   * @return The nextHopInterRegionCost.
+   */
+  int getNextHopInterRegionCost();
+
+  /**
+   *
+   *
+   * <pre>
    * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
@@ -512,6 +537,31 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_med = 198683530;</code>
+   *
+   * @return Whether the nextHopMed field is set.
+   */
+  boolean hasNextHopMed();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_med = 198683530;</code>
+   *
+   * @return The nextHopMed.
+   */
+  int getNextHopMed();
+
+  /**
+   *
+   *
+   * <pre>
    * The URL of the local network if it should handle matching packets.
    * </pre>
    *
@@ -544,6 +594,46 @@ public interface RouteOrBuilder
    * @return The bytes for nextHopNetwork.
    */
   com.google.protobuf.ByteString getNextHopNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * Check the NextHopOrigin enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string next_hop_origin = 48752808;</code>
+   *
+   * @return Whether the nextHopOrigin field is set.
+   */
+  boolean hasNextHopOrigin();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * Check the NextHopOrigin enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string next_hop_origin = 48752808;</code>
+   *
+   * @return The nextHopOrigin.
+   */
+  java.lang.String getNextHopOrigin();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * Check the NextHopOrigin enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string next_hop_origin = 48752808;</code>
+   *
+   * @return The bytes for nextHopOrigin.
+   */
+  com.google.protobuf.ByteString getNextHopOriginBytes();
 
   /**
    *

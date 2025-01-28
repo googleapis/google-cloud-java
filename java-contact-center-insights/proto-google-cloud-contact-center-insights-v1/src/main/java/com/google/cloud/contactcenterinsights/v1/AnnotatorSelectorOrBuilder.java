@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -305,4 +305,53 @@ public interface AnnotatorSelectorOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfigOrBuilder
       getSummarizationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to run the QA annotator.
+   * </pre>
+   *
+   * <code>bool run_qa_annotator = 12;</code>
+   *
+   * @return The runQaAnnotator.
+   */
+  boolean getRunQaAnnotator();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the QA annotator.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;</code>
+   *
+   * @return Whether the qaConfig field is set.
+   */
+  boolean hasQaConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the QA annotator.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;</code>
+   *
+   * @return The qaConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig getQaConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the QA annotator.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfig qa_config = 13;</code>
+   */
+  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.QaConfigOrBuilder
+      getQaConfigOrBuilder();
 }

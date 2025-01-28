@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,21 +28,19 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Identifier. The name of the service.
+   * Identifier. The name of the service, in one of the following formats:
    *
-   * Its format is:
+   * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+   * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+   * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
    *
-   *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-   *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-   *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+   * The following values are valid for `{service}`:
    *
-   * The possible values for id {service} are:
-   *
-   *   * container-threat-detection
-   *   * event-threat-detection
-   *   * security-health-analytics
-   *   * vm-threat-detection
-   *   * web-security-scanner
+   * * `container-threat-detection`
+   * * `event-threat-detection`
+   * * `security-health-analytics`
+   * * `vm-threat-detection`
+   * * `web-security-scanner`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -54,21 +52,19 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Identifier. The name of the service.
+   * Identifier. The name of the service, in one of the following formats:
    *
-   * Its format is:
+   * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+   * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+   * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
    *
-   *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-   *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-   *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+   * The following values are valid for `{service}`:
    *
-   * The possible values for id {service} are:
-   *
-   *   * container-threat-detection
-   *   * event-threat-detection
-   *   * security-health-analytics
-   *   * vm-threat-detection
-   *   * web-security-scanner
+   * * `container-threat-detection`
+   * * `event-threat-detection`
+   * * `security-health-analytics`
+   * * `vm-threat-detection`
+   * * `web-security-scanner`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -81,9 +77,9 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. The intended state of enablement for the service at its level of
-   * the resource hierarchy. A DISABLED state will override all module
-   * enablement_states to DISABLED.
+   * Optional. The intended enablement state for the service at its level of the
+   * resource hierarchy. A `DISABLED` state will override all module enablement
+   * states to `DISABLED`.
    * </pre>
    *
    * <code>
@@ -97,9 +93,9 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. The intended state of enablement for the service at its level of
-   * the resource hierarchy. A DISABLED state will override all module
-   * enablement_states to DISABLED.
+   * Optional. The intended enablement state for the service at its level of the
+   * resource hierarchy. A `DISABLED` state will override all module enablement
+   * states to `DISABLED`.
    * </pre>
    *
    * <code>
@@ -116,7 +112,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    * <pre>
    * Output only. The effective enablement state for the service at its level of
-   * the resource hierarchy. If the intended state is set to INHERITED, the
+   * the resource hierarchy. If the intended state is set to `INHERITED`, the
    * effective state will be inherited from the enablement state of an ancestor.
    * This state may differ from the intended enablement state due to billing
    * eligibility or onboarding status.
@@ -134,7 +130,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    * <pre>
    * Output only. The effective enablement state for the service at its level of
-   * the resource hierarchy. If the intended state is set to INHERITED, the
+   * the resource hierarchy. If the intended state is set to `INHERITED`, the
    * effective state will be inherited from the enablement state of an ancestor.
    * This state may differ from the intended enablement state due to billing
    * eligibility or onboarding status.
@@ -153,8 +149,8 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -167,8 +163,8 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -187,8 +183,8 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -204,8 +200,8 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -224,8 +220,8 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -241,7 +237,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    * <pre>
    * Output only. The time the service was last updated. This could be due to an
-   * explicit user update or due to a side effect of another system change such
+   * explicit user update or due to a side effect of another system change, such
    * as billing subscription expiry.
    * </pre>
    *
@@ -256,7 +252,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    * <pre>
    * Output only. The time the service was last updated. This could be due to an
-   * explicit user update or due to a side effect of another system change such
+   * explicit user update or due to a side effect of another system change, such
    * as billing subscription expiry.
    * </pre>
    *
@@ -271,7 +267,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    * <pre>
    * Output only. The time the service was last updated. This could be due to an
-   * explicit user update or due to a side effect of another system change such
+   * explicit user update or due to a side effect of another system change, such
    * as billing subscription expiry.
    * </pre>
    *
@@ -284,7 +280,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional service specific configuration. Not all services will
+   * Optional. Additional service-specific configuration. Not all services will
    * utilize this field.
    * </pre>
    *
@@ -298,7 +294,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional service specific configuration. Not all services will
+   * Optional. Additional service-specific configuration. Not all services will
    * utilize this field.
    * </pre>
    *
@@ -312,7 +308,7 @@ public interface SecurityCenterServiceOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional service specific configuration. Not all services will
+   * Optional. Additional service-specific configuration. Not all services will
    * utilize this field.
    * </pre>
    *

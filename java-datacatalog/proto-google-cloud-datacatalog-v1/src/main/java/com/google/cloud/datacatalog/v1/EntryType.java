@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,6 +212,36 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOOK = 18;</code>
    */
   LOOK(18),
+  /**
+   *
+   *
+   * <pre>
+   * Feature Online Store resource in Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>FEATURE_ONLINE_STORE = 19;</code>
+   */
+  FEATURE_ONLINE_STORE(19),
+  /**
+   *
+   *
+   * <pre>
+   * Feature View resource in Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>FEATURE_VIEW = 20;</code>
+   */
+  FEATURE_VIEW(20),
+  /**
+   *
+   *
+   * <pre>
+   * Feature Group resource in Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>FEATURE_GROUP = 21;</code>
+   */
+  FEATURE_GROUP(21),
   UNRECOGNIZED(-1),
   ;
 
@@ -387,6 +417,36 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOOK = 18;</code>
    */
   public static final int LOOK_VALUE = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Feature Online Store resource in Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>FEATURE_ONLINE_STORE = 19;</code>
+   */
+  public static final int FEATURE_ONLINE_STORE_VALUE = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Feature View resource in Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>FEATURE_VIEW = 20;</code>
+   */
+  public static final int FEATURE_VIEW_VALUE = 20;
+  /**
+   *
+   *
+   * <pre>
+   * Feature Group resource in Vertex AI Feature Store.
+   * </pre>
+   *
+   * <code>FEATURE_GROUP = 21;</code>
+   */
+  public static final int FEATURE_GROUP_VALUE = 21;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -444,6 +504,12 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
         return EXPLORE;
       case 18:
         return LOOK;
+      case 19:
+        return FEATURE_ONLINE_STORE;
+      case 20:
+        return FEATURE_VIEW;
+      case 21:
+        return FEATURE_GROUP;
       default:
         return null;
     }

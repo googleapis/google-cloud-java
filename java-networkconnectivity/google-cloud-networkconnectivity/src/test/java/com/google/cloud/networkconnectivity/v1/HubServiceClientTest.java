@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocat
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.QueryHubStatusPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -213,6 +214,9 @@ public class HubServiceClientTest {
             .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .addAllRouteTables(new ArrayList<String>())
             .setSpokeSummary(SpokeSummary.newBuilder().build())
+            .setPolicyMode(PolicyMode.forNumber(0))
+            .setPresetTopology(PresetTopology.forNumber(0))
+            .setExportPsc(true)
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -260,6 +264,9 @@ public class HubServiceClientTest {
             .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .addAllRouteTables(new ArrayList<String>())
             .setSpokeSummary(SpokeSummary.newBuilder().build())
+            .setPolicyMode(PolicyMode.forNumber(0))
+            .setPresetTopology(PresetTopology.forNumber(0))
+            .setExportPsc(true)
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -307,6 +314,9 @@ public class HubServiceClientTest {
             .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .addAllRouteTables(new ArrayList<String>())
             .setSpokeSummary(SpokeSummary.newBuilder().build())
+            .setPolicyMode(PolicyMode.forNumber(0))
+            .setPresetTopology(PresetTopology.forNumber(0))
+            .setExportPsc(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -368,6 +378,9 @@ public class HubServiceClientTest {
             .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .addAllRouteTables(new ArrayList<String>())
             .setSpokeSummary(SpokeSummary.newBuilder().build())
+            .setPolicyMode(PolicyMode.forNumber(0))
+            .setPresetTopology(PresetTopology.forNumber(0))
+            .setExportPsc(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -429,6 +442,9 @@ public class HubServiceClientTest {
             .addAllRoutingVpcs(new ArrayList<RoutingVPC>())
             .addAllRouteTables(new ArrayList<String>())
             .setSpokeSummary(SpokeSummary.newBuilder().build())
+            .setPolicyMode(PolicyMode.forNumber(0))
+            .setPresetTopology(PresetTopology.forNumber(0))
+            .setExportPsc(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -646,6 +662,94 @@ public class HubServiceClientTest {
   }
 
   @Test
+  public void queryHubStatusTest() throws Exception {
+    HubStatusEntry responsesElement = HubStatusEntry.newBuilder().build();
+    QueryHubStatusResponse expectedResponse =
+        QueryHubStatusResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllHubStatusEntries(Arrays.asList(responsesElement))
+            .build();
+    mockHubService.addResponse(expectedResponse);
+
+    HubName name = HubName.of("[PROJECT]", "[HUB]");
+
+    QueryHubStatusPagedResponse pagedListResponse = client.queryHubStatus(name);
+
+    List<HubStatusEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getHubStatusEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryHubStatusRequest actualRequest = ((QueryHubStatusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryHubStatusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      HubName name = HubName.of("[PROJECT]", "[HUB]");
+      client.queryHubStatus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryHubStatusTest2() throws Exception {
+    HubStatusEntry responsesElement = HubStatusEntry.newBuilder().build();
+    QueryHubStatusResponse expectedResponse =
+        QueryHubStatusResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllHubStatusEntries(Arrays.asList(responsesElement))
+            .build();
+    mockHubService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QueryHubStatusPagedResponse pagedListResponse = client.queryHubStatus(name);
+
+    List<HubStatusEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getHubStatusEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryHubStatusRequest actualRequest = ((QueryHubStatusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryHubStatusExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.queryHubStatus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listSpokesTest() throws Exception {
     Spoke responsesElement = Spoke.newBuilder().build();
     ListSpokesResponse expectedResponse =
@@ -748,6 +852,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
@@ -800,6 +905,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
@@ -852,6 +958,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
@@ -918,6 +1025,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
@@ -984,6 +1092,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
             .addAllReasons(new ArrayList<Spoke.StateReason>())
@@ -1596,6 +1705,10 @@ public class HubServiceClientTest {
             .setState(State.forNumber(0))
             .setSpoke(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
             .setLocation("location1901043637")
+            .setPriority(-1165461084)
+            .setNextHopVpnTunnel(NextHopVPNTunnel.newBuilder().build())
+            .setNextHopRouterApplianceInstance(NextHopRouterApplianceInstance.newBuilder().build())
+            .setNextHopInterconnectAttachment(NextHopInterconnectAttachment.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -1645,6 +1758,10 @@ public class HubServiceClientTest {
             .setState(State.forNumber(0))
             .setSpoke(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
             .setLocation("location1901043637")
+            .setPriority(-1165461084)
+            .setNextHopVpnTunnel(NextHopVPNTunnel.newBuilder().build())
+            .setNextHopRouterApplianceInstance(NextHopRouterApplianceInstance.newBuilder().build())
+            .setNextHopInterconnectAttachment(NextHopInterconnectAttachment.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -1865,6 +1982,8 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .setUid("uid115792")
             .setState(State.forNumber(0))
+            .setAutoAccept(AutoAccept.newBuilder().build())
+            .setRouteTable("routeTable902012677")
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -1909,6 +2028,8 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .setUid("uid115792")
             .setState(State.forNumber(0))
+            .setAutoAccept(AutoAccept.newBuilder().build())
+            .setRouteTable("routeTable902012677")
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -2027,6 +2148,63 @@ public class HubServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGroupTest() throws Exception {
+    Group expectedResponse =
+        Group.newBuilder()
+            .setName(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .setState(State.forNumber(0))
+            .setAutoAccept(AutoAccept.newBuilder().build())
+            .setRouteTable("routeTable902012677")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGroupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    Group group = Group.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Group actualResponse = client.updateGroupAsync(group, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGroupRequest actualRequest = ((UpdateGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(group, actualRequest.getGroup());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      Group group = Group.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGroupAsync(group, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

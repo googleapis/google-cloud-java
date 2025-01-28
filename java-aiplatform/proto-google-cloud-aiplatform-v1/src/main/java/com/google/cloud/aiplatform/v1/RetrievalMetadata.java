@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,11 +67,11 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Score indicating how likely information from google search could
+   * Optional. Score indicating how likely information from Google Search could
    * help answer the prompt. The score is in the range `[0, 1]`, where 0 is the
    * least likely and 1 is the most likely. This score is only populated when
-   * google search grounding and dynamic retrieval is enabled. It will be
-   * compared to the threshold to determine whether to trigger google search.
+   * Google Search grounding and dynamic retrieval is enabled. It will be
+   * compared to the threshold to determine whether to trigger Google Search.
    * </pre>
    *
    * <code>
@@ -434,11 +434,11 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Score indicating how likely information from google search could
+     * Optional. Score indicating how likely information from Google Search could
      * help answer the prompt. The score is in the range `[0, 1]`, where 0 is the
      * least likely and 1 is the most likely. This score is only populated when
-     * google search grounding and dynamic retrieval is enabled. It will be
-     * compared to the threshold to determine whether to trigger google search.
+     * Google Search grounding and dynamic retrieval is enabled. It will be
+     * compared to the threshold to determine whether to trigger Google Search.
      * </pre>
      *
      * <code>
@@ -455,11 +455,11 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Score indicating how likely information from google search could
+     * Optional. Score indicating how likely information from Google Search could
      * help answer the prompt. The score is in the range `[0, 1]`, where 0 is the
      * least likely and 1 is the most likely. This score is only populated when
-     * google search grounding and dynamic retrieval is enabled. It will be
-     * compared to the threshold to determine whether to trigger google search.
+     * Google Search grounding and dynamic retrieval is enabled. It will be
+     * compared to the threshold to determine whether to trigger Google Search.
      * </pre>
      *
      * <code>
@@ -480,11 +480,11 @@ public final class RetrievalMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Score indicating how likely information from google search could
+     * Optional. Score indicating how likely information from Google Search could
      * help answer the prompt. The score is in the range `[0, 1]`, where 0 is the
      * least likely and 1 is the most likely. This score is only populated when
-     * google search grounding and dynamic retrieval is enabled. It will be
-     * compared to the threshold to determine whether to trigger google search.
+     * Google Search grounding and dynamic retrieval is enabled. It will be
+     * compared to the threshold to determine whether to trigger Google Search.
      * </pre>
      *
      * <code>

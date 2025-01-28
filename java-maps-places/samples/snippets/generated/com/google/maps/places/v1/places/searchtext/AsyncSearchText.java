@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public class AsyncSearchText {
               .setRoutingParameters(RoutingParameters.newBuilder().build())
               .setSearchAlongRouteParameters(
                   SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       ApiFuture<SearchTextResponse> future = placesClient.searchTextCallable().futureCall(request);
       // Do something.

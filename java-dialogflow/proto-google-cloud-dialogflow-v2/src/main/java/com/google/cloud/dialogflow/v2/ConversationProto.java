@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,34 @@ public final class ConversationProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_SearchKnowledgeResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_SearchKnowledgeResponse_fieldAccessorTable;
@@ -142,203 +170,258 @@ public final class ConversationProto {
           + "proto\032*google/cloud/dialogflow/v2/genera"
           + "tor.proto\032,google/cloud/dialogflow/v2/pa"
           + "rticipant.proto\032(google/cloud/dialogflow"
-          + "/v2/session.proto\032\037google/protobuf/times"
-          + "tamp.proto\"\345\006\n\014Conversation\022\024\n\004name\030\001 \001("
-          + "\tB\006\340A\003\340A\010\022U\n\017lifecycle_state\030\002 \001(\01627.goo"
-          + "gle.cloud.dialogflow.v2.Conversation.Lif"
-          + "ecycleStateB\003\340A\003\022S\n\024conversation_profile"
-          + "\030\003 \001(\tB5\340A\002\372A/\n-dialogflow.googleapis.co"
-          + "m/ConversationProfile\022N\n\014phone_number\030\004 "
-          + "\001(\01323.google.cloud.dialogflow.v2.Convers"
-          + "ationPhoneNumberB\003\340A\003\0223\n\nstart_time\030\005 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n\010en"
-          + "d_time\030\006 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\022[\n\022conversation_stage\030\007 \001(\0162:.goog"
-          + "le.cloud.dialogflow.v2.Conversation.Conv"
-          + "ersationStageB\003\340A\001\"Q\n\016LifecycleState\022\037\n\033"
-          + "LIFECYCLE_STATE_UNSPECIFIED\020\000\022\017\n\013IN_PROG"
-          + "RESS\020\001\022\r\n\tCOMPLETED\020\002\"h\n\021ConversationSta"
-          + "ge\022\"\n\036CONVERSATION_STAGE_UNSPECIFIED\020\000\022\027"
-          + "\n\023VIRTUAL_AGENT_STAGE\020\001\022\026\n\022HUMAN_ASSIST_"
-          + "STAGE\020\002:\300\001\352A\274\001\n&dialogflow.googleapis.co"
-          + "m/Conversation\022/projects/{project}/conve"
-          + "rsations/{conversation}\022Dprojects/{proje"
-          + "ct}/locations/{location}/conversations/{"
-          + "conversation}*\rconversations2\014conversati"
-          + "on\"\276\001\n\031CreateConversationRequest\022>\n\006pare"
-          + "nt\030\001 \001(\tB.\340A\002\372A(\022&dialogflow.googleapis."
-          + "com/Conversation\022C\n\014conversation\030\002 \001(\0132("
-          + ".google.cloud.dialogflow.v2.Conversation"
-          + "B\003\340A\002\022\034\n\017conversation_id\030\003 \001(\tB\003\340A\001\"\240\001\n\030"
-          + "ListConversationsRequest\022>\n\006parent\030\001 \001(\t"
-          + "B.\340A\002\372A(\022&dialogflow.googleapis.com/Conv"
-          + "ersation\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage"
-          + "_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\"u"
-          + "\n\031ListConversationsResponse\022?\n\rconversat"
-          + "ions\030\001 \003(\0132(.google.cloud.dialogflow.v2."
-          + "Conversation\022\027\n\017next_page_token\030\002 \001(\t\"V\n"
-          + "\026GetConversationRequest\022<\n\004name\030\001 \001(\tB.\340"
-          + "A\002\372A(\n&dialogflow.googleapis.com/Convers"
-          + "ation\"[\n\033CompleteConversationRequest\022<\n\004"
-          + "name\030\001 \001(\tB.\340A\002\372A(\n&dialogflow.googleapi"
-          + "s.com/Conversation\"\226\001\n\023ListMessagesReque"
-          + "st\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!dialogflow.g"
-          + "oogleapis.com/Message\022\023\n\006filter\030\004 \001(\tB\003\340"
-          + "A\001\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token"
-          + "\030\003 \001(\tB\003\340A\001\"f\n\024ListMessagesResponse\0225\n\010m"
-          + "essages\030\001 \003(\0132#.google.cloud.dialogflow."
-          + "v2.Message\022\027\n\017next_page_token\030\002 \001(\t\"4\n\027C"
-          + "onversationPhoneNumber\022\031\n\014phone_number\030\003"
-          + " \001(\tB\003\340A\003\"\234\002\n!SuggestConversationSummary"
-          + "Request\022D\n\014conversation\030\001 \001(\tB.\340A\002\372A(\n&d"
-          + "ialogflow.googleapis.com/Conversation\022A\n"
-          + "\016latest_message\030\003 \001(\tB)\340A\001\372A#\n!dialogflo"
-          + "w.googleapis.com/Message\022\031\n\014context_size"
-          + "\030\004 \001(\005B\003\340A\001\022S\n\023assist_query_params\030\005 \001(\013"
-          + "21.google.cloud.dialogflow.v2.AssistQuer"
-          + "yParametersB\003\340A\001\"\367\003\n\"SuggestConversation"
-          + "SummaryResponse\022W\n\007summary\030\001 \001(\0132F.googl"
-          + "e.cloud.dialogflow.v2.SuggestConversatio"
-          + "nSummaryResponse.Summary\022>\n\016latest_messa"
-          + "ge\030\002 \001(\tB&\372A#\n!dialogflow.googleapis.com"
-          + "/Message\022\024\n\014context_size\030\003 \001(\005\032\241\002\n\007Summa"
-          + "ry\022\014\n\004text\030\001 \001(\t\022o\n\rtext_sections\030\004 \003(\0132"
-          + "X.google.cloud.dialogflow.v2.SuggestConv"
-          + "ersationSummaryResponse.Summary.TextSect"
-          + "ionsEntry\022B\n\ranswer_record\030\003 \001(\tB+\372A(\n&d"
-          + "ialogflow.googleapis.com/AnswerRecord\022\036\n"
-          + "\026baseline_model_version\030\005 \001(\t\0323\n\021TextSec"
-          + "tionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001\"\334\003\n\037GenerateStatelessSummaryRequest\022t"
-          + "\n\026stateless_conversation\030\001 \001(\0132O.google."
-          + "cloud.dialogflow.v2.GenerateStatelessSum"
-          + "maryRequest.MinimalConversationB\003\340A\002\022R\n\024"
-          + "conversation_profile\030\002 \001(\0132/.google.clou"
-          + "d.dialogflow.v2.ConversationProfileB\003\340A\002"
-          + "\022A\n\016latest_message\030\003 \001(\tB)\340A\001\372A#\n!dialog"
-          + "flow.googleapis.com/Message\022\035\n\020max_conte"
-          + "xt_size\030\004 \001(\005B\003\340A\001\032\214\001\n\023MinimalConversati"
-          + "on\022:\n\010messages\030\001 \003(\0132#.google.cloud.dial"
-          + "ogflow.v2.MessageB\003\340A\002\0229\n\006parent\030\002 \001(\tB)"
+          + "/v2/session.proto\032\034google/protobuf/struc"
+          + "t.proto\032\037google/protobuf/timestamp.proto"
+          + "\"\345\006\n\014Conversation\022\024\n\004name\030\001 \001(\tB\006\340A\003\340A\010\022"
+          + "U\n\017lifecycle_state\030\002 \001(\01627.google.cloud."
+          + "dialogflow.v2.Conversation.LifecycleStat"
+          + "eB\003\340A\003\022S\n\024conversation_profile\030\003 \001(\tB5\340A"
+          + "\002\372A/\n-dialogflow.googleapis.com/Conversa"
+          + "tionProfile\022N\n\014phone_number\030\004 \001(\01323.goog"
+          + "le.cloud.dialogflow.v2.ConversationPhone"
+          + "NumberB\003\340A\003\0223\n\nstart_time\030\005 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\006 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022[\n\022c"
+          + "onversation_stage\030\007 \001(\0162:.google.cloud.d"
+          + "ialogflow.v2.Conversation.ConversationSt"
+          + "ageB\003\340A\001\"Q\n\016LifecycleState\022\037\n\033LIFECYCLE_"
+          + "STATE_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001\022\r\n\t"
+          + "COMPLETED\020\002\"h\n\021ConversationStage\022\"\n\036CONV"
+          + "ERSATION_STAGE_UNSPECIFIED\020\000\022\027\n\023VIRTUAL_"
+          + "AGENT_STAGE\020\001\022\026\n\022HUMAN_ASSIST_STAGE\020\002:\300\001"
+          + "\352A\274\001\n&dialogflow.googleapis.com/Conversa"
+          + "tion\022/projects/{project}/conversations/{"
+          + "conversation}\022Dprojects/{project}/locati"
+          + "ons/{location}/conversations/{conversati"
+          + "on}*\rconversations2\014conversation\"\276\001\n\031Cre"
+          + "ateConversationRequest\022>\n\006parent\030\001 \001(\tB."
+          + "\340A\002\372A(\022&dialogflow.googleapis.com/Conver"
+          + "sation\022C\n\014conversation\030\002 \001(\0132(.google.cl"
+          + "oud.dialogflow.v2.ConversationB\003\340A\002\022\034\n\017c"
+          + "onversation_id\030\003 \001(\tB\003\340A\001\"\240\001\n\030ListConver"
+          + "sationsRequest\022>\n\006parent\030\001 \001(\tB.\340A\002\372A(\022&"
+          + "dialogflow.googleapis.com/Conversation\022\026"
+          + "\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001"
+          + "(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\"u\n\031ListConv"
+          + "ersationsResponse\022?\n\rconversations\030\001 \003(\013"
+          + "2(.google.cloud.dialogflow.v2.Conversati"
+          + "on\022\027\n\017next_page_token\030\002 \001(\t\"V\n\026GetConver"
+          + "sationRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&dia"
+          + "logflow.googleapis.com/Conversation\"[\n\033C"
+          + "ompleteConversationRequest\022<\n\004name\030\001 \001(\t"
+          + "B.\340A\002\372A(\n&dialogflow.googleapis.com/Conv"
+          + "ersation\"\226\001\n\023ListMessagesRequest\0229\n\006pare"
+          + "nt\030\001 \001(\tB)\340A\002\372A#\022!dialogflow.googleapis."
+          + "com/Message\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\026\n\tpage"
+          + "_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A"
+          + "\001\"f\n\024ListMessagesResponse\0225\n\010messages\030\001 "
+          + "\003(\0132#.google.cloud.dialogflow.v2.Message"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"4\n\027Conversatio"
+          + "nPhoneNumber\022\031\n\014phone_number\030\003 \001(\tB\003\340A\003\""
+          + "\234\002\n!SuggestConversationSummaryRequest\022D\n"
+          + "\014conversation\030\001 \001(\tB.\340A\002\372A(\n&dialogflow."
+          + "googleapis.com/Conversation\022A\n\016latest_me"
+          + "ssage\030\003 \001(\tB)\340A\001\372A#\n!dialogflow.googleap"
+          + "is.com/Message\022\031\n\014context_size\030\004 \001(\005B\003\340A"
+          + "\001\022S\n\023assist_query_params\030\005 \001(\01321.google."
+          + "cloud.dialogflow.v2.AssistQueryParameter"
+          + "sB\003\340A\001\"\367\003\n\"SuggestConversationSummaryRes"
+          + "ponse\022W\n\007summary\030\001 \001(\0132F.google.cloud.di"
+          + "alogflow.v2.SuggestConversationSummaryRe"
+          + "sponse.Summary\022>\n\016latest_message\030\002 \001(\tB&"
+          + "\372A#\n!dialogflow.googleapis.com/Message\022\024"
+          + "\n\014context_size\030\003 \001(\005\032\241\002\n\007Summary\022\014\n\004text"
+          + "\030\001 \001(\t\022o\n\rtext_sections\030\004 \003(\0132X.google.c"
+          + "loud.dialogflow.v2.SuggestConversationSu"
+          + "mmaryResponse.Summary.TextSectionsEntry\022"
+          + "B\n\ranswer_record\030\003 \001(\tB+\372A(\n&dialogflow."
+          + "googleapis.com/AnswerRecord\022\036\n\026baseline_"
+          + "model_version\030\005 \001(\t\0323\n\021TextSectionsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\334\003\n\037Gen"
+          + "erateStatelessSummaryRequest\022t\n\026stateles"
+          + "s_conversation\030\001 \001(\0132O.google.cloud.dial"
+          + "ogflow.v2.GenerateStatelessSummaryReques"
+          + "t.MinimalConversationB\003\340A\002\022R\n\024conversati"
+          + "on_profile\030\002 \001(\0132/.google.cloud.dialogfl"
+          + "ow.v2.ConversationProfileB\003\340A\002\022A\n\016latest"
+          + "_message\030\003 \001(\tB)\340A\001\372A#\n!dialogflow.googl"
+          + "eapis.com/Message\022\035\n\020max_context_size\030\004 "
+          + "\001(\005B\003\340A\001\032\214\001\n\023MinimalConversation\022:\n\010mess"
+          + "ages\030\001 \003(\0132#.google.cloud.dialogflow.v2."
+          + "MessageB\003\340A\002\0229\n\006parent\030\002 \001(\tB)\340A\002\372A#\n!lo"
+          + "cations.googleapis.com/Location\"\255\003\n Gene"
+          + "rateStatelessSummaryResponse\022U\n\007summary\030"
+          + "\001 \001(\0132D.google.cloud.dialogflow.v2.Gener"
+          + "ateStatelessSummaryResponse.Summary\022>\n\016l"
+          + "atest_message\030\002 \001(\tB&\372A#\n!dialogflow.goo"
+          + "gleapis.com/Message\022\024\n\014context_size\030\003 \001("
+          + "\005\032\333\001\n\007Summary\022\014\n\004text\030\001 \001(\t\022m\n\rtext_sect"
+          + "ions\030\002 \003(\0132V.google.cloud.dialogflow.v2."
+          + "GenerateStatelessSummaryResponse.Summary"
+          + ".TextSectionsEntry\022\036\n\026baseline_model_ver"
+          + "sion\030\004 \001(\t\0323\n\021TextSectionsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\346\002\n\"GenerateStat"
+          + "elessSuggestionRequest\0229\n\006parent\030\001 \001(\tB)"
           + "\340A\002\372A#\n!locations.googleapis.com/Locatio"
-          + "n\"\255\003\n GenerateStatelessSummaryResponse\022U"
-          + "\n\007summary\030\001 \001(\0132D.google.cloud.dialogflo"
-          + "w.v2.GenerateStatelessSummaryResponse.Su"
-          + "mmary\022>\n\016latest_message\030\002 \001(\tB&\372A#\n!dial"
-          + "ogflow.googleapis.com/Message\022\024\n\014context"
-          + "_size\030\003 \001(\005\032\333\001\n\007Summary\022\014\n\004text\030\001 \001(\t\022m\n"
-          + "\rtext_sections\030\002 \003(\0132V.google.cloud.dial"
-          + "ogflow.v2.GenerateStatelessSummaryRespon"
-          + "se.Summary.TextSectionsEntry\022\036\n\026baseline"
-          + "_model_version\030\004 \001(\t\0323\n\021TextSectionsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\346\002\n\"Ge"
-          + "nerateStatelessSuggestionRequest\0229\n\006pare"
-          + "nt\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.c"
-          + "om/Location\022:\n\tgenerator\030\002 \001(\0132%.google."
-          + "cloud.dialogflow.v2.GeneratorH\000\022\030\n\016gener"
-          + "ator_name\030\003 \001(\tH\000\022R\n\024conversation_contex"
-          + "t\030\005 \001(\0132/.google.cloud.dialogflow.v2.Con"
-          + "versationContextB\003\340A\001\022E\n\016trigger_events\030"
-          + "\006 \003(\0162(.google.cloud.dialogflow.v2.Trigg"
-          + "erEventB\003\340A\001B\024\n\022generator_resource\"y\n#Ge"
-          + "nerateStatelessSuggestionResponse\022R\n\024gen"
-          + "erator_suggestion\030\001 \001(\0132/.google.cloud.d"
-          + "ialogflow.v2.GeneratorSuggestionB\003\340A\002\"\337\002"
-          + "\n\026SearchKnowledgeRequest\022\023\n\006parent\030\006 \001(\t"
-          + "B\003\340A\002\0229\n\005query\030\001 \001(\0132%.google.cloud.dial"
-          + "ogflow.v2.TextInputB\003\340A\002\022S\n\024conversation"
-          + "_profile\030\002 \001(\tB5\340A\002\372A/\n-dialogflow.googl"
-          + "eapis.com/ConversationProfile\022\027\n\nsession"
-          + "_id\030\003 \001(\tB\003\340A\002\022D\n\014conversation\030\004 \001(\tB.\340A"
-          + "\001\372A(\n&dialogflow.googleapis.com/Conversa"
-          + "tion\022A\n\016latest_message\030\005 \001(\tB)\340A\001\372A#\n!di"
-          + "alogflow.googleapis.com/Message\"v\n\027Searc"
-          + "hKnowledgeResponse\022B\n\007answers\030\002 \003(\01321.go"
+          + "n\022:\n\tgenerator\030\002 \001(\0132%.google.cloud.dial"
+          + "ogflow.v2.GeneratorH\000\022\030\n\016generator_name\030"
+          + "\003 \001(\tH\000\022R\n\024conversation_context\030\005 \001(\0132/."
+          + "google.cloud.dialogflow.v2.ConversationC"
+          + "ontextB\003\340A\001\022E\n\016trigger_events\030\006 \003(\0162(.go"
+          + "ogle.cloud.dialogflow.v2.TriggerEventB\003\340"
+          + "A\001B\024\n\022generator_resource\"y\n#GenerateStat"
+          + "elessSuggestionResponse\022R\n\024generator_sug"
+          + "gestion\030\001 \001(\0132/.google.cloud.dialogflow."
+          + "v2.GeneratorSuggestionB\003\340A\002\"\343\021\n\026SearchKn"
+          + "owledgeRequest\022\023\n\006parent\030\006 \001(\tB\003\340A\002\0229\n\005q"
+          + "uery\030\001 \001(\0132%.google.cloud.dialogflow.v2."
+          + "TextInputB\003\340A\002\022S\n\024conversation_profile\030\002"
+          + " \001(\tB5\340A\002\372A/\n-dialogflow.googleapis.com/"
+          + "ConversationProfile\022\027\n\nsession_id\030\003 \001(\tB"
+          + "\003\340A\002\022D\n\014conversation\030\004 \001(\tB.\340A\001\372A(\n&dial"
+          + "ogflow.googleapis.com/Conversation\022A\n\016la"
+          + "test_message\030\005 \001(\tB)\340A\001\372A#\n!dialogflow.g"
+          + "oogleapis.com/Message\022Y\n\014query_source\030\007 "
+          + "\001(\0162>.google.cloud.dialogflow.v2.SearchK"
+          + "nowledgeRequest.QuerySourceB\003\340A\001\0227\n\021end_"
+          + "user_metadata\030\t \001(\0132\027.google.protobuf.St"
+          + "ructB\003\340A\001\022[\n\rsearch_config\030\013 \001(\0132?.googl"
+          + "e.cloud.dialogflow.v2.SearchKnowledgeReq"
+          + "uest.SearchConfigB\003\340A\001\022\031\n\014exact_search\030\016"
+          + " \001(\010B\003\340A\001\032\242\014\n\014SearchConfig\022d\n\013boost_spec"
+          + "s\030\001 \003(\0132J.google.cloud.dialogflow.v2.Sea"
+          + "rchKnowledgeRequest.SearchConfig.BoostSp"
+          + "ecsB\003\340A\001\022f\n\014filter_specs\030\002 \003(\0132K.google."
+          + "cloud.dialogflow.v2.SearchKnowledgeReque"
+          + "st.SearchConfig.FilterSpecsB\003\340A\001\032\205\n\n\nBoo"
+          + "stSpecs\022E\n\013data_stores\030\001 \003(\tB0\340A\001\372A*\n(di"
+          + "scoveryengine.googleapis.com/DataStore\022g"
+          + "\n\004spec\030\002 \003(\0132T.google.cloud.dialogflow.v"
+          + "2.SearchKnowledgeRequest.SearchConfig.Bo"
+          + "ostSpecs.BoostSpecB\003\340A\001\032\306\010\n\tBoostSpec\022\213\001"
+          + "\n\025condition_boost_specs\030\001 \003(\0132g.google.c"
+          + "loud.dialogflow.v2.SearchKnowledgeReques"
+          + "t.SearchConfig.BoostSpecs.BoostSpec.Cond"
+          + "itionBoostSpecB\003\340A\001\032\252\007\n\022ConditionBoostSp"
+          + "ec\022\026\n\tcondition\030\001 \001(\tB\003\340A\001\022\022\n\005boost\030\002 \001("
+          + "\002B\003\340A\001\022\231\001\n\022boost_control_spec\030\004 \001(\0132x.go"
           + "ogle.cloud.dialogflow.v2.SearchKnowledge"
-          + "Answer\022\027\n\017rewritten_query\030\003 \001(\t\"\366\002\n\025Sear"
-          + "chKnowledgeAnswer\022\016\n\006answer\030\001 \001(\t\022Q\n\013ans"
-          + "wer_type\030\002 \001(\0162<.google.cloud.dialogflow"
-          + ".v2.SearchKnowledgeAnswer.AnswerType\022V\n\016"
-          + "answer_sources\030\003 \003(\0132>.google.cloud.dial"
-          + "ogflow.v2.SearchKnowledgeAnswer.AnswerSo"
-          + "urce\022\025\n\ranswer_record\030\005 \001(\t\032;\n\014AnswerSou"
-          + "rce\022\r\n\005title\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\017\n\007snipp"
-          + "et\030\003 \001(\t\"N\n\nAnswerType\022\033\n\027ANSWER_TYPE_UN"
-          + "SPECIFIED\020\000\022\007\n\003FAQ\020\001\022\016\n\nGENERATIVE\020\002\022\n\n\006"
-          + "INTENT\020\0032\323\025\n\rConversations\022\214\002\n\022CreateCon"
-          + "versation\0225.google.cloud.dialogflow.v2.C"
-          + "reateConversationRequest\032(.google.cloud."
-          + "dialogflow.v2.Conversation\"\224\001\332A\023parent,c"
-          + "onversation\202\323\344\223\002x\"%/v2/{parent=projects/"
-          + "*}/conversations:\014conversationZA\"1/v2/{p"
-          + "arent=projects/*/locations/*}/conversati"
-          + "ons:\014conversation\022\355\001\n\021ListConversations\022"
-          + "4.google.cloud.dialogflow.v2.ListConvers"
-          + "ationsRequest\0325.google.cloud.dialogflow."
-          + "v2.ListConversationsResponse\"k\332A\006parent\202"
-          + "\323\344\223\002\\\022%/v2/{parent=projects/*}/conversat"
-          + "ionsZ3\0221/v2/{parent=projects/*/locations"
-          + "/*}/conversations\022\332\001\n\017GetConversation\0222."
-          + "google.cloud.dialogflow.v2.GetConversati"
-          + "onRequest\032(.google.cloud.dialogflow.v2.C"
-          + "onversation\"i\332A\004name\202\323\344\223\002\\\022%/v2/{name=pr"
-          + "ojects/*/conversations/*}Z3\0221/v2/{name=p"
-          + "rojects/*/locations/*/conversations/*}\022\375"
-          + "\001\n\024CompleteConversation\0227.google.cloud.d"
-          + "ialogflow.v2.CompleteConversationRequest"
-          + "\032(.google.cloud.dialogflow.v2.Conversati"
-          + "on\"\201\001\332A\004name\202\323\344\223\002t\"./v2/{name=projects/*"
-          + "/conversations/*}:complete:\001*Z?\":/v2/{na"
-          + "me=projects/*/locations/*/conversations/"
-          + "*}:complete:\001*\022\365\001\n\014ListMessages\022/.google"
-          + ".cloud.dialogflow.v2.ListMessagesRequest"
-          + "\0320.google.cloud.dialogflow.v2.ListMessag"
-          + "esResponse\"\201\001\332A\006parent\202\323\344\223\002r\0220/v2/{paren"
-          + "t=projects/*/conversations/*}/messagesZ>"
-          + "\022</v2/{parent=projects/*/locations/*/con"
-          + "versations/*}/messages\022\364\002\n\032SuggestConver"
-          + "sationSummary\022=.google.cloud.dialogflow."
-          + "v2.SuggestConversationSummaryRequest\032>.g"
-          + "oogle.cloud.dialogflow.v2.SuggestConvers"
-          + "ationSummaryResponse\"\326\001\332A\014conversation\202\323"
-          + "\344\223\002\300\001\"T/v2/{conversation=projects/*/conv"
-          + "ersations/*}/suggestions:suggestConversa"
-          + "tionSummary:\001*Ze\"`/v2/{conversation=proj"
-          + "ects/*/locations/*/conversations/*}/sugg"
-          + "estions:suggestConversationSummary:\001*\022\335\002"
-          + "\n\030GenerateStatelessSummary\022;.google.clou"
-          + "d.dialogflow.v2.GenerateStatelessSummary"
-          + "Request\032<.google.cloud.dialogflow.v2.Gen"
-          + "erateStatelessSummaryResponse\"\305\001\202\323\344\223\002\276\001\""
-          + "S/v2/{stateless_conversation.parent=proj"
-          + "ects/*}/suggestions:generateStatelessSum"
-          + "mary:\001*Zd\"_/v2/{stateless_conversation.p"
-          + "arent=projects/*/locations/*}/suggestion"
-          + "s:generateStatelessSummary:\001*\022\353\001\n\033Genera"
-          + "teStatelessSuggestion\022>.google.cloud.dia"
-          + "logflow.v2.GenerateStatelessSuggestionRe"
-          + "quest\032?.google.cloud.dialogflow.v2.Gener"
-          + "ateStatelessSuggestionResponse\"K\202\323\344\223\002E\"@"
-          + "/v2/{parent=projects/*/locations/*}/stat"
-          + "elessSuggestion:generate:\001*\022\256\003\n\017SearchKn"
-          + "owledge\0222.google.cloud.dialogflow.v2.Sea"
-          + "rchKnowledgeRequest\0323.google.cloud.dialo"
-          + "gflow.v2.SearchKnowledgeResponse\"\261\002\202\323\344\223\002"
-          + "\252\002\"3/v2/{parent=projects/*}/suggestions:"
-          + "searchKnowledge:\001*ZD\"?/v2/{parent=projec"
-          + "ts/*/locations/*}/suggestions:searchKnow"
-          + "ledge:\001*ZN\"I/v2/{conversation=projects/*"
-          + "/conversations/*}/suggestions:searchKnow"
-          + "ledge:\001*ZZ\"U/v2/{conversation=projects/*"
-          + "/locations/*/conversations/*}/suggestion"
-          + "s:searchKnowledge:\001*\032x\312A\031dialogflow.goog"
-          + "leapis.com\322AYhttps://www.googleapis.com/"
-          + "auth/cloud-platform,https://www.googleap"
-          + "is.com/auth/dialogflowB\232\001\n\036com.google.cl"
-          + "oud.dialogflow.v2B\021ConversationProtoP\001Z>"
-          + "cloud.google.com/go/dialogflow/apiv2/dia"
-          + "logflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\032Google."
-          + "Cloud.Dialogflow.V2b\006proto3"
+          + "Request.SearchConfig.BoostSpecs.BoostSpe"
+          + "c.ConditionBoostSpec.BoostControlSpecB\003\340"
+          + "A\001\032\313\005\n\020BoostControlSpec\022\027\n\nfield_name\030\001 "
+          + "\001(\tB\003\340A\001\022\244\001\n\016attribute_type\030\002 \001(\0162\206\001.goo"
+          + "gle.cloud.dialogflow.v2.SearchKnowledgeR"
+          + "equest.SearchConfig.BoostSpecs.BoostSpec"
+          + ".ConditionBoostSpec.BoostControlSpec.Att"
+          + "ributeTypeB\003\340A\001\022\254\001\n\022interpolation_type\030\003"
+          + " \001(\0162\212\001.google.cloud.dialogflow.v2.Searc"
+          + "hKnowledgeRequest.SearchConfig.BoostSpec"
+          + "s.BoostSpec.ConditionBoostSpec.BoostCont"
+          + "rolSpec.InterpolationTypeB\003\340A\001\022\243\001\n\016contr"
+          + "ol_points\030\004 \003(\0132\205\001.google.cloud.dialogfl"
+          + "ow.v2.SearchKnowledgeRequest.SearchConfi"
+          + "g.BoostSpecs.BoostSpec.ConditionBoostSpe"
+          + "c.BoostControlSpec.ControlPointB\003\340A\001\032\016\n\014"
+          + "ControlPoint\"M\n\rAttributeType\022\036\n\032ATTRIBU"
+          + "TE_TYPE_UNSPECIFIED\020\000\022\r\n\tNUMERICAL\020\001\022\r\n\t"
+          + "FRESHNESS\020\002\"C\n\021InterpolationType\022\"\n\036INTE"
+          + "RPOLATION_TYPE_UNSPECIFIED\020\000\022\n\n\006LINEAR\020\001"
+          + "\032<\n\013FilterSpecs\022\030\n\013data_stores\030\001 \003(\tB\003\340A"
+          + "\001\022\023\n\006filter\030\002 \001(\tB\003\340A\001\"Q\n\013QuerySource\022\034\n"
+          + "\030QUERY_SOURCE_UNSPECIFIED\020\000\022\017\n\013AGENT_QUE"
+          + "RY\020\001\022\023\n\017SUGGESTED_QUERY\020\002\"v\n\027SearchKnowl"
+          + "edgeResponse\022B\n\007answers\030\002 \003(\01321.google.c"
+          + "loud.dialogflow.v2.SearchKnowledgeAnswer"
+          + "\022\027\n\017rewritten_query\030\003 \001(\t\"\241\003\n\025SearchKnow"
+          + "ledgeAnswer\022\016\n\006answer\030\001 \001(\t\022Q\n\013answer_ty"
+          + "pe\030\002 \001(\0162<.google.cloud.dialogflow.v2.Se"
+          + "archKnowledgeAnswer.AnswerType\022V\n\016answer"
+          + "_sources\030\003 \003(\0132>.google.cloud.dialogflow"
+          + ".v2.SearchKnowledgeAnswer.AnswerSource\022\025"
+          + "\n\ranswer_record\030\005 \001(\t\032f\n\014AnswerSource\022\r\n"
+          + "\005title\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\017\n\007snippet\030\003 \001"
+          + "(\t\022)\n\010metadata\030\005 \001(\0132\027.google.protobuf.S"
+          + "truct\"N\n\nAnswerType\022\033\n\027ANSWER_TYPE_UNSPE"
+          + "CIFIED\020\000\022\007\n\003FAQ\020\001\022\016\n\nGENERATIVE\020\002\022\n\n\006INT"
+          + "ENT\020\0032\323\025\n\rConversations\022\214\002\n\022CreateConver"
+          + "sation\0225.google.cloud.dialogflow.v2.Crea"
+          + "teConversationRequest\032(.google.cloud.dia"
+          + "logflow.v2.Conversation\"\224\001\332A\023parent,conv"
+          + "ersation\202\323\344\223\002x\"%/v2/{parent=projects/*}/"
+          + "conversations:\014conversationZA\"1/v2/{pare"
+          + "nt=projects/*/locations/*}/conversations"
+          + ":\014conversation\022\355\001\n\021ListConversations\0224.g"
+          + "oogle.cloud.dialogflow.v2.ListConversati"
+          + "onsRequest\0325.google.cloud.dialogflow.v2."
+          + "ListConversationsResponse\"k\332A\006parent\202\323\344\223"
+          + "\002\\\022%/v2/{parent=projects/*}/conversation"
+          + "sZ3\0221/v2/{parent=projects/*/locations/*}"
+          + "/conversations\022\332\001\n\017GetConversation\0222.goo"
+          + "gle.cloud.dialogflow.v2.GetConversationR"
+          + "equest\032(.google.cloud.dialogflow.v2.Conv"
+          + "ersation\"i\332A\004name\202\323\344\223\002\\\022%/v2/{name=proje"
+          + "cts/*/conversations/*}Z3\0221/v2/{name=proj"
+          + "ects/*/locations/*/conversations/*}\022\375\001\n\024"
+          + "CompleteConversation\0227.google.cloud.dial"
+          + "ogflow.v2.CompleteConversationRequest\032(."
+          + "google.cloud.dialogflow.v2.Conversation\""
+          + "\201\001\332A\004name\202\323\344\223\002t\"./v2/{name=projects/*/co"
+          + "nversations/*}:complete:\001*Z?\":/v2/{name="
+          + "projects/*/locations/*/conversations/*}:"
+          + "complete:\001*\022\365\001\n\014ListMessages\022/.google.cl"
+          + "oud.dialogflow.v2.ListMessagesRequest\0320."
+          + "google.cloud.dialogflow.v2.ListMessagesR"
+          + "esponse\"\201\001\332A\006parent\202\323\344\223\002r\0220/v2/{parent=p"
+          + "rojects/*/conversations/*}/messagesZ>\022</"
+          + "v2/{parent=projects/*/locations/*/conver"
+          + "sations/*}/messages\022\364\002\n\032SuggestConversat"
+          + "ionSummary\022=.google.cloud.dialogflow.v2."
+          + "SuggestConversationSummaryRequest\032>.goog"
+          + "le.cloud.dialogflow.v2.SuggestConversati"
+          + "onSummaryResponse\"\326\001\332A\014conversation\202\323\344\223\002"
+          + "\300\001\"T/v2/{conversation=projects/*/convers"
+          + "ations/*}/suggestions:suggestConversatio"
+          + "nSummary:\001*Ze\"`/v2/{conversation=project"
+          + "s/*/locations/*/conversations/*}/suggest"
+          + "ions:suggestConversationSummary:\001*\022\335\002\n\030G"
+          + "enerateStatelessSummary\022;.google.cloud.d"
+          + "ialogflow.v2.GenerateStatelessSummaryReq"
+          + "uest\032<.google.cloud.dialogflow.v2.Genera"
+          + "teStatelessSummaryResponse\"\305\001\202\323\344\223\002\276\001\"S/v"
+          + "2/{stateless_conversation.parent=project"
+          + "s/*}/suggestions:generateStatelessSummar"
+          + "y:\001*Zd\"_/v2/{stateless_conversation.pare"
+          + "nt=projects/*/locations/*}/suggestions:g"
+          + "enerateStatelessSummary:\001*\022\353\001\n\033GenerateS"
+          + "tatelessSuggestion\022>.google.cloud.dialog"
+          + "flow.v2.GenerateStatelessSuggestionReque"
+          + "st\032?.google.cloud.dialogflow.v2.Generate"
+          + "StatelessSuggestionResponse\"K\202\323\344\223\002E\"@/v2"
+          + "/{parent=projects/*/locations/*}/statele"
+          + "ssSuggestion:generate:\001*\022\256\003\n\017SearchKnowl"
+          + "edge\0222.google.cloud.dialogflow.v2.Search"
+          + "KnowledgeRequest\0323.google.cloud.dialogfl"
+          + "ow.v2.SearchKnowledgeResponse\"\261\002\202\323\344\223\002\252\002\""
+          + "3/v2/{parent=projects/*}/suggestions:sea"
+          + "rchKnowledge:\001*ZD\"?/v2/{parent=projects/"
+          + "*/locations/*}/suggestions:searchKnowled"
+          + "ge:\001*ZN\"I/v2/{conversation=projects/*/co"
+          + "nversations/*}/suggestions:searchKnowled"
+          + "ge:\001*ZZ\"U/v2/{conversation=projects/*/lo"
+          + "cations/*/conversations/*}/suggestions:s"
+          + "earchKnowledge:\001*\032x\312A\031dialogflow.googlea"
+          + "pis.com\322AYhttps://www.googleapis.com/aut"
+          + "h/cloud-platform,https://www.googleapis."
+          + "com/auth/dialogflowB\340\002\n\036com.google.cloud"
+          + ".dialogflow.v2B\021ConversationProtoP\001Z>clo"
+          + "ud.google.com/go/dialogflow/apiv2/dialog"
+          + "flowpb;dialogflowpb\242\002\002DF\252\002\032Google.Cloud."
+          + "Dialogflow.V2\352A\305\001\n(discoveryengine.googl"
+          + "eapis.com/DataStore\022Xprojects/{project}/"
+          + "locations/{location}/collections/{collec"
+          + "tion}/dataStores/{data_store}\022?projects/"
+          + "{project}/locations/{location}/dataStore"
+          + "s/{data_store}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -352,6 +435,7 @@ public final class ConversationProto {
               com.google.cloud.dialogflow.v2.GeneratorProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor(),
               com.google.cloud.dialogflow.v2.SessionProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2_Conversation_descriptor =
@@ -547,6 +631,78 @@ public final class ConversationProto {
               "SessionId",
               "Conversation",
               "LatestMessage",
+              "QuerySource",
+              "EndUserMetadata",
+              "SearchConfig",
+              "ExactSearch",
+            });
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor,
+            new java.lang.String[] {
+              "BoostSpecs", "FilterSpecs",
+            });
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_descriptor,
+            new java.lang.String[] {
+              "DataStores", "Spec",
+            });
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_descriptor,
+            new java.lang.String[] {
+              "ConditionBoostSpecs",
+            });
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_descriptor,
+            new java.lang.String[] {
+              "Condition", "Boost", "BoostControlSpec",
+            });
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_descriptor,
+            new java.lang.String[] {
+              "FieldName", "AttributeType", "InterpolationType", "ControlPoints",
+            });
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_BoostSpecs_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SearchKnowledgeRequest_SearchConfig_FilterSpecs_descriptor,
+            new java.lang.String[] {
+              "DataStores", "Filter",
             });
     internal_static_google_cloud_dialogflow_v2_SearchKnowledgeResponse_descriptor =
         getDescriptor().getMessageTypes().get(16);
@@ -572,7 +728,7 @@ public final class ConversationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_SearchKnowledgeAnswer_AnswerSource_descriptor,
             new java.lang.String[] {
-              "Title", "Uri", "Snippet",
+              "Title", "Uri", "Snippet", "Metadata",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -582,6 +738,7 @@ public final class ConversationProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
@@ -593,6 +750,7 @@ public final class ConversationProto {
     com.google.cloud.dialogflow.v2.GeneratorProto.getDescriptor();
     com.google.cloud.dialogflow.v2.ParticipantProto.getDescriptor();
     com.google.cloud.dialogflow.v2.SessionProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

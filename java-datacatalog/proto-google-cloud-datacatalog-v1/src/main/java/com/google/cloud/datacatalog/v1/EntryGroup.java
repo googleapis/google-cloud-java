@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ package com.google.cloud.datacatalog.v1;
  * <pre>
  * Entry group metadata.
  *
- * An `EntryGroup` resource represents a logical grouping of zero or more
- * Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
+ *  An `EntryGroup` resource represents a logical grouping of zero or more
+ *  Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.EntryGroup}
@@ -77,13 +77,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format.
+   * Identifier. The resource name of the entry group in URL format.
    *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -103,13 +103,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format.
+   * Identifier. The resource name of the entry group in URL format.
    *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -291,6 +291,28 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         : dataCatalogTimestamps_;
   }
 
+  public static final int TRANSFERRED_TO_DATAPLEX_FIELD_NUMBER = 9;
+  private boolean transferredToDataplex_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to [true], it means DataCatalog EntryGroup was
+   * transferred to Dataplex Catalog Service. It makes EntryGroup and its
+   * Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and
+   * its Entries can be created. After setting the flag to [true] it cannot be
+   * unset.
+   * </pre>
+   *
+   * <code>bool transferred_to_dataplex = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The transferredToDataplex.
+   */
+  @java.lang.Override
+  public boolean getTransferredToDataplex() {
+    return transferredToDataplex_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -317,6 +339,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getDataCatalogTimestamps());
     }
+    if (transferredToDataplex_ != false) {
+      output.writeBool(9, transferredToDataplex_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -338,6 +363,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDataCatalogTimestamps());
+    }
+    if (transferredToDataplex_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, transferredToDataplex_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -362,6 +390,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
     if (hasDataCatalogTimestamps()) {
       if (!getDataCatalogTimestamps().equals(other.getDataCatalogTimestamps())) return false;
     }
+    if (getTransferredToDataplex() != other.getTransferredToDataplex()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -383,6 +412,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DATA_CATALOG_TIMESTAMPS_FIELD_NUMBER;
       hash = (53 * hash) + getDataCatalogTimestamps().hashCode();
     }
+    hash = (37 * hash) + TRANSFERRED_TO_DATAPLEX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTransferredToDataplex());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -489,8 +520,8 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Entry group metadata.
    *
-   * An `EntryGroup` resource represents a logical grouping of zero or more
-   * Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
+   *  An `EntryGroup` resource represents a logical grouping of zero or more
+   *  Data Catalog [Entry][google.cloud.datacatalog.v1.Entry] resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.EntryGroup}
@@ -542,6 +573,7 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         dataCatalogTimestampsBuilder_.dispose();
         dataCatalogTimestampsBuilder_ = null;
       }
+      transferredToDataplex_ = false;
       return this;
     }
 
@@ -594,6 +626,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
                 ? dataCatalogTimestamps_
                 : dataCatalogTimestampsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.transferredToDataplex_ = transferredToDataplex_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -661,6 +696,9 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDataCatalogTimestamps()) {
         mergeDataCatalogTimestamps(other.getDataCatalogTimestamps());
       }
+      if (other.getTransferredToDataplex() != false) {
+        setTransferredToDataplex(other.getTransferredToDataplex());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -712,6 +750,12 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 72:
+              {
+                transferredToDataplex_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -736,13 +780,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format.
+     * Identifier. The resource name of the entry group in URL format.
      *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -761,13 +805,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format.
+     * Identifier. The resource name of the entry group in URL format.
      *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -786,13 +830,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format.
+     * Identifier. The resource name of the entry group in URL format.
      *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -810,13 +854,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format.
+     * Identifier. The resource name of the entry group in URL format.
      *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -830,13 +874,13 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the entry group in URL format.
+     * Identifier. The resource name of the entry group in URL format.
      *
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1286,6 +1330,71 @@ public final class EntryGroup extends com.google.protobuf.GeneratedMessageV3
         dataCatalogTimestamps_ = null;
       }
       return dataCatalogTimestampsBuilder_;
+    }
+
+    private boolean transferredToDataplex_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to [true], it means DataCatalog EntryGroup was
+     * transferred to Dataplex Catalog Service. It makes EntryGroup and its
+     * Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and
+     * its Entries can be created. After setting the flag to [true] it cannot be
+     * unset.
+     * </pre>
+     *
+     * <code>bool transferred_to_dataplex = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The transferredToDataplex.
+     */
+    @java.lang.Override
+    public boolean getTransferredToDataplex() {
+      return transferredToDataplex_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to [true], it means DataCatalog EntryGroup was
+     * transferred to Dataplex Catalog Service. It makes EntryGroup and its
+     * Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and
+     * its Entries can be created. After setting the flag to [true] it cannot be
+     * unset.
+     * </pre>
+     *
+     * <code>bool transferred_to_dataplex = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The transferredToDataplex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransferredToDataplex(boolean value) {
+
+      transferredToDataplex_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to [true], it means DataCatalog EntryGroup was
+     * transferred to Dataplex Catalog Service. It makes EntryGroup and its
+     * Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and
+     * its Entries can be created. After setting the flag to [true] it cannot be
+     * unset.
+     * </pre>
+     *
+     * <code>bool transferred_to_dataplex = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTransferredToDataplex() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      transferredToDataplex_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

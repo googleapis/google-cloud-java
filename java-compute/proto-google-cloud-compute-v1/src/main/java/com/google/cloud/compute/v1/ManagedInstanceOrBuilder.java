@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -379,6 +379,49 @@ public interface ManagedInstanceOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.PreservedStateOrBuilder getPreservedStateFromPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   *
+   * @return Whether the propertiesFromFlexibilityPolicy field is set.
+   */
+  boolean hasPropertiesFromFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   *
+   * @return The propertiesFromFlexibilityPolicy.
+   */
+  com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+      getPropertiesFromFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
+      getPropertiesFromFlexibilityPolicyOrBuilder();
 
   /**
    *

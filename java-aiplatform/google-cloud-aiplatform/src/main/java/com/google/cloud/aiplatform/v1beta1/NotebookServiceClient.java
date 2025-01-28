@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -294,6 +294,26 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> startNotebookRuntimeOperationCallable()
  *           <li><p> startNotebookRuntimeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopNotebookRuntime</td>
+ *      <td><p> Stops a NotebookRuntime.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopNotebookRuntimeAsync(StopNotebookRuntimeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> stopNotebookRuntimeAsync(NotebookRuntimeName name)
+ *           <li><p> stopNotebookRuntimeAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopNotebookRuntimeOperationCallable()
+ *           <li><p> stopNotebookRuntimeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2427,6 +2447,168 @@ public class NotebookServiceClient implements BackgroundResource {
   public final UnaryCallable<StartNotebookRuntimeRequest, Operation>
       startNotebookRuntimeCallable() {
     return stub.startNotebookRuntimeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   NotebookRuntimeName name =
+   *       NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]");
+   *   StopNotebookRuntimeResponse response =
+   *       notebookServiceClient.stopNotebookRuntimeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookRuntime resource to be stopped. Instead of
+   *     checking whether the name is in valid NotebookRuntime resource name format, directly throw
+   *     NotFound exception if there is no such NotebookRuntime in spanner.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeAsync(NotebookRuntimeName name) {
+    StopNotebookRuntimeRequest request =
+        StopNotebookRuntimeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return stopNotebookRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   String name =
+   *       NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]").toString();
+   *   StopNotebookRuntimeResponse response =
+   *       notebookServiceClient.stopNotebookRuntimeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the NotebookRuntime resource to be stopped. Instead of
+   *     checking whether the name is in valid NotebookRuntime resource name format, directly throw
+   *     NotFound exception if there is no such NotebookRuntime in spanner.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeAsync(String name) {
+    StopNotebookRuntimeRequest request =
+        StopNotebookRuntimeRequest.newBuilder().setName(name).build();
+    return stopNotebookRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopNotebookRuntimeRequest request =
+   *       StopNotebookRuntimeRequest.newBuilder()
+   *           .setName(
+   *               NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]")
+   *                   .toString())
+   *           .build();
+   *   StopNotebookRuntimeResponse response =
+   *       notebookServiceClient.stopNotebookRuntimeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeAsync(StopNotebookRuntimeRequest request) {
+    return stopNotebookRuntimeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopNotebookRuntimeRequest request =
+   *       StopNotebookRuntimeRequest.newBuilder()
+   *           .setName(
+   *               NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<StopNotebookRuntimeResponse, StopNotebookRuntimeOperationMetadata> future =
+   *       notebookServiceClient.stopNotebookRuntimeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StopNotebookRuntimeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationCallable() {
+    return stub.stopNotebookRuntimeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stops a NotebookRuntime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopNotebookRuntimeRequest request =
+   *       StopNotebookRuntimeRequest.newBuilder()
+   *           .setName(
+   *               NotebookRuntimeName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.stopNotebookRuntimeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeCallable() {
+    return stub.stopNotebookRuntimeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

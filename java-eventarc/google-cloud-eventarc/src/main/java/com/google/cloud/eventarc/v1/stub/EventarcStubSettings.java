@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,12 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListGoogleApiSourcesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusesPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListPipelinesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -56,29 +61,59 @@ import com.google.cloud.eventarc.v1.Channel;
 import com.google.cloud.eventarc.v1.ChannelConnection;
 import com.google.cloud.eventarc.v1.CreateChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.CreateChannelRequest;
+import com.google.cloud.eventarc.v1.CreateEnrollmentRequest;
+import com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest;
+import com.google.cloud.eventarc.v1.CreateMessageBusRequest;
+import com.google.cloud.eventarc.v1.CreatePipelineRequest;
 import com.google.cloud.eventarc.v1.CreateTriggerRequest;
 import com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.DeleteChannelRequest;
+import com.google.cloud.eventarc.v1.DeleteEnrollmentRequest;
+import com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest;
+import com.google.cloud.eventarc.v1.DeleteMessageBusRequest;
+import com.google.cloud.eventarc.v1.DeletePipelineRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
+import com.google.cloud.eventarc.v1.Enrollment;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetEnrollmentRequest;
+import com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest;
 import com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest;
+import com.google.cloud.eventarc.v1.GetMessageBusRequest;
+import com.google.cloud.eventarc.v1.GetPipelineRequest;
 import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.GoogleApiSource;
 import com.google.cloud.eventarc.v1.GoogleChannelConfig;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
 import com.google.cloud.eventarc.v1.ListChannelsResponse;
+import com.google.cloud.eventarc.v1.ListEnrollmentsRequest;
+import com.google.cloud.eventarc.v1.ListEnrollmentsResponse;
+import com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest;
+import com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse;
+import com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest;
+import com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse;
+import com.google.cloud.eventarc.v1.ListMessageBusesRequest;
+import com.google.cloud.eventarc.v1.ListMessageBusesResponse;
+import com.google.cloud.eventarc.v1.ListPipelinesRequest;
+import com.google.cloud.eventarc.v1.ListPipelinesResponse;
 import com.google.cloud.eventarc.v1.ListProvidersRequest;
 import com.google.cloud.eventarc.v1.ListProvidersResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
+import com.google.cloud.eventarc.v1.MessageBus;
 import com.google.cloud.eventarc.v1.OperationMetadata;
+import com.google.cloud.eventarc.v1.Pipeline;
 import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
+import com.google.cloud.eventarc.v1.UpdateEnrollmentRequest;
+import com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest;
 import com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest;
+import com.google.cloud.eventarc.v1.UpdateMessageBusRequest;
+import com.google.cloud.eventarc.v1.UpdatePipelineRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -95,9 +130,9 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -164,7 +199,7 @@ import org.threeten.bp.Duration;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * eventarcSettingsBuilder
@@ -230,6 +265,72 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       getGoogleChannelConfigSettings;
   private final UnaryCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
       updateGoogleChannelConfigSettings;
+  private final UnaryCallSettings<GetMessageBusRequest, MessageBus> getMessageBusSettings;
+  private final PagedCallSettings<
+          ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>
+      listMessageBusesSettings;
+  private final PagedCallSettings<
+          ListMessageBusEnrollmentsRequest,
+          ListMessageBusEnrollmentsResponse,
+          ListMessageBusEnrollmentsPagedResponse>
+      listMessageBusEnrollmentsSettings;
+  private final UnaryCallSettings<CreateMessageBusRequest, Operation> createMessageBusSettings;
+  private final OperationCallSettings<CreateMessageBusRequest, MessageBus, OperationMetadata>
+      createMessageBusOperationSettings;
+  private final UnaryCallSettings<UpdateMessageBusRequest, Operation> updateMessageBusSettings;
+  private final OperationCallSettings<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+      updateMessageBusOperationSettings;
+  private final UnaryCallSettings<DeleteMessageBusRequest, Operation> deleteMessageBusSettings;
+  private final OperationCallSettings<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+      deleteMessageBusOperationSettings;
+  private final UnaryCallSettings<GetEnrollmentRequest, Enrollment> getEnrollmentSettings;
+  private final PagedCallSettings<
+          ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>
+      listEnrollmentsSettings;
+  private final UnaryCallSettings<CreateEnrollmentRequest, Operation> createEnrollmentSettings;
+  private final OperationCallSettings<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+      createEnrollmentOperationSettings;
+  private final UnaryCallSettings<UpdateEnrollmentRequest, Operation> updateEnrollmentSettings;
+  private final OperationCallSettings<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+      updateEnrollmentOperationSettings;
+  private final UnaryCallSettings<DeleteEnrollmentRequest, Operation> deleteEnrollmentSettings;
+  private final OperationCallSettings<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+      deleteEnrollmentOperationSettings;
+  private final UnaryCallSettings<GetPipelineRequest, Pipeline> getPipelineSettings;
+  private final PagedCallSettings<
+          ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>
+      listPipelinesSettings;
+  private final UnaryCallSettings<CreatePipelineRequest, Operation> createPipelineSettings;
+  private final OperationCallSettings<CreatePipelineRequest, Pipeline, OperationMetadata>
+      createPipelineOperationSettings;
+  private final UnaryCallSettings<UpdatePipelineRequest, Operation> updatePipelineSettings;
+  private final OperationCallSettings<UpdatePipelineRequest, Pipeline, OperationMetadata>
+      updatePipelineOperationSettings;
+  private final UnaryCallSettings<DeletePipelineRequest, Operation> deletePipelineSettings;
+  private final OperationCallSettings<DeletePipelineRequest, Pipeline, OperationMetadata>
+      deletePipelineOperationSettings;
+  private final UnaryCallSettings<GetGoogleApiSourceRequest, GoogleApiSource>
+      getGoogleApiSourceSettings;
+  private final PagedCallSettings<
+          ListGoogleApiSourcesRequest,
+          ListGoogleApiSourcesResponse,
+          ListGoogleApiSourcesPagedResponse>
+      listGoogleApiSourcesSettings;
+  private final UnaryCallSettings<CreateGoogleApiSourceRequest, Operation>
+      createGoogleApiSourceSettings;
+  private final OperationCallSettings<
+          CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      createGoogleApiSourceOperationSettings;
+  private final UnaryCallSettings<UpdateGoogleApiSourceRequest, Operation>
+      updateGoogleApiSourceSettings;
+  private final OperationCallSettings<
+          UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      updateGoogleApiSourceOperationSettings;
+  private final UnaryCallSettings<DeleteGoogleApiSourceRequest, Operation>
+      deleteGoogleApiSourceSettings;
+  private final OperationCallSettings<
+          DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      deleteGoogleApiSourceOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -382,6 +483,195 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListMessageBusesRequest, ListMessageBusesResponse, MessageBus>
+      LIST_MESSAGE_BUSES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMessageBusesRequest injectToken(
+                ListMessageBusesRequest payload, String token) {
+              return ListMessageBusesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMessageBusesRequest injectPageSize(
+                ListMessageBusesRequest payload, int pageSize) {
+              return ListMessageBusesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMessageBusesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMessageBusesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MessageBus> extractResources(ListMessageBusesResponse payload) {
+              return payload.getMessageBusesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
+      LIST_MESSAGE_BUS_ENROLLMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMessageBusEnrollmentsRequest injectToken(
+                ListMessageBusEnrollmentsRequest payload, String token) {
+              return ListMessageBusEnrollmentsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListMessageBusEnrollmentsRequest injectPageSize(
+                ListMessageBusEnrollmentsRequest payload, int pageSize) {
+              return ListMessageBusEnrollmentsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMessageBusEnrollmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMessageBusEnrollmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<String> extractResources(ListMessageBusEnrollmentsResponse payload) {
+              return payload.getEnrollmentsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment>
+      LIST_ENROLLMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEnrollmentsRequest injectToken(
+                ListEnrollmentsRequest payload, String token) {
+              return ListEnrollmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEnrollmentsRequest injectPageSize(
+                ListEnrollmentsRequest payload, int pageSize) {
+              return ListEnrollmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEnrollmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEnrollmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Enrollment> extractResources(ListEnrollmentsResponse payload) {
+              return payload.getEnrollmentsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListPipelinesRequest, ListPipelinesResponse, Pipeline>
+      LIST_PIPELINES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPipelinesRequest, ListPipelinesResponse, Pipeline>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPipelinesRequest injectToken(ListPipelinesRequest payload, String token) {
+              return ListPipelinesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPipelinesRequest injectPageSize(ListPipelinesRequest payload, int pageSize) {
+              return ListPipelinesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPipelinesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPipelinesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Pipeline> extractResources(ListPipelinesResponse payload) {
+              return payload.getPipelinesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
+      LIST_GOOGLE_API_SOURCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGoogleApiSourcesRequest injectToken(
+                ListGoogleApiSourcesRequest payload, String token) {
+              return ListGoogleApiSourcesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListGoogleApiSourcesRequest injectPageSize(
+                ListGoogleApiSourcesRequest payload, int pageSize) {
+              return ListGoogleApiSourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGoogleApiSourcesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGoogleApiSourcesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GoogleApiSource> extractResources(
+                ListGoogleApiSourcesResponse payload) {
+              return payload.getGoogleApiSourcesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -491,6 +781,109 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
                       PageContext.create(
                           callable, LIST_CHANNEL_CONNECTIONS_PAGE_STR_DESC, request, context);
               return ListChannelConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>
+      LIST_MESSAGE_BUSES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>() {
+            @Override
+            public ApiFuture<ListMessageBusesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMessageBusesRequest, ListMessageBusesResponse> callable,
+                ListMessageBusesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMessageBusesResponse> futureResponse) {
+              PageContext<ListMessageBusesRequest, ListMessageBusesResponse, MessageBus>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MESSAGE_BUSES_PAGE_STR_DESC, request, context);
+              return ListMessageBusesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMessageBusEnrollmentsRequest,
+          ListMessageBusEnrollmentsResponse,
+          ListMessageBusEnrollmentsPagedResponse>
+      LIST_MESSAGE_BUS_ENROLLMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMessageBusEnrollmentsRequest,
+              ListMessageBusEnrollmentsResponse,
+              ListMessageBusEnrollmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMessageBusEnrollmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
+                    callable,
+                ListMessageBusEnrollmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMessageBusEnrollmentsResponse> futureResponse) {
+              PageContext<
+                      ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse, String>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MESSAGE_BUS_ENROLLMENTS_PAGE_STR_DESC, request, context);
+              return ListMessageBusEnrollmentsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>
+      LIST_ENROLLMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEnrollmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEnrollmentsRequest, ListEnrollmentsResponse> callable,
+                ListEnrollmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEnrollmentsResponse> futureResponse) {
+              PageContext<ListEnrollmentsRequest, ListEnrollmentsResponse, Enrollment> pageContext =
+                  PageContext.create(callable, LIST_ENROLLMENTS_PAGE_STR_DESC, request, context);
+              return ListEnrollmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>
+      LIST_PIPELINES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>() {
+            @Override
+            public ApiFuture<ListPipelinesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPipelinesRequest, ListPipelinesResponse> callable,
+                ListPipelinesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPipelinesResponse> futureResponse) {
+              PageContext<ListPipelinesRequest, ListPipelinesResponse, Pipeline> pageContext =
+                  PageContext.create(callable, LIST_PIPELINES_PAGE_STR_DESC, request, context);
+              return ListPipelinesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGoogleApiSourcesRequest,
+          ListGoogleApiSourcesResponse,
+          ListGoogleApiSourcesPagedResponse>
+      LIST_GOOGLE_API_SOURCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGoogleApiSourcesRequest,
+              ListGoogleApiSourcesResponse,
+              ListGoogleApiSourcesPagedResponse>() {
+            @Override
+            public ApiFuture<ListGoogleApiSourcesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse> callable,
+                ListGoogleApiSourcesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGoogleApiSourcesResponse> futureResponse) {
+              PageContext<
+                      ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse, GoogleApiSource>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GOOGLE_API_SOURCES_PAGE_STR_DESC, request, context);
+              return ListGoogleApiSourcesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -661,6 +1054,200 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     return updateGoogleChannelConfigSettings;
   }
 
+  /** Returns the object with the settings used for calls to getMessageBus. */
+  public UnaryCallSettings<GetMessageBusRequest, MessageBus> getMessageBusSettings() {
+    return getMessageBusSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMessageBuses. */
+  public PagedCallSettings<
+          ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>
+      listMessageBusesSettings() {
+    return listMessageBusesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMessageBusEnrollments. */
+  public PagedCallSettings<
+          ListMessageBusEnrollmentsRequest,
+          ListMessageBusEnrollmentsResponse,
+          ListMessageBusEnrollmentsPagedResponse>
+      listMessageBusEnrollmentsSettings() {
+    return listMessageBusEnrollmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMessageBus. */
+  public UnaryCallSettings<CreateMessageBusRequest, Operation> createMessageBusSettings() {
+    return createMessageBusSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMessageBus. */
+  public OperationCallSettings<CreateMessageBusRequest, MessageBus, OperationMetadata>
+      createMessageBusOperationSettings() {
+    return createMessageBusOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMessageBus. */
+  public UnaryCallSettings<UpdateMessageBusRequest, Operation> updateMessageBusSettings() {
+    return updateMessageBusSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMessageBus. */
+  public OperationCallSettings<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+      updateMessageBusOperationSettings() {
+    return updateMessageBusOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMessageBus. */
+  public UnaryCallSettings<DeleteMessageBusRequest, Operation> deleteMessageBusSettings() {
+    return deleteMessageBusSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMessageBus. */
+  public OperationCallSettings<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+      deleteMessageBusOperationSettings() {
+    return deleteMessageBusOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEnrollment. */
+  public UnaryCallSettings<GetEnrollmentRequest, Enrollment> getEnrollmentSettings() {
+    return getEnrollmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEnrollments. */
+  public PagedCallSettings<
+          ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>
+      listEnrollmentsSettings() {
+    return listEnrollmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEnrollment. */
+  public UnaryCallSettings<CreateEnrollmentRequest, Operation> createEnrollmentSettings() {
+    return createEnrollmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEnrollment. */
+  public OperationCallSettings<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+      createEnrollmentOperationSettings() {
+    return createEnrollmentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEnrollment. */
+  public UnaryCallSettings<UpdateEnrollmentRequest, Operation> updateEnrollmentSettings() {
+    return updateEnrollmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEnrollment. */
+  public OperationCallSettings<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+      updateEnrollmentOperationSettings() {
+    return updateEnrollmentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnrollment. */
+  public UnaryCallSettings<DeleteEnrollmentRequest, Operation> deleteEnrollmentSettings() {
+    return deleteEnrollmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnrollment. */
+  public OperationCallSettings<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+      deleteEnrollmentOperationSettings() {
+    return deleteEnrollmentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPipeline. */
+  public UnaryCallSettings<GetPipelineRequest, Pipeline> getPipelineSettings() {
+    return getPipelineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPipelines. */
+  public PagedCallSettings<ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>
+      listPipelinesSettings() {
+    return listPipelinesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPipeline. */
+  public UnaryCallSettings<CreatePipelineRequest, Operation> createPipelineSettings() {
+    return createPipelineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPipeline. */
+  public OperationCallSettings<CreatePipelineRequest, Pipeline, OperationMetadata>
+      createPipelineOperationSettings() {
+    return createPipelineOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePipeline. */
+  public UnaryCallSettings<UpdatePipelineRequest, Operation> updatePipelineSettings() {
+    return updatePipelineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePipeline. */
+  public OperationCallSettings<UpdatePipelineRequest, Pipeline, OperationMetadata>
+      updatePipelineOperationSettings() {
+    return updatePipelineOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePipeline. */
+  public UnaryCallSettings<DeletePipelineRequest, Operation> deletePipelineSettings() {
+    return deletePipelineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePipeline. */
+  public OperationCallSettings<DeletePipelineRequest, Pipeline, OperationMetadata>
+      deletePipelineOperationSettings() {
+    return deletePipelineOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getGoogleApiSource. */
+  public UnaryCallSettings<GetGoogleApiSourceRequest, GoogleApiSource>
+      getGoogleApiSourceSettings() {
+    return getGoogleApiSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listGoogleApiSources. */
+  public PagedCallSettings<
+          ListGoogleApiSourcesRequest,
+          ListGoogleApiSourcesResponse,
+          ListGoogleApiSourcesPagedResponse>
+      listGoogleApiSourcesSettings() {
+    return listGoogleApiSourcesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGoogleApiSource. */
+  public UnaryCallSettings<CreateGoogleApiSourceRequest, Operation>
+      createGoogleApiSourceSettings() {
+    return createGoogleApiSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGoogleApiSource. */
+  public OperationCallSettings<CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      createGoogleApiSourceOperationSettings() {
+    return createGoogleApiSourceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleApiSource. */
+  public UnaryCallSettings<UpdateGoogleApiSourceRequest, Operation>
+      updateGoogleApiSourceSettings() {
+    return updateGoogleApiSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleApiSource. */
+  public OperationCallSettings<UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      updateGoogleApiSourceOperationSettings() {
+    return updateGoogleApiSourceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoogleApiSource. */
+  public UnaryCallSettings<DeleteGoogleApiSourceRequest, Operation>
+      deleteGoogleApiSourceSettings() {
+    return deleteGoogleApiSourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoogleApiSource. */
+  public OperationCallSettings<DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      deleteGoogleApiSourceOperationSettings() {
+    return deleteGoogleApiSourceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -825,6 +1412,42 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
         settingsBuilder.deleteChannelConnectionOperationSettings().build();
     getGoogleChannelConfigSettings = settingsBuilder.getGoogleChannelConfigSettings().build();
     updateGoogleChannelConfigSettings = settingsBuilder.updateGoogleChannelConfigSettings().build();
+    getMessageBusSettings = settingsBuilder.getMessageBusSettings().build();
+    listMessageBusesSettings = settingsBuilder.listMessageBusesSettings().build();
+    listMessageBusEnrollmentsSettings = settingsBuilder.listMessageBusEnrollmentsSettings().build();
+    createMessageBusSettings = settingsBuilder.createMessageBusSettings().build();
+    createMessageBusOperationSettings = settingsBuilder.createMessageBusOperationSettings().build();
+    updateMessageBusSettings = settingsBuilder.updateMessageBusSettings().build();
+    updateMessageBusOperationSettings = settingsBuilder.updateMessageBusOperationSettings().build();
+    deleteMessageBusSettings = settingsBuilder.deleteMessageBusSettings().build();
+    deleteMessageBusOperationSettings = settingsBuilder.deleteMessageBusOperationSettings().build();
+    getEnrollmentSettings = settingsBuilder.getEnrollmentSettings().build();
+    listEnrollmentsSettings = settingsBuilder.listEnrollmentsSettings().build();
+    createEnrollmentSettings = settingsBuilder.createEnrollmentSettings().build();
+    createEnrollmentOperationSettings = settingsBuilder.createEnrollmentOperationSettings().build();
+    updateEnrollmentSettings = settingsBuilder.updateEnrollmentSettings().build();
+    updateEnrollmentOperationSettings = settingsBuilder.updateEnrollmentOperationSettings().build();
+    deleteEnrollmentSettings = settingsBuilder.deleteEnrollmentSettings().build();
+    deleteEnrollmentOperationSettings = settingsBuilder.deleteEnrollmentOperationSettings().build();
+    getPipelineSettings = settingsBuilder.getPipelineSettings().build();
+    listPipelinesSettings = settingsBuilder.listPipelinesSettings().build();
+    createPipelineSettings = settingsBuilder.createPipelineSettings().build();
+    createPipelineOperationSettings = settingsBuilder.createPipelineOperationSettings().build();
+    updatePipelineSettings = settingsBuilder.updatePipelineSettings().build();
+    updatePipelineOperationSettings = settingsBuilder.updatePipelineOperationSettings().build();
+    deletePipelineSettings = settingsBuilder.deletePipelineSettings().build();
+    deletePipelineOperationSettings = settingsBuilder.deletePipelineOperationSettings().build();
+    getGoogleApiSourceSettings = settingsBuilder.getGoogleApiSourceSettings().build();
+    listGoogleApiSourcesSettings = settingsBuilder.listGoogleApiSourcesSettings().build();
+    createGoogleApiSourceSettings = settingsBuilder.createGoogleApiSourceSettings().build();
+    createGoogleApiSourceOperationSettings =
+        settingsBuilder.createGoogleApiSourceOperationSettings().build();
+    updateGoogleApiSourceSettings = settingsBuilder.updateGoogleApiSourceSettings().build();
+    updateGoogleApiSourceOperationSettings =
+        settingsBuilder.updateGoogleApiSourceOperationSettings().build();
+    deleteGoogleApiSourceSettings = settingsBuilder.deleteGoogleApiSourceSettings().build();
+    deleteGoogleApiSourceOperationSettings =
+        settingsBuilder.deleteGoogleApiSourceOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -886,6 +1509,87 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
         getGoogleChannelConfigSettings;
     private final UnaryCallSettings.Builder<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
         updateGoogleChannelConfigSettings;
+    private final UnaryCallSettings.Builder<GetMessageBusRequest, MessageBus> getMessageBusSettings;
+    private final PagedCallSettings.Builder<
+            ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>
+        listMessageBusesSettings;
+    private final PagedCallSettings.Builder<
+            ListMessageBusEnrollmentsRequest,
+            ListMessageBusEnrollmentsResponse,
+            ListMessageBusEnrollmentsPagedResponse>
+        listMessageBusEnrollmentsSettings;
+    private final UnaryCallSettings.Builder<CreateMessageBusRequest, Operation>
+        createMessageBusSettings;
+    private final OperationCallSettings.Builder<
+            CreateMessageBusRequest, MessageBus, OperationMetadata>
+        createMessageBusOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateMessageBusRequest, Operation>
+        updateMessageBusSettings;
+    private final OperationCallSettings.Builder<
+            UpdateMessageBusRequest, MessageBus, OperationMetadata>
+        updateMessageBusOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteMessageBusRequest, Operation>
+        deleteMessageBusSettings;
+    private final OperationCallSettings.Builder<
+            DeleteMessageBusRequest, MessageBus, OperationMetadata>
+        deleteMessageBusOperationSettings;
+    private final UnaryCallSettings.Builder<GetEnrollmentRequest, Enrollment> getEnrollmentSettings;
+    private final PagedCallSettings.Builder<
+            ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>
+        listEnrollmentsSettings;
+    private final UnaryCallSettings.Builder<CreateEnrollmentRequest, Operation>
+        createEnrollmentSettings;
+    private final OperationCallSettings.Builder<
+            CreateEnrollmentRequest, Enrollment, OperationMetadata>
+        createEnrollmentOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateEnrollmentRequest, Operation>
+        updateEnrollmentSettings;
+    private final OperationCallSettings.Builder<
+            UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+        updateEnrollmentOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteEnrollmentRequest, Operation>
+        deleteEnrollmentSettings;
+    private final OperationCallSettings.Builder<
+            DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+        deleteEnrollmentOperationSettings;
+    private final UnaryCallSettings.Builder<GetPipelineRequest, Pipeline> getPipelineSettings;
+    private final PagedCallSettings.Builder<
+            ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>
+        listPipelinesSettings;
+    private final UnaryCallSettings.Builder<CreatePipelineRequest, Operation>
+        createPipelineSettings;
+    private final OperationCallSettings.Builder<CreatePipelineRequest, Pipeline, OperationMetadata>
+        createPipelineOperationSettings;
+    private final UnaryCallSettings.Builder<UpdatePipelineRequest, Operation>
+        updatePipelineSettings;
+    private final OperationCallSettings.Builder<UpdatePipelineRequest, Pipeline, OperationMetadata>
+        updatePipelineOperationSettings;
+    private final UnaryCallSettings.Builder<DeletePipelineRequest, Operation>
+        deletePipelineSettings;
+    private final OperationCallSettings.Builder<DeletePipelineRequest, Pipeline, OperationMetadata>
+        deletePipelineOperationSettings;
+    private final UnaryCallSettings.Builder<GetGoogleApiSourceRequest, GoogleApiSource>
+        getGoogleApiSourceSettings;
+    private final PagedCallSettings.Builder<
+            ListGoogleApiSourcesRequest,
+            ListGoogleApiSourcesResponse,
+            ListGoogleApiSourcesPagedResponse>
+        listGoogleApiSourcesSettings;
+    private final UnaryCallSettings.Builder<CreateGoogleApiSourceRequest, Operation>
+        createGoogleApiSourceSettings;
+    private final OperationCallSettings.Builder<
+            CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        createGoogleApiSourceOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateGoogleApiSourceRequest, Operation>
+        updateGoogleApiSourceSettings;
+    private final OperationCallSettings.Builder<
+            UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        updateGoogleApiSourceOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteGoogleApiSourceRequest, Operation>
+        deleteGoogleApiSourceSettings;
+    private final OperationCallSettings.Builder<
+            DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        deleteGoogleApiSourceOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -900,6 +1604,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
+      definitions.put(
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -909,6 +1620,25 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -948,6 +1678,41 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       deleteChannelConnectionOperationSettings = OperationCallSettings.newBuilder();
       getGoogleChannelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateGoogleChannelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMessageBusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMessageBusesSettings = PagedCallSettings.newBuilder(LIST_MESSAGE_BUSES_PAGE_STR_FACT);
+      listMessageBusEnrollmentsSettings =
+          PagedCallSettings.newBuilder(LIST_MESSAGE_BUS_ENROLLMENTS_PAGE_STR_FACT);
+      createMessageBusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createMessageBusOperationSettings = OperationCallSettings.newBuilder();
+      updateMessageBusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMessageBusOperationSettings = OperationCallSettings.newBuilder();
+      deleteMessageBusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteMessageBusOperationSettings = OperationCallSettings.newBuilder();
+      getEnrollmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEnrollmentsSettings = PagedCallSettings.newBuilder(LIST_ENROLLMENTS_PAGE_STR_FACT);
+      createEnrollmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createEnrollmentOperationSettings = OperationCallSettings.newBuilder();
+      updateEnrollmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEnrollmentOperationSettings = OperationCallSettings.newBuilder();
+      deleteEnrollmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteEnrollmentOperationSettings = OperationCallSettings.newBuilder();
+      getPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPipelinesSettings = PagedCallSettings.newBuilder(LIST_PIPELINES_PAGE_STR_FACT);
+      createPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPipelineOperationSettings = OperationCallSettings.newBuilder();
+      updatePipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePipelineOperationSettings = OperationCallSettings.newBuilder();
+      deletePipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deletePipelineOperationSettings = OperationCallSettings.newBuilder();
+      getGoogleApiSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listGoogleApiSourcesSettings =
+          PagedCallSettings.newBuilder(LIST_GOOGLE_API_SOURCES_PAGE_STR_FACT);
+      createGoogleApiSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createGoogleApiSourceOperationSettings = OperationCallSettings.newBuilder();
+      updateGoogleApiSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGoogleApiSourceOperationSettings = OperationCallSettings.newBuilder();
+      deleteGoogleApiSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteGoogleApiSourceOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -974,6 +1739,27 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               deleteChannelConnectionSettings,
               getGoogleChannelConfigSettings,
               updateGoogleChannelConfigSettings,
+              getMessageBusSettings,
+              listMessageBusesSettings,
+              listMessageBusEnrollmentsSettings,
+              createMessageBusSettings,
+              updateMessageBusSettings,
+              deleteMessageBusSettings,
+              getEnrollmentSettings,
+              listEnrollmentsSettings,
+              createEnrollmentSettings,
+              updateEnrollmentSettings,
+              deleteEnrollmentSettings,
+              getPipelineSettings,
+              listPipelinesSettings,
+              createPipelineSettings,
+              updatePipelineSettings,
+              deletePipelineSettings,
+              getGoogleApiSourceSettings,
+              listGoogleApiSourcesSettings,
+              createGoogleApiSourceSettings,
+              updateGoogleApiSourceSettings,
+              deleteGoogleApiSourceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1013,6 +1799,42 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           settings.deleteChannelConnectionOperationSettings.toBuilder();
       getGoogleChannelConfigSettings = settings.getGoogleChannelConfigSettings.toBuilder();
       updateGoogleChannelConfigSettings = settings.updateGoogleChannelConfigSettings.toBuilder();
+      getMessageBusSettings = settings.getMessageBusSettings.toBuilder();
+      listMessageBusesSettings = settings.listMessageBusesSettings.toBuilder();
+      listMessageBusEnrollmentsSettings = settings.listMessageBusEnrollmentsSettings.toBuilder();
+      createMessageBusSettings = settings.createMessageBusSettings.toBuilder();
+      createMessageBusOperationSettings = settings.createMessageBusOperationSettings.toBuilder();
+      updateMessageBusSettings = settings.updateMessageBusSettings.toBuilder();
+      updateMessageBusOperationSettings = settings.updateMessageBusOperationSettings.toBuilder();
+      deleteMessageBusSettings = settings.deleteMessageBusSettings.toBuilder();
+      deleteMessageBusOperationSettings = settings.deleteMessageBusOperationSettings.toBuilder();
+      getEnrollmentSettings = settings.getEnrollmentSettings.toBuilder();
+      listEnrollmentsSettings = settings.listEnrollmentsSettings.toBuilder();
+      createEnrollmentSettings = settings.createEnrollmentSettings.toBuilder();
+      createEnrollmentOperationSettings = settings.createEnrollmentOperationSettings.toBuilder();
+      updateEnrollmentSettings = settings.updateEnrollmentSettings.toBuilder();
+      updateEnrollmentOperationSettings = settings.updateEnrollmentOperationSettings.toBuilder();
+      deleteEnrollmentSettings = settings.deleteEnrollmentSettings.toBuilder();
+      deleteEnrollmentOperationSettings = settings.deleteEnrollmentOperationSettings.toBuilder();
+      getPipelineSettings = settings.getPipelineSettings.toBuilder();
+      listPipelinesSettings = settings.listPipelinesSettings.toBuilder();
+      createPipelineSettings = settings.createPipelineSettings.toBuilder();
+      createPipelineOperationSettings = settings.createPipelineOperationSettings.toBuilder();
+      updatePipelineSettings = settings.updatePipelineSettings.toBuilder();
+      updatePipelineOperationSettings = settings.updatePipelineOperationSettings.toBuilder();
+      deletePipelineSettings = settings.deletePipelineSettings.toBuilder();
+      deletePipelineOperationSettings = settings.deletePipelineOperationSettings.toBuilder();
+      getGoogleApiSourceSettings = settings.getGoogleApiSourceSettings.toBuilder();
+      listGoogleApiSourcesSettings = settings.listGoogleApiSourcesSettings.toBuilder();
+      createGoogleApiSourceSettings = settings.createGoogleApiSourceSettings.toBuilder();
+      createGoogleApiSourceOperationSettings =
+          settings.createGoogleApiSourceOperationSettings.toBuilder();
+      updateGoogleApiSourceSettings = settings.updateGoogleApiSourceSettings.toBuilder();
+      updateGoogleApiSourceOperationSettings =
+          settings.updateGoogleApiSourceOperationSettings.toBuilder();
+      deleteGoogleApiSourceSettings = settings.deleteGoogleApiSourceSettings.toBuilder();
+      deleteGoogleApiSourceOperationSettings =
+          settings.deleteGoogleApiSourceOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1039,6 +1861,27 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               deleteChannelConnectionSettings,
               getGoogleChannelConfigSettings,
               updateGoogleChannelConfigSettings,
+              getMessageBusSettings,
+              listMessageBusesSettings,
+              listMessageBusEnrollmentsSettings,
+              createMessageBusSettings,
+              updateMessageBusSettings,
+              deleteMessageBusSettings,
+              getEnrollmentSettings,
+              listEnrollmentsSettings,
+              createEnrollmentSettings,
+              updateEnrollmentSettings,
+              deleteEnrollmentSettings,
+              getPipelineSettings,
+              listPipelinesSettings,
+              createPipelineSettings,
+              updatePipelineSettings,
+              deletePipelineSettings,
+              getGoogleApiSourceSettings,
+              listGoogleApiSourcesSettings,
+              createGoogleApiSourceSettings,
+              updateGoogleApiSourceSettings,
+              deleteGoogleApiSourceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1073,93 +1916,198 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     private static Builder initDefaults(Builder builder) {
       builder
           .getTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listTriggersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listChannelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .updateChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getProviderSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listProvidersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getChannelConnectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listChannelConnectionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createChannelConnectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .deleteChannelConnectionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getGoogleChannelConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateGoogleChannelConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getMessageBusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listMessageBusesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listMessageBusEnrollmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createMessageBusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateMessageBusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteMessageBusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getEnrollmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listEnrollmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEnrollmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateEnrollmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteEnrollmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getPipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPipelinesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createPipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updatePipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deletePipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getGoogleApiSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listGoogleApiSourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createGoogleApiSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateGoogleApiSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteGoogleApiSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1191,8 +2139,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateTriggerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Trigger.class))
@@ -1201,13 +2149,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1215,8 +2163,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateTriggerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Trigger.class))
@@ -1225,13 +2173,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1239,8 +2187,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteTriggerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Trigger.class))
@@ -1249,13 +2197,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1263,8 +2211,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Channel.class))
@@ -1273,13 +2221,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1287,8 +2235,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Channel.class))
@@ -1297,13 +2245,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1311,8 +2259,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteChannelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Channel.class))
@@ -1321,13 +2269,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1335,8 +2283,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateChannelConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ChannelConnection.class))
@@ -1345,13 +2293,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1359,8 +2307,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteChannelConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ChannelConnection.class))
@@ -1369,13 +2317,301 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createMessageBusOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateMessageBusRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MessageBus.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateMessageBusOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateMessageBusRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MessageBus.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteMessageBusOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteMessageBusRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MessageBus.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createEnrollmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateEnrollmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Enrollment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateEnrollmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateEnrollmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Enrollment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteEnrollmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteEnrollmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Enrollment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createPipelineOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreatePipelineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Pipeline.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updatePipelineOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdatePipelineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Pipeline.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deletePipelineOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeletePipelineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Pipeline.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createGoogleApiSourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateGoogleApiSourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GoogleApiSource.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGoogleApiSourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGoogleApiSourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GoogleApiSource.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteGoogleApiSourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGoogleApiSourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GoogleApiSource.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1549,6 +2785,210 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     public UnaryCallSettings.Builder<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
         updateGoogleChannelConfigSettings() {
       return updateGoogleChannelConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMessageBus. */
+    public UnaryCallSettings.Builder<GetMessageBusRequest, MessageBus> getMessageBusSettings() {
+      return getMessageBusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMessageBuses. */
+    public PagedCallSettings.Builder<
+            ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>
+        listMessageBusesSettings() {
+      return listMessageBusesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMessageBusEnrollments. */
+    public PagedCallSettings.Builder<
+            ListMessageBusEnrollmentsRequest,
+            ListMessageBusEnrollmentsResponse,
+            ListMessageBusEnrollmentsPagedResponse>
+        listMessageBusEnrollmentsSettings() {
+      return listMessageBusEnrollmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMessageBus. */
+    public UnaryCallSettings.Builder<CreateMessageBusRequest, Operation>
+        createMessageBusSettings() {
+      return createMessageBusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMessageBus. */
+    public OperationCallSettings.Builder<CreateMessageBusRequest, MessageBus, OperationMetadata>
+        createMessageBusOperationSettings() {
+      return createMessageBusOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMessageBus. */
+    public UnaryCallSettings.Builder<UpdateMessageBusRequest, Operation>
+        updateMessageBusSettings() {
+      return updateMessageBusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMessageBus. */
+    public OperationCallSettings.Builder<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+        updateMessageBusOperationSettings() {
+      return updateMessageBusOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMessageBus. */
+    public UnaryCallSettings.Builder<DeleteMessageBusRequest, Operation>
+        deleteMessageBusSettings() {
+      return deleteMessageBusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMessageBus. */
+    public OperationCallSettings.Builder<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+        deleteMessageBusOperationSettings() {
+      return deleteMessageBusOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEnrollment. */
+    public UnaryCallSettings.Builder<GetEnrollmentRequest, Enrollment> getEnrollmentSettings() {
+      return getEnrollmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEnrollments. */
+    public PagedCallSettings.Builder<
+            ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>
+        listEnrollmentsSettings() {
+      return listEnrollmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEnrollment. */
+    public UnaryCallSettings.Builder<CreateEnrollmentRequest, Operation>
+        createEnrollmentSettings() {
+      return createEnrollmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEnrollment. */
+    public OperationCallSettings.Builder<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+        createEnrollmentOperationSettings() {
+      return createEnrollmentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnrollment. */
+    public UnaryCallSettings.Builder<UpdateEnrollmentRequest, Operation>
+        updateEnrollmentSettings() {
+      return updateEnrollmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnrollment. */
+    public OperationCallSettings.Builder<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+        updateEnrollmentOperationSettings() {
+      return updateEnrollmentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnrollment. */
+    public UnaryCallSettings.Builder<DeleteEnrollmentRequest, Operation>
+        deleteEnrollmentSettings() {
+      return deleteEnrollmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnrollment. */
+    public OperationCallSettings.Builder<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+        deleteEnrollmentOperationSettings() {
+      return deleteEnrollmentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPipeline. */
+    public UnaryCallSettings.Builder<GetPipelineRequest, Pipeline> getPipelineSettings() {
+      return getPipelineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPipelines. */
+    public PagedCallSettings.Builder<
+            ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>
+        listPipelinesSettings() {
+      return listPipelinesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPipeline. */
+    public UnaryCallSettings.Builder<CreatePipelineRequest, Operation> createPipelineSettings() {
+      return createPipelineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPipeline. */
+    public OperationCallSettings.Builder<CreatePipelineRequest, Pipeline, OperationMetadata>
+        createPipelineOperationSettings() {
+      return createPipelineOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePipeline. */
+    public UnaryCallSettings.Builder<UpdatePipelineRequest, Operation> updatePipelineSettings() {
+      return updatePipelineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePipeline. */
+    public OperationCallSettings.Builder<UpdatePipelineRequest, Pipeline, OperationMetadata>
+        updatePipelineOperationSettings() {
+      return updatePipelineOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipeline. */
+    public UnaryCallSettings.Builder<DeletePipelineRequest, Operation> deletePipelineSettings() {
+      return deletePipelineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipeline. */
+    public OperationCallSettings.Builder<DeletePipelineRequest, Pipeline, OperationMetadata>
+        deletePipelineOperationSettings() {
+      return deletePipelineOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGoogleApiSource. */
+    public UnaryCallSettings.Builder<GetGoogleApiSourceRequest, GoogleApiSource>
+        getGoogleApiSourceSettings() {
+      return getGoogleApiSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listGoogleApiSources. */
+    public PagedCallSettings.Builder<
+            ListGoogleApiSourcesRequest,
+            ListGoogleApiSourcesResponse,
+            ListGoogleApiSourcesPagedResponse>
+        listGoogleApiSourcesSettings() {
+      return listGoogleApiSourcesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGoogleApiSource. */
+    public UnaryCallSettings.Builder<CreateGoogleApiSourceRequest, Operation>
+        createGoogleApiSourceSettings() {
+      return createGoogleApiSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGoogleApiSource. */
+    public OperationCallSettings.Builder<
+            CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        createGoogleApiSourceOperationSettings() {
+      return createGoogleApiSourceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleApiSource. */
+    public UnaryCallSettings.Builder<UpdateGoogleApiSourceRequest, Operation>
+        updateGoogleApiSourceSettings() {
+      return updateGoogleApiSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleApiSource. */
+    public OperationCallSettings.Builder<
+            UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        updateGoogleApiSourceOperationSettings() {
+      return updateGoogleApiSourceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoogleApiSource. */
+    public UnaryCallSettings.Builder<DeleteGoogleApiSourceRequest, Operation>
+        deleteGoogleApiSourceSettings() {
+      return deleteGoogleApiSourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoogleApiSource. */
+    public OperationCallSettings.Builder<
+            DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        deleteGoogleApiSourceOperationSettings() {
+      return deleteGoogleApiSourceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,7 +142,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Low Price of the aggregate offer.
+   * Low Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -154,7 +154,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Low Price of the aggregate offer.
+   * Low Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -166,7 +166,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Low Price of the aggregate offer.
+   * Low Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price low_price = 3;</code>
@@ -177,7 +177,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * High Price of the aggregate offer.
+   * High Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -189,7 +189,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * High Price of the aggregate offer.
+   * High Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -201,7 +201,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * High Price of the aggregate offer.
+   * High Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price high_price = 4;</code>
@@ -212,7 +212,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * The number of aggregate offers.
+   * The number of CSS Products.
    * </pre>
    *
    * <code>optional int64 number_of_offers = 5;</code>
@@ -224,7 +224,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * The number of aggregate offers.
+   * The number of CSS Products.
    * </pre>
    *
    * <code>optional int64 number_of_offers = 5;</code>
@@ -274,7 +274,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -286,7 +286,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -298,7 +298,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_price = 7;</code>
@@ -383,7 +383,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -395,7 +395,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -407,7 +407,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Headline Price of the aggregate offer.
+   * Headline Price of the CSS Product.
    * </pre>
    *
    * <code>.google.shopping.type.Price headline_offer_shipping_price = 41;</code>
@@ -1948,4 +1948,85 @@ public interface AttributesOrBuilder
    * @return The bytes for customLabel4.
    */
   com.google.protobuf.ByteString getCustomLabel4Bytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   *
+   * @return Whether the headlineOfferInstallment field is set.
+   */
+  boolean hasHeadlineOfferInstallment();
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   *
+   * @return The headlineOfferInstallment.
+   */
+  com.google.shopping.css.v1.HeadlineOfferInstallment getHeadlineOfferInstallment();
+  /**
+   *
+   *
+   * <pre>
+   * Number and amount of installments to pay for an item.
+   * </pre>
+   *
+   * <code>.google.shopping.css.v1.HeadlineOfferInstallment headline_offer_installment = 51;</code>
+   */
+  com.google.shopping.css.v1.HeadlineOfferInstallmentOrBuilder
+      getHeadlineOfferInstallmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   *
+   * @return Whether the headlineOfferSubscriptionCost field is set.
+   */
+  boolean hasHeadlineOfferSubscriptionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   *
+   * @return The headlineOfferSubscriptionCost.
+   */
+  com.google.shopping.css.v1.HeadlineOfferSubscriptionCost getHeadlineOfferSubscriptionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Number of periods (months or years) and amount of payment per period
+   * for an item with an associated subscription contract.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.css.v1.HeadlineOfferSubscriptionCost headline_offer_subscription_cost = 52;
+   * </code>
+   */
+  com.google.shopping.css.v1.HeadlineOfferSubscriptionCostOrBuilder
+      getHeadlineOfferSubscriptionCostOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -546,7 +546,9 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map. This
+   * viewport should not be used as the physical boundary or the service area of
+   * the business.
    * </pre>
    *
    * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -558,7 +560,9 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map. This
+   * viewport should not be used as the physical boundary or the service area of
+   * the business.
    * </pre>
    *
    * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -570,7 +574,9 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A viewport suitable for displaying the place on an average-sized map.
+   * A viewport suitable for displaying the place on an average-sized map. This
+   * viewport should not be used as the physical boundary or the service area of
+   * the business.
    * </pre>
    *
    * <code>.google.geo.type.Viewport viewport = 13;</code>
@@ -848,24 +854,12 @@ public interface PlaceOrBuilder
   com.google.protobuf.ByteString getAdrFormatAddressBytes();
 
   /**
-   *
-   *
-   * <pre>
-   * The business status for the place.
-   * </pre>
-   *
    * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The enum numeric value on the wire for businessStatus.
    */
   int getBusinessStatusValue();
   /**
-   *
-   *
-   * <pre>
-   * The business status for the place.
-   * </pre>
-   *
    * <code>.google.maps.places.v1.Place.BusinessStatus business_status = 25;</code>
    *
    * @return The businessStatus.
@@ -2193,4 +2187,124 @@ public interface PlaceOrBuilder
    * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
    */
   com.google.maps.places.v1.Place.AreaSummaryOrBuilder getAreaSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  java.util.List<com.google.maps.places.v1.Place.ContainingPlace> getContainingPlacesList();
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  com.google.maps.places.v1.Place.ContainingPlace getContainingPlaces(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  int getContainingPlacesCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  java.util.List<? extends com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>
+      getContainingPlacesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of places in which the current place is located.
+   * </pre>
+   *
+   * <code>repeated .google.maps.places.v1.Place.ContainingPlace containing_places = 82;</code>
+   */
+  com.google.maps.places.v1.Place.ContainingPlaceOrBuilder getContainingPlacesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the place is a pure service area business. Pure service
+   * area business is a business that visits or delivers to customers directly
+   * but does not serve customers at their business address. For example,
+   * businesses like cleaning services or plumbers. Those businesses may not
+   * have a physical address or location on Google Maps.
+   * </pre>
+   *
+   * <code>optional bool pure_service_area_business = 83;</code>
+   *
+   * @return Whether the pureServiceAreaBusiness field is set.
+   */
+  boolean hasPureServiceAreaBusiness();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the place is a pure service area business. Pure service
+   * area business is a business that visits or delivers to customers directly
+   * but does not serve customers at their business address. For example,
+   * businesses like cleaning services or plumbers. Those businesses may not
+   * have a physical address or location on Google Maps.
+   * </pre>
+   *
+   * <code>optional bool pure_service_area_business = 83;</code>
+   *
+   * @return The pureServiceAreaBusiness.
+   */
+  boolean getPureServiceAreaBusiness();
+
+  /**
+   *
+   *
+   * <pre>
+   * The price range associated with a Place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+   *
+   * @return Whether the priceRange field is set.
+   */
+  boolean hasPriceRange();
+  /**
+   *
+   *
+   * <pre>
+   * The price range associated with a Place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+   *
+   * @return The priceRange.
+   */
+  com.google.maps.places.v1.PriceRange getPriceRange();
+  /**
+   *
+   *
+   * <pre>
+   * The price range associated with a Place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
+   */
+  com.google.maps.places.v1.PriceRangeOrBuilder getPriceRangeOrBuilder();
 }

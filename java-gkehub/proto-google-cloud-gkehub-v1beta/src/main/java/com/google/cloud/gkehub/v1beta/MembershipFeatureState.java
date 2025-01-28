@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     SERVICEMESH(100),
     METERING(104),
     CONFIGMANAGEMENT(106),
+    POLICYCONTROLLER(116),
     FEATURESTATE_NOT_SET(0);
     private final int value;
 
@@ -99,6 +100,8 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
           return METERING;
         case 106:
           return CONFIGMANAGEMENT;
+        case 116:
+          return POLICYCONTROLLER;
         case 0:
           return FEATURESTATE_NOT_SET;
         default:
@@ -273,6 +276,61 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     return com.google.cloud.gkehub.configmanagement.v1beta.MembershipState.getDefaultInstance();
   }
 
+  public static final int POLICYCONTROLLER_FIELD_NUMBER = 116;
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   *
+   * @return Whether the policycontroller field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolicycontroller() {
+    return featureStateCase_ == 116;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   *
+   * @return The policycontroller.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.policycontroller.v1beta.MembershipState getPolicycontroller() {
+    if (featureStateCase_ == 116) {
+      return (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState) featureState_;
+    }
+    return com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.policycontroller.v1beta.MembershipStateOrBuilder
+      getPolicycontrollerOrBuilder() {
+    if (featureStateCase_ == 116) {
+      return (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState) featureState_;
+    }
+    return com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.getDefaultInstance();
+  }
+
   public static final int STATE_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.v1beta.FeatureState state_;
   /**
@@ -352,6 +410,10 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       output.writeMessage(
           106, (com.google.cloud.gkehub.configmanagement.v1beta.MembershipState) featureState_);
     }
+    if (featureStateCase_ == 116) {
+      output.writeMessage(
+          116, (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState) featureState_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -378,6 +440,11 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               106, (com.google.cloud.gkehub.configmanagement.v1beta.MembershipState) featureState_);
+    }
+    if (featureStateCase_ == 116) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              116, (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState) featureState_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -410,6 +477,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       case 106:
         if (!getConfigmanagement().equals(other.getConfigmanagement())) return false;
         break;
+      case 116:
+        if (!getPolicycontroller().equals(other.getPolicycontroller())) return false;
+        break;
       case 0:
       default:
     }
@@ -440,6 +510,10 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       case 106:
         hash = (37 * hash) + CONFIGMANAGEMENT_FIELD_NUMBER;
         hash = (53 * hash) + getConfigmanagement().hashCode();
+        break;
+      case 116:
+        hash = (37 * hash) + POLICYCONTROLLER_FIELD_NUMBER;
+        hash = (53 * hash) + getPolicycontroller().hashCode();
         break;
       case 0:
       default:
@@ -603,6 +677,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       if (configmanagementBuilder_ != null) {
         configmanagementBuilder_.clear();
       }
+      if (policycontrollerBuilder_ != null) {
+        policycontrollerBuilder_.clear();
+      }
       state_ = null;
       if (stateBuilder_ != null) {
         stateBuilder_.dispose();
@@ -648,7 +725,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     private void buildPartial0(com.google.cloud.gkehub.v1beta.MembershipFeatureState result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -666,6 +743,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       }
       if (featureStateCase_ == 106 && configmanagementBuilder_ != null) {
         result.featureState_ = configmanagementBuilder_.build();
+      }
+      if (featureStateCase_ == 116 && policycontrollerBuilder_ != null) {
+        result.featureState_ = policycontrollerBuilder_.build();
       }
     }
 
@@ -734,6 +814,11 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
             mergeConfigmanagement(other.getConfigmanagement());
             break;
           }
+        case POLICYCONTROLLER:
+          {
+            mergePolicycontroller(other.getPolicycontroller());
+            break;
+          }
         case FEATURESTATE_NOT_SET:
           {
             break;
@@ -768,7 +853,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 802:
@@ -790,6 +875,13 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
                 featureStateCase_ = 106;
                 break;
               } // case 850
+            case 930:
+              {
+                input.readMessage(
+                    getPolicycontrollerFieldBuilder().getBuilder(), extensionRegistry);
+                featureStateCase_ = 116;
+                break;
+              } // case 930
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1476,6 +1568,232 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       return configmanagementBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.policycontroller.v1beta.MembershipState,
+            com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.Builder,
+            com.google.cloud.gkehub.policycontroller.v1beta.MembershipStateOrBuilder>
+        policycontrollerBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     *
+     * @return Whether the policycontroller field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolicycontroller() {
+      return featureStateCase_ == 116;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     *
+     * @return The policycontroller.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.policycontroller.v1beta.MembershipState getPolicycontroller() {
+      if (policycontrollerBuilder_ == null) {
+        if (featureStateCase_ == 116) {
+          return (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState) featureState_;
+        }
+        return com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.getDefaultInstance();
+      } else {
+        if (featureStateCase_ == 116) {
+          return policycontrollerBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     */
+    public Builder setPolicycontroller(
+        com.google.cloud.gkehub.policycontroller.v1beta.MembershipState value) {
+      if (policycontrollerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        featureState_ = value;
+        onChanged();
+      } else {
+        policycontrollerBuilder_.setMessage(value);
+      }
+      featureStateCase_ = 116;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     */
+    public Builder setPolicycontroller(
+        com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.Builder builderForValue) {
+      if (policycontrollerBuilder_ == null) {
+        featureState_ = builderForValue.build();
+        onChanged();
+      } else {
+        policycontrollerBuilder_.setMessage(builderForValue.build());
+      }
+      featureStateCase_ = 116;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     */
+    public Builder mergePolicycontroller(
+        com.google.cloud.gkehub.policycontroller.v1beta.MembershipState value) {
+      if (policycontrollerBuilder_ == null) {
+        if (featureStateCase_ == 116
+            && featureState_
+                != com.google.cloud.gkehub.policycontroller.v1beta.MembershipState
+                    .getDefaultInstance()) {
+          featureState_ =
+              com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.newBuilder(
+                      (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState)
+                          featureState_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          featureState_ = value;
+        }
+        onChanged();
+      } else {
+        if (featureStateCase_ == 116) {
+          policycontrollerBuilder_.mergeFrom(value);
+        } else {
+          policycontrollerBuilder_.setMessage(value);
+        }
+      }
+      featureStateCase_ = 116;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     */
+    public Builder clearPolicycontroller() {
+      if (policycontrollerBuilder_ == null) {
+        if (featureStateCase_ == 116) {
+          featureStateCase_ = 0;
+          featureState_ = null;
+          onChanged();
+        }
+      } else {
+        if (featureStateCase_ == 116) {
+          featureStateCase_ = 0;
+          featureState_ = null;
+        }
+        policycontrollerBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     */
+    public com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.Builder
+        getPolicycontrollerBuilder() {
+      return getPolicycontrollerFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.policycontroller.v1beta.MembershipStateOrBuilder
+        getPolicycontrollerOrBuilder() {
+      if ((featureStateCase_ == 116) && (policycontrollerBuilder_ != null)) {
+        return policycontrollerBuilder_.getMessageOrBuilder();
+      } else {
+        if (featureStateCase_ == 116) {
+          return (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState) featureState_;
+        }
+        return com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Policycontroller-specific state.
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.policycontroller.v1beta.MembershipState,
+            com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.Builder,
+            com.google.cloud.gkehub.policycontroller.v1beta.MembershipStateOrBuilder>
+        getPolicycontrollerFieldBuilder() {
+      if (policycontrollerBuilder_ == null) {
+        if (!(featureStateCase_ == 116)) {
+          featureState_ =
+              com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.getDefaultInstance();
+        }
+        policycontrollerBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.policycontroller.v1beta.MembershipState,
+                com.google.cloud.gkehub.policycontroller.v1beta.MembershipState.Builder,
+                com.google.cloud.gkehub.policycontroller.v1beta.MembershipStateOrBuilder>(
+                (com.google.cloud.gkehub.policycontroller.v1beta.MembershipState) featureState_,
+                getParentForChildren(),
+                isClean());
+        featureState_ = null;
+      }
+      featureStateCase_ = 116;
+      onChanged();
+      return policycontrollerBuilder_;
+    }
+
     private com.google.cloud.gkehub.v1beta.FeatureState state_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.v1beta.FeatureState,
@@ -1494,7 +1812,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1534,7 +1852,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       } else {
         stateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1553,7 +1871,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1568,7 +1886,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      */
     public Builder mergeState(com.google.cloud.gkehub.v1beta.FeatureState value) {
       if (stateBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && state_ != null
             && state_ != com.google.cloud.gkehub.v1beta.FeatureState.getDefaultInstance()) {
           getStateBuilder().mergeFrom(value);
@@ -1579,7 +1897,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
         stateBuilder_.mergeFrom(value);
       }
       if (state_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1594,7 +1912,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.gkehub.v1beta.FeatureState state = 1;</code>
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = null;
       if (stateBuilder_ != null) {
         stateBuilder_.dispose();
@@ -1613,7 +1931,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.gkehub.v1beta.FeatureState state = 1;</code>
      */
     public com.google.cloud.gkehub.v1beta.FeatureState.Builder getStateBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }

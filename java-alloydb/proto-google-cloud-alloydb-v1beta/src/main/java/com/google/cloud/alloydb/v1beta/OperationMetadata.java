@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BATCH_CREATE_INSTANCES_METADATA(8),
+    PROMOTE_CLUSTER_STATUS(9),
+    UPGRADE_CLUSTER_STATUS(10),
     REQUESTSPECIFIC_NOT_SET(0);
     private final int value;
 
@@ -97,6 +99,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 8:
           return BATCH_CREATE_INSTANCES_METADATA;
+        case 9:
+          return PROMOTE_CLUSTER_STATUS;
+        case 10:
+          return UPGRADE_CLUSTER_STATUS;
         case 0:
           return REQUESTSPECIFIC_NOT_SET;
         default:
@@ -170,6 +176,122 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return (com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata) requestSpecific_;
     }
     return com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata.getDefaultInstance();
+  }
+
+  public static final int PROMOTE_CLUSTER_STATUS_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the promoteClusterStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasPromoteClusterStatus() {
+    return requestSpecificCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The promoteClusterStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.PromoteClusterStatus getPromoteClusterStatus() {
+    if (requestSpecificCase_ == 9) {
+      return (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_;
+    }
+    return com.google.cloud.alloydb.v1beta.PromoteClusterStatus.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.PromoteClusterStatusOrBuilder
+      getPromoteClusterStatusOrBuilder() {
+    if (requestSpecificCase_ == 9) {
+      return (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_;
+    }
+    return com.google.cloud.alloydb.v1beta.PromoteClusterStatus.getDefaultInstance();
+  }
+
+  public static final int UPGRADE_CLUSTER_STATUS_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upgradeClusterStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpgradeClusterStatus() {
+    return requestSpecificCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upgradeClusterStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.UpgradeClusterStatus getUpgradeClusterStatus() {
+    if (requestSpecificCase_ == 10) {
+      return (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_;
+    }
+    return com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.UpgradeClusterStatusOrBuilder
+      getUpgradeClusterStatusOrBuilder() {
+    if (requestSpecificCase_ == 10) {
+      return (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_;
+    }
+    return com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.getDefaultInstance();
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
@@ -535,6 +657,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           8, (com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata) requestSpecific_);
     }
+    if (requestSpecificCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_);
+    }
+    if (requestSpecificCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -570,6 +700,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata) requestSpecific_);
     }
+    if (requestSpecificCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_);
+    }
+    if (requestSpecificCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -604,6 +744,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       case 8:
         if (!getBatchCreateInstancesMetadata().equals(other.getBatchCreateInstancesMetadata()))
           return false;
+        break;
+      case 9:
+        if (!getPromoteClusterStatus().equals(other.getPromoteClusterStatus())) return false;
+        break;
+      case 10:
+        if (!getUpgradeClusterStatus().equals(other.getUpgradeClusterStatus())) return false;
         break;
       case 0:
       default:
@@ -641,6 +787,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       case 8:
         hash = (37 * hash) + BATCH_CREATE_INSTANCES_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getBatchCreateInstancesMetadata().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + PROMOTE_CLUSTER_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getPromoteClusterStatus().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + UPGRADE_CLUSTER_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getUpgradeClusterStatus().hashCode();
         break;
       case 0:
       default:
@@ -797,6 +951,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (batchCreateInstancesMetadataBuilder_ != null) {
         batchCreateInstancesMetadataBuilder_.clear();
       }
+      if (promoteClusterStatusBuilder_ != null) {
+        promoteClusterStatusBuilder_.clear();
+      }
+      if (upgradeClusterStatusBuilder_ != null) {
+        upgradeClusterStatusBuilder_.clear();
+      }
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -852,27 +1012,27 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     private void buildPartial0(com.google.cloud.alloydb.v1beta.OperationMetadata result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.target_ = target_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.verb_ = verb_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.statusMessage_ = statusMessage_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.requestedCancellation_ = requestedCancellation_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.apiVersion_ = apiVersion_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -883,6 +1043,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       result.requestSpecific_ = this.requestSpecific_;
       if (requestSpecificCase_ == 8 && batchCreateInstancesMetadataBuilder_ != null) {
         result.requestSpecific_ = batchCreateInstancesMetadataBuilder_.build();
+      }
+      if (requestSpecificCase_ == 9 && promoteClusterStatusBuilder_ != null) {
+        result.requestSpecific_ = promoteClusterStatusBuilder_.build();
+      }
+      if (requestSpecificCase_ == 10 && upgradeClusterStatusBuilder_ != null) {
+        result.requestSpecific_ = upgradeClusterStatusBuilder_.build();
       }
     }
 
@@ -940,17 +1106,17 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getVerb().isEmpty()) {
         verb_ = other.verb_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage_ = other.statusMessage_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getRequestedCancellation() != false) {
@@ -958,13 +1124,23 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getApiVersion().isEmpty()) {
         apiVersion_ = other.apiVersion_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getRequestSpecificCase()) {
         case BATCH_CREATE_INSTANCES_METADATA:
           {
             mergeBatchCreateInstancesMetadata(other.getBatchCreateInstancesMetadata());
+            break;
+          }
+        case PROMOTE_CLUSTER_STATUS:
+          {
+            mergePromoteClusterStatus(other.getPromoteClusterStatus());
+            break;
+          }
+        case UPGRADE_CLUSTER_STATUS:
+          {
+            mergeUpgradeClusterStatus(other.getUpgradeClusterStatus());
             break;
           }
         case REQUESTSPECIFIC_NOT_SET:
@@ -1001,43 +1177,43 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 target_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 verb_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 statusMessage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 48:
               {
                 requestedCancellation_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 48
             case 58:
               {
                 apiVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 66:
@@ -1047,6 +1223,20 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
                 requestSpecificCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getPromoteClusterStatusFieldBuilder().getBuilder(), extensionRegistry);
+                requestSpecificCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getUpgradeClusterStatusFieldBuilder().getBuilder(), extensionRegistry);
+                requestSpecificCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1316,6 +1506,472 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return batchCreateInstancesMetadataBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.PromoteClusterStatus,
+            com.google.cloud.alloydb.v1beta.PromoteClusterStatus.Builder,
+            com.google.cloud.alloydb.v1beta.PromoteClusterStatusOrBuilder>
+        promoteClusterStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the promoteClusterStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasPromoteClusterStatus() {
+      return requestSpecificCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The promoteClusterStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.PromoteClusterStatus getPromoteClusterStatus() {
+      if (promoteClusterStatusBuilder_ == null) {
+        if (requestSpecificCase_ == 9) {
+          return (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_;
+        }
+        return com.google.cloud.alloydb.v1beta.PromoteClusterStatus.getDefaultInstance();
+      } else {
+        if (requestSpecificCase_ == 9) {
+          return promoteClusterStatusBuilder_.getMessage();
+        }
+        return com.google.cloud.alloydb.v1beta.PromoteClusterStatus.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPromoteClusterStatus(
+        com.google.cloud.alloydb.v1beta.PromoteClusterStatus value) {
+      if (promoteClusterStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestSpecific_ = value;
+        onChanged();
+      } else {
+        promoteClusterStatusBuilder_.setMessage(value);
+      }
+      requestSpecificCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPromoteClusterStatus(
+        com.google.cloud.alloydb.v1beta.PromoteClusterStatus.Builder builderForValue) {
+      if (promoteClusterStatusBuilder_ == null) {
+        requestSpecific_ = builderForValue.build();
+        onChanged();
+      } else {
+        promoteClusterStatusBuilder_.setMessage(builderForValue.build());
+      }
+      requestSpecificCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePromoteClusterStatus(
+        com.google.cloud.alloydb.v1beta.PromoteClusterStatus value) {
+      if (promoteClusterStatusBuilder_ == null) {
+        if (requestSpecificCase_ == 9
+            && requestSpecific_
+                != com.google.cloud.alloydb.v1beta.PromoteClusterStatus.getDefaultInstance()) {
+          requestSpecific_ =
+              com.google.cloud.alloydb.v1beta.PromoteClusterStatus.newBuilder(
+                      (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          requestSpecific_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestSpecificCase_ == 9) {
+          promoteClusterStatusBuilder_.mergeFrom(value);
+        } else {
+          promoteClusterStatusBuilder_.setMessage(value);
+        }
+      }
+      requestSpecificCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPromoteClusterStatus() {
+      if (promoteClusterStatusBuilder_ == null) {
+        if (requestSpecificCase_ == 9) {
+          requestSpecificCase_ = 0;
+          requestSpecific_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestSpecificCase_ == 9) {
+          requestSpecificCase_ = 0;
+          requestSpecific_ = null;
+        }
+        promoteClusterStatusBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.PromoteClusterStatus.Builder
+        getPromoteClusterStatusBuilder() {
+      return getPromoteClusterStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.PromoteClusterStatusOrBuilder
+        getPromoteClusterStatusOrBuilder() {
+      if ((requestSpecificCase_ == 9) && (promoteClusterStatusBuilder_ != null)) {
+        return promoteClusterStatusBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestSpecificCase_ == 9) {
+          return (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_;
+        }
+        return com.google.cloud.alloydb.v1beta.PromoteClusterStatus.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. PromoteClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.PromoteClusterStatus,
+            com.google.cloud.alloydb.v1beta.PromoteClusterStatus.Builder,
+            com.google.cloud.alloydb.v1beta.PromoteClusterStatusOrBuilder>
+        getPromoteClusterStatusFieldBuilder() {
+      if (promoteClusterStatusBuilder_ == null) {
+        if (!(requestSpecificCase_ == 9)) {
+          requestSpecific_ =
+              com.google.cloud.alloydb.v1beta.PromoteClusterStatus.getDefaultInstance();
+        }
+        promoteClusterStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.PromoteClusterStatus,
+                com.google.cloud.alloydb.v1beta.PromoteClusterStatus.Builder,
+                com.google.cloud.alloydb.v1beta.PromoteClusterStatusOrBuilder>(
+                (com.google.cloud.alloydb.v1beta.PromoteClusterStatus) requestSpecific_,
+                getParentForChildren(),
+                isClean());
+        requestSpecific_ = null;
+      }
+      requestSpecificCase_ = 9;
+      onChanged();
+      return promoteClusterStatusBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.UpgradeClusterStatus,
+            com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.Builder,
+            com.google.cloud.alloydb.v1beta.UpgradeClusterStatusOrBuilder>
+        upgradeClusterStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the upgradeClusterStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpgradeClusterStatus() {
+      return requestSpecificCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The upgradeClusterStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.UpgradeClusterStatus getUpgradeClusterStatus() {
+      if (upgradeClusterStatusBuilder_ == null) {
+        if (requestSpecificCase_ == 10) {
+          return (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_;
+        }
+        return com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.getDefaultInstance();
+      } else {
+        if (requestSpecificCase_ == 10) {
+          return upgradeClusterStatusBuilder_.getMessage();
+        }
+        return com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpgradeClusterStatus(
+        com.google.cloud.alloydb.v1beta.UpgradeClusterStatus value) {
+      if (upgradeClusterStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestSpecific_ = value;
+        onChanged();
+      } else {
+        upgradeClusterStatusBuilder_.setMessage(value);
+      }
+      requestSpecificCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpgradeClusterStatus(
+        com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.Builder builderForValue) {
+      if (upgradeClusterStatusBuilder_ == null) {
+        requestSpecific_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeClusterStatusBuilder_.setMessage(builderForValue.build());
+      }
+      requestSpecificCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpgradeClusterStatus(
+        com.google.cloud.alloydb.v1beta.UpgradeClusterStatus value) {
+      if (upgradeClusterStatusBuilder_ == null) {
+        if (requestSpecificCase_ == 10
+            && requestSpecific_
+                != com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.getDefaultInstance()) {
+          requestSpecific_ =
+              com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.newBuilder(
+                      (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          requestSpecific_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestSpecificCase_ == 10) {
+          upgradeClusterStatusBuilder_.mergeFrom(value);
+        } else {
+          upgradeClusterStatusBuilder_.setMessage(value);
+        }
+      }
+      requestSpecificCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpgradeClusterStatus() {
+      if (upgradeClusterStatusBuilder_ == null) {
+        if (requestSpecificCase_ == 10) {
+          requestSpecificCase_ = 0;
+          requestSpecific_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestSpecificCase_ == 10) {
+          requestSpecificCase_ = 0;
+          requestSpecific_ = null;
+        }
+        upgradeClusterStatusBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.Builder
+        getUpgradeClusterStatusBuilder() {
+      return getUpgradeClusterStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.UpgradeClusterStatusOrBuilder
+        getUpgradeClusterStatusOrBuilder() {
+      if ((requestSpecificCase_ == 10) && (upgradeClusterStatusBuilder_ != null)) {
+        return upgradeClusterStatusBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestSpecificCase_ == 10) {
+          return (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_;
+        }
+        return com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. UpgradeClusterStatus related metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.UpgradeClusterStatus,
+            com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.Builder,
+            com.google.cloud.alloydb.v1beta.UpgradeClusterStatusOrBuilder>
+        getUpgradeClusterStatusFieldBuilder() {
+      if (upgradeClusterStatusBuilder_ == null) {
+        if (!(requestSpecificCase_ == 10)) {
+          requestSpecific_ =
+              com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.getDefaultInstance();
+        }
+        upgradeClusterStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.UpgradeClusterStatus,
+                com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.Builder,
+                com.google.cloud.alloydb.v1beta.UpgradeClusterStatusOrBuilder>(
+                (com.google.cloud.alloydb.v1beta.UpgradeClusterStatus) requestSpecific_,
+                getParentForChildren(),
+                isClean());
+        requestSpecific_ = null;
+      }
+      requestSpecificCase_ = 10;
+      onChanged();
+      return upgradeClusterStatusBuilder_;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1336,7 +1992,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1380,7 +2036,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1401,7 +2057,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1418,7 +2074,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1429,7 +2085,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1446,7 +2102,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1467,7 +2123,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1538,7 +2194,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1578,7 +2234,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1598,7 +2254,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1614,7 +2270,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -1625,7 +2281,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1641,7 +2297,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -1661,7 +2317,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1771,7 +2427,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       target_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1788,7 +2444,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTarget() {
       target_ = getDefaultInstance().getTarget();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1810,7 +2466,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       target_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1877,7 +2533,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       verb_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1894,7 +2550,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearVerb() {
       verb_ = getDefaultInstance().getVerb();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1916,7 +2572,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       verb_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1983,7 +2639,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       statusMessage_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2000,7 +2656,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearStatusMessage() {
       statusMessage_ = getDefaultInstance().getStatusMessage();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2022,7 +2678,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       statusMessage_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2066,7 +2722,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder setRequestedCancellation(boolean value) {
 
       requestedCancellation_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2086,7 +2742,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRequestedCancellation() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       requestedCancellation_ = false;
       onChanged();
       return this;
@@ -2154,7 +2810,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       apiVersion_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2171,7 +2827,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearApiVersion() {
       apiVersion_ = getDefaultInstance().getApiVersion();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2193,7 +2849,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       apiVersion_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

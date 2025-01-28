@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesOperationMetadata;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesRequest;
+import com.google.cloud.aiplatform.v1.BatchCreateFeaturesResponse;
 import com.google.cloud.aiplatform.v1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1.CreateFeatureGroupRequest;
 import com.google.cloud.aiplatform.v1.CreateFeatureOperationMetadata;
@@ -81,9 +84,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -153,7 +156,7 @@ import org.threeten.bp.Duration;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * featureRegistryServiceSettingsBuilder
@@ -187,6 +190,13 @@ public class FeatureRegistryServiceStubSettings
   private final UnaryCallSettings<CreateFeatureRequest, Operation> createFeatureSettings;
   private final OperationCallSettings<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationSettings;
+  private final UnaryCallSettings<BatchCreateFeaturesRequest, Operation>
+      batchCreateFeaturesSettings;
+  private final OperationCallSettings<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationSettings;
   private final UnaryCallSettings<GetFeatureRequest, Feature> getFeatureSettings;
   private final PagedCallSettings<
           ListFeaturesRequest, ListFeaturesResponse, ListFeaturesPagedResponse>
@@ -425,6 +435,20 @@ public class FeatureRegistryServiceStubSettings
     return createFeatureOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public UnaryCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesSettings() {
+    return batchCreateFeaturesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public OperationCallSettings<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationSettings() {
+    return batchCreateFeaturesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getFeature. */
   public UnaryCallSettings<GetFeatureRequest, Feature> getFeatureSettings() {
     return getFeatureSettings;
@@ -579,6 +603,9 @@ public class FeatureRegistryServiceStubSettings
         settingsBuilder.deleteFeatureGroupOperationSettings().build();
     createFeatureSettings = settingsBuilder.createFeatureSettings().build();
     createFeatureOperationSettings = settingsBuilder.createFeatureOperationSettings().build();
+    batchCreateFeaturesSettings = settingsBuilder.batchCreateFeaturesSettings().build();
+    batchCreateFeaturesOperationSettings =
+        settingsBuilder.batchCreateFeaturesOperationSettings().build();
     getFeatureSettings = settingsBuilder.getFeatureSettings().build();
     listFeaturesSettings = settingsBuilder.listFeaturesSettings().build();
     updateFeatureSettings = settingsBuilder.updateFeatureSettings().build();
@@ -620,6 +647,13 @@ public class FeatureRegistryServiceStubSettings
     private final OperationCallSettings.Builder<
             CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings;
+    private final UnaryCallSettings.Builder<BatchCreateFeaturesRequest, Operation>
+        batchCreateFeaturesSettings;
+    private final OperationCallSettings.Builder<
+            BatchCreateFeaturesRequest,
+            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesOperationMetadata>
+        batchCreateFeaturesOperationSettings;
     private final UnaryCallSettings.Builder<GetFeatureRequest, Feature> getFeatureSettings;
     private final PagedCallSettings.Builder<
             ListFeaturesRequest, ListFeaturesResponse, ListFeaturesPagedResponse>
@@ -677,6 +711,8 @@ public class FeatureRegistryServiceStubSettings
       deleteFeatureGroupOperationSettings = OperationCallSettings.newBuilder();
       createFeatureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFeatureOperationSettings = OperationCallSettings.newBuilder();
+      batchCreateFeaturesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateFeaturesOperationSettings = OperationCallSettings.newBuilder();
       getFeatureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFeaturesSettings = PagedCallSettings.newBuilder(LIST_FEATURES_PAGE_STR_FACT);
       updateFeatureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -697,6 +733,7 @@ public class FeatureRegistryServiceStubSettings
               updateFeatureGroupSettings,
               deleteFeatureGroupSettings,
               createFeatureSettings,
+              batchCreateFeaturesSettings,
               getFeatureSettings,
               listFeaturesSettings,
               updateFeatureSettings,
@@ -725,6 +762,9 @@ public class FeatureRegistryServiceStubSettings
           settings.deleteFeatureGroupOperationSettings.toBuilder();
       createFeatureSettings = settings.createFeatureSettings.toBuilder();
       createFeatureOperationSettings = settings.createFeatureOperationSettings.toBuilder();
+      batchCreateFeaturesSettings = settings.batchCreateFeaturesSettings.toBuilder();
+      batchCreateFeaturesOperationSettings =
+          settings.batchCreateFeaturesOperationSettings.toBuilder();
       getFeatureSettings = settings.getFeatureSettings.toBuilder();
       listFeaturesSettings = settings.listFeaturesSettings.toBuilder();
       updateFeatureSettings = settings.updateFeatureSettings.toBuilder();
@@ -745,6 +785,7 @@ public class FeatureRegistryServiceStubSettings
               updateFeatureGroupSettings,
               deleteFeatureGroupSettings,
               createFeatureSettings,
+              batchCreateFeaturesSettings,
               getFeatureSettings,
               listFeaturesSettings,
               updateFeatureSettings,
@@ -796,6 +837,11 @@ public class FeatureRegistryServiceStubSettings
 
       builder
           .createFeatureSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateFeaturesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -860,13 +906,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -885,13 +931,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -909,13 +955,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -934,13 +980,39 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .batchCreateFeaturesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchCreateFeaturesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BatchCreateFeaturesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  BatchCreateFeaturesOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -959,13 +1031,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -983,13 +1055,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1071,6 +1143,21 @@ public class FeatureRegistryServiceStubSettings
             CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings() {
       return createFeatureOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public UnaryCallSettings.Builder<BatchCreateFeaturesRequest, Operation>
+        batchCreateFeaturesSettings() {
+      return batchCreateFeaturesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public OperationCallSettings.Builder<
+            BatchCreateFeaturesRequest,
+            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesOperationMetadata>
+        batchCreateFeaturesOperationSettings() {
+      return batchCreateFeaturesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getFeature. */

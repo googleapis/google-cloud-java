@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,4 +116,45 @@ public interface ListRepositoriesRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the instance in which the repository is hosted,
+   * formatted as
+   * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+   * When listing repositories via
+   * securesourcemanager.googleapis.com (Control Plane API), this field is
+   * required. When listing repositories via *.sourcemanager.dev (Data Plane
+   * API), this field is ignored.
+   * </pre>
+   *
+   * <code>
+   * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The instance.
+   */
+  java.lang.String getInstance();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the instance in which the repository is hosted,
+   * formatted as
+   * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`.
+   * When listing repositories via
+   * securesourcemanager.googleapis.com (Control Plane API), this field is
+   * required. When listing repositories via *.sourcemanager.dev (Data Plane
+   * API), this field is ignored.
+   * </pre>
+   *
+   * <code>
+   * string instance = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for instance.
+   */
+  com.google.protobuf.ByteString getInstanceBytes();
 }

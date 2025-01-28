@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1090,7 +1090,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Whether nodes have internal IP addresses only.
    * If enable_private_nodes is not specified, then the value is derived from
-   * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+   * [Cluster.NetworkConfig.default_enable_private_nodes][]
    * </pre>
    *
    * <code>optional bool enable_private_nodes = 9;</code>
@@ -1107,7 +1107,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Whether nodes have internal IP addresses only.
    * If enable_private_nodes is not specified, then the value is derived from
-   * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+   * [Cluster.NetworkConfig.default_enable_private_nodes][]
    * </pre>
    *
    * <code>optional bool enable_private_nodes = 9;</code>
@@ -2559,7 +2559,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Whether nodes have internal IP addresses only.
      * If enable_private_nodes is not specified, then the value is derived from
-     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * [Cluster.NetworkConfig.default_enable_private_nodes][]
      * </pre>
      *
      * <code>optional bool enable_private_nodes = 9;</code>
@@ -2576,7 +2576,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Whether nodes have internal IP addresses only.
      * If enable_private_nodes is not specified, then the value is derived from
-     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * [Cluster.NetworkConfig.default_enable_private_nodes][]
      * </pre>
      *
      * <code>optional bool enable_private_nodes = 9;</code>
@@ -2593,7 +2593,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Whether nodes have internal IP addresses only.
      * If enable_private_nodes is not specified, then the value is derived from
-     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * [Cluster.NetworkConfig.default_enable_private_nodes][]
      * </pre>
      *
      * <code>optional bool enable_private_nodes = 9;</code>
@@ -2614,7 +2614,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Whether nodes have internal IP addresses only.
      * If enable_private_nodes is not specified, then the value is derived from
-     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * [Cluster.NetworkConfig.default_enable_private_nodes][]
      * </pre>
      *
      * <code>optional bool enable_private_nodes = 9;</code>

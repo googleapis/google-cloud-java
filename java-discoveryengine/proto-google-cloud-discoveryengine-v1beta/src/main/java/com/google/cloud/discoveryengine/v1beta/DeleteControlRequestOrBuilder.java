@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface DeleteControlRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Control to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface DeleteControlRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Control to delete. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
    * </pre>
    *
    * <code>

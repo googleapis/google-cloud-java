@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,8 @@ import com.google.cloud.aiplatform.v1.MutateDeployedModelResponse;
 import com.google.cloud.aiplatform.v1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1.UndeployModelResponse;
+import com.google.cloud.aiplatform.v1.UpdateEndpointLongRunningRequest;
+import com.google.cloud.aiplatform.v1.UpdateEndpointOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateEndpointRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -79,9 +81,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -150,7 +152,7 @@ import org.threeten.bp.Duration;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * endpointServiceSettingsBuilder
@@ -174,6 +176,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
       listEndpointsSettings;
   private final UnaryCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointSettings;
+  private final UnaryCallSettings<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningSettings;
+  private final OperationCallSettings<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationSettings;
   private final UnaryCallSettings<DeleteEndpointRequest, Operation> deleteEndpointSettings;
   private final OperationCallSettings<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationSettings;
@@ -328,6 +335,19 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
   /** Returns the object with the settings used for calls to updateEndpoint. */
   public UnaryCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointSettings() {
     return updateEndpointSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public UnaryCallSettings<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningSettings() {
+    return updateEndpointLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public OperationCallSettings<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationSettings() {
+    return updateEndpointLongRunningOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteEndpoint. */
@@ -492,6 +512,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     getEndpointSettings = settingsBuilder.getEndpointSettings().build();
     listEndpointsSettings = settingsBuilder.listEndpointsSettings().build();
     updateEndpointSettings = settingsBuilder.updateEndpointSettings().build();
+    updateEndpointLongRunningSettings = settingsBuilder.updateEndpointLongRunningSettings().build();
+    updateEndpointLongRunningOperationSettings =
+        settingsBuilder.updateEndpointLongRunningOperationSettings().build();
     deleteEndpointSettings = settingsBuilder.deleteEndpointSettings().build();
     deleteEndpointOperationSettings = settingsBuilder.deleteEndpointOperationSettings().build();
     deployModelSettings = settingsBuilder.deployModelSettings().build();
@@ -521,6 +544,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
         listEndpointsSettings;
     private final UnaryCallSettings.Builder<UpdateEndpointRequest, Endpoint> updateEndpointSettings;
+    private final UnaryCallSettings.Builder<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+        updateEndpointLongRunningOperationSettings;
     private final UnaryCallSettings.Builder<DeleteEndpointRequest, Operation>
         deleteEndpointSettings;
     private final OperationCallSettings.Builder<
@@ -581,6 +609,8 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       getEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEndpointsSettings = PagedCallSettings.newBuilder(LIST_ENDPOINTS_PAGE_STR_FACT);
       updateEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEndpointLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEndpointLongRunningOperationSettings = OperationCallSettings.newBuilder();
       deleteEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEndpointOperationSettings = OperationCallSettings.newBuilder();
       deployModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -601,6 +631,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               getEndpointSettings,
               listEndpointsSettings,
               updateEndpointSettings,
+              updateEndpointLongRunningSettings,
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
@@ -621,6 +652,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       getEndpointSettings = settings.getEndpointSettings.toBuilder();
       listEndpointsSettings = settings.listEndpointsSettings.toBuilder();
       updateEndpointSettings = settings.updateEndpointSettings.toBuilder();
+      updateEndpointLongRunningSettings = settings.updateEndpointLongRunningSettings.toBuilder();
+      updateEndpointLongRunningOperationSettings =
+          settings.updateEndpointLongRunningOperationSettings.toBuilder();
       deleteEndpointSettings = settings.deleteEndpointSettings.toBuilder();
       deleteEndpointOperationSettings = settings.deleteEndpointOperationSettings.toBuilder();
       deployModelSettings = settings.deployModelSettings.toBuilder();
@@ -642,6 +676,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               getEndpointSettings,
               listEndpointsSettings,
               updateEndpointSettings,
+              updateEndpointLongRunningSettings,
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
@@ -683,6 +718,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
 
       builder
           .updateEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateEndpointLongRunningSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -747,13 +787,39 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateEndpointLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateEndpointLongRunningRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Endpoint.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateEndpointOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -771,13 +837,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -795,13 +861,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -820,13 +886,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -846,13 +912,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -900,6 +966,19 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     /** Returns the builder for the settings used for calls to updateEndpoint. */
     public UnaryCallSettings.Builder<UpdateEndpointRequest, Endpoint> updateEndpointSettings() {
       return updateEndpointSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public UnaryCallSettings.Builder<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningSettings() {
+      return updateEndpointLongRunningSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public OperationCallSettings.Builder<
+            UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+        updateEndpointLongRunningOperationSettings() {
+      return updateEndpointLongRunningOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteEndpoint. */

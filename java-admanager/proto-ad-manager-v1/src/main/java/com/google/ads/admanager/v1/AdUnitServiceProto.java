@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,12 +93,12 @@ public final class AdUnitServiceProto {
           + "itSizesRequest\0320.google.ads.admanager.v1"
           + ".ListAdUnitSizesResponse\"4\332A\006parent\202\323\344\223\002"
           + "%\022#/v1/{parent=networks/*}/adUnitSizes\032\033"
-          + "\312A\030admanager.googleapis.comB\251\001\n\033com.goog"
+          + "\312A\030admanager.googleapis.comB\306\001\n\033com.goog"
           + "le.ads.admanager.v1B\022AdUnitServiceProtoP"
           + "\001Z@google.golang.org/genproto/googleapis"
           + "/ads/admanager/v1;admanager\252\002\027Google.Ads"
-          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1b"
-          + "\006proto3"
+          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352"
+          + "\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

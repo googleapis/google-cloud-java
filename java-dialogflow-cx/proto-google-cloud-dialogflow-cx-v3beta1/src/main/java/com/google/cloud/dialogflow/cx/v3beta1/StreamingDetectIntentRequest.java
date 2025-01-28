@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,22 +105,23 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * The name of the session this query is sent to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/sessions/&lt;SessionID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/sessions/&lt;SessionID&gt;`.
    * If `Environment ID` is not specified, we assume default 'draft'
-   * environment.
-   * It's up to the API caller to choose an appropriate `Session ID`. It can be
-   * a random number or some type of session identifiers (preferably hashed).
-   * The length of the `Session ID` must not exceed 36 characters.
-   * Note: session must be set in the first request.
+   *  environment.
+   *  It's up to the API caller to choose an appropriate `Session ID`. It can be
+   *  a random number or some type of session identifiers (preferably hashed).
+   *  The length of the `Session ID` must not exceed 36 characters.
+   *  Note: session must be set in the first request.
    *
-   * For more information, see the [sessions
-   * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   *  For more information, see the [sessions
+   *  guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
    *
-   * Note: Always use agent versions for production traffic.
-   * See [Versions and
-   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+   *  Note: Always use agent versions for production traffic.
+   *  See [Versions and
+   *  environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -144,22 +145,23 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * The name of the session this query is sent to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/sessions/&lt;SessionID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/sessions/&lt;SessionID&gt;`.
    * If `Environment ID` is not specified, we assume default 'draft'
-   * environment.
-   * It's up to the API caller to choose an appropriate `Session ID`. It can be
-   * a random number or some type of session identifiers (preferably hashed).
-   * The length of the `Session ID` must not exceed 36 characters.
-   * Note: session must be set in the first request.
+   *  environment.
+   *  It's up to the API caller to choose an appropriate `Session ID`. It can be
+   *  a random number or some type of session identifiers (preferably hashed).
+   *  The length of the `Session ID` must not exceed 36 characters.
+   *  Note: session must be set in the first request.
    *
-   * For more information, see the [sessions
-   * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   *  For more information, see the [sessions
+   *  guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
    *
-   * Note: Always use agent versions for production traffic.
-   * See [Versions and
-   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+   *  Note: Always use agent versions for production traffic.
+   *  See [Versions and
+   *  environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -922,22 +924,23 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The name of the session this query is sent to.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/sessions/&lt;SessionID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/sessions/&lt;SessionID&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
-     * environment.
-     * It's up to the API caller to choose an appropriate `Session ID`. It can be
-     * a random number or some type of session identifiers (preferably hashed).
-     * The length of the `Session ID` must not exceed 36 characters.
-     * Note: session must be set in the first request.
+     *  environment.
+     *  It's up to the API caller to choose an appropriate `Session ID`. It can be
+     *  a random number or some type of session identifiers (preferably hashed).
+     *  The length of the `Session ID` must not exceed 36 characters.
+     *  Note: session must be set in the first request.
      *
-     * For more information, see the [sessions
-     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *  For more information, see the [sessions
+     *  guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      *
-     * Note: Always use agent versions for production traffic.
-     * See [Versions and
-     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+     *  Note: Always use agent versions for production traffic.
+     *  See [Versions and
+     *  environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -960,22 +963,23 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The name of the session this query is sent to.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/sessions/&lt;SessionID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/sessions/&lt;SessionID&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
-     * environment.
-     * It's up to the API caller to choose an appropriate `Session ID`. It can be
-     * a random number or some type of session identifiers (preferably hashed).
-     * The length of the `Session ID` must not exceed 36 characters.
-     * Note: session must be set in the first request.
+     *  environment.
+     *  It's up to the API caller to choose an appropriate `Session ID`. It can be
+     *  a random number or some type of session identifiers (preferably hashed).
+     *  The length of the `Session ID` must not exceed 36 characters.
+     *  Note: session must be set in the first request.
      *
-     * For more information, see the [sessions
-     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *  For more information, see the [sessions
+     *  guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      *
-     * Note: Always use agent versions for production traffic.
-     * See [Versions and
-     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+     *  Note: Always use agent versions for production traffic.
+     *  See [Versions and
+     *  environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -998,22 +1002,23 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The name of the session this query is sent to.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/sessions/&lt;SessionID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/sessions/&lt;SessionID&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
-     * environment.
-     * It's up to the API caller to choose an appropriate `Session ID`. It can be
-     * a random number or some type of session identifiers (preferably hashed).
-     * The length of the `Session ID` must not exceed 36 characters.
-     * Note: session must be set in the first request.
+     *  environment.
+     *  It's up to the API caller to choose an appropriate `Session ID`. It can be
+     *  a random number or some type of session identifiers (preferably hashed).
+     *  The length of the `Session ID` must not exceed 36 characters.
+     *  Note: session must be set in the first request.
      *
-     * For more information, see the [sessions
-     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *  For more information, see the [sessions
+     *  guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      *
-     * Note: Always use agent versions for production traffic.
-     * See [Versions and
-     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+     *  Note: Always use agent versions for production traffic.
+     *  See [Versions and
+     *  environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1035,22 +1040,23 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The name of the session this query is sent to.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/sessions/&lt;SessionID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/sessions/&lt;SessionID&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
-     * environment.
-     * It's up to the API caller to choose an appropriate `Session ID`. It can be
-     * a random number or some type of session identifiers (preferably hashed).
-     * The length of the `Session ID` must not exceed 36 characters.
-     * Note: session must be set in the first request.
+     *  environment.
+     *  It's up to the API caller to choose an appropriate `Session ID`. It can be
+     *  a random number or some type of session identifiers (preferably hashed).
+     *  The length of the `Session ID` must not exceed 36 characters.
+     *  Note: session must be set in the first request.
      *
-     * For more information, see the [sessions
-     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *  For more information, see the [sessions
+     *  guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      *
-     * Note: Always use agent versions for production traffic.
-     * See [Versions and
-     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+     *  Note: Always use agent versions for production traffic.
+     *  See [Versions and
+     *  environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1068,22 +1074,23 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * The name of the session this query is sent to.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/sessions/&lt;SessionID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/sessions/&lt;SessionID&gt;`.
      * If `Environment ID` is not specified, we assume default 'draft'
-     * environment.
-     * It's up to the API caller to choose an appropriate `Session ID`. It can be
-     * a random number or some type of session identifiers (preferably hashed).
-     * The length of the `Session ID` must not exceed 36 characters.
-     * Note: session must be set in the first request.
+     *  environment.
+     *  It's up to the API caller to choose an appropriate `Session ID`. It can be
+     *  a random number or some type of session identifiers (preferably hashed).
+     *  The length of the `Session ID` must not exceed 36 characters.
+     *  Note: session must be set in the first request.
      *
-     * For more information, see the [sessions
-     * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     *  For more information, see the [sessions
+     *  guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
      *
-     * Note: Always use agent versions for production traffic.
-     * See [Versions and
-     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+     *  Note: Always use agent versions for production traffic.
+     *  See [Versions and
+     *  environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAccountLabels</td>
- *      <td><p> Lists the labels assigned to an account.</td>
+ *      <td><p> Lists the labels owned by an account.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -251,7 +251,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the labels assigned to an account.
+   * Lists the labels owned by an account.
    *
    * <p>Sample code:
    *
@@ -284,7 +284,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the labels assigned to an account.
+   * Lists the labels owned by an account.
    *
    * <p>Sample code:
    *
@@ -315,7 +315,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the labels assigned to an account.
+   * Lists the labels owned by an account.
    *
    * <p>Sample code:
    *
@@ -349,7 +349,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the labels assigned to an account.
+   * Lists the labels owned by an account.
    *
    * <p>Sample code:
    *
@@ -383,7 +383,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the labels assigned to an account.
+   * Lists the labels owned by an account.
    *
    * <p>Sample code:
    *

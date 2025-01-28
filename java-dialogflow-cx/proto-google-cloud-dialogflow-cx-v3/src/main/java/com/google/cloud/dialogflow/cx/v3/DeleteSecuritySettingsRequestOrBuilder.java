@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ public interface DeleteSecuritySettingsRequestOrBuilder
    * <pre>
    * Required. The name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-   * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * delete. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>
@@ -47,8 +47,8 @@ public interface DeleteSecuritySettingsRequestOrBuilder
    * <pre>
    * Required. The name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to
-   * delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * delete. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>

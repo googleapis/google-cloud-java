@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,7 +116,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * notebookServiceSettingsBuilder
@@ -253,6 +253,20 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       startNotebookRuntimeOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
         .startNotebookRuntimeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopNotebookRuntime. */
+  public UnaryCallSettings<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).stopNotebookRuntimeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopNotebookRuntime. */
+  public OperationCallSettings<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).stopNotebookRuntimeOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createNotebookExecutionJob. */
@@ -540,6 +554,21 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
             StartNotebookRuntimeOperationMetadata>
         startNotebookRuntimeOperationSettings() {
       return getStubSettingsBuilder().startNotebookRuntimeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopNotebookRuntime. */
+    public UnaryCallSettings.Builder<StopNotebookRuntimeRequest, Operation>
+        stopNotebookRuntimeSettings() {
+      return getStubSettingsBuilder().stopNotebookRuntimeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopNotebookRuntime. */
+    public OperationCallSettings.Builder<
+            StopNotebookRuntimeRequest,
+            StopNotebookRuntimeResponse,
+            StopNotebookRuntimeOperationMetadata>
+        stopNotebookRuntimeOperationSettings() {
+      return getStubSettingsBuilder().stopNotebookRuntimeOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createNotebookExecutionJob. */

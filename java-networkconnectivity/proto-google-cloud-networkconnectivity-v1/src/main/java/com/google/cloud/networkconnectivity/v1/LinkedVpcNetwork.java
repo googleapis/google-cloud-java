@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
   private LinkedVpcNetwork() {
     uri_ = "";
     excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    producerVpcSpokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -187,6 +189,154 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     return excludeExportRanges_.getByteString(index);
   }
 
+  public static final int INCLUDE_EXPORT_RANGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList includeExportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the includeExportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getIncludeExportRangesList() {
+    return includeExportRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of includeExportRanges.
+   */
+  public int getIncludeExportRangesCount() {
+    return includeExportRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeExportRanges at the given index.
+   */
+  public java.lang.String getIncludeExportRanges(int index) {
+    return includeExportRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included from peering.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeExportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getIncludeExportRangesBytes(int index) {
+    return includeExportRanges_.getByteString(index);
+  }
+
+  public static final int PRODUCER_VPC_SPOKES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList producerVpcSpokes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the producerVpcSpokes.
+   */
+  public com.google.protobuf.ProtocolStringList getProducerVpcSpokesList() {
+    return producerVpcSpokes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of producerVpcSpokes.
+   */
+  public int getProducerVpcSpokesCount() {
+    return producerVpcSpokes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The producerVpcSpokes at the given index.
+   */
+  public java.lang.String getProducerVpcSpokes(int index) {
+    return producerVpcSpokes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of Producer VPC spokes that this VPC spoke is a
+   * service consumer VPC spoke for. These producer VPCs are connected through
+   * VPC peering to this spoke's backing VPC network.
+   * </pre>
+   *
+   * <code>
+   * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the producerVpcSpokes at the given index.
+   */
+  public com.google.protobuf.ByteString getProducerVpcSpokesBytes(int index) {
+    return producerVpcSpokes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -206,6 +356,12 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < excludeExportRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, excludeExportRanges_.getRaw(i));
+    }
+    for (int i = 0; i < includeExportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, includeExportRanges_.getRaw(i));
+    }
+    for (int i = 0; i < producerVpcSpokes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, producerVpcSpokes_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -227,6 +383,22 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getExcludeExportRangesList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < includeExportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(includeExportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getIncludeExportRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < producerVpcSpokes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(producerVpcSpokes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProducerVpcSpokesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -245,6 +417,8 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
 
     if (!getUri().equals(other.getUri())) return false;
     if (!getExcludeExportRangesList().equals(other.getExcludeExportRangesList())) return false;
+    if (!getIncludeExportRangesList().equals(other.getIncludeExportRangesList())) return false;
+    if (!getProducerVpcSpokesList().equals(other.getProducerVpcSpokesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -261,6 +435,14 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     if (getExcludeExportRangesCount() > 0) {
       hash = (37 * hash) + EXCLUDE_EXPORT_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getExcludeExportRangesList().hashCode();
+    }
+    if (getIncludeExportRangesCount() > 0) {
+      hash = (37 * hash) + INCLUDE_EXPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludeExportRangesList().hashCode();
+    }
+    if (getProducerVpcSpokesCount() > 0) {
+      hash = (37 * hash) + PRODUCER_VPC_SPOKES_FIELD_NUMBER;
+      hash = (53 * hash) + getProducerVpcSpokesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -404,6 +586,8 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       uri_ = "";
       excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      producerVpcSpokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -446,6 +630,14 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         excludeExportRanges_.makeImmutable();
         result.excludeExportRanges_ = excludeExportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        includeExportRanges_.makeImmutable();
+        result.includeExportRanges_ = includeExportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        producerVpcSpokes_.makeImmutable();
+        result.producerVpcSpokes_ = producerVpcSpokes_;
       }
     }
 
@@ -510,6 +702,26 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (!other.includeExportRanges_.isEmpty()) {
+        if (includeExportRanges_.isEmpty()) {
+          includeExportRanges_ = other.includeExportRanges_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureIncludeExportRangesIsMutable();
+          includeExportRanges_.addAll(other.includeExportRanges_);
+        }
+        onChanged();
+      }
+      if (!other.producerVpcSpokes_.isEmpty()) {
+        if (producerVpcSpokes_.isEmpty()) {
+          producerVpcSpokes_ = other.producerVpcSpokes_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureProducerVpcSpokesIsMutable();
+          producerVpcSpokes_.addAll(other.producerVpcSpokes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -549,6 +761,20 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
                 excludeExportRanges_.add(s);
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureIncludeExportRangesIsMutable();
+                includeExportRanges_.add(s);
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProducerVpcSpokesIsMutable();
+                producerVpcSpokes_.add(s);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -863,6 +1089,399 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       ensureExcludeExportRangesIsMutable();
       excludeExportRanges_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList includeExportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureIncludeExportRangesIsMutable() {
+      if (!includeExportRanges_.isModifiable()) {
+        includeExportRanges_ = new com.google.protobuf.LazyStringArrayList(includeExportRanges_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the includeExportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getIncludeExportRangesList() {
+      includeExportRanges_.makeImmutable();
+      return includeExportRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of includeExportRanges.
+     */
+    public int getIncludeExportRangesCount() {
+      return includeExportRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeExportRanges at the given index.
+     */
+    public java.lang.String getIncludeExportRanges(int index) {
+      return includeExportRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeExportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getIncludeExportRangesBytes(int index) {
+      return includeExportRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includeExportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeExportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeExportRangesIsMutable();
+      includeExportRanges_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeExportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeExportRangesIsMutable();
+      includeExportRanges_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The includeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIncludeExportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureIncludeExportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeExportRanges_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeExportRanges() {
+      includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included from peering.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the includeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeExportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIncludeExportRangesIsMutable();
+      includeExportRanges_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList producerVpcSpokes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureProducerVpcSpokesIsMutable() {
+      if (!producerVpcSpokes_.isModifiable()) {
+        producerVpcSpokes_ = new com.google.protobuf.LazyStringArrayList(producerVpcSpokes_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the producerVpcSpokes.
+     */
+    public com.google.protobuf.ProtocolStringList getProducerVpcSpokesList() {
+      producerVpcSpokes_.makeImmutable();
+      return producerVpcSpokes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of producerVpcSpokes.
+     */
+    public int getProducerVpcSpokesCount() {
+      return producerVpcSpokes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The producerVpcSpokes at the given index.
+     */
+    public java.lang.String getProducerVpcSpokes(int index) {
+      return producerVpcSpokes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the producerVpcSpokes at the given index.
+     */
+    public com.google.protobuf.ByteString getProducerVpcSpokesBytes(int index) {
+      return producerVpcSpokes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The producerVpcSpokes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProducerVpcSpokes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProducerVpcSpokesIsMutable();
+      producerVpcSpokes_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The producerVpcSpokes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProducerVpcSpokes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProducerVpcSpokesIsMutable();
+      producerVpcSpokes_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The producerVpcSpokes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProducerVpcSpokes(java.lang.Iterable<java.lang.String> values) {
+      ensureProducerVpcSpokesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, producerVpcSpokes_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProducerVpcSpokes() {
+      producerVpcSpokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of Producer VPC spokes that this VPC spoke is a
+     * service consumer VPC spoke for. These producer VPCs are connected through
+     * VPC peering to this spoke's backing VPC network.
+     * </pre>
+     *
+     * <code>
+     * repeated string producer_vpc_spokes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the producerVpcSpokes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProducerVpcSpokesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProducerVpcSpokesIsMutable();
+      producerVpcSpokes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

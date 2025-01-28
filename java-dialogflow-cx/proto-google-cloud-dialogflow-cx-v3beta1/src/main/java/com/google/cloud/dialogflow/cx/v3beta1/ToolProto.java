@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,10 @@ public final class ToolProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAgentAuthConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_TLSConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_TLSConfig_fieldAccessorTable;
@@ -164,7 +168,7 @@ public final class ToolProto {
           + "beta1.ToolB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.g"
           + "oogle.protobuf.FieldMask\"X\n\021DeleteToolRe"
           + "quest\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036dialogflow."
-          + "googleapis.com/Tool\022\r\n\005force\030\002 \001(\010\"\340\023\n\004T"
+          + "googleapis.com/Tool\022\r\n\005force\030\002 \001(\010\"\344\026\n\004T"
           + "ool\022\014\n\004name\030\001 \001(\t\022\031\n\014display_name\030\002 \001(\tB"
           + "\003\340A\002\022\030\n\013description\030\003 \001(\tB\003\340A\002\022M\n\ropen_a"
           + "pi_spec\030\004 \001(\01324.google.cloud.dialogflow."
@@ -194,7 +198,7 @@ public final class ToolProto {
           + "\n\004name\030\001 \001(\tB\003\340A\002\032w\n\014FunctionTool\0222\n\014inp"
           + "ut_schema\030\001 \001(\0132\027.google.protobuf.Struct"
           + "B\003\340A\001\0223\n\routput_schema\030\002 \001(\0132\027.google.pr"
-          + "otobuf.StructB\003\340A\001\032\203\007\n\016Authentication\022^\n"
+          + "otobuf.StructB\003\340A\001\032\207\n\n\016Authentication\022^\n"
           + "\016api_key_config\030\001 \001(\0132D.google.cloud.dia"
           + "logflow.cx.v3beta1.Tool.Authentication.A"
           + "piKeyConfigH\000\022[\n\014oauth_config\030\002 \001(\0132C.go"
@@ -202,70 +206,79 @@ public final class ToolProto {
           + "thentication.OAuthConfigH\000\022s\n\031service_ag"
           + "ent_auth_config\030\003 \001(\0132N.google.cloud.dia"
           + "logflow.cx.v3beta1.Tool.Authentication.S"
-          + "erviceAgentAuthConfigH\000\032\243\001\n\014ApiKeyConfig"
-          + "\022\025\n\010key_name\030\001 \001(\tB\003\340A\002\022\024\n\007api_key\030\002 \001(\t"
-          + "B\003\340A\002\022f\n\020request_location\030\003 \001(\0162G.google"
-          + ".cloud.dialogflow.cx.v3beta1.Tool.Authen"
-          + "tication.RequestLocationB\003\340A\002\032\234\002\n\013OAuthC"
-          + "onfig\022q\n\020oauth_grant_type\030\001 \001(\0162R.google"
-          + ".cloud.dialogflow.cx.v3beta1.Tool.Authen"
-          + "tication.OAuthConfig.OauthGrantTypeB\003\340A\002"
-          + "\022\026\n\tclient_id\030\002 \001(\tB\003\340A\002\022\032\n\rclient_secre"
-          + "t\030\003 \001(\tB\003\340A\002\022\033\n\016token_endpoint\030\004 \001(\tB\003\340A"
-          + "\002\"I\n\016OauthGrantType\022 \n\034OAUTH_GRANT_TYPE_"
-          + "UNSPECIFIED\020\000\022\025\n\021CLIENT_CREDENTIAL\020\001\032\030\n\026"
-          + "ServiceAgentAuthConfig\"Q\n\017RequestLocatio"
-          + "n\022 \n\034REQUEST_LOCATION_UNSPECIFIED\020\000\022\n\n\006H"
-          + "EADER\020\001\022\020\n\014QUERY_STRING\020\002B\r\n\013auth_config"
-          + "\032\225\001\n\tTLSConfig\022P\n\010ca_certs\030\001 \003(\01329.googl"
-          + "e.cloud.dialogflow.cx.v3beta1.Tool.TLSCo"
-          + "nfig.CACertB\003\340A\002\0326\n\006CACert\022\031\n\014display_na"
-          + "me\030\001 \001(\tB\003\340A\002\022\021\n\004cert\030\002 \001(\014B\003\340A\002\032Z\n\026Serv"
-          + "iceDirectoryConfig\022@\n\007service\030\001 \001(\tB/\340A\002"
-          + "\372A)\n\'servicedirectory.googleapis.com/Ser"
-          + "vice\"L\n\010ToolType\022\031\n\025TOOL_TYPE_UNSPECIFIE"
-          + "D\020\000\022\023\n\017CUSTOMIZED_TOOL\020\001\022\020\n\014BUILTIN_TOOL"
-          + "\020\002:h\352Ae\n\036dialogflow.googleapis.com/Tool\022"
-          + "Cprojects/{project}/locations/{location}"
-          + "/agents/{agent}/tools/{tool}B\017\n\rspecific"
-          + "ation\"\025\n\023ExportToolsMetadata2\221\n\n\005Tools\022\302"
-          + "\001\n\nCreateTool\0225.google.cloud.dialogflow."
-          + "cx.v3beta1.CreateToolRequest\032(.google.cl"
-          + "oud.dialogflow.cx.v3beta1.Tool\"S\332A\013paren"
-          + "t,tool\202\323\344\223\002?\"7/v3beta1/{parent=projects/"
-          + "*/locations/*/agents/*}/tools:\004tool\022\302\001\n\t"
-          + "ListTools\0224.google.cloud.dialogflow.cx.v"
-          + "3beta1.ListToolsRequest\0325.google.cloud.d"
-          + "ialogflow.cx.v3beta1.ListToolsResponse\"H"
-          + "\332A\006parent\202\323\344\223\0029\0227/v3beta1/{parent=projec"
-          + "ts/*/locations/*/agents/*}/tools\022\334\001\n\013Exp"
-          + "ortTools\0226.google.cloud.dialogflow.cx.v3"
-          + "beta1.ExportToolsRequest\032\035.google.longru"
-          + "nning.Operation\"v\312A*\n\023ExportToolsRespons"
-          + "e\022\023ExportToolsMetadata\202\323\344\223\002C\">/v3beta1/{"
-          + "parent=projects/*/locations/*/agents/*}/"
-          + "tools:export:\001*\022\257\001\n\007GetTool\0222.google.clo"
-          + "ud.dialogflow.cx.v3beta1.GetToolRequest\032"
-          + "(.google.cloud.dialogflow.cx.v3beta1.Too"
-          + "l\"F\332A\004name\202\323\344\223\0029\0227/v3beta1/{name=project"
-          + "s/*/locations/*/agents/*/tools/*}\022\314\001\n\nUp"
-          + "dateTool\0225.google.cloud.dialogflow.cx.v3"
-          + "beta1.UpdateToolRequest\032(.google.cloud.d"
-          + "ialogflow.cx.v3beta1.Tool\"]\332A\020tool,updat"
-          + "e_mask\202\323\344\223\002D2</v3beta1/{tool.name=projec"
-          + "ts/*/locations/*/agents/*/tools/*}:\004tool"
-          + "\022\243\001\n\nDeleteTool\0225.google.cloud.dialogflo"
-          + "w.cx.v3beta1.DeleteToolRequest\032\026.google."
-          + "protobuf.Empty\"F\332A\004name\202\323\344\223\0029*7/v3beta1/"
-          + "{name=projects/*/locations/*/agents/*/to"
-          + "ols/*}\032x\312A\031dialogflow.googleapis.com\322AYh"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tform,https://www.googleapis.com/auth/di"
-          + "alogflowB\232\001\n&com.google.cloud.dialogflow"
-          + ".cx.v3beta1B\tToolProtoP\001Z6cloud.google.c"
-          + "om/go/dialogflow/cx/apiv3beta1/cxpb;cxpb"
-          + "\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3"
-          + "Beta1b\006proto3"
+          + "erviceAgentAuthConfigH\000\022h\n\023bearer_token_"
+          + "config\030\004 \001(\0132I.google.cloud.dialogflow.c"
+          + "x.v3beta1.Tool.Authentication.BearerToke"
+          + "nConfigH\000\032\243\001\n\014ApiKeyConfig\022\025\n\010key_name\030\001"
+          + " \001(\tB\003\340A\002\022\024\n\007api_key\030\002 \001(\tB\003\340A\002\022f\n\020reque"
+          + "st_location\030\003 \001(\0162G.google.cloud.dialogf"
+          + "low.cx.v3beta1.Tool.Authentication.Reque"
+          + "stLocationB\003\340A\002\032\261\002\n\013OAuthConfig\022q\n\020oauth"
+          + "_grant_type\030\001 \001(\0162R.google.cloud.dialogf"
+          + "low.cx.v3beta1.Tool.Authentication.OAuth"
+          + "Config.OauthGrantTypeB\003\340A\002\022\026\n\tclient_id\030"
+          + "\002 \001(\tB\003\340A\002\022\032\n\rclient_secret\030\003 \001(\tB\003\340A\002\022\033"
+          + "\n\016token_endpoint\030\004 \001(\tB\003\340A\002\022\023\n\006scopes\030\005 "
+          + "\003(\tB\003\340A\001\"I\n\016OauthGrantType\022 \n\034OAUTH_GRAN"
+          + "T_TYPE_UNSPECIFIED\020\000\022\025\n\021CLIENT_CREDENTIA"
+          + "L\020\001\032\363\001\n\026ServiceAgentAuthConfig\022\200\001\n\022servi"
+          + "ce_agent_auth\030\001 \001(\0162_.google.cloud.dialo"
+          + "gflow.cx.v3beta1.Tool.Authentication.Ser"
+          + "viceAgentAuthConfig.ServiceAgentAuthB\003\340A"
+          + "\001\"V\n\020ServiceAgentAuth\022\"\n\036SERVICE_AGENT_A"
+          + "UTH_UNSPECIFIED\020\000\022\014\n\010ID_TOKEN\020\001\022\020\n\014ACCES"
+          + "S_TOKEN\020\002\032\'\n\021BearerTokenConfig\022\022\n\005token\030"
+          + "\001 \001(\tB\003\340A\002\"Q\n\017RequestLocation\022 \n\034REQUEST"
+          + "_LOCATION_UNSPECIFIED\020\000\022\n\n\006HEADER\020\001\022\020\n\014Q"
+          + "UERY_STRING\020\002B\r\n\013auth_config\032\225\001\n\tTLSConf"
+          + "ig\022P\n\010ca_certs\030\001 \003(\01329.google.cloud.dial"
+          + "ogflow.cx.v3beta1.Tool.TLSConfig.CACertB"
+          + "\003\340A\002\0326\n\006CACert\022\031\n\014display_name\030\001 \001(\tB\003\340A"
+          + "\002\022\021\n\004cert\030\002 \001(\014B\003\340A\002\032Z\n\026ServiceDirectory"
+          + "Config\022@\n\007service\030\001 \001(\tB/\340A\002\372A)\n\'service"
+          + "directory.googleapis.com/Service\"L\n\010Tool"
+          + "Type\022\031\n\025TOOL_TYPE_UNSPECIFIED\020\000\022\023\n\017CUSTO"
+          + "MIZED_TOOL\020\001\022\020\n\014BUILTIN_TOOL\020\002:h\352Ae\n\036dia"
+          + "logflow.googleapis.com/Tool\022Cprojects/{p"
+          + "roject}/locations/{location}/agents/{age"
+          + "nt}/tools/{tool}B\017\n\rspecification\"\025\n\023Exp"
+          + "ortToolsMetadata2\221\n\n\005Tools\022\302\001\n\nCreateToo"
+          + "l\0225.google.cloud.dialogflow.cx.v3beta1.C"
+          + "reateToolRequest\032(.google.cloud.dialogfl"
+          + "ow.cx.v3beta1.Tool\"S\332A\013parent,tool\202\323\344\223\002?"
+          + "\"7/v3beta1/{parent=projects/*/locations/"
+          + "*/agents/*}/tools:\004tool\022\302\001\n\tListTools\0224."
+          + "google.cloud.dialogflow.cx.v3beta1.ListT"
+          + "oolsRequest\0325.google.cloud.dialogflow.cx"
+          + ".v3beta1.ListToolsResponse\"H\332A\006parent\202\323\344"
+          + "\223\0029\0227/v3beta1/{parent=projects/*/locatio"
+          + "ns/*/agents/*}/tools\022\334\001\n\013ExportTools\0226.g"
+          + "oogle.cloud.dialogflow.cx.v3beta1.Export"
+          + "ToolsRequest\032\035.google.longrunning.Operat"
+          + "ion\"v\312A*\n\023ExportToolsResponse\022\023ExportToo"
+          + "lsMetadata\202\323\344\223\002C\">/v3beta1/{parent=proje"
+          + "cts/*/locations/*/agents/*}/tools:export"
+          + ":\001*\022\257\001\n\007GetTool\0222.google.cloud.dialogflo"
+          + "w.cx.v3beta1.GetToolRequest\032(.google.clo"
+          + "ud.dialogflow.cx.v3beta1.Tool\"F\332A\004name\202\323"
+          + "\344\223\0029\0227/v3beta1/{name=projects/*/location"
+          + "s/*/agents/*/tools/*}\022\314\001\n\nUpdateTool\0225.g"
+          + "oogle.cloud.dialogflow.cx.v3beta1.Update"
+          + "ToolRequest\032(.google.cloud.dialogflow.cx"
+          + ".v3beta1.Tool\"]\332A\020tool,update_mask\202\323\344\223\002D"
+          + "2</v3beta1/{tool.name=projects/*/locatio"
+          + "ns/*/agents/*/tools/*}:\004tool\022\243\001\n\nDeleteT"
+          + "ool\0225.google.cloud.dialogflow.cx.v3beta1"
+          + ".DeleteToolRequest\032\026.google.protobuf.Emp"
+          + "ty\"F\332A\004name\202\323\344\223\0029*7/v3beta1/{name=projec"
+          + "ts/*/locations/*/agents/*/tools/*}\032x\312A\031d"
+          + "ialogflow.googleapis.com\322AYhttps://www.g"
+          + "oogleapis.com/auth/cloud-platform,https:"
+          + "//www.googleapis.com/auth/dialogflowB\227\001\n"
+          + "&com.google.cloud.dialogflow.cx.v3beta1B"
+          + "\tToolProtoP\001Z6cloud.google.com/go/dialog"
+          + "flow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Goog"
+          + "le.Cloud.Dialogflow.Cx.V3Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -408,7 +421,11 @@ public final class ToolProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_descriptor,
             new java.lang.String[] {
-              "ApiKeyConfig", "OauthConfig", "ServiceAgentAuthConfig", "AuthConfig",
+              "ApiKeyConfig",
+              "OauthConfig",
+              "ServiceAgentAuthConfig",
+              "BearerTokenConfig",
+              "AuthConfig",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ApiKeyConfig_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_descriptor
@@ -428,7 +445,7 @@ public final class ToolProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_OAuthConfig_descriptor,
             new java.lang.String[] {
-              "OauthGrantType", "ClientId", "ClientSecret", "TokenEndpoint",
+              "OauthGrantType", "ClientId", "ClientSecret", "TokenEndpoint", "Scopes",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAgentAuthConfig_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_descriptor
@@ -437,7 +454,19 @@ public final class ToolProto {
     internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAgentAuthConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAgentAuthConfig_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ServiceAgentAuth",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_descriptor,
+            new java.lang.String[] {
+              "Token",
+            });
     internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_TLSConfig_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_descriptor.getNestedTypes().get(5);
     internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_TLSConfig_fieldAccessorTable =

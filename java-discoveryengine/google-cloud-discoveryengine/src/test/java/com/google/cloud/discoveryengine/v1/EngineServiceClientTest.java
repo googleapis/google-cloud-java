@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,6 +102,7 @@ public class EngineServiceClientTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -162,6 +163,7 @@ public class EngineServiceClientTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -306,6 +308,7 @@ public class EngineServiceClientTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     mockEngineService.addResponse(expectedResponse);
 
@@ -355,6 +358,7 @@ public class EngineServiceClientTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     mockEngineService.addResponse(expectedResponse);
 
@@ -401,6 +405,7 @@ public class EngineServiceClientTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setDisableAnalytics(true)
             .build();
     mockEngineService.addResponse(expectedResponse);
 

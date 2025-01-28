@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,12 +46,12 @@ public final class SizeTypeEnumProto {
           + "TypeEnum\"\203\001\n\010SizeType\022\031\n\025SIZE_TYPE_UNSPE"
           + "CIFIED\020\000\022\t\n\005PIXEL\020\001\022\020\n\014ASPECT_RATIO\020\002\022\020\n"
           + "\014INTERSTITIAL\020\003\022\013\n\007IGNORED\020\004\022\n\n\006NATIVE\020\005"
-          + "\022\t\n\005FLUID\020\006\022\t\n\005AUDIO\020\007B\250\001\n\033com.google.ad"
+          + "\022\t\n\005FLUID\020\006\022\t\n\005AUDIO\020\007B\305\001\n\033com.google.ad"
           + "s.admanager.v1B\021SizeTypeEnumProtoP\001Z@goo"
           + "gle.golang.org/genproto/googleapis/ads/a"
           + "dmanager/v1;admanager\252\002\027Google.Ads.AdMan"
-          + "ager.V1\312\002\027Google\\Ads\\AdManager\\V1b\006proto"
-          + "3"
+          + "ager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Goog"
+          + "le::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

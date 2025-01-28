@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.servicehealth.v1;
  *
  *
  * <pre>
- * Message for requesting list of OrganizationImpacts
+ * Requests list of projects under an organization affected by an event.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsRequest}
@@ -493,7 +493,7 @@ public final class ListOrganizationImpactsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Message for requesting list of OrganizationImpacts
+   * Requests list of projects under an organization affected by an event.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsRequest}

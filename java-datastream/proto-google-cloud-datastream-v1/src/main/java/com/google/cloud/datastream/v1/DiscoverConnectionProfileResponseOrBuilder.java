@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,6 +128,41 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
    */
   com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return Whether the sqlServerRdbms field is set.
+   */
+  boolean hasSqlServerRdbms();
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   *
+   * @return The sqlServerRdbms.
+   */
+  com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerRdbms();
+  /**
+   *
+   *
+   * <pre>
+   * Enriched SQLServer RDBMS object.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   */
+  com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder();
 
   com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
       getDataObjectCase();

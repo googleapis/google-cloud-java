@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.CreateZoneRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareGroupRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteOrderRequest;
+import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.DeleteZoneRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.GetChangeLogEntryRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.GetCommentRequest;
@@ -184,6 +185,15 @@ public abstract class GDCHardwareManagementStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSiteRequest, Operation> updateSiteCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSiteCallable()");
+  }
+
+  public OperationCallable<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSiteOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSiteRequest, Operation> deleteSiteCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSiteCallable()");
   }
 
   public UnaryCallable<ListHardwareGroupsRequest, ListHardwareGroupsPagedResponse>

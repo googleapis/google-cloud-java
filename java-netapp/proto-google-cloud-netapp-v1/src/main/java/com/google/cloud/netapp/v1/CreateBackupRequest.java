@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,8 +132,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The ID to use for the backup.
    * The ID must be unique within the specified backupVault.
-   * Must contain only letters, numbers, underscore and hyphen, with the first
-   * character a letter or underscore, the last a letter or underscore or a
+   * Must contain only letters, numbers and hyphen, with the first
+   * character a letter, the last a letter or a
    * number, and a 63 character maximum.
    * </pre>
    *
@@ -159,8 +159,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The ID to use for the backup.
    * The ID must be unique within the specified backupVault.
-   * Must contain only letters, numbers, underscore and hyphen, with the first
-   * character a letter or underscore, the last a letter or underscore or a
+   * Must contain only letters, numbers and hyphen, with the first
+   * character a letter, the last a letter or a
    * number, and a 63 character maximum.
    * </pre>
    *
@@ -766,8 +766,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * Must contain only letters, numbers, underscore and hyphen, with the first
-     * character a letter or underscore, the last a letter or underscore or a
+     * Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a
      * number, and a 63 character maximum.
      * </pre>
      *
@@ -792,8 +792,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * Must contain only letters, numbers, underscore and hyphen, with the first
-     * character a letter or underscore, the last a letter or underscore or a
+     * Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a
      * number, and a 63 character maximum.
      * </pre>
      *
@@ -818,8 +818,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * Must contain only letters, numbers, underscore and hyphen, with the first
-     * character a letter or underscore, the last a letter or underscore or a
+     * Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a
      * number, and a 63 character maximum.
      * </pre>
      *
@@ -843,8 +843,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * Must contain only letters, numbers, underscore and hyphen, with the first
-     * character a letter or underscore, the last a letter or underscore or a
+     * Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a
      * number, and a 63 character maximum.
      * </pre>
      *
@@ -864,8 +864,8 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The ID to use for the backup.
      * The ID must be unique within the specified backupVault.
-     * Must contain only letters, numbers, underscore and hyphen, with the first
-     * character a letter or underscore, the last a letter or underscore or a
+     * Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a
      * number, and a 63 character maximum.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,7 +106,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * instanceGroupManagersSettingsBuilder
@@ -307,6 +307,19 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
     return ((InstanceGroupManagersStubSettings) getStubSettings()).resizeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public UnaryCallSettings<ResumeInstancesInstanceGroupManagerRequest, Operation>
+      resumeInstancesSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).resumeInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public OperationCallSettings<ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .resumeInstancesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setInstanceTemplate. */
   public UnaryCallSettings<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
       setInstanceTemplateSettings() {
@@ -331,6 +344,44 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       setTargetPoolsOperationSettings() {
     return ((InstanceGroupManagersStubSettings) getStubSettings())
         .setTargetPoolsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public UnaryCallSettings<StartInstancesInstanceGroupManagerRequest, Operation>
+      startInstancesSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).startInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public OperationCallSettings<StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .startInstancesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public UnaryCallSettings<StopInstancesInstanceGroupManagerRequest, Operation>
+      stopInstancesSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).stopInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public OperationCallSettings<StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).stopInstancesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public UnaryCallSettings<SuspendInstancesInstanceGroupManagerRequest, Operation>
+      suspendInstancesSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings()).suspendInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public OperationCallSettings<SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationSettings() {
+    return ((InstanceGroupManagersStubSettings) getStubSettings())
+        .suspendInstancesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
@@ -633,6 +684,19 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
       return getStubSettingsBuilder().resizeOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public UnaryCallSettings.Builder<ResumeInstancesInstanceGroupManagerRequest, Operation>
+        resumeInstancesSettings() {
+      return getStubSettingsBuilder().resumeInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public OperationCallSettings.Builder<
+            ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+        resumeInstancesOperationSettings() {
+      return getStubSettingsBuilder().resumeInstancesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setInstanceTemplate. */
     public UnaryCallSettings.Builder<SetInstanceTemplateInstanceGroupManagerRequest, Operation>
         setInstanceTemplateSettings() {
@@ -657,6 +721,45 @@ public class InstanceGroupManagersSettings extends ClientSettings<InstanceGroupM
             SetTargetPoolsInstanceGroupManagerRequest, Operation, Operation>
         setTargetPoolsOperationSettings() {
       return getStubSettingsBuilder().setTargetPoolsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public UnaryCallSettings.Builder<StartInstancesInstanceGroupManagerRequest, Operation>
+        startInstancesSettings() {
+      return getStubSettingsBuilder().startInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public OperationCallSettings.Builder<
+            StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+        startInstancesOperationSettings() {
+      return getStubSettingsBuilder().startInstancesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public UnaryCallSettings.Builder<StopInstancesInstanceGroupManagerRequest, Operation>
+        stopInstancesSettings() {
+      return getStubSettingsBuilder().stopInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public OperationCallSettings.Builder<
+            StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+        stopInstancesOperationSettings() {
+      return getStubSettingsBuilder().stopInstancesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public UnaryCallSettings.Builder<SuspendInstancesInstanceGroupManagerRequest, Operation>
+        suspendInstancesSettings() {
+      return getStubSettingsBuilder().suspendInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public OperationCallSettings.Builder<
+            SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+        suspendInstancesOperationSettings() {
+      return getStubSettingsBuilder().suspendInstancesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */

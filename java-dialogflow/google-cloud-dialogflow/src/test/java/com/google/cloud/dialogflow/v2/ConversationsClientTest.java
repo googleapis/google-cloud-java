@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -896,6 +897,9 @@ public class ConversationsClientTest {
                 MessageName.ofProjectConversationMessageName(
                         "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                     .toString())
+            .setEndUserMetadata(Struct.newBuilder().build())
+            .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+            .setExactSearch(true)
             .build();
 
     SearchKnowledgeResponse actualResponse = client.searchKnowledge(request);
@@ -911,6 +915,10 @@ public class ConversationsClientTest {
     Assert.assertEquals(request.getSessionId(), actualRequest.getSessionId());
     Assert.assertEquals(request.getConversation(), actualRequest.getConversation());
     Assert.assertEquals(request.getLatestMessage(), actualRequest.getLatestMessage());
+    Assert.assertEquals(request.getQuerySource(), actualRequest.getQuerySource());
+    Assert.assertEquals(request.getEndUserMetadata(), actualRequest.getEndUserMetadata());
+    Assert.assertEquals(request.getSearchConfig(), actualRequest.getSearchConfig());
+    Assert.assertEquals(request.getExactSearch(), actualRequest.getExactSearch());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -939,6 +947,9 @@ public class ConversationsClientTest {
                   MessageName.ofProjectConversationMessageName(
                           "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                       .toString())
+              .setEndUserMetadata(Struct.newBuilder().build())
+              .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+              .setExactSearch(true)
               .build();
       client.searchKnowledge(request);
       Assert.fail("No exception raised");

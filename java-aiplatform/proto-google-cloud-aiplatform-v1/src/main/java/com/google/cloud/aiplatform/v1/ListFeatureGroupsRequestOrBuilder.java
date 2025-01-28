@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,12 +135,12 @@ public interface ListFeatureGroupsRequestOrBuilder
    *
    * <pre>
    * A page token, received from a previous
-   * [FeatureGroupAdminService.ListFeatureGroups][] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * [FeatureGroupAdminService.ListFeatureGroups][] must
-   * match the call that provided the page token.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -153,12 +153,12 @@ public interface ListFeatureGroupsRequestOrBuilder
    *
    * <pre>
    * A page token, received from a previous
-   * [FeatureGroupAdminService.ListFeatureGroups][] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * [FeatureGroupAdminService.ListFeatureGroups][] must
-   * match the call that provided the page token.
+   * [FeatureRegistryService.ListFeatureGroups][google.cloud.aiplatform.v1.FeatureRegistryService.ListFeatureGroups]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>

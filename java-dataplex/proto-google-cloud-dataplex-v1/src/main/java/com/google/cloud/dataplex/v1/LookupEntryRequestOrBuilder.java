@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,8 @@ public interface LookupEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. View for controlling which parts of an entry are to be returned.
+   * Optional. View to control which parts of an entry the service should
+   * return.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -68,7 +69,8 @@ public interface LookupEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. View for controlling which parts of an entry are to be returned.
+   * Optional. View to control which parts of an entry the service should
+   * return.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.EntryView view = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -83,7 +85,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to the provided aspect types.
-   * Only works if the CUSTOM view is selected.
+   * It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string aspect_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -96,7 +98,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to the provided aspect types.
-   * Only works if the CUSTOM view is selected.
+   * It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string aspect_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -109,7 +111,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to the provided aspect types.
-   * Only works if the CUSTOM view is selected.
+   * It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string aspect_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -123,7 +125,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to the provided aspect types.
-   * Only works if the CUSTOM view is selected.
+   * It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string aspect_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -138,7 +140,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to those associated with the provided
-   * paths within the Entry. Only works if the CUSTOM view is selected.
+   * paths within the Entry. It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string paths = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -151,7 +153,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to those associated with the provided
-   * paths within the Entry. Only works if the CUSTOM view is selected.
+   * paths within the Entry. It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string paths = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -164,7 +166,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to those associated with the provided
-   * paths within the Entry. Only works if the CUSTOM view is selected.
+   * paths within the Entry. It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string paths = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -178,7 +180,7 @@ public interface LookupEntryRequestOrBuilder
    *
    * <pre>
    * Optional. Limits the aspects returned to those associated with the provided
-   * paths within the Entry. Only works if the CUSTOM view is selected.
+   * paths within the Entry. It only works for CUSTOM view.
    * </pre>
    *
    * <code>repeated string paths = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

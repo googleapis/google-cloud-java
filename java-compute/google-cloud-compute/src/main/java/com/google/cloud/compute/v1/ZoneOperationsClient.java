@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,7 +249,7 @@ public class ZoneOperationsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
-   * @param operation Name of the Operations resource to delete.
+   * @param operation Name of the Operations resource to delete, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteZoneOperationResponse delete(String project, String zone, String operation) {
@@ -345,7 +345,7 @@ public class ZoneOperationsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation get(String project, String zone, String operation) {
@@ -590,7 +590,7 @@ public class ZoneOperationsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation wait(String project, String zone, String operation) {

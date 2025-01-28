@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,12 @@ public final class RoleMessagesProto {
           + "gle.ads.admanager.v1.RoleStatusEnum.Role"
           + "StatusB\003\340A\003:U\352AR\n\035admanager.googleapis.c"
           + "om/Role\022$networks/{network_code}/roles/{"
-          + "role}*\005roles2\004roleB\250\001\n\033com.google.ads.ad"
+          + "role}*\005roles2\004roleB\305\001\n\033com.google.ads.ad"
           + "manager.v1B\021RoleMessagesProtoP\001Z@google."
           + "golang.org/genproto/googleapis/ads/adman"
           + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
-          + ".V1\312\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

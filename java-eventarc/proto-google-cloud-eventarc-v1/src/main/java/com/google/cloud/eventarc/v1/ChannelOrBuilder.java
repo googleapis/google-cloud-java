@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -292,16 +292,14 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
    *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>
-   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The cryptoKeyName.
    */
@@ -310,20 +308,32 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource name of a KMS crypto key (managed by the user) used to
+   * Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
    *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>
-   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string crypto_key_name = 11 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for cryptoKeyName.
    */
   com.google.protobuf.ByteString getCryptoKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this Channel satisfies the requirements of
+   * physical zone separation
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 
   com.google.cloud.eventarc.v1.Channel.TransportCase getTransportCase();
 }

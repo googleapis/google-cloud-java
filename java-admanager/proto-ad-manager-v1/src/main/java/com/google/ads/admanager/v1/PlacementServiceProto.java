@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,11 +74,12 @@ public final class PlacementServiceProto {
           + "t\032/.google.ads.admanager.v1.ListPlacemen"
           + "tsResponse\"3\332A\006parent\202\323\344\223\002$\022\"/v1/{parent"
           + "=networks/*}/placements\032\033\312A\030admanager.go"
-          + "ogleapis.comB\254\001\n\033com.google.ads.admanage"
+          + "ogleapis.comB\311\001\n\033com.google.ads.admanage"
           + "r.v1B\025PlacementServiceProtoP\001Z@google.go"
           + "lang.org/genproto/googleapis/ads/admanag"
           + "er/v1;admanager\252\002\027Google.Ads.AdManager.V"
-          + "1\312\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ad"
+          + "s::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

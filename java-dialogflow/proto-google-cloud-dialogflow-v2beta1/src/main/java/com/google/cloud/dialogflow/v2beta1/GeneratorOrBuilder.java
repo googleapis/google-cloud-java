@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,7 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
-   * Input of prebuilt Summarization feature.
+   * Input of Summarization feature.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SummarizationContext summarization_context = 13;</code>
@@ -96,7 +96,7 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
-   * Input of prebuilt Summarization feature.
+   * Input of Summarization feature.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SummarizationContext summarization_context = 13;</code>
@@ -108,7 +108,7 @@ public interface GeneratorOrBuilder
    *
    *
    * <pre>
-   * Input of prebuilt Summarization feature.
+   * Input of Summarization feature.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SummarizationContext summarization_context = 13;</code>

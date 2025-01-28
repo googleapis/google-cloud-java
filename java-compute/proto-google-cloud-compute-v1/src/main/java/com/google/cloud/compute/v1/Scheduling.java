@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     nodeAffinities_ = java.util.Collections.emptyList();
     onHostMaintenance_ = "";
     provisioningModel_ = "";
+    terminationTime_ = "";
   }
 
   @java.lang.Override
@@ -603,6 +604,39 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     return automaticRestart_;
   }
 
+  public static final int AVAILABILITY_DOMAIN_FIELD_NUMBER = 252514344;
+  private int availabilityDomain_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * </pre>
+   *
+   * <code>optional int32 availability_domain = 252514344;</code>
+   *
+   * @return Whether the availabilityDomain field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvailabilityDomain() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * </pre>
+   *
+   * <code>optional int32 availability_domain = 252514344;</code>
+   *
+   * @return The availabilityDomain.
+   */
+  @java.lang.Override
+  public int getAvailabilityDomain() {
+    return availabilityDomain_;
+  }
+
   public static final int INSTANCE_TERMINATION_ACTION_FIELD_NUMBER = 107380667;
 
   @SuppressWarnings("serial")
@@ -621,7 +655,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasInstanceTerminationAction() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -687,7 +721,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocalSsdRecoveryTimeout() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -739,7 +773,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocationHint() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -788,6 +822,56 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MAX_RUN_DURATION_FIELD_NUMBER = 430839747;
+  private com.google.cloud.compute.v1.Duration maxRunDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+   *
+   * @return Whether the maxRunDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxRunDuration() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+   *
+   * @return The maxRunDuration.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Duration getMaxRunDuration() {
+    return maxRunDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : maxRunDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DurationOrBuilder getMaxRunDurationOrBuilder() {
+    return maxRunDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : maxRunDuration_;
+  }
+
   public static final int MIN_NODE_CPUS_FIELD_NUMBER = 317231675;
   private int minNodeCpus_ = 0;
   /**
@@ -803,7 +887,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMinNodeCpus() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -917,7 +1001,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOnHostMaintenance() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -968,6 +1052,45 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ON_INSTANCE_STOP_ACTION_FIELD_NUMBER = 529876681;
+  private com.google.cloud.compute.v1.SchedulingOnInstanceStopAction onInstanceStopAction_;
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+   * </code>
+   *
+   * @return Whether the onInstanceStopAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasOnInstanceStopAction() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+   * </code>
+   *
+   * @return The onInstanceStopAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SchedulingOnInstanceStopAction getOnInstanceStopAction() {
+    return onInstanceStopAction_ == null
+        ? com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.getDefaultInstance()
+        : onInstanceStopAction_;
+  }
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SchedulingOnInstanceStopActionOrBuilder
+      getOnInstanceStopActionOrBuilder() {
+    return onInstanceStopAction_ == null
+        ? com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.getDefaultInstance()
+        : onInstanceStopAction_;
+  }
+
   public static final int PREEMPTIBLE_FIELD_NUMBER = 324203169;
   private boolean preemptible_ = false;
   /**
@@ -983,7 +1106,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPreemptible() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1019,7 +1142,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProvisioningModel() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1070,6 +1193,72 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TERMINATION_TIME_FIELD_NUMBER = 428082984;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object terminationTime_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * </pre>
+   *
+   * <code>optional string termination_time = 428082984;</code>
+   *
+   * @return Whether the terminationTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasTerminationTime() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * </pre>
+   *
+   * <code>optional string termination_time = 428082984;</code>
+   *
+   * @return The terminationTime.
+   */
+  @java.lang.Override
+  public java.lang.String getTerminationTime() {
+    java.lang.Object ref = terminationTime_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      terminationTime_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * </pre>
+   *
+   * <code>optional string termination_time = 428082984;</code>
+   *
+   * @return The bytes for terminationTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTerminationTimeBytes() {
+    java.lang.Object ref = terminationTime_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      terminationTime_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1084,33 +1273,45 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 494423, provisioningModel_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 64616796, onHostMaintenance_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 107380667, instanceTerminationAction_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(268015590, getLocalSsdRecoveryTimeout());
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeInt32(317231675, minNodeCpus_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeBool(324203169, preemptible_);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(252514344, availabilityDomain_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(268015590, getLocalSsdRecoveryTimeout());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeInt32(317231675, minNodeCpus_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeBool(324203169, preemptible_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(350821371, automaticRestart_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 428082984, terminationTime_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(430839747, getMaxRunDuration());
+    }
     for (int i = 0; i < nodeAffinities_.size(); i++) {
       output.writeMessage(461799971, nodeAffinities_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(529876681, getOnInstanceStopAction());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1121,39 +1322,55 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494423, provisioningModel_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(64616796, onHostMaintenance_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               107380667, instanceTerminationAction_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(252514344, availabilityDomain_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               268015590, getLocalSsdRecoveryTimeout());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(317231675, minNodeCpus_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(324203169, preemptible_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(350821371, automaticRestart_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(428082984, terminationTime_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(430839747, getMaxRunDuration());
+    }
     for (int i = 0; i < nodeAffinities_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               461799971, nodeAffinities_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              529876681, getOnInstanceStopAction());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1174,6 +1391,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasAutomaticRestart()) {
       if (getAutomaticRestart() != other.getAutomaticRestart()) return false;
     }
+    if (hasAvailabilityDomain() != other.hasAvailabilityDomain()) return false;
+    if (hasAvailabilityDomain()) {
+      if (getAvailabilityDomain() != other.getAvailabilityDomain()) return false;
+    }
     if (hasInstanceTerminationAction() != other.hasInstanceTerminationAction()) return false;
     if (hasInstanceTerminationAction()) {
       if (!getInstanceTerminationAction().equals(other.getInstanceTerminationAction()))
@@ -1187,6 +1408,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasLocationHint()) {
       if (!getLocationHint().equals(other.getLocationHint())) return false;
     }
+    if (hasMaxRunDuration() != other.hasMaxRunDuration()) return false;
+    if (hasMaxRunDuration()) {
+      if (!getMaxRunDuration().equals(other.getMaxRunDuration())) return false;
+    }
     if (hasMinNodeCpus() != other.hasMinNodeCpus()) return false;
     if (hasMinNodeCpus()) {
       if (getMinNodeCpus() != other.getMinNodeCpus()) return false;
@@ -1196,6 +1421,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasOnHostMaintenance()) {
       if (!getOnHostMaintenance().equals(other.getOnHostMaintenance())) return false;
     }
+    if (hasOnInstanceStopAction() != other.hasOnInstanceStopAction()) return false;
+    if (hasOnInstanceStopAction()) {
+      if (!getOnInstanceStopAction().equals(other.getOnInstanceStopAction())) return false;
+    }
     if (hasPreemptible() != other.hasPreemptible()) return false;
     if (hasPreemptible()) {
       if (getPreemptible() != other.getPreemptible()) return false;
@@ -1203,6 +1432,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasProvisioningModel() != other.hasProvisioningModel()) return false;
     if (hasProvisioningModel()) {
       if (!getProvisioningModel().equals(other.getProvisioningModel())) return false;
+    }
+    if (hasTerminationTime() != other.hasTerminationTime()) return false;
+    if (hasTerminationTime()) {
+      if (!getTerminationTime().equals(other.getTerminationTime())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1219,6 +1452,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AUTOMATIC_RESTART_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutomaticRestart());
     }
+    if (hasAvailabilityDomain()) {
+      hash = (37 * hash) + AVAILABILITY_DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailabilityDomain();
+    }
     if (hasInstanceTerminationAction()) {
       hash = (37 * hash) + INSTANCE_TERMINATION_ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceTerminationAction().hashCode();
@@ -1230,6 +1467,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasLocationHint()) {
       hash = (37 * hash) + LOCATION_HINT_FIELD_NUMBER;
       hash = (53 * hash) + getLocationHint().hashCode();
+    }
+    if (hasMaxRunDuration()) {
+      hash = (37 * hash) + MAX_RUN_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxRunDuration().hashCode();
     }
     if (hasMinNodeCpus()) {
       hash = (37 * hash) + MIN_NODE_CPUS_FIELD_NUMBER;
@@ -1243,6 +1484,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ON_HOST_MAINTENANCE_FIELD_NUMBER;
       hash = (53 * hash) + getOnHostMaintenance().hashCode();
     }
+    if (hasOnInstanceStopAction()) {
+      hash = (37 * hash) + ON_INSTANCE_STOP_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getOnInstanceStopAction().hashCode();
+    }
     if (hasPreemptible()) {
       hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreemptible());
@@ -1250,6 +1495,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasProvisioningModel()) {
       hash = (37 * hash) + PROVISIONING_MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getProvisioningModel().hashCode();
+    }
+    if (hasTerminationTime()) {
+      hash = (37 * hash) + TERMINATION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTerminationTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1392,7 +1641,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getLocalSsdRecoveryTimeoutFieldBuilder();
+        getMaxRunDurationFieldBuilder();
         getNodeAffinitiesFieldBuilder();
+        getOnInstanceStopActionFieldBuilder();
       }
     }
 
@@ -1401,6 +1652,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       automaticRestart_ = false;
+      availabilityDomain_ = 0;
       instanceTerminationAction_ = "";
       localSsdRecoveryTimeout_ = null;
       if (localSsdRecoveryTimeoutBuilder_ != null) {
@@ -1408,6 +1660,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         localSsdRecoveryTimeoutBuilder_ = null;
       }
       locationHint_ = "";
+      maxRunDuration_ = null;
+      if (maxRunDurationBuilder_ != null) {
+        maxRunDurationBuilder_.dispose();
+        maxRunDurationBuilder_ = null;
+      }
       minNodeCpus_ = 0;
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
@@ -1415,10 +1672,16 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         nodeAffinities_ = null;
         nodeAffinitiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onHostMaintenance_ = "";
+      onInstanceStopAction_ = null;
+      if (onInstanceStopActionBuilder_ != null) {
+        onInstanceStopActionBuilder_.dispose();
+        onInstanceStopActionBuilder_ = null;
+      }
       preemptible_ = false;
       provisioningModel_ = "";
+      terminationTime_ = "";
       return this;
     }
 
@@ -1456,9 +1719,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Scheduling result) {
       if (nodeAffinitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           nodeAffinities_ = java.util.Collections.unmodifiableList(nodeAffinities_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.nodeAffinities_ = nodeAffinities_;
       } else {
@@ -1474,35 +1737,55 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.instanceTerminationAction_ = instanceTerminationAction_;
+        result.availabilityDomain_ = availabilityDomain_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instanceTerminationAction_ = instanceTerminationAction_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.localSsdRecoveryTimeout_ =
             localSsdRecoveryTimeoutBuilder_ == null
                 ? localSsdRecoveryTimeout_
                 : localSsdRecoveryTimeoutBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.locationHint_ = locationHint_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.minNodeCpus_ = minNodeCpus_;
+        result.locationHint_ = locationHint_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.onHostMaintenance_ = onHostMaintenance_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.maxRunDuration_ =
+            maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.preemptible_ = preemptible_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.minNodeCpus_ = minNodeCpus_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.provisioningModel_ = provisioningModel_;
+        result.onHostMaintenance_ = onHostMaintenance_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.onInstanceStopAction_ =
+            onInstanceStopActionBuilder_ == null
+                ? onInstanceStopAction_
+                : onInstanceStopActionBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.preemptible_ = preemptible_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.provisioningModel_ = provisioningModel_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.terminationTime_ = terminationTime_;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1555,9 +1838,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAutomaticRestart()) {
         setAutomaticRestart(other.getAutomaticRestart());
       }
+      if (other.hasAvailabilityDomain()) {
+        setAvailabilityDomain(other.getAvailabilityDomain());
+      }
       if (other.hasInstanceTerminationAction()) {
         instanceTerminationAction_ = other.instanceTerminationAction_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasLocalSsdRecoveryTimeout()) {
@@ -1565,8 +1851,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasLocationHint()) {
         locationHint_ = other.locationHint_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
+      }
+      if (other.hasMaxRunDuration()) {
+        mergeMaxRunDuration(other.getMaxRunDuration());
       }
       if (other.hasMinNodeCpus()) {
         setMinNodeCpus(other.getMinNodeCpus());
@@ -1575,7 +1864,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         if (!other.nodeAffinities_.isEmpty()) {
           if (nodeAffinities_.isEmpty()) {
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureNodeAffinitiesIsMutable();
             nodeAffinities_.addAll(other.nodeAffinities_);
@@ -1588,7 +1877,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             nodeAffinitiesBuilder_.dispose();
             nodeAffinitiesBuilder_ = null;
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
             nodeAffinitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodeAffinitiesFieldBuilder()
@@ -1600,15 +1889,23 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasOnHostMaintenance()) {
         onHostMaintenance_ = other.onHostMaintenance_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.hasOnInstanceStopAction()) {
+        mergeOnInstanceStopAction(other.getOnInstanceStopAction());
       }
       if (other.hasPreemptible()) {
         setPreemptible(other.getPreemptible());
       }
       if (other.hasProvisioningModel()) {
         provisioningModel_ = other.provisioningModel_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.hasTerminationTime()) {
+        terminationTime_ = other.terminationTime_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1640,44 +1937,50 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             case 3955386:
               {
                 provisioningModel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 3955386
             case 516934370:
               {
                 onHostMaintenance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 516934370
             case 859045338:
               {
                 instanceTerminationAction_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 859045338
+            case 2020114752:
+              {
+                availabilityDomain_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 2020114752
             case 2144124722:
               {
                 input.readMessage(
                     getLocalSsdRecoveryTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 2144124722
             case -1757113896:
               {
                 minNodeCpus_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -1757113896
             case -1701341944:
               {
                 preemptible_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -1701341944
             case -1490811254:
               {
                 locationHint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1490811254
             case -1488396328:
@@ -1686,6 +1989,18 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1488396328
+            case -870303422:
+              {
+                terminationTime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case -870303422
+            case -848249318:
+              {
+                input.readMessage(getMaxRunDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -848249318
             case -600567526:
               {
                 com.google.cloud.compute.v1.SchedulingNodeAffinity m =
@@ -1700,6 +2015,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case -600567526
+            case -55953846:
+              {
+                input.readMessage(
+                    getOnInstanceStopActionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -55953846
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1787,6 +2109,74 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int availabilityDomain_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * </pre>
+     *
+     * <code>optional int32 availability_domain = 252514344;</code>
+     *
+     * @return Whether the availabilityDomain field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvailabilityDomain() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * </pre>
+     *
+     * <code>optional int32 availability_domain = 252514344;</code>
+     *
+     * @return The availabilityDomain.
+     */
+    @java.lang.Override
+    public int getAvailabilityDomain() {
+      return availabilityDomain_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * </pre>
+     *
+     * <code>optional int32 availability_domain = 252514344;</code>
+     *
+     * @param value The availabilityDomain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailabilityDomain(int value) {
+
+      availabilityDomain_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * </pre>
+     *
+     * <code>optional int32 availability_domain = 252514344;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailabilityDomain() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      availabilityDomain_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object instanceTerminationAction_ = "";
     /**
      *
@@ -1801,7 +2191,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the instanceTerminationAction field is set.
      */
     public boolean hasInstanceTerminationAction() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1867,7 +2257,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       instanceTerminationAction_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1885,7 +2275,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInstanceTerminationAction() {
       instanceTerminationAction_ = getDefaultInstance().getInstanceTerminationAction();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1908,7 +2298,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       instanceTerminationAction_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1932,7 +2322,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the localSsdRecoveryTimeout field is set.
      */
     public boolean hasLocalSsdRecoveryTimeout() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1974,7 +2364,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       } else {
         localSsdRecoveryTimeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1995,7 +2385,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       } else {
         localSsdRecoveryTimeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2011,7 +2401,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLocalSsdRecoveryTimeout(com.google.cloud.compute.v1.Duration value) {
       if (localSsdRecoveryTimeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && localSsdRecoveryTimeout_ != null
             && localSsdRecoveryTimeout_
                 != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
@@ -2023,7 +2413,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         localSsdRecoveryTimeoutBuilder_.mergeFrom(value);
       }
       if (localSsdRecoveryTimeout_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2039,7 +2429,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLocalSsdRecoveryTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       localSsdRecoveryTimeout_ = null;
       if (localSsdRecoveryTimeoutBuilder_ != null) {
         localSsdRecoveryTimeoutBuilder_.dispose();
@@ -2059,7 +2449,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getLocalSsdRecoveryTimeoutBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLocalSsdRecoveryTimeoutFieldBuilder().getBuilder();
     }
@@ -2122,7 +2512,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the locationHint field is set.
      */
     public boolean hasLocationHint() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2185,7 +2575,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       locationHint_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2202,7 +2592,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocationHint() {
       locationHint_ = getDefaultInstance().getLocationHint();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2224,9 +2614,194 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       locationHint_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.Duration maxRunDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        maxRunDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     *
+     * @return Whether the maxRunDuration field is set.
+     */
+    public boolean hasMaxRunDuration() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     *
+     * @return The maxRunDuration.
+     */
+    public com.google.cloud.compute.v1.Duration getMaxRunDuration() {
+      if (maxRunDurationBuilder_ == null) {
+        return maxRunDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : maxRunDuration_;
+      } else {
+        return maxRunDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     */
+    public Builder setMaxRunDuration(com.google.cloud.compute.v1.Duration value) {
+      if (maxRunDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxRunDuration_ = value;
+      } else {
+        maxRunDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     */
+    public Builder setMaxRunDuration(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
+      if (maxRunDurationBuilder_ == null) {
+        maxRunDuration_ = builderForValue.build();
+      } else {
+        maxRunDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     */
+    public Builder mergeMaxRunDuration(com.google.cloud.compute.v1.Duration value) {
+      if (maxRunDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && maxRunDuration_ != null
+            && maxRunDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
+          getMaxRunDurationBuilder().mergeFrom(value);
+        } else {
+          maxRunDuration_ = value;
+        }
+      } else {
+        maxRunDurationBuilder_.mergeFrom(value);
+      }
+      if (maxRunDuration_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     */
+    public Builder clearMaxRunDuration() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      maxRunDuration_ = null;
+      if (maxRunDurationBuilder_ != null) {
+        maxRunDurationBuilder_.dispose();
+        maxRunDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     */
+    public com.google.cloud.compute.v1.Duration.Builder getMaxRunDurationBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getMaxRunDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     */
+    public com.google.cloud.compute.v1.DurationOrBuilder getMaxRunDurationOrBuilder() {
+      if (maxRunDurationBuilder_ != null) {
+        return maxRunDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return maxRunDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : maxRunDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        getMaxRunDurationFieldBuilder() {
+      if (maxRunDurationBuilder_ == null) {
+        maxRunDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.Duration,
+                com.google.cloud.compute.v1.Duration.Builder,
+                com.google.cloud.compute.v1.DurationOrBuilder>(
+                getMaxRunDuration(), getParentForChildren(), isClean());
+        maxRunDuration_ = null;
+      }
+      return maxRunDurationBuilder_;
     }
 
     private int minNodeCpus_;
@@ -2243,7 +2818,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMinNodeCpus() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2275,7 +2850,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinNodeCpus(int value) {
 
       minNodeCpus_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2291,7 +2866,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinNodeCpus() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       minNodeCpus_ = 0;
       onChanged();
       return this;
@@ -2301,11 +2876,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNodeAffinitiesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         nodeAffinities_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SchedulingNodeAffinity>(
                 nodeAffinities_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2535,7 +3110,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNodeAffinities() {
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         nodeAffinitiesBuilder_.clear();
@@ -2669,7 +3244,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder,
                 com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>(
                 nodeAffinities_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         nodeAffinities_ = null;
@@ -2691,7 +3266,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onHostMaintenance field is set.
      */
     public boolean hasOnHostMaintenance() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2757,7 +3332,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       onHostMaintenance_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2775,7 +3350,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOnHostMaintenance() {
       onHostMaintenance_ = getDefaultInstance().getOnHostMaintenance();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2798,9 +3373,165 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       onHostMaintenance_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.SchedulingOnInstanceStopAction onInstanceStopAction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SchedulingOnInstanceStopAction,
+            com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.Builder,
+            com.google.cloud.compute.v1.SchedulingOnInstanceStopActionOrBuilder>
+        onInstanceStopActionBuilder_;
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     *
+     * @return Whether the onInstanceStopAction field is set.
+     */
+    public boolean hasOnInstanceStopAction() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     *
+     * @return The onInstanceStopAction.
+     */
+    public com.google.cloud.compute.v1.SchedulingOnInstanceStopAction getOnInstanceStopAction() {
+      if (onInstanceStopActionBuilder_ == null) {
+        return onInstanceStopAction_ == null
+            ? com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.getDefaultInstance()
+            : onInstanceStopAction_;
+      } else {
+        return onInstanceStopActionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     */
+    public Builder setOnInstanceStopAction(
+        com.google.cloud.compute.v1.SchedulingOnInstanceStopAction value) {
+      if (onInstanceStopActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        onInstanceStopAction_ = value;
+      } else {
+        onInstanceStopActionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     */
+    public Builder setOnInstanceStopAction(
+        com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.Builder builderForValue) {
+      if (onInstanceStopActionBuilder_ == null) {
+        onInstanceStopAction_ = builderForValue.build();
+      } else {
+        onInstanceStopActionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     */
+    public Builder mergeOnInstanceStopAction(
+        com.google.cloud.compute.v1.SchedulingOnInstanceStopAction value) {
+      if (onInstanceStopActionBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && onInstanceStopAction_ != null
+            && onInstanceStopAction_
+                != com.google.cloud.compute.v1.SchedulingOnInstanceStopAction
+                    .getDefaultInstance()) {
+          getOnInstanceStopActionBuilder().mergeFrom(value);
+        } else {
+          onInstanceStopAction_ = value;
+        }
+      } else {
+        onInstanceStopActionBuilder_.mergeFrom(value);
+      }
+      if (onInstanceStopAction_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     */
+    public Builder clearOnInstanceStopAction() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onInstanceStopAction_ = null;
+      if (onInstanceStopActionBuilder_ != null) {
+        onInstanceStopActionBuilder_.dispose();
+        onInstanceStopActionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.Builder
+        getOnInstanceStopActionBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getOnInstanceStopActionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SchedulingOnInstanceStopActionOrBuilder
+        getOnInstanceStopActionOrBuilder() {
+      if (onInstanceStopActionBuilder_ != null) {
+        return onInstanceStopActionBuilder_.getMessageOrBuilder();
+      } else {
+        return onInstanceStopAction_ == null
+            ? com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.getDefaultInstance()
+            : onInstanceStopAction_;
+      }
+    }
+    /**
+     * <code>
+     * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SchedulingOnInstanceStopAction,
+            com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.Builder,
+            com.google.cloud.compute.v1.SchedulingOnInstanceStopActionOrBuilder>
+        getOnInstanceStopActionFieldBuilder() {
+      if (onInstanceStopActionBuilder_ == null) {
+        onInstanceStopActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SchedulingOnInstanceStopAction,
+                com.google.cloud.compute.v1.SchedulingOnInstanceStopAction.Builder,
+                com.google.cloud.compute.v1.SchedulingOnInstanceStopActionOrBuilder>(
+                getOnInstanceStopAction(), getParentForChildren(), isClean());
+        onInstanceStopAction_ = null;
+      }
+      return onInstanceStopActionBuilder_;
     }
 
     private boolean preemptible_;
@@ -2817,7 +3548,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPreemptible() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2849,7 +3580,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setPreemptible(boolean value) {
 
       preemptible_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2865,7 +3596,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPreemptible() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000400);
       preemptible_ = false;
       onChanged();
       return this;
@@ -2885,7 +3616,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the provisioningModel field is set.
      */
     public boolean hasProvisioningModel() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -2951,7 +3682,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       provisioningModel_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2969,7 +3700,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProvisioningModel() {
       provisioningModel_ = getDefaultInstance().getProvisioningModel();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -2992,7 +3723,127 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       provisioningModel_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object terminationTime_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * </pre>
+     *
+     * <code>optional string termination_time = 428082984;</code>
+     *
+     * @return Whether the terminationTime field is set.
+     */
+    public boolean hasTerminationTime() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * </pre>
+     *
+     * <code>optional string termination_time = 428082984;</code>
+     *
+     * @return The terminationTime.
+     */
+    public java.lang.String getTerminationTime() {
+      java.lang.Object ref = terminationTime_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        terminationTime_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * </pre>
+     *
+     * <code>optional string termination_time = 428082984;</code>
+     *
+     * @return The bytes for terminationTime.
+     */
+    public com.google.protobuf.ByteString getTerminationTimeBytes() {
+      java.lang.Object ref = terminationTime_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        terminationTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * </pre>
+     *
+     * <code>optional string termination_time = 428082984;</code>
+     *
+     * @param value The terminationTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTerminationTime(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      terminationTime_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * </pre>
+     *
+     * <code>optional string termination_time = 428082984;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTerminationTime() {
+      terminationTime_ = getDefaultInstance().getTerminationTime();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * </pre>
+     *
+     * <code>optional string termination_time = 428082984;</code>
+     *
+     * @param value The bytes for terminationTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTerminationTimeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      terminationTime_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

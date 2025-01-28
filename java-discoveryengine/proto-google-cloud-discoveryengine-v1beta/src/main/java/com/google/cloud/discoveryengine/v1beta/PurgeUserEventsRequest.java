@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the catalog under which the events are
    * created. The format is
-   * `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+   * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the catalog under which the events are
    * created. The format is
-   * `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+   * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
    * </pre>
    *
    * <code>
@@ -644,7 +644,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -670,7 +670,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -696,7 +696,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -721,7 +721,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>
@@ -742,7 +742,7 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the catalog under which the events are
      * created. The format is
-     * `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+     * `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -590,7 +590,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -605,7 +605,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -622,7 +622,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This Analytics Property's quota state including this request.
+   * This Google Analytics property's quota state including this request.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -3963,7 +3963,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -3977,7 +3977,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -3997,7 +3997,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -4019,7 +4019,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -4039,7 +4039,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -4067,7 +4067,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -4086,7 +4086,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -4100,7 +4100,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>
@@ -4118,7 +4118,7 @@ public final class RunReportResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This Analytics Property's quota state including this request.
+     * This Google Analytics property's quota state including this request.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 9;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,4 +94,31 @@ public interface QueryReasoningEngineRequestOrBuilder
    * <code>.google.protobuf.Struct input = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.StructOrBuilder getInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Class method to be used for the query.
+   * It is optional and defaults to "query" if unspecified.
+   * </pre>
+   *
+   * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The classMethod.
+   */
+  java.lang.String getClassMethod();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Class method to be used for the query.
+   * It is optional and defaults to "query" if unspecified.
+   * </pre>
+   *
+   * <code>string class_method = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for classMethod.
+   */
+  com.google.protobuf.ByteString getClassMethodBytes();
 }

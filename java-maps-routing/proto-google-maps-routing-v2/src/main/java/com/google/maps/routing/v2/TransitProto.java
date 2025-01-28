@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,12 +78,12 @@ public final class TransitProto {
           + "NTERCITY_BUS\020\t\022\027\n\023LONG_DISTANCE_TRAIN\020\n\022"
           + "\016\n\nMETRO_RAIL\020\013\022\014\n\010MONORAIL\020\014\022\t\n\005OTHER\020\r"
           + "\022\010\n\004RAIL\020\016\022\016\n\nSHARE_TAXI\020\017\022\n\n\006SUBWAY\020\020\022\010"
-          + "\n\004TRAM\020\021\022\016\n\nTROLLEYBUS\020\022B\301\001\n\032com.google."
+          + "\n\004TRAM\020\021\022\016\n\nTROLLEYBUS\020\022B\276\001\n\032com.google."
           + "maps.routing.v2B\014TransitProtoP\001Z:cloud.g"
           + "oogle.com/go/maps/routing/apiv2/routingp"
-          + "b;routingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Rou"
-          + "ting.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Googl"
-          + "e::Maps::Routing::V2b\006proto3"
+          + "b;routingpb\242\002\005GMRV2\252\002\026Google.Maps.Routin"
+          + "g.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Google::"
+          + "Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2225,6 +2225,1009 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public interface PrivateServiceConnectOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The network attachment that the worker network
+     * interface is peered to. Must be in the format
+     * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+     * The region of network attachment must be the same as the worker pool.
+     * See [Network
+     * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+     * </pre>
+     *
+     * <code>
+     * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The networkAttachment.
+     */
+    java.lang.String getNetworkAttachment();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The network attachment that the worker network
+     * interface is peered to. Must be in the format
+     * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+     * The region of network attachment must be the same as the worker pool.
+     * See [Network
+     * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+     * </pre>
+     *
+     * <code>
+     * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for networkAttachment.
+     */
+    com.google.protobuf.ByteString getNetworkAttachmentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. Disable public IP on the primary network interface.
+     *
+     * If true, workers are created without any public address, which prevents
+     * network egress to public IPs unless a network proxy is configured.
+     * If false, workers are created with a public address which allows for
+     * public internet egress. The public address only applies to traffic
+     * through the primary network interface.
+     * If `route_all_traffic` is set to true, all traffic will go through the
+     * non-primary network interface, this boolean has no effect.
+     * </pre>
+     *
+     * <code>
+     * bool public_ip_address_disabled = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The publicIpAddressDisabled.
+     */
+    boolean getPublicIpAddressDisabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Route all traffic through PSC interface. Enable this if you
+     * want full control of traffic in the private pool. Configure Cloud NAT for
+     * the subnet of network attachment if you need to access public Internet.
+     *
+     * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
+     * 192.168.0.0/16 through PSC interface.
+     * </pre>
+     *
+     * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The routeAllTraffic.
+     */
+    boolean getRouteAllTraffic();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines the Private Service Connect network configuration for the pool.
+   * </pre>
+   *
+   * Protobuf type {@code google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect}
+   */
+  public static final class PrivateServiceConnect extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
+      PrivateServiceConnectOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PrivateServiceConnect.newBuilder() to construct.
+    private PrivateServiceConnect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PrivateServiceConnect() {
+      networkAttachment_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PrivateServiceConnect();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_PrivateServiceConnect_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloudbuild.v1.Cloudbuild
+          .internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_PrivateServiceConnect_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.class,
+              com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder.class);
+    }
+
+    public static final int NETWORK_ATTACHMENT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object networkAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The network attachment that the worker network
+     * interface is peered to. Must be in the format
+     * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+     * The region of network attachment must be the same as the worker pool.
+     * See [Network
+     * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+     * </pre>
+     *
+     * <code>
+     * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The networkAttachment.
+     */
+    @java.lang.Override
+    public java.lang.String getNetworkAttachment() {
+      java.lang.Object ref = networkAttachment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkAttachment_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The network attachment that the worker network
+     * interface is peered to. Must be in the format
+     * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+     * The region of network attachment must be the same as the worker pool.
+     * See [Network
+     * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+     * </pre>
+     *
+     * <code>
+     * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for networkAttachment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNetworkAttachmentBytes() {
+      java.lang.Object ref = networkAttachment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        networkAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PUBLIC_IP_ADDRESS_DISABLED_FIELD_NUMBER = 2;
+    private boolean publicIpAddressDisabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. Disable public IP on the primary network interface.
+     *
+     * If true, workers are created without any public address, which prevents
+     * network egress to public IPs unless a network proxy is configured.
+     * If false, workers are created with a public address which allows for
+     * public internet egress. The public address only applies to traffic
+     * through the primary network interface.
+     * If `route_all_traffic` is set to true, all traffic will go through the
+     * non-primary network interface, this boolean has no effect.
+     * </pre>
+     *
+     * <code>
+     * bool public_ip_address_disabled = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The publicIpAddressDisabled.
+     */
+    @java.lang.Override
+    public boolean getPublicIpAddressDisabled() {
+      return publicIpAddressDisabled_;
+    }
+
+    public static final int ROUTE_ALL_TRAFFIC_FIELD_NUMBER = 3;
+    private boolean routeAllTraffic_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Route all traffic through PSC interface. Enable this if you
+     * want full control of traffic in the private pool. Configure Cloud NAT for
+     * the subnet of network attachment if you need to access public Internet.
+     *
+     * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
+     * 192.168.0.0/16 through PSC interface.
+     * </pre>
+     *
+     * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The routeAllTraffic.
+     */
+    @java.lang.Override
+    public boolean getRouteAllTraffic() {
+      return routeAllTraffic_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkAttachment_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, networkAttachment_);
+      }
+      if (publicIpAddressDisabled_ != false) {
+        output.writeBool(2, publicIpAddressDisabled_);
+      }
+      if (routeAllTraffic_ != false) {
+        output.writeBool(3, routeAllTraffic_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkAttachment_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, networkAttachment_);
+      }
+      if (publicIpAddressDisabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, publicIpAddressDisabled_);
+      }
+      if (routeAllTraffic_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, routeAllTraffic_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)) {
+        return super.equals(obj);
+      }
+      com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect other =
+          (com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect) obj;
+
+      if (!getNetworkAttachment().equals(other.getNetworkAttachment())) return false;
+      if (getPublicIpAddressDisabled() != other.getPublicIpAddressDisabled()) return false;
+      if (getRouteAllTraffic() != other.getRouteAllTraffic()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NETWORK_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkAttachment().hashCode();
+      hash = (37 * hash) + PUBLIC_IP_ADDRESS_DISABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPublicIpAddressDisabled());
+      hash = (37 * hash) + ROUTE_ALL_TRAFFIC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRouteAllTraffic());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines the Private Service Connect network configuration for the pool.
+     * </pre>
+     *
+     * Protobuf type {@code google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
+        com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_PrivateServiceConnect_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_PrivateServiceConnect_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.class,
+                com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        networkAttachment_ = "";
+        publicIpAddressDisabled_ = false;
+        routeAllTraffic_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloudbuild.v1.Cloudbuild
+            .internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_PrivateServiceConnect_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+          getDefaultInstanceForType() {
+        return com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect build() {
+        com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect buildPartial() {
+        com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect result =
+            new com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.networkAttachment_ = networkAttachment_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.publicIpAddressDisabled_ = publicIpAddressDisabled_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.routeAllTraffic_ = routeAllTraffic_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect) {
+          return mergeFrom(
+              (com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect other) {
+        if (other
+            == com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+                .getDefaultInstance()) return this;
+        if (!other.getNetworkAttachment().isEmpty()) {
+          networkAttachment_ = other.networkAttachment_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getPublicIpAddressDisabled() != false) {
+          setPublicIpAddressDisabled(other.getPublicIpAddressDisabled());
+        }
+        if (other.getRouteAllTraffic() != false) {
+          setRouteAllTraffic(other.getRouteAllTraffic());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  networkAttachment_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  publicIpAddressDisabled_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  routeAllTraffic_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object networkAttachment_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. The network attachment that the worker network
+       * interface is peered to. Must be in the format
+       * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+       * The region of network attachment must be the same as the worker pool.
+       * See [Network
+       * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+       * </pre>
+       *
+       * <code>
+       * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The networkAttachment.
+       */
+      public java.lang.String getNetworkAttachment() {
+        java.lang.Object ref = networkAttachment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          networkAttachment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. The network attachment that the worker network
+       * interface is peered to. Must be in the format
+       * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+       * The region of network attachment must be the same as the worker pool.
+       * See [Network
+       * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+       * </pre>
+       *
+       * <code>
+       * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for networkAttachment.
+       */
+      public com.google.protobuf.ByteString getNetworkAttachmentBytes() {
+        java.lang.Object ref = networkAttachment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          networkAttachment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. The network attachment that the worker network
+       * interface is peered to. Must be in the format
+       * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+       * The region of network attachment must be the same as the worker pool.
+       * See [Network
+       * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+       * </pre>
+       *
+       * <code>
+       * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The networkAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkAttachment(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkAttachment_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. The network attachment that the worker network
+       * interface is peered to. Must be in the format
+       * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+       * The region of network attachment must be the same as the worker pool.
+       * See [Network
+       * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+       * </pre>
+       *
+       * <code>
+       * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNetworkAttachment() {
+        networkAttachment_ = getDefaultInstance().getNetworkAttachment();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. The network attachment that the worker network
+       * interface is peered to. Must be in the format
+       * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
+       * The region of network attachment must be the same as the worker pool.
+       * See [Network
+       * Attachments](https://cloud.google.com/vpc/docs/about-network-attachments)
+       * </pre>
+       *
+       * <code>
+       * string network_attachment = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for networkAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkAttachmentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        networkAttachment_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private boolean publicIpAddressDisabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. Disable public IP on the primary network interface.
+       *
+       * If true, workers are created without any public address, which prevents
+       * network egress to public IPs unless a network proxy is configured.
+       * If false, workers are created with a public address which allows for
+       * public internet egress. The public address only applies to traffic
+       * through the primary network interface.
+       * If `route_all_traffic` is set to true, all traffic will go through the
+       * non-primary network interface, this boolean has no effect.
+       * </pre>
+       *
+       * <code>
+       * bool public_ip_address_disabled = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+       * </code>
+       *
+       * @return The publicIpAddressDisabled.
+       */
+      @java.lang.Override
+      public boolean getPublicIpAddressDisabled() {
+        return publicIpAddressDisabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. Disable public IP on the primary network interface.
+       *
+       * If true, workers are created without any public address, which prevents
+       * network egress to public IPs unless a network proxy is configured.
+       * If false, workers are created with a public address which allows for
+       * public internet egress. The public address only applies to traffic
+       * through the primary network interface.
+       * If `route_all_traffic` is set to true, all traffic will go through the
+       * non-primary network interface, this boolean has no effect.
+       * </pre>
+       *
+       * <code>
+       * bool public_ip_address_disabled = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+       * </code>
+       *
+       * @param value The publicIpAddressDisabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublicIpAddressDisabled(boolean value) {
+
+        publicIpAddressDisabled_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Immutable. Disable public IP on the primary network interface.
+       *
+       * If true, workers are created without any public address, which prevents
+       * network egress to public IPs unless a network proxy is configured.
+       * If false, workers are created with a public address which allows for
+       * public internet egress. The public address only applies to traffic
+       * through the primary network interface.
+       * If `route_all_traffic` is set to true, all traffic will go through the
+       * non-primary network interface, this boolean has no effect.
+       * </pre>
+       *
+       * <code>
+       * bool public_ip_address_disabled = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPublicIpAddressDisabled() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        publicIpAddressDisabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean routeAllTraffic_;
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Route all traffic through PSC interface. Enable this if you
+       * want full control of traffic in the private pool. Configure Cloud NAT for
+       * the subnet of network attachment if you need to access public Internet.
+       *
+       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16 through PSC interface.
+       * </pre>
+       *
+       * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The routeAllTraffic.
+       */
+      @java.lang.Override
+      public boolean getRouteAllTraffic() {
+        return routeAllTraffic_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Route all traffic through PSC interface. Enable this if you
+       * want full control of traffic in the private pool. Configure Cloud NAT for
+       * the subnet of network attachment if you need to access public Internet.
+       *
+       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16 through PSC interface.
+       * </pre>
+       *
+       * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The routeAllTraffic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouteAllTraffic(boolean value) {
+
+        routeAllTraffic_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Route all traffic through PSC interface. Enable this if you
+       * want full control of traffic in the private pool. Configure Cloud NAT for
+       * the subnet of network attachment if you need to access public Internet.
+       *
+       * If false, Only route private IPs, e.g. 10.0.0.0/8, 172.16.0.0/12, and
+       * 192.168.0.0/16 through PSC interface.
+       * </pre>
+       *
+       * <code>bool route_all_traffic = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRouteAllTraffic() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        routeAllTraffic_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
+    private static final com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect();
+    }
+
+    public static com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PrivateServiceConnect> PARSER =
+        new com.google.protobuf.AbstractParser<PrivateServiceConnect>() {
+          @java.lang.Override
+          public PrivateServiceConnect parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PrivateServiceConnect> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PrivateServiceConnect> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int WORKER_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloudbuild.v1.PrivatePoolV1Config.WorkerConfig workerConfig_;
@@ -2331,6 +3334,64 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         : networkConfig_;
   }
 
+  public static final int PRIVATE_SERVICE_CONNECT_FIELD_NUMBER = 5;
+  private com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect privateServiceConnect_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the privateServiceConnect field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateServiceConnect() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The privateServiceConnect.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+      getPrivateServiceConnect() {
+    return privateServiceConnect_ == null
+        ? com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.getDefaultInstance()
+        : privateServiceConnect_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder
+      getPrivateServiceConnectOrBuilder() {
+    return privateServiceConnect_ == null
+        ? com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.getDefaultInstance()
+        : privateServiceConnect_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2351,6 +3412,9 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getNetworkConfig());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getPrivateServiceConnect());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2365,6 +3429,10 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getNetworkConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPrivateServiceConnect());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2390,6 +3458,10 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     if (hasNetworkConfig()) {
       if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
     }
+    if (hasPrivateServiceConnect() != other.hasPrivateServiceConnect()) return false;
+    if (hasPrivateServiceConnect()) {
+      if (!getPrivateServiceConnect().equals(other.getPrivateServiceConnect())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2408,6 +3480,10 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     if (hasNetworkConfig()) {
       hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
+    if (hasPrivateServiceConnect()) {
+      hash = (37 * hash) + PRIVATE_SERVICE_CONNECT_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateServiceConnect().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2551,6 +3627,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getWorkerConfigFieldBuilder();
         getNetworkConfigFieldBuilder();
+        getPrivateServiceConnectFieldBuilder();
       }
     }
 
@@ -2567,6 +3644,11 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       if (networkConfigBuilder_ != null) {
         networkConfigBuilder_.dispose();
         networkConfigBuilder_ = null;
+      }
+      privateServiceConnect_ = null;
+      if (privateServiceConnectBuilder_ != null) {
+        privateServiceConnectBuilder_.dispose();
+        privateServiceConnectBuilder_ = null;
       }
       return this;
     }
@@ -2614,6 +3696,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         result.networkConfig_ =
             networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.privateServiceConnect_ =
+            privateServiceConnectBuilder_ == null
+                ? privateServiceConnect_
+                : privateServiceConnectBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2669,6 +3758,9 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
       if (other.hasNetworkConfig()) {
         mergeNetworkConfig(other.getNetworkConfig());
       }
+      if (other.hasPrivateServiceConnect()) {
+        mergePrivateServiceConnect(other.getPrivateServiceConnect());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2707,6 +3799,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 42:
+              {
+                input.readMessage(
+                    getPrivateServiceConnectFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3125,6 +4224,221 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
         networkConfig_ = null;
       }
       return networkConfigBuilder_;
+    }
+
+    private com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+        privateServiceConnect_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect,
+            com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder,
+            com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder>
+        privateServiceConnectBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the privateServiceConnect field is set.
+     */
+    public boolean hasPrivateServiceConnect() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The privateServiceConnect.
+     */
+    public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+        getPrivateServiceConnect() {
+      if (privateServiceConnectBuilder_ == null) {
+        return privateServiceConnect_ == null
+            ? com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+                .getDefaultInstance()
+            : privateServiceConnect_;
+      } else {
+        return privateServiceConnectBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setPrivateServiceConnect(
+        com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect value) {
+      if (privateServiceConnectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateServiceConnect_ = value;
+      } else {
+        privateServiceConnectBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setPrivateServiceConnect(
+        com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder
+            builderForValue) {
+      if (privateServiceConnectBuilder_ == null) {
+        privateServiceConnect_ = builderForValue.build();
+      } else {
+        privateServiceConnectBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergePrivateServiceConnect(
+        com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect value) {
+      if (privateServiceConnectBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && privateServiceConnect_ != null
+            && privateServiceConnect_
+                != com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+                    .getDefaultInstance()) {
+          getPrivateServiceConnectBuilder().mergeFrom(value);
+        } else {
+          privateServiceConnect_ = value;
+        }
+      } else {
+        privateServiceConnectBuilder_.mergeFrom(value);
+      }
+      if (privateServiceConnect_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearPrivateServiceConnect() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      privateServiceConnect_ = null;
+      if (privateServiceConnectBuilder_ != null) {
+        privateServiceConnectBuilder_.dispose();
+        privateServiceConnectBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder
+        getPrivateServiceConnectBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getPrivateServiceConnectFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder
+        getPrivateServiceConnectOrBuilder() {
+      if (privateServiceConnectBuilder_ != null) {
+        return privateServiceConnectBuilder_.getMessageOrBuilder();
+      } else {
+        return privateServiceConnect_ == null
+            ? com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
+                .getDefaultInstance()
+            : privateServiceConnect_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect,
+            com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder,
+            com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder>
+        getPrivateServiceConnectFieldBuilder() {
+      if (privateServiceConnectBuilder_ == null) {
+        privateServiceConnectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect,
+                com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder,
+                com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder>(
+                getPrivateServiceConnect(), getParentForChildren(), isClean());
+        privateServiceConnect_ = null;
+      }
+      return privateServiceConnectBuilder_;
     }
 
     @java.lang.Override

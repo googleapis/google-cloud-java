@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -374,7 +374,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1201
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1202
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -392,7 +392,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1201
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1202
    * @return The document.
    */
   @java.lang.Override
@@ -1413,7 +1413,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1201
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1202
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -1430,7 +1430,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1201
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1202
      * @return The document.
      */
     @java.lang.Deprecated

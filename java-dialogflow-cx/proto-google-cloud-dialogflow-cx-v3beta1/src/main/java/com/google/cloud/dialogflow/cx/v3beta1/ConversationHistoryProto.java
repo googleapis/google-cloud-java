@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -184,13 +184,13 @@ public final class ConversationHistoryProto {
           + "tions/*/agents/*/conversations/*}\032x\312A\031di"
           + "alogflow.googleapis.com\322AYhttps://www.go"
           + "ogleapis.com/auth/cloud-platform,https:/"
-          + "/www.googleapis.com/auth/dialogflowB\322\001\n&"
+          + "/www.googleapis.com/auth/dialogflowB\317\001\n&"
           + "com.google.cloud.dialogflow.cx.v3beta1B\030"
           + "ConversationHistoryProtoP\001Z6cloud.google"
           + ".com/go/dialogflow/cx/apiv3beta1/cxpb;cx"
-          + "pb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx."
-          + "V3Beta1\352\002&Google::Cloud::Dialogflow::CX:"
-          + ":V3beta1b\006proto3"
+          + "pb\242\002\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3B"
+          + "eta1\352\002&Google::Cloud::Dialogflow::CX::V3"
+          + "beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

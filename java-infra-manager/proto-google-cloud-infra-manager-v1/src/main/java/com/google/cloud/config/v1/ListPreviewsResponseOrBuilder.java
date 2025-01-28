@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -38,7 +38,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -48,7 +48,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -58,7 +58,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>
@@ -68,7 +68,7 @@ public interface ListPreviewsResponseOrBuilder
    *
    *
    * <pre>
-   * List of [Previews][]s.
+   * List of [Previews][google.cloud.config.v1.Preview].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Preview previews = 1;</code>

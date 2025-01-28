@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,10 @@ public interface ProductInputOrBuilder
    * Identifier. The name of the product input.
    * Format:
    * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * where the last section `productinput` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product input name is
+   * "accounts/123/productInputs/online~en~US~sku123"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,6 +49,10 @@ public interface ProductInputOrBuilder
    * Identifier. The name of the product input.
    * Format:
    * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * where the last section `productinput` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product input name is
+   * "accounts/123/productInputs/online~en~US~sku123"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

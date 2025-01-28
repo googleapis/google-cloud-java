@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,7 +146,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -157,7 +157,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -168,7 +168,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -179,7 +179,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *
@@ -190,7 +190,7 @@ public interface InitializeEncryptionSpecMetadataOrBuilder
    *
    *
    * <pre>
-   * Partial errors during initialising operation that might cause the operation
+   * Partial errors during initializing operation that might cause the operation
    * output to be incomplete.
    * </pre>
    *

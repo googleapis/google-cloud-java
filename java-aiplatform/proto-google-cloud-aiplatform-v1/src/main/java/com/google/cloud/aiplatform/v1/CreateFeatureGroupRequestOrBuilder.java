@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,7 +105,7 @@ public interface CreateFeatureGroupRequestOrBuilder
    * Required. The ID to use for this FeatureGroup, which will become the final
    * component of the FeatureGroup's resource name.
    *
-   * This value may be up to 60 characters, and valid characters are
+   * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    *
    * The value must be unique within the project and location.
@@ -123,7 +123,7 @@ public interface CreateFeatureGroupRequestOrBuilder
    * Required. The ID to use for this FeatureGroup, which will become the final
    * component of the FeatureGroup's resource name.
    *
-   * This value may be up to 60 characters, and valid characters are
+   * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    *
    * The value must be unique within the project and location.

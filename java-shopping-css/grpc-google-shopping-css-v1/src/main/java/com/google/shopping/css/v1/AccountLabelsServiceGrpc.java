@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -279,7 +279,7 @@ public final class AccountLabelsServiceGrpc {
      *
      *
      * <pre>
-     * Lists the labels assigned to an account.
+     * Lists the labels owned by an account.
      * </pre>
      */
     default void listAccountLabels(
@@ -372,7 +372,7 @@ public final class AccountLabelsServiceGrpc {
      *
      *
      * <pre>
-     * Lists the labels assigned to an account.
+     * Lists the labels owned by an account.
      * </pre>
      */
     public void listAccountLabels(
@@ -458,7 +458,7 @@ public final class AccountLabelsServiceGrpc {
      *
      *
      * <pre>
-     * Lists the labels assigned to an account.
+     * Lists the labels owned by an account.
      * </pre>
      */
     public com.google.shopping.css.v1.ListAccountLabelsResponse listAccountLabels(
@@ -531,7 +531,7 @@ public final class AccountLabelsServiceGrpc {
      *
      *
      * <pre>
-     * Lists the labels assigned to an account.
+     * Lists the labels owned by an account.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

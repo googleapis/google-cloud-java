@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,10 @@ public final class GeneratorProto {
       internal_static_google_cloud_dialogflow_cx_v3_Generator_Placeholder_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_Generator_Placeholder_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_Generator_ModelParameter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_Generator_ModelParameter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3_Phrase_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -79,70 +83,76 @@ public final class GeneratorProto {
           + "/client.proto\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\032\033googl"
           + "e/protobuf/empty.proto\032 google/protobuf/"
-          + "field_mask.proto\"\350\002\n\tGenerator\022\014\n\004name\030\001"
+          + "field_mask.proto\"\347\004\n\tGenerator\022\014\n\004name\030\001"
           + " \001(\t\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022?\n\013promp"
           + "t_text\030\003 \001(\0132%.google.cloud.dialogflow.c"
           + "x.v3.PhraseB\003\340A\002\022O\n\014placeholders\030\005 \003(\01324"
           + ".google.cloud.dialogflow.cx.v3.Generator"
-          + ".PlaceholderB\003\340A\001\032\'\n\013Placeholder\022\n\n\002id\030\001"
-          + " \001(\t\022\014\n\004name\030\002 \001(\t:w\352At\n#dialogflow.goog"
-          + "leapis.com/Generator\022Mprojects/{project}"
-          + "/locations/{location}/agents/{agent}/gen"
-          + "erators/{generator}\"\033\n\006Phrase\022\021\n\004text\030\001 "
-          + "\001(\tB\003\340A\002\"\222\001\n\025ListGeneratorsRequest\022;\n\006pa"
-          + "rent\030\001 \001(\tB+\340A\002\372A%\022#dialogflow.googleapi"
-          + "s.com/Generator\022\025\n\rlanguage_code\030\002 \001(\t\022\021"
-          + "\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\"o\n"
-          + "\026ListGeneratorsResponse\022<\n\ngenerators\030\001 "
-          + "\003(\0132(.google.cloud.dialogflow.cx.v3.Gene"
-          + "rator\022\027\n\017next_page_token\030\002 \001(\t\"g\n\023GetGen"
-          + "eratorRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#dia"
-          + "logflow.googleapis.com/Generator\022\025\n\rlang"
-          + "uage_code\030\002 \001(\t\"\256\001\n\026CreateGeneratorReque"
-          + "st\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#dialogflow.g"
-          + "oogleapis.com/Generator\022@\n\tgenerator\030\002 \001"
-          + "(\0132(.google.cloud.dialogflow.cx.v3.Gener"
-          + "atorB\003\340A\002\022\025\n\rlanguage_code\030\003 \001(\t\"\242\001\n\026Upd"
-          + "ateGeneratorRequest\022@\n\tgenerator\030\001 \001(\0132("
+          + ".PlaceholderB\003\340A\001\022P\n\017model_parameter\030\010 \001"
+          + "(\01327.google.cloud.dialogflow.cx.v3.Gener"
+          + "ator.ModelParameter\032\'\n\013Placeholder\022\n\n\002id"
+          + "\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\032\252\001\n\016ModelParameter\022"
+          + "\030\n\013temperature\030\001 \001(\002H\000\210\001\001\022\035\n\020max_decode_"
+          + "steps\030\002 \001(\005H\001\210\001\001\022\022\n\005top_p\030\003 \001(\002H\002\210\001\001\022\022\n\005"
+          + "top_k\030\004 \001(\005H\003\210\001\001B\016\n\014_temperatureB\023\n\021_max"
+          + "_decode_stepsB\010\n\006_top_pB\010\n\006_top_k:w\352At\n#"
+          + "dialogflow.googleapis.com/Generator\022Mpro"
+          + "jects/{project}/locations/{location}/age"
+          + "nts/{agent}/generators/{generator}\"\033\n\006Ph"
+          + "rase\022\021\n\004text\030\001 \001(\tB\003\340A\002\"\222\001\n\025ListGenerato"
+          + "rsRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#dialo"
+          + "gflow.googleapis.com/Generator\022\025\n\rlangua"
+          + "ge_code\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage"
+          + "_token\030\004 \001(\t\"o\n\026ListGeneratorsResponse\022<"
+          + "\n\ngenerators\030\001 \003(\0132(.google.cloud.dialog"
+          + "flow.cx.v3.Generator\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\"g\n\023GetGeneratorRequest\0229\n\004name\030\001 \001"
+          + "(\tB+\340A\002\372A%\n#dialogflow.googleapis.com/Ge"
+          + "nerator\022\025\n\rlanguage_code\030\002 \001(\t\"\256\001\n\026Creat"
+          + "eGeneratorRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A"
+          + "%\022#dialogflow.googleapis.com/Generator\022@"
+          + "\n\tgenerator\030\002 \001(\0132(.google.cloud.dialogf"
+          + "low.cx.v3.GeneratorB\003\340A\002\022\025\n\rlanguage_cod"
+          + "e\030\003 \001(\t\"\242\001\n\026UpdateGeneratorRequest\022@\n\tge"
+          + "nerator\030\001 \001(\0132(.google.cloud.dialogflow."
+          + "cx.v3.GeneratorB\003\340A\002\022\025\n\rlanguage_code\030\002 "
+          + "\001(\t\022/\n\013update_mask\030\003 \001(\0132\032.google.protob"
+          + "uf.FieldMask\"b\n\026DeleteGeneratorRequest\0229"
+          + "\n\004name\030\001 \001(\tB+\340A\002\372A%\n#dialogflow.googlea"
+          + "pis.com/Generator\022\r\n\005force\030\002 \001(\0102\351\010\n\nGen"
+          + "erators\022\307\001\n\016ListGenerators\0224.google.clou"
+          + "d.dialogflow.cx.v3.ListGeneratorsRequest"
+          + "\0325.google.cloud.dialogflow.cx.v3.ListGen"
+          + "eratorsResponse\"H\332A\006parent\202\323\344\223\0029\0227/v3/{p"
+          + "arent=projects/*/locations/*/agents/*}/g"
+          + "enerators\022\264\001\n\014GetGenerator\0222.google.clou"
+          + "d.dialogflow.cx.v3.GetGeneratorRequest\032("
           + ".google.cloud.dialogflow.cx.v3.Generator"
-          + "B\003\340A\002\022\025\n\rlanguage_code\030\002 \001(\t\022/\n\013update_m"
-          + "ask\030\003 \001(\0132\032.google.protobuf.FieldMask\"b\n"
-          + "\026DeleteGeneratorRequest\0229\n\004name\030\001 \001(\tB+\340"
-          + "A\002\372A%\n#dialogflow.googleapis.com/Generat"
-          + "or\022\r\n\005force\030\002 \001(\0102\351\010\n\nGenerators\022\307\001\n\016Lis"
-          + "tGenerators\0224.google.cloud.dialogflow.cx"
-          + ".v3.ListGeneratorsRequest\0325.google.cloud"
-          + ".dialogflow.cx.v3.ListGeneratorsResponse"
-          + "\"H\332A\006parent\202\323\344\223\0029\0227/v3/{parent=projects/"
-          + "*/locations/*/agents/*}/generators\022\264\001\n\014G"
-          + "etGenerator\0222.google.cloud.dialogflow.cx"
-          + ".v3.GetGeneratorRequest\032(.google.cloud.d"
-          + "ialogflow.cx.v3.Generator\"F\332A\004name\202\323\344\223\0029"
-          + "\0227/v3/{name=projects/*/locations/*/agent"
-          + "s/*/generators/*}\022\321\001\n\017CreateGenerator\0225."
-          + "google.cloud.dialogflow.cx.v3.CreateGene"
-          + "ratorRequest\032(.google.cloud.dialogflow.c"
-          + "x.v3.Generator\"]\332A\020parent,generator\202\323\344\223\002"
-          + "D\"7/v3/{parent=projects/*/locations/*/ag"
-          + "ents/*}/generators:\tgenerator\022\340\001\n\017Update"
-          + "Generator\0225.google.cloud.dialogflow.cx.v"
-          + "3.UpdateGeneratorRequest\032(.google.cloud."
-          + "dialogflow.cx.v3.Generator\"l\332A\025generator"
-          + ",update_mask\202\323\344\223\002N2A/v3/{generator.name="
-          + "projects/*/locations/*/agents/*/generato"
-          + "rs/*}:\tgenerator\022\250\001\n\017DeleteGenerator\0225.g"
-          + "oogle.cloud.dialogflow.cx.v3.DeleteGener"
-          + "atorRequest\032\026.google.protobuf.Empty\"F\332A\004"
-          + "name\202\323\344\223\0029*7/v3/{name=projects/*/locatio"
-          + "ns/*/agents/*/generators/*}\032x\312A\031dialogfl"
-          + "ow.googleapis.com\322AYhttps://www.googleap"
-          + "is.com/auth/cloud-platform,https://www.g"
-          + "oogleapis.com/auth/dialogflowB\264\001\n!com.go"
-          + "ogle.cloud.dialogflow.cx.v3B\016GeneratorPr"
-          + "otoP\001Z1cloud.google.com/go/dialogflow/cx"
-          + "/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud."
-          + "Dialogflow.Cx.V3\352\002!Google::Cloud::Dialog"
-          + "flow::CX::V3b\006proto3"
+          + "\"F\332A\004name\202\323\344\223\0029\0227/v3/{name=projects/*/lo"
+          + "cations/*/agents/*/generators/*}\022\321\001\n\017Cre"
+          + "ateGenerator\0225.google.cloud.dialogflow.c"
+          + "x.v3.CreateGeneratorRequest\032(.google.clo"
+          + "ud.dialogflow.cx.v3.Generator\"]\332A\020parent"
+          + ",generator\202\323\344\223\002D\"7/v3/{parent=projects/*"
+          + "/locations/*/agents/*}/generators:\tgener"
+          + "ator\022\340\001\n\017UpdateGenerator\0225.google.cloud."
+          + "dialogflow.cx.v3.UpdateGeneratorRequest\032"
+          + "(.google.cloud.dialogflow.cx.v3.Generato"
+          + "r\"l\332A\025generator,update_mask\202\323\344\223\002N2A/v3/{"
+          + "generator.name=projects/*/locations/*/ag"
+          + "ents/*/generators/*}:\tgenerator\022\250\001\n\017Dele"
+          + "teGenerator\0225.google.cloud.dialogflow.cx"
+          + ".v3.DeleteGeneratorRequest\032\026.google.prot"
+          + "obuf.Empty\"F\332A\004name\202\323\344\223\0029*7/v3/{name=pro"
+          + "jects/*/locations/*/agents/*/generators/"
+          + "*}\032x\312A\031dialogflow.googleapis.com\322AYhttps"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "m,https://www.googleapis.com/auth/dialog"
+          + "flowB\264\001\n!com.google.cloud.dialogflow.cx."
+          + "v3B\016GeneratorProtoP\001Z1cloud.google.com/g"
+          + "o/dialogflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252"
+          + "\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Google"
+          + "::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -161,7 +171,7 @@ public final class GeneratorProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_Generator_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "PromptText", "Placeholders",
+              "Name", "DisplayName", "PromptText", "Placeholders", "ModelParameter",
             });
     internal_static_google_cloud_dialogflow_cx_v3_Generator_Placeholder_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3_Generator_descriptor.getNestedTypes().get(0);
@@ -170,6 +180,14 @@ public final class GeneratorProto {
             internal_static_google_cloud_dialogflow_cx_v3_Generator_Placeholder_descriptor,
             new java.lang.String[] {
               "Id", "Name",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_Generator_ModelParameter_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3_Generator_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_dialogflow_cx_v3_Generator_ModelParameter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_Generator_ModelParameter_descriptor,
+            new java.lang.String[] {
+              "Temperature", "MaxDecodeSteps", "TopP", "TopK",
             });
     internal_static_google_cloud_dialogflow_cx_v3_Phrase_descriptor =
         getDescriptor().getMessageTypes().get(1);

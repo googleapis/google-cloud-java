@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -469,7 +469,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     default void updateConnectivityTest(
@@ -640,7 +640,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     public void updateConnectivityTest(
@@ -785,7 +785,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     public com.google.longrunning.Operation updateConnectivityTest(
@@ -925,7 +925,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

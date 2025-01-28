@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,16 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FUEL_EFFICIENT = 3;</code>
    */
   FUEL_EFFICIENT(3),
+  /**
+   *
+   *
+   * <pre>
+   * Shorter travel distance route. This is an experimental feature.
+   * </pre>
+   *
+   * <code>SHORTER_DISTANCE = 4;</code>
+   */
+  SHORTER_DISTANCE(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -121,6 +131,16 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FUEL_EFFICIENT = 3;</code>
    */
   public static final int FUEL_EFFICIENT_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Shorter travel distance route. This is an experimental feature.
+   * </pre>
+   *
+   * <code>SHORTER_DISTANCE = 4;</code>
+   */
+  public static final int SHORTER_DISTANCE_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -154,6 +174,8 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
         return DEFAULT_ROUTE_ALTERNATE;
       case 3:
         return FUEL_EFFICIENT;
+      case 4:
+        return SHORTER_DISTANCE;
       default:
         return null;
     }

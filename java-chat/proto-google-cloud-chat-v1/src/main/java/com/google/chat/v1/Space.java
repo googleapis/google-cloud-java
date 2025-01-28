@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -782,7 +782,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 150 characters.
      * </pre>
      *
-     * <code>string description = 1;</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -797,7 +797,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 150 characters.
      * </pre>
      *
-     * <code>string description = 1;</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -812,7 +812,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 5,000 characters.
      * </pre>
      *
-     * <code>string guidelines = 2;</code>
+     * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The guidelines.
      */
@@ -826,7 +826,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 5,000 characters.
      * </pre>
      *
-     * <code>string guidelines = 2;</code>
+     * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for guidelines.
      */
@@ -891,7 +891,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 150 characters.
      * </pre>
      *
-     * <code>string description = 1;</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -917,7 +917,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 150 characters.
      * </pre>
      *
-     * <code>string description = 1;</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -947,7 +947,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 5,000 characters.
      * </pre>
      *
-     * <code>string guidelines = 2;</code>
+     * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The guidelines.
      */
@@ -972,7 +972,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 5,000 characters.
      * </pre>
      *
-     * <code>string guidelines = 2;</code>
+     * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for guidelines.
      */
@@ -1368,7 +1368,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 150 characters.
        * </pre>
        *
-       * <code>string description = 1;</code>
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The description.
        */
@@ -1393,7 +1393,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 150 characters.
        * </pre>
        *
-       * <code>string description = 1;</code>
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for description.
        */
@@ -1418,7 +1418,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 150 characters.
        * </pre>
        *
-       * <code>string description = 1;</code>
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The description to set.
        * @return This builder for chaining.
@@ -1442,7 +1442,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 150 characters.
        * </pre>
        *
-       * <code>string description = 1;</code>
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1462,7 +1462,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 150 characters.
        * </pre>
        *
-       * <code>string description = 1;</code>
+       * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for description to set.
        * @return This builder for chaining.
@@ -1488,7 +1488,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 5,000 characters.
        * </pre>
        *
-       * <code>string guidelines = 2;</code>
+       * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The guidelines.
        */
@@ -1512,7 +1512,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 5,000 characters.
        * </pre>
        *
-       * <code>string guidelines = 2;</code>
+       * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for guidelines.
        */
@@ -1536,7 +1536,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 5,000 characters.
        * </pre>
        *
-       * <code>string guidelines = 2;</code>
+       * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The guidelines to set.
        * @return This builder for chaining.
@@ -1559,7 +1559,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 5,000 characters.
        * </pre>
        *
-       * <code>string guidelines = 2;</code>
+       * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1578,7 +1578,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * Supports up to 5,000 characters.
        * </pre>
        *
-       * <code>string guidelines = 2;</code>
+       * <code>string guidelines = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for guidelines to set.
        * @return This builder for chaining.
@@ -1667,11 +1667,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Count of human users that have directly joined the space, not counting
-     * users joined by having membership in a joined group.
+     * Output only. Count of human users that have directly joined the space,
+     * not counting users joined by having membership in a joined group.
      * </pre>
      *
-     * <code>int32 joined_direct_human_user_count = 4;</code>
+     * <code>int32 joined_direct_human_user_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The joinedDirectHumanUserCount.
      */
@@ -1681,10 +1682,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Count of all groups that have directly joined the space.
+     * Output only. Count of all groups that have directly joined the space.
      * </pre>
      *
-     * <code>int32 joined_group_count = 5;</code>
+     * <code>int32 joined_group_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The joinedGroupCount.
      */
@@ -1738,11 +1739,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Count of human users that have directly joined the space, not counting
-     * users joined by having membership in a joined group.
+     * Output only. Count of human users that have directly joined the space,
+     * not counting users joined by having membership in a joined group.
      * </pre>
      *
-     * <code>int32 joined_direct_human_user_count = 4;</code>
+     * <code>int32 joined_direct_human_user_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The joinedDirectHumanUserCount.
      */
@@ -1757,10 +1759,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Count of all groups that have directly joined the space.
+     * Output only. Count of all groups that have directly joined the space.
      * </pre>
      *
-     * <code>int32 joined_group_count = 5;</code>
+     * <code>int32 joined_group_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The joinedGroupCount.
      */
@@ -2140,11 +2142,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of human users that have directly joined the space, not counting
-       * users joined by having membership in a joined group.
+       * Output only. Count of human users that have directly joined the space,
+       * not counting users joined by having membership in a joined group.
        * </pre>
        *
-       * <code>int32 joined_direct_human_user_count = 4;</code>
+       * <code>
+       * int32 joined_direct_human_user_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return The joinedDirectHumanUserCount.
        */
@@ -2156,11 +2160,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of human users that have directly joined the space, not counting
-       * users joined by having membership in a joined group.
+       * Output only. Count of human users that have directly joined the space,
+       * not counting users joined by having membership in a joined group.
        * </pre>
        *
-       * <code>int32 joined_direct_human_user_count = 4;</code>
+       * <code>
+       * int32 joined_direct_human_user_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @param value The joinedDirectHumanUserCount to set.
        * @return This builder for chaining.
@@ -2176,11 +2182,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of human users that have directly joined the space, not counting
-       * users joined by having membership in a joined group.
+       * Output only. Count of human users that have directly joined the space,
+       * not counting users joined by having membership in a joined group.
        * </pre>
        *
-       * <code>int32 joined_direct_human_user_count = 4;</code>
+       * <code>
+       * int32 joined_direct_human_user_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -2196,10 +2204,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of all groups that have directly joined the space.
+       * Output only. Count of all groups that have directly joined the space.
        * </pre>
        *
-       * <code>int32 joined_group_count = 5;</code>
+       * <code>int32 joined_group_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The joinedGroupCount.
        */
@@ -2211,10 +2219,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of all groups that have directly joined the space.
+       * Output only. Count of all groups that have directly joined the space.
        * </pre>
        *
-       * <code>int32 joined_group_count = 5;</code>
+       * <code>int32 joined_group_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The joinedGroupCount to set.
        * @return This builder for chaining.
@@ -2230,10 +2238,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of all groups that have directly joined the space.
+       * Output only. Count of all groups that have directly joined the space.
        * </pre>
        *
-       * <code>int32 joined_group_count = 5;</code>
+       * <code>int32 joined_group_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2359,8 +2367,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * To use the default target audience for the Google Workspace organization,
      * set to `audiences/default`.
      *
+     * Reading the target audience supports:
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the `chat.app.spaces` scope in [Developer
+     * Preview](https://developers.google.com/workspace/preview).
+     *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     *
+     * Setting the target audience requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2385,8 +2408,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * To use the default target audience for the Google Workspace organization,
      * set to `audiences/default`.
      *
+     * Reading the target audience supports:
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the `chat.app.spaces` scope in [Developer
+     * Preview](https://developers.google.com/workspace/preview).
+     *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     *
+     * Setting the target audience requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2482,6 +2520,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * invited to the space can also discover and access the space. To learn
        * more, see [Make a space discoverable to specific
        * users](https://developers.google.com/workspace/chat/space-target-audience).
+       *
+       * Creating discoverable spaces requires [user
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
        * </pre>
        *
        * <code>DISCOVERABLE = 2;</code>
@@ -2521,6 +2562,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * invited to the space can also discover and access the space. To learn
        * more, see [Make a space discoverable to specific
        * users](https://developers.google.com/workspace/chat/space-target-audience).
+       *
+       * Creating discoverable spaces requires [user
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
        * </pre>
        *
        * <code>DISCOVERABLE = 2;</code>
@@ -2672,8 +2716,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * To use the default target audience for the Google Workspace organization,
      * set to `audiences/default`.
      *
+     * Reading the target audience supports:
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the `chat.app.spaces` scope in [Developer
+     * Preview](https://developers.google.com/workspace/preview).
+     *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     *
+     * Setting the target audience requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2709,8 +2768,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * To use the default target audience for the Google Workspace organization,
      * set to `audiences/default`.
      *
+     * Reading the target audience supports:
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the `chat.app.spaces` scope in [Developer
+     * Preview](https://developers.google.com/workspace/preview).
+     *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     *
+     * Setting the target audience requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3221,8 +3295,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * To use the default target audience for the Google Workspace organization,
        * set to `audiences/default`.
        *
+       * Reading the target audience supports:
+       *
+       * - [User
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+       *
+       * - [App
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+       * with [administrator
+       * approval](https://support.google.com/a?p=chat-app-auth)
+       * with the `chat.app.spaces` scope in [Developer
+       * Preview](https://developers.google.com/workspace/preview).
+       *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+       *
+       * Setting the target audience requires [user
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
        * </pre>
        *
        * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3257,8 +3346,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * To use the default target audience for the Google Workspace organization,
        * set to `audiences/default`.
        *
+       * Reading the target audience supports:
+       *
+       * - [User
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+       *
+       * - [App
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+       * with [administrator
+       * approval](https://support.google.com/a?p=chat-app-auth)
+       * with the `chat.app.spaces` scope in [Developer
+       * Preview](https://developers.google.com/workspace/preview).
+       *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+       *
+       * Setting the target audience requires [user
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
        * </pre>
        *
        * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3293,8 +3397,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * To use the default target audience for the Google Workspace organization,
        * set to `audiences/default`.
        *
+       * Reading the target audience supports:
+       *
+       * - [User
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+       *
+       * - [App
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+       * with [administrator
+       * approval](https://support.google.com/a?p=chat-app-auth)
+       * with the `chat.app.spaces` scope in [Developer
+       * Preview](https://developers.google.com/workspace/preview).
+       *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+       *
+       * Setting the target audience requires [user
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
        * </pre>
        *
        * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3328,8 +3447,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * To use the default target audience for the Google Workspace organization,
        * set to `audiences/default`.
        *
+       * Reading the target audience supports:
+       *
+       * - [User
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+       *
+       * - [App
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+       * with [administrator
+       * approval](https://support.google.com/a?p=chat-app-auth)
+       * with the `chat.app.spaces` scope in [Developer
+       * Preview](https://developers.google.com/workspace/preview).
+       *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+       *
+       * Setting the target audience requires [user
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
        * </pre>
        *
        * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3359,8 +3493,23 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * To use the default target audience for the Google Workspace organization,
        * set to `audiences/default`.
        *
+       * Reading the target audience supports:
+       *
+       * - [User
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+       *
+       * - [App
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+       * with [administrator
+       * approval](https://support.google.com/a?p=chat-app-auth)
+       * with the `chat.app.spaces` scope in [Developer
+       * Preview](https://developers.google.com/workspace/preview).
+       *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+       *
+       * Setting the target audience requires [user
+       * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
        * </pre>
        *
        * <code>string audience = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3452,10 +3601,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing members and groups in a space.
+     * Optional. Setting for managing members and groups in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the manageMembersAndGroups field is set.
      */
@@ -3464,10 +3615,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing members and groups in a space.
+     * Optional. Setting for managing members and groups in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The manageMembersAndGroups.
      */
@@ -3476,10 +3629,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing members and groups in a space.
+     * Optional. Setting for managing members and groups in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getManageMembersAndGroupsOrBuilder();
 
@@ -3487,10 +3642,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for updating space name, avatar, description and guidelines.
+     * Optional. Setting for updating space name, avatar, description and
+     * guidelines.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the modifySpaceDetails field is set.
      */
@@ -3499,10 +3657,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for updating space name, avatar, description and guidelines.
+     * Optional. Setting for updating space name, avatar, description and
+     * guidelines.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The modifySpaceDetails.
      */
@@ -3511,10 +3672,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for updating space name, avatar, description and guidelines.
+     * Optional. Setting for updating space name, avatar, description and
+     * guidelines.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getModifySpaceDetailsOrBuilder();
 
@@ -3522,10 +3686,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for toggling space history on and off.
+     * Optional. Setting for toggling space history on and off.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the toggleHistory field is set.
      */
@@ -3534,10 +3700,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for toggling space history on and off.
+     * Optional. Setting for toggling space history on and off.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The toggleHistory.
      */
@@ -3546,10 +3714,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for toggling space history on and off.
+     * Optional. Setting for toggling space history on and off.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getToggleHistoryOrBuilder();
 
@@ -3557,10 +3727,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for using &#64;all in a space.
+     * Optional. Setting for using &#64;all in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the useAtMentionAll field is set.
      */
@@ -3569,10 +3741,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for using &#64;all in a space.
+     * Optional. Setting for using &#64;all in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The useAtMentionAll.
      */
@@ -3581,10 +3755,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for using &#64;all in a space.
+     * Optional. Setting for using &#64;all in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getUseAtMentionAllOrBuilder();
 
@@ -3592,10 +3768,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing apps in a space.
+     * Optional. Setting for managing apps in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the manageApps field is set.
      */
@@ -3604,10 +3782,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing apps in a space.
+     * Optional. Setting for managing apps in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The manageApps.
      */
@@ -3616,10 +3796,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing apps in a space.
+     * Optional. Setting for managing apps in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getManageAppsOrBuilder();
 
@@ -3627,10 +3809,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing webhooks in a space.
+     * Optional. Setting for managing webhooks in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the manageWebhooks field is set.
      */
@@ -3639,10 +3823,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing webhooks in a space.
+     * Optional. Setting for managing webhooks in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The manageWebhooks.
      */
@@ -3651,10 +3837,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing webhooks in a space.
+     * Optional. Setting for managing webhooks in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getManageWebhooksOrBuilder();
 
@@ -3703,10 +3891,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for replying to messages in a space.
+     * Optional. Setting for replying to messages in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the replyMessages field is set.
      */
@@ -3715,10 +3905,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for replying to messages in a space.
+     * Optional. Setting for replying to messages in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The replyMessages.
      */
@@ -3727,10 +3919,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for replying to messages in a space.
+     * Optional. Setting for replying to messages in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getReplyMessagesOrBuilder();
   }
@@ -3787,10 +3981,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing members and groups in a space.
+     * Optional. Setting for managing members and groups in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the manageMembersAndGroups field is set.
      */
@@ -3802,10 +3998,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing members and groups in a space.
+     * Optional. Setting for managing members and groups in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The manageMembersAndGroups.
      */
@@ -3819,10 +4017,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing members and groups in a space.
+     * Optional. Setting for managing members and groups in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.Space.PermissionSettingOrBuilder
@@ -3838,10 +4038,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for updating space name, avatar, description and guidelines.
+     * Optional. Setting for updating space name, avatar, description and
+     * guidelines.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the modifySpaceDetails field is set.
      */
@@ -3853,10 +4056,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for updating space name, avatar, description and guidelines.
+     * Optional. Setting for updating space name, avatar, description and
+     * guidelines.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The modifySpaceDetails.
      */
@@ -3870,10 +4076,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for updating space name, avatar, description and guidelines.
+     * Optional. Setting for updating space name, avatar, description and
+     * guidelines.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.Space.PermissionSettingOrBuilder getModifySpaceDetailsOrBuilder() {
@@ -3888,10 +4097,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for toggling space history on and off.
+     * Optional. Setting for toggling space history on and off.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the toggleHistory field is set.
      */
@@ -3903,10 +4114,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for toggling space history on and off.
+     * Optional. Setting for toggling space history on and off.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The toggleHistory.
      */
@@ -3920,10 +4133,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for toggling space history on and off.
+     * Optional. Setting for toggling space history on and off.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.Space.PermissionSettingOrBuilder getToggleHistoryOrBuilder() {
@@ -3938,10 +4153,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for using &#64;all in a space.
+     * Optional. Setting for using &#64;all in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the useAtMentionAll field is set.
      */
@@ -3953,10 +4170,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for using &#64;all in a space.
+     * Optional. Setting for using &#64;all in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The useAtMentionAll.
      */
@@ -3970,10 +4189,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for using &#64;all in a space.
+     * Optional. Setting for using &#64;all in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.Space.PermissionSettingOrBuilder getUseAtMentionAllOrBuilder() {
@@ -3988,10 +4209,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing apps in a space.
+     * Optional. Setting for managing apps in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the manageApps field is set.
      */
@@ -4003,10 +4226,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing apps in a space.
+     * Optional. Setting for managing apps in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The manageApps.
      */
@@ -4020,10 +4245,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing apps in a space.
+     * Optional. Setting for managing apps in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.Space.PermissionSettingOrBuilder getManageAppsOrBuilder() {
@@ -4038,10 +4265,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing webhooks in a space.
+     * Optional. Setting for managing webhooks in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the manageWebhooks field is set.
      */
@@ -4053,10 +4282,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing webhooks in a space.
+     * Optional. Setting for managing webhooks in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The manageWebhooks.
      */
@@ -4070,10 +4301,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for managing webhooks in a space.
+     * Optional. Setting for managing webhooks in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.Space.PermissionSettingOrBuilder getManageWebhooksOrBuilder() {
@@ -4144,10 +4377,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for replying to messages in a space.
+     * Optional. Setting for replying to messages in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the replyMessages field is set.
      */
@@ -4159,10 +4394,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for replying to messages in a space.
+     * Optional. Setting for replying to messages in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The replyMessages.
      */
@@ -4176,10 +4413,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Setting for replying to messages in a space.
+     * Optional. Setting for replying to messages in a space.
      * </pre>
      *
-     * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.Space.PermissionSettingOrBuilder getReplyMessagesOrBuilder() {
@@ -4816,10 +5055,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the manageMembersAndGroups field is set.
@@ -4831,10 +5071,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The manageMembersAndGroups.
@@ -4852,10 +5093,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setManageMembersAndGroups(com.google.chat.v1.Space.PermissionSetting value) {
@@ -4875,10 +5117,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setManageMembersAndGroups(
@@ -4896,10 +5139,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder mergeManageMembersAndGroups(com.google.chat.v1.Space.PermissionSetting value) {
@@ -4925,10 +5169,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearManageMembersAndGroups() {
@@ -4945,10 +5190,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.chat.v1.Space.PermissionSetting.Builder getManageMembersAndGroupsBuilder() {
@@ -4960,10 +5206,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.chat.v1.Space.PermissionSettingOrBuilder
@@ -4980,10 +5227,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing members and groups in a space.
+       * Optional. Setting for managing members and groups in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1;
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_members_and_groups = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5013,10 +5261,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the modifySpaceDetails field is set.
        */
@@ -5027,10 +5278,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The modifySpaceDetails.
        */
@@ -5047,10 +5301,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setModifySpaceDetails(com.google.chat.v1.Space.PermissionSetting value) {
         if (modifySpaceDetailsBuilder_ == null) {
@@ -5069,10 +5326,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setModifySpaceDetails(
           com.google.chat.v1.Space.PermissionSetting.Builder builderForValue) {
@@ -5089,10 +5349,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeModifySpaceDetails(com.google.chat.v1.Space.PermissionSetting value) {
         if (modifySpaceDetailsBuilder_ == null) {
@@ -5117,10 +5380,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearModifySpaceDetails() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -5136,10 +5402,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSetting.Builder getModifySpaceDetailsBuilder() {
         bitField0_ |= 0x00000002;
@@ -5150,10 +5419,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSettingOrBuilder getModifySpaceDetailsOrBuilder() {
         if (modifySpaceDetailsBuilder_ != null) {
@@ -5168,10 +5440,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for updating space name, avatar, description and guidelines.
+       * Optional. Setting for updating space name, avatar, description and
+       * guidelines.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting modify_space_details = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.chat.v1.Space.PermissionSetting,
@@ -5200,10 +5475,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the toggleHistory field is set.
        */
@@ -5214,10 +5491,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The toggleHistory.
        */
@@ -5234,10 +5513,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setToggleHistory(com.google.chat.v1.Space.PermissionSetting value) {
         if (toggleHistoryBuilder_ == null) {
@@ -5256,10 +5537,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setToggleHistory(
           com.google.chat.v1.Space.PermissionSetting.Builder builderForValue) {
@@ -5276,10 +5559,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeToggleHistory(com.google.chat.v1.Space.PermissionSetting value) {
         if (toggleHistoryBuilder_ == null) {
@@ -5304,10 +5589,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearToggleHistory() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -5323,10 +5610,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSetting.Builder getToggleHistoryBuilder() {
         bitField0_ |= 0x00000004;
@@ -5337,10 +5626,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSettingOrBuilder getToggleHistoryOrBuilder() {
         if (toggleHistoryBuilder_ != null) {
@@ -5355,10 +5646,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for toggling space history on and off.
+       * Optional. Setting for toggling space history on and off.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting toggle_history = 3;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting toggle_history = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.chat.v1.Space.PermissionSetting,
@@ -5387,10 +5680,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the useAtMentionAll field is set.
        */
@@ -5401,10 +5696,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The useAtMentionAll.
        */
@@ -5421,10 +5718,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setUseAtMentionAll(com.google.chat.v1.Space.PermissionSetting value) {
         if (useAtMentionAllBuilder_ == null) {
@@ -5443,10 +5742,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setUseAtMentionAll(
           com.google.chat.v1.Space.PermissionSetting.Builder builderForValue) {
@@ -5463,10 +5764,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeUseAtMentionAll(com.google.chat.v1.Space.PermissionSetting value) {
         if (useAtMentionAllBuilder_ == null) {
@@ -5491,10 +5794,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearUseAtMentionAll() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -5510,10 +5815,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSetting.Builder getUseAtMentionAllBuilder() {
         bitField0_ |= 0x00000008;
@@ -5524,10 +5831,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSettingOrBuilder getUseAtMentionAllOrBuilder() {
         if (useAtMentionAllBuilder_ != null) {
@@ -5542,10 +5851,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for using &#64;all in a space.
+       * Optional. Setting for using &#64;all in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting use_at_mention_all = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.chat.v1.Space.PermissionSetting,
@@ -5574,10 +5885,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the manageApps field is set.
        */
@@ -5588,10 +5901,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The manageApps.
        */
@@ -5608,10 +5923,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setManageApps(com.google.chat.v1.Space.PermissionSetting value) {
         if (manageAppsBuilder_ == null) {
@@ -5630,10 +5947,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setManageApps(
           com.google.chat.v1.Space.PermissionSetting.Builder builderForValue) {
@@ -5650,10 +5969,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeManageApps(com.google.chat.v1.Space.PermissionSetting value) {
         if (manageAppsBuilder_ == null) {
@@ -5677,10 +5998,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearManageApps() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -5696,10 +6019,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSetting.Builder getManageAppsBuilder() {
         bitField0_ |= 0x00000010;
@@ -5710,10 +6035,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSettingOrBuilder getManageAppsOrBuilder() {
         if (manageAppsBuilder_ != null) {
@@ -5728,10 +6055,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing apps in a space.
+       * Optional. Setting for managing apps in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_apps = 5;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_apps = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.chat.v1.Space.PermissionSetting,
@@ -5760,10 +6089,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the manageWebhooks field is set.
        */
@@ -5774,10 +6105,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The manageWebhooks.
        */
@@ -5794,10 +6127,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setManageWebhooks(com.google.chat.v1.Space.PermissionSetting value) {
         if (manageWebhooksBuilder_ == null) {
@@ -5816,10 +6151,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setManageWebhooks(
           com.google.chat.v1.Space.PermissionSetting.Builder builderForValue) {
@@ -5836,10 +6173,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeManageWebhooks(com.google.chat.v1.Space.PermissionSetting value) {
         if (manageWebhooksBuilder_ == null) {
@@ -5864,10 +6203,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearManageWebhooks() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -5883,10 +6224,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSetting.Builder getManageWebhooksBuilder() {
         bitField0_ |= 0x00000020;
@@ -5897,10 +6240,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSettingOrBuilder getManageWebhooksOrBuilder() {
         if (manageWebhooksBuilder_ != null) {
@@ -5915,10 +6260,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for managing webhooks in a space.
+       * Optional. Setting for managing webhooks in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting manage_webhooks = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.chat.v1.Space.PermissionSetting,
@@ -6151,10 +6498,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the replyMessages field is set.
        */
@@ -6165,10 +6514,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The replyMessages.
        */
@@ -6185,10 +6536,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setReplyMessages(com.google.chat.v1.Space.PermissionSetting value) {
         if (replyMessagesBuilder_ == null) {
@@ -6207,10 +6560,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setReplyMessages(
           com.google.chat.v1.Space.PermissionSetting.Builder builderForValue) {
@@ -6227,10 +6582,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeReplyMessages(com.google.chat.v1.Space.PermissionSetting value) {
         if (replyMessagesBuilder_ == null) {
@@ -6255,10 +6612,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearReplyMessages() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -6274,10 +6633,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSetting.Builder getReplyMessagesBuilder() {
         bitField0_ |= 0x00000080;
@@ -6288,10 +6649,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.chat.v1.Space.PermissionSettingOrBuilder getReplyMessagesOrBuilder() {
         if (replyMessagesBuilder_ != null) {
@@ -6306,10 +6669,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Setting for replying to messages in a space.
+       * Optional. Setting for replying to messages in a space.
        * </pre>
        *
-       * <code>optional .google.chat.v1.Space.PermissionSetting reply_messages = 8;</code>
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting reply_messages = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.chat.v1.Space.PermissionSetting,
@@ -6401,10 +6766,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether spaces managers have this permission.
+     * Optional. Whether spaces managers have this permission.
      * </pre>
      *
-     * <code>bool managers_allowed = 1;</code>
+     * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The managersAllowed.
      */
@@ -6414,10 +6779,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether non-manager members have this permission.
+     * Optional. Whether non-manager members have this permission.
      * </pre>
      *
-     * <code>bool members_allowed = 2;</code>
+     * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The membersAllowed.
      */
@@ -6471,10 +6836,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether spaces managers have this permission.
+     * Optional. Whether spaces managers have this permission.
      * </pre>
      *
-     * <code>bool managers_allowed = 1;</code>
+     * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The managersAllowed.
      */
@@ -6489,10 +6854,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether non-manager members have this permission.
+     * Optional. Whether non-manager members have this permission.
      * </pre>
      *
-     * <code>bool members_allowed = 2;</code>
+     * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The membersAllowed.
      */
@@ -6871,10 +7236,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether spaces managers have this permission.
+       * Optional. Whether spaces managers have this permission.
        * </pre>
        *
-       * <code>bool managers_allowed = 1;</code>
+       * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The managersAllowed.
        */
@@ -6886,10 +7251,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether spaces managers have this permission.
+       * Optional. Whether spaces managers have this permission.
        * </pre>
        *
-       * <code>bool managers_allowed = 1;</code>
+       * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The managersAllowed to set.
        * @return This builder for chaining.
@@ -6905,10 +7270,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether spaces managers have this permission.
+       * Optional. Whether spaces managers have this permission.
        * </pre>
        *
-       * <code>bool managers_allowed = 1;</code>
+       * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -6924,10 +7289,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether non-manager members have this permission.
+       * Optional. Whether non-manager members have this permission.
        * </pre>
        *
-       * <code>bool members_allowed = 2;</code>
+       * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The membersAllowed.
        */
@@ -6939,10 +7304,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether non-manager members have this permission.
+       * Optional. Whether non-manager members have this permission.
        * </pre>
        *
-       * <code>bool members_allowed = 2;</code>
+       * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The membersAllowed to set.
        * @return This builder for chaining.
@@ -6958,10 +7323,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether non-manager members have this permission.
+       * Optional. Whether non-manager members have this permission.
        * </pre>
        *
-       * <code>bool members_allowed = 2;</code>
+       * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -7094,7 +7459,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the space.
+   * Identifier. Resource name of the space.
    *
    * Format: `spaces/{space}`
    *
@@ -7106,7 +7471,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * is `AAAAAAAAA`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -7126,7 +7491,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the space.
+   * Identifier. Resource name of the space.
    *
    * Format: `spaces/{space}`
    *
@@ -7138,7 +7503,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * is `AAAAAAAAA`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -7169,7 +7534,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -7189,7 +7554,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
    * @return The type.
    */
   @java.lang.Override
@@ -7205,11 +7570,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of space. Required when creating a space or updating the space
-   * type of a space. Output only for other usage.
+   * Optional. The type of space. Required when creating a space or updating the
+   * space type of a space. Output only for other usage.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for spaceType.
    */
@@ -7221,11 +7588,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of space. Required when creating a space or updating the space
-   * type of a space. Output only for other usage.
+   * Optional. The type of space. Required when creating a space or updating the
+   * space type of a space. Output only for other usage.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The spaceType.
    */
@@ -7267,7 +7636,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=241
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
    * @return The threaded.
    */
   @java.lang.Override
@@ -7284,7 +7653,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The space's display name. Required when [creating a
+   * Optional. The space's display name. Required when [creating a
    * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
    * with a `spaceType` of `SPACE`. If you receive the error message
    * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -7296,7 +7665,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Supports up to 128 characters.
    * </pre>
    *
-   * <code>string display_name = 3;</code>
+   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -7316,7 +7685,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The space's display name. Required when [creating a
+   * Optional. The space's display name. Required when [creating a
    * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
    * with a `spaceType` of `SPACE`. If you receive the error message
    * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -7328,7 +7697,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Supports up to 128 characters.
    * </pre>
    *
-   * <code>string display_name = 3;</code>
+   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -7351,9 +7720,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Whether this space permits any Google Chat user as a member.
-   * Input when creating a space in a Google Workspace organization. Omit this
-   * field when creating spaces in the following conditions:
+   * Optional. Immutable. Whether this space permits any Google Chat user as a
+   * member. Input when creating a space in a Google Workspace organization.
+   * Omit this field when creating spaces in the following conditions:
    *
    *   * The authenticated user uses a consumer account (unmanaged user
    *     account). By default, a space created by a consumer account permits any
@@ -7362,7 +7731,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * For existing spaces, this field is output only.
    * </pre>
    *
-   * <code>bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The externalUserAllowed.
    */
@@ -7416,10 +7787,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Details about the space including description and rules.
+   * Optional. Details about the space including description and rules.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the spaceDetails field is set.
    */
@@ -7431,10 +7804,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Details about the space including description and rules.
+   * Optional. Details about the space including description and rules.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The spaceDetails.
    */
@@ -7448,10 +7823,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Details about the space including description and rules.
+   * Optional. Details about the space including description and rules.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.chat.v1.Space.SpaceDetailsOrBuilder getSpaceDetailsOrBuilder() {
@@ -7466,10 +7843,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The message history state for messages and threads in this space.
+   * Optional. The message history state for messages and threads in this space.
    * </pre>
    *
-   * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+   * <code>
+   * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for spaceHistoryState.
    */
@@ -7481,10 +7860,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The message history state for messages and threads in this space.
+   * Optional. The message history state for messages and threads in this space.
    * </pre>
    *
-   * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+   * <code>
+   * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The spaceHistoryState.
    */
@@ -7504,6 +7885,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Optional. Whether this space is created in `Import Mode` as part of a data
    * migration into Google Workspace. While spaces are being imported, they
    * aren't visible to users until the import is complete.
+   *
+   * Creating a space in `Import Mode`requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
    * <code>bool import_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7976,6 +8360,80 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     return com.google.chat.v1.Space.PermissionSettings.getDefaultInstance();
   }
 
+  public static final int IMPORT_MODE_EXPIRE_TIME_FIELD_NUMBER = 28;
+  private com.google.protobuf.Timestamp importModeExpireTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importModeExpireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportModeExpireTime() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importModeExpireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getImportModeExpireTime() {
+    return importModeExpireTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : importModeExpireTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getImportModeExpireTimeOrBuilder() {
+    return importModeExpireTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : importModeExpireTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8051,6 +8509,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           27, (com.google.chat.v1.Space.PermissionSettings) spacePermissionSettings_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(28, getImportModeExpireTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8124,6 +8585,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, (com.google.chat.v1.Space.PermissionSettings) spacePermissionSettings_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, getImportModeExpireTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8171,6 +8636,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       if (!getAccessSettings().equals(other.getAccessSettings())) return false;
     }
     if (!getSpaceUri().equals(other.getSpaceUri())) return false;
+    if (hasImportModeExpireTime() != other.hasImportModeExpireTime()) return false;
+    if (hasImportModeExpireTime()) {
+      if (!getImportModeExpireTime().equals(other.getImportModeExpireTime())) return false;
+    }
     if (!getSpacePermissionSettingsCase().equals(other.getSpacePermissionSettingsCase()))
       return false;
     switch (spacePermissionSettingsCase_) {
@@ -8239,6 +8708,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SPACE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getSpaceUri().hashCode();
+    if (hasImportModeExpireTime()) {
+      hash = (37 * hash) + IMPORT_MODE_EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getImportModeExpireTime().hashCode();
+    }
     switch (spacePermissionSettingsCase_) {
       case 26:
         hash = (37 * hash) + PREDEFINED_PERMISSION_SETTINGS_FIELD_NUMBER;
@@ -8393,6 +8866,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         getLastActiveTimeFieldBuilder();
         getMembershipCountFieldBuilder();
         getAccessSettingsFieldBuilder();
+        getImportModeExpireTimeFieldBuilder();
       }
     }
 
@@ -8439,6 +8913,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       spaceUri_ = "";
       if (permissionSettingsBuilder_ != null) {
         permissionSettingsBuilder_.clear();
+      }
+      importModeExpireTime_ = null;
+      if (importModeExpireTimeBuilder_ != null) {
+        importModeExpireTimeBuilder_.dispose();
+        importModeExpireTimeBuilder_ = null;
       }
       spacePermissionSettingsCase_ = 0;
       spacePermissionSettings_ = null;
@@ -8537,6 +9016,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.spaceUri_ = spaceUri_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.importModeExpireTime_ =
+            importModeExpireTimeBuilder_ == null
+                ? importModeExpireTime_
+                : importModeExpireTimeBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8650,6 +9136,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         spaceUri_ = other.spaceUri_;
         bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.hasImportModeExpireTime()) {
+        mergeImportModeExpireTime(other.getImportModeExpireTime());
       }
       switch (other.getSpacePermissionSettingsCase()) {
         case PREDEFINED_PERMISSION_SETTINGS:
@@ -8809,6 +9298,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
                 spacePermissionSettingsCase_ = 27;
                 break;
               } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getImportModeExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8847,7 +9343,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the space.
+     * Identifier. Resource name of the space.
      *
      * Format: `spaces/{space}`
      *
@@ -8859,7 +9355,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * is `AAAAAAAAA`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -8878,7 +9374,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the space.
+     * Identifier. Resource name of the space.
      *
      * Format: `spaces/{space}`
      *
@@ -8890,7 +9386,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * is `AAAAAAAAA`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -8909,7 +9405,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the space.
+     * Identifier. Resource name of the space.
      *
      * Format: `spaces/{space}`
      *
@@ -8921,7 +9417,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * is `AAAAAAAAA`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -8939,7 +9435,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the space.
+     * Identifier. Resource name of the space.
      *
      * Format: `spaces/{space}`
      *
@@ -8951,7 +9447,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * is `AAAAAAAAA`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -8965,7 +9461,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the space.
+     * Identifier. Resource name of the space.
      *
      * Format: `spaces/{space}`
      *
@@ -8977,7 +9473,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * is `AAAAAAAAA`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -9006,7 +9502,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -9026,7 +9522,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -9049,7 +9545,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
      * @return The type.
      */
     @java.lang.Override
@@ -9070,7 +9566,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -9096,7 +9592,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9112,11 +9608,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of space. Required when creating a space or updating the space
-     * type of a space. Output only for other usage.
+     * Optional. The type of space. Required when creating a space or updating the
+     * space type of a space. Output only for other usage.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for spaceType.
      */
@@ -9128,11 +9626,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of space. Required when creating a space or updating the space
-     * type of a space. Output only for other usage.
+     * Optional. The type of space. Required when creating a space or updating the
+     * space type of a space. Output only for other usage.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for spaceType to set.
      * @return This builder for chaining.
@@ -9147,11 +9647,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of space. Required when creating a space or updating the space
-     * type of a space. Output only for other usage.
+     * Optional. The type of space. Required when creating a space or updating the
+     * space type of a space. Output only for other usage.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The spaceType.
      */
@@ -9165,11 +9667,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of space. Required when creating a space or updating the space
-     * type of a space. Output only for other usage.
+     * Optional. The type of space. Required when creating a space or updating the
+     * space type of a space. Output only for other usage.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The spaceType to set.
      * @return This builder for chaining.
@@ -9187,11 +9691,13 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of space. Required when creating a space or updating the space
-     * type of a space. Output only for other usage.
+     * Optional. The type of space. Required when creating a space or updating the
+     * space type of a space. Output only for other usage.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9270,7 +9776,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=241
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
      * @return The threaded.
      */
     @java.lang.Override
@@ -9289,7 +9795,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=241
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -9312,7 +9818,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=241
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9328,7 +9834,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The space's display name. Required when [creating a
+     * Optional. The space's display name. Required when [creating a
      * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
      * with a `spaceType` of `SPACE`. If you receive the error message
      * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -9340,7 +9846,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 128 characters.
      * </pre>
      *
-     * <code>string display_name = 3;</code>
+     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -9359,7 +9865,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The space's display name. Required when [creating a
+     * Optional. The space's display name. Required when [creating a
      * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
      * with a `spaceType` of `SPACE`. If you receive the error message
      * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -9371,7 +9877,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 128 characters.
      * </pre>
      *
-     * <code>string display_name = 3;</code>
+     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -9390,7 +9896,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The space's display name. Required when [creating a
+     * Optional. The space's display name. Required when [creating a
      * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
      * with a `spaceType` of `SPACE`. If you receive the error message
      * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -9402,7 +9908,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 128 characters.
      * </pre>
      *
-     * <code>string display_name = 3;</code>
+     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -9420,7 +9926,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The space's display name. Required when [creating a
+     * Optional. The space's display name. Required when [creating a
      * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
      * with a `spaceType` of `SPACE`. If you receive the error message
      * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -9432,7 +9938,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 128 characters.
      * </pre>
      *
-     * <code>string display_name = 3;</code>
+     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -9446,7 +9952,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The space's display name. Required when [creating a
+     * Optional. The space's display name. Required when [creating a
      * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
      * with a `spaceType` of `SPACE`. If you receive the error message
      * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -9458,7 +9964,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Supports up to 128 characters.
      * </pre>
      *
-     * <code>string display_name = 3;</code>
+     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -9479,9 +9985,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Whether this space permits any Google Chat user as a member.
-     * Input when creating a space in a Google Workspace organization. Omit this
-     * field when creating spaces in the following conditions:
+     * Optional. Immutable. Whether this space permits any Google Chat user as a
+     * member. Input when creating a space in a Google Workspace organization.
+     * Omit this field when creating spaces in the following conditions:
      *
      *   * The authenticated user uses a consumer account (unmanaged user
      *     account). By default, a space created by a consumer account permits any
@@ -9490,7 +9996,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * For existing spaces, this field is output only.
      * </pre>
      *
-     * <code>bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The externalUserAllowed.
      */
@@ -9502,9 +10010,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Whether this space permits any Google Chat user as a member.
-     * Input when creating a space in a Google Workspace organization. Omit this
-     * field when creating spaces in the following conditions:
+     * Optional. Immutable. Whether this space permits any Google Chat user as a
+     * member. Input when creating a space in a Google Workspace organization.
+     * Omit this field when creating spaces in the following conditions:
      *
      *   * The authenticated user uses a consumer account (unmanaged user
      *     account). By default, a space created by a consumer account permits any
@@ -9513,7 +10021,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * For existing spaces, this field is output only.
      * </pre>
      *
-     * <code>bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The externalUserAllowed to set.
      * @return This builder for chaining.
@@ -9529,9 +10039,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Whether this space permits any Google Chat user as a member.
-     * Input when creating a space in a Google Workspace organization. Omit this
-     * field when creating spaces in the following conditions:
+     * Optional. Immutable. Whether this space permits any Google Chat user as a
+     * member. Input when creating a space in a Google Workspace organization.
+     * Omit this field when creating spaces in the following conditions:
      *
      *   * The authenticated user uses a consumer account (unmanaged user
      *     account). By default, a space created by a consumer account permits any
@@ -9540,7 +10050,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * For existing spaces, this field is output only.
      * </pre>
      *
-     * <code>bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9661,10 +10173,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the spaceDetails field is set.
      */
@@ -9675,10 +10189,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The spaceDetails.
      */
@@ -9695,10 +10211,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSpaceDetails(com.google.chat.v1.Space.SpaceDetails value) {
       if (spaceDetailsBuilder_ == null) {
@@ -9717,10 +10235,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSpaceDetails(com.google.chat.v1.Space.SpaceDetails.Builder builderForValue) {
       if (spaceDetailsBuilder_ == null) {
@@ -9736,10 +10256,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSpaceDetails(com.google.chat.v1.Space.SpaceDetails value) {
       if (spaceDetailsBuilder_ == null) {
@@ -9763,10 +10285,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSpaceDetails() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -9782,10 +10306,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.Space.SpaceDetails.Builder getSpaceDetailsBuilder() {
       bitField0_ |= 0x00000100;
@@ -9796,10 +10322,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.Space.SpaceDetailsOrBuilder getSpaceDetailsOrBuilder() {
       if (spaceDetailsBuilder_ != null) {
@@ -9814,10 +10342,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Details about the space including description and rules.
+     * Optional. Details about the space including description and rules.
      * </pre>
      *
-     * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+     * <code>
+     * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.Space.SpaceDetails,
@@ -9841,10 +10371,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message history state for messages and threads in this space.
+     * Optional. The message history state for messages and threads in this space.
      * </pre>
      *
-     * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+     * <code>
+     * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for spaceHistoryState.
      */
@@ -9856,10 +10388,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message history state for messages and threads in this space.
+     * Optional. The message history state for messages and threads in this space.
      * </pre>
      *
-     * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+     * <code>
+     * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for spaceHistoryState to set.
      * @return This builder for chaining.
@@ -9874,10 +10408,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message history state for messages and threads in this space.
+     * Optional. The message history state for messages and threads in this space.
      * </pre>
      *
-     * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+     * <code>
+     * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The spaceHistoryState.
      */
@@ -9891,10 +10427,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message history state for messages and threads in this space.
+     * Optional. The message history state for messages and threads in this space.
      * </pre>
      *
-     * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+     * <code>
+     * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The spaceHistoryState to set.
      * @return This builder for chaining.
@@ -9912,10 +10450,12 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The message history state for messages and threads in this space.
+     * Optional. The message history state for messages and threads in this space.
      * </pre>
      *
-     * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+     * <code>
+     * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9934,6 +10474,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether this space is created in `Import Mode` as part of a data
      * migration into Google Workspace. While spaces are being imported, they
      * aren't visible to users until the import is complete.
+     *
+     * Creating a space in `Import Mode`requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>bool import_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9951,6 +10494,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether this space is created in `Import Mode` as part of a data
      * migration into Google Workspace. While spaces are being imported, they
      * aren't visible to users until the import is complete.
+     *
+     * Creating a space in `Import Mode`requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>bool import_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9972,6 +10518,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether this space is created in `Import Mode` as part of a data
      * migration into Google Workspace. While spaces are being imported, they
      * aren't visible to users until the import is complete.
+     *
+     * Creating a space in `Import Mode`requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
      * <code>bool import_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -11464,6 +12013,263 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       spacePermissionSettingsCase_ = 27;
       onChanged();
       return permissionSettingsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp importModeExpireTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        importModeExpireTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the importModeExpireTime field is set.
+     */
+    public boolean hasImportModeExpireTime() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The importModeExpireTime.
+     */
+    public com.google.protobuf.Timestamp getImportModeExpireTime() {
+      if (importModeExpireTimeBuilder_ == null) {
+        return importModeExpireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : importModeExpireTime_;
+      } else {
+        return importModeExpireTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportModeExpireTime(com.google.protobuf.Timestamp value) {
+      if (importModeExpireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importModeExpireTime_ = value;
+      } else {
+        importModeExpireTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportModeExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (importModeExpireTimeBuilder_ == null) {
+        importModeExpireTime_ = builderForValue.build();
+      } else {
+        importModeExpireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeImportModeExpireTime(com.google.protobuf.Timestamp value) {
+      if (importModeExpireTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && importModeExpireTime_ != null
+            && importModeExpireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getImportModeExpireTimeBuilder().mergeFrom(value);
+        } else {
+          importModeExpireTime_ = value;
+        }
+      } else {
+        importModeExpireTimeBuilder_.mergeFrom(value);
+      }
+      if (importModeExpireTime_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearImportModeExpireTime() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      importModeExpireTime_ = null;
+      if (importModeExpireTimeBuilder_ != null) {
+        importModeExpireTimeBuilder_.dispose();
+        importModeExpireTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getImportModeExpireTimeBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getImportModeExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getImportModeExpireTimeOrBuilder() {
+      if (importModeExpireTimeBuilder_ != null) {
+        return importModeExpireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return importModeExpireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : importModeExpireTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the space will be automatically deleted by the
+     * system if it remains in import mode.
+     *
+     * Each space created in import mode must exit this mode before this expire
+     * time using `spaces.completeImport`.
+     *
+     * This field is only populated for spaces that were created with import mode.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getImportModeExpireTimeFieldBuilder() {
+      if (importModeExpireTimeBuilder_ == null) {
+        importModeExpireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getImportModeExpireTime(), getParentForChildren(), isClean());
+        importModeExpireTime_ = null;
+      }
+      return importModeExpireTimeBuilder_;
     }
 
     @java.lang.Override

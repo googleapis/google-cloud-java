@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,6 +151,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpgradeCluster</td>
+ *      <td><p> Upgrades a single Cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterAsync(UpgradeClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterAsync(ClusterName name, DatabaseVersion version)
+ *           <li><p> upgradeClusterAsync(String name, DatabaseVersion version)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterOperationCallable()
+ *           <li><p> upgradeClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes a single Cluster.</td>
  *      <td>
@@ -187,6 +207,26 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> promoteClusterOperationCallable()
  *           <li><p> promoteClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SwitchoverCluster</td>
+ *      <td><p> Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this newly promoted cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> switchoverClusterAsync(SwitchoverClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> switchoverClusterAsync(ClusterName name)
+ *           <li><p> switchoverClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> switchoverClusterOperationCallable()
+ *           <li><p> switchoverClusterCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -415,6 +455,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> restartInstanceOperationCallable()
  *           <li><p> restartInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteSql</td>
+ *      <td><p> Executes a SQL statement in a database inside an AlloyDB instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeSql(ExecuteSqlRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> executeSql(InstanceName instance, String database, String user, String sqlStatement, String password)
+ *           <li><p> executeSql(String instance, String database, String user, String sqlStatement, String password)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeSqlCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1436,6 +1495,166 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   DatabaseVersion version = DatabaseVersion.forNumber(0);
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(name, version).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param version Required. The version the cluster is going to be upgraded to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      ClusterName name, DatabaseVersion version) {
+    UpgradeClusterRequest request =
+        UpgradeClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setVersion(version)
+            .build();
+    return upgradeClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   DatabaseVersion version = DatabaseVersion.forNumber(0);
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(name, version).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param version Required. The version the cluster is going to be upgraded to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      String name, DatabaseVersion version) {
+    UpgradeClusterRequest request =
+        UpgradeClusterRequest.newBuilder().setName(name).setVersion(version).build();
+    return upgradeClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      UpgradeClusterRequest request) {
+    return upgradeClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<UpgradeClusterResponse, OperationMetadata> future =
+   *       alloyDBAdminClient.upgradeClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UpgradeClusterResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    return stub.upgradeClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future = alloyDBAdminClient.upgradeClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    return stub.upgradeClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single Cluster.
    *
    * <p>Sample code:
@@ -1738,6 +1957,166 @@ public class AlloyDBAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<PromoteClusterRequest, Operation> promoteClusterCallable() {
     return stub.promoteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   Cluster response = alloyDBAdminClient.switchoverClusterAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     Cluster.name field
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, OperationMetadata> switchoverClusterAsync(
+      ClusterName name) {
+    SwitchoverClusterRequest request =
+        SwitchoverClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return switchoverClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   Cluster response = alloyDBAdminClient.switchoverClusterAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     Cluster.name field
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, OperationMetadata> switchoverClusterAsync(String name) {
+    SwitchoverClusterRequest request = SwitchoverClusterRequest.newBuilder().setName(name).build();
+    return switchoverClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   SwitchoverClusterRequest request =
+   *       SwitchoverClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Cluster response = alloyDBAdminClient.switchoverClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, OperationMetadata> switchoverClusterAsync(
+      SwitchoverClusterRequest request) {
+    return switchoverClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   SwitchoverClusterRequest request =
+   *       SwitchoverClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Cluster, OperationMetadata> future =
+   *       alloyDBAdminClient.switchoverClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationCallable() {
+    return stub.switchoverClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   SwitchoverClusterRequest request =
+   *       SwitchoverClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       alloyDBAdminClient.switchoverClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SwitchoverClusterRequest, Operation> switchoverClusterCallable() {
+    return stub.switchoverClusterCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3448,6 +3827,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllNodeIds(new ArrayList<String>())
    *           .build();
    *   Instance response = alloyDBAdminClient.restartInstanceAsync(request).get();
    * }
@@ -3480,6 +3860,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllNodeIds(new ArrayList<String>())
    *           .build();
    *   OperationFuture<Instance, OperationMetadata> future =
    *       alloyDBAdminClient.restartInstanceOperationCallable().futureCall(request);
@@ -3512,6 +3893,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllNodeIds(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       alloyDBAdminClient.restartInstanceCallable().futureCall(request);
@@ -3522,6 +3904,167 @@ public class AlloyDBAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<RestartInstanceRequest, Operation> restartInstanceCallable() {
     return stub.restartInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+   *   String database = "database1789464955";
+   *   String user = "user3599307";
+   *   String sqlStatement = "sqlStatement937767745";
+   *   String password = "password1216985755";
+   *   ExecuteSqlResponse response =
+   *       alloyDBAdminClient.executeSql(instance, database, user, sqlStatement, password);
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The instance where the SQL will be executed. For the required format,
+   *     see the comment on the Instance.name field.
+   * @param database Required. Name of the database where the query will be executed. Note - Value
+   *     provided should be the same as expected from `SELECT current_database();` and NOT as a
+   *     resource reference.
+   * @param user Required. Database user to be used for executing the SQL. Note - Value provided
+   *     should be the same as expected from `SELECT current_user;` and NOT as a resource reference.
+   * @param sqlStatement Required. SQL statement to execute on database. Any valid statement is
+   *     permitted, including DDL, DML, DQL statements.
+   * @param password Optional. The database native user’s password.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(
+      InstanceName instance, String database, String user, String sqlStatement, String password) {
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setDatabase(database)
+            .setUser(user)
+            .setSqlStatement(sqlStatement)
+            .setPassword(password)
+            .build();
+    return executeSql(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String instance =
+   *       InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString();
+   *   String database = "database1789464955";
+   *   String user = "user3599307";
+   *   String sqlStatement = "sqlStatement937767745";
+   *   String password = "password1216985755";
+   *   ExecuteSqlResponse response =
+   *       alloyDBAdminClient.executeSql(instance, database, user, sqlStatement, password);
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The instance where the SQL will be executed. For the required format,
+   *     see the comment on the Instance.name field.
+   * @param database Required. Name of the database where the query will be executed. Note - Value
+   *     provided should be the same as expected from `SELECT current_database();` and NOT as a
+   *     resource reference.
+   * @param user Required. Database user to be used for executing the SQL. Note - Value provided
+   *     should be the same as expected from `SELECT current_user;` and NOT as a resource reference.
+   * @param sqlStatement Required. SQL statement to execute on database. Any valid statement is
+   *     permitted, including DDL, DML, DQL statements.
+   * @param password Optional. The database native user’s password.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(
+      String instance, String database, String user, String sqlStatement, String password) {
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder()
+            .setInstance(instance)
+            .setDatabase(database)
+            .setUser(user)
+            .setSqlStatement(sqlStatement)
+            .setPassword(password)
+            .build();
+    return executeSql(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExecuteSqlRequest request =
+   *       ExecuteSqlRequest.newBuilder()
+   *           .setInstance(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setDatabase("database1789464955")
+   *           .setUser("user3599307")
+   *           .setSqlStatement("sqlStatement937767745")
+   *           .build();
+   *   ExecuteSqlResponse response = alloyDBAdminClient.executeSql(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(ExecuteSqlRequest request) {
+    return executeSqlCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExecuteSqlRequest request =
+   *       ExecuteSqlRequest.newBuilder()
+   *           .setInstance(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setDatabase("database1789464955")
+   *           .setUser("user3599307")
+   *           .setSqlStatement("sqlStatement937767745")
+   *           .build();
+   *   ApiFuture<ExecuteSqlResponse> future =
+   *       alloyDBAdminClient.executeSqlCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteSqlResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    return stub.executeSqlCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

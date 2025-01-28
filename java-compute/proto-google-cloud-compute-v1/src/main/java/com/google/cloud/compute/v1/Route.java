@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     nextHopInstance_ = "";
     nextHopIp_ = "";
     nextHopNetwork_ = "";
+    nextHopOrigin_ = "";
     nextHopPeering_ = "";
     nextHopVpnTunnel_ = "";
     routeStatus_ = "";
@@ -80,6 +81,137 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.Route.class,
             com.google.cloud.compute.v1.Route.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Route.NextHopOrigin}
+   */
+  public enum NextHopOrigin implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_NEXT_HOP_ORIGIN = 0;</code>
+     */
+    UNDEFINED_NEXT_HOP_ORIGIN(0),
+    /** <code>EGP = 68590;</code> */
+    EGP(68590),
+    /** <code>IGP = 72434;</code> */
+    IGP(72434),
+    /** <code>INCOMPLETE = 11941214;</code> */
+    INCOMPLETE(11941214),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_NEXT_HOP_ORIGIN = 0;</code>
+     */
+    public static final int UNDEFINED_NEXT_HOP_ORIGIN_VALUE = 0;
+    /** <code>EGP = 68590;</code> */
+    public static final int EGP_VALUE = 68590;
+    /** <code>IGP = 72434;</code> */
+    public static final int IGP_VALUE = 72434;
+    /** <code>INCOMPLETE = 11941214;</code> */
+    public static final int INCOMPLETE_VALUE = 11941214;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static NextHopOrigin valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static NextHopOrigin forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_NEXT_HOP_ORIGIN;
+        case 68590:
+          return EGP;
+        case 72434:
+          return IGP;
+        case 11941214:
+          return INCOMPLETE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<NextHopOrigin> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<NextHopOrigin> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<NextHopOrigin>() {
+          public NextHopOrigin findValueByNumber(int number) {
+            return NextHopOrigin.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final NextHopOrigin[] VALUES = values();
+
+    public static NextHopOrigin valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private NextHopOrigin(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Route.NextHopOrigin)
   }
 
   /**
@@ -259,7 +391,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final RouteStatus[] VALUES = values();
@@ -396,7 +528,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.Route.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final RouteType[] VALUES = values();
@@ -1061,7 +1193,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -1076,7 +1208,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -1099,7 +1231,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -1185,6 +1317,39 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NEXT_HOP_INTER_REGION_COST_FIELD_NUMBER = 24442003;
+  private int nextHopInterRegionCost_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+   *
+   * @return Whether the nextHopInterRegionCost field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopInterRegionCost() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+   *
+   * @return The nextHopInterRegionCost.
+   */
+  @java.lang.Override
+  public int getNextHopInterRegionCost() {
+    return nextHopInterRegionCost_;
+  }
+
   public static final int NEXT_HOP_IP_FIELD_NUMBER = 110319529;
 
   @SuppressWarnings("serial")
@@ -1202,7 +1367,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNextHopIp() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1251,6 +1416,39 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NEXT_HOP_MED_FIELD_NUMBER = 198683530;
+  private int nextHopMed_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_med = 198683530;</code>
+   *
+   * @return Whether the nextHopMed field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopMed() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+   * </pre>
+   *
+   * <code>optional uint32 next_hop_med = 198683530;</code>
+   *
+   * @return The nextHopMed.
+   */
+  @java.lang.Override
+  public int getNextHopMed() {
+    return nextHopMed_;
+  }
+
   public static final int NEXT_HOP_NETWORK_FIELD_NUMBER = 262295788;
 
   @SuppressWarnings("serial")
@@ -1268,7 +1466,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNextHopNetwork() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1317,6 +1515,75 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NEXT_HOP_ORIGIN_FIELD_NUMBER = 48752808;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextHopOrigin_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * Check the NextHopOrigin enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string next_hop_origin = 48752808;</code>
+   *
+   * @return Whether the nextHopOrigin field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopOrigin() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * Check the NextHopOrigin enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string next_hop_origin = 48752808;</code>
+   *
+   * @return The nextHopOrigin.
+   */
+  @java.lang.Override
+  public java.lang.String getNextHopOrigin() {
+    java.lang.Object ref = nextHopOrigin_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextHopOrigin_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * Check the NextHopOrigin enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string next_hop_origin = 48752808;</code>
+   *
+   * @return The bytes for nextHopOrigin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNextHopOriginBytes() {
+    java.lang.Object ref = nextHopOrigin_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nextHopOrigin_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NEXT_HOP_PEERING_FIELD_NUMBER = 412682750;
 
   @SuppressWarnings("serial")
@@ -1334,7 +1601,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNextHopPeering() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1400,7 +1667,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNextHopVpnTunnel() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1464,7 +1731,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPriority() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -1500,7 +1767,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRouteStatus() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -1569,7 +1836,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRouteType() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -1637,7 +1904,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -1847,10 +2114,16 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3552281, tags_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeUInt32(24442003, nextHopInterRegionCost_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 48752808, nextHopOrigin_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 110319529, nextHopIp_);
     }
     for (int i = 0; i < asPaths_.size(); i++) {
@@ -1862,13 +2135,16 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 198679901, nextHopIlb_);
     }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeUInt32(198683530, nextHopMed_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 262295788, nextHopNetwork_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1880,25 +2156,25 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 393508247, nextHopInstance_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 412682750, nextHopPeering_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 418162344, routeStatus_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeUInt32(445151652, priority_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < warnings_.size(); i++) {
       output.writeMessage(498091095, warnings_.get(i));
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 519844501, nextHopVpnTunnel_);
     }
     getUnknownFields().writeTo(output);
@@ -1927,11 +2203,19 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 4 * getTagsList().size();
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeUInt32Size(
+              24442003, nextHopInterRegionCost_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(48752808, nextHopOrigin_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110319529, nextHopIp_);
     }
     for (int i = 0; i < asPaths_.size(); i++) {
@@ -1943,13 +2227,16 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(198679901, nextHopIlb_);
     }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(198683530, nextHopMed_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(262295788, nextHopNetwork_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
@@ -1961,25 +2248,25 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(393508247, nextHopInstance_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(412682750, nextHopPeering_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418162344, routeStatus_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(445151652, priority_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     for (int i = 0; i < warnings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(498091095, warnings_.get(i));
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(519844501, nextHopVpnTunnel_);
     }
@@ -2043,13 +2330,25 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (hasNextHopInstance()) {
       if (!getNextHopInstance().equals(other.getNextHopInstance())) return false;
     }
+    if (hasNextHopInterRegionCost() != other.hasNextHopInterRegionCost()) return false;
+    if (hasNextHopInterRegionCost()) {
+      if (getNextHopInterRegionCost() != other.getNextHopInterRegionCost()) return false;
+    }
     if (hasNextHopIp() != other.hasNextHopIp()) return false;
     if (hasNextHopIp()) {
       if (!getNextHopIp().equals(other.getNextHopIp())) return false;
     }
+    if (hasNextHopMed() != other.hasNextHopMed()) return false;
+    if (hasNextHopMed()) {
+      if (getNextHopMed() != other.getNextHopMed()) return false;
+    }
     if (hasNextHopNetwork() != other.hasNextHopNetwork()) return false;
     if (hasNextHopNetwork()) {
       if (!getNextHopNetwork().equals(other.getNextHopNetwork())) return false;
+    }
+    if (hasNextHopOrigin() != other.hasNextHopOrigin()) return false;
+    if (hasNextHopOrigin()) {
+      if (!getNextHopOrigin().equals(other.getNextHopOrigin())) return false;
     }
     if (hasNextHopPeering() != other.hasNextHopPeering()) return false;
     if (hasNextHopPeering()) {
@@ -2136,13 +2435,25 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NEXT_HOP_INSTANCE_FIELD_NUMBER;
       hash = (53 * hash) + getNextHopInstance().hashCode();
     }
+    if (hasNextHopInterRegionCost()) {
+      hash = (37 * hash) + NEXT_HOP_INTER_REGION_COST_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopInterRegionCost();
+    }
     if (hasNextHopIp()) {
       hash = (37 * hash) + NEXT_HOP_IP_FIELD_NUMBER;
       hash = (53 * hash) + getNextHopIp().hashCode();
     }
+    if (hasNextHopMed()) {
+      hash = (37 * hash) + NEXT_HOP_MED_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopMed();
+    }
     if (hasNextHopNetwork()) {
       hash = (37 * hash) + NEXT_HOP_NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getNextHopNetwork().hashCode();
+    }
+    if (hasNextHopOrigin()) {
+      hash = (37 * hash) + NEXT_HOP_ORIGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopOrigin().hashCode();
     }
     if (hasNextHopPeering()) {
       hash = (37 * hash) + NEXT_HOP_PEERING_FIELD_NUMBER;
@@ -2332,8 +2643,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       nextHopHub_ = "";
       nextHopIlb_ = "";
       nextHopInstance_ = "";
+      nextHopInterRegionCost_ = 0;
       nextHopIp_ = "";
+      nextHopMed_ = 0;
       nextHopNetwork_ = "";
+      nextHopOrigin_ = "";
       nextHopPeering_ = "";
       nextHopVpnTunnel_ = "";
       priority_ = 0;
@@ -2347,7 +2661,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         warnings_ = null;
         warningsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       return this;
     }
 
@@ -2393,9 +2707,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         result.asPaths_ = asPathsBuilder_.build();
       }
       if (warningsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x01000000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x01000000);
         }
         result.warnings_ = warnings_;
       } else {
@@ -2451,38 +2765,50 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.nextHopIp_ = nextHopIp_;
+        result.nextHopInterRegionCost_ = nextHopInterRegionCost_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.nextHopNetwork_ = nextHopNetwork_;
+        result.nextHopIp_ = nextHopIp_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.nextHopPeering_ = nextHopPeering_;
+        result.nextHopMed_ = nextHopMed_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.nextHopVpnTunnel_ = nextHopVpnTunnel_;
+        result.nextHopNetwork_ = nextHopNetwork_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.priority_ = priority_;
+        result.nextHopOrigin_ = nextHopOrigin_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.routeStatus_ = routeStatus_;
+        result.nextHopPeering_ = nextHopPeering_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.routeType_ = routeType_;
+        result.nextHopVpnTunnel_ = nextHopVpnTunnel_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.priority_ = priority_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.routeStatus_ = routeStatus_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.routeType_ = routeType_;
+        to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         tags_.makeImmutable();
         result.tags_ = tags_;
       }
@@ -2614,24 +2940,35 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (other.hasNextHopInterRegionCost()) {
+        setNextHopInterRegionCost(other.getNextHopInterRegionCost());
+      }
       if (other.hasNextHopIp()) {
         nextHopIp_ = other.nextHopIp_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
+      }
+      if (other.hasNextHopMed()) {
+        setNextHopMed(other.getNextHopMed());
       }
       if (other.hasNextHopNetwork()) {
         nextHopNetwork_ = other.nextHopNetwork_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      if (other.hasNextHopOrigin()) {
+        nextHopOrigin_ = other.nextHopOrigin_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasNextHopPeering()) {
         nextHopPeering_ = other.nextHopPeering_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasNextHopVpnTunnel()) {
         nextHopVpnTunnel_ = other.nextHopVpnTunnel_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasPriority()) {
@@ -2639,23 +2976,23 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRouteStatus()) {
         routeStatus_ = other.routeStatus_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasRouteType()) {
         routeType_ = other.routeType_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ |= 0x00100000;
+          bitField0_ |= 0x00800000;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -2666,7 +3003,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x01000000);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -2679,7 +3016,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             warningsBuilder_.dispose();
             warningsBuilder_ = null;
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x01000000);
             warningsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWarningsFieldBuilder()
@@ -2740,16 +3077,28 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 tags_.add(s);
                 break;
               } // case 28418250
+            case 195536024:
+              {
+                nextHopInterRegionCost_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 195536024
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 244202930
+            case 390022466:
+              {
+                nextHopOrigin_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 390022466
             case 882556234:
               {
                 nextHopIp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 882556234
             case 1100551434:
@@ -2777,6 +3126,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 1589439210
+            case 1589468240:
+              {
+                nextHopMed_ = input.readUInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 1589468240
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
@@ -2786,13 +3141,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             case 2098366306:
               {
                 nextHopNetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 2098366306
             case -1287857278:
               {
                 routeType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case -1287857278
             case -1277564910:
@@ -2816,13 +3171,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             case -993505294:
               {
                 nextHopPeering_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -993505294
             case -949668542:
               {
                 routeStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -949668542
             case -911466526:
@@ -2834,13 +3189,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             case -733754080:
               {
                 priority_ = input.readUInt32();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -733754080
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case -645248918
             case -310238534:
@@ -2859,7 +3214,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             case -136211286:
               {
                 nextHopVpnTunnel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -136211286
             default:
@@ -4262,7 +4617,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4276,7 +4631,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4298,7 +4653,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4320,7 +4675,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4341,7 +4696,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4358,7 +4713,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
+     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4497,6 +4852,74 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int nextHopInterRegionCost_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+     *
+     * @return Whether the nextHopInterRegionCost field is set.
+     */
+    @java.lang.Override
+    public boolean hasNextHopInterRegionCost() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+     *
+     * @return The nextHopInterRegionCost.
+     */
+    @java.lang.Override
+    public int getNextHopInterRegionCost() {
+      return nextHopInterRegionCost_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+     *
+     * @param value The nextHopInterRegionCost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopInterRegionCost(int value) {
+
+      nextHopInterRegionCost_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextHopInterRegionCost() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      nextHopInterRegionCost_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object nextHopIp_ = "";
     /**
      *
@@ -4510,7 +4933,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextHopIp field is set.
      */
     public boolean hasNextHopIp() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4573,7 +4996,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nextHopIp_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4590,7 +5013,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNextHopIp() {
       nextHopIp_ = getDefaultInstance().getNextHopIp();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4612,7 +5035,75 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nextHopIp_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private int nextHopMed_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_med = 198683530;</code>
+     *
+     * @return Whether the nextHopMed field is set.
+     */
+    @java.lang.Override
+    public boolean hasNextHopMed() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_med = 198683530;</code>
+     *
+     * @return The nextHopMed.
+     */
+    @java.lang.Override
+    public int getNextHopMed() {
+      return nextHopMed_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_med = 198683530;</code>
+     *
+     * @param value The nextHopMed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopMed(int value) {
+
+      nextHopMed_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * </pre>
+     *
+     * <code>optional uint32 next_hop_med = 198683530;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextHopMed() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      nextHopMed_ = 0;
       onChanged();
       return this;
     }
@@ -4630,7 +5121,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextHopNetwork field is set.
      */
     public boolean hasNextHopNetwork() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4693,7 +5184,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nextHopNetwork_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4710,7 +5201,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNextHopNetwork() {
       nextHopNetwork_ = getDefaultInstance().getNextHopNetwork();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4732,7 +5223,133 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nextHopNetwork_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nextHopOrigin_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * Check the NextHopOrigin enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string next_hop_origin = 48752808;</code>
+     *
+     * @return Whether the nextHopOrigin field is set.
+     */
+    public boolean hasNextHopOrigin() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * Check the NextHopOrigin enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string next_hop_origin = 48752808;</code>
+     *
+     * @return The nextHopOrigin.
+     */
+    public java.lang.String getNextHopOrigin() {
+      java.lang.Object ref = nextHopOrigin_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextHopOrigin_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * Check the NextHopOrigin enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string next_hop_origin = 48752808;</code>
+     *
+     * @return The bytes for nextHopOrigin.
+     */
+    public com.google.protobuf.ByteString getNextHopOriginBytes() {
+      java.lang.Object ref = nextHopOrigin_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextHopOrigin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * Check the NextHopOrigin enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string next_hop_origin = 48752808;</code>
+     *
+     * @param value The nextHopOrigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopOrigin(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nextHopOrigin_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * Check the NextHopOrigin enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string next_hop_origin = 48752808;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextHopOrigin() {
+      nextHopOrigin_ = getDefaultInstance().getNextHopOrigin();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * Check the NextHopOrigin enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string next_hop_origin = 48752808;</code>
+     *
+     * @param value The bytes for nextHopOrigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopOriginBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nextHopOrigin_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4750,7 +5367,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextHopPeering field is set.
      */
     public boolean hasNextHopPeering() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4813,7 +5430,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nextHopPeering_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4830,7 +5447,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNextHopPeering() {
       nextHopPeering_ = getDefaultInstance().getNextHopPeering();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4852,7 +5469,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nextHopPeering_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4870,7 +5487,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextHopVpnTunnel field is set.
      */
     public boolean hasNextHopVpnTunnel() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -4933,7 +5550,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nextHopVpnTunnel_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4950,7 +5567,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNextHopVpnTunnel() {
       nextHopVpnTunnel_ = getDefaultInstance().getNextHopVpnTunnel();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4972,7 +5589,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nextHopVpnTunnel_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4991,7 +5608,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPriority() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -5023,7 +5640,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriority(int value) {
 
       priority_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5039,7 +5656,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       priority_ = 0;
       onChanged();
       return this;
@@ -5059,7 +5676,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routeStatus field is set.
      */
     public boolean hasRouteStatus() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -5125,7 +5742,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       routeStatus_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5143,7 +5760,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRouteStatus() {
       routeStatus_ = getDefaultInstance().getRouteStatus();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -5166,7 +5783,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       routeStatus_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5185,7 +5802,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routeType field is set.
      */
     public boolean hasRouteType() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -5251,7 +5868,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       routeType_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5269,7 +5886,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRouteType() {
       routeType_ = getDefaultInstance().getRouteType();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -5292,7 +5909,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       routeType_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5310,7 +5927,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -5373,7 +5990,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5390,7 +6007,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -5412,7 +6029,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5424,7 +6041,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
     }
     /**
      *
@@ -5504,7 +6121,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5526,7 +6143,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5545,7 +6162,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5562,7 +6179,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       ;
       onChanged();
       return this;
@@ -5586,7 +6203,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5595,9 +6212,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x01000000) != 0)) {
         warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>(warnings_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x01000000;
       }
     }
 
@@ -5812,7 +6429,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         onChanged();
       } else {
         warningsBuilder_.clear();
@@ -5933,7 +6550,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.Warnings,
                 com.google.cloud.compute.v1.Warnings.Builder,
                 com.google.cloud.compute.v1.WarningsOrBuilder>(
-                warnings_, ((bitField0_ & 0x00200000) != 0), getParentForChildren(), isClean());
+                warnings_, ((bitField0_ & 0x01000000) != 0), getParentForChildren(), isClean());
         warnings_ = null;
       }
       return warningsBuilder_;

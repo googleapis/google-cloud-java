@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,4 +64,52 @@ public interface AutomationRuleConditionOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.TargetsPresentConditionOrBuilder getTargetsPresentConditionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+   * to a an Automation with a timed promote release rule defined.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the timedPromoteReleaseCondition field is set.
+   */
+  boolean hasTimedPromoteReleaseCondition();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+   * to a an Automation with a timed promote release rule defined.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timedPromoteReleaseCondition.
+   */
+  com.google.cloud.deploy.v1.TimedPromoteReleaseCondition getTimedPromoteReleaseCondition();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+   * to a an Automation with a timed promote release rule defined.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.TimedPromoteReleaseConditionOrBuilder
+      getTimedPromoteReleaseConditionOrBuilder();
+
+  com.google.cloud.deploy.v1.AutomationRuleCondition.RuleTypeConditionCase
+      getRuleTypeConditionCase();
 }

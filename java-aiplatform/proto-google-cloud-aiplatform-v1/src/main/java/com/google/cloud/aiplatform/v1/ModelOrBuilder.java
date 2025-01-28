@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1665,7 +1665,7 @@ public interface ModelOrBuilder
    * Stats of data used for training or evaluating the Model.
    *
    * Only populated when the Model is trained by a TrainingPipeline with
-   * [data_input_config][TrainingPipeline.data_input_config].
+   * [data_input_config][google.cloud.aiplatform.v1.TrainingPipeline.input_data_config].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
@@ -1680,7 +1680,7 @@ public interface ModelOrBuilder
    * Stats of data used for training or evaluating the Model.
    *
    * Only populated when the Model is trained by a TrainingPipeline with
-   * [data_input_config][TrainingPipeline.data_input_config].
+   * [data_input_config][google.cloud.aiplatform.v1.TrainingPipeline.input_data_config].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>
@@ -1695,7 +1695,7 @@ public interface ModelOrBuilder
    * Stats of data used for training or evaluating the Model.
    *
    * Only populated when the Model is trained by a TrainingPipeline with
-   * [data_input_config][TrainingPipeline.data_input_config].
+   * [data_input_config][google.cloud.aiplatform.v1.TrainingPipeline.input_data_config].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Model.DataStats data_stats = 21;</code>

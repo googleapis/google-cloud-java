@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1.stub;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListInstancesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListRepositoriesPagedResponse;
@@ -32,19 +33,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.securesourcemanager.v1.BranchRule;
+import com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.CreateInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest;
+import com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest;
+import com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.GetInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.GetRepositoryRequest;
 import com.google.cloud.securesourcemanager.v1.Instance;
+import com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest;
+import com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse;
 import com.google.cloud.securesourcemanager.v1.ListInstancesRequest;
 import com.google.cloud.securesourcemanager.v1.ListInstancesResponse;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse;
 import com.google.cloud.securesourcemanager.v1.OperationMetadata;
 import com.google.cloud.securesourcemanager.v1.Repository;
+import com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -186,6 +194,62 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateBranchRuleRequest, Operation>
+      createBranchRuleMethodDescriptor =
+          MethodDescriptor.<CreateBranchRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/CreateBranchRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateBranchRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListBranchRulesRequest, ListBranchRulesResponse>
+      listBranchRulesMethodDescriptor =
+          MethodDescriptor.<ListBranchRulesRequest, ListBranchRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/ListBranchRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListBranchRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBranchRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetBranchRuleRequest, BranchRule>
+      getBranchRuleMethodDescriptor =
+          MethodDescriptor.<GetBranchRuleRequest, BranchRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/GetBranchRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetBranchRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BranchRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateBranchRuleRequest, Operation>
+      updateBranchRuleMethodDescriptor =
+          MethodDescriptor.<UpdateBranchRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/UpdateBranchRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateBranchRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteBranchRuleRequest, Operation>
+      deleteBranchRuleMethodDescriptor =
+          MethodDescriptor.<DeleteBranchRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/DeleteBranchRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteBranchRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -257,6 +321,20 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyRepoCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsRepoCallable;
+  private final UnaryCallable<CreateBranchRuleRequest, Operation> createBranchRuleCallable;
+  private final OperationCallable<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationCallable;
+  private final UnaryCallable<ListBranchRulesRequest, ListBranchRulesResponse>
+      listBranchRulesCallable;
+  private final UnaryCallable<ListBranchRulesRequest, ListBranchRulesPagedResponse>
+      listBranchRulesPagedCallable;
+  private final UnaryCallable<GetBranchRuleRequest, BranchRule> getBranchRuleCallable;
+  private final UnaryCallable<UpdateBranchRuleRequest, Operation> updateBranchRuleCallable;
+  private final OperationCallable<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationCallable;
+  private final UnaryCallable<DeleteBranchRuleRequest, Operation> deleteBranchRuleCallable;
+  private final OperationCallable<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -422,6 +500,58 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateBranchRuleRequest, Operation> createBranchRuleTransportSettings =
+        GrpcCallSettings.<CreateBranchRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBranchRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListBranchRulesRequest, ListBranchRulesResponse>
+        listBranchRulesTransportSettings =
+            GrpcCallSettings.<ListBranchRulesRequest, ListBranchRulesResponse>newBuilder()
+                .setMethodDescriptor(listBranchRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetBranchRuleRequest, BranchRule> getBranchRuleTransportSettings =
+        GrpcCallSettings.<GetBranchRuleRequest, BranchRule>newBuilder()
+            .setMethodDescriptor(getBranchRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateBranchRuleRequest, Operation> updateBranchRuleTransportSettings =
+        GrpcCallSettings.<UpdateBranchRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBranchRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "branch_rule.name", String.valueOf(request.getBranchRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteBranchRuleRequest, Operation> deleteBranchRuleTransportSettings =
+        GrpcCallSettings.<DeleteBranchRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBranchRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -539,6 +669,42 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
             testIamPermissionsRepoTransportSettings,
             settings.testIamPermissionsRepoSettings(),
             clientContext);
+    this.createBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            createBranchRuleTransportSettings, settings.createBranchRuleSettings(), clientContext);
+    this.createBranchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            createBranchRuleTransportSettings,
+            settings.createBranchRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listBranchRulesCallable =
+        callableFactory.createUnaryCallable(
+            listBranchRulesTransportSettings, settings.listBranchRulesSettings(), clientContext);
+    this.listBranchRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listBranchRulesTransportSettings, settings.listBranchRulesSettings(), clientContext);
+    this.getBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            getBranchRuleTransportSettings, settings.getBranchRuleSettings(), clientContext);
+    this.updateBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateBranchRuleTransportSettings, settings.updateBranchRuleSettings(), clientContext);
+    this.updateBranchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBranchRuleTransportSettings,
+            settings.updateBranchRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteBranchRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteBranchRuleTransportSettings, settings.deleteBranchRuleSettings(), clientContext);
+    this.deleteBranchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBranchRuleTransportSettings,
+            settings.deleteBranchRuleOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -659,6 +825,55 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsRepoCallable() {
     return testIamPermissionsRepoCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBranchRuleRequest, Operation> createBranchRuleCallable() {
+    return createBranchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationCallable() {
+    return createBranchRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBranchRulesRequest, ListBranchRulesResponse> listBranchRulesCallable() {
+    return listBranchRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBranchRulesRequest, ListBranchRulesPagedResponse>
+      listBranchRulesPagedCallable() {
+    return listBranchRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBranchRuleRequest, BranchRule> getBranchRuleCallable() {
+    return getBranchRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBranchRuleRequest, Operation> updateBranchRuleCallable() {
+    return updateBranchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationCallable() {
+    return updateBranchRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBranchRuleRequest, Operation> deleteBranchRuleCallable() {
+    return deleteBranchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationCallable() {
+    return deleteBranchRuleOperationCallable;
   }
 
   @Override

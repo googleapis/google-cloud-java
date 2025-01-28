@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,6 +156,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -203,6 +204,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -250,6 +252,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -291,6 +294,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -332,6 +336,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -376,6 +381,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -420,6 +426,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -461,6 +468,7 @@ public class DataCatalogClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setDataCatalogTimestamps(SystemTimestamps.newBuilder().build())
+            .setTransferredToDataplex(true)
             .build();
     mockDataCatalog.addResponse(expectedResponse);
 
@@ -3025,6 +3033,129 @@ public class DataCatalogClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void setConfigTest() throws Exception {
+    MigrationConfig expectedResponse =
+        MigrationConfig.newBuilder()
+            .setTagTemplateMigration(TagTemplateMigration.forNumber(0))
+            .setCatalogUiExperience(CatalogUIExperience.forNumber(0))
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    SetConfigRequest request = SetConfigRequest.newBuilder().setName("name3373707").build();
+
+    MigrationConfig actualResponse = client.setConfig(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetConfigRequest actualRequest = ((SetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getTagTemplateMigration(), actualRequest.getTagTemplateMigration());
+    Assert.assertEquals(request.getCatalogUiExperience(), actualRequest.getCatalogUiExperience());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      SetConfigRequest request = SetConfigRequest.newBuilder().setName("name3373707").build();
+      client.setConfig(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveConfigTest() throws Exception {
+    OrganizationConfig expectedResponse =
+        OrganizationConfig.newBuilder()
+            .putAllConfig(new HashMap<String, MigrationConfig>())
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    RetrieveConfigRequest request =
+        RetrieveConfigRequest.newBuilder().setName("name3373707").build();
+
+    OrganizationConfig actualResponse = client.retrieveConfig(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RetrieveConfigRequest actualRequest = ((RetrieveConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void retrieveConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      RetrieveConfigRequest request =
+          RetrieveConfigRequest.newBuilder().setName("name3373707").build();
+      client.retrieveConfig(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveEffectiveConfigTest() throws Exception {
+    MigrationConfig expectedResponse =
+        MigrationConfig.newBuilder()
+            .setTagTemplateMigration(TagTemplateMigration.forNumber(0))
+            .setCatalogUiExperience(CatalogUIExperience.forNumber(0))
+            .build();
+    mockDataCatalog.addResponse(expectedResponse);
+
+    RetrieveEffectiveConfigRequest request =
+        RetrieveEffectiveConfigRequest.newBuilder().setName("name3373707").build();
+
+    MigrationConfig actualResponse = client.retrieveEffectiveConfig(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataCatalog.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RetrieveEffectiveConfigRequest actualRequest =
+        ((RetrieveEffectiveConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void retrieveEffectiveConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataCatalog.addException(exception);
+
+    try {
+      RetrieveEffectiveConfigRequest request =
+          RetrieveEffectiveConfigRequest.newBuilder().setName("name3373707").build();
+      client.retrieveEffectiveConfig(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

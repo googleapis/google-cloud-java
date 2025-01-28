@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -152,7 +152,7 @@ public interface MetricsOrBuilder
    *
    * <pre>
    * Metrics are continuous and in order by dates, and in the granularity
-   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
+   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE) have
    * challenge-based data.
    * </pre>
    *
@@ -165,7 +165,7 @@ public interface MetricsOrBuilder
    *
    * <pre>
    * Metrics are continuous and in order by dates, and in the granularity
-   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
+   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE) have
    * challenge-based data.
    * </pre>
    *
@@ -178,7 +178,7 @@ public interface MetricsOrBuilder
    *
    * <pre>
    * Metrics are continuous and in order by dates, and in the granularity
-   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
+   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE) have
    * challenge-based data.
    * </pre>
    *
@@ -191,7 +191,7 @@ public interface MetricsOrBuilder
    *
    * <pre>
    * Metrics are continuous and in order by dates, and in the granularity
-   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
+   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE) have
    * challenge-based data.
    * </pre>
    *
@@ -205,7 +205,7 @@ public interface MetricsOrBuilder
    *
    * <pre>
    * Metrics are continuous and in order by dates, and in the granularity
-   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE), will have
+   * of day. Only challenge-based keys (CHECKBOX, INVISIBLE) have
    * challenge-based data.
    * </pre>
    *

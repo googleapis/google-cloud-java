@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1979,6 +1979,65 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         : linkedVpcNetwork_;
   }
 
+  public static final int LINKED_PRODUCER_VPC_NETWORK_FIELD_NUMBER = 26;
+  private com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
+      linkedProducerVpcNetwork_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the linkedProducerVpcNetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasLinkedProducerVpcNetwork() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The linkedProducerVpcNetwork.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
+      getLinkedProducerVpcNetwork() {
+    return linkedProducerVpcNetwork_ == null
+        ? com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.getDefaultInstance()
+        : linkedProducerVpcNetwork_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder
+      getLinkedProducerVpcNetworkOrBuilder() {
+    return linkedProducerVpcNetwork_ == null
+        ? com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.getDefaultInstance()
+        : linkedProducerVpcNetwork_;
+  }
+
   public static final int UNIQUE_ID_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -2260,6 +2319,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, group_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(26, getLinkedProducerVpcNetwork());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2326,6 +2388,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, group_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26, getLinkedProducerVpcNetwork());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2374,6 +2441,10 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     if (hasLinkedVpcNetwork() != other.hasLinkedVpcNetwork()) return false;
     if (hasLinkedVpcNetwork()) {
       if (!getLinkedVpcNetwork().equals(other.getLinkedVpcNetwork())) return false;
+    }
+    if (hasLinkedProducerVpcNetwork() != other.hasLinkedProducerVpcNetwork()) return false;
+    if (hasLinkedProducerVpcNetwork()) {
+      if (!getLinkedProducerVpcNetwork().equals(other.getLinkedProducerVpcNetwork())) return false;
     }
     if (!getUniqueId().equals(other.getUniqueId())) return false;
     if (state_ != other.state_) return false;
@@ -2425,6 +2496,10 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     if (hasLinkedVpcNetwork()) {
       hash = (37 * hash) + LINKED_VPC_NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getLinkedVpcNetwork().hashCode();
+    }
+    if (hasLinkedProducerVpcNetwork()) {
+      hash = (37 * hash) + LINKED_PRODUCER_VPC_NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getLinkedProducerVpcNetwork().hashCode();
     }
     hash = (37 * hash) + UNIQUE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUniqueId().hashCode();
@@ -2613,6 +2688,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         getLinkedInterconnectAttachmentsFieldBuilder();
         getLinkedRouterApplianceInstancesFieldBuilder();
         getLinkedVpcNetworkFieldBuilder();
+        getLinkedProducerVpcNetworkFieldBuilder();
         getReasonsFieldBuilder();
       }
     }
@@ -2656,6 +2732,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         linkedVpcNetworkBuilder_.dispose();
         linkedVpcNetworkBuilder_ = null;
       }
+      linkedProducerVpcNetwork_ = null;
+      if (linkedProducerVpcNetworkBuilder_ != null) {
+        linkedProducerVpcNetworkBuilder_.dispose();
+        linkedProducerVpcNetworkBuilder_ = null;
+      }
       uniqueId_ = "";
       state_ = 0;
       if (reasonsBuilder_ == null) {
@@ -2664,7 +2745,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         reasons_ = null;
         reasonsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       spokeType_ = 0;
       return this;
     }
@@ -2703,9 +2784,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.networkconnectivity.v1.Spoke result) {
       if (reasonsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           reasons_ = java.util.Collections.unmodifiableList(reasons_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.reasons_ = reasons_;
       } else {
@@ -2765,12 +2846,19 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.uniqueId_ = uniqueId_;
+        result.linkedProducerVpcNetwork_ =
+            linkedProducerVpcNetworkBuilder_ == null
+                ? linkedProducerVpcNetwork_
+                : linkedProducerVpcNetworkBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.uniqueId_ = uniqueId_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.spokeType_ = spokeType_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2861,9 +2949,12 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLinkedVpcNetwork()) {
         mergeLinkedVpcNetwork(other.getLinkedVpcNetwork());
       }
+      if (other.hasLinkedProducerVpcNetwork()) {
+        mergeLinkedProducerVpcNetwork(other.getLinkedProducerVpcNetwork());
+      }
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2873,7 +2964,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         if (!other.reasons_.isEmpty()) {
           if (reasons_.isEmpty()) {
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureReasonsIsMutable();
             reasons_.addAll(other.reasons_);
@@ -2886,7 +2977,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             reasonsBuilder_.dispose();
             reasonsBuilder_ = null;
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             reasonsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReasonsFieldBuilder()
@@ -2970,13 +3061,13 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 uniqueId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 120:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 120
             case 138:
@@ -3025,7 +3116,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
             case 176:
               {
                 spokeType_ = input.readEnum();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 176
             case 186:
@@ -3034,6 +3125,13 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 186
+            case 210:
+              {
+                input.readMessage(
+                    getLinkedProducerVpcNetworkFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4920,6 +5018,218 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return linkedVpcNetworkBuilder_;
     }
 
+    private com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
+        linkedProducerVpcNetwork_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork,
+            com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.Builder,
+            com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder>
+        linkedProducerVpcNetworkBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the linkedProducerVpcNetwork field is set.
+     */
+    public boolean hasLinkedProducerVpcNetwork() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The linkedProducerVpcNetwork.
+     */
+    public com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
+        getLinkedProducerVpcNetwork() {
+      if (linkedProducerVpcNetworkBuilder_ == null) {
+        return linkedProducerVpcNetwork_ == null
+            ? com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.getDefaultInstance()
+            : linkedProducerVpcNetwork_;
+      } else {
+        return linkedProducerVpcNetworkBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLinkedProducerVpcNetwork(
+        com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork value) {
+      if (linkedProducerVpcNetworkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        linkedProducerVpcNetwork_ = value;
+      } else {
+        linkedProducerVpcNetworkBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLinkedProducerVpcNetwork(
+        com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.Builder builderForValue) {
+      if (linkedProducerVpcNetworkBuilder_ == null) {
+        linkedProducerVpcNetwork_ = builderForValue.build();
+      } else {
+        linkedProducerVpcNetworkBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLinkedProducerVpcNetwork(
+        com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork value) {
+      if (linkedProducerVpcNetworkBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && linkedProducerVpcNetwork_ != null
+            && linkedProducerVpcNetwork_
+                != com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
+                    .getDefaultInstance()) {
+          getLinkedProducerVpcNetworkBuilder().mergeFrom(value);
+        } else {
+          linkedProducerVpcNetwork_ = value;
+        }
+      } else {
+        linkedProducerVpcNetworkBuilder_.mergeFrom(value);
+      }
+      if (linkedProducerVpcNetwork_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLinkedProducerVpcNetwork() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      linkedProducerVpcNetwork_ = null;
+      if (linkedProducerVpcNetworkBuilder_ != null) {
+        linkedProducerVpcNetworkBuilder_.dispose();
+        linkedProducerVpcNetworkBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.Builder
+        getLinkedProducerVpcNetworkBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getLinkedProducerVpcNetworkFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder
+        getLinkedProducerVpcNetworkOrBuilder() {
+      if (linkedProducerVpcNetworkBuilder_ != null) {
+        return linkedProducerVpcNetworkBuilder_.getMessageOrBuilder();
+      } else {
+        return linkedProducerVpcNetwork_ == null
+            ? com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.getDefaultInstance()
+            : linkedProducerVpcNetwork_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The linked producer VPC that is associated with the spoke.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork,
+            com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.Builder,
+            com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder>
+        getLinkedProducerVpcNetworkFieldBuilder() {
+      if (linkedProducerVpcNetworkBuilder_ == null) {
+        linkedProducerVpcNetworkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork,
+                com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.Builder,
+                com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder>(
+                getLinkedProducerVpcNetwork(), getParentForChildren(), isClean());
+        linkedProducerVpcNetwork_ = null;
+      }
+      return linkedProducerVpcNetworkBuilder_;
+    }
+
     private java.lang.Object uniqueId_ = "";
     /**
      *
@@ -4988,7 +5298,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uniqueId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5007,7 +5317,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUniqueId() {
       uniqueId_ = getDefaultInstance().getUniqueId();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5031,7 +5341,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uniqueId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5070,7 +5380,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5111,7 +5421,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5130,7 +5440,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       state_ = 0;
       onChanged();
       return this;
@@ -5140,11 +5450,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         reasons_ =
             new java.util.ArrayList<com.google.cloud.networkconnectivity.v1.Spoke.StateReason>(
                 reasons_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -5399,7 +5709,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReasons() {
       if (reasonsBuilder_ == null) {
         reasons_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         reasonsBuilder_.clear();
@@ -5549,7 +5859,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.networkconnectivity.v1.Spoke.StateReason,
                 com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder,
                 com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>(
-                reasons_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+                reasons_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
         reasons_ = null;
       }
       return reasonsBuilder_;
@@ -5589,7 +5899,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setSpokeTypeValue(int value) {
       spokeType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5632,7 +5942,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       spokeType_ = value.getNumber();
       onChanged();
       return this;
@@ -5651,7 +5961,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpokeType() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       spokeType_ = 0;
       onChanged();
       return this;

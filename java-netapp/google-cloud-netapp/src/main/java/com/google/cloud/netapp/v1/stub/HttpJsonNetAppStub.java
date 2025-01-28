@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,6 +70,7 @@ import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -107,6 +108,7 @@ import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
@@ -116,6 +118,7 @@ import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -344,6 +347,46 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteStoragePoolRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceMethodDescriptor =
+          ApiMethodDescriptor.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ValidateDirectoryService")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ValidateDirectoryServiceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/storagePools/*}:validateDirectoryService",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateDirectoryServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateDirectoryServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ValidateDirectoryServiceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1591,6 +1634,86 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<EstablishPeeringRequest, Operation>
+      establishPeeringMethodDescriptor =
+          ApiMethodDescriptor.<EstablishPeeringRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishPeering")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EstablishPeeringRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/replications/*}:establishPeering",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishPeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishPeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (EstablishPeeringRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<SyncReplicationRequest, Operation>
+      syncReplicationMethodDescriptor =
+          ApiMethodDescriptor.<SyncReplicationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SyncReplication")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SyncReplicationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/replications/*}:sync",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncReplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncReplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SyncReplicationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<CreateBackupVaultRequest, Operation>
       createBackupVaultMethodDescriptor =
           ApiMethodDescriptor.<CreateBackupVaultRequest, Operation>newBuilder()
@@ -2250,6 +2373,10 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable;
   private final OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable;
+  private final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable;
+  private final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable;
   private final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
       switchActiveReplicaZoneCallable;
   private final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
@@ -2344,6 +2471,12 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final OperationCallable<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable;
+  private final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable;
+  private final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable;
+  private final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable;
+  private final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable;
   private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
   private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
       createBackupVaultOperationCallable;
@@ -2514,6 +2647,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceTransportSettings =
+            HttpJsonCallSettings.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+                .setMethodDescriptor(validateDirectoryServiceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SwitchActiveReplicaZoneRequest, Operation>
         switchActiveReplicaZoneTransportSettings =
             HttpJsonCallSettings.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
@@ -2881,6 +3026,28 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<EstablishPeeringRequest, Operation> establishPeeringTransportSettings =
+        HttpJsonCallSettings.<EstablishPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(establishPeeringMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<SyncReplicationRequest, Operation> syncReplicationTransportSettings =
+        HttpJsonCallSettings.<SyncReplicationRequest, Operation>newBuilder()
+            .setMethodDescriptor(syncReplicationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
         HttpJsonCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
             .setMethodDescriptor(createBackupVaultMethodDescriptor)
@@ -3114,6 +3281,17 @@ public class HttpJsonNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             deleteStoragePoolTransportSettings,
             settings.deleteStoragePoolOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.validateDirectoryServiceCallable =
+        callableFactory.createUnaryCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceSettings(),
+            clientContext);
+    this.validateDirectoryServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.switchActiveReplicaZoneCallable =
@@ -3377,6 +3555,24 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.reverseReplicationDirectionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.establishPeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishPeeringTransportSettings, settings.establishPeeringSettings(), clientContext);
+    this.establishPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishPeeringTransportSettings,
+            settings.establishPeeringOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.syncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            syncReplicationTransportSettings, settings.syncReplicationSettings(), clientContext);
+    this.syncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            syncReplicationTransportSettings,
+            settings.syncReplicationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createBackupVaultCallable =
         callableFactory.createUnaryCallable(
             createBackupVaultTransportSettings,
@@ -3523,6 +3719,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(getStoragePoolMethodDescriptor);
     methodDescriptors.add(updateStoragePoolMethodDescriptor);
     methodDescriptors.add(deleteStoragePoolMethodDescriptor);
+    methodDescriptors.add(validateDirectoryServiceMethodDescriptor);
     methodDescriptors.add(switchActiveReplicaZoneMethodDescriptor);
     methodDescriptors.add(listVolumesMethodDescriptor);
     methodDescriptors.add(getVolumeMethodDescriptor);
@@ -3555,6 +3752,8 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(stopReplicationMethodDescriptor);
     methodDescriptors.add(resumeReplicationMethodDescriptor);
     methodDescriptors.add(reverseReplicationDirectionMethodDescriptor);
+    methodDescriptors.add(establishPeeringMethodDescriptor);
+    methodDescriptors.add(syncReplicationMethodDescriptor);
     methodDescriptors.add(createBackupVaultMethodDescriptor);
     methodDescriptors.add(getBackupVaultMethodDescriptor);
     methodDescriptors.add(listBackupVaultsMethodDescriptor);
@@ -3627,6 +3826,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable() {
     return deleteStoragePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return validateDirectoryServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return validateDirectoryServiceOperationCallable;
   }
 
   @Override
@@ -3946,6 +4157,28 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable() {
     return reverseReplicationDirectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return establishPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return establishPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return syncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return syncReplicationOperationCallable;
   }
 
   @Override

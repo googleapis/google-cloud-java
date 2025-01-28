@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,2748 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.confidentialcomputing.v1.TokenOptions.class,
             com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder.class);
+  }
+
+  public interface AwsPrincipalTagsOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Principal tags to allow in the token.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the allowedPrincipalTags field is set.
+     */
+    boolean hasAllowedPrincipalTags();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Principal tags to allow in the token.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allowedPrincipalTags.
+     */
+    com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .AllowedPrincipalTags
+        getAllowedPrincipalTags();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Principal tags to allow in the token.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .AllowedPrincipalTagsOrBuilder
+        getAllowedPrincipalTagsOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Token options that only apply to the AWS Principal Tags token type.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions}
+   */
+  public static final class AwsPrincipalTagsOptions extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+      AwsPrincipalTagsOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AwsPrincipalTagsOptions.newBuilder() to construct.
+    private AwsPrincipalTagsOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AwsPrincipalTagsOptions() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AwsPrincipalTagsOptions();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.confidentialcomputing.v1.ServiceProto
+          .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.confidentialcomputing.v1.ServiceProto
+          .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.class,
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.Builder
+                  .class);
+    }
+
+    public interface AllowedPrincipalTagsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image signatures allowed in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the containerImageSignatures field is set.
+       */
+      boolean hasContainerImageSignatures();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image signatures allowed in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The containerImageSignatures.
+       */
+      com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.ContainerImageSignatures
+          getContainerImageSignatures();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image signatures allowed in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder
+          getContainerImageSignaturesOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allowed principal tags is used to define what principal tags will be
+     * placed in the token.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags}
+     */
+    public static final class AllowedPrincipalTags extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags)
+        AllowedPrincipalTagsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use AllowedPrincipalTags.newBuilder() to construct.
+      private AllowedPrincipalTags(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AllowedPrincipalTags() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new AllowedPrincipalTags();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.confidentialcomputing.v1.ServiceProto
+            .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.confidentialcomputing.v1.ServiceProto
+            .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.class,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.Builder.class);
+      }
+
+      public interface ContainerImageSignaturesOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the keyIds.
+         */
+        java.util.List<java.lang.String> getKeyIdsList();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of keyIds.
+         */
+        int getKeyIdsCount();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The keyIds at the given index.
+         */
+        java.lang.String getKeyIds(int index);
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the keyIds at the given index.
+         */
+        com.google.protobuf.ByteString getKeyIdsBytes(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Allowed Container Image Signatures. Key IDs are required to allow this
+       * claim to fit within the narrow AWS IAM restrictions.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures}
+       */
+      public static final class ContainerImageSignatures
+          extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures)
+          ContainerImageSignaturesOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ContainerImageSignatures.newBuilder() to construct.
+        private ContainerImageSignatures(
+            com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ContainerImageSignatures() {
+          keyIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ContainerImageSignatures();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.confidentialcomputing.v1.ServiceProto
+              .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.confidentialcomputing.v1.ServiceProto
+              .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.ContainerImageSignatures.class,
+                  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.ContainerImageSignatures.Builder.class);
+        }
+
+        public static final int KEY_IDS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private com.google.protobuf.LazyStringArrayList keyIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the keyIds.
+         */
+        public com.google.protobuf.ProtocolStringList getKeyIdsList() {
+          return keyIds_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of keyIds.
+         */
+        public int getKeyIdsCount() {
+          return keyIds_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The keyIds at the given index.
+         */
+        public java.lang.String getKeyIds(int index) {
+          return keyIds_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. List of key ids to filter into the Principal tags. Only
+         * keys that have been validated and added to the token will be filtered
+         * into principal tags. Unrecognized key ids will be ignored.
+         * </pre>
+         *
+         * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the keyIds at the given index.
+         */
+        public com.google.protobuf.ByteString getKeyIdsBytes(int index) {
+          return keyIds_.getByteString(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < keyIds_.size(); i++) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyIds_.getRaw(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          {
+            int dataSize = 0;
+            for (int i = 0; i < keyIds_.size(); i++) {
+              dataSize += computeStringSizeNoTag(keyIds_.getRaw(i));
+            }
+            size += dataSize;
+            size += 1 * getKeyIdsList().size();
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.ContainerImageSignatures)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.ContainerImageSignatures
+              other =
+                  (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                          .AllowedPrincipalTags.ContainerImageSignatures)
+                      obj;
+
+          if (!getKeyIdsList().equals(other.getKeyIdsList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getKeyIdsCount() > 0) {
+            hash = (37 * hash) + KEY_IDS_FIELD_NUMBER;
+            hash = (53 * hash) + getKeyIdsList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Allowed Container Image Signatures. Key IDs are required to allow this
+         * claim to fit within the narrow AWS IAM restrictions.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures)
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.confidentialcomputing.v1.ServiceProto
+                .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.confidentialcomputing.v1.ServiceProto
+                .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                        .AllowedPrincipalTags.ContainerImageSignatures.class,
+                    com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                        .AllowedPrincipalTags.ContainerImageSignatures.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            keyIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.confidentialcomputing.v1.ServiceProto
+                .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_ContainerImageSignatures_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.ContainerImageSignatures
+              getDefaultInstanceForType() {
+            return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.ContainerImageSignatures
+              build() {
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.ContainerImageSignatures
+              buildPartial() {
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures
+                result =
+                    new com.google.cloud.confidentialcomputing.v1.TokenOptions
+                        .AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures(
+                        this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.ContainerImageSignatures
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              keyIds_.makeImmutable();
+              result.keyIds_ = keyIds_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures) {
+              return mergeFrom(
+                  (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                          .AllowedPrincipalTags.ContainerImageSignatures)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.ContainerImageSignatures
+                  other) {
+            if (other
+                == com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures.getDefaultInstance())
+              return this;
+            if (!other.keyIds_.isEmpty()) {
+              if (keyIds_.isEmpty()) {
+                keyIds_ = other.keyIds_;
+                bitField0_ |= 0x00000001;
+              } else {
+                ensureKeyIdsIsMutable();
+                keyIds_.addAll(other.keyIds_);
+              }
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      ensureKeyIdsIsMutable();
+                      keyIds_.add(s);
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.LazyStringArrayList keyIds_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
+
+          private void ensureKeyIdsIsMutable() {
+            if (!keyIds_.isModifiable()) {
+              keyIds_ = new com.google.protobuf.LazyStringArrayList(keyIds_);
+            }
+            bitField0_ |= 0x00000001;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return A list containing the keyIds.
+           */
+          public com.google.protobuf.ProtocolStringList getKeyIdsList() {
+            keyIds_.makeImmutable();
+            return keyIds_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The count of keyIds.
+           */
+          public int getKeyIdsCount() {
+            return keyIds_.size();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param index The index of the element to return.
+           * @return The keyIds at the given index.
+           */
+          public java.lang.String getKeyIds(int index) {
+            return keyIds_.get(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param index The index of the value to return.
+           * @return The bytes of the keyIds at the given index.
+           */
+          public com.google.protobuf.ByteString getKeyIdsBytes(int index) {
+            return keyIds_.getByteString(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param index The index to set the value at.
+           * @param value The keyIds to set.
+           * @return This builder for chaining.
+           */
+          public Builder setKeyIds(int index, java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureKeyIdsIsMutable();
+            keyIds_.set(index, value);
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The keyIds to add.
+           * @return This builder for chaining.
+           */
+          public Builder addKeyIds(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureKeyIdsIsMutable();
+            keyIds_.add(value);
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param values The keyIds to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllKeyIds(java.lang.Iterable<java.lang.String> values) {
+            ensureKeyIdsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, keyIds_);
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearKeyIds() {
+            keyIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            ;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. List of key ids to filter into the Principal tags. Only
+           * keys that have been validated and added to the token will be filtered
+           * into principal tags. Unrecognized key ids will be ignored.
+           * </pre>
+           *
+           * <code>repeated string key_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes of the keyIds to add.
+           * @return This builder for chaining.
+           */
+          public Builder addKeyIdsBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            ensureKeyIdsIsMutable();
+            keyIds_.add(value);
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures)
+        private static final com.google.cloud.confidentialcomputing.v1.TokenOptions
+                .AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.ContainerImageSignatures();
+        }
+
+        public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ContainerImageSignatures> PARSER =
+            new com.google.protobuf.AbstractParser<ContainerImageSignatures>() {
+              @java.lang.Override
+              public ContainerImageSignatures parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ContainerImageSignatures> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ContainerImageSignatures> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int CONTAINER_IMAGE_SIGNATURES_FIELD_NUMBER = 1;
+      private com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.ContainerImageSignatures
+          containerImageSignatures_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image signatures allowed in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the containerImageSignatures field is set.
+       */
+      @java.lang.Override
+      public boolean hasContainerImageSignatures() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image signatures allowed in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The containerImageSignatures.
+       */
+      @java.lang.Override
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.ContainerImageSignatures
+          getContainerImageSignatures() {
+        return containerImageSignatures_ == null
+            ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures.getDefaultInstance()
+            : containerImageSignatures_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Container image signatures allowed in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder
+          getContainerImageSignaturesOrBuilder() {
+        return containerImageSignatures_ == null
+            ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures.getDefaultInstance()
+            : containerImageSignatures_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getContainerImageSignatures());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, getContainerImageSignatures());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags
+            other =
+                (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                        .AllowedPrincipalTags)
+                    obj;
+
+        if (hasContainerImageSignatures() != other.hasContainerImageSignatures()) return false;
+        if (hasContainerImageSignatures()) {
+          if (!getContainerImageSignatures().equals(other.getContainerImageSignatures()))
+            return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasContainerImageSignatures()) {
+          hash = (37 * hash) + CONTAINER_IMAGE_SIGNATURES_FIELD_NUMBER;
+          hash = (53 * hash) + getContainerImageSignatures().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Allowed principal tags is used to define what principal tags will be
+       * placed in the token.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags)
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTagsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.confidentialcomputing.v1.ServiceProto
+              .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.confidentialcomputing.v1.ServiceProto
+              .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.class,
+                  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getContainerImageSignaturesFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          containerImageSignatures_ = null;
+          if (containerImageSignaturesBuilder_ != null) {
+            containerImageSignaturesBuilder_.dispose();
+            containerImageSignaturesBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.confidentialcomputing.v1.ServiceProto
+              .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_AllowedPrincipalTags_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags
+            getDefaultInstanceForType() {
+          return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags
+            build() {
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags
+            buildPartial() {
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags
+              result =
+                  new com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.containerImageSignatures_ =
+                containerImageSignaturesBuilder_ == null
+                    ? containerImageSignatures_
+                    : containerImageSignaturesBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags) {
+            return mergeFrom(
+                (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                        .AllowedPrincipalTags)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags
+                other) {
+          if (other
+              == com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.getDefaultInstance()) return this;
+          if (other.hasContainerImageSignatures()) {
+            mergeContainerImageSignatures(other.getContainerImageSignatures());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        getContainerImageSignaturesFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            containerImageSignatures_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures.Builder,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder>
+            containerImageSignaturesBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the containerImageSignatures field is set.
+         */
+        public boolean hasContainerImageSignatures() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The containerImageSignatures.
+         */
+        public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures
+            getContainerImageSignatures() {
+          if (containerImageSignaturesBuilder_ == null) {
+            return containerImageSignatures_ == null
+                ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures.getDefaultInstance()
+                : containerImageSignatures_;
+          } else {
+            return containerImageSignaturesBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setContainerImageSignatures(
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures
+                value) {
+          if (containerImageSignaturesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            containerImageSignatures_ = value;
+          } else {
+            containerImageSignaturesBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setContainerImageSignatures(
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures.Builder
+                builderForValue) {
+          if (containerImageSignaturesBuilder_ == null) {
+            containerImageSignatures_ = builderForValue.build();
+          } else {
+            containerImageSignaturesBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeContainerImageSignatures(
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures
+                value) {
+          if (containerImageSignaturesBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && containerImageSignatures_ != null
+                && containerImageSignatures_
+                    != com.google.cloud.confidentialcomputing.v1.TokenOptions
+                        .AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures
+                        .getDefaultInstance()) {
+              getContainerImageSignaturesBuilder().mergeFrom(value);
+            } else {
+              containerImageSignatures_ = value;
+            }
+          } else {
+            containerImageSignaturesBuilder_.mergeFrom(value);
+          }
+          if (containerImageSignatures_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearContainerImageSignatures() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          containerImageSignatures_ = null;
+          if (containerImageSignaturesBuilder_ != null) {
+            containerImageSignaturesBuilder_.dispose();
+            containerImageSignaturesBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignatures.Builder
+            getContainerImageSignaturesBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getContainerImageSignaturesFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder
+            getContainerImageSignaturesOrBuilder() {
+          if (containerImageSignaturesBuilder_ != null) {
+            return containerImageSignaturesBuilder_.getMessageOrBuilder();
+          } else {
+            return containerImageSignatures_ == null
+                ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures.getDefaultInstance()
+                : containerImageSignatures_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Container image signatures allowed in the token.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures container_image_signatures = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignatures.Builder,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder>
+            getContainerImageSignaturesFieldBuilder() {
+          if (containerImageSignaturesBuilder_ == null) {
+            containerImageSignaturesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                        .AllowedPrincipalTags.ContainerImageSignatures,
+                    com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                        .AllowedPrincipalTags.ContainerImageSignatures.Builder,
+                    com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                        .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder>(
+                    getContainerImageSignatures(), getParentForChildren(), isClean());
+            containerImageSignatures_ = null;
+          }
+          return containerImageSignaturesBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags)
+      private static final com.google.cloud.confidentialcomputing.v1.TokenOptions
+              .AwsPrincipalTagsOptions.AllowedPrincipalTags
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .AllowedPrincipalTags();
+      }
+
+      public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AllowedPrincipalTags> PARSER =
+          new com.google.protobuf.AbstractParser<AllowedPrincipalTags>() {
+            @java.lang.Override
+            public AllowedPrincipalTags parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AllowedPrincipalTags> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AllowedPrincipalTags> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int ALLOWED_PRINCIPAL_TAGS_FIELD_NUMBER = 1;
+    private com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .AllowedPrincipalTags
+        allowedPrincipalTags_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Principal tags to allow in the token.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the allowedPrincipalTags field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowedPrincipalTags() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Principal tags to allow in the token.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allowedPrincipalTags.
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .AllowedPrincipalTags
+        getAllowedPrincipalTags() {
+      return allowedPrincipalTags_ == null
+          ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.getDefaultInstance()
+          : allowedPrincipalTags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Principal tags to allow in the token.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .AllowedPrincipalTagsOrBuilder
+        getAllowedPrincipalTagsOrBuilder() {
+      return allowedPrincipalTags_ == null
+          ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.getDefaultInstance()
+          : allowedPrincipalTags_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getAllowedPrincipalTags());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAllowedPrincipalTags());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions other =
+          (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions) obj;
+
+      if (hasAllowedPrincipalTags() != other.hasAllowedPrincipalTags()) return false;
+      if (hasAllowedPrincipalTags()) {
+        if (!getAllowedPrincipalTags().equals(other.getAllowedPrincipalTags())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAllowedPrincipalTags()) {
+        hash = (37 * hash) + ALLOWED_PRINCIPAL_TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getAllowedPrincipalTags().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Token options that only apply to the AWS Principal Tags token type.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.confidentialcomputing.v1.ServiceProto
+            .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.confidentialcomputing.v1.ServiceProto
+            .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .class,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getAllowedPrincipalTagsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        allowedPrincipalTags_ = null;
+        if (allowedPrincipalTagsBuilder_ != null) {
+          allowedPrincipalTagsBuilder_.dispose();
+          allowedPrincipalTagsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.confidentialcomputing.v1.ServiceProto
+            .internal_static_google_cloud_confidentialcomputing_v1_TokenOptions_AwsPrincipalTagsOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+          getDefaultInstanceForType() {
+        return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+          build() {
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+          buildPartial() {
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions result =
+            new com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.allowedPrincipalTags_ =
+              allowedPrincipalTagsBuilder_ == null
+                  ? allowedPrincipalTags_
+                  : allowedPrincipalTagsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions) {
+          return mergeFrom(
+              (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions other) {
+        if (other
+            == com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                .getDefaultInstance()) return this;
+        if (other.hasAllowedPrincipalTags()) {
+          mergeAllowedPrincipalTags(other.getAllowedPrincipalTags());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getAllowedPrincipalTagsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          allowedPrincipalTags_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags,
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.Builder,
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTagsOrBuilder>
+          allowedPrincipalTagsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the allowedPrincipalTags field is set.
+       */
+      public boolean hasAllowedPrincipalTags() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The allowedPrincipalTags.
+       */
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags
+          getAllowedPrincipalTags() {
+        if (allowedPrincipalTagsBuilder_ == null) {
+          return allowedPrincipalTags_ == null
+              ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.getDefaultInstance()
+              : allowedPrincipalTags_;
+        } else {
+          return allowedPrincipalTagsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAllowedPrincipalTags(
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags
+              value) {
+        if (allowedPrincipalTagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          allowedPrincipalTags_ = value;
+        } else {
+          allowedPrincipalTagsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAllowedPrincipalTags(
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.Builder
+              builderForValue) {
+        if (allowedPrincipalTagsBuilder_ == null) {
+          allowedPrincipalTags_ = builderForValue.build();
+        } else {
+          allowedPrincipalTagsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAllowedPrincipalTags(
+          com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags
+              value) {
+        if (allowedPrincipalTagsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && allowedPrincipalTags_ != null
+              && allowedPrincipalTags_
+                  != com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.getDefaultInstance()) {
+            getAllowedPrincipalTagsBuilder().mergeFrom(value);
+          } else {
+            allowedPrincipalTags_ = value;
+          }
+        } else {
+          allowedPrincipalTagsBuilder_.mergeFrom(value);
+        }
+        if (allowedPrincipalTags_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAllowedPrincipalTags() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        allowedPrincipalTags_ = null;
+        if (allowedPrincipalTagsBuilder_ != null) {
+          allowedPrincipalTagsBuilder_.dispose();
+          allowedPrincipalTagsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTags.Builder
+          getAllowedPrincipalTagsBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getAllowedPrincipalTagsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+              .AllowedPrincipalTagsOrBuilder
+          getAllowedPrincipalTagsOrBuilder() {
+        if (allowedPrincipalTagsBuilder_ != null) {
+          return allowedPrincipalTagsBuilder_.getMessageOrBuilder();
+        } else {
+          return allowedPrincipalTags_ == null
+              ? com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.getDefaultInstance()
+              : allowedPrincipalTags_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Principal tags to allow in the token.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags allowed_principal_tags = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags,
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTags.Builder,
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .AllowedPrincipalTagsOrBuilder>
+          getAllowedPrincipalTagsFieldBuilder() {
+        if (allowedPrincipalTagsBuilder_ == null) {
+          allowedPrincipalTagsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags,
+                  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTags.Builder,
+                  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                      .AllowedPrincipalTagsOrBuilder>(
+                  getAllowedPrincipalTags(), getParentForChildren(), isClean());
+          allowedPrincipalTags_ = null;
+        }
+        return allowedPrincipalTagsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+    private static final com.google.cloud.confidentialcomputing.v1.TokenOptions
+            .AwsPrincipalTagsOptions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions();
+    }
+
+    public static com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AwsPrincipalTagsOptions> PARSER =
+        new com.google.protobuf.AbstractParser<AwsPrincipalTagsOptions>() {
+          @java.lang.Override
+          public AwsPrincipalTagsOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AwsPrincipalTagsOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AwsPrincipalTagsOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int tokenTypeOptionsCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object tokenTypeOptions_;
+
+  public enum TokenTypeOptionsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    AWS_PRINCIPAL_TAGS_OPTIONS(4),
+    TOKENTYPEOPTIONS_NOT_SET(0);
+    private final int value;
+
+    private TokenTypeOptionsCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TokenTypeOptionsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static TokenTypeOptionsCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return AWS_PRINCIPAL_TAGS_OPTIONS;
+        case 0:
+          return TOKENTYPEOPTIONS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public TokenTypeOptionsCase getTokenTypeOptionsCase() {
+    return TokenTypeOptionsCase.forNumber(tokenTypeOptionsCase_);
+  }
+
+  public static final int AWS_PRINCIPAL_TAGS_OPTIONS_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the awsPrincipalTagsOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasAwsPrincipalTagsOptions() {
+    return tokenTypeOptionsCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The awsPrincipalTagsOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+      getAwsPrincipalTagsOptions() {
+    if (tokenTypeOptionsCase_ == 4) {
+      return (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+          tokenTypeOptions_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for the Limited AWS token type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder
+      getAwsPrincipalTagsOptionsOrBuilder() {
+    if (tokenTypeOptionsCase_ == 4) {
+      return (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+          tokenTypeOptions_;
+    }
+    return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        .getDefaultInstance();
   }
 
   public static final int AUDIENCE_FIELD_NUMBER = 1;
@@ -255,6 +2997,12 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.confidentialcomputing.v1.TokenType.TOKEN_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, tokenType_);
     }
+    if (tokenTypeOptionsCase_ == 4) {
+      output.writeMessage(
+          4,
+          (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+              tokenTypeOptions_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -279,6 +3027,13 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.confidentialcomputing.v1.TokenType.TOKEN_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, tokenType_);
     }
+    if (tokenTypeOptionsCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4,
+              (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+                  tokenTypeOptions_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -298,6 +3053,14 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     if (!getAudience().equals(other.getAudience())) return false;
     if (!getNonceList().equals(other.getNonceList())) return false;
     if (tokenType_ != other.tokenType_) return false;
+    if (!getTokenTypeOptionsCase().equals(other.getTokenTypeOptionsCase())) return false;
+    switch (tokenTypeOptionsCase_) {
+      case 4:
+        if (!getAwsPrincipalTagsOptions().equals(other.getAwsPrincipalTagsOptions())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -317,6 +3080,14 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + TOKEN_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + tokenType_;
+    switch (tokenTypeOptionsCase_) {
+      case 4:
+        hash = (37 * hash) + AWS_PRINCIPAL_TAGS_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAwsPrincipalTagsOptions().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -457,9 +3228,14 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (awsPrincipalTagsOptionsBuilder_ != null) {
+        awsPrincipalTagsOptionsBuilder_.clear();
+      }
       audience_ = "";
       nonce_ = com.google.protobuf.LazyStringArrayList.emptyList();
       tokenType_ = 0;
+      tokenTypeOptionsCase_ = 0;
+      tokenTypeOptions_ = null;
       return this;
     }
 
@@ -490,21 +3266,30 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.cloud.confidentialcomputing.v1.TokenOptions result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.audience_ = audience_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         nonce_.makeImmutable();
         result.nonce_ = nonce_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.tokenType_ = tokenType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.confidentialcomputing.v1.TokenOptions result) {
+      result.tokenTypeOptionsCase_ = tokenTypeOptionsCase_;
+      result.tokenTypeOptions_ = this.tokenTypeOptions_;
+      if (tokenTypeOptionsCase_ == 4 && awsPrincipalTagsOptionsBuilder_ != null) {
+        result.tokenTypeOptions_ = awsPrincipalTagsOptionsBuilder_.build();
       }
     }
 
@@ -556,13 +3341,13 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getAudience().isEmpty()) {
         audience_ = other.audience_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.nonce_.isEmpty()) {
         if (nonce_.isEmpty()) {
           nonce_ = other.nonce_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         } else {
           ensureNonceIsMutable();
           nonce_.addAll(other.nonce_);
@@ -571,6 +3356,17 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.tokenType_ != 0) {
         setTokenTypeValue(other.getTokenTypeValue());
+      }
+      switch (other.getTokenTypeOptionsCase()) {
+        case AWS_PRINCIPAL_TAGS_OPTIONS:
+          {
+            mergeAwsPrincipalTagsOptions(other.getAwsPrincipalTagsOptions());
+            break;
+          }
+        case TOKENTYPEOPTIONS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -601,7 +3397,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 audience_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -614,9 +3410,16 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 tokenType_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
+            case 34:
+              {
+                input.readMessage(
+                    getAwsPrincipalTagsOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                tokenTypeOptionsCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -634,7 +3437,269 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int tokenTypeOptionsCase_ = 0;
+    private java.lang.Object tokenTypeOptions_;
+
+    public TokenTypeOptionsCase getTokenTypeOptionsCase() {
+      return TokenTypeOptionsCase.forNumber(tokenTypeOptionsCase_);
+    }
+
+    public Builder clearTokenTypeOptions() {
+      tokenTypeOptionsCase_ = 0;
+      tokenTypeOptions_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions,
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.Builder,
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder>
+        awsPrincipalTagsOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the awsPrincipalTagsOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasAwsPrincipalTagsOptions() {
+      return tokenTypeOptionsCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The awsPrincipalTagsOptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+        getAwsPrincipalTagsOptions() {
+      if (awsPrincipalTagsOptionsBuilder_ == null) {
+        if (tokenTypeOptionsCase_ == 4) {
+          return (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+              tokenTypeOptions_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .getDefaultInstance();
+      } else {
+        if (tokenTypeOptionsCase_ == 4) {
+          return awsPrincipalTagsOptionsBuilder_.getMessage();
+        }
+        return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsPrincipalTagsOptions(
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions value) {
+      if (awsPrincipalTagsOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tokenTypeOptions_ = value;
+        onChanged();
+      } else {
+        awsPrincipalTagsOptionsBuilder_.setMessage(value);
+      }
+      tokenTypeOptionsCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAwsPrincipalTagsOptions(
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.Builder
+            builderForValue) {
+      if (awsPrincipalTagsOptionsBuilder_ == null) {
+        tokenTypeOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsPrincipalTagsOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      tokenTypeOptionsCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAwsPrincipalTagsOptions(
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions value) {
+      if (awsPrincipalTagsOptionsBuilder_ == null) {
+        if (tokenTypeOptionsCase_ == 4
+            && tokenTypeOptions_
+                != com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .getDefaultInstance()) {
+          tokenTypeOptions_ =
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .newBuilder(
+                      (com.google.cloud.confidentialcomputing.v1.TokenOptions
+                              .AwsPrincipalTagsOptions)
+                          tokenTypeOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          tokenTypeOptions_ = value;
+        }
+        onChanged();
+      } else {
+        if (tokenTypeOptionsCase_ == 4) {
+          awsPrincipalTagsOptionsBuilder_.mergeFrom(value);
+        } else {
+          awsPrincipalTagsOptionsBuilder_.setMessage(value);
+        }
+      }
+      tokenTypeOptionsCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAwsPrincipalTagsOptions() {
+      if (awsPrincipalTagsOptionsBuilder_ == null) {
+        if (tokenTypeOptionsCase_ == 4) {
+          tokenTypeOptionsCase_ = 0;
+          tokenTypeOptions_ = null;
+          onChanged();
+        }
+      } else {
+        if (tokenTypeOptionsCase_ == 4) {
+          tokenTypeOptionsCase_ = 0;
+          tokenTypeOptions_ = null;
+        }
+        awsPrincipalTagsOptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.Builder
+        getAwsPrincipalTagsOptionsBuilder() {
+      return getAwsPrincipalTagsOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder
+        getAwsPrincipalTagsOptionsOrBuilder() {
+      if ((tokenTypeOptionsCase_ == 4) && (awsPrincipalTagsOptionsBuilder_ != null)) {
+        return awsPrincipalTagsOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (tokenTypeOptionsCase_ == 4) {
+          return (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+              tokenTypeOptions_;
+        }
+        return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for the Limited AWS token type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions,
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.Builder,
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder>
+        getAwsPrincipalTagsOptionsFieldBuilder() {
+      if (awsPrincipalTagsOptionsBuilder_ == null) {
+        if (!(tokenTypeOptionsCase_ == 4)) {
+          tokenTypeOptions_ =
+              com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                  .getDefaultInstance();
+        }
+        awsPrincipalTagsOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
+                    .Builder,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions
+                    .AwsPrincipalTagsOptionsOrBuilder>(
+                (com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
+                    tokenTypeOptions_,
+                getParentForChildren(),
+                isClean());
+        tokenTypeOptions_ = null;
+      }
+      tokenTypeOptionsCase_ = 4;
+      onChanged();
+      return awsPrincipalTagsOptionsBuilder_;
+    }
 
     private java.lang.Object audience_ = "";
     /**
@@ -701,7 +3766,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       audience_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -719,7 +3784,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAudience() {
       audience_ = getDefaultInstance().getAudience();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -742,7 +3807,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       audience_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -754,7 +3819,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       if (!nonce_.isModifiable()) {
         nonce_ = new com.google.protobuf.LazyStringArrayList(nonce_);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -844,7 +3909,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNonceIsMutable();
       nonce_.set(index, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -868,7 +3933,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNonceIsMutable();
       nonce_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -889,7 +3954,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllNonce(java.lang.Iterable<java.lang.String> values) {
       ensureNonceIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nonce_);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -908,7 +3973,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNonce() {
       nonce_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       ;
       onChanged();
       return this;
@@ -934,7 +3999,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureNonceIsMutable();
       nonce_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -973,7 +4038,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTokenTypeValue(int value) {
       tokenType_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1016,7 +4081,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       tokenType_ = value.getNumber();
       onChanged();
       return this;
@@ -1035,7 +4100,7 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTokenType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       tokenType_ = 0;
       onChanged();
       return this;

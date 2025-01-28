@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,11 +58,12 @@ public final class AdUnitEnumsProto {
           + "ECIFIED\020\000\022\010\n\004NONE\020\001\022\020\n\014SMART_BANNER\020\002\022\020\n"
           + "\014DYNAMIC_SIZE\020\003\"U\n\020TargetWindowEnum\"A\n\014T"
           + "argetWindow\022\035\n\031TARGET_WINDOW_UNSPECIFIED"
-          + "\020\000\022\007\n\003TOP\020\001\022\t\n\005BLANK\020\002B\247\001\n\033com.google.ad"
+          + "\020\000\022\007\n\003TOP\020\001\022\t\n\005BLANK\020\002B\304\001\n\033com.google.ad"
           + "s.admanager.v1B\020AdUnitEnumsProtoP\001Z@goog"
           + "le.golang.org/genproto/googleapis/ads/ad"
           + "manager/v1;admanager\252\002\027Google.Ads.AdMana"
-          + "ger.V1\312\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "ger.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Googl"
+          + "e::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -282,7 +282,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -294,7 +295,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -306,7 +308,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -319,7 +322,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -398,7 +402,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -412,7 +417,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -426,7 +432,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -441,7 +448,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. A collection of text responses.
+     * Required. A collection of text response variants. If multiple variants
+     * are defined, only one text response variant is returned at runtime.
      * </pre>
      *
      * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -871,7 +879,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -886,7 +895,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -900,7 +910,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -915,7 +926,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -930,7 +942,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -953,7 +966,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -975,7 +989,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -994,7 +1009,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1012,7 +1028,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. A collection of text responses.
+       * Required. A collection of text response variants. If multiple variants
+       * are defined, only one text response variant is returned at runtime.
        * </pre>
        *
        * <code>repeated string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>

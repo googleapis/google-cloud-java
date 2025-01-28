@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,24 +76,12 @@ public interface AuditLogConfigOrBuilder
   com.google.protobuf.ByteString getExemptedMembersBytes(int index);
 
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return Whether the ignoreChildExemptions field is set.
    */
   boolean hasIgnoreChildExemptions();
   /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
    * <code>optional bool ignore_child_exemptions = 70141850;</code>
    *
    * @return The ignoreChildExemptions.

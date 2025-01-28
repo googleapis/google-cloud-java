@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,55 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int backendConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object backendConfig_;
+
+  public enum BackendConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    VECTOR_DB_CONFIG(9),
+    VERTEX_AI_SEARCH_CONFIG(10),
+    BACKENDCONFIG_NOT_SET(0);
+    private final int value;
+
+    private BackendConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BackendConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static BackendConfigCase forNumber(int value) {
+      switch (value) {
+        case 9:
+          return VECTOR_DB_CONFIG;
+        case 10:
+          return VERTEX_AI_SEARCH_CONFIG;
+        case 0:
+          return BACKENDCONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public BackendConfigCase getBackendConfigCase() {
+    return BackendConfigCase.forNumber(backendConfigCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -234,12 +283,15 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRagEmbeddingModelConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -251,12 +303,15 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
    * @return The ragEmbeddingModelConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig getRagEmbeddingModelConfig() {
     return ragEmbeddingModelConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.getDefaultInstance()
@@ -270,10 +325,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
       getRagEmbeddingModelConfigOrBuilder() {
     return ragEmbeddingModelConfig_ == null
@@ -291,12 +347,15 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
    * @return Whether the ragVectorDbConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRagVectorDbConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -308,12 +367,15 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
    * @return The ragVectorDbConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig() {
     return ragVectorDbConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance()
@@ -327,10 +389,11 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder
       getRagVectorDbConfigOrBuilder() {
     return ragVectorDbConfig_ == null
@@ -492,6 +555,122 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         : corpusStatus_;
   }
 
+  public static final int VECTOR_DB_CONFIG_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the vectorDbConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasVectorDbConfig() {
+    return backendConfigCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The vectorDbConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getVectorDbConfig() {
+    if (backendConfigCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder
+      getVectorDbConfigOrBuilder() {
+    if (backendConfigCase_ == 9) {
+      return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance();
+  }
+
+  public static final int VERTEX_AI_SEARCH_CONFIG_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the vertexAiSearchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexAiSearchConfig() {
+    return backendConfigCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The vertexAiSearchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig getVertexAiSearchConfig() {
+    if (backendConfigCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfigOrBuilder
+      getVertexAiSearchConfigOrBuilder() {
+    if (backendConfigCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -530,6 +709,14 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(8, getCorpusStatus());
     }
+    if (backendConfigCase_ == 9) {
+      output.writeMessage(
+          9, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_);
+    }
+    if (backendConfigCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -563,6 +750,16 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCorpusStatus());
+    }
+    if (backendConfigCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_);
+    }
+    if (backendConfigCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -603,6 +800,17 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasCorpusStatus()) {
       if (!getCorpusStatus().equals(other.getCorpusStatus())) return false;
     }
+    if (!getBackendConfigCase().equals(other.getBackendConfigCase())) return false;
+    switch (backendConfigCase_) {
+      case 9:
+        if (!getVectorDbConfig().equals(other.getVectorDbConfig())) return false;
+        break;
+      case 10:
+        if (!getVertexAiSearchConfig().equals(other.getVertexAiSearchConfig())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -639,6 +847,18 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasCorpusStatus()) {
       hash = (37 * hash) + CORPUS_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getCorpusStatus().hashCode();
+    }
+    switch (backendConfigCase_) {
+      case 9:
+        hash = (37 * hash) + VECTOR_DB_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getVectorDbConfig().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + VERTEX_AI_SEARCH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexAiSearchConfig().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -821,6 +1041,14 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         corpusStatusBuilder_.dispose();
         corpusStatusBuilder_ = null;
       }
+      if (vectorDbConfigBuilder_ != null) {
+        vectorDbConfigBuilder_.clear();
+      }
+      if (vertexAiSearchConfigBuilder_ != null) {
+        vertexAiSearchConfigBuilder_.clear();
+      }
+      backendConfigCase_ = 0;
+      backendConfig_ = null;
       return this;
     }
 
@@ -851,6 +1079,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -895,6 +1124,17 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.RagCorpus result) {
+      result.backendConfigCase_ = backendConfigCase_;
+      result.backendConfig_ = this.backendConfig_;
+      if (backendConfigCase_ == 9 && vectorDbConfigBuilder_ != null) {
+        result.backendConfig_ = vectorDbConfigBuilder_.build();
+      }
+      if (backendConfigCase_ == 10 && vertexAiSearchConfigBuilder_ != null) {
+        result.backendConfig_ = vertexAiSearchConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -972,6 +1212,22 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCorpusStatus()) {
         mergeCorpusStatus(other.getCorpusStatus());
       }
+      switch (other.getBackendConfigCase()) {
+        case VECTOR_DB_CONFIG:
+          {
+            mergeVectorDbConfig(other.getVectorDbConfig());
+            break;
+          }
+        case VERTEX_AI_SEARCH_CONFIG:
+          {
+            mergeVertexAiSearchConfig(other.getVertexAiSearchConfig());
+            break;
+          }
+        case BACKENDCONFIG_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1048,6 +1304,19 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(getVectorDbConfigFieldBuilder().getBuilder(), extensionRegistry);
+                backendConfigCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getVertexAiSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                backendConfigCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1062,6 +1331,20 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int backendConfigCase_ = 0;
+    private java.lang.Object backendConfig_;
+
+    public BackendConfigCase getBackendConfigCase() {
+      return BackendConfigCase.forNumber(backendConfigCase_);
+    }
+
+    public Builder clearBackendConfig() {
+      backendConfigCase_ = 0;
+      backendConfig_ = null;
+      onChanged();
       return this;
     }
 
@@ -1409,11 +1692,14 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
      * @return Whether the ragEmbeddingModelConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRagEmbeddingModelConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
@@ -1425,11 +1711,14 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=268
      * @return The ragEmbeddingModelConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
         getRagEmbeddingModelConfig() {
       if (ragEmbeddingModelConfigBuilder_ == null) {
@@ -1448,9 +1737,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagEmbeddingModelConfig(
         com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig value) {
       if (ragEmbeddingModelConfigBuilder_ == null) {
@@ -1473,9 +1763,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagEmbeddingModelConfig(
         com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder builderForValue) {
       if (ragEmbeddingModelConfigBuilder_ == null) {
@@ -1495,9 +1786,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRagEmbeddingModelConfig(
         com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig value) {
       if (ragEmbeddingModelConfigBuilder_ == null) {
@@ -1527,9 +1819,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRagEmbeddingModelConfig() {
       bitField0_ = (bitField0_ & ~0x00000008);
       ragEmbeddingModelConfig_ = null;
@@ -1548,9 +1841,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.Builder
         getRagEmbeddingModelConfigBuilder() {
       bitField0_ |= 0x00000008;
@@ -1565,9 +1859,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfigOrBuilder
         getRagEmbeddingModelConfigOrBuilder() {
       if (ragEmbeddingModelConfigBuilder_ != null) {
@@ -1586,7 +1881,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig rag_embedding_model_config = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1620,11 +1915,14 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
      * @return Whether the ragVectorDbConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRagVectorDbConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1636,11 +1934,14 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=275
      * @return The ragVectorDbConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getRagVectorDbConfig() {
       if (ragVectorDbConfigBuilder_ == null) {
         return ragVectorDbConfig_ == null
@@ -1658,9 +1959,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagVectorDbConfig(
         com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig value) {
       if (ragVectorDbConfigBuilder_ == null) {
@@ -1683,9 +1985,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagVectorDbConfig(
         com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder builderForValue) {
       if (ragVectorDbConfigBuilder_ == null) {
@@ -1705,9 +2008,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRagVectorDbConfig(
         com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig value) {
       if (ragVectorDbConfigBuilder_ == null) {
@@ -1736,9 +2040,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRagVectorDbConfig() {
       bitField0_ = (bitField0_ & ~0x00000010);
       ragVectorDbConfig_ = null;
@@ -1757,9 +2062,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder
         getRagVectorDbConfigBuilder() {
       bitField0_ |= 0x00000010;
@@ -1774,9 +2080,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder
         getRagVectorDbConfigOrBuilder() {
       if (ragVectorDbConfigBuilder_ != null) {
@@ -1795,7 +2102,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig rag_vector_db_config = 7 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2424,6 +2731,471 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         corpusStatus_ = null;
       }
       return corpusStatusBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder>
+        vectorDbConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the vectorDbConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasVectorDbConfig() {
+      return backendConfigCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The vectorDbConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig getVectorDbConfig() {
+      if (vectorDbConfigBuilder_ == null) {
+        if (backendConfigCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance();
+      } else {
+        if (backendConfigCase_ == 9) {
+          return vectorDbConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setVectorDbConfig(com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig value) {
+      if (vectorDbConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backendConfig_ = value;
+        onChanged();
+      } else {
+        vectorDbConfigBuilder_.setMessage(value);
+      }
+      backendConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setVectorDbConfig(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder builderForValue) {
+      if (vectorDbConfigBuilder_ == null) {
+        backendConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        vectorDbConfigBuilder_.setMessage(builderForValue.build());
+      }
+      backendConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeVectorDbConfig(
+        com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig value) {
+      if (vectorDbConfigBuilder_ == null) {
+        if (backendConfigCase_ == 9
+            && backendConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance()) {
+          backendConfig_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          backendConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (backendConfigCase_ == 9) {
+          vectorDbConfigBuilder_.mergeFrom(value);
+        } else {
+          vectorDbConfigBuilder_.setMessage(value);
+        }
+      }
+      backendConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearVectorDbConfig() {
+      if (vectorDbConfigBuilder_ == null) {
+        if (backendConfigCase_ == 9) {
+          backendConfigCase_ = 0;
+          backendConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (backendConfigCase_ == 9) {
+          backendConfigCase_ = 0;
+          backendConfig_ = null;
+        }
+        vectorDbConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder
+        getVectorDbConfigBuilder() {
+      return getVectorDbConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder
+        getVectorDbConfigOrBuilder() {
+      if ((backendConfigCase_ == 9) && (vectorDbConfigBuilder_ != null)) {
+        return vectorDbConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (backendConfigCase_ == 9) {
+          return (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vector DBs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder>
+        getVectorDbConfigFieldBuilder() {
+      if (vectorDbConfigBuilder_ == null) {
+        if (!(backendConfigCase_ == 9)) {
+          backendConfig_ =
+              com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.getDefaultInstance();
+        }
+        vectorDbConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagVectorDbConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig) backendConfig_,
+                getParentForChildren(),
+                isClean());
+        backendConfig_ = null;
+      }
+      backendConfigCase_ = 9;
+      onChanged();
+      return vectorDbConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig,
+            com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfigOrBuilder>
+        vertexAiSearchConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the vertexAiSearchConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexAiSearchConfig() {
+      return backendConfigCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The vertexAiSearchConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig getVertexAiSearchConfig() {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (backendConfigCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance();
+      } else {
+        if (backendConfigCase_ == 10) {
+          return vertexAiSearchConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setVertexAiSearchConfig(
+        com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig value) {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backendConfig_ = value;
+        onChanged();
+      } else {
+        vertexAiSearchConfigBuilder_.setMessage(value);
+      }
+      backendConfigCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setVertexAiSearchConfig(
+        com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.Builder builderForValue) {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        backendConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexAiSearchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      backendConfigCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeVertexAiSearchConfig(
+        com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig value) {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (backendConfigCase_ == 10
+            && backendConfig_
+                != com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance()) {
+          backendConfig_ =
+              com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          backendConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (backendConfigCase_ == 10) {
+          vertexAiSearchConfigBuilder_.mergeFrom(value);
+        } else {
+          vertexAiSearchConfigBuilder_.setMessage(value);
+        }
+      }
+      backendConfigCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearVertexAiSearchConfig() {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (backendConfigCase_ == 10) {
+          backendConfigCase_ = 0;
+          backendConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (backendConfigCase_ == 10) {
+          backendConfigCase_ = 0;
+          backendConfig_ = null;
+        }
+        vertexAiSearchConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.Builder
+        getVertexAiSearchConfigBuilder() {
+      return getVertexAiSearchConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfigOrBuilder
+        getVertexAiSearchConfigOrBuilder() {
+      if ((backendConfigCase_ == 10) && (vertexAiSearchConfigBuilder_ != null)) {
+        return vertexAiSearchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (backendConfigCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The config for the Vertex AI Search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig,
+            com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfigOrBuilder>
+        getVertexAiSearchConfigFieldBuilder() {
+      if (vertexAiSearchConfigBuilder_ == null) {
+        if (!(backendConfigCase_ == 10)) {
+          backendConfig_ =
+              com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance();
+        }
+        vertexAiSearchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig,
+                com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_,
+                getParentForChildren(),
+                isClean());
+        backendConfig_ = null;
+      }
+      backendConfigCase_ = 10;
+      onChanged();
+      return vertexAiSearchConfigBuilder_;
     }
 
     @java.lang.Override

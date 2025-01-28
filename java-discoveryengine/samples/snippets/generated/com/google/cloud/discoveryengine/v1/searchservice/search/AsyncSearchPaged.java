@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class AsyncSearchPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")

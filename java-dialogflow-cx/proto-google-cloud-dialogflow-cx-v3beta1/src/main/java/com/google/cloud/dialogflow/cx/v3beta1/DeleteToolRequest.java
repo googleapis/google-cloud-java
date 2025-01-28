@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,8 +73,8 @@ public final class DeleteToolRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the Tool to be deleted.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,8 +100,8 @@ public final class DeleteToolRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the Tool to be deleted.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>
@@ -519,8 +519,8 @@ public final class DeleteToolRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Tool to be deleted.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -545,8 +545,8 @@ public final class DeleteToolRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Tool to be deleted.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -571,8 +571,8 @@ public final class DeleteToolRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Tool to be deleted.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -596,8 +596,8 @@ public final class DeleteToolRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Tool to be deleted.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>
@@ -617,8 +617,8 @@ public final class DeleteToolRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the Tool to be deleted.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>

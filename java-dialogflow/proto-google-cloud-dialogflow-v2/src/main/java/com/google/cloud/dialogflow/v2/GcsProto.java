@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,10 +49,10 @@ public final class GcsProto {
           + "google.cloud.dialogflow.v2\032\037google/api/f"
           + "ield_behavior.proto\"\037\n\nGcsSources\022\021\n\004uri"
           + "s\030\002 \003(\tB\003\340A\002\"\035\n\016GcsDestination\022\013\n\003uri\030\001 "
-          + "\001(\tB\221\001\n\036com.google.cloud.dialogflow.v2B\010"
+          + "\001(\tB\216\001\n\036com.google.cloud.dialogflow.v2B\010"
           + "GcsProtoP\001Z>cloud.google.com/go/dialogfl"
-          + "ow/apiv2/dialogflowpb;dialogflowpb\370\001\001\242\002\002"
-          + "DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "ow/apiv2/dialogflowpb;dialogflowpb\242\002\002DF\252"
+          + "\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

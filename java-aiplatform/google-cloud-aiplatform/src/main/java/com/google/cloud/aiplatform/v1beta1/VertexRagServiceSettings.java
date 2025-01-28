@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,17 @@ public class VertexRagServiceSettings extends ClientSettings<VertexRagServiceSet
   public UnaryCallSettings<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsSettings() {
     return ((VertexRagServiceStubSettings) getStubSettings()).retrieveContextsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to augmentPrompt. */
+  public UnaryCallSettings<AugmentPromptRequest, AugmentPromptResponse> augmentPromptSettings() {
+    return ((VertexRagServiceStubSettings) getStubSettings()).augmentPromptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to corroborateContent. */
+  public UnaryCallSettings<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentSettings() {
+    return ((VertexRagServiceStubSettings) getStubSettings()).corroborateContentSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -230,6 +241,18 @@ public class VertexRagServiceSettings extends ClientSettings<VertexRagServiceSet
     public UnaryCallSettings.Builder<RetrieveContextsRequest, RetrieveContextsResponse>
         retrieveContextsSettings() {
       return getStubSettingsBuilder().retrieveContextsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to augmentPrompt. */
+    public UnaryCallSettings.Builder<AugmentPromptRequest, AugmentPromptResponse>
+        augmentPromptSettings() {
+      return getStubSettingsBuilder().augmentPromptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to corroborateContent. */
+    public UnaryCallSettings.Builder<CorroborateContentRequest, CorroborateContentResponse>
+        corroborateContentSettings() {
+      return getStubSettingsBuilder().corroborateContentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,7 +113,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * datastreamSettingsBuilder
@@ -224,6 +224,17 @@ public class DatastreamSettings extends ClientSettings<DatastreamSettings> {
   public OperationCallSettings<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationSettings() {
     return ((DatastreamStubSettings) getStubSettings()).deleteStreamOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runStream. */
+  public UnaryCallSettings<RunStreamRequest, Operation> runStreamSettings() {
+    return ((DatastreamStubSettings) getStubSettings()).runStreamSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runStream. */
+  public OperationCallSettings<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationSettings() {
+    return ((DatastreamStubSettings) getStubSettings()).runStreamOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getStreamObject. */
@@ -559,6 +570,17 @@ public class DatastreamSettings extends ClientSettings<DatastreamSettings> {
     public OperationCallSettings.Builder<DeleteStreamRequest, Empty, OperationMetadata>
         deleteStreamOperationSettings() {
       return getStubSettingsBuilder().deleteStreamOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public UnaryCallSettings.Builder<RunStreamRequest, Operation> runStreamSettings() {
+      return getStubSettingsBuilder().runStreamSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public OperationCallSettings.Builder<RunStreamRequest, Stream, OperationMetadata>
+        runStreamOperationSettings() {
+      return getStubSettingsBuilder().runStreamOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getStreamObject. */

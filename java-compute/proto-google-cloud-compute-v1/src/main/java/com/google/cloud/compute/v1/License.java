@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -434,6 +434,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
   public static final int RESOURCE_REQUIREMENTS_FIELD_NUMBER = 214292769;
   private com.google.cloud.compute.v1.LicenseResourceRequirements resourceRequirements_;
   /**
+   *
+   *
+   * <pre>
+   * [Input Only] Deprecated.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
@@ -445,6 +451,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * [Input Only] Deprecated.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
@@ -458,6 +470,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
         : resourceRequirements_;
   }
   /**
+   *
+   *
+   * <pre>
+   * [Input Only] Deprecated.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
    * </code>
@@ -1886,6 +1904,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.LicenseResourceRequirementsOrBuilder>
         resourceRequirementsBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -1896,6 +1920,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -1912,6 +1942,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -1931,6 +1967,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -1947,6 +1989,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -1972,6 +2020,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -1987,6 +2041,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -1998,6 +2058,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       return getResourceRequirementsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>
@@ -2013,6 +2079,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * [Input Only] Deprecated.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.LicenseResourceRequirements resource_requirements = 214292769;
      * </code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,7 +178,7 @@ public interface EventOrBuilder
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=724
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated
@@ -189,7 +189,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. Flag for a reCAPTCHA express request for an assessment without a
-   * token. If enabled, `site_key` must reference an express key.
+   * token. If enabled, `site_key` must reference an Express site key.
    * </pre>
    *
    * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -334,7 +334,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Fraud Prevention and the
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -350,7 +350,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Fraud Prevention and the
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *
@@ -366,7 +366,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
-   * this data enables reCAPTCHA Fraud Prevention and the
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
    * FraudPreventionAssessment component in the response.
    * </pre>
    *

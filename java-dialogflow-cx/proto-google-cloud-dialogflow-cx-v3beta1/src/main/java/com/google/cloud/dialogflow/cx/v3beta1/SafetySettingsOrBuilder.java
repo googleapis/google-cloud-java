@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,36 @@ public interface SafetySettingsOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.SafetySettings)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default phrase match strategy for banned phrases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for defaultBannedPhraseMatchStrategy.
+   */
+  int getDefaultBannedPhraseMatchStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default phrase match strategy for banned phrases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy default_banned_phrase_match_strategy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The defaultBannedPhraseMatchStrategy.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
+      getDefaultBannedPhraseMatchStrategy();
 
   /**
    *

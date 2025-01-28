@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -589,7 +589,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=241
+   *     google/cloud/networkmanagement/v1/trace.proto;l=254
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -607,7 +607,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=241
+   *     google/cloud/networkmanagement/v1/trace.proto;l=254
    * @return The loadBalancer.
    */
   @java.lang.Deprecated
@@ -732,6 +732,76 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfoOrBuilder
       getCloudSqlInstanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RedisInstanceInfo redis_instance = 30;</code>
+   *
+   * @return Whether the redisInstance field is set.
+   */
+  boolean hasRedisInstance();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RedisInstanceInfo redis_instance = 30;</code>
+   *
+   * @return The redisInstance.
+   */
+  com.google.cloud.networkmanagement.v1.RedisInstanceInfo getRedisInstance();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Instance.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RedisInstanceInfo redis_instance = 30;</code>
+   */
+  com.google.cloud.networkmanagement.v1.RedisInstanceInfoOrBuilder getRedisInstanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RedisClusterInfo redis_cluster = 31;</code>
+   *
+   * @return Whether the redisCluster field is set.
+   */
+  boolean hasRedisCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RedisClusterInfo redis_cluster = 31;</code>
+   *
+   * @return The redisCluster.
+   */
+  com.google.cloud.networkmanagement.v1.RedisClusterInfo getRedisCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Redis Cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RedisClusterInfo redis_cluster = 31;</code>
+   */
+  com.google.cloud.networkmanagement.v1.RedisClusterInfoOrBuilder getRedisClusterOrBuilder();
 
   /**
    *
@@ -986,6 +1056,44 @@ public interface StepOrBuilder
    * <code>.google.cloud.networkmanagement.v1.StorageBucketInfo storage_bucket = 28;</code>
    */
   com.google.cloud.networkmanagement.v1.StorageBucketInfoOrBuilder getStorageBucketOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Serverless network endpoint group backend. Used
+   * only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.ServerlessNegInfo serverless_neg = 29;</code>
+   *
+   * @return Whether the serverlessNeg field is set.
+   */
+  boolean hasServerlessNeg();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Serverless network endpoint group backend. Used
+   * only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.ServerlessNegInfo serverless_neg = 29;</code>
+   *
+   * @return The serverlessNeg.
+   */
+  com.google.cloud.networkmanagement.v1.ServerlessNegInfo getServerlessNeg();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Serverless network endpoint group backend. Used
+   * only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.ServerlessNegInfo serverless_neg = 29;</code>
+   */
+  com.google.cloud.networkmanagement.v1.ServerlessNegInfoOrBuilder getServerlessNegOrBuilder();
 
   com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
 }

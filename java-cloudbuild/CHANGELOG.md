@@ -1,5 +1,36 @@
 # Changelog
 
+## 3.58.0 (2025-01-09)
+
+### Features
+
+* Add GoModule to Artifact and Results messages and new GO_MODULE_H1 hash type ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#11382](https://github.com/googleapis/google-cloud-java/issues/11382)) ([a4fd23c](https://github.com/googleapis/google-cloud-java/commit/a4fd23ce1dfa364959de1e97e3b769996f3c7d0d))
+
+
+## 3.57.0 (2024-12-13)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#11349](https://github.com/googleapis/google-cloud-java/issues/11349)) ([9bb6334](https://github.com/googleapis/google-cloud-java/commit/9bb6334458fdec53ba9fdec501de534d6516f102))
+
+
+## 3.56.0 (2024-11-18)
+
+* No change
+
+
+## 3.55.0 (2024-10-28)
+
+### Features
+
+* Add PrivateServiceConnect option to WorkerPool ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
 ## 3.54.0 (2024-10-09)
 
 * No change

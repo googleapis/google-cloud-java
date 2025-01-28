@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Response message for simulating a `SecurityHealthAnalyticsCustomModule`
- * against a given resource.
+ * Response message for
+ * [SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule].
  * </pre>
  *
  * Protobuf type {@code
@@ -76,8 +76,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      *
      *
      * <pre>
-     * Finding that would be published for the test case,
-     * if a violation is detected.
+     * Finding that would be published for the test case if a violation is
+     * detected.
      * </pre>
      *
      * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -89,8 +89,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      *
      *
      * <pre>
-     * Finding that would be published for the test case,
-     * if a violation is detected.
+     * Finding that would be published for the test case if a violation is
+     * detected.
      * </pre>
      *
      * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -102,8 +102,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      *
      *
      * <pre>
-     * Finding that would be published for the test case,
-     * if a violation is detected.
+     * Finding that would be published for the test case if a violation is
+     * detected.
      * </pre>
      *
      * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -287,8 +287,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      *
      *
      * <pre>
-     * Finding that would be published for the test case,
-     * if a violation is detected.
+     * Finding that would be published for the test case if a violation is
+     * detected.
      * </pre>
      *
      * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -303,8 +303,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      *
      *
      * <pre>
-     * Finding that would be published for the test case,
-     * if a violation is detected.
+     * Finding that would be published for the test case if a violation is
+     * detected.
      * </pre>
      *
      * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -322,8 +322,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      *
      *
      * <pre>
-     * Finding that would be published for the test case,
-     * if a violation is detected.
+     * Finding that would be published for the test case if a violation is
+     * detected.
      * </pre>
      *
      * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -968,8 +968,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -984,8 +984,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1010,8 +1010,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1034,8 +1034,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1055,8 +1055,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1091,8 +1091,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1117,8 +1117,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1131,8 +1131,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1153,8 +1153,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
        *
        *
        * <pre>
-       * Finding that would be published for the test case,
-       * if a violation is detected.
+       * Finding that would be published for the test case if a violation is
+       * detected.
        * </pre>
        *
        * <code>.google.cloud.securitycentermanagement.v1.SimulatedFinding finding = 1;</code>
@@ -1922,8 +1922,8 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
    *
    *
    * <pre>
-   * Response message for simulating a `SecurityHealthAnalyticsCustomModule`
-   * against a given resource.
+   * Response message for
+   * [SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule].
    * </pre>
    *
    * Protobuf type {@code

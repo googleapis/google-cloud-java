@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ public interface TestingOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. All assessments for this Key will return this score. Must be
-   * between 0 (likely not legitimate) and 1 (likely legitimate) inclusive.
+   * Optional. All assessments for this Key return this score. Must be between 0
+   * (likely not legitimate) and 1 (likely legitimate) inclusive.
    * </pre>
    *
    * <code>float testing_score = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -43,7 +43,7 @@ public interface TestingOptionsOrBuilder
    *
    * <pre>
    * Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all
-   * challenge requests for this site will return nocaptcha if NOCAPTCHA, or an
+   * challenge requests for this site return nocaptcha if NOCAPTCHA, or an
    * unsolvable challenge if CHALLENGE.
    * </pre>
    *
@@ -59,7 +59,7 @@ public interface TestingOptionsOrBuilder
    *
    * <pre>
    * Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all
-   * challenge requests for this site will return nocaptcha if NOCAPTCHA, or an
+   * challenge requests for this site return nocaptcha if NOCAPTCHA, or an
    * unsolvable challenge if CHALLENGE.
    * </pre>
    *

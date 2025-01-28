@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,120 @@ public interface SynthesisInputOrBuilder
    * @return The bytes for ssml.
    */
   com.google.protobuf.ByteString getSsmlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   *
+   * @return Whether the multiSpeakerMarkup field is set.
+   */
+  boolean hasMultiSpeakerMarkup();
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   *
+   * @return The multiSpeakerMarkup.
+   */
+  com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup getMultiSpeakerMarkup();
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   */
+  com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkupOrBuilder
+      getMultiSpeakerMarkupOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations to be applied to the input. If
+   * this is set, the input will be synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support will be for EFIGS (English, French,
+   * Italian, German, Spanish) languages, as provided in
+   * VoiceSelectionParams. Journey and Instant Clone voices are
+   * not supported yet.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag (entirely or partially).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPronunciations field is set.
+   */
+  boolean hasCustomPronunciations();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations to be applied to the input. If
+   * this is set, the input will be synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support will be for EFIGS (English, French,
+   * Italian, German, Spanish) languages, as provided in
+   * VoiceSelectionParams. Journey and Instant Clone voices are
+   * not supported yet.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag (entirely or partially).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPronunciations.
+   */
+  com.google.cloud.texttospeech.v1beta1.CustomPronunciations getCustomPronunciations();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations to be applied to the input. If
+   * this is set, the input will be synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support will be for EFIGS (English, French,
+   * Italian, German, Spanish) languages, as provided in
+   * VoiceSelectionParams. Journey and Instant Clone voices are
+   * not supported yet.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag (entirely or partially).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1beta1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1beta1.CustomPronunciationsOrBuilder
+      getCustomPronunciationsOrBuilder();
 
   com.google.cloud.texttospeech.v1beta1.SynthesisInput.InputSourceCase getInputSourceCase();
 }

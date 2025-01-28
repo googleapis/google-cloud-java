@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Resource name of the space.
+   * Identifier. Resource name of the space.
    *
    * Format: `spaces/{space}`
    *
@@ -40,7 +40,7 @@ public interface SpaceOrBuilder
    * is `AAAAAAAAA`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -49,7 +49,7 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Resource name of the space.
+   * Identifier. Resource name of the space.
    *
    * Format: `spaces/{space}`
    *
@@ -61,7 +61,7 @@ public interface SpaceOrBuilder
    * is `AAAAAAAAA`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -79,7 +79,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -96,7 +96,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=229
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
    * @return The type.
    */
   @java.lang.Deprecated
@@ -106,11 +106,13 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * The type of space. Required when creating a space or updating the space
-   * type of a space. Output only for other usage.
+   * Optional. The type of space. Required when creating a space or updating the
+   * space type of a space. Output only for other usage.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for spaceType.
    */
@@ -119,11 +121,13 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * The type of space. Required when creating a space or updating the space
-   * type of a space. Output only for other usage.
+   * Optional. The type of space. Required when creating a space or updating the
+   * space type of a space. Output only for other usage.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceType space_type = 10;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceType space_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The spaceType.
    */
@@ -153,7 +157,7 @@ public interface SpaceOrBuilder
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=241
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
    * @return The threaded.
    */
   @java.lang.Deprecated
@@ -163,7 +167,7 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * The space's display name. Required when [creating a
+   * Optional. The space's display name. Required when [creating a
    * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
    * with a `spaceType` of `SPACE`. If you receive the error message
    * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -175,7 +179,7 @@ public interface SpaceOrBuilder
    * Supports up to 128 characters.
    * </pre>
    *
-   * <code>string display_name = 3;</code>
+   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -184,7 +188,7 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * The space's display name. Required when [creating a
+   * Optional. The space's display name. Required when [creating a
    * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create)
    * with a `spaceType` of `SPACE`. If you receive the error message
    * `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a
@@ -196,7 +200,7 @@ public interface SpaceOrBuilder
    * Supports up to 128 characters.
    * </pre>
    *
-   * <code>string display_name = 3;</code>
+   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -206,9 +210,9 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Immutable. Whether this space permits any Google Chat user as a member.
-   * Input when creating a space in a Google Workspace organization. Omit this
-   * field when creating spaces in the following conditions:
+   * Optional. Immutable. Whether this space permits any Google Chat user as a
+   * member. Input when creating a space in a Google Workspace organization.
+   * Omit this field when creating spaces in the following conditions:
    *
    *   * The authenticated user uses a consumer account (unmanaged user
    *     account). By default, a space created by a consumer account permits any
@@ -217,7 +221,9 @@ public interface SpaceOrBuilder
    * For existing spaces, this field is output only.
    * </pre>
    *
-   * <code>bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * bool external_user_allowed = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The externalUserAllowed.
    */
@@ -256,10 +262,12 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Details about the space including description and rules.
+   * Optional. Details about the space including description and rules.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the spaceDetails field is set.
    */
@@ -268,10 +276,12 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Details about the space including description and rules.
+   * Optional. Details about the space including description and rules.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The spaceDetails.
    */
@@ -280,10 +290,12 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Details about the space including description and rules.
+   * Optional. Details about the space including description and rules.
    * </pre>
    *
-   * <code>.google.chat.v1.Space.SpaceDetails space_details = 11;</code>
+   * <code>
+   * .google.chat.v1.Space.SpaceDetails space_details = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.chat.v1.Space.SpaceDetailsOrBuilder getSpaceDetailsOrBuilder();
 
@@ -291,10 +303,12 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * The message history state for messages and threads in this space.
+   * Optional. The message history state for messages and threads in this space.
    * </pre>
    *
-   * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+   * <code>
+   * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for spaceHistoryState.
    */
@@ -303,10 +317,12 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * The message history state for messages and threads in this space.
+   * Optional. The message history state for messages and threads in this space.
    * </pre>
    *
-   * <code>.google.chat.v1.HistoryState space_history_state = 13;</code>
+   * <code>
+   * .google.chat.v1.HistoryState space_history_state = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The spaceHistoryState.
    */
@@ -319,6 +335,9 @@ public interface SpaceOrBuilder
    * Optional. Whether this space is created in `Import Mode` as part of a data
    * migration into Google Workspace. While spaces are being imported, they
    * aren't visible to users until the import is complete.
+   *
+   * Creating a space in `Import Mode`requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
    * <code>bool import_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -665,6 +684,65 @@ public interface SpaceOrBuilder
    * </code>
    */
   com.google.chat.v1.Space.PermissionSettingsOrBuilder getPermissionSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importModeExpireTime field is set.
+   */
+  boolean hasImportModeExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importModeExpireTime.
+   */
+  com.google.protobuf.Timestamp getImportModeExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the space will be automatically deleted by the
+   * system if it remains in import mode.
+   *
+   * Each space created in import mode must exit this mode before this expire
+   * time using `spaces.completeImport`.
+   *
+   * This field is only populated for spaces that were created with import mode.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp import_mode_expire_time = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getImportModeExpireTimeOrBuilder();
 
   com.google.chat.v1.Space.SpacePermissionSettingsCase getSpacePermissionSettingsCase();
 }

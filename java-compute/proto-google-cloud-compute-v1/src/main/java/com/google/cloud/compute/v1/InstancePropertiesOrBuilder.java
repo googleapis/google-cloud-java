@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -381,7 +381,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties.
+   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -393,7 +393,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties.
+   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -405,7 +405,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties.
+   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>

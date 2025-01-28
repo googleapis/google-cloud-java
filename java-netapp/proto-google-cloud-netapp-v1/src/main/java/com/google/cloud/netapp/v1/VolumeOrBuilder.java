@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1170,4 +1170,46 @@ public interface VolumeOrBuilder
    * @return The coldTierSizeGib.
    */
   long getColdTierSizeGib();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hybridReplicationParameters field is set.
+   */
+  boolean hasHybridReplicationParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hybridReplicationParameters.
+   */
+  com.google.cloud.netapp.v1.HybridReplicationParameters getHybridReplicationParameters();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Hybrid Replication parameters for the volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters hybrid_replication_parameters = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder
+      getHybridReplicationParametersOrBuilder();
 }

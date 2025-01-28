@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,13 +40,13 @@ public final class VehicleEmissionTypeProto {
           + "n_type.proto\022\026google.maps.routing.v2*p\n\023"
           + "VehicleEmissionType\022%\n!VEHICLE_EMISSION_"
           + "TYPE_UNSPECIFIED\020\000\022\014\n\010GASOLINE\020\001\022\014\n\010ELEC"
-          + "TRIC\020\002\022\n\n\006HYBRID\020\003\022\n\n\006DIESEL\020\004B\315\001\n\032com.g"
+          + "TRIC\020\002\022\n\n\006HYBRID\020\003\022\n\n\006DIESEL\020\004B\312\001\n\032com.g"
           + "oogle.maps.routing.v2B\030VehicleEmissionTy"
           + "peProtoP\001Z:cloud.google.com/go/maps/rout"
-          + "ing/apiv2/routingpb;routingpb\370\001\001\242\002\005GMRV2"
-          + "\252\002\026Google.Maps.Routing.V2\312\002\026Google\\Maps\\"
-          + "Routing\\V2\352\002\031Google::Maps::Routing::V2b\006"
-          + "proto3"
+          + "ing/apiv2/routingpb;routingpb\242\002\005GMRV2\252\002\026"
+          + "Google.Maps.Routing.V2\312\002\026Google\\Maps\\Rou"
+          + "ting\\V2\352\002\031Google::Maps::Routing::V2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

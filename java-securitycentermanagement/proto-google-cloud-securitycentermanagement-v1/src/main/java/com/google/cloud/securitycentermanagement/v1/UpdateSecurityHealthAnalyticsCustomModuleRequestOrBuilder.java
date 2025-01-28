@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,13 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. The only fields that can be
-   * updated are `enablement_state` and `custom_config`. If empty or set to the
-   * wildcard value `*`, both `enablement_state` and `custom_config` are
-   * updated.
+   * Required. The fields to update. The following values are valid:
+   *
+   * * `custom_config`
+   * * `enablement_state`
+   *
+   * If you omit this field or set it to the wildcard value `*`, then all
+   * eligible fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -44,10 +47,13 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. The only fields that can be
-   * updated are `enablement_state` and `custom_config`. If empty or set to the
-   * wildcard value `*`, both `enablement_state` and `custom_config` are
-   * updated.
+   * Required. The fields to update. The following values are valid:
+   *
+   * * `custom_config`
+   * * `enablement_state`
+   *
+   * If you omit this field or set it to the wildcard value `*`, then all
+   * eligible fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -60,10 +66,13 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to be updated. The only fields that can be
-   * updated are `enablement_state` and `custom_config`. If empty or set to the
-   * wildcard value `*`, both `enablement_state` and `custom_config` are
-   * updated.
+   * Required. The fields to update. The following values are valid:
+   *
+   * * `custom_config`
+   * * `enablement_state`
+   *
+   * If you omit this field or set it to the wildcard value `*`, then all
+   * eligible fields are updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -75,7 +84,7 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being updated
+   * Required. The resource being updated.
    * </pre>
    *
    * <code>
@@ -89,7 +98,7 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being updated
+   * Required. The resource being updated.
    * </pre>
    *
    * <code>
@@ -104,7 +113,7 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being updated
+   * Required. The resource being updated.
    * </pre>
    *
    * <code>
@@ -118,13 +127,19 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. When set to true, only validations (including IAM checks) will
-   * done for the request (module will not be updated). An OK response indicates
-   * the request is valid while an error response indicates the request is
-   * invalid. Note that a subsequent request to actually update the module could
-   * still fail because 1. the state could have changed (e.g. IAM permission
-   * lost) or
-   * 2. A failure occurred while trying to update the module.
+   * Optional. When set to `true`, the request will be validated (including IAM
+   * checks), but no module will be updated. An `OK` response indicates that the
+   * request is valid, while an error response indicates that the request is
+   * invalid.
+   *
+   * If the request is valid, a subsequent request to update the module could
+   * still fail for one of the following reasons:
+   *
+   * *  The state of your cloud resources changed; for example, you lost a
+   *    required IAM permission
+   * *  An error occurred during creation of the module
+   *
+   * Defaults to `false`.
    * </pre>
    *
    * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public interface CreateAspectTypeRequestOrBuilder
    * <pre>
    * Required. The resource name of the AspectType, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface CreateAspectTypeRequestOrBuilder
    * <pre>
    * Required. The resource name of the AspectType, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -86,7 +86,7 @@ public interface CreateAspectTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. AspectType Resource
+   * Required. AspectType Resource.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public interface CreateAspectTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. AspectType Resource
+   * Required. AspectType Resource.
    * </pre>
    *
    * <code>
@@ -114,7 +114,7 @@ public interface CreateAspectTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. AspectType Resource
+   * Required. AspectType Resource.
    * </pre>
    *
    * <code>
@@ -127,8 +127,8 @@ public interface CreateAspectTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only validate the request, but do not perform mutations.
-   * The default is false.
+   * Optional. The service validates the request without performing any
+   * mutations. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

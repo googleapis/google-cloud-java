@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,12 +48,12 @@ public final class TaxonomyTypeEnumProto {
           + "_AUDIENCE_1_1\020\003\022\034\n\030TAXONOMY_IAB_CONTENT_"
           + "2_1\020\004\022\034\n\030TAXONOMY_IAB_CONTENT_2_2\020\006\022\034\n\030T"
           + "AXONOMY_IAB_CONTENT_3_0\020\005\022(\n$TAXONOMY_GO"
-          + "OGLE_STRUCTURED_VIDEO_1_0\020\007B\254\001\n\033com.goog"
+          + "OGLE_STRUCTURED_VIDEO_1_0\020\007B\311\001\n\033com.goog"
           + "le.ads.admanager.v1B\025TaxonomyTypeEnumPro"
           + "toP\001Z@google.golang.org/genproto/googlea"
           + "pis/ads/admanager/v1;admanager\252\002\027Google."
           + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
-          + "V1b\006proto3"
+          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -357,7 +357,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -370,7 +370,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -384,7 +384,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -397,7 +397,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -410,7 +410,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] The rules that apply to the network.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1295,7 +1295,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1311,7 +1311,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1327,7 +1327,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1343,7 +1343,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1365,7 +1365,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1385,7 +1385,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1407,7 +1407,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1429,7 +1429,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1449,7 +1449,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1469,7 +1469,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1489,7 +1489,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1508,7 +1508,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1527,7 +1527,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1539,7 +1539,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1555,7 +1555,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1572,7 +1572,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1585,7 +1585,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -1598,7 +1598,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * The rules that apply to the network.
+     * [Output only] The rules that apply to the network.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>

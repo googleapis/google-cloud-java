@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,7 +113,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * endpointServiceSettingsBuilder
@@ -150,6 +150,20 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
   /** Returns the object with the settings used for calls to updateEndpoint. */
   public UnaryCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointSettings() {
     return ((EndpointServiceStubSettings) getStubSettings()).updateEndpointSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public UnaryCallSettings<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningSettings() {
+    return ((EndpointServiceStubSettings) getStubSettings()).updateEndpointLongRunningSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public OperationCallSettings<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationSettings() {
+    return ((EndpointServiceStubSettings) getStubSettings())
+        .updateEndpointLongRunningOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteEndpoint. */
@@ -351,6 +365,19 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     /** Returns the builder for the settings used for calls to updateEndpoint. */
     public UnaryCallSettings.Builder<UpdateEndpointRequest, Endpoint> updateEndpointSettings() {
       return getStubSettingsBuilder().updateEndpointSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public UnaryCallSettings.Builder<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningSettings() {
+      return getStubSettingsBuilder().updateEndpointLongRunningSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public OperationCallSettings.Builder<
+            UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+        updateEndpointLongRunningOperationSettings() {
+      return getStubSettingsBuilder().updateEndpointLongRunningOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteEndpoint. */

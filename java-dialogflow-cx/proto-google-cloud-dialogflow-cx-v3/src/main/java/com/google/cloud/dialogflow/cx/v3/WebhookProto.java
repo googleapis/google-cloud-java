@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -314,15 +314,15 @@ public final class WebhookProto {
           + "ons/*/agents/*/webhooks/*}\032x\312A\031dialogflo"
           + "w.googleapis.com\322AYhttps://www.googleapi"
           + "s.com/auth/cloud-platform,https://www.go"
-          + "ogleapis.com/auth/dialogflowB\261\002\n!com.goo"
+          + "ogleapis.com/auth/dialogflowB\256\002\n!com.goo"
           + "gle.cloud.dialogflow.cx.v3B\014WebhookProto"
           + "P\001Z1cloud.google.com/go/dialogflow/cx/ap"
-          + "iv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dia"
-          + "logflow.Cx.V3\352\002!Google::Cloud::Dialogflo"
-          + "w::CX::V3\352A|\n\'servicedirectory.googleapi"
-          + "s.com/Service\022Qprojects/{project}/locati"
-          + "ons/{location}/namespaces/{namespace}/se"
-          + "rvices/{service}b\006proto3"
+          + "iv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.Dialog"
+          + "flow.Cx.V3\352\002!Google::Cloud::Dialogflow::"
+          + "CX::V3\352A|\n\'servicedirectory.googleapis.c"
+          + "om/Service\022Qprojects/{project}/locations"
+          + "/{location}/namespaces/{namespace}/servi"
+          + "ces/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

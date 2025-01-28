@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -281,4 +281,74 @@ public interface GroupOrBuilder
    * @return The state.
    */
   com.google.cloud.networkconnectivity.v1.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The auto-accept setting for this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoAccept field is set.
+   */
+  boolean hasAutoAccept();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The auto-accept setting for this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoAccept.
+   */
+  com.google.cloud.networkconnectivity.v1.AutoAccept getAutoAccept();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The auto-accept setting for this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.AutoAccept auto_accept = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.AutoAcceptOrBuilder getAutoAcceptOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the route table that corresponds to this group.
+   * They use the following form:
+   * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   * </pre>
+   *
+   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The routeTable.
+   */
+  java.lang.String getRouteTable();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the route table that corresponds to this group.
+   * They use the following form:
+   * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   * </pre>
+   *
+   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for routeTable.
+   */
+  com.google.protobuf.ByteString getRouteTableBytes();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,14 +149,14 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If provided, this field specifies the criteria that must be met by
-   * alert policies to be included in the response.
+   * Optional. If provided, this field specifies the criteria that must be met
+   * by alert policies to be included in the response.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -176,14 +176,14 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If provided, this field specifies the criteria that must be met by
-   * alert policies to be included in the response.
+   * Optional. If provided, this field specifies the criteria that must be met
+   * by alert policies to be included in the response.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -208,15 +208,15 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A comma-separated list of fields by which to sort the result. Supports
-   * the same set of field references as the `filter` field. Entries can be
-   * prefixed with a minus sign to sort by the field in descending order.
+   * Optional. A comma-separated list of fields by which to sort the result.
+   * Supports the same set of field references as the `filter` field. Entries
+   * can be prefixed with a minus sign to sort by the field in descending order.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -236,15 +236,15 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A comma-separated list of fields by which to sort the result. Supports
-   * the same set of field references as the `filter` field. Entries can be
-   * prefixed with a minus sign to sort by the field in descending order.
+   * Optional. A comma-separated list of fields by which to sort the result.
+   * Supports the same set of field references as the `filter` field. Entries
+   * can be prefixed with a minus sign to sort by the field in descending order.
    *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
    *
-   * <code>string order_by = 6;</code>
+   * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -267,10 +267,10 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The maximum number of results to return in a single response.
+   * Optional. The maximum number of results to return in a single response.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -287,12 +287,13 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return more results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return more results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -312,12 +313,13 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If this field is not empty then it must contain the `nextPageToken` value
-   * returned by a previous call to this method.  Using this field causes the
-   * method to return more results from the previous method call.
+   * Optional. If this field is not empty then it must contain the
+   * `nextPageToken` value returned by a previous call to this method.  Using
+   * this field causes the method to return more results from the previous
+   * method call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -941,14 +943,14 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * alert policies to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by alert policies to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -967,14 +969,14 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * alert policies to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by alert policies to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -993,14 +995,14 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * alert policies to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by alert policies to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1018,14 +1020,14 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * alert policies to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by alert policies to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1039,14 +1041,14 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this field specifies the criteria that must be met by
-     * alert policies to be included in the response.
+     * Optional. If provided, this field specifies the criteria that must be met
+     * by alert policies to be included in the response.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1067,15 +1069,15 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of field references as the `filter` field. Entries can be
-     * prefixed with a minus sign to sort by the field in descending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of field references as the `filter` field. Entries
+     * can be prefixed with a minus sign to sort by the field in descending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderBy.
      */
@@ -1094,15 +1096,15 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of field references as the `filter` field. Entries can be
-     * prefixed with a minus sign to sort by the field in descending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of field references as the `filter` field. Entries
+     * can be prefixed with a minus sign to sort by the field in descending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1121,15 +1123,15 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of field references as the `filter` field. Entries can be
-     * prefixed with a minus sign to sort by the field in descending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of field references as the `filter` field. Entries
+     * can be prefixed with a minus sign to sort by the field in descending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1147,15 +1149,15 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of field references as the `filter` field. Entries can be
-     * prefixed with a minus sign to sort by the field in descending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of field references as the `filter` field. Entries
+     * can be prefixed with a minus sign to sort by the field in descending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1169,15 +1171,15 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A comma-separated list of fields by which to sort the result. Supports
-     * the same set of field references as the `filter` field. Entries can be
-     * prefixed with a minus sign to sort by the field in descending order.
+     * Optional. A comma-separated list of fields by which to sort the result.
+     * Supports the same set of field references as the `filter` field. Entries
+     * can be prefixed with a minus sign to sort by the field in descending order.
      *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
      *
-     * <code>string order_by = 6;</code>
+     * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
@@ -1198,10 +1200,10 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The maximum number of results to return in a single response.
+     * Optional. The maximum number of results to return in a single response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -1213,10 +1215,10 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The maximum number of results to return in a single response.
+     * Optional. The maximum number of results to return in a single response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -1232,10 +1234,10 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The maximum number of results to return in a single response.
+     * Optional. The maximum number of results to return in a single response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1251,12 +1253,13 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return more results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return more results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1275,12 +1278,13 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return more results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return more results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1299,12 +1303,13 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return more results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return more results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1322,12 +1327,13 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return more results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return more results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1341,12 +1347,13 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If this field is not empty then it must contain the `nextPageToken` value
-     * returned by a previous call to this method.  Using this field causes the
-     * method to return more results from the previous method call.
+     * Optional. If this field is not empty then it must contain the
+     * `nextPageToken` value returned by a previous call to this method.  Using
+     * this field causes the method to return more results from the previous
+     * method call.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

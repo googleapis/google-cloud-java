@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,8 +70,8 @@ public interface QueryResultOrBuilder
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
    * provided as input, this field will contain a copy of the intent
-   * identifier. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * identifier. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -85,8 +85,8 @@ public interface QueryResultOrBuilder
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
    * provided as input, this field will contain a copy of the intent
-   * identifier. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * identifier. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -100,8 +100,8 @@ public interface QueryResultOrBuilder
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
    * provided as input, this field will contain a copy of the intent
-   * identifier. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * identifier. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -829,7 +829,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1086
    * @return Whether the intent field is set.
    */
   @java.lang.Deprecated
@@ -849,7 +849,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1086
    * @return The intent.
    */
   @java.lang.Deprecated
@@ -889,7 +889,7 @@ public interface QueryResultOrBuilder
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1014
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1097
    * @return The intentDetectionConfidence.
    */
   @java.lang.Deprecated
@@ -1166,8 +1166,8 @@ public interface QueryResultOrBuilder
    * <pre>
    * Optional. Data store connection feature output signals.
    * Filled only when data stores are involved in serving the query and
-   * DetectIntentRequest.populate data_store_connection_quality_signals is set
-   * to true in the request.
+   * DetectIntentRequest.populate_data_store_connection_signals is set to true
+   * in the request.
    * </pre>
    *
    * <code>
@@ -1183,8 +1183,8 @@ public interface QueryResultOrBuilder
    * <pre>
    * Optional. Data store connection feature output signals.
    * Filled only when data stores are involved in serving the query and
-   * DetectIntentRequest.populate data_store_connection_quality_signals is set
-   * to true in the request.
+   * DetectIntentRequest.populate_data_store_connection_signals is set to true
+   * in the request.
    * </pre>
    *
    * <code>
@@ -1200,8 +1200,8 @@ public interface QueryResultOrBuilder
    * <pre>
    * Optional. Data store connection feature output signals.
    * Filled only when data stores are involved in serving the query and
-   * DetectIntentRequest.populate data_store_connection_quality_signals is set
-   * to true in the request.
+   * DetectIntentRequest.populate_data_store_connection_signals is set to true
+   * in the request.
    * </pre>
    *
    * <code>

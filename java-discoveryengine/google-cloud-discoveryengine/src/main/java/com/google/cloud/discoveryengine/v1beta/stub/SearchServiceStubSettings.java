@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.discoveryengine.v1beta.stub;
 
+import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchLitePagedResponse;
 import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -51,9 +52,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -115,10 +116,47 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
 
   private final PagedCallSettings<SearchRequest, SearchResponse, SearchPagedResponse>
       searchSettings;
+  private final PagedCallSettings<SearchRequest, SearchResponse, SearchLitePagedResponse>
+      searchLiteSettings;
 
   private static final PagedListDescriptor<
           SearchRequest, SearchResponse, SearchResponse.SearchResult>
       SEARCH_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchRequest, SearchResponse, SearchResponse.SearchResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchRequest injectToken(SearchRequest payload, String token) {
+              return SearchRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchRequest injectPageSize(SearchRequest payload, int pageSize) {
+              return SearchRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchResponse.SearchResult> extractResources(SearchResponse payload) {
+              return payload.getResultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchRequest, SearchResponse, SearchResponse.SearchResult>
+      SEARCH_LITE_PAGE_STR_DESC =
           new PagedListDescriptor<SearchRequest, SearchResponse, SearchResponse.SearchResult>() {
             @Override
             public String emptyToken() {
@@ -166,9 +204,31 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
             }
           };
 
+  private static final PagedListResponseFactory<
+          SearchRequest, SearchResponse, SearchLitePagedResponse>
+      SEARCH_LITE_PAGE_STR_FACT =
+          new PagedListResponseFactory<SearchRequest, SearchResponse, SearchLitePagedResponse>() {
+            @Override
+            public ApiFuture<SearchLitePagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchRequest, SearchResponse> callable,
+                SearchRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchResponse> futureResponse) {
+              PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> pageContext =
+                  PageContext.create(callable, SEARCH_LITE_PAGE_STR_DESC, request, context);
+              return SearchLitePagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to search. */
   public PagedCallSettings<SearchRequest, SearchResponse, SearchPagedResponse> searchSettings() {
     return searchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchLite. */
+  public PagedCallSettings<SearchRequest, SearchResponse, SearchLitePagedResponse>
+      searchLiteSettings() {
+    return searchLiteSettings;
   }
 
   public SearchServiceStub createStub() throws IOException {
@@ -283,6 +343,7 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     super(settingsBuilder);
 
     searchSettings = settingsBuilder.searchSettings().build();
+    searchLiteSettings = settingsBuilder.searchLiteSettings().build();
   }
 
   /** Builder for SearchServiceStubSettings. */
@@ -290,6 +351,8 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchPagedResponse>
         searchSettings;
+    private final PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchLitePagedResponse>
+        searchLiteSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -309,13 +372,13 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(30000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -329,9 +392,10 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       super(clientContext);
 
       searchSettings = PagedCallSettings.newBuilder(SEARCH_PAGE_STR_FACT);
+      searchLiteSettings = PagedCallSettings.newBuilder(SEARCH_LITE_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings, searchLiteSettings);
       initDefaults(this);
     }
 
@@ -339,9 +403,10 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       super(settings);
 
       searchSettings = settings.searchSettings.toBuilder();
+      searchLiteSettings = settings.searchLiteSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings, searchLiteSettings);
     }
 
     private static Builder createDefault() {
@@ -374,6 +439,11 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
+      builder
+          .searchLiteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
       return builder;
     }
 
@@ -396,6 +466,12 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     public PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchPagedResponse>
         searchSettings() {
       return searchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchLite. */
+    public PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchLitePagedResponse>
+        searchLiteSettings() {
+      return searchLiteSettings;
     }
 
     @Override

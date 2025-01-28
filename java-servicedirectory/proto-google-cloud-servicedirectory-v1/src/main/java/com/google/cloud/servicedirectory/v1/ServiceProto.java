@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,13 +59,13 @@ public final class ServiceProto {
           + "(\t:\0028\001:\177\352A|\n\'servicedirectory.googleapis"
           + ".com/Service\022Qprojects/{project}/locatio"
           + "ns/{location}/namespaces/{namespace}/ser"
-          + "vices/{service}B\367\001\n$com.google.cloud.ser"
+          + "vices/{service}B\364\001\n$com.google.cloud.ser"
           + "vicedirectory.v1B\014ServiceProtoP\001ZPcloud."
           + "google.com/go/servicedirectory/apiv1/ser"
-          + "vicedirectorypb;servicedirectorypb\370\001\001\252\002 "
-          + "Google.Cloud.ServiceDirectory.V1\312\002 Googl"
-          + "e\\Cloud\\ServiceDirectory\\V1\352\002#Google::Cl"
-          + "oud::ServiceDirectory::V1b\006proto3"
+          + "vicedirectorypb;servicedirectorypb\252\002 Goo"
+          + "gle.Cloud.ServiceDirectory.V1\312\002 Google\\C"
+          + "loud\\ServiceDirectory\\V1\352\002#Google::Cloud"
+          + "::ServiceDirectory::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

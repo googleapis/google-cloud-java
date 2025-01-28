@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,31 @@ public interface NetworkEndpointOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * </pre>
+   *
+   * <code>optional int32 client_destination_port = 123765766;</code>
+   *
+   * @return Whether the clientDestinationPort field is set.
+   */
+  boolean hasClientDestinationPort();
+  /**
+   *
+   *
+   * <pre>
+   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * </pre>
+   *
+   * <code>optional int32 client_destination_port = 123765766;</code>
+   *
+   * @return The clientDestinationPort.
+   */
+  int getClientDestinationPort();
 
   /**
    *
@@ -192,6 +217,43 @@ public interface NetworkEndpointOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  boolean hasIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  java.lang.String getIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * Optional IPv6 address of network endpoint.
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  com.google.protobuf.ByteString getIpv6AddressBytes();
 
   /**
    *

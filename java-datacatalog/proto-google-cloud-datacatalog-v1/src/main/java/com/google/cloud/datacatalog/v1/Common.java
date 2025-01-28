@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,12 +53,12 @@ public final class Common {
           + "D_SQL\020\010\022\n\n\006LOOKER\020\t\022\r\n\tVERTEX_AI\020\n*j\n\016Ma"
           + "nagingSystem\022\037\n\033MANAGING_SYSTEM_UNSPECIF"
           + "IED\020\000\022\034\n\030MANAGING_SYSTEM_DATAPLEX\020\001\022\031\n\025M"
-          + "ANAGING_SYSTEM_OTHER\020\002B\306\001\n\037com.google.cl"
+          + "ANAGING_SYSTEM_OTHER\020\002B\303\001\n\037com.google.cl"
           + "oud.datacatalog.v1P\001ZAcloud.google.com/g"
           + "o/datacatalog/apiv1/datacatalogpb;dataca"
-          + "talogpb\370\001\001\252\002\033Google.Cloud.DataCatalog.V1"
-          + "\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google:"
-          + ":Cloud::DataCatalog::V1b\006proto3"
+          + "talogpb\252\002\033Google.Cloud.DataCatalog.V1\312\002\033"
+          + "Google\\Cloud\\DataCatalog\\V1\352\002\036Google::Cl"
+          + "oud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

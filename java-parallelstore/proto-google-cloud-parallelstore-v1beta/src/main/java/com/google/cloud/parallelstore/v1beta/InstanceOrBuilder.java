@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -531,4 +531,39 @@ public interface InstanceOrBuilder
    * @return The directoryStripeLevel.
    */
   com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel getDirectoryStripeLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment type of the instance. Allowed values are:
+   *
+   * * `SCRATCH`: the instance is a scratch instance.
+   * * `PERSISTENT`: the instance is a persistent instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentType.
+   */
+  int getDeploymentTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployment type of the instance. Allowed values are:
+   *
+   * * `SCRATCH`: the instance is a scratch instance.
+   * * `PERSISTENT`: the instance is a persistent instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deploymentType.
+   */
+  com.google.cloud.parallelstore.v1beta.DeploymentType getDeploymentType();
 }

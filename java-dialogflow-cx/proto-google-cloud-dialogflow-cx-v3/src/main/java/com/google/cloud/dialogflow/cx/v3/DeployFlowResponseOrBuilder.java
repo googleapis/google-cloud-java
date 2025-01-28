@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,7 @@ public interface DeployFlowResponseOrBuilder
    * <pre>
    * The name of the flow version
    * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
-   * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/deployments/&lt;DeploymentID&gt;`.
    * </pre>
    *
    * <code>string deployment = 2;</code>
@@ -80,8 +79,7 @@ public interface DeployFlowResponseOrBuilder
    * <pre>
    * The name of the flow version
    * [Deployment][google.cloud.dialogflow.cx.v3.Deployment]. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/
-   * environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/deployments/&lt;DeploymentID&gt;`.
    * </pre>
    *
    * <code>string deployment = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,10 @@ public final class DeveloperConnectProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_Connection_AnnotationsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_CryptoKeyConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_CryptoKeyConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_developerconnect_v1_InstallationState_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_InstallationState_fieldAccessorTable;
@@ -49,9 +53,29 @@ public final class DeveloperConnectProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_GitHubConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_GitHubEnterpriseConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_GitHubEnterpriseConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_ServiceDirectoryConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_ServiceDirectoryConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_developerconnect_v1_OAuthCredential_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_developerconnect_v1_OAuthCredential_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_GitLabConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_GitLabConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_UserCredential_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_UserCredential_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_developerconnect_v1_GitLabEnterpriseConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_developerconnect_v1_GitLabEnterpriseConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_developerconnect_v1_ListConnectionsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -178,262 +202,317 @@ public final class DeveloperConnectProto {
           + "ogle/longrunning/operations.proto\032\033googl"
           + "e/protobuf/empty.proto\032 google/protobuf/"
           + "field_mask.proto\032\037google/protobuf/timest"
-          + "amp.proto\"\357\006\n\nConnection\022G\n\rgithub_confi"
+          + "amp.proto\"\307\t\n\nConnection\022G\n\rgithub_confi"
           + "g\030\005 \001(\0132..google.cloud.developerconnect."
-          + "v1.GitHubConfigH\000\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013"
-          + "create_time\030\002 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\0224\n\013delete_time\030"
-          + "\013 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022M"
-          + "\n\006labels\030\004 \003(\01328.google.cloud.developerc"
-          + "onnect.v1.Connection.LabelsEntryB\003\340A\001\022T\n"
-          + "\022installation_state\030\006 \001(\01323.google.cloud"
-          + ".developerconnect.v1.InstallationStateB\003"
-          + "\340A\003\022\025\n\010disabled\030\007 \001(\010B\003\340A\001\022\030\n\013reconcilin"
-          + "g\030\010 \001(\010B\003\340A\003\022W\n\013annotations\030\t \003(\0132=.goog"
-          + "le.cloud.developerconnect.v1.Connection."
-          + "AnnotationsEntryB\003\340A\001\022\021\n\004etag\030\n \001(\tB\003\340A\001"
-          + "\022\030\n\003uid\030\014 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\032-\n\013LabelsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Ann"
-          + "otationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001:\216\001\352A\212\001\n*developerconnect.googleapi"
-          + "s.com/Connection\022@projects/{project}/loc"
-          + "ations/{location}/connections/{connectio"
-          + "n}*\013connections2\nconnectionR\001\001B\023\n\021connec"
-          + "tion_config\"\210\002\n\021InstallationState\022M\n\005sta"
-          + "ge\030\001 \001(\01629.google.cloud.developerconnect"
-          + ".v1.InstallationState.StageB\003\340A\003\022\024\n\007mess"
-          + "age\030\002 \001(\tB\003\340A\003\022\027\n\naction_uri\030\003 \001(\tB\003\340A\003\""
-          + "u\n\005Stage\022\025\n\021STAGE_UNSPECIFIED\020\000\022\026\n\022PENDI"
-          + "NG_CREATE_APP\020\001\022\026\n\022PENDING_USER_OAUTH\020\002\022"
-          + "\027\n\023PENDING_INSTALL_APP\020\003\022\014\n\010COMPLETE\020\n\"\313"
-          + "\002\n\014GitHubConfig\022T\n\ngithub_app\030\001 \001(\01628.go"
-          + "ogle.cloud.developerconnect.v1.GitHubCon"
-          + "fig.GitHubAppB\006\340A\002\340A\005\022U\n\025authorizer_cred"
-          + "ential\030\002 \001(\01321.google.cloud.developercon"
-          + "nect.v1.OAuthCredentialB\003\340A\001\022 \n\023app_inst"
-          + "allation_id\030\003 \001(\003B\003\340A\001\022\035\n\020installation_u"
-          + "ri\030\004 \001(\tB\003\340A\003\"M\n\tGitHubApp\022\033\n\027GIT_HUB_AP"
-          + "P_UNSPECIFIED\020\000\022\025\n\021DEVELOPER_CONNECT\020\001\022\014"
-          + "\n\010FIREBASE\020\002\"\200\001\n\017OAuthCredential\022V\n\032oaut"
-          + "h_token_secret_version\030\001 \001(\tB2\340A\002\372A,\n*se"
-          + "cretmanager.googleapis.com/SecretVersion"
-          + "\022\025\n\010username\030\002 \001(\tB\003\340A\003\"\271\001\n\026ListConnecti"
-          + "onsRequest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*deve"
-          + "loperconnect.googleapis.com/Connection\022\026"
-          + "\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001"
-          + "(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by"
-          + "\030\005 \001(\tB\003\340A\001\"\212\001\n\027ListConnectionsResponse\022"
-          + "A\n\013connections\030\001 \003(\0132,.google.cloud.deve"
-          + "loperconnect.v1.Connection\022\027\n\017next_page_"
-          + "token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"X\n\024GetC"
-          + "onnectionRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*"
-          + "developerconnect.googleapis.com/Connecti"
-          + "on\"\375\001\n\027CreateConnectionRequest\022B\n\006parent"
-          + "\030\001 \001(\tB2\340A\002\372A,\022*developerconnect.googlea"
-          + "pis.com/Connection\022\032\n\rconnection_id\030\002 \001("
-          + "\tB\003\340A\002\022E\n\nconnection\030\003 \001(\0132,.google.clou"
-          + "d.developerconnect.v1.ConnectionB\003\340A\002\022\037\n"
-          + "\nrequest_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\rvalida"
-          + "te_only\030\005 \001(\010B\003\340A\001\"\357\001\n\027UpdateConnectionR"
-          + "equest\0224\n\013update_mask\030\001 \001(\0132\032.google.pro"
-          + "tobuf.FieldMaskB\003\340A\002\022E\n\nconnection\030\002 \001(\013"
-          + "2,.google.cloud.developerconnect.v1.Conn"
-          + "ectionB\003\340A\002\022\037\n\nrequest_id\030\003 \001(\tB\013\340A\001\342\214\317\327"
-          + "\010\002\010\001\022\032\n\rallow_missing\030\004 \001(\010B\003\340A\001\022\032\n\rvali"
-          + "date_only\030\005 \001(\010B\003\340A\001\"\253\001\n\027DeleteConnectio"
-          + "nRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*develope"
-          + "rconnect.googleapis.com/Connection\022\037\n\nre"
-          + "quest_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\rvalidate_"
-          + "only\030\003 \001(\010B\003\340A\001\022\021\n\004etag\030\004 \001(\tB\003\340A\001\"\200\002\n\021O"
-          + "perationMetadata\0224\n\013create_time\030\001 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\0221\n\010end_ti"
-          + "me\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A"
-          + "\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026reques"
-          + "ted_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_versi"
-          + "on\030\007 \001(\tB\003\340A\003\"\217\006\n\021GitRepositoryLink\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\010\022\026\n\tclone_uri\030\002 \001(\tB\003\340A\002\0224"
-          + "\n\013create_time\030\003 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\0224\n\013delete_tim"
-          + "e\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\022T\n\006labels\030\006 \003(\0132?.google.cloud.develope"
-          + "rconnect.v1.GitRepositoryLink.LabelsEntr"
-          + "yB\003\340A\001\022\021\n\004etag\030\007 \001(\tB\003\340A\001\022\030\n\013reconciling"
-          + "\030\010 \001(\010B\003\340A\003\022^\n\013annotations\030\t \003(\0132D.googl"
-          + "e.cloud.developerconnect.v1.GitRepositor"
-          + "yLink.AnnotationsEntryB\003\340A\001\022\030\n\003uid\030\n \001(\t"
-          + "B\013\340A\003\342\214\317\327\010\002\010\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\314\001\352A\310\001\n"
+          + "v1.GitHubConfigH\000\022\\\n\030github_enterprise_c"
+          + "onfig\030\r \001(\01328.google.cloud.developerconn"
+          + "ect.v1.GitHubEnterpriseConfigH\000\022G\n\rgitla"
+          + "b_config\030\016 \001(\0132..google.cloud.developerc"
+          + "onnect.v1.GitLabConfigH\000\022\\\n\030gitlab_enter"
+          + "prise_config\030\020 \001(\01328.google.cloud.develo"
+          + "perconnect.v1.GitLabEnterpriseConfigH\000\022\021"
+          + "\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013create_time\030\002 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\0224\n\013updat"
+          + "e_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\0224\n\013delete_time\030\013 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\022M\n\006labels\030\004 \003(\01328.go"
+          + "ogle.cloud.developerconnect.v1.Connectio"
+          + "n.LabelsEntryB\003\340A\001\022T\n\022installation_state"
+          + "\030\006 \001(\01323.google.cloud.developerconnect.v"
+          + "1.InstallationStateB\003\340A\003\022\025\n\010disabled\030\007 \001"
+          + "(\010B\003\340A\001\022\030\n\013reconciling\030\010 \001(\010B\003\340A\003\022W\n\013ann"
+          + "otations\030\t \003(\0132=.google.cloud.developerc"
+          + "onnect.v1.Connection.AnnotationsEntryB\003\340"
+          + "A\001\022\021\n\004etag\030\n \001(\tB\003\340A\001\022\030\n\003uid\030\014 \001(\tB\013\340A\003\342"
+          + "\214\317\327\010\002\010\001\022Q\n\021crypto_key_config\030\017 \001(\01321.goo"
+          + "gle.cloud.developerconnect.v1.CryptoKeyC"
+          + "onfigB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\216\001\352A\212\001\n*de"
+          + "veloperconnect.googleapis.com/Connection"
+          + "\022@projects/{project}/locations/{location"
+          + "}/connections/{connection}*\013connections2"
+          + "\nconnectionR\001\001B\023\n\021connection_config\"S\n\017C"
+          + "ryptoKeyConfig\022@\n\rkey_reference\030\001 \001(\tB)\340"
+          + "A\002\372A#\n!cloudkms.googleapis.com/CryptoKey"
+          + "\"\210\002\n\021InstallationState\022M\n\005stage\030\001 \001(\01629."
+          + "google.cloud.developerconnect.v1.Install"
+          + "ationState.StageB\003\340A\003\022\024\n\007message\030\002 \001(\tB\003"
+          + "\340A\003\022\027\n\naction_uri\030\003 \001(\tB\003\340A\003\"u\n\005Stage\022\025\n"
+          + "\021STAGE_UNSPECIFIED\020\000\022\026\n\022PENDING_CREATE_A"
+          + "PP\020\001\022\026\n\022PENDING_USER_OAUTH\020\002\022\027\n\023PENDING_"
+          + "INSTALL_APP\020\003\022\014\n\010COMPLETE\020\n\"\313\002\n\014GitHubCo"
+          + "nfig\022T\n\ngithub_app\030\001 \001(\01628.google.cloud."
+          + "developerconnect.v1.GitHubConfig.GitHubA"
+          + "ppB\006\340A\002\340A\005\022U\n\025authorizer_credential\030\002 \001("
+          + "\01321.google.cloud.developerconnect.v1.OAu"
+          + "thCredentialB\003\340A\001\022 \n\023app_installation_id"
+          + "\030\003 \001(\003B\003\340A\001\022\035\n\020installation_uri\030\004 \001(\tB\003\340"
+          + "A\003\"M\n\tGitHubApp\022\033\n\027GIT_HUB_APP_UNSPECIFI"
+          + "ED\020\000\022\025\n\021DEVELOPER_CONNECT\020\001\022\014\n\010FIREBASE\020"
+          + "\002\"\356\003\n\026GitHubEnterpriseConfig\022\025\n\010host_uri"
+          + "\030\001 \001(\tB\003\340A\002\022\023\n\006app_id\030\002 \001(\003B\003\340A\001\022\025\n\010app_"
+          + "slug\030\003 \001(\tB\003\340A\003\022V\n\032private_key_secret_ve"
+          + "rsion\030\004 \001(\tB2\340A\001\372A,\n*secretmanager.googl"
+          + "eapis.com/SecretVersion\022Y\n\035webhook_secre"
+          + "t_secret_version\030\005 \001(\tB2\340A\001\372A,\n*secretma"
+          + "nager.googleapis.com/SecretVersion\022 \n\023ap"
+          + "p_installation_id\030\010 \001(\003B\003\340A\001\022\035\n\020installa"
+          + "tion_uri\030\t \001(\tB\003\340A\003\022_\n\030service_directory"
+          + "_config\030\n \001(\01328.google.cloud.developerco"
+          + "nnect.v1.ServiceDirectoryConfigB\003\340A\001\022\033\n\016"
+          + "server_version\030\014 \001(\tB\003\340A\003\022\037\n\022ssl_ca_cert"
+          + "ificate\030\016 \001(\tB\003\340A\001\"Z\n\026ServiceDirectoryCo"
+          + "nfig\022@\n\007service\030\001 \001(\tB/\340A\002\372A)\n\'servicedi"
+          + "rectory.googleapis.com/Service\"\200\001\n\017OAuth"
+          + "Credential\022V\n\032oauth_token_secret_version"
+          + "\030\001 \001(\tB2\340A\002\372A,\n*secretmanager.googleapis"
+          + ".com/SecretVersion\022\025\n\010username\030\002 \001(\tB\003\340A"
+          + "\003\"\235\002\n\014GitLabConfig\022\\\n\035webhook_secret_sec"
+          + "ret_version\030\001 \001(\tB5\340A\002\340A\005\372A,\n*secretmana"
+          + "ger.googleapis.com/SecretVersion\022Y\n\032read"
+          + "_authorizer_credential\030\002 \001(\01320.google.cl"
+          + "oud.developerconnect.v1.UserCredentialB\003"
+          + "\340A\002\022T\n\025authorizer_credential\030\003 \001(\01320.goo"
+          + "gle.cloud.developerconnect.v1.UserCreden"
+          + "tialB\003\340A\002\"~\n\016UserCredential\022U\n\031user_toke"
+          + "n_secret_version\030\001 \001(\tB2\340A\002\372A,\n*secretma"
+          + "nager.googleapis.com/SecretVersion\022\025\n\010us"
+          + "ername\030\002 \001(\tB\003\340A\003\"\335\003\n\026GitLabEnterpriseCo"
+          + "nfig\022\025\n\010host_uri\030\001 \001(\tB\003\340A\002\022\\\n\035webhook_s"
+          + "ecret_secret_version\030\002 \001(\tB5\340A\002\340A\005\372A,\n*s"
+          + "ecretmanager.googleapis.com/SecretVersio"
+          + "n\022Y\n\032read_authorizer_credential\030\003 \001(\01320."
+          + "google.cloud.developerconnect.v1.UserCre"
+          + "dentialB\003\340A\002\022T\n\025authorizer_credential\030\004 "
+          + "\001(\01320.google.cloud.developerconnect.v1.U"
+          + "serCredentialB\003\340A\002\022_\n\030service_directory_"
+          + "config\030\005 \001(\01328.google.cloud.developercon"
+          + "nect.v1.ServiceDirectoryConfigB\003\340A\001\022\037\n\022s"
+          + "sl_ca_certificate\030\006 \001(\tB\003\340A\001\022\033\n\016server_v"
+          + "ersion\030\007 \001(\tB\003\340A\003\"\271\001\n\026ListConnectionsReq"
+          + "uest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*developerc"
+          + "onnect.googleapis.com/Connection\022\026\n\tpage"
+          + "_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A"
+          + "\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\t"
+          + "B\003\340A\001\"\212\001\n\027ListConnectionsResponse\022A\n\013con"
+          + "nections\030\001 \003(\0132,.google.cloud.developerc"
+          + "onnect.v1.Connection\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"X\n\024GetConnect"
+          + "ionRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*develo"
+          + "perconnect.googleapis.com/Connection\"\375\001\n"
+          + "\027CreateConnectionRequest\022B\n\006parent\030\001 \001(\t"
+          + "B2\340A\002\372A,\022*developerconnect.googleapis.co"
+          + "m/Connection\022\032\n\rconnection_id\030\002 \001(\tB\003\340A\002"
+          + "\022E\n\nconnection\030\003 \001(\0132,.google.cloud.deve"
+          + "loperconnect.v1.ConnectionB\003\340A\002\022\037\n\nreque"
+          + "st_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\rvalidate_onl"
+          + "y\030\005 \001(\010B\003\340A\001\"\357\001\n\027UpdateConnectionRequest"
+          + "\0224\n\013update_mask\030\001 \001(\0132\032.google.protobuf."
+          + "FieldMaskB\003\340A\002\022E\n\nconnection\030\002 \001(\0132,.goo"
+          + "gle.cloud.developerconnect.v1.Connection"
+          + "B\003\340A\002\022\037\n\nrequest_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032"
+          + "\n\rallow_missing\030\004 \001(\010B\003\340A\001\022\032\n\rvalidate_o"
+          + "nly\030\005 \001(\010B\003\340A\001\"\253\001\n\027DeleteConnectionReque"
+          + "st\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*developerconne"
+          + "ct.googleapis.com/Connection\022\037\n\nrequest_"
+          + "id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\rvalidate_only\030\003"
+          + " \001(\010B\003\340A\001\022\021\n\004etag\030\004 \001(\tB\003\340A\001\"\200\002\n\021Operati"
+          + "onMetadata\0224\n\013create_time\030\001 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006t"
+          + "arget\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016s"
+          + "tatus_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_ca"
+          + "ncellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001"
+          + "(\tB\003\340A\003\"\250\006\n\021GitRepositoryLink\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\010\022\026\n\tclone_uri\030\002 \001(\tB\003\340A\002\0224\n\013crea"
+          + "te_time\030\003 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0224\n\013delete_time\030\005 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022T\n\006la"
+          + "bels\030\006 \003(\0132?.google.cloud.developerconne"
+          + "ct.v1.GitRepositoryLink.LabelsEntryB\003\340A\001"
+          + "\022\021\n\004etag\030\007 \001(\tB\003\340A\001\022\030\n\013reconciling\030\010 \001(\010"
+          + "B\003\340A\003\022^\n\013annotations\030\t \003(\0132D.google.clou"
+          + "d.developerconnect.v1.GitRepositoryLink."
+          + "AnnotationsEntryB\003\340A\001\022\030\n\003uid\030\n \001(\tB\013\340A\003\342"
+          + "\214\317\327\010\002\010\001\022\027\n\nwebhook_id\030\013 \001(\tB\003\340A\003\032-\n\013Labe"
+          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032"
+          + "2\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+          + "e\030\002 \001(\t:\0028\001:\314\001\352A\310\001\n1developerconnect.goo"
+          + "gleapis.com/GitRepositoryLink\022iprojects/"
+          + "{project}/locations/{location}/connectio"
+          + "ns/{connection}/gitRepositoryLinks/{git_"
+          + "repository_link}*\022gitRepositoryLinks2\021gi"
+          + "tRepositoryLinkR\001\001\"\244\002\n\036CreateGitReposito"
+          + "ryLinkRequest\022I\n\006parent\030\001 \001(\tB9\340A\002\372A3\0221d"
+          + "eveloperconnect.googleapis.com/GitReposi"
+          + "toryLink\022U\n\023git_repository_link\030\002 \001(\01323."
+          + "google.cloud.developerconnect.v1.GitRepo"
+          + "sitoryLinkB\003\340A\002\022#\n\026git_repository_link_i"
+          + "d\030\003 \001(\tB\003\340A\002\022\037\n\nrequest_id\030\004 \001(\tB\013\340A\001\342\214\317"
+          + "\327\010\002\010\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\271\001\n\036De"
+          + "leteGitRepositoryLinkRequest\022G\n\004name\030\001 \001"
+          + "(\tB9\340A\002\372A3\n1developerconnect.googleapis."
+          + "com/GitRepositoryLink\022\037\n\nrequest_id\030\002 \001("
+          + "\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\rvalidate_only\030\003 \001(\010B\003\340"
+          + "A\001\022\021\n\004etag\030\004 \001(\tB\003\340A\001\"\307\001\n\035ListGitReposit"
+          + "oryLinksRequest\022I\n\006parent\030\001 \001(\tB9\340A\002\372A3\022"
           + "1developerconnect.googleapis.com/GitRepo"
-          + "sitoryLink\022iprojects/{project}/locations"
-          + "/{location}/connections/{connection}/git"
-          + "RepositoryLinks/{git_repository_link}*\022g"
-          + "itRepositoryLinks2\021gitRepositoryLinkR\001\001\""
-          + "\244\002\n\036CreateGitRepositoryLinkRequest\022I\n\006pa"
-          + "rent\030\001 \001(\tB9\340A\002\372A3\0221developerconnect.goo"
-          + "gleapis.com/GitRepositoryLink\022U\n\023git_rep"
-          + "ository_link\030\002 \001(\01323.google.cloud.develo"
-          + "perconnect.v1.GitRepositoryLinkB\003\340A\002\022#\n\026"
-          + "git_repository_link_id\030\003 \001(\tB\003\340A\002\022\037\n\nreq"
-          + "uest_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\rvalidate_o"
-          + "nly\030\005 \001(\010B\003\340A\001\"\271\001\n\036DeleteGitRepositoryLi"
-          + "nkRequest\022G\n\004name\030\001 \001(\tB9\340A\002\372A3\n1develop"
+          + "sitoryLink\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npa"
+          + "ge_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001"
+          + "\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\241\001\n\036ListGitRepos"
+          + "itoryLinksResponse\022Q\n\024git_repository_lin"
+          + "ks\030\001 \003(\01323.google.cloud.developerconnect"
+          + ".v1.GitRepositoryLink\022\027\n\017next_page_token"
+          + "\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"f\n\033GetGitRep"
+          + "ositoryLinkRequest\022G\n\004name\030\001 \001(\tB9\340A\002\372A3"
+          + "\n1developerconnect.googleapis.com/GitRep"
+          + "ositoryLink\"t\n\032FetchReadWriteTokenReques"
+          + "t\022V\n\023git_repository_link\030\001 \001(\tB9\340A\002\372A3\n1"
+          + "developerconnect.googleapis.com/GitRepos"
+          + "itoryLink\"o\n\025FetchReadTokenRequest\022V\n\023gi"
+          + "t_repository_link\030\001 \001(\tB9\340A\002\372A3\n1develop"
           + "erconnect.googleapis.com/GitRepositoryLi"
-          + "nk\022\037\n\nrequest_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\rv"
-          + "alidate_only\030\003 \001(\010B\003\340A\001\022\021\n\004etag\030\004 \001(\tB\003\340"
-          + "A\001\"\307\001\n\035ListGitRepositoryLinksRequest\022I\n\006"
-          + "parent\030\001 \001(\tB9\340A\002\372A3\0221developerconnect.g"
-          + "oogleapis.com/GitRepositoryLink\022\026\n\tpage_"
+          + "nk\"r\n\026FetchReadTokenResponse\022\r\n\005token\030\001 "
+          + "\001(\t\0223\n\017expiration_time\030\002 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\022\024\n\014git_username\030\003 \001(\t\"w"
+          + "\n\033FetchReadWriteTokenResponse\022\r\n\005token\030\001"
+          + " \001(\t\0223\n\017expiration_time\030\002 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022\024\n\014git_username\030\003 \001(\t\""
+          + "\236\001\n#FetchLinkableGitRepositoriesRequest\022"
+          + "F\n\nconnection\030\001 \001(\tB2\340A\002\372A,\n*developerco"
+          + "nnect.googleapis.com/Connection\022\026\n\tpage_"
           + "size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001"
-          + "\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB"
-          + "\003\340A\001\"\241\001\n\036ListGitRepositoryLinksResponse\022"
-          + "Q\n\024git_repository_links\030\001 \003(\01323.google.c"
-          + "loud.developerconnect.v1.GitRepositoryLi"
-          + "nk\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachab"
-          + "le\030\003 \003(\t\"f\n\033GetGitRepositoryLinkRequest\022"
-          + "G\n\004name\030\001 \001(\tB9\340A\002\372A3\n1developerconnect."
-          + "googleapis.com/GitRepositoryLink\"t\n\032Fetc"
-          + "hReadWriteTokenRequest\022V\n\023git_repository"
-          + "_link\030\001 \001(\tB9\340A\002\372A3\n1developerconnect.go"
-          + "ogleapis.com/GitRepositoryLink\"o\n\025FetchR"
-          + "eadTokenRequest\022V\n\023git_repository_link\030\001"
-          + " \001(\tB9\340A\002\372A3\n1developerconnect.googleapi"
-          + "s.com/GitRepositoryLink\"r\n\026FetchReadToke"
-          + "nResponse\022\r\n\005token\030\001 \001(\t\0223\n\017expiration_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\022\024\n"
-          + "\014git_username\030\003 \001(\t\"w\n\033FetchReadWriteTok"
-          + "enResponse\022\r\n\005token\030\001 \001(\t\0223\n\017expiration_"
-          + "time\030\002 \001(\0132\032.google.protobuf.Timestamp\022\024"
-          + "\n\014git_username\030\003 \001(\t\"\236\001\n#FetchLinkableGi"
-          + "tRepositoriesRequest\022F\n\nconnection\030\001 \001(\t"
-          + "B2\340A\002\372A,\n*developerconnect.googleapis.co"
-          + "m/Connection\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\233\001\n$FetchLinkableG"
-          + "itRepositoriesResponse\022Z\n\031linkable_git_r"
-          + "epositories\030\001 \003(\01327.google.cloud.develop"
-          + "erconnect.v1.LinkableGitRepository\022\027\n\017ne"
-          + "xt_page_token\030\002 \001(\t\"*\n\025LinkableGitReposi"
-          + "tory\022\021\n\tclone_uri\030\001 \001(\t\"i\n\037FetchGitHubIn"
-          + "stallationsRequest\022F\n\nconnection\030\001 \001(\tB2"
-          + "\340A\002\372A,\n*developerconnect.googleapis.com/"
-          + "Connection\"\302\001\n FetchGitHubInstallationsR"
-          + "esponse\022f\n\rinstallations\030\001 \003(\0132O.google."
-          + "cloud.developerconnect.v1.FetchGitHubIns"
-          + "tallationsResponse.Installation\0326\n\014Insta"
-          + "llation\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004typ"
-          + "e\030\003 \001(\t\"\256\002\n\023FetchGitRefsRequest\022V\n\023git_r"
-          + "epository_link\030\001 \001(\tB9\340A\002\372A3\n1developerc"
-          + "onnect.googleapis.com/GitRepositoryLink\022"
-          + "T\n\010ref_type\030\002 \001(\0162=.google.cloud.develop"
-          + "erconnect.v1.FetchGitRefsRequest.RefType"
-          + "B\003\340A\002\022\026\n\tpage_size\030\004 \001(\005B\003\340A\001\022\027\n\npage_to"
-          + "ken\030\005 \001(\tB\003\340A\001\"8\n\007RefType\022\030\n\024REF_TYPE_UN"
-          + "SPECIFIED\020\000\022\007\n\003TAG\020\001\022\n\n\006BRANCH\020\002\"B\n\024Fetc"
-          + "hGitRefsResponse\022\021\n\tref_names\030\001 \003(\t\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t2\247\034\n\020DeveloperConnec"
-          + "t\022\310\001\n\017ListConnections\0228.google.cloud.dev"
-          + "eloperconnect.v1.ListConnectionsRequest\032"
-          + "9.google.cloud.developerconnect.v1.ListC"
-          + "onnectionsResponse\"@\332A\006parent\202\323\344\223\0021\022//v1"
+          + "\"\233\001\n$FetchLinkableGitRepositoriesRespons"
+          + "e\022Z\n\031linkable_git_repositories\030\001 \003(\01327.g"
+          + "oogle.cloud.developerconnect.v1.Linkable"
+          + "GitRepository\022\027\n\017next_page_token\030\002 \001(\t\"*"
+          + "\n\025LinkableGitRepository\022\021\n\tclone_uri\030\001 \001"
+          + "(\t\"i\n\037FetchGitHubInstallationsRequest\022F\n"
+          + "\nconnection\030\001 \001(\tB2\340A\002\372A,\n*developerconn"
+          + "ect.googleapis.com/Connection\"\302\001\n FetchG"
+          + "itHubInstallationsResponse\022f\n\rinstallati"
+          + "ons\030\001 \003(\0132O.google.cloud.developerconnec"
+          + "t.v1.FetchGitHubInstallationsResponse.In"
+          + "stallation\0326\n\014Installation\022\n\n\002id\030\001 \001(\003\022\014"
+          + "\n\004name\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"\256\002\n\023FetchGitR"
+          + "efsRequest\022V\n\023git_repository_link\030\001 \001(\tB"
+          + "9\340A\002\372A3\n1developerconnect.googleapis.com"
+          + "/GitRepositoryLink\022T\n\010ref_type\030\002 \001(\0162=.g"
+          + "oogle.cloud.developerconnect.v1.FetchGit"
+          + "RefsRequest.RefTypeB\003\340A\002\022\026\n\tpage_size\030\004 "
+          + "\001(\005B\003\340A\001\022\027\n\npage_token\030\005 \001(\tB\003\340A\001\"8\n\007Ref"
+          + "Type\022\030\n\024REF_TYPE_UNSPECIFIED\020\000\022\007\n\003TAG\020\001\022"
+          + "\n\n\006BRANCH\020\002\"B\n\024FetchGitRefsResponse\022\021\n\tr"
+          + "ef_names\030\001 \003(\t\022\027\n\017next_page_token\030\002 \001(\t2"
+          + "\247\034\n\020DeveloperConnect\022\310\001\n\017ListConnections"
+          + "\0228.google.cloud.developerconnect.v1.List"
+          + "ConnectionsRequest\0329.google.cloud.develo"
+          + "perconnect.v1.ListConnectionsResponse\"@\332"
+          + "A\006parent\202\323\344\223\0021\022//v1/{parent=projects/*/l"
+          + "ocations/*}/connections\022\265\001\n\rGetConnectio"
+          + "n\0226.google.cloud.developerconnect.v1.Get"
+          + "ConnectionRequest\032,.google.cloud.develop"
+          + "erconnect.v1.Connection\">\332A\004name\202\323\344\223\0021\022/"
+          + "/v1/{name=projects/*/locations/*/connect"
+          + "ions/*}\022\366\001\n\020CreateConnection\0229.google.cl"
+          + "oud.developerconnect.v1.CreateConnection"
+          + "Request\032\035.google.longrunning.Operation\"\207"
+          + "\001\312A\037\n\nConnection\022\021OperationMetadata\332A\037pa"
+          + "rent,connection,connection_id\202\323\344\223\002=\"//v1"
           + "/{parent=projects/*/locations/*}/connect"
-          + "ions\022\265\001\n\rGetConnection\0226.google.cloud.de"
-          + "veloperconnect.v1.GetConnectionRequest\032,"
-          + ".google.cloud.developerconnect.v1.Connec"
-          + "tion\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/"
-          + "*/locations/*/connections/*}\022\366\001\n\020CreateC"
-          + "onnection\0229.google.cloud.developerconnec"
-          + "t.v1.CreateConnectionRequest\032\035.google.lo"
-          + "ngrunning.Operation\"\207\001\312A\037\n\nConnection\022\021O"
-          + "perationMetadata\332A\037parent,connection,con"
-          + "nection_id\202\323\344\223\002=\"//v1/{parent=projects/*"
-          + "/locations/*}/connections:\nconnection\022\370\001"
-          + "\n\020UpdateConnection\0229.google.cloud.develo"
-          + "perconnect.v1.UpdateConnectionRequest\032\035."
-          + "google.longrunning.Operation\"\211\001\312A\037\n\nConn"
-          + "ection\022\021OperationMetadata\332A\026connection,u"
-          + "pdate_mask\202\323\344\223\002H2:/v1/{connection.name=p"
-          + "rojects/*/locations/*/connections/*}:\nco"
-          + "nnection\022\331\001\n\020DeleteConnection\0229.google.c"
-          + "loud.developerconnect.v1.DeleteConnectio"
-          + "nRequest\032\035.google.longrunning.Operation\""
-          + "k\312A*\n\025google.protobuf.Empty\022\021OperationMe"
-          + "tadata\332A\004name\202\323\344\223\0021*//v1/{name=projects/"
-          + "*/locations/*/connections/*}\022\273\002\n\027CreateG"
-          + "itRepositoryLink\022@.google.cloud.develope"
-          + "rconnect.v1.CreateGitRepositoryLinkReque"
-          + "st\032\035.google.longrunning.Operation\"\276\001\312A&\n"
-          + "\021GitRepositoryLink\022\021OperationMetadata\332A1"
-          + "parent,git_repository_link,git_repositor"
-          + "y_link_id\202\323\344\223\002[\"D/v1/{parent=projects/*/"
-          + "locations/*/connections/*}/gitRepository"
-          + "Links:\023git_repository_link\022\375\001\n\027DeleteGit"
-          + "RepositoryLink\022@.google.cloud.developerc"
-          + "onnect.v1.DeleteGitRepositoryLinkRequest"
-          + "\032\035.google.longrunning.Operation\"\200\001\312A*\n\025g"
-          + "oogle.protobuf.Empty\022\021OperationMetadata\332"
-          + "A\004name\202\323\344\223\002F*D/v1/{name=projects/*/locat"
-          + "ions/*/connections/*/gitRepositoryLinks/"
-          + "*}\022\362\001\n\026ListGitRepositoryLinks\022?.google.c"
-          + "loud.developerconnect.v1.ListGitReposito"
-          + "ryLinksRequest\032@.google.cloud.developerc"
-          + "onnect.v1.ListGitRepositoryLinksResponse"
-          + "\"U\332A\006parent\202\323\344\223\002F\022D/v1/{parent=projects/"
-          + "*/locations/*/connections/*}/gitReposito"
-          + "ryLinks\022\337\001\n\024GetGitRepositoryLink\022=.googl"
-          + "e.cloud.developerconnect.v1.GetGitReposi"
-          + "toryLinkRequest\0323.google.cloud.developer"
-          + "connect.v1.GitRepositoryLink\"S\332A\004name\202\323\344"
-          + "\223\002F\022D/v1/{name=projects/*/locations/*/co"
-          + "nnections/*/gitRepositoryLinks/*}\022\235\002\n\023Fe"
-          + "tchReadWriteToken\022<.google.cloud.develop"
-          + "erconnect.v1.FetchReadWriteTokenRequest\032"
-          + "=.google.cloud.developerconnect.v1.Fetch"
-          + "ReadWriteTokenResponse\"\210\001\332A\023git_reposito"
-          + "ry_link\202\323\344\223\002l\"g/v1/{git_repository_link="
-          + "projects/*/locations/*/connections/*/git"
-          + "RepositoryLinks/*}:fetchReadWriteToken:\001"
-          + "*\022\211\002\n\016FetchReadToken\0227.google.cloud.deve"
-          + "loperconnect.v1.FetchReadTokenRequest\0328."
-          + "google.cloud.developerconnect.v1.FetchRe"
-          + "adTokenResponse\"\203\001\332A\023git_repository_link"
-          + "\202\323\344\223\002g\"b/v1/{git_repository_link=project"
-          + "s/*/locations/*/connections/*/gitReposit"
-          + "oryLinks/*}:fetchReadToken:\001*\022\226\002\n\034FetchL"
-          + "inkableGitRepositories\022E.google.cloud.de"
-          + "veloperconnect.v1.FetchLinkableGitReposi"
-          + "toriesRequest\032F.google.cloud.developerco"
-          + "nnect.v1.FetchLinkableGitRepositoriesRes"
-          + "ponse\"g\332A\nconnection\202\323\344\223\002T\022R/v1/{connect"
-          + "ion=projects/*/locations/*/connections/*"
-          + "}:fetchLinkableGitRepositories\022\206\002\n\030Fetch"
-          + "GitHubInstallations\022A.google.cloud.devel"
-          + "operconnect.v1.FetchGitHubInstallationsR"
-          + "equest\032B.google.cloud.developerconnect.v"
-          + "1.FetchGitHubInstallationsResponse\"c\332A\nc"
-          + "onnection\202\323\344\223\002P\022N/v1/{connection=project"
-          + "s/*/locations/*/connections/*}:fetchGitH"
-          + "ubInstallations\022\207\002\n\014FetchGitRefs\0225.googl"
-          + "e.cloud.developerconnect.v1.FetchGitRefs"
-          + "Request\0326.google.cloud.developerconnect."
-          + "v1.FetchGitRefsResponse\"\207\001\332A\034git_reposit"
-          + "ory_link,ref_type\202\323\344\223\002b\022`/v1/{git_reposi"
-          + "tory_link=projects/*/locations/*/connect"
-          + "ions/*/gitRepositoryLinks/*}:fetchGitRef"
-          + "s\032S\312A\037developerconnect.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\376\002\n$com.google.cloud.developercon"
-          + "nect.v1B\025DeveloperConnectProtoP\001ZPcloud."
-          + "google.com/go/developerconnect/apiv1/dev"
-          + "eloperconnectpb;developerconnectpb\242\002\020Dev"
-          + "eloperConnect\252\002 Google.Cloud.DeveloperCo"
-          + "nnect.V1\312\002 Google\\Cloud\\DeveloperConnect"
-          + "\\V1\352\002#Google::Cloud::DeveloperConnect::V"
-          + "1\352Ak\n*secretmanager.googleapis.com/Secre"
-          + "tVersion\022=projects/{project}/secrets/{se"
-          + "cret}/versions/{secret_version}b\006proto3"
+          + "ions:\nconnection\022\370\001\n\020UpdateConnection\0229."
+          + "google.cloud.developerconnect.v1.UpdateC"
+          + "onnectionRequest\032\035.google.longrunning.Op"
+          + "eration\"\211\001\312A\037\n\nConnection\022\021OperationMeta"
+          + "data\332A\026connection,update_mask\202\323\344\223\002H2:/v1"
+          + "/{connection.name=projects/*/locations/*"
+          + "/connections/*}:\nconnection\022\331\001\n\020DeleteCo"
+          + "nnection\0229.google.cloud.developerconnect"
+          + ".v1.DeleteConnectionRequest\032\035.google.lon"
+          + "grunning.Operation\"k\312A*\n\025google.protobuf"
+          + ".Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0021*/"
+          + "/v1/{name=projects/*/locations/*/connect"
+          + "ions/*}\022\273\002\n\027CreateGitRepositoryLink\022@.go"
+          + "ogle.cloud.developerconnect.v1.CreateGit"
+          + "RepositoryLinkRequest\032\035.google.longrunni"
+          + "ng.Operation\"\276\001\312A&\n\021GitRepositoryLink\022\021O"
+          + "perationMetadata\332A1parent,git_repository"
+          + "_link,git_repository_link_id\202\323\344\223\002[\"D/v1/"
+          + "{parent=projects/*/locations/*/connectio"
+          + "ns/*}/gitRepositoryLinks:\023git_repository"
+          + "_link\022\375\001\n\027DeleteGitRepositoryLink\022@.goog"
+          + "le.cloud.developerconnect.v1.DeleteGitRe"
+          + "positoryLinkRequest\032\035.google.longrunning"
+          + ".Operation\"\200\001\312A*\n\025google.protobuf.Empty\022"
+          + "\021OperationMetadata\332A\004name\202\323\344\223\002F*D/v1/{na"
+          + "me=projects/*/locations/*/connections/*/"
+          + "gitRepositoryLinks/*}\022\362\001\n\026ListGitReposit"
+          + "oryLinks\022?.google.cloud.developerconnect"
+          + ".v1.ListGitRepositoryLinksRequest\032@.goog"
+          + "le.cloud.developerconnect.v1.ListGitRepo"
+          + "sitoryLinksResponse\"U\332A\006parent\202\323\344\223\002F\022D/v"
+          + "1/{parent=projects/*/locations/*/connect"
+          + "ions/*}/gitRepositoryLinks\022\337\001\n\024GetGitRep"
+          + "ositoryLink\022=.google.cloud.developerconn"
+          + "ect.v1.GetGitRepositoryLinkRequest\0323.goo"
+          + "gle.cloud.developerconnect.v1.GitReposit"
+          + "oryLink\"S\332A\004name\202\323\344\223\002F\022D/v1/{name=projec"
+          + "ts/*/locations/*/connections/*/gitReposi"
+          + "toryLinks/*}\022\235\002\n\023FetchReadWriteToken\022<.g"
+          + "oogle.cloud.developerconnect.v1.FetchRea"
+          + "dWriteTokenRequest\032=.google.cloud.develo"
+          + "perconnect.v1.FetchReadWriteTokenRespons"
+          + "e\"\210\001\332A\023git_repository_link\202\323\344\223\002l\"g/v1/{g"
+          + "it_repository_link=projects/*/locations/"
+          + "*/connections/*/gitRepositoryLinks/*}:fe"
+          + "tchReadWriteToken:\001*\022\211\002\n\016FetchReadToken\022"
+          + "7.google.cloud.developerconnect.v1.Fetch"
+          + "ReadTokenRequest\0328.google.cloud.develope"
+          + "rconnect.v1.FetchReadTokenResponse\"\203\001\332A\023"
+          + "git_repository_link\202\323\344\223\002g\"b/v1/{git_repo"
+          + "sitory_link=projects/*/locations/*/conne"
+          + "ctions/*/gitRepositoryLinks/*}:fetchRead"
+          + "Token:\001*\022\226\002\n\034FetchLinkableGitRepositorie"
+          + "s\022E.google.cloud.developerconnect.v1.Fet"
+          + "chLinkableGitRepositoriesRequest\032F.googl"
+          + "e.cloud.developerconnect.v1.FetchLinkabl"
+          + "eGitRepositoriesResponse\"g\332A\nconnection\202"
+          + "\323\344\223\002T\022R/v1/{connection=projects/*/locati"
+          + "ons/*/connections/*}:fetchLinkableGitRep"
+          + "ositories\022\206\002\n\030FetchGitHubInstallations\022A"
+          + ".google.cloud.developerconnect.v1.FetchG"
+          + "itHubInstallationsRequest\032B.google.cloud"
+          + ".developerconnect.v1.FetchGitHubInstalla"
+          + "tionsResponse\"c\332A\nconnection\202\323\344\223\002P\022N/v1/"
+          + "{connection=projects/*/locations/*/conne"
+          + "ctions/*}:fetchGitHubInstallations\022\207\002\n\014F"
+          + "etchGitRefs\0225.google.cloud.developerconn"
+          + "ect.v1.FetchGitRefsRequest\0326.google.clou"
+          + "d.developerconnect.v1.FetchGitRefsRespon"
+          + "se\"\207\001\332A\034git_repository_link,ref_type\202\323\344\223"
+          + "\002b\022`/v1/{git_repository_link=projects/*/"
+          + "locations/*/connections/*/gitRepositoryL"
+          + "inks/*}:fetchGitRefs\032S\312A\037developerconnec"
+          + "t.googleapis.com\322A.https://www.googleapi"
+          + "s.com/auth/cloud-platformB\370\004\n$com.google"
+          + ".cloud.developerconnect.v1B\025DeveloperCon"
+          + "nectProtoP\001ZPcloud.google.com/go/develop"
+          + "erconnect/apiv1/developerconnectpb;devel"
+          + "operconnectpb\242\002\020DeveloperConnect\252\002 Googl"
+          + "e.Cloud.DeveloperConnect.V1\312\002 Google\\Clo"
+          + "ud\\DeveloperConnect\\V1\352\002#Google::Cloud::"
+          + "DeveloperConnect::V1\352Ak\n*secretmanager.g"
+          + "oogleapis.com/SecretVersion\022=projects/{p"
+          + "roject}/secrets/{secret}/versions/{secre"
+          + "t_version}\352Ax\n!cloudkms.googleapis.com/C"
+          + "ryptoKey\022Sprojects/{project}/locations/{"
+          + "location}/keyRings/{key_ring}/cryptoKeys"
+          + "/{crypto_key}\352A|\n\'servicedirectory.googl"
+          + "eapis.com/Service\022Qprojects/{project}/lo"
+          + "cations/{location}/namespaces/{namespace"
+          + "}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -456,6 +535,9 @@ public final class DeveloperConnectProto {
             internal_static_google_cloud_developerconnect_v1_Connection_descriptor,
             new java.lang.String[] {
               "GithubConfig",
+              "GithubEnterpriseConfig",
+              "GitlabConfig",
+              "GitlabEnterpriseConfig",
               "Name",
               "CreateTime",
               "UpdateTime",
@@ -467,6 +549,7 @@ public final class DeveloperConnectProto {
               "Annotations",
               "Etag",
               "Uid",
+              "CryptoKeyConfig",
               "ConnectionConfig",
             });
     internal_static_google_cloud_developerconnect_v1_Connection_LabelsEntry_descriptor =
@@ -489,8 +572,16 @@ public final class DeveloperConnectProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_developerconnect_v1_InstallationState_descriptor =
+    internal_static_google_cloud_developerconnect_v1_CryptoKeyConfig_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_developerconnect_v1_CryptoKeyConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_CryptoKeyConfig_descriptor,
+            new java.lang.String[] {
+              "KeyReference",
+            });
+    internal_static_google_cloud_developerconnect_v1_InstallationState_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_developerconnect_v1_InstallationState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_InstallationState_descriptor,
@@ -498,23 +589,78 @@ public final class DeveloperConnectProto {
               "Stage", "Message", "ActionUri",
             });
     internal_static_google_cloud_developerconnect_v1_GitHubConfig_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_developerconnect_v1_GitHubConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GitHubConfig_descriptor,
             new java.lang.String[] {
               "GithubApp", "AuthorizerCredential", "AppInstallationId", "InstallationUri",
             });
+    internal_static_google_cloud_developerconnect_v1_GitHubEnterpriseConfig_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_developerconnect_v1_GitHubEnterpriseConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_GitHubEnterpriseConfig_descriptor,
+            new java.lang.String[] {
+              "HostUri",
+              "AppId",
+              "AppSlug",
+              "PrivateKeySecretVersion",
+              "WebhookSecretSecretVersion",
+              "AppInstallationId",
+              "InstallationUri",
+              "ServiceDirectoryConfig",
+              "ServerVersion",
+              "SslCaCertificate",
+            });
+    internal_static_google_cloud_developerconnect_v1_ServiceDirectoryConfig_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_developerconnect_v1_ServiceDirectoryConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_ServiceDirectoryConfig_descriptor,
+            new java.lang.String[] {
+              "Service",
+            });
     internal_static_google_cloud_developerconnect_v1_OAuthCredential_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_developerconnect_v1_OAuthCredential_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_OAuthCredential_descriptor,
             new java.lang.String[] {
               "OauthTokenSecretVersion", "Username",
             });
+    internal_static_google_cloud_developerconnect_v1_GitLabConfig_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_developerconnect_v1_GitLabConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_GitLabConfig_descriptor,
+            new java.lang.String[] {
+              "WebhookSecretSecretVersion", "ReadAuthorizerCredential", "AuthorizerCredential",
+            });
+    internal_static_google_cloud_developerconnect_v1_UserCredential_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_developerconnect_v1_UserCredential_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_UserCredential_descriptor,
+            new java.lang.String[] {
+              "UserTokenSecretVersion", "Username",
+            });
+    internal_static_google_cloud_developerconnect_v1_GitLabEnterpriseConfig_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_developerconnect_v1_GitLabEnterpriseConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_developerconnect_v1_GitLabEnterpriseConfig_descriptor,
+            new java.lang.String[] {
+              "HostUri",
+              "WebhookSecretSecretVersion",
+              "ReadAuthorizerCredential",
+              "AuthorizerCredential",
+              "ServiceDirectoryConfig",
+              "SslCaCertificate",
+              "ServerVersion",
+            });
     internal_static_google_cloud_developerconnect_v1_ListConnectionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_developerconnect_v1_ListConnectionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_ListConnectionsRequest_descriptor,
@@ -522,7 +668,7 @@ public final class DeveloperConnectProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_developerconnect_v1_ListConnectionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_developerconnect_v1_ListConnectionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_ListConnectionsResponse_descriptor,
@@ -530,7 +676,7 @@ public final class DeveloperConnectProto {
               "Connections", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_developerconnect_v1_GetConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_developerconnect_v1_GetConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GetConnectionRequest_descriptor,
@@ -538,7 +684,7 @@ public final class DeveloperConnectProto {
               "Name",
             });
     internal_static_google_cloud_developerconnect_v1_CreateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_developerconnect_v1_CreateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_CreateConnectionRequest_descriptor,
@@ -546,7 +692,7 @@ public final class DeveloperConnectProto {
               "Parent", "ConnectionId", "Connection", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_developerconnect_v1_UpdateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_developerconnect_v1_UpdateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_UpdateConnectionRequest_descriptor,
@@ -554,7 +700,7 @@ public final class DeveloperConnectProto {
               "UpdateMask", "Connection", "RequestId", "AllowMissing", "ValidateOnly",
             });
     internal_static_google_cloud_developerconnect_v1_DeleteConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_developerconnect_v1_DeleteConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_DeleteConnectionRequest_descriptor,
@@ -562,7 +708,7 @@ public final class DeveloperConnectProto {
               "Name", "RequestId", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_developerconnect_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_developerconnect_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_OperationMetadata_descriptor,
@@ -576,7 +722,7 @@ public final class DeveloperConnectProto {
               "ApiVersion",
             });
     internal_static_google_cloud_developerconnect_v1_GitRepositoryLink_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_developerconnect_v1_GitRepositoryLink_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GitRepositoryLink_descriptor,
@@ -591,6 +737,7 @@ public final class DeveloperConnectProto {
               "Reconciling",
               "Annotations",
               "Uid",
+              "WebhookId",
             });
     internal_static_google_cloud_developerconnect_v1_GitRepositoryLink_LabelsEntry_descriptor =
         internal_static_google_cloud_developerconnect_v1_GitRepositoryLink_descriptor
@@ -613,7 +760,7 @@ public final class DeveloperConnectProto {
               "Key", "Value",
             });
     internal_static_google_cloud_developerconnect_v1_CreateGitRepositoryLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_developerconnect_v1_CreateGitRepositoryLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_CreateGitRepositoryLinkRequest_descriptor,
@@ -621,7 +768,7 @@ public final class DeveloperConnectProto {
               "Parent", "GitRepositoryLink", "GitRepositoryLinkId", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_developerconnect_v1_DeleteGitRepositoryLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_developerconnect_v1_DeleteGitRepositoryLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_DeleteGitRepositoryLinkRequest_descriptor,
@@ -629,7 +776,7 @@ public final class DeveloperConnectProto {
               "Name", "RequestId", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_developerconnect_v1_ListGitRepositoryLinksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_developerconnect_v1_ListGitRepositoryLinksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_ListGitRepositoryLinksRequest_descriptor,
@@ -637,7 +784,7 @@ public final class DeveloperConnectProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_developerconnect_v1_ListGitRepositoryLinksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_developerconnect_v1_ListGitRepositoryLinksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_ListGitRepositoryLinksResponse_descriptor,
@@ -645,7 +792,7 @@ public final class DeveloperConnectProto {
               "GitRepositoryLinks", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_developerconnect_v1_GetGitRepositoryLinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_developerconnect_v1_GetGitRepositoryLinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_GetGitRepositoryLinkRequest_descriptor,
@@ -653,7 +800,7 @@ public final class DeveloperConnectProto {
               "Name",
             });
     internal_static_google_cloud_developerconnect_v1_FetchReadWriteTokenRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_developerconnect_v1_FetchReadWriteTokenRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchReadWriteTokenRequest_descriptor,
@@ -661,7 +808,7 @@ public final class DeveloperConnectProto {
               "GitRepositoryLink",
             });
     internal_static_google_cloud_developerconnect_v1_FetchReadTokenRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_developerconnect_v1_FetchReadTokenRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchReadTokenRequest_descriptor,
@@ -669,7 +816,7 @@ public final class DeveloperConnectProto {
               "GitRepositoryLink",
             });
     internal_static_google_cloud_developerconnect_v1_FetchReadTokenResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_developerconnect_v1_FetchReadTokenResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchReadTokenResponse_descriptor,
@@ -677,7 +824,7 @@ public final class DeveloperConnectProto {
               "Token", "ExpirationTime", "GitUsername",
             });
     internal_static_google_cloud_developerconnect_v1_FetchReadWriteTokenResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_developerconnect_v1_FetchReadWriteTokenResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchReadWriteTokenResponse_descriptor,
@@ -685,7 +832,7 @@ public final class DeveloperConnectProto {
               "Token", "ExpirationTime", "GitUsername",
             });
     internal_static_google_cloud_developerconnect_v1_FetchLinkableGitRepositoriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_developerconnect_v1_FetchLinkableGitRepositoriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchLinkableGitRepositoriesRequest_descriptor,
@@ -693,7 +840,7 @@ public final class DeveloperConnectProto {
               "Connection", "PageSize", "PageToken",
             });
     internal_static_google_cloud_developerconnect_v1_FetchLinkableGitRepositoriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_developerconnect_v1_FetchLinkableGitRepositoriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchLinkableGitRepositoriesResponse_descriptor,
@@ -701,7 +848,7 @@ public final class DeveloperConnectProto {
               "LinkableGitRepositories", "NextPageToken",
             });
     internal_static_google_cloud_developerconnect_v1_LinkableGitRepository_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_developerconnect_v1_LinkableGitRepository_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_LinkableGitRepository_descriptor,
@@ -709,7 +856,7 @@ public final class DeveloperConnectProto {
               "CloneUri",
             });
     internal_static_google_cloud_developerconnect_v1_FetchGitHubInstallationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_developerconnect_v1_FetchGitHubInstallationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchGitHubInstallationsRequest_descriptor,
@@ -717,7 +864,7 @@ public final class DeveloperConnectProto {
               "Connection",
             });
     internal_static_google_cloud_developerconnect_v1_FetchGitHubInstallationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_developerconnect_v1_FetchGitHubInstallationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchGitHubInstallationsResponse_descriptor,
@@ -735,7 +882,7 @@ public final class DeveloperConnectProto {
               "Id", "Name", "Type",
             });
     internal_static_google_cloud_developerconnect_v1_FetchGitRefsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_developerconnect_v1_FetchGitRefsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchGitRefsRequest_descriptor,
@@ -743,7 +890,7 @@ public final class DeveloperConnectProto {
               "GitRepositoryLink", "RefType", "PageSize", "PageToken",
             });
     internal_static_google_cloud_developerconnect_v1_FetchGitRefsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_developerconnect_v1_FetchGitRefsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_developerconnect_v1_FetchGitRefsResponse_descriptor,

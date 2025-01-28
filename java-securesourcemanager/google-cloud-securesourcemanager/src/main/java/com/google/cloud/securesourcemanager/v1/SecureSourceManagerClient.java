@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -313,6 +314,104 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> testIamPermissionsRepoCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateBranchRule</td>
+ *      <td><p> CreateBranchRule creates a branch rule in a given repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createBranchRuleAsync(CreateBranchRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createBranchRuleAsync(RepositoryName parent, BranchRule branchRule, String branchRuleId)
+ *           <li><p> createBranchRuleAsync(String parent, BranchRule branchRule, String branchRuleId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createBranchRuleOperationCallable()
+ *           <li><p> createBranchRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBranchRules</td>
+ *      <td><p> ListBranchRules lists branch rules in a given repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBranchRules(ListBranchRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBranchRules(RepositoryName parent)
+ *           <li><p> listBranchRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBranchRulesPagedCallable()
+ *           <li><p> listBranchRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBranchRule</td>
+ *      <td><p> GetBranchRule gets a branch rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBranchRule(GetBranchRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBranchRule(BranchRuleName name)
+ *           <li><p> getBranchRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBranchRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBranchRule</td>
+ *      <td><p> UpdateBranchRule updates a branch rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBranchRuleAsync(UpdateBranchRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateBranchRuleAsync(BranchRule branchRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBranchRuleOperationCallable()
+ *           <li><p> updateBranchRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBranchRule</td>
+ *      <td><p> DeleteBranchRule deletes a branch rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBranchRuleAsync(DeleteBranchRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteBranchRuleAsync(BranchRuleName name)
+ *           <li><p> deleteBranchRuleAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBranchRuleOperationCallable()
+ *           <li><p> deleteBranchRuleCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1196,6 +1295,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .build();
    *   for (Repository element : secureSourceManagerClient.listRepositories(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1231,6 +1331,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .build();
    *   ApiFuture<Repository> future =
    *       secureSourceManagerClient.listRepositoriesPagedCallable().futureCall(request);
@@ -1267,6 +1368,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .build();
    *   while (true) {
    *     ListRepositoriesResponse response =
@@ -2100,6 +2202,733 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * CreateBranchRule creates a branch rule in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   BranchRule branchRule = BranchRule.newBuilder().build();
+   *   String branchRuleId = "branchRuleId-1052663431";
+   *   BranchRule response =
+   *       secureSourceManagerClient.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @param branchRule
+   * @param branchRuleId
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BranchRule, OperationMetadata> createBranchRuleAsync(
+      RepositoryName parent, BranchRule branchRule, String branchRuleId) {
+    CreateBranchRuleRequest request =
+        CreateBranchRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBranchRule(branchRule)
+            .setBranchRuleId(branchRuleId)
+            .build();
+    return createBranchRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CreateBranchRule creates a branch rule in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   BranchRule branchRule = BranchRule.newBuilder().build();
+   *   String branchRuleId = "branchRuleId-1052663431";
+   *   BranchRule response =
+   *       secureSourceManagerClient.createBranchRuleAsync(parent, branchRule, branchRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @param branchRule
+   * @param branchRuleId
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BranchRule, OperationMetadata> createBranchRuleAsync(
+      String parent, BranchRule branchRule, String branchRuleId) {
+    CreateBranchRuleRequest request =
+        CreateBranchRuleRequest.newBuilder()
+            .setParent(parent)
+            .setBranchRule(branchRule)
+            .setBranchRuleId(branchRuleId)
+            .build();
+    return createBranchRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CreateBranchRule creates a branch rule in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateBranchRuleRequest request =
+   *       CreateBranchRuleRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setBranchRule(BranchRule.newBuilder().build())
+   *           .setBranchRuleId("branchRuleId-1052663431")
+   *           .build();
+   *   BranchRule response = secureSourceManagerClient.createBranchRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BranchRule, OperationMetadata> createBranchRuleAsync(
+      CreateBranchRuleRequest request) {
+    return createBranchRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CreateBranchRule creates a branch rule in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateBranchRuleRequest request =
+   *       CreateBranchRuleRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setBranchRule(BranchRule.newBuilder().build())
+   *           .setBranchRuleId("branchRuleId-1052663431")
+   *           .build();
+   *   OperationFuture<BranchRule, OperationMetadata> future =
+   *       secureSourceManagerClient.createBranchRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BranchRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationCallable() {
+    return stub.createBranchRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CreateBranchRule creates a branch rule in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   CreateBranchRuleRequest request =
+   *       CreateBranchRuleRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setBranchRule(BranchRule.newBuilder().build())
+   *           .setBranchRuleId("branchRuleId-1052663431")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.createBranchRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateBranchRuleRequest, Operation> createBranchRuleCallable() {
+    return stub.createBranchRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ListBranchRules lists branch rules in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (BranchRule element : secureSourceManagerClient.listBranchRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBranchRulesPagedResponse listBranchRules(RepositoryName parent) {
+    ListBranchRulesRequest request =
+        ListBranchRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBranchRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ListBranchRules lists branch rules in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (BranchRule element : secureSourceManagerClient.listBranchRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBranchRulesPagedResponse listBranchRules(String parent) {
+    ListBranchRulesRequest request = ListBranchRulesRequest.newBuilder().setParent(parent).build();
+    return listBranchRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ListBranchRules lists branch rules in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListBranchRulesRequest request =
+   *       ListBranchRulesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BranchRule element : secureSourceManagerClient.listBranchRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBranchRulesPagedResponse listBranchRules(ListBranchRulesRequest request) {
+    return listBranchRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ListBranchRules lists branch rules in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListBranchRulesRequest request =
+   *       ListBranchRulesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BranchRule> future =
+   *       secureSourceManagerClient.listBranchRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BranchRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBranchRulesRequest, ListBranchRulesPagedResponse>
+      listBranchRulesPagedCallable() {
+    return stub.listBranchRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ListBranchRules lists branch rules in a given repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   ListBranchRulesRequest request =
+   *       ListBranchRulesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListBranchRulesResponse response =
+   *         secureSourceManagerClient.listBranchRulesCallable().call(request);
+   *     for (BranchRule element : response.getBranchRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBranchRulesRequest, ListBranchRulesResponse>
+      listBranchRulesCallable() {
+    return stub.listBranchRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * GetBranchRule gets a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   BranchRuleName name =
+   *       BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+   *   BranchRule response = secureSourceManagerClient.getBranchRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the repository to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BranchRule getBranchRule(BranchRuleName name) {
+    GetBranchRuleRequest request =
+        GetBranchRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBranchRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * GetBranchRule gets a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]").toString();
+   *   BranchRule response = secureSourceManagerClient.getBranchRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the repository to retrieve. The format is
+   *     `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BranchRule getBranchRule(String name) {
+    GetBranchRuleRequest request = GetBranchRuleRequest.newBuilder().setName(name).build();
+    return getBranchRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * GetBranchRule gets a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetBranchRuleRequest request =
+   *       GetBranchRuleRequest.newBuilder()
+   *           .setName(
+   *               BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+   *                   .toString())
+   *           .build();
+   *   BranchRule response = secureSourceManagerClient.getBranchRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BranchRule getBranchRule(GetBranchRuleRequest request) {
+    return getBranchRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * GetBranchRule gets a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   GetBranchRuleRequest request =
+   *       GetBranchRuleRequest.newBuilder()
+   *           .setName(
+   *               BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<BranchRule> future =
+   *       secureSourceManagerClient.getBranchRuleCallable().futureCall(request);
+   *   // Do something.
+   *   BranchRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBranchRuleRequest, BranchRule> getBranchRuleCallable() {
+    return stub.getBranchRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * UpdateBranchRule updates a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   BranchRule branchRule = BranchRule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   BranchRule response =
+   *       secureSourceManagerClient.updateBranchRuleAsync(branchRule, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param branchRule
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     branchRule resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. The
+   *     special value "&#42;" means full replacement.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BranchRule, OperationMetadata> updateBranchRuleAsync(
+      BranchRule branchRule, FieldMask updateMask) {
+    UpdateBranchRuleRequest request =
+        UpdateBranchRuleRequest.newBuilder()
+            .setBranchRule(branchRule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateBranchRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * UpdateBranchRule updates a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateBranchRuleRequest request =
+   *       UpdateBranchRuleRequest.newBuilder()
+   *           .setBranchRule(BranchRule.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   BranchRule response = secureSourceManagerClient.updateBranchRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BranchRule, OperationMetadata> updateBranchRuleAsync(
+      UpdateBranchRuleRequest request) {
+    return updateBranchRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * UpdateBranchRule updates a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateBranchRuleRequest request =
+   *       UpdateBranchRuleRequest.newBuilder()
+   *           .setBranchRule(BranchRule.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BranchRule, OperationMetadata> future =
+   *       secureSourceManagerClient.updateBranchRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BranchRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationCallable() {
+    return stub.updateBranchRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * UpdateBranchRule updates a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   UpdateBranchRuleRequest request =
+   *       UpdateBranchRuleRequest.newBuilder()
+   *           .setBranchRule(BranchRule.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.updateBranchRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBranchRuleRequest, Operation> updateBranchRuleCallable() {
+    return stub.updateBranchRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * DeleteBranchRule deletes a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   BranchRuleName name =
+   *       BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]");
+   *   secureSourceManagerClient.deleteBranchRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBranchRuleAsync(
+      BranchRuleName name) {
+    DeleteBranchRuleRequest request =
+        DeleteBranchRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteBranchRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * DeleteBranchRule deletes a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   String name =
+   *       BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]").toString();
+   *   secureSourceManagerClient.deleteBranchRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBranchRuleAsync(String name) {
+    DeleteBranchRuleRequest request = DeleteBranchRuleRequest.newBuilder().setName(name).build();
+    return deleteBranchRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * DeleteBranchRule deletes a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteBranchRuleRequest request =
+   *       DeleteBranchRuleRequest.newBuilder()
+   *           .setName(
+   *               BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+   *                   .toString())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   secureSourceManagerClient.deleteBranchRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBranchRuleAsync(
+      DeleteBranchRuleRequest request) {
+    return deleteBranchRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * DeleteBranchRule deletes a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteBranchRuleRequest request =
+   *       DeleteBranchRuleRequest.newBuilder()
+   *           .setName(
+   *               BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+   *                   .toString())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       secureSourceManagerClient.deleteBranchRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationCallable() {
+    return stub.deleteBranchRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * DeleteBranchRule deletes a branch rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   DeleteBranchRuleRequest request =
+   *       DeleteBranchRuleRequest.newBuilder()
+   *           .setName(
+   *               BranchRuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[BRANCH_RULE]")
+   *                   .toString())
+   *           .setAllowMissing(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       secureSourceManagerClient.deleteBranchRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBranchRuleRequest, Operation> deleteBranchRuleCallable() {
+    return stub.deleteBranchRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -2628,6 +3457,83 @@ public class SecureSourceManagerClient implements BackgroundResource {
     protected ListRepositoriesFixedSizeCollection createCollection(
         List<ListRepositoriesPage> pages, int collectionSize) {
       return new ListRepositoriesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBranchRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListBranchRulesRequest,
+          ListBranchRulesResponse,
+          BranchRule,
+          ListBranchRulesPage,
+          ListBranchRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListBranchRulesPagedResponse> createAsync(
+        PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
+        ApiFuture<ListBranchRulesResponse> futureResponse) {
+      ApiFuture<ListBranchRulesPage> futurePage =
+          ListBranchRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBranchRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBranchRulesPagedResponse(ListBranchRulesPage page) {
+      super(page, ListBranchRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBranchRulesPage
+      extends AbstractPage<
+          ListBranchRulesRequest, ListBranchRulesResponse, BranchRule, ListBranchRulesPage> {
+
+    private ListBranchRulesPage(
+        PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
+        ListBranchRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListBranchRulesPage createEmptyPage() {
+      return new ListBranchRulesPage(null, null);
+    }
+
+    @Override
+    protected ListBranchRulesPage createPage(
+        PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
+        ListBranchRulesResponse response) {
+      return new ListBranchRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBranchRulesPage> createPageAsync(
+        PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> context,
+        ApiFuture<ListBranchRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBranchRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBranchRulesRequest,
+          ListBranchRulesResponse,
+          BranchRule,
+          ListBranchRulesPage,
+          ListBranchRulesFixedSizeCollection> {
+
+    private ListBranchRulesFixedSizeCollection(
+        List<ListBranchRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBranchRulesFixedSizeCollection createEmptyCollection() {
+      return new ListBranchRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBranchRulesFixedSizeCollection createCollection(
+        List<ListBranchRulesPage> pages, int collectionSize) {
+      return new ListBranchRulesFixedSizeCollection(pages, collectionSize);
     }
   }
 

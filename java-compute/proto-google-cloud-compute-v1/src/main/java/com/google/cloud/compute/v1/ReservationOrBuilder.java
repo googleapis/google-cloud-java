@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -540,7 +540,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -553,7 +553,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -566,7 +566,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

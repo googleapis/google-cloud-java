@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ import com.google.cloud.datastream.v1.LookupStreamObjectRequest;
 import com.google.cloud.datastream.v1.OperationMetadata;
 import com.google.cloud.datastream.v1.PrivateConnection;
 import com.google.cloud.datastream.v1.Route;
+import com.google.cloud.datastream.v1.RunStreamRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobResponse;
 import com.google.cloud.datastream.v1.StopBackfillJobRequest;
@@ -184,6 +185,15 @@ public abstract class DatastreamStub implements BackgroundResource {
 
   public UnaryCallable<DeleteStreamRequest, Operation> deleteStreamCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteStreamCallable()");
+  }
+
+  public OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: runStreamOperationCallable()");
+  }
+
+  public UnaryCallable<RunStreamRequest, Operation> runStreamCallable() {
+    throw new UnsupportedOperationException("Not implemented: runStreamCallable()");
   }
 
   public UnaryCallable<GetStreamObjectRequest, StreamObject> getStreamObjectCallable() {

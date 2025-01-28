@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,12 @@ package com.google.cloud.eventarc.v1;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListGoogleApiSourcesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusesPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListPipelinesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -123,6 +128,8 @@ public class EventarcClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockEventarc.addResponse(expectedResponse);
@@ -172,6 +179,8 @@ public class EventarcClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockEventarc.addResponse(expectedResponse);
@@ -309,6 +318,8 @@ public class EventarcClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -372,6 +383,8 @@ public class EventarcClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -435,6 +448,8 @@ public class EventarcClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -498,6 +513,8 @@ public class EventarcClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -558,6 +575,8 @@ public class EventarcClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -614,6 +633,7 @@ public class EventarcClientTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -658,6 +678,7 @@ public class EventarcClientTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -790,6 +811,7 @@ public class EventarcClientTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -848,6 +870,7 @@ public class EventarcClientTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -906,6 +929,7 @@ public class EventarcClientTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -961,6 +985,7 @@ public class EventarcClientTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1013,6 +1038,7 @@ public class EventarcClientTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1762,6 +1788,2084 @@ public class EventarcClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+
+    MessageBus actualResponse = client.getMessageBus(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMessageBusRequest actualRequest = ((GetMessageBusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMessageBusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+      client.getMessageBus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMessageBusTest2() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    MessageBus actualResponse = client.getMessageBus(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMessageBusRequest actualRequest = ((GetMessageBusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMessageBusExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMessageBus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusesTest() throws Exception {
+    MessageBus responsesElement = MessageBus.newBuilder().build();
+    ListMessageBusesResponse expectedResponse =
+        ListMessageBusesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMessageBuses(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListMessageBusesPagedResponse pagedListResponse = client.listMessageBuses(parent);
+
+    List<MessageBus> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMessageBusesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMessageBusesRequest actualRequest = ((ListMessageBusesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMessageBusesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listMessageBuses(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusesTest2() throws Exception {
+    MessageBus responsesElement = MessageBus.newBuilder().build();
+    ListMessageBusesResponse expectedResponse =
+        ListMessageBusesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMessageBuses(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMessageBusesPagedResponse pagedListResponse = client.listMessageBuses(parent);
+
+    List<MessageBus> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMessageBusesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMessageBusesRequest actualRequest = ((ListMessageBusesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMessageBusesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMessageBuses(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsTest() throws Exception {
+    String responsesElement = "responsesElement-318365110";
+    ListMessageBusEnrollmentsResponse expectedResponse =
+        ListMessageBusEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    MessageBusName parent = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+
+    ListMessageBusEnrollmentsPagedResponse pagedListResponse =
+        client.listMessageBusEnrollments(parent);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMessageBusEnrollmentsRequest actualRequest =
+        ((ListMessageBusEnrollmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      MessageBusName parent = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+      client.listMessageBusEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsTest2() throws Exception {
+    String responsesElement = "responsesElement-318365110";
+    ListMessageBusEnrollmentsResponse expectedResponse =
+        ListMessageBusEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMessageBusEnrollmentsPagedResponse pagedListResponse =
+        client.listMessageBusEnrollments(parent);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMessageBusEnrollmentsRequest actualRequest =
+        ((ListMessageBusEnrollmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMessageBusEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MessageBus messageBus = MessageBus.newBuilder().build();
+    String messageBusId = "messageBusId-1312824332";
+
+    MessageBus actualResponse =
+        client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMessageBusRequest actualRequest = ((CreateMessageBusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(messageBus, actualRequest.getMessageBus());
+    Assert.assertEquals(messageBusId, actualRequest.getMessageBusId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMessageBusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MessageBus messageBus = MessageBus.newBuilder().build();
+      String messageBusId = "messageBusId-1312824332";
+      client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMessageBusTest2() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    MessageBus messageBus = MessageBus.newBuilder().build();
+    String messageBusId = "messageBusId-1312824332";
+
+    MessageBus actualResponse =
+        client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMessageBusRequest actualRequest = ((CreateMessageBusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(messageBus, actualRequest.getMessageBus());
+    Assert.assertEquals(messageBusId, actualRequest.getMessageBusId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMessageBusExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MessageBus messageBus = MessageBus.newBuilder().build();
+      String messageBusId = "messageBusId-1312824332";
+      client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    MessageBus messageBus = MessageBus.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MessageBus actualResponse = client.updateMessageBusAsync(messageBus, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMessageBusRequest actualRequest = ((UpdateMessageBusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(messageBus, actualRequest.getMessageBus());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateMessageBusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      MessageBus messageBus = MessageBus.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMessageBusAsync(messageBus, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+    String etag = "etag3123477";
+
+    MessageBus actualResponse = client.deleteMessageBusAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMessageBusRequest actualRequest = ((DeleteMessageBusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMessageBusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+      String etag = "etag3123477";
+      client.deleteMessageBusAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteMessageBusTest2() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String etag = "etag3123477";
+
+    MessageBus actualResponse = client.deleteMessageBusAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMessageBusRequest actualRequest = ((DeleteMessageBusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMessageBusExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String etag = "etag3123477";
+      client.deleteMessageBusAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+
+    Enrollment actualResponse = client.getEnrollment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEnrollmentRequest actualRequest = ((GetEnrollmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEnrollmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+      client.getEnrollment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnrollmentTest2() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Enrollment actualResponse = client.getEnrollment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEnrollmentRequest actualRequest = ((GetEnrollmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEnrollmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEnrollment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEnrollmentsTest() throws Exception {
+    Enrollment responsesElement = Enrollment.newBuilder().build();
+    ListEnrollmentsResponse expectedResponse =
+        ListEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListEnrollmentsPagedResponse pagedListResponse = client.listEnrollments(parent);
+
+    List<Enrollment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEnrollmentsRequest actualRequest = ((ListEnrollmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEnrollmentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEnrollmentsTest2() throws Exception {
+    Enrollment responsesElement = Enrollment.newBuilder().build();
+    ListEnrollmentsResponse expectedResponse =
+        ListEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEnrollmentsPagedResponse pagedListResponse = client.listEnrollments(parent);
+
+    List<Enrollment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEnrollmentsRequest actualRequest = ((ListEnrollmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEnrollmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Enrollment enrollment = Enrollment.newBuilder().build();
+    String enrollmentId = "enrollmentId-107037889";
+
+    Enrollment actualResponse =
+        client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEnrollmentRequest actualRequest = ((CreateEnrollmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(enrollment, actualRequest.getEnrollment());
+    Assert.assertEquals(enrollmentId, actualRequest.getEnrollmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEnrollmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Enrollment enrollment = Enrollment.newBuilder().build();
+      String enrollmentId = "enrollmentId-107037889";
+      client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createEnrollmentTest2() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Enrollment enrollment = Enrollment.newBuilder().build();
+    String enrollmentId = "enrollmentId-107037889";
+
+    Enrollment actualResponse =
+        client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEnrollmentRequest actualRequest = ((CreateEnrollmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(enrollment, actualRequest.getEnrollment());
+    Assert.assertEquals(enrollmentId, actualRequest.getEnrollmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEnrollmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Enrollment enrollment = Enrollment.newBuilder().build();
+      String enrollmentId = "enrollmentId-107037889";
+      client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    Enrollment enrollment = Enrollment.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Enrollment actualResponse = client.updateEnrollmentAsync(enrollment, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEnrollmentRequest actualRequest = ((UpdateEnrollmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(enrollment, actualRequest.getEnrollment());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEnrollmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      Enrollment enrollment = Enrollment.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEnrollmentAsync(enrollment, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+    String etag = "etag3123477";
+
+    Enrollment actualResponse = client.deleteEnrollmentAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEnrollmentRequest actualRequest = ((DeleteEnrollmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEnrollmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+      String etag = "etag3123477";
+      client.deleteEnrollmentAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteEnrollmentTest2() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String etag = "etag3123477";
+
+    Enrollment actualResponse = client.deleteEnrollmentAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEnrollmentRequest actualRequest = ((DeleteEnrollmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEnrollmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String etag = "etag3123477";
+      client.deleteEnrollmentAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getPipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+
+    Pipeline actualResponse = client.getPipeline(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPipelineRequest actualRequest = ((GetPipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPipelineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+      client.getPipeline(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPipelineTest2() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Pipeline actualResponse = client.getPipeline(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPipelineRequest actualRequest = ((GetPipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPipelineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPipeline(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPipelinesTest() throws Exception {
+    Pipeline responsesElement = Pipeline.newBuilder().build();
+    ListPipelinesResponse expectedResponse =
+        ListPipelinesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPipelines(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPipelinesPagedResponse pagedListResponse = client.listPipelines(parent);
+
+    List<Pipeline> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPipelinesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPipelinesRequest actualRequest = ((ListPipelinesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPipelinesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPipelines(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPipelinesTest2() throws Exception {
+    Pipeline responsesElement = Pipeline.newBuilder().build();
+    ListPipelinesResponse expectedResponse =
+        ListPipelinesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPipelines(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPipelinesPagedResponse pagedListResponse = client.listPipelines(parent);
+
+    List<Pipeline> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPipelinesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPipelinesRequest actualRequest = ((ListPipelinesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPipelinesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPipelines(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createPipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Pipeline pipeline = Pipeline.newBuilder().build();
+    String pipelineId = "pipelineId-1076718755";
+
+    Pipeline actualResponse = client.createPipelineAsync(parent, pipeline, pipelineId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePipelineRequest actualRequest = ((CreatePipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(pipeline, actualRequest.getPipeline());
+    Assert.assertEquals(pipelineId, actualRequest.getPipelineId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPipelineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Pipeline pipeline = Pipeline.newBuilder().build();
+      String pipelineId = "pipelineId-1076718755";
+      client.createPipelineAsync(parent, pipeline, pipelineId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createPipelineTest2() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Pipeline pipeline = Pipeline.newBuilder().build();
+    String pipelineId = "pipelineId-1076718755";
+
+    Pipeline actualResponse = client.createPipelineAsync(parent, pipeline, pipelineId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePipelineRequest actualRequest = ((CreatePipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(pipeline, actualRequest.getPipeline());
+    Assert.assertEquals(pipelineId, actualRequest.getPipelineId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPipelineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Pipeline pipeline = Pipeline.newBuilder().build();
+      String pipelineId = "pipelineId-1076718755";
+      client.createPipelineAsync(parent, pipeline, pipelineId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updatePipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updatePipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    Pipeline pipeline = Pipeline.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Pipeline actualResponse = client.updatePipelineAsync(pipeline, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdatePipelineRequest actualRequest = ((UpdatePipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(pipeline, actualRequest.getPipeline());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePipelineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      Pipeline pipeline = Pipeline.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePipelineAsync(pipeline, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deletePipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+    String etag = "etag3123477";
+
+    Pipeline actualResponse = client.deletePipelineAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePipelineRequest actualRequest = ((DeletePipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePipelineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+      String etag = "etag3123477";
+      client.deletePipelineAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deletePipelineTest2() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String etag = "etag3123477";
+
+    Pipeline actualResponse = client.deletePipelineAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePipelineRequest actualRequest = ((DeletePipelineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePipelineExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String etag = "etag3123477";
+      client.deletePipelineAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    GoogleApiSourceName name =
+        GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+
+    GoogleApiSource actualResponse = client.getGoogleApiSource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoogleApiSourceRequest actualRequest = ((GetGoogleApiSourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoogleApiSourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      GoogleApiSourceName name =
+          GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+      client.getGoogleApiSource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoogleApiSourceTest2() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoogleApiSource actualResponse = client.getGoogleApiSource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoogleApiSourceRequest actualRequest = ((GetGoogleApiSourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoogleApiSourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoogleApiSource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoogleApiSourcesTest() throws Exception {
+    GoogleApiSource responsesElement = GoogleApiSource.newBuilder().build();
+    ListGoogleApiSourcesResponse expectedResponse =
+        ListGoogleApiSourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoogleApiSources(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoogleApiSourcesPagedResponse pagedListResponse = client.listGoogleApiSources(parent);
+
+    List<GoogleApiSource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoogleApiSourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoogleApiSourcesRequest actualRequest =
+        ((ListGoogleApiSourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoogleApiSourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoogleApiSources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoogleApiSourcesTest2() throws Exception {
+    GoogleApiSource responsesElement = GoogleApiSource.newBuilder().build();
+    ListGoogleApiSourcesResponse expectedResponse =
+        ListGoogleApiSourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoogleApiSources(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoogleApiSourcesPagedResponse pagedListResponse = client.listGoogleApiSources(parent);
+
+    List<GoogleApiSource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoogleApiSourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoogleApiSourcesRequest actualRequest =
+        ((ListGoogleApiSourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoogleApiSourcesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoogleApiSources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+    String googleApiSourceId = "googleApiSourceId-1417062697";
+
+    GoogleApiSource actualResponse =
+        client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoogleApiSourceRequest actualRequest =
+        ((CreateGoogleApiSourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(googleApiSource, actualRequest.getGoogleApiSource());
+    Assert.assertEquals(googleApiSourceId, actualRequest.getGoogleApiSourceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoogleApiSourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+      String googleApiSourceId = "googleApiSourceId-1417062697";
+      client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createGoogleApiSourceTest2() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+    String googleApiSourceId = "googleApiSourceId-1417062697";
+
+    GoogleApiSource actualResponse =
+        client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoogleApiSourceRequest actualRequest =
+        ((CreateGoogleApiSourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(googleApiSource, actualRequest.getGoogleApiSource());
+    Assert.assertEquals(googleApiSourceId, actualRequest.getGoogleApiSourceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoogleApiSourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+      String googleApiSourceId = "googleApiSourceId-1417062697";
+      client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GoogleApiSource actualResponse =
+        client.updateGoogleApiSourceAsync(googleApiSource, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGoogleApiSourceRequest actualRequest =
+        ((UpdateGoogleApiSourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(googleApiSource, actualRequest.getGoogleApiSource());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGoogleApiSourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGoogleApiSourceAsync(googleApiSource, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    GoogleApiSourceName name =
+        GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+    String etag = "etag3123477";
+
+    GoogleApiSource actualResponse = client.deleteGoogleApiSourceAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoogleApiSourceRequest actualRequest =
+        ((DeleteGoogleApiSourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoogleApiSourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      GoogleApiSourceName name =
+          GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+      String etag = "etag3123477";
+      client.deleteGoogleApiSourceAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoogleApiSourceTest2() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEventarc.addResponse(resultOperation);
+
+    String name = "name3373707";
+    String etag = "etag3123477";
+
+    GoogleApiSource actualResponse = client.deleteGoogleApiSourceAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoogleApiSourceRequest actualRequest =
+        ((DeleteGoogleApiSourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(etag, actualRequest.getEtag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoogleApiSourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String etag = "etag3123477";
+      client.deleteGoogleApiSourceAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

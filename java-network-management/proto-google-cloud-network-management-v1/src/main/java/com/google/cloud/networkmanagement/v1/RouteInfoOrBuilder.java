@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,10 +128,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a route.
-   * Dynamic, peering static and peering dynamic routes do not have an URI.
-   * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have an URI.
+   * URI of a route (if applicable).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -143,10 +140,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a route.
-   * Dynamic, peering static and peering dynamic routes do not have an URI.
-   * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have an URI.
+   * URI of a route (if applicable).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -154,6 +148,31 @@ public interface RouteInfoOrBuilder
    * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Region of the route (if applicable).
+   * </pre>
+   *
+   * <code>string region = 19;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   *
+   *
+   * <pre>
+   * Region of the route (if applicable).
+   * </pre>
+   *
+   * <code>string region = 19;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
    *
@@ -545,4 +564,90 @@ public interface RouteInfoOrBuilder
    * @return The bytes for nccSpokeUri.
    */
   com.google.protobuf.ByteString getNccSpokeUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * the corresponding IP prefix.
+   * </pre>
+   *
+   * <code>optional string advertised_route_source_router_uri = 17;</code>
+   *
+   * @return Whether the advertisedRouteSourceRouterUri field is set.
+   */
+  boolean hasAdvertisedRouteSourceRouterUri();
+  /**
+   *
+   *
+   * <pre>
+   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * the corresponding IP prefix.
+   * </pre>
+   *
+   * <code>optional string advertised_route_source_router_uri = 17;</code>
+   *
+   * @return The advertisedRouteSourceRouterUri.
+   */
+  java.lang.String getAdvertisedRouteSourceRouterUri();
+  /**
+   *
+   *
+   * <pre>
+   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * the corresponding IP prefix.
+   * </pre>
+   *
+   * <code>optional string advertised_route_source_router_uri = 17;</code>
+   *
+   * @return The bytes for advertisedRouteSourceRouterUri.
+   */
+  com.google.protobuf.ByteString getAdvertisedRouteSourceRouterUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+   * the advertised prefix is advertised through, or URI of the source peered
+   * network.
+   * </pre>
+   *
+   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   *
+   * @return Whether the advertisedRouteNextHopUri field is set.
+   */
+  boolean hasAdvertisedRouteNextHopUri();
+  /**
+   *
+   *
+   * <pre>
+   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+   * the advertised prefix is advertised through, or URI of the source peered
+   * network.
+   * </pre>
+   *
+   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   *
+   * @return The advertisedRouteNextHopUri.
+   */
+  java.lang.String getAdvertisedRouteNextHopUri();
+  /**
+   *
+   *
+   * <pre>
+   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
+   * the advertised prefix is advertised through, or URI of the source peered
+   * network.
+   * </pre>
+   *
+   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   *
+   * @return The bytes for advertisedRouteNextHopUri.
+   */
+  com.google.protobuf.ByteString getAdvertisedRouteNextHopUriBytes();
 }

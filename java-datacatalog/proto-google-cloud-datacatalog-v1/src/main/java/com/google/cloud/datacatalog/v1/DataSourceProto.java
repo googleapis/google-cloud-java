@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,13 @@ public final class DataSourceProto {
           + "vice\022\027\n\023SERVICE_UNSPECIFIED\020\000\022\021\n\rCLOUD_S"
           + "TORAGE\020\001\022\014\n\010BIGQUERY\020\002B\014\n\nproperties\"<\n\021"
           + "StorageProperties\022\024\n\014file_pattern\030\001 \003(\t\022"
-          + "\021\n\tfile_type\030\002 \001(\tB\327\001\n\037com.google.cloud."
+          + "\021\n\tfile_type\030\002 \001(\tB\324\001\n\037com.google.cloud."
           + "datacatalog.v1B\017DataSourceProtoP\001ZAcloud"
           + ".google.com/go/datacatalog/apiv1/datacat"
-          + "alogpb;datacatalogpb\370\001\001\252\002\033Google.Cloud.D"
-          + "ataCatalog.V1\312\002\033Google\\Cloud\\DataCatalog"
-          + "\\V1\352\002\036Google::Cloud::DataCatalog::V1b\006pr"
-          + "oto3"
+          + "alogpb;datacatalogpb\252\002\033Google.Cloud.Data"
+          + "Catalog.V1\312\002\033Google\\Cloud\\DataCatalog\\V1"
+          + "\352\002\036Google::Cloud::DataCatalog::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

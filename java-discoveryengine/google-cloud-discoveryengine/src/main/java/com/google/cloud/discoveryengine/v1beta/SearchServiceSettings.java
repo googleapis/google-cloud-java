@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.discoveryengine.v1beta;
 
+import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchLitePagedResponse;
 import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -92,6 +93,12 @@ public class SearchServiceSettings extends ClientSettings<SearchServiceSettings>
   /** Returns the object with the settings used for calls to search. */
   public PagedCallSettings<SearchRequest, SearchResponse, SearchPagedResponse> searchSettings() {
     return ((SearchServiceStubSettings) getStubSettings()).searchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchLite. */
+  public PagedCallSettings<SearchRequest, SearchResponse, SearchLitePagedResponse>
+      searchLiteSettings() {
+    return ((SearchServiceStubSettings) getStubSettings()).searchLiteSettings();
   }
 
   public static final SearchServiceSettings create(SearchServiceStubSettings stub)
@@ -210,6 +217,12 @@ public class SearchServiceSettings extends ClientSettings<SearchServiceSettings>
     public PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchPagedResponse>
         searchSettings() {
       return getStubSettingsBuilder().searchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchLite. */
+    public PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchLitePagedResponse>
+        searchLiteSettings() {
+      return getStubSettingsBuilder().searchLiteSettings();
     }
 
     @Override

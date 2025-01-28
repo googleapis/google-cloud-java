@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,12 @@ public interface ReactionOrBuilder
    *
    *
    * <pre>
-   * The resource name of the reaction.
+   * Identifier. The resource name of the reaction.
    *
    * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface ReactionOrBuilder
    *
    *
    * <pre>
-   * The resource name of the reaction.
+   * Identifier. The resource name of the reaction.
    *
    * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -92,10 +92,10 @@ public interface ReactionOrBuilder
    *
    *
    * <pre>
-   * The emoji used in the reaction.
+   * Required. The emoji used in the reaction.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 3;</code>
+   * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the emoji field is set.
    */
@@ -104,10 +104,10 @@ public interface ReactionOrBuilder
    *
    *
    * <pre>
-   * The emoji used in the reaction.
+   * Required. The emoji used in the reaction.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 3;</code>
+   * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The emoji.
    */
@@ -116,10 +116,10 @@ public interface ReactionOrBuilder
    *
    *
    * <pre>
-   * The emoji used in the reaction.
+   * Required. The emoji used in the reaction.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 3;</code>
+   * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.chat.v1.EmojiOrBuilder getEmojiOrBuilder();
 }

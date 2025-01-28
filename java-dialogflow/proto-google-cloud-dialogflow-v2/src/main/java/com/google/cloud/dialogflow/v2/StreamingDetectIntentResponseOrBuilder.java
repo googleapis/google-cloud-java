@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,7 +219,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -232,7 +233,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>
@@ -245,7 +247,8 @@ public interface StreamingDetectIntentResponseOrBuilder
    *
    * <pre>
    * Debugging info that would get populated when
-   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * [StreamingDetectIntentRequest.enable_debugging_info][google.cloud.dialogflow.v2.StreamingDetectIntentRequest.enable_debugging_info]
+   * is set to true.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo debugging_info = 8;</code>

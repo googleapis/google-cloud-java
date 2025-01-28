@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,10 @@ public final class PackageProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_Package_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_Package_AnnotationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_Package_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_ListPackagesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_ListPackagesRequest_fieldAccessorTable;
@@ -48,6 +52,10 @@ public final class PackageProto {
       internal_static_google_devtools_artifactregistry_v1_DeletePackageRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_DeletePackageRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_UpdatePackageRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_UpdatePackageRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -60,32 +68,41 @@ public final class PackageProto {
       "\n1google/devtools/artifactregistry/v1/pa"
           + "ckage.proto\022#google.devtools.artifactreg"
           + "istry.v1\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032\037google/pro"
-          + "tobuf/timestamp.proto\"\224\002\n\007Package\022\014\n\004nam"
-          + "e\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022/\n\013create_"
-          + "time\030\005 \001(\0132\032.google.protobuf.Timestamp\022/"
-          + "\n\013update_time\030\006 \001(\0132\032.google.protobuf.Ti"
-          + "mestamp:\202\001\352A\177\n\'artifactregistry.googleap"
-          + "is.com/Package\022Tprojects/{project}/locat"
-          + "ions/{location}/repositories/{repository"
-          + "}/packages/{package}\"}\n\023ListPackagesRequ"
-          + "est\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'artifactreg"
-          + "istry.googleapis.com/Package\022\021\n\tpage_siz"
-          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"o\n\024ListPacka"
-          + "gesResponse\022>\n\010packages\030\001 \003(\0132,.google.d"
-          + "evtools.artifactregistry.v1.Package\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t\"R\n\021GetPackageReques"
-          + "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'artifactregistr"
-          + "y.googleapis.com/Package\"U\n\024DeletePackag"
-          + "eRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'artifact"
-          + "registry.googleapis.com/PackageB\367\001\n\'com."
-          + "google.devtools.artifactregistry.v1B\014Pac"
-          + "kageProtoP\001ZPcloud.google.com/go/artifac"
-          + "tregistry/apiv1/artifactregistrypb;artif"
-          + "actregistrypb\252\002 Google.Cloud.ArtifactReg"
-          + "istry.V1\312\002 Google\\Cloud\\ArtifactRegistry"
-          + "\\V1\352\002#Google::Cloud::ArtifactRegistry::V"
-          + "1b\006proto3"
+          + "o\032\031google/api/resource.proto\032 google/pro"
+          + "tobuf/field_mask.proto\032\037google/protobuf/"
+          + "timestamp.proto\"\241\003\n\007Package\022\014\n\004name\030\001 \001("
+          + "\t\022\024\n\014display_name\030\002 \001(\t\022/\n\013create_time\030\005"
+          + " \001(\0132\032.google.protobuf.Timestamp\022/\n\013upda"
+          + "te_time\030\006 \001(\0132\032.google.protobuf.Timestam"
+          + "p\022W\n\013annotations\030\007 \003(\0132=.google.devtools"
+          + ".artifactregistry.v1.Package.Annotations"
+          + "EntryB\003\340A\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\202\001\352A\177\n\'artifactre"
+          + "gistry.googleapis.com/Package\022Tprojects/"
+          + "{project}/locations/{location}/repositor"
+          + "ies/{repository}/packages/{package}\"\251\001\n\023"
+          + "ListPackagesRequest\022?\n\006parent\030\001 \001(\tB/\340A\002"
+          + "\372A)\022\'artifactregistry.googleapis.com/Pac"
+          + "kage\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
+          + "\001(\t\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001"
+          + "(\tB\003\340A\001\"o\n\024ListPackagesResponse\022>\n\010packa"
+          + "ges\030\001 \003(\0132,.google.devtools.artifactregi"
+          + "stry.v1.Package\022\027\n\017next_page_token\030\002 \001(\t"
+          + "\"R\n\021GetPackageRequest\022=\n\004name\030\001 \001(\tB/\340A\002"
+          + "\372A)\n\'artifactregistry.googleapis.com/Pac"
+          + "kage\"U\n\024DeletePackageRequest\022=\n\004name\030\001 \001"
+          + "(\tB/\340A\002\372A)\n\'artifactregistry.googleapis."
+          + "com/Package\"\206\001\n\024UpdatePackageRequest\022=\n\007"
+          + "package\030\001 \001(\0132,.google.devtools.artifact"
+          + "registry.v1.Package\022/\n\013update_mask\030\002 \001(\013"
+          + "2\032.google.protobuf.FieldMaskB\367\001\n\'com.goo"
+          + "gle.devtools.artifactregistry.v1B\014Packag"
+          + "eProtoP\001ZPcloud.google.com/go/artifactre"
+          + "gistry/apiv1/artifactregistrypb;artifact"
+          + "registrypb\252\002 Google.Cloud.ArtifactRegist"
+          + "ry.V1\312\002 Google\\Cloud\\ArtifactRegistry\\V1"
+          + "\352\002#Google::Cloud::ArtifactRegistry::V1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -93,6 +110,7 @@ public final class PackageProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_devtools_artifactregistry_v1_Package_descriptor =
@@ -101,7 +119,17 @@ public final class PackageProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_Package_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "CreateTime", "UpdateTime",
+              "Name", "DisplayName", "CreateTime", "UpdateTime", "Annotations",
+            });
+    internal_static_google_devtools_artifactregistry_v1_Package_AnnotationsEntry_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_Package_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_artifactregistry_v1_Package_AnnotationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_Package_AnnotationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_devtools_artifactregistry_v1_ListPackagesRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -109,7 +137,7 @@ public final class PackageProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListPackagesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_devtools_artifactregistry_v1_ListPackagesResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -135,6 +163,14 @@ public final class PackageProto {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_devtools_artifactregistry_v1_UpdatePackageRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_devtools_artifactregistry_v1_UpdatePackageRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_UpdatePackageRequest_descriptor,
+            new java.lang.String[] {
+              "Package", "UpdateMask",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -144,6 +180,7 @@ public final class PackageProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

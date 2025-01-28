@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,12 @@ package com.google.cloud.eventarc.v1;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListGoogleApiSourcesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusesPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListPipelinesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -113,6 +118,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -168,6 +175,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -323,6 +332,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -387,6 +398,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -451,6 +464,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -474,6 +489,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -518,6 +535,8 @@ public class EventarcClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setChannel("channel738950403")
               .putAllConditions(new HashMap<String, StateCondition>())
+              .setEventDataContentType("eventDataContentType1497299791")
+              .setSatisfiesPzs(true)
               .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -543,6 +562,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -605,6 +626,8 @@ public class EventarcClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
             .putAllConditions(new HashMap<String, StateCondition>())
+            .setEventDataContentType("eventDataContentType1497299791")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -663,6 +686,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -713,6 +737,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -863,6 +888,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -922,6 +948,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -981,6 +1008,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -999,6 +1027,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1037,6 +1066,7 @@ public class EventarcClientHttpJsonTest {
               .setProvider("provider-987494927")
               .setActivationToken("activationToken1276937859")
               .setCryptoKeyName("cryptoKeyName1447084425")
+              .setSatisfiesPzs(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateChannelAsync(channel, updateMask).get();
@@ -1056,6 +1086,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1111,6 +1142,7 @@ public class EventarcClientHttpJsonTest {
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1939,6 +1971,2333 @@ public class EventarcClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+
+    MessageBus actualResponse = client.getMessageBus(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMessageBusExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+      client.getMessageBus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMessageBusTest2() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-5545/locations/location-5545/messageBuses/messageBuse-5545";
+
+    MessageBus actualResponse = client.getMessageBus(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMessageBusExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-5545/locations/location-5545/messageBuses/messageBuse-5545";
+      client.getMessageBus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusesTest() throws Exception {
+    MessageBus responsesElement = MessageBus.newBuilder().build();
+    ListMessageBusesResponse expectedResponse =
+        ListMessageBusesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMessageBuses(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListMessageBusesPagedResponse pagedListResponse = client.listMessageBuses(parent);
+
+    List<MessageBus> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMessageBusesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMessageBusesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listMessageBuses(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusesTest2() throws Exception {
+    MessageBus responsesElement = MessageBus.newBuilder().build();
+    ListMessageBusesResponse expectedResponse =
+        ListMessageBusesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMessageBuses(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListMessageBusesPagedResponse pagedListResponse = client.listMessageBuses(parent);
+
+    List<MessageBus> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMessageBusesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMessageBusesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listMessageBuses(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsTest() throws Exception {
+    String responsesElement = "responsesElement-318365110";
+    ListMessageBusEnrollmentsResponse expectedResponse =
+        ListMessageBusEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MessageBusName parent = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+
+    ListMessageBusEnrollmentsPagedResponse pagedListResponse =
+        client.listMessageBusEnrollments(parent);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MessageBusName parent = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+      client.listMessageBusEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsTest2() throws Exception {
+    String responsesElement = "responsesElement-318365110";
+    ListMessageBusEnrollmentsResponse expectedResponse =
+        ListMessageBusEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-280/locations/location-280/messageBuses/messageBuse-280";
+
+    ListMessageBusEnrollmentsPagedResponse pagedListResponse =
+        client.listMessageBusEnrollments(parent);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMessageBusEnrollmentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-280/locations/location-280/messageBuses/messageBuse-280";
+      client.listMessageBusEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MessageBus messageBus = MessageBus.newBuilder().build();
+    String messageBusId = "messageBusId-1312824332";
+
+    MessageBus actualResponse =
+        client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMessageBusExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MessageBus messageBus = MessageBus.newBuilder().build();
+      String messageBusId = "messageBusId-1312824332";
+      client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createMessageBusTest2() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    MessageBus messageBus = MessageBus.newBuilder().build();
+    String messageBusId = "messageBusId-1312824332";
+
+    MessageBus actualResponse =
+        client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMessageBusExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      MessageBus messageBus = MessageBus.newBuilder().build();
+      String messageBusId = "messageBusId-1312824332";
+      client.createMessageBusAsync(parent, messageBus, messageBusId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    MessageBus messageBus =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MessageBus actualResponse = client.updateMessageBusAsync(messageBus, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateMessageBusExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MessageBus messageBus =
+          MessageBus.newBuilder()
+              .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+              .setUid("uid115792")
+              .setEtag("etag3123477")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setDisplayName("displayName1714148973")
+              .setCryptoKeyName("cryptoKeyName1447084425")
+              .setLoggingConfig(LoggingConfig.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMessageBusAsync(messageBus, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteMessageBusTest() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+    String etag = "etag3123477";
+
+    MessageBus actualResponse = client.deleteMessageBusAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteMessageBusExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MessageBusName name = MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]");
+      String etag = "etag3123477";
+      client.deleteMessageBusAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteMessageBusTest2() throws Exception {
+    MessageBus expectedResponse =
+        MessageBus.newBuilder()
+            .setName(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMessageBusTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-5545/locations/location-5545/messageBuses/messageBuse-5545";
+    String etag = "etag3123477";
+
+    MessageBus actualResponse = client.deleteMessageBusAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteMessageBusExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-5545/locations/location-5545/messageBuses/messageBuse-5545";
+      String etag = "etag3123477";
+      client.deleteMessageBusAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+
+    Enrollment actualResponse = client.getEnrollment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEnrollmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+      client.getEnrollment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnrollmentTest2() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-603/locations/location-603/enrollments/enrollment-603";
+
+    Enrollment actualResponse = client.getEnrollment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEnrollmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-603/locations/location-603/enrollments/enrollment-603";
+      client.getEnrollment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEnrollmentsTest() throws Exception {
+    Enrollment responsesElement = Enrollment.newBuilder().build();
+    ListEnrollmentsResponse expectedResponse =
+        ListEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListEnrollmentsPagedResponse pagedListResponse = client.listEnrollments(parent);
+
+    List<Enrollment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEnrollmentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEnrollmentsTest2() throws Exception {
+    Enrollment responsesElement = Enrollment.newBuilder().build();
+    ListEnrollmentsResponse expectedResponse =
+        ListEnrollmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEnrollments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListEnrollmentsPagedResponse pagedListResponse = client.listEnrollments(parent);
+
+    List<Enrollment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEnrollmentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEnrollmentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listEnrollments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Enrollment enrollment = Enrollment.newBuilder().build();
+    String enrollmentId = "enrollmentId-107037889";
+
+    Enrollment actualResponse =
+        client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEnrollmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Enrollment enrollment = Enrollment.newBuilder().build();
+      String enrollmentId = "enrollmentId-107037889";
+      client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createEnrollmentTest2() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Enrollment enrollment = Enrollment.newBuilder().build();
+    String enrollmentId = "enrollmentId-107037889";
+
+    Enrollment actualResponse =
+        client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEnrollmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Enrollment enrollment = Enrollment.newBuilder().build();
+      String enrollmentId = "enrollmentId-107037889";
+      client.createEnrollmentAsync(parent, enrollment, enrollmentId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Enrollment enrollment =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Enrollment actualResponse = client.updateEnrollmentAsync(enrollment, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateEnrollmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Enrollment enrollment =
+          Enrollment.newBuilder()
+              .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+              .setUid("uid115792")
+              .setEtag("etag3123477")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setDisplayName("displayName1714148973")
+              .setCelMatch("celMatch-945813605")
+              .setMessageBus(
+                  MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+              .setDestination("destination-1429847026")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEnrollmentAsync(enrollment, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteEnrollmentTest() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+    String etag = "etag3123477";
+
+    Enrollment actualResponse = client.deleteEnrollmentAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEnrollmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnrollmentName name = EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]");
+      String etag = "etag3123477";
+      client.deleteEnrollmentAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteEnrollmentTest2() throws Exception {
+    Enrollment expectedResponse =
+        Enrollment.newBuilder()
+            .setName(EnrollmentName.of("[PROJECT]", "[LOCATION]", "[ENROLLMENT]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setCelMatch("celMatch-945813605")
+            .setMessageBus(MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setDestination("destination-1429847026")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteEnrollmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-603/locations/location-603/enrollments/enrollment-603";
+    String etag = "etag3123477";
+
+    Enrollment actualResponse = client.deleteEnrollmentAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEnrollmentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-603/locations/location-603/enrollments/enrollment-603";
+      String etag = "etag3123477";
+      client.deleteEnrollmentAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getPipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+
+    Pipeline actualResponse = client.getPipeline(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPipelineExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+      client.getPipeline(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPipelineTest2() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-4265/locations/location-4265/pipelines/pipeline-4265";
+
+    Pipeline actualResponse = client.getPipeline(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getPipelineExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4265/locations/location-4265/pipelines/pipeline-4265";
+      client.getPipeline(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPipelinesTest() throws Exception {
+    Pipeline responsesElement = Pipeline.newBuilder().build();
+    ListPipelinesResponse expectedResponse =
+        ListPipelinesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPipelines(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPipelinesPagedResponse pagedListResponse = client.listPipelines(parent);
+
+    List<Pipeline> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPipelinesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPipelinesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPipelines(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPipelinesTest2() throws Exception {
+    Pipeline responsesElement = Pipeline.newBuilder().build();
+    ListPipelinesResponse expectedResponse =
+        ListPipelinesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPipelines(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListPipelinesPagedResponse pagedListResponse = client.listPipelines(parent);
+
+    List<Pipeline> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPipelinesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listPipelinesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listPipelines(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createPipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Pipeline pipeline = Pipeline.newBuilder().build();
+    String pipelineId = "pipelineId-1076718755";
+
+    Pipeline actualResponse = client.createPipelineAsync(parent, pipeline, pipelineId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createPipelineExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Pipeline pipeline = Pipeline.newBuilder().build();
+      String pipelineId = "pipelineId-1076718755";
+      client.createPipelineAsync(parent, pipeline, pipelineId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createPipelineTest2() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Pipeline pipeline = Pipeline.newBuilder().build();
+    String pipelineId = "pipelineId-1076718755";
+
+    Pipeline actualResponse = client.createPipelineAsync(parent, pipeline, pipelineId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createPipelineExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Pipeline pipeline = Pipeline.newBuilder().build();
+      String pipelineId = "pipelineId-1076718755";
+      client.createPipelineAsync(parent, pipeline, pipelineId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updatePipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updatePipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Pipeline pipeline =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Pipeline actualResponse = client.updatePipelineAsync(pipeline, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updatePipelineExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Pipeline pipeline =
+          Pipeline.newBuilder()
+              .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setUid("uid115792")
+              .putAllAnnotations(new HashMap<String, String>())
+              .setDisplayName("displayName1714148973")
+              .addAllDestinations(new ArrayList<Pipeline.Destination>())
+              .addAllMediations(new ArrayList<Pipeline.Mediation>())
+              .setCryptoKeyName("cryptoKeyName1447084425")
+              .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+              .setLoggingConfig(LoggingConfig.newBuilder().build())
+              .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+              .setEtag("etag3123477")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePipelineAsync(pipeline, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deletePipelineTest() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+    String etag = "etag3123477";
+
+    Pipeline actualResponse = client.deletePipelineAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deletePipelineExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PipelineName name = PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]");
+      String etag = "etag3123477";
+      client.deletePipelineAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deletePipelineTest2() throws Exception {
+    Pipeline expectedResponse =
+        Pipeline.newBuilder()
+            .setName(PipelineName.of("[PROJECT]", "[LOCATION]", "[PIPELINE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .addAllDestinations(new ArrayList<Pipeline.Destination>())
+            .addAllMediations(new ArrayList<Pipeline.Mediation>())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setInputPayloadFormat(Pipeline.MessagePayloadFormat.newBuilder().build())
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePipelineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-4265/locations/location-4265/pipelines/pipeline-4265";
+    String etag = "etag3123477";
+
+    Pipeline actualResponse = client.deletePipelineAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deletePipelineExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4265/locations/location-4265/pipelines/pipeline-4265";
+      String etag = "etag3123477";
+      client.deletePipelineAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GoogleApiSourceName name =
+        GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+
+    GoogleApiSource actualResponse = client.getGoogleApiSource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoogleApiSourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoogleApiSourceName name =
+          GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+      client.getGoogleApiSource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoogleApiSourceTest2() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5847/locations/location-5847/googleApiSources/googleApiSource-5847";
+
+    GoogleApiSource actualResponse = client.getGoogleApiSource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoogleApiSourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5847/locations/location-5847/googleApiSources/googleApiSource-5847";
+      client.getGoogleApiSource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoogleApiSourcesTest() throws Exception {
+    GoogleApiSource responsesElement = GoogleApiSource.newBuilder().build();
+    ListGoogleApiSourcesResponse expectedResponse =
+        ListGoogleApiSourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoogleApiSources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoogleApiSourcesPagedResponse pagedListResponse = client.listGoogleApiSources(parent);
+
+    List<GoogleApiSource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoogleApiSourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoogleApiSourcesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoogleApiSources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoogleApiSourcesTest2() throws Exception {
+    GoogleApiSource responsesElement = GoogleApiSource.newBuilder().build();
+    ListGoogleApiSourcesResponse expectedResponse =
+        ListGoogleApiSourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoogleApiSources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListGoogleApiSourcesPagedResponse pagedListResponse = client.listGoogleApiSources(parent);
+
+    List<GoogleApiSource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoogleApiSourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listGoogleApiSourcesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listGoogleApiSources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+    String googleApiSourceId = "googleApiSourceId-1417062697";
+
+    GoogleApiSource actualResponse =
+        client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoogleApiSourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+      String googleApiSourceId = "googleApiSourceId-1417062697";
+      client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createGoogleApiSourceTest2() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+    String googleApiSourceId = "googleApiSourceId-1417062697";
+
+    GoogleApiSource actualResponse =
+        client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createGoogleApiSourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      GoogleApiSource googleApiSource = GoogleApiSource.newBuilder().build();
+      String googleApiSourceId = "googleApiSourceId-1417062697";
+      client.createGoogleApiSourceAsync(parent, googleApiSource, googleApiSourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    GoogleApiSource googleApiSource =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GoogleApiSource actualResponse =
+        client.updateGoogleApiSourceAsync(googleApiSource, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateGoogleApiSourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoogleApiSource googleApiSource =
+          GoogleApiSource.newBuilder()
+              .setName(
+                  GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]")
+                      .toString())
+              .setUid("uid115792")
+              .setEtag("etag3123477")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setDisplayName("displayName1714148973")
+              .setDestination(
+                  MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+              .setCryptoKeyName("cryptoKeyName1447084425")
+              .setLoggingConfig(LoggingConfig.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGoogleApiSourceAsync(googleApiSource, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoogleApiSourceTest() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    GoogleApiSourceName name =
+        GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+    String etag = "etag3123477";
+
+    GoogleApiSource actualResponse = client.deleteGoogleApiSourceAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoogleApiSourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoogleApiSourceName name =
+          GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]");
+      String etag = "etag3123477";
+      client.deleteGoogleApiSourceAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteGoogleApiSourceTest2() throws Exception {
+    GoogleApiSource expectedResponse =
+        GoogleApiSource.newBuilder()
+            .setName(
+                GoogleApiSourceName.of("[PROJECT]", "[LOCATION]", "[GOOGLE_API_SOURCE]").toString())
+            .setUid("uid115792")
+            .setEtag("etag3123477")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setDestination(
+                MessageBusName.of("[PROJECT]", "[LOCATION]", "[MESSAGE_BUS]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoogleApiSourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-5847/locations/location-5847/googleApiSources/googleApiSource-5847";
+    String etag = "etag3123477";
+
+    GoogleApiSource actualResponse = client.deleteGoogleApiSourceAsync(name, etag).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteGoogleApiSourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5847/locations/location-5847/googleApiSources/googleApiSource-5847";
+      String etag = "etag3123477";
+      client.deleteGoogleApiSourceAsync(name, etag).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

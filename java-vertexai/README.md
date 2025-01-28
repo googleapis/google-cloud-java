@@ -18,7 +18,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.49.0</version>
+      <version>26.52.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -40,20 +40,20 @@ If you're using Maven without the BOM, add the following to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vertexai</artifactId>
-  <version>1.12.0</version>
+  <version>1.16.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-vertexai:1.12.0'
+implementation 'com.google.cloud:google-cloud-vertexai:1.16.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-vertexai" % "1.12.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-vertexai" % "1.16.0"
 ```
 <!-- {x-version-update-end} -->
 

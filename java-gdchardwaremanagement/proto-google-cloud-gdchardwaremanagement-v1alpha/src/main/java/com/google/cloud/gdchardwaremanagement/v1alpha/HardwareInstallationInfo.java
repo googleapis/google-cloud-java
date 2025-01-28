@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -233,11 +233,11 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+   * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
    * Rack 3.
    * </pre>
    *
-   * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The rackLocation.
    */
@@ -257,11 +257,11 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+   * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
    * Rack 3.
    * </pre>
    *
-   * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for rackLocation.
    */
@@ -982,11 +982,11 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+     * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
      * Rack 3.
      * </pre>
      *
-     * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The rackLocation.
      */
@@ -1005,11 +1005,11 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+     * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
      * Rack 3.
      * </pre>
      *
-     * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for rackLocation.
      */
@@ -1028,11 +1028,11 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+     * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
      * Rack 3.
      * </pre>
      *
-     * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The rackLocation to set.
      * @return This builder for chaining.
@@ -1050,11 +1050,11 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+     * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
      * Rack 3.
      * </pre>
      *
-     * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1068,11 +1068,11 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+     * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
      * Rack 3.
      * </pre>
      *
-     * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for rackLocation to set.
      * @return This builder for chaining.

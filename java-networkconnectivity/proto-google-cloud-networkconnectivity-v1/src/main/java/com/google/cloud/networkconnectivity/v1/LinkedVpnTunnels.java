@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
   private LinkedVpnTunnels() {
     uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     vpcNetwork_ = "";
+    includeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -206,6 +207,82 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int INCLUDE_IMPORT_RANGES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList includeImportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the includeImportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getIncludeImportRangesList() {
+    return includeImportRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of includeImportRanges.
+   */
+  public int getIncludeImportRangesCount() {
+    return includeImportRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeImportRanges at the given index.
+   */
+  public java.lang.String getIncludeImportRanges(int index) {
+    return includeImportRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeImportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getIncludeImportRangesBytes(int index) {
+    return includeImportRanges_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -228,6 +305,9 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNetwork_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, vpcNetwork_);
+    }
+    for (int i = 0; i < includeImportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, includeImportRanges_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -252,6 +332,14 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNetwork_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, vpcNetwork_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < includeImportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(includeImportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getIncludeImportRangesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -271,6 +359,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     if (!getUrisList().equals(other.getUrisList())) return false;
     if (getSiteToSiteDataTransfer() != other.getSiteToSiteDataTransfer()) return false;
     if (!getVpcNetwork().equals(other.getVpcNetwork())) return false;
+    if (!getIncludeImportRangesList().equals(other.getIncludeImportRangesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -290,6 +379,10 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSiteToSiteDataTransfer());
     hash = (37 * hash) + VPC_NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getVpcNetwork().hashCode();
+    if (getIncludeImportRangesCount() > 0) {
+      hash = (37 * hash) + INCLUDE_IMPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludeImportRangesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -436,6 +529,7 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       siteToSiteDataTransfer_ = false;
       vpcNetwork_ = "";
+      includeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -481,6 +575,10 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.vpcNetwork_ = vpcNetwork_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        includeImportRanges_.makeImmutable();
+        result.includeImportRanges_ = includeImportRanges_;
       }
     }
 
@@ -548,6 +646,16 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.includeImportRanges_.isEmpty()) {
+        if (includeImportRanges_.isEmpty()) {
+          includeImportRanges_ = other.includeImportRanges_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureIncludeImportRangesIsMutable();
+          includeImportRanges_.addAll(other.includeImportRanges_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -593,6 +701,13 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureIncludeImportRangesIsMutable();
+                includeImportRanges_.add(s);
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -957,6 +1072,207 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       vpcNetwork_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList includeImportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureIncludeImportRangesIsMutable() {
+      if (!includeImportRanges_.isModifiable()) {
+        includeImportRanges_ = new com.google.protobuf.LazyStringArrayList(includeImportRanges_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the includeImportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getIncludeImportRangesList() {
+      includeImportRanges_.makeImmutable();
+      return includeImportRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of includeImportRanges.
+     */
+    public int getIncludeImportRangesCount() {
+      return includeImportRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeImportRanges at the given index.
+     */
+    public java.lang.String getIncludeImportRanges(int index) {
+      return includeImportRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeImportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getIncludeImportRangesBytes(int index) {
+      return includeImportRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includeImportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeImportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeImportRangesIsMutable();
+      includeImportRanges_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includeImportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeImportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeImportRangesIsMutable();
+      includeImportRanges_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The includeImportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIncludeImportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureIncludeImportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeImportRanges_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeImportRanges() {
+      includeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP ranges allowed to be included during import from hub (does not
+     * control transit connectivity). The only allowed value for now is
+     * "ALL_IPV4_RANGES".
+     * </pre>
+     *
+     * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the includeImportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeImportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIncludeImportRangesIsMutable();
+      includeImportRanges_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

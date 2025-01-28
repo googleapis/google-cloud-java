@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,7 +140,7 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
    * Negative values return an `INVALID_ARGUMENT` error.
    * </pre>
    *
-   * <code>int32 page_size = 5;</code>
+   * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -157,15 +157,15 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A page token, received from a previous list space events call. Provide this
-   * to retrieve the subsequent page.
+   * Optional. A page token, received from a previous list space events call.
+   * Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to list space events must
    * match the call that provided the page token. Passing different values to
    * the other parameters might lead to unexpected results.
    * </pre>
    *
-   * <code>string page_token = 6;</code>
+   * <code>string page_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -185,15 +185,15 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A page token, received from a previous list space events call. Provide this
-   * to retrieve the subsequent page.
+   * Optional. A page token, received from a previous list space events call.
+   * Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to list space events must
    * match the call that provided the page token. Passing different values to
    * the other parameters might lead to unexpected results.
    * </pre>
    *
-   * <code>string page_token = 6;</code>
+   * <code>string page_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -921,7 +921,7 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
      *
-     * <code>int32 page_size = 5;</code>
+     * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -939,7 +939,7 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
      *
-     * <code>int32 page_size = 5;</code>
+     * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -961,7 +961,7 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
      *
-     * <code>int32 page_size = 5;</code>
+     * <code>int32 page_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -977,15 +977,15 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A page token, received from a previous list space events call. Provide this
-     * to retrieve the subsequent page.
+     * Optional. A page token, received from a previous list space events call.
+     * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to list space events must
      * match the call that provided the page token. Passing different values to
      * the other parameters might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 6;</code>
+     * <code>string page_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1004,15 +1004,15 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A page token, received from a previous list space events call. Provide this
-     * to retrieve the subsequent page.
+     * Optional. A page token, received from a previous list space events call.
+     * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to list space events must
      * match the call that provided the page token. Passing different values to
      * the other parameters might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 6;</code>
+     * <code>string page_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1031,15 +1031,15 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A page token, received from a previous list space events call. Provide this
-     * to retrieve the subsequent page.
+     * Optional. A page token, received from a previous list space events call.
+     * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to list space events must
      * match the call that provided the page token. Passing different values to
      * the other parameters might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 6;</code>
+     * <code>string page_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1057,15 +1057,15 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A page token, received from a previous list space events call. Provide this
-     * to retrieve the subsequent page.
+     * Optional. A page token, received from a previous list space events call.
+     * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to list space events must
      * match the call that provided the page token. Passing different values to
      * the other parameters might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 6;</code>
+     * <code>string page_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1079,15 +1079,15 @@ public final class ListSpaceEventsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A page token, received from a previous list space events call. Provide this
-     * to retrieve the subsequent page.
+     * Optional. A page token, received from a previous list space events call.
+     * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to list space events must
      * match the call that provided the page token. Passing different values to
      * the other parameters might lead to unexpected results.
      * </pre>
      *
-     * <code>string page_token = 6;</code>
+     * <code>string page_token = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

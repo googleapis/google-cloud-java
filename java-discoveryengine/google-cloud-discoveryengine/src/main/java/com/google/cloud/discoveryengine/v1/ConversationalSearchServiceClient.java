@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -452,9 +452,9 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Conversation to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`.
    *     Use
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/-`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/-`
    *     to activate auto session mode, which automatically creates a new conversation inside a
    *     ConverseConversation session.
    * @param query Required. Current user input.
@@ -495,9 +495,9 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Conversation to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`.
    *     Use
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/-`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/-`
    *     to activate auto session mode, which automatically creates a new conversation inside a
    *     ConverseConversation session.
    * @param query Required. Current user input.
@@ -624,7 +624,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of parent data store. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @param conversation Required. The conversation to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -664,7 +664,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of parent data store. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @param conversation Required. The conversation to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -774,7 +774,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Conversation to delete. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteConversation(ConversationName name) {
@@ -811,7 +811,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Conversation to delete. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteConversation(String name) {
@@ -1024,7 +1024,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Conversation to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation getConversation(ConversationName name) {
@@ -1056,7 +1056,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Conversation to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation getConversation(String name) {
@@ -1152,7 +1152,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The data store resource name. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListConversationsPagedResponse listConversations(DataStoreName parent) {
@@ -1188,7 +1188,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The data store resource name. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListConversationsPagedResponse listConversations(String parent) {
@@ -1435,7 +1435,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Answer to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Answer getAnswer(AnswerName name) {
@@ -1467,7 +1467,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Answer to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Answer getAnswer(String name) {
@@ -1564,7 +1564,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of parent data store. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @param session Required. The session to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1603,7 +1603,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of parent data store. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @param session Required. The session to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1710,7 +1710,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Session to delete. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSession(SessionName name) {
@@ -1745,7 +1745,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Session to delete. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSession(String name) {
@@ -1953,7 +1953,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Session to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Session getSession(SessionName name) {
@@ -1985,7 +1985,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the Session to get. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Session getSession(String name) {
@@ -2080,7 +2080,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The data store resource name. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSessionsPagedResponse listSessions(DataStoreName parent) {
@@ -2115,7 +2115,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The data store resource name. Format:
-   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSessionsPagedResponse listSessions(String parent) {

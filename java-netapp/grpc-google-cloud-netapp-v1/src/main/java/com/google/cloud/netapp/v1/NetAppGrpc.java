@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,6 +248,55 @@ public final class NetAppGrpc {
       }
     }
     return getDeleteStoragePoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+          com.google.longrunning.Operation>
+      getValidateDirectoryServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ValidateDirectoryService",
+      requestType = com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+          com.google.longrunning.Operation>
+      getValidateDirectoryServiceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+            com.google.longrunning.Operation>
+        getValidateDirectoryServiceMethod;
+    if ((getValidateDirectoryServiceMethod = NetAppGrpc.getValidateDirectoryServiceMethod)
+        == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getValidateDirectoryServiceMethod = NetAppGrpc.getValidateDirectoryServiceMethod)
+            == null) {
+          NetAppGrpc.getValidateDirectoryServiceMethod =
+              getValidateDirectoryServiceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ValidateDirectoryService"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetAppMethodDescriptorSupplier("ValidateDirectoryService"))
+                      .build();
+        }
+      }
+    }
+    return getValidateDirectoryServiceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1637,6 +1686,90 @@ public final class NetAppGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+      getEstablishPeeringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EstablishPeering",
+      requestType = com.google.cloud.netapp.v1.EstablishPeeringRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+      getEstablishPeeringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+        getEstablishPeeringMethod;
+    if ((getEstablishPeeringMethod = NetAppGrpc.getEstablishPeeringMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getEstablishPeeringMethod = NetAppGrpc.getEstablishPeeringMethod) == null) {
+          NetAppGrpc.getEstablishPeeringMethod =
+              getEstablishPeeringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.EstablishPeeringRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EstablishPeering"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.EstablishPeeringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("EstablishPeering"))
+                      .build();
+        }
+      }
+    }
+    return getEstablishPeeringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+      getSyncReplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SyncReplication",
+      requestType = com.google.cloud.netapp.v1.SyncReplicationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+      getSyncReplicationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+        getSyncReplicationMethod;
+    if ((getSyncReplicationMethod = NetAppGrpc.getSyncReplicationMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getSyncReplicationMethod = NetAppGrpc.getSyncReplicationMethod) == null) {
+          NetAppGrpc.getSyncReplicationMethod =
+              getSyncReplicationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.SyncReplicationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SyncReplication"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.SyncReplicationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("SyncReplication"))
+                      .build();
+        }
+      }
+    }
+    return getSyncReplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.netapp.v1.CreateBackupVaultRequest, com.google.longrunning.Operation>
       getCreateBackupVaultMethod;
 
@@ -2400,6 +2533,21 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    default void validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getValidateDirectoryServiceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * This operation will switch the active/replica zone for a regional
      * storagePool.
      * </pre>
@@ -2859,6 +3007,35 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    default void establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEstablishPeeringMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    default void syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSyncReplicationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -3180,6 +3357,23 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteStoragePoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public void validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getValidateDirectoryServiceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3710,6 +3904,39 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public void establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEstablishPeeringMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public void syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSyncReplicationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -4032,6 +4259,20 @@ public final class NetAppGrpc {
         com.google.cloud.netapp.v1.DeleteStoragePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateDirectoryServiceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -4460,6 +4701,33 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.longrunning.Operation establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEstablishPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.longrunning.Operation syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSyncReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -4738,6 +5006,21 @@ public final class NetAppGrpc {
         deleteStoragePool(com.google.cloud.netapp.v1.DeleteStoragePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteStoragePoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        validateDirectoryService(
+            com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getValidateDirectoryServiceMethod(), getCallOptions()), request);
     }
 
     /**
@@ -5175,6 +5458,33 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        establishPeering(com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEstablishPeeringMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        syncReplication(com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSyncReplicationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates new backup vault
      * </pre>
      */
@@ -5380,53 +5690,56 @@ public final class NetAppGrpc {
   private static final int METHODID_GET_STORAGE_POOL = 2;
   private static final int METHODID_UPDATE_STORAGE_POOL = 3;
   private static final int METHODID_DELETE_STORAGE_POOL = 4;
-  private static final int METHODID_SWITCH_ACTIVE_REPLICA_ZONE = 5;
-  private static final int METHODID_LIST_VOLUMES = 6;
-  private static final int METHODID_GET_VOLUME = 7;
-  private static final int METHODID_CREATE_VOLUME = 8;
-  private static final int METHODID_UPDATE_VOLUME = 9;
-  private static final int METHODID_DELETE_VOLUME = 10;
-  private static final int METHODID_REVERT_VOLUME = 11;
-  private static final int METHODID_LIST_SNAPSHOTS = 12;
-  private static final int METHODID_GET_SNAPSHOT = 13;
-  private static final int METHODID_CREATE_SNAPSHOT = 14;
-  private static final int METHODID_DELETE_SNAPSHOT = 15;
-  private static final int METHODID_UPDATE_SNAPSHOT = 16;
-  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 17;
-  private static final int METHODID_GET_ACTIVE_DIRECTORY = 18;
-  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 19;
-  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 20;
-  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 21;
-  private static final int METHODID_LIST_KMS_CONFIGS = 22;
-  private static final int METHODID_CREATE_KMS_CONFIG = 23;
-  private static final int METHODID_GET_KMS_CONFIG = 24;
-  private static final int METHODID_UPDATE_KMS_CONFIG = 25;
-  private static final int METHODID_ENCRYPT_VOLUMES = 26;
-  private static final int METHODID_VERIFY_KMS_CONFIG = 27;
-  private static final int METHODID_DELETE_KMS_CONFIG = 28;
-  private static final int METHODID_LIST_REPLICATIONS = 29;
-  private static final int METHODID_GET_REPLICATION = 30;
-  private static final int METHODID_CREATE_REPLICATION = 31;
-  private static final int METHODID_DELETE_REPLICATION = 32;
-  private static final int METHODID_UPDATE_REPLICATION = 33;
-  private static final int METHODID_STOP_REPLICATION = 34;
-  private static final int METHODID_RESUME_REPLICATION = 35;
-  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 36;
-  private static final int METHODID_CREATE_BACKUP_VAULT = 37;
-  private static final int METHODID_GET_BACKUP_VAULT = 38;
-  private static final int METHODID_LIST_BACKUP_VAULTS = 39;
-  private static final int METHODID_UPDATE_BACKUP_VAULT = 40;
-  private static final int METHODID_DELETE_BACKUP_VAULT = 41;
-  private static final int METHODID_CREATE_BACKUP = 42;
-  private static final int METHODID_GET_BACKUP = 43;
-  private static final int METHODID_LIST_BACKUPS = 44;
-  private static final int METHODID_DELETE_BACKUP = 45;
-  private static final int METHODID_UPDATE_BACKUP = 46;
-  private static final int METHODID_CREATE_BACKUP_POLICY = 47;
-  private static final int METHODID_GET_BACKUP_POLICY = 48;
-  private static final int METHODID_LIST_BACKUP_POLICIES = 49;
-  private static final int METHODID_UPDATE_BACKUP_POLICY = 50;
-  private static final int METHODID_DELETE_BACKUP_POLICY = 51;
+  private static final int METHODID_VALIDATE_DIRECTORY_SERVICE = 5;
+  private static final int METHODID_SWITCH_ACTIVE_REPLICA_ZONE = 6;
+  private static final int METHODID_LIST_VOLUMES = 7;
+  private static final int METHODID_GET_VOLUME = 8;
+  private static final int METHODID_CREATE_VOLUME = 9;
+  private static final int METHODID_UPDATE_VOLUME = 10;
+  private static final int METHODID_DELETE_VOLUME = 11;
+  private static final int METHODID_REVERT_VOLUME = 12;
+  private static final int METHODID_LIST_SNAPSHOTS = 13;
+  private static final int METHODID_GET_SNAPSHOT = 14;
+  private static final int METHODID_CREATE_SNAPSHOT = 15;
+  private static final int METHODID_DELETE_SNAPSHOT = 16;
+  private static final int METHODID_UPDATE_SNAPSHOT = 17;
+  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 18;
+  private static final int METHODID_GET_ACTIVE_DIRECTORY = 19;
+  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 20;
+  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 21;
+  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 22;
+  private static final int METHODID_LIST_KMS_CONFIGS = 23;
+  private static final int METHODID_CREATE_KMS_CONFIG = 24;
+  private static final int METHODID_GET_KMS_CONFIG = 25;
+  private static final int METHODID_UPDATE_KMS_CONFIG = 26;
+  private static final int METHODID_ENCRYPT_VOLUMES = 27;
+  private static final int METHODID_VERIFY_KMS_CONFIG = 28;
+  private static final int METHODID_DELETE_KMS_CONFIG = 29;
+  private static final int METHODID_LIST_REPLICATIONS = 30;
+  private static final int METHODID_GET_REPLICATION = 31;
+  private static final int METHODID_CREATE_REPLICATION = 32;
+  private static final int METHODID_DELETE_REPLICATION = 33;
+  private static final int METHODID_UPDATE_REPLICATION = 34;
+  private static final int METHODID_STOP_REPLICATION = 35;
+  private static final int METHODID_RESUME_REPLICATION = 36;
+  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 37;
+  private static final int METHODID_ESTABLISH_PEERING = 38;
+  private static final int METHODID_SYNC_REPLICATION = 39;
+  private static final int METHODID_CREATE_BACKUP_VAULT = 40;
+  private static final int METHODID_GET_BACKUP_VAULT = 41;
+  private static final int METHODID_LIST_BACKUP_VAULTS = 42;
+  private static final int METHODID_UPDATE_BACKUP_VAULT = 43;
+  private static final int METHODID_DELETE_BACKUP_VAULT = 44;
+  private static final int METHODID_CREATE_BACKUP = 45;
+  private static final int METHODID_GET_BACKUP = 46;
+  private static final int METHODID_LIST_BACKUPS = 47;
+  private static final int METHODID_DELETE_BACKUP = 48;
+  private static final int METHODID_UPDATE_BACKUP = 49;
+  private static final int METHODID_CREATE_BACKUP_POLICY = 50;
+  private static final int METHODID_GET_BACKUP_POLICY = 51;
+  private static final int METHODID_LIST_BACKUP_POLICIES = 52;
+  private static final int METHODID_UPDATE_BACKUP_POLICY = 53;
+  private static final int METHODID_DELETE_BACKUP_POLICY = 54;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5470,6 +5783,11 @@ public final class NetAppGrpc {
         case METHODID_DELETE_STORAGE_POOL:
           serviceImpl.deleteStoragePool(
               (com.google.cloud.netapp.v1.DeleteStoragePoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_VALIDATE_DIRECTORY_SERVICE:
+          serviceImpl.validateDirectoryService(
+              (com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_SWITCH_ACTIVE_REPLICA_ZONE:
@@ -5641,6 +5959,16 @@ public final class NetAppGrpc {
               (com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_ESTABLISH_PEERING:
+          serviceImpl.establishPeering(
+              (com.google.cloud.netapp.v1.EstablishPeeringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SYNC_REPLICATION:
+          serviceImpl.syncReplication(
+              (com.google.cloud.netapp.v1.SyncReplicationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_CREATE_BACKUP_VAULT:
           serviceImpl.createBackupVault(
               (com.google.cloud.netapp.v1.CreateBackupVaultRequest) request,
@@ -5770,6 +6098,13 @@ public final class NetAppGrpc {
                 new MethodHandlers<
                     com.google.cloud.netapp.v1.DeleteStoragePoolRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_STORAGE_POOL)))
+        .addMethod(
+            getValidateDirectoryServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_VALIDATE_DIRECTORY_SERVICE)))
         .addMethod(
             getSwitchActiveReplicaZoneMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -5972,6 +6307,18 @@ public final class NetAppGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_REVERSE_REPLICATION_DIRECTION)))
         .addMethod(
+            getEstablishPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.EstablishPeeringRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ESTABLISH_PEERING)))
+        .addMethod(
+            getSyncReplicationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.SyncReplicationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SYNC_REPLICATION)))
+        .addMethod(
             getCreateBackupVaultMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6118,6 +6465,7 @@ public final class NetAppGrpc {
                       .addMethod(getGetStoragePoolMethod())
                       .addMethod(getUpdateStoragePoolMethod())
                       .addMethod(getDeleteStoragePoolMethod())
+                      .addMethod(getValidateDirectoryServiceMethod())
                       .addMethod(getSwitchActiveReplicaZoneMethod())
                       .addMethod(getListVolumesMethod())
                       .addMethod(getGetVolumeMethod())
@@ -6150,6 +6498,8 @@ public final class NetAppGrpc {
                       .addMethod(getStopReplicationMethod())
                       .addMethod(getResumeReplicationMethod())
                       .addMethod(getReverseReplicationDirectionMethod())
+                      .addMethod(getEstablishPeeringMethod())
+                      .addMethod(getSyncReplicationMethod())
                       .addMethod(getCreateBackupVaultMethod())
                       .addMethod(getGetBackupVaultMethod())
                       .addMethod(getListBackupVaultsMethod())

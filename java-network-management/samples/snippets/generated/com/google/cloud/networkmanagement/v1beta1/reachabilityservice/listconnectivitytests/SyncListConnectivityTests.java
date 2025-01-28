@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.networkmanagement.v1beta1.samples;
 // [START networkmanagement_v1beta1_generated_ReachabilityService_ListConnectivityTests_sync]
 import com.google.cloud.networkmanagement.v1beta1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsRequest;
+import com.google.cloud.networkmanagement.v1beta1.ProjectName;
 import com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient;
 
 public class SyncListConnectivityTests {
@@ -36,7 +37,7 @@ public class SyncListConnectivityTests {
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       ListConnectivityTestsRequest request =
           ListConnectivityTestsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

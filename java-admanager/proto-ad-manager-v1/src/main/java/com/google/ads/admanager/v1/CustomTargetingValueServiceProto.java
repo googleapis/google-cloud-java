@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,12 +80,13 @@ public final class CustomTargetingValueServiceProto {
           + "tomTargetingValuesResponse\"T\332A\006parent\202\323\344"
           + "\223\002E\022C/v1/{parent=networks/*/customTarget"
           + "ingKeys/*}/customTargetingValues\032\033\312A\030adm"
-          + "anager.googleapis.comB\267\001\n\033com.google.ads"
+          + "anager.googleapis.comB\324\001\n\033com.google.ads"
           + ".admanager.v1B CustomTargetingValueServi"
           + "ceProtoP\001Z@google.golang.org/genproto/go"
           + "ogleapis/ads/admanager/v1;admanager\252\002\027Go"
           + "ogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMan"
-          + "ager\\V1b\006proto3"
+          + "ager\\V1\352\002\032Google::Ads::AdManager::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

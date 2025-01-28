@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -69,6 +72,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -97,6 +103,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -122,6 +131,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -151,6 +163,9 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * kernel.shmmni
+   * kernel.shmmax
+   * kernel.shmall
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>

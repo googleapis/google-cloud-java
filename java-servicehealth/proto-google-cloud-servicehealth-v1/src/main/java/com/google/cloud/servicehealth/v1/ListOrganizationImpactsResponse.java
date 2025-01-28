@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,16 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.servicehealth.v1;
 
-/** Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsResponse} */
+/**
+ *
+ *
+ * <pre>
+ * Response to request for listing projects under an organization affected by an
+ * event.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsResponse}
+ */
 public final class ListOrganizationImpactsResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.servicehealth.v1.ListOrganizationImpactsResponse)
@@ -463,7 +472,16 @@ public final class ListOrganizationImpactsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsResponse} */
+  /**
+   *
+   *
+   * <pre>
+   * Response to request for listing projects under an organization affected by an
+   * event.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.servicehealth.v1.ListOrganizationImpactsResponse}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.servicehealth.v1.ListOrganizationImpactsResponse)

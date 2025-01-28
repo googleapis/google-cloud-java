@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,4 +215,44 @@ public interface HealthStatusForNetworkEndpointOrBuilder
    * @return The bytes for healthState.
    */
   com.google.protobuf.ByteString getHealthStateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return Whether the ipv6HealthState field is set.
+   */
+  boolean hasIpv6HealthState();
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The ipv6HealthState.
+   */
+  java.lang.String getIpv6HealthState();
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The bytes for ipv6HealthState.
+   */
+  com.google.protobuf.ByteString getIpv6HealthStateBytes();
 }

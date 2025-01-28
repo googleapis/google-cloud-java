@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,6 +163,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
    * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
    * pairs. For details see:
    * https://kubernetes.io/docs/concepts/configuration/configmap/
+   *
+   * Example:
+   *
+   * {
+   *   "example_key": "example_value",
+   *   "another_key": "another_value"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -187,6 +194,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
    * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
    * pairs. For details see:
    * https://kubernetes.io/docs/concepts/configuration/configmap/
+   *
+   * Example:
+   *
+   * {
+   *   "example_key": "example_value",
+   *   "another_key": "another_value"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -202,6 +216,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
    * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
    * pairs. For details see:
    * https://kubernetes.io/docs/concepts/configuration/configmap/
+   *
+   * Example:
+   *
+   * {
+   *   "example_key": "example_value",
+   *   "another_key": "another_value"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -224,6 +245,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
    * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
    * pairs. For details see:
    * https://kubernetes.io/docs/concepts/configuration/configmap/
+   *
+   * Example:
+   *
+   * {
+   *   "example_key": "example_value",
+   *   "another_key": "another_value"
+   * }
    * </pre>
    *
    * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -801,6 +829,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
      * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
      * pairs. For details see:
      * https://kubernetes.io/docs/concepts/configuration/configmap/
+     *
+     * Example:
+     *
+     * {
+     *   "example_key": "example_value",
+     *   "another_key": "another_value"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -825,6 +860,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
      * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
      * pairs. For details see:
      * https://kubernetes.io/docs/concepts/configuration/configmap/
+     *
+     * Example:
+     *
+     * {
+     *   "example_key": "example_value",
+     *   "another_key": "another_value"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -840,6 +882,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
      * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
      * pairs. For details see:
      * https://kubernetes.io/docs/concepts/configuration/configmap/
+     *
+     * Example:
+     *
+     * {
+     *   "example_key": "example_value",
+     *   "another_key": "another_value"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -862,6 +911,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
      * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
      * pairs. For details see:
      * https://kubernetes.io/docs/concepts/configuration/configmap/
+     *
+     * Example:
+     *
+     * {
+     *   "example_key": "example_value",
+     *   "another_key": "another_value"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -890,6 +946,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
      * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
      * pairs. For details see:
      * https://kubernetes.io/docs/concepts/configuration/configmap/
+     *
+     * Example:
+     *
+     * {
+     *   "example_key": "example_value",
+     *   "another_key": "another_value"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -914,6 +977,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
      * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
      * pairs. For details see:
      * https://kubernetes.io/docs/concepts/configuration/configmap/
+     *
+     * Example:
+     *
+     * {
+     *   "example_key": "example_value",
+     *   "another_key": "another_value"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -936,6 +1006,13 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
      * Optional. The "data" field of Kubernetes ConfigMap, organized in key-value
      * pairs. For details see:
      * https://kubernetes.io/docs/concepts/configuration/configmap/
+     *
+     * Example:
+     *
+     * {
+     *   "example_key": "example_value",
+     *   "another_key": "another_value"
+     * }
      * </pre>
      *
      * <code>map&lt;string, string&gt; data = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

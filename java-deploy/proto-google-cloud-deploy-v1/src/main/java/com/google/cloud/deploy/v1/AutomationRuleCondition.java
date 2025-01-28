@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,52 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
   }
 
   private int bitField0_;
+  private int ruleTypeConditionCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object ruleTypeCondition_;
+
+  public enum RuleTypeConditionCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    TIMED_PROMOTE_RELEASE_CONDITION(2),
+    RULETYPECONDITION_NOT_SET(0);
+    private final int value;
+
+    private RuleTypeConditionCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RuleTypeConditionCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RuleTypeConditionCase forNumber(int value) {
+      switch (value) {
+        case 2:
+          return TIMED_PROMOTE_RELEASE_CONDITION;
+        case 0:
+          return RULETYPECONDITION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RuleTypeConditionCase getRuleTypeConditionCase() {
+    return RuleTypeConditionCase.forNumber(ruleTypeConditionCase_);
+  }
+
   public static final int TARGETS_PRESENT_CONDITION_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.TargetsPresentCondition targetsPresentCondition_;
   /**
@@ -120,6 +166,67 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         : targetsPresentCondition_;
   }
 
+  public static final int TIMED_PROMOTE_RELEASE_CONDITION_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+   * to a an Automation with a timed promote release rule defined.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the timedPromoteReleaseCondition field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimedPromoteReleaseCondition() {
+    return ruleTypeConditionCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+   * to a an Automation with a timed promote release rule defined.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timedPromoteReleaseCondition.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TimedPromoteReleaseCondition getTimedPromoteReleaseCondition() {
+    if (ruleTypeConditionCase_ == 2) {
+      return (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_;
+    }
+    return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+   * to a an Automation with a timed promote release rule defined.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TimedPromoteReleaseConditionOrBuilder
+      getTimedPromoteReleaseConditionOrBuilder() {
+    if (ruleTypeConditionCase_ == 2) {
+      return (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_;
+    }
+    return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -137,6 +244,10 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getTargetsPresentCondition());
     }
+    if (ruleTypeConditionCase_ == 2) {
+      output.writeMessage(
+          2, (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -149,6 +260,11 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTargetsPresentCondition());
+    }
+    if (ruleTypeConditionCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +286,15 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     if (hasTargetsPresentCondition()) {
       if (!getTargetsPresentCondition().equals(other.getTargetsPresentCondition())) return false;
     }
+    if (!getRuleTypeConditionCase().equals(other.getRuleTypeConditionCase())) return false;
+    switch (ruleTypeConditionCase_) {
+      case 2:
+        if (!getTimedPromoteReleaseCondition().equals(other.getTimedPromoteReleaseCondition()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -184,6 +309,14 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
     if (hasTargetsPresentCondition()) {
       hash = (37 * hash) + TARGETS_PRESENT_CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + getTargetsPresentCondition().hashCode();
+    }
+    switch (ruleTypeConditionCase_) {
+      case 2:
+        hash = (37 * hash) + TIMED_PROMOTE_RELEASE_CONDITION_FIELD_NUMBER;
+        hash = (53 * hash) + getTimedPromoteReleaseCondition().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -339,6 +472,11 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         targetsPresentConditionBuilder_.dispose();
         targetsPresentConditionBuilder_ = null;
       }
+      if (timedPromoteReleaseConditionBuilder_ != null) {
+        timedPromoteReleaseConditionBuilder_.clear();
+      }
+      ruleTypeConditionCase_ = 0;
+      ruleTypeCondition_ = null;
       return this;
     }
 
@@ -369,6 +507,7 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -384,6 +523,14 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.deploy.v1.AutomationRuleCondition result) {
+      result.ruleTypeConditionCase_ = ruleTypeConditionCase_;
+      result.ruleTypeCondition_ = this.ruleTypeCondition_;
+      if (ruleTypeConditionCase_ == 2 && timedPromoteReleaseConditionBuilder_ != null) {
+        result.ruleTypeCondition_ = timedPromoteReleaseConditionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,6 +582,17 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       if (other.hasTargetsPresentCondition()) {
         mergeTargetsPresentCondition(other.getTargetsPresentCondition());
       }
+      switch (other.getRuleTypeConditionCase()) {
+        case TIMED_PROMOTE_RELEASE_CONDITION:
+          {
+            mergeTimedPromoteReleaseCondition(other.getTimedPromoteReleaseCondition());
+            break;
+          }
+        case RULETYPECONDITION_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -468,6 +626,13 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getTimedPromoteReleaseConditionFieldBuilder().getBuilder(), extensionRegistry);
+                ruleTypeConditionCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -482,6 +647,20 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int ruleTypeConditionCase_ = 0;
+    private java.lang.Object ruleTypeCondition_;
+
+    public RuleTypeConditionCase getRuleTypeConditionCase() {
+      return RuleTypeConditionCase.forNumber(ruleTypeConditionCase_);
+    }
+
+    public Builder clearRuleTypeCondition() {
+      ruleTypeConditionCase_ = 0;
+      ruleTypeCondition_ = null;
+      onChanged();
       return this;
     }
 
@@ -694,6 +873,249 @@ public final class AutomationRuleCondition extends com.google.protobuf.Generated
         targetsPresentCondition_ = null;
       }
       return targetsPresentConditionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TimedPromoteReleaseCondition,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Builder,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseConditionOrBuilder>
+        timedPromoteReleaseConditionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timedPromoteReleaseCondition field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimedPromoteReleaseCondition() {
+      return ruleTypeConditionCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timedPromoteReleaseCondition.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseCondition
+        getTimedPromoteReleaseCondition() {
+      if (timedPromoteReleaseConditionBuilder_ == null) {
+        if (ruleTypeConditionCase_ == 2) {
+          return (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_;
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
+      } else {
+        if (ruleTypeConditionCase_ == 2) {
+          return timedPromoteReleaseConditionBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimedPromoteReleaseCondition(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseCondition value) {
+      if (timedPromoteReleaseConditionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ruleTypeCondition_ = value;
+        onChanged();
+      } else {
+        timedPromoteReleaseConditionBuilder_.setMessage(value);
+      }
+      ruleTypeConditionCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimedPromoteReleaseCondition(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Builder builderForValue) {
+      if (timedPromoteReleaseConditionBuilder_ == null) {
+        ruleTypeCondition_ = builderForValue.build();
+        onChanged();
+      } else {
+        timedPromoteReleaseConditionBuilder_.setMessage(builderForValue.build());
+      }
+      ruleTypeConditionCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTimedPromoteReleaseCondition(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseCondition value) {
+      if (timedPromoteReleaseConditionBuilder_ == null) {
+        if (ruleTypeConditionCase_ == 2
+            && ruleTypeCondition_
+                != com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance()) {
+          ruleTypeCondition_ =
+              com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.newBuilder(
+                      (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ruleTypeCondition_ = value;
+        }
+        onChanged();
+      } else {
+        if (ruleTypeConditionCase_ == 2) {
+          timedPromoteReleaseConditionBuilder_.mergeFrom(value);
+        } else {
+          timedPromoteReleaseConditionBuilder_.setMessage(value);
+        }
+      }
+      ruleTypeConditionCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTimedPromoteReleaseCondition() {
+      if (timedPromoteReleaseConditionBuilder_ == null) {
+        if (ruleTypeConditionCase_ == 2) {
+          ruleTypeConditionCase_ = 0;
+          ruleTypeCondition_ = null;
+          onChanged();
+        }
+      } else {
+        if (ruleTypeConditionCase_ == 2) {
+          ruleTypeConditionCase_ = 0;
+          ruleTypeCondition_ = null;
+        }
+        timedPromoteReleaseConditionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Builder
+        getTimedPromoteReleaseConditionBuilder() {
+      return getTimedPromoteReleaseConditionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseConditionOrBuilder
+        getTimedPromoteReleaseConditionOrBuilder() {
+      if ((ruleTypeConditionCase_ == 2) && (timedPromoteReleaseConditionBuilder_ != null)) {
+        return timedPromoteReleaseConditionBuilder_.getMessageOrBuilder();
+      } else {
+        if (ruleTypeConditionCase_ == 2) {
+          return (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_;
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TimedPromoteReleaseCondition contains rule conditions specific
+     * to a an Automation with a timed promote release rule defined.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseCondition timed_promote_release_condition = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TimedPromoteReleaseCondition,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Builder,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseConditionOrBuilder>
+        getTimedPromoteReleaseConditionFieldBuilder() {
+      if (timedPromoteReleaseConditionBuilder_ == null) {
+        if (!(ruleTypeConditionCase_ == 2)) {
+          ruleTypeCondition_ =
+              com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.getDefaultInstance();
+        }
+        timedPromoteReleaseConditionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.TimedPromoteReleaseCondition,
+                com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Builder,
+                com.google.cloud.deploy.v1.TimedPromoteReleaseConditionOrBuilder>(
+                (com.google.cloud.deploy.v1.TimedPromoteReleaseCondition) ruleTypeCondition_,
+                getParentForChildren(),
+                isClean());
+        ruleTypeCondition_ = null;
+      }
+      ruleTypeConditionCase_ = 2;
+      onChanged();
+      return timedPromoteReleaseConditionBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,7 +79,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
    * </pre>
    *
    * <code>
@@ -116,7 +116,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
    * </pre>
    *
    * <code>
@@ -131,7 +131,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
    * </pre>
    *
    * <code>
@@ -148,7 +148,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
    * </pre>
    *
    * <code>
@@ -772,7 +772,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -793,7 +793,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -811,7 +811,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -831,7 +831,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -859,7 +859,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -885,7 +885,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -912,7 +912,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -940,7 +940,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -965,7 +965,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -991,7 +991,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1017,7 +1017,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1038,7 +1038,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1059,7 +1059,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1076,7 +1076,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1096,7 +1096,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1118,7 +1118,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1139,7 +1139,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>
@@ -1161,7 +1161,7 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * Effective firewalls from firewall policy.
+     * [Output only] Effective firewalls from firewall policy. It applies to Regional Network Firewall Policies in the specified region, Global Network Firewall Policies and Hierachial Firewall Policies which are associated with the network.
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1429,10 +1429,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     default void listEffectiveSecurityHealthAnalyticsCustomModules(
@@ -1451,7 +1452,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     default void getEffectiveSecurityHealthAnalyticsCustomModule(
@@ -1470,9 +1472,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     default void listSecurityHealthAnalyticsCustomModules(
@@ -1490,8 +1494,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     default void listDescendantSecurityHealthAnalyticsCustomModules(
@@ -1510,7 +1516,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     default void getSecurityHealthAnalyticsCustomModule(
@@ -1527,10 +1534,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     default void createSecurityHealthAnalyticsCustomModule(
@@ -1548,11 +1557,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     default void updateSecurityHealthAnalyticsCustomModule(
@@ -1570,9 +1581,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     default void deleteSecurityHealthAnalyticsCustomModule(
@@ -1588,7 +1600,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     default void simulateSecurityHealthAnalyticsCustomModule(
@@ -1628,13 +1642,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     default void getEffectiveEventThreatDetectionCustomModule(
@@ -1653,9 +1671,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     default void listEventThreatDetectionCustomModules(
@@ -1673,8 +1691,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     default void listDescendantEventThreatDetectionCustomModules(
@@ -1711,9 +1729,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     default void createEventThreatDetectionCustomModule(
@@ -1753,8 +1771,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     default void deleteEventThreatDetectionCustomModule(
@@ -1872,10 +1890,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public void listEffectiveSecurityHealthAnalyticsCustomModules(
@@ -1898,7 +1917,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public void getEffectiveSecurityHealthAnalyticsCustomModule(
@@ -1921,9 +1941,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public void listSecurityHealthAnalyticsCustomModules(
@@ -1944,8 +1966,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     public void listDescendantSecurityHealthAnalyticsCustomModules(
@@ -1968,7 +1992,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public void getSecurityHealthAnalyticsCustomModule(
@@ -1987,10 +2012,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     public void createSecurityHealthAnalyticsCustomModule(
@@ -2011,11 +2038,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     public void updateSecurityHealthAnalyticsCustomModule(
@@ -2036,9 +2065,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     public void deleteSecurityHealthAnalyticsCustomModule(
@@ -2057,7 +2087,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     public void simulateSecurityHealthAnalyticsCustomModule(
@@ -2103,13 +2135,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     public void getEffectiveEventThreatDetectionCustomModule(
@@ -2131,9 +2167,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     public void listEventThreatDetectionCustomModules(
@@ -2153,8 +2189,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     public void listDescendantEventThreatDetectionCustomModules(
@@ -2197,9 +2233,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     public void createEventThreatDetectionCustomModule(
@@ -2243,8 +2279,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     public void deleteEventThreatDetectionCustomModule(
@@ -2358,10 +2394,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2381,7 +2418,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule
@@ -2400,9 +2438,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2422,8 +2462,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2443,7 +2485,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
@@ -2462,10 +2505,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
@@ -2484,11 +2529,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
@@ -2507,9 +2554,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     public com.google.protobuf.Empty deleteSecurityHealthAnalyticsCustomModule(
@@ -2527,7 +2575,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2569,13 +2619,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule
@@ -2594,9 +2648,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2616,8 +2670,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2653,9 +2707,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
@@ -2699,8 +2753,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     public com.google.protobuf.Empty deleteEventThreatDetectionCustomModule(
@@ -2804,10 +2858,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all EffectiveSecurityHealthAnalyticsCustomModules for the
-     * given parent. This includes resident modules defined at the scope of the
-     * parent, and inherited modules, inherited from CRM ancestors (no
-     * descendants).
+     * Returns a list of all
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2828,7 +2883,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets details of a single EffectiveSecurityHealthAnalyticsCustomModule.
+     * Gets details of a single
+     * [EffectiveSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.EffectiveSecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2849,9 +2905,11 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all SecurityHealthAnalyticsCustomModules for the given
-     * parent. This includes resident modules defined at the scope of the parent,
-     * and inherited modules, inherited from CRM ancestors (no descendants).
+     * Returns a list of all
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources for the given parent. This includes resident modules defined at
+     * the scope of the parent, and inherited modules, inherited from ancestor
+     * organizations, folders, and projects (no descendants).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2871,8 +2929,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent's CRM descendants.
+     * Returns a list of all resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * resources under the given organization, folder, or project and all of its
+     * descendants.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2893,7 +2953,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Retrieves a SecurityHealthAnalyticsCustomModule.
+     * Retrieves a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2911,10 +2972,12 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the
-     * given CRM parent, and also creates inherited
-     * SecurityHealthAnalyticsCustomModules for all CRM descendants of the given
-     * parent. These modules are enabled by default.
+     * Creates a resident
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * at the scope of the given organization, folder, or project, and also
+     * creates inherited `SecurityHealthAnalyticsCustomModule` resources for all
+     * folders and projects that are descendants of the given parent. These
+     * modules are enabled by default.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2933,11 +2996,13 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Updates the SecurityHealthAnalyticsCustomModule under the given name based
-     * on the given update mask. Updating the enablement state is supported on
-     * both resident and inherited modules (though resident modules cannot have an
-     * enablement state of "inherited"). Updating the display name and custom
-     * config of a module is supported on resident modules only.
+     * Updates the
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * under the given name based on the given update mask. Updating the
+     * enablement state is supported on both resident and inherited modules
+     * (though resident modules cannot have an enablement state of "inherited").
+     * Updating the display name and custom configuration of a module is supported
+     * on resident modules only.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2956,9 +3021,10 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Deletes the specified SecurityHealthAnalyticsCustomModule and all of its
-     * descendants in the CRM hierarchy. This method is only supported for
-     * resident custom modules.
+     * Deletes the specified
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * and all of its descendants in the resource hierarchy. This method is only
+     * supported for resident custom modules.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -2976,7 +3042,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+     * Simulates the result of using a
+     * [SecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule]
+     * to check a resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3018,13 +3086,17 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Gets an effective ETD custom module. Retrieves the effective module at the
-     * given level. The difference between an EffectiveCustomModule and a
-     * CustomModule is that the fields for an EffectiveCustomModule are computed
-     * from ancestors if needed. For example, the enablement_state for a
-     * CustomModule can be either ENABLED, DISABLED, or INHERITED. Where as the
-     * enablement_state for an EffectiveCustomModule is always computed to ENABLED
-     * or DISABLED (the effective enablement_state).
+     * Gets the effective Event Threat Detection custom module at the given level.
+     * The difference between an
+     * [EffectiveEventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EffectiveEventThreatDetectionCustomModule]
+     * and an
+     * [EventThreatDetectionCustomModule][google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule]
+     * is that the fields for an `EffectiveEventThreatDetectionCustomModule` are
+     * computed from ancestors if needed. For example, the enablement state for an
+     * `EventThreatDetectionCustomModule` can be `ENABLED`, `DISABLED`, or
+     * `INHERITED`. In contrast, the enablement state for an
+     * `EffectiveEventThreatDetectionCustomModule` is always computed as `ENABLED`
+     * or `DISABLED`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3043,9 +3115,9 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all Event Threat Detection custom modules for the given
-     * Resource Manager parent. This includes resident modules defined at the
-     * scope of the parent along with modules inherited from ancestors.
+     * Lists all Event Threat Detection custom modules for the given organization,
+     * folder, or project. This includes resident modules defined at the scope of
+     * the parent along with modules inherited from ancestors.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3064,8 +3136,8 @@ public final class SecurityCenterManagementGrpc {
      *
      *
      * <pre>
-     * Lists all resident Event Threat Detection custom modules under the
-     * given Resource Manager parent and its descendants.
+     * Lists all resident Event Threat Detection custom modules for the given
+     * organization, folder, or project and its descendants.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3104,9 +3176,9 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Creates a resident Event Threat Detection custom module at the scope of the
-     * given Resource Manager parent, and also creates inherited custom modules
-     * for all descendants of the given parent. These modules are enabled by
-     * default.
+     * given organization, folder, or project, and creates inherited custom
+     * modules for all descendants of the given parent. These modules are enabled
+     * by default.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3148,8 +3220,8 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Deletes the specified Event Threat Detection custom module and all of its
-     * descendants in the Resource Manager hierarchy. This method is only
-     * supported for resident custom modules.
+     * descendants in the resource hierarchy. This method is only supported for
+     * resident custom modules.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

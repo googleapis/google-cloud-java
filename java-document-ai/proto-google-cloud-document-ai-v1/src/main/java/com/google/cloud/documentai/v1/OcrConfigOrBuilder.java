@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,7 +189,7 @@ public interface OcrConfigOrBuilder
    * <code>bool compute_style_info = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1.OcrConfig.compute_style_info is deprecated. See
-   *     google/cloud/documentai/v1/document_io.proto;l=165
+   *     google/cloud/documentai/v1/document_io.proto;l=166
    * @return The computeStyleInfo.
    */
   @java.lang.Deprecated

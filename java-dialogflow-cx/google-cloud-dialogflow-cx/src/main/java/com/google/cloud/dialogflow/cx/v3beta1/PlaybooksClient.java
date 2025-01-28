@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -393,8 +393,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a playbook for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a playbook for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param playbook Required. The playbook to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -426,8 +426,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a playbook for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a playbook for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param playbook Required. The playbook to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -512,9 +512,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybook(PlaybookName name) {
@@ -541,9 +540,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybook(String name) {
@@ -628,8 +626,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list playbooks from. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list playbooks from. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybooksPagedResponse listPlaybooks(AgentName parent) {
@@ -660,8 +658,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list playbooks from. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list playbooks from. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybooksPagedResponse listPlaybooks(String parent) {
@@ -789,9 +787,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Playbook getPlaybook(PlaybookName name) {
@@ -818,9 +815,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param name Required. The name of the playbook. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Playbook getPlaybook(String name) {
@@ -991,9 +987,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to create a version for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to create a version for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @param playbookVersion Required. The playbook version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1027,9 +1022,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to create a version for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to create a version for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @param playbookVersion Required. The playbook version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1123,9 +1117,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PlaybookVersion getPlaybookVersion(PlaybookVersionName name) {
@@ -1156,9 +1149,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PlaybookVersion getPlaybookVersion(String name) {
@@ -1250,9 +1242,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to list versions for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to list versions for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybookVersionsPagedResponse listPlaybookVersions(PlaybookName parent) {
@@ -1284,9 +1275,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The playbook to list versions for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;`.
+   * @param parent Required. The playbook to list versions for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPlaybookVersionsPagedResponse listPlaybookVersions(String parent) {
@@ -1423,9 +1413,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybookVersion(PlaybookVersionName name) {
@@ -1456,9 +1445,8 @@ public class PlaybooksClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the playbook version to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/playbooks/&lt;Playbook
-   *     ID&gt;/versions/&lt;Version ID&gt;`.
+   * @param name Required. The name of the playbook version to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deletePlaybookVersion(String name) {

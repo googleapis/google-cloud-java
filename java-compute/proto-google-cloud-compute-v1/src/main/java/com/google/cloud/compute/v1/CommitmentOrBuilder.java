@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,6 +125,43 @@ public interface CommitmentOrBuilder
    * @return The bytes for creationTimestamp.
    */
   com.google.protobuf.ByteString getCreationTimestampBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Input Only] Optional, specifies the CUD end time requested by the customer in RFC3339 text format. Needed when the customer wants CUD's end date is later than the start date + term duration.
+   * </pre>
+   *
+   * <code>optional string custom_end_timestamp = 181770852;</code>
+   *
+   * @return Whether the customEndTimestamp field is set.
+   */
+  boolean hasCustomEndTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Input Only] Optional, specifies the CUD end time requested by the customer in RFC3339 text format. Needed when the customer wants CUD's end date is later than the start date + term duration.
+   * </pre>
+   *
+   * <code>optional string custom_end_timestamp = 181770852;</code>
+   *
+   * @return The customEndTimestamp.
+   */
+  java.lang.String getCustomEndTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * [Input Only] Optional, specifies the CUD end time requested by the customer in RFC3339 text format. Needed when the customer wants CUD's end date is later than the start date + term duration.
+   * </pre>
+   *
+   * <code>optional string custom_end_timestamp = 181770852;</code>
+   *
+   * @return The bytes for customEndTimestamp.
+   */
+  com.google.protobuf.ByteString getCustomEndTimestampBytes();
 
   /**
    *
@@ -567,6 +604,44 @@ public interface CommitmentOrBuilder
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   com.google.cloud.compute.v1.ReservationOrBuilder getReservationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information for Commitment resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
+   * </code>
+   *
+   * @return Whether the resourceStatus field is set.
+   */
+  boolean hasResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information for Commitment resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
+   * </code>
+   *
+   * @return The resourceStatus.
+   */
+  com.google.cloud.compute.v1.CommitmentResourceStatus getResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Status information for Commitment resource.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CommitmentResourceStatusOrBuilder getResourceStatusOrBuilder();
 
   /**
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     name_ = "";
     selfLink_ = "";
+    usedBy_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -942,6 +943,77 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int USED_BY_FIELD_NUMBER = 389320729;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.BackendBucketUsedBy> usedBy_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.BackendBucketUsedBy> getUsedByList() {
+    return usedBy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>
+      getUsedByOrBuilderList() {
+    return usedBy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  @java.lang.Override
+  public int getUsedByCount() {
+    return usedBy_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendBucketUsedBy getUsedBy(int index) {
+    return usedBy_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] List of resources referencing that backend bucket.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder getUsedByOrBuilder(int index) {
+    return usedBy_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -986,6 +1058,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < customResponseHeaders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 387539094, customResponseHeaders_.getRaw(i));
+    }
+    for (int i = 0; i < usedBy_.size(); i++) {
+      output.writeMessage(389320729, usedBy_.get(i));
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
@@ -1038,6 +1113,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getCustomResponseHeadersList().size();
+    }
+    for (int i = 0; i < usedBy_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(389320729, usedBy_.get(i));
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
@@ -1106,6 +1184,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (!getUsedByList().equals(other.getUsedByList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1164,6 +1243,10 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (getUsedByCount() > 0) {
+      hash = (37 * hash) + USED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getUsedByList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1306,6 +1389,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCdnPolicyFieldBuilder();
+        getUsedByFieldBuilder();
       }
     }
 
@@ -1329,6 +1413,13 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       kind_ = "";
       name_ = "";
       selfLink_ = "";
+      if (usedByBuilder_ == null) {
+        usedBy_ = java.util.Collections.emptyList();
+      } else {
+        usedBy_ = null;
+        usedByBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1356,11 +1447,24 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.BackendBucket buildPartial() {
       com.google.cloud.compute.v1.BackendBucket result =
           new com.google.cloud.compute.v1.BackendBucket(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.BackendBucket result) {
+      if (usedByBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          usedBy_ = java.util.Collections.unmodifiableList(usedBy_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.usedBy_ = usedBy_;
+      } else {
+        result.usedBy_ = usedByBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.BackendBucket result) {
@@ -1521,6 +1625,33 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (usedByBuilder_ == null) {
+        if (!other.usedBy_.isEmpty()) {
+          if (usedBy_.isEmpty()) {
+            usedBy_ = other.usedBy_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureUsedByIsMutable();
+            usedBy_.addAll(other.usedBy_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.usedBy_.isEmpty()) {
+          if (usedByBuilder_.isEmpty()) {
+            usedByBuilder_.dispose();
+            usedByBuilder_ = null;
+            usedBy_ = other.usedBy_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            usedByBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getUsedByFieldBuilder()
+                    : null;
+          } else {
+            usedByBuilder_.addAllMessages(other.usedBy_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1608,6 +1739,20 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
                 customResponseHeaders_.add(s);
                 break;
               } // case -1194654542
+            case -1180401462:
+              {
+                com.google.cloud.compute.v1.BackendBucketUsedBy m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.BackendBucketUsedBy.parser(),
+                        extensionRegistry);
+                if (usedByBuilder_ == null) {
+                  ensureUsedByIsMutable();
+                  usedBy_.add(m);
+                } else {
+                  usedByBuilder_.addMessage(m);
+                }
+                break;
+              } // case -1180401462
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
@@ -3101,6 +3246,356 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.BackendBucketUsedBy> usedBy_ =
+        java.util.Collections.emptyList();
+
+    private void ensureUsedByIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        usedBy_ = new java.util.ArrayList<com.google.cloud.compute.v1.BackendBucketUsedBy>(usedBy_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendBucketUsedBy,
+            com.google.cloud.compute.v1.BackendBucketUsedBy.Builder,
+            com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>
+        usedByBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.BackendBucketUsedBy> getUsedByList() {
+      if (usedByBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(usedBy_);
+      } else {
+        return usedByBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public int getUsedByCount() {
+      if (usedByBuilder_ == null) {
+        return usedBy_.size();
+      } else {
+        return usedByBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public com.google.cloud.compute.v1.BackendBucketUsedBy getUsedBy(int index) {
+      if (usedByBuilder_ == null) {
+        return usedBy_.get(index);
+      } else {
+        return usedByBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder setUsedBy(int index, com.google.cloud.compute.v1.BackendBucketUsedBy value) {
+      if (usedByBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsedByIsMutable();
+        usedBy_.set(index, value);
+        onChanged();
+      } else {
+        usedByBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder setUsedBy(
+        int index, com.google.cloud.compute.v1.BackendBucketUsedBy.Builder builderForValue) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        usedByBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder addUsedBy(com.google.cloud.compute.v1.BackendBucketUsedBy value) {
+      if (usedByBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsedByIsMutable();
+        usedBy_.add(value);
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder addUsedBy(int index, com.google.cloud.compute.v1.BackendBucketUsedBy value) {
+      if (usedByBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsedByIsMutable();
+        usedBy_.add(index, value);
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder addUsedBy(
+        com.google.cloud.compute.v1.BackendBucketUsedBy.Builder builderForValue) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.add(builderForValue.build());
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder addUsedBy(
+        int index, com.google.cloud.compute.v1.BackendBucketUsedBy.Builder builderForValue) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        usedByBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder addAllUsedBy(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.BackendBucketUsedBy> values) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, usedBy_);
+        onChanged();
+      } else {
+        usedByBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder clearUsedBy() {
+      if (usedByBuilder_ == null) {
+        usedBy_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        usedByBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public Builder removeUsedBy(int index) {
+      if (usedByBuilder_ == null) {
+        ensureUsedByIsMutable();
+        usedBy_.remove(index);
+        onChanged();
+      } else {
+        usedByBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public com.google.cloud.compute.v1.BackendBucketUsedBy.Builder getUsedByBuilder(int index) {
+      return getUsedByFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder getUsedByOrBuilder(int index) {
+      if (usedByBuilder_ == null) {
+        return usedBy_.get(index);
+      } else {
+        return usedByBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>
+        getUsedByOrBuilderList() {
+      if (usedByBuilder_ != null) {
+        return usedByBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(usedBy_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public com.google.cloud.compute.v1.BackendBucketUsedBy.Builder addUsedByBuilder() {
+      return getUsedByFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.BackendBucketUsedBy.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public com.google.cloud.compute.v1.BackendBucketUsedBy.Builder addUsedByBuilder(int index) {
+      return getUsedByFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.BackendBucketUsedBy.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] List of resources referencing that backend bucket.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.BackendBucketUsedBy.Builder>
+        getUsedByBuilderList() {
+      return getUsedByFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.BackendBucketUsedBy,
+            com.google.cloud.compute.v1.BackendBucketUsedBy.Builder,
+            com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>
+        getUsedByFieldBuilder() {
+      if (usedByBuilder_ == null) {
+        usedByBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.BackendBucketUsedBy,
+                com.google.cloud.compute.v1.BackendBucketUsedBy.Builder,
+                com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>(
+                usedBy_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+        usedBy_ = null;
+      }
+      return usedByBuilder_;
     }
 
     @java.lang.Override

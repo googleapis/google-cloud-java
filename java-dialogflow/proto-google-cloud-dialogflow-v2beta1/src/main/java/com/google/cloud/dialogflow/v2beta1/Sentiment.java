@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-   * sentiment).
+   *  sentiment).
    * </pre>
    *
    * <code>float score = 1;</code>
@@ -474,7 +474,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-     * sentiment).
+     *  sentiment).
      * </pre>
      *
      * <code>float score = 1;</code>
@@ -490,7 +490,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-     * sentiment).
+     *  sentiment).
      * </pre>
      *
      * <code>float score = 1;</code>
@@ -510,7 +510,7 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-     * sentiment).
+     *  sentiment).
      * </pre>
      *
      * <code>float score = 1;</code>

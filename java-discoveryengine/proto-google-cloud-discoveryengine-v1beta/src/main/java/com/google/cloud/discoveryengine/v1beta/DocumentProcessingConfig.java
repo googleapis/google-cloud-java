@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ package com.google.cloud.discoveryengine.v1beta;
  *
  * <pre>
  * A singleton resource of
- * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]. It's empty when
- * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is created, which
- * defaults to digital parser. The first call to
- * [DataStoreService.UpdateDocumentProcessingConfig][] method will initialize
- * the config.
+ * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]. If it's empty
+ * when [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is created
+ * and [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is set to
+ * [DataStore.ContentConfig.CONTENT_REQUIRED][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.CONTENT_REQUIRED],
+ * the default parser will default to digital parser.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1beta.DocumentProcessingConfig}
@@ -5899,6 +5899,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
    * layout parsing are supported.
+   * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
+   * layout parsing are supported.
    * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
    * layout parsing are supported.
    * </pre>
@@ -5938,6 +5940,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
    * layout parsing are supported.
+   * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
+   * layout parsing are supported.
    * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
    * layout parsing are supported.
    * </pre>
@@ -5967,6 +5971,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
+   * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
    * layout parsing are supported.
    * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
    * layout parsing are supported.
@@ -6007,6 +6013,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    * * `docx`: Override parsing config for DOCX files, only digital parsing and
    * layout parsing are supported.
    * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+   * layout parsing are supported.
+   * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
    * layout parsing are supported.
    * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
    * layout parsing are supported.
@@ -6252,11 +6260,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * A singleton resource of
-   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]. It's empty when
-   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is created, which
-   * defaults to digital parser. The first call to
-   * [DataStoreService.UpdateDocumentProcessingConfig][] method will initialize
-   * the config.
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]. If it's empty
+   * when [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is created
+   * and [DataStore][google.cloud.discoveryengine.v1beta.DataStore] is set to
+   * [DataStore.ContentConfig.CONTENT_REQUIRED][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.CONTENT_REQUIRED],
+   * the default parser will default to digital parser.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1beta.DocumentProcessingConfig}
@@ -7204,6 +7212,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
      * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
+     * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.
      * </pre>
@@ -7243,6 +7253,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
      * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
+     * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.
      * </pre>
@@ -7272,6 +7284,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
      * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.
@@ -7315,6 +7329,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
      * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.
@@ -7361,6 +7377,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
      * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
+     * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.
      * </pre>
@@ -7400,6 +7418,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
      * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
+     * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.
      * </pre>
@@ -7435,6 +7455,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
      * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.
@@ -7475,6 +7497,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
      * * `docx`: Override parsing config for DOCX files, only digital parsing and
      * layout parsing are supported.
      * * `pptx`: Override parsing config for PPTX files, only digital parsing and
+     * layout parsing are supported.
+     * * `xlsm`: Override parsing config for XLSM files, only digital parsing and
      * layout parsing are supported.
      * * `xlsx`: Override parsing config for XLSX files, only digital parsing and
      * layout parsing are supported.

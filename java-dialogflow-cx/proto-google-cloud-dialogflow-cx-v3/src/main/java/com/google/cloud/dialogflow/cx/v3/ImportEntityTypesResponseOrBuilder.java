@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ public interface ImportEntityTypesResponseOrBuilder
    *
    * <pre>
    * The unique identifier of the imported entity types.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
    * </pre>
    *
    * <code>repeated string entity_types = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -43,8 +43,8 @@ public interface ImportEntityTypesResponseOrBuilder
    *
    * <pre>
    * The unique identifier of the imported entity types.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
    * </pre>
    *
    * <code>repeated string entity_types = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -57,8 +57,8 @@ public interface ImportEntityTypesResponseOrBuilder
    *
    * <pre>
    * The unique identifier of the imported entity types.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
    * </pre>
    *
    * <code>repeated string entity_types = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -72,8 +72,8 @@ public interface ImportEntityTypesResponseOrBuilder
    *
    * <pre>
    * The unique identifier of the imported entity types.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
    * </pre>
    *
    * <code>repeated string entity_types = 1 [(.google.api.resource_reference) = { ... }</code>

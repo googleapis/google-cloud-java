@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,11 @@ public final class ReviewProto {
           + "n\0220\n\014publish_time\030\016 \001(\0132\032.google.protobu"
           + "f.Timestamp:S\352AP\n\034places.googleapis.com/"
           + "Review\022\037places/{place}/reviews/{review}*"
-          + "\007reviews2\006reviewB\237\001\n\031com.google.maps.pla"
+          + "\007reviews2\006reviewB\234\001\n\031com.google.maps.pla"
           + "ces.v1B\013ReviewProtoP\001Z7cloud.google.com/"
-          + "go/maps/places/apiv1/placespb;placespb\370\001"
-          + "\001\242\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Goo"
-          + "gle\\Maps\\Places\\V1b\006proto3"
+          + "go/maps/places/apiv1/placespb;placespb\242\002"
+          + "\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Google"
+          + "\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

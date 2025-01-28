@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ public final class CreateFirewallPolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The name of the project this policy will apply to, in the format
+   * Required. The name of the project this policy applies to, in the format
    * `projects/{project}`.
    * </pre>
    *
@@ -98,7 +98,7 @@ public final class CreateFirewallPolicyRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The name of the project this policy will apply to, in the format
+   * Required. The name of the project this policy applies to, in the format
    * `projects/{project}`.
    * </pre>
    *
@@ -572,7 +572,7 @@ public final class CreateFirewallPolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the project this policy will apply to, in the format
+     * Required. The name of the project this policy applies to, in the format
      * `projects/{project}`.
      * </pre>
      *
@@ -597,7 +597,7 @@ public final class CreateFirewallPolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the project this policy will apply to, in the format
+     * Required. The name of the project this policy applies to, in the format
      * `projects/{project}`.
      * </pre>
      *
@@ -622,7 +622,7 @@ public final class CreateFirewallPolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the project this policy will apply to, in the format
+     * Required. The name of the project this policy applies to, in the format
      * `projects/{project}`.
      * </pre>
      *
@@ -646,7 +646,7 @@ public final class CreateFirewallPolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the project this policy will apply to, in the format
+     * Required. The name of the project this policy applies to, in the format
      * `projects/{project}`.
      * </pre>
      *
@@ -666,7 +666,7 @@ public final class CreateFirewallPolicyRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The name of the project this policy will apply to, in the format
+     * Required. The name of the project this policy applies to, in the format
      * `projects/{project}`.
      * </pre>
      *

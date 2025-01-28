@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,11 @@ public interface SupplementalProductDataSourceOrBuilder
    *
    * `feedLabel` and `contentLanguage` must be either both set or unset for data
    * sources with product content type.
-   * They must be set for data sources with a file input.
+   *
+   * They must be set for data sources with a [file
+   * input][google.shopping.merchant.datasources.v1main.FileInput].
+   * The fields must be unset for data sources without [file
+   * input][google.shopping.merchant.datasources.v1main.FileInput].
    *
    * If set, the data source will only accept products matching this
    * combination. If unset, the data source will accept produts without that
@@ -68,7 +72,11 @@ public interface SupplementalProductDataSourceOrBuilder
    *
    * `feedLabel` and `contentLanguage` must be either both set or unset for data
    * sources with product content type.
-   * They must be set for data sources with a file input.
+   *
+   * They must be set for data sources with a [file
+   * input][google.shopping.merchant.datasources.v1main.FileInput].
+   * The fields must be unset for data sources without [file
+   * input][google.shopping.merchant.datasources.v1main.FileInput].
    *
    * If set, the data source will only accept products matching this
    * combination. If unset, the data source will accept produts without that
@@ -97,7 +105,11 @@ public interface SupplementalProductDataSourceOrBuilder
    *
    * `feedLabel` and `contentLanguage` must be either both set or unset for data
    * sources with product content type.
-   * They must be set for data sources with a file input.
+   *
+   * They must be set for data sources with a [file
+   * input][google.shopping.merchant.datasources.v1main.FileInput].
+   * The fields must be unset for data sources without [file
+   * input][google.shopping.merchant.datasources.v1main.FileInput].
    *
    * If set, the data source will only accept products matching this
    * combination. If unset, the data source will accept produts without that

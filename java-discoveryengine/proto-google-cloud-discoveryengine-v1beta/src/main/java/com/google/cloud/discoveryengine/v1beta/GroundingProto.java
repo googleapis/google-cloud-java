@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,10 @@ public final class GroundingProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_GroundingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_GroundingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_GroundingFact_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_GroundingFact_fieldAccessorTable;
@@ -56,24 +60,28 @@ public final class GroundingProto {
       "\n3google/cloud/discoveryengine/v1beta/gr"
           + "ounding.proto\022#google.cloud.discoveryeng"
           + "ine.v1beta\032\037google/api/field_behavior.pr"
-          + "oto\032\031google/api/resource.proto\"\255\001\n\rGroun"
-          + "dingFact\022\021\n\tfact_text\030\001 \001(\t\022V\n\nattribute"
-          + "s\030\002 \003(\0132B.google.cloud.discoveryengine.v"
-          + "1beta.GroundingFact.AttributesEntry\0321\n\017A"
-          + "ttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001\"\322\001\n\tFactChunk\022\022\n\nchunk_text\030\001 \001(\t"
-          + "\022\016\n\006source\030\002 \001(\t\022\r\n\005index\030\004 \001(\005\022[\n\017sourc"
-          + "e_metadata\030\003 \003(\0132B.google.cloud.discover"
-          + "yengine.v1beta.FactChunk.SourceMetadataE"
-          + "ntry\0325\n\023SourceMetadataEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\t:\0028\001B\225\002\n\'com.google.cloud"
-          + ".discoveryengine.v1betaB\016GroundingProtoP"
-          + "\001ZQcloud.google.com/go/discoveryengine/a"
-          + "piv1beta/discoveryenginepb;discoveryengi"
-          + "nepb\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Di"
-          + "scoveryEngine.V1Beta\312\002#Google\\Cloud\\Disc"
-          + "overyEngine\\V1beta\352\002&Google::Cloud::Disc"
-          + "overyEngine::V1betab\006proto3"
+          + "oto\032\031google/api/resource.proto\"\247\001\n\017Groun"
+          + "dingConfig\022\021\n\004name\030\001 \001(\tB\003\340A\002:\200\001\352A}\n.dis"
+          + "coveryengine.googleapis.com/GroundingCon"
+          + "fig\022Kprojects/{project}/locations/{locat"
+          + "ion}/groundingConfigs/{grounding_config}"
+          + "\"\255\001\n\rGroundingFact\022\021\n\tfact_text\030\001 \001(\t\022V\n"
+          + "\nattributes\030\002 \003(\0132B.google.cloud.discove"
+          + "ryengine.v1beta.GroundingFact.Attributes"
+          + "Entry\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\322\001\n\tFactChunk\022\022\n\nchunk_"
+          + "text\030\001 \001(\t\022\016\n\006source\030\002 \001(\t\022\r\n\005index\030\004 \001("
+          + "\005\022[\n\017source_metadata\030\003 \003(\0132B.google.clou"
+          + "d.discoveryengine.v1beta.FactChunk.Sourc"
+          + "eMetadataEntry\0325\n\023SourceMetadataEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\225\002\n\'com.go"
+          + "ogle.cloud.discoveryengine.v1betaB\016Groun"
+          + "dingProtoP\001ZQcloud.google.com/go/discove"
+          + "ryengine/apiv1beta/discoveryenginepb;dis"
+          + "coveryenginepb\242\002\017DISCOVERYENGINE\252\002#Googl"
+          + "e.Cloud.DiscoveryEngine.V1Beta\312\002#Google\\"
+          + "Cloud\\DiscoveryEngine\\V1beta\352\002&Google::C"
+          + "loud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -82,8 +90,16 @@ public final class GroundingProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
-    internal_static_google_cloud_discoveryengine_v1beta_GroundingFact_descriptor =
+    internal_static_google_cloud_discoveryengine_v1beta_GroundingConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_GroundingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_GroundingConfig_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_GroundingFact_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_discoveryengine_v1beta_GroundingFact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_GroundingFact_descriptor,
@@ -101,7 +117,7 @@ public final class GroundingProto {
               "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1beta_FactChunk_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_discoveryengine_v1beta_FactChunk_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_FactChunk_descriptor,
@@ -118,6 +134,12 @@ public final class GroundingProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }

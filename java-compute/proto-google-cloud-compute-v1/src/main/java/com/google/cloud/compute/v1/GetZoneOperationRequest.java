@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,7 @@ public final class GetZoneOperationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Name of the Operations resource to return.
+   * Name of the Operations resource to return, or its unique numeric identifier.
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetZoneOperationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Name of the Operations resource to return.
+   * Name of the Operations resource to return, or its unique numeric identifier.
    * </pre>
    *
    * <code>
@@ -617,7 +617,7 @@ public final class GetZoneOperationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -641,7 +641,7 @@ public final class GetZoneOperationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -665,7 +665,7 @@ public final class GetZoneOperationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -688,7 +688,7 @@ public final class GetZoneOperationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>
@@ -707,7 +707,7 @@ public final class GetZoneOperationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Name of the Operations resource to return.
+     * Name of the Operations resource to return, or its unique numeric identifier.
      * </pre>
      *
      * <code>

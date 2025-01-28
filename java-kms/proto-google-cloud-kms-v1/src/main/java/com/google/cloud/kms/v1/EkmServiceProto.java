@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -191,14 +191,14 @@ public final class EkmServiceProto {
           + "ifyConnectivity\032t\312A\027cloudkms.googleapis."
           + "com\322AWhttps://www.googleapis.com/auth/cl"
           + "oud-platform,https://www.googleapis.com/"
-          + "auth/cloudkmsB\205\002\n\027com.google.cloud.kms.v"
+          + "auth/cloudkmsB\202\002\n\027com.google.cloud.kms.v"
           + "1B\017EkmServiceProtoP\001Z)cloud.google.com/g"
-          + "o/kms/apiv1/kmspb;kmspb\370\001\001\252\002\023Google.Clou"
-          + "d.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1\352A|\n\'servi"
-          + "cedirectory.googleapis.com/Service\022Qproj"
-          + "ects/{project}/locations/{location}/name"
-          + "spaces/{namespace}/services/{service}b\006p"
-          + "roto3"
+          + "o/kms/apiv1/kmspb;kmspb\252\002\023Google.Cloud.K"
+          + "ms.V1\312\002\023Google\\Cloud\\Kms\\V1\352A|\n\'serviced"
+          + "irectory.googleapis.com/Service\022Qproject"
+          + "s/{project}/locations/{location}/namespa"
+          + "ces/{namespace}/services/{service}b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

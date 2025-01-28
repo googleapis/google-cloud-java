@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.recaptchaenterprise.v1;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -51,6 +52,8 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -59,6 +62,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
@@ -180,6 +185,19 @@ public class RecaptchaEnterpriseServiceSettings
   /** Returns the object with the settings used for calls to addIpOverride. */
   public UnaryCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideSettings() {
     return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).addIpOverrideSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeIpOverride. */
+  public UnaryCallSettings<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).removeIpOverrideSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listIpOverrides. */
+  public PagedCallSettings<
+          ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+      listIpOverridesSettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).listIpOverridesSettings();
   }
 
   /** Returns the object with the settings used for calls to getMetrics. */
@@ -412,6 +430,19 @@ public class RecaptchaEnterpriseServiceSettings
     public UnaryCallSettings.Builder<AddIpOverrideRequest, AddIpOverrideResponse>
         addIpOverrideSettings() {
       return getStubSettingsBuilder().addIpOverrideSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeIpOverride. */
+    public UnaryCallSettings.Builder<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+        removeIpOverrideSettings() {
+      return getStubSettingsBuilder().removeIpOverrideSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listIpOverrides. */
+    public PagedCallSettings.Builder<
+            ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+        listIpOverridesSettings() {
+      return getStubSettingsBuilder().listIpOverridesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getMetrics. */

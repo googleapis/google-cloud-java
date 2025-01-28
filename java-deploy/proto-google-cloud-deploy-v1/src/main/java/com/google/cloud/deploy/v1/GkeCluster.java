@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,6 +135,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * Only specify this option when `cluster` is a [private GKE
    * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+   * Note that `internal_ip` and `dns_endpoint` cannot both be set to true.
    * </pre>
    *
    * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -201,6 +202,25 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DNS_ENDPOINT_FIELD_NUMBER = 4;
+  private boolean dnsEndpoint_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the cluster will be accessed using the DNS endpoint. Note
+   * that `dns_endpoint` and `internal_ip` cannot both be set to true.
+   * </pre>
+   *
+   * <code>bool dns_endpoint = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dnsEndpoint.
+   */
+  @java.lang.Override
+  public boolean getDnsEndpoint() {
+    return dnsEndpoint_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -224,6 +244,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, proxyUrl_);
     }
+    if (dnsEndpoint_ != false) {
+      output.writeBool(4, dnsEndpoint_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -241,6 +264,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, proxyUrl_);
+    }
+    if (dnsEndpoint_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, dnsEndpoint_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -260,6 +286,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     if (!getCluster().equals(other.getCluster())) return false;
     if (getInternalIp() != other.getInternalIp()) return false;
     if (!getProxyUrl().equals(other.getProxyUrl())) return false;
+    if (getDnsEndpoint() != other.getDnsEndpoint()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -277,6 +304,8 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInternalIp());
     hash = (37 * hash) + PROXY_URL_FIELD_NUMBER;
     hash = (53 * hash) + getProxyUrl().hashCode();
+    hash = (37 * hash) + DNS_ENDPOINT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDnsEndpoint());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -418,6 +447,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       cluster_ = "";
       internalIp_ = false;
       proxyUrl_ = "";
+      dnsEndpoint_ = false;
       return this;
     }
 
@@ -462,6 +492,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.proxyUrl_ = proxyUrl_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dnsEndpoint_ = dnsEndpoint_;
       }
     }
 
@@ -523,6 +556,9 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getDnsEndpoint() != false) {
+        setDnsEndpoint(other.getDnsEndpoint());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -567,6 +603,12 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                dnsEndpoint_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -720,6 +762,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * Only specify this option when `cluster` is a [private GKE
      * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+     * Note that `internal_ip` and `dns_endpoint` cannot both be set to true.
      * </pre>
      *
      * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -742,6 +785,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * Only specify this option when `cluster` is a [private GKE
      * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+     * Note that `internal_ip` and `dns_endpoint` cannot both be set to true.
      * </pre>
      *
      * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -768,6 +812,7 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * Only specify this option when `cluster` is a [private GKE
      * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+     * Note that `internal_ip` and `dns_endpoint` cannot both be set to true.
      * </pre>
      *
      * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,6 +938,62 @@ public final class GkeCluster extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       proxyUrl_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean dnsEndpoint_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the cluster will be accessed using the DNS endpoint. Note
+     * that `dns_endpoint` and `internal_ip` cannot both be set to true.
+     * </pre>
+     *
+     * <code>bool dns_endpoint = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dnsEndpoint.
+     */
+    @java.lang.Override
+    public boolean getDnsEndpoint() {
+      return dnsEndpoint_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the cluster will be accessed using the DNS endpoint. Note
+     * that `dns_endpoint` and `internal_ip` cannot both be set to true.
+     * </pre>
+     *
+     * <code>bool dns_endpoint = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dnsEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDnsEndpoint(boolean value) {
+
+      dnsEndpoint_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the cluster will be accessed using the DNS endpoint. Note
+     * that `dns_endpoint` and `internal_ip` cannot both be set to true.
+     * </pre>
+     *
+     * <code>bool dns_endpoint = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDnsEndpoint() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      dnsEndpoint_ = false;
       onChanged();
       return this;
     }

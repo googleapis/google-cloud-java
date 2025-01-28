@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.ModelGardenServiceStub;
@@ -37,6 +39,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -107,6 +111,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listPublisherModelsPagedCallable()
  *           <li><p> listPublisherModelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeployPublisherModel</td>
+ *      <td><p> Deploys publisher models.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployPublisherModelAsync(DeployPublisherModelRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployPublisherModelOperationCallable()
+ *           <li><p> deployPublisherModelCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -231,6 +250,7 @@ import javax.annotation.Generated;
 public class ModelGardenServiceClient implements BackgroundResource {
   private final ModelGardenServiceSettings settings;
   private final ModelGardenServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of ModelGardenServiceClient with default settings. */
   public static final ModelGardenServiceClient create() throws IOException {
@@ -262,11 +282,13 @@ public class ModelGardenServiceClient implements BackgroundResource {
   protected ModelGardenServiceClient(ModelGardenServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ModelGardenServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected ModelGardenServiceClient(ModelGardenServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final ModelGardenServiceSettings getSettings() {
@@ -275,6 +297,14 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
   public ModelGardenServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -451,6 +481,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setListAllVersions(true)
    *           .build();
    *   for (PublisherModel element :
    *       modelGardenServiceClient.listPublisherModels(request).iterateAll()) {
@@ -489,6 +520,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setListAllVersions(true)
    *           .build();
    *   ApiFuture<PublisherModel> future =
    *       modelGardenServiceClient.listPublisherModelsPagedCallable().futureCall(request);
@@ -526,6 +558,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setListAllVersions(true)
    *           .build();
    *   while (true) {
    *     ListPublisherModelsResponse response =
@@ -546,6 +579,115 @@ public class ModelGardenServiceClient implements BackgroundResource {
   public final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
       listPublisherModelsCallable() {
     return stub.listPublisherModelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployPublisherModelRequest request =
+   *       DeployPublisherModelRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setEndpointDisplayName("endpointDisplayName697270680")
+   *           .setDedicatedResources(DedicatedResources.newBuilder().build())
+   *           .setModelDisplayName("modelDisplayName1578770308")
+   *           .setHuggingFaceAccessToken("huggingFaceAccessToken-159927933")
+   *           .setAcceptEula(true)
+   *           .build();
+   *   DeployPublisherModelResponse response =
+   *       modelGardenServiceClient.deployPublisherModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployPublisherModelResponse, DeployPublisherModelOperationMetadata>
+      deployPublisherModelAsync(DeployPublisherModelRequest request) {
+    return deployPublisherModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployPublisherModelRequest request =
+   *       DeployPublisherModelRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setEndpointDisplayName("endpointDisplayName697270680")
+   *           .setDedicatedResources(DedicatedResources.newBuilder().build())
+   *           .setModelDisplayName("modelDisplayName1578770308")
+   *           .setHuggingFaceAccessToken("huggingFaceAccessToken-159927933")
+   *           .setAcceptEula(true)
+   *           .build();
+   *   OperationFuture<DeployPublisherModelResponse, DeployPublisherModelOperationMetadata> future =
+   *       modelGardenServiceClient.deployPublisherModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployPublisherModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationCallable() {
+    return stub.deployPublisherModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployPublisherModelRequest request =
+   *       DeployPublisherModelRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setEndpointDisplayName("endpointDisplayName697270680")
+   *           .setDedicatedResources(DedicatedResources.newBuilder().build())
+   *           .setModelDisplayName("modelDisplayName1578770308")
+   *           .setHuggingFaceAccessToken("huggingFaceAccessToken-159927933")
+   *           .setAcceptEula(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       modelGardenServiceClient.deployPublisherModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployPublisherModelRequest, Operation>
+      deployPublisherModelCallable() {
+    return stub.deployPublisherModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

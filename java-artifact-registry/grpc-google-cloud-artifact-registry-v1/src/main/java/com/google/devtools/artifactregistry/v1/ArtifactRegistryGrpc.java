@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1078,6 +1078,52 @@ public final class ArtifactRegistryGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateVersionRequest,
+          com.google.devtools.artifactregistry.v1.Version>
+      getUpdateVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVersion",
+      requestType = com.google.devtools.artifactregistry.v1.UpdateVersionRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.Version.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateVersionRequest,
+          com.google.devtools.artifactregistry.v1.Version>
+      getUpdateVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.UpdateVersionRequest,
+            com.google.devtools.artifactregistry.v1.Version>
+        getUpdateVersionMethod;
+    if ((getUpdateVersionMethod = ArtifactRegistryGrpc.getUpdateVersionMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getUpdateVersionMethod = ArtifactRegistryGrpc.getUpdateVersionMethod) == null) {
+          ArtifactRegistryGrpc.getUpdateVersionMethod =
+              getUpdateVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.UpdateVersionRequest,
+                          com.google.devtools.artifactregistry.v1.Version>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.UpdateVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.Version.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("UpdateVersion"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.artifactregistry.v1.ListFilesRequest,
           com.google.devtools.artifactregistry.v1.ListFilesResponse>
       getListFilesMethod;
@@ -1167,6 +1213,98 @@ public final class ArtifactRegistryGrpc {
       }
     }
     return getGetFileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.DeleteFileRequest,
+          com.google.longrunning.Operation>
+      getDeleteFileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteFile",
+      requestType = com.google.devtools.artifactregistry.v1.DeleteFileRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.DeleteFileRequest,
+          com.google.longrunning.Operation>
+      getDeleteFileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.DeleteFileRequest,
+            com.google.longrunning.Operation>
+        getDeleteFileMethod;
+    if ((getDeleteFileMethod = ArtifactRegistryGrpc.getDeleteFileMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getDeleteFileMethod = ArtifactRegistryGrpc.getDeleteFileMethod) == null) {
+          ArtifactRegistryGrpc.getDeleteFileMethod =
+              getDeleteFileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.DeleteFileRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteFile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.DeleteFileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("DeleteFile"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteFileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateFileRequest,
+          com.google.devtools.artifactregistry.v1.File>
+      getUpdateFileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateFile",
+      requestType = com.google.devtools.artifactregistry.v1.UpdateFileRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.File.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateFileRequest,
+          com.google.devtools.artifactregistry.v1.File>
+      getUpdateFileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.UpdateFileRequest,
+            com.google.devtools.artifactregistry.v1.File>
+        getUpdateFileMethod;
+    if ((getUpdateFileMethod = ArtifactRegistryGrpc.getUpdateFileMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getUpdateFileMethod = ArtifactRegistryGrpc.getUpdateFileMethod) == null) {
+          ArtifactRegistryGrpc.getUpdateFileMethod =
+              getUpdateFileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.UpdateFileRequest,
+                          com.google.devtools.artifactregistry.v1.File>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateFile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.UpdateFileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.File.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("UpdateFile"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateFileMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1393,6 +1531,233 @@ public final class ArtifactRegistryGrpc {
       }
     }
     return getDeleteTagMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.CreateRuleRequest,
+          com.google.devtools.artifactregistry.v1.Rule>
+      getCreateRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRule",
+      requestType = com.google.devtools.artifactregistry.v1.CreateRuleRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.Rule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.CreateRuleRequest,
+          com.google.devtools.artifactregistry.v1.Rule>
+      getCreateRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.CreateRuleRequest,
+            com.google.devtools.artifactregistry.v1.Rule>
+        getCreateRuleMethod;
+    if ((getCreateRuleMethod = ArtifactRegistryGrpc.getCreateRuleMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getCreateRuleMethod = ArtifactRegistryGrpc.getCreateRuleMethod) == null) {
+          ArtifactRegistryGrpc.getCreateRuleMethod =
+              getCreateRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.CreateRuleRequest,
+                          com.google.devtools.artifactregistry.v1.Rule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.CreateRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.Rule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("CreateRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListRulesRequest,
+          com.google.devtools.artifactregistry.v1.ListRulesResponse>
+      getListRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRules",
+      requestType = com.google.devtools.artifactregistry.v1.ListRulesRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.ListRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListRulesRequest,
+          com.google.devtools.artifactregistry.v1.ListRulesResponse>
+      getListRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.ListRulesRequest,
+            com.google.devtools.artifactregistry.v1.ListRulesResponse>
+        getListRulesMethod;
+    if ((getListRulesMethod = ArtifactRegistryGrpc.getListRulesMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getListRulesMethod = ArtifactRegistryGrpc.getListRulesMethod) == null) {
+          ArtifactRegistryGrpc.getListRulesMethod =
+              getListRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.ListRulesRequest,
+                          com.google.devtools.artifactregistry.v1.ListRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ListRules"))
+                      .build();
+        }
+      }
+    }
+    return getListRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetRuleRequest,
+          com.google.devtools.artifactregistry.v1.Rule>
+      getGetRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRule",
+      requestType = com.google.devtools.artifactregistry.v1.GetRuleRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.Rule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetRuleRequest,
+          com.google.devtools.artifactregistry.v1.Rule>
+      getGetRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.GetRuleRequest,
+            com.google.devtools.artifactregistry.v1.Rule>
+        getGetRuleMethod;
+    if ((getGetRuleMethod = ArtifactRegistryGrpc.getGetRuleMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getGetRuleMethod = ArtifactRegistryGrpc.getGetRuleMethod) == null) {
+          ArtifactRegistryGrpc.getGetRuleMethod =
+              getGetRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.GetRuleRequest,
+                          com.google.devtools.artifactregistry.v1.Rule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.GetRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.Rule.getDefaultInstance()))
+                      .setSchemaDescriptor(new ArtifactRegistryMethodDescriptorSupplier("GetRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateRuleRequest,
+          com.google.devtools.artifactregistry.v1.Rule>
+      getUpdateRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRule",
+      requestType = com.google.devtools.artifactregistry.v1.UpdateRuleRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.Rule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdateRuleRequest,
+          com.google.devtools.artifactregistry.v1.Rule>
+      getUpdateRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.UpdateRuleRequest,
+            com.google.devtools.artifactregistry.v1.Rule>
+        getUpdateRuleMethod;
+    if ((getUpdateRuleMethod = ArtifactRegistryGrpc.getUpdateRuleMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getUpdateRuleMethod = ArtifactRegistryGrpc.getUpdateRuleMethod) == null) {
+          ArtifactRegistryGrpc.getUpdateRuleMethod =
+              getUpdateRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.UpdateRuleRequest,
+                          com.google.devtools.artifactregistry.v1.Rule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.UpdateRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.Rule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("UpdateRule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.DeleteRuleRequest, com.google.protobuf.Empty>
+      getDeleteRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRule",
+      requestType = com.google.devtools.artifactregistry.v1.DeleteRuleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.DeleteRuleRequest, com.google.protobuf.Empty>
+      getDeleteRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.DeleteRuleRequest, com.google.protobuf.Empty>
+        getDeleteRuleMethod;
+    if ((getDeleteRuleMethod = ArtifactRegistryGrpc.getDeleteRuleMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getDeleteRuleMethod = ArtifactRegistryGrpc.getDeleteRuleMethod) == null) {
+          ArtifactRegistryGrpc.getDeleteRuleMethod =
+              getDeleteRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.DeleteRuleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.DeleteRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("DeleteRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRuleMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1708,6 +2073,238 @@ public final class ArtifactRegistryGrpc {
       }
     }
     return getUpdateVPCSCConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdatePackageRequest,
+          com.google.devtools.artifactregistry.v1.Package>
+      getUpdatePackageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePackage",
+      requestType = com.google.devtools.artifactregistry.v1.UpdatePackageRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.Package.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.UpdatePackageRequest,
+          com.google.devtools.artifactregistry.v1.Package>
+      getUpdatePackageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.UpdatePackageRequest,
+            com.google.devtools.artifactregistry.v1.Package>
+        getUpdatePackageMethod;
+    if ((getUpdatePackageMethod = ArtifactRegistryGrpc.getUpdatePackageMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getUpdatePackageMethod = ArtifactRegistryGrpc.getUpdatePackageMethod) == null) {
+          ArtifactRegistryGrpc.getUpdatePackageMethod =
+              getUpdatePackageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.UpdatePackageRequest,
+                          com.google.devtools.artifactregistry.v1.Package>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePackage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.UpdatePackageRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.Package.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("UpdatePackage"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePackageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListAttachmentsRequest,
+          com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>
+      getListAttachmentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAttachments",
+      requestType = com.google.devtools.artifactregistry.v1.ListAttachmentsRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.ListAttachmentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.ListAttachmentsRequest,
+          com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>
+      getListAttachmentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.ListAttachmentsRequest,
+            com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>
+        getListAttachmentsMethod;
+    if ((getListAttachmentsMethod = ArtifactRegistryGrpc.getListAttachmentsMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getListAttachmentsMethod = ArtifactRegistryGrpc.getListAttachmentsMethod) == null) {
+          ArtifactRegistryGrpc.getListAttachmentsMethod =
+              getListAttachmentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.ListAttachmentsRequest,
+                          com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAttachments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListAttachmentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.ListAttachmentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("ListAttachments"))
+                      .build();
+        }
+      }
+    }
+    return getListAttachmentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetAttachmentRequest,
+          com.google.devtools.artifactregistry.v1.Attachment>
+      getGetAttachmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAttachment",
+      requestType = com.google.devtools.artifactregistry.v1.GetAttachmentRequest.class,
+      responseType = com.google.devtools.artifactregistry.v1.Attachment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.GetAttachmentRequest,
+          com.google.devtools.artifactregistry.v1.Attachment>
+      getGetAttachmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.GetAttachmentRequest,
+            com.google.devtools.artifactregistry.v1.Attachment>
+        getGetAttachmentMethod;
+    if ((getGetAttachmentMethod = ArtifactRegistryGrpc.getGetAttachmentMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getGetAttachmentMethod = ArtifactRegistryGrpc.getGetAttachmentMethod) == null) {
+          ArtifactRegistryGrpc.getGetAttachmentMethod =
+              getGetAttachmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.GetAttachmentRequest,
+                          com.google.devtools.artifactregistry.v1.Attachment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAttachment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.GetAttachmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.Attachment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("GetAttachment"))
+                      .build();
+        }
+      }
+    }
+    return getGetAttachmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.CreateAttachmentRequest,
+          com.google.longrunning.Operation>
+      getCreateAttachmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAttachment",
+      requestType = com.google.devtools.artifactregistry.v1.CreateAttachmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.CreateAttachmentRequest,
+          com.google.longrunning.Operation>
+      getCreateAttachmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.CreateAttachmentRequest,
+            com.google.longrunning.Operation>
+        getCreateAttachmentMethod;
+    if ((getCreateAttachmentMethod = ArtifactRegistryGrpc.getCreateAttachmentMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getCreateAttachmentMethod = ArtifactRegistryGrpc.getCreateAttachmentMethod) == null) {
+          ArtifactRegistryGrpc.getCreateAttachmentMethod =
+              getCreateAttachmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.CreateAttachmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAttachment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.CreateAttachmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("CreateAttachment"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAttachmentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest,
+          com.google.longrunning.Operation>
+      getDeleteAttachmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAttachment",
+      requestType = com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest,
+          com.google.longrunning.Operation>
+      getDeleteAttachmentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest,
+            com.google.longrunning.Operation>
+        getDeleteAttachmentMethod;
+    if ((getDeleteAttachmentMethod = ArtifactRegistryGrpc.getDeleteAttachmentMethod) == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getDeleteAttachmentMethod = ArtifactRegistryGrpc.getDeleteAttachmentMethod) == null) {
+          ArtifactRegistryGrpc.getDeleteAttachmentMethod =
+              getDeleteAttachmentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAttachment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("DeleteAttachment"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAttachmentMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -2110,6 +2707,21 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Updates a version.
+     * </pre>
+     */
+    default void updateVersion(
+        com.google.devtools.artifactregistry.v1.UpdateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Version>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -2132,6 +2744,35 @@ public final class ArtifactRegistryGrpc {
         io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.File>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a file and all of its content. It is only allowed on generic
+     * repositories. The returned operation will complete once the file has been
+     * deleted.
+     * </pre>
+     */
+    default void deleteFile(
+        com.google.devtools.artifactregistry.v1.DeleteFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteFileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a file.
+     * </pre>
+     */
+    default void updateFile(
+        com.google.devtools.artifactregistry.v1.UpdateFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.File>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateFileMethod(), responseObserver);
     }
 
     /**
@@ -2198,6 +2839,75 @@ public final class ArtifactRegistryGrpc {
         com.google.devtools.artifactregistry.v1.DeleteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTagMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a rule.
+     * </pre>
+     */
+    default void createRule(
+        com.google.devtools.artifactregistry.v1.CreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists rules.
+     * </pre>
+     */
+    default void listRules(
+        com.google.devtools.artifactregistry.v1.ListRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.ListRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a rule.
+     * </pre>
+     */
+    default void getRule(
+        com.google.devtools.artifactregistry.v1.GetRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a rule.
+     * </pre>
+     */
+    default void updateRule(
+        com.google.devtools.artifactregistry.v1.UpdateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a rule.
+     * </pre>
+     */
+    default void deleteRule(
+        com.google.devtools.artifactregistry.v1.DeleteRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRuleMethod(), responseObserver);
     }
 
     /**
@@ -2301,6 +3011,82 @@ public final class ArtifactRegistryGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateVPCSCConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a package.
+     * </pre>
+     */
+    default void updatePackage(
+        com.google.devtools.artifactregistry.v1.UpdatePackageRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Package>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePackageMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists attachments.
+     * </pre>
+     */
+    default void listAttachments(
+        com.google.devtools.artifactregistry.v1.ListAttachmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAttachmentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an attachment.
+     * </pre>
+     */
+    default void getAttachment(
+        com.google.devtools.artifactregistry.v1.GetAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Attachment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAttachmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an attachment. The returned Operation will finish once the
+     * attachment has been created. Its response will be the created attachment.
+     * </pre>
+     */
+    default void createAttachment(
+        com.google.devtools.artifactregistry.v1.CreateAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAttachmentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an attachment. The returned Operation will
+     * finish once the attachments has been deleted. It will not have any
+     * Operation metadata and will return a `google.protobuf.Empty` response.
+     * </pre>
+     */
+    default void deleteAttachment(
+        com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAttachmentMethod(), responseObserver);
     }
   }
 
@@ -2739,6 +3525,23 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Updates a version.
+     * </pre>
+     */
+    public void updateVersion(
+        com.google.devtools.artifactregistry.v1.UpdateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Version>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -2763,6 +3566,37 @@ public final class ArtifactRegistryGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetFileMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a file and all of its content. It is only allowed on generic
+     * repositories. The returned operation will complete once the file has been
+     * deleted.
+     * </pre>
+     */
+    public void deleteFile(
+        com.google.devtools.artifactregistry.v1.DeleteFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteFileMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a file.
+     * </pre>
+     */
+    public void updateFile(
+        com.google.devtools.artifactregistry.v1.UpdateFileRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.File>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateFileMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2834,6 +3668,80 @@ public final class ArtifactRegistryGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a rule.
+     * </pre>
+     */
+    public void createRule(
+        com.google.devtools.artifactregistry.v1.CreateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRuleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists rules.
+     * </pre>
+     */
+    public void listRules(
+        com.google.devtools.artifactregistry.v1.ListRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.ListRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRulesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a rule.
+     * </pre>
+     */
+    public void getRule(
+        com.google.devtools.artifactregistry.v1.GetRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRuleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a rule.
+     * </pre>
+     */
+    public void updateRule(
+        com.google.devtools.artifactregistry.v1.UpdateRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRuleMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a rule.
+     * </pre>
+     */
+    public void deleteRule(
+        com.google.devtools.artifactregistry.v1.DeleteRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRuleMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2949,6 +3857,92 @@ public final class ArtifactRegistryGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateVPCSCConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a package.
+     * </pre>
+     */
+    public void updatePackage(
+        com.google.devtools.artifactregistry.v1.UpdatePackageRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Package>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePackageMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists attachments.
+     * </pre>
+     */
+    public void listAttachments(
+        com.google.devtools.artifactregistry.v1.ListAttachmentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAttachmentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an attachment.
+     * </pre>
+     */
+    public void getAttachment(
+        com.google.devtools.artifactregistry.v1.GetAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Attachment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAttachmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an attachment. The returned Operation will finish once the
+     * attachment has been created. Its response will be the created attachment.
+     * </pre>
+     */
+    public void createAttachment(
+        com.google.devtools.artifactregistry.v1.CreateAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAttachmentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an attachment. The returned Operation will
+     * finish once the attachments has been deleted. It will not have any
+     * Operation metadata and will return a `google.protobuf.Empty` response.
+     * </pre>
+     */
+    public void deleteAttachment(
+        com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAttachmentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3284,6 +4278,19 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Updates a version.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.Version updateVersion(
+        com.google.devtools.artifactregistry.v1.UpdateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -3304,6 +4311,34 @@ public final class ArtifactRegistryGrpc {
         com.google.devtools.artifactregistry.v1.GetFileRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a file and all of its content. It is only allowed on generic
+     * repositories. The returned operation will complete once the file has been
+     * deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFile(
+        com.google.devtools.artifactregistry.v1.DeleteFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a file.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.File updateFile(
+        com.google.devtools.artifactregistry.v1.UpdateFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFileMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3369,6 +4404,71 @@ public final class ArtifactRegistryGrpc {
         com.google.devtools.artifactregistry.v1.DeleteTagRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a rule.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.Rule createRule(
+        com.google.devtools.artifactregistry.v1.CreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists rules.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.ListRulesResponse listRules(
+        com.google.devtools.artifactregistry.v1.ListRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a rule.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.Rule getRule(
+        com.google.devtools.artifactregistry.v1.GetRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a rule.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.Rule updateRule(
+        com.google.devtools.artifactregistry.v1.UpdateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a rule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRule(
+        com.google.devtools.artifactregistry.v1.DeleteRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRuleMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3458,6 +4558,74 @@ public final class ArtifactRegistryGrpc {
         com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateVPCSCConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a package.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.Package updatePackage(
+        com.google.devtools.artifactregistry.v1.UpdatePackageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePackageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists attachments.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.ListAttachmentsResponse listAttachments(
+        com.google.devtools.artifactregistry.v1.ListAttachmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAttachmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an attachment.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1.Attachment getAttachment(
+        com.google.devtools.artifactregistry.v1.GetAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an attachment. The returned Operation will finish once the
+     * attachment has been created. Its response will be the created attachment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAttachment(
+        com.google.devtools.artifactregistry.v1.CreateAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an attachment. The returned Operation will
+     * finish once the attachments has been deleted. It will not have any
+     * Operation metadata and will return a `google.protobuf.Empty` response.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAttachment(
+        com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAttachmentMethod(), getCallOptions(), request);
     }
   }
 
@@ -3811,6 +4979,20 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Updates a version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.Version>
+        updateVersion(com.google.devtools.artifactregistry.v1.UpdateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -3833,6 +5015,35 @@ public final class ArtifactRegistryGrpc {
         getFile(com.google.devtools.artifactregistry.v1.GetFileRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetFileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a file and all of its content. It is only allowed on generic
+     * repositories. The returned operation will complete once the file has been
+     * deleted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteFile(com.google.devtools.artifactregistry.v1.DeleteFileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteFileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a file.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.File>
+        updateFile(com.google.devtools.artifactregistry.v1.UpdateFileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateFileMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3902,6 +5113,75 @@ public final class ArtifactRegistryGrpc {
         com.google.devtools.artifactregistry.v1.DeleteTagRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTagMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.Rule>
+        createRule(com.google.devtools.artifactregistry.v1.CreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists rules.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.ListRulesResponse>
+        listRules(com.google.devtools.artifactregistry.v1.ListRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.Rule>
+        getRule(com.google.devtools.artifactregistry.v1.GetRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.Rule>
+        updateRule(com.google.devtools.artifactregistry.v1.UpdateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteRule(
+        com.google.devtools.artifactregistry.v1.DeleteRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRuleMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4002,6 +5282,77 @@ public final class ArtifactRegistryGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateVPCSCConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a package.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.Package>
+        updatePackage(com.google.devtools.artifactregistry.v1.UpdatePackageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePackageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists attachments.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>
+        listAttachments(com.google.devtools.artifactregistry.v1.ListAttachmentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAttachmentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an attachment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devtools.artifactregistry.v1.Attachment>
+        getAttachment(com.google.devtools.artifactregistry.v1.GetAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAttachmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an attachment. The returned Operation will finish once the
+     * attachment has been created. Its response will be the created attachment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAttachment(com.google.devtools.artifactregistry.v1.CreateAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAttachmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an attachment. The returned Operation will
+     * finish once the attachments has been deleted. It will not have any
+     * Operation metadata and will return a `google.protobuf.Empty` response.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAttachment(com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAttachmentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DOCKER_IMAGES = 0;
@@ -4026,20 +5377,33 @@ public final class ArtifactRegistryGrpc {
   private static final int METHODID_GET_VERSION = 19;
   private static final int METHODID_DELETE_VERSION = 20;
   private static final int METHODID_BATCH_DELETE_VERSIONS = 21;
-  private static final int METHODID_LIST_FILES = 22;
-  private static final int METHODID_GET_FILE = 23;
-  private static final int METHODID_LIST_TAGS = 24;
-  private static final int METHODID_GET_TAG = 25;
-  private static final int METHODID_CREATE_TAG = 26;
-  private static final int METHODID_UPDATE_TAG = 27;
-  private static final int METHODID_DELETE_TAG = 28;
-  private static final int METHODID_SET_IAM_POLICY = 29;
-  private static final int METHODID_GET_IAM_POLICY = 30;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 31;
-  private static final int METHODID_GET_PROJECT_SETTINGS = 32;
-  private static final int METHODID_UPDATE_PROJECT_SETTINGS = 33;
-  private static final int METHODID_GET_VPCSCCONFIG = 34;
-  private static final int METHODID_UPDATE_VPCSCCONFIG = 35;
+  private static final int METHODID_UPDATE_VERSION = 22;
+  private static final int METHODID_LIST_FILES = 23;
+  private static final int METHODID_GET_FILE = 24;
+  private static final int METHODID_DELETE_FILE = 25;
+  private static final int METHODID_UPDATE_FILE = 26;
+  private static final int METHODID_LIST_TAGS = 27;
+  private static final int METHODID_GET_TAG = 28;
+  private static final int METHODID_CREATE_TAG = 29;
+  private static final int METHODID_UPDATE_TAG = 30;
+  private static final int METHODID_DELETE_TAG = 31;
+  private static final int METHODID_CREATE_RULE = 32;
+  private static final int METHODID_LIST_RULES = 33;
+  private static final int METHODID_GET_RULE = 34;
+  private static final int METHODID_UPDATE_RULE = 35;
+  private static final int METHODID_DELETE_RULE = 36;
+  private static final int METHODID_SET_IAM_POLICY = 37;
+  private static final int METHODID_GET_IAM_POLICY = 38;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 39;
+  private static final int METHODID_GET_PROJECT_SETTINGS = 40;
+  private static final int METHODID_UPDATE_PROJECT_SETTINGS = 41;
+  private static final int METHODID_GET_VPCSCCONFIG = 42;
+  private static final int METHODID_UPDATE_VPCSCCONFIG = 43;
+  private static final int METHODID_UPDATE_PACKAGE = 44;
+  private static final int METHODID_LIST_ATTACHMENTS = 45;
+  private static final int METHODID_GET_ATTACHMENT = 46;
+  private static final int METHODID_CREATE_ATTACHMENT = 47;
+  private static final int METHODID_DELETE_ATTACHMENT = 48;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4190,6 +5554,12 @@ public final class ArtifactRegistryGrpc {
               (com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_VERSION:
+          serviceImpl.updateVersion(
+              (com.google.devtools.artifactregistry.v1.UpdateVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Version>)
+                  responseObserver);
+          break;
         case METHODID_LIST_FILES:
           serviceImpl.listFiles(
               (com.google.devtools.artifactregistry.v1.ListFilesRequest) request,
@@ -4200,6 +5570,17 @@ public final class ArtifactRegistryGrpc {
         case METHODID_GET_FILE:
           serviceImpl.getFile(
               (com.google.devtools.artifactregistry.v1.GetFileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.File>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_FILE:
+          serviceImpl.deleteFile(
+              (com.google.devtools.artifactregistry.v1.DeleteFileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_FILE:
+          serviceImpl.updateFile(
+              (com.google.devtools.artifactregistry.v1.UpdateFileRequest) request,
               (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.File>)
                   responseObserver);
           break;
@@ -4231,6 +5612,36 @@ public final class ArtifactRegistryGrpc {
         case METHODID_DELETE_TAG:
           serviceImpl.deleteTag(
               (com.google.devtools.artifactregistry.v1.DeleteTagRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_RULE:
+          serviceImpl.createRule(
+              (com.google.devtools.artifactregistry.v1.CreateRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RULES:
+          serviceImpl.listRules(
+              (com.google.devtools.artifactregistry.v1.ListRulesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devtools.artifactregistry.v1.ListRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RULE:
+          serviceImpl.getRule(
+              (com.google.devtools.artifactregistry.v1.GetRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_RULE:
+          serviceImpl.updateRule(
+              (com.google.devtools.artifactregistry.v1.UpdateRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Rule>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_RULE:
+          serviceImpl.deleteRule(
+              (com.google.devtools.artifactregistry.v1.DeleteRuleRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_SET_IAM_POLICY:
@@ -4272,6 +5683,35 @@ public final class ArtifactRegistryGrpc {
               (com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.VPCSCConfig>)
                   responseObserver);
+          break;
+        case METHODID_UPDATE_PACKAGE:
+          serviceImpl.updatePackage(
+              (com.google.devtools.artifactregistry.v1.UpdatePackageRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Package>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ATTACHMENTS:
+          serviceImpl.listAttachments(
+              (com.google.devtools.artifactregistry.v1.ListAttachmentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ATTACHMENT:
+          serviceImpl.getAttachment(
+              (com.google.devtools.artifactregistry.v1.GetAttachmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devtools.artifactregistry.v1.Attachment>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ATTACHMENT:
+          serviceImpl.createAttachment(
+              (com.google.devtools.artifactregistry.v1.CreateAttachmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ATTACHMENT:
+          serviceImpl.deleteAttachment(
+              (com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4439,6 +5879,13 @@ public final class ArtifactRegistryGrpc {
                     com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest,
                     com.google.longrunning.Operation>(service, METHODID_BATCH_DELETE_VERSIONS)))
         .addMethod(
+            getUpdateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.UpdateVersionRequest,
+                    com.google.devtools.artifactregistry.v1.Version>(
+                    service, METHODID_UPDATE_VERSION)))
+        .addMethod(
             getListFilesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4451,6 +5898,18 @@ public final class ArtifactRegistryGrpc {
                 new MethodHandlers<
                     com.google.devtools.artifactregistry.v1.GetFileRequest,
                     com.google.devtools.artifactregistry.v1.File>(service, METHODID_GET_FILE)))
+        .addMethod(
+            getDeleteFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.DeleteFileRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FILE)))
+        .addMethod(
+            getUpdateFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.UpdateFileRequest,
+                    com.google.devtools.artifactregistry.v1.File>(service, METHODID_UPDATE_FILE)))
         .addMethod(
             getListTagsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4482,6 +5941,37 @@ public final class ArtifactRegistryGrpc {
                 new MethodHandlers<
                     com.google.devtools.artifactregistry.v1.DeleteTagRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_TAG)))
+        .addMethod(
+            getCreateRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.CreateRuleRequest,
+                    com.google.devtools.artifactregistry.v1.Rule>(service, METHODID_CREATE_RULE)))
+        .addMethod(
+            getListRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.ListRulesRequest,
+                    com.google.devtools.artifactregistry.v1.ListRulesResponse>(
+                    service, METHODID_LIST_RULES)))
+        .addMethod(
+            getGetRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.GetRuleRequest,
+                    com.google.devtools.artifactregistry.v1.Rule>(service, METHODID_GET_RULE)))
+        .addMethod(
+            getUpdateRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.UpdateRuleRequest,
+                    com.google.devtools.artifactregistry.v1.Rule>(service, METHODID_UPDATE_RULE)))
+        .addMethod(
+            getDeleteRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.DeleteRuleRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_RULE)))
         .addMethod(
             getSetIamPolicyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4527,6 +6017,39 @@ public final class ArtifactRegistryGrpc {
                     com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest,
                     com.google.devtools.artifactregistry.v1.VPCSCConfig>(
                     service, METHODID_UPDATE_VPCSCCONFIG)))
+        .addMethod(
+            getUpdatePackageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.UpdatePackageRequest,
+                    com.google.devtools.artifactregistry.v1.Package>(
+                    service, METHODID_UPDATE_PACKAGE)))
+        .addMethod(
+            getListAttachmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.ListAttachmentsRequest,
+                    com.google.devtools.artifactregistry.v1.ListAttachmentsResponse>(
+                    service, METHODID_LIST_ATTACHMENTS)))
+        .addMethod(
+            getGetAttachmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.GetAttachmentRequest,
+                    com.google.devtools.artifactregistry.v1.Attachment>(
+                    service, METHODID_GET_ATTACHMENT)))
+        .addMethod(
+            getCreateAttachmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.CreateAttachmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ATTACHMENT)))
+        .addMethod(
+            getDeleteAttachmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ATTACHMENT)))
         .build();
   }
 
@@ -4600,13 +6123,21 @@ public final class ArtifactRegistryGrpc {
                       .addMethod(getGetVersionMethod())
                       .addMethod(getDeleteVersionMethod())
                       .addMethod(getBatchDeleteVersionsMethod())
+                      .addMethod(getUpdateVersionMethod())
                       .addMethod(getListFilesMethod())
                       .addMethod(getGetFileMethod())
+                      .addMethod(getDeleteFileMethod())
+                      .addMethod(getUpdateFileMethod())
                       .addMethod(getListTagsMethod())
                       .addMethod(getGetTagMethod())
                       .addMethod(getCreateTagMethod())
                       .addMethod(getUpdateTagMethod())
                       .addMethod(getDeleteTagMethod())
+                      .addMethod(getCreateRuleMethod())
+                      .addMethod(getListRulesMethod())
+                      .addMethod(getGetRuleMethod())
+                      .addMethod(getUpdateRuleMethod())
+                      .addMethod(getDeleteRuleMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
@@ -4614,6 +6145,11 @@ public final class ArtifactRegistryGrpc {
                       .addMethod(getUpdateProjectSettingsMethod())
                       .addMethod(getGetVPCSCConfigMethod())
                       .addMethod(getUpdateVPCSCConfigMethod())
+                      .addMethod(getUpdatePackageMethod())
+                      .addMethod(getListAttachmentsMethod())
+                      .addMethod(getGetAttachmentMethod())
+                      .addMethod(getCreateAttachmentMethod())
+                      .addMethod(getDeleteAttachmentMethod())
                       .build();
         }
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,8 +41,10 @@ import com.google.container.v1.ClusterAutoscaling;
 import com.google.container.v1.ClusterUpdate;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
+import com.google.container.v1.CompliancePostureConfig;
 import com.google.container.v1.ConfidentialNodes;
 import com.google.container.v1.ContainerdConfig;
+import com.google.container.v1.ControlPlaneEndpointsConfig;
 import com.google.container.v1.CostManagementConfig;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
@@ -98,11 +100,13 @@ import com.google.container.v1.NotificationConfig;
 import com.google.container.v1.Operation;
 import com.google.container.v1.OperationProgress;
 import com.google.container.v1.PrivateClusterConfig;
+import com.google.container.v1.RBACBindingConfig;
 import com.google.container.v1.ReleaseChannel;
 import com.google.container.v1.ResourceLabels;
 import com.google.container.v1.ResourceManagerTags;
 import com.google.container.v1.ResourceUsageExportConfig;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
+import com.google.container.v1.SecretManagerConfig;
 import com.google.container.v1.SecurityPostureConfig;
 import com.google.container.v1.ServerConfig;
 import com.google.container.v1.SetAddonsConfigRequest;
@@ -124,6 +128,7 @@ import com.google.container.v1.UpdateClusterRequest;
 import com.google.container.v1.UpdateMasterRequest;
 import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.UsableSubnetwork;
+import com.google.container.v1.UserManagedKeysConfig;
 import com.google.container.v1.VerticalPodAutoscaling;
 import com.google.container.v1.VirtualNIC;
 import com.google.container.v1.WindowsNodeConfig;
@@ -334,10 +339,15 @@ public class ClusterManagerClientTest {
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .setControlPlaneEndpointsConfig(ControlPlaneEndpointsConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
+            .setSecretManagerConfig(SecretManagerConfig.newBuilder().build())
+            .setCompliancePostureConfig(CompliancePostureConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
+            .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -439,10 +449,15 @@ public class ClusterManagerClientTest {
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .setControlPlaneEndpointsConfig(ControlPlaneEndpointsConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
             .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
+            .setSecretManagerConfig(SecretManagerConfig.newBuilder().build())
+            .setCompliancePostureConfig(CompliancePostureConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setUserManagedKeysConfig(UserManagedKeysConfig.newBuilder().build())
+            .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -756,6 +771,7 @@ public class ClusterManagerClientTest {
             .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
             .setContainerdConfig(ContainerdConfig.newBuilder().build())
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+            .addAllStoragePools(new ArrayList<String>())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -797,6 +813,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getResourceManagerTags(), actualRequest.getResourceManagerTags());
     Assert.assertEquals(request.getContainerdConfig(), actualRequest.getContainerdConfig());
     Assert.assertEquals(request.getQueuedProvisioning(), actualRequest.getQueuedProvisioning());
+    Assert.assertEquals(request.getStoragePoolsList(), actualRequest.getStoragePoolsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -842,6 +859,7 @@ public class ClusterManagerClientTest {
               .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .setContainerdConfig(ContainerdConfig.newBuilder().build())
               .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
+              .addAllStoragePools(new ArrayList<String>())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

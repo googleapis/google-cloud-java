@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,9 +129,9 @@ public final class CreateVolumeRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Id of the requesting volume. Must be unique within the parent
-   * resource. Must contain only letters, numbers, underscore and hyphen, with
-   * the first character a letter or underscore, the last a letter or underscore
-   * or a number, and a 63 character maximum.
+   * resource. Must contain only letters, numbers and hyphen, with the first
+   * character a letter, the last a letter or a number,
+   * and a 63 character maximum.
    * </pre>
    *
    * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,9 +155,9 @@ public final class CreateVolumeRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Id of the requesting volume. Must be unique within the parent
-   * resource. Must contain only letters, numbers, underscore and hyphen, with
-   * the first character a letter or underscore, the last a letter or underscore
-   * or a number, and a 63 character maximum.
+   * resource. Must contain only letters, numbers and hyphen, with the first
+   * character a letter, the last a letter or a number,
+   * and a 63 character maximum.
    * </pre>
    *
    * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -756,9 +756,9 @@ public final class CreateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Id of the requesting volume. Must be unique within the parent
-     * resource. Must contain only letters, numbers, underscore and hyphen, with
-     * the first character a letter or underscore, the last a letter or underscore
-     * or a number, and a 63 character maximum.
+     * resource. Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a number,
+     * and a 63 character maximum.
      * </pre>
      *
      * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -781,9 +781,9 @@ public final class CreateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Id of the requesting volume. Must be unique within the parent
-     * resource. Must contain only letters, numbers, underscore and hyphen, with
-     * the first character a letter or underscore, the last a letter or underscore
-     * or a number, and a 63 character maximum.
+     * resource. Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a number,
+     * and a 63 character maximum.
      * </pre>
      *
      * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -806,9 +806,9 @@ public final class CreateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Id of the requesting volume. Must be unique within the parent
-     * resource. Must contain only letters, numbers, underscore and hyphen, with
-     * the first character a letter or underscore, the last a letter or underscore
-     * or a number, and a 63 character maximum.
+     * resource. Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a number,
+     * and a 63 character maximum.
      * </pre>
      *
      * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -830,9 +830,9 @@ public final class CreateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Id of the requesting volume. Must be unique within the parent
-     * resource. Must contain only letters, numbers, underscore and hyphen, with
-     * the first character a letter or underscore, the last a letter or underscore
-     * or a number, and a 63 character maximum.
+     * resource. Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a number,
+     * and a 63 character maximum.
      * </pre>
      *
      * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -850,9 +850,9 @@ public final class CreateVolumeRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Id of the requesting volume. Must be unique within the parent
-     * resource. Must contain only letters, numbers, underscore and hyphen, with
-     * the first character a letter or underscore, the last a letter or underscore
-     * or a number, and a 63 character maximum.
+     * resource. Must contain only letters, numbers and hyphen, with the first
+     * character a letter, the last a letter or a number,
+     * and a 63 character maximum.
      * </pre>
      *
      * <code>string volume_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

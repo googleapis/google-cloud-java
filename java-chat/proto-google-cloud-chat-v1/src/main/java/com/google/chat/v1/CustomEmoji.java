@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,9 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
    * Output only. Unique key for the custom emoji resource.
    * </pre>
    *
-   * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -95,7 +97,9 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
    * Output only. Unique key for the custom emoji resource.
    * </pre>
    *
-   * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -455,7 +459,9 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique key for the custom emoji resource.
      * </pre>
      *
-     * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -477,7 +483,9 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique key for the custom emoji resource.
      * </pre>
      *
-     * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -499,7 +507,9 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique key for the custom emoji resource.
      * </pre>
      *
-     * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -520,7 +530,9 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique key for the custom emoji resource.
      * </pre>
      *
-     * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -537,7 +549,9 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
      * Output only. Unique key for the custom emoji resource.
      * </pre>
      *
-     * <code>string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.

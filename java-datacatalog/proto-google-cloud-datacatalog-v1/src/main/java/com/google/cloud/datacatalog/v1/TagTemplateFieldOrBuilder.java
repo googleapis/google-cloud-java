@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format.
+   * Identifier. The resource name of the tag template field in URL format.
    * Example:
    *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
@@ -41,7 +41,7 @@ public interface TagTemplateFieldOrBuilder
    * The maximum length is 64 characters.
    * </pre>
    *
-   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -50,7 +50,7 @@ public interface TagTemplateFieldOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format.
+   * Identifier. The resource name of the tag template field in URL format.
    * Example:
    *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
@@ -63,7 +63,7 @@ public interface TagTemplateFieldOrBuilder
    * The maximum length is 64 characters.
    * </pre>
    *
-   * <code>string name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

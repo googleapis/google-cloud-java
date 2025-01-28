@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1.stub;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListInstancesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListRepositoriesPagedResponse;
@@ -54,19 +55,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.securesourcemanager.v1.BranchRule;
+import com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.CreateInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest;
+import com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest;
+import com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest;
 import com.google.cloud.securesourcemanager.v1.GetInstanceRequest;
 import com.google.cloud.securesourcemanager.v1.GetRepositoryRequest;
 import com.google.cloud.securesourcemanager.v1.Instance;
+import com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest;
+import com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse;
 import com.google.cloud.securesourcemanager.v1.ListInstancesRequest;
 import com.google.cloud.securesourcemanager.v1.ListInstancesResponse;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse;
 import com.google.cloud.securesourcemanager.v1.OperationMetadata;
 import com.google.cloud.securesourcemanager.v1.Repository;
+import com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -79,9 +87,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -152,7 +160,7 @@ import org.threeten.bp.Duration;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * secureSourceManagerSettingsBuilder
@@ -191,6 +199,19 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicyRepoSettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsRepoSettings;
+  private final UnaryCallSettings<CreateBranchRuleRequest, Operation> createBranchRuleSettings;
+  private final OperationCallSettings<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationSettings;
+  private final PagedCallSettings<
+          ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>
+      listBranchRulesSettings;
+  private final UnaryCallSettings<GetBranchRuleRequest, BranchRule> getBranchRuleSettings;
+  private final UnaryCallSettings<UpdateBranchRuleRequest, Operation> updateBranchRuleSettings;
+  private final OperationCallSettings<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationSettings;
+  private final UnaryCallSettings<DeleteBranchRuleRequest, Operation> deleteBranchRuleSettings;
+  private final OperationCallSettings<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -271,6 +292,43 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
             }
           };
 
+  private static final PagedListDescriptor<
+          ListBranchRulesRequest, ListBranchRulesResponse, BranchRule>
+      LIST_BRANCH_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBranchRulesRequest injectToken(
+                ListBranchRulesRequest payload, String token) {
+              return ListBranchRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBranchRulesRequest injectPageSize(
+                ListBranchRulesRequest payload, int pageSize) {
+              return ListBranchRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBranchRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBranchRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BranchRule> extractResources(ListBranchRulesResponse payload) {
+              return payload.getBranchRulesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -338,6 +396,23 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
                       PageContext.create(
                           callable, LIST_REPOSITORIES_PAGE_STR_DESC, request, context);
               return ListRepositoriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>
+      LIST_BRANCH_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListBranchRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBranchRulesRequest, ListBranchRulesResponse> callable,
+                ListBranchRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBranchRulesResponse> futureResponse) {
+              PageContext<ListBranchRulesRequest, ListBranchRulesResponse, BranchRule> pageContext =
+                  PageContext.create(callable, LIST_BRANCH_RULES_PAGE_STR_DESC, request, context);
+              return ListBranchRulesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -439,6 +514,51 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsRepoSettings() {
     return testIamPermissionsRepoSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBranchRule. */
+  public UnaryCallSettings<CreateBranchRuleRequest, Operation> createBranchRuleSettings() {
+    return createBranchRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBranchRule. */
+  public OperationCallSettings<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+      createBranchRuleOperationSettings() {
+    return createBranchRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBranchRules. */
+  public PagedCallSettings<
+          ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>
+      listBranchRulesSettings() {
+    return listBranchRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBranchRule. */
+  public UnaryCallSettings<GetBranchRuleRequest, BranchRule> getBranchRuleSettings() {
+    return getBranchRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBranchRule. */
+  public UnaryCallSettings<UpdateBranchRuleRequest, Operation> updateBranchRuleSettings() {
+    return updateBranchRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBranchRule. */
+  public OperationCallSettings<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+      updateBranchRuleOperationSettings() {
+    return updateBranchRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBranchRule. */
+  public UnaryCallSettings<DeleteBranchRuleRequest, Operation> deleteBranchRuleSettings() {
+    return deleteBranchRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBranchRule. */
+  public OperationCallSettings<DeleteBranchRuleRequest, Empty, OperationMetadata>
+      deleteBranchRuleOperationSettings() {
+    return deleteBranchRuleOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -594,6 +714,14 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     getIamPolicyRepoSettings = settingsBuilder.getIamPolicyRepoSettings().build();
     setIamPolicyRepoSettings = settingsBuilder.setIamPolicyRepoSettings().build();
     testIamPermissionsRepoSettings = settingsBuilder.testIamPermissionsRepoSettings().build();
+    createBranchRuleSettings = settingsBuilder.createBranchRuleSettings().build();
+    createBranchRuleOperationSettings = settingsBuilder.createBranchRuleOperationSettings().build();
+    listBranchRulesSettings = settingsBuilder.listBranchRulesSettings().build();
+    getBranchRuleSettings = settingsBuilder.getBranchRuleSettings().build();
+    updateBranchRuleSettings = settingsBuilder.updateBranchRuleSettings().build();
+    updateBranchRuleOperationSettings = settingsBuilder.updateBranchRuleOperationSettings().build();
+    deleteBranchRuleSettings = settingsBuilder.deleteBranchRuleSettings().build();
+    deleteBranchRuleOperationSettings = settingsBuilder.deleteBranchRuleOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -634,6 +762,24 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicyRepoSettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsRepoSettings;
+    private final UnaryCallSettings.Builder<CreateBranchRuleRequest, Operation>
+        createBranchRuleSettings;
+    private final OperationCallSettings.Builder<
+            CreateBranchRuleRequest, BranchRule, OperationMetadata>
+        createBranchRuleOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>
+        listBranchRulesSettings;
+    private final UnaryCallSettings.Builder<GetBranchRuleRequest, BranchRule> getBranchRuleSettings;
+    private final UnaryCallSettings.Builder<UpdateBranchRuleRequest, Operation>
+        updateBranchRuleSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+        updateBranchRuleOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteBranchRuleRequest, Operation>
+        deleteBranchRuleSettings;
+    private final OperationCallSettings.Builder<DeleteBranchRuleRequest, Empty, OperationMetadata>
+        deleteBranchRuleOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -662,13 +808,13 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -698,6 +844,14 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
       getIamPolicyRepoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicyRepoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsRepoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBranchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBranchRuleOperationSettings = OperationCallSettings.newBuilder();
+      listBranchRulesSettings = PagedCallSettings.newBuilder(LIST_BRANCH_RULES_PAGE_STR_FACT);
+      getBranchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBranchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBranchRuleOperationSettings = OperationCallSettings.newBuilder();
+      deleteBranchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBranchRuleOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -717,6 +871,11 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
               getIamPolicyRepoSettings,
               setIamPolicyRepoSettings,
               testIamPermissionsRepoSettings,
+              createBranchRuleSettings,
+              listBranchRulesSettings,
+              getBranchRuleSettings,
+              updateBranchRuleSettings,
+              deleteBranchRuleSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -743,6 +902,14 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
       getIamPolicyRepoSettings = settings.getIamPolicyRepoSettings.toBuilder();
       setIamPolicyRepoSettings = settings.setIamPolicyRepoSettings.toBuilder();
       testIamPermissionsRepoSettings = settings.testIamPermissionsRepoSettings.toBuilder();
+      createBranchRuleSettings = settings.createBranchRuleSettings.toBuilder();
+      createBranchRuleOperationSettings = settings.createBranchRuleOperationSettings.toBuilder();
+      listBranchRulesSettings = settings.listBranchRulesSettings.toBuilder();
+      getBranchRuleSettings = settings.getBranchRuleSettings.toBuilder();
+      updateBranchRuleSettings = settings.updateBranchRuleSettings.toBuilder();
+      updateBranchRuleOperationSettings = settings.updateBranchRuleOperationSettings.toBuilder();
+      deleteBranchRuleSettings = settings.deleteBranchRuleSettings.toBuilder();
+      deleteBranchRuleOperationSettings = settings.deleteBranchRuleOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -762,6 +929,11 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
               getIamPolicyRepoSettings,
               setIamPolicyRepoSettings,
               testIamPermissionsRepoSettings,
+              createBranchRuleSettings,
+              listBranchRulesSettings,
+              getBranchRuleSettings,
+              updateBranchRuleSettings,
+              deleteBranchRuleSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -850,6 +1022,31 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .createBranchRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBranchRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBranchRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateBranchRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBranchRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -889,13 +1086,13 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -913,13 +1110,13 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -937,13 +1134,13 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -961,13 +1158,85 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createBranchRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBranchRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BranchRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBranchRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBranchRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BranchRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBranchRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBranchRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1072,6 +1341,54 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsRepoSettings() {
       return testIamPermissionsRepoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBranchRule. */
+    public UnaryCallSettings.Builder<CreateBranchRuleRequest, Operation>
+        createBranchRuleSettings() {
+      return createBranchRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBranchRule. */
+    public OperationCallSettings.Builder<CreateBranchRuleRequest, BranchRule, OperationMetadata>
+        createBranchRuleOperationSettings() {
+      return createBranchRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBranchRules. */
+    public PagedCallSettings.Builder<
+            ListBranchRulesRequest, ListBranchRulesResponse, ListBranchRulesPagedResponse>
+        listBranchRulesSettings() {
+      return listBranchRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBranchRule. */
+    public UnaryCallSettings.Builder<GetBranchRuleRequest, BranchRule> getBranchRuleSettings() {
+      return getBranchRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBranchRule. */
+    public UnaryCallSettings.Builder<UpdateBranchRuleRequest, Operation>
+        updateBranchRuleSettings() {
+      return updateBranchRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBranchRule. */
+    public OperationCallSettings.Builder<UpdateBranchRuleRequest, BranchRule, OperationMetadata>
+        updateBranchRuleOperationSettings() {
+      return updateBranchRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBranchRule. */
+    public UnaryCallSettings.Builder<DeleteBranchRuleRequest, Operation>
+        deleteBranchRuleSettings() {
+      return deleteBranchRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBranchRule. */
+    public OperationCallSettings.Builder<DeleteBranchRuleRequest, Empty, OperationMetadata>
+        deleteBranchRuleOperationSettings() {
+      return deleteBranchRuleOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

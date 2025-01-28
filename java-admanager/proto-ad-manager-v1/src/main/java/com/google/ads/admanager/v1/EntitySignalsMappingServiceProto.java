@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,12 +155,12 @@ public final class EntitySignalsMappingServiceProto {
           + "alsMappingsResponse\"V\332A\017parent,requests\202"
           + "\323\344\223\002>\"9/v1/{parent=networks/*}/entitySig"
           + "nalsMappings:batchUpdate:\001*\032\033\312A\030admanage"
-          + "r.googleapis.comB\267\001\n\033com.google.ads.adma"
+          + "r.googleapis.comB\324\001\n\033com.google.ads.adma"
           + "nager.v1B EntitySignalsMappingServicePro"
           + "toP\001Z@google.golang.org/genproto/googlea"
           + "pis/ads/admanager/v1;admanager\252\002\027Google."
           + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
-          + "V1b\006proto3"
+          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

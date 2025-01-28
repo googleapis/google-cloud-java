@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1004,12 +1004,13 @@ public final class ReportServiceProto {
           + "t\0326.google.ads.admanager.v1.FetchReportR"
           + "esultRowsResponse\"B\332A\004name\202\323\344\223\0025\0223/v1/{n"
           + "ame=networks/*/reports/*/results/*}:fetc"
-          + "hRows\032\033\312A\030admanager.googleapis.comB\251\001\n\033c"
+          + "hRows\032\033\312A\030admanager.googleapis.comB\306\001\n\033c"
           + "om.google.ads.admanager.v1B\022ReportServic"
           + "eProtoP\001Z@google.golang.org/genproto/goo"
           + "gleapis/ads/admanager/v1;admanager\252\002\027Goo"
           + "gle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMana"
-          + "ger\\V1b\006proto3"
+          + "ger\\V1\352\002\032Google::Ads::AdManager::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

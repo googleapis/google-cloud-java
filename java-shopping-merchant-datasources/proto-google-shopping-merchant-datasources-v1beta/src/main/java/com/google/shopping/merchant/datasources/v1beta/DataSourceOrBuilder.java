@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [primary data
+   * The [primary data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
    * </code>
    *
    * @return Whether the primaryProductDataSource field is set.
@@ -44,13 +44,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [primary data
+   * The [primary data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
    * </code>
    *
    * @return The primaryProductDataSource.
@@ -61,13 +61,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [primary data
+   * The [primary data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PrimaryProductDataSource primary_product_data_source = 4;
    * </code>
    */
   com.google.shopping.merchant.datasources.v1beta.PrimaryProductDataSourceOrBuilder
@@ -77,13 +77,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [supplemental data
+   * The [supplemental data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
    * </code>
    *
    * @return Whether the supplementalProductDataSource field is set.
@@ -93,13 +93,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [supplemental data
+   * The [supplemental data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
    * </code>
    *
    * @return The supplementalProductDataSource.
@@ -110,13 +110,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [supplemental data
+   * The [supplemental data
    * source](https://support.google.com/merchants/answer/7439058) for local
    * and online products.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.SupplementalProductDataSource supplemental_product_data_source = 5;
    * </code>
    */
   com.google.shopping.merchant.datasources.v1beta.SupplementalProductDataSourceOrBuilder
@@ -126,13 +126,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [local
+   * The [local
    * inventory](https://support.google.com/merchants/answer/7023001) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
    * </code>
    *
    * @return Whether the localInventoryDataSource field is set.
@@ -142,13 +142,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [local
+   * The [local
    * inventory](https://support.google.com/merchants/answer/7023001) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
    * </code>
    *
    * @return The localInventoryDataSource.
@@ -159,13 +159,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [local
+   * The [local
    * inventory](https://support.google.com/merchants/answer/7023001) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.LocalInventoryDataSource local_inventory_data_source = 6;
    * </code>
    */
   com.google.shopping.merchant.datasources.v1beta.LocalInventoryDataSourceOrBuilder
@@ -175,13 +175,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [regional
+   * The [regional
    * inventory](https://support.google.com/merchants/answer/7439058) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
    * </code>
    *
    * @return Whether the regionalInventoryDataSource field is set.
@@ -191,13 +191,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [regional
+   * The [regional
    * inventory](https://support.google.com/merchants/answer/7439058) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
    * </code>
    *
    * @return The regionalInventoryDataSource.
@@ -208,13 +208,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The [regional
+   * The [regional
    * inventory](https://support.google.com/merchants/answer/7439058) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSource regional_inventory_data_source = 7;
    * </code>
    */
   com.google.shopping.merchant.datasources.v1beta.RegionalInventoryDataSourceOrBuilder
@@ -224,13 +224,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The
+   * The
    * [promotion](https://support.google.com/merchants/answer/2906014) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
    * </code>
    *
    * @return Whether the promotionDataSource field is set.
@@ -240,13 +240,13 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The
+   * The
    * [promotion](https://support.google.com/merchants/answer/2906014) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
    * </code>
    *
    * @return The promotionDataSource.
@@ -256,17 +256,115 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Required. The
+   * The
    * [promotion](https://support.google.com/merchants/answer/2906014) data
    * source.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8 [(.google.api.field_behavior) = REQUIRED];
+   * .google.shopping.merchant.datasources.v1beta.PromotionDataSource promotion_data_source = 8;
    * </code>
    */
   com.google.shopping.merchant.datasources.v1beta.PromotionDataSourceOrBuilder
       getPromotionDataSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [product
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+   * </code>
+   *
+   * @return Whether the productReviewDataSource field is set.
+   */
+  boolean hasProductReviewDataSource();
+  /**
+   *
+   *
+   * <pre>
+   * The [product
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+   * </code>
+   *
+   * @return The productReviewDataSource.
+   */
+  com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSource
+      getProductReviewDataSource();
+  /**
+   *
+   *
+   * <pre>
+   * The [product
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.ProductReviewDataSource product_review_data_source = 9;
+   * </code>
+   */
+  com.google.shopping.merchant.datasources.v1beta.ProductReviewDataSourceOrBuilder
+      getProductReviewDataSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [merchant
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+   * </code>
+   *
+   * @return Whether the merchantReviewDataSource field is set.
+   */
+  boolean hasMerchantReviewDataSource();
+  /**
+   *
+   *
+   * <pre>
+   * The [merchant
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+   * </code>
+   *
+   * @return The merchantReviewDataSource.
+   */
+  com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource
+      getMerchantReviewDataSource();
+  /**
+   *
+   *
+   * <pre>
+   * The [merchant
+   * review](https://support.google.com/merchants/answer/7045996)
+   * data source.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.datasources.v1beta.MerchantReviewDataSource merchant_review_data_source = 12;
+   * </code>
+   */
+  com.google.shopping.merchant.datasources.v1beta.MerchantReviewDataSourceOrBuilder
+      getMerchantReviewDataSourceOrBuilder();
 
   /**
    *

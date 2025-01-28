@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,14 +59,14 @@ public interface NotificationChannelOrBuilder
    *
    *
    * <pre>
-   * The full REST resource name for this channel. The format is:
+   * Identifier. The full REST resource name for this channel. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    *
    * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
    * </pre>
    *
-   * <code>string name = 6;</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -75,14 +75,14 @@ public interface NotificationChannelOrBuilder
    *
    *
    * <pre>
-   * The full REST resource name for this channel. The format is:
+   * Identifier. The full REST resource name for this channel. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
    *
    * The `[CHANNEL_ID]` is automatically assigned by the server on creation.
    * </pre>
    *
-   * <code>string name = 6;</code>
+   * <code>string name = 6 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

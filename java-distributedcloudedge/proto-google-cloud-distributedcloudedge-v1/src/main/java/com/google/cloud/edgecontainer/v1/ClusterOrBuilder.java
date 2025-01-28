@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -939,4 +939,45 @@ public interface ClusterOrBuilder
    * @return The bytes of the externalLoadBalancerIpv6AddressPools at the given index.
    */
   com.google.protobuf.ByteString getExternalLoadBalancerIpv6AddressPoolsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current connection state of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the connectionState field is set.
+   */
+  boolean hasConnectionState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current connection state of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The connectionState.
+   */
+  com.google.cloud.edgecontainer.v1.Cluster.ConnectionState getConnectionState();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current connection state of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.Cluster.ConnectionState connection_state = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.edgecontainer.v1.Cluster.ConnectionStateOrBuilder getConnectionStateOrBuilder();
 }

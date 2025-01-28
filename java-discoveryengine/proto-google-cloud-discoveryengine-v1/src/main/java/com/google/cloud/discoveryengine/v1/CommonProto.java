@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ public final class CommonProto {
           + "ARCH_TIER_UNSPECIFIED\020\000\022\030\n\024SEARCH_TIER_S"
           + "TANDARD\020\001\022\032\n\026SEARCH_TIER_ENTERPRISE\020\002*C\n"
           + "\013SearchAddOn\022\035\n\031SEARCH_ADD_ON_UNSPECIFIE"
-          + "D\020\000\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\243\013\n#com.googl"
+          + "D\020\000\022\025\n\021SEARCH_ADD_ON_LLM\020\001B\313\014\n#com.googl"
           + "e.cloud.discoveryengine.v1B\013CommonProtoP"
           + "\001ZMcloud.google.com/go/discoveryengine/a"
           + "piv1/discoveryenginepb;discoveryenginepb"
@@ -106,7 +106,12 @@ public final class CommonProto {
           + "kingConfigs/{ranking_config}\352Ay\n#healthc"
           + "are.googleapis.com/FhirStore\022Rprojects/{"
           + "project}/locations/{location}/datasets/{"
-          + "dataset}/fhirStores/{fhir_store}b\006proto3"
+          + "dataset}/fhirStores/{fhir_store}\352A\244\001\n&he"
+          + "althcare.googleapis.com/FhirResource\022zpr"
+          + "ojects/{project}/locations/{location}/da"
+          + "tasets/{dataset}/fhirStores/{fhir_store}"
+          + "/fhir/{resource_type}/{fhir_resource_id}"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

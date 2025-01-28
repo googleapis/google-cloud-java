@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2162,7 +2162,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2349
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2188,7 +2188,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2349
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -4279,7 +4279,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2349
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -4304,7 +4304,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2349
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -4329,7 +4329,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2349
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -4353,7 +4353,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2349
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4373,7 +4373,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2284
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2349
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */

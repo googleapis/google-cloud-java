@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public final class RevisionTemplateProto {
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\032!google/cloud/run/v2/k8s.min.prot"
           + "o\032)google/cloud/run/v2/vendor_settings.p"
-          + "roto\032\036google/protobuf/duration.proto\"\356\007\n"
+          + "roto\032\036google/protobuf/duration.proto\"\233\t\n"
           + "\020RevisionTemplate\0225\n\010revision\030\001 \001(\tB#\340A\001"
           + "\372A\035\n\033run.googleapis.com/Revision\022F\n\006labe"
           + "ls\030\002 \003(\01321.google.cloud.run.v2.RevisionT"
@@ -74,15 +74,20 @@ public final class RevisionTemplateProto {
           + "kms.googleapis.com/CryptoKey\022-\n max_inst"
           + "ance_request_concurrency\030\017 \001(\005B\003\340A\001\022;\n\014s"
           + "ervice_mesh\030\020 \001(\0132 .google.cloud.run.v2."
-          + "ServiceMeshB\003\340A\001\022\035\n\020session_affinity\030\023 \001"
-          + "(\010B\003\340A\001\022\"\n\025health_check_disabled\030\024 \001(\010B\003"
-          + "\340A\001\022=\n\rnode_selector\030\025 \001(\0132!.google.clou"
-          + "d.run.v2.NodeSelectorB\003\340A\001\032-\n\013LabelsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Ann"
-          + "otationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001B]\n\027com.google.cloud.run.v2B\025Revisi"
-          + "onTemplateProtoP\001Z)cloud.google.com/go/r"
-          + "un/apiv2/runpb;runpbb\006proto3"
+          + "ServiceMeshB\003\340A\001\022a\n encryption_key_revoc"
+          + "ation_action\030\021 \001(\01622.google.cloud.run.v2"
+          + ".EncryptionKeyRevocationActionB\003\340A\001\022H\n e"
+          + "ncryption_key_shutdown_duration\030\022 \001(\0132\031."
+          + "google.protobuf.DurationB\003\340A\001\022\035\n\020session"
+          + "_affinity\030\023 \001(\010B\003\340A\001\022\"\n\025health_check_dis"
+          + "abled\030\024 \001(\010B\003\340A\001\022=\n\rnode_selector\030\025 \001(\0132"
+          + "!.google.cloud.run.v2.NodeSelectorB\003\340A\001\032"
+          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001B]\n\027com.google.cloud.r"
+          + "un.v2B\025RevisionTemplateProtoP\001Z)cloud.go"
+          + "ogle.com/go/run/apiv2/runpb;runpbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,6 +118,8 @@ public final class RevisionTemplateProto {
               "EncryptionKey",
               "MaxInstanceRequestConcurrency",
               "ServiceMesh",
+              "EncryptionKeyRevocationAction",
+              "EncryptionKeyShutdownDuration",
               "SessionAffinity",
               "HealthCheckDisabled",
               "NodeSelector",

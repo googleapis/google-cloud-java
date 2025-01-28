@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -490,7 +490,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -509,7 +511,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -664,7 +668,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -685,7 +691,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -824,7 +832,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -841,7 +851,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -971,7 +983,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -990,7 +1004,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.

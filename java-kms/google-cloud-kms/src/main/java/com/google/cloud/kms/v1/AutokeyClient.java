@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateKeyHandle</td>
- *      <td><p> Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the provisioning of a new [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK use with the given resource type in the configured key project and the same location. [GetOperation][Operations.GetOperation] should be used to resolve the resulting long-running operation and get the resulting [KeyHandle][google.cloud.kms.v1.KeyHandle] and [CryptoKey][google.cloud.kms.v1.CryptoKey].</td>
+ *      <td><p> Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the provisioning of a new [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK use with the given resource type in the configured key project and the same location. [GetOperation][google.longrunning.Operations.GetOperation] should be used to resolve the resulting long-running operation and get the resulting [KeyHandle][google.cloud.kms.v1.KeyHandle] and [CryptoKey][google.cloud.kms.v1.CryptoKey].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -351,8 +351,9 @@ public class AutokeyClient implements BackgroundResource {
   /**
    * Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the provisioning of a new
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK use with the given resource type in the
-   * configured key project and the same location. [GetOperation][Operations.GetOperation] should be
-   * used to resolve the resulting long-running operation and get the resulting
+   * configured key project and the same location.
+   * [GetOperation][google.longrunning.Operations.GetOperation] should be used to resolve the
+   * resulting long-running operation and get the resulting
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] and [CryptoKey][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:
@@ -395,8 +396,9 @@ public class AutokeyClient implements BackgroundResource {
   /**
    * Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the provisioning of a new
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK use with the given resource type in the
-   * configured key project and the same location. [GetOperation][Operations.GetOperation] should be
-   * used to resolve the resulting long-running operation and get the resulting
+   * configured key project and the same location.
+   * [GetOperation][google.longrunning.Operations.GetOperation] should be used to resolve the
+   * resulting long-running operation and get the resulting
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] and [CryptoKey][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:
@@ -439,8 +441,9 @@ public class AutokeyClient implements BackgroundResource {
   /**
    * Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the provisioning of a new
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK use with the given resource type in the
-   * configured key project and the same location. [GetOperation][Operations.GetOperation] should be
-   * used to resolve the resulting long-running operation and get the resulting
+   * configured key project and the same location.
+   * [GetOperation][google.longrunning.Operations.GetOperation] should be used to resolve the
+   * resulting long-running operation and get the resulting
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] and [CryptoKey][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:
@@ -474,8 +477,9 @@ public class AutokeyClient implements BackgroundResource {
   /**
    * Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the provisioning of a new
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK use with the given resource type in the
-   * configured key project and the same location. [GetOperation][Operations.GetOperation] should be
-   * used to resolve the resulting long-running operation and get the resulting
+   * configured key project and the same location.
+   * [GetOperation][google.longrunning.Operations.GetOperation] should be used to resolve the
+   * resulting long-running operation and get the resulting
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] and [CryptoKey][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:
@@ -509,8 +513,9 @@ public class AutokeyClient implements BackgroundResource {
   /**
    * Creates a new [KeyHandle][google.cloud.kms.v1.KeyHandle], triggering the provisioning of a new
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] for CMEK use with the given resource type in the
-   * configured key project and the same location. [GetOperation][Operations.GetOperation] should be
-   * used to resolve the resulting long-running operation and get the resulting
+   * configured key project and the same location.
+   * [GetOperation][google.longrunning.Operations.GetOperation] should be used to resolve the
+   * resulting long-running operation and get the resulting
    * [KeyHandle][google.cloud.kms.v1.KeyHandle] and [CryptoKey][google.cloud.kms.v1.CryptoKey].
    *
    * <p>Sample code:

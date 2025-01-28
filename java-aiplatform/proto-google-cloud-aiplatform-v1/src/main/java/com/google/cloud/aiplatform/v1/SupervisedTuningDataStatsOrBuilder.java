@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ public interface SupervisedTuningDataStatsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count
-   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=212
+   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=221
    * @return The totalBillableCharacterCount.
    */
   @java.lang.Deprecated

@@ -37,6 +37,9 @@
             "DeleteOrder": {
               "methods": ["deleteOrderAsync", "deleteOrderAsync", "deleteOrderAsync", "deleteOrderOperationCallable", "deleteOrderCallable"]
             },
+            "DeleteSite": {
+              "methods": ["deleteSiteAsync", "deleteSiteAsync", "deleteSiteAsync", "deleteSiteOperationCallable", "deleteSiteCallable"]
+            },
             "DeleteZone": {
               "methods": ["deleteZoneAsync", "deleteZoneAsync", "deleteZoneAsync", "deleteZoneOperationCallable", "deleteZoneCallable"]
             },

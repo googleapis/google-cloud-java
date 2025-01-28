@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * <pre>
  * Stores metadata of the invocation of a child playbook.
- * Next Id: 5
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.PlaybookInvocation}
@@ -75,8 +74,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The unique identifier of the playbook.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>
@@ -102,8 +101,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The unique identifier of the playbook.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>
@@ -485,7 +484,6 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Stores metadata of the invocation of a child playbook.
-   * Next Id: 5
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.PlaybookInvocation}
@@ -733,8 +731,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -759,8 +757,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -785,8 +783,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -810,8 +808,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -831,8 +829,8 @@ public final class PlaybookInvocation extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,8 +96,13 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -160,8 +165,13 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -224,8 +234,13 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -281,8 +296,13 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -528,8 +548,13 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -545,8 +570,13 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
             .setLanguageInfo(LanguageInfo.newBuilder().build())
+            .setNaturalLanguageQueryUnderstandingConfig(
+                NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+            .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+            .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -588,8 +618,13 @@ public class DataStoreServiceClientHttpJsonTest {
               .setDefaultSchemaId("defaultSchemaId1300415485")
               .setCreateTime(Timestamp.newBuilder().build())
               .setLanguageInfo(LanguageInfo.newBuilder().build())
+              .setNaturalLanguageQueryUnderstandingConfig(
+                  NaturalLanguageQueryUnderstandingConfig.newBuilder().build())
+              .setBillingEstimation(DataStore.BillingEstimation.newBuilder().build())
+              .setWorkspaceConfig(WorkspaceConfig.newBuilder().build())
               .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
               .setStartingSchema(Schema.newBuilder().build())
+              .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataStore(dataStore, updateMask);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -324,6 +324,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATA_QUALITY_SPEC(100),
     DATA_PROFILE_SPEC(101),
+    DATA_DISCOVERY_SPEC(102),
     SPEC_NOT_SET(0);
     private final int value;
 
@@ -346,6 +347,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           return DATA_QUALITY_SPEC;
         case 101:
           return DATA_PROFILE_SPEC;
+        case 102:
+          return DATA_DISCOVERY_SPEC;
         case 0:
           return SPEC_NOT_SET;
         default:
@@ -373,6 +376,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATA_QUALITY_RESULT(200),
     DATA_PROFILE_RESULT(201),
+    DATA_DISCOVERY_RESULT(202),
     RESULT_NOT_SET(0);
     private final int value;
 
@@ -395,6 +399,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           return DATA_QUALITY_RESULT;
         case 201:
           return DATA_PROFILE_RESULT;
+        case 202:
+          return DATA_DISCOVERY_RESULT;
         case 0:
           return RESULT_NOT_SET;
         default:
@@ -419,13 +425,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the DataScanJob, of the form:
+   * Output only. Identifier. The relative resource name of the DataScanJob, of
+   * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -445,13 +454,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The relative resource name of the DataScanJob, of the form:
+   * Output only. Identifier. The relative resource name of the DataScanJob, of
+   * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -479,7 +491,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    * Output only. System generated globally unique ID for the DataScanJob.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -502,7 +516,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    * Output only. System generated globally unique ID for the DataScanJob.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -517,6 +533,55 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the DataScanJob was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the DataScanJob was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the DataScanJob was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 3;
@@ -535,7 +600,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -584,7 +649,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEndTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -751,7 +816,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DataQualityScan related setting.
+   * Output only. Settings for a data quality scan.
    * </pre>
    *
    * <code>
@@ -768,7 +833,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DataQualityScan related setting.
+   * Output only. Settings for a data quality scan.
    * </pre>
    *
    * <code>
@@ -788,7 +853,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DataQualityScan related setting.
+   * Output only. Settings for a data quality scan.
    * </pre>
    *
    * <code>
@@ -808,7 +873,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DataProfileScan related setting.
+   * Output only. Settings for a data profile scan.
    * </pre>
    *
    * <code>
@@ -825,7 +890,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DataProfileScan related setting.
+   * Output only. Settings for a data profile scan.
    * </pre>
    *
    * <code>
@@ -845,7 +910,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DataProfileScan related setting.
+   * Output only. Settings for a data profile scan.
    * </pre>
    *
    * <code>
@@ -860,12 +925,69 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.DataProfileSpec.getDefaultInstance();
   }
 
+  public static final int DATA_DISCOVERY_SPEC_FIELD_NUMBER = 102;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDiscoverySpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataDiscoverySpec() {
+    return specCase_ == 102;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDiscoverySpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec() {
+    if (specCase_ == 102) {
+      return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder getDataDiscoverySpecOrBuilder() {
+    if (specCase_ == 102) {
+      return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+  }
+
   public static final int DATA_QUALITY_RESULT_FIELD_NUMBER = 200;
   /**
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -882,7 +1004,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -902,7 +1024,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -922,7 +1044,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -939,7 +1061,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -959,7 +1081,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -972,6 +1094,64 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.dataplex.v1.DataProfileResult) result_;
     }
     return com.google.cloud.dataplex.v1.DataProfileResult.getDefaultInstance();
+  }
+
+  public static final int DATA_DISCOVERY_RESULT_FIELD_NUMBER = 202;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDiscoveryResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataDiscoveryResult() {
+    return resultCase_ == 202;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDiscoveryResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult() {
+    if (resultCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder
+      getDataDiscoveryResultOrBuilder() {
+    if (resultCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -994,10 +1174,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uid_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getStartTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getEndTime());
     }
     if (state_ != com.google.cloud.dataplex.v1.DataScanJob.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1009,17 +1189,26 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.dataplex.v1.DataScanType.DATA_SCAN_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, type_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(8, getCreateTime());
+    }
     if (specCase_ == 100) {
       output.writeMessage(100, (com.google.cloud.dataplex.v1.DataQualitySpec) spec_);
     }
     if (specCase_ == 101) {
       output.writeMessage(101, (com.google.cloud.dataplex.v1.DataProfileSpec) spec_);
     }
+    if (specCase_ == 102) {
+      output.writeMessage(102, (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_);
+    }
     if (resultCase_ == 200) {
       output.writeMessage(200, (com.google.cloud.dataplex.v1.DataQualityResult) result_);
     }
     if (resultCase_ == 201) {
       output.writeMessage(201, (com.google.cloud.dataplex.v1.DataProfileResult) result_);
+    }
+    if (resultCase_ == 202) {
+      output.writeMessage(202, (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1036,10 +1225,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uid_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStartTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getEndTime());
     }
     if (state_ != com.google.cloud.dataplex.v1.DataScanJob.State.STATE_UNSPECIFIED.getNumber()) {
@@ -1051,6 +1240,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.dataplex.v1.DataScanType.DATA_SCAN_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, type_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCreateTime());
+    }
     if (specCase_ == 100) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1061,6 +1253,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               101, (com.google.cloud.dataplex.v1.DataProfileSpec) spec_);
     }
+    if (specCase_ == 102) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              102, (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_);
+    }
     if (resultCase_ == 200) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1070,6 +1267,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               201, (com.google.cloud.dataplex.v1.DataProfileResult) result_);
+    }
+    if (resultCase_ == 202) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              202, (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1088,6 +1290,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getUid().equals(other.getUid())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime().equals(other.getStartTime())) return false;
@@ -1107,6 +1313,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       case 101:
         if (!getDataProfileSpec().equals(other.getDataProfileSpec())) return false;
         break;
+      case 102:
+        if (!getDataDiscoverySpec().equals(other.getDataDiscoverySpec())) return false;
+        break;
       case 0:
       default:
     }
@@ -1117,6 +1326,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         break;
       case 201:
         if (!getDataProfileResult().equals(other.getDataProfileResult())) return false;
+        break;
+      case 202:
+        if (!getDataDiscoveryResult().equals(other.getDataDiscoveryResult())) return false;
         break;
       case 0:
       default:
@@ -1136,6 +1348,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + UID_FIELD_NUMBER;
     hash = (53 * hash) + getUid().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -1159,6 +1375,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DATA_PROFILE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getDataProfileSpec().hashCode();
         break;
+      case 102:
+        hash = (37 * hash) + DATA_DISCOVERY_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDiscoverySpec().hashCode();
+        break;
       case 0:
       default:
     }
@@ -1170,6 +1390,10 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       case 201:
         hash = (37 * hash) + DATA_PROFILE_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getDataProfileResult().hashCode();
+        break;
+      case 202:
+        hash = (37 * hash) + DATA_DISCOVERY_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getDataDiscoveryResult().hashCode();
         break;
       case 0:
       default:
@@ -1314,6 +1538,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCreateTimeFieldBuilder();
         getStartTimeFieldBuilder();
         getEndTimeFieldBuilder();
       }
@@ -1325,6 +1550,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       uid_ = "";
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -1344,11 +1574,17 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       if (dataProfileSpecBuilder_ != null) {
         dataProfileSpecBuilder_.clear();
       }
+      if (dataDiscoverySpecBuilder_ != null) {
+        dataDiscoverySpecBuilder_.clear();
+      }
       if (dataQualityResultBuilder_ != null) {
         dataQualityResultBuilder_.clear();
       }
       if (dataProfileResultBuilder_ != null) {
         dataProfileResultBuilder_.clear();
+      }
+      if (dataDiscoveryResultBuilder_ != null) {
+        dataDiscoveryResultBuilder_.clear();
       }
       specCase_ = 0;
       spec_ = null;
@@ -1399,20 +1635,24 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.state_ = state_;
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.message_ = message_;
+        result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.type_ = type_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1427,6 +1667,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       if (specCase_ == 101 && dataProfileSpecBuilder_ != null) {
         result.spec_ = dataProfileSpecBuilder_.build();
       }
+      if (specCase_ == 102 && dataDiscoverySpecBuilder_ != null) {
+        result.spec_ = dataDiscoverySpecBuilder_.build();
+      }
       result.resultCase_ = resultCase_;
       result.result_ = this.result_;
       if (resultCase_ == 200 && dataQualityResultBuilder_ != null) {
@@ -1434,6 +1677,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (resultCase_ == 201 && dataProfileResultBuilder_ != null) {
         result.result_ = dataProfileResultBuilder_.build();
+      }
+      if (resultCase_ == 202 && dataDiscoveryResultBuilder_ != null) {
+        result.result_ = dataDiscoveryResultBuilder_.build();
       }
     }
 
@@ -1492,6 +1738,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
@@ -1503,7 +1752,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -1520,6 +1769,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
             mergeDataProfileSpec(other.getDataProfileSpec());
             break;
           }
+        case DATA_DISCOVERY_SPEC:
+          {
+            mergeDataDiscoverySpec(other.getDataDiscoverySpec());
+            break;
+          }
         case SPEC_NOT_SET:
           {
             break;
@@ -1534,6 +1788,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         case DATA_PROFILE_RESULT:
           {
             mergeDataProfileResult(other.getDataProfileResult());
+            break;
+          }
+        case DATA_DISCOVERY_RESULT:
+          {
+            mergeDataDiscoveryResult(other.getDataDiscoveryResult());
             break;
           }
         case RESULT_NOT_SET:
@@ -1582,33 +1841,39 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
+            case 66:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 66
             case 802:
               {
                 input.readMessage(getDataQualitySpecFieldBuilder().getBuilder(), extensionRegistry);
@@ -1621,6 +1886,13 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
                 specCase_ = 101;
                 break;
               } // case 810
+            case 818:
+              {
+                input.readMessage(
+                    getDataDiscoverySpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 102;
+                break;
+              } // case 818
             case 1602:
               {
                 input.readMessage(
@@ -1635,6 +1907,13 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
                 resultCase_ = 201;
                 break;
               } // case 1610
+            case 1618:
+              {
+                input.readMessage(
+                    getDataDiscoveryResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 202;
+                break;
+              } // case 1618
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1687,13 +1966,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -1712,13 +1994,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -1737,13 +2022,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1761,13 +2049,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1781,13 +2072,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The relative resource name of the DataScanJob, of the form:
+     * Output only. Identifier. The relative resource name of the DataScanJob, of
+     * the form:
      * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1811,7 +2105,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -1833,7 +2129,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -1855,7 +2153,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -1876,7 +2176,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1893,7 +2195,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * Output only. System generated globally unique ID for the DataScanJob.
      * </pre>
      *
-     * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.
@@ -1907,6 +2211,209 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the DataScanJob was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
     }
 
     private com.google.protobuf.Timestamp startTime_;
@@ -1928,7 +2435,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1968,7 +2475,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1988,7 +2495,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2004,7 +2511,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -2015,7 +2522,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2031,7 +2538,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -2051,7 +2558,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -2118,7 +2625,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2158,7 +2665,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2178,7 +2685,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2194,7 +2701,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -2205,7 +2712,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2221,7 +2728,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -2241,7 +2748,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2323,7 +2830,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2364,7 +2871,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2383,7 +2890,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2451,7 +2958,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       message_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2468,7 +2975,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMessage() {
       message_ = getDefaultInstance().getMessage();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2490,7 +2997,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       message_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2529,7 +3036,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2570,7 +3077,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -2589,7 +3096,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       type_ = 0;
       onChanged();
       return this;
@@ -2604,7 +3111,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2621,7 +3128,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2648,7 +3155,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2672,7 +3179,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2694,7 +3201,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2728,7 +3235,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2755,7 +3262,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2769,7 +3276,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2791,7 +3298,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataQualityScan related setting.
+     * Output only. Settings for a data quality scan.
      * </pre>
      *
      * <code>
@@ -2831,7 +3338,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -2848,7 +3355,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -2875,7 +3382,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -2899,7 +3406,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -2921,7 +3428,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -2955,7 +3462,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -2982,7 +3489,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -2996,7 +3503,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -3018,7 +3525,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DataProfileScan related setting.
+     * Output only. Settings for a data profile scan.
      * </pre>
      *
      * <code>
@@ -3050,6 +3557,233 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoverySpec,
+            com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder>
+        dataDiscoverySpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataDiscoverySpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataDiscoverySpec() {
+      return specCase_ == 102;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataDiscoverySpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec() {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (specCase_ == 102) {
+          return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 102) {
+          return dataDiscoverySpecBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDiscoverySpec(com.google.cloud.dataplex.v1.DataDiscoverySpec value) {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        dataDiscoverySpecBuilder_.setMessage(value);
+      }
+      specCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDiscoverySpec(
+        com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder builderForValue) {
+      if (dataDiscoverySpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataDiscoverySpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataDiscoverySpec(com.google.cloud.dataplex.v1.DataDiscoverySpec value) {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (specCase_ == 102
+            && spec_ != com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 102) {
+          dataDiscoverySpecBuilder_.mergeFrom(value);
+        } else {
+          dataDiscoverySpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataDiscoverySpec() {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (specCase_ == 102) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 102) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        dataDiscoverySpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder getDataDiscoverySpecBuilder() {
+      return getDataDiscoverySpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder getDataDiscoverySpecOrBuilder() {
+      if ((specCase_ == 102) && (dataDiscoverySpecBuilder_ != null)) {
+        return dataDiscoverySpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 102) {
+          return (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Settings for a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoverySpec,
+            com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder>
+        getDataDiscoverySpecFieldBuilder() {
+      if (dataDiscoverySpecBuilder_ == null) {
+        if (!(specCase_ == 102)) {
+          spec_ = com.google.cloud.dataplex.v1.DataDiscoverySpec.getDefaultInstance();
+        }
+        dataDiscoverySpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataDiscoverySpec,
+                com.google.cloud.dataplex.v1.DataDiscoverySpec.Builder,
+                com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDiscoverySpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 102;
+      onChanged();
+      return dataDiscoverySpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataQualityResult,
             com.google.cloud.dataplex.v1.DataQualityResult.Builder,
             com.google.cloud.dataplex.v1.DataQualityResultOrBuilder>
@@ -3058,7 +3792,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3075,7 +3809,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3102,7 +3836,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3126,7 +3860,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3148,7 +3882,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3182,7 +3916,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3209,7 +3943,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3223,7 +3957,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3245,7 +3979,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data quality scan.
+     * Output only. The result of a data quality scan.
      * </pre>
      *
      * <code>
@@ -3285,7 +4019,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3302,7 +4036,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3329,7 +4063,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3353,7 +4087,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3375,7 +4109,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3409,7 +4143,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3436,7 +4170,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3450,7 +4184,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3472,7 +4206,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The result of the data profile scan.
+     * Output only. The result of a data profile scan.
      * </pre>
      *
      * <code>
@@ -3501,6 +4235,236 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 201;
       onChanged();
       return dataProfileResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoveryResult,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder>
+        dataDiscoveryResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dataDiscoveryResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataDiscoveryResult() {
+      return resultCase_ == 202;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dataDiscoveryResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult() {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (resultCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 202) {
+          return dataDiscoveryResultBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDiscoveryResult(com.google.cloud.dataplex.v1.DataDiscoveryResult value) {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        dataDiscoveryResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDataDiscoveryResult(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder builderForValue) {
+      if (dataDiscoveryResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataDiscoveryResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDataDiscoveryResult(
+        com.google.cloud.dataplex.v1.DataDiscoveryResult value) {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (resultCase_ == 202
+            && result_ != com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance()) {
+          result_ =
+              com.google.cloud.dataplex.v1.DataDiscoveryResult.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 202) {
+          dataDiscoveryResultBuilder_.mergeFrom(value);
+        } else {
+          dataDiscoveryResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDataDiscoveryResult() {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (resultCase_ == 202) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 202) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        dataDiscoveryResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder
+        getDataDiscoveryResultBuilder() {
+      return getDataDiscoveryResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder
+        getDataDiscoveryResultOrBuilder() {
+      if ((resultCase_ == 202) && (dataDiscoveryResultBuilder_ != null)) {
+        return dataDiscoveryResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result of a data discovery scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataDiscoveryResult,
+            com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder,
+            com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder>
+        getDataDiscoveryResultFieldBuilder() {
+      if (dataDiscoveryResultBuilder_ == null) {
+        if (!(resultCase_ == 202)) {
+          result_ = com.google.cloud.dataplex.v1.DataDiscoveryResult.getDefaultInstance();
+        }
+        dataDiscoveryResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataDiscoveryResult,
+                com.google.cloud.dataplex.v1.DataDiscoveryResult.Builder,
+                com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDiscoveryResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 202;
+      onChanged();
+      return dataDiscoveryResultBuilder_;
     }
 
     @java.lang.Override

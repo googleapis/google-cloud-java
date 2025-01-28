@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public interface MasterAuthOrBuilder
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1220
+   *     google/container/v1/cluster_service.proto;l=1280
    * @return The username.
    */
   @java.lang.Deprecated
@@ -63,7 +63,7 @@ public interface MasterAuthOrBuilder
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1220
+   *     google/container/v1/cluster_service.proto;l=1280
    * @return The bytes for username.
    */
   @java.lang.Deprecated
@@ -87,7 +87,7 @@ public interface MasterAuthOrBuilder
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1231
+   *     google/container/v1/cluster_service.proto;l=1291
    * @return The password.
    */
   @java.lang.Deprecated
@@ -110,7 +110,7 @@ public interface MasterAuthOrBuilder
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1231
+   *     google/container/v1/cluster_service.proto;l=1291
    * @return The bytes for password.
    */
   @java.lang.Deprecated
@@ -189,7 +189,8 @@ public interface MasterAuthOrBuilder
    *
    * <pre>
    * Output only. Base64-encoded public certificate used by clients to
-   * authenticate to the cluster endpoint.
+   * authenticate to the cluster endpoint. Issued only if
+   * client_certificate_config is set.
    * </pre>
    *
    * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -202,7 +203,8 @@ public interface MasterAuthOrBuilder
    *
    * <pre>
    * Output only. Base64-encoded public certificate used by clients to
-   * authenticate to the cluster endpoint.
+   * authenticate to the cluster endpoint. Issued only if
+   * client_certificate_config is set.
    * </pre>
    *
    * <code>string client_certificate = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

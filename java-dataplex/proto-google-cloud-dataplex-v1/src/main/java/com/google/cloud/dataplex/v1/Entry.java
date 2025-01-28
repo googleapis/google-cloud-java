@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * An entry is a representation of a data asset which can be described by
+ * An entry is a representation of a data resource that can be described by
  * various metadata.
  * </pre>
  *
@@ -88,8 +88,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifier. The relative resource name of the Entry, of the form:
-   * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
+   * Identifier. The relative resource name of the entry, in the format
+   * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -112,8 +112,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifier. The relative resource name of the Entry, of the form:
-   * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
+   * Identifier. The relative resource name of the entry, in the format
+   * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -141,8 +141,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The resource name of the EntryType used to create this
-   * Entry.
+   * Required. Immutable. The relative resource name of the entry type that was
+   * used to create this entry, in the format
+   * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
    * </pre>
    *
    * <code>
@@ -167,8 +168,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The resource name of the EntryType used to create this
-   * Entry.
+   * Required. Immutable. The relative resource name of the entry type that was
+   * used to create this entry, in the format
+   * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
    * </pre>
    *
    * <code>
@@ -196,7 +198,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the Entry was created.
+   * Output only. The time when the entry was created in Dataplex.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -212,7 +214,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the Entry was created.
+   * Output only. The time when the entry was created in Dataplex.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -228,7 +230,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the Entry was created.
+   * Output only. The time when the entry was created in Dataplex.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -245,7 +247,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the Entry was last updated.
+   * Output only. The time when the entry was last updated in Dataplex.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -261,7 +263,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the Entry was last updated.
+   * Output only. The time when the entry was last updated in Dataplex.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -277,7 +279,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the Entry was last updated.
+   * Output only. The time when the entry was last updated in Dataplex.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -322,12 +324,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry.
-   * The format for the key can be one of the following:
-   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-   * directly to the entry)
-   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-   * attached to an entry's path)
+   * Optional. The aspects that are attached to the entry. Depending on how the
+   * aspect is attached to the entry, the format of the aspect key can be one of
+   * the following:
+   *
+   * * If the aspect is attached directly to the entry:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * * If the aspect is attached to an entry's path:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
    * </pre>
    *
    * <code>
@@ -351,12 +355,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry.
-   * The format for the key can be one of the following:
-   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-   * directly to the entry)
-   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-   * attached to an entry's path)
+   * Optional. The aspects that are attached to the entry. Depending on how the
+   * aspect is attached to the entry, the format of the aspect key can be one of
+   * the following:
+   *
+   * * If the aspect is attached directly to the entry:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * * If the aspect is attached to an entry's path:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
    * </pre>
    *
    * <code>
@@ -371,12 +377,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry.
-   * The format for the key can be one of the following:
-   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-   * directly to the entry)
-   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-   * attached to an entry's path)
+   * Optional. The aspects that are attached to the entry. Depending on how the
+   * aspect is attached to the entry, the format of the aspect key can be one of
+   * the following:
+   *
+   * * If the aspect is attached directly to the entry:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * * If the aspect is attached to an entry's path:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
    * </pre>
    *
    * <code>
@@ -399,12 +407,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Aspects attached to the Entry.
-   * The format for the key can be one of the following:
-   * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-   * directly to the entry)
-   * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-   * attached to an entry's path)
+   * Optional. The aspects that are attached to the entry. Depending on how the
+   * aspect is attached to the entry, the format of the aspect key can be one of
+   * the following:
+   *
+   * * If the aspect is attached directly to the entry:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+   * * If the aspect is attached to an entry's path:
+   * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
    * </pre>
    *
    * <code>
@@ -487,7 +497,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A name for the entry that can reference it in an external system.
+   * Optional. A name for the entry that can be referenced by an external
+   * system. For more information, see [Fully qualified
+   * names](https://cloud.google.com/data-catalog/docs/fully-qualified-names).
    * The maximum size of the field is 4000 characters.
    * </pre>
    *
@@ -511,7 +523,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A name for the entry that can reference it in an external system.
+   * Optional. A name for the entry that can be referenced by an external
+   * system. For more information, see [Fully qualified
+   * names](https://cloud.google.com/data-catalog/docs/fully-qualified-names).
    * The maximum size of the field is 4000 characters.
    * </pre>
    *
@@ -538,7 +552,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Source system related information for an entry.
+   * Optional. Information related to the source system of the data resource
+   * that is represented by the entry.
    * </pre>
    *
    * <code>
@@ -555,7 +570,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Source system related information for an entry.
+   * Optional. Information related to the source system of the data resource
+   * that is represented by the entry.
    * </pre>
    *
    * <code>
@@ -574,7 +590,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Source system related information for an entry.
+   * Optional. Information related to the source system of the data resource
+   * that is represented by the entry.
    * </pre>
    *
    * <code>
@@ -836,7 +853,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An entry is a representation of a data asset which can be described by
+   * An entry is a representation of a data resource that can be described by
    * various metadata.
    * </pre>
    *
@@ -1173,8 +1190,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifier. The relative resource name of the Entry, of the form:
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
+     * Identifier. The relative resource name of the entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1196,8 +1213,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifier. The relative resource name of the Entry, of the form:
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
+     * Identifier. The relative resource name of the entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1219,8 +1236,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifier. The relative resource name of the Entry, of the form:
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
+     * Identifier. The relative resource name of the entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1241,8 +1258,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifier. The relative resource name of the Entry, of the form:
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
+     * Identifier. The relative resource name of the entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1259,8 +1276,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifier. The relative resource name of the Entry, of the form:
-     * projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
+     * Identifier. The relative resource name of the entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1284,8 +1301,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The resource name of the EntryType used to create this
-     * Entry.
+     * Required. Immutable. The relative resource name of the entry type that was
+     * used to create this entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
      * </pre>
      *
      * <code>
@@ -1309,8 +1327,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The resource name of the EntryType used to create this
-     * Entry.
+     * Required. Immutable. The relative resource name of the entry type that was
+     * used to create this entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
      * </pre>
      *
      * <code>
@@ -1334,8 +1353,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The resource name of the EntryType used to create this
-     * Entry.
+     * Required. Immutable. The relative resource name of the entry type that was
+     * used to create this entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
      * </pre>
      *
      * <code>
@@ -1358,8 +1378,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The resource name of the EntryType used to create this
-     * Entry.
+     * Required. Immutable. The relative resource name of the entry type that was
+     * used to create this entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
      * </pre>
      *
      * <code>
@@ -1378,8 +1399,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The resource name of the EntryType used to create this
-     * Entry.
+     * Required. Immutable. The relative resource name of the entry type that was
+     * used to create this entry, in the format
+     * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
      * </pre>
      *
      * <code>
@@ -1410,7 +1432,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1426,7 +1448,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1448,7 +1470,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1472,7 +1494,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1493,7 +1515,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1522,7 +1544,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1543,7 +1565,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1559,7 +1581,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1579,7 +1601,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was created.
+     * Output only. The time when the entry was created in Dataplex.
      * </pre>
      *
      * <code>
@@ -1613,7 +1635,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1629,7 +1651,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1651,7 +1673,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1675,7 +1697,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1696,7 +1718,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1725,7 +1747,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1746,7 +1768,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1762,7 +1784,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1782,7 +1804,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the Entry was last updated.
+     * Output only. The time when the entry was last updated in Dataplex.
      * </pre>
      *
      * <code>
@@ -1869,12 +1891,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -1898,12 +1922,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -1918,12 +1944,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -1946,12 +1974,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -1980,12 +2010,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -2010,12 +2042,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -2037,12 +2071,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -2065,12 +2101,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Aspects attached to the Entry.
-     * The format for the key can be one of the following:
-     * 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached
-     * directly to the entry)
-     * 2. {projectId}.{locationId}.{aspectTypeId}&#64;{path} (if the aspect is
-     * attached to an entry's path)
+     * Optional. The aspects that are attached to the entry. Depending on how the
+     * aspect is attached to the entry, the format of the aspect key can be one of
+     * the following:
+     *
+     * * If the aspect is attached directly to the entry:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}`
+     * * If the aspect is attached to an entry's path:
+     * `{project_id_or_number}.{location_id}.{aspect_type_id}&#64;{path}`
      * </pre>
      *
      * <code>
@@ -2214,7 +2252,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A name for the entry that can reference it in an external system.
+     * Optional. A name for the entry that can be referenced by an external
+     * system. For more information, see [Fully qualified
+     * names](https://cloud.google.com/data-catalog/docs/fully-qualified-names).
      * The maximum size of the field is 4000 characters.
      * </pre>
      *
@@ -2237,7 +2277,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A name for the entry that can reference it in an external system.
+     * Optional. A name for the entry that can be referenced by an external
+     * system. For more information, see [Fully qualified
+     * names](https://cloud.google.com/data-catalog/docs/fully-qualified-names).
      * The maximum size of the field is 4000 characters.
      * </pre>
      *
@@ -2260,7 +2302,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A name for the entry that can reference it in an external system.
+     * Optional. A name for the entry that can be referenced by an external
+     * system. For more information, see [Fully qualified
+     * names](https://cloud.google.com/data-catalog/docs/fully-qualified-names).
      * The maximum size of the field is 4000 characters.
      * </pre>
      *
@@ -2282,7 +2326,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A name for the entry that can reference it in an external system.
+     * Optional. A name for the entry that can be referenced by an external
+     * system. For more information, see [Fully qualified
+     * names](https://cloud.google.com/data-catalog/docs/fully-qualified-names).
      * The maximum size of the field is 4000 characters.
      * </pre>
      *
@@ -2300,7 +2346,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A name for the entry that can reference it in an external system.
+     * Optional. A name for the entry that can be referenced by an external
+     * system. For more information, see [Fully qualified
+     * names](https://cloud.google.com/data-catalog/docs/fully-qualified-names).
      * The maximum size of the field is 4000 characters.
      * </pre>
      *
@@ -2330,7 +2378,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2346,7 +2395,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2368,7 +2418,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2392,7 +2443,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2414,7 +2466,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2443,7 +2496,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2464,7 +2518,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2480,7 +2535,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>
@@ -2500,7 +2556,8 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Source system related information for an entry.
+     * Optional. Information related to the source system of the data resource
+     * that is represented by the entry.
      * </pre>
      *
      * <code>

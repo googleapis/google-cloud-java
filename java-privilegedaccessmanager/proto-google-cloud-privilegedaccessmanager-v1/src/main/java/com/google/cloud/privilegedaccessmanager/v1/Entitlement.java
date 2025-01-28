@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2868,7 +2868,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * AdditionalNotificationTargets includes email addresses to be notified.
+   * `AdditionalNotificationTargets` includes email addresses to be notified.
    * </pre>
    *
    * Protobuf type {@code
@@ -3275,7 +3275,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * AdditionalNotificationTargets includes email addresses to be notified.
+     * `AdditionalNotificationTargets` includes email addresses to be notified.
      * </pre>
      *
      * Protobuf type {@code

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,912 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.MysqlSourceConfig.Builder.class);
   }
 
+  public interface BinaryLogPositionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary log position based replication.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition}
+   */
+  public static final class BinaryLogPosition extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition)
+      BinaryLogPositionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BinaryLogPosition.newBuilder() to construct.
+    private BinaryLogPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BinaryLogPosition() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BinaryLogPosition();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_BinaryLogPosition_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_BinaryLogPosition_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.class,
+              com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition other =
+          (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition)
+        com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPositionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_BinaryLogPosition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_BinaryLogPosition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.class,
+                com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_BinaryLogPosition_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition build() {
+        com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition buildPartial() {
+        com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition result =
+            new com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition other) {
+        if (other
+            == com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition)
+    private static final com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition();
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BinaryLogPosition> PARSER =
+        new com.google.protobuf.AbstractParser<BinaryLogPosition>() {
+          @java.lang.Override
+          public BinaryLogPosition parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BinaryLogPosition> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BinaryLogPosition> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GtidOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.MysqlSourceConfig.Gtid)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Use GTID based replication.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.MysqlSourceConfig.Gtid}
+   */
+  public static final class Gtid extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.MysqlSourceConfig.Gtid)
+      GtidOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Gtid.newBuilder() to construct.
+    private Gtid(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Gtid() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Gtid();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_Gtid_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_Gtid_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.class,
+              com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid other =
+          (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.MysqlSourceConfig.Gtid}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.MysqlSourceConfig.Gtid)
+        com.google.cloud.datastream.v1.MysqlSourceConfig.GtidOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_Gtid_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_Gtid_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.class,
+                com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.Builder.class);
+      }
+
+      // Construct using com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_MysqlSourceConfig_Gtid_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid build() {
+        com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid buildPartial() {
+        com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid result =
+            new com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) {
+          return mergeFrom((com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid other) {
+        if (other == com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.MysqlSourceConfig.Gtid)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.MysqlSourceConfig.Gtid)
+    private static final com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid();
+    }
+
+    public static com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Gtid> PARSER =
+        new com.google.protobuf.AbstractParser<Gtid>() {
+          @java.lang.Override
+          public Gtid parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Gtid> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Gtid> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int cdcMethodCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object cdcMethod_;
+
+  public enum CdcMethodCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    BINARY_LOG_POSITION(101),
+    GTID(102),
+    CDCMETHOD_NOT_SET(0);
+    private final int value;
+
+    private CdcMethodCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CdcMethodCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CdcMethodCase forNumber(int value) {
+      switch (value) {
+        case 101:
+          return BINARY_LOG_POSITION;
+        case 102:
+          return GTID;
+        case 0:
+          return CDCMETHOD_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public CdcMethodCase getCdcMethodCase() {
+    return CdcMethodCase.forNumber(cdcMethodCase_);
+  }
+
   public static final int INCLUDE_OBJECTS_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.MysqlRdbms includeObjects_;
   /**
@@ -201,6 +1106,115 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     return maxConcurrentBackfillTasks_;
   }
 
+  public static final int BINARY_LOG_POSITION_FIELD_NUMBER = 101;
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary log position based replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+   * </code>
+   *
+   * @return Whether the binaryLogPosition field is set.
+   */
+  @java.lang.Override
+  public boolean hasBinaryLogPosition() {
+    return cdcMethodCase_ == 101;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary log position based replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+   * </code>
+   *
+   * @return The binaryLogPosition.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition getBinaryLogPosition() {
+    if (cdcMethodCase_ == 101) {
+      return (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary log position based replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPositionOrBuilder
+      getBinaryLogPositionOrBuilder() {
+    if (cdcMethodCase_ == 101) {
+      return (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.getDefaultInstance();
+  }
+
+  public static final int GTID_FIELD_NUMBER = 102;
+  /**
+   *
+   *
+   * <pre>
+   * Use GTID based replication.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+   *
+   * @return Whether the gtid field is set.
+   */
+  @java.lang.Override
+  public boolean hasGtid() {
+    return cdcMethodCase_ == 102;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use GTID based replication.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+   *
+   * @return The gtid.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid getGtid() {
+    if (cdcMethodCase_ == 102) {
+      return (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Use GTID based replication.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MysqlSourceConfig.GtidOrBuilder getGtidOrBuilder() {
+    if (cdcMethodCase_ == 102) {
+      return (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_;
+    }
+    return com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -227,6 +1241,13 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     if (maxConcurrentBackfillTasks_ != 0) {
       output.writeInt32(4, maxConcurrentBackfillTasks_);
     }
+    if (cdcMethodCase_ == 101) {
+      output.writeMessage(
+          101, (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) cdcMethod_);
+    }
+    if (cdcMethodCase_ == 102) {
+      output.writeMessage(102, (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -248,6 +1269,16 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     if (maxConcurrentBackfillTasks_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(4, maxConcurrentBackfillTasks_);
+    }
+    if (cdcMethodCase_ == 101) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              101, (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) cdcMethod_);
+    }
+    if (cdcMethodCase_ == 102) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              102, (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -275,6 +1306,17 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     }
     if (getMaxConcurrentCdcTasks() != other.getMaxConcurrentCdcTasks()) return false;
     if (getMaxConcurrentBackfillTasks() != other.getMaxConcurrentBackfillTasks()) return false;
+    if (!getCdcMethodCase().equals(other.getCdcMethodCase())) return false;
+    switch (cdcMethodCase_) {
+      case 101:
+        if (!getBinaryLogPosition().equals(other.getBinaryLogPosition())) return false;
+        break;
+      case 102:
+        if (!getGtid().equals(other.getGtid())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -298,6 +1340,18 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getMaxConcurrentCdcTasks();
     hash = (37 * hash) + MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER;
     hash = (53 * hash) + getMaxConcurrentBackfillTasks();
+    switch (cdcMethodCase_) {
+      case 101:
+        hash = (37 * hash) + BINARY_LOG_POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getBinaryLogPosition().hashCode();
+        break;
+      case 102:
+        hash = (37 * hash) + GTID_FIELD_NUMBER;
+        hash = (53 * hash) + getGtid().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -459,6 +1513,14 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       }
       maxConcurrentCdcTasks_ = 0;
       maxConcurrentBackfillTasks_ = 0;
+      if (binaryLogPositionBuilder_ != null) {
+        binaryLogPositionBuilder_.clear();
+      }
+      if (gtidBuilder_ != null) {
+        gtidBuilder_.clear();
+      }
+      cdcMethodCase_ = 0;
+      cdcMethod_ = null;
       return this;
     }
 
@@ -489,6 +1551,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -513,6 +1576,17 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
         result.maxConcurrentBackfillTasks_ = maxConcurrentBackfillTasks_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.datastream.v1.MysqlSourceConfig result) {
+      result.cdcMethodCase_ = cdcMethodCase_;
+      result.cdcMethod_ = this.cdcMethod_;
+      if (cdcMethodCase_ == 101 && binaryLogPositionBuilder_ != null) {
+        result.cdcMethod_ = binaryLogPositionBuilder_.build();
+      }
+      if (cdcMethodCase_ == 102 && gtidBuilder_ != null) {
+        result.cdcMethod_ = gtidBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -573,6 +1647,22 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       if (other.getMaxConcurrentBackfillTasks() != 0) {
         setMaxConcurrentBackfillTasks(other.getMaxConcurrentBackfillTasks());
       }
+      switch (other.getCdcMethodCase()) {
+        case BINARY_LOG_POSITION:
+          {
+            mergeBinaryLogPosition(other.getBinaryLogPosition());
+            break;
+          }
+        case GTID:
+          {
+            mergeGtid(other.getGtid());
+            break;
+          }
+        case CDCMETHOD_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -623,6 +1713,19 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 810:
+              {
+                input.readMessage(
+                    getBinaryLogPositionFieldBuilder().getBuilder(), extensionRegistry);
+                cdcMethodCase_ = 101;
+                break;
+              } // case 810
+            case 818:
+              {
+                input.readMessage(getGtidFieldBuilder().getBuilder(), extensionRegistry);
+                cdcMethodCase_ = 102;
+                break;
+              } // case 818
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -637,6 +1740,20 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int cdcMethodCase_ = 0;
+    private java.lang.Object cdcMethod_;
+
+    public CdcMethodCase getCdcMethodCase() {
+      return CdcMethodCase.forNumber(cdcMethodCase_);
+    }
+
+    public Builder clearCdcMethod() {
+      cdcMethodCase_ = 0;
+      cdcMethod_ = null;
+      onChanged();
       return this;
     }
 
@@ -1127,6 +2244,457 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
       maxConcurrentBackfillTasks_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.Builder,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPositionOrBuilder>
+        binaryLogPositionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     *
+     * @return Whether the binaryLogPosition field is set.
+     */
+    @java.lang.Override
+    public boolean hasBinaryLogPosition() {
+      return cdcMethodCase_ == 101;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     *
+     * @return The binaryLogPosition.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+        getBinaryLogPosition() {
+      if (binaryLogPositionBuilder_ == null) {
+        if (cdcMethodCase_ == 101) {
+          return (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+            .getDefaultInstance();
+      } else {
+        if (cdcMethodCase_ == 101) {
+          return binaryLogPositionBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     */
+    public Builder setBinaryLogPosition(
+        com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition value) {
+      if (binaryLogPositionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cdcMethod_ = value;
+        onChanged();
+      } else {
+        binaryLogPositionBuilder_.setMessage(value);
+      }
+      cdcMethodCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     */
+    public Builder setBinaryLogPosition(
+        com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.Builder
+            builderForValue) {
+      if (binaryLogPositionBuilder_ == null) {
+        cdcMethod_ = builderForValue.build();
+        onChanged();
+      } else {
+        binaryLogPositionBuilder_.setMessage(builderForValue.build());
+      }
+      cdcMethodCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     */
+    public Builder mergeBinaryLogPosition(
+        com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition value) {
+      if (binaryLogPositionBuilder_ == null) {
+        if (cdcMethodCase_ == 101
+            && cdcMethod_
+                != com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+                    .getDefaultInstance()) {
+          cdcMethod_ =
+              com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.newBuilder(
+                      (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition)
+                          cdcMethod_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          cdcMethod_ = value;
+        }
+        onChanged();
+      } else {
+        if (cdcMethodCase_ == 101) {
+          binaryLogPositionBuilder_.mergeFrom(value);
+        } else {
+          binaryLogPositionBuilder_.setMessage(value);
+        }
+      }
+      cdcMethodCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     */
+    public Builder clearBinaryLogPosition() {
+      if (binaryLogPositionBuilder_ == null) {
+        if (cdcMethodCase_ == 101) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+          onChanged();
+        }
+      } else {
+        if (cdcMethodCase_ == 101) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+        }
+        binaryLogPositionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.Builder
+        getBinaryLogPositionBuilder() {
+      return getBinaryLogPositionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPositionOrBuilder
+        getBinaryLogPositionOrBuilder() {
+      if ((cdcMethodCase_ == 101) && (binaryLogPositionBuilder_ != null)) {
+        return binaryLogPositionBuilder_.getMessageOrBuilder();
+      } else {
+        if (cdcMethodCase_ == 101) {
+          return (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary log position based replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.Builder,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPositionOrBuilder>
+        getBinaryLogPositionFieldBuilder() {
+      if (binaryLogPositionBuilder_ == null) {
+        if (!(cdcMethodCase_ == 101)) {
+          cdcMethod_ =
+              com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition
+                  .getDefaultInstance();
+        }
+        binaryLogPositionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition,
+                com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition.Builder,
+                com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPositionOrBuilder>(
+                (com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition) cdcMethod_,
+                getParentForChildren(),
+                isClean());
+        cdcMethod_ = null;
+      }
+      cdcMethodCase_ = 101;
+      onChanged();
+      return binaryLogPositionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.Builder,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.GtidOrBuilder>
+        gtidBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     *
+     * @return Whether the gtid field is set.
+     */
+    @java.lang.Override
+    public boolean hasGtid() {
+      return cdcMethodCase_ == 102;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     *
+     * @return The gtid.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid getGtid() {
+      if (gtidBuilder_ == null) {
+        if (cdcMethodCase_ == 102) {
+          return (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance();
+      } else {
+        if (cdcMethodCase_ == 102) {
+          return gtidBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     */
+    public Builder setGtid(com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid value) {
+      if (gtidBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cdcMethod_ = value;
+        onChanged();
+      } else {
+        gtidBuilder_.setMessage(value);
+      }
+      cdcMethodCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     */
+    public Builder setGtid(
+        com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.Builder builderForValue) {
+      if (gtidBuilder_ == null) {
+        cdcMethod_ = builderForValue.build();
+        onChanged();
+      } else {
+        gtidBuilder_.setMessage(builderForValue.build());
+      }
+      cdcMethodCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     */
+    public Builder mergeGtid(com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid value) {
+      if (gtidBuilder_ == null) {
+        if (cdcMethodCase_ == 102
+            && cdcMethod_
+                != com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance()) {
+          cdcMethod_ =
+              com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.newBuilder(
+                      (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          cdcMethod_ = value;
+        }
+        onChanged();
+      } else {
+        if (cdcMethodCase_ == 102) {
+          gtidBuilder_.mergeFrom(value);
+        } else {
+          gtidBuilder_.setMessage(value);
+        }
+      }
+      cdcMethodCase_ = 102;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     */
+    public Builder clearGtid() {
+      if (gtidBuilder_ == null) {
+        if (cdcMethodCase_ == 102) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+          onChanged();
+        }
+      } else {
+        if (cdcMethodCase_ == 102) {
+          cdcMethodCase_ = 0;
+          cdcMethod_ = null;
+        }
+        gtidBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     */
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.Builder getGtidBuilder() {
+      return getGtidFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlSourceConfig.GtidOrBuilder getGtidOrBuilder() {
+      if ((cdcMethodCase_ == 102) && (gtidBuilder_ != null)) {
+        return gtidBuilder_.getMessageOrBuilder();
+      } else {
+        if (cdcMethodCase_ == 102) {
+          return (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_;
+        }
+        return com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use GTID based replication.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.Builder,
+            com.google.cloud.datastream.v1.MysqlSourceConfig.GtidOrBuilder>
+        getGtidFieldBuilder() {
+      if (gtidBuilder_ == null) {
+        if (!(cdcMethodCase_ == 102)) {
+          cdcMethod_ = com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.getDefaultInstance();
+        }
+        gtidBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid,
+                com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid.Builder,
+                com.google.cloud.datastream.v1.MysqlSourceConfig.GtidOrBuilder>(
+                (com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid) cdcMethod_,
+                getParentForChildren(),
+                isClean());
+        cdcMethod_ = null;
+      }
+      cdcMethodCase_ = 102;
+      onChanged();
+      return gtidBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,12 +52,13 @@ public final class UserServiceProto {
           + "GetUser\022\'.google.ads.admanager.v1.GetUse"
           + "rRequest\032\035.google.ads.admanager.v1.User\""
           + ",\332A\004name\202\323\344\223\002\037\022\035/v1/{name=networks/*/use"
-          + "rs/*}\032\033\312A\030admanager.googleapis.comB\247\001\n\033c"
+          + "rs/*}\032\033\312A\030admanager.googleapis.comB\304\001\n\033c"
           + "om.google.ads.admanager.v1B\020UserServiceP"
           + "rotoP\001Z@google.golang.org/genproto/googl"
           + "eapis/ads/admanager/v1;admanager\252\002\027Googl"
           + "e.Ads.AdManager.V1\312\002\027Google\\Ads\\AdManage"
-          + "r\\V1b\006proto3"
+          + "r\\V1\352\002\032Google::Ads::AdManager::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

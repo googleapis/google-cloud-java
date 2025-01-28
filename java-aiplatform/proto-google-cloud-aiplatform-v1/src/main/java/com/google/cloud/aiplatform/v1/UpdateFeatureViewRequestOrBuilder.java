@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    *   * `feature_registry_source.feature_groups`
    *   * `sync_config`
    *   * `sync_config.cron`
+   *   * `optimized_config.automatic_resources`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -124,6 +125,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    *   * `feature_registry_source.feature_groups`
    *   * `sync_config`
    *   * `sync_config.cron`
+   *   * `optimized_config.automatic_resources`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -154,6 +156,7 @@ public interface UpdateFeatureViewRequestOrBuilder
    *   * `feature_registry_source.feature_groups`
    *   * `sync_config`
    *   * `sync_config.cron`
+   *   * `optimized_config.automatic_resources`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

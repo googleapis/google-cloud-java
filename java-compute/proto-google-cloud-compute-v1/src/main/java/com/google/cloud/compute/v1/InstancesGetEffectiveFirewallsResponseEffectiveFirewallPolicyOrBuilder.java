@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,32 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return The priority.
+   */
+  int getPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -112,7 +137,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -122,7 +147,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -132,7 +157,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -143,7 +168,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * The rules that apply to the network.
+   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.cloud.compute.v1.RemoveRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
 import com.google.cloud.compute.v1.SecurityPolicyRule;
+import com.google.cloud.compute.v1.SetLabelsRegionSecurityPolicyRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -113,6 +114,15 @@ public abstract class RegionSecurityPoliciesStub implements BackgroundResource {
 
   public UnaryCallable<RemoveRuleRegionSecurityPolicyRequest, Operation> removeRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: removeRuleCallable()");
+  }
+
+  public OperationCallable<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<SetLabelsRegionSecurityPolicyRequest, Operation> setLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,8 +75,8 @@ public final class GetAgentValidationResultRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The agent name.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * </pre>
    *
    * <code>
@@ -102,8 +102,8 @@ public final class GetAgentValidationResultRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The agent name.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/validationResult`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * </pre>
    *
    * <code>
@@ -559,8 +559,8 @@ public final class GetAgentValidationResultRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The agent name.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>
@@ -585,8 +585,8 @@ public final class GetAgentValidationResultRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The agent name.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>
@@ -611,8 +611,8 @@ public final class GetAgentValidationResultRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The agent name.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>
@@ -636,8 +636,8 @@ public final class GetAgentValidationResultRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The agent name.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>
@@ -657,8 +657,8 @@ public final class GetAgentValidationResultRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The agent name.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/validationResult`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
      * </pre>
      *
      * <code>

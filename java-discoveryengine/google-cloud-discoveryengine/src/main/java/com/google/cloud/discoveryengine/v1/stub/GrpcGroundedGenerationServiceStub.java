@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,14 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.CheckGroundingRequest;
 import com.google.cloud.discoveryengine.v1.CheckGroundingResponse;
+import com.google.cloud.discoveryengine.v1.GenerateGroundedContentRequest;
+import com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -40,6 +43,34 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcGroundedGenerationServiceStub extends GroundedGenerationServiceStub {
+  private static final MethodDescriptor<
+          GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentMethodDescriptor =
+          MethodDescriptor
+              .<GenerateGroundedContentRequest, GenerateGroundedContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.GroundedGenerationService/StreamGenerateGroundedContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateGroundedContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateGroundedContentResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentMethodDescriptor =
+          MethodDescriptor
+              .<GenerateGroundedContentRequest, GenerateGroundedContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.GroundedGenerationService/GenerateGroundedContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateGroundedContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateGroundedContentResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CheckGroundingRequest, CheckGroundingResponse>
       checkGroundingMethodDescriptor =
           MethodDescriptor.<CheckGroundingRequest, CheckGroundingResponse>newBuilder()
@@ -52,6 +83,11 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                   ProtoUtils.marshaller(CheckGroundingResponse.getDefaultInstance()))
               .build();
 
+  private final BidiStreamingCallable<
+          GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentCallable;
+  private final UnaryCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentCallable;
   private final UnaryCallable<CheckGroundingRequest, CheckGroundingResponse> checkGroundingCallable;
 
   private final BackgroundResource backgroundResources;
@@ -99,6 +135,30 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        streamGenerateGroundedContentTransportSettings =
+            GrpcCallSettings
+                .<GenerateGroundedContentRequest, GenerateGroundedContentResponse>newBuilder()
+                .setMethodDescriptor(streamGenerateGroundedContentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+        generateGroundedContentTransportSettings =
+            GrpcCallSettings
+                .<GenerateGroundedContentRequest, GenerateGroundedContentResponse>newBuilder()
+                .setMethodDescriptor(generateGroundedContentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CheckGroundingRequest, CheckGroundingResponse>
         checkGroundingTransportSettings =
             GrpcCallSettings.<CheckGroundingRequest, CheckGroundingResponse>newBuilder()
@@ -111,6 +171,16 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                     })
                 .build();
 
+    this.streamGenerateGroundedContentCallable =
+        callableFactory.createBidiStreamingCallable(
+            streamGenerateGroundedContentTransportSettings,
+            settings.streamGenerateGroundedContentSettings(),
+            clientContext);
+    this.generateGroundedContentCallable =
+        callableFactory.createUnaryCallable(
+            generateGroundedContentTransportSettings,
+            settings.generateGroundedContentSettings(),
+            clientContext);
     this.checkGroundingCallable =
         callableFactory.createUnaryCallable(
             checkGroundingTransportSettings, settings.checkGroundingSettings(), clientContext);
@@ -121,6 +191,18 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public BidiStreamingCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentCallable() {
+    return streamGenerateGroundedContentCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentCallable() {
+    return generateGroundedContentCallable;
   }
 
   @Override

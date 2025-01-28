@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,12 +40,12 @@ public final class RoutingPreferenceProto {
           + "ce.proto\022\025google.maps.places.v1*z\n\021Routi"
           + "ngPreference\022\"\n\036ROUTING_PREFERENCE_UNSPE"
           + "CIFIED\020\000\022\023\n\017TRAFFIC_UNAWARE\020\001\022\021\n\rTRAFFIC"
-          + "_AWARE\020\002\022\031\n\025TRAFFIC_AWARE_OPTIMAL\020\003B\252\001\n\031"
+          + "_AWARE\020\002\022\031\n\025TRAFFIC_AWARE_OPTIMAL\020\003B\247\001\n\031"
           + "com.google.maps.places.v1B\026RoutingPrefer"
           + "enceProtoP\001Z7cloud.google.com/go/maps/pl"
-          + "aces/apiv1/placespb;placespb\370\001\001\242\002\006GMPSV1"
-          + "\252\002\025Google.Maps.Places.V1\312\002\025Google\\Maps\\P"
-          + "laces\\V1b\006proto3"
+          + "aces/apiv1/placespb;placespb\242\002\006GMPSV1\252\002\025"
+          + "Google.Maps.Places.V1\312\002\025Google\\Maps\\Plac"
+          + "es\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

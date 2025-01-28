@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,7 @@ public interface ConversationOrBuilder
    * Identifier. The identifier of the conversation.
    * If conversation ID is reused, interactions happened later than 48 hours of
    * the conversation's create time will be ignored. Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -47,8 +46,7 @@ public interface ConversationOrBuilder
    * Identifier. The identifier of the conversation.
    * If conversation ID is reused, interactions happened later than 48 hours of
    * the conversation's create time will be ignored. Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/conversations/&lt;Conversation ID&gt;`
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/conversations/&lt;ConversationID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

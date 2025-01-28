@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.dataplex.v1;
 
-/** Protobuf type {@code google.cloud.dataplex.v1.ListEntriesResponse} */
+/**
+ *
+ *
+ * <pre>
+ * List Entries response.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.dataplex.v1.ListEntriesResponse}
+ */
 public final class ListEntriesResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.ListEntriesResponse)
@@ -64,7 +72,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -77,7 +85,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -91,7 +99,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -104,7 +112,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -117,7 +125,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of entries.
+   * The list of entries under the given parent location.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -135,7 +143,8 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Pagination token.
+   * Token to retrieve the next page of results, or empty if there are no more
+   * results in the list.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -158,7 +167,8 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Pagination token.
+   * Token to retrieve the next page of results, or empty if there are no more
+   * results in the list.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -348,7 +358,15 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.dataplex.v1.ListEntriesResponse} */
+  /**
+   *
+   *
+   * <pre>
+   * List Entries response.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.ListEntriesResponse}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.ListEntriesResponse)
@@ -604,7 +622,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -620,7 +638,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -636,7 +654,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -652,7 +670,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -674,7 +692,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -694,7 +712,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -716,7 +734,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -738,7 +756,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -757,7 +775,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -777,7 +795,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -797,7 +815,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -816,7 +834,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -835,7 +853,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -847,7 +865,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -863,7 +881,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -880,7 +898,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -893,7 +911,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -906,7 +924,7 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of entries.
+     * The list of entries under the given parent location.
      * </pre>
      *
      * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
@@ -937,7 +955,8 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pagination token.
+     * Token to retrieve the next page of results, or empty if there are no more
+     * results in the list.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -959,7 +978,8 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pagination token.
+     * Token to retrieve the next page of results, or empty if there are no more
+     * results in the list.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -981,7 +1001,8 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pagination token.
+     * Token to retrieve the next page of results, or empty if there are no more
+     * results in the list.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1002,7 +1023,8 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pagination token.
+     * Token to retrieve the next page of results, or empty if there are no more
+     * results in the list.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1019,7 +1041,8 @@ public final class ListEntriesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pagination token.
+     * Token to retrieve the next page of results, or empty if there are no more
+     * results in the list.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

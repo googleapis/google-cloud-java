@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public interface CustomVoiceParamsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=298
+   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
    * @return The enum numeric value on the wire for reportedUsage.
    */
   @java.lang.Deprecated
@@ -82,7 +82,7 @@ public interface CustomVoiceParamsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=298
+   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=387
    * @return The reportedUsage.
    */
   @java.lang.Deprecated

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * A subset of the fields of the Security Center Finding proto. The minimum set
- * of fields needed to represent a simulated finding from a SHA custom module.
+ * The minimum set of fields needed to represent a simulated finding from a
+ * Security Health Analytics custom module.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycentermanagement.v1.SimulatedFinding}
@@ -96,7 +96,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -116,8 +116,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The finding has been fixed, triaged as a non-issue or otherwise addressed
-     * and is no longer active.
+     * The finding has been fixed, triaged as a non-issue, or otherwise
+     * addressed and is no longer active.
      * </pre>
      *
      * <code>INACTIVE = 2;</code>
@@ -130,7 +130,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>STATE_UNSPECIFIED = 0;</code>
@@ -150,8 +150,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The finding has been fixed, triaged as a non-issue or otherwise addressed
-     * and is no longer active.
+     * The finding has been fixed, triaged as a non-issue, or otherwise
+     * addressed and is no longer active.
      * </pre>
      *
      * <code>INACTIVE = 2;</code>
@@ -257,8 +257,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This value is used for findings when a source doesn't write a severity
-     * value.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
@@ -268,17 +267,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A critical vulnerability is easily discoverable by an external actor,
-     * exploitable, and results in the direct ability to execute arbitrary code,
-     * exfiltrate data, and otherwise gain additional access and privileges to
-     * cloud resources and workloads. Examples include publicly accessible
-     * unprotected user data and public SSH access with weak or no
-     * passwords.
+     * For vulnerabilities: A critical vulnerability is easily discoverable by
+     * an external actor, exploitable, and results in the direct ability to
+     * execute arbitrary code, exfiltrate data, and otherwise gain additional
+     * access and privileges to cloud resources and workloads. Examples include
+     * publicly accessible unprotected user data and public SSH access with weak
+     * or no passwords.
      *
-     * Threat:
-     * Indicates a threat that is able to access, modify, or delete data or
-     * execute unauthorized code within existing resources.
+     * For threats: Indicates a threat that is able to access, modify, or delete
+     * data or execute unauthorized code within existing resources.
      * </pre>
      *
      * <code>CRITICAL = 1;</code>
@@ -288,19 +285,17 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A high risk vulnerability can be easily discovered and exploited in
-     * combination with other vulnerabilities in order to gain direct access and
-     * the ability to execute arbitrary code, exfiltrate data, and otherwise
-     * gain additional access and privileges to cloud resources and workloads.
-     * An example is a database with weak or no passwords that is only
-     * accessible internally. This database could easily be compromised by an
-     * actor that had access to the internal network.
+     * For vulnerabilities: A high-risk vulnerability can be easily discovered
+     * and exploited in combination with other vulnerabilities in order to gain
+     * direct access and the ability to execute arbitrary code, exfiltrate data,
+     * and otherwise gain additional access and privileges to cloud resources
+     * and workloads. An example is a database with weak or no passwords that is
+     * only accessible internally. This database could easily be compromised by
+     * an actor that had access to the internal network.
      *
-     * Threat:
-     * Indicates a threat that is able to create new computational resources in
-     * an environment but not able to access data or execute code in existing
-     * resources.
+     * For threats: Indicates a threat that is able to create new computational
+     * resources in an environment but not able to access data or execute code
+     * in existing resources.
      * </pre>
      *
      * <code>HIGH = 2;</code>
@@ -310,18 +305,17 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A medium risk vulnerability could be used by an actor to gain access to
-     * resources or privileges that enable them to eventually (through multiple
-     * steps or a complex exploit) gain access and the ability to execute
-     * arbitrary code or exfiltrate data. An example is a service account with
-     * access to more projects than it should have. If an actor gains access to
-     * the service account, they could potentially use that access to manipulate
-     * a project the service account was not intended to.
+     * For vulnerabilities: A medium-risk vulnerability could be used by an
+     * actor to gain access to resources or privileges that enable them to
+     * eventually (through multiple steps or a complex exploit) gain access and
+     * the ability to execute arbitrary code or exfiltrate data. An example is a
+     * service account with access to more projects than it should have. If an
+     * actor gains access to the service account, they could potentially use
+     * that access to manipulate a project the service account was not intended
+     * to.
      *
-     * Threat:
-     * Indicates a threat that is able to cause operational impact but may not
-     * access data or execute unauthorized code.
+     * For threats: Indicates a threat that is able to cause operational impact
+     * but may not access data or execute unauthorized code.
      * </pre>
      *
      * <code>MEDIUM = 3;</code>
@@ -331,15 +325,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A low risk vulnerability hampers a security organization's ability to
-     * detect vulnerabilities or active threats in their deployment, or prevents
-     * the root cause investigation of security issues. An example is monitoring
-     * and logs being disabled for resource configurations and access.
+     * For vulnerabilities: A low-risk vulnerability hampers a security
+     * organization's ability to detect vulnerabilities or active threats in
+     * their deployment, or prevents the root cause investigation of security
+     * issues. An example is monitoring and logs being disabled for resource
+     * configurations and access.
      *
-     * Threat:
-     * Indicates a threat that has obtained minimal access to an environment but
-     * is not able to access data, execute code, or create resources.
+     * For threats: Indicates a threat that has obtained minimal access to an
+     * environment but is not able to access data, execute code, or create
+     * resources.
      * </pre>
      *
      * <code>LOW = 4;</code>
@@ -352,8 +346,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This value is used for findings when a source doesn't write a severity
-     * value.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
@@ -363,17 +356,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A critical vulnerability is easily discoverable by an external actor,
-     * exploitable, and results in the direct ability to execute arbitrary code,
-     * exfiltrate data, and otherwise gain additional access and privileges to
-     * cloud resources and workloads. Examples include publicly accessible
-     * unprotected user data and public SSH access with weak or no
-     * passwords.
+     * For vulnerabilities: A critical vulnerability is easily discoverable by
+     * an external actor, exploitable, and results in the direct ability to
+     * execute arbitrary code, exfiltrate data, and otherwise gain additional
+     * access and privileges to cloud resources and workloads. Examples include
+     * publicly accessible unprotected user data and public SSH access with weak
+     * or no passwords.
      *
-     * Threat:
-     * Indicates a threat that is able to access, modify, or delete data or
-     * execute unauthorized code within existing resources.
+     * For threats: Indicates a threat that is able to access, modify, or delete
+     * data or execute unauthorized code within existing resources.
      * </pre>
      *
      * <code>CRITICAL = 1;</code>
@@ -383,19 +374,17 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A high risk vulnerability can be easily discovered and exploited in
-     * combination with other vulnerabilities in order to gain direct access and
-     * the ability to execute arbitrary code, exfiltrate data, and otherwise
-     * gain additional access and privileges to cloud resources and workloads.
-     * An example is a database with weak or no passwords that is only
-     * accessible internally. This database could easily be compromised by an
-     * actor that had access to the internal network.
+     * For vulnerabilities: A high-risk vulnerability can be easily discovered
+     * and exploited in combination with other vulnerabilities in order to gain
+     * direct access and the ability to execute arbitrary code, exfiltrate data,
+     * and otherwise gain additional access and privileges to cloud resources
+     * and workloads. An example is a database with weak or no passwords that is
+     * only accessible internally. This database could easily be compromised by
+     * an actor that had access to the internal network.
      *
-     * Threat:
-     * Indicates a threat that is able to create new computational resources in
-     * an environment but not able to access data or execute code in existing
-     * resources.
+     * For threats: Indicates a threat that is able to create new computational
+     * resources in an environment but not able to access data or execute code
+     * in existing resources.
      * </pre>
      *
      * <code>HIGH = 2;</code>
@@ -405,18 +394,17 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A medium risk vulnerability could be used by an actor to gain access to
-     * resources or privileges that enable them to eventually (through multiple
-     * steps or a complex exploit) gain access and the ability to execute
-     * arbitrary code or exfiltrate data. An example is a service account with
-     * access to more projects than it should have. If an actor gains access to
-     * the service account, they could potentially use that access to manipulate
-     * a project the service account was not intended to.
+     * For vulnerabilities: A medium-risk vulnerability could be used by an
+     * actor to gain access to resources or privileges that enable them to
+     * eventually (through multiple steps or a complex exploit) gain access and
+     * the ability to execute arbitrary code or exfiltrate data. An example is a
+     * service account with access to more projects than it should have. If an
+     * actor gains access to the service account, they could potentially use
+     * that access to manipulate a project the service account was not intended
+     * to.
      *
-     * Threat:
-     * Indicates a threat that is able to cause operational impact but may not
-     * access data or execute unauthorized code.
+     * For threats: Indicates a threat that is able to cause operational impact
+     * but may not access data or execute unauthorized code.
      * </pre>
      *
      * <code>MEDIUM = 3;</code>
@@ -426,15 +414,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Vulnerability:
-     * A low risk vulnerability hampers a security organization's ability to
-     * detect vulnerabilities or active threats in their deployment, or prevents
-     * the root cause investigation of security issues. An example is monitoring
-     * and logs being disabled for resource configurations and access.
+     * For vulnerabilities: A low-risk vulnerability hampers a security
+     * organization's ability to detect vulnerabilities or active threats in
+     * their deployment, or prevents the root cause investigation of security
+     * issues. An example is monitoring and logs being disabled for resource
+     * configurations and access.
      *
-     * Threat:
-     * Indicates a threat that has obtained minimal access to an environment but
-     * is not able to access data, execute code, or create resources.
+     * For threats: Indicates a threat that has obtained minimal access to an
+     * environment but is not able to access data, execute code, or create
+     * resources.
      * </pre>
      *
      * <code>LOW = 4;</code>
@@ -534,7 +522,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents what kind of Finding it is.
+   * Represents what kind of finding it is.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.securitycentermanagement.v1.SimulatedFinding.FindingClass}
@@ -544,7 +532,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified finding class.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>FINDING_CLASS_UNSPECIFIED = 0;</code>
@@ -565,7 +553,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Describes a potential weakness in software that increases risk to
-     * Confidentiality &amp; Integrity &amp; Availability.
+     * confidentiality, integrity, and availability.
      * </pre>
      *
      * <code>VULNERABILITY = 2;</code>
@@ -575,8 +563,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes a potential weakness in cloud resource/asset configuration that
-     * increases risk.
+     * Describes a potential weakness in cloud resource or asset configuration
+     * that increases risk.
      * </pre>
      *
      * <code>MISCONFIGURATION = 3;</code>
@@ -596,7 +584,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes an error that prevents some SCC functionality.
+     * Describes an error that prevents Security Command Center from working
+     * correctly.
      * </pre>
      *
      * <code>SCC_ERROR = 5;</code>
@@ -631,7 +620,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified finding class.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>FINDING_CLASS_UNSPECIFIED = 0;</code>
@@ -652,7 +641,7 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Describes a potential weakness in software that increases risk to
-     * Confidentiality &amp; Integrity &amp; Availability.
+     * confidentiality, integrity, and availability.
      * </pre>
      *
      * <code>VULNERABILITY = 2;</code>
@@ -662,8 +651,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes a potential weakness in cloud resource/asset configuration that
-     * increases risk.
+     * Describes a potential weakness in cloud resource or asset configuration
+     * that increases risk.
      * </pre>
      *
      * <code>MISCONFIGURATION = 3;</code>
@@ -683,7 +672,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes an error that prevents some SCC functionality.
+     * Describes an error that prevents Security Command Center from working
+     * correctly.
      * </pre>
      *
      * <code>SCC_ERROR = 5;</code>
@@ -816,12 +806,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The [relative resource
-   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-   * of the finding. Example:
-   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-   * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+   * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+   * finding, in one of the following formats:
+   *
+   * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+   * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+   * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -844,12 +834,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The [relative resource
-   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-   * of the finding. Example:
-   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-   * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+   * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+   * finding, in one of the following formats:
+   *
+   * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+   * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+   * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -877,11 +867,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The relative resource name of the source the finding belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * This field is immutable after creation time.
-   * For example:
-   * `organizations/{organization_id}/sources/{source_id}`
+   * The [relative resource name](https://google.aip.dev/122) of the source the
+   * finding belongs to. For example,
+   * `organizations/{organization_id}/sources/{source_id}`. This field is
+   * immutable after creation time.
    * </pre>
    *
    * <code>string parent = 2;</code>
@@ -904,11 +893,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The relative resource name of the source the finding belongs to. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * This field is immutable after creation time.
-   * For example:
-   * `organizations/{organization_id}/sources/{source_id}`
+   * The [relative resource name](https://google.aip.dev/122) of the source the
+   * finding belongs to. For example,
+   * `organizations/{organization_id}/sources/{source_id}`. This field is
+   * immutable after creation time.
    * </pre>
    *
    * <code>string parent = 2;</code>
@@ -936,12 +924,11 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * For findings on Google Cloud resources, the full resource
-   * name of the Google Cloud resource this finding is for. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-Google Cloud resource, the resourceName can
-   * be a customer or partner defined string. This field is immutable after
-   * creation time.
+   * For findings on Google Cloud resources, the
+   * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+   * Google Cloud resource this finding is for. When the finding is for a
+   * non-Google Cloud resource, the value can be a customer or partner defined
+   * string. This field is immutable after creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -964,12 +951,11 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * For findings on Google Cloud resources, the full resource
-   * name of the Google Cloud resource this finding is for. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * When the finding is for a non-Google Cloud resource, the resourceName can
-   * be a customer or partner defined string. This field is immutable after
-   * creation time.
+   * For findings on Google Cloud resources, the
+   * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+   * Google Cloud resource this finding is for. When the finding is for a
+   * non-Google Cloud resource, the value can be a customer or partner defined
+   * string. This field is immutable after creation time.
    * </pre>
    *
    * <code>string resource_name = 3;</code>
@@ -997,9 +983,9 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The additional taxonomy group within findings from a given source.
-   * This field is immutable after creation time.
-   * Example: "XSS_FLASH_INJECTION"
+   * The additional taxonomy group within findings from a given source. For
+   * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+   * time.
    * </pre>
    *
    * <code>string category = 4;</code>
@@ -1022,9 +1008,9 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The additional taxonomy group within findings from a given source.
-   * This field is immutable after creation time.
-   * Example: "XSS_FLASH_INJECTION"
+   * The additional taxonomy group within findings from a given source. For
+   * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+   * time.
    * </pre>
    *
    * <code>string category = 4;</code>
@@ -1120,10 +1106,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -1145,10 +1131,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -1161,10 +1147,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -1185,10 +1171,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Source specific properties. These properties are managed by the source
-   * that writes the finding. The key names in the source_properties map must be
-   * between 1 and 255 characters, and must start with a letter and contain
-   * alphanumeric characters or underscores only.
+   * Source-specific properties. These properties are managed by the source
+   * that writes the finding. The key names must be between 1 and 255
+   * characters; they must start with a letter and contain alphanumeric
+   * characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -1213,12 +1199,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The time the finding was first detected. If an existing finding is updated,
-   * then this is the time the update occurred.
+   * then this is the time the update occurred. If the finding is later
+   * resolved, then this time reflects when the finding was resolved.
+   *
    * For example, if the finding represents an open firewall, this property
    * captures the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding is later resolved,
-   * then this time reflects when the finding was resolved. This must not
-   * be set to a value greater than the current timestamp.
+   * accuracy is determined by the detector.
+   *
+   * The event time must not be set to a value greater than the current
+   * timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -1234,12 +1223,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The time the finding was first detected. If an existing finding is updated,
-   * then this is the time the update occurred.
+   * then this is the time the update occurred. If the finding is later
+   * resolved, then this time reflects when the finding was resolved.
+   *
    * For example, if the finding represents an open firewall, this property
    * captures the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding is later resolved,
-   * then this time reflects when the finding was resolved. This must not
-   * be set to a value greater than the current timestamp.
+   * accuracy is determined by the detector.
+   *
+   * The event time must not be set to a value greater than the current
+   * timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -1255,12 +1247,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The time the finding was first detected. If an existing finding is updated,
-   * then this is the time the update occurred.
+   * then this is the time the update occurred. If the finding is later
+   * resolved, then this time reflects when the finding was resolved.
+   *
    * For example, if the finding represents an open firewall, this property
    * captures the time the detector believes the firewall became open. The
-   * accuracy is determined by the detector. If the finding is later resolved,
-   * then this time reflects when the finding was resolved. This must not
-   * be set to a value greater than the current timestamp.
+   * accuracy is determined by the detector.
+   *
+   * The event time must not be set to a value greater than the current
+   * timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -1617,8 +1612,8 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A subset of the fields of the Security Center Finding proto. The minimum set
-   * of fields needed to represent a simulated finding from a SHA custom module.
+   * The minimum set of fields needed to represent a simulated finding from a
+   * Security Health Analytics custom module.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycentermanagement.v1.SimulatedFinding}
@@ -1960,12 +1955,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The [relative resource
-     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * of the finding. Example:
-     * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-     * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-     * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+     * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+     * finding, in one of the following formats:
+     *
+     * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+     * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+     * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1987,12 +1982,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The [relative resource
-     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * of the finding. Example:
-     * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-     * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-     * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+     * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+     * finding, in one of the following formats:
+     *
+     * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+     * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+     * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2014,12 +2009,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The [relative resource
-     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * of the finding. Example:
-     * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-     * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-     * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+     * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+     * finding, in one of the following formats:
+     *
+     * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+     * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+     * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2040,12 +2035,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The [relative resource
-     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * of the finding. Example:
-     * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-     * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-     * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+     * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+     * finding, in one of the following formats:
+     *
+     * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+     * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+     * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2062,12 +2057,12 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The [relative resource
-     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * of the finding. Example:
-     * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`,
-     * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`,
-     * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
+     * Identifier. The [relative resource name](https://google.aip.dev/122) of the
+     * finding, in one of the following formats:
+     *
+     * * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`
+     * * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`
+     * * `projects/{project_id}/sources/{source_id}/findings/{finding_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2091,11 +2086,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative resource name of the source the finding belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * This field is immutable after creation time.
-     * For example:
-     * `organizations/{organization_id}/sources/{source_id}`
+     * The [relative resource name](https://google.aip.dev/122) of the source the
+     * finding belongs to. For example,
+     * `organizations/{organization_id}/sources/{source_id}`. This field is
+     * immutable after creation time.
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -2117,11 +2111,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative resource name of the source the finding belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * This field is immutable after creation time.
-     * For example:
-     * `organizations/{organization_id}/sources/{source_id}`
+     * The [relative resource name](https://google.aip.dev/122) of the source the
+     * finding belongs to. For example,
+     * `organizations/{organization_id}/sources/{source_id}`. This field is
+     * immutable after creation time.
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -2143,11 +2136,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative resource name of the source the finding belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * This field is immutable after creation time.
-     * For example:
-     * `organizations/{organization_id}/sources/{source_id}`
+     * The [relative resource name](https://google.aip.dev/122) of the source the
+     * finding belongs to. For example,
+     * `organizations/{organization_id}/sources/{source_id}`. This field is
+     * immutable after creation time.
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -2168,11 +2160,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative resource name of the source the finding belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * This field is immutable after creation time.
-     * For example:
-     * `organizations/{organization_id}/sources/{source_id}`
+     * The [relative resource name](https://google.aip.dev/122) of the source the
+     * finding belongs to. For example,
+     * `organizations/{organization_id}/sources/{source_id}`. This field is
+     * immutable after creation time.
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -2189,11 +2180,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The relative resource name of the source the finding belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * This field is immutable after creation time.
-     * For example:
-     * `organizations/{organization_id}/sources/{source_id}`
+     * The [relative resource name](https://google.aip.dev/122) of the source the
+     * finding belongs to. For example,
+     * `organizations/{organization_id}/sources/{source_id}`. This field is
+     * immutable after creation time.
      * </pre>
      *
      * <code>string parent = 2;</code>
@@ -2217,12 +2207,11 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * For findings on Google Cloud resources, the full resource
-     * name of the Google Cloud resource this finding is for. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-Google Cloud resource, the resourceName can
-     * be a customer or partner defined string. This field is immutable after
-     * creation time.
+     * For findings on Google Cloud resources, the
+     * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+     * Google Cloud resource this finding is for. When the finding is for a
+     * non-Google Cloud resource, the value can be a customer or partner defined
+     * string. This field is immutable after creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -2244,12 +2233,11 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * For findings on Google Cloud resources, the full resource
-     * name of the Google Cloud resource this finding is for. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-Google Cloud resource, the resourceName can
-     * be a customer or partner defined string. This field is immutable after
-     * creation time.
+     * For findings on Google Cloud resources, the
+     * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+     * Google Cloud resource this finding is for. When the finding is for a
+     * non-Google Cloud resource, the value can be a customer or partner defined
+     * string. This field is immutable after creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -2271,12 +2259,11 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * For findings on Google Cloud resources, the full resource
-     * name of the Google Cloud resource this finding is for. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-Google Cloud resource, the resourceName can
-     * be a customer or partner defined string. This field is immutable after
-     * creation time.
+     * For findings on Google Cloud resources, the
+     * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+     * Google Cloud resource this finding is for. When the finding is for a
+     * non-Google Cloud resource, the value can be a customer or partner defined
+     * string. This field is immutable after creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -2297,12 +2284,11 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * For findings on Google Cloud resources, the full resource
-     * name of the Google Cloud resource this finding is for. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-Google Cloud resource, the resourceName can
-     * be a customer or partner defined string. This field is immutable after
-     * creation time.
+     * For findings on Google Cloud resources, the
+     * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+     * Google Cloud resource this finding is for. When the finding is for a
+     * non-Google Cloud resource, the value can be a customer or partner defined
+     * string. This field is immutable after creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -2319,12 +2305,11 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * For findings on Google Cloud resources, the full resource
-     * name of the Google Cloud resource this finding is for. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * When the finding is for a non-Google Cloud resource, the resourceName can
-     * be a customer or partner defined string. This field is immutable after
-     * creation time.
+     * For findings on Google Cloud resources, the
+     * [full resource name](https://google.aip.dev/122#full-resource-names) of the
+     * Google Cloud resource this finding is for. When the finding is for a
+     * non-Google Cloud resource, the value can be a customer or partner defined
+     * string. This field is immutable after creation time.
      * </pre>
      *
      * <code>string resource_name = 3;</code>
@@ -2348,9 +2333,9 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The additional taxonomy group within findings from a given source.
-     * This field is immutable after creation time.
-     * Example: "XSS_FLASH_INJECTION"
+     * The additional taxonomy group within findings from a given source. For
+     * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+     * time.
      * </pre>
      *
      * <code>string category = 4;</code>
@@ -2372,9 +2357,9 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The additional taxonomy group within findings from a given source.
-     * This field is immutable after creation time.
-     * Example: "XSS_FLASH_INJECTION"
+     * The additional taxonomy group within findings from a given source. For
+     * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+     * time.
      * </pre>
      *
      * <code>string category = 4;</code>
@@ -2396,9 +2381,9 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The additional taxonomy group within findings from a given source.
-     * This field is immutable after creation time.
-     * Example: "XSS_FLASH_INJECTION"
+     * The additional taxonomy group within findings from a given source. For
+     * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+     * time.
      * </pre>
      *
      * <code>string category = 4;</code>
@@ -2419,9 +2404,9 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The additional taxonomy group within findings from a given source.
-     * This field is immutable after creation time.
-     * Example: "XSS_FLASH_INJECTION"
+     * The additional taxonomy group within findings from a given source. For
+     * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+     * time.
      * </pre>
      *
      * <code>string category = 4;</code>
@@ -2438,9 +2423,9 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The additional taxonomy group within findings from a given source.
-     * This field is immutable after creation time.
-     * Example: "XSS_FLASH_INJECTION"
+     * The additional taxonomy group within findings from a given source. For
+     * example, `XSS_FLASH_INJECTION`. This field is immutable after creation
+     * time.
      * </pre>
      *
      * <code>string category = 4;</code>
@@ -2623,10 +2608,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2648,10 +2633,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2664,10 +2649,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2688,10 +2673,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2718,10 +2703,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2743,10 +2728,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2766,10 +2751,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2789,10 +2774,10 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Source specific properties. These properties are managed by the source
-     * that writes the finding. The key names in the source_properties map must be
-     * between 1 and 255 characters, and must start with a letter and contain
-     * alphanumeric characters or underscores only.
+     * Source-specific properties. These properties are managed by the source
+     * that writes the finding. The key names must be between 1 and 255
+     * characters; they must start with a letter and contain alphanumeric
+     * characters or underscores only.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 6;</code>
@@ -2824,12 +2809,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -2844,12 +2832,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -2868,12 +2859,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -2896,12 +2890,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -2921,12 +2918,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -2954,12 +2954,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -2979,12 +2982,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -2999,12 +3005,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>
@@ -3021,12 +3030,15 @@ public final class SimulatedFinding extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The time the finding was first detected. If an existing finding is updated,
-     * then this is the time the update occurred.
+     * then this is the time the update occurred. If the finding is later
+     * resolved, then this time reflects when the finding was resolved.
+     *
      * For example, if the finding represents an open firewall, this property
      * captures the time the detector believes the firewall became open. The
-     * accuracy is determined by the detector. If the finding is later resolved,
-     * then this time reflects when the finding was resolved. This must not
-     * be set to a value greater than the current timestamp.
+     * accuracy is determined by the detector.
+     *
+     * The event time must not be set to a value greater than the current
+     * timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp event_time = 7;</code>

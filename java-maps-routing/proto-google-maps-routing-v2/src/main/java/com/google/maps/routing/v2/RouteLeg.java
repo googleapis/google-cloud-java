@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,9 +107,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration represented in text
-     * form. Note: If you did not request traffic information, this value will
-     * be the same value as static_duration.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * static_duration.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -121,9 +122,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration represented in text
-     * form. Note: If you did not request traffic information, this value will
-     * be the same value as static_duration.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * static_duration.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -135,9 +137,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration represented in text
-     * form. Note: If you did not request traffic information, this value will
-     * be the same value as static_duration.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * static_duration.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -277,9 +280,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration represented in text
-     * form. Note: If you did not request traffic information, this value will
-     * be the same value as static_duration.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * static_duration.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -294,9 +298,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration represented in text
-     * form. Note: If you did not request traffic information, this value will
-     * be the same value as static_duration.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * static_duration.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -311,9 +316,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration taking traffic conditions into consideration represented in text
-     * form. Note: If you did not request traffic information, this value will
-     * be the same value as static_duration.
+     * Duration, represented in text form and localized to the region of the
+     * query. Takes traffic conditions into consideration. Note: If you did not
+     * request traffic information, this value is the same value as
+     * static_duration.
      * </pre>
      *
      * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1004,9 +1010,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1020,9 +1027,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1040,9 +1048,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1064,9 +1073,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1085,9 +1095,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1114,9 +1125,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1135,9 +1147,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1151,9 +1164,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>
@@ -1169,9 +1183,10 @@ public final class RouteLeg extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Duration taking traffic conditions into consideration represented in text
-       * form. Note: If you did not request traffic information, this value will
-       * be the same value as static_duration.
+       * Duration, represented in text form and localized to the region of the
+       * query. Takes traffic conditions into consideration. Note: If you did not
+       * request traffic information, this value is the same value as
+       * static_duration.
        * </pre>
        *
        * <code>.google.type.LocalizedText duration = 2;</code>

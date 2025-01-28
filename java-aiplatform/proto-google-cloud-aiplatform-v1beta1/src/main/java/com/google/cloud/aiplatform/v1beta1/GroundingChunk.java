@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1085,6 +1085,43 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for title.
      */
     com.google.protobuf.ByteString getTitleBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Text of the attribution.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return Whether the text field is set.
+     */
+    boolean hasText();
+    /**
+     *
+     *
+     * <pre>
+     * Text of the attribution.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The text.
+     */
+    java.lang.String getText();
+    /**
+     *
+     *
+     * <pre>
+     * Text of the attribution.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The bytes for text.
+     */
+    com.google.protobuf.ByteString getTextBytes();
   }
   /**
    *
@@ -1108,6 +1145,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     private RetrievedContext() {
       uri_ = "";
       title_ = "";
+      text_ = "";
     }
 
     @java.lang.Override
@@ -1264,6 +1302,72 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int TEXT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object text_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Text of the attribution.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return Whether the text field is set.
+     */
+    @java.lang.Override
+    public boolean hasText() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text of the attribution.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The text.
+     */
+    @java.lang.Override
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text of the attribution.
+     * </pre>
+     *
+     * <code>optional string text = 3;</code>
+     *
+     * @return The bytes for text.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1284,6 +1388,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1298,6 +1405,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1323,6 +1433,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasTitle()) {
         if (!getTitle().equals(other.getTitle())) return false;
       }
+      if (hasText() != other.hasText()) return false;
+      if (hasText()) {
+        if (!getText().equals(other.getText())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1341,6 +1455,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasTitle()) {
         hash = (37 * hash) + TITLE_FIELD_NUMBER;
         hash = (53 * hash) + getTitle().hashCode();
+      }
+      if (hasText()) {
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1488,6 +1606,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         uri_ = "";
         title_ = "";
+        text_ = "";
         return this;
       }
 
@@ -1535,6 +1654,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.title_ = title_;
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.text_ = text_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1600,6 +1723,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.hasText()) {
+          text_ = other.text_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1638,6 +1766,12 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  text_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1893,6 +2027,126 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         title_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Text of the attribution.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return Whether the text field is set.
+       */
+      public boolean hasText() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of the attribution.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return The text.
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of the attribution.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return The bytes for text.
+       */
+      public com.google.protobuf.ByteString getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of the attribution.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        text_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of the attribution.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+        text_ = getDefaultInstance().getText();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text of the attribution.
+       * </pre>
+       *
+       * <code>optional string text = 3;</code>
+       *
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        text_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

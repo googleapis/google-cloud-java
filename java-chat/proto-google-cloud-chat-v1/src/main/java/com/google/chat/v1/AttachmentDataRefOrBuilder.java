@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,11 @@ public interface AttachmentDataRefOrBuilder
    *
    *
    * <pre>
-   * The resource name of the attachment data. This field is used with the media
-   * API to download the attachment data.
+   * Optional. The resource name of the attachment data. This field is used with
+   * the media API to download the attachment data.
    * </pre>
    *
-   * <code>string resource_name = 1;</code>
+   * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The resourceName.
    */
@@ -41,11 +41,11 @@ public interface AttachmentDataRefOrBuilder
    *
    *
    * <pre>
-   * The resource name of the attachment data. This field is used with the media
-   * API to download the attachment data.
+   * Optional. The resource name of the attachment data. This field is used with
+   * the media API to download the attachment data.
    * </pre>
    *
-   * <code>string resource_name = 1;</code>
+   * <code>string resource_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for resourceName.
    */
@@ -55,12 +55,12 @@ public interface AttachmentDataRefOrBuilder
    *
    *
    * <pre>
-   * Opaque token containing a reference to an uploaded attachment. Treated by
-   * clients as an opaque string and used to create or update Chat messages with
-   * attachments.
+   * Optional. Opaque token containing a reference to an uploaded attachment.
+   * Treated by clients as an opaque string and used to create or update Chat
+   * messages with attachments.
    * </pre>
    *
-   * <code>string attachment_upload_token = 2;</code>
+   * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The attachmentUploadToken.
    */
@@ -69,12 +69,12 @@ public interface AttachmentDataRefOrBuilder
    *
    *
    * <pre>
-   * Opaque token containing a reference to an uploaded attachment. Treated by
-   * clients as an opaque string and used to create or update Chat messages with
-   * attachments.
+   * Optional. Opaque token containing a reference to an uploaded attachment.
+   * Treated by clients as an opaque string and used to create or update Chat
+   * messages with attachments.
    * </pre>
    *
-   * <code>string attachment_upload_token = 2;</code>
+   * <code>string attachment_upload_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for attachmentUploadToken.
    */

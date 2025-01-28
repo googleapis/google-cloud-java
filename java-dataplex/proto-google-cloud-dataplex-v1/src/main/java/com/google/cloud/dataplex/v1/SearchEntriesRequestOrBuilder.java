@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@ public interface SearchEntriesRequestOrBuilder
    * following form: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -45,7 +47,9 @@ public interface SearchEntriesRequestOrBuilder
    * following form: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -56,6 +60,8 @@ public interface SearchEntriesRequestOrBuilder
    *
    * <pre>
    * Required. The query against which entries in scope should be matched.
+   * The query syntax is defined in [Search syntax for Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -68,6 +74,8 @@ public interface SearchEntriesRequestOrBuilder
    *
    * <pre>
    * Required. The query against which entries in scope should be matched.
+   * The query syntax is defined in [Search syntax for Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,7 +88,9 @@ public interface SearchEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Pagination.
+   * Optional. Number of results in the search page. If &lt;=0, then defaults
+   * to 10. Max limit for page_size is 1000. Throws an invalid argument for
+   * page_size &gt; 1000.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90,12 +100,26 @@ public interface SearchEntriesRequestOrBuilder
   int getPageSize();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Page token received from a previous `SearchEntries` call. Provide
+   * this to retrieve the subsequent page.
+   * </pre>
+   *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
+   * <pre>
+   * Optional. Page token received from a previous `SearchEntries` call. Provide
+   * this to retrieve the subsequent page.
+   * </pre>
+   *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
@@ -106,7 +130,11 @@ public interface SearchEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Ordering of the results. Supported options to be added later.
+   * Optional. Specifies the ordering of results.
+   * Supported values are:
+   * * `relevance` (default)
+   * * `last_modified_timestamp`
+   * * `last_modified_timestamp asc`
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -118,7 +146,11 @@ public interface SearchEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Ordering of the results. Supported options to be added later.
+   * Optional. Specifies the ordering of results.
+   * Supported values are:
+   * * `relevance` (default)
+   * * `last_modified_timestamp`
+   * * `last_modified_timestamp asc`
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -131,10 +163,10 @@ public interface SearchEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The scope under which the search should be operating. Should
-   * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-   * unspecified, it will default to the organization where the project provided
-   * in `name` is located.
+   * Optional. The scope under which the search should be operating. It must
+   * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+   * unspecified, it defaults to the organization where the project provided in
+   * `name` is located.
    * </pre>
    *
    * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -146,10 +178,10 @@ public interface SearchEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The scope under which the search should be operating. Should
-   * either be organizations/&lt;org_id&gt; or projects/&lt;project_ref&gt;. If left
-   * unspecified, it will default to the organization where the project provided
-   * in `name` is located.
+   * Optional. The scope under which the search should be operating. It must
+   * either be `organizations/&lt;org_id&gt;` or `projects/&lt;project_ref&gt;`. If it is
+   * unspecified, it defaults to the organization where the project provided in
+   * `name` is located.
    * </pre>
    *
    * <code>string scope = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

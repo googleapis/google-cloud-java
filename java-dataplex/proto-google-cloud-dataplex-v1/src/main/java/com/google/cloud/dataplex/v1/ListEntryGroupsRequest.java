@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the entryGroup location, of the form:
    * `projects/{project_number}/locations/{location_id}`
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the entryGroup location, of the form:
    * `projects/{project_number}/locations/{location_id}`
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -132,9 +132,9 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Maximum number of EntryGroups to return. The service may return
-   * fewer than this value. If unspecified, at most 10 EntryGroups will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
-   * 1000.
+   * fewer than this value. If unspecified, the service returns at most 10
+   * EntryGroups. The maximum value is 1000; values above 1000 will be coerced
+   * to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -156,8 +156,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. Page token received from a previous `ListEntryGroups` call.
    * Provide this to retrieve the subsequent page. When paginating, all other
-   * parameters provided to `ListEntryGroups` must match the call that provided
-   * the page token.
+   * parameters you provide to `ListEntryGroups` must match the call that
+   * provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -182,8 +182,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. Page token received from a previous `ListEntryGroups` call.
    * Provide this to retrieve the subsequent page. When paginating, all other
-   * parameters provided to `ListEntryGroups` must match the call that provided
-   * the page token.
+   * parameters you provide to `ListEntryGroups` must match the call that
+   * provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -748,7 +748,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the entryGroup location, of the form:
      * `projects/{project_number}/locations/{location_id}`
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -774,7 +774,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the entryGroup location, of the form:
      * `projects/{project_number}/locations/{location_id}`
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -800,7 +800,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the entryGroup location, of the form:
      * `projects/{project_number}/locations/{location_id}`
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -825,7 +825,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the entryGroup location, of the form:
      * `projects/{project_number}/locations/{location_id}`
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -846,7 +846,7 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the entryGroup location, of the form:
      * `projects/{project_number}/locations/{location_id}`
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -873,9 +873,9 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Maximum number of EntryGroups to return. The service may return
-     * fewer than this value. If unspecified, at most 10 EntryGroups will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * fewer than this value. If unspecified, the service returns at most 10
+     * EntryGroups. The maximum value is 1000; values above 1000 will be coerced
+     * to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -891,9 +891,9 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Maximum number of EntryGroups to return. The service may return
-     * fewer than this value. If unspecified, at most 10 EntryGroups will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * fewer than this value. If unspecified, the service returns at most 10
+     * EntryGroups. The maximum value is 1000; values above 1000 will be coerced
+     * to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -913,9 +913,9 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Maximum number of EntryGroups to return. The service may return
-     * fewer than this value. If unspecified, at most 10 EntryGroups will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * fewer than this value. If unspecified, the service returns at most 10
+     * EntryGroups. The maximum value is 1000; values above 1000 will be coerced
+     * to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -936,8 +936,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Page token received from a previous `ListEntryGroups` call.
      * Provide this to retrieve the subsequent page. When paginating, all other
-     * parameters provided to `ListEntryGroups` must match the call that provided
-     * the page token.
+     * parameters you provide to `ListEntryGroups` must match the call that
+     * provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -961,8 +961,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Page token received from a previous `ListEntryGroups` call.
      * Provide this to retrieve the subsequent page. When paginating, all other
-     * parameters provided to `ListEntryGroups` must match the call that provided
-     * the page token.
+     * parameters you provide to `ListEntryGroups` must match the call that
+     * provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -986,8 +986,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Page token received from a previous `ListEntryGroups` call.
      * Provide this to retrieve the subsequent page. When paginating, all other
-     * parameters provided to `ListEntryGroups` must match the call that provided
-     * the page token.
+     * parameters you provide to `ListEntryGroups` must match the call that
+     * provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1010,8 +1010,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Page token received from a previous `ListEntryGroups` call.
      * Provide this to retrieve the subsequent page. When paginating, all other
-     * parameters provided to `ListEntryGroups` must match the call that provided
-     * the page token.
+     * parameters you provide to `ListEntryGroups` must match the call that
+     * provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1030,8 +1030,8 @@ public final class ListEntryGroupsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. Page token received from a previous `ListEntryGroups` call.
      * Provide this to retrieve the subsequent page. When paginating, all other
-     * parameters provided to `ListEntryGroups` must match the call that provided
-     * the page token.
+     * parameters you provide to `ListEntryGroups` must match the call that
+     * provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -346,7 +346,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
+   *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=568
    * @return The singleUtterance.
    */
   @java.lang.Override
@@ -1823,7 +1823,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=568
      * @return The singleUtterance.
      */
     @java.lang.Override
@@ -1849,7 +1849,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=568
      * @param value The singleUtterance to set.
      * @return This builder for chaining.
      */
@@ -1879,7 +1879,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
+     *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=568
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

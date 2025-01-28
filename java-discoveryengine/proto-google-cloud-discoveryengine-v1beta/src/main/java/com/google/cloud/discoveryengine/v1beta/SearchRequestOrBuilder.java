@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,6 +236,21 @@ public interface SearchRequestOrBuilder
    * @return The offset.
    */
   int getOffset();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of results to return for OneBox.
+   * This applies to each OneBox type individually.
+   * Default number is 10.
+   * </pre>
+   *
+   * <code>int32 one_box_page_size = 47;</code>
+   *
+   * @return The oneBoxPageSize.
+   */
+  int getOneBoxPageSize();
 
   /**
    *
@@ -1541,4 +1556,74 @@ public interface SearchRequestOrBuilder
    * @return The relevanceThreshold.
    */
   com.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold getRelevanceThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 46;
+   * </code>
+   *
+   * @return Whether the personalizationSpec field is set.
+   */
+  boolean hasPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 46;
+   * </code>
+   *
+   * @return The personalizationSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
+      getPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization.
+   *
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * are set,
+   * [SearchRequest.personalization_spec][google.cloud.discoveryengine.v1beta.SearchRequest.personalization_spec]
+   * overrides
+   * [ServingConfig.personalization_spec][google.cloud.discoveryengine.v1beta.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec personalization_spec = 46;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder
+      getPersonalizationSpecOrBuilder();
 }

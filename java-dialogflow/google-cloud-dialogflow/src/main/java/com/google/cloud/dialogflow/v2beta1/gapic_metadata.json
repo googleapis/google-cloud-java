@@ -539,6 +539,36 @@
         }
       }
     },
+    "SipTrunks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SipTrunksClient",
+          "rpcs": {
+            "CreateSipTrunk": {
+              "methods": ["createSipTrunk", "createSipTrunk", "createSipTrunk", "createSipTrunkCallable"]
+            },
+            "DeleteSipTrunk": {
+              "methods": ["deleteSipTrunk", "deleteSipTrunk", "deleteSipTrunk", "deleteSipTrunkCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSipTrunk": {
+              "methods": ["getSipTrunk", "getSipTrunk", "getSipTrunk", "getSipTrunkCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSipTrunks": {
+              "methods": ["listSipTrunks", "listSipTrunks", "listSipTrunks", "listSipTrunksPagedCallable", "listSipTrunksCallable"]
+            },
+            "UpdateSipTrunk": {
+              "methods": ["updateSipTrunk", "updateSipTrunk", "updateSipTrunkCallable"]
+            }
+          }
+        }
+      }
+    },
     "Versions": {
       "clients": {
         "grpc": {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -485,6 +485,8 @@ public class DocumentServiceClientHttpJsonTest {
         DatasetSchema.newBuilder()
             .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setDocumentSchema(DocumentSchema.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -530,6 +532,8 @@ public class DocumentServiceClientHttpJsonTest {
         DatasetSchema.newBuilder()
             .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setDocumentSchema(DocumentSchema.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -577,6 +581,8 @@ public class DocumentServiceClientHttpJsonTest {
         DatasetSchema.newBuilder()
             .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setDocumentSchema(DocumentSchema.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -584,6 +590,8 @@ public class DocumentServiceClientHttpJsonTest {
         DatasetSchema.newBuilder()
             .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
             .setDocumentSchema(DocumentSchema.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -617,6 +625,8 @@ public class DocumentServiceClientHttpJsonTest {
           DatasetSchema.newBuilder()
               .setName(DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
               .setDocumentSchema(DocumentSchema.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDatasetSchema(datasetSchema, updateMask);

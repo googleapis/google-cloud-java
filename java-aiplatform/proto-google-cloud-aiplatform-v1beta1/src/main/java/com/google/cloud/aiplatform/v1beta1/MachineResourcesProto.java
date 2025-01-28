@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,36 +89,37 @@ public final class MachineResourcesProto {
           + "\340A\005\022\031\n\021accelerator_count\030\003 \001(\005\022\031\n\014tpu_to"
           + "pology\030\004 \001(\tB\003\340A\005\022Z\n\024reservation_affinit"
           + "y\030\005 \001(\01324.google.cloud.aiplatform.v1beta"
-          + "1.ReservationAffinityB\006\340A\005\340A\001\"\225\002\n\022Dedica"
+          + "1.ReservationAffinityB\006\340A\005\340A\001\"\272\002\n\022Dedica"
           + "tedResources\022J\n\014machine_spec\030\001 \001(\0132,.goo"
           + "gle.cloud.aiplatform.v1beta1.MachineSpec"
           + "B\006\340A\002\340A\005\022!\n\021min_replica_count\030\002 \001(\005B\006\340A\002"
-          + "\340A\005\022\036\n\021max_replica_count\030\003 \001(\005B\003\340A\005\022]\n\030a"
-          + "utoscaling_metric_specs\030\004 \003(\01326.google.c"
-          + "loud.aiplatform.v1beta1.AutoscalingMetri"
-          + "cSpecB\003\340A\005\022\021\n\004spot\030\005 \001(\010B\003\340A\001\"T\n\022Automat"
-          + "icResources\022\036\n\021min_replica_count\030\001 \001(\005B\003"
-          + "\340A\005\022\036\n\021max_replica_count\030\002 \001(\005B\003\340A\005\"\252\001\n\027"
-          + "BatchDedicatedResources\022J\n\014machine_spec\030"
-          + "\001 \001(\0132,.google.cloud.aiplatform.v1beta1."
-          + "MachineSpecB\006\340A\002\340A\005\022#\n\026starting_replica_"
-          + "count\030\002 \001(\005B\003\340A\005\022\036\n\021max_replica_count\030\003 "
-          + "\001(\005B\003\340A\005\"/\n\021ResourcesConsumed\022\032\n\rreplica"
-          + "_hours\030\001 \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016boot_di"
-          + "sk_type\030\001 \001(\t\022\031\n\021boot_disk_size_gb\030\002 \001(\005"
-          + "\"=\n\022PersistentDiskSpec\022\021\n\tdisk_type\030\001 \001("
-          + "\t\022\024\n\014disk_size_gb\030\002 \001(\003\"L\n\010NfsMount\022\023\n\006s"
-          + "erver\030\001 \001(\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013m"
-          + "ount_point\030\003 \001(\tB\003\340A\002\"A\n\025AutoscalingMetr"
-          + "icSpec\022\030\n\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n\006targ"
-          + "et\030\002 \001(\005\".\n\020ShieldedVmConfig\022\032\n\022enable_s"
-          + "ecure_boot\030\001 \001(\010B\354\001\n#com.google.cloud.ai"
-          + "platform.v1beta1B\025MachineResourcesProtoP"
-          + "\001ZCcloud.google.com/go/aiplatform/apiv1b"
-          + "eta1/aiplatformpb;aiplatformpb\252\002\037Google."
-          + "Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\"
-          + "AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPl"
-          + "atform::V1beta1b\006proto3"
+          + "\340A\005\022\036\n\021max_replica_count\030\003 \001(\005B\003\340A\005\022#\n\026r"
+          + "equired_replica_count\030\t \001(\005B\003\340A\001\022]\n\030auto"
+          + "scaling_metric_specs\030\004 \003(\01326.google.clou"
+          + "d.aiplatform.v1beta1.AutoscalingMetricSp"
+          + "ecB\003\340A\005\022\021\n\004spot\030\005 \001(\010B\003\340A\001\"T\n\022AutomaticR"
+          + "esources\022\036\n\021min_replica_count\030\001 \001(\005B\003\340A\005"
+          + "\022\036\n\021max_replica_count\030\002 \001(\005B\003\340A\005\"\252\001\n\027Bat"
+          + "chDedicatedResources\022J\n\014machine_spec\030\001 \001"
+          + "(\0132,.google.cloud.aiplatform.v1beta1.Mac"
+          + "hineSpecB\006\340A\002\340A\005\022#\n\026starting_replica_cou"
+          + "nt\030\002 \001(\005B\003\340A\005\022\036\n\021max_replica_count\030\003 \001(\005"
+          + "B\003\340A\005\"/\n\021ResourcesConsumed\022\032\n\rreplica_ho"
+          + "urs\030\001 \001(\001B\003\340A\003\"=\n\010DiskSpec\022\026\n\016boot_disk_"
+          + "type\030\001 \001(\t\022\031\n\021boot_disk_size_gb\030\002 \001(\005\"=\n"
+          + "\022PersistentDiskSpec\022\021\n\tdisk_type\030\001 \001(\t\022\024"
+          + "\n\014disk_size_gb\030\002 \001(\003\"L\n\010NfsMount\022\023\n\006serv"
+          + "er\030\001 \001(\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013moun"
+          + "t_point\030\003 \001(\tB\003\340A\002\"A\n\025AutoscalingMetricS"
+          + "pec\022\030\n\013metric_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030"
+          + "\002 \001(\005\".\n\020ShieldedVmConfig\022\032\n\022enable_secu"
+          + "re_boot\030\001 \001(\010B\354\001\n#com.google.cloud.aipla"
+          + "tform.v1beta1B\025MachineResourcesProtoP\001ZC"
+          + "cloud.google.com/go/aiplatform/apiv1beta"
+          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
+          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
+          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
+          + "orm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -146,7 +147,12 @@ public final class MachineResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_descriptor,
             new java.lang.String[] {
-              "MachineSpec", "MinReplicaCount", "MaxReplicaCount", "AutoscalingMetricSpecs", "Spot",
+              "MachineSpec",
+              "MinReplicaCount",
+              "MaxReplicaCount",
+              "RequiredReplicaCount",
+              "AutoscalingMetricSpecs",
+              "Spot",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AutomaticResources_descriptor =
         getDescriptor().getMessageTypes().get(2);

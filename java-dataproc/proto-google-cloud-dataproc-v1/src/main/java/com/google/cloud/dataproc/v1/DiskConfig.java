@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.DiskConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int BOOT_DISK_TYPE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -226,6 +227,88 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int BOOT_DISK_PROVISIONED_IOPS_FIELD_NUMBER = 5;
+  private long bootDiskProvisionedIops_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how many IOPS to provision for the disk. This sets the
+   * number of I/O operations per second that the disk can handle. Note: This
+   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootDiskProvisionedIops field is set.
+   */
+  @java.lang.Override
+  public boolean hasBootDiskProvisionedIops() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how many IOPS to provision for the disk. This sets the
+   * number of I/O operations per second that the disk can handle. Note: This
+   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootDiskProvisionedIops.
+   */
+  @java.lang.Override
+  public long getBootDiskProvisionedIops() {
+    return bootDiskProvisionedIops_;
+  }
+
+  public static final int BOOT_DISK_PROVISIONED_THROUGHPUT_FIELD_NUMBER = 6;
+  private long bootDiskProvisionedThroughput_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how much throughput to provision for the disk. This
+   * sets the number of throughput mb per second that the disk can handle.
+   * Values must be greater than or equal to 1. Note: This field is only
+   * supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>
+   * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootDiskProvisionedThroughput field is set.
+   */
+  @java.lang.Override
+  public boolean hasBootDiskProvisionedThroughput() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates how much throughput to provision for the disk. This
+   * sets the number of throughput mb per second that the disk can handle.
+   * Values must be greater than or equal to 1. Note: This field is only
+   * supported if boot_disk_type is hyperdisk-balanced.
+   * </pre>
+   *
+   * <code>
+   * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootDiskProvisionedThroughput.
+   */
+  @java.lang.Override
+  public long getBootDiskProvisionedThroughput() {
+    return bootDiskProvisionedThroughput_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -252,6 +335,12 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(localSsdInterface_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, localSsdInterface_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(5, bootDiskProvisionedIops_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt64(6, bootDiskProvisionedThroughput_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -273,6 +362,13 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(localSsdInterface_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, localSsdInterface_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, bootDiskProvisionedIops_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(6, bootDiskProvisionedThroughput_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -292,6 +388,16 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     if (getBootDiskSizeGb() != other.getBootDiskSizeGb()) return false;
     if (getNumLocalSsds() != other.getNumLocalSsds()) return false;
     if (!getLocalSsdInterface().equals(other.getLocalSsdInterface())) return false;
+    if (hasBootDiskProvisionedIops() != other.hasBootDiskProvisionedIops()) return false;
+    if (hasBootDiskProvisionedIops()) {
+      if (getBootDiskProvisionedIops() != other.getBootDiskProvisionedIops()) return false;
+    }
+    if (hasBootDiskProvisionedThroughput() != other.hasBootDiskProvisionedThroughput())
+      return false;
+    if (hasBootDiskProvisionedThroughput()) {
+      if (getBootDiskProvisionedThroughput() != other.getBootDiskProvisionedThroughput())
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -311,6 +417,15 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getNumLocalSsds();
     hash = (37 * hash) + LOCAL_SSD_INTERFACE_FIELD_NUMBER;
     hash = (53 * hash) + getLocalSsdInterface().hashCode();
+    if (hasBootDiskProvisionedIops()) {
+      hash = (37 * hash) + BOOT_DISK_PROVISIONED_IOPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBootDiskProvisionedIops());
+    }
+    if (hasBootDiskProvisionedThroughput()) {
+      hash = (37 * hash) + BOOT_DISK_PROVISIONED_THROUGHPUT_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashLong(getBootDiskProvisionedThroughput());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -454,6 +569,8 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       bootDiskSizeGb_ = 0;
       numLocalSsds_ = 0;
       localSsdInterface_ = "";
+      bootDiskProvisionedIops_ = 0L;
+      bootDiskProvisionedThroughput_ = 0L;
       return this;
     }
 
@@ -502,6 +619,16 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.localSsdInterface_ = localSsdInterface_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.bootDiskProvisionedIops_ = bootDiskProvisionedIops_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.bootDiskProvisionedThroughput_ = bootDiskProvisionedThroughput_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -565,6 +692,12 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasBootDiskProvisionedIops()) {
+        setBootDiskProvisionedIops(other.getBootDiskProvisionedIops());
+      }
+      if (other.hasBootDiskProvisionedThroughput()) {
+        setBootDiskProvisionedThroughput(other.getBootDiskProvisionedThroughput());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -615,6 +748,18 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                bootDiskProvisionedIops_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                bootDiskProvisionedThroughput_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1012,6 +1157,178 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       localSsdInterface_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private long bootDiskProvisionedIops_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how many IOPS to provision for the disk. This sets the
+     * number of I/O operations per second that the disk can handle. Note: This
+     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bootDiskProvisionedIops field is set.
+     */
+    @java.lang.Override
+    public boolean hasBootDiskProvisionedIops() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how many IOPS to provision for the disk. This sets the
+     * number of I/O operations per second that the disk can handle. Note: This
+     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bootDiskProvisionedIops.
+     */
+    @java.lang.Override
+    public long getBootDiskProvisionedIops() {
+      return bootDiskProvisionedIops_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how many IOPS to provision for the disk. This sets the
+     * number of I/O operations per second that the disk can handle. Note: This
+     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bootDiskProvisionedIops to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootDiskProvisionedIops(long value) {
+
+      bootDiskProvisionedIops_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how many IOPS to provision for the disk. This sets the
+     * number of I/O operations per second that the disk can handle. Note: This
+     * field is only supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBootDiskProvisionedIops() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      bootDiskProvisionedIops_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long bootDiskProvisionedThroughput_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how much throughput to provision for the disk. This
+     * sets the number of throughput mb per second that the disk can handle.
+     * Values must be greater than or equal to 1. Note: This field is only
+     * supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bootDiskProvisionedThroughput field is set.
+     */
+    @java.lang.Override
+    public boolean hasBootDiskProvisionedThroughput() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how much throughput to provision for the disk. This
+     * sets the number of throughput mb per second that the disk can handle.
+     * Values must be greater than or equal to 1. Note: This field is only
+     * supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bootDiskProvisionedThroughput.
+     */
+    @java.lang.Override
+    public long getBootDiskProvisionedThroughput() {
+      return bootDiskProvisionedThroughput_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how much throughput to provision for the disk. This
+     * sets the number of throughput mb per second that the disk can handle.
+     * Values must be greater than or equal to 1. Note: This field is only
+     * supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bootDiskProvisionedThroughput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootDiskProvisionedThroughput(long value) {
+
+      bootDiskProvisionedThroughput_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates how much throughput to provision for the disk. This
+     * sets the number of throughput mb per second that the disk can handle.
+     * Values must be greater than or equal to 1. Note: This field is only
+     * supported if boot_disk_type is hyperdisk-balanced.
+     * </pre>
+     *
+     * <code>
+     * optional int64 boot_disk_provisioned_throughput = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBootDiskProvisionedThroughput() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      bootDiskProvisionedThroughput_ = 0L;
       onChanged();
       return this;
     }

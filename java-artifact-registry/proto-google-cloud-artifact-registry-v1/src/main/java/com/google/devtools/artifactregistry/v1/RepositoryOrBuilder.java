@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -200,7 +200,8 @@ public interface RepositoryOrBuilder
    *
    * <pre>
    * The name of the repository, for example:
-   * `projects/p1/locations/us-central1/repositories/repo1`.
+   * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+   * in a project, repository names must be unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -213,7 +214,8 @@ public interface RepositoryOrBuilder
    *
    * <pre>
    * The name of the repository, for example:
-   * `projects/p1/locations/us-central1/repositories/repo1`.
+   * `projects/p1/locations/us-central1/repositories/repo1`. For each location
+   * in a project, repository names must be unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -617,6 +619,79 @@ public interface RepositoryOrBuilder
    * @return The cleanupPolicyDryRun.
    */
   boolean getCleanupPolicyDryRun();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config and state for vulnerability scanning of resources within
+   * this Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vulnerabilityScanningConfig field is set.
+   */
+  boolean hasVulnerabilityScanningConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config and state for vulnerability scanning of resources within
+   * this Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vulnerabilityScanningConfig.
+   */
+  com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
+      getVulnerabilityScanningConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config and state for vulnerability scanning of resources within
+   * this Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig vulnerability_scanning_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfigOrBuilder
+      getVulnerabilityScanningConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If this is true, an unspecified repo type will be treated as
+   * error rather than defaulting to standard.
+   * </pre>
+   *
+   * <code>bool disallow_unspecified_mode = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disallowUnspecifiedMode.
+   */
+  boolean getDisallowUnspecifiedMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the repository satisfies physical zone isolation.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   com.google.devtools.artifactregistry.v1.Repository.FormatConfigCase getFormatConfigCase();
 

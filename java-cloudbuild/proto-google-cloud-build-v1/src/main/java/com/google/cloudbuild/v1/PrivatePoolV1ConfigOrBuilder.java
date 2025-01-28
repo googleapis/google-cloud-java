@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,4 +96,46 @@ public interface PrivatePoolV1ConfigOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.PrivatePoolV1Config.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the privateServiceConnect field is set.
+   */
+  boolean hasPrivateServiceConnect();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The privateServiceConnect.
+   */
+  com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect getPrivateServiceConnect();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder
+      getPrivateServiceConnectOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * Metadata for a [ConversationProfile.SetSuggestionFeatureConfig][]
+ * Metadata for a
+ * [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig]
  * operation.
  * </pre>
  *
@@ -460,7 +461,8 @@ public final class SetSuggestionFeatureConfigOperationMetadata
    *
    *
    * <pre>
-   * Metadata for a [ConversationProfile.SetSuggestionFeatureConfig][]
+   * Metadata for a
+   * [ConversationProfiles.SetSuggestionFeatureConfig][google.cloud.dialogflow.v2.ConversationProfiles.SetSuggestionFeatureConfig]
    * operation.
    * </pre>
    *

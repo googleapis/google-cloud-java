@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -391,7 +391,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    * be set.  The values hold the flattened representation of the tensor in
    * row major order.
    *
-   * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+   * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
    * </pre>
    *
    * <code>repeated bool bool_val = 3;</code>
@@ -411,7 +411,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    * be set.  The values hold the flattened representation of the tensor in
    * row major order.
    *
-   * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+   * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
    * </pre>
    *
    * <code>repeated bool bool_val = 3;</code>
@@ -430,7 +430,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    * be set.  The values hold the flattened representation of the tensor in
    * row major order.
    *
-   * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+   * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
    * </pre>
    *
    * <code>repeated bool bool_val = 3;</code>
@@ -453,7 +453,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+   * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
    * </pre>
    *
    * <code>repeated string string_val = 14;</code>
@@ -467,7 +467,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+   * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
    * </pre>
    *
    * <code>repeated string string_val = 14;</code>
@@ -481,7 +481,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+   * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
    * </pre>
    *
    * <code>repeated string string_val = 14;</code>
@@ -496,7 +496,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+   * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
    * </pre>
    *
    * <code>repeated string string_val = 14;</code>
@@ -517,7 +517,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+   * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
    * </pre>
    *
    * <code>repeated bytes bytes_val = 15;</code>
@@ -532,7 +532,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+   * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
    * </pre>
    *
    * <code>repeated bytes bytes_val = 15;</code>
@@ -546,7 +546,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+   * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
    * </pre>
    *
    * <code>repeated bytes bytes_val = 15;</code>
@@ -566,7 +566,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+   * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
    * </pre>
    *
    * <code>repeated float float_val = 5;</code>
@@ -581,7 +581,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+   * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
    * </pre>
    *
    * <code>repeated float float_val = 5;</code>
@@ -595,7 +595,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+   * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
    * </pre>
    *
    * <code>repeated float float_val = 5;</code>
@@ -617,7 +617,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+   * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
    * </pre>
    *
    * <code>repeated double double_val = 6;</code>
@@ -632,7 +632,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+   * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
    * </pre>
    *
    * <code>repeated double double_val = 6;</code>
@@ -646,7 +646,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+   * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
    * </pre>
    *
    * <code>repeated double double_val = 6;</code>
@@ -668,9 +668,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-   * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-   * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+   * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+   * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+   * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
    * </pre>
    *
    * <code>repeated int32 int_val = 7;</code>
@@ -685,9 +685,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-   * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-   * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+   * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+   * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+   * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
    * </pre>
    *
    * <code>repeated int32 int_val = 7;</code>
@@ -701,9 +701,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-   * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-   * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+   * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+   * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+   * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
    * </pre>
    *
    * <code>repeated int32 int_val = 7;</code>
@@ -725,7 +725,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+   * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
    * </pre>
    *
    * <code>repeated int64 int64_val = 8;</code>
@@ -740,7 +740,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+   * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
    * </pre>
    *
    * <code>repeated int64 int64_val = 8;</code>
@@ -754,7 +754,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+   * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
    * </pre>
    *
    * <code>repeated int64 int64_val = 8;</code>
@@ -776,9 +776,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-   * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-   * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+   * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+   * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+   * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
    * </pre>
    *
    * <code>repeated uint32 uint_val = 9;</code>
@@ -793,9 +793,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-   * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-   * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+   * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+   * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+   * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
    * </pre>
    *
    * <code>repeated uint32 uint_val = 9;</code>
@@ -809,9 +809,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-   * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-   * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+   * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+   * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+   * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
    * </pre>
    *
    * <code>repeated uint32 uint_val = 9;</code>
@@ -833,7 +833,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+   * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
    * </pre>
    *
    * <code>repeated uint64 uint64_val = 10;</code>
@@ -848,7 +848,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+   * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
    * </pre>
    *
    * <code>repeated uint64 uint64_val = 10;</code>
@@ -862,7 +862,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+   * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
    * </pre>
    *
    * <code>repeated uint64 uint64_val = 10;</code>
@@ -2352,7 +2352,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * be set.  The values hold the flattened representation of the tensor in
      * row major order.
      *
-     * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+     * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
      * </pre>
      *
      * <code>repeated bool bool_val = 3;</code>
@@ -2372,7 +2372,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * be set.  The values hold the flattened representation of the tensor in
      * row major order.
      *
-     * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+     * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
      * </pre>
      *
      * <code>repeated bool bool_val = 3;</code>
@@ -2391,7 +2391,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * be set.  The values hold the flattened representation of the tensor in
      * row major order.
      *
-     * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+     * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
      * </pre>
      *
      * <code>repeated bool bool_val = 3;</code>
@@ -2411,7 +2411,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * be set.  The values hold the flattened representation of the tensor in
      * row major order.
      *
-     * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+     * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
      * </pre>
      *
      * <code>repeated bool bool_val = 3;</code>
@@ -2437,7 +2437,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * be set.  The values hold the flattened representation of the tensor in
      * row major order.
      *
-     * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+     * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
      * </pre>
      *
      * <code>repeated bool bool_val = 3;</code>
@@ -2462,7 +2462,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * be set.  The values hold the flattened representation of the tensor in
      * row major order.
      *
-     * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+     * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
      * </pre>
      *
      * <code>repeated bool bool_val = 3;</code>
@@ -2486,7 +2486,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      * be set.  The values hold the flattened representation of the tensor in
      * row major order.
      *
-     * [BOOL][google.aiplatform.master.Tensor.DataType.BOOL]
+     * [BOOL][google.cloud.aiplatform.v1.Tensor.DataType.BOOL]
      * </pre>
      *
      * <code>repeated bool bool_val = 3;</code>
@@ -2513,7 +2513,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2528,7 +2528,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2542,7 +2542,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2557,7 +2557,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2572,7 +2572,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2595,7 +2595,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2617,7 +2617,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2636,7 +2636,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2654,7 +2654,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated string string_val = 14;</code>
@@ -2687,7 +2687,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated bytes bytes_val = 15;</code>
@@ -2702,7 +2702,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated bytes bytes_val = 15;</code>
@@ -2716,7 +2716,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated bytes bytes_val = 15;</code>
@@ -2731,7 +2731,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated bytes bytes_val = 15;</code>
@@ -2754,7 +2754,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated bytes bytes_val = 15;</code>
@@ -2776,7 +2776,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated bytes bytes_val = 15;</code>
@@ -2796,7 +2796,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [STRING][google.aiplatform.master.Tensor.DataType.STRING]
+     * [STRING][google.cloud.aiplatform.v1.Tensor.DataType.STRING]
      * </pre>
      *
      * <code>repeated bytes bytes_val = 15;</code>
@@ -2829,7 +2829,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+     * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
      * </pre>
      *
      * <code>repeated float float_val = 5;</code>
@@ -2844,7 +2844,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+     * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
      * </pre>
      *
      * <code>repeated float float_val = 5;</code>
@@ -2858,7 +2858,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+     * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
      * </pre>
      *
      * <code>repeated float float_val = 5;</code>
@@ -2873,7 +2873,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+     * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
      * </pre>
      *
      * <code>repeated float float_val = 5;</code>
@@ -2894,7 +2894,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+     * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
      * </pre>
      *
      * <code>repeated float float_val = 5;</code>
@@ -2914,7 +2914,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+     * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
      * </pre>
      *
      * <code>repeated float float_val = 5;</code>
@@ -2933,7 +2933,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [FLOAT][google.aiplatform.master.Tensor.DataType.FLOAT]
+     * [FLOAT][google.cloud.aiplatform.v1.Tensor.DataType.FLOAT]
      * </pre>
      *
      * <code>repeated float float_val = 5;</code>
@@ -2966,7 +2966,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+     * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
      * </pre>
      *
      * <code>repeated double double_val = 6;</code>
@@ -2981,7 +2981,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+     * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
      * </pre>
      *
      * <code>repeated double double_val = 6;</code>
@@ -2995,7 +2995,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+     * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
      * </pre>
      *
      * <code>repeated double double_val = 6;</code>
@@ -3010,7 +3010,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+     * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
      * </pre>
      *
      * <code>repeated double double_val = 6;</code>
@@ -3031,7 +3031,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+     * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
      * </pre>
      *
      * <code>repeated double double_val = 6;</code>
@@ -3051,7 +3051,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+     * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
      * </pre>
      *
      * <code>repeated double double_val = 6;</code>
@@ -3070,7 +3070,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [DOUBLE][google.aiplatform.master.Tensor.DataType.DOUBLE]
+     * [DOUBLE][google.cloud.aiplatform.v1.Tensor.DataType.DOUBLE]
      * </pre>
      *
      * <code>repeated double double_val = 6;</code>
@@ -3096,9 +3096,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-     * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-     * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+     * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+     * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+     * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
      * </pre>
      *
      * <code>repeated int32 int_val = 7;</code>
@@ -3113,9 +3113,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-     * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-     * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+     * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+     * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+     * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
      * </pre>
      *
      * <code>repeated int32 int_val = 7;</code>
@@ -3129,9 +3129,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-     * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-     * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+     * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+     * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+     * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
      * </pre>
      *
      * <code>repeated int32 int_val = 7;</code>
@@ -3146,9 +3146,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-     * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-     * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+     * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+     * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+     * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
      * </pre>
      *
      * <code>repeated int32 int_val = 7;</code>
@@ -3169,9 +3169,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-     * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-     * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+     * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+     * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+     * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
      * </pre>
      *
      * <code>repeated int32 int_val = 7;</code>
@@ -3191,9 +3191,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-     * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-     * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+     * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+     * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+     * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
      * </pre>
      *
      * <code>repeated int32 int_val = 7;</code>
@@ -3212,9 +3212,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT_8][google.aiplatform.master.Tensor.DataType.INT8]
-     * [INT_16][google.aiplatform.master.Tensor.DataType.INT16]
-     * [INT_32][google.aiplatform.master.Tensor.DataType.INT32]
+     * [INT_8][google.cloud.aiplatform.v1.Tensor.DataType.INT8]
+     * [INT_16][google.cloud.aiplatform.v1.Tensor.DataType.INT16]
+     * [INT_32][google.cloud.aiplatform.v1.Tensor.DataType.INT32]
      * </pre>
      *
      * <code>repeated int32 int_val = 7;</code>
@@ -3240,7 +3240,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+     * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
      * </pre>
      *
      * <code>repeated int64 int64_val = 8;</code>
@@ -3255,7 +3255,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+     * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
      * </pre>
      *
      * <code>repeated int64 int64_val = 8;</code>
@@ -3269,7 +3269,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+     * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
      * </pre>
      *
      * <code>repeated int64 int64_val = 8;</code>
@@ -3284,7 +3284,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+     * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
      * </pre>
      *
      * <code>repeated int64 int64_val = 8;</code>
@@ -3305,7 +3305,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+     * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
      * </pre>
      *
      * <code>repeated int64 int64_val = 8;</code>
@@ -3325,7 +3325,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+     * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
      * </pre>
      *
      * <code>repeated int64 int64_val = 8;</code>
@@ -3344,7 +3344,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [INT64][google.aiplatform.master.Tensor.DataType.INT64]
+     * [INT64][google.cloud.aiplatform.v1.Tensor.DataType.INT64]
      * </pre>
      *
      * <code>repeated int64 int64_val = 8;</code>
@@ -3370,9 +3370,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-     * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-     * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+     * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+     * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+     * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
      * </pre>
      *
      * <code>repeated uint32 uint_val = 9;</code>
@@ -3387,9 +3387,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-     * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-     * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+     * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+     * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+     * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
      * </pre>
      *
      * <code>repeated uint32 uint_val = 9;</code>
@@ -3403,9 +3403,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-     * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-     * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+     * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+     * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+     * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
      * </pre>
      *
      * <code>repeated uint32 uint_val = 9;</code>
@@ -3420,9 +3420,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-     * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-     * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+     * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+     * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+     * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
      * </pre>
      *
      * <code>repeated uint32 uint_val = 9;</code>
@@ -3443,9 +3443,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-     * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-     * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+     * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+     * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+     * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
      * </pre>
      *
      * <code>repeated uint32 uint_val = 9;</code>
@@ -3465,9 +3465,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-     * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-     * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+     * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+     * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+     * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
      * </pre>
      *
      * <code>repeated uint32 uint_val = 9;</code>
@@ -3486,9 +3486,9 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT8][google.aiplatform.master.Tensor.DataType.UINT8]
-     * [UINT16][google.aiplatform.master.Tensor.DataType.UINT16]
-     * [UINT32][google.aiplatform.master.Tensor.DataType.UINT32]
+     * [UINT8][google.cloud.aiplatform.v1.Tensor.DataType.UINT8]
+     * [UINT16][google.cloud.aiplatform.v1.Tensor.DataType.UINT16]
+     * [UINT32][google.cloud.aiplatform.v1.Tensor.DataType.UINT32]
      * </pre>
      *
      * <code>repeated uint32 uint_val = 9;</code>
@@ -3514,7 +3514,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+     * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
      * </pre>
      *
      * <code>repeated uint64 uint64_val = 10;</code>
@@ -3529,7 +3529,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+     * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
      * </pre>
      *
      * <code>repeated uint64 uint64_val = 10;</code>
@@ -3543,7 +3543,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+     * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
      * </pre>
      *
      * <code>repeated uint64 uint64_val = 10;</code>
@@ -3558,7 +3558,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+     * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
      * </pre>
      *
      * <code>repeated uint64 uint64_val = 10;</code>
@@ -3579,7 +3579,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+     * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
      * </pre>
      *
      * <code>repeated uint64 uint64_val = 10;</code>
@@ -3599,7 +3599,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+     * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
      * </pre>
      *
      * <code>repeated uint64 uint64_val = 10;</code>
@@ -3618,7 +3618,7 @@ public final class Tensor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [UINT64][google.aiplatform.master.Tensor.DataType.UINT64]
+     * [UINT64][google.cloud.aiplatform.v1.Tensor.DataType.UINT64]
      * </pre>
      *
      * <code>repeated uint64 uint64_val = 10;</code>

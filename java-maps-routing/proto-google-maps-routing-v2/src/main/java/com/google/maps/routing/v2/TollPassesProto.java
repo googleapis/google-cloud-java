@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,12 +95,12 @@ public final class TollPassesProto {
           + "\020US_WA_GOOD_TO_GO\020\001\022\022\n\016US_WV_EZPASSWV\020>\022"
           + "!\n\035US_WV_MEMORIAL_BRIDGE_TICKETS\020?\022\022\n\016US"
           + "_WV_MOV_PASS\020d\022#\n\037US_WV_NEWELL_TOLL_BRID"
-          + "GE_TICKET\020@B\304\001\n\032com.google.maps.routing."
+          + "GE_TICKET\020@B\301\001\n\032com.google.maps.routing."
           + "v2B\017TollPassesProtoP\001Z:cloud.google.com/"
           + "go/maps/routing/apiv2/routingpb;routingp"
-          + "b\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026"
-          + "Google\\Maps\\Routing\\V2\352\002\031Google::Maps::R"
-          + "outing::V2b\006proto3"
+          + "b\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Goo"
+          + "gle\\Maps\\Routing\\V2\352\002\031Google::Maps::Rout"
+          + "ing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

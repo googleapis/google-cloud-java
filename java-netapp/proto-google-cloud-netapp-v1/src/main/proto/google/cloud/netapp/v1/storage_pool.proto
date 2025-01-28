@@ -89,9 +89,9 @@ message CreateStoragePoolRequest {
   ];
 
   // Required. Id of the requesting storage pool. Must be unique within the
-  // parent resource. Must contain only letters, numbers, underscore and hyphen,
-  // with the first character a letter or underscore, the last a letter or
-  // underscore or a number, and a 63 character maximum.
+  // parent resource. Must contain only letters, numbers and hyphen, with the
+  // first character a letter, the last a letter or a number, and a 63 character
+  // maximum.
   string storage_pool_id = 2 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The required parameters to create a new storage pool.
@@ -253,4 +253,19 @@ message StoragePool {
 
   // Optional. Specifies the active zone for regional storagePool.
   string zone = 21 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// ValidateDirectoryServiceRequest validates the directory service policy
+// attached to the storage pool.
+message ValidateDirectoryServiceRequest {
+  // Required. Name of the storage pool
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {
+      type: "netapp.googleapis.com/StoragePool"
+    }
+  ];
+
+  // Type of directory service policy attached to the storage pool.
+  DirectoryServiceType directory_service_type = 2;
 }

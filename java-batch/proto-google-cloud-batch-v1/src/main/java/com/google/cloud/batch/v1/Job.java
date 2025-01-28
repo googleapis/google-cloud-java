@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -364,16 +364,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for the Job. Labels could be user provided or system generated.
-   * For example,
-   * "labels": {
-   *    "department": "finance",
-   *    "environment": "test"
-   *  }
-   * You can assign up to 64 labels.  [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and any Cloud Logging
+   * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+   * that it generates.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -395,16 +397,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for the Job. Labels could be user provided or system generated.
-   * For example,
-   * "labels": {
-   *    "department": "finance",
-   *    "environment": "test"
-   *  }
-   * You can assign up to 64 labels.  [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and any Cloud Logging
+   * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+   * that it generates.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -417,16 +421,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for the Job. Labels could be user provided or system generated.
-   * For example,
-   * "labels": {
-   *    "department": "finance",
-   *    "environment": "test"
-   *  }
-   * You can assign up to 64 labels.  [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and any Cloud Logging
+   * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+   * that it generates.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -446,16 +452,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for the Job. Labels could be user provided or system generated.
-   * For example,
-   * "labels": {
-   *    "department": "finance",
-   *    "environment": "test"
-   *  }
-   * You can assign up to 64 labels.  [Google Compute Engine label
-   * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-   * apply.
-   * Label names that start with "goog-" or "google-" are reserved.
+   * Custom labels to apply to the job and any Cloud Logging
+   * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+   * that it generates.
+   *
+   * Use labels to group and describe the resources they are applied to. Batch
+   * automatically applies predefined labels and supports multiple `labels`
+   * fields for each job, which each let you apply custom labels to various
+   * resources. Label names that start with "goog-" or "google-" are
+   * reserved for predefined labels. For more information about labels with
+   * Batch, see
+   * [Organize resources using
+   * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2380,16 +2388,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for the Job. Labels could be user provided or system generated.
-     * For example,
-     * "labels": {
-     *    "department": "finance",
-     *    "environment": "test"
-     *  }
-     * You can assign up to 64 labels.  [Google Compute Engine label
-     * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-     * apply.
-     * Label names that start with "goog-" or "google-" are reserved.
+     * Custom labels to apply to the job and any Cloud Logging
+     * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+     * that it generates.
+     *
+     * Use labels to group and describe the resources they are applied to. Batch
+     * automatically applies predefined labels and supports multiple `labels`
+     * fields for each job, which each let you apply custom labels to various
+     * resources. Label names that start with "goog-" or "google-" are
+     * reserved for predefined labels. For more information about labels with
+     * Batch, see
+     * [Organize resources using
+     * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2411,16 +2421,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for the Job. Labels could be user provided or system generated.
-     * For example,
-     * "labels": {
-     *    "department": "finance",
-     *    "environment": "test"
-     *  }
-     * You can assign up to 64 labels.  [Google Compute Engine label
-     * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-     * apply.
-     * Label names that start with "goog-" or "google-" are reserved.
+     * Custom labels to apply to the job and any Cloud Logging
+     * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+     * that it generates.
+     *
+     * Use labels to group and describe the resources they are applied to. Batch
+     * automatically applies predefined labels and supports multiple `labels`
+     * fields for each job, which each let you apply custom labels to various
+     * resources. Label names that start with "goog-" or "google-" are
+     * reserved for predefined labels. For more information about labels with
+     * Batch, see
+     * [Organize resources using
+     * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2433,16 +2445,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for the Job. Labels could be user provided or system generated.
-     * For example,
-     * "labels": {
-     *    "department": "finance",
-     *    "environment": "test"
-     *  }
-     * You can assign up to 64 labels.  [Google Compute Engine label
-     * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-     * apply.
-     * Label names that start with "goog-" or "google-" are reserved.
+     * Custom labels to apply to the job and any Cloud Logging
+     * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+     * that it generates.
+     *
+     * Use labels to group and describe the resources they are applied to. Batch
+     * automatically applies predefined labels and supports multiple `labels`
+     * fields for each job, which each let you apply custom labels to various
+     * resources. Label names that start with "goog-" or "google-" are
+     * reserved for predefined labels. For more information about labels with
+     * Batch, see
+     * [Organize resources using
+     * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2462,16 +2476,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for the Job. Labels could be user provided or system generated.
-     * For example,
-     * "labels": {
-     *    "department": "finance",
-     *    "environment": "test"
-     *  }
-     * You can assign up to 64 labels.  [Google Compute Engine label
-     * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-     * apply.
-     * Label names that start with "goog-" or "google-" are reserved.
+     * Custom labels to apply to the job and any Cloud Logging
+     * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+     * that it generates.
+     *
+     * Use labels to group and describe the resources they are applied to. Batch
+     * automatically applies predefined labels and supports multiple `labels`
+     * fields for each job, which each let you apply custom labels to various
+     * resources. Label names that start with "goog-" or "google-" are
+     * reserved for predefined labels. For more information about labels with
+     * Batch, see
+     * [Organize resources using
+     * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2497,16 +2513,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for the Job. Labels could be user provided or system generated.
-     * For example,
-     * "labels": {
-     *    "department": "finance",
-     *    "environment": "test"
-     *  }
-     * You can assign up to 64 labels.  [Google Compute Engine label
-     * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-     * apply.
-     * Label names that start with "goog-" or "google-" are reserved.
+     * Custom labels to apply to the job and any Cloud Logging
+     * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+     * that it generates.
+     *
+     * Use labels to group and describe the resources they are applied to. Batch
+     * automatically applies predefined labels and supports multiple `labels`
+     * fields for each job, which each let you apply custom labels to various
+     * resources. Label names that start with "goog-" or "google-" are
+     * reserved for predefined labels. For more information about labels with
+     * Batch, see
+     * [Organize resources using
+     * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2528,16 +2546,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for the Job. Labels could be user provided or system generated.
-     * For example,
-     * "labels": {
-     *    "department": "finance",
-     *    "environment": "test"
-     *  }
-     * You can assign up to 64 labels.  [Google Compute Engine label
-     * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-     * apply.
-     * Label names that start with "goog-" or "google-" are reserved.
+     * Custom labels to apply to the job and any Cloud Logging
+     * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+     * that it generates.
+     *
+     * Use labels to group and describe the resources they are applied to. Batch
+     * automatically applies predefined labels and supports multiple `labels`
+     * fields for each job, which each let you apply custom labels to various
+     * resources. Label names that start with "goog-" or "google-" are
+     * reserved for predefined labels. For more information about labels with
+     * Batch, see
+     * [Organize resources using
+     * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2557,16 +2577,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for the Job. Labels could be user provided or system generated.
-     * For example,
-     * "labels": {
-     *    "department": "finance",
-     *    "environment": "test"
-     *  }
-     * You can assign up to 64 labels.  [Google Compute Engine label
-     * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
-     * apply.
-     * Label names that start with "goog-" or "google-" are reserved.
+     * Custom labels to apply to the job and any Cloud Logging
+     * [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
+     * that it generates.
+     *
+     * Use labels to group and describe the resources they are applied to. Batch
+     * automatically applies predefined labels and supports multiple `labels`
+     * fields for each job, which each let you apply custom labels to various
+     * resources. Label names that start with "goog-" or "google-" are
+     * reserved for predefined labels. For more information about labels with
+     * Batch, see
+     * [Organize resources using
+     * labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>

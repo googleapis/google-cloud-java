@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,12 @@ public interface ThreadOrBuilder
    *
    *
    * <pre>
-   * Resource name of the thread.
+   * Identifier. Resource name of the thread.
    *
    * Example: `spaces/{space}/threads/{thread}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -42,12 +42,12 @@ public interface ThreadOrBuilder
    *
    *
    * <pre>
-   * Resource name of the thread.
+   * Identifier. Resource name of the thread.
    *
    * Example: `spaces/{space}/threads/{thread}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

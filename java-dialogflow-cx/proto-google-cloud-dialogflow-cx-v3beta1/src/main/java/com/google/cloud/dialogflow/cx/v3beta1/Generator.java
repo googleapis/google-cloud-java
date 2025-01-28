@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -923,6 +923,1160 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ModelParameterOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling. Temperature sampling occurs after both
+     * topP and topK have been applied.
+     * Valid range: [0.0, 1.0]
+     * Low temperature = less random. High temperature = more random.
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return Whether the temperature field is set.
+     */
+    boolean hasTemperature();
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling. Temperature sampling occurs after both
+     * topP and topK have been applied.
+     * Valid range: [0.0, 1.0]
+     * Low temperature = less random. High temperature = more random.
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return The temperature.
+     */
+    float getTemperature();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of tokens to generate.
+     * </pre>
+     *
+     * <code>optional int32 max_decode_steps = 2;</code>
+     *
+     * @return Whether the maxDecodeSteps field is set.
+     */
+    boolean hasMaxDecodeSteps();
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of tokens to generate.
+     * </pre>
+     *
+     * <code>optional int32 max_decode_steps = 2;</code>
+     *
+     * @return The maxDecodeSteps.
+     */
+    int getMaxDecodeSteps();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, only the tokens comprising the top top_p probability mass are
+     * considered. If both top_p and top_k are
+     * set, top_p will be used for further refining candidates selected with
+     * top_k.
+     * Valid range: (0.0, 1.0].
+     * Small topP = less random. Large topP = more random.
+     * </pre>
+     *
+     * <code>optional float top_p = 3;</code>
+     *
+     * @return Whether the topP field is set.
+     */
+    boolean hasTopP();
+    /**
+     *
+     *
+     * <pre>
+     * If set, only the tokens comprising the top top_p probability mass are
+     * considered. If both top_p and top_k are
+     * set, top_p will be used for further refining candidates selected with
+     * top_k.
+     * Valid range: (0.0, 1.0].
+     * Small topP = less random. Large topP = more random.
+     * </pre>
+     *
+     * <code>optional float top_p = 3;</code>
+     *
+     * @return The topP.
+     */
+    float getTopP();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, the sampling process in each step is limited to the top_k tokens
+     * with highest probabilities.
+     * Valid range: [1, 40] or 1000+.
+     * Small topK = less random. Large topK = more random.
+     * </pre>
+     *
+     * <code>optional int32 top_k = 4;</code>
+     *
+     * @return Whether the topK field is set.
+     */
+    boolean hasTopK();
+    /**
+     *
+     *
+     * <pre>
+     * If set, the sampling process in each step is limited to the top_k tokens
+     * with highest probabilities.
+     * Valid range: [1, 40] or 1000+.
+     * Small topK = less random. Large topK = more random.
+     * </pre>
+     *
+     * <code>optional int32 top_k = 4;</code>
+     *
+     * @return The topK.
+     */
+    int getTopK();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters to be passed to the LLM. If not set, default values will be
+   * used.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter}
+   */
+  public static final class ModelParameter extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter)
+      ModelParameterOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ModelParameter.newBuilder() to construct.
+    private ModelParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ModelParameter() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ModelParameter();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.GeneratorProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Generator_ModelParameter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.GeneratorProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Generator_ModelParameter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TEMPERATURE_FIELD_NUMBER = 1;
+    private float temperature_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling. Temperature sampling occurs after both
+     * topP and topK have been applied.
+     * Valid range: [0.0, 1.0]
+     * Low temperature = less random. High temperature = more random.
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return Whether the temperature field is set.
+     */
+    @java.lang.Override
+    public boolean hasTemperature() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The temperature used for sampling. Temperature sampling occurs after both
+     * topP and topK have been applied.
+     * Valid range: [0.0, 1.0]
+     * Low temperature = less random. High temperature = more random.
+     * </pre>
+     *
+     * <code>optional float temperature = 1;</code>
+     *
+     * @return The temperature.
+     */
+    @java.lang.Override
+    public float getTemperature() {
+      return temperature_;
+    }
+
+    public static final int MAX_DECODE_STEPS_FIELD_NUMBER = 2;
+    private int maxDecodeSteps_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of tokens to generate.
+     * </pre>
+     *
+     * <code>optional int32 max_decode_steps = 2;</code>
+     *
+     * @return Whether the maxDecodeSteps field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxDecodeSteps() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of tokens to generate.
+     * </pre>
+     *
+     * <code>optional int32 max_decode_steps = 2;</code>
+     *
+     * @return The maxDecodeSteps.
+     */
+    @java.lang.Override
+    public int getMaxDecodeSteps() {
+      return maxDecodeSteps_;
+    }
+
+    public static final int TOP_P_FIELD_NUMBER = 3;
+    private float topP_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * If set, only the tokens comprising the top top_p probability mass are
+     * considered. If both top_p and top_k are
+     * set, top_p will be used for further refining candidates selected with
+     * top_k.
+     * Valid range: (0.0, 1.0].
+     * Small topP = less random. Large topP = more random.
+     * </pre>
+     *
+     * <code>optional float top_p = 3;</code>
+     *
+     * @return Whether the topP field is set.
+     */
+    @java.lang.Override
+    public boolean hasTopP() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, only the tokens comprising the top top_p probability mass are
+     * considered. If both top_p and top_k are
+     * set, top_p will be used for further refining candidates selected with
+     * top_k.
+     * Valid range: (0.0, 1.0].
+     * Small topP = less random. Large topP = more random.
+     * </pre>
+     *
+     * <code>optional float top_p = 3;</code>
+     *
+     * @return The topP.
+     */
+    @java.lang.Override
+    public float getTopP() {
+      return topP_;
+    }
+
+    public static final int TOP_K_FIELD_NUMBER = 4;
+    private int topK_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * If set, the sampling process in each step is limited to the top_k tokens
+     * with highest probabilities.
+     * Valid range: [1, 40] or 1000+.
+     * Small topK = less random. Large topK = more random.
+     * </pre>
+     *
+     * <code>optional int32 top_k = 4;</code>
+     *
+     * @return Whether the topK field is set.
+     */
+    @java.lang.Override
+    public boolean hasTopK() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, the sampling process in each step is limited to the top_k tokens
+     * with highest probabilities.
+     * Valid range: [1, 40] or 1000+.
+     * Small topK = less random. Large topK = more random.
+     * </pre>
+     *
+     * <code>optional int32 top_k = 4;</code>
+     *
+     * @return The topK.
+     */
+    @java.lang.Override
+    public int getTopK() {
+      return topK_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeFloat(1, temperature_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt32(2, maxDecodeSteps_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeFloat(3, topP_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeInt32(4, topK_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, temperature_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxDecodeSteps_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, topP_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, topK_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter) obj;
+
+      if (hasTemperature() != other.hasTemperature()) return false;
+      if (hasTemperature()) {
+        if (java.lang.Float.floatToIntBits(getTemperature())
+            != java.lang.Float.floatToIntBits(other.getTemperature())) return false;
+      }
+      if (hasMaxDecodeSteps() != other.hasMaxDecodeSteps()) return false;
+      if (hasMaxDecodeSteps()) {
+        if (getMaxDecodeSteps() != other.getMaxDecodeSteps()) return false;
+      }
+      if (hasTopP() != other.hasTopP()) return false;
+      if (hasTopP()) {
+        if (java.lang.Float.floatToIntBits(getTopP())
+            != java.lang.Float.floatToIntBits(other.getTopP())) return false;
+      }
+      if (hasTopK() != other.hasTopK()) return false;
+      if (hasTopK()) {
+        if (getTopK() != other.getTopK()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTemperature()) {
+        hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getTemperature());
+      }
+      if (hasMaxDecodeSteps()) {
+        hash = (37 * hash) + MAX_DECODE_STEPS_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxDecodeSteps();
+      }
+      if (hasTopP()) {
+        hash = (37 * hash) + TOP_P_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getTopP());
+      }
+      if (hasTopK()) {
+        hash = (37 * hash) + TOP_K_FIELD_NUMBER;
+        hash = (53 * hash) + getTopK();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters to be passed to the LLM. If not set, default values will be
+     * used.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter)
+        com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.GeneratorProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Generator_ModelParameter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.GeneratorProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Generator_ModelParameter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        temperature_ = 0F;
+        maxDecodeSteps_ = 0;
+        topP_ = 0F;
+        topK_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.GeneratorProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Generator_ModelParameter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.temperature_ = temperature_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxDecodeSteps_ = maxDecodeSteps_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.topP_ = topP_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.topK_ = topK_;
+          to_bitField0_ |= 0x00000008;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.getDefaultInstance())
+          return this;
+        if (other.hasTemperature()) {
+          setTemperature(other.getTemperature());
+        }
+        if (other.hasMaxDecodeSteps()) {
+          setMaxDecodeSteps(other.getMaxDecodeSteps());
+        }
+        if (other.hasTopP()) {
+          setTopP(other.getTopP());
+        }
+        if (other.hasTopK()) {
+          setTopK(other.getTopK());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  temperature_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              case 16:
+                {
+                  maxDecodeSteps_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 29:
+                {
+                  topP_ = input.readFloat();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 29
+              case 32:
+                {
+                  topK_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float temperature_;
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling. Temperature sampling occurs after both
+       * topP and topK have been applied.
+       * Valid range: [0.0, 1.0]
+       * Low temperature = less random. High temperature = more random.
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @return Whether the temperature field is set.
+       */
+      @java.lang.Override
+      public boolean hasTemperature() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling. Temperature sampling occurs after both
+       * topP and topK have been applied.
+       * Valid range: [0.0, 1.0]
+       * Low temperature = less random. High temperature = more random.
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @return The temperature.
+       */
+      @java.lang.Override
+      public float getTemperature() {
+        return temperature_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling. Temperature sampling occurs after both
+       * topP and topK have been applied.
+       * Valid range: [0.0, 1.0]
+       * Low temperature = less random. High temperature = more random.
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @param value The temperature to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTemperature(float value) {
+
+        temperature_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The temperature used for sampling. Temperature sampling occurs after both
+       * topP and topK have been applied.
+       * Valid range: [0.0, 1.0]
+       * Low temperature = less random. High temperature = more random.
+       * </pre>
+       *
+       * <code>optional float temperature = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTemperature() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        temperature_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int maxDecodeSteps_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of tokens to generate.
+       * </pre>
+       *
+       * <code>optional int32 max_decode_steps = 2;</code>
+       *
+       * @return Whether the maxDecodeSteps field is set.
+       */
+      @java.lang.Override
+      public boolean hasMaxDecodeSteps() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of tokens to generate.
+       * </pre>
+       *
+       * <code>optional int32 max_decode_steps = 2;</code>
+       *
+       * @return The maxDecodeSteps.
+       */
+      @java.lang.Override
+      public int getMaxDecodeSteps() {
+        return maxDecodeSteps_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of tokens to generate.
+       * </pre>
+       *
+       * <code>optional int32 max_decode_steps = 2;</code>
+       *
+       * @param value The maxDecodeSteps to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxDecodeSteps(int value) {
+
+        maxDecodeSteps_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of tokens to generate.
+       * </pre>
+       *
+       * <code>optional int32 max_decode_steps = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxDecodeSteps() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxDecodeSteps_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float topP_;
+      /**
+       *
+       *
+       * <pre>
+       * If set, only the tokens comprising the top top_p probability mass are
+       * considered. If both top_p and top_k are
+       * set, top_p will be used for further refining candidates selected with
+       * top_k.
+       * Valid range: (0.0, 1.0].
+       * Small topP = less random. Large topP = more random.
+       * </pre>
+       *
+       * <code>optional float top_p = 3;</code>
+       *
+       * @return Whether the topP field is set.
+       */
+      @java.lang.Override
+      public boolean hasTopP() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, only the tokens comprising the top top_p probability mass are
+       * considered. If both top_p and top_k are
+       * set, top_p will be used for further refining candidates selected with
+       * top_k.
+       * Valid range: (0.0, 1.0].
+       * Small topP = less random. Large topP = more random.
+       * </pre>
+       *
+       * <code>optional float top_p = 3;</code>
+       *
+       * @return The topP.
+       */
+      @java.lang.Override
+      public float getTopP() {
+        return topP_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, only the tokens comprising the top top_p probability mass are
+       * considered. If both top_p and top_k are
+       * set, top_p will be used for further refining candidates selected with
+       * top_k.
+       * Valid range: (0.0, 1.0].
+       * Small topP = less random. Large topP = more random.
+       * </pre>
+       *
+       * <code>optional float top_p = 3;</code>
+       *
+       * @param value The topP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopP(float value) {
+
+        topP_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, only the tokens comprising the top top_p probability mass are
+       * considered. If both top_p and top_k are
+       * set, top_p will be used for further refining candidates selected with
+       * top_k.
+       * Valid range: (0.0, 1.0].
+       * Small topP = less random. Large topP = more random.
+       * </pre>
+       *
+       * <code>optional float top_p = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTopP() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        topP_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int topK_;
+      /**
+       *
+       *
+       * <pre>
+       * If set, the sampling process in each step is limited to the top_k tokens
+       * with highest probabilities.
+       * Valid range: [1, 40] or 1000+.
+       * Small topK = less random. Large topK = more random.
+       * </pre>
+       *
+       * <code>optional int32 top_k = 4;</code>
+       *
+       * @return Whether the topK field is set.
+       */
+      @java.lang.Override
+      public boolean hasTopK() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, the sampling process in each step is limited to the top_k tokens
+       * with highest probabilities.
+       * Valid range: [1, 40] or 1000+.
+       * Small topK = less random. Large topK = more random.
+       * </pre>
+       *
+       * <code>optional int32 top_k = 4;</code>
+       *
+       * @return The topK.
+       */
+      @java.lang.Override
+      public int getTopK() {
+        return topK_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, the sampling process in each step is limited to the top_k tokens
+       * with highest probabilities.
+       * Valid range: [1, 40] or 1000+.
+       * Small topK = less random. Large topK = more random.
+       * </pre>
+       *
+       * <code>optional int32 top_k = 4;</code>
+       *
+       * @param value The topK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTopK(int value) {
+
+        topK_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, the sampling process in each step is limited to the top_k tokens
+       * with highest probabilities.
+       * Valid range: [1, 40] or 1000+.
+       * Small topK = less random. Large topK = more random.
+       * </pre>
+       *
+       * <code>optional int32 top_k = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTopK() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        topK_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModelParameter> PARSER =
+        new com.google.protobuf.AbstractParser<ModelParameter>() {
+          @java.lang.Override
+          public ModelParameter parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ModelParameter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModelParameter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -936,8 +2090,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
    * Must be set for the
    * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
    * method. [Generators.CreateGenerate][] populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/generators/&lt;Generator ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -964,8 +2118,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
    * Must be set for the
    * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
    * method. [Generators.CreateGenerate][] populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/generators/&lt;Generator ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1234,6 +2388,57 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         : llmModelSettings_;
   }
 
+  public static final int MODEL_PARAMETER_FIELD_NUMBER = 8;
+  private com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter modelParameter_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters passed to the LLM to configure its behavior.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;</code>
+   *
+   * @return Whether the modelParameter field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelParameter() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters passed to the LLM to configure its behavior.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;</code>
+   *
+   * @return The modelParameter.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter getModelParameter() {
+    return modelParameter_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.getDefaultInstance()
+        : modelParameter_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters passed to the LLM to configure its behavior.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameterOrBuilder
+      getModelParameterOrBuilder() {
+    return modelParameter_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.getDefaultInstance()
+        : modelParameter_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1260,6 +2465,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < placeholders_.size(); i++) {
       output.writeMessage(5, placeholders_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(8, getModelParameter());
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getLlmModelSettings());
     }
@@ -1283,6 +2491,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < placeholders_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, placeholders_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getModelParameter());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLlmModelSettings());
@@ -1314,6 +2525,10 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     if (hasLlmModelSettings()) {
       if (!getLlmModelSettings().equals(other.getLlmModelSettings())) return false;
     }
+    if (hasModelParameter() != other.hasModelParameter()) return false;
+    if (hasModelParameter()) {
+      if (!getModelParameter().equals(other.getModelParameter())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1340,6 +2555,10 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     if (hasLlmModelSettings()) {
       hash = (37 * hash) + LLM_MODEL_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getLlmModelSettings().hashCode();
+    }
+    if (hasModelParameter()) {
+      hash = (37 * hash) + MODEL_PARAMETER_FIELD_NUMBER;
+      hash = (53 * hash) + getModelParameter().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1487,6 +2706,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         getPromptTextFieldBuilder();
         getPlaceholdersFieldBuilder();
         getLlmModelSettingsFieldBuilder();
+        getModelParameterFieldBuilder();
       }
     }
 
@@ -1512,6 +2732,11 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (llmModelSettingsBuilder_ != null) {
         llmModelSettingsBuilder_.dispose();
         llmModelSettingsBuilder_ = null;
+      }
+      modelParameter_ = null;
+      if (modelParameterBuilder_ != null) {
+        modelParameterBuilder_.dispose();
+        modelParameterBuilder_ = null;
       }
       return this;
     }
@@ -1578,6 +2803,11 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         result.llmModelSettings_ =
             llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.modelParameter_ =
+            modelParameterBuilder_ == null ? modelParameter_ : modelParameterBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1671,6 +2901,9 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLlmModelSettings()) {
         mergeLlmModelSettings(other.getLlmModelSettings());
       }
+      if (other.hasModelParameter()) {
+        mergeModelParameter(other.getModelParameter());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1729,6 +2962,12 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 42
+            case 66:
+              {
+                input.readMessage(getModelParameterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             case 74:
               {
                 input.readMessage(
@@ -1764,8 +3003,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * Must be set for the
      * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
      * method. [Generators.CreateGenerate][] populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/generators/&lt;Generator ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1791,8 +3030,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * Must be set for the
      * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
      * method. [Generators.CreateGenerate][] populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/generators/&lt;Generator ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1818,8 +3057,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * Must be set for the
      * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
      * method. [Generators.CreateGenerate][] populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/generators/&lt;Generator ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1844,8 +3083,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * Must be set for the
      * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
      * method. [Generators.CreateGenerate][] populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/generators/&lt;Generator ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1866,8 +3105,8 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
      * Must be set for the
      * [Generators.UpdateGenerator][google.cloud.dialogflow.cx.v3beta1.Generators.UpdateGenerator]
      * method. [Generators.CreateGenerate][] populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/generators/&lt;Generator ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2803,6 +4042,207 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         llmModelSettings_ = null;
       }
       return llmModelSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter modelParameter_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter,
+            com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameterOrBuilder>
+        modelParameterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     *
+     * @return Whether the modelParameter field is set.
+     */
+    public boolean hasModelParameter() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     *
+     * @return The modelParameter.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter getModelParameter() {
+      if (modelParameterBuilder_ == null) {
+        return modelParameter_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.getDefaultInstance()
+            : modelParameter_;
+      } else {
+        return modelParameterBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     */
+    public Builder setModelParameter(
+        com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter value) {
+      if (modelParameterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelParameter_ = value;
+      } else {
+        modelParameterBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     */
+    public Builder setModelParameter(
+        com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.Builder builderForValue) {
+      if (modelParameterBuilder_ == null) {
+        modelParameter_ = builderForValue.build();
+      } else {
+        modelParameterBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     */
+    public Builder mergeModelParameter(
+        com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter value) {
+      if (modelParameterBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && modelParameter_ != null
+            && modelParameter_
+                != com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter
+                    .getDefaultInstance()) {
+          getModelParameterBuilder().mergeFrom(value);
+        } else {
+          modelParameter_ = value;
+        }
+      } else {
+        modelParameterBuilder_.mergeFrom(value);
+      }
+      if (modelParameter_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     */
+    public Builder clearModelParameter() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      modelParameter_ = null;
+      if (modelParameterBuilder_ != null) {
+        modelParameterBuilder_.dispose();
+        modelParameterBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.Builder
+        getModelParameterBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getModelParameterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameterOrBuilder
+        getModelParameterOrBuilder() {
+      if (modelParameterBuilder_ != null) {
+        return modelParameterBuilder_.getMessageOrBuilder();
+      } else {
+        return modelParameter_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.getDefaultInstance()
+            : modelParameter_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters passed to the LLM to configure its behavior.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter model_parameter = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter,
+            com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameterOrBuilder>
+        getModelParameterFieldBuilder() {
+      if (modelParameterBuilder_ == null) {
+        modelParameterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter,
+                com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameter.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Generator.ModelParameterOrBuilder>(
+                getModelParameter(), getParentForChildren(), isClean());
+        modelParameter_ = null;
+      }
+      return modelParameterBuilder_;
     }
 
     @java.lang.Override

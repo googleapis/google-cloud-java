@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,12 +70,12 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the reaction.
+   * Identifier. The resource name of the reaction.
    *
    * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -95,12 +95,12 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the reaction.
+   * Identifier. The resource name of the reaction.
    *
    * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -169,10 +169,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The emoji used in the reaction.
+   * Required. The emoji used in the reaction.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 3;</code>
+   * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the emoji field is set.
    */
@@ -184,10 +184,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The emoji used in the reaction.
+   * Required. The emoji used in the reaction.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 3;</code>
+   * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The emoji.
    */
@@ -199,10 +199,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The emoji used in the reaction.
+   * Required. The emoji used in the reaction.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 3;</code>
+   * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.chat.v1.EmojiOrBuilder getEmojiOrBuilder() {
@@ -625,12 +625,12 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reaction.
+     * Identifier. The resource name of the reaction.
      *
      * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -649,12 +649,12 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reaction.
+     * Identifier. The resource name of the reaction.
      *
      * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -673,12 +673,12 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reaction.
+     * Identifier. The resource name of the reaction.
      *
      * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -696,12 +696,12 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reaction.
+     * Identifier. The resource name of the reaction.
      *
      * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -715,12 +715,12 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reaction.
+     * Identifier. The resource name of the reaction.
      *
      * Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -926,10 +926,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the emoji field is set.
      */
@@ -940,10 +940,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The emoji.
      */
@@ -958,10 +958,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setEmoji(com.google.chat.v1.Emoji value) {
       if (emojiBuilder_ == null) {
@@ -980,10 +980,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setEmoji(com.google.chat.v1.Emoji.Builder builderForValue) {
       if (emojiBuilder_ == null) {
@@ -999,10 +999,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeEmoji(com.google.chat.v1.Emoji value) {
       if (emojiBuilder_ == null) {
@@ -1026,10 +1026,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearEmoji() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1045,10 +1045,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.chat.v1.Emoji.Builder getEmojiBuilder() {
       bitField0_ |= 0x00000004;
@@ -1059,10 +1059,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.chat.v1.EmojiOrBuilder getEmojiOrBuilder() {
       if (emojiBuilder_ != null) {
@@ -1075,10 +1075,10 @@ public final class Reaction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The emoji used in the reaction.
+     * Required. The emoji used in the reaction.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 3;</code>
+     * <code>.google.chat.v1.Emoji emoji = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.Emoji,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,7 @@ public interface NodeConfigOrBuilder
    * `nodeConfig.subnetwork`.
    * </pre>
    *
-   * <code>string network = 3;</code>
+   * <code>string network = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The network.
    */
@@ -191,7 +191,7 @@ public interface NodeConfigOrBuilder
    * `nodeConfig.subnetwork`.
    * </pre>
    *
-   * <code>string network = 3;</code>
+   * <code>string network = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for network.
    */
@@ -212,7 +212,7 @@ public interface NodeConfigOrBuilder
    * location.
    * </pre>
    *
-   * <code>string subnetwork = 4;</code>
+   * <code>string subnetwork = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The subnetwork.
    */
@@ -232,7 +232,7 @@ public interface NodeConfigOrBuilder
    * location.
    * </pre>
    *
-   * <code>string subnetwork = 4;</code>
+   * <code>string subnetwork = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -335,7 +335,7 @@ public interface NodeConfigOrBuilder
    * service account is used. Cannot be updated.
    * </pre>
    *
-   * <code>string service_account = 7;</code>
+   * <code>string service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceAccount.
    */
@@ -349,7 +349,7 @@ public interface NodeConfigOrBuilder
    * service account is used. Cannot be updated.
    * </pre>
    *
-   * <code>string service_account = 7;</code>
+   * <code>string service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceAccount.
    */

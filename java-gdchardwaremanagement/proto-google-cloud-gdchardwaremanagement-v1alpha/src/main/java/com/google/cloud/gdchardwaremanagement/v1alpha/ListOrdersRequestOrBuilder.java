@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,10 @@ public interface ListOrdersRequestOrBuilder
    * <pre>
    * Required. The project and location to list orders in.
    * Format: `projects/{project}/locations/{location}`
+   *
+   * To list orders across all locations, substitute `-` (the hyphen or
+   * dash character) for the location and check the unreachable field in
+   * the response message.
    * </pre>
    *
    * <code>
@@ -45,6 +49,10 @@ public interface ListOrdersRequestOrBuilder
    * <pre>
    * Required. The project and location to list orders in.
    * Format: `projects/{project}/locations/{location}`
+   *
+   * To list orders across all locations, substitute `-` (the hyphen or
+   * dash character) for the location and check the unreachable field in
+   * the response message.
    * </pre>
    *
    * <code>

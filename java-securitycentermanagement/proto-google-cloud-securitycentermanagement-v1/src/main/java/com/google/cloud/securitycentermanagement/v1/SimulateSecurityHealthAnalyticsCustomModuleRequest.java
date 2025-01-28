@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,9 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Request message to simulate a CustomConfig against a given test resource.
- * Maximum size of the request is 4 MB by default.
+ * Request message for
+ * [SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule].
+ * The maximum size of the request is 4 MiB.
  * </pre>
  *
  * Protobuf type {@code
@@ -78,7 +79,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, for example,
+     * Required. The type of the resource. For example,
      * `compute.googleapis.com/Disk`.
      * </pre>
      *
@@ -91,7 +92,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, for example,
+     * Required. The type of the resource. For example,
      * `compute.googleapis.com/Disk`.
      * </pre>
      *
@@ -107,6 +108,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * <pre>
      * Optional. A representation of the Google Cloud resource. Should match the
      * Google Cloud resource JSON format.
+     *
+     * If the custom module evaluates only the IAM allow policy, then you can
+     * omit this field.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -121,6 +125,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * <pre>
      * Optional. A representation of the Google Cloud resource. Should match the
      * Google Cloud resource JSON format.
+     *
+     * If the custom module evaluates only the IAM allow policy, then you can
+     * omit this field.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -135,6 +142,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * <pre>
      * Optional. A representation of the Google Cloud resource. Should match the
      * Google Cloud resource JSON format.
+     *
+     * If the custom module evaluates only the IAM allow policy, then you can
+     * omit this field.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -146,7 +156,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the IAM policy.
+     * Optional. A representation of the IAM allow policy.
+     *
+     * If the custom module evaluates only the resource data, then you can omit
+     * this field.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -159,7 +172,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the IAM policy.
+     * Optional. A representation of the IAM allow policy.
+     *
+     * If the custom module evaluates only the resource data, then you can omit
+     * this field.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -172,7 +188,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the IAM policy.
+     * Optional. A representation of the IAM allow policy.
+     *
+     * If the custom module evaluates only the resource data, then you can omit
+     * this field.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -184,9 +203,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Manually constructed resource name. If the custom module evaluates against
-   * only the resource data, you can omit the `iam_policy_data` field. If it
-   * evaluates only the `iam_policy_data` field, you can omit the resource data.
+   * Manually constructed information about a resource.
    * </pre>
    *
    * Protobuf type {@code
@@ -239,7 +256,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, for example,
+     * Required. The type of the resource. For example,
      * `compute.googleapis.com/Disk`.
      * </pre>
      *
@@ -263,7 +280,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. The type of the resource, for example,
+     * Required. The type of the resource. For example,
      * `compute.googleapis.com/Disk`.
      * </pre>
      *
@@ -292,6 +309,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * <pre>
      * Optional. A representation of the Google Cloud resource. Should match the
      * Google Cloud resource JSON format.
+     *
+     * If the custom module evaluates only the IAM allow policy, then you can
+     * omit this field.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -309,6 +329,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * <pre>
      * Optional. A representation of the Google Cloud resource. Should match the
      * Google Cloud resource JSON format.
+     *
+     * If the custom module evaluates only the IAM allow policy, then you can
+     * omit this field.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -328,6 +351,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      * <pre>
      * Optional. A representation of the Google Cloud resource. Should match the
      * Google Cloud resource JSON format.
+     *
+     * If the custom module evaluates only the IAM allow policy, then you can
+     * omit this field.
      * </pre>
      *
      * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -346,7 +372,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the IAM policy.
+     * Optional. A representation of the IAM allow policy.
+     *
+     * If the custom module evaluates only the resource data, then you can omit
+     * this field.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -362,7 +391,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the IAM policy.
+     * Optional. A representation of the IAM allow policy.
+     *
+     * If the custom module evaluates only the resource data, then you can omit
+     * this field.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -380,7 +412,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Optional. A representation of the IAM policy.
+     * Optional. A representation of the IAM allow policy.
+     *
+     * If the custom module evaluates only the resource data, then you can omit
+     * this field.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -613,9 +648,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Manually constructed resource name. If the custom module evaluates against
-     * only the resource data, you can omit the `iam_policy_data` field. If it
-     * evaluates only the `iam_policy_data` field, you can omit the resource data.
+     * Manually constructed information about a resource.
      * </pre>
      *
      * Protobuf type {@code
@@ -885,7 +918,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, for example,
+       * Required. The type of the resource. For example,
        * `compute.googleapis.com/Disk`.
        * </pre>
        *
@@ -908,7 +941,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, for example,
+       * Required. The type of the resource. For example,
        * `compute.googleapis.com/Disk`.
        * </pre>
        *
@@ -931,7 +964,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, for example,
+       * Required. The type of the resource. For example,
        * `compute.googleapis.com/Disk`.
        * </pre>
        *
@@ -953,7 +986,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, for example,
+       * Required. The type of the resource. For example,
        * `compute.googleapis.com/Disk`.
        * </pre>
        *
@@ -971,7 +1004,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Required. The type of the resource, for example,
+       * Required. The type of the resource. For example,
        * `compute.googleapis.com/Disk`.
        * </pre>
        *
@@ -1003,6 +1036,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1019,6 +1055,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1041,6 +1080,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1065,6 +1107,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1086,6 +1131,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1115,6 +1163,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1136,6 +1187,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1152,6 +1206,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1172,6 +1229,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        * <pre>
        * Optional. A representation of the Google Cloud resource. Should match the
        * Google Cloud resource JSON format.
+       *
+       * If the custom module evaluates only the IAM allow policy, then you can
+       * omit this field.
        * </pre>
        *
        * <code>.google.protobuf.Struct resource_data = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1204,7 +1264,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1219,7 +1282,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1240,7 +1306,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1263,7 +1332,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1283,7 +1355,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1311,7 +1386,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1331,7 +1409,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1346,7 +1427,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1365,7 +1449,10 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
        *
        *
        * <pre>
-       * Optional. A representation of the IAM policy.
+       * Optional. A representation of the IAM allow policy.
+       *
+       * If the custom module evaluates only the resource data, then you can omit
+       * this field.
        * </pre>
        *
        * <code>.google.iam.v1.Policy iam_policy_data = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -1470,10 +1557,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    * <pre>
    * Required. The relative resource name of the organization, project, or
-   * folder. For more information about relative resource names, see [Relative
-   * Resource
-   * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-   * Example: `organizations/{organization_id}`.
+   * folder. For more information about relative resource names, see [AIP-122:
+   * Resource names](https://google.aip.dev/122). Example:
+   * `organizations/{organization_id}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1497,10 +1583,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    * <pre>
    * Required. The relative resource name of the organization, project, or
-   * folder. For more information about relative resource names, see [Relative
-   * Resource
-   * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-   * Example: `organizations/{organization_id}`.
+   * folder. For more information about relative resource names, see [AIP-122:
+   * Resource names](https://google.aip.dev/122). Example:
+   * `organizations/{organization_id}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1861,8 +1946,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Request message to simulate a CustomConfig against a given test resource.
-   * Maximum size of the request is 4 MB by default.
+   * Request message for
+   * [SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.SimulateSecurityHealthAnalyticsCustomModule].
+   * The maximum size of the request is 4 MiB.
    * </pre>
    *
    * Protobuf type {@code
@@ -2126,10 +2212,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. For more information about relative resource names, see [Relative
-     * Resource
-     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * Example: `organizations/{organization_id}`.
+     * folder. For more information about relative resource names, see [AIP-122:
+     * Resource names](https://google.aip.dev/122). Example:
+     * `organizations/{organization_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2152,10 +2237,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. For more information about relative resource names, see [Relative
-     * Resource
-     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * Example: `organizations/{organization_id}`.
+     * folder. For more information about relative resource names, see [AIP-122:
+     * Resource names](https://google.aip.dev/122). Example:
+     * `organizations/{organization_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2178,10 +2262,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. For more information about relative resource names, see [Relative
-     * Resource
-     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * Example: `organizations/{organization_id}`.
+     * folder. For more information about relative resource names, see [AIP-122:
+     * Resource names](https://google.aip.dev/122). Example:
+     * `organizations/{organization_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2203,10 +2286,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. For more information about relative resource names, see [Relative
-     * Resource
-     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * Example: `organizations/{organization_id}`.
+     * folder. For more information about relative resource names, see [AIP-122:
+     * Resource names](https://google.aip.dev/122). Example:
+     * `organizations/{organization_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2224,10 +2306,9 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleRequest
      *
      * <pre>
      * Required. The relative resource name of the organization, project, or
-     * folder. For more information about relative resource names, see [Relative
-     * Resource
-     * Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
-     * Example: `organizations/{organization_id}`.
+     * folder. For more information about relative resource names, see [AIP-122:
+     * Resource names](https://google.aip.dev/122). Example:
+     * `organizations/{organization_id}`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

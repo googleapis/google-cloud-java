@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,28 +124,30 @@ public final class DatasetProto {
           + "i.v1beta3.RevisionRef\032C\n\024GCSManagedDocum"
           + "entId\022\024\n\007gcs_uri\030\001 \001(\tB\003\340A\002\022\025\n\tcw_doc_id"
           + "\030\002 \001(\tB\002\030\001\032*\n\023UnmanagedDocumentId\022\023\n\006doc"
-          + "_id\030\001 \001(\tB\003\340A\002B\006\n\004type\"\361\001\n\rDatasetSchema"
+          + "_id\030\001 \001(\tB\003\340A\002B\006\n\004type\"\251\002\n\rDatasetSchema"
           + "\022\014\n\004name\030\001 \001(\t\022M\n\017document_schema\030\003 \001(\0132"
           + "/.google.cloud.documentai.v1beta3.Docume"
-          + "ntSchemaB\003\340A\001:\202\001\352A\177\n\'documentai.googleap"
-          + "is.com/DatasetSchema\022Tprojects/{project}"
-          + "/locations/{location}/processors/{proces"
-          + "sor}/dataset/datasetSchema\"\207\002\n\025BatchData"
-          + "setDocuments\022o\n\027individual_document_ids\030"
-          + "\001 \001(\0132L.google.cloud.documentai.v1beta3."
-          + "BatchDatasetDocuments.IndividualDocument"
-          + "IdsH\000\022\020\n\006filter\030\002 \001(\tH\000\032_\n\025IndividualDoc"
-          + "umentIds\022F\n\014document_ids\030\001 \003(\0132+.google."
-          + "cloud.documentai.v1beta3.DocumentIdB\003\340A\002"
-          + "B\n\n\010criteriaB\310\002\n#com.google.cloud.docume"
-          + "ntai.v1beta3B\014DatasetProtoP\001ZCcloud.goog"
-          + "le.com/go/documentai/apiv1beta3/document"
-          + "aipb;documentaipb\252\002\037Google.Cloud.Documen"
-          + "tAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V1"
-          + "beta3\352\002\"Google::Cloud::DocumentAI::V1bet"
-          + "a3\352Ab\n&contentwarehouse.googleapis.com/S"
-          + "chema\0228projects/{project}/locations/{loc"
-          + "ation}/schemas/{schema}b\006proto3"
+          + "ntSchemaB\003\340A\001\022\032\n\rsatisfies_pzs\030\004 \001(\010B\003\340A"
+          + "\003\022\032\n\rsatisfies_pzi\030\005 \001(\010B\003\340A\003:\202\001\352A\177\n\'doc"
+          + "umentai.googleapis.com/DatasetSchema\022Tpr"
+          + "ojects/{project}/locations/{location}/pr"
+          + "ocessors/{processor}/dataset/datasetSche"
+          + "ma\"\207\002\n\025BatchDatasetDocuments\022o\n\027individu"
+          + "al_document_ids\030\001 \001(\0132L.google.cloud.doc"
+          + "umentai.v1beta3.BatchDatasetDocuments.In"
+          + "dividualDocumentIdsH\000\022\020\n\006filter\030\002 \001(\tH\000\032"
+          + "_\n\025IndividualDocumentIds\022F\n\014document_ids"
+          + "\030\001 \003(\0132+.google.cloud.documentai.v1beta3"
+          + ".DocumentIdB\003\340A\002B\n\n\010criteriaB\310\002\n#com.goo"
+          + "gle.cloud.documentai.v1beta3B\014DatasetPro"
+          + "toP\001ZCcloud.google.com/go/documentai/api"
+          + "v1beta3/documentaipb;documentaipb\252\002\037Goog"
+          + "le.Cloud.DocumentAI.V1Beta3\312\002\037Google\\Clo"
+          + "ud\\DocumentAI\\V1beta3\352\002\"Google::Cloud::D"
+          + "ocumentAI::V1beta3\352Ab\n&contentwarehouse."
+          + "googleapis.com/Schema\0228projects/{project"
+          + "}/locations/{location}/schemas/{schema}b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -236,7 +238,7 @@ public final class DatasetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DatasetSchema_descriptor,
             new java.lang.String[] {
-              "Name", "DocumentSchema",
+              "Name", "DocumentSchema", "SatisfiesPzs", "SatisfiesPzi",
             });
     internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_descriptor =
         getDescriptor().getMessageTypes().get(3);

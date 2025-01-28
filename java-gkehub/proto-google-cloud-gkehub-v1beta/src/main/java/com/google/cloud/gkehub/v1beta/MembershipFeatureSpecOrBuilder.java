@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,45 @@ public interface MembershipFeatureSpecOrBuilder
    * <code>.google.cloud.gkehub.servicemesh.v1beta.MembershipSpec mesh = 116;</code>
    */
   com.google.cloud.gkehub.servicemesh.v1beta.MembershipSpecOrBuilder getMeshOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Policy Controller spec.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec policycontroller = 118;
+   * </code>
+   *
+   * @return Whether the policycontroller field is set.
+   */
+  boolean hasPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policy Controller spec.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec policycontroller = 118;
+   * </code>
+   *
+   * @return The policycontroller.
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec getPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policy Controller spec.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipSpec policycontroller = 118;
+   * </code>
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipSpecOrBuilder
+      getPolicycontrollerOrBuilder();
 
   com.google.cloud.gkehub.v1beta.MembershipFeatureSpec.FeatureSpecCase getFeatureSpecCase();
 }

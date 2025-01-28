@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,12 +54,13 @@ public final class EntitySignalsMappingMessagesProto {
           + "ntitySignalsMapping\022Fnetworks/{network_c"
           + "ode}/entitySignalsMappings/{entity_signa"
           + "ls_mapping}*\025entitySignalsMappings2\024enti"
-          + "tySignalsMappingB\010\n\006entityB\270\001\n\033com.googl"
+          + "tySignalsMappingB\010\n\006entityB\325\001\n\033com.googl"
           + "e.ads.admanager.v1B!EntitySignalsMapping"
           + "MessagesProtoP\001Z@google.golang.org/genpr"
           + "oto/googleapis/ads/admanager/v1;admanage"
           + "r\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads"
-          + "\\AdManager\\V1b\006proto3"
+          + "\\AdManager\\V1\352\002\032Google::Ads::AdManager::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

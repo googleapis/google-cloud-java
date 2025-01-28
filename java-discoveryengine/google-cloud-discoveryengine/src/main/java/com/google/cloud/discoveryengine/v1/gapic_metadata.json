@@ -189,6 +189,12 @@
           "rpcs": {
             "CheckGrounding": {
               "methods": ["checkGrounding", "checkGroundingCallable"]
+            },
+            "GenerateGroundedContent": {
+              "methods": ["generateGroundedContent", "generateGroundedContentCallable"]
+            },
+            "StreamGenerateGroundedContent": {
+              "methods": ["streamGenerateGroundedContentCallable"]
             }
           }
         }
@@ -261,6 +267,9 @@
           "rpcs": {
             "Search": {
               "methods": ["search", "searchPagedCallable", "searchCallable"]
+            },
+            "SearchLite": {
+              "methods": ["searchLite", "searchLitePagedCallable", "searchLiteCallable"]
             }
           }
         }

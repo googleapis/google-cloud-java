@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -387,8 +387,6 @@ public final class GenAiTuningServiceGrpc {
      *
      * <pre>
      * Rebase a TunedModel.
-     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-     * Reference and creates a TuningJob based on newly available model.
      * </pre>
      */
     default void rebaseTunedModel(
@@ -516,8 +514,6 @@ public final class GenAiTuningServiceGrpc {
      *
      * <pre>
      * Rebase a TunedModel.
-     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-     * Reference and creates a TuningJob based on newly available model.
      * </pre>
      */
     public void rebaseTunedModel(
@@ -619,8 +615,6 @@ public final class GenAiTuningServiceGrpc {
      *
      * <pre>
      * Rebase a TunedModel.
-     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-     * Reference and creates a TuningJob based on newly available model.
      * </pre>
      */
     public com.google.longrunning.Operation rebaseTunedModel(
@@ -721,8 +715,6 @@ public final class GenAiTuningServiceGrpc {
      *
      * <pre>
      * Rebase a TunedModel.
-     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-     * Reference and creates a TuningJob based on newly available model.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

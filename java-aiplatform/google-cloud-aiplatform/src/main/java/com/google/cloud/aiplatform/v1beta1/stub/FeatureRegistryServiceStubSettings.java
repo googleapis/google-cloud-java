@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureGroupsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeaturesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListLocationsPagedResponse;
 
@@ -47,19 +49,34 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorJobRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.Feature;
 import com.google.cloud.aiplatform.v1beta1.FeatureGroup;
+import com.google.cloud.aiplatform.v1beta1.FeatureMonitor;
+import com.google.cloud.aiplatform.v1beta1.FeatureMonitorJob;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.GetFeatureMonitorJobRequest;
+import com.google.cloud.aiplatform.v1beta1.GetFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeatureGroupsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeatureGroupsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupOperationMetadata;
@@ -82,9 +99,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -154,7 +171,7 @@ import org.threeten.bp.Duration;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * featureRegistryServiceSettingsBuilder
@@ -189,6 +206,13 @@ public class FeatureRegistryServiceStubSettings
   private final UnaryCallSettings<CreateFeatureRequest, Operation> createFeatureSettings;
   private final OperationCallSettings<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationSettings;
+  private final UnaryCallSettings<BatchCreateFeaturesRequest, Operation>
+      batchCreateFeaturesSettings;
+  private final OperationCallSettings<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationSettings;
   private final UnaryCallSettings<GetFeatureRequest, Feature> getFeatureSettings;
   private final PagedCallSettings<
           ListFeaturesRequest, ListFeaturesResponse, ListFeaturesPagedResponse>
@@ -199,6 +223,29 @@ public class FeatureRegistryServiceStubSettings
   private final UnaryCallSettings<DeleteFeatureRequest, Operation> deleteFeatureSettings;
   private final OperationCallSettings<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
       deleteFeatureOperationSettings;
+  private final UnaryCallSettings<CreateFeatureMonitorRequest, Operation>
+      createFeatureMonitorSettings;
+  private final OperationCallSettings<
+          CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+      createFeatureMonitorOperationSettings;
+  private final UnaryCallSettings<GetFeatureMonitorRequest, FeatureMonitor>
+      getFeatureMonitorSettings;
+  private final PagedCallSettings<
+          ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, ListFeatureMonitorsPagedResponse>
+      listFeatureMonitorsSettings;
+  private final UnaryCallSettings<DeleteFeatureMonitorRequest, Operation>
+      deleteFeatureMonitorSettings;
+  private final OperationCallSettings<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+      deleteFeatureMonitorOperationSettings;
+  private final UnaryCallSettings<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+      createFeatureMonitorJobSettings;
+  private final UnaryCallSettings<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+      getFeatureMonitorJobSettings;
+  private final PagedCallSettings<
+          ListFeatureMonitorJobsRequest,
+          ListFeatureMonitorJobsResponse,
+          ListFeatureMonitorJobsPagedResponse>
+      listFeatureMonitorJobsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -280,6 +327,85 @@ public class FeatureRegistryServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
+      LIST_FEATURE_MONITORS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFeatureMonitorsRequest injectToken(
+                ListFeatureMonitorsRequest payload, String token) {
+              return ListFeatureMonitorsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFeatureMonitorsRequest injectPageSize(
+                ListFeatureMonitorsRequest payload, int pageSize) {
+              return ListFeatureMonitorsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFeatureMonitorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFeatureMonitorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FeatureMonitor> extractResources(ListFeatureMonitorsResponse payload) {
+              return payload.getFeatureMonitorsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse, FeatureMonitorJob>
+      LIST_FEATURE_MONITOR_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse, FeatureMonitorJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFeatureMonitorJobsRequest injectToken(
+                ListFeatureMonitorJobsRequest payload, String token) {
+              return ListFeatureMonitorJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFeatureMonitorJobsRequest injectPageSize(
+                ListFeatureMonitorJobsRequest payload, int pageSize) {
+              return ListFeatureMonitorJobsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFeatureMonitorJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFeatureMonitorJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FeatureMonitorJob> extractResources(
+                ListFeatureMonitorJobsResponse payload) {
+              return payload.getFeatureMonitorJobsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -349,6 +475,54 @@ public class FeatureRegistryServiceStubSettings
               PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> pageContext =
                   PageContext.create(callable, LIST_FEATURES_PAGE_STR_DESC, request, context);
               return ListFeaturesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, ListFeatureMonitorsPagedResponse>
+      LIST_FEATURE_MONITORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFeatureMonitorsRequest,
+              ListFeatureMonitorsResponse,
+              ListFeatureMonitorsPagedResponse>() {
+            @Override
+            public ApiFuture<ListFeatureMonitorsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse> callable,
+                ListFeatureMonitorsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFeatureMonitorsResponse> futureResponse) {
+              PageContext<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_FEATURE_MONITORS_PAGE_STR_DESC, request, context);
+              return ListFeatureMonitorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListFeatureMonitorJobsRequest,
+          ListFeatureMonitorJobsResponse,
+          ListFeatureMonitorJobsPagedResponse>
+      LIST_FEATURE_MONITOR_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFeatureMonitorJobsRequest,
+              ListFeatureMonitorJobsResponse,
+              ListFeatureMonitorJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListFeatureMonitorJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>
+                    callable,
+                ListFeatureMonitorJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFeatureMonitorJobsResponse> futureResponse) {
+              PageContext<
+                      ListFeatureMonitorJobsRequest,
+                      ListFeatureMonitorJobsResponse,
+                      FeatureMonitorJob>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_FEATURE_MONITOR_JOBS_PAGE_STR_DESC, request, context);
+              return ListFeatureMonitorJobsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -427,6 +601,20 @@ public class FeatureRegistryServiceStubSettings
     return createFeatureOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public UnaryCallSettings<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesSettings() {
+    return batchCreateFeaturesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateFeatures. */
+  public OperationCallSettings<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationSettings() {
+    return batchCreateFeaturesOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getFeature. */
   public UnaryCallSettings<GetFeatureRequest, Feature> getFeatureSettings() {
     return getFeatureSettings;
@@ -458,6 +646,62 @@ public class FeatureRegistryServiceStubSettings
   public OperationCallSettings<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
       deleteFeatureOperationSettings() {
     return deleteFeatureOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createFeatureMonitor. */
+  public UnaryCallSettings<CreateFeatureMonitorRequest, Operation> createFeatureMonitorSettings() {
+    return createFeatureMonitorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createFeatureMonitor. */
+  public OperationCallSettings<
+          CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+      createFeatureMonitorOperationSettings() {
+    return createFeatureMonitorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getFeatureMonitor. */
+  public UnaryCallSettings<GetFeatureMonitorRequest, FeatureMonitor> getFeatureMonitorSettings() {
+    return getFeatureMonitorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listFeatureMonitors. */
+  public PagedCallSettings<
+          ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, ListFeatureMonitorsPagedResponse>
+      listFeatureMonitorsSettings() {
+    return listFeatureMonitorsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeatureMonitor. */
+  public UnaryCallSettings<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorSettings() {
+    return deleteFeatureMonitorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFeatureMonitor. */
+  public OperationCallSettings<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+      deleteFeatureMonitorOperationSettings() {
+    return deleteFeatureMonitorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createFeatureMonitorJob. */
+  public UnaryCallSettings<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+      createFeatureMonitorJobSettings() {
+    return createFeatureMonitorJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getFeatureMonitorJob. */
+  public UnaryCallSettings<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+      getFeatureMonitorJobSettings() {
+    return getFeatureMonitorJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listFeatureMonitorJobs. */
+  public PagedCallSettings<
+          ListFeatureMonitorJobsRequest,
+          ListFeatureMonitorJobsResponse,
+          ListFeatureMonitorJobsPagedResponse>
+      listFeatureMonitorJobsSettings() {
+    return listFeatureMonitorJobsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -581,12 +825,26 @@ public class FeatureRegistryServiceStubSettings
         settingsBuilder.deleteFeatureGroupOperationSettings().build();
     createFeatureSettings = settingsBuilder.createFeatureSettings().build();
     createFeatureOperationSettings = settingsBuilder.createFeatureOperationSettings().build();
+    batchCreateFeaturesSettings = settingsBuilder.batchCreateFeaturesSettings().build();
+    batchCreateFeaturesOperationSettings =
+        settingsBuilder.batchCreateFeaturesOperationSettings().build();
     getFeatureSettings = settingsBuilder.getFeatureSettings().build();
     listFeaturesSettings = settingsBuilder.listFeaturesSettings().build();
     updateFeatureSettings = settingsBuilder.updateFeatureSettings().build();
     updateFeatureOperationSettings = settingsBuilder.updateFeatureOperationSettings().build();
     deleteFeatureSettings = settingsBuilder.deleteFeatureSettings().build();
     deleteFeatureOperationSettings = settingsBuilder.deleteFeatureOperationSettings().build();
+    createFeatureMonitorSettings = settingsBuilder.createFeatureMonitorSettings().build();
+    createFeatureMonitorOperationSettings =
+        settingsBuilder.createFeatureMonitorOperationSettings().build();
+    getFeatureMonitorSettings = settingsBuilder.getFeatureMonitorSettings().build();
+    listFeatureMonitorsSettings = settingsBuilder.listFeatureMonitorsSettings().build();
+    deleteFeatureMonitorSettings = settingsBuilder.deleteFeatureMonitorSettings().build();
+    deleteFeatureMonitorOperationSettings =
+        settingsBuilder.deleteFeatureMonitorOperationSettings().build();
+    createFeatureMonitorJobSettings = settingsBuilder.createFeatureMonitorJobSettings().build();
+    getFeatureMonitorJobSettings = settingsBuilder.getFeatureMonitorJobSettings().build();
+    listFeatureMonitorJobsSettings = settingsBuilder.listFeatureMonitorJobsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -622,6 +880,13 @@ public class FeatureRegistryServiceStubSettings
     private final OperationCallSettings.Builder<
             CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings;
+    private final UnaryCallSettings.Builder<BatchCreateFeaturesRequest, Operation>
+        batchCreateFeaturesSettings;
+    private final OperationCallSettings.Builder<
+            BatchCreateFeaturesRequest,
+            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesOperationMetadata>
+        batchCreateFeaturesOperationSettings;
     private final UnaryCallSettings.Builder<GetFeatureRequest, Feature> getFeatureSettings;
     private final PagedCallSettings.Builder<
             ListFeaturesRequest, ListFeaturesResponse, ListFeaturesPagedResponse>
@@ -634,6 +899,32 @@ public class FeatureRegistryServiceStubSettings
     private final OperationCallSettings.Builder<
             DeleteFeatureRequest, Empty, DeleteOperationMetadata>
         deleteFeatureOperationSettings;
+    private final UnaryCallSettings.Builder<CreateFeatureMonitorRequest, Operation>
+        createFeatureMonitorSettings;
+    private final OperationCallSettings.Builder<
+            CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+        createFeatureMonitorOperationSettings;
+    private final UnaryCallSettings.Builder<GetFeatureMonitorRequest, FeatureMonitor>
+        getFeatureMonitorSettings;
+    private final PagedCallSettings.Builder<
+            ListFeatureMonitorsRequest,
+            ListFeatureMonitorsResponse,
+            ListFeatureMonitorsPagedResponse>
+        listFeatureMonitorsSettings;
+    private final UnaryCallSettings.Builder<DeleteFeatureMonitorRequest, Operation>
+        deleteFeatureMonitorSettings;
+    private final OperationCallSettings.Builder<
+            DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+        deleteFeatureMonitorOperationSettings;
+    private final UnaryCallSettings.Builder<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+        createFeatureMonitorJobSettings;
+    private final UnaryCallSettings.Builder<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+        getFeatureMonitorJobSettings;
+    private final PagedCallSettings.Builder<
+            ListFeatureMonitorJobsRequest,
+            ListFeatureMonitorJobsResponse,
+            ListFeatureMonitorJobsPagedResponse>
+        listFeatureMonitorJobsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -679,12 +970,25 @@ public class FeatureRegistryServiceStubSettings
       deleteFeatureGroupOperationSettings = OperationCallSettings.newBuilder();
       createFeatureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFeatureOperationSettings = OperationCallSettings.newBuilder();
+      batchCreateFeaturesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateFeaturesOperationSettings = OperationCallSettings.newBuilder();
       getFeatureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFeaturesSettings = PagedCallSettings.newBuilder(LIST_FEATURES_PAGE_STR_FACT);
       updateFeatureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFeatureOperationSettings = OperationCallSettings.newBuilder();
       deleteFeatureSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFeatureOperationSettings = OperationCallSettings.newBuilder();
+      createFeatureMonitorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createFeatureMonitorOperationSettings = OperationCallSettings.newBuilder();
+      getFeatureMonitorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listFeatureMonitorsSettings =
+          PagedCallSettings.newBuilder(LIST_FEATURE_MONITORS_PAGE_STR_FACT);
+      deleteFeatureMonitorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFeatureMonitorOperationSettings = OperationCallSettings.newBuilder();
+      createFeatureMonitorJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getFeatureMonitorJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listFeatureMonitorJobsSettings =
+          PagedCallSettings.newBuilder(LIST_FEATURE_MONITOR_JOBS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -699,10 +1003,18 @@ public class FeatureRegistryServiceStubSettings
               updateFeatureGroupSettings,
               deleteFeatureGroupSettings,
               createFeatureSettings,
+              batchCreateFeaturesSettings,
               getFeatureSettings,
               listFeaturesSettings,
               updateFeatureSettings,
               deleteFeatureSettings,
+              createFeatureMonitorSettings,
+              getFeatureMonitorSettings,
+              listFeatureMonitorsSettings,
+              deleteFeatureMonitorSettings,
+              createFeatureMonitorJobSettings,
+              getFeatureMonitorJobSettings,
+              listFeatureMonitorJobsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -727,12 +1039,26 @@ public class FeatureRegistryServiceStubSettings
           settings.deleteFeatureGroupOperationSettings.toBuilder();
       createFeatureSettings = settings.createFeatureSettings.toBuilder();
       createFeatureOperationSettings = settings.createFeatureOperationSettings.toBuilder();
+      batchCreateFeaturesSettings = settings.batchCreateFeaturesSettings.toBuilder();
+      batchCreateFeaturesOperationSettings =
+          settings.batchCreateFeaturesOperationSettings.toBuilder();
       getFeatureSettings = settings.getFeatureSettings.toBuilder();
       listFeaturesSettings = settings.listFeaturesSettings.toBuilder();
       updateFeatureSettings = settings.updateFeatureSettings.toBuilder();
       updateFeatureOperationSettings = settings.updateFeatureOperationSettings.toBuilder();
       deleteFeatureSettings = settings.deleteFeatureSettings.toBuilder();
       deleteFeatureOperationSettings = settings.deleteFeatureOperationSettings.toBuilder();
+      createFeatureMonitorSettings = settings.createFeatureMonitorSettings.toBuilder();
+      createFeatureMonitorOperationSettings =
+          settings.createFeatureMonitorOperationSettings.toBuilder();
+      getFeatureMonitorSettings = settings.getFeatureMonitorSettings.toBuilder();
+      listFeatureMonitorsSettings = settings.listFeatureMonitorsSettings.toBuilder();
+      deleteFeatureMonitorSettings = settings.deleteFeatureMonitorSettings.toBuilder();
+      deleteFeatureMonitorOperationSettings =
+          settings.deleteFeatureMonitorOperationSettings.toBuilder();
+      createFeatureMonitorJobSettings = settings.createFeatureMonitorJobSettings.toBuilder();
+      getFeatureMonitorJobSettings = settings.getFeatureMonitorJobSettings.toBuilder();
+      listFeatureMonitorJobsSettings = settings.listFeatureMonitorJobsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -747,10 +1073,18 @@ public class FeatureRegistryServiceStubSettings
               updateFeatureGroupSettings,
               deleteFeatureGroupSettings,
               createFeatureSettings,
+              batchCreateFeaturesSettings,
               getFeatureSettings,
               listFeaturesSettings,
               updateFeatureSettings,
               deleteFeatureSettings,
+              createFeatureMonitorSettings,
+              getFeatureMonitorSettings,
+              listFeatureMonitorsSettings,
+              deleteFeatureMonitorSettings,
+              createFeatureMonitorJobSettings,
+              getFeatureMonitorJobSettings,
+              listFeatureMonitorJobsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -802,6 +1136,11 @@ public class FeatureRegistryServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .batchCreateFeaturesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .getFeatureSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -818,6 +1157,41 @@ public class FeatureRegistryServiceStubSettings
 
       builder
           .deleteFeatureSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createFeatureMonitorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getFeatureMonitorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listFeatureMonitorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteFeatureMonitorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createFeatureMonitorJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getFeatureMonitorJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listFeatureMonitorJobsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -862,13 +1236,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -887,13 +1261,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -911,13 +1285,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -936,13 +1310,39 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .batchCreateFeaturesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchCreateFeaturesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BatchCreateFeaturesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  BatchCreateFeaturesOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -961,13 +1361,13 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -985,13 +1385,62 @@ public class FeatureRegistryServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createFeatureMonitorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateFeatureMonitorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(FeatureMonitor.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateFeatureMonitorOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteFeatureMonitorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteFeatureMonitorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1075,6 +1524,21 @@ public class FeatureRegistryServiceStubSettings
       return createFeatureOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public UnaryCallSettings.Builder<BatchCreateFeaturesRequest, Operation>
+        batchCreateFeaturesSettings() {
+      return batchCreateFeaturesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateFeatures. */
+    public OperationCallSettings.Builder<
+            BatchCreateFeaturesRequest,
+            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesOperationMetadata>
+        batchCreateFeaturesOperationSettings() {
+      return batchCreateFeaturesOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getFeature. */
     public UnaryCallSettings.Builder<GetFeatureRequest, Feature> getFeatureSettings() {
       return getFeatureSettings;
@@ -1108,6 +1572,68 @@ public class FeatureRegistryServiceStubSettings
     public OperationCallSettings.Builder<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
         deleteFeatureOperationSettings() {
       return deleteFeatureOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createFeatureMonitor. */
+    public UnaryCallSettings.Builder<CreateFeatureMonitorRequest, Operation>
+        createFeatureMonitorSettings() {
+      return createFeatureMonitorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createFeatureMonitor. */
+    public OperationCallSettings.Builder<
+            CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+        createFeatureMonitorOperationSettings() {
+      return createFeatureMonitorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getFeatureMonitor. */
+    public UnaryCallSettings.Builder<GetFeatureMonitorRequest, FeatureMonitor>
+        getFeatureMonitorSettings() {
+      return getFeatureMonitorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listFeatureMonitors. */
+    public PagedCallSettings.Builder<
+            ListFeatureMonitorsRequest,
+            ListFeatureMonitorsResponse,
+            ListFeatureMonitorsPagedResponse>
+        listFeatureMonitorsSettings() {
+      return listFeatureMonitorsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureMonitor. */
+    public UnaryCallSettings.Builder<DeleteFeatureMonitorRequest, Operation>
+        deleteFeatureMonitorSettings() {
+      return deleteFeatureMonitorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFeatureMonitor. */
+    public OperationCallSettings.Builder<
+            DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+        deleteFeatureMonitorOperationSettings() {
+      return deleteFeatureMonitorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createFeatureMonitorJob. */
+    public UnaryCallSettings.Builder<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+        createFeatureMonitorJobSettings() {
+      return createFeatureMonitorJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getFeatureMonitorJob. */
+    public UnaryCallSettings.Builder<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+        getFeatureMonitorJobSettings() {
+      return getFeatureMonitorJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listFeatureMonitorJobs. */
+    public PagedCallSettings.Builder<
+            ListFeatureMonitorJobsRequest,
+            ListFeatureMonitorJobsResponse,
+            ListFeatureMonitorJobsPagedResponse>
+        listFeatureMonitorJobsSettings() {
+      return listFeatureMonitorJobsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

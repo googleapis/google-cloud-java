@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,48 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1beta.MigrationSourceOrBuilder getMigrationSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudsqlBackupRunSource field is set.
+   */
+  boolean hasCloudsqlBackupRunSource();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudsqlBackupRunSource.
+   */
+  com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource getCloudsqlBackupRunSource();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSourceOrBuilder
+      getCloudsqlBackupRunSourceOrBuilder();
 
   /**
    *
@@ -503,7 +545,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=574
+   *     google/cloud/alloydb/v1beta/resources.proto;l=622
    * @return The network.
    */
   @java.lang.Deprecated
@@ -524,7 +566,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=574
+   *     google/cloud/alloydb/v1beta/resources.proto;l=622
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -748,7 +790,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=609
+   *     google/cloud/alloydb/v1beta/resources.proto;l=657
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -763,7 +805,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=609
+   *     google/cloud/alloydb/v1beta/resources.proto;l=657
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1050,6 +1092,50 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscConfig field is set.
+   */
+  boolean hasPscConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscConfig.
+   */
+  com.google.cloud.alloydb.v1beta.Cluster.PscConfig getPscConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Cluster.PscConfigOrBuilder getPscConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The maintenance update policy determines when to allow or deny
    * updates.
    * </pre>
@@ -1134,6 +1220,213 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1beta.MaintenanceScheduleOrBuilder getMaintenanceScheduleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiConfig field is set.
+   */
+  boolean hasGeminiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiConfig.
+   */
+  com.google.cloud.alloydb.v1beta.GeminiClusterConfig getGeminiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder getGeminiConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Subscription type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for subscriptionType.
+   */
+  int getSubscriptionTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Subscription type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The subscriptionType.
+   */
+  com.google.cloud.alloydb.v1beta.SubscriptionType getSubscriptionType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the trialMetadata field is set.
+   */
+  boolean hasTrialMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The trialMetadata.
+   */
+  com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata getTrialMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Cluster.TrialMetadataOrBuilder getTrialMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 
   com.google.cloud.alloydb.v1beta.Cluster.SourceCase getSourceCase();
 }

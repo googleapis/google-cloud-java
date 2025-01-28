@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,14 +130,14 @@ public final class DeleteUserRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. An optional request ID to identify requests. Specify a unique
-   * request ID so that if you must retry your request, the server will know to
-   * ignore the request if it has already been completed. The server will
-   * guarantee that for at least 60 minutes after the first request.
+   * request ID so that if you must retry your request, the server ignores the
+   * request if it has already been completed. The server guarantees that for at
+   * least 60 minutes since the first request.
    *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
-   * ID, the server can check if original operation with the same request ID
-   * was received, and if so, will ignore the second request. This prevents
+   * ID, the server can check if the original operation with the same request ID
+   * was received, and if so, ignores the second request. This prevents
    * clients from accidentally creating duplicate commitments.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
@@ -165,14 +165,14 @@ public final class DeleteUserRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. An optional request ID to identify requests. Specify a unique
-   * request ID so that if you must retry your request, the server will know to
-   * ignore the request if it has already been completed. The server will
-   * guarantee that for at least 60 minutes after the first request.
+   * request ID so that if you must retry your request, the server ignores the
+   * request if it has already been completed. The server guarantees that for at
+   * least 60 minutes since the first request.
    *
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
-   * ID, the server can check if original operation with the same request ID
-   * was received, and if so, will ignore the second request. This prevents
+   * ID, the server can check if the original operation with the same request ID
+   * was received, and if so, ignores the second request. This prevents
    * clients from accidentally creating duplicate commitments.
    *
    * The request ID must be a valid UUID with the exception that zero UUID is
@@ -730,14 +730,14 @@ public final class DeleteUserRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes after the first request.
+     * request ID so that if you must retry your request, the server ignores the
+     * request if it has already been completed. The server guarantees that for at
+     * least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
-     * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
+     * ID, the server can check if the original operation with the same request ID
+     * was received, and if so, ignores the second request. This prevents
      * clients from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
@@ -764,14 +764,14 @@ public final class DeleteUserRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes after the first request.
+     * request ID so that if you must retry your request, the server ignores the
+     * request if it has already been completed. The server guarantees that for at
+     * least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
-     * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
+     * ID, the server can check if the original operation with the same request ID
+     * was received, and if so, ignores the second request. This prevents
      * clients from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
@@ -798,14 +798,14 @@ public final class DeleteUserRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes after the first request.
+     * request ID so that if you must retry your request, the server ignores the
+     * request if it has already been completed. The server guarantees that for at
+     * least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
-     * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
+     * ID, the server can check if the original operation with the same request ID
+     * was received, and if so, ignores the second request. This prevents
      * clients from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
@@ -831,14 +831,14 @@ public final class DeleteUserRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes after the first request.
+     * request ID so that if you must retry your request, the server ignores the
+     * request if it has already been completed. The server guarantees that for at
+     * least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
-     * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
+     * ID, the server can check if the original operation with the same request ID
+     * was received, and if so, ignores the second request. This prevents
      * clients from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is
@@ -860,14 +860,14 @@ public final class DeleteUserRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. An optional request ID to identify requests. Specify a unique
-     * request ID so that if you must retry your request, the server will know to
-     * ignore the request if it has already been completed. The server will
-     * guarantee that for at least 60 minutes after the first request.
+     * request ID so that if you must retry your request, the server ignores the
+     * request if it has already been completed. The server guarantees that for at
+     * least 60 minutes since the first request.
      *
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
-     * ID, the server can check if original operation with the same request ID
-     * was received, and if so, will ignore the second request. This prevents
+     * ID, the server can check if the original operation with the same request ID
+     * was received, and if so, ignores the second request. This prevents
      * clients from accidentally creating duplicate commitments.
      *
      * The request ID must be a valid UUID with the exception that zero UUID is

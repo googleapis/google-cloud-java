@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,16 +59,16 @@ public final class EndpointProto {
           + "\226\001\352A\222\001\n(servicedirectory.googleapis.com/"
           + "Endpoint\022fprojects/{project}/locations/{"
           + "location}/namespaces/{namespace}/service"
-          + "s/{service}/endpoints/{endpoint}B\334\002\n$com"
+          + "s/{service}/endpoints/{endpoint}B\331\002\n$com"
           + ".google.cloud.servicedirectory.v1B\rEndpo"
           + "intProtoP\001ZPcloud.google.com/go/serviced"
           + "irectory/apiv1/servicedirectorypb;servic"
-          + "edirectorypb\370\001\001\252\002 Google.Cloud.ServiceDi"
-          + "rectory.V1\312\002 Google\\Cloud\\ServiceDirecto"
-          + "ry\\V1\352\002#Google::Cloud::ServiceDirectory:"
-          + ":V1\352Aa\n\'servicedirectory.googleapis.com/"
-          + "Network\0226projects/{project}/locations/gl"
-          + "obal/networks/{network}b\006proto3"
+          + "edirectorypb\252\002 Google.Cloud.ServiceDirec"
+          + "tory.V1\312\002 Google\\Cloud\\ServiceDirectory\\"
+          + "V1\352\002#Google::Cloud::ServiceDirectory::V1"
+          + "\352Aa\n\'servicedirectory.googleapis.com/Net"
+          + "work\0226projects/{project}/locations/globa"
+          + "l/networks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

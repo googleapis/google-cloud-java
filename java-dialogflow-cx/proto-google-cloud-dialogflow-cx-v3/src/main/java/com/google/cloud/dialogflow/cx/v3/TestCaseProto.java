@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -456,12 +456,12 @@ public final class TestCaseProto {
           + "ns/*/agents/*/testCases/*/results/*}\032x\312A"
           + "\031dialogflow.googleapis.com\322AYhttps://www"
           + ".googleapis.com/auth/cloud-platform,http"
-          + "s://www.googleapis.com/auth/dialogflowB\263"
+          + "s://www.googleapis.com/auth/dialogflowB\260"
           + "\001\n!com.google.cloud.dialogflow.cx.v3B\rTe"
           + "stCaseProtoP\001Z1cloud.google.com/go/dialo"
-          + "gflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Googl"
-          + "e.Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud"
-          + "::Dialogflow::CX::V3b\006proto3"
+          + "gflow/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.C"
+          + "loud.Dialogflow.Cx.V3\352\002!Google::Cloud::D"
+          + "ialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

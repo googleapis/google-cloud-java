@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -257,8 +257,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A cluster URI for [Google Kubernetes Engine
-   * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * A cluster URI for [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
    *
    * <code>string gke_master_cluster = 7;</code>
@@ -270,8 +270,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A cluster URI for [Google Kubernetes Engine
-   * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * A cluster URI for [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
    *
    * <code>string gke_master_cluster = 7;</code>
@@ -279,6 +279,37 @@ public interface EndpointOrBuilder
    * @return The bytes for gkeMasterCluster.
    */
   com.google.protobuf.ByteString getGkeMasterClusterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+   * ip_address or network. Applicable only to destination endpoint.
+   * </pre>
+   *
+   * <code>string fqdn = 19;</code>
+   *
+   * @return The fqdn.
+   */
+  java.lang.String getFqdn();
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+   * ip_address or network. Applicable only to destination endpoint.
+   * </pre>
+   *
+   * <code>string fqdn = 19;</code>
+   *
+   * @return The bytes for fqdn.
+   */
+  com.google.protobuf.ByteString getFqdnBytes();
 
   /**
    *
@@ -304,6 +335,60 @@ public interface EndpointOrBuilder
    * @return The bytes for cloudSqlInstance.
    */
   com.google.protobuf.ByteString getCloudSqlInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_instance = 17;</code>
+   *
+   * @return The redisInstance.
+   */
+  java.lang.String getRedisInstance();
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_instance = 17;</code>
+   *
+   * @return The bytes for redisInstance.
+   */
+  com.google.protobuf.ByteString getRedisInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_cluster = 18;</code>
+   *
+   * @return The redisCluster.
+   */
+  java.lang.String getRedisCluster();
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_cluster = 18;</code>
+   *
+   * @return The bytes for redisCluster.
+   */
+  com.google.protobuf.ByteString getRedisClusterBytes();
 
   /**
    *

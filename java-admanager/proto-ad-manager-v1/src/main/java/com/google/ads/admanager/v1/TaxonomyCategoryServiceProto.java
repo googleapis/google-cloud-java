@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,12 +77,13 @@ public final class TaxonomyCategoryServiceProto {
           + "oogle.ads.admanager.v1.ListTaxonomyCateg"
           + "oriesResponse\";\332A\006parent\202\323\344\223\002,\022*/v1/{par"
           + "ent=networks/*}/taxonomyCategories\032\033\312A\030a"
-          + "dmanager.googleapis.comB\263\001\n\033com.google.a"
+          + "dmanager.googleapis.comB\320\001\n\033com.google.a"
           + "ds.admanager.v1B\034TaxonomyCategoryService"
           + "ProtoP\001Z@google.golang.org/genproto/goog"
           + "leapis/ads/admanager/v1;admanager\252\002\027Goog"
           + "le.Ads.AdManager.V1\312\002\027Google\\Ads\\AdManag"
-          + "er\\V1b\006proto3"
+          + "er\\V1\352\002\032Google::Ads::AdManager::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

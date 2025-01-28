@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -234,8 +234,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The SecretManager secret version resource name (e.g.
      * projects/{project}/secrets/{secret}/versions/{version}) storing the
-     * Jira API key
-     * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+     * Jira API key. See [Manage API tokens for your Atlassian
+     * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
      * </pre>
      *
      * <code>
@@ -251,8 +251,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The SecretManager secret version resource name (e.g.
      * projects/{project}/secrets/{secret}/versions/{version}) storing the
-     * Jira API key
-     * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+     * Jira API key. See [Manage API tokens for your Atlassian
+     * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
      * </pre>
      *
      * <code>
@@ -268,8 +268,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The SecretManager secret version resource name (e.g.
      * projects/{project}/secrets/{secret}/versions/{version}) storing the
-     * Jira API key
-     * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+     * Jira API key. See [Manage API tokens for your Atlassian
+     * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
      * </pre>
      *
      * <code>
@@ -572,8 +572,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The SecretManager secret version resource name (e.g.
      * projects/{project}/secrets/{secret}/versions/{version}) storing the
-     * Jira API key
-     * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+     * Jira API key. See [Manage API tokens for your Atlassian
+     * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
      * </pre>
      *
      * <code>
@@ -592,8 +592,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The SecretManager secret version resource name (e.g.
      * projects/{project}/secrets/{secret}/versions/{version}) storing the
-     * Jira API key
-     * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+     * Jira API key. See [Manage API tokens for your Atlassian
+     * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
      * </pre>
      *
      * <code>
@@ -614,8 +614,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The SecretManager secret version resource name (e.g.
      * projects/{project}/secrets/{secret}/versions/{version}) storing the
-     * Jira API key
-     * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+     * Jira API key. See [Manage API tokens for your Atlassian
+     * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
      * </pre>
      *
      * <code>
@@ -1714,8 +1714,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1733,8 +1733,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1758,8 +1758,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1786,8 +1786,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1811,8 +1811,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1846,8 +1846,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1870,8 +1870,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1890,8 +1890,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>
@@ -1914,8 +1914,8 @@ public final class JiraSource extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. The SecretManager secret version resource name (e.g.
        * projects/{project}/secrets/{secret}/versions/{version}) storing the
-       * Jira API key
-       * (https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+       * Jira API key. See [Manage API tokens for your Atlassian
+       * account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
        * </pre>
        *
        * <code>

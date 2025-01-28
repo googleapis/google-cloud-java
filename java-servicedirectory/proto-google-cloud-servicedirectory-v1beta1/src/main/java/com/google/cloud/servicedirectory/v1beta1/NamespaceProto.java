@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,14 +59,14 @@ public final class NamespaceProto {
           + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352A"
           + "k\n)servicedirectory.googleapis.com/Names"
           + "pace\022>projects/{project}/locations/{loca"
-          + "tion}/namespaces/{namespace}B\222\002\n)com.goo"
+          + "tion}/namespaces/{namespace}B\217\002\n)com.goo"
           + "gle.cloud.servicedirectory.v1beta1B\016Name"
           + "spaceProtoP\001ZUcloud.google.com/go/servic"
           + "edirectory/apiv1beta1/servicedirectorypb"
-          + ";servicedirectorypb\370\001\001\252\002%Google.Cloud.Se"
-          + "rviceDirectory.V1Beta1\312\002%Google\\Cloud\\Se"
-          + "rviceDirectory\\V1beta1\352\002(Google::Cloud::"
-          + "ServiceDirectory::V1beta1b\006proto3"
+          + ";servicedirectorypb\252\002%Google.Cloud.Servi"
+          + "ceDirectory.V1Beta1\312\002%Google\\Cloud\\Servi"
+          + "ceDirectory\\V1beta1\352\002(Google::Cloud::Ser"
+          + "viceDirectory::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

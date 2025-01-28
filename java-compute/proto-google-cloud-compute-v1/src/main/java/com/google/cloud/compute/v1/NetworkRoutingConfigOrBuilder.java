@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,111 @@ public interface NetworkRoutingConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.NetworkRoutingConfig)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * </pre>
+   *
+   * <code>optional bool bgp_always_compare_med = 213102902;</code>
+   *
+   * @return Whether the bgpAlwaysCompareMed field is set.
+   */
+  boolean hasBgpAlwaysCompareMed();
+  /**
+   *
+   *
+   * <pre>
+   * Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
+   * </pre>
+   *
+   * <code>optional bool bgp_always_compare_med = 213102902;</code>
+   *
+   * @return The bgpAlwaysCompareMed.
+   */
+  boolean getBgpAlwaysCompareMed();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return Whether the bgpBestPathSelectionMode field is set.
+   */
+  boolean hasBgpBestPathSelectionMode();
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return The bgpBestPathSelectionMode.
+   */
+  java.lang.String getBgpBestPathSelectionMode();
+  /**
+   *
+   *
+   * <pre>
+   * The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
+   * Check the BgpBestPathSelectionMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_best_path_selection_mode = 317816297;</code>
+   *
+   * @return The bytes for bgpBestPathSelectionMode.
+   */
+  com.google.protobuf.ByteString getBgpBestPathSelectionModeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return Whether the bgpInterRegionCost field is set.
+   */
+  boolean hasBgpInterRegionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return The bgpInterRegionCost.
+   */
+  java.lang.String getBgpInterRegionCost();
+  /**
+   *
+   *
+   * <pre>
+   * Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
+   * Check the BgpInterRegionCost enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bgp_inter_region_cost = 462142689;</code>
+   *
+   * @return The bytes for bgpInterRegionCost.
+   */
+  com.google.protobuf.ByteString getBgpInterRegionCostBytes();
 
   /**
    *

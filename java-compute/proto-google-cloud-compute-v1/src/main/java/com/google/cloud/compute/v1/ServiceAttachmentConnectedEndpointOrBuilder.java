@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,31 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    * @return The bytes for endpoint.
    */
   com.google.protobuf.ByteString getEndpointBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_count = 324594130;</code>
+   *
+   * @return Whether the propagatedConnectionCount field is set.
+   */
+  boolean hasPropagatedConnectionCount();
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_count = 324594130;</code>
+   *
+   * @return The propagatedConnectionCount.
+   */
+  int getPropagatedConnectionCount();
 
   /**
    *

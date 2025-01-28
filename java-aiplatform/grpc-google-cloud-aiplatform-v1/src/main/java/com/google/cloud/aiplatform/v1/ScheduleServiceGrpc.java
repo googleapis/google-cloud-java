@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -484,8 +484,9 @@ public final class ScheduleServiceGrpc {
      * Only paused Schedule can be resumed.
      * When the Schedule is resumed, new runs will be scheduled starting from the
      * next execution time after the current time based on the time_specification
-     * in the Schedule. If [Schedule.catchUp][] is set up true, all
-     * missed runs will be scheduled for backfill first.
+     * in the Schedule. If
+     * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up
+     * true, all missed runs will be scheduled for backfill first.
      * </pre>
      */
     default void resumeSchedule(
@@ -644,8 +645,9 @@ public final class ScheduleServiceGrpc {
      * Only paused Schedule can be resumed.
      * When the Schedule is resumed, new runs will be scheduled starting from the
      * next execution time after the current time based on the time_specification
-     * in the Schedule. If [Schedule.catchUp][] is set up true, all
-     * missed runs will be scheduled for backfill first.
+     * in the Schedule. If
+     * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up
+     * true, all missed runs will be scheduled for backfill first.
      * </pre>
      */
     public void resumeSchedule(
@@ -776,8 +778,9 @@ public final class ScheduleServiceGrpc {
      * Only paused Schedule can be resumed.
      * When the Schedule is resumed, new runs will be scheduled starting from the
      * next execution time after the current time based on the time_specification
-     * in the Schedule. If [Schedule.catchUp][] is set up true, all
-     * missed runs will be scheduled for backfill first.
+     * in the Schedule. If
+     * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up
+     * true, all missed runs will be scheduled for backfill first.
      * </pre>
      */
     public com.google.protobuf.Empty resumeSchedule(
@@ -905,8 +908,9 @@ public final class ScheduleServiceGrpc {
      * Only paused Schedule can be resumed.
      * When the Schedule is resumed, new runs will be scheduled starting from the
      * next execution time after the current time based on the time_specification
-     * in the Schedule. If [Schedule.catchUp][] is set up true, all
-     * missed runs will be scheduled for backfill first.
+     * in the Schedule. If
+     * [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] is set up
+     * true, all missed runs will be scheduled for backfill first.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,7 +219,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * </code>
    *
    * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
-   *     See google/monitoring/v3/notification.proto;l=75
+   *     See google/monitoring/v3/notification.proto;l=76
    * @return A list containing the supportedTiers.
    */
   @java.lang.Deprecated
@@ -236,7 +236,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * </code>
    *
    * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
-   *     See google/monitoring/v3/notification.proto;l=75
+   *     See google/monitoring/v3/notification.proto;l=76
    * @return The count of supportedTiers.
    */
   @java.lang.Deprecated
@@ -253,7 +253,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * </code>
    *
    * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
-   *     See google/monitoring/v3/notification.proto;l=75
+   *     See google/monitoring/v3/notification.proto;l=76
    * @param index The index of the element to return.
    * @return The supportedTiers at the given index.
    */
@@ -271,7 +271,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * </code>
    *
    * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
-   *     See google/monitoring/v3/notification.proto;l=75
+   *     See google/monitoring/v3/notification.proto;l=76
    * @return A list containing the enum numeric values on the wire for supportedTiers.
    */
   @java.lang.Deprecated
@@ -288,7 +288,7 @@ public interface NotificationChannelDescriptorOrBuilder
    * </code>
    *
    * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
-   *     See google/monitoring/v3/notification.proto;l=75
+   *     See google/monitoring/v3/notification.proto;l=76
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of supportedTiers at the given index.
    */

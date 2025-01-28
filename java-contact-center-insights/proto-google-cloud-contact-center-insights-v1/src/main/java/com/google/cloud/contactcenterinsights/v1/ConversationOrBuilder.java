@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -371,8 +371,8 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * A map for the user to specify any custom fields. A maximum of 20 labels per
-   * conversation is allowed, with a maximum of 256 characters per entry.
+   * A map for the user to specify any custom fields. A maximum of 100 labels
+   * per conversation is allowed, with a maximum of 256 characters per entry.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -382,8 +382,8 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * A map for the user to specify any custom fields. A maximum of 20 labels per
-   * conversation is allowed, with a maximum of 256 characters per entry.
+   * A map for the user to specify any custom fields. A maximum of 100 labels
+   * per conversation is allowed, with a maximum of 256 characters per entry.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -396,8 +396,8 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * A map for the user to specify any custom fields. A maximum of 20 labels per
-   * conversation is allowed, with a maximum of 256 characters per entry.
+   * A map for the user to specify any custom fields. A maximum of 100 labels
+   * per conversation is allowed, with a maximum of 256 characters per entry.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -407,8 +407,8 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * A map for the user to specify any custom fields. A maximum of 20 labels per
-   * conversation is allowed, with a maximum of 256 characters per entry.
+   * A map for the user to specify any custom fields. A maximum of 100 labels
+   * per conversation is allowed, with a maximum of 256 characters per entry.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -422,8 +422,8 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * A map for the user to specify any custom fields. A maximum of 20 labels per
-   * conversation is allowed, with a maximum of 256 characters per entry.
+   * A map for the user to specify any custom fields. A maximum of 100 labels
+   * per conversation is allowed, with a maximum of 256 characters per entry.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -476,9 +476,9 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * Input only. JSON Metadata encoded as a string.
+   * Input only. JSON metadata encoded as a string.
    * This field is primarily used by Insights integrations with various telphony
-   * systems and must be in one of Insights' supported formats.
+   * systems and must be in one of Insight's supported formats.
    * </pre>
    *
    * <code>string metadata_json = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -490,9 +490,9 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * Input only. JSON Metadata encoded as a string.
+   * Input only. JSON metadata encoded as a string.
    * This field is primarily used by Insights integrations with various telphony
-   * systems and must be in one of Insights' supported formats.
+   * systems and must be in one of Insight's supported formats.
    * </pre>
    *
    * <code>string metadata_json = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>

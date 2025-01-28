@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -4766,6 +4766,1163 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ClientCertificateSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ssl certificate encoded in PEM format. This string must
+     * include the begin header and end footer lines.
+     * </pre>
+     *
+     * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The sslCertificate.
+     */
+    java.lang.String getSslCertificate();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ssl certificate encoded in PEM format. This string must
+     * include the begin header and end footer lines.
+     * </pre>
+     *
+     * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for sslCertificate.
+     */
+    com.google.protobuf.ByteString getSslCertificateBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the SecretManager secret version resource storing
+     * the private key encoded in PEM format. Format:
+     * `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The privateKey.
+     */
+    java.lang.String getPrivateKey();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the SecretManager secret version resource storing
+     * the private key encoded in PEM format. Format:
+     * `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for privateKey.
+     */
+    com.google.protobuf.ByteString getPrivateKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the SecretManager secret version resource storing
+     * the passphrase. 'passphrase' should be left unset if the private key is
+     * not encrypted.
+     * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The passphrase.
+     */
+    java.lang.String getPassphrase();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the SecretManager secret version resource storing
+     * the passphrase. 'passphrase' should be left unset if the private key is
+     * not encrypted.
+     * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for passphrase.
+     */
+    com.google.protobuf.ByteString getPassphraseBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for custom client certificates.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings}
+   */
+  public static final class ClientCertificateSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings)
+      ClientCertificateSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ClientCertificateSettings.newBuilder() to construct.
+    private ClientCertificateSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ClientCertificateSettings() {
+      sslCertificate_ = "";
+      privateKey_ = "";
+      passphrase_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ClientCertificateSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_Agent_ClientCertificateSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3_Agent_ClientCertificateSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.class,
+              com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder.class);
+    }
+
+    public static final int SSL_CERTIFICATE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sslCertificate_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ssl certificate encoded in PEM format. This string must
+     * include the begin header and end footer lines.
+     * </pre>
+     *
+     * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The sslCertificate.
+     */
+    @java.lang.Override
+    public java.lang.String getSslCertificate() {
+      java.lang.Object ref = sslCertificate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sslCertificate_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The ssl certificate encoded in PEM format. This string must
+     * include the begin header and end footer lines.
+     * </pre>
+     *
+     * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for sslCertificate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSslCertificateBytes() {
+      java.lang.Object ref = sslCertificate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sslCertificate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVATE_KEY_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object privateKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the SecretManager secret version resource storing
+     * the private key encoded in PEM format. Format:
+     * `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The privateKey.
+     */
+    @java.lang.Override
+    public java.lang.String getPrivateKey() {
+      java.lang.Object ref = privateKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privateKey_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the SecretManager secret version resource storing
+     * the private key encoded in PEM format. Format:
+     * `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for privateKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPrivateKeyBytes() {
+      java.lang.Object ref = privateKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        privateKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSPHRASE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object passphrase_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the SecretManager secret version resource storing
+     * the passphrase. 'passphrase' should be left unset if the private key is
+     * not encrypted.
+     * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The passphrase.
+     */
+    @java.lang.Override
+    public java.lang.String getPassphrase() {
+      java.lang.Object ref = passphrase_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        passphrase_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the SecretManager secret version resource storing
+     * the passphrase. 'passphrase' should be left unset if the private key is
+     * not encrypted.
+     * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+     * </pre>
+     *
+     * <code>
+     * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for passphrase.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPassphraseBytes() {
+      java.lang.Object ref = passphrase_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        passphrase_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sslCertificate_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sslCertificate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, privateKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passphrase_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, passphrase_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sslCertificate_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sslCertificate_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, privateKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passphrase_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, passphrase_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings other =
+          (com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings) obj;
+
+      if (!getSslCertificate().equals(other.getSslCertificate())) return false;
+      if (!getPrivateKey().equals(other.getPrivateKey())) return false;
+      if (!getPassphrase().equals(other.getPassphrase())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SSL_CERTIFICATE_FIELD_NUMBER;
+      hash = (53 * hash) + getSslCertificate().hashCode();
+      hash = (37 * hash) + PRIVATE_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateKey().hashCode();
+      hash = (37 * hash) + PASSPHRASE_FIELD_NUMBER;
+      hash = (53 * hash) + getPassphrase().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for custom client certificates.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings)
+        com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Agent_ClientCertificateSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Agent_ClientCertificateSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.class,
+                com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sslCertificate_ = "";
+        privateKey_ = "";
+        passphrase_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3_Agent_ClientCertificateSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings build() {
+        com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings result =
+            new com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sslCertificate_ = sslCertificate_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.privateKey_ = privateKey_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.passphrase_ = passphrase_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+                .getDefaultInstance()) return this;
+        if (!other.getSslCertificate().isEmpty()) {
+          sslCertificate_ = other.sslCertificate_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getPrivateKey().isEmpty()) {
+          privateKey_ = other.privateKey_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getPassphrase().isEmpty()) {
+          passphrase_ = other.passphrase_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  sslCertificate_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  privateKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  passphrase_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object sslCertificate_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ssl certificate encoded in PEM format. This string must
+       * include the begin header and end footer lines.
+       * </pre>
+       *
+       * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The sslCertificate.
+       */
+      public java.lang.String getSslCertificate() {
+        java.lang.Object ref = sslCertificate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sslCertificate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ssl certificate encoded in PEM format. This string must
+       * include the begin header and end footer lines.
+       * </pre>
+       *
+       * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for sslCertificate.
+       */
+      public com.google.protobuf.ByteString getSslCertificateBytes() {
+        java.lang.Object ref = sslCertificate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sslCertificate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ssl certificate encoded in PEM format. This string must
+       * include the begin header and end footer lines.
+       * </pre>
+       *
+       * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The sslCertificate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSslCertificate(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sslCertificate_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ssl certificate encoded in PEM format. This string must
+       * include the begin header and end footer lines.
+       * </pre>
+       *
+       * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSslCertificate() {
+        sslCertificate_ = getDefaultInstance().getSslCertificate();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The ssl certificate encoded in PEM format. This string must
+       * include the begin header and end footer lines.
+       * </pre>
+       *
+       * <code>string ssl_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for sslCertificate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSslCertificateBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sslCertificate_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object privateKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the SecretManager secret version resource storing
+       * the private key encoded in PEM format. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The privateKey.
+       */
+      public java.lang.String getPrivateKey() {
+        java.lang.Object ref = privateKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          privateKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the SecretManager secret version resource storing
+       * the private key encoded in PEM format. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for privateKey.
+       */
+      public com.google.protobuf.ByteString getPrivateKeyBytes() {
+        java.lang.Object ref = privateKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          privateKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the SecretManager secret version resource storing
+       * the private key encoded in PEM format. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The privateKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivateKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateKey_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the SecretManager secret version resource storing
+       * the private key encoded in PEM format. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivateKey() {
+        privateKey_ = getDefaultInstance().getPrivateKey();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the SecretManager secret version resource storing
+       * the private key encoded in PEM format. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string private_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for privateKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivateKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        privateKey_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object passphrase_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the passphrase. 'passphrase' should be left unset if the private key is
+       * not encrypted.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The passphrase.
+       */
+      public java.lang.String getPassphrase() {
+        java.lang.Object ref = passphrase_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          passphrase_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the passphrase. 'passphrase' should be left unset if the private key is
+       * not encrypted.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for passphrase.
+       */
+      public com.google.protobuf.ByteString getPassphraseBytes() {
+        java.lang.Object ref = passphrase_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          passphrase_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the passphrase. 'passphrase' should be left unset if the private key is
+       * not encrypted.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The passphrase to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassphrase(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        passphrase_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the passphrase. 'passphrase' should be left unset if the private key is
+       * not encrypted.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPassphrase() {
+        passphrase_ = getDefaultInstance().getPassphrase();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the passphrase. 'passphrase' should be left unset if the private key is
+       * not encrypted.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string passphrase = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for passphrase to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassphraseBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        passphrase_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings)
+    private static final com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClientCertificateSettings> PARSER =
+        new com.google.protobuf.AbstractParser<ClientCertificateSettings>() {
+          @java.lang.Override
+          public ClientCertificateSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ClientCertificateSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientCertificateSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -4781,7 +5938,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * method.
    * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -4810,7 +5967,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * method.
    * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
    * populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -5242,8 +6399,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * deleting the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -5270,8 +6427,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * deleting the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>
@@ -5303,8 +6460,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * reference for the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -5329,8 +6486,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Name of the
    * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-   * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * reference for the agent. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * </pre>
    *
    * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -5365,7 +6522,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=337
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -5771,6 +6928,65 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         : personalizationSettings_;
   }
 
+  public static final int CLIENT_CERTIFICATE_SETTINGS_FIELD_NUMBER = 43;
+  private com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+      clientCertificateSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientCertificateSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientCertificateSettings() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientCertificateSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+      getClientCertificateSettings() {
+    return clientCertificateSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.getDefaultInstance()
+        : clientCertificateSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for custom client certificates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettingsOrBuilder
+      getClientCertificateSettingsOrBuilder() {
+    return clientCertificateSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.getDefaultInstance()
+        : clientCertificateSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5845,6 +7061,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(42, getPersonalizationSettings());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(43, getClientCertificateSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5928,6 +7147,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               42, getPersonalizationSettings());
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              43, getClientCertificateSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5984,6 +7208,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasPersonalizationSettings() != other.hasPersonalizationSettings()) return false;
     if (hasPersonalizationSettings()) {
       if (!getPersonalizationSettings().equals(other.getPersonalizationSettings())) return false;
+    }
+    if (hasClientCertificateSettings() != other.hasClientCertificateSettings()) return false;
+    if (hasClientCertificateSettings()) {
+      if (!getClientCertificateSettings().equals(other.getClientCertificateSettings()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -6051,6 +7280,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasPersonalizationSettings()) {
       hash = (37 * hash) + PERSONALIZATION_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getPersonalizationSettings().hashCode();
+    }
+    if (hasClientCertificateSettings()) {
+      hash = (37 * hash) + CLIENT_CERTIFICATE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getClientCertificateSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -6211,6 +7444,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         getGenAppBuilderSettingsFieldBuilder();
         getAnswerFeedbackSettingsFieldBuilder();
         getPersonalizationSettingsFieldBuilder();
+        getClientCertificateSettingsFieldBuilder();
       }
     }
 
@@ -6265,6 +7499,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (personalizationSettingsBuilder_ != null) {
         personalizationSettingsBuilder_.dispose();
         personalizationSettingsBuilder_ = null;
+      }
+      clientCertificateSettings_ = null;
+      if (clientCertificateSettingsBuilder_ != null) {
+        clientCertificateSettingsBuilder_.dispose();
+        clientCertificateSettingsBuilder_ = null;
       }
       return this;
     }
@@ -6389,6 +7628,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 ? personalizationSettings_
                 : personalizationSettingsBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.clientCertificateSettings_ =
+            clientCertificateSettingsBuilder_ == null
+                ? clientCertificateSettings_
+                : clientCertificateSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6520,6 +7766,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPersonalizationSettings()) {
         mergePersonalizationSettings(other.getPersonalizationSettings());
+      }
+      if (other.hasClientCertificateSettings()) {
+        mergeClientCertificateSettings(other.getClientCertificateSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6675,6 +7924,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00080000;
                 break;
               } // case 338
+            case 346:
+              {
+                input.readMessage(
+                    getClientCertificateSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6705,7 +7961,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * method.
      * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -6733,7 +7989,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * method.
      * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -6761,7 +8017,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * method.
      * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -6788,7 +8044,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * method.
      * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -6811,7 +8067,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * method.
      * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent]
      * populates the name automatically.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7821,8 +9077,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * deleting the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -7848,8 +9104,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * deleting the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -7875,8 +9131,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * deleting the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -7901,8 +9157,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * deleting the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -7923,8 +9179,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * deleting the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>
@@ -7952,8 +9208,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * reference for the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -7977,8 +9233,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * reference for the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -8002,8 +9258,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * reference for the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -8026,8 +9282,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * reference for the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -8046,8 +9302,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Name of the
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]
-     * reference for the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * reference for the agent. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
      * </pre>
      *
      * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -8080,7 +9336,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=337
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -8101,7 +9357,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=337
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -8126,7 +9382,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/agent.proto;l=337
+     *     google/cloud/dialogflow/cx/v3/agent.proto;l=368
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9557,6 +10813,218 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         personalizationSettings_ = null;
       }
       return personalizationSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+        clientCertificateSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings,
+            com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettingsOrBuilder>
+        clientCertificateSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clientCertificateSettings field is set.
+     */
+    public boolean hasClientCertificateSettings() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clientCertificateSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+        getClientCertificateSettings() {
+      if (clientCertificateSettingsBuilder_ == null) {
+        return clientCertificateSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.getDefaultInstance()
+            : clientCertificateSettings_;
+      } else {
+        return clientCertificateSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientCertificateSettings(
+        com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings value) {
+      if (clientCertificateSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientCertificateSettings_ = value;
+      } else {
+        clientCertificateSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientCertificateSettings(
+        com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder builderForValue) {
+      if (clientCertificateSettingsBuilder_ == null) {
+        clientCertificateSettings_ = builderForValue.build();
+      } else {
+        clientCertificateSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClientCertificateSettings(
+        com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings value) {
+      if (clientCertificateSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && clientCertificateSettings_ != null
+            && clientCertificateSettings_
+                != com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings
+                    .getDefaultInstance()) {
+          getClientCertificateSettingsBuilder().mergeFrom(value);
+        } else {
+          clientCertificateSettings_ = value;
+        }
+      } else {
+        clientCertificateSettingsBuilder_.mergeFrom(value);
+      }
+      if (clientCertificateSettings_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClientCertificateSettings() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      clientCertificateSettings_ = null;
+      if (clientCertificateSettingsBuilder_ != null) {
+        clientCertificateSettingsBuilder_.dispose();
+        clientCertificateSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder
+        getClientCertificateSettingsBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getClientCertificateSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettingsOrBuilder
+        getClientCertificateSettingsOrBuilder() {
+      if (clientCertificateSettingsBuilder_ != null) {
+        return clientCertificateSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return clientCertificateSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.getDefaultInstance()
+            : clientCertificateSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for custom client certificates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings client_certificate_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings,
+            com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettingsOrBuilder>
+        getClientCertificateSettingsFieldBuilder() {
+      if (clientCertificateSettingsBuilder_ == null) {
+        clientCertificateSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings,
+                com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.Agent.ClientCertificateSettingsOrBuilder>(
+                getClientCertificateSettings(), getParentForChildren(), isClean());
+        clientCertificateSettings_ = null;
+      }
+      return clientCertificateSettingsBuilder_;
     }
 
     @java.lang.Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,31 @@ public interface SchedulingOrBuilder
    * @return The automaticRestart.
    */
   boolean getAutomaticRestart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * </pre>
+   *
+   * <code>optional int32 availability_domain = 252514344;</code>
+   *
+   * @return Whether the availabilityDomain field is set.
+   */
+  boolean hasAvailabilityDomain();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * </pre>
+   *
+   * <code>optional int32 availability_domain = 252514344;</code>
+   *
+   * @return The availabilityDomain.
+   */
+  int getAvailabilityDomain();
 
   /**
    *
@@ -160,6 +185,41 @@ public interface SchedulingOrBuilder
    * @return The bytes for locationHint.
    */
   com.google.protobuf.ByteString getLocationHintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+   *
+   * @return Whether the maxRunDuration field is set.
+   */
+  boolean hasMaxRunDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+   *
+   * @return The maxRunDuration.
+   */
+  com.google.cloud.compute.v1.Duration getMaxRunDuration();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getMaxRunDurationOrBuilder();
 
   /**
    *
@@ -284,6 +344,30 @@ public interface SchedulingOrBuilder
   com.google.protobuf.ByteString getOnHostMaintenanceBytes();
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+   * </code>
+   *
+   * @return Whether the onInstanceStopAction field is set.
+   */
+  boolean hasOnInstanceStopAction();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+   * </code>
+   *
+   * @return The onInstanceStopAction.
+   */
+  com.google.cloud.compute.v1.SchedulingOnInstanceStopAction getOnInstanceStopAction();
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingOnInstanceStopAction on_instance_stop_action = 529876681;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SchedulingOnInstanceStopActionOrBuilder
+      getOnInstanceStopActionOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -347,4 +431,41 @@ public interface SchedulingOrBuilder
    * @return The bytes for provisioningModel.
    */
   com.google.protobuf.ByteString getProvisioningModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * </pre>
+   *
+   * <code>optional string termination_time = 428082984;</code>
+   *
+   * @return Whether the terminationTime field is set.
+   */
+  boolean hasTerminationTime();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * </pre>
+   *
+   * <code>optional string termination_time = 428082984;</code>
+   *
+   * @return The terminationTime.
+   */
+  java.lang.String getTerminationTime();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * </pre>
+   *
+   * <code>optional string termination_time = 428082984;</code>
+   *
+   * @return The bytes for terminationTime.
+   */
+  com.google.protobuf.ByteString getTerminationTimeBytes();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes for this router's network.
+   * A list of the best dynamic routes for this Cloud Router's Virtual Private Cloud (VPC) network in the same region as this Cloud Router. Lists all of the best routes per prefix that are programmed into this region's VPC data plane. When global dynamic routing mode is turned on in the VPC network, this list can include cross-region dynamic routes from Cloud Routers in other regions.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
@@ -38,7 +38,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes for this router's network.
+   * A list of the best dynamic routes for this Cloud Router's Virtual Private Cloud (VPC) network in the same region as this Cloud Router. Lists all of the best routes per prefix that are programmed into this region's VPC data plane. When global dynamic routing mode is turned on in the VPC network, this list can include cross-region dynamic routes from Cloud Routers in other regions.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
@@ -48,7 +48,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes for this router's network.
+   * A list of the best dynamic routes for this Cloud Router's Virtual Private Cloud (VPC) network in the same region as this Cloud Router. Lists all of the best routes per prefix that are programmed into this region's VPC data plane. When global dynamic routing mode is turned on in the VPC network, this list can include cross-region dynamic routes from Cloud Routers in other regions.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
@@ -58,7 +58,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes for this router's network.
+   * A list of the best dynamic routes for this Cloud Router's Virtual Private Cloud (VPC) network in the same region as this Cloud Router. Lists all of the best routes per prefix that are programmed into this region's VPC data plane. When global dynamic routing mode is turned on in the VPC network, this list can include cross-region dynamic routes from Cloud Routers in other regions.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
@@ -68,7 +68,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes for this router's network.
+   * A list of the best dynamic routes for this Cloud Router's Virtual Private Cloud (VPC) network in the same region as this Cloud Router. Lists all of the best routes per prefix that are programmed into this region's VPC data plane. When global dynamic routing mode is turned on in the VPC network, this list can include cross-region dynamic routes from Cloud Routers in other regions.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
@@ -79,7 +79,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes learned by this router.
+   * A list of the best BGP routes learned by this Cloud Router. It is possible that routes listed might not be programmed into the data plane, if the Google Cloud control plane finds a more optimal route for a prefix than a route learned by this Cloud Router.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>
@@ -89,7 +89,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes learned by this router.
+   * A list of the best BGP routes learned by this Cloud Router. It is possible that routes listed might not be programmed into the data plane, if the Google Cloud control plane finds a more optimal route for a prefix than a route learned by this Cloud Router.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>
@@ -99,7 +99,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes learned by this router.
+   * A list of the best BGP routes learned by this Cloud Router. It is possible that routes listed might not be programmed into the data plane, if the Google Cloud control plane finds a more optimal route for a prefix than a route learned by this Cloud Router.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>
@@ -109,7 +109,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes learned by this router.
+   * A list of the best BGP routes learned by this Cloud Router. It is possible that routes listed might not be programmed into the data plane, if the Google Cloud control plane finds a more optimal route for a prefix than a route learned by this Cloud Router.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>
@@ -120,7 +120,7 @@ public interface RouterStatusOrBuilder
    *
    *
    * <pre>
-   * Best routes learned by this router.
+   * A list of the best BGP routes learned by this Cloud Router. It is possible that routes listed might not be programmed into the data plane, if the Google Cloud control plane finds a more optimal route for a prefix than a route learned by this Cloud Router.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,10 @@ public final class DocumentServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_UrisMatcher_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_Matcher_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_Matcher_fieldAccessorTable;
@@ -116,109 +120,115 @@ public final class DocumentServiceProto {
           + "mask\030\003 \001(\0132\032.google.protobuf.FieldMask\"V"
           + "\n\025DeleteDocumentRequest\022=\n\004name\030\001 \001(\tB/\340"
           + "A\002\372A)\n\'discoveryengine.googleapis.com/Do"
-          + "cument\"\334\002\n BatchGetDocumentsMetadataRequ"
+          + "cument\"\233\004\n BatchGetDocumentsMetadataRequ"
           + "est\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%discoveryen"
           + "gine.googleapis.com/Branch\022_\n\007matcher\030\002 "
           + "\001(\0132I.google.cloud.discoveryengine.v1.Ba"
           + "tchGetDocumentsMetadataRequest.MatcherB\003"
-          + "\340A\002\032\033\n\013UrisMatcher\022\014\n\004uris\030\001 \003(\t\032{\n\007Matc"
-          + "her\022e\n\014uris_matcher\030\001 \001(\0132M.google.cloud"
-          + ".discoveryengine.v1.BatchGetDocumentsMet"
-          + "adataRequest.UrisMatcherH\000B\t\n\007matcher\"\332\004"
-          + "\n!BatchGetDocumentsMetadataResponse\022o\n\022d"
-          + "ocuments_metadata\030\001 \003(\0132S.google.cloud.d"
+          + "\340A\002\032\033\n\013UrisMatcher\022\014\n\004uris\030\001 \003(\t\032U\n\013Fhir"
+          + "Matcher\022F\n\016fhir_resources\030\001 \003(\tB.\340A\002\372A(\n"
+          + "&healthcare.googleapis.com/FhirResource\032"
+          + "\342\001\n\007Matcher\022e\n\014uris_matcher\030\001 \001(\0132M.goog"
+          + "le.cloud.discoveryengine.v1.BatchGetDocu"
+          + "mentsMetadataRequest.UrisMatcherH\000\022e\n\014fh"
+          + "ir_matcher\030\002 \001(\0132M.google.cloud.discover"
+          + "yengine.v1.BatchGetDocumentsMetadataRequ"
+          + "est.FhirMatcherH\000B\t\n\007matcher\"\240\005\n!BatchGe"
+          + "tDocumentsMetadataResponse\022o\n\022documents_"
+          + "metadata\030\001 \003(\0132S.google.cloud.discoverye"
+          + "ngine.v1.BatchGetDocumentsMetadataRespon"
+          + "se.DocumentMetadata\032\262\003\n\020DocumentMetadata"
+          + "\022w\n\rmatcher_value\030\002 \001(\0132`.google.cloud.d"
           + "iscoveryengine.v1.BatchGetDocumentsMetad"
-          + "ataResponse.DocumentMetadata\032\354\002\n\020Documen"
-          + "tMetadata\022w\n\rmatcher_value\030\002 \001(\0132`.googl"
-          + "e.cloud.discoveryengine.v1.BatchGetDocum"
-          + "entsMetadataResponse.DocumentMetadata.Ma"
-          + "tcherValue\022W\n\005state\030\003 \001(\0162H.google.cloud"
-          + ".discoveryengine.v1.BatchGetDocumentsMet"
-          + "adataResponse.State\0227\n\023last_refreshed_ti"
-          + "me\030\004 \001(\0132\032.google.protobuf.Timestamp\022\035\n\025"
-          + "data_ingestion_source\030\005 \001(\t\032.\n\014MatcherVa"
-          + "lue\022\r\n\003uri\030\001 \001(\tH\000B\017\n\rmatcher_value\"U\n\005S"
-          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007INDEXED\020\001"
-          + "\022\026\n\022NOT_IN_TARGET_SITE\020\002\022\020\n\014NOT_IN_INDEX"
-          + "\020\0032\235\026\n\017DocumentService\022\234\002\n\013GetDocument\0223"
-          + ".google.cloud.discoveryengine.v1.GetDocu"
-          + "mentRequest\032).google.cloud.discoveryengi"
-          + "ne.v1.Document\"\254\001\332A\004name\202\323\344\223\002\236\001\022E/v1/{na"
-          + "me=projects/*/locations/*/dataStores/*/b"
-          + "ranches/*/documents/*}ZU\022S/v1/{name=proj"
+          + "ataResponse.DocumentMetadata.MatcherValu"
+          + "e\022W\n\005state\030\003 \001(\0162H.google.cloud.discover"
+          + "yengine.v1.BatchGetDocumentsMetadataResp"
+          + "onse.State\0227\n\023last_refreshed_time\030\004 \001(\0132"
+          + "\032.google.protobuf.Timestamp\022\035\n\025data_inge"
+          + "stion_source\030\005 \001(\t\032t\n\014MatcherValue\022\r\n\003ur"
+          + "i\030\001 \001(\tH\000\022D\n\rfhir_resource\030\002 \001(\tB+\372A(\n&h"
+          + "ealthcare.googleapis.com/FhirResourceH\000B"
+          + "\017\n\rmatcher_value\"U\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\013\n\007INDEXED\020\001\022\026\n\022NOT_IN_TARGET_S"
+          + "ITE\020\002\022\020\n\014NOT_IN_INDEX\020\0032\235\026\n\017DocumentServ"
+          + "ice\022\234\002\n\013GetDocument\0223.google.cloud.disco"
+          + "veryengine.v1.GetDocumentRequest\032).googl"
+          + "e.cloud.discoveryengine.v1.Document\"\254\001\332A"
+          + "\004name\202\323\344\223\002\236\001\022E/v1/{name=projects/*/locat"
+          + "ions/*/dataStores/*/branches/*/documents"
+          + "/*}ZU\022S/v1/{name=projects/*/locations/*/"
+          + "collections/*/dataStores/*/branches/*/do"
+          + "cuments/*}\022\257\002\n\rListDocuments\0225.google.cl"
+          + "oud.discoveryengine.v1.ListDocumentsRequ"
+          + "est\0326.google.cloud.discoveryengine.v1.Li"
+          + "stDocumentsResponse\"\256\001\332A\006parent\202\323\344\223\002\236\001\022E"
+          + "/v1/{parent=projects/*/locations/*/dataS"
+          + "tores/*/branches/*}/documentsZU\022S/v1/{pa"
+          + "rent=projects/*/locations/*/collections/"
+          + "*/dataStores/*/branches/*}/documents\022\315\002\n"
+          + "\016CreateDocument\0226.google.cloud.discovery"
+          + "engine.v1.CreateDocumentRequest\032).google"
+          + ".cloud.discoveryengine.v1.Document\"\327\001\332A\033"
+          + "parent,document,document_id\202\323\344\223\002\262\001\"E/v1/"
+          + "{parent=projects/*/locations/*/dataStore"
+          + "s/*/branches/*}/documents:\010documentZ_\"S/"
+          + "v1/{parent=projects/*/locations/*/collec"
+          + "tions/*/dataStores/*/branches/*}/documen"
+          + "ts:\010document\022\330\002\n\016UpdateDocument\0226.google"
+          + ".cloud.discoveryengine.v1.UpdateDocument"
+          + "Request\032).google.cloud.discoveryengine.v"
+          + "1.Document\"\342\001\332A\024document,update_mask\202\323\344\223"
+          + "\002\304\0012N/v1/{document.name=projects/*/locat"
+          + "ions/*/dataStores/*/branches/*/documents"
+          + "/*}:\010documentZh2\\/v1/{document.name=proj"
           + "ects/*/locations/*/collections/*/dataSto"
-          + "res/*/branches/*/documents/*}\022\257\002\n\rListDo"
-          + "cuments\0225.google.cloud.discoveryengine.v"
-          + "1.ListDocumentsRequest\0326.google.cloud.di"
-          + "scoveryengine.v1.ListDocumentsResponse\"\256"
-          + "\001\332A\006parent\202\323\344\223\002\236\001\022E/v1/{parent=projects/"
-          + "*/locations/*/dataStores/*/branches/*}/d"
-          + "ocumentsZU\022S/v1/{parent=projects/*/locat"
-          + "ions/*/collections/*/dataStores/*/branch"
-          + "es/*}/documents\022\315\002\n\016CreateDocument\0226.goo"
-          + "gle.cloud.discoveryengine.v1.CreateDocum"
-          + "entRequest\032).google.cloud.discoveryengin"
-          + "e.v1.Document\"\327\001\332A\033parent,document,docum"
-          + "ent_id\202\323\344\223\002\262\001\"E/v1/{parent=projects/*/lo"
-          + "cations/*/dataStores/*/branches/*}/docum"
-          + "ents:\010documentZ_\"S/v1/{parent=projects/*"
-          + "/locations/*/collections/*/dataStores/*/"
-          + "branches/*}/documents:\010document\022\330\002\n\016Upda"
-          + "teDocument\0226.google.cloud.discoveryengin"
-          + "e.v1.UpdateDocumentRequest\032).google.clou"
-          + "d.discoveryengine.v1.Document\"\342\001\332A\024docum"
-          + "ent,update_mask\202\323\344\223\002\304\0012N/v1/{document.na"
-          + "me=projects/*/locations/*/dataStores/*/b"
-          + "ranches/*/documents/*}:\010documentZh2\\/v1/"
-          + "{document.name=projects/*/locations/*/co"
-          + "llections/*/dataStores/*/branches/*/docu"
-          + "ments/*}:\010document\022\217\002\n\016DeleteDocument\0226."
-          + "google.cloud.discoveryengine.v1.DeleteDo"
-          + "cumentRequest\032\026.google.protobuf.Empty\"\254\001"
-          + "\332A\004name\202\323\344\223\002\236\001*E/v1/{name=projects/*/loc"
-          + "ations/*/dataStores/*/branches/*/documen"
-          + "ts/*}ZU*S/v1/{name=projects/*/locations/"
-          + "*/collections/*/dataStores/*/branches/*/"
-          + "documents/*}\022\232\003\n\017ImportDocuments\0227.googl"
-          + "e.cloud.discoveryengine.v1.ImportDocumen"
-          + "tsRequest\032\035.google.longrunning.Operation"
-          + "\"\256\002\312Ar\n7google.cloud.discoveryengine.v1."
-          + "ImportDocumentsResponse\0227google.cloud.di"
-          + "scoveryengine.v1.ImportDocumentsMetadata"
-          + "\202\323\344\223\002\262\001\"L/v1/{parent=projects/*/location"
-          + "s/*/dataStores/*/branches/*}/documents:i"
-          + "mport:\001*Z_\"Z/v1/{parent=projects/*/locat"
-          + "ions/*/collections/*/dataStores/*/branch"
-          + "es/*}/documents:import:\001*\022\224\003\n\016PurgeDocum"
-          + "ents\0226.google.cloud.discoveryengine.v1.P"
-          + "urgeDocumentsRequest\032\035.google.longrunnin"
-          + "g.Operation\"\252\002\312Ap\n6google.cloud.discover"
-          + "yengine.v1.PurgeDocumentsResponse\0226googl"
-          + "e.cloud.discoveryengine.v1.PurgeDocument"
-          + "sMetadata\202\323\344\223\002\260\001\"K/v1/{parent=projects/*"
-          + "/locations/*/dataStores/*/branches/*}/do"
-          + "cuments:purge:\001*Z^\"Y/v1/{parent=projects"
-          + "/*/locations/*/collections/*/dataStores/"
-          + "*/branches/*}/documents:purge:\001*\022\363\002\n\031Bat"
-          + "chGetDocumentsMetadata\022A.google.cloud.di"
-          + "scoveryengine.v1.BatchGetDocumentsMetada"
-          + "taRequest\032B.google.cloud.discoveryengine"
-          + ".v1.BatchGetDocumentsMetadataResponse\"\316\001"
-          + "\332A\006parent\202\323\344\223\002\276\001\022U/v1/{parent=projects/*"
-          + "/locations/*/dataStores/*/branches/*}/ba"
-          + "tchGetDocumentsMetadataZe\022c/v1/{parent=p"
-          + "rojects/*/locations/*/collections/*/data"
-          + "Stores/*/branches/*}/batchGetDocumentsMe"
-          + "tadata\032R\312A\036discoveryengine.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformB\207\002\n#com.google.cloud.discover"
-          + "yengine.v1B\024DocumentServiceProtoP\001ZMclou"
-          + "d.google.com/go/discoveryengine/apiv1/di"
-          + "scoveryenginepb;discoveryenginepb\242\002\017DISC"
-          + "OVERYENGINE\252\002\037Google.Cloud.DiscoveryEngi"
-          + "ne.V1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352"
-          + "\002\"Google::Cloud::DiscoveryEngine::V1b\006pr"
-          + "oto3"
+          + "res/*/branches/*/documents/*}:\010document\022"
+          + "\217\002\n\016DeleteDocument\0226.google.cloud.discov"
+          + "eryengine.v1.DeleteDocumentRequest\032\026.goo"
+          + "gle.protobuf.Empty\"\254\001\332A\004name\202\323\344\223\002\236\001*E/v1"
+          + "/{name=projects/*/locations/*/dataStores"
+          + "/*/branches/*/documents/*}ZU*S/v1/{name="
+          + "projects/*/locations/*/collections/*/dat"
+          + "aStores/*/branches/*/documents/*}\022\232\003\n\017Im"
+          + "portDocuments\0227.google.cloud.discoveryen"
+          + "gine.v1.ImportDocumentsRequest\032\035.google."
+          + "longrunning.Operation\"\256\002\312Ar\n7google.clou"
+          + "d.discoveryengine.v1.ImportDocumentsResp"
+          + "onse\0227google.cloud.discoveryengine.v1.Im"
+          + "portDocumentsMetadata\202\323\344\223\002\262\001\"L/v1/{paren"
+          + "t=projects/*/locations/*/dataStores/*/br"
+          + "anches/*}/documents:import:\001*Z_\"Z/v1/{pa"
+          + "rent=projects/*/locations/*/collections/"
+          + "*/dataStores/*/branches/*}/documents:imp"
+          + "ort:\001*\022\224\003\n\016PurgeDocuments\0226.google.cloud"
+          + ".discoveryengine.v1.PurgeDocumentsReques"
+          + "t\032\035.google.longrunning.Operation\"\252\002\312Ap\n6"
+          + "google.cloud.discoveryengine.v1.PurgeDoc"
+          + "umentsResponse\0226google.cloud.discoveryen"
+          + "gine.v1.PurgeDocumentsMetadata\202\323\344\223\002\260\001\"K/"
+          + "v1/{parent=projects/*/locations/*/dataSt"
+          + "ores/*/branches/*}/documents:purge:\001*Z^\""
+          + "Y/v1/{parent=projects/*/locations/*/coll"
+          + "ections/*/dataStores/*/branches/*}/docum"
+          + "ents:purge:\001*\022\363\002\n\031BatchGetDocumentsMetad"
+          + "ata\022A.google.cloud.discoveryengine.v1.Ba"
+          + "tchGetDocumentsMetadataRequest\032B.google."
+          + "cloud.discoveryengine.v1.BatchGetDocumen"
+          + "tsMetadataResponse\"\316\001\332A\006parent\202\323\344\223\002\276\001\022U/"
+          + "v1/{parent=projects/*/locations/*/dataSt"
+          + "ores/*/branches/*}/batchGetDocumentsMeta"
+          + "dataZe\022c/v1/{parent=projects/*/locations"
+          + "/*/collections/*/dataStores/*/branches/*"
+          + "}/batchGetDocumentsMetadata\032R\312A\036discover"
+          + "yengine.googleapis.com\322A.https://www.goo"
+          + "gleapis.com/auth/cloud-platformB\207\002\n#com."
+          + "google.cloud.discoveryengine.v1B\024Documen"
+          + "tServiceProtoP\001ZMcloud.google.com/go/dis"
+          + "coveryengine/apiv1/discoveryenginepb;dis"
+          + "coveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Googl"
+          + "e.Cloud.DiscoveryEngine.V1\312\002\037Google\\Clou"
+          + "d\\DiscoveryEngine\\V1\352\002\"Google::Cloud::Di"
+          + "scoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -302,15 +312,25 @@ public final class DocumentServiceProto {
             new java.lang.String[] {
               "Uris",
             });
-    internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_Matcher_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_descriptor =
         internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_descriptor
             .getNestedTypes()
             .get(1);
+    internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_FhirMatcher_descriptor,
+            new java.lang.String[] {
+              "FhirResources",
+            });
+    internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_Matcher_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_descriptor
+            .getNestedTypes()
+            .get(2);
     internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_Matcher_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataRequest_Matcher_descriptor,
             new java.lang.String[] {
-              "UrisMatcher", "Matcher",
+              "UrisMatcher", "FhirMatcher", "Matcher",
             });
     internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataResponse_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -338,7 +358,7 @@ public final class DocumentServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_BatchGetDocumentsMetadataResponse_DocumentMetadata_MatcherValue_descriptor,
             new java.lang.String[] {
-              "Uri", "MatcherValue",
+              "Uri", "FhirResource", "MatcherValue",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

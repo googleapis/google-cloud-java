@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -873,7 +873,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource("SetIamPolicyRequest1223629066".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -906,7 +906,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource("SetIamPolicyRequest1223629066".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -931,7 +931,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource("GetIamPolicyRequest-1527610370".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -963,7 +963,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource("GetIamPolicyRequest-1527610370".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -982,7 +982,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource("TestIamPermissionsRequest942398222".toString())
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -1014,7 +1014,7 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);

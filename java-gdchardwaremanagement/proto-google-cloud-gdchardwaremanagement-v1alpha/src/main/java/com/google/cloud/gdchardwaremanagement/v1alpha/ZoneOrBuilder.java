@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -470,4 +470,33 @@ public interface ZoneOrBuilder
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SubscriptionConfigOrBuilder
       getSubscriptionConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provisioning state for configurations like MAC addresses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for provisioningState.
+   */
+  int getProvisioningStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provisioning state for configurations like MAC addresses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The provisioningState.
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState getProvisioningState();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -349,6 +349,138 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the naturalLanguageQueryUnderstandingConfig field is set.
+   */
+  boolean hasNaturalLanguageQueryUnderstandingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The naturalLanguageQueryUnderstandingConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig
+      getNaturalLanguageQueryUnderstandingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Natural Language Query Understanding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfig natural_language_query_understanding_config = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.NaturalLanguageQueryUnderstandingConfigOrBuilder
+      getNaturalLanguageQueryUnderstandingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the billingEstimation field is set.
+   */
+  boolean hasBillingEstimation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The billingEstimation.
+   */
+  com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation getBillingEstimation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data size estimation for billing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.BillingEstimation billing_estimation = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimationOrBuilder
+      getBillingEstimationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1beta.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return Whether the workspaceConfig field is set.
+   */
+  boolean hasWorkspaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1beta.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.WorkspaceConfig workspace_config = 25;</code>
+   *
+   * @return The workspaceConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.WorkspaceConfig getWorkspaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config to store data store type configuration for workspace data. This
+   * must be set when
+   * [DataStore.content_config][google.cloud.discoveryengine.v1beta.DataStore.content_config]
+   * is set as
+   * [DataStore.ContentConfig.GOOGLE_WORKSPACE][google.cloud.discoveryengine.v1beta.DataStore.ContentConfig.GOOGLE_WORKSPACE].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.WorkspaceConfig workspace_config = 25;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.WorkspaceConfigOrBuilder getWorkspaceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for Document understanding and enrichment.
    * </pre>
    *
@@ -463,4 +595,47 @@ public interface DataStoreOrBuilder
    * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
    */
   com.google.cloud.discoveryengine.v1beta.SchemaOrBuilder getStartingSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stores serving config at DataStore level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore serving_config_data_store = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the servingConfigDataStore field is set.
+   */
+  boolean hasServingConfigDataStore();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stores serving config at DataStore level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore serving_config_data_store = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The servingConfigDataStore.
+   */
+  com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore
+      getServingConfigDataStore();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stores serving config at DataStore level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStore serving_config_data_store = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStoreOrBuilder
+      getServingConfigDataStoreOrBuilder();
 }

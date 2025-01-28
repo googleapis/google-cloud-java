@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,46 @@ public final class IoProto {
       internal_static_google_cloud_aiplatform_v1_ContainerRegistryDestination_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ContainerRegistryDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_ResourceId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_ResourceId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_DirectUploadSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_DirectUploadSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SlackSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SlackSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_SlackChannel_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_SlackChannel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_JiraSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_JiraSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_JiraSource_JiraQueries_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_JiraSource_JiraQueries_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SharePointSources_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SharePointSources_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_SharePointSources_SharePointSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_SharePointSources_SharePointSource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -75,32 +115,74 @@ public final class IoProto {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/aiplatform/v1/io.proto\022\032g"
           + "oogle.cloud.aiplatform.v1\032\037google/api/fi"
-          + "eld_behavior.proto\"L\n\nAvroSource\022>\n\ngcs_"
-          + "source\030\001 \001(\0132%.google.cloud.aiplatform.v"
-          + "1.GcsSourceB\003\340A\002\"K\n\tCsvSource\022>\n\ngcs_sou"
-          + "rce\030\001 \001(\0132%.google.cloud.aiplatform.v1.G"
-          + "csSourceB\003\340A\002\"\036\n\tGcsSource\022\021\n\004uris\030\001 \003(\t"
-          + "B\003\340A\002\"0\n\016GcsDestination\022\036\n\021output_uri_pr"
-          + "efix\030\001 \001(\tB\003\340A\002\"(\n\016BigQuerySource\022\026\n\tinp"
-          + "ut_uri\030\001 \001(\tB\003\340A\002\".\n\023BigQueryDestination"
-          + "\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002\"Z\n\016CsvDestinat"
-          + "ion\022H\n\017gcs_destination\030\001 \001(\0132*.google.cl"
-          + "oud.aiplatform.v1.GcsDestinationB\003\340A\002\"_\n"
-          + "\023TFRecordDestination\022H\n\017gcs_destination\030"
-          + "\001 \001(\0132*.google.cloud.aiplatform.v1.GcsDe"
-          + "stinationB\003\340A\002\"7\n\034ContainerRegistryDesti"
-          + "nation\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002B\305\001\n\036com."
-          + "google.cloud.aiplatform.v1B\007IoProtoP\001Z>c"
-          + "loud.google.com/go/aiplatform/apiv1/aipl"
-          + "atformpb;aiplatformpb\252\002\032Google.Cloud.AIP"
-          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
-          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "eld_behavior.proto\032)google/cloud/aiplatf"
+          + "orm/v1/api_auth.proto\032\037google/protobuf/t"
+          + "imestamp.proto\"L\n\nAvroSource\022>\n\ngcs_sour"
+          + "ce\030\001 \001(\0132%.google.cloud.aiplatform.v1.Gc"
+          + "sSourceB\003\340A\002\"K\n\tCsvSource\022>\n\ngcs_source\030"
+          + "\001 \001(\0132%.google.cloud.aiplatform.v1.GcsSo"
+          + "urceB\003\340A\002\"\036\n\tGcsSource\022\021\n\004uris\030\001 \003(\tB\003\340A"
+          + "\002\"0\n\016GcsDestination\022\036\n\021output_uri_prefix"
+          + "\030\001 \001(\tB\003\340A\002\"(\n\016BigQuerySource\022\026\n\tinput_u"
+          + "ri\030\001 \001(\tB\003\340A\002\".\n\023BigQueryDestination\022\027\n\n"
+          + "output_uri\030\001 \001(\tB\003\340A\002\"Z\n\016CsvDestination\022"
+          + "H\n\017gcs_destination\030\001 \001(\0132*.google.cloud."
+          + "aiplatform.v1.GcsDestinationB\003\340A\002\"_\n\023TFR"
+          + "ecordDestination\022H\n\017gcs_destination\030\001 \001("
+          + "\0132*.google.cloud.aiplatform.v1.GcsDestin"
+          + "ationB\003\340A\002\"7\n\034ContainerRegistryDestinati"
+          + "on\022\027\n\noutput_uri\030\001 \001(\tB\003\340A\002\"\325\002\n\021GoogleDr"
+          + "iveSource\022S\n\014resource_ids\030\001 \003(\01328.google"
+          + ".cloud.aiplatform.v1.GoogleDriveSource.R"
+          + "esourceIdB\003\340A\002\032\352\001\n\nResourceId\022a\n\rresourc"
+          + "e_type\030\001 \001(\0162E.google.cloud.aiplatform.v"
+          + "1.GoogleDriveSource.ResourceId.ResourceT"
+          + "ypeB\003\340A\002\022\030\n\013resource_id\030\002 \001(\tB\003\340A\002\"_\n\014Re"
+          + "sourceType\022\035\n\031RESOURCE_TYPE_UNSPECIFIED\020"
+          + "\000\022\026\n\022RESOURCE_TYPE_FILE\020\001\022\030\n\024RESOURCE_TY"
+          + "PE_FOLDER\020\002\"\024\n\022DirectUploadSource\"\251\003\n\013Sl"
+          + "ackSource\022L\n\010channels\030\001 \003(\01325.google.clo"
+          + "ud.aiplatform.v1.SlackSource.SlackChanne"
+          + "lsB\003\340A\002\032\313\002\n\rSlackChannels\022Y\n\010channels\030\001 "
+          + "\003(\0132B.google.cloud.aiplatform.v1.SlackSo"
+          + "urce.SlackChannels.SlackChannelB\003\340A\002\022M\n\016"
+          + "api_key_config\030\003 \001(\01320.google.cloud.aipl"
+          + "atform.v1.ApiAuth.ApiKeyConfigB\003\340A\002\032\217\001\n\014"
+          + "SlackChannel\022\027\n\nchannel_id\030\001 \001(\tB\003\340A\002\0223\n"
+          + "\nstart_time\030\002 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\001\0221\n\010end_time\030\003 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\001\"\221\002\n\nJiraSource\022M\n\014"
+          + "jira_queries\030\001 \003(\01322.google.cloud.aiplat"
+          + "form.v1.JiraSource.JiraQueriesB\003\340A\002\032\263\001\n\013"
+          + "JiraQueries\022\020\n\010projects\030\003 \003(\t\022\026\n\016custom_"
+          + "queries\030\004 \003(\t\022\022\n\005email\030\005 \001(\tB\003\340A\002\022\027\n\nser"
+          + "ver_uri\030\006 \001(\tB\003\340A\002\022M\n\016api_key_config\030\007 \001"
+          + "(\01320.google.cloud.aiplatform.v1.ApiAuth."
+          + "ApiKeyConfigB\003\340A\002\"\265\003\n\021SharePointSources\022"
+          + "[\n\023share_point_sources\030\001 \003(\0132>.google.cl"
+          + "oud.aiplatform.v1.SharePointSources.Shar"
+          + "ePointSource\032\302\002\n\020SharePointSource\022 \n\026sha"
+          + "repoint_folder_path\030\005 \001(\tH\000\022\036\n\024sharepoin"
+          + "t_folder_id\030\006 \001(\tH\000\022\024\n\ndrive_name\030\007 \001(\tH"
+          + "\001\022\022\n\010drive_id\030\010 \001(\tH\001\022\021\n\tclient_id\030\001 \001(\t"
+          + "\022G\n\rclient_secret\030\002 \001(\01320.google.cloud.a"
+          + "iplatform.v1.ApiAuth.ApiKeyConfig\022\021\n\tten"
+          + "ant_id\030\003 \001(\t\022\034\n\024sharepoint_site_name\030\004 \001"
+          + "(\t\022\024\n\007file_id\030\t \001(\tB\003\340A\003B\017\n\rfolder_sourc"
+          + "eB\016\n\014drive_sourceB\305\001\n\036com.google.cloud.a"
+          + "iplatform.v1B\007IoProtoP\001Z>cloud.google.co"
+          + "m/go/aiplatform/apiv1/aiplatformpb;aipla"
+          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1.ApiAuthProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_AvroSource_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -174,12 +256,108 @@ public final class IoProto {
             new java.lang.String[] {
               "OutputUri",
             });
+    internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_descriptor,
+            new java.lang.String[] {
+              "ResourceIds",
+            });
+    internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_ResourceId_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_ResourceId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GoogleDriveSource_ResourceId_descriptor,
+            new java.lang.String[] {
+              "ResourceType", "ResourceId",
+            });
+    internal_static_google_cloud_aiplatform_v1_DirectUploadSource_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_aiplatform_v1_DirectUploadSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_DirectUploadSource_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1_SlackSource_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1_SlackSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SlackSource_descriptor,
+            new java.lang.String[] {
+              "Channels",
+            });
+    internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_descriptor =
+        internal_static_google_cloud_aiplatform_v1_SlackSource_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_descriptor,
+            new java.lang.String[] {
+              "Channels", "ApiKeyConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_SlackChannel_descriptor =
+        internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_SlackChannel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SlackSource_SlackChannels_SlackChannel_descriptor,
+            new java.lang.String[] {
+              "ChannelId", "StartTime", "EndTime",
+            });
+    internal_static_google_cloud_aiplatform_v1_JiraSource_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_aiplatform_v1_JiraSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_JiraSource_descriptor,
+            new java.lang.String[] {
+              "JiraQueries",
+            });
+    internal_static_google_cloud_aiplatform_v1_JiraSource_JiraQueries_descriptor =
+        internal_static_google_cloud_aiplatform_v1_JiraSource_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1_JiraSource_JiraQueries_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_JiraSource_JiraQueries_descriptor,
+            new java.lang.String[] {
+              "Projects", "CustomQueries", "Email", "ServerUri", "ApiKeyConfig",
+            });
+    internal_static_google_cloud_aiplatform_v1_SharePointSources_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_aiplatform_v1_SharePointSources_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SharePointSources_descriptor,
+            new java.lang.String[] {
+              "SharePointSources",
+            });
+    internal_static_google_cloud_aiplatform_v1_SharePointSources_SharePointSource_descriptor =
+        internal_static_google_cloud_aiplatform_v1_SharePointSources_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_SharePointSources_SharePointSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_SharePointSources_SharePointSource_descriptor,
+            new java.lang.String[] {
+              "SharepointFolderPath",
+              "SharepointFolderId",
+              "DriveName",
+              "DriveId",
+              "ClientId",
+              "ClientSecret",
+              "TenantId",
+              "SharepointSiteName",
+              "FileId",
+              "FolderSource",
+              "DriveSource",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.cloud.aiplatform.v1.ApiAuthProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

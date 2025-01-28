@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1803,13 +1803,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * actuating resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return Whether the serviceAccount field is set.
@@ -1822,13 +1822,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * actuating resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The serviceAccount.
@@ -1849,13 +1849,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * actuating resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for serviceAccount.
@@ -5861,13 +5861,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-specified Service Account (SA) credentials to be used when
+     * Required. User-specified Service Account (SA) credentials to be used when
      * actuating resources.
      * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
      * </pre>
      *
      * <code>
-     * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return Whether the serviceAccount field is set.
@@ -5879,13 +5879,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-specified Service Account (SA) credentials to be used when
+     * Required. User-specified Service Account (SA) credentials to be used when
      * actuating resources.
      * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
      * </pre>
      *
      * <code>
-     * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The serviceAccount.
@@ -5905,13 +5905,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-specified Service Account (SA) credentials to be used when
+     * Required. User-specified Service Account (SA) credentials to be used when
      * actuating resources.
      * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
      * </pre>
      *
      * <code>
-     * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for serviceAccount.
@@ -5931,13 +5931,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-specified Service Account (SA) credentials to be used when
+     * Required. User-specified Service Account (SA) credentials to be used when
      * actuating resources.
      * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
      * </pre>
      *
      * <code>
-     * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The serviceAccount to set.
@@ -5956,13 +5956,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-specified Service Account (SA) credentials to be used when
+     * Required. User-specified Service Account (SA) credentials to be used when
      * actuating resources.
      * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
      * </pre>
      *
      * <code>
-     * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -5977,13 +5977,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-specified Service Account (SA) credentials to be used when
+     * Required. User-specified Service Account (SA) credentials to be used when
      * actuating resources.
      * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
      * </pre>
      *
      * <code>
-     * optional string service_account = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string service_account = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for serviceAccount to set.

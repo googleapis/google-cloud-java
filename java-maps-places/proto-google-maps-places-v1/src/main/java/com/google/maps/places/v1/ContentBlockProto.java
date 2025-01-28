@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,12 +47,12 @@ public final class ContentBlockProto {
           + "ocalized_text.proto\"\201\001\n\014ContentBlock\022\r\n\005"
           + "topic\030\001 \001(\t\022+\n\007content\030\002 \001(\0132\032.google.ty"
           + "pe.LocalizedText\0225\n\nreferences\030\003 \001(\0132!.g"
-          + "oogle.maps.places.v1.ReferencesB\245\001\n\031com."
+          + "oogle.maps.places.v1.ReferencesB\242\001\n\031com."
           + "google.maps.places.v1B\021ContentBlockProto"
           + "P\001Z7cloud.google.com/go/maps/places/apiv"
-          + "1/placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025Google"
-          + ".Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1b"
-          + "\006proto3"
+          + "1/placespb;placespb\242\002\006GMPSV1\252\002\025Google.Ma"
+          + "ps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

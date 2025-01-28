@@ -26,7 +26,6 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.V2";
 option go_package = "cloud.google.com/go/dialogflow/apiv2/dialogflowpb;dialogflowpb";
 option java_multiple_files = true;
@@ -331,7 +330,7 @@ message ImportConversationDataOperationResponse {
   int32 import_count = 3;
 }
 
-// Metadata for [ConversationDatasets][CreateConversationDataset].
+// Metadata for [CreateConversationDataset][].
 message CreateConversationDatasetOperationMetadata {
   // The resource name of the conversation dataset that will be created. Format:
   // `projects/<Project ID>/locations/<Location
@@ -341,5 +340,5 @@ message CreateConversationDatasetOperationMetadata {
   }];
 }
 
-// Metadata for [ConversationDatasets][DeleteConversationDataset].
+// Metadata for [DeleteConversationDataset][].
 message DeleteConversationDatasetOperationMetadata {}

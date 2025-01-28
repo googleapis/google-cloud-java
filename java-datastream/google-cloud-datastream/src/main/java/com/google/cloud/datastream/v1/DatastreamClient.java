@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -280,6 +280,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteStreamOperationCallable()
  *           <li><p> deleteStreamCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunStream</td>
+ *      <td><p> Use this method to start, resume or recover a stream with a non default CDC strategy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runStreamAsync(RunStreamRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runStreamOperationCallable()
+ *           <li><p> runStreamCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2254,6 +2269,96 @@ public class DatastreamClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteStreamRequest, Operation> deleteStreamCallable() {
     return stub.deleteStreamCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Use this method to start, resume or recover a stream with a non default CDC strategy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
+   *   RunStreamRequest request =
+   *       RunStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+   *           .setCdcStrategy(CdcStrategy.newBuilder().build())
+   *           .setForce(true)
+   *           .build();
+   *   Stream response = datastreamClient.runStreamAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Stream, OperationMetadata> runStreamAsync(RunStreamRequest request) {
+    return runStreamOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Use this method to start, resume or recover a stream with a non default CDC strategy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
+   *   RunStreamRequest request =
+   *       RunStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+   *           .setCdcStrategy(CdcStrategy.newBuilder().build())
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Stream, OperationMetadata> future =
+   *       datastreamClient.runStreamOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Stream response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable() {
+    return stub.runStreamOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Use this method to start, resume or recover a stream with a non default CDC strategy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatastreamClient datastreamClient = DatastreamClient.create()) {
+   *   RunStreamRequest request =
+   *       RunStreamRequest.newBuilder()
+   *           .setName(StreamName.of("[PROJECT]", "[LOCATION]", "[STREAM]").toString())
+   *           .setCdcStrategy(CdcStrategy.newBuilder().build())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future = datastreamClient.runStreamCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunStreamRequest, Operation> runStreamCallable() {
+    return stub.runStreamCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

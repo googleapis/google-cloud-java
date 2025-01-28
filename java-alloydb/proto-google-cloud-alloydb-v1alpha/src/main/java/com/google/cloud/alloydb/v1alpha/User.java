@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -436,6 +436,25 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.alloydb.v1alpha.User.UserType.UNRECOGNIZED : result;
   }
 
+  public static final int KEEP_EXTRA_ROLES_FIELD_NUMBER = 6;
+  private boolean keepExtraRoles_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. If the user already exists and it has additional roles, keep
+   * them granted.
+   * </pre>
+   *
+   * <code>bool keep_extra_roles = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The keepExtraRoles.
+   */
+  @java.lang.Override
+  public boolean getKeepExtraRoles() {
+    return keepExtraRoles_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -462,6 +481,9 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     if (userType_
         != com.google.cloud.alloydb.v1alpha.User.UserType.USER_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, userType_);
+    }
+    if (keepExtraRoles_ != false) {
+      output.writeBool(6, keepExtraRoles_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -490,6 +512,9 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.alloydb.v1alpha.User.UserType.USER_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, userType_);
     }
+    if (keepExtraRoles_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, keepExtraRoles_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -509,6 +534,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     if (!getPassword().equals(other.getPassword())) return false;
     if (!getDatabaseRolesList().equals(other.getDatabaseRolesList())) return false;
     if (userType_ != other.userType_) return false;
+    if (getKeepExtraRoles() != other.getKeepExtraRoles()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -530,6 +556,8 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + USER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + userType_;
+    hash = (37 * hash) + KEEP_EXTRA_ROLES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeepExtraRoles());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -672,6 +700,7 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       password_ = "";
       databaseRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       userType_ = 0;
+      keepExtraRoles_ = false;
       return this;
     }
 
@@ -720,6 +749,9 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.userType_ = userType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.keepExtraRoles_ = keepExtraRoles_;
       }
     }
 
@@ -791,6 +823,9 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       if (other.userType_ != 0) {
         setUserTypeValue(other.getUserTypeValue());
       }
+      if (other.getKeepExtraRoles() != false) {
+        setKeepExtraRoles(other.getKeepExtraRoles());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -842,6 +877,12 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 40
+            case 48:
+              {
+                keepExtraRoles_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1357,6 +1398,62 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUserType() {
       bitField0_ = (bitField0_ & ~0x00000008);
       userType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean keepExtraRoles_;
+    /**
+     *
+     *
+     * <pre>
+     * Input only. If the user already exists and it has additional roles, keep
+     * them granted.
+     * </pre>
+     *
+     * <code>bool keep_extra_roles = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The keepExtraRoles.
+     */
+    @java.lang.Override
+    public boolean getKeepExtraRoles() {
+      return keepExtraRoles_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. If the user already exists and it has additional roles, keep
+     * them granted.
+     * </pre>
+     *
+     * <code>bool keep_extra_roles = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The keepExtraRoles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeepExtraRoles(boolean value) {
+
+      keepExtraRoles_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. If the user already exists and it has additional roles, keep
+     * them granted.
+     * </pre>
+     *
+     * <code>bool keep_extra_roles = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeepExtraRoles() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      keepExtraRoles_ = false;
       onChanged();
       return this;
     }

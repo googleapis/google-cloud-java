@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,12 +57,12 @@ public final class DumpContentProto {
           + ".cloud.datacatalog.v1.TagB\003\340A\001B\007\n\005entry\""
           + "T\n\010DumpItem\022@\n\014tagged_entry\030\001 \001(\0132(.goog"
           + "le.cloud.datacatalog.v1.TaggedEntryH\000B\006\n"
-          + "\004itemB\330\001\n\037com.google.cloud.datacatalog.v"
+          + "\004itemB\325\001\n\037com.google.cloud.datacatalog.v"
           + "1B\020DumpContentProtoP\001ZAcloud.google.com/"
           + "go/datacatalog/apiv1/datacatalogpb;datac"
-          + "atalogpb\370\001\001\252\002\033Google.Cloud.DataCatalog.V"
-          + "1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google"
-          + "::Cloud::DataCatalog::V1b\006proto3"
+          + "atalogpb\252\002\033Google.Cloud.DataCatalog.V1\312\002"
+          + "\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google::C"
+          + "loud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,10 @@ public final class CloudDeployProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_deploy_v1_KubernetesConfig_ServiceNetworking_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_KubernetesConfig_ServiceNetworking_fieldAccessorTable;
@@ -177,6 +181,10 @@ public final class CloudDeployProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_Target_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_Target_AssociatedEntitiesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_Target_AssociatedEntitiesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_deploy_v1_Target_DeployParametersEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_Target_DeployParametersEntry_fieldAccessorTable;
@@ -212,6 +220,10 @@ public final class CloudDeployProto {
       internal_static_google_cloud_deploy_v1_CustomTarget_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_CustomTarget_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_AssociatedEntities_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_AssociatedEntities_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_deploy_v1_ListTargetsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -689,6 +701,10 @@ public final class CloudDeployProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_AutomationRule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseRule_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_deploy_v1_PromoteReleaseRule_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_PromoteReleaseRule_fieldAccessorTable;
@@ -701,9 +717,29 @@ public final class CloudDeployProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_RepairRolloutRule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_RepairPhaseConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_RepairPhaseConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_Retry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_Retry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_Rollback_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_Rollback_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_deploy_v1_AutomationRuleCondition_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_AutomationRuleCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_Targets_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_Targets_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_deploy_v1_CreateAutomationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -744,6 +780,10 @@ public final class CloudDeployProto {
       internal_static_google_cloud_deploy_v1_RepairRolloutOperation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_deploy_v1_RepairRolloutOperation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseOperation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_deploy_v1_TimedPromoteReleaseOperation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_deploy_v1_RepairPhase_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -859,1130 +899,1183 @@ public final class CloudDeployProto {
           + "\022\020\n\010profiles\030\003 \003(\t\022\016\n\006verify\030\004 \001(\010\0229\n\tpr"
           + "edeploy\030\005 \001(\0132!.google.cloud.deploy.v1.P"
           + "redeployB\003\340A\001\022;\n\npostdeploy\030\006 \001(\0132\".goog"
-          + "le.cloud.deploy.v1.PostdeployB\003\340A\001\"\361\004\n\020K"
+          + "le.cloud.deploy.v1.PostdeployB\003\340A\001\"\264\006\n\020K"
           + "ubernetesConfig\022[\n\024gateway_service_mesh\030"
           + "\001 \001(\0132;.google.cloud.deploy.v1.Kubernete"
           + "sConfig.GatewayServiceMeshH\000\022X\n\022service_"
           + "networking\030\002 \001(\0132:.google.cloud.deploy.v"
-          + "1.KubernetesConfig.ServiceNetworkingH\000\032\376"
-          + "\001\n\022GatewayServiceMesh\022\027\n\nhttp_route\030\001 \001("
+          + "1.KubernetesConfig.ServiceNetworkingH\000\032\301"
+          + "\003\n\022GatewayServiceMesh\022\027\n\nhttp_route\030\001 \001("
           + "\tB\003\340A\002\022\024\n\007service\030\002 \001(\tB\003\340A\002\022\027\n\ndeployme"
           + "nt\030\003 \001(\tB\003\340A\002\022>\n\026route_update_wait_time\030"
           + "\004 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022?\n"
           + "\027stable_cutback_duration\030\005 \001(\0132\031.google."
           + "protobuf.DurationB\003\340A\001\022\037\n\022pod_selector_l"
-          + "abel\030\006 \001(\tB\003\340A\001\032\216\001\n\021ServiceNetworking\022\024\n"
-          + "\007service\030\001 \001(\tB\003\340A\002\022\027\n\ndeployment\030\002 \001(\tB"
-          + "\003\340A\002\022)\n\034disable_pod_overprovisioning\030\003 \001"
-          + "(\010B\003\340A\001\022\037\n\022pod_selector_label\030\004 \001(\tB\003\340A\001"
-          + "B\024\n\022service_definition\"\233\001\n\016CloudRunConfi"
-          + "g\022!\n\031automatic_traffic_control\030\001 \001(\010\022!\n\024"
-          + "canary_revision_tags\030\002 \003(\tB\003\340A\001\022 \n\023prior"
-          + "_revision_tags\030\003 \003(\tB\003\340A\001\022!\n\024stable_revi"
-          + "sion_tags\030\004 \003(\tB\003\340A\001\"\236\001\n\rRuntimeConfig\022>"
-          + "\n\nkubernetes\030\001 \001(\0132(.google.cloud.deploy"
-          + ".v1.KubernetesConfigH\000\022;\n\tcloud_run\030\002 \001("
-          + "\0132&.google.cloud.deploy.v1.CloudRunConfi"
-          + "gH\000B\020\n\016runtime_config\"Y\n\026PipelineReadyCo"
-          + "ndition\022\016\n\006status\030\003 \001(\010\022/\n\013update_time\030\004"
-          + " \001(\0132\032.google.protobuf.Timestamp\"\233\001\n\027Tar"
-          + "getsPresentCondition\022\016\n\006status\030\001 \001(\010\022?\n\017"
-          + "missing_targets\030\002 \003(\tB&\372A#\n!clouddeploy."
-          + "googleapis.com/Target\022/\n\013update_time\030\004 \001"
-          + "(\0132\032.google.protobuf.Timestamp\"=\n\024Target"
-          + "sTypeCondition\022\016\n\006status\030\001 \001(\010\022\025\n\rerror_"
-          + "details\030\002 \001(\t\"\207\002\n\021PipelineCondition\022P\n\030p"
-          + "ipeline_ready_condition\030\001 \001(\0132..google.c"
-          + "loud.deploy.v1.PipelineReadyCondition\022R\n"
-          + "\031targets_present_condition\030\003 \001(\0132/.googl"
-          + "e.cloud.deploy.v1.TargetsPresentConditio"
-          + "n\022L\n\026targets_type_condition\030\004 \001(\0132,.goog"
-          + "le.cloud.deploy.v1.TargetsTypeCondition\""
-          + "\254\001\n\034ListDeliveryPipelinesRequest\022C\n\006pare"
-          + "nt\030\001 \001(\tB3\340A\002\372A-\022+clouddeploy.googleapis"
-          + ".com/DeliveryPipeline\022\021\n\tpage_size\030\002 \001(\005"
-          + "\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010"
-          + "order_by\030\005 \001(\t\"\223\001\n\035ListDeliveryPipelines"
-          + "Response\022D\n\022delivery_pipelines\030\001 \003(\0132(.g"
-          + "oogle.cloud.deploy.v1.DeliveryPipeline\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003"
-          + " \003(\t\"_\n\032GetDeliveryPipelineRequest\022A\n\004na"
-          + "me\030\001 \001(\tB3\340A\002\372A-\n+clouddeploy.googleapis"
-          + ".com/DeliveryPipeline\"\206\002\n\035CreateDelivery"
-          + "PipelineRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022"
-          + "+clouddeploy.googleapis.com/DeliveryPipe"
-          + "line\022!\n\024delivery_pipeline_id\030\002 \001(\tB\003\340A\002\022"
-          + "H\n\021delivery_pipeline\030\003 \001(\0132(.google.clou"
-          + "d.deploy.v1.DeliveryPipelineB\003\340A\002\022\027\n\nreq"
-          + "uest_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001("
-          + "\010B\003\340A\001\"\360\001\n\035UpdateDeliveryPipelineRequest"
-          + "\0224\n\013update_mask\030\001 \001(\0132\032.google.protobuf."
-          + "FieldMaskB\003\340A\002\022H\n\021delivery_pipeline\030\002 \001("
-          + "\0132(.google.cloud.deploy.v1.DeliveryPipel"
-          + "ineB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032\n\rall"
-          + "ow_missing\030\004 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\005"
-          + " \001(\010B\003\340A\001\"\332\001\n\035DeleteDeliveryPipelineRequ"
-          + "est\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+clouddeploy.g"
-          + "oogleapis.com/DeliveryPipeline\022\027\n\nreques"
-          + "t_id\030\002 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003"
-          + "\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\022\n\005force"
-          + "\030\006 \001(\010B\003\340A\001\022\021\n\004etag\030\005 \001(\tB\003\340A\001\"m\n\024Rollba"
-          + "ckTargetConfig\0225\n\007rollout\030\001 \001(\0132\037.google"
-          + ".cloud.deploy.v1.RolloutB\003\340A\001\022\036\n\021startin"
-          + "g_phase_id\030\002 \001(\tB\003\340A\001\"\200\003\n\025RollbackTarget"
-          + "Request\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+clouddepl"
-          + "oy.googleapis.com/DeliveryPipeline\022\026\n\tta"
-          + "rget_id\030\002 \001(\tB\003\340A\002\022\027\n\nrollout_id\030\003 \001(\tB\003"
-          + "\340A\002\022\027\n\nrelease_id\030\004 \001(\tB\003\340A\001\022!\n\024rollout_"
-          + "to_roll_back\030\005 \001(\tB\003\340A\001\022J\n\017rollback_conf"
-          + "ig\030\006 \001(\0132,.google.cloud.deploy.v1.Rollba"
-          + "ckTargetConfigB\003\340A\001\022\032\n\rvalidate_only\030\007 \001"
-          + "(\010B\003\340A\001\022O\n\026override_deploy_policy\030\t \003(\tB"
-          + "/\340A\001\372A)\n\'clouddeploy.googleapis.com/Depl"
-          + "oyPolicy\"_\n\026RollbackTargetResponse\022E\n\017ro"
-          + "llback_config\030\001 \001(\0132,.google.cloud.deplo"
-          + "y.v1.RollbackTargetConfig\"\370\010\n\006Target\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\001\022\026\n\ttarget_id\030\002 \001(\tB\003\340A\003\022"
-          + "\020\n\003uid\030\003 \001(\tB\003\340A\003\022\030\n\013description\030\004 \001(\tB\003"
-          + "\340A\001\022I\n\013annotations\030\005 \003(\0132/.google.cloud."
-          + "deploy.v1.Target.AnnotationsEntryB\003\340A\001\022?"
-          + "\n\006labels\030\006 \003(\0132*.google.cloud.deploy.v1."
-          + "Target.LabelsEntryB\003\340A\001\022\035\n\020require_appro"
-          + "val\030\r \001(\010B\003\340A\001\0224\n\013create_time\030\010 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
-          + "ime\030\t \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\0226\n\003gke\030\017 \001(\0132\".google.cloud.deploy.v1"
-          + ".GkeClusterB\003\340A\001H\000\022D\n\016anthos_cluster\030\021 \001"
-          + "(\0132%.google.cloud.deploy.v1.AnthosCluste"
-          + "rB\003\340A\001H\000\022<\n\003run\030\022 \001(\0132(.google.cloud.dep"
-          + "loy.v1.CloudRunLocationB\003\340A\001H\000\022@\n\014multi_"
-          + "target\030\023 \001(\0132#.google.cloud.deploy.v1.Mu"
-          + "ltiTargetB\003\340A\001H\000\022B\n\rcustom_target\030\025 \001(\0132"
-          + "$.google.cloud.deploy.v1.CustomTargetB\003\340"
-          + "A\001H\000\022\021\n\004etag\030\014 \001(\tB\003\340A\001\022B\n\021execution_con"
-          + "figs\030\020 \003(\0132\'.google.cloud.deploy.v1.Exec"
-          + "utionConfig\022T\n\021deploy_parameters\030\024 \003(\01324"
-          + ".google.cloud.deploy.v1.Target.DeployPar"
-          + "ametersEntryB\003\340A\001\0322\n\020AnnotationsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0327\n\025"
-          + "DeployParametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001:`\352A]\n!clouddeploy.googleap"
-          + "is.com/Target\0228projects/{project}/locati"
-          + "ons/{location}/targets/{target}B\023\n\021deplo"
-          + "yment_target\"\345\004\n\017ExecutionConfig\022V\n\006usag"
-          + "es\030\001 \003(\0162A.google.cloud.deploy.v1.Execut"
-          + "ionConfig.ExecutionEnvironmentUsageB\003\340A\002"
-          + "\022@\n\014default_pool\030\002 \001(\0132#.google.cloud.de"
-          + "ploy.v1.DefaultPoolB\003\340A\001H\000\022@\n\014private_po"
-          + "ol\030\003 \001(\0132#.google.cloud.deploy.v1.Privat"
-          + "ePoolB\003\340A\001H\000\022A\n\013worker_pool\030\004 \001(\tB,\340A\001\372A"
-          + "&\n$cloudbuild.googleapis.com/WorkerPool\022"
-          + "\034\n\017service_account\030\005 \001(\tB\003\340A\001\022\035\n\020artifac"
-          + "t_storage\030\006 \001(\tB\003\340A\001\0229\n\021execution_timeou"
-          + "t\030\007 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022"
-          + "\024\n\007verbose\030\010 \001(\010B\003\340A\001\"\213\001\n\031ExecutionEnvir"
-          + "onmentUsage\022+\n\'EXECUTION_ENVIRONMENT_USA"
-          + "GE_UNSPECIFIED\020\000\022\n\n\006RENDER\020\001\022\n\n\006DEPLOY\020\002"
-          + "\022\n\n\006VERIFY\020\003\022\r\n\tPREDEPLOY\020\004\022\016\n\nPOSTDEPLO"
-          + "Y\020\005B\027\n\025execution_environment\"J\n\013DefaultP"
-          + "ool\022\034\n\017service_account\030\001 \001(\tB\003\340A\001\022\035\n\020art"
-          + "ifact_storage\030\002 \001(\tB\003\340A\001\"\215\001\n\013PrivatePool"
-          + "\022A\n\013worker_pool\030\001 \001(\tB,\340A\002\372A&\n$cloudbuil"
-          + "d.googleapis.com/WorkerPool\022\034\n\017service_a"
-          + "ccount\030\002 \001(\tB\003\340A\001\022\035\n\020artifact_storage\030\003 "
-          + "\001(\tB\003\340A\001\"y\n\nGkeCluster\0229\n\007cluster\030\001 \001(\tB"
-          + "(\340A\001\372A\"\n container.googleapis.com/Cluste"
-          + "r\022\030\n\013internal_ip\030\002 \001(\010B\003\340A\001\022\026\n\tproxy_url"
-          + "\030\003 \001(\tB\003\340A\001\"M\n\rAnthosCluster\022<\n\nmembersh"
-          + "ip\030\001 \001(\tB(\340A\001\372A\"\n gkehub.googleapis.com/"
-          + "Membership\"O\n\020CloudRunLocation\022;\n\010locati"
-          + "on\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.c"
-          + "om/Location\"&\n\013MultiTarget\022\027\n\ntarget_ids"
-          + "\030\001 \003(\tB\003\340A\002\"_\n\014CustomTarget\022O\n\022custom_ta"
-          + "rget_type\030\001 \001(\tB3\340A\002\372A-\n+clouddeploy.goo"
-          + "gleapis.com/CustomTargetType\"\254\001\n\022ListTar"
-          + "getsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!clo"
-          + "uddeploy.googleapis.com/Target\022\026\n\tpage_s"
-          + "ize\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022"
-          + "\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003"
-          + "\340A\001\"t\n\023ListTargetsResponse\022/\n\007targets\030\001 "
-          + "\003(\0132\036.google.cloud.deploy.v1.Target\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003("
-          + "\t\"K\n\020GetTargetRequest\0227\n\004name\030\001 \001(\tB)\340A\002"
-          + "\372A#\n!clouddeploy.googleapis.com/Target\"\322"
-          + "\001\n\023CreateTargetRequest\0229\n\006parent\030\001 \001(\tB)"
-          + "\340A\002\372A#\022!clouddeploy.googleapis.com/Targe"
-          + "t\022\026\n\ttarget_id\030\002 \001(\tB\003\340A\002\0223\n\006target\030\003 \001("
-          + "\0132\036.google.cloud.deploy.v1.TargetB\003\340A\002\022\027"
-          + "\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only"
-          + "\030\005 \001(\010B\003\340A\001\"\321\001\n\023UpdateTargetRequest\0224\n\013u"
+          + "abel\030\006 \001(\tB\003\340A\001\022n\n\022route_destinations\030\010 "
+          + "\001(\0132M.google.cloud.deploy.v1.KubernetesC"
+          + "onfig.GatewayServiceMesh.RouteDestinatio"
+          + "nsB\003\340A\001\032Q\n\021RouteDestinations\022\034\n\017destinat"
+          + "ion_ids\030\001 \003(\tB\003\340A\002\022\036\n\021propagate_service\030"
+          + "\002 \001(\010B\003\340A\001\032\216\001\n\021ServiceNetworking\022\024\n\007serv"
+          + "ice\030\001 \001(\tB\003\340A\002\022\027\n\ndeployment\030\002 \001(\tB\003\340A\002\022"
+          + ")\n\034disable_pod_overprovisioning\030\003 \001(\010B\003\340"
+          + "A\001\022\037\n\022pod_selector_label\030\004 \001(\tB\003\340A\001B\024\n\022s"
+          + "ervice_definition\"\233\001\n\016CloudRunConfig\022!\n\031"
+          + "automatic_traffic_control\030\001 \001(\010\022!\n\024canar"
+          + "y_revision_tags\030\002 \003(\tB\003\340A\001\022 \n\023prior_revi"
+          + "sion_tags\030\003 \003(\tB\003\340A\001\022!\n\024stable_revision_"
+          + "tags\030\004 \003(\tB\003\340A\001\"\236\001\n\rRuntimeConfig\022>\n\nkub"
+          + "ernetes\030\001 \001(\0132(.google.cloud.deploy.v1.K"
+          + "ubernetesConfigH\000\022;\n\tcloud_run\030\002 \001(\0132&.g"
+          + "oogle.cloud.deploy.v1.CloudRunConfigH\000B\020"
+          + "\n\016runtime_config\"Y\n\026PipelineReadyConditi"
+          + "on\022\016\n\006status\030\003 \001(\010\022/\n\013update_time\030\004 \001(\0132"
+          + "\032.google.protobuf.Timestamp\"\233\001\n\027TargetsP"
+          + "resentCondition\022\016\n\006status\030\001 \001(\010\022?\n\017missi"
+          + "ng_targets\030\002 \003(\tB&\372A#\n!clouddeploy.googl"
+          + "eapis.com/Target\022/\n\013update_time\030\004 \001(\0132\032."
+          + "google.protobuf.Timestamp\"=\n\024TargetsType"
+          + "Condition\022\016\n\006status\030\001 \001(\010\022\025\n\rerror_detai"
+          + "ls\030\002 \001(\t\"\207\002\n\021PipelineCondition\022P\n\030pipeli"
+          + "ne_ready_condition\030\001 \001(\0132..google.cloud."
+          + "deploy.v1.PipelineReadyCondition\022R\n\031targ"
+          + "ets_present_condition\030\003 \001(\0132/.google.clo"
+          + "ud.deploy.v1.TargetsPresentCondition\022L\n\026"
+          + "targets_type_condition\030\004 \001(\0132,.google.cl"
+          + "oud.deploy.v1.TargetsTypeCondition\"\254\001\n\034L"
+          + "istDeliveryPipelinesRequest\022C\n\006parent\030\001 "
+          + "\001(\tB3\340A\002\372A-\022+clouddeploy.googleapis.com/"
+          + "DeliveryPipeline\022\021\n\tpage_size\030\002 \001(\005\022\022\n\np"
+          + "age_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order"
+          + "_by\030\005 \001(\t\"\223\001\n\035ListDeliveryPipelinesRespo"
+          + "nse\022D\n\022delivery_pipelines\030\001 \003(\0132(.google"
+          + ".cloud.deploy.v1.DeliveryPipeline\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\""
+          + "_\n\032GetDeliveryPipelineRequest\022A\n\004name\030\001 "
+          + "\001(\tB3\340A\002\372A-\n+clouddeploy.googleapis.com/"
+          + "DeliveryPipeline\"\206\002\n\035CreateDeliveryPipel"
+          + "ineRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+clou"
+          + "ddeploy.googleapis.com/DeliveryPipeline\022"
+          + "!\n\024delivery_pipeline_id\030\002 \001(\tB\003\340A\002\022H\n\021de"
+          + "livery_pipeline\030\003 \001(\0132(.google.cloud.dep"
+          + "loy.v1.DeliveryPipelineB\003\340A\002\022\027\n\nrequest_"
+          + "id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A"
+          + "\001\"\360\001\n\035UpdateDeliveryPipelineRequest\0224\n\013u"
           + "pdate_mask\030\001 \001(\0132\032.google.protobuf.Field"
-          + "MaskB\003\340A\002\0223\n\006target\030\002 \001(\0132\036.google.cloud"
-          + ".deploy.v1.TargetB\003\340A\002\022\027\n\nrequest_id\030\003 \001"
-          + "(\tB\003\340A\001\022\032\n\rallow_missing\030\004 \001(\010B\003\340A\001\022\032\n\rv"
-          + "alidate_only\030\005 \001(\010B\003\340A\001\"\262\001\n\023DeleteTarget"
-          + "Request\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!clouddepl"
-          + "oy.googleapis.com/Target\022\027\n\nrequest_id\030\002"
-          + " \001(\tB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\022\032\n"
-          + "\rvalidate_only\030\004 \001(\010B\003\340A\001\022\021\n\004etag\030\005 \001(\tB"
-          + "\003\340A\001\"\327\005\n\020CustomTargetType\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\001\022\"\n\025custom_target_type_id\030\002 \001(\tB\003\340A\003"
-          + "\022\020\n\003uid\030\003 \001(\tB\003\340A\003\022\030\n\013description\030\004 \001(\tB"
-          + "\003\340A\001\022S\n\013annotations\030\005 \003(\01329.google.cloud"
-          + ".deploy.v1.CustomTargetType.AnnotationsE"
-          + "ntryB\003\340A\001\022I\n\006labels\030\006 \003(\01324.google.cloud"
-          + ".deploy.v1.CustomTargetType.LabelsEntryB"
-          + "\003\340A\001\0224\n\013create_time\030\007 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\0224\n\013update_time\030\010 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004etag"
-          + "\030\t \001(\tB\003\340A\001\022M\n\016custom_actions\030\n \001(\01323.go"
-          + "ogle.cloud.deploy.v1.CustomTargetSkaffol"
-          + "dActionsH\000\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\200\001\352A}\n+clo"
-          + "uddeploy.googleapis.com/CustomTargetType"
-          + "\022Nprojects/{project}/locations/{location"
-          + "}/customTargetTypes/{custom_target_type}"
-          + "B\014\n\ndefinition\"\245\001\n\033CustomTargetSkaffoldA"
-          + "ctions\022\032\n\rrender_action\030\001 \001(\tB\003\340A\001\022\032\n\rde"
-          + "ploy_action\030\002 \001(\tB\003\340A\002\022N\n\030include_skaffo"
-          + "ld_modules\030\003 \003(\0132\'.google.cloud.deploy.v"
-          + "1.SkaffoldModulesB\003\340A\001\"\302\004\n\017SkaffoldModul"
-          + "es\022\024\n\007configs\030\001 \003(\tB\003\340A\001\022H\n\003git\030\002 \001(\01329."
-          + "google.cloud.deploy.v1.SkaffoldModules.S"
-          + "kaffoldGitSourceH\000\022Y\n\024google_cloud_stora"
-          + "ge\030\003 \001(\01329.google.cloud.deploy.v1.Skaffo"
-          + "ldModules.SkaffoldGCSSourceH\000\022`\n\027google_"
-          + "cloud_build_repo\030\004 \001(\0132=.google.cloud.de"
-          + "ploy.v1.SkaffoldModules.SkaffoldGCBRepoS"
-          + "ourceH\000\032K\n\021SkaffoldGitSource\022\021\n\004repo\030\001 \001"
-          + "(\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\001\022\020\n\003ref\030\003 \001(\tB"
-          + "\003\340A\001\032;\n\021SkaffoldGCSSource\022\023\n\006source\030\001 \001("
-          + "\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\001\032~\n\025SkaffoldGCB"
-          + "RepoSource\022@\n\nrepository\030\001 \001(\tB,\340A\002\372A&\n$"
-          + "cloudbuild.googleapis.com/Repository\022\021\n\004"
-          + "path\030\002 \001(\tB\003\340A\001\022\020\n\003ref\030\003 \001(\tB\003\340A\001B\010\n\006sou"
-          + "rce\"\300\001\n\034ListCustomTargetTypesRequest\022C\n\006"
-          + "parent\030\001 \001(\tB3\340A\002\372A-\022+clouddeploy.google"
-          + "apis.com/CustomTargetType\022\026\n\tpage_size\030\002"
-          + " \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006fi"
-          + "lter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\224"
-          + "\001\n\035ListCustomTargetTypesResponse\022E\n\023cust"
-          + "om_target_types\030\001 \003(\0132(.google.cloud.dep"
-          + "loy.v1.CustomTargetType\022\027\n\017next_page_tok"
-          + "en\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"_\n\032GetCust"
-          + "omTargetTypeRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A"
-          + "-\n+clouddeploy.googleapis.com/CustomTarg"
-          + "etType\"\210\002\n\035CreateCustomTargetTypeRequest"
-          + "\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+clouddeploy.go"
-          + "ogleapis.com/CustomTargetType\022\"\n\025custom_"
-          + "target_type_id\030\002 \001(\tB\003\340A\002\022I\n\022custom_targ"
-          + "et_type\030\003 \001(\0132(.google.cloud.deploy.v1.C"
-          + "ustomTargetTypeB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\t"
-          + "B\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\361\001\n\035Up"
-          + "dateCustomTargetTypeRequest\0224\n\013update_ma"
-          + "sk\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A"
-          + "\002\022I\n\022custom_target_type\030\002 \001(\0132(.google.c"
-          + "loud.deploy.v1.CustomTargetTypeB\003\340A\002\022\027\n\n"
-          + "request_id\030\003 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\004"
-          + " \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\306\001"
-          + "\n\035DeleteCustomTargetTypeRequest\022A\n\004name\030"
-          + "\001 \001(\tB3\340A\002\372A-\n+clouddeploy.googleapis.co"
-          + "m/CustomTargetType\022\027\n\nrequest_id\030\002 \001(\tB\003"
-          + "\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\022\032\n\rvalid"
-          + "ate_only\030\004 \001(\010B\003\340A\001\022\021\n\004etag\030\005 \001(\tB\003\340A\001\"\212"
-          + "\006\n\014DeployPolicy\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003ui"
-          + "d\030\002 \001(\tB\003\340A\003\022\023\n\013description\030\003 \001(\t\022J\n\013ann"
-          + "otations\030\004 \003(\01325.google.cloud.deploy.v1."
-          + "DeployPolicy.AnnotationsEntry\022@\n\006labels\030"
-          + "\005 \003(\01320.google.cloud.deploy.v1.DeployPol"
-          + "icy.LabelsEntry\0224\n\013create_time\030\006 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
-          + "time\030\007 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\022\021\n\tsuspended\030\010 \001(\010\022L\n\tselectors\030\014 \003("
-          + "\01324.google.cloud.deploy.v1.DeployPolicyR"
-          + "esourceSelectorB\003\340A\002\0226\n\005rules\030\n \003(\0132\".go"
-          + "ogle.cloud.deploy.v1.PolicyRuleB\003\340A\002\022\014\n\004"
-          + "etag\030\013 \001(\t\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"C\n\007Invoker"
-          + "\022\027\n\023INVOKER_UNSPECIFIED\020\000\022\010\n\004USER\020\001\022\025\n\021D"
-          + "EPLOY_AUTOMATION\020\002:w\352At\n\'clouddeploy.goo"
-          + "gleapis.com/DeployPolicy\022Fprojects/{proj"
-          + "ect}/locations/{location}/deployPolicies"
-          + "/{deploy_policy}R\001\001\"\257\001\n\034DeployPolicyReso"
-          + "urceSelector\022Q\n\021delivery_pipeline\030\001 \001(\0132"
-          + "1.google.cloud.deploy.v1.DeliveryPipelin"
-          + "eAttributeB\003\340A\001\022<\n\006target\030\002 \001(\0132\'.google"
-          + ".cloud.deploy.v1.TargetAttributeB\003\340A\001\"\245\001"
-          + "\n\031DeliveryPipelineAttribute\022\n\n\002id\030\001 \001(\t\022"
-          + "M\n\006labels\030\002 \003(\0132=.google.cloud.deploy.v1"
-          + ".DeliveryPipelineAttribute.LabelsEntry\032-"
-          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001\"\221\001\n\017TargetAttribute\022\n\n\002id\030\001 \001(\t\022C\n"
-          + "\006labels\030\002 \003(\01323.google.cloud.deploy.v1.T"
-          + "argetAttribute.LabelsEntry\032-\n\013LabelsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"_\n\nPol"
-          + "icyRule\022I\n\023rollout_restriction\030\002 \001(\0132*.g"
-          + "oogle.cloud.deploy.v1.RolloutRestriction"
-          + "H\000B\006\n\004rule\"\244\003\n\022RolloutRestriction\022\017\n\002id\030"
-          + "\001 \001(\tB\003\340A\002\022C\n\010invokers\030\002 \003(\0162,.google.cl"
-          + "oud.deploy.v1.DeployPolicy.InvokerB\003\340A\001\022"
-          + "O\n\007actions\030\003 \003(\01629.google.cloud.deploy.v"
-          + "1.RolloutRestriction.RolloutActionsB\003\340A\001"
-          + "\022>\n\014time_windows\030\004 \001(\0132#.google.cloud.de"
-          + "ploy.v1.TimeWindowsB\003\340A\002\"\246\001\n\016RolloutActi"
-          + "ons\022\037\n\033ROLLOUT_ACTIONS_UNSPECIFIED\020\000\022\013\n\007"
-          + "ADVANCE\020\001\022\013\n\007APPROVE\020\002\022\n\n\006CANCEL\020\003\022\n\n\006CR"
-          + "EATE\020\004\022\016\n\nIGNORE_JOB\020\005\022\r\n\tRETRY_JOB\020\006\022\014\n"
-          + "\010ROLLBACK\020\007\022\024\n\020TERMINATE_JOBRUN\020\010\"\256\001\n\013Ti"
-          + "meWindows\022\026\n\ttime_zone\030\001 \001(\tB\003\340A\002\022D\n\020one"
-          + "_time_windows\030\002 \003(\0132%.google.cloud.deplo"
-          + "y.v1.OneTimeWindowB\003\340A\001\022A\n\016weekly_window"
-          + "s\030\003 \003(\0132$.google.cloud.deploy.v1.WeeklyW"
-          + "indowB\003\340A\001\"\305\001\n\rOneTimeWindow\022*\n\nstart_da"
-          + "te\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022/\n\nstar"
-          + "t_time\030\002 \001(\0132\026.google.type.TimeOfDayB\003\340A"
-          + "\002\022(\n\010end_date\030\003 \001(\0132\021.google.type.DateB\003"
-          + "\340A\002\022-\n\010end_time\030\004 \001(\0132\026.google.type.Time"
-          + "OfDayB\003\340A\002\"\241\001\n\014WeeklyWindow\0221\n\014days_of_w"
-          + "eek\030\001 \003(\0162\026.google.type.DayOfWeekB\003\340A\001\022/"
-          + "\n\nstart_time\030\002 \001(\0132\026.google.type.TimeOfD"
-          + "ayB\003\340A\001\022-\n\010end_time\030\003 \001(\0132\026.google.type."
-          + "TimeOfDayB\003\340A\001\"c\n\017PolicyViolation\022P\n\030pol"
-          + "icy_violation_details\030\001 \003(\0132..google.clo"
-          + "ud.deploy.v1.PolicyViolationDetails\"R\n\026P"
-          + "olicyViolationDetails\022\016\n\006policy\030\001 \001(\t\022\017\n"
-          + "\007rule_id\030\002 \001(\t\022\027\n\017failure_message\030\003 \001(\t\""
-          + "\256\027\n\007Release\022\021\n\004name\030\001 \001(\tB\003\340A\001\022\020\n\003uid\030\002 "
-          + "\001(\tB\003\340A\003\022\023\n\013description\030\003 \001(\t\022E\n\013annotat"
-          + "ions\030\004 \003(\01320.google.cloud.deploy.v1.Rele"
-          + "ase.AnnotationsEntry\022;\n\006labels\030\005 \003(\0132+.g"
-          + "oogle.cloud.deploy.v1.Release.LabelsEntr"
-          + "y\022\026\n\tabandoned\030\027 \001(\010B\003\340A\003\0224\n\013create_time"
-          + "\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + ":\n\021render_start_time\030\007 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0228\n\017render_end_time\030\010"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\033\n"
-          + "\023skaffold_config_uri\030\021 \001(\t\022\034\n\024skaffold_c"
-          + "onfig_path\030\t \001(\t\022>\n\017build_artifacts\030\n \003("
-          + "\0132%.google.cloud.deploy.v1.BuildArtifact"
-          + "\022Q\n\032delivery_pipeline_snapshot\030\013 \001(\0132(.g"
+          + "MaskB\003\340A\002\022H\n\021delivery_pipeline\030\002 \001(\0132(.g"
           + "oogle.cloud.deploy.v1.DeliveryPipelineB\003"
-          + "\340A\003\022=\n\020target_snapshots\030\014 \003(\0132\036.google.c"
-          + "loud.deploy.v1.TargetB\003\340A\003\022S\n\034custom_tar"
-          + "get_type_snapshots\030\033 \003(\0132(.google.cloud."
-          + "deploy.v1.CustomTargetTypeB\003\340A\003\022F\n\014rende"
-          + "r_state\030\r \001(\0162+.google.cloud.deploy.v1.R"
-          + "elease.RenderStateB\003\340A\003\022\014\n\004etag\030\020 \001(\t\022\030\n"
-          + "\020skaffold_version\030\023 \001(\t\022S\n\020target_artifa"
-          + "cts\030\024 \003(\01324.google.cloud.deploy.v1.Relea"
-          + "se.TargetArtifactsEntryB\003\340A\003\022O\n\016target_r"
-          + "enders\030\026 \003(\01322.google.cloud.deploy.v1.Re"
-          + "lease.TargetRendersEntryB\003\340A\003\022H\n\tconditi"
-          + "on\030\030 \001(\01320.google.cloud.deploy.v1.Releas"
-          + "e.ReleaseConditionB\003\340A\003\022U\n\021deploy_parame"
-          + "ters\030\031 \003(\01325.google.cloud.deploy.v1.Rele"
-          + "ase.DeployParametersEntryB\003\340A\001\032\324\005\n\014Targe"
-          + "tRender\022@\n\017rendering_build\030\001 \001(\tB\'\340A\003\372A!"
-          + "\n\037cloudbuild.googleapis.com/Build\022\\\n\017ren"
-          + "dering_state\030\002 \001(\0162>.google.cloud.deploy"
-          + ".v1.Release.TargetRender.TargetRenderSta",
-      "teB\003\340A\003\022=\n\010metadata\030\006 \001(\0132&.google.cloud"
-          + ".deploy.v1.RenderMetadataB\003\340A\003\022U\n\rfailur"
-          + "e_cause\030\004 \001(\01629.google.cloud.deploy.v1.R"
-          + "elease.TargetRender.FailureCauseB\003\340A\003\022\034\n"
-          + "\017failure_message\030\005 \001(\tB\003\340A\003\"d\n\021TargetRen"
-          + "derState\022#\n\037TARGET_RENDER_STATE_UNSPECIF"
-          + "IED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\022\017\n\013IN_P"
-          + "ROGRESS\020\003\"\211\002\n\014FailureCause\022\035\n\031FAILURE_CA"
-          + "USE_UNSPECIFIED\020\000\022\033\n\027CLOUD_BUILD_UNAVAIL"
-          + "ABLE\020\001\022\024\n\020EXECUTION_FAILED\020\002\022\036\n\032CLOUD_BU"
-          + "ILD_REQUEST_FAILED\020\003\022!\n\035VERIFICATION_CON"
-          + "FIG_NOT_FOUND\020\004\022\033\n\027CUSTOM_ACTION_NOT_FOU"
-          + "ND\020\005\022%\n!DEPLOYMENT_STRATEGY_NOT_SUPPORTE"
-          + "D\020\006\022 \n\034RENDER_FEATURE_NOT_SUPPORTED\020\007\032\'\n"
-          + "\025ReleaseReadyCondition\022\016\n\006status\030\001 \001(\010\032\362"
-          + "\001\n\032SkaffoldSupportedCondition\022\016\n\006status\030"
-          + "\001 \001(\010\022L\n\026skaffold_support_state\030\002 \001(\0162,."
-          + "google.cloud.deploy.v1.SkaffoldSupportSt"
-          + "ate\0229\n\025maintenance_mode_time\030\003 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\022;\n\027support_expira"
-          + "tion_time\030\004 \001(\0132\032.google.protobuf.Timest"
-          + "amp\032\314\001\n\020ReleaseCondition\022V\n\027release_read"
-          + "y_condition\030\001 \001(\01325.google.cloud.deploy."
-          + "v1.Release.ReleaseReadyCondition\022`\n\034skaf"
-          + "fold_supported_condition\030\002 \001(\0132:.google."
-          + "cloud.deploy.v1.Release.SkaffoldSupporte"
-          + "dCondition\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032^\n\024TargetA"
-          + "rtifactsEntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001("
-          + "\0132&.google.cloud.deploy.v1.TargetArtifac"
-          + "t:\0028\001\032b\n\022TargetRendersEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022;\n\005value\030\002 \001(\0132,.google.cloud.deploy.v1"
-          + ".Release.TargetRender:\0028\001\0327\n\025DeployParam"
-          + "etersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001\"W\n\013RenderState\022\034\n\030RENDER_STATE_UNSPEC"
-          + "IFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\022\017\n\013IN"
-          + "_PROGRESS\020\003:\212\001\352A\206\001\n\"clouddeploy.googleap"
-          + "is.com/Release\022`projects/{project}/locat"
-          + "ions/{location}/deliveryPipelines/{deliv"
-          + "ery_pipeline}/releases/{release}\"\362\001\n\031Cre"
-          + "ateDeployPolicyRequest\022?\n\006parent\030\001 \001(\tB/"
-          + "\340A\002\372A)\022\'clouddeploy.googleapis.com/Deplo"
-          + "yPolicy\022\035\n\020deploy_policy_id\030\002 \001(\tB\003\340A\002\022@"
-          + "\n\rdeploy_policy\030\003 \001(\0132$.google.cloud.dep"
-          + "loy.v1.DeployPolicyB\003\340A\002\022\027\n\nrequest_id\030\004"
-          + " \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\344\001"
-          + "\n\031UpdateDeployPolicyRequest\0224\n\013update_ma"
-          + "sk\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A"
-          + "\002\022@\n\rdeploy_policy\030\002 \001(\0132$.google.cloud."
-          + "deploy.v1.DeployPolicyB\003\340A\002\022\027\n\nrequest_i"
-          + "d\030\003 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\004 \001(\010B\003\340A\001"
-          + "\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\276\001\n\031DeleteD"
-          + "eployPolicyRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)"
-          + "\n\'clouddeploy.googleapis.com/DeployPolic"
-          + "y\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\022\032\n\rallow_miss"
-          + "ing\030\003 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340"
-          + "A\001\022\021\n\004etag\030\005 \001(\tB\003\340A\001\"\245\001\n\031ListDeployPoli"
-          + "ciesRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'clo"
-          + "uddeploy.googleapis.com/DeployPolicy\022\021\n\t"
-          + "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006f"
-          + "ilter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\211\001\n\032ListDe"
-          + "ployPoliciesResponse\022=\n\017deploy_policies\030"
-          + "\001 \003(\0132$.google.cloud.deploy.v1.DeployPol"
-          + "icy\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreacha"
-          + "ble\030\003 \003(\t\"W\n\026GetDeployPolicyRequest\022=\n\004n"
-          + "ame\030\001 \001(\tB/\340A\002\372A)\n\'clouddeploy.googleapi"
-          + "s.com/DeployPolicy\"+\n\rBuildArtifact\022\r\n\005i"
-          + "mage\030\003 \001(\t\022\013\n\003tag\030\002 \001(\t\"\253\003\n\016TargetArtifa"
-          + "ct\022\033\n\014artifact_uri\030\004 \001(\tB\003\340A\003H\000\022!\n\024skaff"
-          + "old_config_path\030\002 \001(\tB\003\340A\003\022\032\n\rmanifest_p"
-          + "ath\030\003 \001(\tB\003\340A\003\022X\n\017phase_artifacts\030\005 \003(\0132"
-          + ":.google.cloud.deploy.v1.TargetArtifact."
-          + "PhaseArtifactsEntryB\003\340A\003\032o\n\rPhaseArtifac"
-          + "t\022!\n\024skaffold_config_path\030\001 \001(\tB\003\340A\003\022\032\n\r"
-          + "manifest_path\030\003 \001(\tB\003\340A\003\022\037\n\022job_manifest"
-          + "s_path\030\004 \001(\tB\003\340A\003\032k\n\023PhaseArtifactsEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022C\n\005value\030\002 \001(\01324.google.cl"
-          + "oud.deploy.v1.TargetArtifact.PhaseArtifa"
-          + "ct:\0028\001B\005\n\003uri\"H\n\016DeployArtifact\022\031\n\014artif"
-          + "act_uri\030\001 \001(\tB\003\340A\003\022\033\n\016manifest_paths\030\002 \003"
-          + "(\tB\003\340A\003\"M\n\026CloudRunRenderMetadata\0223\n\007ser"
-          + "vice\030\001 \001(\tB\"\340A\003\372A\034\n\032run.googleapis.com/S"
-          + "ervice\"\225\001\n\016RenderMetadata\022F\n\tcloud_run\030\001"
-          + " \001(\0132..google.cloud.deploy.v1.CloudRunRe"
-          + "nderMetadataB\003\340A\003\022;\n\006custom\030\002 \001(\0132&.goog"
-          + "le.cloud.deploy.v1.CustomMetadataB\003\340A\003\"\267"
-          + "\001\n\023ListReleasesRequest\022C\n\006parent\030\001 \001(\tB3"
-          + "\340A\002\372A-\n+clouddeploy.googleapis.com/Deliv"
-          + "eryPipeline\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\np"
-          + "age_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A"
-          + "\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"w\n\024ListReleases"
-          + "Response\0221\n\010releases\030\001 \003(\0132\037.google.clou"
-          + "d.deploy.v1.Release\022\027\n\017next_page_token\030\002"
-          + " \001(\t\022\023\n\013unreachable\030\003 \003(\t\"M\n\021GetReleaseR"
-          + "equest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"clouddeplo"
-          + "y.googleapis.com/Release\"\261\002\n\024CreateRelea"
-          + "seRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+cloud"
-          + "deploy.googleapis.com/DeliveryPipeline\022\027"
-          + "\n\nrelease_id\030\002 \001(\tB\003\340A\002\0225\n\007release\030\003 \001(\013"
-          + "2\037.google.cloud.deploy.v1.ReleaseB\003\340A\002\022\027"
-          + "\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only"
-          + "\030\005 \001(\010B\003\340A\001\022O\n\026override_deploy_policy\030\006 "
-          + "\003(\tB/\340A\001\372A)\n\'clouddeploy.googleapis.com/"
-          + "DeployPolicy\"\350\016\n\007Rollout\022\021\n\004name\030\001 \001(\tB\003"
-          + "\340A\001\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\023\n\013description\030\003 \001"
-          + "(\t\022E\n\013annotations\030\004 \003(\01320.google.cloud.d"
-          + "eploy.v1.Rollout.AnnotationsEntry\022;\n\006lab"
-          + "els\030\005 \003(\0132+.google.cloud.deploy.v1.Rollo"
-          + "ut.LabelsEntry\0224\n\013create_time\030\006 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\0225\n\014approve_"
-          + "time\030\007 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\0225\n\014enqueue_time\030\010 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\022:\n\021deploy_start_time\030"
-          + "\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0228"
-          + "\n\017deploy_end_time\030\n \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\022\026\n\ttarget_id\030\022 \001(\tB\003\340A\002"
-          + "\022J\n\016approval_state\030\014 \001(\0162-.google.cloud."
-          + "deploy.v1.Rollout.ApprovalStateB\003\340A\003\0229\n\005"
-          + "state\030\r \001(\0162%.google.cloud.deploy.v1.Rol"
-          + "lout.StateB\003\340A\003\022\033\n\016failure_reason\030\016 \001(\tB"
-          + "\003\340A\003\022@\n\017deploying_build\030\021 \001(\tB\'\340A\003\372A!\n\037c"
-          + "loudbuild.googleapis.com/Build\022\014\n\004etag\030\020"
-          + " \001(\t\022O\n\024deploy_failure_cause\030\023 \001(\0162,.goo"
-          + "gle.cloud.deploy.v1.Rollout.FailureCause"
-          + "B\003\340A\003\0222\n\006phases\030\027 \003(\0132\035.google.cloud.dep"
-          + "loy.v1.PhaseB\003\340A\003\0227\n\010metadata\030\030 \001(\0132 .go"
-          + "ogle.cloud.deploy.v1.MetadataB\003\340A\003\022\037\n\022co"
-          + "ntroller_rollout\030\031 \001(\tB\003\340A\003\022 \n\023rollback_"
-          + "of_rollout\030\032 \001(\tB\003\340A\003\022$\n\027rolled_back_by_"
-          + "rollouts\030\033 \003(\tB\003\340A\003\0322\n\020AnnotationsEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013Label"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"{"
-          + "\n\rApprovalState\022\036\n\032APPROVAL_STATE_UNSPEC"
-          + "IFIED\020\000\022\022\n\016NEEDS_APPROVAL\020\001\022\032\n\026DOES_NOT_"
-          + "NEED_APPROVAL\020\002\022\014\n\010APPROVED\020\003\022\014\n\010REJECTE"
-          + "D\020\004\"\304\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\t"
-          + "SUCCEEDED\020\001\022\n\n\006FAILED\020\002\022\017\n\013IN_PROGRESS\020\003"
-          + "\022\024\n\020PENDING_APPROVAL\020\004\022\025\n\021APPROVAL_REJEC"
-          + "TED\020\005\022\013\n\007PENDING\020\006\022\023\n\017PENDING_RELEASE\020\007\022"
-          + "\016\n\nCANCELLING\020\010\022\r\n\tCANCELLED\020\t\022\n\n\006HALTED"
-          + "\020\n\"\212\002\n\014FailureCause\022\035\n\031FAILURE_CAUSE_UNS"
-          + "PECIFIED\020\000\022\033\n\027CLOUD_BUILD_UNAVAILABLE\020\001\022"
-          + "\024\n\020EXECUTION_FAILED\020\002\022\025\n\021DEADLINE_EXCEED"
-          + "ED\020\003\022\022\n\016RELEASE_FAILED\020\004\022\025\n\021RELEASE_ABAN"
-          + "DONED\020\005\022!\n\035VERIFICATION_CONFIG_NOT_FOUND"
-          + "\020\006\022\036\n\032CLOUD_BUILD_REQUEST_FAILED\020\007\022#\n\037OP"
-          + "ERATION_FEATURE_NOT_SUPPORTED\020\010:\235\001\352A\231\001\n\""
-          + "clouddeploy.googleapis.com/Rollout\022sproj"
-          + "ects/{project}/locations/{location}/deli"
-          + "veryPipelines/{delivery_pipeline}/releas"
-          + "es/{release}/rollouts/{rollout}\"\325\001\n\010Meta"
-          + "data\022@\n\tcloud_run\030\001 \001(\0132(.google.cloud.d"
-          + "eploy.v1.CloudRunMetadataB\003\340A\003\022J\n\nautoma"
-          + "tion\030\002 \001(\01321.google.cloud.deploy.v1.Auto"
-          + "mationRolloutMetadataB\003\340A\003\022;\n\006custom\030\003 \001"
-          + "(\0132&.google.cloud.deploy.v1.CustomMetada"
-          + "taB\003\340A\003\"\345\001\n\024DeployJobRunMetadata\022@\n\tclou"
-          + "d_run\030\001 \001(\0132(.google.cloud.deploy.v1.Clo"
-          + "udRunMetadataB\003\340A\003\022N\n\rcustom_target\030\002 \001("
-          + "\01322.google.cloud.deploy.v1.CustomTargetD"
-          + "eployMetadataB\003\340A\003\022;\n\006custom\030\003 \001(\0132&.goo"
-          + "gle.cloud.deploy.v1.CustomMetadataB\003\340A\003\""
-          + "\246\001\n\020CloudRunMetadata\0223\n\007service\030\001 \001(\tB\"\340"
-          + "A\003\372A\034\n\032run.googleapis.com/Service\022\031\n\014ser"
-          + "vice_urls\030\002 \003(\tB\003\340A\003\022\025\n\010revision\030\003 \001(\tB\003"
-          + "\340A\003\022+\n\003job\030\004 \001(\tB\036\340A\003\372A\030\n\026run.googleapis"
-          + ".com/Job\"7\n\032CustomTargetDeployMetadata\022\031"
-          + "\n\014skip_message\030\001 \001(\tB\003\340A\003\"\213\001\n\031Automation"
-          + "RolloutMetadata\022#\n\026promote_automation_ru"
-          + "n\030\001 \001(\tB\003\340A\003\022$\n\027advance_automation_runs\030"
-          + "\002 \003(\tB\003\340A\003\022#\n\026repair_automation_runs\030\003 \003"
-          + "(\tB\003\340A\003\"\210\001\n\016CustomMetadata\022G\n\006values\030\001 \003"
-          + "(\01322.google.cloud.deploy.v1.CustomMetada"
-          + "ta.ValuesEntryB\003\340A\003\032-\n\013ValuesEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\374\002\n\005Phase\022\017\n\002"
-          + "id\030\001 \001(\tB\003\340A\003\0227\n\005state\030\003 \001(\0162#.google.cl"
-          + "oud.deploy.v1.Phase.StateB\003\340A\003\022\031\n\014skip_m"
-          + "essage\030\006 \001(\tB\003\340A\003\022F\n\017deployment_jobs\030\004 \001"
-          + "(\0132&.google.cloud.deploy.v1.DeploymentJo"
-          + "bsB\003\340A\003H\000\022K\n\022child_rollout_jobs\030\005 \001(\0132(."
-          + "google.cloud.deploy.v1.ChildRolloutJobsB"
-          + "\003\340A\003H\000\"q\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013"
-          + "\n\007PENDING\020\001\022\017\n\013IN_PROGRESS\020\002\022\r\n\tSUCCEEDE"
-          + "D\020\003\022\n\n\006FAILED\020\004\022\013\n\007ABORTED\020\005\022\013\n\007SKIPPED\020"
-          + "\006B\006\n\004jobs\"\357\001\n\016DeploymentJobs\0224\n\ndeploy_j"
-          + "ob\030\001 \001(\0132\033.google.cloud.deploy.v1.JobB\003\340"
-          + "A\003\0224\n\nverify_job\030\002 \001(\0132\033.google.cloud.de"
-          + "ploy.v1.JobB\003\340A\003\0227\n\rpredeploy_job\030\003 \001(\0132"
-          + "\033.google.cloud.deploy.v1.JobB\003\340A\003\0228\n\016pos"
-          + "tdeploy_job\030\004 \001(\0132\033.google.cloud.deploy."
-          + "v1.JobB\003\340A\003\"\221\001\n\020ChildRolloutJobs\022=\n\023crea"
-          + "te_rollout_jobs\030\001 \003(\0132\033.google.cloud.dep"
-          + "loy.v1.JobB\003\340A\003\022>\n\024advance_rollout_jobs\030"
-          + "\002 \003(\0132\033.google.cloud.deploy.v1.JobB\003\340A\003\""
-          + "\367\005\n\003Job\022\017\n\002id\030\001 \001(\tB\003\340A\003\0225\n\005state\030\002 \001(\0162"
-          + "!.google.cloud.deploy.v1.Job.StateB\003\340A\003\022"
-          + "\031\n\014skip_message\030\010 \001(\tB\003\340A\003\022:\n\007job_run\030\003 "
-          + "\001(\tB)\340A\003\372A#\n!clouddeploy.googleapis.com/"
-          + "JobRun\022<\n\ndeploy_job\030\004 \001(\0132!.google.clou"
-          + "d.deploy.v1.DeployJobB\003\340A\003H\000\022<\n\nverify_j"
-          + "ob\030\005 \001(\0132!.google.cloud.deploy.v1.Verify"
-          + "JobB\003\340A\003H\000\022B\n\rpredeploy_job\030\t \001(\0132$.goog"
-          + "le.cloud.deploy.v1.PredeployJobB\003\340A\003H\000\022D"
-          + "\n\016postdeploy_job\030\n \001(\0132%.google.cloud.de"
-          + "ploy.v1.PostdeployJobB\003\340A\003H\000\022V\n\030create_c"
-          + "hild_rollout_job\030\006 \001(\0132-.google.cloud.de"
-          + "ploy.v1.CreateChildRolloutJobB\003\340A\003H\000\022X\n\031"
-          + "advance_child_rollout_job\030\007 \001(\0132..google"
-          + ".cloud.deploy.v1.AdvanceChildRolloutJobB"
-          + "\003\340A\003H\000\"\214\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022"
-          + "\013\n\007PENDING\020\001\022\014\n\010DISABLED\020\002\022\017\n\013IN_PROGRES"
-          + "S\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\013\n\007ABORTE"
-          + "D\020\006\022\013\n\007SKIPPED\020\007\022\013\n\007IGNORED\020\010B\n\n\010job_typ"
-          + "e\"\013\n\tDeployJob\"\013\n\tVerifyJob\"$\n\014Predeploy"
-          + "Job\022\024\n\007actions\030\001 \003(\tB\003\340A\003\"%\n\rPostdeployJ"
-          + "ob\022\024\n\007actions\030\001 \003(\tB\003\340A\003\"\027\n\025CreateChildR"
-          + "olloutJob\"\030\n\026AdvanceChildRolloutJob\"\256\001\n\023"
-          + "ListRolloutsRequest\022:\n\006parent\030\001 \001(\tB*\340A\002"
-          + "\372A$\n\"clouddeploy.googleapis.com/Release\022"
-          + "\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 "
-          + "\001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_b"
-          + "y\030\005 \001(\tB\003\340A\001\"w\n\024ListRolloutsResponse\0221\n\010"
-          + "rollouts\030\001 \003(\0132\037.google.cloud.deploy.v1."
-          + "Rollout\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unre"
-          + "achable\030\003 \003(\t\"M\n\021GetRolloutRequest\0228\n\004na"
-          + "me\030\001 \001(\tB*\340A\002\372A$\n\"clouddeploy.googleapis"
-          + ".com/Rollout\"\310\002\n\024CreateRolloutRequest\022:\n"
-          + "\006parent\030\001 \001(\tB*\340A\002\372A$\n\"clouddeploy.googl"
-          + "eapis.com/Release\022\027\n\nrollout_id\030\002 \001(\tB\003\340"
-          + "A\002\0225\n\007rollout\030\003 \001(\0132\037.google.cloud.deplo"
-          + "y.v1.RolloutB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340"
-          + "A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\022O\n\026overri"
-          + "de_deploy_policy\030\006 \003(\tB/\340A\001\372A)\n\'clouddep"
-          + "loy.googleapis.com/DeployPolicy\022\036\n\021start"
-          + "ing_phase_id\030\007 \001(\tB\003\340A\001\"\200\002\n\021OperationMet"
-          + "adata\0224\n\013create_time\030\001 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022\023\n\006target"
-          + "\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status"
-          + "_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cancell"
-          + "ation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340"
-          + "A\003\"\271\001\n\025ApproveRolloutRequest\0228\n\004name\030\001 \001"
-          + "(\tB*\340A\002\372A$\n\"clouddeploy.googleapis.com/R"
-          + "ollout\022\025\n\010approved\030\002 \001(\010B\003\340A\002\022O\n\026overrid"
-          + "e_deploy_policy\030\003 \003(\tB/\340A\001\372A)\n\'clouddepl"
-          + "oy.googleapis.com/DeployPolicy\"\030\n\026Approv"
-          + "eRolloutResponse\"\271\001\n\025AdvanceRolloutReque"
-          + "st\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"clouddeploy.go"
-          + "ogleapis.com/Rollout\022\025\n\010phase_id\030\002 \001(\tB\003"
-          + "\340A\002\022O\n\026override_deploy_policy\030\003 \003(\tB/\340A\001"
-          + "\372A)\n\'clouddeploy.googleapis.com/DeployPo"
-          + "licy\"\030\n\026AdvanceRolloutResponse\"\241\001\n\024Cance"
-          + "lRolloutRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"c"
-          + "louddeploy.googleapis.com/Rollout\022O\n\026ove"
-          + "rride_deploy_policy\030\002 \003(\tB/\340A\001\372A)\n\'cloud"
-          + "deploy.googleapis.com/DeployPolicy\"\027\n\025Ca"
-          + "ncelRolloutResponse\"\314\001\n\020IgnoreJobRequest"
-          + "\022;\n\007rollout\030\001 \001(\tB*\340A\002\372A$\n\"clouddeploy.g"
-          + "oogleapis.com/Rollout\022\025\n\010phase_id\030\002 \001(\tB"
-          + "\003\340A\002\022\023\n\006job_id\030\003 \001(\tB\003\340A\002\022O\n\026override_de"
-          + "ploy_policy\030\004 \003(\tB/\340A\001\372A)\n\'clouddeploy.g"
-          + "oogleapis.com/DeployPolicy\"\023\n\021IgnoreJobR"
-          + "esponse\"\313\001\n\017RetryJobRequest\022;\n\007rollout\030\001"
-          + " \001(\tB*\340A\002\372A$\n\"clouddeploy.googleapis.com"
-          + "/Rollout\022\025\n\010phase_id\030\002 \001(\tB\003\340A\002\022\023\n\006job_i"
-          + "d\030\003 \001(\tB\003\340A\002\022O\n\026override_deploy_policy\030\004"
-          + " \003(\tB/\340A\001\372A)\n\'clouddeploy.googleapis.com"
-          + "/DeployPolicy\"\022\n\020RetryJobResponse\"Q\n\025Aba"
-          + "ndonReleaseRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$"
-          + "\n\"clouddeploy.googleapis.com/Release\"\030\n\026"
-          + "AbandonReleaseResponse\"\320\010\n\006JobRun\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\001\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\025\n\010phase_"
-          + "id\030\003 \001(\tB\003\340A\003\022\023\n\006job_id\030\004 \001(\tB\003\340A\003\0224\n\013cr"
-          + "eate_time\030\005 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\0223\n\nstart_time\030\006 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\0221\n\010end_time\030\007 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\0228\n\005stat"
-          + "e\030\010 \001(\0162$.google.cloud.deploy.v1.JobRun."
-          + "StateB\003\340A\003\022C\n\016deploy_job_run\030\t \001(\0132$.goo"
-          + "gle.cloud.deploy.v1.DeployJobRunB\003\340A\003H\000\022"
-          + "C\n\016verify_job_run\030\n \001(\0132$.google.cloud.d"
-          + "eploy.v1.VerifyJobRunB\003\340A\003H\000\022I\n\021predeplo"
-          + "y_job_run\030\016 \001(\0132\'.google.cloud.deploy.v1"
-          + ".PredeployJobRunB\003\340A\003H\000\022K\n\022postdeploy_jo"
-          + "b_run\030\017 \001(\0132(.google.cloud.deploy.v1.Pos"
-          + "tdeployJobRunB\003\340A\003H\000\022]\n\034create_child_rol"
-          + "lout_job_run\030\014 \001(\01320.google.cloud.deploy"
-          + ".v1.CreateChildRolloutJobRunB\003\340A\003H\000\022_\n\035a"
-          + "dvance_child_rollout_job_run\030\r \001(\01321.goo"
-          + "gle.cloud.deploy.v1.AdvanceChildRolloutJ"
-          + "obRunB\003\340A\003H\000\022\021\n\004etag\030\013 \001(\tB\003\340A\003\"k\n\005State"
-          + "\022\025\n\021STATE_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS\020\001"
-          + "\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED\020\003\022\017\n\013TERMINATI"
-          + "NG\020\004\022\016\n\nTERMINATED\020\005:\257\001\352A\253\001\n!clouddeploy"
-          + ".googleapis.com/JobRun\022\205\001projects/{proje"
-          + "ct}/locations/{location}/deliveryPipelin"
-          + "es/{delivery_pipeline}/releases/{release"
-          + "}/rollouts/{rollout}/jobRuns/{job_run}B\t"
-          + "\n\007job_run\"\225\004\n\014DeployJobRun\0226\n\005build\030\001 \001("
-          + "\tB\'\340A\003\372A!\n\037cloudbuild.googleapis.com/Bui"
-          + "ld\022M\n\rfailure_cause\030\002 \001(\01621.google.cloud"
-          + ".deploy.v1.DeployJobRun.FailureCauseB\003\340A"
-          + "\003\022\034\n\017failure_message\030\003 \001(\tB\003\340A\003\022C\n\010metad"
-          + "ata\030\004 \001(\0132,.google.cloud.deploy.v1.Deplo"
-          + "yJobRunMetadataB\003\340A\003\022=\n\010artifact\030\005 \001(\0132&"
-          + ".google.cloud.deploy.v1.DeployArtifactB\003"
-          + "\340A\003\"\333\001\n\014FailureCause\022\035\n\031FAILURE_CAUSE_UN"
-          + "SPECIFIED\020\000\022\033\n\027CLOUD_BUILD_UNAVAILABLE\020\001"
-          + "\022\024\n\020EXECUTION_FAILED\020\002\022\025\n\021DEADLINE_EXCEE"
-          + "DED\020\003\022 \n\034MISSING_RESOURCES_FOR_CANARY\020\004\022"
-          + "\036\n\032CLOUD_BUILD_REQUEST_FAILED\020\005\022 \n\034DEPLO"
-          + "Y_FEATURE_NOT_SUPPORTED\020\006\"\250\003\n\014VerifyJobR"
-          + "un\0226\n\005build\030\001 \001(\tB\'\340A\003\372A!\n\037cloudbuild.go"
-          + "ogleapis.com/Build\022\031\n\014artifact_uri\030\002 \001(\t"
-          + "B\003\340A\003\022\033\n\016event_log_path\030\003 \001(\tB\003\340A\003\022M\n\rfa"
-          + "ilure_cause\030\004 \001(\01621.google.cloud.deploy."
-          + "v1.VerifyJobRun.FailureCauseB\003\340A\003\022\034\n\017fai"
-          + "lure_message\030\005 \001(\tB\003\340A\003\"\272\001\n\014FailureCause"
-          + "\022\035\n\031FAILURE_CAUSE_UNSPECIFIED\020\000\022\033\n\027CLOUD"
-          + "_BUILD_UNAVAILABLE\020\001\022\024\n\020EXECUTION_FAILED"
-          + "\020\002\022\025\n\021DEADLINE_EXCEEDED\020\003\022!\n\035VERIFICATIO"
-          + "N_CONFIG_NOT_FOUND\020\004\022\036\n\032CLOUD_BUILD_REQU"
-          + "EST_FAILED\020\005\"\323\002\n\017PredeployJobRun\0226\n\005buil"
-          + "d\030\001 \001(\tB\'\340A\003\372A!\n\037cloudbuild.googleapis.c"
-          + "om/Build\022P\n\rfailure_cause\030\002 \001(\01624.google"
-          + ".cloud.deploy.v1.PredeployJobRun.Failure"
-          + "CauseB\003\340A\003\022\034\n\017failure_message\030\003 \001(\tB\003\340A\003"
-          + "\"\227\001\n\014FailureCause\022\035\n\031FAILURE_CAUSE_UNSPE"
-          + "CIFIED\020\000\022\033\n\027CLOUD_BUILD_UNAVAILABLE\020\001\022\024\n"
-          + "\020EXECUTION_FAILED\020\002\022\025\n\021DEADLINE_EXCEEDED"
-          + "\020\003\022\036\n\032CLOUD_BUILD_REQUEST_FAILED\020\004\"\325\002\n\020P"
-          + "ostdeployJobRun\0226\n\005build\030\001 \001(\tB\'\340A\003\372A!\n\037"
-          + "cloudbuild.googleapis.com/Build\022Q\n\rfailu"
-          + "re_cause\030\002 \001(\01625.google.cloud.deploy.v1."
-          + "PostdeployJobRun.FailureCauseB\003\340A\003\022\034\n\017fa"
-          + "ilure_message\030\003 \001(\tB\003\340A\003\"\227\001\n\014FailureCaus"
-          + "e\022\035\n\031FAILURE_CAUSE_UNSPECIFIED\020\000\022\033\n\027CLOU"
-          + "D_BUILD_UNAVAILABLE\020\001\022\024\n\020EXECUTION_FAILE"
-          + "D\020\002\022\025\n\021DEADLINE_EXCEEDED\020\003\022\036\n\032CLOUD_BUIL"
-          + "D_REQUEST_FAILED\020\004\"O\n\030CreateChildRollout"
-          + "JobRun\022\024\n\007rollout\030\001 \001(\tB\003\340A\003\022\035\n\020rollout_"
-          + "phase_id\030\002 \001(\tB\003\340A\003\"P\n\031AdvanceChildRollo"
-          + "utJobRun\022\024\n\007rollout\030\001 \001(\tB\003\340A\003\022\035\n\020rollou"
-          + "t_phase_id\030\002 \001(\tB\003\340A\003\"\255\001\n\022ListJobRunsReq"
-          + "uest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"clouddeplo"
-          + "y.googleapis.com/Rollout\022\026\n\tpage_size\030\002 "
-          + "\001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006fil"
-          + "ter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"u\n"
-          + "\023ListJobRunsResponse\0220\n\010job_runs\030\001 \003(\0132\036"
-          + ".google.cloud.deploy.v1.JobRun\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"K\n\020"
-          + "GetJobRunRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!"
-          + "clouddeploy.googleapis.com/JobRun\"\242\001\n\026Te"
-          + "rminateJobRunRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372"
-          + "A#\n!clouddeploy.googleapis.com/JobRun\022O\n"
-          + "\026override_deploy_policy\030\002 \003(\tB/\340A\001\372A)\n\'c"
-          + "louddeploy.googleapis.com/DeployPolicy\"\031"
-          + "\n\027TerminateJobRunResponse\"\325\001\n\006Config\022\014\n\004"
-          + "name\030\001 \001(\t\022C\n\022supported_versions\030\002 \003(\0132\'"
-          + ".google.cloud.deploy.v1.SkaffoldVersion\022"
-          + " \n\030default_skaffold_version\030\003 \001(\t:V\352AS\n!"
-          + "clouddeploy.googleapis.com/Config\022.proje"
-          + "cts/{project}/locations/{location}/confi"
-          + "g\"\307\001\n\017SkaffoldVersion\022\017\n\007version\030\001 \001(\t\0229"
-          + "\n\025maintenance_mode_time\030\003 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022;\n\027support_expiration_"
-          + "time\030\004 \001(\0132\032.google.protobuf.Timestamp\022+"
-          + "\n\020support_end_date\030\002 \001(\0132\021.google.type.D"
-          + "ate\"K\n\020GetConfigRequest\0227\n\004name\030\001 \001(\tB)\340"
-          + "A\002\372A#\n!clouddeploy.googleapis.com/Config"
-          + "\"\227\006\n\nAutomation\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003ui"
-          + "d\030\002 \001(\tB\003\340A\003\022\030\n\013description\030\003 \001(\tB\003\340A\001\0224"
-          + "\n\013create_time\030\004 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\022M\n\013annotation"
-          + "s\030\006 \003(\01323.google.cloud.deploy.v1.Automat"
-          + "ion.AnnotationsEntryB\003\340A\001\022C\n\006labels\030\007 \003("
-          + "\0132..google.cloud.deploy.v1.Automation.La"
-          + "belsEntryB\003\340A\001\022\021\n\004etag\030\010 \001(\tB\003\340A\001\022\026\n\tsus"
-          + "pended\030\t \001(\010B\003\340A\001\022\034\n\017service_account\030\n \001"
-          + "(\tB\003\340A\002\022I\n\010selector\030\013 \001(\01322.google.cloud"
-          + ".deploy.v1.AutomationResourceSelectorB\003\340"
-          + "A\002\022:\n\005rules\030\016 \003(\0132&.google.cloud.deploy."
-          + "v1.AutomationRuleB\003\340A\002\0322\n\020AnnotationsEnt"
+          + "\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032\n\rallow_mi"
+          + "ssing\030\004 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B"
+          + "\003\340A\001\"\332\001\n\035DeleteDeliveryPipelineRequest\022A"
+          + "\n\004name\030\001 \001(\tB3\340A\002\372A-\n+clouddeploy.google"
+          + "apis.com/DeliveryPipeline\022\027\n\nrequest_id\030"
+          + "\002 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\022\032"
+          + "\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\022\n\005force\030\006 \001("
+          + "\010B\003\340A\001\022\021\n\004etag\030\005 \001(\tB\003\340A\001\"m\n\024RollbackTar"
+          + "getConfig\0225\n\007rollout\030\001 \001(\0132\037.google.clou"
+          + "d.deploy.v1.RolloutB\003\340A\001\022\036\n\021starting_pha"
+          + "se_id\030\002 \001(\tB\003\340A\001\"\200\003\n\025RollbackTargetReque"
+          + "st\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+clouddeploy.go"
+          + "ogleapis.com/DeliveryPipeline\022\026\n\ttarget_"
+          + "id\030\002 \001(\tB\003\340A\002\022\027\n\nrollout_id\030\003 \001(\tB\003\340A\002\022\027"
+          + "\n\nrelease_id\030\004 \001(\tB\003\340A\001\022!\n\024rollout_to_ro"
+          + "ll_back\030\005 \001(\tB\003\340A\001\022J\n\017rollback_config\030\006 "
+          + "\001(\0132,.google.cloud.deploy.v1.RollbackTar"
+          + "getConfigB\003\340A\001\022\032\n\rvalidate_only\030\007 \001(\010B\003\340"
+          + "A\001\022O\n\026override_deploy_policy\030\t \003(\tB/\340A\001\372"
+          + "A)\n\'clouddeploy.googleapis.com/DeployPol"
+          + "icy\"_\n\026RollbackTargetResponse\022E\n\017rollbac"
+          + "k_config\030\001 \001(\0132,.google.cloud.deploy.v1."
+          + "RollbackTargetConfig\"\271\n\n\006Target\022\021\n\004name\030"
+          + "\001 \001(\tB\003\340A\001\022\026\n\ttarget_id\030\002 \001(\tB\003\340A\003\022\020\n\003ui"
+          + "d\030\003 \001(\tB\003\340A\003\022\030\n\013description\030\004 \001(\tB\003\340A\001\022I"
+          + "\n\013annotations\030\005 \003(\0132/.google.cloud.deplo"
+          + "y.v1.Target.AnnotationsEntryB\003\340A\001\022?\n\006lab"
+          + "els\030\006 \003(\0132*.google.cloud.deploy.v1.Targe"
+          + "t.LabelsEntryB\003\340A\001\022\035\n\020require_approval\030\r"
+          + " \001(\010B\003\340A\001\0224\n\013create_time\030\010 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\0224\n\013update_time\030\t"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0226\n"
+          + "\003gke\030\017 \001(\0132\".google.cloud.deploy.v1.GkeC"
+          + "lusterB\003\340A\001H\000\022D\n\016anthos_cluster\030\021 \001(\0132%."
+          + "google.cloud.deploy.v1.AnthosClusterB\003\340A"
+          + "\001H\000\022<\n\003run\030\022 \001(\0132(.google.cloud.deploy.v"
+          + "1.CloudRunLocationB\003\340A\001H\000\022@\n\014multi_targe"
+          + "t\030\023 \001(\0132#.google.cloud.deploy.v1.MultiTa"
+          + "rgetB\003\340A\001H\000\022B\n\rcustom_target\030\025 \001(\0132$.goo"
+          + "gle.cloud.deploy.v1.CustomTargetB\003\340A\001H\000\022"
+          + "X\n\023associated_entities\030\027 \003(\01326.google.cl"
+          + "oud.deploy.v1.Target.AssociatedEntitiesE"
+          + "ntryB\003\340A\001\022\021\n\004etag\030\014 \001(\tB\003\340A\001\022B\n\021executio"
+          + "n_configs\030\020 \003(\0132\'.google.cloud.deploy.v1"
+          + ".ExecutionConfig\022T\n\021deploy_parameters\030\024 "
+          + "\003(\01324.google.cloud.deploy.v1.Target.Depl"
+          + "oyParametersEntryB\003\340A\001\0322\n\020AnnotationsEnt"
           + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013La"
           + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001:\226\001\352A\222\001\n%clouddeploy.googleapis.com/Aut"
-          + "omation\022fprojects/{project}/locations/{l"
-          + "ocation}/deliveryPipelines/{delivery_pip"
-          + "eline}/automations/{automation}R\001\001\"V\n\032Au"
-          + "tomationResourceSelector\0228\n\007targets\030\001 \003("
-          + "\0132\'.google.cloud.deploy.v1.TargetAttribu"
-          + "te\"\211\002\n\016AutomationRule\022O\n\024promote_release"
-          + "_rule\030\001 \001(\0132*.google.cloud.deploy.v1.Pro"
-          + "moteReleaseRuleB\003\340A\001H\000\022O\n\024advance_rollou"
-          + "t_rule\030\002 \001(\0132*.google.cloud.deploy.v1.Ad"
-          + "vanceRolloutRuleB\003\340A\001H\000\022M\n\023repair_rollou"
-          + "t_rule\030\003 \001(\0132).google.cloud.deploy.v1.Re"
-          + "pairRolloutRuleB\003\340A\001H\000B\006\n\004rule\"\340\001\n\022Promo",
-      "teReleaseRule\022\017\n\002id\030\001 \001(\tB\003\340A\002\022,\n\004wait\030\002"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022\"\n\025"
-          + "destination_target_id\030\007 \001(\tB\003\340A\001\022G\n\tcond"
-          + "ition\030\005 \001(\0132/.google.cloud.deploy.v1.Aut"
-          + "omationRuleConditionB\003\340A\003\022\036\n\021destination"
-          + "_phase\030\010 \001(\tB\003\340A\001\"\270\001\n\022AdvanceRolloutRule"
-          + "\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\032\n\rsource_phases\030\006 \003(\t"
-          + "B\003\340A\001\022,\n\004wait\030\003 \001(\0132\031.google.protobuf.Du"
-          + "rationB\003\340A\001\022G\n\tcondition\030\005 \001(\0132/.google."
-          + "cloud.deploy.v1.AutomationRuleConditionB"
-          + "\003\340A\003\"\200\001\n\021RepairRolloutRule\022\017\n\002id\030\001 \001(\tB\003"
-          + "\340A\002\022\021\n\004jobs\030\003 \003(\tB\003\340A\001\022G\n\tcondition\030\006 \001("
-          + "\0132/.google.cloud.deploy.v1.AutomationRul"
-          + "eConditionB\003\340A\003\"r\n\027AutomationRuleConditi"
-          + "on\022W\n\031targets_present_condition\030\001 \001(\0132/."
-          + "google.cloud.deploy.v1.TargetsPresentCon"
-          + "ditionB\003\340A\001\"\346\001\n\027CreateAutomationRequest\022"
-          + "=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%clouddeploy.goo"
-          + "gleapis.com/Automation\022\032\n\rautomation_id\030"
-          + "\002 \001(\tB\003\340A\002\022;\n\nautomation\030\003 \001(\0132\".google."
-          + "cloud.deploy.v1.AutomationB\003\340A\002\022\027\n\nreque"
+          + "\001\032e\n\027AssociatedEntitiesEntry\022\013\n\003key\030\001 \001("
+          + "\t\0229\n\005value\030\002 \001(\0132*.google.cloud.deploy.v"
+          + "1.AssociatedEntities:\0028\001\0327\n\025DeployParame"
+          + "tersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001:`\352A]\n!clouddeploy.googleapis.com/Targe"
+          + "t\0228projects/{project}/locations/{locatio"
+          + "n}/targets/{target}B\023\n\021deployment_target"
+          + "\"\345\004\n\017ExecutionConfig\022V\n\006usages\030\001 \003(\0162A.g"
+          + "oogle.cloud.deploy.v1.ExecutionConfig.Ex"
+          + "ecutionEnvironmentUsageB\003\340A\002\022@\n\014default_"
+          + "pool\030\002 \001(\0132#.google.cloud.deploy.v1.Defa"
+          + "ultPoolB\003\340A\001H\000\022@\n\014private_pool\030\003 \001(\0132#.g"
+          + "oogle.cloud.deploy.v1.PrivatePoolB\003\340A\001H\000"
+          + "\022A\n\013worker_pool\030\004 \001(\tB,\340A\001\372A&\n$cloudbuil"
+          + "d.googleapis.com/WorkerPool\022\034\n\017service_a"
+          + "ccount\030\005 \001(\tB\003\340A\001\022\035\n\020artifact_storage\030\006 "
+          + "\001(\tB\003\340A\001\0229\n\021execution_timeout\030\007 \001(\0132\031.go"
+          + "ogle.protobuf.DurationB\003\340A\001\022\024\n\007verbose\030\010"
+          + " \001(\010B\003\340A\001\"\213\001\n\031ExecutionEnvironmentUsage\022"
+          + "+\n\'EXECUTION_ENVIRONMENT_USAGE_UNSPECIFI"
+          + "ED\020\000\022\n\n\006RENDER\020\001\022\n\n\006DEPLOY\020\002\022\n\n\006VERIFY\020\003"
+          + "\022\r\n\tPREDEPLOY\020\004\022\016\n\nPOSTDEPLOY\020\005B\027\n\025execu"
+          + "tion_environment\"J\n\013DefaultPool\022\034\n\017servi"
+          + "ce_account\030\001 \001(\tB\003\340A\001\022\035\n\020artifact_storag"
+          + "e\030\002 \001(\tB\003\340A\001\"\215\001\n\013PrivatePool\022A\n\013worker_p"
+          + "ool\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.googleapis"
+          + ".com/WorkerPool\022\034\n\017service_account\030\002 \001(\t"
+          + "B\003\340A\001\022\035\n\020artifact_storage\030\003 \001(\tB\003\340A\001\"\224\001\n"
+          + "\nGkeCluster\0229\n\007cluster\030\001 \001(\tB(\340A\001\372A\"\n co"
+          + "ntainer.googleapis.com/Cluster\022\030\n\013intern"
+          + "al_ip\030\002 \001(\010B\003\340A\001\022\026\n\tproxy_url\030\003 \001(\tB\003\340A\001"
+          + "\022\031\n\014dns_endpoint\030\004 \001(\010B\003\340A\001\"M\n\rAnthosClu"
+          + "ster\022<\n\nmembership\030\001 \001(\tB(\340A\001\372A\"\n gkehub"
+          + ".googleapis.com/Membership\"O\n\020CloudRunLo"
+          + "cation\022;\n\010location\030\001 \001(\tB)\340A\002\372A#\n!locati"
+          + "ons.googleapis.com/Location\"&\n\013MultiTarg"
+          + "et\022\027\n\ntarget_ids\030\001 \003(\tB\003\340A\002\"_\n\014CustomTar"
+          + "get\022O\n\022custom_target_type\030\001 \001(\tB3\340A\002\372A-\n"
+          + "+clouddeploy.googleapis.com/CustomTarget"
+          + "Type\"\230\001\n\022AssociatedEntities\022=\n\014gke_clust"
+          + "ers\030\002 \003(\0132\".google.cloud.deploy.v1.GkeCl"
+          + "usterB\003\340A\001\022C\n\017anthos_clusters\030\003 \003(\0132%.go"
+          + "ogle.cloud.deploy.v1.AnthosClusterB\003\340A\001\""
+          + "\254\001\n\022ListTargetsRequest\0229\n\006parent\030\001 \001(\tB)"
+          + "\340A\002\372A#\022!clouddeploy.googleapis.com/Targe"
+          + "t\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030"
+          + "\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order"
+          + "_by\030\005 \001(\tB\003\340A\001\"t\n\023ListTargetsResponse\022/\n"
+          + "\007targets\030\001 \003(\0132\036.google.cloud.deploy.v1."
+          + "Target\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
+          + "chable\030\003 \003(\t\"K\n\020GetTargetRequest\0227\n\004name"
+          + "\030\001 \001(\tB)\340A\002\372A#\n!clouddeploy.googleapis.c"
+          + "om/Target\"\322\001\n\023CreateTargetRequest\0229\n\006par"
+          + "ent\030\001 \001(\tB)\340A\002\372A#\022!clouddeploy.googleapi"
+          + "s.com/Target\022\026\n\ttarget_id\030\002 \001(\tB\003\340A\002\0223\n\006"
+          + "target\030\003 \001(\0132\036.google.cloud.deploy.v1.Ta"
+          + "rgetB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rva"
+          + "lidate_only\030\005 \001(\010B\003\340A\001\"\321\001\n\023UpdateTargetR"
+          + "equest\0224\n\013update_mask\030\001 \001(\0132\032.google.pro"
+          + "tobuf.FieldMaskB\003\340A\002\0223\n\006target\030\002 \001(\0132\036.g"
+          + "oogle.cloud.deploy.v1.TargetB\003\340A\002\022\027\n\nreq"
+          + "uest_id\030\003 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\004 \001("
+          + "\010B\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\262\001\n\023D"
+          + "eleteTargetRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#"
+          + "\n!clouddeploy.googleapis.com/Target\022\027\n\nr"
+          + "equest_id\030\002 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\003 "
+          + "\001(\010B\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\021\n\004"
+          + "etag\030\005 \001(\tB\003\340A\001\"\327\005\n\020CustomTargetType\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\001\022\"\n\025custom_target_type_id"
+          + "\030\002 \001(\tB\003\340A\003\022\020\n\003uid\030\003 \001(\tB\003\340A\003\022\030\n\013descrip"
+          + "tion\030\004 \001(\tB\003\340A\001\022S\n\013annotations\030\005 \003(\01329.g"
+          + "oogle.cloud.deploy.v1.CustomTargetType.A"
+          + "nnotationsEntryB\003\340A\001\022I\n\006labels\030\006 \003(\01324.g"
+          + "oogle.cloud.deploy.v1.CustomTargetType.L"
+          + "abelsEntryB\003\340A\001\0224\n\013create_time\030\007 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\0224\n\013update_"
+          + "time\030\010 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\003\022\021\n\004etag\030\t \001(\tB\003\340A\001\022M\n\016custom_actions"
+          + "\030\n \001(\01323.google.cloud.deploy.v1.CustomTa"
+          + "rgetSkaffoldActionsH\000\0322\n\020AnnotationsEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013Lab"
+          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+          + ":\200\001\352A}\n+clouddeploy.googleapis.com/Custo"
+          + "mTargetType\022Nprojects/{project}/location"
+          + "s/{location}/customTargetTypes/{custom_t"
+          + "arget_type}B\014\n\ndefinition\"\245\001\n\033CustomTarg"
+          + "etSkaffoldActions\022\032\n\rrender_action\030\001 \001(\t"
+          + "B\003\340A\001\022\032\n\rdeploy_action\030\002 \001(\tB\003\340A\002\022N\n\030inc"
+          + "lude_skaffold_modules\030\003 \003(\0132\'.google.clo"
+          + "ud.deploy.v1.SkaffoldModulesB\003\340A\001\"\302\004\n\017Sk"
+          + "affoldModules\022\024\n\007configs\030\001 \003(\tB\003\340A\001\022H\n\003g"
+          + "it\030\002 \001(\01329.google.cloud.deploy.v1.Skaffo"
+          + "ldModules.SkaffoldGitSourceH\000\022Y\n\024google_"
+          + "cloud_storage\030\003 \001(\01329.google.cloud.deplo"
+          + "y.v1.SkaffoldModules.SkaffoldGCSSourceH\000"
+          + "\022`\n\027google_cloud_build_repo\030\004 \001(\0132=.goog"
+          + "le.cloud.deploy.v1.SkaffoldModules.Skaff"
+          + "oldGCBRepoSourceH\000\032K\n\021SkaffoldGitSource\022"
+          + "\021\n\004repo\030\001 \001(\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\001\022\020\n"
+          + "\003ref\030\003 \001(\tB\003\340A\001\032;\n\021SkaffoldGCSSource\022\023\n\006"
+          + "source\030\001 \001(\tB\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\001\032~\n\025"
+          + "SkaffoldGCBRepoSource\022@\n\nrepository\030\001 \001("
+          + "\tB,\340A\002\372A&\n$cloudbuild.googleapis.com/Rep"
+          + "ository\022\021\n\004path\030\002 \001(\tB\003\340A\001\022\020\n\003ref\030\003 \001(\tB"
+          + "\003\340A\001B\010\n\006source\"\300\001\n\034ListCustomTargetTypes"
+          + "Request\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+cloudde"
+          + "ploy.googleapis.com/CustomTargetType\022\026\n\t"
+          + "page_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\t"
+          + "B\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005"
+          + " \001(\tB\003\340A\001\"\224\001\n\035ListCustomTargetTypesRespo"
+          + "nse\022E\n\023custom_target_types\030\001 \003(\0132(.googl"
+          + "e.cloud.deploy.v1.CustomTargetType\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t"
+          + "\"_\n\032GetCustomTargetTypeRequest\022A\n\004name\030\001"
+          + " \001(\tB3\340A\002\372A-\n+clouddeploy.googleapis.com"
+          + "/CustomTargetType\"\210\002\n\035CreateCustomTarget"
+          + "TypeRequest\022C\n\006parent\030\001 \001(\tB3\340A\002\372A-\022+clo"
+          + "uddeploy.googleapis.com/CustomTargetType"
+          + "\022\"\n\025custom_target_type_id\030\002 \001(\tB\003\340A\002\022I\n\022"
+          + "custom_target_type\030\003 \001(\0132(.google.cloud."
+          + "deploy.v1.CustomTargetTypeB\003\340A\002\022\027\n\nreque"
           + "st_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B"
-          + "\003\340A\001\"\335\001\n\027UpdateAutomationRequest\0224\n\013upda"
-          + "te_mask\030\001 \001(\0132\032.google.protobuf.FieldMas"
-          + "kB\003\340A\002\022;\n\nautomation\030\002 \001(\0132\".google.clou"
-          + "d.deploy.v1.AutomationB\003\340A\002\022\027\n\nrequest_i"
-          + "d\030\003 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\004 \001(\010B\003\340A\001"
-          + "\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\"\272\001\n\027DeleteA"
-          + "utomationRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%"
-          + "clouddeploy.googleapis.com/Automation\022\027\n"
-          + "\nrequest_id\030\002 \001(\tB\003\340A\001\022\032\n\rallow_missing\030"
-          + "\003 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\021"
-          + "\n\004etag\030\005 \001(\tB\003\340A\001\"\240\001\n\026ListAutomationsReq"
-          + "uest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%clouddeplo"
-          + "y.googleapis.com/Automation\022\021\n\tpage_size"
-          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001"
-          + "(\t\022\020\n\010order_by\030\005 \001(\t\"\200\001\n\027ListAutomations"
-          + "Response\0227\n\013automations\030\001 \003(\0132\".google.c"
-          + "loud.deploy.v1.Automation\022\027\n\017next_page_t"
-          + "oken\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"S\n\024GetAu"
-          + "tomationRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%c"
-          + "louddeploy.googleapis.com/Automation\"\231\t\n"
-          + "\rAutomationRun\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013cre"
-          + "ate_time\030\002 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\022\021\n\004etag\030\004 \001(\tB\003\340A\003"
-          + "\022\034\n\017service_account\030\005 \001(\tB\003\340A\003\022D\n\023automa"
-          + "tion_snapshot\030\006 \001(\0132\".google.cloud.deplo"
-          + "y.v1.AutomationB\003\340A\003\022\026\n\ttarget_id\030\007 \001(\tB"
-          + "\003\340A\003\022?\n\005state\030\010 \001(\0162+.google.cloud.deplo"
-          + "y.v1.AutomationRun.StateB\003\340A\003\022\036\n\021state_d"
-          + "escription\030\t \001(\tB\003\340A\003\022F\n\020policy_violatio"
-          + "n\030\n \001(\0132\'.google.cloud.deploy.v1.PolicyV"
-          + "iolationB\003\340A\003\0224\n\013expire_time\030\013 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\022\024\n\007rule_id\030\014"
-          + " \001(\tB\003\340A\003\022\032\n\rautomation_id\030\017 \001(\tB\003\340A\003\022Y\n"
-          + "\031promote_release_operation\030\r \001(\0132/.googl"
-          + "e.cloud.deploy.v1.PromoteReleaseOperatio"
-          + "nB\003\340A\003H\000\022Y\n\031advance_rollout_operation\030\016 "
-          + "\001(\0132/.google.cloud.deploy.v1.AdvanceRoll"
-          + "outOperationB\003\340A\003H\000\022W\n\030repair_rollout_op"
-          + "eration\030\021 \001(\0132..google.cloud.deploy.v1.R"
-          + "epairRolloutOperationB\003\340A\003H\000\0228\n\017wait_unt"
-          + "il_time\030\020 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\"s\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r"
-          + "\n\tSUCCEEDED\020\001\022\r\n\tCANCELLED\020\002\022\n\n\006FAILED\020\003"
-          + "\022\017\n\013IN_PROGRESS\020\004\022\013\n\007PENDING\020\005\022\013\n\007ABORTE"
-          + "D\020\006:\235\001\352A\231\001\n(clouddeploy.googleapis.com/A"
-          + "utomationRun\022mprojects/{project}/locatio"
-          + "ns/{location}/deliveryPipelines/{deliver"
-          + "y_pipeline}/automationRuns/{automation_r"
-          + "un}B\013\n\toperation\"\211\001\n\027PromoteReleaseOpera"
-          + "tion\022\026\n\ttarget_id\030\001 \001(\tB\003\340A\003\022,\n\004wait\030\002 \001"
-          + "(\0132\031.google.protobuf.DurationB\003\340A\003\022\024\n\007ro"
-          + "llout\030\003 \001(\tB\003\340A\003\022\022\n\005phase\030\004 \001(\tB\003\340A\003\"\230\001\n"
-          + "\027AdvanceRolloutOperation\022\031\n\014source_phase"
-          + "\030\005 \001(\tB\003\340A\003\022,\n\004wait\030\002 \001(\0132\031.google.proto"
-          + "buf.DurationB\003\340A\003\022\024\n\007rollout\030\003 \001(\tB\003\340A\003\022"
-          + "\036\n\021destination_phase\030\004 \001(\tB\003\340A\003\"\233\001\n\026Repa"
-          + "irRolloutOperation\022\024\n\007rollout\030\001 \001(\tB\003\340A\003"
-          + "\022?\n\rrepair_phases\030\003 \003(\0132#.google.cloud.d"
-          + "eploy.v1.RepairPhaseB\003\340A\003\022\025\n\010phase_id\030\004 "
-          + "\001(\tB\003\340A\003\022\023\n\006job_id\030\005 \001(\tB\003\340A\003\"\231\001\n\013Repair"
-          + "Phase\0228\n\005retry\030\001 \001(\0132\".google.cloud.depl"
-          + "oy.v1.RetryPhaseB\003\340A\003H\000\022@\n\010rollback\030\002 \001("
-          + "\0132\'.google.cloud.deploy.v1.RollbackAttem"
-          + "ptB\003\340A\003H\000B\016\n\014repair_phase\"\246\001\n\nRetryPhase"
-          + "\022\033\n\016total_attempts\030\001 \001(\003B\003\340A\003\022>\n\014backoff"
-          + "_mode\030\002 \001(\0162#.google.cloud.deploy.v1.Bac"
-          + "koffModeB\003\340A\003\022;\n\010attempts\030\005 \003(\0132$.google"
-          + ".cloud.deploy.v1.RetryAttemptB\003\340A\003\"\244\001\n\014R"
-          + "etryAttempt\022\024\n\007attempt\030\001 \001(\003B\003\340A\003\022,\n\004wai"
-          + "t\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\003\022"
-          + "7\n\005state\030\005 \001(\0162#.google.cloud.deploy.v1."
-          + "RepairStateB\003\340A\003\022\027\n\nstate_desc\030\006 \001(\tB\003\340A"
-          + "\003\"\234\001\n\017RollbackAttempt\022\036\n\021destination_pha"
-          + "se\030\001 \001(\tB\003\340A\003\022\027\n\nrollout_id\030\002 \001(\tB\003\340A\003\0227"
-          + "\n\005state\030\003 \001(\0162#.google.cloud.deploy.v1.R"
-          + "epairStateB\003\340A\003\022\027\n\nstate_desc\030\004 \001(\tB\003\340A\003"
-          + "\"\246\001\n\031ListAutomationRunsRequest\022@\n\006parent"
-          + "\030\001 \001(\tB0\340A\002\372A*\022(clouddeploy.googleapis.c"
-          + "om/AutomationRun\022\021\n\tpage_size\030\002 \001(\005\022\022\n\np"
-          + "age_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order"
-          + "_by\030\005 \001(\t\"\212\001\n\032ListAutomationRunsResponse"
-          + "\022>\n\017automation_runs\030\001 \003(\0132%.google.cloud"
-          + ".deploy.v1.AutomationRun\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"Y\n\027GetAut"
-          + "omationRunRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n"
-          + "(clouddeploy.googleapis.com/AutomationRu"
-          + "n\"\\\n\032CancelAutomationRunRequest\022>\n\004name\030"
-          + "\001 \001(\tB0\340A\002\372A*\n(clouddeploy.googleapis.co"
-          + "m/AutomationRun\"\035\n\033CancelAutomationRunRe"
-          + "sponse*\271\001\n\024SkaffoldSupportState\022&\n\"SKAFF"
-          + "OLD_SUPPORT_STATE_UNSPECIFIED\020\000\022$\n SKAFF"
-          + "OLD_SUPPORT_STATE_SUPPORTED\020\001\022+\n\'SKAFFOL"
-          + "D_SUPPORT_STATE_MAINTENANCE_MODE\020\002\022&\n\"SK"
-          + "AFFOLD_SUPPORT_STATE_UNSUPPORTED\020\003*b\n\013Ba"
-          + "ckoffMode\022\034\n\030BACKOFF_MODE_UNSPECIFIED\020\000\022"
-          + "\027\n\023BACKOFF_MODE_LINEAR\020\001\022\034\n\030BACKOFF_MODE"
-          + "_EXPONENTIAL\020\002*\316\001\n\013RepairState\022\034\n\030REPAIR"
-          + "_STATE_UNSPECIFIED\020\000\022\032\n\026REPAIR_STATE_SUC"
-          + "CEEDED\020\001\022\032\n\026REPAIR_STATE_CANCELLED\020\002\022\027\n\023"
-          + "REPAIR_STATE_FAILED\020\003\022\034\n\030REPAIR_STATE_IN"
-          + "_PROGRESS\020\004\022\030\n\024REPAIR_STATE_PENDING\020\005\022\030\n"
-          + "\024REPAIR_STATE_ABORTED\020\0072\357L\n\013CloudDeploy\022"
-          + "\314\001\n\025ListDeliveryPipelines\0224.google.cloud"
-          + ".deploy.v1.ListDeliveryPipelinesRequest\032"
-          + "5.google.cloud.deploy.v1.ListDeliveryPip"
-          + "elinesResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{pa"
-          + "rent=projects/*/locations/*}/deliveryPip"
-          + "elines\022\271\001\n\023GetDeliveryPipeline\0222.google."
-          + "cloud.deploy.v1.GetDeliveryPipelineReque"
-          + "st\032(.google.cloud.deploy.v1.DeliveryPipe"
-          + "line\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=projects/"
-          + "*/locations/*/deliveryPipelines/*}\022\231\002\n\026C"
-          + "reateDeliveryPipeline\0225.google.cloud.dep"
-          + "loy.v1.CreateDeliveryPipelineRequest\032\035.g"
-          + "oogle.longrunning.Operation\"\250\001\312A%\n\020Deliv"
-          + "eryPipeline\022\021OperationMetadata\332A-parent,"
-          + "delivery_pipeline,delivery_pipeline_id\202\323"
-          + "\344\223\002J\"5/v1/{parent=projects/*/locations/*"
-          + "}/deliveryPipelines:\021delivery_pipeline\022\233"
-          + "\002\n\026UpdateDeliveryPipeline\0225.google.cloud"
-          + ".deploy.v1.UpdateDeliveryPipelineRequest"
-          + "\032\035.google.longrunning.Operation\"\252\001\312A%\n\020D"
-          + "eliveryPipeline\022\021OperationMetadata\332A\035del"
-          + "ivery_pipeline,update_mask\202\323\344\223\002\\2G/v1/{d"
-          + "elivery_pipeline.name=projects/*/locatio"
-          + "ns/*/deliveryPipelines/*}:\021delivery_pipe"
-          + "line\022\341\001\n\026DeleteDeliveryPipeline\0225.google"
-          + ".cloud.deploy.v1.DeleteDeliveryPipelineR"
-          + "equest\032\035.google.longrunning.Operation\"q\312"
-          + "A*\n\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\332A\004name\202\323\344\223\0027*5/v1/{name=projects/*/"
-          + "locations/*/deliveryPipelines/*}\022\244\001\n\013Lis"
-          + "tTargets\022*.google.cloud.deploy.v1.ListTa"
-          + "rgetsRequest\032+.google.cloud.deploy.v1.Li"
-          + "stTargetsResponse\"<\332A\006parent\202\323\344\223\002-\022+/v1/"
-          + "{parent=projects/*/locations/*}/targets\022"
-          + "\334\001\n\016RollbackTarget\022-.google.cloud.deploy"
-          + ".v1.RollbackTargetRequest\032..google.cloud"
-          + ".deploy.v1.RollbackTargetResponse\"k\332A\031na"
-          + "me,target_id,rollout_id\202\323\344\223\002I\"D/v1/{name"
-          + "=projects/*/locations/*/deliveryPipeline"
-          + "s/*}:rollbackTarget:\001*\022\221\001\n\tGetTarget\022(.g"
-          + "oogle.cloud.deploy.v1.GetTargetRequest\032\036"
-          + ".google.cloud.deploy.v1.Target\":\332A\004name\202"
-          + "\323\344\223\002-\022+/v1/{name=projects/*/locations/*/"
-          + "targets/*}\022\317\001\n\014CreateTarget\022+.google.clo"
-          + "ud.deploy.v1.CreateTargetRequest\032\035.googl"
-          + "e.longrunning.Operation\"s\312A\033\n\006Target\022\021Op"
-          + "erationMetadata\332A\027parent,target,target_i"
-          + "d\202\323\344\223\0025\"+/v1/{parent=projects/*/location"
-          + "s/*}/targets:\006target\022\321\001\n\014UpdateTarget\022+."
-          + "google.cloud.deploy.v1.UpdateTargetReque"
-          + "st\032\035.google.longrunning.Operation\"u\312A\033\n\006"
-          + "Target\022\021OperationMetadata\332A\022target,updat"
-          + "e_mask\202\323\344\223\002<22/v1/{target.name=projects/"
-          + "*/locations/*/targets/*}:\006target\022\303\001\n\014Del"
-          + "eteTarget\022+.google.cloud.deploy.v1.Delet"
-          + "eTargetRequest\032\035.google.longrunning.Oper"
-          + "ation\"g\312A*\n\025google.protobuf.Empty\022\021Opera"
-          + "tionMetadata\332A\004name\202\323\344\223\002-*+/v1/{name=pro"
-          + "jects/*/locations/*/targets/*}\022\314\001\n\025ListC"
-          + "ustomTargetTypes\0224.google.cloud.deploy.v"
-          + "1.ListCustomTargetTypesRequest\0325.google."
-          + "cloud.deploy.v1.ListCustomTargetTypesRes"
-          + "ponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{parent=proj"
-          + "ects/*/locations/*}/customTargetTypes\022\271\001"
-          + "\n\023GetCustomTargetType\0222.google.cloud.dep"
-          + "loy.v1.GetCustomTargetTypeRequest\032(.goog"
-          + "le.cloud.deploy.v1.CustomTargetType\"D\332A\004"
-          + "name\202\323\344\223\0027\0225/v1/{name=projects/*/locatio"
-          + "ns/*/customTargetTypes/*}\022\234\002\n\026CreateCust"
-          + "omTargetType\0225.google.cloud.deploy.v1.Cr"
-          + "eateCustomTargetTypeRequest\032\035.google.lon"
-          + "grunning.Operation\"\253\001\312A%\n\020CustomTargetTy"
-          + "pe\022\021OperationMetadata\332A/parent,custom_ta"
-          + "rget_type,custom_target_type_id\202\323\344\223\002K\"5/"
-          + "v1/{parent=projects/*/locations/*}/custo"
-          + "mTargetTypes:\022custom_target_type\022\236\002\n\026Upd"
-          + "ateCustomTargetType\0225.google.cloud.deplo"
-          + "y.v1.UpdateCustomTargetTypeRequest\032\035.goo"
-          + "gle.longrunning.Operation\"\255\001\312A%\n\020CustomT"
-          + "argetType\022\021OperationMetadata\332A\036custom_ta"
-          + "rget_type,update_mask\202\323\344\223\002^2H/v1/{custom"
-          + "_target_type.name=projects/*/locations/*"
-          + "/customTargetTypes/*}:\022custom_target_typ"
-          + "e\022\341\001\n\026DeleteCustomTargetType\0225.google.cl"
-          + "oud.deploy.v1.DeleteCustomTargetTypeRequ"
-          + "est\032\035.google.longrunning.Operation\"q\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadat"
-          + "a\332A\004name\202\323\344\223\0027*5/v1/{name=projects/*/loc"
-          + "ations/*/customTargetTypes/*}\022\274\001\n\014ListRe"
-          + "leases\022+.google.cloud.deploy.v1.ListRele"
-          + "asesRequest\032,.google.cloud.deploy.v1.Lis"
-          + "tReleasesResponse\"Q\332A\006parent\202\323\344\223\002B\022@/v1/"
-          + "{parent=projects/*/locations/*/deliveryP"
-          + "ipelines/*}/releases\022\251\001\n\nGetRelease\022).go"
-          + "ogle.cloud.deploy.v1.GetReleaseRequest\032\037"
-          + ".google.cloud.deploy.v1.Release\"O\332A\004name"
-          + "\202\323\344\223\002B\022@/v1/{name=projects/*/locations/*"
-          + "/deliveryPipelines/*/releases/*}\022\353\001\n\rCre"
-          + "ateRelease\022,.google.cloud.deploy.v1.Crea"
-          + "teReleaseRequest\032\035.google.longrunning.Op"
-          + "eration\"\214\001\312A\034\n\007Release\022\021OperationMetadat"
-          + "a\332A\031parent,release,release_id\202\323\344\223\002K\"@/v1"
-          + "/{parent=projects/*/locations/*/delivery"
-          + "Pipelines/*}/releases:\007release\022\313\001\n\016Aband"
-          + "onRelease\022-.google.cloud.deploy.v1.Aband"
-          + "onReleaseRequest\032..google.cloud.deploy.v"
-          + "1.AbandonReleaseResponse\"Z\332A\004name\202\323\344\223\002M\""
-          + "H/v1/{name=projects/*/locations/*/delive"
-          + "ryPipelines/*/releases/*}:abandon:\001*\022\376\001\n"
-          + "\022CreateDeployPolicy\0221.google.cloud.deplo"
-          + "y.v1.CreateDeployPolicyRequest\032\035.google."
-          + "longrunning.Operation\"\225\001\312A!\n\014DeployPolic"
-          + "y\022\021OperationMetadata\332A%parent,deploy_pol"
-          + "icy,deploy_policy_id\202\323\344\223\002C\"2/v1/{parent="
-          + "projects/*/locations/*}/deployPolicies:\r"
-          + "deploy_policy\022\200\002\n\022UpdateDeployPolicy\0221.g"
-          + "oogle.cloud.deploy.v1.UpdateDeployPolicy"
-          + "Request\032\035.google.longrunning.Operation\"\227"
-          + "\001\312A!\n\014DeployPolicy\022\021OperationMetadata\332A\031"
-          + "deploy_policy,update_mask\202\323\344\223\002Q2@/v1/{de"
-          + "ploy_policy.name=projects/*/locations/*/"
-          + "deployPolicies/*}:\rdeploy_policy\022\326\001\n\022Del"
-          + "eteDeployPolicy\0221.google.cloud.deploy.v1"
-          + ".DeleteDeployPolicyRequest\032\035.google.long"
-          + "running.Operation\"n\312A*\n\025google.protobuf."
-          + "Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0024*2/"
-          + "v1/{name=projects/*/locations/*/deployPo"
-          + "licies/*}\022\300\001\n\022ListDeployPolicies\0221.googl"
-          + "e.cloud.deploy.v1.ListDeployPoliciesRequ"
-          + "est\0322.google.cloud.deploy.v1.ListDeployP"
-          + "oliciesResponse\"C\332A\006parent\202\323\344\223\0024\0222/v1/{p"
-          + "arent=projects/*/locations/*}/deployPoli"
-          + "cies\022\252\001\n\017GetDeployPolicy\022..google.cloud."
-          + "deploy.v1.GetDeployPolicyRequest\032$.googl"
-          + "e.cloud.deploy.v1.DeployPolicy\"A\332A\004name\202"
-          + "\323\344\223\0024\0222/v1/{name=projects/*/locations/*/"
-          + "deployPolicies/*}\022\326\001\n\016ApproveRollout\022-.g"
-          + "oogle.cloud.deploy.v1.ApproveRolloutRequ"
-          + "est\032..google.cloud.deploy.v1.ApproveRoll"
-          + "outResponse\"e\332A\004name\202\323\344\223\002X\"S/v1/{name=pr"
-          + "ojects/*/locations/*/deliveryPipelines/*"
-          + "/releases/*/rollouts/*}:approve:\001*\022\337\001\n\016A"
-          + "dvanceRollout\022-.google.cloud.deploy.v1.A"
-          + "dvanceRolloutRequest\032..google.cloud.depl"
-          + "oy.v1.AdvanceRolloutResponse\"n\332A\rname,ph"
-          + "ase_id\202\323\344\223\002X\"S/v1/{name=projects/*/locat"
-          + "ions/*/deliveryPipelines/*/releases/*/ro"
-          + "llouts/*}:advance:\001*\022\322\001\n\rCancelRollout\022,"
-          + ".google.cloud.deploy.v1.CancelRolloutReq"
-          + "uest\032-.google.cloud.deploy.v1.CancelRoll"
-          + "outResponse\"d\332A\004name\202\323\344\223\002W\"R/v1/{name=pr"
-          + "ojects/*/locations/*/deliveryPipelines/*"
-          + "/releases/*/rollouts/*}:cancel:\001*\022\307\001\n\014Li"
-          + "stRollouts\022+.google.cloud.deploy.v1.List"
-          + "RolloutsRequest\032,.google.cloud.deploy.v1"
-          + ".ListRolloutsResponse\"\\\332A\006parent\202\323\344\223\002M\022K"
-          + "/v1/{parent=projects/*/locations/*/deliv"
-          + "eryPipelines/*/releases/*}/rollouts\022\264\001\n\n"
-          + "GetRollout\022).google.cloud.deploy.v1.GetR"
-          + "olloutRequest\032\037.google.cloud.deploy.v1.R"
-          + "ollout\"Z\332A\004name\202\323\344\223\002M\022K/v1/{name=project"
-          + "s/*/locations/*/deliveryPipelines/*/rele"
-          + "ases/*/rollouts/*}\022\366\001\n\rCreateRollout\022,.g"
-          + "oogle.cloud.deploy.v1.CreateRolloutReque"
-          + "st\032\035.google.longrunning.Operation\"\227\001\312A\034\n"
-          + "\007Rollout\022\021OperationMetadata\332A\031parent,rol"
-          + "lout,rollout_id\202\323\344\223\002V\"K/v1/{parent=proje"
-          + "cts/*/locations/*/deliveryPipelines/*/re"
-          + "leases/*}/rollouts:\007rollout\022\337\001\n\tIgnoreJo"
-          + "b\022(.google.cloud.deploy.v1.IgnoreJobRequ"
-          + "est\032).google.cloud.deploy.v1.IgnoreJobRe"
-          + "sponse\"}\332A\027rollout,phase_id,job_id\202\323\344\223\002]"
-          + "\"X/v1/{rollout=projects/*/locations/*/de"
-          + "liveryPipelines/*/releases/*/rollouts/*}"
-          + ":ignoreJob:\001*\022\333\001\n\010RetryJob\022\'.google.clou"
-          + "d.deploy.v1.RetryJobRequest\032(.google.clo"
-          + "ud.deploy.v1.RetryJobResponse\"|\332A\027rollou"
-          + "t,phase_id,job_id\202\323\344\223\002\\\"W/v1/{rollout=pr"
-          + "ojects/*/locations/*/deliveryPipelines/*"
-          + "/releases/*/rollouts/*}:retryJob:\001*\022\316\001\n\013"
-          + "ListJobRuns\022*.google.cloud.deploy.v1.Lis"
-          + "tJobRunsRequest\032+.google.cloud.deploy.v1"
-          + ".ListJobRunsResponse\"f\332A\006parent\202\323\344\223\002W\022U/"
-          + "v1/{parent=projects/*/locations/*/delive"
-          + "ryPipelines/*/releases/*/rollouts/*}/job"
-          + "Runs\022\273\001\n\tGetJobRun\022(.google.cloud.deploy"
-          + ".v1.GetJobRunRequest\032\036.google.cloud.depl"
-          + "oy.v1.JobRun\"d\332A\004name\202\323\344\223\002W\022U/v1/{name=p"
-          + "rojects/*/locations/*/deliveryPipelines/"
-          + "*/releases/*/rollouts/*/jobRuns/*}\022\345\001\n\017T"
-          + "erminateJobRun\022..google.cloud.deploy.v1."
-          + "TerminateJobRunRequest\032/.google.cloud.de"
-          + "ploy.v1.TerminateJobRunResponse\"q\332A\004name"
-          + "\202\323\344\223\002d\"_/v1/{name=projects/*/locations/*"
-          + "/deliveryPipelines/*/releases/*/rollouts"
-          + "/*/jobRuns/*}:terminate:\001*\022\216\001\n\tGetConfig"
-          + "\022(.google.cloud.deploy.v1.GetConfigReque"
-          + "st\032\036.google.cloud.deploy.v1.Config\"7\332A\004n"
-          + "ame\202\323\344\223\002*\022(/v1/{name=projects/*/location"
-          + "s/*/config}\022\200\002\n\020CreateAutomation\022/.googl"
-          + "e.cloud.deploy.v1.CreateAutomationReques"
-          + "t\032\035.google.longrunning.Operation\"\233\001\312A\037\n\n"
-          + "Automation\022\021OperationMetadata\332A\037parent,a"
-          + "utomation,automation_id\202\323\344\223\002Q\"C/v1/{pare"
-          + "nt=projects/*/locations/*/deliveryPipeli"
-          + "nes/*}/automations:\nautomation\022\202\002\n\020Updat"
-          + "eAutomation\022/.google.cloud.deploy.v1.Upd"
-          + "ateAutomationRequest\032\035.google.longrunnin"
-          + "g.Operation\"\235\001\312A\037\n\nAutomation\022\021Operation"
-          + "Metadata\332A\026automation,update_mask\202\323\344\223\002\\2"
-          + "N/v1/{automation.name=projects/*/locatio"
-          + "ns/*/deliveryPipelines/*/automations/*}:"
-          + "\nautomation\022\343\001\n\020DeleteAutomation\022/.googl"
-          + "e.cloud.deploy.v1.DeleteAutomationReques"
-          + "t\032\035.google.longrunning.Operation\"\177\312A*\n\025g"
-          + "oogle.protobuf.Empty\022\021OperationMetadata\332"
-          + "A\004name\202\323\344\223\002E*C/v1/{name=projects/*/locat"
-          + "ions/*/deliveryPipelines/*/automations/*"
-          + "}\022\265\001\n\rGetAutomation\022,.google.cloud.deplo"
-          + "y.v1.GetAutomationRequest\032\".google.cloud"
-          + ".deploy.v1.Automation\"R\332A\004name\202\323\344\223\002E\022C/v"
-          + "1/{name=projects/*/locations/*/deliveryP"
-          + "ipelines/*/automations/*}\022\310\001\n\017ListAutoma"
-          + "tions\022..google.cloud.deploy.v1.ListAutom"
-          + "ationsRequest\032/.google.cloud.deploy.v1.L"
-          + "istAutomationsResponse\"T\332A\006parent\202\323\344\223\002E\022"
-          + "C/v1/{parent=projects/*/locations/*/deli"
-          + "veryPipelines/*}/automations\022\301\001\n\020GetAuto"
-          + "mationRun\022/.google.cloud.deploy.v1.GetAu"
-          + "tomationRunRequest\032%.google.cloud.deploy"
-          + ".v1.AutomationRun\"U\332A\004name\202\323\344\223\002H\022F/v1/{n"
+          + "\003\340A\001\"\361\001\n\035UpdateCustomTargetTypeRequest\0224"
+          + "\n\013update_mask\030\001 \001(\0132\032.google.protobuf.Fi"
+          + "eldMaskB\003\340A\002\022I\n\022custom_target_type\030\002 \001(\013"
+          + "2(.google.cloud.deploy.v1.CustomTargetTy"
+          + "peB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032\n\rallo"
+          + "w_missing\030\004 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\005 "
+          + "\001(\010B\003\340A\001\"\306\001\n\035DeleteCustomTargetTypeReque"
+          + "st\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+clouddeploy.go"
+          + "ogleapis.com/CustomTargetType\022\027\n\nrequest"
+          + "_id\030\002 \001(\tB\003\340A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340"
+          + "A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022\021\n\004etag\030\005"
+          + " \001(\tB\003\340A\001\"\212\006\n\014DeployPolicy\022\021\n\004name\030\001 \001(\t"
+          + "B\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\023\n\013description\030\003"
+          + " \001(\t\022J\n\013annotations\030\004 \003(\01325.google.cloud"
+          + ".deploy.v1.DeployPolicy.AnnotationsEntry"
+          + "\022@\n\006labels\030\005 \003(\01320.google.cloud.deploy.v"
+          + "1.DeployPolicy.LabelsEntry\0224\n\013create_tim"
+          + "e\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\0224\n\013update_time\030\007 \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003\022\021\n\tsuspended\030\010 \001(\010\022L\n\tsel"
+          + "ectors\030\014 \003(\01324.google.cloud.deploy.v1.De"
+          + "ployPolicyResourceSelectorB\003\340A\002\0226\n\005rules"
+          + "\030\n \003(\0132\".google.cloud.deploy.v1.PolicyRu"
+          + "leB\003\340A\002\022\014\n\004etag\030\013 \001(\t\0322\n\020AnnotationsEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013Lab"
+          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+          + "\"C\n\007Invoker\022\027\n\023INVOKER_UNSPECIFIED\020\000\022\010\n\004"
+          + "USER\020\001\022\025\n\021DEPLOY_AUTOMATION\020\002:w\352At\n\'clou"
+          + "ddeploy.googleapis.com/DeployPolicy\022Fpro"
+          + "jects/{project}/locations/{location}/dep"
+          + "loyPolicies/{deploy_policy}R\001\001\"\257\001\n\034Deplo"
+          + "yPolicyResourceSelector\022Q\n\021delivery_pipe"
+          + "line\030\001 \001(\01321.google.cloud.deploy.v1.Deli"
+          + "veryPipelineAttributeB\003\340A\001\022<\n\006target\030\002 \001"
+          + "(\0132\'.google.cloud.deploy.v1.TargetAttrib"
+          + "uteB\003\340A\001\"\245\001\n\031DeliveryPipelineAttribute\022\n"
+          + "\n\002id\030\001 \001(\t\022M\n\006labels\030\002 \003(\0132=.google.clou"
+          + "d.deploy.v1.DeliveryPipelineAttribute.La"
+          + "belsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\221\001\n\017TargetAttribute\022\n\n\002"
+          + "id\030\001 \001(\t\022C\n\006labels\030\002 \003(\01323.google.cloud."
+          + "deploy.v1.TargetAttribute.LabelsEntry\032-\n"
+          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001\"_\n\nPolicyRule\022I\n\023rollout_restrictio"
+          + "n\030\002 \001(\0132*.google.cloud.deploy.v1.Rollout"
+          + "RestrictionH\000B\006\n\004rule\"\244\003\n\022RolloutRestric"
+          + "tion\022\017\n\002id\030\001 \001(\tB\003\340A\002\022C\n\010invokers\030\002 \003(\0162"
+          + ",.google.cloud.deploy.v1.DeployPolicy.In"
+          + "vokerB\003\340A\001\022O\n\007actions\030\003 \003(\01629.google.clo"
+          + "ud.deploy.v1.RolloutRestriction.RolloutA"
+          + "ctionsB\003\340A\001\022>\n\014time_windows\030\004 \001(\0132#.goog"
+          + "le.cloud.deploy.v1.TimeWindowsB\003\340A\002\"\246\001\n\016"
+          + "RolloutActions\022\037\n\033ROLLOUT_ACTIONS_UNSPEC"
+          + "IFIED\020\000\022\013\n\007ADVANCE\020\001\022\013\n\007APPROVE\020\002\022\n\n\006CAN"
+          + "CEL\020\003\022\n\n\006CREATE\020\004\022\016\n\nIGNORE_JOB\020\005\022\r\n\tRET"
+          + "RY_JOB\020\006\022\014\n\010ROLLBACK\020\007\022\024\n\020TERMINATE_JOBR"
+          + "UN\020\010\"\256\001\n\013TimeWindows\022\026\n\ttime_zone\030\001 \001(\tB"
+          + "\003\340A\002\022D\n\020one_time_windows\030\002 \003(\0132%.google."
+          + "cloud.deploy.v1.OneTimeWindowB\003\340A\001\022A\n\016we"
+          + "ekly_windows\030\003 \003(\0132$.google.cloud.deploy"
+          + ".v1.WeeklyWindowB\003\340A\001\"\305\001\n\rOneTimeWindow\022"
+          + "*\n\nstart_date\030\001 \001(\0132\021.google.type.DateB\003"
+          + "\340A\002\022/\n\nstart_time\030\002 \001(\0132\026.google.type.Ti"
+          + "meOfDayB\003\340A\002\022(\n\010end_date\030\003 \001(\0132\021.google."
+          + "type.DateB\003\340A\002\022-\n\010end_time\030\004 \001(\0132\026.googl"
+          + "e.type.TimeOfDayB\003\340A\002\"\241\001\n\014WeeklyWindow\0221"
+          + "\n\014days_of_week\030\001 \003(\0162\026.google.type.DayOf"
+          + "WeekB\003\340A\001\022/\n\nstart_time\030\002 \001(\0132\026.google.t"
+          + "ype.TimeOfDayB\003\340A\001\022-\n\010end_time\030\003 \001(\0132\026.g"
+          + "oogle.type.TimeOfDayB\003\340A\001\"c\n\017PolicyViola"
+          + "tion\022P\n\030policy_violation_details\030\001 \003(\0132."
+          + ".google.cloud.deploy.v1.PolicyViolationD"
+          + "etails\"R\n\026PolicyViolationDetails\022\016\n\006poli"
+          + "cy\030\001 \001(\t\022\017\n\007rule_id\030\002 \001(\t\022\027\n\017failure_mes"
+          + "sage\030\003 \001(\t\"\263\027\n\007Release\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "\001\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\023\n\013description\030\003 \001(\t"
+          + "\022E\n\013annotations\030\004 \003(\01320.google.cloud.dep"
+          + "loy.v1.Release.AnnotationsEntry\022;\n\006label"
+          + "s\030\005 \003(\0132+.google.cloud.deploy.v1.Release"
+          + ".LabelsEntry\022\026\n\tabandoned\030\027 \001(\010B\003\340A\003\0224\n\013"
+          + "create_time\030\006 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\022:\n\021render_start_time\030\007 \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\0228\n\017render"
+          + "_end_time\030\010 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022\033\n\023skaffold_config_uri\030\021 \001(\t\022\034\n"
+          + "\024skaffold_config_path\030\t \001(\t\022>\n\017build_art"
+          + "ifacts\030\n \003(\0132%.google.cloud.deploy.v1.Bu"
+          + "ildArtifact\022Q\n\032delivery_pipeline_snapsho"
+          + "t\030\013 \001(\0132(.google.cloud.deploy.v1.Deliver"
+          + "yPipelineB\003\340A\003\022=\n\020target_snapshots\030\014 \003(\013"
+          + "2\036.google.cloud.deploy.v1.TargetB\003\340A\003\022S\n"
+          + "\034custom_target_type_snapshots\030\033 \003(\0132(.go"
+          + "ogle.cloud.deploy.v1.CustomTargetTypeB\003\340"
+          + "A\003\022F\n\014render_state\030\r \001(\0162+.google.cloud.",
+      "deploy.v1.Release.RenderStateB\003\340A\003\022\014\n\004et"
+          + "ag\030\020 \001(\t\022\035\n\020skaffold_version\030\023 \001(\tB\003\340A\001\022"
+          + "S\n\020target_artifacts\030\024 \003(\01324.google.cloud"
+          + ".deploy.v1.Release.TargetArtifactsEntryB"
+          + "\003\340A\003\022O\n\016target_renders\030\026 \003(\01322.google.cl"
+          + "oud.deploy.v1.Release.TargetRendersEntry"
+          + "B\003\340A\003\022H\n\tcondition\030\030 \001(\01320.google.cloud."
+          + "deploy.v1.Release.ReleaseConditionB\003\340A\003\022"
+          + "U\n\021deploy_parameters\030\031 \003(\01325.google.clou"
+          + "d.deploy.v1.Release.DeployParametersEntr"
+          + "yB\003\340A\001\032\324\005\n\014TargetRender\022@\n\017rendering_bui"
+          + "ld\030\001 \001(\tB\'\340A\003\372A!\n\037cloudbuild.googleapis."
+          + "com/Build\022\\\n\017rendering_state\030\002 \001(\0162>.goo"
+          + "gle.cloud.deploy.v1.Release.TargetRender"
+          + ".TargetRenderStateB\003\340A\003\022=\n\010metadata\030\006 \001("
+          + "\0132&.google.cloud.deploy.v1.RenderMetadat"
+          + "aB\003\340A\003\022U\n\rfailure_cause\030\004 \001(\01629.google.c"
+          + "loud.deploy.v1.Release.TargetRender.Fail"
+          + "ureCauseB\003\340A\003\022\034\n\017failure_message\030\005 \001(\tB\003"
+          + "\340A\003\"d\n\021TargetRenderState\022#\n\037TARGET_RENDE"
+          + "R_STATE_UNSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006"
+          + "FAILED\020\002\022\017\n\013IN_PROGRESS\020\003\"\211\002\n\014FailureCau"
+          + "se\022\035\n\031FAILURE_CAUSE_UNSPECIFIED\020\000\022\033\n\027CLO"
+          + "UD_BUILD_UNAVAILABLE\020\001\022\024\n\020EXECUTION_FAIL"
+          + "ED\020\002\022\036\n\032CLOUD_BUILD_REQUEST_FAILED\020\003\022!\n\035"
+          + "VERIFICATION_CONFIG_NOT_FOUND\020\004\022\033\n\027CUSTO"
+          + "M_ACTION_NOT_FOUND\020\005\022%\n!DEPLOYMENT_STRAT"
+          + "EGY_NOT_SUPPORTED\020\006\022 \n\034RENDER_FEATURE_NO"
+          + "T_SUPPORTED\020\007\032\'\n\025ReleaseReadyCondition\022\016"
+          + "\n\006status\030\001 \001(\010\032\362\001\n\032SkaffoldSupportedCond"
+          + "ition\022\016\n\006status\030\001 \001(\010\022L\n\026skaffold_suppor"
+          + "t_state\030\002 \001(\0162,.google.cloud.deploy.v1.S"
+          + "kaffoldSupportState\0229\n\025maintenance_mode_"
+          + "time\030\003 \001(\0132\032.google.protobuf.Timestamp\022;"
+          + "\n\027support_expiration_time\030\004 \001(\0132\032.google"
+          + ".protobuf.Timestamp\032\314\001\n\020ReleaseCondition"
+          + "\022V\n\027release_ready_condition\030\001 \001(\01325.goog"
+          + "le.cloud.deploy.v1.Release.ReleaseReadyC"
+          + "ondition\022`\n\034skaffold_supported_condition"
+          + "\030\002 \001(\0132:.google.cloud.deploy.v1.Release."
+          + "SkaffoldSupportedCondition\0322\n\020Annotation"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-"
+          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001\032^\n\024TargetArtifactsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\0225\n\005value\030\002 \001(\0132&.google.cloud.deploy."
+          + "v1.TargetArtifact:\0028\001\032b\n\022TargetRendersEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.google"
+          + ".cloud.deploy.v1.Release.TargetRender:\0028"
+          + "\001\0327\n\025DeployParametersEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001\"W\n\013RenderState\022\034\n\030REN"
+          + "DER_STATE_UNSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n"
+          + "\n\006FAILED\020\002\022\017\n\013IN_PROGRESS\020\003:\212\001\352A\206\001\n\"clou"
+          + "ddeploy.googleapis.com/Release\022`projects"
+          + "/{project}/locations/{location}/delivery"
+          + "Pipelines/{delivery_pipeline}/releases/{"
+          + "release}\"\362\001\n\031CreateDeployPolicyRequest\022?"
+          + "\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'clouddeploy.goog"
+          + "leapis.com/DeployPolicy\022\035\n\020deploy_policy"
+          + "_id\030\002 \001(\tB\003\340A\002\022@\n\rdeploy_policy\030\003 \001(\0132$."
+          + "google.cloud.deploy.v1.DeployPolicyB\003\340A\002"
+          + "\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_on"
+          + "ly\030\005 \001(\010B\003\340A\001\"\344\001\n\031UpdateDeployPolicyRequ"
+          + "est\0224\n\013update_mask\030\001 \001(\0132\032.google.protob"
+          + "uf.FieldMaskB\003\340A\002\022@\n\rdeploy_policy\030\002 \001(\013"
+          + "2$.google.cloud.deploy.v1.DeployPolicyB\003"
+          + "\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032\n\rallow_mi"
+          + "ssing\030\004 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B"
+          + "\003\340A\001\"\276\001\n\031DeleteDeployPolicyRequest\022=\n\004na"
+          + "me\030\001 \001(\tB/\340A\002\372A)\n\'clouddeploy.googleapis"
+          + ".com/DeployPolicy\022\027\n\nrequest_id\030\002 \001(\tB\003\340"
+          + "A\001\022\032\n\rallow_missing\030\003 \001(\010B\003\340A\001\022\032\n\rvalida"
+          + "te_only\030\004 \001(\010B\003\340A\001\022\021\n\004etag\030\005 \001(\tB\003\340A\001\"\245\001"
+          + "\n\031ListDeployPoliciesRequest\022?\n\006parent\030\001 "
+          + "\001(\tB/\340A\002\372A)\022\'clouddeploy.googleapis.com/"
+          + "DeployPolicy\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
+          + "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030"
+          + "\005 \001(\t\"\211\001\n\032ListDeployPoliciesResponse\022=\n\017"
+          + "deploy_policies\030\001 \003(\0132$.google.cloud.dep"
+          + "loy.v1.DeployPolicy\022\027\n\017next_page_token\030\002"
+          + " \001(\t\022\023\n\013unreachable\030\003 \003(\t\"W\n\026GetDeployPo"
+          + "licyRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'cloud"
+          + "deploy.googleapis.com/DeployPolicy\"+\n\rBu"
+          + "ildArtifact\022\r\n\005image\030\003 \001(\t\022\013\n\003tag\030\002 \001(\t\""
+          + "\253\003\n\016TargetArtifact\022\033\n\014artifact_uri\030\004 \001(\t"
+          + "B\003\340A\003H\000\022!\n\024skaffold_config_path\030\002 \001(\tB\003\340"
+          + "A\003\022\032\n\rmanifest_path\030\003 \001(\tB\003\340A\003\022X\n\017phase_"
+          + "artifacts\030\005 \003(\0132:.google.cloud.deploy.v1"
+          + ".TargetArtifact.PhaseArtifactsEntryB\003\340A\003"
+          + "\032o\n\rPhaseArtifact\022!\n\024skaffold_config_pat"
+          + "h\030\001 \001(\tB\003\340A\003\022\032\n\rmanifest_path\030\003 \001(\tB\003\340A\003"
+          + "\022\037\n\022job_manifests_path\030\004 \001(\tB\003\340A\003\032k\n\023Pha"
+          + "seArtifactsEntry\022\013\n\003key\030\001 \001(\t\022C\n\005value\030\002"
+          + " \001(\01324.google.cloud.deploy.v1.TargetArti"
+          + "fact.PhaseArtifact:\0028\001B\005\n\003uri\"H\n\016DeployA"
+          + "rtifact\022\031\n\014artifact_uri\030\001 \001(\tB\003\340A\003\022\033\n\016ma"
+          + "nifest_paths\030\002 \003(\tB\003\340A\003\"M\n\026CloudRunRende"
+          + "rMetadata\0223\n\007service\030\001 \001(\tB\"\340A\003\372A\034\n\032run."
+          + "googleapis.com/Service\"\225\001\n\016RenderMetadat"
+          + "a\022F\n\tcloud_run\030\001 \001(\0132..google.cloud.depl"
+          + "oy.v1.CloudRunRenderMetadataB\003\340A\003\022;\n\006cus"
+          + "tom\030\002 \001(\0132&.google.cloud.deploy.v1.Custo"
+          + "mMetadataB\003\340A\003\"\267\001\n\023ListReleasesRequest\022C"
+          + "\n\006parent\030\001 \001(\tB3\340A\002\372A-\n+clouddeploy.goog"
+          + "leapis.com/DeliveryPipeline\022\026\n\tpage_size"
+          + "\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006"
+          + "filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001"
+          + "\"w\n\024ListReleasesResponse\0221\n\010releases\030\001 \003"
+          + "(\0132\037.google.cloud.deploy.v1.Release\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003("
+          + "\t\"M\n\021GetReleaseRequest\0228\n\004name\030\001 \001(\tB*\340A"
+          + "\002\372A$\n\"clouddeploy.googleapis.com/Release"
+          + "\"\261\002\n\024CreateReleaseRequest\022C\n\006parent\030\001 \001("
+          + "\tB3\340A\002\372A-\n+clouddeploy.googleapis.com/De"
+          + "liveryPipeline\022\027\n\nrelease_id\030\002 \001(\tB\003\340A\002\022"
+          + "5\n\007release\030\003 \001(\0132\037.google.cloud.deploy.v"
+          + "1.ReleaseB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\022"
+          + "\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\022O\n\026override_"
+          + "deploy_policy\030\006 \003(\tB/\340A\001\372A)\n\'clouddeploy"
+          + ".googleapis.com/DeployPolicy\"\223\017\n\007Rollout"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\001\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\023\n"
+          + "\013description\030\003 \001(\t\022E\n\013annotations\030\004 \003(\0132"
+          + "0.google.cloud.deploy.v1.Rollout.Annotat"
+          + "ionsEntry\022;\n\006labels\030\005 \003(\0132+.google.cloud"
+          + ".deploy.v1.Rollout.LabelsEntry\0224\n\013create"
+          + "_time\030\006 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\0225\n\014approve_time\030\007 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\0225\n\014enqueue_time\030\010 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022:\n\021de"
+          + "ploy_start_time\030\t \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003\0228\n\017deploy_end_time\030\n \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\022\026\n\ttarg"
+          + "et_id\030\022 \001(\tB\003\340A\002\022J\n\016approval_state\030\014 \001(\016"
+          + "2-.google.cloud.deploy.v1.Rollout.Approv"
+          + "alStateB\003\340A\003\0229\n\005state\030\r \001(\0162%.google.clo"
+          + "ud.deploy.v1.Rollout.StateB\003\340A\003\022\033\n\016failu"
+          + "re_reason\030\016 \001(\tB\003\340A\003\022@\n\017deploying_build\030"
+          + "\021 \001(\tB\'\340A\003\372A!\n\037cloudbuild.googleapis.com"
+          + "/Build\022\014\n\004etag\030\020 \001(\t\022O\n\024deploy_failure_c"
+          + "ause\030\023 \001(\0162,.google.cloud.deploy.v1.Roll"
+          + "out.FailureCauseB\003\340A\003\0222\n\006phases\030\027 \003(\0132\035."
+          + "google.cloud.deploy.v1.PhaseB\003\340A\003\0227\n\010met"
+          + "adata\030\030 \001(\0132 .google.cloud.deploy.v1.Met"
+          + "adataB\003\340A\003\022\037\n\022controller_rollout\030\031 \001(\tB\003"
+          + "\340A\003\022 \n\023rollback_of_rollout\030\032 \001(\tB\003\340A\003\022$\n"
+          + "\027rolled_back_by_rollouts\030\033 \003(\tB\003\340A\003\022)\n\034a"
+          + "ctive_repair_automation_run\030\034 \001(\tB\003\340A\003\0322"
+          + "\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\"{\n\rApprovalState\022\036\n\032AP"
+          + "PROVAL_STATE_UNSPECIFIED\020\000\022\022\n\016NEEDS_APPR"
+          + "OVAL\020\001\022\032\n\026DOES_NOT_NEED_APPROVAL\020\002\022\014\n\010AP"
+          + "PROVED\020\003\022\014\n\010REJECTED\020\004\"\304\001\n\005State\022\025\n\021STAT"
+          + "E_UNSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED"
+          + "\020\002\022\017\n\013IN_PROGRESS\020\003\022\024\n\020PENDING_APPROVAL\020"
+          + "\004\022\025\n\021APPROVAL_REJECTED\020\005\022\013\n\007PENDING\020\006\022\023\n"
+          + "\017PENDING_RELEASE\020\007\022\016\n\nCANCELLING\020\010\022\r\n\tCA"
+          + "NCELLED\020\t\022\n\n\006HALTED\020\n\"\212\002\n\014FailureCause\022\035"
+          + "\n\031FAILURE_CAUSE_UNSPECIFIED\020\000\022\033\n\027CLOUD_B"
+          + "UILD_UNAVAILABLE\020\001\022\024\n\020EXECUTION_FAILED\020\002"
+          + "\022\025\n\021DEADLINE_EXCEEDED\020\003\022\022\n\016RELEASE_FAILE"
+          + "D\020\004\022\025\n\021RELEASE_ABANDONED\020\005\022!\n\035VERIFICATI"
+          + "ON_CONFIG_NOT_FOUND\020\006\022\036\n\032CLOUD_BUILD_REQ"
+          + "UEST_FAILED\020\007\022#\n\037OPERATION_FEATURE_NOT_S"
+          + "UPPORTED\020\010:\235\001\352A\231\001\n\"clouddeploy.googleapi"
+          + "s.com/Rollout\022sprojects/{project}/locati"
+          + "ons/{location}/deliveryPipelines/{delive"
+          + "ry_pipeline}/releases/{release}/rollouts"
+          + "/{rollout}\"\325\001\n\010Metadata\022@\n\tcloud_run\030\001 \001"
+          + "(\0132(.google.cloud.deploy.v1.CloudRunMeta"
+          + "dataB\003\340A\003\022J\n\nautomation\030\002 \001(\01321.google.c"
+          + "loud.deploy.v1.AutomationRolloutMetadata"
+          + "B\003\340A\003\022;\n\006custom\030\003 \001(\0132&.google.cloud.dep"
+          + "loy.v1.CustomMetadataB\003\340A\003\"\345\001\n\024DeployJob"
+          + "RunMetadata\022@\n\tcloud_run\030\001 \001(\0132(.google."
+          + "cloud.deploy.v1.CloudRunMetadataB\003\340A\003\022N\n"
+          + "\rcustom_target\030\002 \001(\01322.google.cloud.depl"
+          + "oy.v1.CustomTargetDeployMetadataB\003\340A\003\022;\n"
+          + "\006custom\030\003 \001(\0132&.google.cloud.deploy.v1.C"
+          + "ustomMetadataB\003\340A\003\"\246\001\n\020CloudRunMetadata\022"
+          + "3\n\007service\030\001 \001(\tB\"\340A\003\372A\034\n\032run.googleapis"
+          + ".com/Service\022\031\n\014service_urls\030\002 \003(\tB\003\340A\003\022"
+          + "\025\n\010revision\030\003 \001(\tB\003\340A\003\022+\n\003job\030\004 \001(\tB\036\340A\003"
+          + "\372A\030\n\026run.googleapis.com/Job\"7\n\032CustomTar"
+          + "getDeployMetadata\022\031\n\014skip_message\030\001 \001(\tB"
+          + "\003\340A\003\"\213\001\n\031AutomationRolloutMetadata\022#\n\026pr"
+          + "omote_automation_run\030\001 \001(\tB\003\340A\003\022$\n\027advan"
+          + "ce_automation_runs\030\002 \003(\tB\003\340A\003\022#\n\026repair_"
+          + "automation_runs\030\003 \003(\tB\003\340A\003\"\210\001\n\016CustomMet"
+          + "adata\022G\n\006values\030\001 \003(\01322.google.cloud.dep"
+          + "loy.v1.CustomMetadata.ValuesEntryB\003\340A\003\032-"
+          + "\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001\"\374\002\n\005Phase\022\017\n\002id\030\001 \001(\tB\003\340A\003\0227\n\005stat"
+          + "e\030\003 \001(\0162#.google.cloud.deploy.v1.Phase.S"
+          + "tateB\003\340A\003\022\031\n\014skip_message\030\006 \001(\tB\003\340A\003\022F\n\017"
+          + "deployment_jobs\030\004 \001(\0132&.google.cloud.dep"
+          + "loy.v1.DeploymentJobsB\003\340A\003H\000\022K\n\022child_ro"
+          + "llout_jobs\030\005 \001(\0132(.google.cloud.deploy.v"
+          + "1.ChildRolloutJobsB\003\340A\003H\000\"q\n\005State\022\025\n\021ST"
+          + "ATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\017\n\013IN_PRO"
+          + "GRESS\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\013\n\007AB"
+          + "ORTED\020\005\022\013\n\007SKIPPED\020\006B\006\n\004jobs\"\357\001\n\016Deploym"
+          + "entJobs\0224\n\ndeploy_job\030\001 \001(\0132\033.google.clo"
+          + "ud.deploy.v1.JobB\003\340A\003\0224\n\nverify_job\030\002 \001("
+          + "\0132\033.google.cloud.deploy.v1.JobB\003\340A\003\0227\n\rp"
+          + "redeploy_job\030\003 \001(\0132\033.google.cloud.deploy"
+          + ".v1.JobB\003\340A\003\0228\n\016postdeploy_job\030\004 \001(\0132\033.g"
+          + "oogle.cloud.deploy.v1.JobB\003\340A\003\"\221\001\n\020Child"
+          + "RolloutJobs\022=\n\023create_rollout_jobs\030\001 \003(\013"
+          + "2\033.google.cloud.deploy.v1.JobB\003\340A\003\022>\n\024ad"
+          + "vance_rollout_jobs\030\002 \003(\0132\033.google.cloud."
+          + "deploy.v1.JobB\003\340A\003\"\367\005\n\003Job\022\017\n\002id\030\001 \001(\tB\003"
+          + "\340A\003\0225\n\005state\030\002 \001(\0162!.google.cloud.deploy"
+          + ".v1.Job.StateB\003\340A\003\022\031\n\014skip_message\030\010 \001(\t"
+          + "B\003\340A\003\022:\n\007job_run\030\003 \001(\tB)\340A\003\372A#\n!clouddep"
+          + "loy.googleapis.com/JobRun\022<\n\ndeploy_job\030"
+          + "\004 \001(\0132!.google.cloud.deploy.v1.DeployJob"
+          + "B\003\340A\003H\000\022<\n\nverify_job\030\005 \001(\0132!.google.clo"
+          + "ud.deploy.v1.VerifyJobB\003\340A\003H\000\022B\n\rpredepl"
+          + "oy_job\030\t \001(\0132$.google.cloud.deploy.v1.Pr"
+          + "edeployJobB\003\340A\003H\000\022D\n\016postdeploy_job\030\n \001("
+          + "\0132%.google.cloud.deploy.v1.PostdeployJob"
+          + "B\003\340A\003H\000\022V\n\030create_child_rollout_job\030\006 \001("
+          + "\0132-.google.cloud.deploy.v1.CreateChildRo"
+          + "lloutJobB\003\340A\003H\000\022X\n\031advance_child_rollout"
+          + "_job\030\007 \001(\0132..google.cloud.deploy.v1.Adva"
+          + "nceChildRolloutJobB\003\340A\003H\000\"\214\001\n\005State\022\025\n\021S"
+          + "TATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010DISAB"
+          + "LED\020\002\022\017\n\013IN_PROGRESS\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n"
+          + "\006FAILED\020\005\022\013\n\007ABORTED\020\006\022\013\n\007SKIPPED\020\007\022\013\n\007I"
+          + "GNORED\020\010B\n\n\010job_type\"\013\n\tDeployJob\"\013\n\tVer"
+          + "ifyJob\"$\n\014PredeployJob\022\024\n\007actions\030\001 \003(\tB"
+          + "\003\340A\003\"%\n\rPostdeployJob\022\024\n\007actions\030\001 \003(\tB\003"
+          + "\340A\003\"\027\n\025CreateChildRolloutJob\"\030\n\026AdvanceC"
+          + "hildRolloutJob\"\256\001\n\023ListRolloutsRequest\022:"
+          + "\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"clouddeploy.goog"
+          + "leapis.com/Release\022\026\n\tpage_size\030\002 \001(\005B\003\340"
+          + "A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 "
+          + "\001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"w\n\024ListR"
+          + "olloutsResponse\0221\n\010rollouts\030\001 \003(\0132\037.goog"
+          + "le.cloud.deploy.v1.Rollout\022\027\n\017next_page_"
+          + "token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"M\n\021GetR"
+          + "olloutRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"clo"
+          + "uddeploy.googleapis.com/Rollout\"\310\002\n\024Crea"
+          + "teRolloutRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$"
+          + "\n\"clouddeploy.googleapis.com/Release\022\027\n\n"
+          + "rollout_id\030\002 \001(\tB\003\340A\002\0225\n\007rollout\030\003 \001(\0132\037"
+          + ".google.cloud.deploy.v1.RolloutB\003\340A\002\022\027\n\n"
+          + "request_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_only\030\005"
+          + " \001(\010B\003\340A\001\022O\n\026override_deploy_policy\030\006 \003("
+          + "\tB/\340A\001\372A)\n\'clouddeploy.googleapis.com/De"
+          + "ployPolicy\022\036\n\021starting_phase_id\030\007 \001(\tB\003\340"
+          + "A\001\"\200\002\n\021OperationMetadata\0224\n\013create_time\030"
+          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221"
+          + "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004"
+          + " \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#"
+          + "\n\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013a"
+          + "pi_version\030\007 \001(\tB\003\340A\003\"\271\001\n\025ApproveRollout"
+          + "Request\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"clouddepl"
+          + "oy.googleapis.com/Rollout\022\025\n\010approved\030\002 "
+          + "\001(\010B\003\340A\002\022O\n\026override_deploy_policy\030\003 \003(\t"
+          + "B/\340A\001\372A)\n\'clouddeploy.googleapis.com/Dep"
+          + "loyPolicy\"\030\n\026ApproveRolloutResponse\"\271\001\n\025"
+          + "AdvanceRolloutRequest\0228\n\004name\030\001 \001(\tB*\340A\002"
+          + "\372A$\n\"clouddeploy.googleapis.com/Rollout\022"
+          + "\025\n\010phase_id\030\002 \001(\tB\003\340A\002\022O\n\026override_deplo"
+          + "y_policy\030\003 \003(\tB/\340A\001\372A)\n\'clouddeploy.goog"
+          + "leapis.com/DeployPolicy\"\030\n\026AdvanceRollou"
+          + "tResponse\"\241\001\n\024CancelRolloutRequest\0228\n\004na"
+          + "me\030\001 \001(\tB*\340A\002\372A$\n\"clouddeploy.googleapis"
+          + ".com/Rollout\022O\n\026override_deploy_policy\030\002"
+          + " \003(\tB/\340A\001\372A)\n\'clouddeploy.googleapis.com"
+          + "/DeployPolicy\"\027\n\025CancelRolloutResponse\"\314"
+          + "\001\n\020IgnoreJobRequest\022;\n\007rollout\030\001 \001(\tB*\340A"
+          + "\002\372A$\n\"clouddeploy.googleapis.com/Rollout"
+          + "\022\025\n\010phase_id\030\002 \001(\tB\003\340A\002\022\023\n\006job_id\030\003 \001(\tB"
+          + "\003\340A\002\022O\n\026override_deploy_policy\030\004 \003(\tB/\340A"
+          + "\001\372A)\n\'clouddeploy.googleapis.com/DeployP"
+          + "olicy\"\023\n\021IgnoreJobResponse\"\313\001\n\017RetryJobR"
+          + "equest\022;\n\007rollout\030\001 \001(\tB*\340A\002\372A$\n\"cloudde"
+          + "ploy.googleapis.com/Rollout\022\025\n\010phase_id\030"
+          + "\002 \001(\tB\003\340A\002\022\023\n\006job_id\030\003 \001(\tB\003\340A\002\022O\n\026overr"
+          + "ide_deploy_policy\030\004 \003(\tB/\340A\001\372A)\n\'cloudde"
+          + "ploy.googleapis.com/DeployPolicy\"\022\n\020Retr"
+          + "yJobResponse\"Q\n\025AbandonReleaseRequest\0228\n"
+          + "\004name\030\001 \001(\tB*\340A\002\372A$\n\"clouddeploy.googlea"
+          + "pis.com/Release\"\030\n\026AbandonReleaseRespons"
+          + "e\"\320\010\n\006JobRun\022\021\n\004name\030\001 \001(\tB\003\340A\001\022\020\n\003uid\030\002"
+          + " \001(\tB\003\340A\003\022\025\n\010phase_id\030\003 \001(\tB\003\340A\003\022\023\n\006job_"
+          + "id\030\004 \001(\tB\003\340A\003\0224\n\013create_time\030\005 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\0223\n\nstart_tim"
+          + "e\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\0221\n\010end_time\030\007 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\0228\n\005state\030\010 \001(\0162$.google.clou"
+          + "d.deploy.v1.JobRun.StateB\003\340A\003\022C\n\016deploy_"
+          + "job_run\030\t \001(\0132$.google.cloud.deploy.v1.D"
+          + "eployJobRunB\003\340A\003H\000\022C\n\016verify_job_run\030\n \001"
+          + "(\0132$.google.cloud.deploy.v1.VerifyJobRun"
+          + "B\003\340A\003H\000\022I\n\021predeploy_job_run\030\016 \001(\0132\'.goo"
+          + "gle.cloud.deploy.v1.PredeployJobRunB\003\340A\003"
+          + "H\000\022K\n\022postdeploy_job_run\030\017 \001(\0132(.google."
+          + "cloud.deploy.v1.PostdeployJobRunB\003\340A\003H\000\022"
+          + "]\n\034create_child_rollout_job_run\030\014 \001(\01320."
+          + "google.cloud.deploy.v1.CreateChildRollou"
+          + "tJobRunB\003\340A\003H\000\022_\n\035advance_child_rollout_"
+          + "job_run\030\r \001(\01321.google.cloud.deploy.v1.A"
+          + "dvanceChildRolloutJobRunB\003\340A\003H\000\022\021\n\004etag\030"
+          + "\013 \001(\tB\003\340A\003\"k\n\005State\022\025\n\021STATE_UNSPECIFIED"
+          + "\020\000\022\017\n\013IN_PROGRESS\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n\006FA"
+          + "ILED\020\003\022\017\n\013TERMINATING\020\004\022\016\n\nTERMINATED\020\005:"
+          + "\257\001\352A\253\001\n!clouddeploy.googleapis.com/JobRu"
+          + "n\022\205\001projects/{project}/locations/{locati"
+          + "on}/deliveryPipelines/{delivery_pipeline"
+          + "}/releases/{release}/rollouts/{rollout}/"
+          + "jobRuns/{job_run}B\t\n\007job_run\"\225\004\n\014DeployJ"
+          + "obRun\0226\n\005build\030\001 \001(\tB\'\340A\003\372A!\n\037cloudbuild"
+          + ".googleapis.com/Build\022M\n\rfailure_cause\030\002"
+          + " \001(\01621.google.cloud.deploy.v1.DeployJobR"
+          + "un.FailureCauseB\003\340A\003\022\034\n\017failure_message\030"
+          + "\003 \001(\tB\003\340A\003\022C\n\010metadata\030\004 \001(\0132,.google.cl"
+          + "oud.deploy.v1.DeployJobRunMetadataB\003\340A\003\022"
+          + "=\n\010artifact\030\005 \001(\0132&.google.cloud.deploy."
+          + "v1.DeployArtifactB\003\340A\003\"\333\001\n\014FailureCause\022"
+          + "\035\n\031FAILURE_CAUSE_UNSPECIFIED\020\000\022\033\n\027CLOUD_"
+          + "BUILD_UNAVAILABLE\020\001\022\024\n\020EXECUTION_FAILED\020"
+          + "\002\022\025\n\021DEADLINE_EXCEEDED\020\003\022 \n\034MISSING_RESO"
+          + "URCES_FOR_CANARY\020\004\022\036\n\032CLOUD_BUILD_REQUES"
+          + "T_FAILED\020\005\022 \n\034DEPLOY_FEATURE_NOT_SUPPORT"
+          + "ED\020\006\"\250\003\n\014VerifyJobRun\0226\n\005build\030\001 \001(\tB\'\340A"
+          + "\003\372A!\n\037cloudbuild.googleapis.com/Build\022\031\n"
+          + "\014artifact_uri\030\002 \001(\tB\003\340A\003\022\033\n\016event_log_pa"
+          + "th\030\003 \001(\tB\003\340A\003\022M\n\rfailure_cause\030\004 \001(\01621.g"
+          + "oogle.cloud.deploy.v1.VerifyJobRun.Failu"
+          + "reCauseB\003\340A\003\022\034\n\017failure_message\030\005 \001(\tB\003\340"
+          + "A\003\"\272\001\n\014FailureCause\022\035\n\031FAILURE_CAUSE_UNS"
+          + "PECIFIED\020\000\022\033\n\027CLOUD_BUILD_UNAVAILABLE\020\001\022"
+          + "\024\n\020EXECUTION_FAILED\020\002\022\025\n\021DEADLINE_EXCEED"
+          + "ED\020\003\022!\n\035VERIFICATION_CONFIG_NOT_FOUND\020\004\022"
+          + "\036\n\032CLOUD_BUILD_REQUEST_FAILED\020\005\"\323\002\n\017Pred"
+          + "eployJobRun\0226\n\005build\030\001 \001(\tB\'\340A\003\372A!\n\037clou"
+          + "dbuild.googleapis.com/Build\022P\n\rfailure_c"
+          + "ause\030\002 \001(\01624.google.cloud.deploy.v1.Pred"
+          + "eployJobRun.FailureCauseB\003\340A\003\022\034\n\017failure"
+          + "_message\030\003 \001(\tB\003\340A\003\"\227\001\n\014FailureCause\022\035\n\031"
+          + "FAILURE_CAUSE_UNSPECIFIED\020\000\022\033\n\027CLOUD_BUI"
+          + "LD_UNAVAILABLE\020\001\022\024\n\020EXECUTION_FAILED\020\002\022\025"
+          + "\n\021DEADLINE_EXCEEDED\020\003\022\036\n\032CLOUD_BUILD_REQ"
+          + "UEST_FAILED\020\004\"\325\002\n\020PostdeployJobRun\0226\n\005bu"
+          + "ild\030\001 \001(\tB\'\340A\003\372A!\n\037cloudbuild.googleapis"
+          + ".com/Build\022Q\n\rfailure_cause\030\002 \001(\01625.goog"
+          + "le.cloud.deploy.v1.PostdeployJobRun.Fail"
+          + "ureCauseB\003\340A\003\022\034\n\017failure_message\030\003 \001(\tB\003"
+          + "\340A\003\"\227\001\n\014FailureCause\022\035\n\031FAILURE_CAUSE_UN"
+          + "SPECIFIED\020\000\022\033\n\027CLOUD_BUILD_UNAVAILABLE\020\001"
+          + "\022\024\n\020EXECUTION_FAILED\020\002\022\025\n\021DEADLINE_EXCEE"
+          + "DED\020\003\022\036\n\032CLOUD_BUILD_REQUEST_FAILED\020\004\"O\n"
+          + "\030CreateChildRolloutJobRun\022\024\n\007rollout\030\001 \001"
+          + "(\tB\003\340A\003\022\035\n\020rollout_phase_id\030\002 \001(\tB\003\340A\003\"P"
+          + "\n\031AdvanceChildRolloutJobRun\022\024\n\007rollout\030\001"
+          + " \001(\tB\003\340A\003\022\035\n\020rollout_phase_id\030\002 \001(\tB\003\340A\003"
+          + "\"\255\001\n\022ListJobRunsRequest\022:\n\006parent\030\001 \001(\tB"
+          + "*\340A\002\372A$\n\"clouddeploy.googleapis.com/Roll"
+          + "out\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_toke"
+          + "n\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010ord"
+          + "er_by\030\005 \001(\tB\003\340A\001\"u\n\023ListJobRunsResponse\022"
+          + "0\n\010job_runs\030\001 \003(\0132\036.google.cloud.deploy."
+          + "v1.JobRun\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013un"
+          + "reachable\030\003 \003(\t\"K\n\020GetJobRunRequest\0227\n\004n"
+          + "ame\030\001 \001(\tB)\340A\002\372A#\n!clouddeploy.googleapi"
+          + "s.com/JobRun\"\242\001\n\026TerminateJobRunRequest\022"
+          + "7\n\004name\030\001 \001(\tB)\340A\002\372A#\n!clouddeploy.googl"
+          + "eapis.com/JobRun\022O\n\026override_deploy_poli"
+          + "cy\030\002 \003(\tB/\340A\001\372A)\n\'clouddeploy.googleapis"
+          + ".com/DeployPolicy\"\031\n\027TerminateJobRunResp"
+          + "onse\"\325\001\n\006Config\022\014\n\004name\030\001 \001(\t\022C\n\022support"
+          + "ed_versions\030\002 \003(\0132\'.google.cloud.deploy."
+          + "v1.SkaffoldVersion\022 \n\030default_skaffold_v"
+          + "ersion\030\003 \001(\t:V\352AS\n!clouddeploy.googleapi"
+          + "s.com/Config\022.projects/{project}/locatio"
+          + "ns/{location}/config\"\307\001\n\017SkaffoldVersion"
+          + "\022\017\n\007version\030\001 \001(\t\0229\n\025maintenance_mode_ti"
+          + "me\030\003 \001(\0132\032.google.protobuf.Timestamp\022;\n\027"
+          + "support_expiration_time\030\004 \001(\0132\032.google.p"
+          + "rotobuf.Timestamp\022+\n\020support_end_date\030\002 "
+          + "\001(\0132\021.google.type.Date\"K\n\020GetConfigReque"
+          + "st\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!clouddeploy.go"
+          + "ogleapis.com/Config\"\227\006\n\nAutomation\022\021\n\004na"
+          + "me\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\030\n\013descr"
+          + "iption\030\003 \001(\tB\003\340A\001\0224\n\013create_time\030\004 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\0224\n\013updat"
+          + "e_time\030\005 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\022M\n\013annotations\030\006 \003(\01323.google.clou"
+          + "d.deploy.v1.Automation.AnnotationsEntryB"
+          + "\003\340A\001\022C\n\006labels\030\007 \003(\0132..google.cloud.depl"
+          + "oy.v1.Automation.LabelsEntryB\003\340A\001\022\021\n\004eta"
+          + "g\030\010 \001(\tB\003\340A\001\022\026\n\tsuspended\030\t \001(\010B\003\340A\001\022\034\n\017"
+          + "service_account\030\n \001(\tB\003\340A\002\022I\n\010selector\030\013"
+          + " \001(\01322.google.cloud.deploy.v1.Automation"
+          + "ResourceSelectorB\003\340A\002\022:\n\005rules\030\016 \003(\0132&.g"
+          + "oogle.cloud.deploy.v1.AutomationRuleB\003\340A",
+      "\002\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001:\226\001\352A\222\001\n%clouddeploy"
+          + ".googleapis.com/Automation\022fprojects/{pr"
+          + "oject}/locations/{location}/deliveryPipe"
+          + "lines/{delivery_pipeline}/automations/{a"
+          + "utomation}R\001\001\"V\n\032AutomationResourceSelec"
+          + "tor\0228\n\007targets\030\001 \003(\0132\'.google.cloud.depl"
+          + "oy.v1.TargetAttribute\"\345\002\n\016AutomationRule"
+          + "\022O\n\024promote_release_rule\030\001 \001(\0132*.google."
+          + "cloud.deploy.v1.PromoteReleaseRuleB\003\340A\001H"
+          + "\000\022O\n\024advance_rollout_rule\030\002 \001(\0132*.google"
+          + ".cloud.deploy.v1.AdvanceRolloutRuleB\003\340A\001"
+          + "H\000\022M\n\023repair_rollout_rule\030\003 \001(\0132).google"
+          + ".cloud.deploy.v1.RepairRolloutRuleB\003\340A\001H"
+          + "\000\022Z\n\032timed_promote_release_rule\030\004 \001(\0132/."
+          + "google.cloud.deploy.v1.TimedPromoteRelea"
+          + "seRuleB\003\340A\001H\000B\006\n\004rule\"\346\001\n\027TimedPromoteRe"
+          + "leaseRule\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\"\n\025destinatio"
+          + "n_target_id\030\002 \001(\tB\003\340A\001\022\025\n\010schedule\030\003 \001(\t"
+          + "B\003\340A\002\022\026\n\ttime_zone\030\004 \001(\tB\003\340A\002\022G\n\tconditi"
+          + "on\030\005 \001(\0132/.google.cloud.deploy.v1.Automa"
+          + "tionRuleConditionB\003\340A\003\022\036\n\021destination_ph"
+          + "ase\030\006 \001(\tB\003\340A\001\"\340\001\n\022PromoteReleaseRule\022\017\n"
+          + "\002id\030\001 \001(\tB\003\340A\002\022,\n\004wait\030\002 \001(\0132\031.google.pr"
+          + "otobuf.DurationB\003\340A\001\022\"\n\025destination_targ"
+          + "et_id\030\007 \001(\tB\003\340A\001\022G\n\tcondition\030\005 \001(\0132/.go"
+          + "ogle.cloud.deploy.v1.AutomationRuleCondi"
+          + "tionB\003\340A\003\022\036\n\021destination_phase\030\010 \001(\tB\003\340A"
+          + "\001\"\270\001\n\022AdvanceRolloutRule\022\017\n\002id\030\001 \001(\tB\003\340A"
+          + "\002\022\032\n\rsource_phases\030\006 \003(\tB\003\340A\001\022,\n\004wait\030\003 "
+          + "\001(\0132\031.google.protobuf.DurationB\003\340A\001\022G\n\tc"
+          + "ondition\030\005 \001(\0132/.google.cloud.deploy.v1."
+          + "AutomationRuleConditionB\003\340A\003\"\334\001\n\021RepairR"
+          + "olloutRule\022\017\n\002id\030\001 \001(\tB\003\340A\002\022\023\n\006phases\030\007 "
+          + "\003(\tB\003\340A\001\022\021\n\004jobs\030\003 \003(\tB\003\340A\001\022G\n\tcondition"
+          + "\030\006 \001(\0132/.google.cloud.deploy.v1.Automati"
+          + "onRuleConditionB\003\340A\003\022E\n\rrepair_phases\030\010 "
+          + "\003(\0132).google.cloud.deploy.v1.RepairPhase"
+          + "ConfigB\003\340A\002\"\223\001\n\021RepairPhaseConfig\0223\n\005ret"
+          + "ry\030\001 \001(\0132\035.google.cloud.deploy.v1.RetryB"
+          + "\003\340A\001H\000\0229\n\010rollback\030\002 \001(\0132 .google.cloud."
+          + "deploy.v1.RollbackB\003\340A\001H\000B\016\n\014repair_phas"
+          + "e\"\214\001\n\005Retry\022\025\n\010attempts\030\001 \001(\003B\003\340A\002\022,\n\004wa"
+          + "it\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\001"
+          + "\022>\n\014backoff_mode\030\003 \001(\0162#.google.cloud.de"
+          + "ploy.v1.BackoffModeB\003\340A\001\"\\\n\010Rollback\022\036\n\021"
+          + "destination_phase\030\001 \001(\tB\003\340A\001\0220\n#disable_"
+          + "rollback_if_rollout_pending\030\002 \001(\010B\003\340A\001\"\357"
+          + "\001\n\027AutomationRuleCondition\022W\n\031targets_pr"
+          + "esent_condition\030\001 \001(\0132/.google.cloud.dep"
+          + "loy.v1.TargetsPresentConditionB\003\340A\001\022d\n\037t"
+          + "imed_promote_release_condition\030\002 \001(\01324.g"
+          + "oogle.cloud.deploy.v1.TimedPromoteReleas"
+          + "eConditionB\003\340A\001H\000B\025\n\023rule_type_condition"
+          + "\"\203\002\n\034TimedPromoteReleaseCondition\022<\n\023nex"
+          + "t_promotion_time\030\001 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022W\n\014targets_list\030\002 \003(\0132<."
+          + "google.cloud.deploy.v1.TimedPromoteRelea"
+          + "seCondition.TargetsB\003\340A\003\032L\n\007Targets\022\035\n\020s"
+          + "ource_target_id\030\001 \001(\tB\003\340A\001\022\"\n\025destinatio"
+          + "n_target_id\030\002 \001(\tB\003\340A\001\"\346\001\n\027CreateAutomat"
+          + "ionRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%clou"
+          + "ddeploy.googleapis.com/Automation\022\032\n\raut"
+          + "omation_id\030\002 \001(\tB\003\340A\002\022;\n\nautomation\030\003 \001("
+          + "\0132\".google.cloud.deploy.v1.AutomationB\003\340"
+          + "A\002\022\027\n\nrequest_id\030\004 \001(\tB\003\340A\001\022\032\n\rvalidate_"
+          + "only\030\005 \001(\010B\003\340A\001\"\335\001\n\027UpdateAutomationRequ"
+          + "est\0224\n\013update_mask\030\001 \001(\0132\032.google.protob"
+          + "uf.FieldMaskB\003\340A\002\022;\n\nautomation\030\002 \001(\0132\"."
+          + "google.cloud.deploy.v1.AutomationB\003\340A\002\022\027"
+          + "\n\nrequest_id\030\003 \001(\tB\003\340A\001\022\032\n\rallow_missing"
+          + "\030\004 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\005 \001(\010B\003\340A\001\""
+          + "\272\001\n\027DeleteAutomationRequest\022;\n\004name\030\001 \001("
+          + "\tB-\340A\002\372A\'\n%clouddeploy.googleapis.com/Au"
+          + "tomation\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\022\032\n\rall"
+          + "ow_missing\030\003 \001(\010B\003\340A\001\022\032\n\rvalidate_only\030\004"
+          + " \001(\010B\003\340A\001\022\021\n\004etag\030\005 \001(\tB\003\340A\001\"\240\001\n\026ListAut"
+          + "omationsRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022"
+          + "%clouddeploy.googleapis.com/Automation\022\021"
+          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n"
+          + "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\200\001\n\027List"
+          + "AutomationsResponse\0227\n\013automations\030\001 \003(\013"
+          + "2\".google.cloud.deploy.v1.Automation\022\027\n\017"
+          + "next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003"
+          + "(\t\"S\n\024GetAutomationRequest\022;\n\004name\030\001 \001(\t"
+          + "B-\340A\002\372A\'\n%clouddeploy.googleapis.com/Aut"
+          + "omation\"\377\t\n\rAutomationRun\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\003\0224\n\013create_time\030\002 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\022\021\n\004etag"
+          + "\030\004 \001(\tB\003\340A\003\022\034\n\017service_account\030\005 \001(\tB\003\340A"
+          + "\003\022D\n\023automation_snapshot\030\006 \001(\0132\".google."
+          + "cloud.deploy.v1.AutomationB\003\340A\003\022\026\n\ttarge"
+          + "t_id\030\007 \001(\tB\003\340A\003\022?\n\005state\030\010 \001(\0162+.google."
+          + "cloud.deploy.v1.AutomationRun.StateB\003\340A\003"
+          + "\022\036\n\021state_description\030\t \001(\tB\003\340A\003\022F\n\020poli"
+          + "cy_violation\030\n \001(\0132\'.google.cloud.deploy"
+          + ".v1.PolicyViolationB\003\340A\003\0224\n\013expire_time\030"
+          + "\013 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\024"
+          + "\n\007rule_id\030\014 \001(\tB\003\340A\003\022\032\n\rautomation_id\030\017 "
+          + "\001(\tB\003\340A\003\022Y\n\031promote_release_operation\030\r "
+          + "\001(\0132/.google.cloud.deploy.v1.PromoteRele"
+          + "aseOperationB\003\340A\003H\000\022Y\n\031advance_rollout_o"
+          + "peration\030\016 \001(\0132/.google.cloud.deploy.v1."
+          + "AdvanceRolloutOperationB\003\340A\003H\000\022W\n\030repair"
+          + "_rollout_operation\030\021 \001(\0132..google.cloud."
+          + "deploy.v1.RepairRolloutOperationB\003\340A\003H\000\022"
+          + "d\n\037timed_promote_release_operation\030\023 \001(\013"
+          + "24.google.cloud.deploy.v1.TimedPromoteRe"
+          + "leaseOperationB\003\340A\003H\000\0228\n\017wait_until_time"
+          + "\030\020 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\""
+          + "s\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tSUCCE"
+          + "EDED\020\001\022\r\n\tCANCELLED\020\002\022\n\n\006FAILED\020\003\022\017\n\013IN_"
+          + "PROGRESS\020\004\022\013\n\007PENDING\020\005\022\013\n\007ABORTED\020\006:\235\001\352"
+          + "A\231\001\n(clouddeploy.googleapis.com/Automati"
+          + "onRun\022mprojects/{project}/locations/{loc"
+          + "ation}/deliveryPipelines/{delivery_pipel"
+          + "ine}/automationRuns/{automation_run}B\013\n\t"
+          + "operation\"\211\001\n\027PromoteReleaseOperation\022\026\n"
+          + "\ttarget_id\030\001 \001(\tB\003\340A\003\022,\n\004wait\030\002 \001(\0132\031.go"
+          + "ogle.protobuf.DurationB\003\340A\003\022\024\n\007rollout\030\003"
+          + " \001(\tB\003\340A\003\022\022\n\005phase\030\004 \001(\tB\003\340A\003\"\230\001\n\027Advanc"
+          + "eRolloutOperation\022\031\n\014source_phase\030\005 \001(\tB"
+          + "\003\340A\003\022,\n\004wait\030\002 \001(\0132\031.google.protobuf.Dur"
+          + "ationB\003\340A\003\022\024\n\007rollout\030\003 \001(\tB\003\340A\003\022\036\n\021dest"
+          + "ination_phase\030\004 \001(\tB\003\340A\003\"\304\001\n\026RepairRollo"
+          + "utOperation\022\024\n\007rollout\030\001 \001(\tB\003\340A\003\022\'\n\032cur"
+          + "rent_repair_phase_index\030\006 \001(\003B\003\340A\003\022?\n\rre"
+          + "pair_phases\030\003 \003(\0132#.google.cloud.deploy."
+          + "v1.RepairPhaseB\003\340A\003\022\025\n\010phase_id\030\004 \001(\tB\003\340"
+          + "A\003\022\023\n\006job_id\030\005 \001(\tB\003\340A\003\"`\n\034TimedPromoteR"
+          + "eleaseOperation\022\026\n\ttarget_id\030\001 \001(\tB\003\340A\003\022"
+          + "\024\n\007release\030\002 \001(\tB\003\340A\003\022\022\n\005phase\030\003 \001(\tB\003\340A"
+          + "\003\"\231\001\n\013RepairPhase\0228\n\005retry\030\001 \001(\0132\".googl"
+          + "e.cloud.deploy.v1.RetryPhaseB\003\340A\003H\000\022@\n\010r"
+          + "ollback\030\002 \001(\0132\'.google.cloud.deploy.v1.R"
+          + "ollbackAttemptB\003\340A\003H\000B\016\n\014repair_phase\"\246\001"
+          + "\n\nRetryPhase\022\033\n\016total_attempts\030\001 \001(\003B\003\340A"
+          + "\003\022>\n\014backoff_mode\030\002 \001(\0162#.google.cloud.d"
+          + "eploy.v1.BackoffModeB\003\340A\003\022;\n\010attempts\030\005 "
+          + "\003(\0132$.google.cloud.deploy.v1.RetryAttemp"
+          + "tB\003\340A\003\"\244\001\n\014RetryAttempt\022\024\n\007attempt\030\001 \001(\003"
+          + "B\003\340A\003\022,\n\004wait\030\002 \001(\0132\031.google.protobuf.Du"
+          + "rationB\003\340A\003\0227\n\005state\030\005 \001(\0162#.google.clou"
+          + "d.deploy.v1.RepairStateB\003\340A\003\022\027\n\nstate_de"
+          + "sc\030\006 \001(\tB\003\340A\003\"\316\001\n\017RollbackAttempt\022\036\n\021des"
+          + "tination_phase\030\001 \001(\tB\003\340A\003\022\027\n\nrollout_id\030"
+          + "\002 \001(\tB\003\340A\003\0227\n\005state\030\003 \001(\0162#.google.cloud"
+          + ".deploy.v1.RepairStateB\003\340A\003\022\027\n\nstate_des"
+          + "c\030\004 \001(\tB\003\340A\003\0220\n#disable_rollback_if_roll"
+          + "out_pending\030\005 \001(\010B\003\340A\003\"\246\001\n\031ListAutomatio"
+          + "nRunsRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\022(cl"
+          + "ouddeploy.googleapis.com/AutomationRun\022\021"
+          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n"
+          + "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\212\001\n\032List"
+          + "AutomationRunsResponse\022>\n\017automation_run"
+          + "s\030\001 \003(\0132%.google.cloud.deploy.v1.Automat"
+          + "ionRun\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
+          + "chable\030\003 \003(\t\"Y\n\027GetAutomationRunRequest\022"
+          + ">\n\004name\030\001 \001(\tB0\340A\002\372A*\n(clouddeploy.googl"
+          + "eapis.com/AutomationRun\"\\\n\032CancelAutomat"
+          + "ionRunRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(clo"
+          + "uddeploy.googleapis.com/AutomationRun\"\035\n"
+          + "\033CancelAutomationRunResponse*\271\001\n\024Skaffol"
+          + "dSupportState\022&\n\"SKAFFOLD_SUPPORT_STATE_"
+          + "UNSPECIFIED\020\000\022$\n SKAFFOLD_SUPPORT_STATE_"
+          + "SUPPORTED\020\001\022+\n\'SKAFFOLD_SUPPORT_STATE_MA"
+          + "INTENANCE_MODE\020\002\022&\n\"SKAFFOLD_SUPPORT_STA"
+          + "TE_UNSUPPORTED\020\003*b\n\013BackoffMode\022\034\n\030BACKO"
+          + "FF_MODE_UNSPECIFIED\020\000\022\027\n\023BACKOFF_MODE_LI"
+          + "NEAR\020\001\022\034\n\030BACKOFF_MODE_EXPONENTIAL\020\002*\316\001\n"
+          + "\013RepairState\022\034\n\030REPAIR_STATE_UNSPECIFIED"
+          + "\020\000\022\032\n\026REPAIR_STATE_SUCCEEDED\020\001\022\032\n\026REPAIR"
+          + "_STATE_CANCELLED\020\002\022\027\n\023REPAIR_STATE_FAILE"
+          + "D\020\003\022\034\n\030REPAIR_STATE_IN_PROGRESS\020\004\022\030\n\024REP"
+          + "AIR_STATE_PENDING\020\005\022\030\n\024REPAIR_STATE_ABOR"
+          + "TED\020\0072\357L\n\013CloudDeploy\022\314\001\n\025ListDeliveryPi"
+          + "pelines\0224.google.cloud.deploy.v1.ListDel"
+          + "iveryPipelinesRequest\0325.google.cloud.dep"
+          + "loy.v1.ListDeliveryPipelinesResponse\"F\332A"
+          + "\006parent\202\323\344\223\0027\0225/v1/{parent=projects/*/lo"
+          + "cations/*}/deliveryPipelines\022\271\001\n\023GetDeli"
+          + "veryPipeline\0222.google.cloud.deploy.v1.Ge"
+          + "tDeliveryPipelineRequest\032(.google.cloud."
+          + "deploy.v1.DeliveryPipeline\"D\332A\004name\202\323\344\223\002"
+          + "7\0225/v1/{name=projects/*/locations/*/deli"
+          + "veryPipelines/*}\022\231\002\n\026CreateDeliveryPipel"
+          + "ine\0225.google.cloud.deploy.v1.CreateDeliv"
+          + "eryPipelineRequest\032\035.google.longrunning."
+          + "Operation\"\250\001\312A%\n\020DeliveryPipeline\022\021Opera"
+          + "tionMetadata\332A-parent,delivery_pipeline,"
+          + "delivery_pipeline_id\202\323\344\223\002J\"5/v1/{parent="
+          + "projects/*/locations/*}/deliveryPipeline"
+          + "s:\021delivery_pipeline\022\233\002\n\026UpdateDeliveryP"
+          + "ipeline\0225.google.cloud.deploy.v1.UpdateD"
+          + "eliveryPipelineRequest\032\035.google.longrunn"
+          + "ing.Operation\"\252\001\312A%\n\020DeliveryPipeline\022\021O"
+          + "perationMetadata\332A\035delivery_pipeline,upd"
+          + "ate_mask\202\323\344\223\002\\2G/v1/{delivery_pipeline.n"
           + "ame=projects/*/locations/*/deliveryPipel"
-          + "ines/*/automationRuns/*}\022\324\001\n\022ListAutomat"
-          + "ionRuns\0221.google.cloud.deploy.v1.ListAut"
-          + "omationRunsRequest\0322.google.cloud.deploy"
-          + ".v1.ListAutomationRunsResponse\"W\332A\006paren"
-          + "t\202\323\344\223\002H\022F/v1/{parent=projects/*/location"
-          + "s/*/deliveryPipelines/*}/automationRuns\022"
-          + "\337\001\n\023CancelAutomationRun\0222.google.cloud.d"
-          + "eploy.v1.CancelAutomationRunRequest\0323.go"
-          + "ogle.cloud.deploy.v1.CancelAutomationRun"
-          + "Response\"_\332A\004name\202\323\344\223\002R\"M/v1/{name=proje"
-          + "cts/*/locations/*/deliveryPipelines/*/au"
-          + "tomationRuns/*}:cancel:\001*\032N\312A\032clouddeplo"
-          + "y.googleapis.com\322A.https://www.googleapi"
-          + "s.com/auth/cloud-platformB\215\007\n\032com.google"
-          + ".cloud.deploy.v1B\020CloudDeployProtoP\001Z2cl"
-          + "oud.google.com/go/deploy/apiv1/deploypb;"
-          + "deploypb\352AY\n\037cloudbuild.googleapis.com/B"
-          + "uild\0226projects/{project}/locations/{loca"
-          + "tion}/builds/{build}\352A\202\001\n$cloudbuild.goo"
-          + "gleapis.com/Repository\022Zprojects/{projec"
-          + "t}/locations/{location}/connections/{con"
-          + "nection}/repositories/{repository}\352A^\n c"
-          + "ontainer.googleapis.com/Cluster\022:project"
-          + "s/{project}/locations/{location}/cluster"
-          + "s/{cluster}\352Af\n$clouddeploy.googleapis.c"
-          + "om/Operation\022>projects/{project}/locatio"
-          + "ns/{location}/operations/{operation}\352Ai\n"
-          + "$cloudbuild.googleapis.com/WorkerPool\022Ap"
-          + "rojects/{project}/locations/{location}/w"
-          + "orkerPools/{worker_pool}\352Ad\n gkehub.goog"
-          + "leapis.com/Membership\022@projects/{project"
-          + "}/locations/{location}/memberships/{memb"
-          + "ership}\352AX\n\032run.googleapis.com/Service\022:"
-          + "projects/{project}/locations/{location}/"
-          + "services/{service}\352AL\n\026run.googleapis.co"
-          + "m/Job\0222projects/{project}/locations/{loc"
-          + "ation}/jobs/{job}b\006proto3"
+          + "ines/*}:\021delivery_pipeline\022\341\001\n\026DeleteDel"
+          + "iveryPipeline\0225.google.cloud.deploy.v1.D"
+          + "eleteDeliveryPipelineRequest\032\035.google.lo"
+          + "ngrunning.Operation\"q\312A*\n\025google.protobu"
+          + "f.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0027*"
+          + "5/v1/{name=projects/*/locations/*/delive"
+          + "ryPipelines/*}\022\244\001\n\013ListTargets\022*.google."
+          + "cloud.deploy.v1.ListTargetsRequest\032+.goo"
+          + "gle.cloud.deploy.v1.ListTargetsResponse\""
+          + "<\332A\006parent\202\323\344\223\002-\022+/v1/{parent=projects/*"
+          + "/locations/*}/targets\022\334\001\n\016RollbackTarget"
+          + "\022-.google.cloud.deploy.v1.RollbackTarget"
+          + "Request\032..google.cloud.deploy.v1.Rollbac"
+          + "kTargetResponse\"k\332A\031name,target_id,rollo"
+          + "ut_id\202\323\344\223\002I\"D/v1/{name=projects/*/locati"
+          + "ons/*/deliveryPipelines/*}:rollbackTarge"
+          + "t:\001*\022\221\001\n\tGetTarget\022(.google.cloud.deploy"
+          + ".v1.GetTargetRequest\032\036.google.cloud.depl"
+          + "oy.v1.Target\":\332A\004name\202\323\344\223\002-\022+/v1/{name=p"
+          + "rojects/*/locations/*/targets/*}\022\317\001\n\014Cre"
+          + "ateTarget\022+.google.cloud.deploy.v1.Creat"
+          + "eTargetRequest\032\035.google.longrunning.Oper"
+          + "ation\"s\312A\033\n\006Target\022\021OperationMetadata\332A\027"
+          + "parent,target,target_id\202\323\344\223\0025\"+/v1/{pare"
+          + "nt=projects/*/locations/*}/targets:\006targ"
+          + "et\022\321\001\n\014UpdateTarget\022+.google.cloud.deplo"
+          + "y.v1.UpdateTargetRequest\032\035.google.longru"
+          + "nning.Operation\"u\312A\033\n\006Target\022\021OperationM"
+          + "etadata\332A\022target,update_mask\202\323\344\223\002<22/v1/"
+          + "{target.name=projects/*/locations/*/targ"
+          + "ets/*}:\006target\022\303\001\n\014DeleteTarget\022+.google"
+          + ".cloud.deploy.v1.DeleteTargetRequest\032\035.g"
+          + "oogle.longrunning.Operation\"g\312A*\n\025google"
+          + ".protobuf.Empty\022\021OperationMetadata\332A\004nam"
+          + "e\202\323\344\223\002-*+/v1/{name=projects/*/locations/"
+          + "*/targets/*}\022\314\001\n\025ListCustomTargetTypes\0224"
+          + ".google.cloud.deploy.v1.ListCustomTarget"
+          + "TypesRequest\0325.google.cloud.deploy.v1.Li"
+          + "stCustomTargetTypesResponse\"F\332A\006parent\202\323"
+          + "\344\223\0027\0225/v1/{parent=projects/*/locations/*"
+          + "}/customTargetTypes\022\271\001\n\023GetCustomTargetT"
+          + "ype\0222.google.cloud.deploy.v1.GetCustomTa"
+          + "rgetTypeRequest\032(.google.cloud.deploy.v1"
+          + ".CustomTargetType\"D\332A\004name\202\323\344\223\0027\0225/v1/{n"
+          + "ame=projects/*/locations/*/customTargetT"
+          + "ypes/*}\022\234\002\n\026CreateCustomTargetType\0225.goo"
+          + "gle.cloud.deploy.v1.CreateCustomTargetTy"
+          + "peRequest\032\035.google.longrunning.Operation"
+          + "\"\253\001\312A%\n\020CustomTargetType\022\021OperationMetad"
+          + "ata\332A/parent,custom_target_type,custom_t"
+          + "arget_type_id\202\323\344\223\002K\"5/v1/{parent=project"
+          + "s/*/locations/*}/customTargetTypes:\022cust"
+          + "om_target_type\022\236\002\n\026UpdateCustomTargetTyp"
+          + "e\0225.google.cloud.deploy.v1.UpdateCustomT"
+          + "argetTypeRequest\032\035.google.longrunning.Op"
+          + "eration\"\255\001\312A%\n\020CustomTargetType\022\021Operati"
+          + "onMetadata\332A\036custom_target_type,update_m"
+          + "ask\202\323\344\223\002^2H/v1/{custom_target_type.name="
+          + "projects/*/locations/*/customTargetTypes"
+          + "/*}:\022custom_target_type\022\341\001\n\026DeleteCustom"
+          + "TargetType\0225.google.cloud.deploy.v1.Dele"
+          + "teCustomTargetTypeRequest\032\035.google.longr"
+          + "unning.Operation\"q\312A*\n\025google.protobuf.E"
+          + "mpty\022\021OperationMetadata\332A\004name\202\323\344\223\0027*5/v"
+          + "1/{name=projects/*/locations/*/customTar"
+          + "getTypes/*}\022\274\001\n\014ListReleases\022+.google.cl"
+          + "oud.deploy.v1.ListReleasesRequest\032,.goog"
+          + "le.cloud.deploy.v1.ListReleasesResponse\""
+          + "Q\332A\006parent\202\323\344\223\002B\022@/v1/{parent=projects/*"
+          + "/locations/*/deliveryPipelines/*}/releas"
+          + "es\022\251\001\n\nGetRelease\022).google.cloud.deploy."
+          + "v1.GetReleaseRequest\032\037.google.cloud.depl"
+          + "oy.v1.Release\"O\332A\004name\202\323\344\223\002B\022@/v1/{name="
+          + "projects/*/locations/*/deliveryPipelines"
+          + "/*/releases/*}\022\353\001\n\rCreateRelease\022,.googl"
+          + "e.cloud.deploy.v1.CreateReleaseRequest\032\035"
+          + ".google.longrunning.Operation\"\214\001\312A\034\n\007Rel"
+          + "ease\022\021OperationMetadata\332A\031parent,release"
+          + ",release_id\202\323\344\223\002K\"@/v1/{parent=projects/"
+          + "*/locations/*/deliveryPipelines/*}/relea"
+          + "ses:\007release\022\313\001\n\016AbandonRelease\022-.google"
+          + ".cloud.deploy.v1.AbandonReleaseRequest\032."
+          + ".google.cloud.deploy.v1.AbandonReleaseRe"
+          + "sponse\"Z\332A\004name\202\323\344\223\002M\"H/v1/{name=project"
+          + "s/*/locations/*/deliveryPipelines/*/rele"
+          + "ases/*}:abandon:\001*\022\376\001\n\022CreateDeployPolic"
+          + "y\0221.google.cloud.deploy.v1.CreateDeployP"
+          + "olicyRequest\032\035.google.longrunning.Operat"
+          + "ion\"\225\001\312A!\n\014DeployPolicy\022\021OperationMetada"
+          + "ta\332A%parent,deploy_policy,deploy_policy_"
+          + "id\202\323\344\223\002C\"2/v1/{parent=projects/*/locatio"
+          + "ns/*}/deployPolicies:\rdeploy_policy\022\200\002\n\022"
+          + "UpdateDeployPolicy\0221.google.cloud.deploy"
+          + ".v1.UpdateDeployPolicyRequest\032\035.google.l"
+          + "ongrunning.Operation\"\227\001\312A!\n\014DeployPolicy"
+          + "\022\021OperationMetadata\332A\031deploy_policy,upda"
+          + "te_mask\202\323\344\223\002Q2@/v1/{deploy_policy.name=p"
+          + "rojects/*/locations/*/deployPolicies/*}:"
+          + "\rdeploy_policy\022\326\001\n\022DeleteDeployPolicy\0221."
+          + "google.cloud.deploy.v1.DeleteDeployPolic"
+          + "yRequest\032\035.google.longrunning.Operation\""
+          + "n\312A*\n\025google.protobuf.Empty\022\021OperationMe"
+          + "tadata\332A\004name\202\323\344\223\0024*2/v1/{name=projects/"
+          + "*/locations/*/deployPolicies/*}\022\300\001\n\022List"
+          + "DeployPolicies\0221.google.cloud.deploy.v1."
+          + "ListDeployPoliciesRequest\0322.google.cloud"
+          + ".deploy.v1.ListDeployPoliciesResponse\"C\332"
+          + "A\006parent\202\323\344\223\0024\0222/v1/{parent=projects/*/l"
+          + "ocations/*}/deployPolicies\022\252\001\n\017GetDeploy"
+          + "Policy\022..google.cloud.deploy.v1.GetDeplo"
+          + "yPolicyRequest\032$.google.cloud.deploy.v1."
+          + "DeployPolicy\"A\332A\004name\202\323\344\223\0024\0222/v1/{name=p"
+          + "rojects/*/locations/*/deployPolicies/*}\022"
+          + "\326\001\n\016ApproveRollout\022-.google.cloud.deploy"
+          + ".v1.ApproveRolloutRequest\032..google.cloud"
+          + ".deploy.v1.ApproveRolloutResponse\"e\332A\004na"
+          + "me\202\323\344\223\002X\"S/v1/{name=projects/*/locations"
+          + "/*/deliveryPipelines/*/releases/*/rollou"
+          + "ts/*}:approve:\001*\022\337\001\n\016AdvanceRollout\022-.go"
+          + "ogle.cloud.deploy.v1.AdvanceRolloutReque"
+          + "st\032..google.cloud.deploy.v1.AdvanceRollo"
+          + "utResponse\"n\332A\rname,phase_id\202\323\344\223\002X\"S/v1/"
+          + "{name=projects/*/locations/*/deliveryPip"
+          + "elines/*/releases/*/rollouts/*}:advance:"
+          + "\001*\022\322\001\n\rCancelRollout\022,.google.cloud.depl"
+          + "oy.v1.CancelRolloutRequest\032-.google.clou"
+          + "d.deploy.v1.CancelRolloutResponse\"d\332A\004na"
+          + "me\202\323\344\223\002W\"R/v1/{name=projects/*/locations"
+          + "/*/deliveryPipelines/*/releases/*/rollou"
+          + "ts/*}:cancel:\001*\022\307\001\n\014ListRollouts\022+.googl"
+          + "e.cloud.deploy.v1.ListRolloutsRequest\032,."
+          + "google.cloud.deploy.v1.ListRolloutsRespo"
+          + "nse\"\\\332A\006parent\202\323\344\223\002M\022K/v1/{parent=projec"
+          + "ts/*/locations/*/deliveryPipelines/*/rel"
+          + "eases/*}/rollouts\022\264\001\n\nGetRollout\022).googl"
+          + "e.cloud.deploy.v1.GetRolloutRequest\032\037.go"
+          + "ogle.cloud.deploy.v1.Rollout\"Z\332A\004name\202\323\344"
+          + "\223\002M\022K/v1/{name=projects/*/locations/*/de"
+          + "liveryPipelines/*/releases/*/rollouts/*}"
+          + "\022\366\001\n\rCreateRollout\022,.google.cloud.deploy"
+          + ".v1.CreateRolloutRequest\032\035.google.longru"
+          + "nning.Operation\"\227\001\312A\034\n\007Rollout\022\021Operatio"
+          + "nMetadata\332A\031parent,rollout,rollout_id\202\323\344"
+          + "\223\002V\"K/v1/{parent=projects/*/locations/*/"
+          + "deliveryPipelines/*/releases/*}/rollouts"
+          + ":\007rollout\022\337\001\n\tIgnoreJob\022(.google.cloud.d"
+          + "eploy.v1.IgnoreJobRequest\032).google.cloud"
+          + ".deploy.v1.IgnoreJobResponse\"}\332A\027rollout"
+          + ",phase_id,job_id\202\323\344\223\002]\"X/v1/{rollout=pro"
+          + "jects/*/locations/*/deliveryPipelines/*/"
+          + "releases/*/rollouts/*}:ignoreJob:\001*\022\333\001\n\010"
+          + "RetryJob\022\'.google.cloud.deploy.v1.RetryJ"
+          + "obRequest\032(.google.cloud.deploy.v1.Retry"
+          + "JobResponse\"|\332A\027rollout,phase_id,job_id\202"
+          + "\323\344\223\002\\\"W/v1/{rollout=projects/*/locations"
+          + "/*/deliveryPipelines/*/releases/*/rollou"
+          + "ts/*}:retryJob:\001*\022\316\001\n\013ListJobRuns\022*.goog"
+          + "le.cloud.deploy.v1.ListJobRunsRequest\032+."
+          + "google.cloud.deploy.v1.ListJobRunsRespon"
+          + "se\"f\332A\006parent\202\323\344\223\002W\022U/v1/{parent=project"
+          + "s/*/locations/*/deliveryPipelines/*/rele"
+          + "ases/*/rollouts/*}/jobRuns\022\273\001\n\tGetJobRun"
+          + "\022(.google.cloud.deploy.v1.GetJobRunReque"
+          + "st\032\036.google.cloud.deploy.v1.JobRun\"d\332A\004n"
+          + "ame\202\323\344\223\002W\022U/v1/{name=projects/*/location"
+          + "s/*/deliveryPipelines/*/releases/*/rollo"
+          + "uts/*/jobRuns/*}\022\345\001\n\017TerminateJobRun\022..g"
+          + "oogle.cloud.deploy.v1.TerminateJobRunReq"
+          + "uest\032/.google.cloud.deploy.v1.TerminateJ"
+          + "obRunResponse\"q\332A\004name\202\323\344\223\002d\"_/v1/{name="
+          + "projects/*/locations/*/deliveryPipelines"
+          + "/*/releases/*/rollouts/*/jobRuns/*}:term"
+          + "inate:\001*\022\216\001\n\tGetConfig\022(.google.cloud.de"
+          + "ploy.v1.GetConfigRequest\032\036.google.cloud."
+          + "deploy.v1.Config\"7\332A\004name\202\323\344\223\002*\022(/v1/{na"
+          + "me=projects/*/locations/*/config}\022\200\002\n\020Cr"
+          + "eateAutomation\022/.google.cloud.deploy.v1."
+          + "CreateAutomationRequest\032\035.google.longrun"
+          + "ning.Operation\"\233\001\312A\037\n\nAutomation\022\021Operat"
+          + "ionMetadata\332A\037parent,automation,automati"
+          + "on_id\202\323\344\223\002Q\"C/v1/{parent=projects/*/loca"
+          + "tions/*/deliveryPipelines/*}/automations"
+          + ":\nautomation\022\202\002\n\020UpdateAutomation\022/.goog"
+          + "le.cloud.deploy.v1.UpdateAutomationReque"
+          + "st\032\035.google.longrunning.Operation\"\235\001\312A\037\n"
+          + "\nAutomation\022\021OperationMetadata\332A\026automat"
+          + "ion,update_mask\202\323\344\223\002\\2N/v1/{automation.n"
+          + "ame=projects/*/locations/*/deliveryPipel"
+          + "ines/*/automations/*}:\nautomation\022\343\001\n\020De"
+          + "leteAutomation\022/.google.cloud.deploy.v1."
+          + "DeleteAutomationRequest\032\035.google.longrun"
+          + "ning.Operation\"\177\312A*\n\025google.protobuf.Emp"
+          + "ty\022\021OperationMetadata\332A\004name\202\323\344\223\002E*C/v1/"
+          + "{name=projects/*/locations/*/deliveryPip"
+          + "elines/*/automations/*}\022\265\001\n\rGetAutomatio"
+          + "n\022,.google.cloud.deploy.v1.GetAutomation"
+          + "Request\032\".google.cloud.deploy.v1.Automat"
+          + "ion\"R\332A\004name\202\323\344\223\002E\022C/v1/{name=projects/*"
+          + "/locations/*/deliveryPipelines/*/automat",
+      "ions/*}\022\310\001\n\017ListAutomations\022..google.clo"
+          + "ud.deploy.v1.ListAutomationsRequest\032/.go"
+          + "ogle.cloud.deploy.v1.ListAutomationsResp"
+          + "onse\"T\332A\006parent\202\323\344\223\002E\022C/v1/{parent=proje"
+          + "cts/*/locations/*/deliveryPipelines/*}/a"
+          + "utomations\022\301\001\n\020GetAutomationRun\022/.google"
+          + ".cloud.deploy.v1.GetAutomationRunRequest"
+          + "\032%.google.cloud.deploy.v1.AutomationRun\""
+          + "U\332A\004name\202\323\344\223\002H\022F/v1/{name=projects/*/loc"
+          + "ations/*/deliveryPipelines/*/automationR"
+          + "uns/*}\022\324\001\n\022ListAutomationRuns\0221.google.c"
+          + "loud.deploy.v1.ListAutomationRunsRequest"
+          + "\0322.google.cloud.deploy.v1.ListAutomation"
+          + "RunsResponse\"W\332A\006parent\202\323\344\223\002H\022F/v1/{pare"
+          + "nt=projects/*/locations/*/deliveryPipeli"
+          + "nes/*}/automationRuns\022\337\001\n\023CancelAutomati"
+          + "onRun\0222.google.cloud.deploy.v1.CancelAut"
+          + "omationRunRequest\0323.google.cloud.deploy."
+          + "v1.CancelAutomationRunResponse\"_\332A\004name\202"
+          + "\323\344\223\002R\"M/v1/{name=projects/*/locations/*/"
+          + "deliveryPipelines/*/automationRuns/*}:ca"
+          + "ncel:\001*\032N\312A\032clouddeploy.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-p"
+          + "latformB\215\007\n\032com.google.cloud.deploy.v1B\020"
+          + "CloudDeployProtoP\001Z2cloud.google.com/go/"
+          + "deploy/apiv1/deploypb;deploypb\352AY\n\037cloud"
+          + "build.googleapis.com/Build\0226projects/{pr"
+          + "oject}/locations/{location}/builds/{buil"
+          + "d}\352A\202\001\n$cloudbuild.googleapis.com/Reposi"
+          + "tory\022Zprojects/{project}/locations/{loca"
+          + "tion}/connections/{connection}/repositor"
+          + "ies/{repository}\352A^\n container.googleapi"
+          + "s.com/Cluster\022:projects/{project}/locati"
+          + "ons/{location}/clusters/{cluster}\352Af\n$cl"
+          + "ouddeploy.googleapis.com/Operation\022>proj"
+          + "ects/{project}/locations/{location}/oper"
+          + "ations/{operation}\352Ai\n$cloudbuild.google"
+          + "apis.com/WorkerPool\022Aprojects/{project}/"
+          + "locations/{location}/workerPools/{worker"
+          + "_pool}\352Ad\n gkehub.googleapis.com/Members"
+          + "hip\022@projects/{project}/locations/{locat"
+          + "ion}/memberships/{membership}\352AX\n\032run.go"
+          + "ogleapis.com/Service\022:projects/{project}"
+          + "/locations/{location}/services/{service}"
+          + "\352AL\n\026run.googleapis.com/Job\0222projects/{p"
+          + "roject}/locations/{location}/jobs/{job}b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -2162,6 +2255,17 @@ public final class CloudDeployProto {
               "RouteUpdateWaitTime",
               "StableCutbackDuration",
               "PodSelectorLabel",
+              "RouteDestinations",
+            });
+    internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_descriptor =
+        internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_KubernetesConfig_GatewayServiceMesh_RouteDestinations_descriptor,
+            new java.lang.String[] {
+              "DestinationIds", "PropagateService",
             });
     internal_static_google_cloud_deploy_v1_KubernetesConfig_ServiceNetworking_descriptor =
         internal_static_google_cloud_deploy_v1_KubernetesConfig_descriptor.getNestedTypes().get(1);
@@ -2321,6 +2425,7 @@ public final class CloudDeployProto {
               "Run",
               "MultiTarget",
               "CustomTarget",
+              "AssociatedEntities",
               "Etag",
               "ExecutionConfigs",
               "DeployParameters",
@@ -2342,8 +2447,16 @@ public final class CloudDeployProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_deploy_v1_Target_DeployParametersEntry_descriptor =
+    internal_static_google_cloud_deploy_v1_Target_AssociatedEntitiesEntry_descriptor =
         internal_static_google_cloud_deploy_v1_Target_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_deploy_v1_Target_AssociatedEntitiesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_Target_AssociatedEntitiesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_deploy_v1_Target_DeployParametersEntry_descriptor =
+        internal_static_google_cloud_deploy_v1_Target_descriptor.getNestedTypes().get(3);
     internal_static_google_cloud_deploy_v1_Target_DeployParametersEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Target_DeployParametersEntry_descriptor,
@@ -2388,7 +2501,7 @@ public final class CloudDeployProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GkeCluster_descriptor,
             new java.lang.String[] {
-              "Cluster", "InternalIp", "ProxyUrl",
+              "Cluster", "InternalIp", "ProxyUrl", "DnsEndpoint",
             });
     internal_static_google_cloud_deploy_v1_AnthosCluster_descriptor =
         getDescriptor().getMessageTypes().get(32);
@@ -2422,8 +2535,16 @@ public final class CloudDeployProto {
             new java.lang.String[] {
               "CustomTargetType",
             });
-    internal_static_google_cloud_deploy_v1_ListTargetsRequest_descriptor =
+    internal_static_google_cloud_deploy_v1_AssociatedEntities_descriptor =
         getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_deploy_v1_AssociatedEntities_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_AssociatedEntities_descriptor,
+            new java.lang.String[] {
+              "GkeClusters", "AnthosClusters",
+            });
+    internal_static_google_cloud_deploy_v1_ListTargetsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_deploy_v1_ListTargetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListTargetsRequest_descriptor,
@@ -2431,7 +2552,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListTargetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_deploy_v1_ListTargetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListTargetsResponse_descriptor,
@@ -2439,7 +2560,7 @@ public final class CloudDeployProto {
               "Targets", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetTargetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_deploy_v1_GetTargetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetTargetRequest_descriptor,
@@ -2447,7 +2568,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_CreateTargetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_deploy_v1_CreateTargetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateTargetRequest_descriptor,
@@ -2455,7 +2576,7 @@ public final class CloudDeployProto {
               "Parent", "TargetId", "Target", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_UpdateTargetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_deploy_v1_UpdateTargetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_UpdateTargetRequest_descriptor,
@@ -2463,7 +2584,7 @@ public final class CloudDeployProto {
               "UpdateMask", "Target", "RequestId", "AllowMissing", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_DeleteTargetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_deploy_v1_DeleteTargetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeleteTargetRequest_descriptor,
@@ -2471,7 +2592,7 @@ public final class CloudDeployProto {
               "Name", "RequestId", "AllowMissing", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_deploy_v1_CustomTargetType_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_deploy_v1_CustomTargetType_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CustomTargetType_descriptor,
@@ -2505,7 +2626,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_CustomTargetSkaffoldActions_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_deploy_v1_CustomTargetSkaffoldActions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CustomTargetSkaffoldActions_descriptor,
@@ -2513,7 +2634,7 @@ public final class CloudDeployProto {
               "RenderAction", "DeployAction", "IncludeSkaffoldModules",
             });
     internal_static_google_cloud_deploy_v1_SkaffoldModules_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_deploy_v1_SkaffoldModules_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_SkaffoldModules_descriptor,
@@ -2545,7 +2666,7 @@ public final class CloudDeployProto {
               "Repository", "Path", "Ref",
             });
     internal_static_google_cloud_deploy_v1_ListCustomTargetTypesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_deploy_v1_ListCustomTargetTypesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListCustomTargetTypesRequest_descriptor,
@@ -2553,7 +2674,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListCustomTargetTypesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_deploy_v1_ListCustomTargetTypesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListCustomTargetTypesResponse_descriptor,
@@ -2561,7 +2682,7 @@ public final class CloudDeployProto {
               "CustomTargetTypes", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetCustomTargetTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_deploy_v1_GetCustomTargetTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetCustomTargetTypeRequest_descriptor,
@@ -2569,7 +2690,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_CreateCustomTargetTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_deploy_v1_CreateCustomTargetTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateCustomTargetTypeRequest_descriptor,
@@ -2577,7 +2698,7 @@ public final class CloudDeployProto {
               "Parent", "CustomTargetTypeId", "CustomTargetType", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_UpdateCustomTargetTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_deploy_v1_UpdateCustomTargetTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_UpdateCustomTargetTypeRequest_descriptor,
@@ -2585,7 +2706,7 @@ public final class CloudDeployProto {
               "UpdateMask", "CustomTargetType", "RequestId", "AllowMissing", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_DeleteCustomTargetTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_deploy_v1_DeleteCustomTargetTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeleteCustomTargetTypeRequest_descriptor,
@@ -2593,7 +2714,7 @@ public final class CloudDeployProto {
               "Name", "RequestId", "AllowMissing", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_deploy_v1_DeployPolicy_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_deploy_v1_DeployPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeployPolicy_descriptor,
@@ -2627,7 +2748,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_DeployPolicyResourceSelector_descriptor =
-        getDescriptor().getMessageTypes().get(52);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_cloud_deploy_v1_DeployPolicyResourceSelector_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeployPolicyResourceSelector_descriptor,
@@ -2635,7 +2756,7 @@ public final class CloudDeployProto {
               "DeliveryPipeline", "Target",
             });
     internal_static_google_cloud_deploy_v1_DeliveryPipelineAttribute_descriptor =
-        getDescriptor().getMessageTypes().get(53);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_cloud_deploy_v1_DeliveryPipelineAttribute_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeliveryPipelineAttribute_descriptor,
@@ -2653,7 +2774,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_TargetAttribute_descriptor =
-        getDescriptor().getMessageTypes().get(54);
+        getDescriptor().getMessageTypes().get(55);
     internal_static_google_cloud_deploy_v1_TargetAttribute_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_TargetAttribute_descriptor,
@@ -2669,7 +2790,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_PolicyRule_descriptor =
-        getDescriptor().getMessageTypes().get(55);
+        getDescriptor().getMessageTypes().get(56);
     internal_static_google_cloud_deploy_v1_PolicyRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PolicyRule_descriptor,
@@ -2677,7 +2798,7 @@ public final class CloudDeployProto {
               "RolloutRestriction", "Rule",
             });
     internal_static_google_cloud_deploy_v1_RolloutRestriction_descriptor =
-        getDescriptor().getMessageTypes().get(56);
+        getDescriptor().getMessageTypes().get(57);
     internal_static_google_cloud_deploy_v1_RolloutRestriction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RolloutRestriction_descriptor,
@@ -2685,7 +2806,7 @@ public final class CloudDeployProto {
               "Id", "Invokers", "Actions", "TimeWindows",
             });
     internal_static_google_cloud_deploy_v1_TimeWindows_descriptor =
-        getDescriptor().getMessageTypes().get(57);
+        getDescriptor().getMessageTypes().get(58);
     internal_static_google_cloud_deploy_v1_TimeWindows_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_TimeWindows_descriptor,
@@ -2693,7 +2814,7 @@ public final class CloudDeployProto {
               "TimeZone", "OneTimeWindows", "WeeklyWindows",
             });
     internal_static_google_cloud_deploy_v1_OneTimeWindow_descriptor =
-        getDescriptor().getMessageTypes().get(58);
+        getDescriptor().getMessageTypes().get(59);
     internal_static_google_cloud_deploy_v1_OneTimeWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_OneTimeWindow_descriptor,
@@ -2701,7 +2822,7 @@ public final class CloudDeployProto {
               "StartDate", "StartTime", "EndDate", "EndTime",
             });
     internal_static_google_cloud_deploy_v1_WeeklyWindow_descriptor =
-        getDescriptor().getMessageTypes().get(59);
+        getDescriptor().getMessageTypes().get(60);
     internal_static_google_cloud_deploy_v1_WeeklyWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_WeeklyWindow_descriptor,
@@ -2709,7 +2830,7 @@ public final class CloudDeployProto {
               "DaysOfWeek", "StartTime", "EndTime",
             });
     internal_static_google_cloud_deploy_v1_PolicyViolation_descriptor =
-        getDescriptor().getMessageTypes().get(60);
+        getDescriptor().getMessageTypes().get(61);
     internal_static_google_cloud_deploy_v1_PolicyViolation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PolicyViolation_descriptor,
@@ -2717,7 +2838,7 @@ public final class CloudDeployProto {
               "PolicyViolationDetails",
             });
     internal_static_google_cloud_deploy_v1_PolicyViolationDetails_descriptor =
-        getDescriptor().getMessageTypes().get(61);
+        getDescriptor().getMessageTypes().get(62);
     internal_static_google_cloud_deploy_v1_PolicyViolationDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PolicyViolationDetails_descriptor,
@@ -2725,7 +2846,7 @@ public final class CloudDeployProto {
               "Policy", "RuleId", "FailureMessage",
             });
     internal_static_google_cloud_deploy_v1_Release_descriptor =
-        getDescriptor().getMessageTypes().get(62);
+        getDescriptor().getMessageTypes().get(63);
     internal_static_google_cloud_deploy_v1_Release_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Release_descriptor,
@@ -2826,7 +2947,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_CreateDeployPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(63);
+        getDescriptor().getMessageTypes().get(64);
     internal_static_google_cloud_deploy_v1_CreateDeployPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateDeployPolicyRequest_descriptor,
@@ -2834,7 +2955,7 @@ public final class CloudDeployProto {
               "Parent", "DeployPolicyId", "DeployPolicy", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_UpdateDeployPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(64);
+        getDescriptor().getMessageTypes().get(65);
     internal_static_google_cloud_deploy_v1_UpdateDeployPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_UpdateDeployPolicyRequest_descriptor,
@@ -2842,7 +2963,7 @@ public final class CloudDeployProto {
               "UpdateMask", "DeployPolicy", "RequestId", "AllowMissing", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_DeleteDeployPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(65);
+        getDescriptor().getMessageTypes().get(66);
     internal_static_google_cloud_deploy_v1_DeleteDeployPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeleteDeployPolicyRequest_descriptor,
@@ -2850,7 +2971,7 @@ public final class CloudDeployProto {
               "Name", "RequestId", "AllowMissing", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_deploy_v1_ListDeployPoliciesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(66);
+        getDescriptor().getMessageTypes().get(67);
     internal_static_google_cloud_deploy_v1_ListDeployPoliciesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListDeployPoliciesRequest_descriptor,
@@ -2858,7 +2979,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListDeployPoliciesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(67);
+        getDescriptor().getMessageTypes().get(68);
     internal_static_google_cloud_deploy_v1_ListDeployPoliciesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListDeployPoliciesResponse_descriptor,
@@ -2866,7 +2987,7 @@ public final class CloudDeployProto {
               "DeployPolicies", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetDeployPolicyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(68);
+        getDescriptor().getMessageTypes().get(69);
     internal_static_google_cloud_deploy_v1_GetDeployPolicyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetDeployPolicyRequest_descriptor,
@@ -2874,7 +2995,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_BuildArtifact_descriptor =
-        getDescriptor().getMessageTypes().get(69);
+        getDescriptor().getMessageTypes().get(70);
     internal_static_google_cloud_deploy_v1_BuildArtifact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_BuildArtifact_descriptor,
@@ -2882,7 +3003,7 @@ public final class CloudDeployProto {
               "Image", "Tag",
             });
     internal_static_google_cloud_deploy_v1_TargetArtifact_descriptor =
-        getDescriptor().getMessageTypes().get(70);
+        getDescriptor().getMessageTypes().get(71);
     internal_static_google_cloud_deploy_v1_TargetArtifact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_TargetArtifact_descriptor,
@@ -2906,7 +3027,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_DeployArtifact_descriptor =
-        getDescriptor().getMessageTypes().get(71);
+        getDescriptor().getMessageTypes().get(72);
     internal_static_google_cloud_deploy_v1_DeployArtifact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeployArtifact_descriptor,
@@ -2914,7 +3035,7 @@ public final class CloudDeployProto {
               "ArtifactUri", "ManifestPaths",
             });
     internal_static_google_cloud_deploy_v1_CloudRunRenderMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(72);
+        getDescriptor().getMessageTypes().get(73);
     internal_static_google_cloud_deploy_v1_CloudRunRenderMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CloudRunRenderMetadata_descriptor,
@@ -2922,7 +3043,7 @@ public final class CloudDeployProto {
               "Service",
             });
     internal_static_google_cloud_deploy_v1_RenderMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(73);
+        getDescriptor().getMessageTypes().get(74);
     internal_static_google_cloud_deploy_v1_RenderMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RenderMetadata_descriptor,
@@ -2930,7 +3051,7 @@ public final class CloudDeployProto {
               "CloudRun", "Custom",
             });
     internal_static_google_cloud_deploy_v1_ListReleasesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(74);
+        getDescriptor().getMessageTypes().get(75);
     internal_static_google_cloud_deploy_v1_ListReleasesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListReleasesRequest_descriptor,
@@ -2938,7 +3059,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListReleasesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(75);
+        getDescriptor().getMessageTypes().get(76);
     internal_static_google_cloud_deploy_v1_ListReleasesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListReleasesResponse_descriptor,
@@ -2946,7 +3067,7 @@ public final class CloudDeployProto {
               "Releases", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetReleaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(76);
+        getDescriptor().getMessageTypes().get(77);
     internal_static_google_cloud_deploy_v1_GetReleaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetReleaseRequest_descriptor,
@@ -2954,7 +3075,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_CreateReleaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(77);
+        getDescriptor().getMessageTypes().get(78);
     internal_static_google_cloud_deploy_v1_CreateReleaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateReleaseRequest_descriptor,
@@ -2962,7 +3083,7 @@ public final class CloudDeployProto {
               "Parent", "ReleaseId", "Release", "RequestId", "ValidateOnly", "OverrideDeployPolicy",
             });
     internal_static_google_cloud_deploy_v1_Rollout_descriptor =
-        getDescriptor().getMessageTypes().get(78);
+        getDescriptor().getMessageTypes().get(79);
     internal_static_google_cloud_deploy_v1_Rollout_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Rollout_descriptor,
@@ -2989,6 +3110,7 @@ public final class CloudDeployProto {
               "ControllerRollout",
               "RollbackOfRollout",
               "RolledBackByRollouts",
+              "ActiveRepairAutomationRun",
             });
     internal_static_google_cloud_deploy_v1_Rollout_AnnotationsEntry_descriptor =
         internal_static_google_cloud_deploy_v1_Rollout_descriptor.getNestedTypes().get(0);
@@ -3007,7 +3129,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_Metadata_descriptor =
-        getDescriptor().getMessageTypes().get(79);
+        getDescriptor().getMessageTypes().get(80);
     internal_static_google_cloud_deploy_v1_Metadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Metadata_descriptor,
@@ -3015,7 +3137,7 @@ public final class CloudDeployProto {
               "CloudRun", "Automation", "Custom",
             });
     internal_static_google_cloud_deploy_v1_DeployJobRunMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(80);
+        getDescriptor().getMessageTypes().get(81);
     internal_static_google_cloud_deploy_v1_DeployJobRunMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeployJobRunMetadata_descriptor,
@@ -3023,7 +3145,7 @@ public final class CloudDeployProto {
               "CloudRun", "CustomTarget", "Custom",
             });
     internal_static_google_cloud_deploy_v1_CloudRunMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(81);
+        getDescriptor().getMessageTypes().get(82);
     internal_static_google_cloud_deploy_v1_CloudRunMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CloudRunMetadata_descriptor,
@@ -3031,7 +3153,7 @@ public final class CloudDeployProto {
               "Service", "ServiceUrls", "Revision", "Job",
             });
     internal_static_google_cloud_deploy_v1_CustomTargetDeployMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(82);
+        getDescriptor().getMessageTypes().get(83);
     internal_static_google_cloud_deploy_v1_CustomTargetDeployMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CustomTargetDeployMetadata_descriptor,
@@ -3039,7 +3161,7 @@ public final class CloudDeployProto {
               "SkipMessage",
             });
     internal_static_google_cloud_deploy_v1_AutomationRolloutMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(83);
+        getDescriptor().getMessageTypes().get(84);
     internal_static_google_cloud_deploy_v1_AutomationRolloutMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AutomationRolloutMetadata_descriptor,
@@ -3047,7 +3169,7 @@ public final class CloudDeployProto {
               "PromoteAutomationRun", "AdvanceAutomationRuns", "RepairAutomationRuns",
             });
     internal_static_google_cloud_deploy_v1_CustomMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(84);
+        getDescriptor().getMessageTypes().get(85);
     internal_static_google_cloud_deploy_v1_CustomMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CustomMetadata_descriptor,
@@ -3063,7 +3185,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_Phase_descriptor =
-        getDescriptor().getMessageTypes().get(85);
+        getDescriptor().getMessageTypes().get(86);
     internal_static_google_cloud_deploy_v1_Phase_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Phase_descriptor,
@@ -3071,7 +3193,7 @@ public final class CloudDeployProto {
               "Id", "State", "SkipMessage", "DeploymentJobs", "ChildRolloutJobs", "Jobs",
             });
     internal_static_google_cloud_deploy_v1_DeploymentJobs_descriptor =
-        getDescriptor().getMessageTypes().get(86);
+        getDescriptor().getMessageTypes().get(87);
     internal_static_google_cloud_deploy_v1_DeploymentJobs_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeploymentJobs_descriptor,
@@ -3079,7 +3201,7 @@ public final class CloudDeployProto {
               "DeployJob", "VerifyJob", "PredeployJob", "PostdeployJob",
             });
     internal_static_google_cloud_deploy_v1_ChildRolloutJobs_descriptor =
-        getDescriptor().getMessageTypes().get(87);
+        getDescriptor().getMessageTypes().get(88);
     internal_static_google_cloud_deploy_v1_ChildRolloutJobs_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ChildRolloutJobs_descriptor,
@@ -3087,7 +3209,7 @@ public final class CloudDeployProto {
               "CreateRolloutJobs", "AdvanceRolloutJobs",
             });
     internal_static_google_cloud_deploy_v1_Job_descriptor =
-        getDescriptor().getMessageTypes().get(88);
+        getDescriptor().getMessageTypes().get(89);
     internal_static_google_cloud_deploy_v1_Job_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Job_descriptor,
@@ -3105,17 +3227,17 @@ public final class CloudDeployProto {
               "JobType",
             });
     internal_static_google_cloud_deploy_v1_DeployJob_descriptor =
-        getDescriptor().getMessageTypes().get(89);
+        getDescriptor().getMessageTypes().get(90);
     internal_static_google_cloud_deploy_v1_DeployJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeployJob_descriptor, new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_VerifyJob_descriptor =
-        getDescriptor().getMessageTypes().get(90);
+        getDescriptor().getMessageTypes().get(91);
     internal_static_google_cloud_deploy_v1_VerifyJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_VerifyJob_descriptor, new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_PredeployJob_descriptor =
-        getDescriptor().getMessageTypes().get(91);
+        getDescriptor().getMessageTypes().get(92);
     internal_static_google_cloud_deploy_v1_PredeployJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PredeployJob_descriptor,
@@ -3123,7 +3245,7 @@ public final class CloudDeployProto {
               "Actions",
             });
     internal_static_google_cloud_deploy_v1_PostdeployJob_descriptor =
-        getDescriptor().getMessageTypes().get(92);
+        getDescriptor().getMessageTypes().get(93);
     internal_static_google_cloud_deploy_v1_PostdeployJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PostdeployJob_descriptor,
@@ -3131,19 +3253,19 @@ public final class CloudDeployProto {
               "Actions",
             });
     internal_static_google_cloud_deploy_v1_CreateChildRolloutJob_descriptor =
-        getDescriptor().getMessageTypes().get(93);
+        getDescriptor().getMessageTypes().get(94);
     internal_static_google_cloud_deploy_v1_CreateChildRolloutJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateChildRolloutJob_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_AdvanceChildRolloutJob_descriptor =
-        getDescriptor().getMessageTypes().get(94);
+        getDescriptor().getMessageTypes().get(95);
     internal_static_google_cloud_deploy_v1_AdvanceChildRolloutJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AdvanceChildRolloutJob_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_ListRolloutsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(95);
+        getDescriptor().getMessageTypes().get(96);
     internal_static_google_cloud_deploy_v1_ListRolloutsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListRolloutsRequest_descriptor,
@@ -3151,7 +3273,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListRolloutsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(96);
+        getDescriptor().getMessageTypes().get(97);
     internal_static_google_cloud_deploy_v1_ListRolloutsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListRolloutsResponse_descriptor,
@@ -3159,7 +3281,7 @@ public final class CloudDeployProto {
               "Rollouts", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetRolloutRequest_descriptor =
-        getDescriptor().getMessageTypes().get(97);
+        getDescriptor().getMessageTypes().get(98);
     internal_static_google_cloud_deploy_v1_GetRolloutRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetRolloutRequest_descriptor,
@@ -3167,7 +3289,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_CreateRolloutRequest_descriptor =
-        getDescriptor().getMessageTypes().get(98);
+        getDescriptor().getMessageTypes().get(99);
     internal_static_google_cloud_deploy_v1_CreateRolloutRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateRolloutRequest_descriptor,
@@ -3181,7 +3303,7 @@ public final class CloudDeployProto {
               "StartingPhaseId",
             });
     internal_static_google_cloud_deploy_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(99);
+        getDescriptor().getMessageTypes().get(100);
     internal_static_google_cloud_deploy_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_OperationMetadata_descriptor,
@@ -3195,7 +3317,7 @@ public final class CloudDeployProto {
               "ApiVersion",
             });
     internal_static_google_cloud_deploy_v1_ApproveRolloutRequest_descriptor =
-        getDescriptor().getMessageTypes().get(100);
+        getDescriptor().getMessageTypes().get(101);
     internal_static_google_cloud_deploy_v1_ApproveRolloutRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ApproveRolloutRequest_descriptor,
@@ -3203,13 +3325,13 @@ public final class CloudDeployProto {
               "Name", "Approved", "OverrideDeployPolicy",
             });
     internal_static_google_cloud_deploy_v1_ApproveRolloutResponse_descriptor =
-        getDescriptor().getMessageTypes().get(101);
+        getDescriptor().getMessageTypes().get(102);
     internal_static_google_cloud_deploy_v1_ApproveRolloutResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ApproveRolloutResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_AdvanceRolloutRequest_descriptor =
-        getDescriptor().getMessageTypes().get(102);
+        getDescriptor().getMessageTypes().get(103);
     internal_static_google_cloud_deploy_v1_AdvanceRolloutRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AdvanceRolloutRequest_descriptor,
@@ -3217,13 +3339,13 @@ public final class CloudDeployProto {
               "Name", "PhaseId", "OverrideDeployPolicy",
             });
     internal_static_google_cloud_deploy_v1_AdvanceRolloutResponse_descriptor =
-        getDescriptor().getMessageTypes().get(103);
+        getDescriptor().getMessageTypes().get(104);
     internal_static_google_cloud_deploy_v1_AdvanceRolloutResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AdvanceRolloutResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_CancelRolloutRequest_descriptor =
-        getDescriptor().getMessageTypes().get(104);
+        getDescriptor().getMessageTypes().get(105);
     internal_static_google_cloud_deploy_v1_CancelRolloutRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CancelRolloutRequest_descriptor,
@@ -3231,13 +3353,13 @@ public final class CloudDeployProto {
               "Name", "OverrideDeployPolicy",
             });
     internal_static_google_cloud_deploy_v1_CancelRolloutResponse_descriptor =
-        getDescriptor().getMessageTypes().get(105);
+        getDescriptor().getMessageTypes().get(106);
     internal_static_google_cloud_deploy_v1_CancelRolloutResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CancelRolloutResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_IgnoreJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(106);
+        getDescriptor().getMessageTypes().get(107);
     internal_static_google_cloud_deploy_v1_IgnoreJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_IgnoreJobRequest_descriptor,
@@ -3245,13 +3367,13 @@ public final class CloudDeployProto {
               "Rollout", "PhaseId", "JobId", "OverrideDeployPolicy",
             });
     internal_static_google_cloud_deploy_v1_IgnoreJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(107);
+        getDescriptor().getMessageTypes().get(108);
     internal_static_google_cloud_deploy_v1_IgnoreJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_IgnoreJobResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_RetryJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(108);
+        getDescriptor().getMessageTypes().get(109);
     internal_static_google_cloud_deploy_v1_RetryJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RetryJobRequest_descriptor,
@@ -3259,13 +3381,13 @@ public final class CloudDeployProto {
               "Rollout", "PhaseId", "JobId", "OverrideDeployPolicy",
             });
     internal_static_google_cloud_deploy_v1_RetryJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(109);
+        getDescriptor().getMessageTypes().get(110);
     internal_static_google_cloud_deploy_v1_RetryJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RetryJobResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_AbandonReleaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(110);
+        getDescriptor().getMessageTypes().get(111);
     internal_static_google_cloud_deploy_v1_AbandonReleaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AbandonReleaseRequest_descriptor,
@@ -3273,13 +3395,13 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_AbandonReleaseResponse_descriptor =
-        getDescriptor().getMessageTypes().get(111);
+        getDescriptor().getMessageTypes().get(112);
     internal_static_google_cloud_deploy_v1_AbandonReleaseResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AbandonReleaseResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_JobRun_descriptor =
-        getDescriptor().getMessageTypes().get(112);
+        getDescriptor().getMessageTypes().get(113);
     internal_static_google_cloud_deploy_v1_JobRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_JobRun_descriptor,
@@ -3302,7 +3424,7 @@ public final class CloudDeployProto {
               "JobRun",
             });
     internal_static_google_cloud_deploy_v1_DeployJobRun_descriptor =
-        getDescriptor().getMessageTypes().get(113);
+        getDescriptor().getMessageTypes().get(114);
     internal_static_google_cloud_deploy_v1_DeployJobRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeployJobRun_descriptor,
@@ -3310,7 +3432,7 @@ public final class CloudDeployProto {
               "Build", "FailureCause", "FailureMessage", "Metadata", "Artifact",
             });
     internal_static_google_cloud_deploy_v1_VerifyJobRun_descriptor =
-        getDescriptor().getMessageTypes().get(114);
+        getDescriptor().getMessageTypes().get(115);
     internal_static_google_cloud_deploy_v1_VerifyJobRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_VerifyJobRun_descriptor,
@@ -3318,7 +3440,7 @@ public final class CloudDeployProto {
               "Build", "ArtifactUri", "EventLogPath", "FailureCause", "FailureMessage",
             });
     internal_static_google_cloud_deploy_v1_PredeployJobRun_descriptor =
-        getDescriptor().getMessageTypes().get(115);
+        getDescriptor().getMessageTypes().get(116);
     internal_static_google_cloud_deploy_v1_PredeployJobRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PredeployJobRun_descriptor,
@@ -3326,7 +3448,7 @@ public final class CloudDeployProto {
               "Build", "FailureCause", "FailureMessage",
             });
     internal_static_google_cloud_deploy_v1_PostdeployJobRun_descriptor =
-        getDescriptor().getMessageTypes().get(116);
+        getDescriptor().getMessageTypes().get(117);
     internal_static_google_cloud_deploy_v1_PostdeployJobRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PostdeployJobRun_descriptor,
@@ -3334,7 +3456,7 @@ public final class CloudDeployProto {
               "Build", "FailureCause", "FailureMessage",
             });
     internal_static_google_cloud_deploy_v1_CreateChildRolloutJobRun_descriptor =
-        getDescriptor().getMessageTypes().get(117);
+        getDescriptor().getMessageTypes().get(118);
     internal_static_google_cloud_deploy_v1_CreateChildRolloutJobRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateChildRolloutJobRun_descriptor,
@@ -3342,7 +3464,7 @@ public final class CloudDeployProto {
               "Rollout", "RolloutPhaseId",
             });
     internal_static_google_cloud_deploy_v1_AdvanceChildRolloutJobRun_descriptor =
-        getDescriptor().getMessageTypes().get(118);
+        getDescriptor().getMessageTypes().get(119);
     internal_static_google_cloud_deploy_v1_AdvanceChildRolloutJobRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AdvanceChildRolloutJobRun_descriptor,
@@ -3350,7 +3472,7 @@ public final class CloudDeployProto {
               "Rollout", "RolloutPhaseId",
             });
     internal_static_google_cloud_deploy_v1_ListJobRunsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(119);
+        getDescriptor().getMessageTypes().get(120);
     internal_static_google_cloud_deploy_v1_ListJobRunsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListJobRunsRequest_descriptor,
@@ -3358,7 +3480,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListJobRunsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(120);
+        getDescriptor().getMessageTypes().get(121);
     internal_static_google_cloud_deploy_v1_ListJobRunsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListJobRunsResponse_descriptor,
@@ -3366,7 +3488,7 @@ public final class CloudDeployProto {
               "JobRuns", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetJobRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(121);
+        getDescriptor().getMessageTypes().get(122);
     internal_static_google_cloud_deploy_v1_GetJobRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetJobRunRequest_descriptor,
@@ -3374,7 +3496,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_TerminateJobRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(122);
+        getDescriptor().getMessageTypes().get(123);
     internal_static_google_cloud_deploy_v1_TerminateJobRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_TerminateJobRunRequest_descriptor,
@@ -3382,13 +3504,13 @@ public final class CloudDeployProto {
               "Name", "OverrideDeployPolicy",
             });
     internal_static_google_cloud_deploy_v1_TerminateJobRunResponse_descriptor =
-        getDescriptor().getMessageTypes().get(123);
+        getDescriptor().getMessageTypes().get(124);
     internal_static_google_cloud_deploy_v1_TerminateJobRunResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_TerminateJobRunResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_deploy_v1_Config_descriptor =
-        getDescriptor().getMessageTypes().get(124);
+        getDescriptor().getMessageTypes().get(125);
     internal_static_google_cloud_deploy_v1_Config_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Config_descriptor,
@@ -3396,7 +3518,7 @@ public final class CloudDeployProto {
               "Name", "SupportedVersions", "DefaultSkaffoldVersion",
             });
     internal_static_google_cloud_deploy_v1_SkaffoldVersion_descriptor =
-        getDescriptor().getMessageTypes().get(125);
+        getDescriptor().getMessageTypes().get(126);
     internal_static_google_cloud_deploy_v1_SkaffoldVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_SkaffoldVersion_descriptor,
@@ -3404,7 +3526,7 @@ public final class CloudDeployProto {
               "Version", "MaintenanceModeTime", "SupportExpirationTime", "SupportEndDate",
             });
     internal_static_google_cloud_deploy_v1_GetConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(126);
+        getDescriptor().getMessageTypes().get(127);
     internal_static_google_cloud_deploy_v1_GetConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetConfigRequest_descriptor,
@@ -3412,7 +3534,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_Automation_descriptor =
-        getDescriptor().getMessageTypes().get(127);
+        getDescriptor().getMessageTypes().get(128);
     internal_static_google_cloud_deploy_v1_Automation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_Automation_descriptor,
@@ -3447,7 +3569,7 @@ public final class CloudDeployProto {
               "Key", "Value",
             });
     internal_static_google_cloud_deploy_v1_AutomationResourceSelector_descriptor =
-        getDescriptor().getMessageTypes().get(128);
+        getDescriptor().getMessageTypes().get(129);
     internal_static_google_cloud_deploy_v1_AutomationResourceSelector_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AutomationResourceSelector_descriptor,
@@ -3455,15 +3577,27 @@ public final class CloudDeployProto {
               "Targets",
             });
     internal_static_google_cloud_deploy_v1_AutomationRule_descriptor =
-        getDescriptor().getMessageTypes().get(129);
+        getDescriptor().getMessageTypes().get(130);
     internal_static_google_cloud_deploy_v1_AutomationRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AutomationRule_descriptor,
             new java.lang.String[] {
-              "PromoteReleaseRule", "AdvanceRolloutRule", "RepairRolloutRule", "Rule",
+              "PromoteReleaseRule",
+              "AdvanceRolloutRule",
+              "RepairRolloutRule",
+              "TimedPromoteReleaseRule",
+              "Rule",
+            });
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseRule_descriptor =
+        getDescriptor().getMessageTypes().get(131);
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseRule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_TimedPromoteReleaseRule_descriptor,
+            new java.lang.String[] {
+              "Id", "DestinationTargetId", "Schedule", "TimeZone", "Condition", "DestinationPhase",
             });
     internal_static_google_cloud_deploy_v1_PromoteReleaseRule_descriptor =
-        getDescriptor().getMessageTypes().get(130);
+        getDescriptor().getMessageTypes().get(132);
     internal_static_google_cloud_deploy_v1_PromoteReleaseRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PromoteReleaseRule_descriptor,
@@ -3471,7 +3605,7 @@ public final class CloudDeployProto {
               "Id", "Wait", "DestinationTargetId", "Condition", "DestinationPhase",
             });
     internal_static_google_cloud_deploy_v1_AdvanceRolloutRule_descriptor =
-        getDescriptor().getMessageTypes().get(131);
+        getDescriptor().getMessageTypes().get(133);
     internal_static_google_cloud_deploy_v1_AdvanceRolloutRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AdvanceRolloutRule_descriptor,
@@ -3479,23 +3613,65 @@ public final class CloudDeployProto {
               "Id", "SourcePhases", "Wait", "Condition",
             });
     internal_static_google_cloud_deploy_v1_RepairRolloutRule_descriptor =
-        getDescriptor().getMessageTypes().get(132);
+        getDescriptor().getMessageTypes().get(134);
     internal_static_google_cloud_deploy_v1_RepairRolloutRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RepairRolloutRule_descriptor,
             new java.lang.String[] {
-              "Id", "Jobs", "Condition",
+              "Id", "Phases", "Jobs", "Condition", "RepairPhases",
+            });
+    internal_static_google_cloud_deploy_v1_RepairPhaseConfig_descriptor =
+        getDescriptor().getMessageTypes().get(135);
+    internal_static_google_cloud_deploy_v1_RepairPhaseConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_RepairPhaseConfig_descriptor,
+            new java.lang.String[] {
+              "Retry", "Rollback", "RepairPhase",
+            });
+    internal_static_google_cloud_deploy_v1_Retry_descriptor =
+        getDescriptor().getMessageTypes().get(136);
+    internal_static_google_cloud_deploy_v1_Retry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_Retry_descriptor,
+            new java.lang.String[] {
+              "Attempts", "Wait", "BackoffMode",
+            });
+    internal_static_google_cloud_deploy_v1_Rollback_descriptor =
+        getDescriptor().getMessageTypes().get(137);
+    internal_static_google_cloud_deploy_v1_Rollback_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_Rollback_descriptor,
+            new java.lang.String[] {
+              "DestinationPhase", "DisableRollbackIfRolloutPending",
             });
     internal_static_google_cloud_deploy_v1_AutomationRuleCondition_descriptor =
-        getDescriptor().getMessageTypes().get(133);
+        getDescriptor().getMessageTypes().get(138);
     internal_static_google_cloud_deploy_v1_AutomationRuleCondition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AutomationRuleCondition_descriptor,
             new java.lang.String[] {
-              "TargetsPresentCondition",
+              "TargetsPresentCondition", "TimedPromoteReleaseCondition", "RuleTypeCondition",
+            });
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_descriptor =
+        getDescriptor().getMessageTypes().get(139);
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_descriptor,
+            new java.lang.String[] {
+              "NextPromotionTime", "TargetsList",
+            });
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_Targets_descriptor =
+        internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_Targets_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_TimedPromoteReleaseCondition_Targets_descriptor,
+            new java.lang.String[] {
+              "SourceTargetId", "DestinationTargetId",
             });
     internal_static_google_cloud_deploy_v1_CreateAutomationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(134);
+        getDescriptor().getMessageTypes().get(140);
     internal_static_google_cloud_deploy_v1_CreateAutomationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CreateAutomationRequest_descriptor,
@@ -3503,7 +3679,7 @@ public final class CloudDeployProto {
               "Parent", "AutomationId", "Automation", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_UpdateAutomationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(135);
+        getDescriptor().getMessageTypes().get(141);
     internal_static_google_cloud_deploy_v1_UpdateAutomationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_UpdateAutomationRequest_descriptor,
@@ -3511,7 +3687,7 @@ public final class CloudDeployProto {
               "UpdateMask", "Automation", "RequestId", "AllowMissing", "ValidateOnly",
             });
     internal_static_google_cloud_deploy_v1_DeleteAutomationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(136);
+        getDescriptor().getMessageTypes().get(142);
     internal_static_google_cloud_deploy_v1_DeleteAutomationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_DeleteAutomationRequest_descriptor,
@@ -3519,7 +3695,7 @@ public final class CloudDeployProto {
               "Name", "RequestId", "AllowMissing", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_deploy_v1_ListAutomationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(137);
+        getDescriptor().getMessageTypes().get(143);
     internal_static_google_cloud_deploy_v1_ListAutomationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListAutomationsRequest_descriptor,
@@ -3527,7 +3703,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListAutomationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(138);
+        getDescriptor().getMessageTypes().get(144);
     internal_static_google_cloud_deploy_v1_ListAutomationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListAutomationsResponse_descriptor,
@@ -3535,7 +3711,7 @@ public final class CloudDeployProto {
               "Automations", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetAutomationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(139);
+        getDescriptor().getMessageTypes().get(145);
     internal_static_google_cloud_deploy_v1_GetAutomationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetAutomationRequest_descriptor,
@@ -3543,7 +3719,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_AutomationRun_descriptor =
-        getDescriptor().getMessageTypes().get(140);
+        getDescriptor().getMessageTypes().get(146);
     internal_static_google_cloud_deploy_v1_AutomationRun_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AutomationRun_descriptor,
@@ -3564,11 +3740,12 @@ public final class CloudDeployProto {
               "PromoteReleaseOperation",
               "AdvanceRolloutOperation",
               "RepairRolloutOperation",
+              "TimedPromoteReleaseOperation",
               "WaitUntilTime",
               "Operation",
             });
     internal_static_google_cloud_deploy_v1_PromoteReleaseOperation_descriptor =
-        getDescriptor().getMessageTypes().get(141);
+        getDescriptor().getMessageTypes().get(147);
     internal_static_google_cloud_deploy_v1_PromoteReleaseOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_PromoteReleaseOperation_descriptor,
@@ -3576,7 +3753,7 @@ public final class CloudDeployProto {
               "TargetId", "Wait", "Rollout", "Phase",
             });
     internal_static_google_cloud_deploy_v1_AdvanceRolloutOperation_descriptor =
-        getDescriptor().getMessageTypes().get(142);
+        getDescriptor().getMessageTypes().get(148);
     internal_static_google_cloud_deploy_v1_AdvanceRolloutOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_AdvanceRolloutOperation_descriptor,
@@ -3584,15 +3761,23 @@ public final class CloudDeployProto {
               "SourcePhase", "Wait", "Rollout", "DestinationPhase",
             });
     internal_static_google_cloud_deploy_v1_RepairRolloutOperation_descriptor =
-        getDescriptor().getMessageTypes().get(143);
+        getDescriptor().getMessageTypes().get(149);
     internal_static_google_cloud_deploy_v1_RepairRolloutOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RepairRolloutOperation_descriptor,
             new java.lang.String[] {
-              "Rollout", "RepairPhases", "PhaseId", "JobId",
+              "Rollout", "CurrentRepairPhaseIndex", "RepairPhases", "PhaseId", "JobId",
+            });
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseOperation_descriptor =
+        getDescriptor().getMessageTypes().get(150);
+    internal_static_google_cloud_deploy_v1_TimedPromoteReleaseOperation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_deploy_v1_TimedPromoteReleaseOperation_descriptor,
+            new java.lang.String[] {
+              "TargetId", "Release", "Phase",
             });
     internal_static_google_cloud_deploy_v1_RepairPhase_descriptor =
-        getDescriptor().getMessageTypes().get(144);
+        getDescriptor().getMessageTypes().get(151);
     internal_static_google_cloud_deploy_v1_RepairPhase_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RepairPhase_descriptor,
@@ -3600,7 +3785,7 @@ public final class CloudDeployProto {
               "Retry", "Rollback", "RepairPhase",
             });
     internal_static_google_cloud_deploy_v1_RetryPhase_descriptor =
-        getDescriptor().getMessageTypes().get(145);
+        getDescriptor().getMessageTypes().get(152);
     internal_static_google_cloud_deploy_v1_RetryPhase_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RetryPhase_descriptor,
@@ -3608,7 +3793,7 @@ public final class CloudDeployProto {
               "TotalAttempts", "BackoffMode", "Attempts",
             });
     internal_static_google_cloud_deploy_v1_RetryAttempt_descriptor =
-        getDescriptor().getMessageTypes().get(146);
+        getDescriptor().getMessageTypes().get(153);
     internal_static_google_cloud_deploy_v1_RetryAttempt_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RetryAttempt_descriptor,
@@ -3616,15 +3801,19 @@ public final class CloudDeployProto {
               "Attempt", "Wait", "State", "StateDesc",
             });
     internal_static_google_cloud_deploy_v1_RollbackAttempt_descriptor =
-        getDescriptor().getMessageTypes().get(147);
+        getDescriptor().getMessageTypes().get(154);
     internal_static_google_cloud_deploy_v1_RollbackAttempt_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_RollbackAttempt_descriptor,
             new java.lang.String[] {
-              "DestinationPhase", "RolloutId", "State", "StateDesc",
+              "DestinationPhase",
+              "RolloutId",
+              "State",
+              "StateDesc",
+              "DisableRollbackIfRolloutPending",
             });
     internal_static_google_cloud_deploy_v1_ListAutomationRunsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(148);
+        getDescriptor().getMessageTypes().get(155);
     internal_static_google_cloud_deploy_v1_ListAutomationRunsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListAutomationRunsRequest_descriptor,
@@ -3632,7 +3821,7 @@ public final class CloudDeployProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_deploy_v1_ListAutomationRunsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(149);
+        getDescriptor().getMessageTypes().get(156);
     internal_static_google_cloud_deploy_v1_ListAutomationRunsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_ListAutomationRunsResponse_descriptor,
@@ -3640,7 +3829,7 @@ public final class CloudDeployProto {
               "AutomationRuns", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_deploy_v1_GetAutomationRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(150);
+        getDescriptor().getMessageTypes().get(157);
     internal_static_google_cloud_deploy_v1_GetAutomationRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_GetAutomationRunRequest_descriptor,
@@ -3648,7 +3837,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_CancelAutomationRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(151);
+        getDescriptor().getMessageTypes().get(158);
     internal_static_google_cloud_deploy_v1_CancelAutomationRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CancelAutomationRunRequest_descriptor,
@@ -3656,7 +3845,7 @@ public final class CloudDeployProto {
               "Name",
             });
     internal_static_google_cloud_deploy_v1_CancelAutomationRunResponse_descriptor =
-        getDescriptor().getMessageTypes().get(152);
+        getDescriptor().getMessageTypes().get(159);
     internal_static_google_cloud_deploy_v1_CancelAutomationRunResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_deploy_v1_CancelAutomationRunResponse_descriptor,

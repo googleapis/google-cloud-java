@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -449,7 +449,7 @@ public interface FeatureViewOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=339
    * @return Whether the vectorSearchConfig field is set.
    */
   @java.lang.Deprecated
@@ -468,7 +468,7 @@ public interface FeatureViewOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=327
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=339
    * @return The vectorSearchConfig.
    */
   @java.lang.Deprecated
@@ -539,6 +539,51 @@ public interface FeatureViewOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder getIndexConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the optimizedConfig field is set.
+   */
+  boolean hasOptimizedConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The optimizedConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig getOptimizedConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for FeatureView created under Optimized
+   * FeatureOnlineStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfig optimized_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureView.OptimizedConfigOrBuilder
+      getOptimizedConfigOrBuilder();
 
   /**
    *

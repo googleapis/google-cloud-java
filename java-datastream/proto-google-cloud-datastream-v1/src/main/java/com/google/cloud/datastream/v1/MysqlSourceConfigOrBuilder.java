@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,4 +122,83 @@ public interface MysqlSourceConfigOrBuilder
    * @return The maxConcurrentBackfillTasks.
    */
   int getMaxConcurrentBackfillTasks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary log position based replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+   * </code>
+   *
+   * @return Whether the binaryLogPosition field is set.
+   */
+  boolean hasBinaryLogPosition();
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary log position based replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+   * </code>
+   *
+   * @return The binaryLogPosition.
+   */
+  com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition getBinaryLogPosition();
+  /**
+   *
+   *
+   * <pre>
+   * Use Binary log position based replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPosition binary_log_position = 101;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.MysqlSourceConfig.BinaryLogPositionOrBuilder
+      getBinaryLogPositionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Use GTID based replication.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+   *
+   * @return Whether the gtid field is set.
+   */
+  boolean hasGtid();
+  /**
+   *
+   *
+   * <pre>
+   * Use GTID based replication.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+   *
+   * @return The gtid.
+   */
+  com.google.cloud.datastream.v1.MysqlSourceConfig.Gtid getGtid();
+  /**
+   *
+   *
+   * <pre>
+   * Use GTID based replication.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MysqlSourceConfig.Gtid gtid = 102;</code>
+   */
+  com.google.cloud.datastream.v1.MysqlSourceConfig.GtidOrBuilder getGtidOrBuilder();
+
+  com.google.cloud.datastream.v1.MysqlSourceConfig.CdcMethodCase getCdcMethodCase();
 }

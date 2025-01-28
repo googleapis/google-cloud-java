@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2785
+   *     google/container/v1/cluster_service.proto;l=3066
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2785
+   *     google/container/v1/cluster_service.proto;l=3066
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -72,7 +72,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2791
+   *     google/container/v1/cluster_service.proto;l=3072
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2791
+   *     google/container/v1/cluster_service.proto;l=3072
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2795
+   *     google/container/v1/cluster_service.proto;l=3076
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2795
+   *     google/container/v1/cluster_service.proto;l=3076
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -140,7 +140,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2799
+   *     google/container/v1/cluster_service.proto;l=3080
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -156,7 +156,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2799
+   *     google/container/v1/cluster_service.proto;l=3080
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -1166,4 +1166,59 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
    */
   com.google.container.v1.NodePool.QueuedProvisioningOrBuilder getQueuedProvisioningOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @return A list containing the storagePools.
+   */
+  java.util.List<java.lang.String> getStoragePoolsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @return The count of storagePools.
+   */
+  int getStoragePoolsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The storagePools at the given index.
+   */
+  java.lang.String getStoragePools(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * Existing Storage Pools will be replaced with storage-pools.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 43;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the storagePools at the given index.
+   */
+  com.google.protobuf.ByteString getStoragePoolsBytes(int index);
 }

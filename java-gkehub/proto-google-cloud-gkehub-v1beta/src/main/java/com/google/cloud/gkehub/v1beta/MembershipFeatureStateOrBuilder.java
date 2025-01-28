@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,6 +132,45 @@ public interface MembershipFeatureStateOrBuilder
    */
   com.google.cloud.gkehub.configmanagement.v1beta.MembershipStateOrBuilder
       getConfigmanagementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   *
+   * @return Whether the policycontroller field is set.
+   */
+  boolean hasPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   *
+   * @return The policycontroller.
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipState getPolicycontroller();
+  /**
+   *
+   *
+   * <pre>
+   * Policycontroller-specific state.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.policycontroller.v1beta.MembershipState policycontroller = 116;
+   * </code>
+   */
+  com.google.cloud.gkehub.policycontroller.v1beta.MembershipStateOrBuilder
+      getPolicycontrollerOrBuilder();
 
   /**
    *

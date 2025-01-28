@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,15 @@ public final class LookupServiceProto {
           + "beta1/{name=projects/*/locations/*/names"
           + "paces/*/services/*}:resolve:\001*\032S\312A\037servi"
           + "cedirectory.googleapis.com\322A.https://www"
-          + ".googleapis.com/auth/cloud-platformB\226\002\n)"
+          + ".googleapis.com/auth/cloud-platformB\223\002\n)"
           + "com.google.cloud.servicedirectory.v1beta"
           + "1B\022LookupServiceProtoP\001ZUcloud.google.co"
           + "m/go/servicedirectory/apiv1beta1/service"
-          + "directorypb;servicedirectorypb\370\001\001\252\002%Goog"
-          + "le.Cloud.ServiceDirectory.V1Beta1\312\002%Goog"
-          + "le\\Cloud\\ServiceDirectory\\V1beta1\352\002(Goog"
-          + "le::Cloud::ServiceDirectory::V1beta1b\006pr"
-          + "oto3"
+          + "directorypb;servicedirectorypb\252\002%Google."
+          + "Cloud.ServiceDirectory.V1Beta1\312\002%Google\\"
+          + "Cloud\\ServiceDirectory\\V1beta1\352\002(Google:"
+          + ":Cloud::ServiceDirectory::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,14 +79,14 @@ public final class TextToSpeechLongAudioSynthesisProto {
           + "ta\202\323\344\223\002A\"</v1beta1/{parent=projects/*/lo"
           + "cations/*}:synthesizeLongAudio:\001*\032O\312A\033te"
           + "xttospeech.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformB\213\002\n%c"
+          + "googleapis.com/auth/cloud-platformB\210\002\n%c"
           + "om.google.cloud.texttospeech.v1beta1B#Te"
           + "xtToSpeechLongAudioSynthesisProtoP\001ZIclo"
           + "ud.google.com/go/texttospeech/apiv1beta1"
-          + "/texttospeechpb;texttospeechpb\370\001\001\252\002!Goog"
-          + "le.Cloud.TextToSpeech.V1Beta1\312\002!Google\\C"
-          + "loud\\TextToSpeech\\V1beta1\352\002$Google::Clou"
-          + "d::TextToSpeech::V1beta1b\006proto3"
+          + "/texttospeechpb;texttospeechpb\252\002!Google."
+          + "Cloud.TextToSpeech.V1Beta1\312\002!Google\\Clou"
+          + "d\\TextToSpeech\\V1beta1\352\002$Google::Cloud::"
+          + "TextToSpeech::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

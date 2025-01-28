@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.discoveryengine.v1beta.stub;
 
+import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchLitePagedResponse;
 import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -93,8 +94,52 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<SearchRequest, SearchResponse>
+      searchLiteMethodDescriptor =
+          ApiMethodDescriptor.<SearchRequest, SearchResponse>newBuilder()
+              .setFullMethodName("google.cloud.discoveryengine.v1beta.SearchService/SearchLite")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{servingConfig=projects/*/locations/*/dataStores/*/servingConfigs/*}:searchLite",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "servingConfig", request.getServingConfig());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:searchLite",
+                          "/v1beta/{servingConfig=projects/*/locations/*/collections/*/engines/*/servingConfigs/*}:searchLite")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearServingConfig().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchResponse>newBuilder()
+                      .setDefaultInstance(SearchResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;
   private final UnaryCallable<SearchRequest, SearchPagedResponse> searchPagedCallable;
+  private final UnaryCallable<SearchRequest, SearchResponse> searchLiteCallable;
+  private final UnaryCallable<SearchRequest, SearchLitePagedResponse> searchLitePagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -149,6 +194,17 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SearchRequest, SearchResponse> searchLiteTransportSettings =
+        HttpJsonCallSettings.<SearchRequest, SearchResponse>newBuilder()
+            .setMethodDescriptor(searchLiteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                  return builder.build();
+                })
+            .build();
 
     this.searchCallable =
         callableFactory.createUnaryCallable(
@@ -156,6 +212,12 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
     this.searchPagedCallable =
         callableFactory.createPagedCallable(
             searchTransportSettings, settings.searchSettings(), clientContext);
+    this.searchLiteCallable =
+        callableFactory.createUnaryCallable(
+            searchLiteTransportSettings, settings.searchLiteSettings(), clientContext);
+    this.searchLitePagedCallable =
+        callableFactory.createPagedCallable(
+            searchLiteTransportSettings, settings.searchLiteSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -165,6 +227,7 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(searchMethodDescriptor);
+    methodDescriptors.add(searchLiteMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -176,6 +239,16 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
   @Override
   public UnaryCallable<SearchRequest, SearchPagedResponse> searchPagedCallable() {
     return searchPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchRequest, SearchResponse> searchLiteCallable() {
+    return searchLiteCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchRequest, SearchLitePagedResponse> searchLitePagedCallable() {
+    return searchLitePagedCallable;
   }
 
   @Override

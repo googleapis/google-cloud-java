@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -572,9 +572,9 @@ public interface HardwareOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested installation date for this hardware. This is
-   * auto-populated when the order is accepted, if the hardware's HardwareGroup
-   * specifies this. It can also be filled in by the customer.
+   * Optional. Requested installation date for this hardware. If not specified,
+   * this is auto-populated from the order's fulfillment_time upon submission or
+   * from the HardwareGroup's requested_installation_date upon order acceptance.
    * </pre>
    *
    * <code>
@@ -588,9 +588,9 @@ public interface HardwareOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested installation date for this hardware. This is
-   * auto-populated when the order is accepted, if the hardware's HardwareGroup
-   * specifies this. It can also be filled in by the customer.
+   * Optional. Requested installation date for this hardware. If not specified,
+   * this is auto-populated from the order's fulfillment_time upon submission or
+   * from the HardwareGroup's requested_installation_date upon order acceptance.
    * </pre>
    *
    * <code>
@@ -604,9 +604,9 @@ public interface HardwareOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested installation date for this hardware. This is
-   * auto-populated when the order is accepted, if the hardware's HardwareGroup
-   * specifies this. It can also be filled in by the customer.
+   * Optional. Requested installation date for this hardware. If not specified,
+   * this is auto-populated from the order's fulfillment_time upon submission or
+   * from the HardwareGroup's requested_installation_date upon order acceptance.
    * </pre>
    *
    * <code>
@@ -658,4 +658,69 @@ public interface HardwareOrBuilder
    * </code>
    */
   com.google.type.DateOrBuilder getActualInstallationDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo>
+      getMachineInfosList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo getMachineInfos(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getMachineInfosCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder>
+      getMachineInfosOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Per machine asset information needed for turnup.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfo machine_infos = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder
+      getMachineInfosOrBuilder(int index);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -543,7 +543,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The ID of a SavedQuery (annotation set) under the Dataset specified by
-   * [dataset_id][] used for filtering Annotations for training.
+   * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name]
+   * used for filtering Annotations for training.
    *
    * Only used for custom training data export use cases.
    * Only applicable to Datasets that have SavedQueries.
@@ -584,7 +585,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The ID of a SavedQuery (annotation set) under the Dataset specified by
-   * [dataset_id][] used for filtering Annotations for training.
+   * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name]
+   * used for filtering Annotations for training.
    *
    * Only used for custom training data export use cases.
    * Only applicable to Datasets that have SavedQueries.
@@ -636,7 +638,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
    * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
    * chosen schema must be consistent with
    * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
-   * Dataset specified by [dataset_id][].
+   * Dataset specified by
+   * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name].
    *
    * Only used for custom training data export use cases.
    * Only applicable to Datasets that have DataItems and Annotations.
@@ -680,7 +683,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
    * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
    * chosen schema must be consistent with
    * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
-   * Dataset specified by [dataset_id][].
+   * Dataset specified by
+   * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name].
    *
    * Only used for custom training data export use cases.
    * Only applicable to Datasets that have DataItems and Annotations.
@@ -2160,7 +2164,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ID of a SavedQuery (annotation set) under the Dataset specified by
-     * [dataset_id][] used for filtering Annotations for training.
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name]
+     * used for filtering Annotations for training.
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have SavedQueries.
@@ -2200,7 +2205,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ID of a SavedQuery (annotation set) under the Dataset specified by
-     * [dataset_id][] used for filtering Annotations for training.
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name]
+     * used for filtering Annotations for training.
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have SavedQueries.
@@ -2240,7 +2246,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ID of a SavedQuery (annotation set) under the Dataset specified by
-     * [dataset_id][] used for filtering Annotations for training.
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name]
+     * used for filtering Annotations for training.
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have SavedQueries.
@@ -2279,7 +2286,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ID of a SavedQuery (annotation set) under the Dataset specified by
-     * [dataset_id][] used for filtering Annotations for training.
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name]
+     * used for filtering Annotations for training.
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have SavedQueries.
@@ -2314,7 +2322,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The ID of a SavedQuery (annotation set) under the Dataset specified by
-     * [dataset_id][] used for filtering Annotations for training.
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name]
+     * used for filtering Annotations for training.
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have SavedQueries.
@@ -2362,7 +2371,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
      * chosen schema must be consistent with
      * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
-     * Dataset specified by [dataset_id][].
+     * Dataset specified by
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name].
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have DataItems and Annotations.
@@ -2405,7 +2415,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
      * chosen schema must be consistent with
      * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
-     * Dataset specified by [dataset_id][].
+     * Dataset specified by
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name].
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have DataItems and Annotations.
@@ -2448,7 +2459,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
      * chosen schema must be consistent with
      * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
-     * Dataset specified by [dataset_id][].
+     * Dataset specified by
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name].
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have DataItems and Annotations.
@@ -2490,7 +2502,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
      * chosen schema must be consistent with
      * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
-     * Dataset specified by [dataset_id][].
+     * Dataset specified by
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name].
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have DataItems and Annotations.
@@ -2528,7 +2541,8 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
      * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
      * chosen schema must be consistent with
      * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
-     * Dataset specified by [dataset_id][].
+     * Dataset specified by
+     * [ExportDataRequest.name][google.cloud.aiplatform.v1.ExportDataRequest.name].
      *
      * Only used for custom training data export use cases.
      * Only applicable to Datasets that have DataItems and Annotations.

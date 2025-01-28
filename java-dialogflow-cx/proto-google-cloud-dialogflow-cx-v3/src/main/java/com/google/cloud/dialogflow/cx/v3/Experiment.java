@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -4453,8 +4453,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4467,8 +4467,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4602,8 +4602,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -4627,8 +4627,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-       * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
        * </pre>
        *
        * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -5203,8 +5203,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * Format:
+         * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -5227,8 +5227,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * Format:
+         * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -5251,8 +5251,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * Format:
+         * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -5274,8 +5274,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * Format:
+         * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -5293,8 +5293,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * The name of the flow [Version][google.cloud.dialogflow.cx.v3.Version].
-         * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-         * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+         * Format:
+         * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
          * </pre>
          *
          * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -7103,8 +7103,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the experiment.
-   * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;..
+   * Format:
+   * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -7128,8 +7128,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the experiment.
-   * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;..
+   * Format:
+   * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -8706,8 +8706,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the experiment.
-     * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;..
+     * Format:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -8730,8 +8730,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the experiment.
-     * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;..
+     * Format:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -8754,8 +8754,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the experiment.
-     * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;..
+     * Format:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -8777,8 +8777,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the experiment.
-     * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;..
+     * Format:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -8796,8 +8796,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the experiment.
-     * Format: projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;..
+     * Format:
+     * projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;.
      * </pre>
      *
      * <code>string name = 1;</code>

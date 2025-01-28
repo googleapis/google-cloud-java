@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,12 +38,12 @@ public final class UnitsProto {
     java.lang.String[] descriptorData = {
       "\n\"google/maps/routing/v2/units.proto\022\026go"
           + "ogle.maps.routing.v2*8\n\005Units\022\025\n\021UNITS_U"
-          + "NSPECIFIED\020\000\022\n\n\006METRIC\020\001\022\014\n\010IMPERIAL\020\002B\277"
+          + "NSPECIFIED\020\000\022\n\n\006METRIC\020\001\022\014\n\010IMPERIAL\020\002B\274"
           + "\001\n\032com.google.maps.routing.v2B\nUnitsProt"
           + "oP\001Z:cloud.google.com/go/maps/routing/ap"
-          + "iv2/routingpb;routingpb\370\001\001\242\002\005GMRV2\252\002\026Goo"
-          + "gle.Maps.Routing.V2\312\002\026Google\\Maps\\Routin"
-          + "g\\V2\352\002\031Google::Maps::Routing::V2b\006proto3"
+          + "iv2/routingpb;routingpb\242\002\005GMRV2\252\002\026Google"
+          + ".Maps.Routing.V2\312\002\026Google\\Maps\\Routing\\V"
+          + "2\352\002\031Google::Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

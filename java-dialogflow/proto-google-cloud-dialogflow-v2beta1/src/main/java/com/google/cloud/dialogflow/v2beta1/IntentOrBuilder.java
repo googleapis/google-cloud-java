@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,7 +175,7 @@ public interface IntentOrBuilder
    * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
+   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1153
    * @return The mlEnabled.
    */
   @java.lang.Deprecated

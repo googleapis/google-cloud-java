@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -283,7 +283,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The non-answer seeking query ignored case.
+     * The non-answer seeking query ignored case
+     *
+     * Google skips the answer if the query is chit chat.
      * </pre>
      *
      * <code>NON_ANSWER_SEEKING_QUERY_IGNORED = 2;</code>
@@ -354,6 +356,31 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOMER_POLICY_VIOLATION = 7;</code>
      */
     CUSTOMER_POLICY_VIOLATION(7),
+    /**
+     *
+     *
+     * <pre>
+     * The non-answer seeking query ignored case.
+     *
+     * Google skips the answer if the query doesn't have clear intent.
+     * </pre>
+     *
+     * <code>NON_ANSWER_SEEKING_QUERY_IGNORED_V2 = 8;</code>
+     */
+    NON_ANSWER_SEEKING_QUERY_IGNORED_V2(8),
+    /**
+     *
+     *
+     * <pre>
+     * The low-grounded answer case.
+     *
+     * Google skips the answer if a well grounded answer was unable to be
+     * generated.
+     * </pre>
+     *
+     * <code>LOW_GROUNDED_ANSWER = 9;</code>
+     */
+    LOW_GROUNDED_ANSWER(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -381,7 +408,9 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The non-answer seeking query ignored case.
+     * The non-answer seeking query ignored case
+     *
+     * Google skips the answer if the query is chit chat.
      * </pre>
      *
      * <code>NON_ANSWER_SEEKING_QUERY_IGNORED = 2;</code>
@@ -452,6 +481,31 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
      * <code>CUSTOMER_POLICY_VIOLATION = 7;</code>
      */
     public static final int CUSTOMER_POLICY_VIOLATION_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The non-answer seeking query ignored case.
+     *
+     * Google skips the answer if the query doesn't have clear intent.
+     * </pre>
+     *
+     * <code>NON_ANSWER_SEEKING_QUERY_IGNORED_V2 = 8;</code>
+     */
+    public static final int NON_ANSWER_SEEKING_QUERY_IGNORED_V2_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The low-grounded answer case.
+     *
+     * Google skips the answer if a well grounded answer was unable to be
+     * generated.
+     * </pre>
+     *
+     * <code>LOW_GROUNDED_ANSWER = 9;</code>
+     */
+    public static final int LOW_GROUNDED_ANSWER_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -493,6 +547,10 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
           return JAIL_BREAKING_QUERY_IGNORED;
         case 7:
           return CUSTOMER_POLICY_VIOLATION;
+        case 8:
+          return NON_ANSWER_SEEKING_QUERY_IGNORED_V2;
+        case 9:
+          return LOW_GROUNDED_ANSWER;
         default:
           return null;
       }
@@ -12961,10 +13019,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Data representation.
            * The structured JSON data for the document.
-           * It's populated from the struct data from the Document
-           * , or the Chunk in
-           * search result
-           * .
+           * It's populated from the struct data from the Document, or the
+           * Chunk in search result.
            * </pre>
            *
            * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -12978,10 +13034,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Data representation.
            * The structured JSON data for the document.
-           * It's populated from the struct data from the Document
-           * , or the Chunk in
-           * search result
-           * .
+           * It's populated from the struct data from the Document, or the
+           * Chunk in search result.
            * </pre>
            *
            * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -12995,10 +13049,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Data representation.
            * The structured JSON data for the document.
-           * It's populated from the struct data from the Document
-           * , or the Chunk in
-           * search result
-           * .
+           * It's populated from the struct data from the Document, or the
+           * Chunk in search result.
            * </pre>
            *
            * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -15444,10 +15496,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Data representation.
            * The structured JSON data for the document.
-           * It's populated from the struct data from the Document
-           * , or the Chunk in
-           * search result
-           * .
+           * It's populated from the struct data from the Document, or the
+           * Chunk in search result.
            * </pre>
            *
            * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -15464,10 +15514,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Data representation.
            * The structured JSON data for the document.
-           * It's populated from the struct data from the Document
-           * , or the Chunk in
-           * search result
-           * .
+           * It's populated from the struct data from the Document, or the
+           * Chunk in search result.
            * </pre>
            *
            * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -15486,10 +15534,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
            * <pre>
            * Data representation.
            * The structured JSON data for the document.
-           * It's populated from the struct data from the Document
-           * , or the Chunk in
-           * search result
-           * .
+           * It's populated from the struct data from the Document, or the
+           * Chunk in search result.
            * </pre>
            *
            * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17407,10 +17453,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17426,10 +17470,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17451,10 +17493,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17478,10 +17518,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17502,10 +17540,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17534,10 +17570,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17558,10 +17592,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17577,10 +17609,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -17600,10 +17630,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
              * <pre>
              * Data representation.
              * The structured JSON data for the document.
-             * It's populated from the struct data from the Document
-             * , or the Chunk in
-             * search result
-             * .
+             * It's populated from the struct data from the Document, or the
+             * Chunk in search result.
              * </pre>
              *
              * <code>.google.protobuf.Struct struct_data = 6;</code>
@@ -21550,7 +21578,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Non-answer-seeking query classification type.
+         * Non-answer-seeking query classification type, for chit chat.
          * </pre>
          *
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
@@ -21566,6 +21594,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * <code>JAIL_BREAKING_QUERY = 3;</code>
          */
         JAIL_BREAKING_QUERY(3),
+        /**
+         *
+         *
+         * <pre>
+         * Non-answer-seeking query classification type, for no clear intent.
+         * </pre>
+         *
+         * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
+         */
+        NON_ANSWER_SEEKING_QUERY_V2(4),
         UNRECOGNIZED(-1),
         ;
 
@@ -21593,7 +21631,7 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Non-answer-seeking query classification type.
+         * Non-answer-seeking query classification type, for chit chat.
          * </pre>
          *
          * <code>NON_ANSWER_SEEKING_QUERY = 2;</code>
@@ -21609,6 +21647,16 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
          * <code>JAIL_BREAKING_QUERY = 3;</code>
          */
         public static final int JAIL_BREAKING_QUERY_VALUE = 3;
+        /**
+         *
+         *
+         * <pre>
+         * Non-answer-seeking query classification type, for no clear intent.
+         * </pre>
+         *
+         * <code>NON_ANSWER_SEEKING_QUERY_V2 = 4;</code>
+         */
+        public static final int NON_ANSWER_SEEKING_QUERY_V2_VALUE = 4;
 
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
@@ -21642,6 +21690,8 @@ public final class Answer extends com.google.protobuf.GeneratedMessageV3
               return NON_ANSWER_SEEKING_QUERY;
             case 3:
               return JAIL_BREAKING_QUERY;
+            case 4:
+              return NON_ANSWER_SEEKING_QUERY_V2;
             default:
               return null;
           }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     name_ = "";
     displayName_ = "";
     modelState_ = 0;
+    errorMessage_ = "";
   }
 
   @java.lang.Override
@@ -358,8 +359,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    * Required. The fully qualified resource name of the model.
    *
    * Format:
-   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-   * model must be an alpha-numerical string with limit of 40 characters.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+   *
+   * Model must be an alpha-numerical string with limit of 40 characters.
    * </pre>
    *
    * <code>
@@ -387,8 +389,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    * Required. The fully qualified resource name of the model.
    *
    * Format:
-   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-   * model must be an alpha-numerical string with limit of 40 characters.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+   *
+   * Model must be an alpha-numerical string with limit of 40 characters.
    * </pre>
    *
    * <code>
@@ -522,13 +525,13 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: timestamp the Model was created at.
+   * Deprecated: Timestamp the Model was created at.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.CustomTuningModel.create_time is deprecated. See
-   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=88
+   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=89
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -540,13 +543,13 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: timestamp the Model was created at.
+   * Deprecated: Timestamp the Model was created at.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.CustomTuningModel.create_time is deprecated. See
-   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=88
+   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=89
    * @return The createTime.
    */
   @java.lang.Override
@@ -558,7 +561,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Deprecated: timestamp the Model was created at.
+   * Deprecated: Timestamp the Model was created at.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -718,6 +721,59 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     return map.get(key);
   }
 
+  public static final int ERROR_MESSAGE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Currently this is only populated if the model state is
+   * `INPUT_VALIDATION_FAILED`.
+   * </pre>
+   *
+   * <code>string error_message = 8;</code>
+   *
+   * @return The errorMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getErrorMessage() {
+    java.lang.Object ref = errorMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      errorMessage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Currently this is only populated if the model state is
+   * `INPUT_VALIDATION_FAILED`.
+   * </pre>
+   *
+   * <code>string error_message = 8;</code>
+   *
+   * @return The bytes for errorMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getErrorMessageBytes() {
+    java.lang.Object ref = errorMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      errorMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -754,6 +810,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetrics(), MetricsDefaultEntryHolder.defaultEntry, 7);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, errorMessage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -793,6 +852,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, metrics__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, errorMessage_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -822,6 +884,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       if (!getTrainingStartTime().equals(other.getTrainingStartTime())) return false;
     }
     if (!internalGetMetrics().equals(other.internalGetMetrics())) return false;
+    if (!getErrorMessage().equals(other.getErrorMessage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -853,6 +916,8 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetrics().hashCode();
     }
+    hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getErrorMessage().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1040,6 +1105,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
         trainingStartTimeBuilder_ = null;
       }
       internalGetMutableMetrics().clear();
+      errorMessage_ = "";
       return this;
     }
 
@@ -1103,6 +1169,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.metrics_ = internalGetMetrics();
         result.metrics_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.errorMessage_ = errorMessage_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1177,6 +1246,11 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
       }
       internalGetMutableMetrics().mergeFrom(other.internalGetMetrics());
       bitField0_ |= 0x00000040;
+      if (!other.getErrorMessage().isEmpty()) {
+        errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1252,6 +1326,12 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                errorMessage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1279,8 +1359,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Required. The fully qualified resource name of the model.
      *
      * Format:
-     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-     * model must be an alpha-numerical string with limit of 40 characters.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+     *
+     * Model must be an alpha-numerical string with limit of 40 characters.
      * </pre>
      *
      * <code>
@@ -1307,8 +1388,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Required. The fully qualified resource name of the model.
      *
      * Format:
-     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-     * model must be an alpha-numerical string with limit of 40 characters.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+     *
+     * Model must be an alpha-numerical string with limit of 40 characters.
      * </pre>
      *
      * <code>
@@ -1335,8 +1417,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Required. The fully qualified resource name of the model.
      *
      * Format:
-     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-     * model must be an alpha-numerical string with limit of 40 characters.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+     *
+     * Model must be an alpha-numerical string with limit of 40 characters.
      * </pre>
      *
      * <code>
@@ -1362,8 +1445,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Required. The fully qualified resource name of the model.
      *
      * Format:
-     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-     * model must be an alpha-numerical string with limit of 40 characters.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+     *
+     * Model must be an alpha-numerical string with limit of 40 characters.
      * </pre>
      *
      * <code>
@@ -1385,8 +1469,9 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      * Required. The fully qualified resource name of the model.
      *
      * Format:
-     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-     * model must be an alpha-numerical string with limit of 40 characters.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+     *
+     * Model must be an alpha-numerical string with limit of 40 characters.
      * </pre>
      *
      * <code>
@@ -1669,13 +1754,13 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.discoveryengine.v1.CustomTuningModel.create_time is deprecated. See
-     *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=88
+     *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=89
      * @return Whether the createTime field is set.
      */
     @java.lang.Deprecated
@@ -1686,13 +1771,13 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.discoveryengine.v1.CustomTuningModel.create_time is deprecated. See
-     *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=88
+     *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=89
      * @return The createTime.
      */
     @java.lang.Deprecated
@@ -1709,7 +1794,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -1732,7 +1817,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -1752,7 +1837,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -1780,7 +1865,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -1800,7 +1885,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -1815,7 +1900,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -1834,7 +1919,7 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Deprecated: timestamp the Model was created at.
+     * Deprecated: Timestamp the Model was created at.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -2196,6 +2281,117 @@ public final class CustomTuningModel extends com.google.protobuf.GeneratedMessag
     public Builder putAllMetrics(java.util.Map<java.lang.String, java.lang.Double> values) {
       internalGetMutableMetrics().getMutableMap().putAll(values);
       bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    private java.lang.Object errorMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Currently this is only populated if the model state is
+     * `INPUT_VALIDATION_FAILED`.
+     * </pre>
+     *
+     * <code>string error_message = 8;</code>
+     *
+     * @return The errorMessage.
+     */
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = errorMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Currently this is only populated if the model state is
+     * `INPUT_VALIDATION_FAILED`.
+     * </pre>
+     *
+     * <code>string error_message = 8;</code>
+     *
+     * @return The bytes for errorMessage.
+     */
+    public com.google.protobuf.ByteString getErrorMessageBytes() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        errorMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Currently this is only populated if the model state is
+     * `INPUT_VALIDATION_FAILED`.
+     * </pre>
+     *
+     * <code>string error_message = 8;</code>
+     *
+     * @param value The errorMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorMessage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      errorMessage_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Currently this is only populated if the model state is
+     * `INPUT_VALIDATION_FAILED`.
+     * </pre>
+     *
+     * <code>string error_message = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearErrorMessage() {
+      errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Currently this is only populated if the model state is
+     * `INPUT_VALIDATION_FAILED`.
+     * </pre>
+     *
+     * <code>string error_message = 8;</code>
+     *
+     * @param value The bytes for errorMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setErrorMessageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      errorMessage_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
 

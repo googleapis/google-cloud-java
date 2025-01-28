@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,13 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format.
+   * Identifier. The resource name of the entry group in URL format.
    *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,13 +43,13 @@ public interface EntryGroupOrBuilder
    *
    *
    * <pre>
-   * The resource name of the entry group in URL format.
+   * Identifier. The resource name of the entry group in URL format.
    *
    * Note: The entry group itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -151,4 +151,21 @@ public interface EntryGroupOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder getDataCatalogTimestampsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to [true], it means DataCatalog EntryGroup was
+   * transferred to Dataplex Catalog Service. It makes EntryGroup and its
+   * Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and
+   * its Entries can be created. After setting the flag to [true] it cannot be
+   * unset.
+   * </pre>
+   *
+   * <code>bool transferred_to_dataplex = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The transferredToDataplex.
+   */
+  boolean getTransferredToDataplex();
 }

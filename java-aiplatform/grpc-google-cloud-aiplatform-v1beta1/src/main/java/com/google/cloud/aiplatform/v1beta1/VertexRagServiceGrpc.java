@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,6 +83,101 @@ public final class VertexRagServiceGrpc {
     return getRetrieveContextsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+      getAugmentPromptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AugmentPrompt",
+      requestType = com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+          com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+      getAugmentPromptMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+            com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+        getAugmentPromptMethod;
+    if ((getAugmentPromptMethod = VertexRagServiceGrpc.getAugmentPromptMethod) == null) {
+      synchronized (VertexRagServiceGrpc.class) {
+        if ((getAugmentPromptMethod = VertexRagServiceGrpc.getAugmentPromptMethod) == null) {
+          VertexRagServiceGrpc.getAugmentPromptMethod =
+              getAugmentPromptMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+                          com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AugmentPrompt"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagServiceMethodDescriptorSupplier("AugmentPrompt"))
+                      .build();
+        }
+      }
+    }
+    return getAugmentPromptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+      getCorroborateContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CorroborateContent",
+      requestType = com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+          com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+      getCorroborateContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+            com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+        getCorroborateContentMethod;
+    if ((getCorroborateContentMethod = VertexRagServiceGrpc.getCorroborateContentMethod) == null) {
+      synchronized (VertexRagServiceGrpc.class) {
+        if ((getCorroborateContentMethod = VertexRagServiceGrpc.getCorroborateContentMethod)
+            == null) {
+          VertexRagServiceGrpc.getCorroborateContentMethod =
+              getCorroborateContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+                          com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CorroborateContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VertexRagServiceMethodDescriptorSupplier("CorroborateContent"))
+                      .build();
+        }
+      }
+    }
+    return getCorroborateContentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VertexRagServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VertexRagServiceStub> factory =
@@ -147,6 +242,39 @@ public final class VertexRagServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRetrieveContextsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    default void augmentPrompt(
+        com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAugmentPromptMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    default void corroborateContent(
+        com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCorroborateContentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -199,6 +327,43 @@ public final class VertexRagServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public void augmentPrompt(
+        com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAugmentPromptMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public void corroborateContent(
+        com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCorroborateContentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -231,6 +396,35 @@ public final class VertexRagServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRetrieveContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse augmentPrompt(
+        com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAugmentPromptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse corroborateContent(
+        com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCorroborateContentMethod(), getCallOptions(), request);
     }
   }
 
@@ -266,9 +460,42 @@ public final class VertexRagServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRetrieveContextsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>
+        augmentPrompt(com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAugmentPromptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>
+        corroborateContent(com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCorroborateContentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RETRIEVE_CONTEXTS = 0;
+  private static final int METHODID_AUGMENT_PROMPT = 1;
+  private static final int METHODID_CORROBORATE_CONTENT = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -292,6 +519,20 @@ public final class VertexRagServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_AUGMENT_PROMPT:
+          serviceImpl.augmentPrompt(
+              (com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CORROBORATE_CONTENT:
+          serviceImpl.corroborateContent(
+              (com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>)
                   responseObserver);
           break;
         default:
@@ -319,6 +560,20 @@ public final class VertexRagServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest,
                     com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse>(
                     service, METHODID_RETRIEVE_CONTEXTS)))
+        .addMethod(
+            getAugmentPromptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest,
+                    com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse>(
+                    service, METHODID_AUGMENT_PROMPT)))
+        .addMethod(
+            getCorroborateContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest,
+                    com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse>(
+                    service, METHODID_CORROBORATE_CONTENT)))
         .build();
   }
 
@@ -371,6 +626,8 @@ public final class VertexRagServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new VertexRagServiceFileDescriptorSupplier())
                       .addMethod(getRetrieveContextsMethod())
+                      .addMethod(getAugmentPromptMethod())
+                      .addMethod(getCorroborateContentMethod())
                       .build();
         }
       }

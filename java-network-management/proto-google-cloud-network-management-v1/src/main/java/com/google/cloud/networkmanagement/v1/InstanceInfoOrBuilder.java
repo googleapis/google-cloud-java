@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,7 +235,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=299
+   *     google/cloud/networkmanagement/v1/trace.proto;l=322
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
@@ -250,9 +250,34 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=299
+   *     google/cloud/networkmanagement/v1/trace.proto;l=322
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * </pre>
+   *
+   * <code>string psc_network_attachment_uri = 9;</code>
+   *
+   * @return The pscNetworkAttachmentUri.
+   */
+  java.lang.String getPscNetworkAttachmentUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC network attachment the NIC is attached to (if relevant).
+   * </pre>
+   *
+   * <code>string psc_network_attachment_uri = 9;</code>
+   *
+   * @return The bytes for pscNetworkAttachmentUri.
+   */
+  com.google.protobuf.ByteString getPscNetworkAttachmentUriBytes();
 }

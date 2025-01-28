@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -119,6 +123,10 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
 
   private final UnaryCallSettings<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsSettings;
+  private final UnaryCallSettings<AugmentPromptRequest, AugmentPromptResponse>
+      augmentPromptSettings;
+  private final UnaryCallSettings<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -183,6 +191,17 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
   public UnaryCallSettings<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsSettings() {
     return retrieveContextsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to augmentPrompt. */
+  public UnaryCallSettings<AugmentPromptRequest, AugmentPromptResponse> augmentPromptSettings() {
+    return augmentPromptSettings;
+  }
+
+  /** Returns the object with the settings used for calls to corroborateContent. */
+  public UnaryCallSettings<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentSettings() {
+    return corroborateContentSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -294,6 +313,8 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
     super(settingsBuilder);
 
     retrieveContextsSettings = settingsBuilder.retrieveContextsSettings().build();
+    augmentPromptSettings = settingsBuilder.augmentPromptSettings().build();
+    corroborateContentSettings = settingsBuilder.corroborateContentSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -306,6 +327,10 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<RetrieveContextsRequest, RetrieveContextsResponse>
         retrieveContextsSettings;
+    private final UnaryCallSettings.Builder<AugmentPromptRequest, AugmentPromptResponse>
+        augmentPromptSettings;
+    private final UnaryCallSettings.Builder<CorroborateContentRequest, CorroborateContentResponse>
+        corroborateContentSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -342,6 +367,8 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
       super(clientContext);
 
       retrieveContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      augmentPromptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      corroborateContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -351,6 +378,8 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               retrieveContextsSettings,
+              augmentPromptSettings,
+              corroborateContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -363,6 +392,8 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
       super(settings);
 
       retrieveContextsSettings = settings.retrieveContextsSettings.toBuilder();
+      augmentPromptSettings = settings.augmentPromptSettings.toBuilder();
+      corroborateContentSettings = settings.corroborateContentSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -372,6 +403,8 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               retrieveContextsSettings,
+              augmentPromptSettings,
+              corroborateContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -394,6 +427,16 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
     private static Builder initDefaults(Builder builder) {
       builder
           .retrieveContextsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .augmentPromptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .corroborateContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -444,6 +487,18 @@ public class VertexRagServiceStubSettings extends StubSettings<VertexRagServiceS
     public UnaryCallSettings.Builder<RetrieveContextsRequest, RetrieveContextsResponse>
         retrieveContextsSettings() {
       return retrieveContextsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to augmentPrompt. */
+    public UnaryCallSettings.Builder<AugmentPromptRequest, AugmentPromptResponse>
+        augmentPromptSettings() {
+      return augmentPromptSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to corroborateContent. */
+    public UnaryCallSettings.Builder<CorroborateContentRequest, CorroborateContentResponse>
+        corroborateContentSettings() {
+      return corroborateContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

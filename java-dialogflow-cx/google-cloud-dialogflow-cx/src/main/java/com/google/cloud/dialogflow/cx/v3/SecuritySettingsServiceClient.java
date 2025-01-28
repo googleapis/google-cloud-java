@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -327,7 +327,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param securitySettings Required. The security settings to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -364,7 +364,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param securitySettings Required. The security settings to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -460,8 +460,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the settings. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+   * @param name Required. Resource name of the settings. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecuritySettings getSecuritySettings(SecuritySettingsName name) {
@@ -493,8 +493,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the settings. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+   * @param name Required. Resource name of the settings. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecuritySettings getSecuritySettings(String name) {
@@ -689,7 +689,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location to list all security settings for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecuritySettingsPagedResponse listSecuritySettings(LocationName parent) {
@@ -723,7 +723,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location to list all security settings for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecuritySettingsPagedResponse listSecuritySettings(String parent) {
@@ -864,8 +864,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to delete. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
-   *     Settings ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecuritySettings(SecuritySettingsName name) {
@@ -898,8 +897,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to delete. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
-   *     Settings ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecuritySettings(String name) {

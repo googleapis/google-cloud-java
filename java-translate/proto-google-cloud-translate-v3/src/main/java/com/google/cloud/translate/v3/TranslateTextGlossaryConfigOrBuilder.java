@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,4 +76,18 @@ public interface TranslateTextGlossaryConfigOrBuilder
    * @return The ignoreCase.
    */
   boolean getIgnoreCase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the glossary will be used for contextual
+   * translation.
+   * </pre>
+   *
+   * <code>bool contextual_translation_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The contextualTranslationEnabled.
+   */
+  boolean getContextualTranslationEnabled();
 }

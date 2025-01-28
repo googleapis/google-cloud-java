@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the Conversation to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the Conversation to get. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
    * </pre>
    *
    * <code>
@@ -469,7 +469,7 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Conversation to get. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -494,7 +494,7 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Conversation to get. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -519,7 +519,7 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Conversation to get. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Conversation to get. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>
@@ -563,7 +563,7 @@ public final class GetConversationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the Conversation to get. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.networkmanagement.v1.samples;
 
 // [START networkmanagement_v1_generated_ReachabilityService_TestIamPermissions_sync]
+import com.google.cloud.networkmanagement.v1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -37,7 +38,7 @@ public class SyncTestIamPermissions {
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       TestIamPermissionsResponse response = reachabilityServiceClient.testIamPermissions(request);

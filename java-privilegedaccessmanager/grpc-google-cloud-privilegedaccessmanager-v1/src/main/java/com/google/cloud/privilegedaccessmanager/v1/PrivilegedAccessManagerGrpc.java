@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -790,7 +790,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * CheckOnboardingStatus reports the onboarding status for a
+     * `CheckOnboardingStatus` reports the onboarding status for a
      * project/folder/organization. Any findings reported by this API need to be
      * fixed before PAM can be used on the resource.
      * </pre>
@@ -872,7 +872,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      * <pre>
      * Deletes a single entitlement. This method can only be called when there
-     * are no in-progress (ACTIVE/ACTIVATING/REVOKING) grants under the
+     * are no in-progress (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the
      * entitlement.
      * </pre>
      */
@@ -962,7 +962,8 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new grant in a given project and location.
+     * Creates a new grant in a given project/folder/organization and
+     * location.
      * </pre>
      */
     default void createGrant(
@@ -1089,7 +1090,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * CheckOnboardingStatus reports the onboarding status for a
+     * `CheckOnboardingStatus` reports the onboarding status for a
      * project/folder/organization. Any findings reported by this API need to be
      * fixed before PAM can be used on the resource.
      * </pre>
@@ -1181,7 +1182,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      * <pre>
      * Deletes a single entitlement. This method can only be called when there
-     * are no in-progress (ACTIVE/ACTIVATING/REVOKING) grants under the
+     * are no in-progress (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the
      * entitlement.
      * </pre>
      */
@@ -1279,7 +1280,8 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new grant in a given project and location.
+     * Creates a new grant in a given project/folder/organization and
+     * location.
      * </pre>
      */
     public void createGrant(
@@ -1384,7 +1386,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * CheckOnboardingStatus reports the onboarding status for a
+     * `CheckOnboardingStatus` reports the onboarding status for a
      * project/folder/organization. Any findings reported by this API need to be
      * fixed before PAM can be used on the resource.
      * </pre>
@@ -1456,7 +1458,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      * <pre>
      * Deletes a single entitlement. This method can only be called when there
-     * are no in-progress (ACTIVE/ACTIVATING/REVOKING) grants under the
+     * are no in-progress (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the
      * entitlement.
      * </pre>
      */
@@ -1539,7 +1541,8 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new grant in a given project and location.
+     * Creates a new grant in a given project/folder/organization and
+     * location.
      * </pre>
      */
     public com.google.cloud.privilegedaccessmanager.v1.Grant createGrant(
@@ -1632,7 +1635,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * CheckOnboardingStatus reports the onboarding status for a
+     * `CheckOnboardingStatus` reports the onboarding status for a
      * project/folder/organization. Any findings reported by this API need to be
      * fixed before PAM can be used on the resource.
      * </pre>
@@ -1710,7 +1713,7 @@ public final class PrivilegedAccessManagerGrpc {
      *
      * <pre>
      * Deletes a single entitlement. This method can only be called when there
-     * are no in-progress (ACTIVE/ACTIVATING/REVOKING) grants under the
+     * are no in-progress (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the
      * entitlement.
      * </pre>
      */
@@ -1798,7 +1801,8 @@ public final class PrivilegedAccessManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new grant in a given project and location.
+     * Creates a new grant in a given project/folder/organization and
+     * location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

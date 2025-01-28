@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
+import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
@@ -264,6 +265,44 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody("reservation", request.getReservation(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Reservation>newBuilder()
+                      .setDefaultInstance(Reservation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<FailoverReservationRequest, Reservation>
+      failoverReservationMethodDescriptor =
+          ApiMethodDescriptor.<FailoverReservationRequest, Reservation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/FailoverReservation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FailoverReservationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/reservations/*}:failoverReservation",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FailoverReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FailoverReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Reservation>newBuilder()
@@ -899,6 +938,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
   private final UnaryCallable<GetReservationRequest, Reservation> getReservationCallable;
   private final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable;
   private final UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable;
+  private final UnaryCallable<FailoverReservationRequest, Reservation> failoverReservationCallable;
   private final UnaryCallable<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentCallable;
   private final UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
@@ -1036,6 +1076,18 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<FailoverReservationRequest, Reservation>
+        failoverReservationTransportSettings =
+            HttpJsonCallSettings.<FailoverReservationRequest, Reservation>newBuilder()
+                .setMethodDescriptor(failoverReservationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentTransportSettings =
             HttpJsonCallSettings.<CreateCapacityCommitmentRequest, CapacityCommitment>newBuilder()
@@ -1255,6 +1307,11 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
             updateReservationTransportSettings,
             settings.updateReservationSettings(),
             clientContext);
+    this.failoverReservationCallable =
+        callableFactory.createUnaryCallable(
+            failoverReservationTransportSettings,
+            settings.failoverReservationSettings(),
+            clientContext);
     this.createCapacityCommitmentCallable =
         callableFactory.createUnaryCallable(
             createCapacityCommitmentTransportSettings,
@@ -1354,6 +1411,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
     methodDescriptors.add(getReservationMethodDescriptor);
     methodDescriptors.add(deleteReservationMethodDescriptor);
     methodDescriptors.add(updateReservationMethodDescriptor);
+    methodDescriptors.add(failoverReservationMethodDescriptor);
     methodDescriptors.add(createCapacityCommitmentMethodDescriptor);
     methodDescriptors.add(listCapacityCommitmentsMethodDescriptor);
     methodDescriptors.add(getCapacityCommitmentMethodDescriptor);
@@ -1403,6 +1461,11 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
   @Override
   public UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
     return updateReservationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FailoverReservationRequest, Reservation> failoverReservationCallable() {
+    return failoverReservationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,10 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the parent to validate the Custom Module under.
+   * Required. Resource name of the parent to validate the custom modules under,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}`.
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -46,11 +45,10 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the parent to validate the Custom Module under.
+   * Required. Resource name of the parent to validate the custom modules under,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}`.
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -92,7 +90,7 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+   * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -104,7 +102,7 @@ public interface ValidateEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The type of the module (e.g. CONFIGURABLE_BAD_IP).
+   * Required. The type of the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 3 [(.google.api.field_behavior) = REQUIRED];</code>

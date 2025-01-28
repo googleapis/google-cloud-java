@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,15 +23,13 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * An EffectiveSecurityHealthAnalyticsCustomModule is the representation of
- * a Security Health Analytics custom module at a specified level of the
- * resource hierarchy: organization, folder, or project. If a custom module is
- * inherited from a parent organization or folder, the value of the
- * `enablementState` property in EffectiveSecurityHealthAnalyticsCustomModule is
- * set to the value that is effective in the parent, instead of  `INHERITED`.
- * For example, if the module is enabled in a parent organization or folder, the
- * effective enablement_state for the module in all child folders or projects is
- * also `enabled`. EffectiveSecurityHealthAnalyticsCustomModule is read-only.
+ * The representation of a Security Health Analytics custom module at a
+ * specified level of the resource hierarchy: organization, folder, or project.
+ * If a custom module is inherited from an ancestor organization or folder, then
+ * the enablement state is set to the value that is effective in the parent, not
+ * to `INHERITED`. For example, if the module is enabled in an organization or
+ * folder, then the effective enablement state for the module is `ENABLED` in
+ * all descendant folders or projects.
  * </pre>
  *
  * Protobuf type {@code
@@ -93,7 +91,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Unspecified enablement state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
@@ -126,7 +124,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Unspecified enablement state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
@@ -250,12 +248,12 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
    *
-   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -278,12 +276,12 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
    *
-   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -366,7 +364,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Output only. The effective state of enablement for the module at the given
+   * Output only. The effective enablement state for the module at the given
    * level of the hierarchy.
    * </pre>
    *
@@ -384,7 +382,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * Output only. The effective state of enablement for the module at the given
+   * Output only. The effective enablement state for the module at the given
    * level of the hierarchy.
    * </pre>
    *
@@ -692,15 +690,13 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
    *
    *
    * <pre>
-   * An EffectiveSecurityHealthAnalyticsCustomModule is the representation of
-   * a Security Health Analytics custom module at a specified level of the
-   * resource hierarchy: organization, folder, or project. If a custom module is
-   * inherited from a parent organization or folder, the value of the
-   * `enablementState` property in EffectiveSecurityHealthAnalyticsCustomModule is
-   * set to the value that is effective in the parent, instead of  `INHERITED`.
-   * For example, if the module is enabled in a parent organization or folder, the
-   * effective enablement_state for the module in all child folders or projects is
-   * also `enabled`. EffectiveSecurityHealthAnalyticsCustomModule is read-only.
+   * The representation of a Security Health Analytics custom module at a
+   * specified level of the resource hierarchy: organization, folder, or project.
+   * If a custom module is inherited from an ancestor organization or folder, then
+   * the enablement state is set to the value that is effective in the parent, not
+   * to `INHERITED`. For example, if the module is enabled in an organization or
+   * folder, then the effective enablement state for the module is `ENABLED` in
+   * all descendant folders or projects.
    * </pre>
    *
    * Protobuf type {@code
@@ -965,12 +961,12 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -992,12 +988,12 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1019,12 +1015,12 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1045,12 +1041,12 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1067,12 +1063,12 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Identifier. The full resource name of the custom module, specified in one
-     * of the following formats:
+     * Identifier. The full resource name of the custom module, in one of the
+     * following formats:
      *
-     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+     * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+     * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1305,7 +1301,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Output only. The effective state of enablement for the module at the given
+     * Output only. The effective enablement state for the module at the given
      * level of the hierarchy.
      * </pre>
      *
@@ -1323,7 +1319,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Output only. The effective state of enablement for the module at the given
+     * Output only. The effective enablement state for the module at the given
      * level of the hierarchy.
      * </pre>
      *
@@ -1344,7 +1340,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Output only. The effective state of enablement for the module at the given
+     * Output only. The effective enablement state for the module at the given
      * level of the hierarchy.
      * </pre>
      *
@@ -1373,7 +1369,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Output only. The effective state of enablement for the module at the given
+     * Output only. The effective enablement state for the module at the given
      * level of the hierarchy.
      * </pre>
      *
@@ -1400,7 +1396,7 @@ public final class EffectiveSecurityHealthAnalyticsCustomModule
      *
      *
      * <pre>
-     * Output only. The effective state of enablement for the module at the given
+     * Output only. The effective enablement state for the module at the given
      * level of the hierarchy.
      * </pre>
      *

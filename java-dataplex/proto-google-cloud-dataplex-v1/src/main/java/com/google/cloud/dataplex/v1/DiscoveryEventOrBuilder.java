@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,6 +148,31 @@ public interface DiscoveryEventOrBuilder
    * @return The bytes for dataLocation.
    */
   com.google.protobuf.ByteString getDataLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The id of the associated datascan for standalone discovery.
+   * </pre>
+   *
+   * <code>string datascan_id = 6;</code>
+   *
+   * @return The datascanId.
+   */
+  java.lang.String getDatascanId();
+  /**
+   *
+   *
+   * <pre>
+   * The id of the associated datascan for standalone discovery.
+   * </pre>
+   *
+   * <code>string datascan_id = 6;</code>
+   *
+   * @return The bytes for datascanId.
+   */
+  com.google.protobuf.ByteString getDatascanIdBytes();
 
   /**
    *
@@ -313,6 +338,41 @@ public interface DiscoveryEventOrBuilder
    * <code>.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails action = 23;</code>
    */
   com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetailsOrBuilder getActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about the BigQuery table publishing associated with the event.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+   *
+   * @return Whether the table field is set.
+   */
+  boolean hasTable();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the BigQuery table publishing associated with the event.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+   *
+   * @return The table.
+   */
+  com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails getTable();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the BigQuery table publishing associated with the event.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+   */
+  com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder getTableOrBuilder();
 
   com.google.cloud.dataplex.v1.DiscoveryEvent.DetailsCase getDetailsCase();
 }

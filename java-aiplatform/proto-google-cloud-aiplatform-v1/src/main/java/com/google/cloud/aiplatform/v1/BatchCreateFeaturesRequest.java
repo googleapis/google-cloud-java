@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ package com.google.cloud.aiplatform.v1;
  * <pre>
  * Request message for
  * [FeaturestoreService.BatchCreateFeatures][google.cloud.aiplatform.v1.FeaturestoreService.BatchCreateFeatures].
+ * Request message for
+ * [FeatureRegistryService.BatchCreateFeatures][google.cloud.aiplatform.v1.FeatureRegistryService.BatchCreateFeatures].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.BatchCreateFeaturesRequest}
@@ -73,9 +75,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType to create the batch of
-   * Features under. Format:
+   * Required. The resource name of the EntityType/FeatureGroup to create the
+   * batch of Features under. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -100,9 +103,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType to create the batch of
-   * Features under. Format:
+   * Required. The resource name of the EntityType/FeatureGroup to create the
+   * batch of Features under. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -133,10 +137,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The request message specifying the Features to create. All
-   * Features must be created under the same parent EntityType. The `parent`
-   * field in each child request message can be omitted. If `parent` is set in a
-   * child request, then the value must match the `parent` value in this request
-   * message.
+   * Features must be created under the same parent EntityType / FeatureGroup.
+   * The `parent` field in each child request message can be omitted. If
+   * `parent` is set in a child request, then the value must match the `parent`
+   * value in this request message.
    * </pre>
    *
    * <code>
@@ -152,10 +156,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The request message specifying the Features to create. All
-   * Features must be created under the same parent EntityType. The `parent`
-   * field in each child request message can be omitted. If `parent` is set in a
-   * child request, then the value must match the `parent` value in this request
-   * message.
+   * Features must be created under the same parent EntityType / FeatureGroup.
+   * The `parent` field in each child request message can be omitted. If
+   * `parent` is set in a child request, then the value must match the `parent`
+   * value in this request message.
    * </pre>
    *
    * <code>
@@ -172,10 +176,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The request message specifying the Features to create. All
-   * Features must be created under the same parent EntityType. The `parent`
-   * field in each child request message can be omitted. If `parent` is set in a
-   * child request, then the value must match the `parent` value in this request
-   * message.
+   * Features must be created under the same parent EntityType / FeatureGroup.
+   * The `parent` field in each child request message can be omitted. If
+   * `parent` is set in a child request, then the value must match the `parent`
+   * value in this request message.
    * </pre>
    *
    * <code>
@@ -191,10 +195,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The request message specifying the Features to create. All
-   * Features must be created under the same parent EntityType. The `parent`
-   * field in each child request message can be omitted. If `parent` is set in a
-   * child request, then the value must match the `parent` value in this request
-   * message.
+   * Features must be created under the same parent EntityType / FeatureGroup.
+   * The `parent` field in each child request message can be omitted. If
+   * `parent` is set in a child request, then the value must match the `parent`
+   * value in this request message.
    * </pre>
    *
    * <code>
@@ -210,10 +214,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The request message specifying the Features to create. All
-   * Features must be created under the same parent EntityType. The `parent`
-   * field in each child request message can be omitted. If `parent` is set in a
-   * child request, then the value must match the `parent` value in this request
-   * message.
+   * Features must be created under the same parent EntityType / FeatureGroup.
+   * The `parent` field in each child request message can be omitted. If
+   * `parent` is set in a child request, then the value must match the `parent`
+   * value in this request message.
    * </pre>
    *
    * <code>
@@ -403,6 +407,8 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
    * <pre>
    * Request message for
    * [FeaturestoreService.BatchCreateFeatures][google.cloud.aiplatform.v1.FeaturestoreService.BatchCreateFeatures].
+   * Request message for
+   * [FeatureRegistryService.BatchCreateFeatures][google.cloud.aiplatform.v1.FeatureRegistryService.BatchCreateFeatures].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.BatchCreateFeaturesRequest}
@@ -648,9 +654,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType to create the batch of
-     * Features under. Format:
+     * Required. The resource name of the EntityType/FeatureGroup to create the
+     * batch of Features under. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -674,9 +681,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType to create the batch of
-     * Features under. Format:
+     * Required. The resource name of the EntityType/FeatureGroup to create the
+     * batch of Features under. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -700,9 +708,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType to create the batch of
-     * Features under. Format:
+     * Required. The resource name of the EntityType/FeatureGroup to create the
+     * batch of Features under. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -725,9 +734,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType to create the batch of
-     * Features under. Format:
+     * Required. The resource name of the EntityType/FeatureGroup to create the
+     * batch of Features under. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -746,9 +756,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType to create the batch of
-     * Features under. Format:
+     * Required. The resource name of the EntityType/FeatureGroup to create the
+     * batch of Features under. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -791,10 +802,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -813,10 +824,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -835,10 +846,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -857,10 +868,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -886,10 +897,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -912,10 +923,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -940,10 +951,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -969,10 +980,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -995,10 +1006,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1021,10 +1032,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1047,10 +1058,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1072,10 +1083,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1097,10 +1108,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1116,10 +1127,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1139,10 +1150,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1162,10 +1173,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1181,10 +1192,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>
@@ -1202,10 +1213,10 @@ public final class BatchCreateFeaturesRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The request message specifying the Features to create. All
-     * Features must be created under the same parent EntityType. The `parent`
-     * field in each child request message can be omitted. If `parent` is set in a
-     * child request, then the value must match the `parent` value in this request
-     * message.
+     * Features must be created under the same parent EntityType / FeatureGroup.
+     * The `parent` field in each child request message can be omitted. If
+     * `parent` is set in a child request, then the value must match the `parent`
+     * value in this request message.
      * </pre>
      *
      * <code>

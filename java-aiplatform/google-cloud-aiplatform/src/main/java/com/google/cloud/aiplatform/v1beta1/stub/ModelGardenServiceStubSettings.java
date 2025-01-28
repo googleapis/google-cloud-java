@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,10 +29,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -42,6 +46,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
@@ -59,7 +66,9 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -113,6 +122,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deployPublisherModel:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ModelGardenServiceStubSettings.Builder modelGardenServiceSettingsBuilder =
+ *     ModelGardenServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * modelGardenServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -126,6 +161,13 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
   private final PagedCallSettings<
           ListPublisherModelsRequest, ListPublisherModelsResponse, ListPublisherModelsPagedResponse>
       listPublisherModelsSettings;
+  private final UnaryCallSettings<DeployPublisherModelRequest, Operation>
+      deployPublisherModelSettings;
+  private final OperationCallSettings<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -257,6 +299,20 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     return listPublisherModelsSettings;
   }
 
+  /** Returns the object with the settings used for calls to deployPublisherModel. */
+  public UnaryCallSettings<DeployPublisherModelRequest, Operation> deployPublisherModelSettings() {
+    return deployPublisherModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deployPublisherModel. */
+  public OperationCallSettings<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationSettings() {
+    return deployPublisherModelOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -367,6 +423,9 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
 
     getPublisherModelSettings = settingsBuilder.getPublisherModelSettings().build();
     listPublisherModelsSettings = settingsBuilder.listPublisherModelsSettings().build();
+    deployPublisherModelSettings = settingsBuilder.deployPublisherModelSettings().build();
+    deployPublisherModelOperationSettings =
+        settingsBuilder.deployPublisherModelOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -385,6 +444,13 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
             ListPublisherModelsResponse,
             ListPublisherModelsPagedResponse>
         listPublisherModelsSettings;
+    private final UnaryCallSettings.Builder<DeployPublisherModelRequest, Operation>
+        deployPublisherModelSettings;
+    private final OperationCallSettings.Builder<
+            DeployPublisherModelRequest,
+            DeployPublisherModelResponse,
+            DeployPublisherModelOperationMetadata>
+        deployPublisherModelOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -423,6 +489,8 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       getPublisherModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPublisherModelsSettings =
           PagedCallSettings.newBuilder(LIST_PUBLISHER_MODELS_PAGE_STR_FACT);
+      deployPublisherModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deployPublisherModelOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -433,6 +501,7 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getPublisherModelSettings,
               listPublisherModelsSettings,
+              deployPublisherModelSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -446,6 +515,9 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
 
       getPublisherModelSettings = settings.getPublisherModelSettings.toBuilder();
       listPublisherModelsSettings = settings.listPublisherModelsSettings.toBuilder();
+      deployPublisherModelSettings = settings.deployPublisherModelSettings.toBuilder();
+      deployPublisherModelOperationSettings =
+          settings.deployPublisherModelOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -456,6 +528,7 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getPublisherModelSettings,
               listPublisherModelsSettings,
+              deployPublisherModelSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -487,6 +560,11 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .deployPublisherModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -510,6 +588,32 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deployPublisherModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeployPublisherModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  DeployPublisherModelResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeployPublisherModelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -542,6 +646,21 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
             ListPublisherModelsPagedResponse>
         listPublisherModelsSettings() {
       return listPublisherModelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deployPublisherModel. */
+    public UnaryCallSettings.Builder<DeployPublisherModelRequest, Operation>
+        deployPublisherModelSettings() {
+      return deployPublisherModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deployPublisherModel. */
+    public OperationCallSettings.Builder<
+            DeployPublisherModelRequest,
+            DeployPublisherModelResponse,
+            DeployPublisherModelOperationMetadata>
+        deployPublisherModelOperationSettings() {
+      return deployPublisherModelOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,7 +236,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+   * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
    * </pre>
    *
    * <code>optional int32 resize_by = 533735362;</code>
@@ -248,7 +248,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * The number of instances to be created by this resize request. The group's target size will be increased by this number.
+   * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
    * </pre>
    *
    * <code>optional int32 resize_by = 533735362;</code>

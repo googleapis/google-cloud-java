@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,7 +235,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -250,7 +250,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1381,7 +1381,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1396,7 +1396,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1411,7 +1411,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1430,7 +1430,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>

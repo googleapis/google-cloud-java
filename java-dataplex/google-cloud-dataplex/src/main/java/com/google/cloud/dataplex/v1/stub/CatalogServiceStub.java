@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,16 +21,19 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.AspectType;
+import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
@@ -42,6 +45,7 @@ import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
 import com.google.cloud.dataplex.v1.ListEntriesRequest;
@@ -50,7 +54,10 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -239,6 +246,34 @@ public abstract class CatalogServiceStub implements BackgroundResource {
 
   public UnaryCallable<SearchEntriesRequest, SearchEntriesResponse> searchEntriesCallable() {
     throw new UnsupportedOperationException("Not implemented: searchEntriesCallable()");
+  }
+
+  public OperationCallable<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createMetadataJobOperationCallable()");
+  }
+
+  public UnaryCallable<CreateMetadataJobRequest, Operation> createMetadataJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMetadataJobCallable()");
+  }
+
+  public UnaryCallable<GetMetadataJobRequest, MetadataJob> getMetadataJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMetadataJobCallable()");
+  }
+
+  public UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
+      listMetadataJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMetadataJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMetadataJobsCallable()");
+  }
+
+  public UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelMetadataJobCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -313,14 +313,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -340,14 +340,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the environment, in the form:
+   * Identifier. The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -370,10 +370,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the config field is set.
    */
@@ -385,10 +387,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The config.
    */
@@ -403,10 +407,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration parameters for this environment.
+   * Optional. Configuration parameters for this environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfigOrBuilder
@@ -1481,14 +1487,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1507,14 +1513,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1533,14 +1539,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1558,14 +1564,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1579,14 +1585,14 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the environment, in the form:
+     * Identifier. The resource name of the environment, in the form:
      * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
      *
      * EnvironmentId must start with a lowercase letter followed by up to 63
      * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1612,10 +1618,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the config field is set.
@@ -1627,10 +1634,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The config.
@@ -1649,10 +1657,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setConfig(
@@ -1673,10 +1682,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setConfig(
@@ -1695,10 +1705,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeConfig(
@@ -1726,10 +1737,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearConfig() {
@@ -1746,10 +1758,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.Builder
@@ -1762,10 +1775,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfigOrBuilder
@@ -1783,10 +1797,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration parameters for this environment.
+     * Optional. Configuration parameters for this environment.
      * </pre>
      *
-     * <code>.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2;
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

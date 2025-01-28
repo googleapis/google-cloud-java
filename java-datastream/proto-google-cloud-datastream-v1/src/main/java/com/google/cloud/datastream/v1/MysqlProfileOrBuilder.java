@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,11 +91,12 @@ public interface MysqlProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Password for the MySQL connection.
+   * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+   * with the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>
-   * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+   * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return The password.
@@ -105,11 +106,12 @@ public interface MysqlProfileOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Password for the MySQL connection.
+   * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+   * with the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>
-   * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+   * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return The bytes for password.

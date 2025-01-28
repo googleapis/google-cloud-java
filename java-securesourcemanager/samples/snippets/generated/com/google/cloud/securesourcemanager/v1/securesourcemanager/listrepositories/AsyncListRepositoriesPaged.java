@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.securesourcemanager.v1.samples;
 
 // [START securesourcemanager_v1_generated_SecureSourceManager_ListRepositories_Paged_async]
+import com.google.cloud.securesourcemanager.v1.InstanceName;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest;
 import com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse;
 import com.google.cloud.securesourcemanager.v1.LocationName;
@@ -43,6 +44,7 @@ public class AsyncListRepositoriesPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .build();
       while (true) {
         ListRepositoriesResponse response =

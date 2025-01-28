@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,8 +71,8 @@ public interface DeleteMessageRequestOrBuilder
    *
    *
    * <pre>
-   * When `true`, deleting a message also deletes its threaded replies. When
-   * `false`, if a message has threaded replies, deletion fails.
+   * Optional. When `true`, deleting a message also deletes its threaded
+   * replies. When `false`, if a message has threaded replies, deletion fails.
    *
    * Only applies when [authenticating as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -80,7 +80,7 @@ public interface DeleteMessageRequestOrBuilder
    * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
-   * <code>bool force = 2;</code>
+   * <code>bool force = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */

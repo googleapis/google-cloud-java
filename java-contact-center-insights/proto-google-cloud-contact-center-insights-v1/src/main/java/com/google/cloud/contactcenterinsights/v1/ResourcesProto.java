@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,6 +108,10 @@ public final class ResourcesProto {
       internal_static_google_cloud_contactcenterinsights_v1_IssueModelResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_contactcenterinsights_v1_IssueModelResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_FeedbackLabel_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_FeedbackLabel_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSentiment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -233,6 +237,10 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_contactcenterinsights_v1_Settings_PubsubNotificationSettingsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_AnalysisRule_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_AnalysisRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_contactcenterinsights_v1_EncryptionSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_contactcenterinsights_v1_EncryptionSpec_fieldAccessorTable;
@@ -320,6 +328,62 @@ public final class ResourcesProto {
       internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_AnswerChoice_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_AnswerChoice_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_Metrics_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_Metrics_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_TuningMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_TuningMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecard_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecard_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardRevision_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardRevision_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerValue_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_QaTagResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_QaTagResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_ScoreSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_ScoreSource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -334,7 +398,7 @@ public final class ResourcesProto {
           + "terinsights.v1\032\037google/api/field_behavio"
           + "r.proto\032\031google/api/resource.proto\032\036goog"
           + "le/protobuf/duration.proto\032\037google/proto"
-          + "buf/timestamp.proto\"\330\027\n\014Conversation\022Y\n\r"
+          + "buf/timestamp.proto\"\343\031\n\014Conversation\022Y\n\r"
           + "call_metadata\030\007 \001(\0132@.google.cloud.conta"
           + "ctcenterinsights.v1.Conversation.CallMet"
           + "adataH\000\0221\n\013expire_time\030\017 \001(\0132\032.google.pr"
@@ -370,408 +434,576 @@ public final class ResourcesProto {
           + "v1.Conversation.DialogflowIntentsEntryB\003"
           + "\340A\003\022\032\n\022obfuscated_user_id\030\025 \001(\t\032?\n\014CallM"
           + "etadata\022\030\n\020customer_channel\030\001 \001(\005\022\025\n\rage"
-          + "nt_channel\030\002 \001(\005\032\274\002\n\017QualityMetadata\022$\n\034"
+          + "nt_channel\030\002 \001(\005\032\226\003\n\017QualityMetadata\022$\n\034"
           + "customer_satisfaction_rating\030\001 \001(\005\0220\n\rwa"
           + "it_duration\030\002 \001(\0132\031.google.protobuf.Dura"
           + "tion\022\021\n\tmenu_path\030\003 \001(\t\022a\n\nagent_info\030\004 "
           + "\003(\0132M.google.cloud.contactcenterinsights"
           + ".v1.Conversation.QualityMetadata.AgentIn"
-          + "fo\032[\n\tAgentInfo\022\020\n\010agent_id\030\001 \001(\t\022\024\n\014dis"
-          + "play_name\030\002 \001(\t\022\014\n\004team\030\003 \001(\t\022\030\n\020disposi"
-          + "tion_code\030\004 \001(\t\032\206\007\n\nTranscript\022m\n\023transc"
-          + "ript_segments\030\001 \003(\0132P.google.cloud.conta"
-          + "ctcenterinsights.v1.Conversation.Transcr"
-          + "ipt.TranscriptSegment\032\210\006\n\021TranscriptSegm"
-          + "ent\0220\n\014message_time\030\006 \001(\0132\032.google.proto"
-          + "buf.Timestamp\022\014\n\004text\030\001 \001(\t\022\022\n\nconfidenc"
-          + "e\030\002 \001(\002\022h\n\005words\030\003 \003(\0132Y.google.cloud.co"
-          + "ntactcenterinsights.v1.Conversation.Tran"
-          + "script.TranscriptSegment.WordInfo\022\025\n\rlan"
-          + "guage_code\030\004 \001(\t\022\023\n\013channel_tag\030\005 \001(\005\022[\n"
-          + "\023segment_participant\030\t \001(\0132>.google.clou"
-          + "d.contactcenterinsights.v1.ConversationP"
-          + "articipant\022\217\001\n\033dialogflow_segment_metada"
-          + "ta\030\n \001(\0132j.google.cloud.contactcenterins"
-          + "ights.v1.Conversation.Transcript.Transcr"
-          + "iptSegment.DialogflowSegmentMetadata\022G\n\t"
-          + "sentiment\030\013 \001(\01324.google.cloud.contactce"
-          + "nterinsights.v1.SentimentData\032\214\001\n\010WordIn"
-          + "fo\022/\n\014start_offset\030\001 \001(\0132\031.google.protob"
-          + "uf.Duration\022-\n\nend_offset\030\002 \001(\0132\031.google"
-          + ".protobuf.Duration\022\014\n\004word\030\003 \001(\t\022\022\n\nconf"
-          + "idence\030\004 \001(\002\032B\n\031DialogflowSegmentMetadat"
-          + "a\022%\n\035smart_reply_allowlist_covered\030\001 \001(\010"
-          + "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\t:\0028\001\032q\n\026DialogflowIntentsEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.google.cloud.con"
-          + "tactcenterinsights.v1.DialogflowIntent:\002"
-          + "8\001\":\n\006Medium\022\026\n\022MEDIUM_UNSPECIFIED\020\000\022\016\n\n"
-          + "PHONE_CALL\020\001\022\010\n\004CHAT\020\002:|\352Ay\n1contactcent"
-          + "erinsights.googleapis.com/Conversation\022D"
+          + "fo\032\264\001\n\tAgentInfo\022\020\n\010agent_id\030\001 \001(\t\022\024\n\014di"
+          + "splay_name\030\002 \001(\t\022\014\n\004team\030\003 \001(\t\022\030\n\020dispos"
+          + "ition_code\030\004 \001(\t\022W\n\nagent_type\030\005 \001(\0162C.g"
+          + "oogle.cloud.contactcenterinsights.v1.Con"
+          + "versationParticipant.Role\032\206\007\n\nTranscript"
+          + "\022m\n\023transcript_segments\030\001 \003(\0132P.google.c"
+          + "loud.contactcenterinsights.v1.Conversati"
+          + "on.Transcript.TranscriptSegment\032\210\006\n\021Tran"
+          + "scriptSegment\0220\n\014message_time\030\006 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022\014\n\004text\030\001 \001(\t\022\022\n"
+          + "\nconfidence\030\002 \001(\002\022h\n\005words\030\003 \003(\0132Y.googl"
+          + "e.cloud.contactcenterinsights.v1.Convers"
+          + "ation.Transcript.TranscriptSegment.WordI"
+          + "nfo\022\025\n\rlanguage_code\030\004 \001(\t\022\023\n\013channel_ta"
+          + "g\030\005 \001(\005\022[\n\023segment_participant\030\t \001(\0132>.g"
+          + "oogle.cloud.contactcenterinsights.v1.Con"
+          + "versationParticipant\022\217\001\n\033dialogflow_segm"
+          + "ent_metadata\030\n \001(\0132j.google.cloud.contac"
+          + "tcenterinsights.v1.Conversation.Transcri"
+          + "pt.TranscriptSegment.DialogflowSegmentMe"
+          + "tadata\022G\n\tsentiment\030\013 \001(\01324.google.cloud"
+          + ".contactcenterinsights.v1.SentimentData\032"
+          + "\214\001\n\010WordInfo\022/\n\014start_offset\030\001 \001(\0132\031.goo"
+          + "gle.protobuf.Duration\022-\n\nend_offset\030\002 \001("
+          + "\0132\031.google.protobuf.Duration\022\014\n\004word\030\003 \001"
+          + "(\t\022\022\n\nconfidence\030\004 \001(\002\032B\n\031DialogflowSegm"
+          + "entMetadata\022%\n\035smart_reply_allowlist_cov"
+          + "ered\030\001 \001(\010\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\032q\n\026DialogflowIntentsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.google"
+          + ".cloud.contactcenterinsights.v1.Dialogfl"
+          + "owIntent:\0028\001\":\n\006Medium\022\026\n\022MEDIUM_UNSPECI"
+          + "FIED\020\000\022\016\n\nPHONE_CALL\020\001\022\010\n\004CHAT\020\002:\254\002\352A\250\002\n"
+          + "1contactcenterinsights.googleapis.com/Co"
+          + "nversation\022Dprojects/{project}/locations"
+          + "/{location}/conversations/{conversation}"
+          + "\022\217\001projects/{project}/locations/{locatio"
+          + "n}/authorizedViewSets/{authorized_view_s"
+          + "et}/authorizedViews/{authorized_view}/co"
+          + "nversations/{conversation}*\rconversation"
+          + "s2\014conversationB\n\n\010metadataB\014\n\nexpiratio"
+          + "n\"\377\004\n\010Analysis\022\021\n\004name\030\001 \001(\tB\003\340A\005\0225\n\014req"
+          + "uest_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\022S\n\017analysis_resul"
+          + "t\030\007 \001(\01325.google.cloud.contactcenterinsi"
+          + "ghts.v1.AnalysisResultB\003\340A\003\022T\n\022annotator"
+          + "_selector\030\010 \001(\01328.google.cloud.contactce"
+          + "nterinsights.v1.AnnotatorSelector:\307\002\352A\303\002"
+          + "\n-contactcenterinsights.googleapis.com/A"
+          + "nalysis\022Xprojects/{project}/locations/{l"
+          + "ocation}/conversations/{conversation}/an"
+          + "alyses/{analysis}\022\243\001projects/{project}/l"
+          + "ocations/{location}/authorizedViewSets/{"
+          + "authorized_view_set}/authorizedViews/{au"
+          + "thorized_view}/conversations/{conversati"
+          + "on}/analyses/{analysis}*\010analyses2\010analy"
+          + "sis\"\300\001\n\026ConversationDataSource\022F\n\ngcs_so"
+          + "urce\030\001 \001(\01320.google.cloud.contactcenteri"
+          + "nsights.v1.GcsSourceH\000\022T\n\021dialogflow_sou"
+          + "rce\030\003 \001(\01327.google.cloud.contactcenterin"
+          + "sights.v1.DialogflowSourceH\000B\010\n\006source\";"
+          + "\n\tGcsSource\022\021\n\taudio_uri\030\001 \001(\t\022\033\n\016transc"
+          + "ript_uri\030\002 \001(\tB\003\340A\005\"K\n\020DialogflowSource\022"
+          + "$\n\027dialogflow_conversation\030\001 \001(\tB\003\340A\003\022\021\n"
+          + "\taudio_uri\030\003 \001(\t\"\360\t\n\016AnalysisResult\022l\n\026c"
+          + "all_analysis_metadata\030\002 \001(\0132J.google.clo"
+          + "ud.contactcenterinsights.v1.AnalysisResu"
+          + "lt.CallAnalysisMetadataH\000\022,\n\010end_time\030\001 "
+          + "\001(\0132\032.google.protobuf.Timestamp\032\265\010\n\024Call"
+          + "AnalysisMetadata\022J\n\013annotations\030\002 \003(\01325."
+          + "google.cloud.contactcenterinsights.v1.Ca"
+          + "llAnnotation\022j\n\010entities\030\003 \003(\0132X.google."
+          + "cloud.contactcenterinsights.v1.AnalysisR"
+          + "esult.CallAnalysisMetadata.EntitiesEntry"
+          + "\022U\n\nsentiments\030\004 \003(\0132A.google.cloud.cont"
+          + "actcenterinsights.v1.ConversationLevelSe"
+          + "ntiment\022P\n\007silence\030\013 \001(\0132?.google.cloud."
+          + "contactcenterinsights.v1.ConversationLev"
+          + "elSilence\022h\n\007intents\030\006 \003(\0132W.google.clou"
+          + "d.contactcenterinsights.v1.AnalysisResul"
+          + "t.CallAnalysisMetadata.IntentsEntry\022w\n\017p"
+          + "hrase_matchers\030\007 \003(\0132^.google.cloud.cont"
+          + "actcenterinsights.v1.AnalysisResult.Call"
+          + "AnalysisMetadata.PhraseMatchersEntry\022S\n\022"
+          + "issue_model_result\030\010 \001(\01327.google.cloud."
+          + "contactcenterinsights.v1.IssueModelResul"
+          + "t\022V\n\024qa_scorecard_results\030\n \003(\01328.google"
+          + ".cloud.contactcenterinsights.v1.QaScorec"
+          + "ardResult\032^\n\rEntitiesEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "<\n\005value\030\002 \001(\0132-.google.cloud.contactcen"
+          + "terinsights.v1.Entity:\0028\001\032]\n\014IntentsEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.google.c"
+          + "loud.contactcenterinsights.v1.Intent:\0028\001"
+          + "\032m\n\023PhraseMatchersEntry\022\013\n\003key\030\001 \001(\t\022E\n\005"
+          + "value\030\002 \001(\01326.google.cloud.contactcenter"
+          + "insights.v1.PhraseMatchData:\0028\001B\n\n\010metad"
+          + "ata\"\245\001\n\020IssueModelResult\022I\n\013issue_model\030"
+          + "\001 \001(\tB4\372A1\n/contactcenterinsights.google"
+          + "apis.com/IssueModel\022F\n\006issues\030\002 \003(\01326.go"
+          + "ogle.cloud.contactcenterinsights.v1.Issu"
+          + "eAssignment\"\221\005\n\rFeedbackLabel\022\017\n\005label\030\004"
+          + " \001(\tH\000\022V\n\017qa_answer_label\030\007 \001(\0132;.google"
+          + ".cloud.contactcenterinsights.v1.QaAnswer"
+          + ".AnswerValueH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\030\n\020lab"
+          + "eled_resource\030\003 \001(\t\0224\n\013create_time\030\005 \001(\013"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upd"
+          + "ate_time\030\006 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003:\357\002\352A\353\002\n2contactcenterinsights.go"
+          + "ogleapis.com/FeedbackLabel\022dprojects/{pr"
+          + "oject}/locations/{location}/conversation"
+          + "s/{conversation}/feedbackLabels/{feedbac"
+          + "k_label}\022\257\001projects/{project}/locations/"
+          + "{location}/authorizedViewSets/{authorize"
+          + "d_view_set}/authorizedViews/{authorized_"
+          + "view}/conversations/{conversation}/feedb"
+          + "ackLabels/{feedback_label}*\016feedbackLabe"
+          + "ls2\rfeedbackLabelB\014\n\nlabel_type\"\177\n\032Conve"
+          + "rsationLevelSentiment\022\023\n\013channel_tag\030\001 \001"
+          + "(\005\022L\n\016sentiment_data\030\002 \001(\01324.google.clou"
+          + "d.contactcenterinsights.v1.SentimentData"
+          + "\"k\n\030ConversationLevelSilence\0223\n\020silence_"
+          + "duration\030\001 \001(\0132\031.google.protobuf.Duratio"
+          + "n\022\032\n\022silence_percentage\030\002 \001(\002\"J\n\017IssueAs"
+          + "signment\022\r\n\005issue\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\031"
+          + "\n\014display_name\030\003 \001(\tB\003\340A\005\"\365\006\n\016CallAnnota"
+          + "tion\022T\n\021interruption_data\030\n \001(\01327.google"
+          + ".cloud.contactcenterinsights.v1.Interrup"
+          + "tionDataH\000\022N\n\016sentiment_data\030\013 \001(\01324.goo"
+          + "gle.cloud.contactcenterinsights.v1.Senti"
+          + "mentDataH\000\022J\n\014silence_data\030\014 \001(\01322.googl"
+          + "e.cloud.contactcenterinsights.v1.Silence"
+          + "DataH\000\022D\n\thold_data\030\r \001(\0132/.google.cloud"
+          + ".contactcenterinsights.v1.HoldDataH\000\022W\n\023"
+          + "entity_mention_data\030\017 \001(\01328.google.cloud"
+          + ".contactcenterinsights.v1.EntityMentionD"
+          + "ataH\000\022S\n\021intent_match_data\030\020 \001(\01326.googl"
+          + "e.cloud.contactcenterinsights.v1.IntentM"
+          + "atchDataH\000\022S\n\021phrase_match_data\030\021 \001(\01326."
+          + "google.cloud.contactcenterinsights.v1.Ph"
+          + "raseMatchDataH\000\022Q\n\020issue_match_data\030\022 \001("
+          + "\01325.google.cloud.contactcenterinsights.v"
+          + "1.IssueMatchDataH\000\022\023\n\013channel_tag\030\001 \001(\005\022"
+          + "\\\n\031annotation_start_boundary\030\004 \001(\01329.goo"
+          + "gle.cloud.contactcenterinsights.v1.Annot"
+          + "ationBoundary\022Z\n\027annotation_end_boundary"
+          + "\030\005 \001(\01329.google.cloud.contactcenterinsig"
+          + "hts.v1.AnnotationBoundaryB\006\n\004data\"Y\n\022Ann"
+          + "otationBoundary\022\024\n\nword_index\030\003 \001(\005H\000\022\030\n"
+          + "\020transcript_index\030\001 \001(\005B\023\n\021detailed_boun"
+          + "dary\"\200\004\n\006Entity\022\024\n\014display_name\030\001 \001(\t\022@\n"
+          + "\004type\030\002 \001(\01622.google.cloud.contactcenter"
+          + "insights.v1.Entity.Type\022M\n\010metadata\030\003 \003("
+          + "\0132;.google.cloud.contactcenterinsights.v"
+          + "1.Entity.MetadataEntry\022\020\n\010salience\030\004 \001(\002"
+          + "\022G\n\tsentiment\030\005 \001(\01324.google.cloud.conta"
+          + "ctcenterinsights.v1.SentimentData\032/\n\rMet"
+          + "adataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\"\302\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006PER"
+          + "SON\020\001\022\014\n\010LOCATION\020\002\022\020\n\014ORGANIZATION\020\003\022\t\n"
+          + "\005EVENT\020\004\022\017\n\013WORK_OF_ART\020\005\022\021\n\rCONSUMER_GO"
+          + "OD\020\006\022\t\n\005OTHER\020\007\022\020\n\014PHONE_NUMBER\020\t\022\013\n\007ADD"
+          + "RESS\020\n\022\010\n\004DATE\020\013\022\n\n\006NUMBER\020\014\022\t\n\005PRICE\020\r\""
+          + "*\n\006Intent\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 "
+          + "\001(\t\"?\n\017PhraseMatchData\022\026\n\016phrase_matcher"
+          + "\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\"(\n\020Dialogfl"
+          + "owIntent\022\024\n\014display_name\030\001 \001(\t\"\022\n\020Interr"
+          + "uptionData\"\r\n\013SilenceData\"\n\n\010HoldData\"\217\002"
+          + "\n\021EntityMentionData\022\030\n\020entity_unique_id\030"
+          + "\001 \001(\t\022R\n\004type\030\002 \001(\0162D.google.cloud.conta"
+          + "ctcenterinsights.v1.EntityMentionData.Me"
+          + "ntionType\022G\n\tsentiment\030\003 \001(\01324.google.cl"
+          + "oud.contactcenterinsights.v1.SentimentDa"
+          + "ta\"C\n\013MentionType\022\034\n\030MENTION_TYPE_UNSPEC"
+          + "IFIED\020\000\022\n\n\006PROPER\020\001\022\n\n\006COMMON\020\002\"+\n\017Inten"
+          + "tMatchData\022\030\n\020intent_unique_id\030\001 \001(\t\"1\n\r"
+          + "SentimentData\022\021\n\tmagnitude\030\001 \001(\002\022\r\n\005scor"
+          + "e\030\002 \001(\002\"b\n\016IssueMatchData\022P\n\020issue_assig"
+          + "nment\030\001 \001(\01326.google.cloud.contactcenter"
+          + "insights.v1.IssueAssignment\"\362\007\n\nIssueMod"
+          + "el\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\014display_name\030\002 "
+          + "\001(\t\0224\n\013create_time\030\003 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\022\030\n\013issue"
+          + "_count\030\010 \001(\003B\003\340A\003\022K\n\005state\030\005 \001(\01627.googl"
+          + "e.cloud.contactcenterinsights.v1.IssueMo"
+          + "del.StateB\003\340A\003\022\\\n\021input_data_config\030\006 \001("
+          + "\0132A.google.cloud.contactcenterinsights.v"
+          + "1.IssueModel.InputDataConfig\022[\n\016training"
+          + "_stats\030\007 \001(\0132;.google.cloud.contactcente"
+          + "rinsights.v1.IssueModelLabelStatsB\006\340A\003\340A"
+          + "\005\022O\n\nmodel_type\030\t \001(\0162;.google.cloud.con"
+          + "tactcenterinsights.v1.IssueModel.ModelTy"
+          + "pe\022\025\n\rlanguage_code\030\n \001(\t\032\234\001\n\017InputDataC"
+          + "onfig\022N\n\006medium\030\001 \001(\0162:.google.cloud.con"
+          + "tactcenterinsights.v1.Conversation.Mediu"
+          + "mB\002\030\001\022)\n\034training_conversations_count\030\002 "
+          + "\001(\003B\003\340A\003\022\016\n\006filter\030\003 \001(\t\"j\n\005State\022\025\n\021STA"
+          + "TE_UNSPECIFIED\020\000\022\016\n\nUNDEPLOYED\020\001\022\r\n\tDEPL"
+          + "OYING\020\002\022\014\n\010DEPLOYED\020\003\022\017\n\013UNDEPLOYING\020\004\022\014"
+          + "\n\010DELETING\020\005\"A\n\tModelType\022\032\n\026MODEL_TYPE_"
+          + "UNSPECIFIED\020\000\022\013\n\007TYPE_V1\020\001\022\013\n\007TYPE_V2\020\002:"
+          + "w\352At\n/contactcenterinsights.googleapis.c"
+          + "om/IssueModel\022Aprojects/{project}/locati"
+          + "ons/{location}/issueModels/{issue_model}"
+          + "\"\335\002\n\005Issue\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\014display"
+          + "_name\030\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
+          + "\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "\036\n\021sample_utterances\030\006 \003(\tB\003\340A\003\022\033\n\023displ"
+          + "ay_description\030\016 \001(\t:\201\001\352A~\n*contactcente"
+          + "rinsights.googleapis.com/Issue\022Pprojects"
+          + "/{project}/locations/{location}/issueMod"
+          + "els/{issue_model}/issues/{issue}\"\233\003\n\024Iss"
+          + "ueModelLabelStats\022$\n\034analyzed_conversati"
+          + "ons_count\030\001 \001(\003\022(\n unclassified_conversa"
+          + "tions_count\030\002 \001(\003\022`\n\013issue_stats\030\003 \003(\0132K"
+          + ".google.cloud.contactcenterinsights.v1.I"
+          + "ssueModelLabelStats.IssueStatsEntry\032V\n\nI"
+          + "ssueStats\022\r\n\005issue\030\001 \001(\t\022#\n\033labeled_conv"
+          + "ersations_count\030\002 \001(\003\022\024\n\014display_name\030\003 "
+          + "\001(\t\032y\n\017IssueStatsEntry\022\013\n\003key\030\001 \001(\t\022U\n\005v"
+          + "alue\030\002 \001(\0132F.google.cloud.contactcenteri"
+          + "nsights.v1.IssueModelLabelStats.IssueSta"
+          + "ts:\0028\001\"\223\006\n\rPhraseMatcher\022\014\n\004name\030\001 \001(\t\022\033"
+          + "\n\013revision_id\030\002 \001(\tB\006\340A\005\340A\003\022\023\n\013version_t"
+          + "ag\030\003 \001(\t\022=\n\024revision_create_time\030\004 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\022\024\n\014displ"
+          + "ay_name\030\005 \001(\t\022Y\n\004type\030\006 \001(\0162F.google.clo"
+          + "ud.contactcenterinsights.v1.PhraseMatche"
+          + "r.PhraseMatcherTypeB\003\340A\002\022\016\n\006active\030\007 \001(\010"
+          + "\022]\n\030phrase_match_rule_groups\030\010 \003(\0132;.goo"
+          + "gle.cloud.contactcenterinsights.v1.Phras"
+          + "eMatchRuleGroup\022?\n\026activation_update_tim"
+          + "e\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\022W\n\nrole_match\030\n \001(\0162C.google.cloud.cont"
+          + "actcenterinsights.v1.ConversationPartici"
+          + "pant.Role\0224\n\013update_time\030\013 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\"P\n\021PhraseMatcher"
+          + "Type\022#\n\037PHRASE_MATCHER_TYPE_UNSPECIFIED\020"
+          + "\000\022\n\n\006ALL_OF\020\001\022\n\n\006ANY_OF\020\002:\200\001\352A}\n2contact"
+          + "centerinsights.googleapis.com/PhraseMatc"
+          + "her\022Gprojects/{project}/locations/{locat"
+          + "ion}/phraseMatchers/{phrase_matcher}\"\265\002\n"
+          + "\024PhraseMatchRuleGroup\022g\n\004type\030\001 \001(\0162T.go"
+          + "ogle.cloud.contactcenterinsights.v1.Phra"
+          + "seMatchRuleGroup.PhraseMatchRuleGroupTyp"
+          + "eB\003\340A\002\022R\n\022phrase_match_rules\030\002 \003(\01326.goo"
+          + "gle.cloud.contactcenterinsights.v1.Phras"
+          + "eMatchRule\"`\n\030PhraseMatchRuleGroupType\022,"
+          + "\n(PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFI"
+          + "ED\020\000\022\n\n\006ALL_OF\020\001\022\n\n\006ANY_OF\020\002\"\204\001\n\017PhraseM"
+          + "atchRule\022\022\n\005query\030\001 \001(\tB\003\340A\002\022\017\n\007negated\030"
+          + "\002 \001(\010\022L\n\006config\030\003 \001(\0132<.google.cloud.con"
+          + "tactcenterinsights.v1.PhraseMatchRuleCon"
+          + "fig\"x\n\025PhraseMatchRuleConfig\022U\n\022exact_ma"
+          + "tch_config\030\001 \001(\01327.google.cloud.contactc"
+          + "enterinsights.v1.ExactMatchConfigH\000B\010\n\006c"
+          + "onfig\"*\n\020ExactMatchConfig\022\026\n\016case_sensit"
+          + "ive\030\001 \001(\010\"\274\007\n\010Settings\022\021\n\004name\030\001 \001(\tB\003\340A"
+          + "\005\0224\n\013create_time\030\002 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\022\025\n\rlanguag"
+          + "e_code\030\004 \001(\t\0223\n\020conversation_ttl\030\005 \001(\0132\031"
+          + ".google.protobuf.Duration\022u\n\034pubsub_noti"
+          + "fication_settings\030\006 \003(\0132O.google.cloud.c"
+          + "ontactcenterinsights.v1.Settings.PubsubN"
+          + "otificationSettingsEntry\022W\n\017analysis_con"
+          + "fig\030\007 \001(\0132>.google.cloud.contactcenterin"
+          + "sights.v1.Settings.AnalysisConfig\022P\n\020red"
+          + "action_config\030\n \001(\01326.google.cloud.conta"
+          + "ctcenterinsights.v1.RedactionConfig\022O\n\rs"
+          + "peech_config\030\013 \001(\01323.google.cloud.contac"
+          + "tcenterinsights.v1.SpeechConfigB\003\340A\001\032\310\001\n"
+          + "\016AnalysisConfig\022/\n\'runtime_integration_a"
+          + "nalysis_percentage\030\001 \001(\001\022/\n\'upload_conve"
+          + "rsation_analysis_percentage\030\006 \001(\001\022T\n\022ann"
+          + "otator_selector\030\005 \001(\01328.google.cloud.con"
+          + "tactcenterinsights.v1.AnnotatorSelector\032"
+          + "A\n\037PubsubNotificationSettingsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:d\352Aa\n-contact"
+          + "centerinsights.googleapis.com/Settings\0220"
           + "projects/{project}/locations/{location}/"
-          + "conversations/{conversation}B\n\n\010metadata"
-          + "B\014\n\nexpiration\"\305\003\n\010Analysis\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\005\0225\n\014request_time\030\002 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\0224\n\013create_time\030\003 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022S\n\017a"
-          + "nalysis_result\030\007 \001(\01325.google.cloud.cont"
-          + "actcenterinsights.v1.AnalysisResultB\003\340A\003"
-          + "\022T\n\022annotator_selector\030\010 \001(\01328.google.cl"
-          + "oud.contactcenterinsights.v1.AnnotatorSe"
-          + "lector:\215\001\352A\211\001\n-contactcenterinsights.goo"
-          + "gleapis.com/Analysis\022Xprojects/{project}"
-          + "/locations/{location}/conversations/{con"
-          + "versation}/analyses/{analysis}\"\300\001\n\026Conve"
-          + "rsationDataSource\022F\n\ngcs_source\030\001 \001(\01320."
-          + "google.cloud.contactcenterinsights.v1.Gc"
-          + "sSourceH\000\022T\n\021dialogflow_source\030\003 \001(\01327.g"
-          + "oogle.cloud.contactcenterinsights.v1.Dia"
-          + "logflowSourceH\000B\010\n\006source\";\n\tGcsSource\022\021"
-          + "\n\taudio_uri\030\001 \001(\t\022\033\n\016transcript_uri\030\002 \001("
-          + "\tB\003\340A\005\"K\n\020DialogflowSource\022$\n\027dialogflow"
-          + "_conversation\030\001 \001(\tB\003\340A\003\022\021\n\taudio_uri\030\003 "
-          + "\001(\t\"\230\t\n\016AnalysisResult\022l\n\026call_analysis_"
-          + "metadata\030\002 \001(\0132J.google.cloud.contactcen"
-          + "terinsights.v1.AnalysisResult.CallAnalys"
-          + "isMetadataH\000\022,\n\010end_time\030\001 \001(\0132\032.google."
-          + "protobuf.Timestamp\032\335\007\n\024CallAnalysisMetad"
-          + "ata\022J\n\013annotations\030\002 \003(\01325.google.cloud."
-          + "contactcenterinsights.v1.CallAnnotation\022"
-          + "j\n\010entities\030\003 \003(\0132X.google.cloud.contact"
-          + "centerinsights.v1.AnalysisResult.CallAna"
-          + "lysisMetadata.EntitiesEntry\022U\n\nsentiment"
-          + "s\030\004 \003(\0132A.google.cloud.contactcenterinsi"
-          + "ghts.v1.ConversationLevelSentiment\022P\n\007si"
-          + "lence\030\013 \001(\0132?.google.cloud.contactcenter"
-          + "insights.v1.ConversationLevelSilence\022h\n\007"
-          + "intents\030\006 \003(\0132W.google.cloud.contactcent"
-          + "erinsights.v1.AnalysisResult.CallAnalysi"
-          + "sMetadata.IntentsEntry\022w\n\017phrase_matcher"
-          + "s\030\007 \003(\0132^.google.cloud.contactcenterinsi"
-          + "ghts.v1.AnalysisResult.CallAnalysisMetad"
-          + "ata.PhraseMatchersEntry\022S\n\022issue_model_r"
-          + "esult\030\010 \001(\01327.google.cloud.contactcenter"
-          + "insights.v1.IssueModelResult\032^\n\rEntities"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.goog"
-          + "le.cloud.contactcenterinsights.v1.Entity"
-          + ":\0028\001\032]\n\014IntentsEntry\022\013\n\003key\030\001 \001(\t\022<\n\005val"
-          + "ue\030\002 \001(\0132-.google.cloud.contactcenterins"
-          + "ights.v1.Intent:\0028\001\032m\n\023PhraseMatchersEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022E\n\005value\030\002 \001(\01326.google."
-          + "cloud.contactcenterinsights.v1.PhraseMat"
-          + "chData:\0028\001B\n\n\010metadata\"\245\001\n\020IssueModelRes"
-          + "ult\022I\n\013issue_model\030\001 \001(\tB4\372A1\n/contactce"
-          + "nterinsights.googleapis.com/IssueModel\022F"
-          + "\n\006issues\030\002 \003(\01326.google.cloud.contactcen"
-          + "terinsights.v1.IssueAssignment\"\177\n\032Conver"
-          + "sationLevelSentiment\022\023\n\013channel_tag\030\001 \001("
-          + "\005\022L\n\016sentiment_data\030\002 \001(\01324.google.cloud"
-          + ".contactcenterinsights.v1.SentimentData\""
-          + "k\n\030ConversationLevelSilence\0223\n\020silence_d"
-          + "uration\030\001 \001(\0132\031.google.protobuf.Duration"
-          + "\022\032\n\022silence_percentage\030\002 \001(\002\"J\n\017IssueAss"
-          + "ignment\022\r\n\005issue\030\001 \001(\t\022\r\n\005score\030\002 \001(\001\022\031\n"
-          + "\014display_name\030\003 \001(\tB\003\340A\005\"\365\006\n\016CallAnnotat"
-          + "ion\022T\n\021interruption_data\030\n \001(\01327.google."
-          + "cloud.contactcenterinsights.v1.Interrupt"
-          + "ionDataH\000\022N\n\016sentiment_data\030\013 \001(\01324.goog"
-          + "le.cloud.contactcenterinsights.v1.Sentim"
-          + "entDataH\000\022J\n\014silence_data\030\014 \001(\01322.google"
-          + ".cloud.contactcenterinsights.v1.SilenceD"
-          + "ataH\000\022D\n\thold_data\030\r \001(\0132/.google.cloud."
-          + "contactcenterinsights.v1.HoldDataH\000\022W\n\023e"
-          + "ntity_mention_data\030\017 \001(\01328.google.cloud."
-          + "contactcenterinsights.v1.EntityMentionDa"
-          + "taH\000\022S\n\021intent_match_data\030\020 \001(\01326.google"
-          + ".cloud.contactcenterinsights.v1.IntentMa"
-          + "tchDataH\000\022S\n\021phrase_match_data\030\021 \001(\01326.g"
-          + "oogle.cloud.contactcenterinsights.v1.Phr"
-          + "aseMatchDataH\000\022Q\n\020issue_match_data\030\022 \001(\013"
-          + "25.google.cloud.contactcenterinsights.v1"
-          + ".IssueMatchDataH\000\022\023\n\013channel_tag\030\001 \001(\005\022\\"
-          + "\n\031annotation_start_boundary\030\004 \001(\01329.goog"
-          + "le.cloud.contactcenterinsights.v1.Annota"
-          + "tionBoundary\022Z\n\027annotation_end_boundary\030"
-          + "\005 \001(\01329.google.cloud.contactcenterinsigh"
-          + "ts.v1.AnnotationBoundaryB\006\n\004data\"Y\n\022Anno"
-          + "tationBoundary\022\024\n\nword_index\030\003 \001(\005H\000\022\030\n\020"
-          + "transcript_index\030\001 \001(\005B\023\n\021detailed_bound"
-          + "ary\"\200\004\n\006Entity\022\024\n\014display_name\030\001 \001(\t\022@\n\004"
-          + "type\030\002 \001(\01622.google.cloud.contactcenteri"
-          + "nsights.v1.Entity.Type\022M\n\010metadata\030\003 \003(\013"
-          + "2;.google.cloud.contactcenterinsights.v1"
-          + ".Entity.MetadataEntry\022\020\n\010salience\030\004 \001(\002\022"
-          + "G\n\tsentiment\030\005 \001(\01324.google.cloud.contac"
-          + "tcenterinsights.v1.SentimentData\032/\n\rMeta"
-          + "dataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001\"\302\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006PERS"
-          + "ON\020\001\022\014\n\010LOCATION\020\002\022\020\n\014ORGANIZATION\020\003\022\t\n\005"
-          + "EVENT\020\004\022\017\n\013WORK_OF_ART\020\005\022\021\n\rCONSUMER_GOO"
-          + "D\020\006\022\t\n\005OTHER\020\007\022\020\n\014PHONE_NUMBER\020\t\022\013\n\007ADDR"
-          + "ESS\020\n\022\010\n\004DATE\020\013\022\n\n\006NUMBER\020\014\022\t\n\005PRICE\020\r\"*"
-          + "\n\006Intent\022\n\n\002id\030\001 \001(\t\022\024\n\014display_name\030\002 \001"
-          + "(\t\"?\n\017PhraseMatchData\022\026\n\016phrase_matcher\030"
-          + "\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\"(\n\020Dialogflo"
-          + "wIntent\022\024\n\014display_name\030\001 \001(\t\"\022\n\020Interru"
-          + "ptionData\"\r\n\013SilenceData\"\n\n\010HoldData\"\217\002\n"
-          + "\021EntityMentionData\022\030\n\020entity_unique_id\030\001"
-          + " \001(\t\022R\n\004type\030\002 \001(\0162D.google.cloud.contac"
-          + "tcenterinsights.v1.EntityMentionData.Men"
-          + "tionType\022G\n\tsentiment\030\003 \001(\01324.google.clo"
-          + "ud.contactcenterinsights.v1.SentimentDat"
-          + "a\"C\n\013MentionType\022\034\n\030MENTION_TYPE_UNSPECI"
-          + "FIED\020\000\022\n\n\006PROPER\020\001\022\n\n\006COMMON\020\002\"+\n\017Intent"
-          + "MatchData\022\030\n\020intent_unique_id\030\001 \001(\t\"1\n\rS"
-          + "entimentData\022\021\n\tmagnitude\030\001 \001(\002\022\r\n\005score"
-          + "\030\002 \001(\002\"b\n\016IssueMatchData\022P\n\020issue_assign"
-          + "ment\030\001 \001(\01326.google.cloud.contactcenteri"
-          + "nsights.v1.IssueAssignment\"\362\007\n\nIssueMode"
-          + "l\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\014display_name\030\002 \001"
-          + "(\t\0224\n\013create_time\030\003 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022\030\n\013issue_"
-          + "count\030\010 \001(\003B\003\340A\003\022K\n\005state\030\005 \001(\01627.google"
-          + ".cloud.contactcenterinsights.v1.IssueMod"
-          + "el.StateB\003\340A\003\022\\\n\021input_data_config\030\006 \001(\013"
-          + "2A.google.cloud.contactcenterinsights.v1"
-          + ".IssueModel.InputDataConfig\022[\n\016training_"
-          + "stats\030\007 \001(\0132;.google.cloud.contactcenter"
-          + "insights.v1.IssueModelLabelStatsB\006\340A\003\340A\005"
-          + "\022O\n\nmodel_type\030\t \001(\0162;.google.cloud.cont"
-          + "actcenterinsights.v1.IssueModel.ModelTyp"
-          + "e\022\025\n\rlanguage_code\030\n \001(\t\032\234\001\n\017InputDataCo"
-          + "nfig\022N\n\006medium\030\001 \001(\0162:.google.cloud.cont"
-          + "actcenterinsights.v1.Conversation.Medium"
-          + "B\002\030\001\022)\n\034training_conversations_count\030\002 \001"
-          + "(\003B\003\340A\003\022\016\n\006filter\030\003 \001(\t\"j\n\005State\022\025\n\021STAT"
-          + "E_UNSPECIFIED\020\000\022\016\n\nUNDEPLOYED\020\001\022\r\n\tDEPLO"
-          + "YING\020\002\022\014\n\010DEPLOYED\020\003\022\017\n\013UNDEPLOYING\020\004\022\014\n"
-          + "\010DELETING\020\005\"A\n\tModelType\022\032\n\026MODEL_TYPE_U"
-          + "NSPECIFIED\020\000\022\013\n\007TYPE_V1\020\001\022\013\n\007TYPE_V2\020\002:w"
-          + "\352At\n/contactcenterinsights.googleapis.co"
-          + "m/IssueModel\022Aprojects/{project}/locatio"
-          + "ns/{location}/issueModels/{issue_model}\""
-          + "\335\002\n\005Issue\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\014display_"
+          + "settings\"\367\003\n\014AnalysisRule\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\010\0224\n\013create_time\030\002 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\022\031\n\014disp"
+          + "lay_name\030\004 \001(\tH\000\210\001\001\022\033\n\023conversation_filt"
+          + "er\030\005 \001(\t\022T\n\022annotator_selector\030\006 \001(\01328.g"
+          + "oogle.cloud.contactcenterinsights.v1.Ann"
+          + "otatorSelector\022\033\n\023analysis_percentage\030\007 "
+          + "\001(\001\022\016\n\006active\030\010 \001(\010:\233\001\352A\227\001\n1contactcente"
+          + "rinsights.googleapis.com/AnalysisRule\022Ep"
+          + "rojects/{project}/locations/{location}/a"
+          + "nalysisRules/{analysis_rule}*\ranalysisRu"
+          + "les2\014analysisRuleB\017\n\r_display_name\"\253\001\n\016E"
+          + "ncryptionSpec\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\007kms_"
+          + "key\030\002 \001(\tB\003\340A\002:p\352Am\n3contactcenterinsigh"
+          + "ts.googleapis.com/EncryptionSpec\0226projec"
+          + "ts/{project}/locations/{location}/encryp"
+          + "tionSpec\"H\n\017RedactionConfig\022\033\n\023deidentif"
+          + "y_template\030\001 \001(\t\022\030\n\020inspect_template\030\002 \001"
+          + "(\t\"P\n\014SpeechConfig\022@\n\021speech_recognizer\030"
+          + "\001 \001(\tB%\372A\"\n speech.googleapis.com/Recogn"
+          + "izer\"\337\t\n\021RuntimeAnnotation\022Z\n\022article_su"
+          + "ggestion\030\006 \001(\0132<.google.cloud.contactcen"
+          + "terinsights.v1.ArticleSuggestionDataH\000\022J"
+          + "\n\nfaq_answer\030\007 \001(\01324.google.cloud.contac"
+          + "tcenterinsights.v1.FaqAnswerDataH\000\022L\n\013sm"
+          + "art_reply\030\010 \001(\01325.google.cloud.contactce"
+          + "nterinsights.v1.SmartReplyDataH\000\022e\n\030smar"
+          + "t_compose_suggestion\030\t \001(\0132A.google.clou"
+          + "d.contactcenterinsights.v1.SmartComposeS"
+          + "uggestionDataH\000\022b\n\026dialogflow_interactio"
+          + "n\030\n \001(\0132@.google.cloud.contactcenterinsi"
+          + "ghts.v1.DialogflowInteractionDataH\000\022\177\n%c"
+          + "onversation_summarization_suggestion\030\014 \001"
+          + "(\0132N.google.cloud.contactcenterinsights."
+          + "v1.ConversationSummarizationSuggestionDa"
+          + "taH\000\022\025\n\rannotation_id\030\001 \001(\t\022/\n\013create_ti"
+          + "me\030\002 \001(\0132\032.google.protobuf.Timestamp\022Q\n\016"
+          + "start_boundary\030\003 \001(\01329.google.cloud.cont"
+          + "actcenterinsights.v1.AnnotationBoundary\022"
+          + "O\n\014end_boundary\030\004 \001(\01329.google.cloud.con"
+          + "tactcenterinsights.v1.AnnotationBoundary"
+          + "\022N\n\017answer_feedback\030\005 \001(\01325.google.cloud"
+          + ".contactcenterinsights.v1.AnswerFeedback"
+          + "\022V\n\nuser_input\030\020 \001(\0132B.google.cloud.cont"
+          + "actcenterinsights.v1.RuntimeAnnotation.U"
+          + "serInput\032\353\001\n\tUserInput\022\r\n\005query\030\001 \001(\t\022\026\n"
+          + "\016generator_name\030\002 \001(\t\022d\n\014query_source\030\003 "
+          + "\001(\0162N.google.cloud.contactcenterinsights"
+          + ".v1.RuntimeAnnotation.UserInput.QuerySou"
+          + "rce\"Q\n\013QuerySource\022\034\n\030QUERY_SOURCE_UNSPE"
+          + "CIFIED\020\000\022\017\n\013AGENT_QUERY\020\001\022\023\n\017SUGGESTED_Q"
+          + "UERY\020\002B\006\n\004data\"\211\002\n\016AnswerFeedback\022a\n\021cor"
+          + "rectness_level\030\001 \001(\0162F.google.cloud.cont"
+          + "actcenterinsights.v1.AnswerFeedback.Corr"
+          + "ectnessLevel\022\017\n\007clicked\030\002 \001(\010\022\021\n\tdisplay"
+          + "ed\030\003 \001(\010\"p\n\020CorrectnessLevel\022!\n\035CORRECTN"
+          + "ESS_LEVEL_UNSPECIFIED\020\000\022\017\n\013NOT_CORRECT\020\001"
+          + "\022\025\n\021PARTIALLY_CORRECT\020\002\022\021\n\rFULLY_CORRECT"
+          + "\020\003\"\202\002\n\025ArticleSuggestionData\022\r\n\005title\030\001 "
+          + "\001(\t\022\013\n\003uri\030\002 \001(\t\022\030\n\020confidence_score\030\003 \001"
+          + "(\002\022\\\n\010metadata\030\004 \003(\0132J.google.cloud.cont"
+          + "actcenterinsights.v1.ArticleSuggestionDa"
+          + "ta.MetadataEntry\022\024\n\014query_record\030\005 \001(\t\022\016"
+          + "\n\006source\030\006 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\370\001\n\rFaqAnswerDat"
+          + "a\022\016\n\006answer\030\001 \001(\t\022\030\n\020confidence_score\030\002 "
+          + "\001(\002\022\020\n\010question\030\003 \001(\t\022T\n\010metadata\030\004 \003(\0132"
+          + "B.google.cloud.contactcenterinsights.v1."
+          + "FaqAnswerData.MetadataEntry\022\024\n\014query_rec",
+      "ord\030\005 \001(\t\022\016\n\006source\030\006 \001(\t\032/\n\rMetadataEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\327\001\n\016S"
+          + "martReplyData\022\r\n\005reply\030\001 \001(\t\022\030\n\020confiden"
+          + "ce_score\030\002 \001(\001\022U\n\010metadata\030\003 \003(\0132C.googl"
+          + "e.cloud.contactcenterinsights.v1.SmartRe"
+          + "plyData.MetadataEntry\022\024\n\014query_record\030\004 "
+          + "\001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\"\364\001\n\032SmartComposeSuggestionD"
+          + "ata\022\022\n\nsuggestion\030\001 \001(\t\022\030\n\020confidence_sc"
+          + "ore\030\002 \001(\001\022a\n\010metadata\030\003 \003(\0132O.google.clo"
+          + "ud.contactcenterinsights.v1.SmartCompose"
+          + "SuggestionData.MetadataEntry\022\024\n\014query_re"
+          + "cord\030\004 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n\031DialogflowInterac"
+          + "tionData\022\034\n\024dialogflow_intent_id\030\001 \001(\t\022\022"
+          + "\n\nconfidence\030\002 \001(\002\"\315\003\n\'ConversationSumma"
+          + "rizationSuggestionData\022\014\n\004text\030\001 \001(\t\022w\n\r"
+          + "text_sections\030\005 \003(\0132`.google.cloud.conta"
+          + "ctcenterinsights.v1.ConversationSummariz"
+          + "ationSuggestionData.TextSectionsEntry\022\022\n"
+          + "\nconfidence\030\002 \001(\002\022n\n\010metadata\030\003 \003(\0132\\.go"
+          + "ogle.cloud.contactcenterinsights.v1.Conv"
+          + "ersationSummarizationSuggestionData.Meta"
+          + "dataEntry\022\025\n\ranswer_record\030\004 \001(\t\022\032\n\022conv"
+          + "ersation_model\030\006 \001(\t\0323\n\021TextSectionsEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032/\n\rMet"
+          + "adataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\"\213\003\n\027ConversationParticipant\022Q\n\033dialog"
+          + "flow_participant_name\030\005 \001(\tB*\372A\'\n%dialog"
+          + "flow.googleapis.com/ParticipantH\000\022\021\n\007use"
+          + "r_id\030\006 \001(\tH\000\022\"\n\026dialogflow_participant\030\001"
+          + " \001(\tB\002\030\001\022#\n\033obfuscated_external_user_id\030"
+          + "\003 \001(\t\022Q\n\004role\030\002 \001(\0162C.google.cloud.conta"
+          + "ctcenterinsights.v1.ConversationParticip"
+          + "ant.Role\"_\n\004Role\022\024\n\020ROLE_UNSPECIFIED\020\000\022\017"
+          + "\n\013HUMAN_AGENT\020\001\022\023\n\017AUTOMATED_AGENT\020\002\022\014\n\010"
+          + "END_USER\020\003\022\r\n\tANY_AGENT\020\004B\r\n\013participant"
+          + "\"\220\002\n\004View\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\014display_"
           + "name\030\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.google"
           + ".protobuf.TimestampB\003\340A\003\0224\n\013update_time\030"
-          + "\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\036"
-          + "\n\021sample_utterances\030\006 \003(\tB\003\340A\003\022\033\n\023displa"
-          + "y_description\030\016 \001(\t:\201\001\352A~\n*contactcenter"
-          + "insights.googleapis.com/Issue\022Pprojects/"
-          + "{project}/locations/{location}/issueMode"
-          + "ls/{issue_model}/issues/{issue}\"\233\003\n\024Issu"
-          + "eModelLabelStats\022$\n\034analyzed_conversatio"
-          + "ns_count\030\001 \001(\003\022(\n unclassified_conversat"
-          + "ions_count\030\002 \001(\003\022`\n\013issue_stats\030\003 \003(\0132K."
-          + "google.cloud.contactcenterinsights.v1.Is"
-          + "sueModelLabelStats.IssueStatsEntry\032V\n\nIs"
-          + "sueStats\022\r\n\005issue\030\001 \001(\t\022#\n\033labeled_conve"
-          + "rsations_count\030\002 \001(\003\022\024\n\014display_name\030\003 \001"
-          + "(\t\032y\n\017IssueStatsEntry\022\013\n\003key\030\001 \001(\t\022U\n\005va"
-          + "lue\030\002 \001(\0132F.google.cloud.contactcenterin"
-          + "sights.v1.IssueModelLabelStats.IssueStat"
-          + "s:\0028\001\"\223\006\n\rPhraseMatcher\022\014\n\004name\030\001 \001(\t\022\033\n"
-          + "\013revision_id\030\002 \001(\tB\006\340A\005\340A\003\022\023\n\013version_ta"
-          + "g\030\003 \001(\t\022=\n\024revision_create_time\030\004 \001(\0132\032."
-          + "google.protobuf.TimestampB\003\340A\003\022\024\n\014displa"
-          + "y_name\030\005 \001(\t\022Y\n\004type\030\006 \001(\0162F.google.clou"
-          + "d.contactcenterinsights.v1.PhraseMatcher"
-          + ".PhraseMatcherTypeB\003\340A\002\022\016\n\006active\030\007 \001(\010\022"
-          + "]\n\030phrase_match_rule_groups\030\010 \003(\0132;.goog"
-          + "le.cloud.contactcenterinsights.v1.Phrase"
-          + "MatchRuleGroup\022?\n\026activation_update_time"
-          + "\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "W\n\nrole_match\030\n \001(\0162C.google.cloud.conta"
-          + "ctcenterinsights.v1.ConversationParticip"
-          + "ant.Role\0224\n\013update_time\030\013 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\"P\n\021PhraseMatcherT"
-          + "ype\022#\n\037PHRASE_MATCHER_TYPE_UNSPECIFIED\020\000"
-          + "\022\n\n\006ALL_OF\020\001\022\n\n\006ANY_OF\020\002:\200\001\352A}\n2contactc"
-          + "enterinsights.googleapis.com/PhraseMatch"
-          + "er\022Gprojects/{project}/locations/{locati"
-          + "on}/phraseMatchers/{phrase_matcher}\"\265\002\n\024"
-          + "PhraseMatchRuleGroup\022g\n\004type\030\001 \001(\0162T.goo"
-          + "gle.cloud.contactcenterinsights.v1.Phras"
-          + "eMatchRuleGroup.PhraseMatchRuleGroupType"
-          + "B\003\340A\002\022R\n\022phrase_match_rules\030\002 \003(\01326.goog"
-          + "le.cloud.contactcenterinsights.v1.Phrase"
-          + "MatchRule\"`\n\030PhraseMatchRuleGroupType\022,\n"
-          + "(PHRASE_MATCH_RULE_GROUP_TYPE_UNSPECIFIE"
-          + "D\020\000\022\n\n\006ALL_OF\020\001\022\n\n\006ANY_OF\020\002\"\204\001\n\017PhraseMa"
-          + "tchRule\022\022\n\005query\030\001 \001(\tB\003\340A\002\022\017\n\007negated\030\002"
-          + " \001(\010\022L\n\006config\030\003 \001(\0132<.google.cloud.cont"
-          + "actcenterinsights.v1.PhraseMatchRuleConf"
-          + "ig\"x\n\025PhraseMatchRuleConfig\022U\n\022exact_mat"
-          + "ch_config\030\001 \001(\01327.google.cloud.contactce"
-          + "nterinsights.v1.ExactMatchConfigH\000B\010\n\006co"
-          + "nfig\"*\n\020ExactMatchConfig\022\026\n\016case_sensiti"
-          + "ve\030\001 \001(\010\"\274\007\n\010Settings\022\021\n\004name\030\001 \001(\tB\003\340A\005"
-          + "\0224\n\013create_time\030\002 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\022\025\n\rlanguage"
-          + "_code\030\004 \001(\t\0223\n\020conversation_ttl\030\005 \001(\0132\031."
-          + "google.protobuf.Duration\022u\n\034pubsub_notif"
-          + "ication_settings\030\006 \003(\0132O.google.cloud.co"
-          + "ntactcenterinsights.v1.Settings.PubsubNo"
-          + "tificationSettingsEntry\022W\n\017analysis_conf"
-          + "ig\030\007 \001(\0132>.google.cloud.contactcenterins"
-          + "ights.v1.Settings.AnalysisConfig\022P\n\020reda"
-          + "ction_config\030\n \001(\01326.google.cloud.contac"
-          + "tcenterinsights.v1.RedactionConfig\022O\n\rsp"
-          + "eech_config\030\013 \001(\01323.google.cloud.contact"
-          + "centerinsights.v1.SpeechConfigB\003\340A\001\032\310\001\n\016"
-          + "AnalysisConfig\022/\n\'runtime_integration_an"
-          + "alysis_percentage\030\001 \001(\001\022/\n\'upload_conver"
-          + "sation_analysis_percentage\030\006 \001(\001\022T\n\022anno"
-          + "tator_selector\030\005 \001(\01328.google.cloud.cont"
-          + "actcenterinsights.v1.AnnotatorSelector\032A"
-          + "\n\037PubsubNotificationSettingsEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:d\352Aa\n-contactc"
-          + "enterinsights.googleapis.com/Settings\0220p"
-          + "rojects/{project}/locations/{location}/s"
-          + "ettings\"\253\001\n\016EncryptionSpec\022\021\n\004name\030\001 \001(\t"
-          + "B\003\340A\005\022\024\n\007kms_key\030\002 \001(\tB\003\340A\002:p\352Am\n3contac"
-          + "tcenterinsights.googleapis.com/Encryptio"
-          + "nSpec\0226projects/{project}/locations/{loc"
-          + "ation}/encryptionSpec\"H\n\017RedactionConfig"
-          + "\022\033\n\023deidentify_template\030\001 \001(\t\022\030\n\020inspect"
-          + "_template\030\002 \001(\t\"P\n\014SpeechConfig\022@\n\021speec"
-          + "h_recognizer\030\001 \001(\tB%\372A\"\n speech.googleap"
-          + "is.com/Recognizer\"\337\t\n\021RuntimeAnnotation\022"
-          + "Z\n\022article_suggestion\030\006 \001(\0132<.google.clo"
-          + "ud.contactcenterinsights.v1.ArticleSugge"
-          + "stionDataH\000\022J\n\nfaq_answer\030\007 \001(\01324.google"
-          + ".cloud.contactcenterinsights.v1.FaqAnswe"
-          + "rDataH\000\022L\n\013smart_reply\030\010 \001(\01325.google.cl"
-          + "oud.contactcenterinsights.v1.SmartReplyD"
-          + "ataH\000\022e\n\030smart_compose_suggestion\030\t \001(\0132"
-          + "A.google.cloud.contactcenterinsights.v1."
-          + "SmartComposeSuggestionDataH\000\022b\n\026dialogfl"
-          + "ow_interaction\030\n \001(\0132@.google.cloud.cont"
-          + "actcenterinsights.v1.DialogflowInteracti"
-          + "onDataH\000\022\177\n%conversation_summarization_s"
-          + "uggestion\030\014 \001(\0132N.google.cloud.contactce"
-          + "nterinsights.v1.ConversationSummarizatio"
-          + "nSuggestionDataH\000\022\025\n\rannotation_id\030\001 \001(\t"
-          + "\022/\n\013create_time\030\002 \001(\0132\032.google.protobuf."
-          + "Timestamp\022Q\n\016start_boundary\030\003 \001(\01329.goog"
-          + "le.cloud.contactcenterinsights.v1.Annota"
-          + "tionBoundary\022O\n\014end_boundary\030\004 \001(\01329.goo"
-          + "gle.cloud.contactcenterinsights.v1.Annot"
-          + "ationBoundary\022N\n\017answer_feedback\030\005 \001(\01325"
+          + "\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\r"
+          + "\n\005value\030\005 \001(\t:d\352Aa\n)contactcenterinsight"
+          + "s.googleapis.com/View\0224projects/{project"
+          + "}/locations/{location}/views/{view}\"\373\t\n\021"
+          + "AnnotatorSelector\022\"\n\032run_interruption_an"
+          + "notator\030\001 \001(\010\022\035\n\025run_silence_annotator\030\002"
+          + " \001(\010\022$\n\034run_phrase_matcher_annotator\030\003 \001"
+          + "(\010\022P\n\017phrase_matchers\030\004 \003(\tB7\372A4\n2contac"
+          + "tcenterinsights.googleapis.com/PhraseMat"
+          + "cher\022\037\n\027run_sentiment_annotator\030\005 \001(\010\022\034\n"
+          + "\024run_entity_annotator\030\006 \001(\010\022\034\n\024run_inten"
+          + "t_annotator\030\007 \001(\010\022!\n\031run_issue_model_ann"
+          + "otator\030\010 \001(\010\022J\n\014issue_models\030\n \003(\tB4\372A1\n"
+          + "/contactcenterinsights.googleapis.com/Is"
+          + "sueModel\022#\n\033run_summarization_annotator\030"
+          + "\t \001(\010\022j\n\024summarization_config\030\013 \001(\0132L.go"
+          + "ogle.cloud.contactcenterinsights.v1.Anno"
+          + "tatorSelector.SummarizationConfig\022\030\n\020run"
+          + "_qa_annotator\030\014 \001(\010\022T\n\tqa_config\030\r \001(\0132A"
           + ".google.cloud.contactcenterinsights.v1.A"
-          + "nswerFeedback\022V\n\nuser_input\030\020 \001(\0132B.goog"
-          + "le.cloud.contactcenterinsights.v1.Runtim"
-          + "eAnnotation.UserInput\032\353\001\n\tUserInput\022\r\n\005q"
-          + "uery\030\001 \001(\t\022\026\n\016generator_name\030\002 \001(\t\022d\n\014qu"
-          + "ery_source\030\003 \001(\0162N.google.cloud.contactc"
-          + "enterinsights.v1.RuntimeAnnotation.UserI"
-          + "nput.QuerySource\"Q\n\013QuerySource\022\034\n\030QUERY"
-          + "_SOURCE_UNSPECIFIED\020\000\022\017\n\013AGENT_QUERY\020\001\022\023"
-          + "\n\017SUGGESTED_QUERY\020\002B\006\n\004data\"\211\002\n\016AnswerFe"
-          + "edback\022a\n\021correctness_level\030\001 \001(\0162F.goog"
-          + "le.cloud.contactcenterinsights.v1.Answer"
-          + "Feedback.CorrectnessLevel\022\017\n\007clicked\030\002 \001"
-          + "(\010\022\021\n\tdisplayed\030\003 \001(\010\"p\n\020CorrectnessLeve"
-          + "l\022!\n\035CORRECTNESS_LEVEL_UNSPECIFIED\020\000\022\017\n\013"
-          + "NOT_CORRECT\020\001\022\025\n\021PARTIALLY_CORRECT\020\002\022\021\n\r"
-          + "FULLY_CORRECT\020\003\"\202\002\n\025ArticleSuggestionDat"
-          + "a\022\r\n\005title\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\030\n\020confide"
-          + "nce_score\030\003 \001(\002\022\\\n\010metadata\030\004 \003(\0132J.goog"
-          + "le.cloud.contactcenterinsights.v1.Articl"
-          + "eSuggestionData.MetadataEntry\022\024\n\014query_r"
-          + "ecord\030\005 \001(\t\022\016\n\006source\030\006 \001(\t\032/\n\rMetadataE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\370\001\n"
-          + "\rFaqAnswerData\022\016\n\006answer\030\001 \001(\t\022\030\n\020confid"
-          + "ence_score\030\002 \001(\002\022\020\n\010question\030\003 \001(\t\022T\n\010me"
-          + "tadata\030\004 \003(\0132B.google.cloud.contactcente"
-          + "rinsights.v1.FaqAnswerData.MetadataEntry"
-          + "\022\024\n\014query_record\030\005 \001(\t\022\016\n\006source\030\006 \001(\t\032/"
-          + "\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\t:\0028\001\"\327\001\n\016SmartReplyData\022\r\n\005reply\030\001 \001("
-          + "\t\022\030\n\020confidence_score\030\002 \001(\001\022U\n\010metadata\030"
-          + "\003 \003(\0132C.google.cloud.contactcenterinsigh"
-          + "ts.v1.SmartReplyData.MetadataEntry\022\024\n\014qu"
-          + "ery_record\030\004 \001(\t\032/\n\rMetadataEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\364\001\n\032SmartCompo"
-          + "seSuggestionData\022\022\n\nsuggestion\030\001 \001(\t\022\030\n\020"
-          + "confidence_score\030\002 \001(\001\022a\n\010metadata\030\003 \003(\013"
-          + "2O.google.cloud.contactcenterinsights.v1"
-          + ".SmartComposeSuggestionData.MetadataEntr"
-          + "y\022\024\n\014query_record\030\004 \001(\t\032/\n\rMetadataEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n\031Dial"
-          + "ogflowInteractionData\022\034\n\024dialogflow_inte"
-          + "nt_id\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\"\315\003\n\'Conv"
-          + "ersationSummarizationSuggestionData\022\014\n\004t"
-          + "ext\030\001 \001(\t\022w\n\rtext_sections\030\005 \003(\0132`.googl"
-          + "e.cloud.contactcenterinsights.v1.Convers"
-          + "ationSummarizationSuggestionData.TextSec"
-          + "tionsEntry\022\022\n\nconfidence\030\002 \001(\002\022n\n\010metada"
-          + "ta\030\003 \003(\0132\\.google.cloud.contactcenterins"
-          + "ights.v1.ConversationSummarizationSugges"
-          + "tionData.MetadataEntry\022\025\n\ranswer_record\030"
-          + "\004 \001(\t\022\032\n\022conversation_model\030\006 \001(\t\0323\n\021Tex"
-          + "tSectionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001\"\213\003\n\027ConversationParticip"
-          + "ant\022Q\n\033dialogflow_participant_name\030\005 \001(\t"
-          + "B*\372A\'\n%dialogflow.googleapis.com/Partici"
-          + "pantH\000\022\021\n\007user_id\030\006 \001(\tH\000\022\"\n\026dialogflow_"
-          + "participant\030\001 \001(\tB\002\030\001\022#\n\033obfuscated_exte"
-          + "rnal_user_id\030\003 \001(\t\022Q\n\004role\030\002 \001(\0162C.googl"
-          + "e.cloud.contactcenterinsights.v1.Convers"
-          + "ationParticipant.Role\"_\n\004Role\022\024\n\020ROLE_UN"
-          + "SPECIFIED\020\000\022\017\n\013HUMAN_AGENT\020\001\022\023\n\017AUTOMATE"
-          + "D_AGENT\020\002\022\014\n\010END_USER\020\003\022\r\n\tANY_AGENT\020\004B\r"
-          + "\n\013participant\"\220\002\n\004View\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\005\022\024\n\014display_name\030\002 \001(\t\0224\n\013create_time\030\003"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\004 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\022\r\n\005value\030\005 \001(\t:d\352Aa\n)contact"
-          + "centerinsights.googleapis.com/View\0224proj",
-      "ects/{project}/locations/{location}/view"
-          + "s/{view}\"\217\007\n\021AnnotatorSelector\022\"\n\032run_in"
-          + "terruption_annotator\030\001 \001(\010\022\035\n\025run_silenc"
-          + "e_annotator\030\002 \001(\010\022$\n\034run_phrase_matcher_"
-          + "annotator\030\003 \001(\010\022P\n\017phrase_matchers\030\004 \003(\t"
-          + "B7\372A4\n2contactcenterinsights.googleapis."
-          + "com/PhraseMatcher\022\037\n\027run_sentiment_annot"
-          + "ator\030\005 \001(\010\022\034\n\024run_entity_annotator\030\006 \001(\010"
-          + "\022\034\n\024run_intent_annotator\030\007 \001(\010\022!\n\031run_is"
-          + "sue_model_annotator\030\010 \001(\010\022J\n\014issue_model"
-          + "s\030\n \003(\tB4\372A1\n/contactcenterinsights.goog"
-          + "leapis.com/IssueModel\022#\n\033run_summarizati"
-          + "on_annotator\030\t \001(\010\022j\n\024summarization_conf"
-          + "ig\030\013 \001(\0132L.google.cloud.contactcenterins"
-          + "ights.v1.AnnotatorSelector.Summarization"
-          + "Config\032\341\002\n\023SummarizationConfig\022R\n\024conver"
-          + "sation_profile\030\001 \001(\tB2\372A/\n-dialogflow.go"
-          + "ogleapis.com/ConversationProfileH\000\022~\n\023su"
-          + "mmarization_model\030\002 \001(\0162_.google.cloud.c"
-          + "ontactcenterinsights.v1.AnnotatorSelecto"
-          + "r.SummarizationConfig.SummarizationModel"
-          + "H\000\"f\n\022SummarizationModel\022#\n\037SUMMARIZATIO"
-          + "N_MODEL_UNSPECIFIED\020\000\022\022\n\016BASELINE_MODEL\020"
-          + "\001\022\027\n\023BASELINE_MODEL_V2_0\020\002B\016\n\014model_sour"
-          + "ceB\340\005\n)com.google.cloud.contactcenterins"
-          + "ights.v1B\016ResourcesProtoP\001Z_cloud.google"
-          + ".com/go/contactcenterinsights/apiv1/cont"
-          + "actcenterinsightspb;contactcenterinsight"
-          + "spb\252\002%Google.Cloud.ContactCenterInsights"
-          + ".V1\312\002%Google\\Cloud\\ContactCenterInsights"
-          + "\\V1\352\002(Google::Cloud::ContactCenterInsigh"
-          + "ts::V1\352A\204\001\n-dialogflow.googleapis.com/Co"
-          + "nversationProfile\022Sprojects/{project}/lo"
-          + "cations/{location}/conversationProfiles/"
-          + "{conversation_profile}\352A\324\001\n%dialogflow.g"
-          + "oogleapis.com/Participant\022Jprojects/{pro"
-          + "ject}/conversations/{conversation}/parti"
-          + "cipants/{participant}\022_projects/{project"
-          + "}/locations/{location}/conversations/{co"
-          + "nversation}/participants/{participant}\352A"
-          + "d\n speech.googleapis.com/Recognizer\022@pro"
-          + "jects/{project}/locations/{location}/rec"
-          + "ognizers/{recognizer}b\006proto3"
+          + "nnotatorSelector.QaConfig\032\341\002\n\023Summarizat"
+          + "ionConfig\022R\n\024conversation_profile\030\001 \001(\tB"
+          + "2\372A/\n-dialogflow.googleapis.com/Conversa"
+          + "tionProfileH\000\022~\n\023summarization_model\030\002 \001"
+          + "(\0162_.google.cloud.contactcenterinsights."
+          + "v1.AnnotatorSelector.SummarizationConfig"
+          + ".SummarizationModelH\000\"f\n\022SummarizationMo"
+          + "del\022#\n\037SUMMARIZATION_MODEL_UNSPECIFIED\020\000"
+          + "\022\022\n\016BASELINE_MODEL\020\001\022\027\n\023BASELINE_MODEL_V"
+          + "2_0\020\002B\016\n\014model_source\032\371\001\n\010QaConfig\022i\n\016sc"
+          + "orecard_list\030\001 \001(\0132O.google.cloud.contac"
+          + "tcenterinsights.v1.AnnotatorSelector.QaC"
+          + "onfig.ScorecardListH\000\032n\n\rScorecardList\022]"
+          + "\n\026qa_scorecard_revisions\030\001 \003(\tB=\372A:\n8con"
+          + "tactcenterinsights.googleapis.com/QaScor"
+          + "ecardRevisionB\022\n\020scorecard_source\"\241\010\n\nQa"
+          + "Question\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024\n\014abbreviat"
+          + "ion\030\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\0224\n\013update_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\025\n"
+          + "\rquestion_body\030\005 \001(\t\022\033\n\023answer_instructi"
+          + "ons\030\t \001(\t\022V\n\016answer_choices\030\006 \003(\0132>.goog"
+          + "le.cloud.contactcenterinsights.v1.QaQues"
+          + "tion.AnswerChoice\022\014\n\004tags\030\007 \003(\t\022\r\n\005order"
+          + "\030\010 \001(\005\022J\n\007metrics\030\n \001(\01329.google.cloud.c"
+          + "ontactcenterinsights.v1.QaQuestion.Metri"
+          + "cs\022Y\n\017tuning_metadata\030\013 \001(\0132@.google.clo"
+          + "ud.contactcenterinsights.v1.QaQuestion.T"
+          + "uningMetadata\032\226\001\n\014AnswerChoice\022\023\n\tstr_va"
+          + "lue\030\002 \001(\tH\000\022\023\n\tnum_value\030\003 \001(\001H\000\022\024\n\nbool"
+          + "_value\030\004 \001(\010H\000\022\022\n\010na_value\030\005 \001(\010H\000\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\022\n\005score\030\006 \001(\001H\001\210\001\001B\007\n\005valueB\010\n\006"
+          + "_score\032 \n\007Metrics\022\025\n\010accuracy\030\001 \001(\001B\003\340A\003"
+          + "\032\255\001\n\016TuningMetadata\022\037\n\027total_valid_label"
+          + "_count\030\001 \001(\003\022d\n\033dataset_validation_warni"
+          + "ngs\030\002 \003(\0162?.google.cloud.contactcenterin"
+          + "sights.v1.DatasetValidationWarning\022\024\n\014tu"
+          + "ning_error\030\003 \001(\t:\302\001\352A\276\001\n/contactcenterin"
+          + "sights.googleapis.com/QaQuestion\022rprojec"
+          + "ts/{project}/locations/{location}/qaScor"
+          + "ecards/{qa_scorecard}/revisions/{revisio"
+          + "n}/qaQuestions/{qa_question}*\013qaQuestion"
+          + "s2\nqaQuestion\"\320\002\n\013QaScorecard\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\010\022\024\n\014display_name\030\007 \001(\t\022\023\n\013descri"
+          + "ption\030\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
+          + "\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003:"
+          + "\226\001\352A\222\001\n0contactcenterinsights.googleapis"
+          + ".com/QaScorecard\022Cprojects/{project}/loc"
+          + "ations/{location}/qaScorecards/{qa_score"
+          + "card}*\014qaScorecards2\013qaScorecard\"\337\004\n\023QaS"
+          + "corecardRevision\022\021\n\004name\030\001 \001(\tB\003\340A\010\022D\n\010s"
+          + "napshot\030\002 \001(\01322.google.cloud.contactcent"
+          + "erinsights.v1.QaScorecard\0224\n\013create_time"
+          + "\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "\032\n\ralternate_ids\030\004 \003(\tB\003\340A\003\022T\n\005state\030\005 \001"
+          + "(\0162@.google.cloud.contactcenterinsights."
+          + "v1.QaScorecardRevision.StateB\003\340A\003\"\200\001\n\005St"
+          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010EDITABLE\020\014"
+          + "\022\014\n\010TRAINING\020\002\022\023\n\017TRAINING_FAILED\020\t\022\t\n\005R"
+          + "EADY\020\013\022\014\n\010DELETING\020\007\022\026\n\022TRAINING_CANCELL"
+          + "ED\020\016:\303\001\352A\277\001\n8contactcenterinsights.googl"
+          + "eapis.com/QaScorecardRevision\022Xprojects/"
+          + "{project}/locations/{location}/qaScoreca"
+          + "rds/{qa_scorecard}/revisions/{revision}*"
+          + "\024qaScorecardRevisions2\023qaScorecardRevisi"
+          + "on\"\222\007\n\010QaAnswer\022I\n\013qa_question\030\007 \001(\tB4\372A"
+          + "1\n/contactcenterinsights.googleapis.com/"
+          + "QaQuestion\022L\n\014conversation\030\002 \001(\tB6\372A3\n1c"
+          + "ontactcenterinsights.googleapis.com/Conv"
+          + "ersation\022\025\n\rquestion_body\030\006 \001(\t\022Q\n\014answe"
+          + "r_value\030\003 \001(\0132;.google.cloud.contactcent"
+          + "erinsights.v1.QaAnswer.AnswerValue\022\014\n\004ta"
+          + "gs\030\005 \003(\t\022T\n\016answer_sources\030\010 \003(\0132<.googl"
+          + "e.cloud.contactcenterinsights.v1.QaAnswe"
+          + "r.AnswerSource\032\212\002\n\013AnswerValue\022\023\n\tstr_va"
+          + "lue\030\002 \001(\tH\000\022\023\n\tnum_value\030\003 \001(\001H\000\022\024\n\nbool"
+          + "_value\030\004 \001(\010H\000\022\022\n\010na_value\030\005 \001(\010H\000\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\027\n\005score\030\006 \001(\001B\003\340A\003H\001\210\001\001\022!\n\017pote"
+          + "ntial_score\030\007 \001(\001B\003\340A\003H\002\210\001\001\022\"\n\020normalize"
+          + "d_score\030\010 \001(\001B\003\340A\003H\003\210\001\001B\007\n\005valueB\010\n\006_sco"
+          + "reB\022\n\020_potential_scoreB\023\n\021_normalized_sc"
+          + "ore\032\221\002\n\014AnswerSource\022\\\n\013source_type\030\001 \001("
+          + "\0162G.google.cloud.contactcenterinsights.v"
+          + "1.QaAnswer.AnswerSource.SourceType\022Q\n\014an"
+          + "swer_value\030\002 \001(\0132;.google.cloud.contactc"
+          + "enterinsights.v1.QaAnswer.AnswerValue\"P\n"
+          + "\nSourceType\022\033\n\027SOURCE_TYPE_UNSPECIFIED\020\000"
+          + "\022\024\n\020SYSTEM_GENERATED\020\001\022\017\n\013MANUAL_EDIT\020\002\""
+          + "\260\013\n\021QaScorecardResult\022\021\n\004name\030\001 \001(\tB\003\340A\010"
+          + "\022\\\n\025qa_scorecard_revision\030\002 \001(\tB=\372A:\n8co"
+          + "ntactcenterinsights.googleapis.com/QaSco"
+          + "recardRevision\022L\n\014conversation\030\003 \001(\tB6\372A"
+          + "3\n1contactcenterinsights.googleapis.com/"
+          + "Conversation\0224\n\013create_time\030\004 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\022\020\n\010agent_id\030\005"
+          + " \001(\t\022C\n\nqa_answers\030\006 \003(\0132/.google.cloud."
+          + "contactcenterinsights.v1.QaAnswer\022\022\n\005sco"
+          + "re\030\007 \001(\001H\000\210\001\001\022\034\n\017potential_score\030\010 \001(\001H\001"
+          + "\210\001\001\022\035\n\020normalized_score\030\t \001(\001H\002\210\001\001\022\\\n\016qa"
+          + "_tag_results\030\n \003(\0132D.google.cloud.contac"
+          + "tcenterinsights.v1.QaScorecardResult.QaT"
+          + "agResult\022[\n\rscore_sources\030\013 \003(\0132D.google"
+          + ".cloud.contactcenterinsights.v1.QaScorec"
+          + "ardResult.ScoreSource\032\236\001\n\013QaTagResult\022\013\n"
+          + "\003tag\030\001 \001(\t\022\022\n\005score\030\002 \001(\001H\000\210\001\001\022\034\n\017potent"
+          + "ial_score\030\003 \001(\001H\001\210\001\001\022\035\n\020normalized_score"
+          + "\030\004 \001(\001H\002\210\001\001B\010\n\006_scoreB\022\n\020_potential_scor"
+          + "eB\023\n\021_normalized_score\032\266\003\n\013ScoreSource\022d"
+          + "\n\013source_type\030\001 \001(\0162O.google.cloud.conta"
+          + "ctcenterinsights.v1.QaScorecardResult.Sc"
+          + "oreSource.SourceType\022\022\n\005score\030\002 \001(\001H\000\210\001\001"
+          + "\022\034\n\017potential_score\030\003 \001(\001H\001\210\001\001\022\035\n\020normal"
+          + "ized_score\030\004 \001(\001H\002\210\001\001\022\\\n\016qa_tag_results\030"
+          + "\005 \003(\0132D.google.cloud.contactcenterinsigh"
+          + "ts.v1.QaScorecardResult.QaTagResult\"_\n\nS"
+          + "ourceType\022\033\n\027SOURCE_TYPE_UNSPECIFIED\020\000\022\031"
+          + "\n\025SYSTEM_GENERATED_ONLY\020\001\022\031\n\025INCLUDES_MA"
+          + "NUAL_EDITS\020\002B\010\n\006_scoreB\022\n\020_potential_sco"
+          + "reB\023\n\021_normalized_score:\265\001\352A\261\001\n6contactc"
+          + "enterinsights.googleapis.com/QaScorecard"
+          + "Result\022Pprojects/{project}/locations/{lo"
+          + "cation}/qaScorecardResults/{qa_scorecard"
+          + "_result}*\022qaScorecardResults2\021qaScorecar"
+          + "dResultB\010\n\006_scoreB\022\n\020_potential_scoreB\023\n"
+          + "\021_normalized_score*\351\001\n\030DatasetValidation"
+          + "Warning\022*\n&DATASET_VALIDATION_WARNING_UN"
+          + "SPECIFIED\020\000\022$\n TOO_MANY_INVALID_FEEDBACK"
+          + "_LABELS\020\001\022 \n\034INSUFFICIENT_FEEDBACK_LABEL"
+          + "S\020\002\022+\n\'INSUFFICIENT_FEEDBACK_LABELS_PER_"
+          + "ANSWER\020\003\022,\n(ALL_FEEDBACK_LABELS_HAVE_THE"
+          + "_SAME_ANSWER\020\004B\340\005\n)com.google.cloud.cont"
+          + "actcenterinsights.v1B\016ResourcesProtoP\001Z_"
+          + "cloud.google.com/go/contactcenterinsight"
+          + "s/apiv1/contactcenterinsightspb;contactc"
+          + "enterinsightspb\252\002%Google.Cloud.ContactCe"
+          + "nterInsights.V1\312\002%Google\\Cloud\\ContactCe"
+          + "nterInsights\\V1\352\002(Google::Cloud::Contact"
+          + "CenterInsights::V1\352A\204\001\n-dialogflow.googl"
+          + "eapis.com/ConversationProfile\022Sprojects/"
+          + "{project}/locations/{location}/conversat"
+          + "ionProfiles/{conversation_profile}\352A\324\001\n%"
+          + "dialogflow.googleapis.com/Participant\022Jp"
+          + "rojects/{project}/conversations/{convers"
+          + "ation}/participants/{participant}\022_proje"
+          + "cts/{project}/locations/{location}/conve"
+          + "rsations/{conversation}/participants/{pa"
+          + "rticipant}\352Ad\n speech.googleapis.com/Rec"
+          + "ognizer\022@projects/{project}/locations/{l"
+          + "ocation}/recognizers/{recognizer}b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -841,7 +1073,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_Conversation_QualityMetadata_AgentInfo_descriptor,
             new java.lang.String[] {
-              "AgentId", "DisplayName", "Team", "DispositionCode",
+              "AgentId", "DisplayName", "Team", "DispositionCode", "AgentType",
             });
     internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_descriptor =
         internal_static_google_cloud_contactcenterinsights_v1_Conversation_descriptor
@@ -966,6 +1198,7 @@ public final class ResourcesProto {
               "Intents",
               "PhraseMatchers",
               "IssueModelResult",
+              "QaScorecardResults",
             });
     internal_static_google_cloud_contactcenterinsights_v1_AnalysisResult_CallAnalysisMetadata_EntitiesEntry_descriptor =
         internal_static_google_cloud_contactcenterinsights_v1_AnalysisResult_CallAnalysisMetadata_descriptor
@@ -1005,8 +1238,22 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "IssueModel", "Issues",
             });
-    internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSentiment_descriptor =
+    internal_static_google_cloud_contactcenterinsights_v1_FeedbackLabel_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_contactcenterinsights_v1_FeedbackLabel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_FeedbackLabel_descriptor,
+            new java.lang.String[] {
+              "Label",
+              "QaAnswerLabel",
+              "Name",
+              "LabeledResource",
+              "CreateTime",
+              "UpdateTime",
+              "LabelType",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSentiment_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSentiment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSentiment_descriptor,
@@ -1014,7 +1261,7 @@ public final class ResourcesProto {
               "ChannelTag", "SentimentData",
             });
     internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSilence_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSilence_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_ConversationLevelSilence_descriptor,
@@ -1022,7 +1269,7 @@ public final class ResourcesProto {
               "SilenceDuration", "SilencePercentage",
             });
     internal_static_google_cloud_contactcenterinsights_v1_IssueAssignment_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_contactcenterinsights_v1_IssueAssignment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_IssueAssignment_descriptor,
@@ -1030,7 +1277,7 @@ public final class ResourcesProto {
               "Issue", "Score", "DisplayName",
             });
     internal_static_google_cloud_contactcenterinsights_v1_CallAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_contactcenterinsights_v1_CallAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_CallAnnotation_descriptor,
@@ -1049,7 +1296,7 @@ public final class ResourcesProto {
               "Data",
             });
     internal_static_google_cloud_contactcenterinsights_v1_AnnotationBoundary_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_contactcenterinsights_v1_AnnotationBoundary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_AnnotationBoundary_descriptor,
@@ -1057,7 +1304,7 @@ public final class ResourcesProto {
               "WordIndex", "TranscriptIndex", "DetailedBoundary",
             });
     internal_static_google_cloud_contactcenterinsights_v1_Entity_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_contactcenterinsights_v1_Entity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_Entity_descriptor,
@@ -1075,7 +1322,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_Intent_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_contactcenterinsights_v1_Intent_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_Intent_descriptor,
@@ -1083,7 +1330,7 @@ public final class ResourcesProto {
               "Id", "DisplayName",
             });
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchData_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchData_descriptor,
@@ -1091,7 +1338,7 @@ public final class ResourcesProto {
               "PhraseMatcher", "DisplayName",
             });
     internal_static_google_cloud_contactcenterinsights_v1_DialogflowIntent_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_contactcenterinsights_v1_DialogflowIntent_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_DialogflowIntent_descriptor,
@@ -1099,25 +1346,25 @@ public final class ResourcesProto {
               "DisplayName",
             });
     internal_static_google_cloud_contactcenterinsights_v1_InterruptionData_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_contactcenterinsights_v1_InterruptionData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_InterruptionData_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_contactcenterinsights_v1_SilenceData_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_contactcenterinsights_v1_SilenceData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_SilenceData_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_contactcenterinsights_v1_HoldData_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_contactcenterinsights_v1_HoldData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_HoldData_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_contactcenterinsights_v1_EntityMentionData_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_contactcenterinsights_v1_EntityMentionData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_EntityMentionData_descriptor,
@@ -1125,7 +1372,7 @@ public final class ResourcesProto {
               "EntityUniqueId", "Type", "Sentiment",
             });
     internal_static_google_cloud_contactcenterinsights_v1_IntentMatchData_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_contactcenterinsights_v1_IntentMatchData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_IntentMatchData_descriptor,
@@ -1133,7 +1380,7 @@ public final class ResourcesProto {
               "IntentUniqueId",
             });
     internal_static_google_cloud_contactcenterinsights_v1_SentimentData_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_contactcenterinsights_v1_SentimentData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_SentimentData_descriptor,
@@ -1141,7 +1388,7 @@ public final class ResourcesProto {
               "Magnitude", "Score",
             });
     internal_static_google_cloud_contactcenterinsights_v1_IssueMatchData_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_contactcenterinsights_v1_IssueMatchData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_IssueMatchData_descriptor,
@@ -1149,7 +1396,7 @@ public final class ResourcesProto {
               "IssueAssignment",
             });
     internal_static_google_cloud_contactcenterinsights_v1_IssueModel_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_contactcenterinsights_v1_IssueModel_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_IssueModel_descriptor,
@@ -1176,7 +1423,7 @@ public final class ResourcesProto {
               "Medium", "TrainingConversationsCount", "Filter",
             });
     internal_static_google_cloud_contactcenterinsights_v1_Issue_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_contactcenterinsights_v1_Issue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_Issue_descriptor,
@@ -1189,7 +1436,7 @@ public final class ResourcesProto {
               "DisplayDescription",
             });
     internal_static_google_cloud_contactcenterinsights_v1_IssueModelLabelStats_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_contactcenterinsights_v1_IssueModelLabelStats_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_IssueModelLabelStats_descriptor,
@@ -1217,7 +1464,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatcher_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatcher_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_PhraseMatcher_descriptor,
@@ -1235,7 +1482,7 @@ public final class ResourcesProto {
               "UpdateTime",
             });
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRuleGroup_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRuleGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRuleGroup_descriptor,
@@ -1243,7 +1490,7 @@ public final class ResourcesProto {
               "Type", "PhraseMatchRules",
             });
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRule_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRule_descriptor,
@@ -1251,7 +1498,7 @@ public final class ResourcesProto {
               "Query", "Negated", "Config",
             });
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRuleConfig_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRuleConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_PhraseMatchRuleConfig_descriptor,
@@ -1259,7 +1506,7 @@ public final class ResourcesProto {
               "ExactMatchConfig", "Config",
             });
     internal_static_google_cloud_contactcenterinsights_v1_ExactMatchConfig_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_contactcenterinsights_v1_ExactMatchConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_ExactMatchConfig_descriptor,
@@ -1267,7 +1514,7 @@ public final class ResourcesProto {
               "CaseSensitive",
             });
     internal_static_google_cloud_contactcenterinsights_v1_Settings_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_contactcenterinsights_v1_Settings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_Settings_descriptor,
@@ -1304,8 +1551,23 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_contactcenterinsights_v1_AnalysisRule_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_contactcenterinsights_v1_AnalysisRule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_AnalysisRule_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "DisplayName",
+              "ConversationFilter",
+              "AnnotatorSelector",
+              "AnalysisPercentage",
+              "Active",
+            });
     internal_static_google_cloud_contactcenterinsights_v1_EncryptionSpec_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_contactcenterinsights_v1_EncryptionSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_EncryptionSpec_descriptor,
@@ -1313,7 +1575,7 @@ public final class ResourcesProto {
               "Name", "KmsKey",
             });
     internal_static_google_cloud_contactcenterinsights_v1_RedactionConfig_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_contactcenterinsights_v1_RedactionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_RedactionConfig_descriptor,
@@ -1321,7 +1583,7 @@ public final class ResourcesProto {
               "DeidentifyTemplate", "InspectTemplate",
             });
     internal_static_google_cloud_contactcenterinsights_v1_SpeechConfig_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_contactcenterinsights_v1_SpeechConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_SpeechConfig_descriptor,
@@ -1329,7 +1591,7 @@ public final class ResourcesProto {
               "SpeechRecognizer",
             });
     internal_static_google_cloud_contactcenterinsights_v1_RuntimeAnnotation_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_contactcenterinsights_v1_RuntimeAnnotation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_RuntimeAnnotation_descriptor,
@@ -1359,7 +1621,7 @@ public final class ResourcesProto {
               "Query", "GeneratorName", "QuerySource",
             });
     internal_static_google_cloud_contactcenterinsights_v1_AnswerFeedback_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_contactcenterinsights_v1_AnswerFeedback_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_AnswerFeedback_descriptor,
@@ -1367,7 +1629,7 @@ public final class ResourcesProto {
               "CorrectnessLevel", "Clicked", "Displayed",
             });
     internal_static_google_cloud_contactcenterinsights_v1_ArticleSuggestionData_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_contactcenterinsights_v1_ArticleSuggestionData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_ArticleSuggestionData_descriptor,
@@ -1385,7 +1647,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_FaqAnswerData_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_contactcenterinsights_v1_FaqAnswerData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_FaqAnswerData_descriptor,
@@ -1403,7 +1665,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_SmartReplyData_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_contactcenterinsights_v1_SmartReplyData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_SmartReplyData_descriptor,
@@ -1421,7 +1683,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_SmartComposeSuggestionData_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_contactcenterinsights_v1_SmartComposeSuggestionData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_SmartComposeSuggestionData_descriptor,
@@ -1439,7 +1701,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_DialogflowInteractionData_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_contactcenterinsights_v1_DialogflowInteractionData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_DialogflowInteractionData_descriptor,
@@ -1447,7 +1709,7 @@ public final class ResourcesProto {
               "DialogflowIntentId", "Confidence",
             });
     internal_static_google_cloud_contactcenterinsights_v1_ConversationSummarizationSuggestionData_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_contactcenterinsights_v1_ConversationSummarizationSuggestionData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_ConversationSummarizationSuggestionData_descriptor,
@@ -1475,7 +1737,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_ConversationParticipant_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_contactcenterinsights_v1_ConversationParticipant_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_ConversationParticipant_descriptor,
@@ -1488,7 +1750,7 @@ public final class ResourcesProto {
               "Participant",
             });
     internal_static_google_cloud_contactcenterinsights_v1_View_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_contactcenterinsights_v1_View_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_View_descriptor,
@@ -1496,7 +1758,7 @@ public final class ResourcesProto {
               "Name", "DisplayName", "CreateTime", "UpdateTime", "Value",
             });
     internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_descriptor,
@@ -1512,6 +1774,8 @@ public final class ResourcesProto {
               "IssueModels",
               "RunSummarizationAnnotator",
               "SummarizationConfig",
+              "RunQaAnnotator",
+              "QaConfig",
             });
     internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_descriptor =
         internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_descriptor
@@ -1522,6 +1786,164 @@ public final class ResourcesProto {
             internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_descriptor,
             new java.lang.String[] {
               "ConversationProfile", "SummarizationModel", "ModelSource",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_descriptor,
+            new java.lang.String[] {
+              "ScorecardList", "ScorecardSource",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_QaConfig_ScorecardList_descriptor,
+            new java.lang.String[] {
+              "QaScorecardRevisions",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_descriptor =
+        getDescriptor().getMessageTypes().get(48);
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "Abbreviation",
+              "CreateTime",
+              "UpdateTime",
+              "QuestionBody",
+              "AnswerInstructions",
+              "AnswerChoices",
+              "Tags",
+              "Order",
+              "Metrics",
+              "TuningMetadata",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_AnswerChoice_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_AnswerChoice_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_AnswerChoice_descriptor,
+            new java.lang.String[] {
+              "StrValue", "NumValue", "BoolValue", "NaValue", "Key", "Score", "Value",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_Metrics_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_Metrics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_Metrics_descriptor,
+            new java.lang.String[] {
+              "Accuracy",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_TuningMetadata_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_TuningMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaQuestion_TuningMetadata_descriptor,
+            new java.lang.String[] {
+              "TotalValidLabelCount", "DatasetValidationWarnings", "TuningError",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecard_descriptor =
+        getDescriptor().getMessageTypes().get(49);
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecard_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaScorecard_descriptor,
+            new java.lang.String[] {
+              "Name", "DisplayName", "Description", "CreateTime", "UpdateTime",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardRevision_descriptor =
+        getDescriptor().getMessageTypes().get(50);
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardRevision_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaScorecardRevision_descriptor,
+            new java.lang.String[] {
+              "Name", "Snapshot", "CreateTime", "AlternateIds", "State",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_descriptor =
+        getDescriptor().getMessageTypes().get(51);
+    internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_descriptor,
+            new java.lang.String[] {
+              "QaQuestion", "Conversation", "QuestionBody", "AnswerValue", "Tags", "AnswerSources",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerValue_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerValue_descriptor,
+            new java.lang.String[] {
+              "StrValue",
+              "NumValue",
+              "BoolValue",
+              "NaValue",
+              "Key",
+              "Score",
+              "PotentialScore",
+              "NormalizedScore",
+              "Value",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerSource_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaAnswer_AnswerSource_descriptor,
+            new java.lang.String[] {
+              "SourceType", "AnswerValue",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_descriptor =
+        getDescriptor().getMessageTypes().get(52);
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "QaScorecardRevision",
+              "Conversation",
+              "CreateTime",
+              "AgentId",
+              "QaAnswers",
+              "Score",
+              "PotentialScore",
+              "NormalizedScore",
+              "QaTagResults",
+              "ScoreSources",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_QaTagResult_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_QaTagResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_QaTagResult_descriptor,
+            new java.lang.String[] {
+              "Tag", "Score", "PotentialScore", "NormalizedScore",
+            });
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_ScoreSource_descriptor =
+        internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_ScoreSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contactcenterinsights_v1_QaScorecardResult_ScoreSource_descriptor,
+            new java.lang.String[] {
+              "SourceType", "Score", "PotentialScore", "NormalizedScore", "QaTagResults",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

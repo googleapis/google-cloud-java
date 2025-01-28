@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -357,8 +357,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Environment][google.cloud.dialogflow.cx.v3.Environment] to list
-   *     all environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     all environments for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExperimentsPagedResponse listExperiments(EnvironmentName parent) {
@@ -392,8 +392,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Environment][google.cloud.dialogflow.cx.v3.Environment] to list
-   *     all environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     all environments for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExperimentsPagedResponse listExperiments(String parent) {
@@ -535,8 +535,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment].
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Experiment getExperiment(ExperimentName name) {
@@ -566,8 +566,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment].
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Experiment getExperiment(String name) {
@@ -658,9 +658,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
-   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;`.
+   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @param experiment Required. The experiment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -695,9 +694,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an
-   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;`.
+   *     [Environment][google.cloud.dialogflow.cx.v3.Environment] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @param experiment Required. The experiment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -881,9 +879,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment]
-   *     to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   *     to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteExperiment(ExperimentName name) {
@@ -913,9 +910,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Environment][google.cloud.dialogflow.cx.v3.Environment]
-   *     to delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   *     to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteExperiment(String name) {
@@ -1004,9 +1000,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the experiment to start. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   * @param name Required. Resource name of the experiment to start. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Experiment startExperiment(ExperimentName name) {
@@ -1036,9 +1031,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the experiment to start. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   * @param name Required. Resource name of the experiment to start. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Experiment startExperiment(String name) {
@@ -1130,9 +1124,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the experiment to stop. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   * @param name Required. Resource name of the experiment to stop. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Experiment stopExperiment(ExperimentName name) {
@@ -1162,9 +1155,8 @@ public class ExperimentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the experiment to stop. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
+   * @param name Required. Resource name of the experiment to stop. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Experiment stopExperiment(String name) {

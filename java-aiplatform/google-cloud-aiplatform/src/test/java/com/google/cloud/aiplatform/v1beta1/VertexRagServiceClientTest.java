@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,6 +172,186 @@ public class VertexRagServiceClientTest {
       String parent = "parent-995424086";
       RagQuery query = RagQuery.newBuilder().build();
       client.retrieveContexts(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void augmentPromptTest() throws Exception {
+    AugmentPromptResponse expectedResponse =
+        AugmentPromptResponse.newBuilder()
+            .addAllAugmentedPrompt(new ArrayList<Content>())
+            .addAllFacts(new ArrayList<Fact>())
+            .build();
+    mockVertexRagService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AugmentPromptRequest.Model model = AugmentPromptRequest.Model.newBuilder().build();
+    VertexRagStore vertexRagStore = VertexRagStore.newBuilder().build();
+
+    AugmentPromptResponse actualResponse = client.augmentPrompt(parent, model, vertexRagStore);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AugmentPromptRequest actualRequest = ((AugmentPromptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertEquals(vertexRagStore, actualRequest.getVertexRagStore());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void augmentPromptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AugmentPromptRequest.Model model = AugmentPromptRequest.Model.newBuilder().build();
+      VertexRagStore vertexRagStore = VertexRagStore.newBuilder().build();
+      client.augmentPrompt(parent, model, vertexRagStore);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void augmentPromptTest2() throws Exception {
+    AugmentPromptResponse expectedResponse =
+        AugmentPromptResponse.newBuilder()
+            .addAllAugmentedPrompt(new ArrayList<Content>())
+            .addAllFacts(new ArrayList<Fact>())
+            .build();
+    mockVertexRagService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    AugmentPromptRequest.Model model = AugmentPromptRequest.Model.newBuilder().build();
+    VertexRagStore vertexRagStore = VertexRagStore.newBuilder().build();
+
+    AugmentPromptResponse actualResponse = client.augmentPrompt(parent, model, vertexRagStore);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AugmentPromptRequest actualRequest = ((AugmentPromptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(model, actualRequest.getModel());
+    Assert.assertEquals(vertexRagStore, actualRequest.getVertexRagStore());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void augmentPromptExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AugmentPromptRequest.Model model = AugmentPromptRequest.Model.newBuilder().build();
+      VertexRagStore vertexRagStore = VertexRagStore.newBuilder().build();
+      client.augmentPrompt(parent, model, vertexRagStore);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void corroborateContentTest() throws Exception {
+    CorroborateContentResponse expectedResponse =
+        CorroborateContentResponse.newBuilder()
+            .setCorroborationScore(-1042003226)
+            .addAllClaims(new ArrayList<Claim>())
+            .build();
+    mockVertexRagService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Content content = Content.newBuilder().build();
+    List<Fact> facts = new ArrayList<>();
+
+    CorroborateContentResponse actualResponse = client.corroborateContent(parent, content, facts);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CorroborateContentRequest actualRequest = ((CorroborateContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(content, actualRequest.getContent());
+    Assert.assertEquals(facts, actualRequest.getFactsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void corroborateContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Content content = Content.newBuilder().build();
+      List<Fact> facts = new ArrayList<>();
+      client.corroborateContent(parent, content, facts);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void corroborateContentTest2() throws Exception {
+    CorroborateContentResponse expectedResponse =
+        CorroborateContentResponse.newBuilder()
+            .setCorroborationScore(-1042003226)
+            .addAllClaims(new ArrayList<Claim>())
+            .build();
+    mockVertexRagService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Content content = Content.newBuilder().build();
+    List<Fact> facts = new ArrayList<>();
+
+    CorroborateContentResponse actualResponse = client.corroborateContent(parent, content, facts);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CorroborateContentRequest actualRequest = ((CorroborateContentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(content, actualRequest.getContent());
+    Assert.assertEquals(facts, actualRequest.getFactsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void corroborateContentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Content content = Content.newBuilder().build();
+      List<Fact> facts = new ArrayList<>();
+      client.corroborateContent(parent, content, facts);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

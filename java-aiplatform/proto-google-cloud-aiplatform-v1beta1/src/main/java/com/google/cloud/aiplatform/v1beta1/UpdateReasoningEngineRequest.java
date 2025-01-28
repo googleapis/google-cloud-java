@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,10 +126,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Mask specifying which fields to update.
+   * Optional. Mask specifying which fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -142,10 +142,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Mask specifying which fields to update.
+   * Optional. Mask specifying which fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -158,10 +158,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. Mask specifying which fields to update.
+   * Optional. Mask specifying which fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -786,10 +786,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the updateMask field is set.
@@ -801,10 +801,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The updateMask.
@@ -822,10 +822,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
@@ -845,10 +845,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -865,10 +865,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
@@ -893,10 +893,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUpdateMask() {
@@ -913,10 +913,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
@@ -928,10 +928,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -947,10 +947,10 @@ public final class UpdateReasoningEngineRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. Mask specifying which fields to update.
+     * Optional. Mask specifying which fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

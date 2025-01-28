@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureGroupsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeaturesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListLocationsPagedResponse;
 
@@ -48,6 +50,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -118,6 +121,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -176,6 +180,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -234,6 +239,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -277,6 +283,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureRegistryService.addResponse(expectedResponse);
 
@@ -408,6 +415,7 @@ public class FeatureRegistryServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -559,6 +567,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .addAllFeatureStatsAndAnomaly(new ArrayList<FeatureStatsAndAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
             .setPointOfContact("pointOfContact-804861287")
             .build();
@@ -627,6 +636,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .addAllFeatureStatsAndAnomaly(new ArrayList<FeatureStatsAndAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
             .setPointOfContact("pointOfContact-804861287")
             .build();
@@ -693,6 +703,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .addAllFeatureStatsAndAnomaly(new ArrayList<FeatureStatsAndAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
             .setPointOfContact("pointOfContact-804861287")
             .build();
@@ -743,6 +754,152 @@ public class FeatureRegistryServiceClientTest {
   }
 
   @Test
+  public void batchCreateFeaturesTest() throws Exception {
+    BatchCreateFeaturesResponse expectedResponse =
+        BatchCreateFeaturesResponse.newBuilder().addAllFeatures(new ArrayList<Feature>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateFeaturesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    EntityTypeName parent =
+        EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+    List<CreateFeatureRequest> requests = new ArrayList<>();
+
+    BatchCreateFeaturesResponse actualResponse =
+        client.batchCreateFeaturesAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateFeaturesRequest actualRequest = ((BatchCreateFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateFeaturesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      EntityTypeName parent =
+          EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+      List<CreateFeatureRequest> requests = new ArrayList<>();
+      client.batchCreateFeaturesAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchCreateFeaturesTest2() throws Exception {
+    BatchCreateFeaturesResponse expectedResponse =
+        BatchCreateFeaturesResponse.newBuilder().addAllFeatures(new ArrayList<Feature>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateFeaturesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+    List<CreateFeatureRequest> requests = new ArrayList<>();
+
+    BatchCreateFeaturesResponse actualResponse =
+        client.batchCreateFeaturesAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateFeaturesRequest actualRequest = ((BatchCreateFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateFeaturesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      List<CreateFeatureRequest> requests = new ArrayList<>();
+      client.batchCreateFeaturesAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchCreateFeaturesTest3() throws Exception {
+    BatchCreateFeaturesResponse expectedResponse =
+        BatchCreateFeaturesResponse.newBuilder().addAllFeatures(new ArrayList<Feature>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateFeaturesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<CreateFeatureRequest> requests = new ArrayList<>();
+
+    BatchCreateFeaturesResponse actualResponse =
+        client.batchCreateFeaturesAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateFeaturesRequest actualRequest = ((BatchCreateFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateFeaturesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<CreateFeatureRequest> requests = new ArrayList<>();
+      client.batchCreateFeaturesAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getFeatureTest() throws Exception {
     Feature expectedResponse =
         Feature.newBuilder()
@@ -759,6 +916,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .addAllFeatureStatsAndAnomaly(new ArrayList<FeatureStatsAndAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
             .setPointOfContact("pointOfContact-804861287")
             .build();
@@ -815,6 +973,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .addAllFeatureStatsAndAnomaly(new ArrayList<FeatureStatsAndAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
             .setPointOfContact("pointOfContact-804861287")
             .build();
@@ -1001,6 +1160,7 @@ public class FeatureRegistryServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .addAllFeatureStatsAndAnomaly(new ArrayList<FeatureStatsAndAnomaly>())
             .setVersionColumnName("versionColumnName-997658119")
             .setPointOfContact("pointOfContact-804861287")
             .build();
@@ -1132,6 +1292,744 @@ public class FeatureRegistryServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeatureMonitorTest() throws Exception {
+    FeatureMonitor expectedResponse =
+        FeatureMonitor.newBuilder()
+            .setName(
+                FeatureMonitorName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeatureMonitorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+    FeatureMonitor featureMonitor = FeatureMonitor.newBuilder().build();
+    String featureMonitorId = "featureMonitorId1191342527";
+
+    FeatureMonitor actualResponse =
+        client.createFeatureMonitorAsync(parent, featureMonitor, featureMonitorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureMonitorRequest actualRequest =
+        ((CreateFeatureMonitorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(featureMonitor, actualRequest.getFeatureMonitor());
+    Assert.assertEquals(featureMonitorId, actualRequest.getFeatureMonitorId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureMonitorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      FeatureMonitor featureMonitor = FeatureMonitor.newBuilder().build();
+      String featureMonitorId = "featureMonitorId1191342527";
+      client.createFeatureMonitorAsync(parent, featureMonitor, featureMonitorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeatureMonitorTest2() throws Exception {
+    FeatureMonitor expectedResponse =
+        FeatureMonitor.newBuilder()
+            .setName(
+                FeatureMonitorName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeatureMonitorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    FeatureMonitor featureMonitor = FeatureMonitor.newBuilder().build();
+    String featureMonitorId = "featureMonitorId1191342527";
+
+    FeatureMonitor actualResponse =
+        client.createFeatureMonitorAsync(parent, featureMonitor, featureMonitorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureMonitorRequest actualRequest =
+        ((CreateFeatureMonitorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(featureMonitor, actualRequest.getFeatureMonitor());
+    Assert.assertEquals(featureMonitorId, actualRequest.getFeatureMonitorId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureMonitorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      FeatureMonitor featureMonitor = FeatureMonitor.newBuilder().build();
+      String featureMonitorId = "featureMonitorId1191342527";
+      client.createFeatureMonitorAsync(parent, featureMonitor, featureMonitorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getFeatureMonitorTest() throws Exception {
+    FeatureMonitor expectedResponse =
+        FeatureMonitor.newBuilder()
+            .setName(
+                FeatureMonitorName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    FeatureMonitorName name =
+        FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+
+    FeatureMonitor actualResponse = client.getFeatureMonitor(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeatureMonitorRequest actualRequest = ((GetFeatureMonitorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeatureMonitorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureMonitorName name =
+          FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+      client.getFeatureMonitor(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeatureMonitorTest2() throws Exception {
+    FeatureMonitor expectedResponse =
+        FeatureMonitor.newBuilder()
+            .setName(
+                FeatureMonitorName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FeatureMonitor actualResponse = client.getFeatureMonitor(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeatureMonitorRequest actualRequest = ((GetFeatureMonitorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeatureMonitorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFeatureMonitor(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeatureMonitorsTest() throws Exception {
+    FeatureMonitor responsesElement = FeatureMonitor.newBuilder().build();
+    ListFeatureMonitorsResponse expectedResponse =
+        ListFeatureMonitorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeatureMonitors(Arrays.asList(responsesElement))
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+
+    ListFeatureMonitorsPagedResponse pagedListResponse = client.listFeatureMonitors(parent);
+
+    List<FeatureMonitor> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeatureMonitorsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeatureMonitorsRequest actualRequest = ((ListFeatureMonitorsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeatureMonitorsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      client.listFeatureMonitors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeatureMonitorsTest2() throws Exception {
+    FeatureMonitor responsesElement = FeatureMonitor.newBuilder().build();
+    ListFeatureMonitorsResponse expectedResponse =
+        ListFeatureMonitorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeatureMonitors(Arrays.asList(responsesElement))
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFeatureMonitorsPagedResponse pagedListResponse = client.listFeatureMonitors(parent);
+
+    List<FeatureMonitor> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeatureMonitorsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeatureMonitorsRequest actualRequest = ((ListFeatureMonitorsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeatureMonitorsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFeatureMonitors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFeatureMonitorTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFeatureMonitorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    FeatureMonitorName name =
+        FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+
+    client.deleteFeatureMonitorAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeatureMonitorRequest actualRequest =
+        ((DeleteFeatureMonitorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeatureMonitorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureMonitorName name =
+          FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+      client.deleteFeatureMonitorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteFeatureMonitorTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFeatureMonitorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteFeatureMonitorAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeatureMonitorRequest actualRequest =
+        ((DeleteFeatureMonitorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeatureMonitorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFeatureMonitorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeatureMonitorJobTest() throws Exception {
+    FeatureMonitorJob expectedResponse =
+        FeatureMonitorJob.newBuilder()
+            .setName(
+                FeatureMonitorJobName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[FEATURE_GROUP]",
+                        "[FEATURE_MONITOR]",
+                        "[FEATURE_MONITOR_JOB]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setFinalStatus(Status.newBuilder().build())
+            .setJobSummary(FeatureMonitorJob.JobSummary.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDriftBaseFeatureMonitorJobId(-410085021)
+            .setDriftBaseSnapshotTime(Timestamp.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    FeatureMonitorName parent =
+        FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+    FeatureMonitorJob featureMonitorJob = FeatureMonitorJob.newBuilder().build();
+    long featureMonitorJobId = 816328651;
+
+    FeatureMonitorJob actualResponse =
+        client.createFeatureMonitorJob(parent, featureMonitorJob, featureMonitorJobId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureMonitorJobRequest actualRequest =
+        ((CreateFeatureMonitorJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(featureMonitorJob, actualRequest.getFeatureMonitorJob());
+    Assert.assertEquals(featureMonitorJobId, actualRequest.getFeatureMonitorJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureMonitorJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureMonitorName parent =
+          FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+      FeatureMonitorJob featureMonitorJob = FeatureMonitorJob.newBuilder().build();
+      long featureMonitorJobId = 816328651;
+      client.createFeatureMonitorJob(parent, featureMonitorJob, featureMonitorJobId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFeatureMonitorJobTest2() throws Exception {
+    FeatureMonitorJob expectedResponse =
+        FeatureMonitorJob.newBuilder()
+            .setName(
+                FeatureMonitorJobName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[FEATURE_GROUP]",
+                        "[FEATURE_MONITOR]",
+                        "[FEATURE_MONITOR_JOB]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setFinalStatus(Status.newBuilder().build())
+            .setJobSummary(FeatureMonitorJob.JobSummary.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDriftBaseFeatureMonitorJobId(-410085021)
+            .setDriftBaseSnapshotTime(Timestamp.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    FeatureMonitorJob featureMonitorJob = FeatureMonitorJob.newBuilder().build();
+    long featureMonitorJobId = 816328651;
+
+    FeatureMonitorJob actualResponse =
+        client.createFeatureMonitorJob(parent, featureMonitorJob, featureMonitorJobId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureMonitorJobRequest actualRequest =
+        ((CreateFeatureMonitorJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(featureMonitorJob, actualRequest.getFeatureMonitorJob());
+    Assert.assertEquals(featureMonitorJobId, actualRequest.getFeatureMonitorJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureMonitorJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      FeatureMonitorJob featureMonitorJob = FeatureMonitorJob.newBuilder().build();
+      long featureMonitorJobId = 816328651;
+      client.createFeatureMonitorJob(parent, featureMonitorJob, featureMonitorJobId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeatureMonitorJobTest() throws Exception {
+    FeatureMonitorJob expectedResponse =
+        FeatureMonitorJob.newBuilder()
+            .setName(
+                FeatureMonitorJobName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[FEATURE_GROUP]",
+                        "[FEATURE_MONITOR]",
+                        "[FEATURE_MONITOR_JOB]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setFinalStatus(Status.newBuilder().build())
+            .setJobSummary(FeatureMonitorJob.JobSummary.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDriftBaseFeatureMonitorJobId(-410085021)
+            .setDriftBaseSnapshotTime(Timestamp.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    FeatureMonitorJobName name =
+        FeatureMonitorJobName.of(
+            "[PROJECT]",
+            "[LOCATION]",
+            "[FEATURE_GROUP]",
+            "[FEATURE_MONITOR]",
+            "[FEATURE_MONITOR_JOB]");
+
+    FeatureMonitorJob actualResponse = client.getFeatureMonitorJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeatureMonitorJobRequest actualRequest =
+        ((GetFeatureMonitorJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeatureMonitorJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureMonitorJobName name =
+          FeatureMonitorJobName.of(
+              "[PROJECT]",
+              "[LOCATION]",
+              "[FEATURE_GROUP]",
+              "[FEATURE_MONITOR]",
+              "[FEATURE_MONITOR_JOB]");
+      client.getFeatureMonitorJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeatureMonitorJobTest2() throws Exception {
+    FeatureMonitorJob expectedResponse =
+        FeatureMonitorJob.newBuilder()
+            .setName(
+                FeatureMonitorJobName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[FEATURE_GROUP]",
+                        "[FEATURE_MONITOR]",
+                        "[FEATURE_MONITOR_JOB]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setFinalStatus(Status.newBuilder().build())
+            .setJobSummary(FeatureMonitorJob.JobSummary.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setDriftBaseFeatureMonitorJobId(-410085021)
+            .setDriftBaseSnapshotTime(Timestamp.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FeatureMonitorJob actualResponse = client.getFeatureMonitorJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeatureMonitorJobRequest actualRequest =
+        ((GetFeatureMonitorJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeatureMonitorJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFeatureMonitorJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeatureMonitorJobsTest() throws Exception {
+    FeatureMonitorJob responsesElement = FeatureMonitorJob.newBuilder().build();
+    ListFeatureMonitorJobsResponse expectedResponse =
+        ListFeatureMonitorJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeatureMonitorJobs(Arrays.asList(responsesElement))
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    FeatureMonitorName parent =
+        FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+
+    ListFeatureMonitorJobsPagedResponse pagedListResponse = client.listFeatureMonitorJobs(parent);
+
+    List<FeatureMonitorJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeatureMonitorJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeatureMonitorJobsRequest actualRequest =
+        ((ListFeatureMonitorJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeatureMonitorJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureMonitorName parent =
+          FeatureMonitorName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]");
+      client.listFeatureMonitorJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeatureMonitorJobsTest2() throws Exception {
+    FeatureMonitorJob responsesElement = FeatureMonitorJob.newBuilder().build();
+    ListFeatureMonitorJobsResponse expectedResponse =
+        ListFeatureMonitorJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeatureMonitorJobs(Arrays.asList(responsesElement))
+            .build();
+    mockFeatureRegistryService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFeatureMonitorJobsPagedResponse pagedListResponse = client.listFeatureMonitorJobs(parent);
+
+    List<FeatureMonitorJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeatureMonitorJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeatureMonitorJobsRequest actualRequest =
+        ((ListFeatureMonitorJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeatureMonitorJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFeatureMonitorJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

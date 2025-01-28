@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -486,6 +486,41 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlExcludedObjectsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+     *
+     * @return Whether the sqlServerExcludedObjects field is set.
+     */
+    boolean hasSqlServerExcludedObjects();
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+     *
+     * @return The sqlServerExcludedObjects.
+     */
+    com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerExcludedObjects();
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+     */
+    com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerExcludedObjectsOrBuilder();
+
     com.google.cloud.datastream.v1.Stream.BackfillAllStrategy.ExcludedObjectsCase
         getExcludedObjectsCase();
   }
@@ -544,6 +579,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       ORACLE_EXCLUDED_OBJECTS(1),
       MYSQL_EXCLUDED_OBJECTS(2),
       POSTGRESQL_EXCLUDED_OBJECTS(3),
+      SQL_SERVER_EXCLUDED_OBJECTS(4),
       EXCLUDEDOBJECTS_NOT_SET(0);
       private final int value;
 
@@ -568,6 +604,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             return MYSQL_EXCLUDED_OBJECTS;
           case 3:
             return POSTGRESQL_EXCLUDED_OBJECTS;
+          case 4:
+            return SQL_SERVER_EXCLUDED_OBJECTS;
           case 0:
             return EXCLUDEDOBJECTS_NOT_SET;
           default:
@@ -738,6 +776,58 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.datastream.v1.PostgresqlRdbms.getDefaultInstance();
     }
 
+    public static final int SQL_SERVER_EXCLUDED_OBJECTS_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+     *
+     * @return Whether the sqlServerExcludedObjects field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlServerExcludedObjects() {
+      return excludedObjectsCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+     *
+     * @return The sqlServerExcludedObjects.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerExcludedObjects() {
+      if (excludedObjectsCase_ == 4) {
+        return (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder
+        getSqlServerExcludedObjectsOrBuilder() {
+      if (excludedObjectsCase_ == 4) {
+        return (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -760,6 +850,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       if (excludedObjectsCase_ == 3) {
         output.writeMessage(3, (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 4) {
+        output.writeMessage(4, (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -784,6 +877,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, (com.google.cloud.datastream.v1.PostgresqlRdbms) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -813,6 +911,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           if (!getPostgresqlExcludedObjects().equals(other.getPostgresqlExcludedObjects()))
             return false;
           break;
+        case 4:
+          if (!getSqlServerExcludedObjects().equals(other.getSqlServerExcludedObjects()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -839,6 +941,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         case 3:
           hash = (37 * hash) + POSTGRESQL_EXCLUDED_OBJECTS_FIELD_NUMBER;
           hash = (53 * hash) + getPostgresqlExcludedObjects().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + SQL_SERVER_EXCLUDED_OBJECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getSqlServerExcludedObjects().hashCode();
           break;
         case 0:
         default:
@@ -995,6 +1101,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         if (postgresqlExcludedObjectsBuilder_ != null) {
           postgresqlExcludedObjectsBuilder_.clear();
         }
+        if (sqlServerExcludedObjectsBuilder_ != null) {
+          sqlServerExcludedObjectsBuilder_.clear();
+        }
         excludedObjectsCase_ = 0;
         excludedObjects_ = null;
         return this;
@@ -1048,6 +1157,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         if (excludedObjectsCase_ == 3 && postgresqlExcludedObjectsBuilder_ != null) {
           result.excludedObjects_ = postgresqlExcludedObjectsBuilder_.build();
+        }
+        if (excludedObjectsCase_ == 4 && sqlServerExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = sqlServerExcludedObjectsBuilder_.build();
         }
       }
 
@@ -1115,6 +1227,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
               mergePostgresqlExcludedObjects(other.getPostgresqlExcludedObjects());
               break;
             }
+          case SQL_SERVER_EXCLUDED_OBJECTS:
+            {
+              mergeSqlServerExcludedObjects(other.getSqlServerExcludedObjects());
+              break;
+            }
           case EXCLUDEDOBJECTS_NOT_SET:
             {
               break;
@@ -1167,6 +1284,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                   excludedObjectsCase_ = 3;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getSqlServerExcludedObjectsFieldBuilder().getBuilder(), extensionRegistry);
+                  excludedObjectsCase_ = 4;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1833,6 +1957,220 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 3;
         onChanged();
         return postgresqlExcludedObjectsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.SqlServerRdbms,
+              com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
+              com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>
+          sqlServerExcludedObjectsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       *
+       * @return Whether the sqlServerExcludedObjects field is set.
+       */
+      @java.lang.Override
+      public boolean hasSqlServerExcludedObjects() {
+        return excludedObjectsCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       *
+       * @return The sqlServerExcludedObjects.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerExcludedObjects() {
+        if (sqlServerExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 4) {
+            return (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+        } else {
+          if (excludedObjectsCase_ == 4) {
+            return sqlServerExcludedObjectsBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       */
+      public Builder setSqlServerExcludedObjects(
+          com.google.cloud.datastream.v1.SqlServerRdbms value) {
+        if (sqlServerExcludedObjectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          excludedObjects_ = value;
+          onChanged();
+        } else {
+          sqlServerExcludedObjectsBuilder_.setMessage(value);
+        }
+        excludedObjectsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       */
+      public Builder setSqlServerExcludedObjects(
+          com.google.cloud.datastream.v1.SqlServerRdbms.Builder builderForValue) {
+        if (sqlServerExcludedObjectsBuilder_ == null) {
+          excludedObjects_ = builderForValue.build();
+          onChanged();
+        } else {
+          sqlServerExcludedObjectsBuilder_.setMessage(builderForValue.build());
+        }
+        excludedObjectsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       */
+      public Builder mergeSqlServerExcludedObjects(
+          com.google.cloud.datastream.v1.SqlServerRdbms value) {
+        if (sqlServerExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 4
+              && excludedObjects_
+                  != com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance()) {
+            excludedObjects_ =
+                com.google.cloud.datastream.v1.SqlServerRdbms.newBuilder(
+                        (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            excludedObjects_ = value;
+          }
+          onChanged();
+        } else {
+          if (excludedObjectsCase_ == 4) {
+            sqlServerExcludedObjectsBuilder_.mergeFrom(value);
+          } else {
+            sqlServerExcludedObjectsBuilder_.setMessage(value);
+          }
+        }
+        excludedObjectsCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       */
+      public Builder clearSqlServerExcludedObjects() {
+        if (sqlServerExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 4) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+            onChanged();
+          }
+        } else {
+          if (excludedObjectsCase_ == 4) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+          }
+          sqlServerExcludedObjectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       */
+      public com.google.cloud.datastream.v1.SqlServerRdbms.Builder
+          getSqlServerExcludedObjectsBuilder() {
+        return getSqlServerExcludedObjectsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder
+          getSqlServerExcludedObjectsOrBuilder() {
+        if ((excludedObjectsCase_ == 4) && (sqlServerExcludedObjectsBuilder_ != null)) {
+          return sqlServerExcludedObjectsBuilder_.getMessageOrBuilder();
+        } else {
+          if (excludedObjectsCase_ == 4) {
+            return (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * SQLServer data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_excluded_objects = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.SqlServerRdbms,
+              com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
+              com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>
+          getSqlServerExcludedObjectsFieldBuilder() {
+        if (sqlServerExcludedObjectsBuilder_ == null) {
+          if (!(excludedObjectsCase_ == 4)) {
+            excludedObjects_ = com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
+          }
+          sqlServerExcludedObjectsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.datastream.v1.SqlServerRdbms,
+                  com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
+                  com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>(
+                  (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_,
+                  getParentForChildren(),
+                  isClean());
+          excludedObjects_ = null;
+        }
+        excludedObjectsCase_ = 4;
+        onChanged();
+        return sqlServerExcludedObjectsBuilder_;
       }
 
       @java.lang.Override
@@ -3093,6 +3431,65 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LAST_RECOVERY_TIME_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp lastRecoveryTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastRecoveryTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastRecoveryTime() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastRecoveryTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getLastRecoveryTime() {
+    return lastRecoveryTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastRecoveryTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getLastRecoveryTimeOrBuilder() {
+    return lastRecoveryTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastRecoveryTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3135,6 +3532,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, customerManagedEncryptionKey_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(13, getLastRecoveryTime());
     }
     if (backfillStrategyCase_ == 101) {
       output.writeMessage(
@@ -3192,6 +3592,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               10, customerManagedEncryptionKey_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getLastRecoveryTime());
+    }
     if (backfillStrategyCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -3242,6 +3645,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     if (hasCustomerManagedEncryptionKey()) {
       if (!getCustomerManagedEncryptionKey().equals(other.getCustomerManagedEncryptionKey()))
         return false;
+    }
+    if (hasLastRecoveryTime() != other.hasLastRecoveryTime()) return false;
+    if (hasLastRecoveryTime()) {
+      if (!getLastRecoveryTime().equals(other.getLastRecoveryTime())) return false;
     }
     if (!getBackfillStrategyCase().equals(other.getBackfillStrategyCase())) return false;
     switch (backfillStrategyCase_) {
@@ -3298,6 +3705,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     if (hasCustomerManagedEncryptionKey()) {
       hash = (37 * hash) + CUSTOMER_MANAGED_ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getCustomerManagedEncryptionKey().hashCode();
+    }
+    if (hasLastRecoveryTime()) {
+      hash = (37 * hash) + LAST_RECOVERY_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastRecoveryTime().hashCode();
     }
     switch (backfillStrategyCase_) {
       case 101:
@@ -3477,6 +3888,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         getSourceConfigFieldBuilder();
         getDestinationConfigFieldBuilder();
         getErrorsFieldBuilder();
+        getLastRecoveryTimeFieldBuilder();
       }
     }
 
@@ -3522,6 +3934,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000400);
       customerManagedEncryptionKey_ = "";
+      lastRecoveryTime_ = null;
+      if (lastRecoveryTimeBuilder_ != null) {
+        lastRecoveryTimeBuilder_.dispose();
+        lastRecoveryTimeBuilder_ = null;
+      }
       backfillStrategyCase_ = 0;
       backfillStrategy_ = null;
       return this;
@@ -3611,6 +4028,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.customerManagedEncryptionKey_ = customerManagedEncryptionKey_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.lastRecoveryTime_ =
+            lastRecoveryTimeBuilder_ == null ? lastRecoveryTime_ : lastRecoveryTimeBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3730,6 +4152,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (other.hasLastRecoveryTime()) {
+        mergeLastRecoveryTime(other.getLastRecoveryTime());
+      }
       switch (other.getBackfillStrategyCase()) {
         case BACKFILL_ALL:
           {
@@ -3846,6 +4271,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 82
+            case 106:
+              {
+                input.readMessage(
+                    getLastRecoveryTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             case 810:
               {
                 input.readMessage(getBackfillAllFieldBuilder().getBuilder(), extensionRegistry);
@@ -6144,6 +6576,218 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp lastRecoveryTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastRecoveryTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastRecoveryTime field is set.
+     */
+    public boolean hasLastRecoveryTime() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastRecoveryTime.
+     */
+    public com.google.protobuf.Timestamp getLastRecoveryTime() {
+      if (lastRecoveryTimeBuilder_ == null) {
+        return lastRecoveryTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastRecoveryTime_;
+      } else {
+        return lastRecoveryTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastRecoveryTime(com.google.protobuf.Timestamp value) {
+      if (lastRecoveryTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastRecoveryTime_ = value;
+      } else {
+        lastRecoveryTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastRecoveryTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastRecoveryTimeBuilder_ == null) {
+        lastRecoveryTime_ = builderForValue.build();
+      } else {
+        lastRecoveryTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastRecoveryTime(com.google.protobuf.Timestamp value) {
+      if (lastRecoveryTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && lastRecoveryTime_ != null
+            && lastRecoveryTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastRecoveryTimeBuilder().mergeFrom(value);
+        } else {
+          lastRecoveryTime_ = value;
+        }
+      } else {
+        lastRecoveryTimeBuilder_.mergeFrom(value);
+      }
+      if (lastRecoveryTime_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastRecoveryTime() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      lastRecoveryTime_ = null;
+      if (lastRecoveryTimeBuilder_ != null) {
+        lastRecoveryTimeBuilder_.dispose();
+        lastRecoveryTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastRecoveryTimeBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getLastRecoveryTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastRecoveryTimeOrBuilder() {
+      if (lastRecoveryTimeBuilder_ != null) {
+        return lastRecoveryTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return lastRecoveryTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastRecoveryTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the stream was recovered, the time of the last recovery.
+     * Note: This field is currently experimental.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getLastRecoveryTimeFieldBuilder() {
+      if (lastRecoveryTimeBuilder_ == null) {
+        lastRecoveryTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastRecoveryTime(), getParentForChildren(), isClean());
+        lastRecoveryTime_ = null;
+      }
+      return lastRecoveryTimeBuilder_;
     }
 
     @java.lang.Override

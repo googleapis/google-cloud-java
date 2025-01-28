@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -255,7 +255,7 @@ public interface ListMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * When `true`, the method runs using the user's Google Workspace
+   * Optional. When `true`, the method runs using the user's Google Workspace
    * administrator privileges.
    *
    * The calling user must be a Google Workspace administrator with the
@@ -269,7 +269,7 @@ public interface ListMembershipsRequestOrBuilder
    * Listing app memberships in a space isn't supported when using admin access.
    * </pre>
    *
-   * <code>bool use_admin_access = 8;</code>
+   * <code>bool use_admin_access = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useAdminAccess.
    */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     loadBalancerId_ = "";
     loadBalancerType_ = 0;
     gkeMasterCluster_ = "";
+    fqdn_ = "";
     cloudSqlInstance_ = "";
+    redisInstance_ = "";
+    redisCluster_ = "";
     network_ = "";
     networkType_ = 0;
     projectId_ = "";
@@ -2845,8 +2848,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A cluster URI for [Google Kubernetes Engine
-   * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * A cluster URI for [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
    *
    * <code>string gke_master_cluster = 7;</code>
@@ -2869,8 +2872,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A cluster URI for [Google Kubernetes Engine
-   * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * A cluster URI for [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
    *
    * <code>string gke_master_cluster = 7;</code>
@@ -2884,6 +2887,63 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       gkeMasterCluster_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FQDN_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fqdn_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+   * ip_address or network. Applicable only to destination endpoint.
+   * </pre>
+   *
+   * <code>string fqdn = 19;</code>
+   *
+   * @return The fqdn.
+   */
+  @java.lang.Override
+  public java.lang.String getFqdn() {
+    java.lang.Object ref = fqdn_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fqdn_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * DNS endpoint of [Google Kubernetes Engine cluster control
+   * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+   * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+   * ip_address or network. Applicable only to destination endpoint.
+   * </pre>
+   *
+   * <code>string fqdn = 19;</code>
+   *
+   * @return The bytes for fqdn.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFqdnBytes() {
+    java.lang.Object ref = fqdn_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      fqdn_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2935,6 +2995,112 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       cloudSqlInstance_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REDIS_INSTANCE_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redisInstance_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_instance = 17;</code>
+   *
+   * @return The redisInstance.
+   */
+  @java.lang.Override
+  public java.lang.String getRedisInstance() {
+    java.lang.Object ref = redisInstance_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redisInstance_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_instance = 17;</code>
+   *
+   * @return The bytes for redisInstance.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRedisInstanceBytes() {
+    java.lang.Object ref = redisInstance_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      redisInstance_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REDIS_CLUSTER_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redisCluster_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_cluster = 18;</code>
+   *
+   * @return The redisCluster.
+   */
+  @java.lang.Override
+  public java.lang.String getRedisCluster() {
+    java.lang.Object ref = redisCluster_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redisCluster_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+   * URI.
+   * </pre>
+   *
+   * <code>string redis_cluster = 18;</code>
+   *
+   * @return The bytes for redisCluster.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRedisClusterBytes() {
+    java.lang.Object ref = redisCluster_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      redisCluster_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -3341,6 +3507,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(16, loadBalancerType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redisInstance_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, redisInstance_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redisCluster_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, redisCluster_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fqdn_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, fqdn_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3397,6 +3572,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, loadBalancerType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redisInstance_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, redisInstance_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redisCluster_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, redisCluster_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fqdn_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, fqdn_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3430,7 +3614,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (loadBalancerType_ != other.loadBalancerType_) return false;
     }
     if (!getGkeMasterCluster().equals(other.getGkeMasterCluster())) return false;
+    if (!getFqdn().equals(other.getFqdn())) return false;
     if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
+    if (!getRedisInstance().equals(other.getRedisInstance())) return false;
+    if (!getRedisCluster().equals(other.getRedisCluster())) return false;
     if (hasCloudFunction() != other.hasCloudFunction()) return false;
     if (hasCloudFunction()) {
       if (!getCloudFunction().equals(other.getCloudFunction())) return false;
@@ -3479,8 +3666,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + GKE_MASTER_CLUSTER_FIELD_NUMBER;
     hash = (53 * hash) + getGkeMasterCluster().hashCode();
+    hash = (37 * hash) + FQDN_FIELD_NUMBER;
+    hash = (53 * hash) + getFqdn().hashCode();
     hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getCloudSqlInstance().hashCode();
+    hash = (37 * hash) + REDIS_INSTANCE_FIELD_NUMBER;
+    hash = (53 * hash) + getRedisInstance().hashCode();
+    hash = (37 * hash) + REDIS_CLUSTER_FIELD_NUMBER;
+    hash = (53 * hash) + getRedisCluster().hashCode();
     if (hasCloudFunction()) {
       hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
       hash = (53 * hash) + getCloudFunction().hashCode();
@@ -3657,7 +3850,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       loadBalancerId_ = "";
       loadBalancerType_ = 0;
       gkeMasterCluster_ = "";
+      fqdn_ = "";
       cloudSqlInstance_ = "";
+      redisInstance_ = "";
+      redisCluster_ = "";
       cloudFunction_ = null;
       if (cloudFunctionBuilder_ != null) {
         cloudFunctionBuilder_.dispose();
@@ -3741,30 +3937,39 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         result.gkeMasterCluster_ = gkeMasterCluster_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.cloudSqlInstance_ = cloudSqlInstance_;
+        result.fqdn_ = fqdn_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.cloudSqlInstance_ = cloudSqlInstance_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.redisInstance_ = redisInstance_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.redisCluster_ = redisCluster_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.cloudFunction_ =
             cloudFunctionBuilder_ == null ? cloudFunction_ : cloudFunctionBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.appEngineVersion_ =
             appEngineVersionBuilder_ == null ? appEngineVersion_ : appEngineVersionBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.cloudRunRevision_ =
             cloudRunRevisionBuilder_ == null ? cloudRunRevision_ : cloudRunRevisionBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.network_ = network_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.networkType_ = networkType_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.projectId_ = projectId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3849,9 +4054,24 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (!other.getFqdn().isEmpty()) {
+        fqdn_ = other.fqdn_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       if (!other.getCloudSqlInstance().isEmpty()) {
         cloudSqlInstance_ = other.cloudSqlInstance_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getRedisInstance().isEmpty()) {
+        redisInstance_ = other.redisInstance_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getRedisCluster().isEmpty()) {
+        redisCluster_ = other.redisCluster_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasCloudFunction()) {
@@ -3865,7 +4085,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.networkType_ != 0) {
@@ -3873,7 +4093,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3923,19 +4143,19 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 34
             case 40:
               {
                 networkType_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 40
             case 50:
               {
                 projectId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 50
             case 58:
@@ -3947,27 +4167,27 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 cloudSqlInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getCloudFunctionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     getAppEngineVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getCloudRunRevisionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 98
             case 106:
@@ -3994,6 +4214,24 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 128
+            case 138:
+              {
+                redisInstance_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 138
+            case 146:
+              {
+                redisCluster_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 146
+            case 154:
+              {
+                fqdn_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4791,8 +5029,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A cluster URI for [Google Kubernetes Engine
-     * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * A cluster URI for [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
      * </pre>
      *
      * <code>string gke_master_cluster = 7;</code>
@@ -4814,8 +5052,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A cluster URI for [Google Kubernetes Engine
-     * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * A cluster URI for [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
      * </pre>
      *
      * <code>string gke_master_cluster = 7;</code>
@@ -4837,8 +5075,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A cluster URI for [Google Kubernetes Engine
-     * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * A cluster URI for [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
      * </pre>
      *
      * <code>string gke_master_cluster = 7;</code>
@@ -4859,8 +5097,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A cluster URI for [Google Kubernetes Engine
-     * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * A cluster URI for [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
      * </pre>
      *
      * <code>string gke_master_cluster = 7;</code>
@@ -4877,8 +5115,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A cluster URI for [Google Kubernetes Engine
-     * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * A cluster URI for [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
      * </pre>
      *
      * <code>string gke_master_cluster = 7;</code>
@@ -4893,6 +5131,127 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       gkeMasterCluster_ = value;
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fqdn_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+     * ip_address or network. Applicable only to destination endpoint.
+     * </pre>
+     *
+     * <code>string fqdn = 19;</code>
+     *
+     * @return The fqdn.
+     */
+    public java.lang.String getFqdn() {
+      java.lang.Object ref = fqdn_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fqdn_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+     * ip_address or network. Applicable only to destination endpoint.
+     * </pre>
+     *
+     * <code>string fqdn = 19;</code>
+     *
+     * @return The bytes for fqdn.
+     */
+    public com.google.protobuf.ByteString getFqdnBytes() {
+      java.lang.Object ref = fqdn_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fqdn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+     * ip_address or network. Applicable only to destination endpoint.
+     * </pre>
+     *
+     * <code>string fqdn = 19;</code>
+     *
+     * @param value The fqdn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFqdn(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      fqdn_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+     * ip_address or network. Applicable only to destination endpoint.
+     * </pre>
+     *
+     * <code>string fqdn = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFqdn() {
+      fqdn_ = getDefaultInstance().getFqdn();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * DNS endpoint of [Google Kubernetes Engine cluster control
+     * plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+     * Requires gke_master_cluster to be set, can't be used simultaneoulsly with
+     * ip_address or network. Applicable only to destination endpoint.
+     * </pre>
+     *
+     * <code>string fqdn = 19;</code>
+     *
+     * @param value The bytes for fqdn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFqdnBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      fqdn_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4959,7 +5318,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       cloudSqlInstance_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4976,7 +5335,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCloudSqlInstance() {
       cloudSqlInstance_ = getDefaultInstance().getCloudSqlInstance();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4998,7 +5357,229 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       cloudSqlInstance_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object redisInstance_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_instance = 17;</code>
+     *
+     * @return The redisInstance.
+     */
+    public java.lang.String getRedisInstance() {
+      java.lang.Object ref = redisInstance_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redisInstance_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_instance = 17;</code>
+     *
+     * @return The bytes for redisInstance.
+     */
+    public com.google.protobuf.ByteString getRedisInstanceBytes() {
+      java.lang.Object ref = redisInstance_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        redisInstance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_instance = 17;</code>
+     *
+     * @param value The redisInstance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedisInstance(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      redisInstance_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_instance = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRedisInstance() {
+      redisInstance_ = getDefaultInstance().getRedisInstance();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_instance = 17;</code>
+     *
+     * @param value The bytes for redisInstance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedisInstanceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      redisInstance_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object redisCluster_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_cluster = 18;</code>
+     *
+     * @return The redisCluster.
+     */
+    public java.lang.String getRedisCluster() {
+      java.lang.Object ref = redisCluster_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redisCluster_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_cluster = 18;</code>
+     *
+     * @return The bytes for redisCluster.
+     */
+    public com.google.protobuf.ByteString getRedisClusterBytes() {
+      java.lang.Object ref = redisCluster_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        redisCluster_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_cluster = 18;</code>
+     *
+     * @param value The redisCluster to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedisCluster(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      redisCluster_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_cluster = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRedisCluster() {
+      redisCluster_ = getDefaultInstance().getRedisCluster();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
+     * URI.
+     * </pre>
+     *
+     * <code>string redis_cluster = 18;</code>
+     *
+     * @param value The bytes for redisCluster to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedisClusterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      redisCluster_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5022,7 +5603,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudFunction field is set.
      */
     public boolean hasCloudFunction() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -5066,7 +5647,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudFunctionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5088,7 +5669,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudFunctionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5105,7 +5686,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCloudFunction(
         com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint value) {
       if (cloudFunctionBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && cloudFunction_ != null
             && cloudFunction_
                 != com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
@@ -5118,7 +5699,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         cloudFunctionBuilder_.mergeFrom(value);
       }
       if (cloudFunction_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5134,7 +5715,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCloudFunction() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       cloudFunction_ = null;
       if (cloudFunctionBuilder_ != null) {
         cloudFunctionBuilder_.dispose();
@@ -5155,7 +5736,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder
         getCloudFunctionBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getCloudFunctionFieldBuilder().getBuilder();
     }
@@ -5229,7 +5810,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the appEngineVersion field is set.
      */
     public boolean hasAppEngineVersion() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5278,7 +5859,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         appEngineVersionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5302,7 +5883,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         appEngineVersionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5321,7 +5902,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAppEngineVersion(
         com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint value) {
       if (appEngineVersionBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && appEngineVersion_ != null
             && appEngineVersion_
                 != com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
@@ -5334,7 +5915,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         appEngineVersionBuilder_.mergeFrom(value);
       }
       if (appEngineVersion_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5352,7 +5933,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAppEngineVersion() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       appEngineVersion_ = null;
       if (appEngineVersionBuilder_ != null) {
         appEngineVersionBuilder_.dispose();
@@ -5375,7 +5956,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder
         getAppEngineVersionBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getAppEngineVersionFieldBuilder().getBuilder();
     }
@@ -5453,7 +6034,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudRunRevision field is set.
      */
     public boolean hasCloudRunRevision() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5502,7 +6083,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudRunRevisionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5526,7 +6107,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } else {
         cloudRunRevisionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5545,7 +6126,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCloudRunRevision(
         com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint value) {
       if (cloudRunRevisionBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && cloudRunRevision_ != null
             && cloudRunRevision_
                 != com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
@@ -5558,7 +6139,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         cloudRunRevisionBuilder_.mergeFrom(value);
       }
       if (cloudRunRevision_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5576,7 +6157,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCloudRunRevision() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       cloudRunRevision_ = null;
       if (cloudRunRevisionBuilder_ != null) {
         cloudRunRevisionBuilder_.dispose();
@@ -5599,7 +6180,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder
         getCloudRunRevisionBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getCloudRunRevisionFieldBuilder().getBuilder();
     }
@@ -5717,7 +6298,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5734,7 +6315,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5756,7 +6337,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5795,7 +6376,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setNetworkTypeValue(int value) {
       networkType_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5839,7 +6420,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       networkType_ = value.getNumber();
       onChanged();
       return this;
@@ -5858,7 +6439,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       networkType_ = 0;
       onChanged();
       return this;
@@ -5950,7 +6531,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       projectId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5975,7 +6556,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProjectId() {
       projectId_ = getDefaultInstance().getProjectId();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -6005,7 +6586,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       projectId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

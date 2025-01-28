@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,13 +97,35 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fuel efficient route. Routes labeled with this value are determined to be
-     * optimized for parameters such as fuel consumption.
+     * Fuel efficient route.
      * </pre>
      *
      * <code>FUEL_EFFICIENT = 1;</code>
      */
     FUEL_EFFICIENT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Route with shorter travel distance. This is an experimental feature.
+     *
+     * For `DRIVE` requests, this feature prioritizes shorter distance over
+     * driving comfort. For example, it may prefer local roads instead of
+     * highways, take dirt roads, cut through parking lots, etc. This feature
+     * does not return any maneuvers that Google Maps knows to be illegal.
+     *
+     * For `BICYCLE` and `TWO_WHEELER` requests, this feature returns routes
+     * similar to those returned when you don't specify
+     * `requested_reference_routes`.
+     *
+     * This feature is not compatible with any other travel modes, via
+     * intermediate waypoints, or `optimize_waypoint_order`; such requests will
+     * fail. However, you can use it with any `routing_preference`.
+     * </pre>
+     *
+     * <code>SHORTER_DISTANCE = 2;</code>
+     */
+    SHORTER_DISTANCE(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -121,13 +143,35 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Fuel efficient route. Routes labeled with this value are determined to be
-     * optimized for parameters such as fuel consumption.
+     * Fuel efficient route.
      * </pre>
      *
      * <code>FUEL_EFFICIENT = 1;</code>
      */
     public static final int FUEL_EFFICIENT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Route with shorter travel distance. This is an experimental feature.
+     *
+     * For `DRIVE` requests, this feature prioritizes shorter distance over
+     * driving comfort. For example, it may prefer local roads instead of
+     * highways, take dirt roads, cut through parking lots, etc. This feature
+     * does not return any maneuvers that Google Maps knows to be illegal.
+     *
+     * For `BICYCLE` and `TWO_WHEELER` requests, this feature returns routes
+     * similar to those returned when you don't specify
+     * `requested_reference_routes`.
+     *
+     * This feature is not compatible with any other travel modes, via
+     * intermediate waypoints, or `optimize_waypoint_order`; such requests will
+     * fail. However, you can use it with any `routing_preference`.
+     * </pre>
+     *
+     * <code>SHORTER_DISTANCE = 2;</code>
+     */
+    public static final int SHORTER_DISTANCE_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -157,6 +201,8 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
           return REFERENCE_ROUTE_UNSPECIFIED;
         case 1:
           return FUEL_EFFICIENT;
+        case 2:
+          return SHORTER_DISTANCE;
         default:
           return null;
       }
@@ -273,6 +319,34 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>HTML_FORMATTED_NAVIGATION_INSTRUCTIONS = 4;</code>
      */
     HTML_FORMATTED_NAVIGATION_INSTRUCTIONS(4),
+    /**
+     *
+     *
+     * <pre>
+     * Flyover information for the route(s). The
+     * `routes.polyline_details.flyover_info` fieldmask must be specified to
+     * return this information. This data will only currently be populated for
+     * certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>FLYOVER_INFO_ON_POLYLINE = 7;</code>
+     */
+    FLYOVER_INFO_ON_POLYLINE(7),
+    /**
+     *
+     *
+     * <pre>
+     * Narrow road information for the route(s). The
+     * `routes.polyline_details.narrow_road_info` fieldmask must be specified
+     * to return this information. This data will only currently be populated
+     * for certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>NARROW_ROAD_INFO_ON_POLYLINE = 8;</code>
+     */
+    NARROW_ROAD_INFO_ON_POLYLINE(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -329,6 +403,34 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>HTML_FORMATTED_NAVIGATION_INSTRUCTIONS = 4;</code>
      */
     public static final int HTML_FORMATTED_NAVIGATION_INSTRUCTIONS_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Flyover information for the route(s). The
+     * `routes.polyline_details.flyover_info` fieldmask must be specified to
+     * return this information. This data will only currently be populated for
+     * certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>FLYOVER_INFO_ON_POLYLINE = 7;</code>
+     */
+    public static final int FLYOVER_INFO_ON_POLYLINE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Narrow road information for the route(s). The
+     * `routes.polyline_details.narrow_road_info` fieldmask must be specified
+     * to return this information. This data will only currently be populated
+     * for certain metros in India. This feature is experimental, and the
+     * SKU/charge is subject to change.
+     * </pre>
+     *
+     * <code>NARROW_ROAD_INFO_ON_POLYLINE = 8;</code>
+     */
+    public static final int NARROW_ROAD_INFO_ON_POLYLINE_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -364,6 +466,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
           return TRAFFIC_ON_POLYLINE;
         case 4:
           return HTML_FORMATTED_NAVIGATION_INSTRUCTIONS;
+        case 7:
+          return FLYOVER_INFO_ON_POLYLINE;
+        case 8:
+          return NARROW_ROAD_INFO_ON_POLYLINE;
         default:
           return null;
       }
@@ -1209,7 +1315,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -1233,7 +1342,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -1254,7 +1366,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -1277,7 +1392,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -1298,7 +1416,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -5004,7 +5125,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5027,7 +5151,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5047,7 +5174,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5069,7 +5199,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5098,7 +5231,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5126,7 +5262,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5154,7 +5293,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5177,7 +5319,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5197,7 +5342,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5218,7 +5366,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5243,7 +5394,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>
@@ -5267,7 +5421,10 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * request in addition to the default route. A reference route is a route with
      * a different route calculation objective than the default route. For example
      * a `FUEL_EFFICIENT` reference route calculation takes into account various
-     * parameters that would generate an optimal fuel efficient route.
+     * parameters that would generate an optimal fuel efficient route. When using
+     * this feature, look for
+     * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+     * resulting routes.
      * </pre>
      *
      * <code>

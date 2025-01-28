@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,9 @@ public interface CustomTuningModelOrBuilder
    * Required. The fully qualified resource name of the model.
    *
    * Format:
-   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-   * model must be an alpha-numerical string with limit of 40 characters.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+   *
+   * Model must be an alpha-numerical string with limit of 40 characters.
    * </pre>
    *
    * <code>
@@ -49,8 +50,9 @@ public interface CustomTuningModelOrBuilder
    * Required. The fully qualified resource name of the model.
    *
    * Format:
-   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`
-   * model must be an alpha-numerical string with limit of 40 characters.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`.
+   *
+   * Model must be an alpha-numerical string with limit of 40 characters.
    * </pre>
    *
    * <code>
@@ -128,13 +130,13 @@ public interface CustomTuningModelOrBuilder
    *
    *
    * <pre>
-   * Deprecated: timestamp the Model was created at.
+   * Deprecated: Timestamp the Model was created at.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.CustomTuningModel.create_time is deprecated. See
-   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=88
+   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=89
    * @return Whether the createTime field is set.
    */
   @java.lang.Deprecated
@@ -143,13 +145,13 @@ public interface CustomTuningModelOrBuilder
    *
    *
    * <pre>
-   * Deprecated: timestamp the Model was created at.
+   * Deprecated: Timestamp the Model was created at.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.CustomTuningModel.create_time is deprecated. See
-   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=88
+   *     google/cloud/discoveryengine/v1/custom_tuning_model.proto;l=89
    * @return The createTime.
    */
   @java.lang.Deprecated
@@ -158,7 +160,7 @@ public interface CustomTuningModelOrBuilder
    *
    *
    * <pre>
-   * Deprecated: timestamp the Model was created at.
+   * Deprecated: Timestamp the Model was created at.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [deprecated = true];</code>
@@ -254,4 +256,31 @@ public interface CustomTuningModelOrBuilder
    * <code>map&lt;string, double&gt; metrics = 7;</code>
    */
   double getMetricsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Currently this is only populated if the model state is
+   * `INPUT_VALIDATION_FAILED`.
+   * </pre>
+   *
+   * <code>string error_message = 8;</code>
+   *
+   * @return The errorMessage.
+   */
+  java.lang.String getErrorMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Currently this is only populated if the model state is
+   * `INPUT_VALIDATION_FAILED`.
+   * </pre>
+   *
+   * <code>string error_message = 8;</code>
+   *
+   * @return The bytes for errorMessage.
+   */
+  com.google.protobuf.ByteString getErrorMessageBytes();
 }

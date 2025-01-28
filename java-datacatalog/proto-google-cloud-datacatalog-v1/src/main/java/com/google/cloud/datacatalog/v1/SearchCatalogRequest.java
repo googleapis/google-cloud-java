@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -338,7 +338,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
+     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=713
      * @return The includePublicTagTemplates.
      */
     @java.lang.Deprecated
@@ -708,7 +708,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
+     *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=713
      * @return The includePublicTagTemplates.
      */
     @java.lang.Override
@@ -2039,7 +2039,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * @deprecated
        *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=713
        * @return The includePublicTagTemplates.
        */
       @java.lang.Override
@@ -2061,7 +2061,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * @deprecated
        *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=713
        * @param value The includePublicTagTemplates to set.
        * @return This builder for chaining.
        */
@@ -2087,7 +2087,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
        *
        * @deprecated
        *     google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates is
-       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=677
+       *     deprecated. See google/cloud/datacatalog/v1/datacatalog.proto;l=713
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,6 +170,16 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>ERROR = 6;</code>
      */
     ERROR(6),
+    /**
+     *
+     *
+     * <pre>
+     * Active Directory State is Diagnosing.
+     * </pre>
+     *
+     * <code>DIAGNOSING = 7;</code>
+     */
+    DIAGNOSING(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -243,6 +253,16 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
      * <code>ERROR = 6;</code>
      */
     public static final int ERROR_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Active Directory State is Diagnosing.
+     * </pre>
+     *
+     * <code>DIAGNOSING = 7;</code>
+     */
+    public static final int DIAGNOSING_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -282,6 +302,8 @@ public final class ActiveDirectory extends com.google.protobuf.GeneratedMessageV
           return DELETING;
         case 6:
           return ERROR;
+        case 7:
+          return DIAGNOSING;
         default:
           return null;
       }

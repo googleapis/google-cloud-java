@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,8 +74,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the cluster the GKE service is running in. The cluster must be
-   * running in the same project as the trigger being created.
+   * Required. The name of the cluster the GKE service is running in. The
+   * cluster must be running in the same project as the trigger being created.
    * </pre>
    *
    * <code>string cluster = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,8 +98,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the cluster the GKE service is running in. The cluster must be
-   * running in the same project as the trigger being created.
+   * Required. The name of the cluster the GKE service is running in. The
+   * cluster must be running in the same project as the trigger being created.
    * </pre>
    *
    * <code>string cluster = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,9 +127,10 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Google Compute Engine in which the cluster resides, which
-   * can either be compute zone (for example, us-central1-a) for the zonal
-   * clusters or region (for example, us-central1) for regional clusters.
+   * Required. The name of the Google Compute Engine in which the cluster
+   * resides, which can either be compute zone (for example, us-central1-a) for
+   * the zonal clusters or region (for example, us-central1) for regional
+   * clusters.
    * </pre>
    *
    * <code>string location = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,9 +153,10 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Google Compute Engine in which the cluster resides, which
-   * can either be compute zone (for example, us-central1-a) for the zonal
-   * clusters or region (for example, us-central1) for regional clusters.
+   * Required. The name of the Google Compute Engine in which the cluster
+   * resides, which can either be compute zone (for example, us-central1-a) for
+   * the zonal clusters or region (for example, us-central1) for regional
+   * clusters.
    * </pre>
    *
    * <code>string location = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -284,7 +286,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The relative path on the GKE service the events should be sent to.
+   * Optional. The relative path on the GKE service the events should be sent
+   * to.
    *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -310,7 +313,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The relative path on the GKE service the events should be sent to.
+   * Optional. The relative path on the GKE service the events should be sent
+   * to.
    *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -772,8 +776,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the cluster the GKE service is running in. The cluster must be
-     * running in the same project as the trigger being created.
+     * Required. The name of the cluster the GKE service is running in. The
+     * cluster must be running in the same project as the trigger being created.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -795,8 +799,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the cluster the GKE service is running in. The cluster must be
-     * running in the same project as the trigger being created.
+     * Required. The name of the cluster the GKE service is running in. The
+     * cluster must be running in the same project as the trigger being created.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -818,8 +822,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the cluster the GKE service is running in. The cluster must be
-     * running in the same project as the trigger being created.
+     * Required. The name of the cluster the GKE service is running in. The
+     * cluster must be running in the same project as the trigger being created.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -840,8 +844,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the cluster the GKE service is running in. The cluster must be
-     * running in the same project as the trigger being created.
+     * Required. The name of the cluster the GKE service is running in. The
+     * cluster must be running in the same project as the trigger being created.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -858,8 +862,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the cluster the GKE service is running in. The cluster must be
-     * running in the same project as the trigger being created.
+     * Required. The name of the cluster the GKE service is running in. The
+     * cluster must be running in the same project as the trigger being created.
      * </pre>
      *
      * <code>string cluster = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -883,9 +887,10 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Google Compute Engine in which the cluster resides, which
-     * can either be compute zone (for example, us-central1-a) for the zonal
-     * clusters or region (for example, us-central1) for regional clusters.
+     * Required. The name of the Google Compute Engine in which the cluster
+     * resides, which can either be compute zone (for example, us-central1-a) for
+     * the zonal clusters or region (for example, us-central1) for regional
+     * clusters.
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -907,9 +912,10 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Google Compute Engine in which the cluster resides, which
-     * can either be compute zone (for example, us-central1-a) for the zonal
-     * clusters or region (for example, us-central1) for regional clusters.
+     * Required. The name of the Google Compute Engine in which the cluster
+     * resides, which can either be compute zone (for example, us-central1-a) for
+     * the zonal clusters or region (for example, us-central1) for regional
+     * clusters.
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -931,9 +937,10 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Google Compute Engine in which the cluster resides, which
-     * can either be compute zone (for example, us-central1-a) for the zonal
-     * clusters or region (for example, us-central1) for regional clusters.
+     * Required. The name of the Google Compute Engine in which the cluster
+     * resides, which can either be compute zone (for example, us-central1-a) for
+     * the zonal clusters or region (for example, us-central1) for regional
+     * clusters.
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -954,9 +961,10 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Google Compute Engine in which the cluster resides, which
-     * can either be compute zone (for example, us-central1-a) for the zonal
-     * clusters or region (for example, us-central1) for regional clusters.
+     * Required. The name of the Google Compute Engine in which the cluster
+     * resides, which can either be compute zone (for example, us-central1-a) for
+     * the zonal clusters or region (for example, us-central1) for regional
+     * clusters.
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -973,9 +981,10 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Google Compute Engine in which the cluster resides, which
-     * can either be compute zone (for example, us-central1-a) for the zonal
-     * clusters or region (for example, us-central1) for regional clusters.
+     * Required. The name of the Google Compute Engine in which the cluster
+     * resides, which can either be compute zone (for example, us-central1-a) for
+     * the zonal clusters or region (for example, us-central1) for regional
+     * clusters.
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1211,7 +1220,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the GKE service the events should be sent to.
+     * Optional. The relative path on the GKE service the events should be sent
+     * to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -1236,7 +1246,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the GKE service the events should be sent to.
+     * Optional. The relative path on the GKE service the events should be sent
+     * to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -1261,7 +1272,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the GKE service the events should be sent to.
+     * Optional. The relative path on the GKE service the events should be sent
+     * to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -1285,7 +1297,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the GKE service the events should be sent to.
+     * Optional. The relative path on the GKE service the events should be sent
+     * to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -1305,7 +1318,8 @@ public final class GKE extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the GKE service the events should be sent to.
+     * Optional. The relative path on the GKE service the events should be sent
+     * to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".

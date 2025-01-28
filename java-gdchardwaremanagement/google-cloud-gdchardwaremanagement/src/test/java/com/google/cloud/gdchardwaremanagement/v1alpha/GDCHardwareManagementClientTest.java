@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1055,6 +1055,90 @@ public class GDCHardwareManagementClientTest {
   }
 
   @Test
+  public void deleteSiteTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSiteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockGDCHardwareManagement.addResponse(resultOperation);
+
+    SiteName name = SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]");
+
+    client.deleteSiteAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockGDCHardwareManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSiteRequest actualRequest = ((DeleteSiteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSiteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGDCHardwareManagement.addException(exception);
+
+    try {
+      SiteName name = SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]");
+      client.deleteSiteAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSiteTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSiteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockGDCHardwareManagement.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteSiteAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockGDCHardwareManagement.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSiteRequest actualRequest = ((DeleteSiteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSiteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGDCHardwareManagement.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSiteAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listHardwareGroupsTest() throws Exception {
     HardwareGroup responsesElement = HardwareGroup.newBuilder().build();
     ListHardwareGroupsResponse expectedResponse =
@@ -1621,6 +1705,7 @@ public class GDCHardwareManagementClientTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     mockGDCHardwareManagement.addResponse(expectedResponse);
 
@@ -1676,6 +1761,7 @@ public class GDCHardwareManagementClientTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     mockGDCHardwareManagement.addResponse(expectedResponse);
 
@@ -1731,6 +1817,7 @@ public class GDCHardwareManagementClientTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1800,6 +1887,7 @@ public class GDCHardwareManagementClientTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1869,6 +1957,7 @@ public class GDCHardwareManagementClientTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

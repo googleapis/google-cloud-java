@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,4 +121,33 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The bytes of the uris at the given index.
    */
   com.google.protobuf.ByteString getUrisBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Full resource name of the [SiteCredential][], such as
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+   * Only set to crawl private URIs.
+   * </pre>
+   *
+   * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The siteCredential.
+   */
+  java.lang.String getSiteCredential();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Full resource name of the [SiteCredential][], such as
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
+   * Only set to crawl private URIs.
+   * </pre>
+   *
+   * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for siteCredential.
+   */
+  com.google.protobuf.ByteString getSiteCredentialBytes();
 }

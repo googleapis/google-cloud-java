@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,7 +116,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * netAppSettingsBuilder
@@ -171,6 +171,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   public OperationCallSettings<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationSettings() {
     return ((NetAppStubSettings) getStubSettings()).deleteStoragePoolOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public UnaryCallSettings<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceSettings() {
+    return ((NetAppStubSettings) getStubSettings()).validateDirectoryServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public OperationCallSettings<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).validateDirectoryServiceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
@@ -476,6 +488,28 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).reverseReplicationDirectionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public UnaryCallSettings<EstablishPeeringRequest, Operation> establishPeeringSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishPeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public OperationCallSettings<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishPeeringOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public UnaryCallSettings<SyncReplicationRequest, Operation> syncReplicationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).syncReplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public OperationCallSettings<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).syncReplicationOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createBackupVault. */
   public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
     return ((NetAppStubSettings) getStubSettings()).createBackupVaultSettings();
@@ -778,6 +812,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings() {
       return getStubSettingsBuilder().deleteStoragePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public UnaryCallSettings.Builder<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceSettings() {
+      return getStubSettingsBuilder().validateDirectoryServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public OperationCallSettings.Builder<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+        validateDirectoryServiceOperationSettings() {
+      return getStubSettingsBuilder().validateDirectoryServiceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
@@ -1091,6 +1137,29 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
       return getStubSettingsBuilder().reverseReplicationDirectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public UnaryCallSettings.Builder<EstablishPeeringRequest, Operation>
+        establishPeeringSettings() {
+      return getStubSettingsBuilder().establishPeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public OperationCallSettings.Builder<EstablishPeeringRequest, Replication, OperationMetadata>
+        establishPeeringOperationSettings() {
+      return getStubSettingsBuilder().establishPeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public UnaryCallSettings.Builder<SyncReplicationRequest, Operation> syncReplicationSettings() {
+      return getStubSettingsBuilder().syncReplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public OperationCallSettings.Builder<SyncReplicationRequest, Replication, OperationMetadata>
+        syncReplicationOperationSettings() {
+      return getStubSettingsBuilder().syncReplicationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createBackupVault. */

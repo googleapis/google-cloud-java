@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ public final class GetGeneratorRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The generator resource name to retrieve. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetGeneratorRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The generator resource name to retrieve. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
    * </pre>
    *
    * <code>
@@ -468,7 +468,7 @@ public final class GetGeneratorRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The generator resource name to retrieve. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
      * </pre>
      *
      * <code>
@@ -493,7 +493,7 @@ public final class GetGeneratorRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The generator resource name to retrieve. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
      * </pre>
      *
      * <code>
@@ -518,7 +518,7 @@ public final class GetGeneratorRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The generator resource name to retrieve. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
      * </pre>
      *
      * <code>
@@ -542,7 +542,7 @@ public final class GetGeneratorRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The generator resource name to retrieve. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
      * </pre>
      *
      * <code>
@@ -562,7 +562,7 @@ public final class GetGeneratorRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The generator resource name to retrieve. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`/generators/&lt;Generator ID&gt;`
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/generators/&lt;Generator ID&gt;`
      * </pre>
      *
      * <code>

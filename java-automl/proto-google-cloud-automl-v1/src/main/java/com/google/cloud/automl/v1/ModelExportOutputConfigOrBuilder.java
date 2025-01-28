@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,9 @@ public interface ModelExportOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location where the model is to be written to.
-   * This location may only be set for the following model formats:
+   * Required. The Google Cloud Storage location where the model is to be
+   * written to. This location may only be set for the following model
+   * formats:
    *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
    *
    *  Under the directory given as the destination a new one with name
@@ -50,8 +51,9 @@ public interface ModelExportOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location where the model is to be written to.
-   * This location may only be set for the following model formats:
+   * Required. The Google Cloud Storage location where the model is to be
+   * written to. This location may only be set for the following model
+   * formats:
    *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
    *
    *  Under the directory given as the destination a new one with name
@@ -72,8 +74,9 @@ public interface ModelExportOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location where the model is to be written to.
-   * This location may only be set for the following model formats:
+   * Required. The Google Cloud Storage location where the model is to be
+   * written to. This location may only be set for the following model
+   * formats:
    *   "tflite", "edgetpu_tflite", "tf_saved_model", "tf_js", "core_ml".
    *
    *  Under the directory given as the destination a new one with name

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,10 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -63,6 +67,29 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   ProtoUtils.marshaller(RetrieveContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveContextsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AugmentPromptRequest, AugmentPromptResponse>
+      augmentPromptMethodDescriptor =
+          MethodDescriptor.<AugmentPromptRequest, AugmentPromptResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.VertexRagService/AugmentPrompt")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AugmentPromptRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AugmentPromptResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentMethodDescriptor =
+          MethodDescriptor.<CorroborateContentRequest, CorroborateContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagService/CorroborateContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CorroborateContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CorroborateContentResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -113,6 +140,9 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
 
   private final UnaryCallable<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsCallable;
+  private final UnaryCallable<AugmentPromptRequest, AugmentPromptResponse> augmentPromptCallable;
+  private final UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -177,6 +207,27 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<AugmentPromptRequest, AugmentPromptResponse> augmentPromptTransportSettings =
+        GrpcCallSettings.<AugmentPromptRequest, AugmentPromptResponse>newBuilder()
+            .setMethodDescriptor(augmentPromptMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CorroborateContentRequest, CorroborateContentResponse>
+        corroborateContentTransportSettings =
+            GrpcCallSettings.<CorroborateContentRequest, CorroborateContentResponse>newBuilder()
+                .setMethodDescriptor(corroborateContentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -232,6 +283,14 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
     this.retrieveContextsCallable =
         callableFactory.createUnaryCallable(
             retrieveContextsTransportSettings, settings.retrieveContextsSettings(), clientContext);
+    this.augmentPromptCallable =
+        callableFactory.createUnaryCallable(
+            augmentPromptTransportSettings, settings.augmentPromptSettings(), clientContext);
+    this.corroborateContentCallable =
+        callableFactory.createUnaryCallable(
+            corroborateContentTransportSettings,
+            settings.corroborateContentSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -265,6 +324,17 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
   public UnaryCallable<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsCallable() {
     return retrieveContextsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AugmentPromptRequest, AugmentPromptResponse> augmentPromptCallable() {
+    return augmentPromptCallable;
+  }
+
+  @Override
+  public UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentCallable() {
+    return corroborateContentCallable;
   }
 
   @Override

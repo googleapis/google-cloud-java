@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -501,6 +501,105 @@ public final class RecaptchaEnterpriseServiceGrpc {
       }
     }
     return getAddIpOverrideMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest,
+          com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>
+      getRemoveIpOverrideMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveIpOverride",
+      requestType = com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest,
+          com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>
+      getRemoveIpOverrideMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest,
+            com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>
+        getRemoveIpOverrideMethod;
+    if ((getRemoveIpOverrideMethod = RecaptchaEnterpriseServiceGrpc.getRemoveIpOverrideMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getRemoveIpOverrideMethod = RecaptchaEnterpriseServiceGrpc.getRemoveIpOverrideMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getRemoveIpOverrideMethod =
+              getRemoveIpOverrideMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest,
+                          com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveIpOverride"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "RemoveIpOverride"))
+                      .build();
+        }
+      }
+    }
+    return getRemoveIpOverrideMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListIpOverridesRequest,
+          com.google.recaptchaenterprise.v1.ListIpOverridesResponse>
+      getListIpOverridesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIpOverrides",
+      requestType = com.google.recaptchaenterprise.v1.ListIpOverridesRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.ListIpOverridesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListIpOverridesRequest,
+          com.google.recaptchaenterprise.v1.ListIpOverridesResponse>
+      getListIpOverridesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.ListIpOverridesRequest,
+            com.google.recaptchaenterprise.v1.ListIpOverridesResponse>
+        getListIpOverridesMethod;
+    if ((getListIpOverridesMethod = RecaptchaEnterpriseServiceGrpc.getListIpOverridesMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getListIpOverridesMethod = RecaptchaEnterpriseServiceGrpc.getListIpOverridesMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getListIpOverridesMethod =
+              getListIpOverridesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.ListIpOverridesRequest,
+                          com.google.recaptchaenterprise.v1.ListIpOverridesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListIpOverrides"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ListIpOverridesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ListIpOverridesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier("ListIpOverrides"))
+                      .build();
+        }
+      }
+    }
+    return getListIpOverridesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1236,6 +1335,40 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Removes an IP override from a key. The following restrictions hold:
+     * * If the IP isn't found in an existing IP override, a `NOT_FOUND` error
+     * is returned.
+     * * If the IP is found in an existing IP override, but the
+     * override type does not match, a `NOT_FOUND` error is returned.
+     * </pre>
+     */
+    default void removeIpOverride(
+        com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRemoveIpOverrideMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all IP overrides for a key.
+     * </pre>
+     */
+    default void listIpOverrides(
+        com.google.recaptchaenterprise.v1.ListIpOverridesRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.ListIpOverridesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListIpOverridesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get some aggregated metrics for a Key. This data can be used to build
      * dashboards.
      * </pre>
@@ -1592,6 +1725,44 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Removes an IP override from a key. The following restrictions hold:
+     * * If the IP isn't found in an existing IP override, a `NOT_FOUND` error
+     * is returned.
+     * * If the IP is found in an existing IP override, but the
+     * override type does not match, a `NOT_FOUND` error is returned.
+     * </pre>
+     */
+    public void removeIpOverride(
+        com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveIpOverrideMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all IP overrides for a key.
+     * </pre>
+     */
+    public void listIpOverrides(
+        com.google.recaptchaenterprise.v1.ListIpOverridesRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.ListIpOverridesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListIpOverridesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get some aggregated metrics for a Key. This data can be used to build
      * dashboards.
      * </pre>
@@ -1928,6 +2099,36 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Removes an IP override from a key. The following restrictions hold:
+     * * If the IP isn't found in an existing IP override, a `NOT_FOUND` error
+     * is returned.
+     * * If the IP is found in an existing IP override, but the
+     * override type does not match, a `NOT_FOUND` error is returned.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse removeIpOverride(
+        com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveIpOverrideMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all IP overrides for a key.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.ListIpOverridesResponse listIpOverrides(
+        com.google.recaptchaenterprise.v1.ListIpOverridesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIpOverridesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get some aggregated metrics for a Key. This data can be used to build
      * dashboards.
      * </pre>
@@ -2234,6 +2435,38 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Removes an IP override from a key. The following restrictions hold:
+     * * If the IP isn't found in an existing IP override, a `NOT_FOUND` error
+     * is returned.
+     * * If the IP is found in an existing IP override, but the
+     * override type does not match, a `NOT_FOUND` error is returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>
+        removeIpOverride(com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveIpOverrideMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all IP overrides for a key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.ListIpOverridesResponse>
+        listIpOverrides(com.google.recaptchaenterprise.v1.ListIpOverridesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListIpOverridesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get some aggregated metrics for a Key. This data can be used to build
      * dashboards.
      * </pre>
@@ -2393,16 +2626,18 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final int METHODID_DELETE_KEY = 7;
   private static final int METHODID_MIGRATE_KEY = 8;
   private static final int METHODID_ADD_IP_OVERRIDE = 9;
-  private static final int METHODID_GET_METRICS = 10;
-  private static final int METHODID_CREATE_FIREWALL_POLICY = 11;
-  private static final int METHODID_LIST_FIREWALL_POLICIES = 12;
-  private static final int METHODID_GET_FIREWALL_POLICY = 13;
-  private static final int METHODID_UPDATE_FIREWALL_POLICY = 14;
-  private static final int METHODID_DELETE_FIREWALL_POLICY = 15;
-  private static final int METHODID_REORDER_FIREWALL_POLICIES = 16;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 17;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 18;
-  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 19;
+  private static final int METHODID_REMOVE_IP_OVERRIDE = 10;
+  private static final int METHODID_LIST_IP_OVERRIDES = 11;
+  private static final int METHODID_GET_METRICS = 12;
+  private static final int METHODID_CREATE_FIREWALL_POLICY = 13;
+  private static final int METHODID_LIST_FIREWALL_POLICIES = 14;
+  private static final int METHODID_GET_FIREWALL_POLICY = 15;
+  private static final int METHODID_UPDATE_FIREWALL_POLICY = 16;
+  private static final int METHODID_DELETE_FIREWALL_POLICY = 17;
+  private static final int METHODID_REORDER_FIREWALL_POLICIES = 18;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 19;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 20;
+  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2480,6 +2715,20 @@ public final class RecaptchaEnterpriseServiceGrpc {
           serviceImpl.addIpOverride(
               (com.google.recaptchaenterprise.v1.AddIpOverrideRequest) request,
               (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.AddIpOverrideResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REMOVE_IP_OVERRIDE:
+          serviceImpl.removeIpOverride(
+              (com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_IP_OVERRIDES:
+          serviceImpl.listIpOverrides(
+              (com.google.recaptchaenterprise.v1.ListIpOverridesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1.ListIpOverridesResponse>)
                   responseObserver);
           break;
         case METHODID_GET_METRICS:
@@ -2632,6 +2881,20 @@ public final class RecaptchaEnterpriseServiceGrpc {
                     com.google.recaptchaenterprise.v1.AddIpOverrideResponse>(
                     service, METHODID_ADD_IP_OVERRIDE)))
         .addMethod(
+            getRemoveIpOverrideMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest,
+                    com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse>(
+                    service, METHODID_REMOVE_IP_OVERRIDE)))
+        .addMethod(
+            getListIpOverridesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.ListIpOverridesRequest,
+                    com.google.recaptchaenterprise.v1.ListIpOverridesResponse>(
+                    service, METHODID_LIST_IP_OVERRIDES)))
+        .addMethod(
             getGetMetricsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2760,6 +3023,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       .addMethod(getDeleteKeyMethod())
                       .addMethod(getMigrateKeyMethod())
                       .addMethod(getAddIpOverrideMethod())
+                      .addMethod(getRemoveIpOverrideMethod())
+                      .addMethod(getListIpOverridesMethod())
                       .addMethod(getGetMetricsMethod())
                       .addMethod(getCreateFirewallPolicyMethod())
                       .addMethod(getListFirewallPoliciesMethod())

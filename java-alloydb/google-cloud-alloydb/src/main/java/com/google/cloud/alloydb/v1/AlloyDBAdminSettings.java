@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.alloydb.v1;
 
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListClustersPagedResponse;
+import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListDatabasesPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
@@ -112,7 +113,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * alloyDBAdminSettingsBuilder
@@ -177,6 +178,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
   public OperationCallSettings<PromoteClusterRequest, Cluster, OperationMetadata>
       promoteClusterOperationSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).promoteClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchoverCluster. */
+  public UnaryCallSettings<SwitchoverClusterRequest, Operation> switchoverClusterSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).switchoverClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchoverCluster. */
+  public OperationCallSettings<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).switchoverClusterOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to restoreCluster. */
@@ -304,6 +316,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     return ((AlloyDBAdminStubSettings) getStubSettings()).restartInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to executeSql. */
+  public UnaryCallSettings<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).executeSqlSettings();
+  }
+
   /** Returns the object with the settings used for calls to listBackups. */
   public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
       listBackupsSettings() {
@@ -392,6 +409,12 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
   /** Returns the object with the settings used for calls to deleteUser. */
   public UnaryCallSettings<DeleteUserRequest, Empty> deleteUserSettings() {
     return ((AlloyDBAdminStubSettings) getStubSettings()).deleteUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatabases. */
+  public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      listDatabasesSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).listDatabasesSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -573,6 +596,18 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
       return getStubSettingsBuilder().promoteClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to switchoverCluster. */
+    public UnaryCallSettings.Builder<SwitchoverClusterRequest, Operation>
+        switchoverClusterSettings() {
+      return getStubSettingsBuilder().switchoverClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverCluster. */
+    public OperationCallSettings.Builder<SwitchoverClusterRequest, Cluster, OperationMetadata>
+        switchoverClusterOperationSettings() {
+      return getStubSettingsBuilder().switchoverClusterOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to restoreCluster. */
     public UnaryCallSettings.Builder<RestoreClusterRequest, Operation> restoreClusterSettings() {
       return getStubSettingsBuilder().restoreClusterSettings();
@@ -701,6 +736,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
       return getStubSettingsBuilder().restartInstanceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to executeSql. */
+    public UnaryCallSettings.Builder<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlSettings() {
+      return getStubSettingsBuilder().executeSqlSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listBackups. */
     public PagedCallSettings.Builder<
             ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
@@ -792,6 +832,13 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     /** Returns the builder for the settings used for calls to deleteUser. */
     public UnaryCallSettings.Builder<DeleteUserRequest, Empty> deleteUserSettings() {
       return getStubSettingsBuilder().deleteUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabases. */
+    public PagedCallSettings.Builder<
+            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+        listDatabasesSettings() {
+      return getStubSettingsBuilder().listDatabasesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

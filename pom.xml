@@ -121,6 +121,8 @@
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
     <module>java-maps-area-insights</module>
+    <module>java-maps-fleetengine</module>
+    <module>java-maps-fleetengine-delivery</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routeoptimization</module>
@@ -191,6 +193,7 @@
     <module>java-shopping-merchant-promotions</module>
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
+    <module>java-shopping-merchant-reviews</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
     <module>java-storageinsights</module>
@@ -201,6 +204,7 @@
     <module>java-tpu</module>
     <module>java-trace</module>
     <module>java-translate</module>
+    <module>java-valkey</module>
     <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>

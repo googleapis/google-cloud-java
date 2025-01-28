@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     statusMessage_ = "";
     apiVersion_ = "";
     warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    statusReason_ = 0;
   }
 
   @java.lang.Override
@@ -65,6 +66,143 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.cloud.edgecontainer.v1.OperationMetadata.class,
             com.google.cloud.edgecontainer.v1.OperationMetadata.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the reason for the status of the operation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.edgecontainer.v1.OperationMetadata.StatusReason}
+   */
+  public enum StatusReason implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Reason unknown.
+     * </pre>
+     *
+     * <code>STATUS_REASON_UNSPECIFIED = 0;</code>
+     */
+    STATUS_REASON_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The cluster upgrade is currently paused.
+     * </pre>
+     *
+     * <code>UPGRADE_PAUSED = 1;</code>
+     */
+    UPGRADE_PAUSED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Reason unknown.
+     * </pre>
+     *
+     * <code>STATUS_REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATUS_REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The cluster upgrade is currently paused.
+     * </pre>
+     *
+     * <code>UPGRADE_PAUSED = 1;</code>
+     */
+    public static final int UPGRADE_PAUSED_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StatusReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StatusReason forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATUS_REASON_UNSPECIFIED;
+        case 1:
+          return UPGRADE_PAUSED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StatusReason> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<StatusReason> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<StatusReason>() {
+          public StatusReason findValueByNumber(int number) {
+            return StatusReason.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.edgecontainer.v1.OperationMetadata.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final StatusReason[] VALUES = values();
+
+    public static StatusReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StatusReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.edgecontainer.v1.OperationMetadata.StatusReason)
   }
 
   private int bitField0_;
@@ -453,6 +591,43 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return warnings_.getByteString(index);
   }
 
+  public static final int STATUS_REASON_FIELD_NUMBER = 9;
+  private int statusReason_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Machine-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+   *
+   * @return The enum numeric value on the wire for statusReason.
+   */
+  @java.lang.Override
+  public int getStatusReasonValue() {
+    return statusReason_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Machine-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+   *
+   * @return The statusReason.
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason getStatusReason() {
+    com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason result =
+        com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason.forNumber(statusReason_);
+    return result == null
+        ? com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -490,6 +665,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < warnings_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, warnings_.getRaw(i));
+    }
+    if (statusReason_
+        != com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason
+            .STATUS_REASON_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, statusReason_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -529,6 +710,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getWarningsList().size();
     }
+    if (statusReason_
+        != com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason
+            .STATUS_REASON_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, statusReason_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -559,6 +746,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (getRequestedCancellation() != other.getRequestedCancellation()) return false;
     if (!getApiVersion().equals(other.getApiVersion())) return false;
     if (!getWarningsList().equals(other.getWarningsList())) return false;
+    if (statusReason_ != other.statusReason_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -592,6 +780,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
       hash = (53 * hash) + getWarningsList().hashCode();
     }
+    hash = (37 * hash) + STATUS_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + statusReason_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -757,6 +947,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestedCancellation_ = false;
       apiVersion_ = "";
       warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      statusReason_ = 0;
       return this;
     }
 
@@ -820,6 +1011,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000080) != 0)) {
         warnings_.makeImmutable();
         result.warnings_ = warnings_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.statusReason_ = statusReason_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -909,6 +1103,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         }
         onChanged();
       }
+      if (other.statusReason_ != 0) {
+        setStatusReasonValue(other.getStatusReasonValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -984,6 +1181,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
                 warnings_.add(s);
                 break;
               } // case 66
+            case 72:
+              {
+                statusReason_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2034,6 +2237,99 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       ensureWarningsIsMutable();
       warnings_.add(value);
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private int statusReason_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Machine-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+     *
+     * @return The enum numeric value on the wire for statusReason.
+     */
+    @java.lang.Override
+    public int getStatusReasonValue() {
+      return statusReason_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for statusReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusReasonValue(int value) {
+      statusReason_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+     *
+     * @return The statusReason.
+     */
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason getStatusReason() {
+      com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason result =
+          com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason.forNumber(statusReason_);
+      return result == null
+          ? com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+     *
+     * @param value The statusReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusReason(
+        com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      statusReason_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Machine-readable status of the operation, if any.
+     * </pre>
+     *
+     * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusReason() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      statusReason_ = 0;
       onChanged();
       return this;
     }

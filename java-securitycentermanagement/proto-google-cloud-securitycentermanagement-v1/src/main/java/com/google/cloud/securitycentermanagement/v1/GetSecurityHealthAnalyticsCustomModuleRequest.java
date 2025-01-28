@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Message for getting a SecurityHealthAnalyticsCustomModule
+ * Request message for
+ * [SecurityCenterManagement.GetSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.GetSecurityHealthAnalyticsCustomModule].
  * </pre>
  *
  * Protobuf type {@code
@@ -76,7 +77,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Required. Name of the resource
+   * Required. Name of the resource, in the format
+   * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
    * </pre>
    *
    * <code>
@@ -101,7 +103,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Required. Name of the resource
+   * Required. Name of the resource, in the format
+   * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
    * </pre>
    *
    * <code>
@@ -312,7 +315,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Message for getting a SecurityHealthAnalyticsCustomModule
+   * Request message for
+   * [SecurityCenterManagement.GetSecurityHealthAnalyticsCustomModule][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.GetSecurityHealthAnalyticsCustomModule].
    * </pre>
    *
    * Protobuf type {@code
@@ -522,7 +526,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the resource
+     * Required. Name of the resource, in the format
+     * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
      * </pre>
      *
      * <code>
@@ -546,7 +551,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the resource
+     * Required. Name of the resource, in the format
+     * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
      * </pre>
      *
      * <code>
@@ -570,7 +576,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the resource
+     * Required. Name of the resource, in the format
+     * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
      * </pre>
      *
      * <code>
@@ -593,7 +600,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the resource
+     * Required. Name of the resource, in the format
+     * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
      * </pre>
      *
      * <code>
@@ -612,7 +620,8 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
      *
      *
      * <pre>
-     * Required. Name of the resource
+     * Required. Name of the resource, in the format
+     * `projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{custom_module}`.
      * </pre>
      *
      * <code>

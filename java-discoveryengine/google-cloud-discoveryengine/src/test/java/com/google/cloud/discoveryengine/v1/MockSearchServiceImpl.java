@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,26 @@ public class MockSearchServiceImpl extends SearchServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method Search, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchLite(SearchRequest request, StreamObserver<SearchResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchLite, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchResponse.class.getName(),
                   Exception.class.getName())));

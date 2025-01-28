@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -942,7 +942,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the agent to restore into.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -968,7 +968,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the agent to restore into.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -1712,7 +1712,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the agent to restore into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1737,7 +1737,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the agent to restore into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1762,7 +1762,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the agent to restore into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1786,7 +1786,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the agent to restore into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1806,7 +1806,7 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the agent to restore into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>

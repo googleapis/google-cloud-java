@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1064,6 +1064,39 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     return gcpPublicCidrsAccessEnabled_;
   }
 
+  public static final int PRIVATE_ENDPOINT_ENFORCEMENT_ENABLED_FIELD_NUMBER = 5;
+  private boolean privateEndpointEnforcementEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether master authorized networks is enforced on private endpoint or not.
+   * </pre>
+   *
+   * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+   *
+   * @return Whether the privateEndpointEnforcementEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateEndpointEnforcementEnabled() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether master authorized networks is enforced on private endpoint or not.
+   * </pre>
+   *
+   * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+   *
+   * @return The privateEndpointEnforcementEnabled.
+   */
+  @java.lang.Override
+  public boolean getPrivateEndpointEnforcementEnabled() {
+    return privateEndpointEnforcementEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1087,6 +1120,9 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(3, gcpPublicCidrsAccessEnabled_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(5, privateEndpointEnforcementEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1105,6 +1141,11 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(3, gcpPublicCidrsAccessEnabled_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              5, privateEndpointEnforcementEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1128,6 +1169,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     if (hasGcpPublicCidrsAccessEnabled()) {
       if (getGcpPublicCidrsAccessEnabled() != other.getGcpPublicCidrsAccessEnabled()) return false;
     }
+    if (hasPrivateEndpointEnforcementEnabled() != other.hasPrivateEndpointEnforcementEnabled())
+      return false;
+    if (hasPrivateEndpointEnforcementEnabled()) {
+      if (getPrivateEndpointEnforcementEnabled() != other.getPrivateEndpointEnforcementEnabled())
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1149,6 +1196,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       hash = (37 * hash) + GCP_PUBLIC_CIDRS_ACCESS_ENABLED_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGcpPublicCidrsAccessEnabled());
+    }
+    if (hasPrivateEndpointEnforcementEnabled()) {
+      hash = (37 * hash) + PRIVATE_ENDPOINT_ENFORCEMENT_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getPrivateEndpointEnforcementEnabled());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1302,6 +1355,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       gcpPublicCidrsAccessEnabled_ = false;
+      privateEndpointEnforcementEnabled_ = false;
       return this;
     }
 
@@ -1359,6 +1413,10 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.gcpPublicCidrsAccessEnabled_ = gcpPublicCidrsAccessEnabled_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.privateEndpointEnforcementEnabled_ = privateEndpointEnforcementEnabled_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1442,6 +1500,9 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       if (other.hasGcpPublicCidrsAccessEnabled()) {
         setGcpPublicCidrsAccessEnabled(other.getGcpPublicCidrsAccessEnabled());
       }
+      if (other.hasPrivateEndpointEnforcementEnabled()) {
+        setPrivateEndpointEnforcementEnabled(other.getPrivateEndpointEnforcementEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1494,6 +1555,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 40:
+              {
+                privateEndpointEnforcementEnabled_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2037,6 +2104,74 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     public Builder clearGcpPublicCidrsAccessEnabled() {
       bitField0_ = (bitField0_ & ~0x00000004);
       gcpPublicCidrsAccessEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean privateEndpointEnforcementEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether master authorized networks is enforced on private endpoint or not.
+     * </pre>
+     *
+     * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+     *
+     * @return Whether the privateEndpointEnforcementEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivateEndpointEnforcementEnabled() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether master authorized networks is enforced on private endpoint or not.
+     * </pre>
+     *
+     * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+     *
+     * @return The privateEndpointEnforcementEnabled.
+     */
+    @java.lang.Override
+    public boolean getPrivateEndpointEnforcementEnabled() {
+      return privateEndpointEnforcementEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether master authorized networks is enforced on private endpoint or not.
+     * </pre>
+     *
+     * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+     *
+     * @param value The privateEndpointEnforcementEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateEndpointEnforcementEnabled(boolean value) {
+
+      privateEndpointEnforcementEnabled_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether master authorized networks is enforced on private endpoint or not.
+     * </pre>
+     *
+     * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrivateEndpointEnforcementEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      privateEndpointEnforcementEnabled_ = false;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,4 +90,18 @@ public interface ProjectSettingsOrBuilder
    */
   com.google.devtools.artifactregistry.v1.ProjectSettings.RedirectionState
       getLegacyRedirectionState();
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of pull traffic to redirect from GCR to AR when using
+   * partial redirection.
+   * </pre>
+   *
+   * <code>int32 pull_percent = 3;</code>
+   *
+   * @return The pullPercent.
+   */
+  int getPullPercent();
 }

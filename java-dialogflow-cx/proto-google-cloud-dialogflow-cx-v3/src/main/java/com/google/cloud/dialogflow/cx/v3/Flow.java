@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1142,8 +1142,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1167,8 +1167,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1589,11 +1589,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -1616,11 +1616,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -1643,11 +1643,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -1671,11 +1671,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
    *
-   * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-   * groups.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * or
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -2692,8 +2692,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2716,8 +2716,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2740,8 +2740,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2763,8 +2763,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2782,8 +2782,8 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4248,11 +4248,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4277,11 +4277,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4305,11 +4305,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4334,11 +4334,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4363,11 +4363,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4400,11 +4400,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4436,11 +4436,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4469,11 +4469,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -4501,11 +4501,11 @@ public final class Flow extends com.google.protobuf.GeneratedMessageV3
      * route groups][Page.transition_route_groups]. Transition route groups
      * defined in the page have higher priority than those defined in the flow.
      *
-     * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
-     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
-     * groups.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * or
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface ExportTestCasesResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported test cases. This field is
-   * populated only if `gcs_uri` is specified in
+   *  populated only if `gcs_uri` is specified in
    * [ExportTestCasesRequest][google.cloud.dialogflow.cx.v3.ExportTestCasesRequest].
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface ExportTestCasesResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported test cases. This field is
-   * populated only if `gcs_uri` is specified in
+   *  populated only if `gcs_uri` is specified in
    * [ExportTestCasesRequest][google.cloud.dialogflow.cx.v3.ExportTestCasesRequest].
    * </pre>
    *
@@ -57,7 +57,7 @@ public interface ExportTestCasesResponseOrBuilder
    *
    * <pre>
    * The URI to a file containing the exported test cases. This field is
-   * populated only if `gcs_uri` is specified in
+   *  populated only if `gcs_uri` is specified in
    * [ExportTestCasesRequest][google.cloud.dialogflow.cx.v3.ExportTestCasesRequest].
    * </pre>
    *

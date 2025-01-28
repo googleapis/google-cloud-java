@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public interface SynthesizeLongAudioMetadataOrBuilder
    * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.texttospeech.v1beta1.SynthesizeLongAudioMetadata.last_update_time is
-   *     deprecated. See google/cloud/texttospeech/v1beta1/cloud_tts_lrs.proto;l=85
+   *     deprecated. See google/cloud/texttospeech/v1beta1/cloud_tts_lrs.proto;l=84
    * @return Whether the lastUpdateTime field is set.
    */
   @java.lang.Deprecated
@@ -84,7 +84,7 @@ public interface SynthesizeLongAudioMetadataOrBuilder
    * <code>.google.protobuf.Timestamp last_update_time = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.texttospeech.v1beta1.SynthesizeLongAudioMetadata.last_update_time is
-   *     deprecated. See google/cloud/texttospeech/v1beta1/cloud_tts_lrs.proto;l=85
+   *     deprecated. See google/cloud/texttospeech/v1beta1/cloud_tts_lrs.proto;l=84
    * @return The lastUpdateTime.
    */
   @java.lang.Deprecated

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,4 +208,17 @@ public interface ListPublisherModelsRequestOrBuilder
    * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List all publisher model versions if the flag is set to true.
+   * </pre>
+   *
+   * <code>bool list_all_versions = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The listAllVersions.
+   */
+  boolean getListAllVersions();
 }

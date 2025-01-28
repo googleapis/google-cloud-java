@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,7 +235,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Updates the specified storagePool with the data included in the request. The update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: size_tb and provisioned_iops.</td>
+ *      <td><p> Updates the specified storagePool with the data included in the request. The update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: pool_provisioned_capacity_gb, pool_provisioned_iops and pool_provisioned_throughput.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1478,7 +1478,8 @@ public class StoragePoolsClient implements BackgroundResource {
   /**
    * Updates the specified storagePool with the data included in the request. The update is
    * performed only on selected fields included as part of update-mask. Only the following fields
-   * can be modified: size_tb and provisioned_iops.
+   * can be modified: pool_provisioned_capacity_gb, pool_provisioned_iops and
+   * pool_provisioned_throughput.
    *
    * <p>Sample code:
    *
@@ -1520,7 +1521,8 @@ public class StoragePoolsClient implements BackgroundResource {
   /**
    * Updates the specified storagePool with the data included in the request. The update is
    * performed only on selected fields included as part of update-mask. Only the following fields
-   * can be modified: size_tb and provisioned_iops.
+   * can be modified: pool_provisioned_capacity_gb, pool_provisioned_iops and
+   * pool_provisioned_throughput.
    *
    * <p>Sample code:
    *
@@ -1555,7 +1557,8 @@ public class StoragePoolsClient implements BackgroundResource {
   /**
    * Updates the specified storagePool with the data included in the request. The update is
    * performed only on selected fields included as part of update-mask. Only the following fields
-   * can be modified: size_tb and provisioned_iops.
+   * can be modified: pool_provisioned_capacity_gb, pool_provisioned_iops and
+   * pool_provisioned_throughput.
    *
    * <p>Sample code:
    *
@@ -1591,7 +1594,8 @@ public class StoragePoolsClient implements BackgroundResource {
   /**
    * Updates the specified storagePool with the data included in the request. The update is
    * performed only on selected fields included as part of update-mask. Only the following fields
-   * can be modified: size_tb and provisioned_iops.
+   * can be modified: pool_provisioned_capacity_gb, pool_provisioned_iops and
+   * pool_provisioned_throughput.
    *
    * <p>Sample code:
    *

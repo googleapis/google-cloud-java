@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,10 @@ public interface GetProductRequestOrBuilder
    * <pre>
    * Required. The name of the product to retrieve.
    * Format: `accounts/{account}/products/{product}`
+   * where the last section `product` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product name is
+   * "accounts/123/products/online~en~US~sku123"
    * </pre>
    *
    * <code>
@@ -45,6 +49,10 @@ public interface GetProductRequestOrBuilder
    * <pre>
    * Required. The name of the product to retrieve.
    * Format: `accounts/{account}/products/{product}`
+   * where the last section `product` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product name is
+   * "accounts/123/products/online~en~US~sku123"
    * </pre>
    *
    * <code>

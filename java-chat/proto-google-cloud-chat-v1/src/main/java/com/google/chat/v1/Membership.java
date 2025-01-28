@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -480,12 +480,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the membership, assigned by the server.
+   * Identifier. Resource name of the membership, assigned by the server.
    *
    * Format: `spaces/{space}/members/{member}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -505,12 +505,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the membership, assigned by the server.
+   * Identifier. Resource name of the membership, assigned by the server.
    *
    * Format: `spaces/{space}/members/{member}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -616,7 +616,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Chat user or app the membership corresponds to.
+   * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * the output populates the
@@ -624,7 +624,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * `name` and `type`.
    * </pre>
    *
-   * <code>.google.chat.v1.User member = 3;</code>
+   * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the member field is set.
    */
@@ -636,7 +636,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Chat user or app the membership corresponds to.
+   * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * the output populates the
@@ -644,7 +644,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * `name` and `type`.
    * </pre>
    *
-   * <code>.google.chat.v1.User member = 3;</code>
+   * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The member.
    */
@@ -659,7 +659,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Chat user or app the membership corresponds to.
+   * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
    * the output populates the
@@ -667,7 +667,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * `name` and `type`.
    * </pre>
    *
-   * <code>.google.chat.v1.User member = 3;</code>
+   * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.chat.v1.UserOrBuilder getMemberOrBuilder() {
@@ -682,10 +682,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Group the membership corresponds to.
+   * Optional. The Google Group the membership corresponds to.
+   *
+   * Reading or mutating memberships for Google Groups requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
-   * <code>.google.chat.v1.Group group_member = 5;</code>
+   * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the groupMember field is set.
    */
@@ -697,10 +700,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Group the membership corresponds to.
+   * Optional. The Google Group the membership corresponds to.
+   *
+   * Reading or mutating memberships for Google Groups requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
-   * <code>.google.chat.v1.Group group_member = 5;</code>
+   * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The groupMember.
    */
@@ -715,10 +721,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Group the membership corresponds to.
+   * Optional. The Google Group the membership corresponds to.
+   *
+   * Reading or mutating memberships for Google Groups requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
    * </pre>
    *
-   * <code>.google.chat.v1.Group group_member = 5;</code>
+   * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.chat.v1.GroupOrBuilder getGroupMemberOrBuilder() {
@@ -1412,12 +1421,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the membership, assigned by the server.
+     * Identifier. Resource name of the membership, assigned by the server.
      *
      * Format: `spaces/{space}/members/{member}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1436,12 +1445,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the membership, assigned by the server.
+     * Identifier. Resource name of the membership, assigned by the server.
      *
      * Format: `spaces/{space}/members/{member}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1460,12 +1469,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the membership, assigned by the server.
+     * Identifier. Resource name of the membership, assigned by the server.
      *
      * Format: `spaces/{space}/members/{member}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1483,12 +1492,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the membership, assigned by the server.
+     * Identifier. Resource name of the membership, assigned by the server.
      *
      * Format: `spaces/{space}/members/{member}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1502,12 +1511,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the membership, assigned by the server.
+     * Identifier. Resource name of the membership, assigned by the server.
      *
      * Format: `spaces/{space}/members/{member}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1747,7 +1756,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1755,7 +1764,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the member field is set.
      */
@@ -1767,7 +1776,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1775,7 +1784,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The member.
      */
@@ -1797,7 +1806,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1805,7 +1814,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMember(com.google.chat.v1.User value) {
       if (memberBuilder_ == null) {
@@ -1824,7 +1833,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1832,7 +1841,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMember(com.google.chat.v1.User.Builder builderForValue) {
       if (memberBuilder_ == null) {
@@ -1848,7 +1857,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1856,7 +1865,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMember(com.google.chat.v1.User value) {
       if (memberBuilder_ == null) {
@@ -1883,7 +1892,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1891,7 +1900,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMember() {
       if (memberBuilder_ == null) {
@@ -1913,7 +1922,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1921,7 +1930,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.chat.v1.User.Builder getMemberBuilder() {
       return getMemberFieldBuilder().getBuilder();
@@ -1930,7 +1939,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1938,7 +1947,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.chat.v1.UserOrBuilder getMemberOrBuilder() {
@@ -1955,7 +1964,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Chat user or app the membership corresponds to.
+     * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
      * the output populates the
@@ -1963,7 +1972,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * `name` and `type`.
      * </pre>
      *
-     * <code>.google.chat.v1.User member = 3;</code>
+     * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.User,
@@ -1996,10 +2005,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the groupMember field is set.
      */
@@ -2011,10 +2024,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The groupMember.
      */
@@ -2036,10 +2053,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGroupMember(com.google.chat.v1.Group value) {
       if (groupMemberBuilder_ == null) {
@@ -2058,10 +2079,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGroupMember(com.google.chat.v1.Group.Builder builderForValue) {
       if (groupMemberBuilder_ == null) {
@@ -2077,10 +2102,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeGroupMember(com.google.chat.v1.Group value) {
       if (groupMemberBuilder_ == null) {
@@ -2107,10 +2136,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearGroupMember() {
       if (groupMemberBuilder_ == null) {
@@ -2132,10 +2165,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.chat.v1.Group.Builder getGroupMemberBuilder() {
       return getGroupMemberFieldBuilder().getBuilder();
@@ -2144,10 +2181,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.chat.v1.GroupOrBuilder getGroupMemberOrBuilder() {
@@ -2164,10 +2205,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Group the membership corresponds to.
+     * Optional. The Google Group the membership corresponds to.
+     *
+     * Reading or mutating memberships for Google Groups requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
      * </pre>
      *
-     * <code>.google.chat.v1.Group group_member = 5;</code>
+     * <code>.google.chat.v1.Group group_member = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.Group,

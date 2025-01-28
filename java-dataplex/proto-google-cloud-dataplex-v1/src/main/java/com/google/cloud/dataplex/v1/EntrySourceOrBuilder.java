@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface EntrySourceOrBuilder
    *
    * <pre>
    * The name of the resource in the source system.
-   * The maximum size of the field is 4000 characters.
+   * Maximum length is 4,000 characters.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -42,7 +42,7 @@ public interface EntrySourceOrBuilder
    *
    * <pre>
    * The name of the resource in the source system.
-   * The maximum size of the field is 4000 characters.
+   * Maximum length is 4,000 characters.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -56,7 +56,7 @@ public interface EntrySourceOrBuilder
    *
    * <pre>
    * The name of the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string system = 2;</code>
@@ -69,7 +69,7 @@ public interface EntrySourceOrBuilder
    *
    * <pre>
    * The name of the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string system = 2;</code>
@@ -83,7 +83,7 @@ public interface EntrySourceOrBuilder
    *
    * <pre>
    * The platform containing the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string platform = 3;</code>
@@ -96,7 +96,7 @@ public interface EntrySourceOrBuilder
    *
    * <pre>
    * The platform containing the source system.
-   * The maximum size of the field is 64 characters.
+   * Maximum length is 64 characters.
    * </pre>
    *
    * <code>string platform = 3;</code>
@@ -109,8 +109,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * User friendly display name.
-   * The maximum size of the field is 500 characters.
+   * A user-friendly display name.
+   * Maximum length is 500 characters.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -122,8 +122,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * User friendly display name.
-   * The maximum size of the field is 500 characters.
+   * A user-friendly display name.
+   * Maximum length is 500 characters.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -136,8 +136,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Description of the Entry.
-   * The maximum size of the field is 2000 characters.
+   * A description of the data resource.
+   * Maximum length is 2,000 characters.
    * </pre>
    *
    * <code>string description = 6;</code>
@@ -149,8 +149,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Description of the Entry.
-   * The maximum size of the field is 2000 characters.
+   * A description of the data resource.
+   * Maximum length is 2,000 characters.
    * </pre>
    *
    * <code>string description = 6;</code>
@@ -226,7 +226,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -238,7 +239,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -250,7 +252,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -262,7 +265,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -275,7 +279,8 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The ancestors of the Entry in the source system.
+   * Immutable. The entries representing the ancestors of the data resource in
+   * the source system.
    * </pre>
    *
    * <code>
@@ -288,7 +293,7 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * The create time of the resource in the source system.
+   * The time when the resource was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -300,7 +305,7 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * The create time of the resource in the source system.
+   * The time when the resource was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -312,7 +317,7 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * The create time of the resource in the source system.
+   * The time when the resource was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -323,7 +328,10 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * The update time of the resource in the source system.
+   * The time when the resource was last updated in the source system. If the
+   * entry exists in the system and its `EntrySource` has `update_time`
+   * populated, further updates to the `EntrySource` of the entry must provide
+   * incremental updates to its `update_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -335,7 +343,10 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * The update time of the resource in the source system.
+   * The time when the resource was last updated in the source system. If the
+   * entry exists in the system and its `EntrySource` has `update_time`
+   * populated, further updates to the `EntrySource` of the entry must provide
+   * incremental updates to its `update_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -347,7 +358,10 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * The update time of the resource in the source system.
+   * The time when the resource was last updated in the source system. If the
+   * entry exists in the system and its `EntrySource` has `update_time`
+   * populated, further updates to the `EntrySource` of the entry must provide
+   * incremental updates to its `update_time`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -358,10 +372,10 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Location of the resource in the source system. Entry will be
-   * searchable by this location. By default, this should match the location of
-   * the EntryGroup containing this entry. A different value allows capturing
-   * source location for data external to GCP.
+   * Output only. Location of the resource in the source system. You can search
+   * the entry by this location. By default, this should match the location of
+   * the entry group containing this entry. A different value allows capturing
+   * the source location for data external to Google Cloud.
    * </pre>
    *
    * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -373,10 +387,10 @@ public interface EntrySourceOrBuilder
    *
    *
    * <pre>
-   * Output only. Location of the resource in the source system. Entry will be
-   * searchable by this location. By default, this should match the location of
-   * the EntryGroup containing this entry. A different value allows capturing
-   * source location for data external to GCP.
+   * Output only. Location of the resource in the source system. You can search
+   * the entry by this location. By default, this should match the location of
+   * the entry group containing this entry. A different value allows capturing
+   * the source location for data external to Google Cloud.
    * </pre>
    *
    * <code>string location = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

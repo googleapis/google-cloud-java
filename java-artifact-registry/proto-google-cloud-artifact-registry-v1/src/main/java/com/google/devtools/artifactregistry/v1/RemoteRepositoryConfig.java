@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2039,6 +2039,50 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.PublicRepository
         getPublicRepository();
 
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    boolean hasCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository
+        getCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder();
+
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.UpstreamCase
         getUpstreamCase();
   }
@@ -2229,6 +2273,727 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.PublicRepository)
     }
 
+    public interface CustomRepositoryOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the custom remote repository, for ex:
+       * "https://registry-1.docker.io".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      java.lang.String getUri();
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the custom remote repository, for ex:
+       * "https://registry-1.docker.io".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      com.google.protobuf.ByteString getUriBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified publicly available remote repository.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository}
+     */
+    public static final class CustomRepository extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository)
+        CustomRepositoryOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use CustomRepository.newBuilder() to construct.
+      private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomRepository() {
+        uri_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomRepository();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository.class,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository.Builder.class);
+      }
+
+      public static final int URI_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the custom remote repository, for ex:
+       * "https://registry-1.docker.io".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the custom remote repository, for ex:
+       * "https://registry-1.docker.io".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository)) {
+          return super.equals(obj);
+        }
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository
+            other =
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                        .CustomRepository)
+                    obj;
+
+        if (!getUri().equals(other.getUri())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified publicly available remote repository.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository)
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepositoryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                      .CustomRepository.class,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                      .CustomRepository.Builder.class);
+        }
+
+        // Construct using
+        // com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          uri_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository
+            getDefaultInstanceForType() {
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository
+            build() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository
+            buildPartial() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository
+              result =
+                  new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                      .DockerRepository.CustomRepository(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.uri_ = uri_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository) {
+            return mergeFrom(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                        .CustomRepository)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository
+                other) {
+          if (other
+              == com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository.getDefaultInstance()) return this;
+          if (!other.getUri().isEmpty()) {
+            uri_ = other.uri_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    uri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object uri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the custom remote repository, for ex:
+         * "https://registry-1.docker.io".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the custom remote repository, for ex:
+         * "https://registry-1.docker.io".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the custom remote repository, for ex:
+         * "https://registry-1.docker.io".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the custom remote repository, for ex:
+         * "https://registry-1.docker.io".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+          uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the custom remote repository, for ex:
+         * "https://registry-1.docker.io".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository)
+      private static final com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+              .DockerRepository.CustomRepository
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository();
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomRepository> PARSER =
+          new com.google.protobuf.AbstractParser<CustomRepository>() {
+            @java.lang.Override
+            public CustomRepository parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomRepository> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomRepository> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int upstreamCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -2239,6 +3004,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PUBLIC_REPOSITORY(1),
+      CUSTOM_REPOSITORY(3),
       UPSTREAM_NOT_SET(0);
       private final int value;
 
@@ -2259,6 +3025,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         switch (value) {
           case 1:
             return PUBLIC_REPOSITORY;
+          case 3:
+            return CUSTOM_REPOSITORY;
           case 0:
             return UPSTREAM_NOT_SET;
           default:
@@ -2345,6 +3113,73 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
     }
 
+    public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomRepository() {
+      return upstreamCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+            .CustomRepository
+        getCustomRepository() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+          .CustomRepository.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+          .CustomRepository.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2362,6 +3197,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       if (upstreamCase_ == 1) {
         output.writeEnum(1, ((java.lang.Integer) upstream_));
       }
+      if (upstreamCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository)
+                upstream_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2375,6 +3217,14 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         size +=
             com.google.protobuf.CodedOutputStream.computeEnumSize(
                 1, ((java.lang.Integer) upstream_));
+      }
+      if (upstreamCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                        .CustomRepository)
+                    upstream_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2399,6 +3249,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           if (getPublicRepositoryValue() != other.getPublicRepositoryValue()) return false;
           break;
+        case 3:
+          if (!getCustomRepository().equals(other.getCustomRepository())) return false;
+          break;
         case 0:
         default:
       }
@@ -2417,6 +3270,10 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           hash = (37 * hash) + PUBLIC_REPOSITORY_FIELD_NUMBER;
           hash = (53 * hash) + getPublicRepositoryValue();
+          break;
+        case 3:
+          hash = (37 * hash) + CUSTOM_REPOSITORY_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomRepository().hashCode();
           break;
         case 0:
         default:
@@ -2573,6 +3430,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (customRepositoryBuilder_ != null) {
+          customRepositoryBuilder_.clear();
+        }
         upstreamCase_ = 0;
         upstream_ = null;
         return this;
@@ -2625,6 +3485,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository result) {
         result.upstreamCase_ = upstreamCase_;
         result.upstream_ = this.upstream_;
+        if (upstreamCase_ == 3 && customRepositoryBuilder_ != null) {
+          result.upstream_ = customRepositoryBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2687,6 +3550,11 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               setPublicRepositoryValue(other.getPublicRepositoryValue());
               break;
             }
+          case CUSTOM_REPOSITORY:
+            {
+              mergeCustomRepository(other.getCustomRepository());
+              break;
+            }
           case UPSTREAM_NOT_SET:
             {
               break;
@@ -2725,6 +3593,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   upstream_ = rawValue;
                   break;
                 } // case 8
+              case 26:
+                {
+                  input.readMessage(
+                      getCustomRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                  upstreamCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2900,6 +3775,272 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return this;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepositoryOrBuilder>
+          customRepositoryBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return Whether the customRepository field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomRepository() {
+        return upstreamCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return The customRepository.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository
+          getCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository.getDefaultInstance();
+        } else {
+          if (upstreamCase_ == 3) {
+            return customRepositoryBuilder_.getMessage();
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstream_ = value;
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(value);
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository.Builder
+              builderForValue) {
+        if (customRepositoryBuilder_ == null) {
+          upstream_ = builderForValue.build();
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(builderForValue.build());
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder mergeCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3
+              && upstream_
+                  != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                      .CustomRepository.getDefaultInstance()) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository.newBuilder(
+                        (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                                .DockerRepository.CustomRepository)
+                            upstream_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            upstream_ = value;
+          }
+          onChanged();
+        } else {
+          if (upstreamCase_ == 3) {
+            customRepositoryBuilder_.mergeFrom(value);
+          } else {
+            customRepositoryBuilder_.setMessage(value);
+          }
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder clearCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+            onChanged();
+          }
+        } else {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+          }
+          customRepositoryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository.Builder
+          getCustomRepositoryBuilder() {
+        return getCustomRepositoryFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepositoryOrBuilder
+          getCustomRepositoryOrBuilder() {
+        if ((upstreamCase_ == 3) && (customRepositoryBuilder_ != null)) {
+          return customRepositoryBuilder_.getMessageOrBuilder();
+        } else {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                  .CustomRepositoryOrBuilder>
+          getCustomRepositoryFieldBuilder() {
+        if (customRepositoryBuilder_ == null) {
+          if (!(upstreamCase_ == 3)) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                    .CustomRepository.getDefaultInstance();
+          }
+          customRepositoryBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                      .CustomRepository,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                      .CustomRepository.Builder,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                      .CustomRepositoryOrBuilder>(
+                  (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
+                          .CustomRepository)
+                      upstream_,
+                  getParentForChildren(),
+                  isClean());
+          upstream_ = null;
+        }
+        upstreamCase_ = 3;
+        onChanged();
+        return customRepositoryBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3020,6 +4161,50 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.PublicRepository
         getPublicRepository();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    boolean hasCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository
+        getCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder();
 
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.UpstreamCase
         getUpstreamCase();
@@ -3211,6 +4396,727 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.PublicRepository)
     }
 
+    public interface CustomRepositoryOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.maven.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      java.lang.String getUri();
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.maven.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      com.google.protobuf.ByteString getUriBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified publicly available remote repository.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository}
+     */
+    public static final class CustomRepository extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository)
+        CustomRepositoryOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use CustomRepository.newBuilder() to construct.
+      private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomRepository() {
+        uri_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomRepository();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository.class,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository.Builder.class);
+      }
+
+      public static final int URI_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.maven.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.maven.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository)) {
+          return super.equals(obj);
+        }
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository
+            other =
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                        .CustomRepository)
+                    obj;
+
+        if (!getUri().equals(other.getUri())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified publicly available remote repository.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository)
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepositoryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                      .CustomRepository.class,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                      .CustomRepository.Builder.class);
+        }
+
+        // Construct using
+        // com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          uri_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository
+            getDefaultInstanceForType() {
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository
+            build() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository
+            buildPartial() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository
+              result =
+                  new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                      .CustomRepository(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.uri_ = uri_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository) {
+            return mergeFrom(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                        .CustomRepository)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository
+                other) {
+          if (other
+              == com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository.getDefaultInstance()) return this;
+          if (!other.getUri().isEmpty()) {
+            uri_ = other.uri_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    uri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object uri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.maven.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.maven.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.maven.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.maven.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+          uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.maven.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository)
+      private static final com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+              .MavenRepository.CustomRepository
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository();
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomRepository> PARSER =
+          new com.google.protobuf.AbstractParser<CustomRepository>() {
+            @java.lang.Override
+            public CustomRepository parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomRepository> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomRepository> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int upstreamCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -3221,6 +5127,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PUBLIC_REPOSITORY(1),
+      CUSTOM_REPOSITORY(3),
       UPSTREAM_NOT_SET(0);
       private final int value;
 
@@ -3241,6 +5148,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         switch (value) {
           case 1:
             return PUBLIC_REPOSITORY;
+          case 3:
+            return CUSTOM_REPOSITORY;
           case 0:
             return UPSTREAM_NOT_SET;
           default:
@@ -3327,6 +5236,73 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
     }
 
+    public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomRepository() {
+      return upstreamCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+            .CustomRepository
+        getCustomRepository() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+          .CustomRepository.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+          .CustomRepository.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3344,6 +5320,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       if (upstreamCase_ == 1) {
         output.writeEnum(1, ((java.lang.Integer) upstream_));
       }
+      if (upstreamCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository)
+                upstream_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3357,6 +5340,14 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         size +=
             com.google.protobuf.CodedOutputStream.computeEnumSize(
                 1, ((java.lang.Integer) upstream_));
+      }
+      if (upstreamCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                        .CustomRepository)
+                    upstream_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3381,6 +5372,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           if (getPublicRepositoryValue() != other.getPublicRepositoryValue()) return false;
           break;
+        case 3:
+          if (!getCustomRepository().equals(other.getCustomRepository())) return false;
+          break;
         case 0:
         default:
       }
@@ -3399,6 +5393,10 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           hash = (37 * hash) + PUBLIC_REPOSITORY_FIELD_NUMBER;
           hash = (53 * hash) + getPublicRepositoryValue();
+          break;
+        case 3:
+          hash = (37 * hash) + CUSTOM_REPOSITORY_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomRepository().hashCode();
           break;
         case 0:
         default:
@@ -3555,6 +5553,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (customRepositoryBuilder_ != null) {
+          customRepositoryBuilder_.clear();
+        }
         upstreamCase_ = 0;
         upstream_ = null;
         return this;
@@ -3607,6 +5608,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository result) {
         result.upstreamCase_ = upstreamCase_;
         result.upstream_ = this.upstream_;
+        if (upstreamCase_ == 3 && customRepositoryBuilder_ != null) {
+          result.upstream_ = customRepositoryBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3669,6 +5673,11 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               setPublicRepositoryValue(other.getPublicRepositoryValue());
               break;
             }
+          case CUSTOM_REPOSITORY:
+            {
+              mergeCustomRepository(other.getCustomRepository());
+              break;
+            }
           case UPSTREAM_NOT_SET:
             {
               break;
@@ -3707,6 +5716,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   upstream_ = rawValue;
                   break;
                 } // case 8
+              case 26:
+                {
+                  input.readMessage(
+                      getCustomRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                  upstreamCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3882,6 +5898,272 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return this;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepositoryOrBuilder>
+          customRepositoryBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return Whether the customRepository field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomRepository() {
+        return upstreamCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return The customRepository.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository
+          getCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository.getDefaultInstance();
+        } else {
+          if (upstreamCase_ == 3) {
+            return customRepositoryBuilder_.getMessage();
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstream_ = value;
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(value);
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository.Builder
+              builderForValue) {
+        if (customRepositoryBuilder_ == null) {
+          upstream_ = builderForValue.build();
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(builderForValue.build());
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder mergeCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3
+              && upstream_
+                  != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                      .CustomRepository.getDefaultInstance()) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository.newBuilder(
+                        (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                                .MavenRepository.CustomRepository)
+                            upstream_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            upstream_ = value;
+          }
+          onChanged();
+        } else {
+          if (upstreamCase_ == 3) {
+            customRepositoryBuilder_.mergeFrom(value);
+          } else {
+            customRepositoryBuilder_.setMessage(value);
+          }
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder clearCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+            onChanged();
+          }
+        } else {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+          }
+          customRepositoryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository.Builder
+          getCustomRepositoryBuilder() {
+        return getCustomRepositoryFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepositoryOrBuilder
+          getCustomRepositoryOrBuilder() {
+        if ((upstreamCase_ == 3) && (customRepositoryBuilder_ != null)) {
+          return customRepositoryBuilder_.getMessageOrBuilder();
+        } else {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                  .CustomRepositoryOrBuilder>
+          getCustomRepositoryFieldBuilder() {
+        if (customRepositoryBuilder_ == null) {
+          if (!(upstreamCase_ == 3)) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                    .CustomRepository.getDefaultInstance();
+          }
+          customRepositoryBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                      .CustomRepository,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                      .CustomRepository.Builder,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                      .CustomRepositoryOrBuilder>(
+                  (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
+                          .CustomRepository)
+                      upstream_,
+                  getParentForChildren(),
+                  isClean());
+          upstream_ = null;
+        }
+        upstreamCase_ = 3;
+        onChanged();
+        return customRepositoryBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4002,6 +6284,50 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.PublicRepository
         getPublicRepository();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    boolean hasCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository
+        getCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder();
 
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.UpstreamCase
         getUpstreamCase();
@@ -4191,6 +6517,727 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.PublicRepository)
     }
 
+    public interface CustomRepositoryOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.npm.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      java.lang.String getUri();
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.npm.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      com.google.protobuf.ByteString getUriBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified publicly available remote repository.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository}
+     */
+    public static final class CustomRepository extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository)
+        CustomRepositoryOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use CustomRepository.newBuilder() to construct.
+      private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomRepository() {
+        uri_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomRepository();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository.class,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository.Builder.class);
+      }
+
+      public static final int URI_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.npm.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.npm.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository)) {
+          return super.equals(obj);
+        }
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository
+            other =
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                        .CustomRepository)
+                    obj;
+
+        if (!getUri().equals(other.getUri())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified publicly available remote repository.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository)
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepositoryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                      .CustomRepository.class,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                      .CustomRepository.Builder.class);
+        }
+
+        // Construct using
+        // com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          uri_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository
+            getDefaultInstanceForType() {
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository
+            build() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository
+            buildPartial() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository
+              result =
+                  new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                      .CustomRepository(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.uri_ = uri_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository) {
+            return mergeFrom(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                        .CustomRepository)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository
+                other) {
+          if (other
+              == com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository.getDefaultInstance()) return this;
+          if (!other.getUri().isEmpty()) {
+            uri_ = other.uri_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    uri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object uri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.npm.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.npm.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.npm.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.npm.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+          uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.npm.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository)
+      private static final com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+              .NpmRepository.CustomRepository
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository();
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomRepository> PARSER =
+          new com.google.protobuf.AbstractParser<CustomRepository>() {
+            @java.lang.Override
+            public CustomRepository parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomRepository> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomRepository> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int upstreamCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -4201,6 +7248,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PUBLIC_REPOSITORY(1),
+      CUSTOM_REPOSITORY(3),
       UPSTREAM_NOT_SET(0);
       private final int value;
 
@@ -4221,6 +7269,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         switch (value) {
           case 1:
             return PUBLIC_REPOSITORY;
+          case 3:
+            return CUSTOM_REPOSITORY;
           case 0:
             return UPSTREAM_NOT_SET;
           default:
@@ -4307,6 +7357,73 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
     }
 
+    public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomRepository() {
+      return upstreamCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+            .CustomRepository
+        getCustomRepository() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+          .CustomRepository.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+          .CustomRepository.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4324,6 +7441,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       if (upstreamCase_ == 1) {
         output.writeEnum(1, ((java.lang.Integer) upstream_));
       }
+      if (upstreamCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository)
+                upstream_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4337,6 +7461,14 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         size +=
             com.google.protobuf.CodedOutputStream.computeEnumSize(
                 1, ((java.lang.Integer) upstream_));
+      }
+      if (upstreamCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                        .CustomRepository)
+                    upstream_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4361,6 +7493,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           if (getPublicRepositoryValue() != other.getPublicRepositoryValue()) return false;
           break;
+        case 3:
+          if (!getCustomRepository().equals(other.getCustomRepository())) return false;
+          break;
         case 0:
         default:
       }
@@ -4379,6 +7514,10 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           hash = (37 * hash) + PUBLIC_REPOSITORY_FIELD_NUMBER;
           hash = (53 * hash) + getPublicRepositoryValue();
+          break;
+        case 3:
+          hash = (37 * hash) + CUSTOM_REPOSITORY_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomRepository().hashCode();
           break;
         case 0:
         default:
@@ -4534,6 +7673,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (customRepositoryBuilder_ != null) {
+          customRepositoryBuilder_.clear();
+        }
         upstreamCase_ = 0;
         upstream_ = null;
         return this;
@@ -4584,6 +7726,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository result) {
         result.upstreamCase_ = upstreamCase_;
         result.upstream_ = this.upstream_;
+        if (upstreamCase_ == 3 && customRepositoryBuilder_ != null) {
+          result.upstream_ = customRepositoryBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4645,6 +7790,11 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               setPublicRepositoryValue(other.getPublicRepositoryValue());
               break;
             }
+          case CUSTOM_REPOSITORY:
+            {
+              mergeCustomRepository(other.getCustomRepository());
+              break;
+            }
           case UPSTREAM_NOT_SET:
             {
               break;
@@ -4683,6 +7833,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   upstream_ = rawValue;
                   break;
                 } // case 8
+              case 26:
+                {
+                  input.readMessage(
+                      getCustomRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                  upstreamCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4858,6 +8015,272 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return this;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepositoryOrBuilder>
+          customRepositoryBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return Whether the customRepository field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomRepository() {
+        return upstreamCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return The customRepository.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository
+          getCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository.getDefaultInstance();
+        } else {
+          if (upstreamCase_ == 3) {
+            return customRepositoryBuilder_.getMessage();
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstream_ = value;
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(value);
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository.Builder
+              builderForValue) {
+        if (customRepositoryBuilder_ == null) {
+          upstream_ = builderForValue.build();
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(builderForValue.build());
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder mergeCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3
+              && upstream_
+                  != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                      .CustomRepository.getDefaultInstance()) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository.newBuilder(
+                        (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                                .NpmRepository.CustomRepository)
+                            upstream_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            upstream_ = value;
+          }
+          onChanged();
+        } else {
+          if (upstreamCase_ == 3) {
+            customRepositoryBuilder_.mergeFrom(value);
+          } else {
+            customRepositoryBuilder_.setMessage(value);
+          }
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder clearCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+            onChanged();
+          }
+        } else {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+          }
+          customRepositoryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository.Builder
+          getCustomRepositoryBuilder() {
+        return getCustomRepositoryFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepositoryOrBuilder
+          getCustomRepositoryOrBuilder() {
+        if ((upstreamCase_ == 3) && (customRepositoryBuilder_ != null)) {
+          return customRepositoryBuilder_.getMessageOrBuilder();
+        } else {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                  .CustomRepositoryOrBuilder>
+          getCustomRepositoryFieldBuilder() {
+        if (customRepositoryBuilder_ == null) {
+          if (!(upstreamCase_ == 3)) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                    .CustomRepository.getDefaultInstance();
+          }
+          customRepositoryBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                      .CustomRepository,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                      .CustomRepository.Builder,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                      .CustomRepositoryOrBuilder>(
+                  (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository
+                          .CustomRepository)
+                      upstream_,
+                  getParentForChildren(),
+                  isClean());
+          upstream_ = null;
+        }
+        upstreamCase_ = 3;
+        onChanged();
+        return customRepositoryBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4978,6 +8401,50 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.PublicRepository
         getPublicRepository();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    boolean hasCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository
+        getCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder();
 
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.UpstreamCase
         getUpstreamCase();
@@ -5168,6 +8635,727 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(enum_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.PublicRepository)
     }
 
+    public interface CustomRepositoryOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.python.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      java.lang.String getUri();
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.python.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      com.google.protobuf.ByteString getUriBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified publicly available remote repository.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository}
+     */
+    public static final class CustomRepository extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository)
+        CustomRepositoryOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use CustomRepository.newBuilder() to construct.
+      private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomRepository() {
+        uri_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomRepository();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository.class,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository.Builder.class);
+      }
+
+      public static final int URI_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.python.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.python.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository)) {
+          return super.equals(obj);
+        }
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository
+            other =
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                        .CustomRepository)
+                    obj;
+
+        if (!getUri().equals(other.getUri())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified publicly available remote repository.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository)
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepositoryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                      .CustomRepository.class,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                      .CustomRepository.Builder.class);
+        }
+
+        // Construct using
+        // com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          uri_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository
+            getDefaultInstanceForType() {
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository
+            build() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository
+            buildPartial() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository
+              result =
+                  new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                      .PythonRepository.CustomRepository(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.uri_ = uri_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository) {
+            return mergeFrom(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                        .CustomRepository)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository
+                other) {
+          if (other
+              == com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository.getDefaultInstance()) return this;
+          if (!other.getUri().isEmpty()) {
+            uri_ = other.uri_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    uri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object uri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.python.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.python.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.python.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.python.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+          uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.python.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository)
+      private static final com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+              .PythonRepository.CustomRepository
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository();
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomRepository> PARSER =
+          new com.google.protobuf.AbstractParser<CustomRepository>() {
+            @java.lang.Override
+            public CustomRepository parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomRepository> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomRepository> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int upstreamCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -5178,6 +9366,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PUBLIC_REPOSITORY(1),
+      CUSTOM_REPOSITORY(3),
       UPSTREAM_NOT_SET(0);
       private final int value;
 
@@ -5198,6 +9387,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         switch (value) {
           case 1:
             return PUBLIC_REPOSITORY;
+          case 3:
+            return CUSTOM_REPOSITORY;
           case 0:
             return UPSTREAM_NOT_SET;
           default:
@@ -5284,6 +9475,73 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           .PublicRepository.PUBLIC_REPOSITORY_UNSPECIFIED;
     }
 
+    public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomRepository() {
+      return upstreamCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+            .CustomRepository
+        getCustomRepository() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+          .CustomRepository.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+          .CustomRepository.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5301,6 +9559,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       if (upstreamCase_ == 1) {
         output.writeEnum(1, ((java.lang.Integer) upstream_));
       }
+      if (upstreamCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository)
+                upstream_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5314,6 +9579,14 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         size +=
             com.google.protobuf.CodedOutputStream.computeEnumSize(
                 1, ((java.lang.Integer) upstream_));
+      }
+      if (upstreamCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                        .CustomRepository)
+                    upstream_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5338,6 +9611,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           if (getPublicRepositoryValue() != other.getPublicRepositoryValue()) return false;
           break;
+        case 3:
+          if (!getCustomRepository().equals(other.getCustomRepository())) return false;
+          break;
         case 0:
         default:
       }
@@ -5356,6 +9632,10 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           hash = (37 * hash) + PUBLIC_REPOSITORY_FIELD_NUMBER;
           hash = (53 * hash) + getPublicRepositoryValue();
+          break;
+        case 3:
+          hash = (37 * hash) + CUSTOM_REPOSITORY_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomRepository().hashCode();
           break;
         case 0:
         default:
@@ -5512,6 +9792,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (customRepositoryBuilder_ != null) {
+          customRepositoryBuilder_.clear();
+        }
         upstreamCase_ = 0;
         upstream_ = null;
         return this;
@@ -5564,6 +9847,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository result) {
         result.upstreamCase_ = upstreamCase_;
         result.upstream_ = this.upstream_;
+        if (upstreamCase_ == 3 && customRepositoryBuilder_ != null) {
+          result.upstream_ = customRepositoryBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5626,6 +9912,11 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               setPublicRepositoryValue(other.getPublicRepositoryValue());
               break;
             }
+          case CUSTOM_REPOSITORY:
+            {
+              mergeCustomRepository(other.getCustomRepository());
+              break;
+            }
           case UPSTREAM_NOT_SET:
             {
               break;
@@ -5664,6 +9955,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   upstream_ = rawValue;
                   break;
                 } // case 8
+              case 26:
+                {
+                  input.readMessage(
+                      getCustomRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                  upstreamCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5839,6 +10137,272 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return this;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepositoryOrBuilder>
+          customRepositoryBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return Whether the customRepository field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomRepository() {
+        return upstreamCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return The customRepository.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository
+          getCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository.getDefaultInstance();
+        } else {
+          if (upstreamCase_ == 3) {
+            return customRepositoryBuilder_.getMessage();
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstream_ = value;
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(value);
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository.Builder
+              builderForValue) {
+        if (customRepositoryBuilder_ == null) {
+          upstream_ = builderForValue.build();
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(builderForValue.build());
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder mergeCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3
+              && upstream_
+                  != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                      .CustomRepository.getDefaultInstance()) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository.newBuilder(
+                        (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                                .PythonRepository.CustomRepository)
+                            upstream_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            upstream_ = value;
+          }
+          onChanged();
+        } else {
+          if (upstreamCase_ == 3) {
+            customRepositoryBuilder_.mergeFrom(value);
+          } else {
+            customRepositoryBuilder_.setMessage(value);
+          }
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder clearCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+            onChanged();
+          }
+        } else {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+          }
+          customRepositoryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository.Builder
+          getCustomRepositoryBuilder() {
+        return getCustomRepositoryFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepositoryOrBuilder
+          getCustomRepositoryOrBuilder() {
+        if ((upstreamCase_ == 3) && (customRepositoryBuilder_ != null)) {
+          return customRepositoryBuilder_.getMessageOrBuilder();
+        } else {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                  .CustomRepositoryOrBuilder>
+          getCustomRepositoryFieldBuilder() {
+        if (customRepositoryBuilder_ == null) {
+          if (!(upstreamCase_ == 3)) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                    .CustomRepository.getDefaultInstance();
+          }
+          customRepositoryBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                      .CustomRepository,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                      .CustomRepository.Builder,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                      .CustomRepositoryOrBuilder>(
+                  (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
+                          .CustomRepository)
+                      upstream_,
+                  getParentForChildren(),
+                  isClean());
+          upstream_ = null;
+        }
+        upstreamCase_ = 3;
+        onChanged();
+        return customRepositoryBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5959,6 +10523,50 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
             .PublicRepositoryOrBuilder
         getPublicRepositoryOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    boolean hasCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository
+        getCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder();
 
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.UpstreamCase
         getUpstreamCase();
@@ -6157,6 +10765,16 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>UBUNTU = 2;</code>
          */
         UBUNTU(2),
+        /**
+         *
+         *
+         * <pre>
+         * Archived Debian.
+         * </pre>
+         *
+         * <code>DEBIAN_SNAPSHOT = 3;</code>
+         */
+        DEBIAN_SNAPSHOT(3),
         UNRECOGNIZED(-1),
         ;
 
@@ -6190,6 +10808,16 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
          * <code>UBUNTU = 2;</code>
          */
         public static final int UBUNTU_VALUE = 2;
+        /**
+         *
+         *
+         * <pre>
+         * Archived Debian.
+         * </pre>
+         *
+         * <code>DEBIAN_SNAPSHOT = 3;</code>
+         */
+        public static final int DEBIAN_SNAPSHOT_VALUE = 3;
 
         public final int getNumber() {
           if (this == UNRECOGNIZED) {
@@ -6221,6 +10849,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               return DEBIAN;
             case 2:
               return UBUNTU;
+            case 3:
+              return DEBIAN_SNAPSHOT;
             default:
               return null;
           }
@@ -7103,6 +11733,727 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
     }
 
+    public interface CustomRepositoryOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.apt.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      java.lang.String getUri();
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.apt.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      com.google.protobuf.ByteString getUriBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified publicly available remote repository.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository}
+     */
+    public static final class CustomRepository extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository)
+        CustomRepositoryOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use CustomRepository.newBuilder() to construct.
+      private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomRepository() {
+        uri_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomRepository();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository.class,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository.Builder.class);
+      }
+
+      public static final int URI_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.apt.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.apt.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository)) {
+          return super.equals(obj);
+        }
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository
+            other =
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                        .CustomRepository)
+                    obj;
+
+        if (!getUri().equals(other.getUri())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified publicly available remote repository.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository)
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepositoryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                      .CustomRepository.class,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                      .CustomRepository.Builder.class);
+        }
+
+        // Construct using
+        // com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          uri_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository
+            getDefaultInstanceForType() {
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository
+            build() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository
+            buildPartial() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository
+              result =
+                  new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                      .CustomRepository(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.uri_ = uri_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository) {
+            return mergeFrom(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                        .CustomRepository)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository
+                other) {
+          if (other
+              == com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository.getDefaultInstance()) return this;
+          if (!other.getUri().isEmpty()) {
+            uri_ = other.uri_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    uri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object uri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.apt.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.apt.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.apt.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.apt.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+          uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.apt.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository)
+      private static final com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+              .AptRepository.CustomRepository
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository();
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomRepository> PARSER =
+          new com.google.protobuf.AbstractParser<CustomRepository>() {
+            @java.lang.Override
+            public CustomRepository parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomRepository> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomRepository> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int upstreamCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -7113,6 +12464,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PUBLIC_REPOSITORY(1),
+      CUSTOM_REPOSITORY(3),
       UPSTREAM_NOT_SET(0);
       private final int value;
 
@@ -7133,6 +12485,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         switch (value) {
           case 1:
             return PUBLIC_REPOSITORY;
+          case 3:
+            return CUSTOM_REPOSITORY;
           case 0:
             return UPSTREAM_NOT_SET;
           default:
@@ -7219,6 +12573,73 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           .PublicRepository.getDefaultInstance();
     }
 
+    public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomRepository() {
+      return upstreamCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+            .CustomRepository
+        getCustomRepository() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+          .CustomRepository.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+          .CustomRepository.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7240,6 +12661,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                     .PublicRepository)
                 upstream_);
       }
+      if (upstreamCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository)
+                upstream_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7255,6 +12683,14 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                 1,
                 (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
                         .PublicRepository)
+                    upstream_);
+      }
+      if (upstreamCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                        .CustomRepository)
                     upstream_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -7280,6 +12716,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           if (!getPublicRepository().equals(other.getPublicRepository())) return false;
           break;
+        case 3:
+          if (!getCustomRepository().equals(other.getCustomRepository())) return false;
+          break;
         case 0:
         default:
       }
@@ -7298,6 +12737,10 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           hash = (37 * hash) + PUBLIC_REPOSITORY_FIELD_NUMBER;
           hash = (53 * hash) + getPublicRepository().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + CUSTOM_REPOSITORY_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomRepository().hashCode();
           break;
         case 0:
         default:
@@ -7456,6 +12899,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         if (publicRepositoryBuilder_ != null) {
           publicRepositoryBuilder_.clear();
         }
+        if (customRepositoryBuilder_ != null) {
+          customRepositoryBuilder_.clear();
+        }
         upstreamCase_ = 0;
         upstream_ = null;
         return this;
@@ -7508,6 +12954,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         result.upstream_ = this.upstream_;
         if (upstreamCase_ == 1 && publicRepositoryBuilder_ != null) {
           result.upstream_ = publicRepositoryBuilder_.build();
+        }
+        if (upstreamCase_ == 3 && customRepositoryBuilder_ != null) {
+          result.upstream_ = customRepositoryBuilder_.build();
         }
       }
 
@@ -7570,6 +13019,11 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               mergePublicRepository(other.getPublicRepository());
               break;
             }
+          case CUSTOM_REPOSITORY:
+            {
+              mergeCustomRepository(other.getCustomRepository());
+              break;
+            }
           case UPSTREAM_NOT_SET:
             {
               break;
@@ -7608,6 +13062,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   upstreamCase_ = 1;
                   break;
                 } // case 10
+              case 26:
+                {
+                  input.readMessage(
+                      getCustomRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                  upstreamCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7916,6 +13377,272 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return publicRepositoryBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepositoryOrBuilder>
+          customRepositoryBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return Whether the customRepository field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomRepository() {
+        return upstreamCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return The customRepository.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository
+          getCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository.getDefaultInstance();
+        } else {
+          if (upstreamCase_ == 3) {
+            return customRepositoryBuilder_.getMessage();
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstream_ = value;
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(value);
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository.Builder
+              builderForValue) {
+        if (customRepositoryBuilder_ == null) {
+          upstream_ = builderForValue.build();
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(builderForValue.build());
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder mergeCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3
+              && upstream_
+                  != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                      .CustomRepository.getDefaultInstance()) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository.newBuilder(
+                        (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                                .AptRepository.CustomRepository)
+                            upstream_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            upstream_ = value;
+          }
+          onChanged();
+        } else {
+          if (upstreamCase_ == 3) {
+            customRepositoryBuilder_.mergeFrom(value);
+          } else {
+            customRepositoryBuilder_.setMessage(value);
+          }
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder clearCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+            onChanged();
+          }
+        } else {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+          }
+          customRepositoryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository.Builder
+          getCustomRepositoryBuilder() {
+        return getCustomRepositoryFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepositoryOrBuilder
+          getCustomRepositoryOrBuilder() {
+        if ((upstreamCase_ == 3) && (customRepositoryBuilder_ != null)) {
+          return customRepositoryBuilder_.getMessageOrBuilder();
+        } else {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                  .CustomRepositoryOrBuilder>
+          getCustomRepositoryFieldBuilder() {
+        if (customRepositoryBuilder_ == null) {
+          if (!(upstreamCase_ == 3)) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                    .CustomRepository.getDefaultInstance();
+          }
+          customRepositoryBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                      .CustomRepository,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                      .CustomRepository.Builder,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                      .CustomRepositoryOrBuilder>(
+                  (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository
+                          .CustomRepository)
+                      upstream_,
+                  getParentForChildren(),
+                  isClean());
+          upstream_ = null;
+        }
+        upstreamCase_ = 3;
+        onChanged();
+        return customRepositoryBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8036,6 +13763,50 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
             .PublicRepositoryOrBuilder
         getPublicRepositoryOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    boolean hasCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository
+        getCustomRepository();
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder();
 
     com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.UpstreamCase
         getUpstreamCase();
@@ -9268,6 +15039,727 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
     }
 
+    public interface CustomRepositoryOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.yum.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      java.lang.String getUri();
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.yum.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      com.google.protobuf.ByteString getUriBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified publicly available remote repository.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository}
+     */
+    public static final class CustomRepository extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository)
+        CustomRepositoryOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use CustomRepository.newBuilder() to construct.
+      private CustomRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomRepository() {
+        uri_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CustomRepository();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository.class,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository.Builder.class);
+      }
+
+      public static final int URI_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.yum.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An http/https uri reference to the upstream remote repository, for ex:
+       * "https://my.yum.registry/".
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository)) {
+          return super.equals(obj);
+        }
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository
+            other =
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                        .CustomRepository)
+                    obj;
+
+        if (!getUri().equals(other.getUri())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified publicly available remote repository.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository)
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepositoryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                      .CustomRepository.class,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                      .CustomRepository.Builder.class);
+        }
+
+        // Construct using
+        // com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          uri_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.devtools.artifactregistry.v1.RepositoryProto
+              .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository
+            getDefaultInstanceForType() {
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository
+            build() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository
+            buildPartial() {
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository
+              result =
+                  new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                      .CustomRepository(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.uri_ = uri_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository) {
+            return mergeFrom(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                        .CustomRepository)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository
+                other) {
+          if (other
+              == com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository.getDefaultInstance()) return this;
+          if (!other.getUri().isEmpty()) {
+            uri_ = other.uri_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    uri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object uri_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.yum.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The uri.
+         */
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.yum.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return The bytes for uri.
+         */
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.yum.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.yum.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUri() {
+          uri_ = getDefaultInstance().getUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * An http/https uri reference to the upstream remote repository, for ex:
+         * "https://my.yum.registry/".
+         * </pre>
+         *
+         * <code>string uri = 1;</code>
+         *
+         * @param value The bytes for uri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          uri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository)
+      private static final com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+              .YumRepository.CustomRepository
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository();
+      }
+
+      public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomRepository> PARSER =
+          new com.google.protobuf.AbstractParser<CustomRepository>() {
+            @java.lang.Override
+            public CustomRepository parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomRepository> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomRepository> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int upstreamCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -9278,6 +15770,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PUBLIC_REPOSITORY(1),
+      CUSTOM_REPOSITORY(3),
       UPSTREAM_NOT_SET(0);
       private final int value;
 
@@ -9298,6 +15791,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         switch (value) {
           case 1:
             return PUBLIC_REPOSITORY;
+          case 3:
+            return CUSTOM_REPOSITORY;
           case 0:
             return UPSTREAM_NOT_SET;
           default:
@@ -9384,6 +15879,73 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           .PublicRepository.getDefaultInstance();
     }
 
+    public static final int CUSTOM_REPOSITORY_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return Whether the customRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomRepository() {
+      return upstreamCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+     * </code>
+     *
+     * @return The customRepository.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+            .CustomRepository
+        getCustomRepository() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+          .CustomRepository.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-specified remote repository.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+            .CustomRepositoryOrBuilder
+        getCustomRepositoryOrBuilder() {
+      if (upstreamCase_ == 3) {
+        return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                .CustomRepository)
+            upstream_;
+      }
+      return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+          .CustomRepository.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -9405,6 +15967,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                     .PublicRepository)
                 upstream_);
       }
+      if (upstreamCase_ == 3) {
+        output.writeMessage(
+            3,
+            (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository)
+                upstream_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -9420,6 +15989,14 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                 1,
                 (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
                         .PublicRepository)
+                    upstream_);
+      }
+      if (upstreamCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3,
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                        .CustomRepository)
                     upstream_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -9445,6 +16022,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           if (!getPublicRepository().equals(other.getPublicRepository())) return false;
           break;
+        case 3:
+          if (!getCustomRepository().equals(other.getCustomRepository())) return false;
+          break;
         case 0:
         default:
       }
@@ -9463,6 +16043,10 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case 1:
           hash = (37 * hash) + PUBLIC_REPOSITORY_FIELD_NUMBER;
           hash = (53 * hash) + getPublicRepository().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + CUSTOM_REPOSITORY_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomRepository().hashCode();
           break;
         case 0:
         default:
@@ -9621,6 +16205,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         if (publicRepositoryBuilder_ != null) {
           publicRepositoryBuilder_.clear();
         }
+        if (customRepositoryBuilder_ != null) {
+          customRepositoryBuilder_.clear();
+        }
         upstreamCase_ = 0;
         upstream_ = null;
         return this;
@@ -9673,6 +16260,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         result.upstream_ = this.upstream_;
         if (upstreamCase_ == 1 && publicRepositoryBuilder_ != null) {
           result.upstream_ = publicRepositoryBuilder_.build();
+        }
+        if (upstreamCase_ == 3 && customRepositoryBuilder_ != null) {
+          result.upstream_ = customRepositoryBuilder_.build();
         }
       }
 
@@ -9735,6 +16325,11 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               mergePublicRepository(other.getPublicRepository());
               break;
             }
+          case CUSTOM_REPOSITORY:
+            {
+              mergeCustomRepository(other.getCustomRepository());
+              break;
+            }
           case UPSTREAM_NOT_SET:
             {
               break;
@@ -9773,6 +16368,13 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
                   upstreamCase_ = 1;
                   break;
                 } // case 10
+              case 26:
+                {
+                  input.readMessage(
+                      getCustomRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                  upstreamCase_ = 3;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10081,6 +16683,272 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return publicRepositoryBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepositoryOrBuilder>
+          customRepositoryBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return Whether the customRepository field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomRepository() {
+        return upstreamCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       *
+       * @return The customRepository.
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository
+          getCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository.getDefaultInstance();
+        } else {
+          if (upstreamCase_ == 3) {
+            return customRepositoryBuilder_.getMessage();
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upstream_ = value;
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(value);
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder setCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository.Builder
+              builderForValue) {
+        if (customRepositoryBuilder_ == null) {
+          upstream_ = builderForValue.build();
+          onChanged();
+        } else {
+          customRepositoryBuilder_.setMessage(builderForValue.build());
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder mergeCustomRepository(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository
+              value) {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3
+              && upstream_
+                  != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                      .CustomRepository.getDefaultInstance()) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository.newBuilder(
+                        (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                                .YumRepository.CustomRepository)
+                            upstream_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            upstream_ = value;
+          }
+          onChanged();
+        } else {
+          if (upstreamCase_ == 3) {
+            customRepositoryBuilder_.mergeFrom(value);
+          } else {
+            customRepositoryBuilder_.setMessage(value);
+          }
+        }
+        upstreamCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public Builder clearCustomRepository() {
+        if (customRepositoryBuilder_ == null) {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+            onChanged();
+          }
+        } else {
+          if (upstreamCase_ == 3) {
+            upstreamCase_ = 0;
+            upstream_ = null;
+          }
+          customRepositoryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository.Builder
+          getCustomRepositoryBuilder() {
+        return getCustomRepositoryFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepositoryOrBuilder
+          getCustomRepositoryOrBuilder() {
+        if ((upstreamCase_ == 3) && (customRepositoryBuilder_ != null)) {
+          return customRepositoryBuilder_.getMessageOrBuilder();
+        } else {
+          if (upstreamCase_ == 3) {
+            return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository)
+                upstream_;
+          }
+          return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+              .CustomRepository.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Customer-specified remote repository.
+       * </pre>
+       *
+       * <code>
+       * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository.CustomRepository custom_repository = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepository.Builder,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                  .CustomRepositoryOrBuilder>
+          getCustomRepositoryFieldBuilder() {
+        if (customRepositoryBuilder_ == null) {
+          if (!(upstreamCase_ == 3)) {
+            upstream_ =
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                    .CustomRepository.getDefaultInstance();
+          }
+          customRepositoryBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                      .CustomRepository,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                      .CustomRepository.Builder,
+                  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                      .CustomRepositoryOrBuilder>(
+                  (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository
+                          .CustomRepository)
+                      upstream_,
+                  getParentForChildren(),
+                  isClean());
+          upstream_ = null;
+        }
+        upstreamCase_ = 3;
+        onChanged();
+        return customRepositoryBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10150,6 +17018,702 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface CommonRemoteRepositoryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. A common public repository base for remote repository.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     *
+     *
+     * <pre>
+     * Required. A common public repository base for remote repository.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Common remote repository settings type.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository}
+   */
+  public static final class CommonRemoteRepository extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+      CommonRemoteRepositoryOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CommonRemoteRepository.newBuilder() to construct.
+    private CommonRemoteRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CommonRemoteRepository() {
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CommonRemoteRepository();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.devtools.artifactregistry.v1.RepositoryProto
+          .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                  .class,
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                  .Builder.class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. A common public repository base for remote repository.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. A common public repository base for remote repository.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)) {
+        return super.equals(obj);
+      }
+      com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository other =
+          (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+              obj;
+
+      if (!getUri().equals(other.getUri())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings type.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepositoryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .CommonRemoteRepository.class,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .CommonRemoteRepository.Builder.class);
+      }
+
+      // Construct using
+      // com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.devtools.artifactregistry.v1.RepositoryProto
+            .internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+          getDefaultInstanceForType() {
+        return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+          build() {
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+          buildPartial() {
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            result =
+                new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .CommonRemoteRepository(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository) {
+          return mergeFrom(
+              (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                      .CommonRemoteRepository)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+              other) {
+        if (other
+            == com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                .getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. A common public repository base for remote repository.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A common public repository base for remote repository.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A common public repository base for remote repository.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A common public repository base for remote repository.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. A common public repository base for remote repository.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+    private static final com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+              .CommonRemoteRepository();
+    }
+
+    public static com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepository
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CommonRemoteRepository> PARSER =
+        new com.google.protobuf.AbstractParser<CommonRemoteRepository>() {
+          @java.lang.Override
+          public CommonRemoteRepository parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CommonRemoteRepository> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CommonRemoteRepository> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int remoteSourceCase_ = 0;
 
@@ -10166,6 +17730,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     PYTHON_REPOSITORY(5),
     APT_REPOSITORY(6),
     YUM_REPOSITORY(7),
+    COMMON_REPOSITORY(14),
     REMOTESOURCE_NOT_SET(0);
     private final int value;
 
@@ -10196,6 +17761,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
           return APT_REPOSITORY;
         case 7:
           return YUM_REPOSITORY;
+        case 14:
+          return COMMON_REPOSITORY;
         case 0:
           return REMOTESOURCE_NOT_SET;
         default:
@@ -10590,6 +18157,73 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         .getDefaultInstance();
   }
 
+  public static final int COMMON_REPOSITORY_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Common remote repository settings.
+   * Used as the remote repository upstream URL.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+   * </code>
+   *
+   * @return Whether the commonRepository field is set.
+   */
+  @java.lang.Override
+  public boolean hasCommonRepository() {
+    return remoteSourceCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Common remote repository settings.
+   * Used as the remote repository upstream URL.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+   * </code>
+   *
+   * @return The commonRepository.
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+      getCommonRepository() {
+    if (remoteSourceCase_ == 14) {
+      return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+          remoteSource_;
+    }
+    return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Common remote repository settings.
+   * Used as the remote repository upstream URL.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+          .CommonRemoteRepositoryOrBuilder
+      getCommonRepositoryOrBuilder() {
+    if (remoteSourceCase_ == 14) {
+      return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+          remoteSource_;
+    }
+    return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+        .getDefaultInstance();
+  }
+
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -10702,6 +18336,25 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         : upstreamCredentials_;
   }
 
+  public static final int DISABLE_UPSTREAM_VALIDATION_FIELD_NUMBER = 12;
+  private boolean disableUpstreamValidation_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. A create/update remote repo option to avoid making a HEAD/GET
+   * request to validate a remote repo and any supplied upstream credentials.
+   * </pre>
+   *
+   * <code>bool disable_upstream_validation = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The disableUpstreamValidation.
+   */
+  @java.lang.Override
+  public boolean getDisableUpstreamValidation() {
+    return disableUpstreamValidation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10757,6 +18410,15 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(9, getUpstreamCredentials());
+    }
+    if (disableUpstreamValidation_ != false) {
+      output.writeBool(12, disableUpstreamValidation_);
+    }
+    if (remoteSourceCase_ == 14) {
+      output.writeMessage(
+          14,
+          (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository)
+              remoteSource_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -10815,6 +18477,17 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUpstreamCredentials());
     }
+    if (disableUpstreamValidation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disableUpstreamValidation_);
+    }
+    if (remoteSourceCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14,
+              (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                      .CommonRemoteRepository)
+                  remoteSource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10836,6 +18509,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     if (hasUpstreamCredentials()) {
       if (!getUpstreamCredentials().equals(other.getUpstreamCredentials())) return false;
     }
+    if (getDisableUpstreamValidation() != other.getDisableUpstreamValidation()) return false;
     if (!getRemoteSourceCase().equals(other.getRemoteSourceCase())) return false;
     switch (remoteSourceCase_) {
       case 2:
@@ -10855,6 +18529,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         break;
       case 7:
         if (!getYumRepository().equals(other.getYumRepository())) return false;
+        break;
+      case 14:
+        if (!getCommonRepository().equals(other.getCommonRepository())) return false;
         break;
       case 0:
       default:
@@ -10876,6 +18553,8 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + UPSTREAM_CREDENTIALS_FIELD_NUMBER;
       hash = (53 * hash) + getUpstreamCredentials().hashCode();
     }
+    hash = (37 * hash) + DISABLE_UPSTREAM_VALIDATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableUpstreamValidation());
     switch (remoteSourceCase_) {
       case 2:
         hash = (37 * hash) + DOCKER_REPOSITORY_FIELD_NUMBER;
@@ -10900,6 +18579,10 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       case 7:
         hash = (37 * hash) + YUM_REPOSITORY_FIELD_NUMBER;
         hash = (53 * hash) + getYumRepository().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + COMMON_REPOSITORY_FIELD_NUMBER;
+        hash = (53 * hash) + getCommonRepository().hashCode();
         break;
       case 0:
       default:
@@ -11071,12 +18754,16 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       if (yumRepositoryBuilder_ != null) {
         yumRepositoryBuilder_.clear();
       }
+      if (commonRepositoryBuilder_ != null) {
+        commonRepositoryBuilder_.clear();
+      }
       description_ = "";
       upstreamCredentials_ = null;
       if (upstreamCredentialsBuilder_ != null) {
         upstreamCredentialsBuilder_.dispose();
         upstreamCredentialsBuilder_ = null;
       }
+      disableUpstreamValidation_ = false;
       remoteSourceCase_ = 0;
       remoteSource_ = null;
       return this;
@@ -11118,16 +18805,19 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     private void buildPartial0(
         com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.upstreamCredentials_ =
             upstreamCredentialsBuilder_ == null
                 ? upstreamCredentials_
                 : upstreamCredentialsBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.disableUpstreamValidation_ = disableUpstreamValidation_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -11153,6 +18843,9 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       if (remoteSourceCase_ == 7 && yumRepositoryBuilder_ != null) {
         result.remoteSource_ = yumRepositoryBuilder_.build();
+      }
+      if (remoteSourceCase_ == 14 && commonRepositoryBuilder_ != null) {
+        result.remoteSource_ = commonRepositoryBuilder_.build();
       }
     }
 
@@ -11205,11 +18898,14 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasUpstreamCredentials()) {
         mergeUpstreamCredentials(other.getUpstreamCredentials());
+      }
+      if (other.getDisableUpstreamValidation() != false) {
+        setDisableUpstreamValidation(other.getDisableUpstreamValidation());
       }
       switch (other.getRemoteSourceCase()) {
         case DOCKER_REPOSITORY:
@@ -11240,6 +18936,11 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         case YUM_REPOSITORY:
           {
             mergeYumRepository(other.getYumRepository());
+            break;
+          }
+        case COMMON_REPOSITORY:
+          {
+            mergeCommonRepository(other.getCommonRepository());
             break;
           }
         case REMOTESOURCE_NOT_SET:
@@ -11276,7 +18977,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
             case 10:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 10
             case 18:
@@ -11321,9 +19022,22 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
               {
                 input.readMessage(
                     getUpstreamCredentialsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 96:
+              {
+                disableUpstreamValidation_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
+            case 114:
+              {
+                input.readMessage(
+                    getCommonRepositoryFieldBuilder().getBuilder(), extensionRegistry);
+                remoteSourceCase_ = 14;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12846,6 +20560,276 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       return yumRepositoryBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                .Builder,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                .CommonRemoteRepositoryOrBuilder>
+        commonRepositoryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     *
+     * @return Whether the commonRepository field is set.
+     */
+    @java.lang.Override
+    public boolean hasCommonRepository() {
+      return remoteSourceCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     *
+     * @return The commonRepository.
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+        getCommonRepository() {
+      if (commonRepositoryBuilder_ == null) {
+        if (remoteSourceCase_ == 14) {
+          return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                  .CommonRemoteRepository)
+              remoteSource_;
+        }
+        return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            .getDefaultInstance();
+      } else {
+        if (remoteSourceCase_ == 14) {
+          return commonRepositoryBuilder_.getMessage();
+        }
+        return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     */
+    public Builder setCommonRepository(
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            value) {
+      if (commonRepositoryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        remoteSource_ = value;
+        onChanged();
+      } else {
+        commonRepositoryBuilder_.setMessage(value);
+      }
+      remoteSourceCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     */
+    public Builder setCommonRepository(
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                .Builder
+            builderForValue) {
+      if (commonRepositoryBuilder_ == null) {
+        remoteSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        commonRepositoryBuilder_.setMessage(builderForValue.build());
+      }
+      remoteSourceCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     */
+    public Builder mergeCommonRepository(
+        com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            value) {
+      if (commonRepositoryBuilder_ == null) {
+        if (remoteSourceCase_ == 14
+            && remoteSource_
+                != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .CommonRemoteRepository.getDefaultInstance()) {
+          remoteSource_ =
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                  .newBuilder(
+                      (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                              .CommonRemoteRepository)
+                          remoteSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          remoteSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (remoteSourceCase_ == 14) {
+          commonRepositoryBuilder_.mergeFrom(value);
+        } else {
+          commonRepositoryBuilder_.setMessage(value);
+        }
+      }
+      remoteSourceCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     */
+    public Builder clearCommonRepository() {
+      if (commonRepositoryBuilder_ == null) {
+        if (remoteSourceCase_ == 14) {
+          remoteSourceCase_ = 0;
+          remoteSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (remoteSourceCase_ == 14) {
+          remoteSourceCase_ = 0;
+          remoteSource_ = null;
+        }
+        commonRepositoryBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     */
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            .Builder
+        getCommonRepositoryBuilder() {
+      return getCommonRepositoryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+            .CommonRemoteRepositoryOrBuilder
+        getCommonRepositoryOrBuilder() {
+      if ((remoteSourceCase_ == 14) && (commonRepositoryBuilder_ != null)) {
+        return commonRepositoryBuilder_.getMessageOrBuilder();
+      } else {
+        if (remoteSourceCase_ == 14) {
+          return (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                  .CommonRemoteRepository)
+              remoteSource_;
+        }
+        return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Common remote repository settings.
+     * Used as the remote repository upstream URL.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository common_repository = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                .Builder,
+            com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                .CommonRemoteRepositoryOrBuilder>
+        getCommonRepositoryFieldBuilder() {
+      if (commonRepositoryBuilder_ == null) {
+        if (!(remoteSourceCase_ == 14)) {
+          remoteSource_ =
+              com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
+                  .getDefaultInstance();
+        }
+        commonRepositoryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .CommonRemoteRepository,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .CommonRemoteRepository.Builder,
+                com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                    .CommonRemoteRepositoryOrBuilder>(
+                (com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
+                        .CommonRemoteRepository)
+                    remoteSource_,
+                getParentForChildren(),
+                isClean());
+        remoteSource_ = null;
+      }
+      remoteSourceCase_ = 14;
+      onChanged();
+      return commonRepositoryBuilder_;
+    }
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -12908,7 +20892,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12925,7 +20909,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -12947,7 +20931,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12975,7 +20959,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * @return Whether the upstreamCredentials field is set.
      */
     public boolean hasUpstreamCredentials() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -13022,7 +21006,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       } else {
         upstreamCredentialsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13045,7 +21029,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
       } else {
         upstreamCredentialsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13063,7 +21047,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public Builder mergeUpstreamCredentials(
         com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials value) {
       if (upstreamCredentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && upstreamCredentials_ != null
             && upstreamCredentials_
                 != com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig
@@ -13076,7 +21060,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCredentialsBuilder_.mergeFrom(value);
       }
       if (upstreamCredentials_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -13093,7 +21077,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearUpstreamCredentials() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       upstreamCredentials_ = null;
       if (upstreamCredentialsBuilder_ != null) {
         upstreamCredentialsBuilder_.dispose();
@@ -13116,7 +21100,7 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
     public com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials
             .Builder
         getUpstreamCredentialsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpstreamCredentialsFieldBuilder().getBuilder();
     }
@@ -13173,6 +21157,65 @@ public final class RemoteRepositoryConfig extends com.google.protobuf.GeneratedM
         upstreamCredentials_ = null;
       }
       return upstreamCredentialsBuilder_;
+    }
+
+    private boolean disableUpstreamValidation_;
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A create/update remote repo option to avoid making a HEAD/GET
+     * request to validate a remote repo and any supplied upstream credentials.
+     * </pre>
+     *
+     * <code>bool disable_upstream_validation = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The disableUpstreamValidation.
+     */
+    @java.lang.Override
+    public boolean getDisableUpstreamValidation() {
+      return disableUpstreamValidation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A create/update remote repo option to avoid making a HEAD/GET
+     * request to validate a remote repo and any supplied upstream credentials.
+     * </pre>
+     *
+     * <code>bool disable_upstream_validation = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The disableUpstreamValidation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableUpstreamValidation(boolean value) {
+
+      disableUpstreamValidation_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. A create/update remote repo option to avoid making a HEAD/GET
+     * request to validate a remote repo and any supplied upstream credentials.
+     * </pre>
+     *
+     * <code>bool disable_upstream_validation = 12 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableUpstreamValidation() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      disableUpstreamValidation_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

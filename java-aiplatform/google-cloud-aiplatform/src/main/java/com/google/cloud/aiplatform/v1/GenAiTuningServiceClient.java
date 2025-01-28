@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,7 +156,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RebaseTunedModel</td>
- *      <td><p> Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model Reference and creates a TuningJob based on newly available model.</td>
+ *      <td><p> Rebase a TunedModel.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -893,8 +893,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-   * Reference and creates a TuningJob based on newly available model.
+   * Rebase a TunedModel.
    *
    * <p>Sample code:
    *
@@ -929,8 +928,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-   * Reference and creates a TuningJob based on newly available model.
+   * Rebase a TunedModel.
    *
    * <p>Sample code:
    *
@@ -965,8 +963,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-   * Reference and creates a TuningJob based on newly available model.
+   * Rebase a TunedModel.
    *
    * <p>Sample code:
    *
@@ -999,8 +996,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-   * Reference and creates a TuningJob based on newly available model.
+   * Rebase a TunedModel.
    *
    * <p>Sample code:
    *
@@ -1034,8 +1030,7 @@ public class GenAiTuningServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Rebase a TunedModel. Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-   * Reference and creates a TuningJob based on newly available model.
+   * Rebase a TunedModel.
    *
    * <p>Sample code:
    *

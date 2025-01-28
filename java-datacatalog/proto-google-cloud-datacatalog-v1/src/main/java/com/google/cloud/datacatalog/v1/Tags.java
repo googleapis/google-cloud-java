@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,57 +81,65 @@ public final class Tags {
           + "\022\033google.cloud.datacatalog.v1\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
           + "rce.proto\032\037google/protobuf/timestamp.pro"
-          + "to\"\206\003\n\003Tag\022\014\n\004name\030\001 \001(\t\022\025\n\010template\030\002 \001"
-          + "(\tB\003\340A\002\022\"\n\025template_display_name\030\005 \001(\tB\003"
-          + "\340A\003\022\020\n\006column\030\004 \001(\tH\000\022A\n\006fields\030\003 \003(\0132,."
-          + "google.cloud.datacatalog.v1.Tag.FieldsEn"
-          + "tryB\003\340A\002\032T\n\013FieldsEntry\022\013\n\003key\030\001 \001(\t\0224\n\005"
-          + "value\030\002 \001(\0132%.google.cloud.datacatalog.v"
-          + "1.TagField:\0028\001:\201\001\352A~\n\036datacatalog.google"
-          + "apis.com/Tag\022\\projects/{project}/locatio"
-          + "ns/{location}/entryGroups/{entry_group}/"
-          + "entries/{entry}/tags/{tag}B\007\n\005scope\"\302\002\n\010"
-          + "TagField\022\031\n\014display_name\030\001 \001(\tB\003\340A\003\022\026\n\014d"
-          + "ouble_value\030\002 \001(\001H\000\022\026\n\014string_value\030\003 \001("
-          + "\tH\000\022\024\n\nbool_value\030\004 \001(\010H\000\0225\n\017timestamp_v"
-          + "alue\030\005 \001(\0132\032.google.protobuf.TimestampH\000"
-          + "\022E\n\nenum_value\030\006 \001(\0132/.google.cloud.data"
-          + "catalog.v1.TagField.EnumValueH\000\022\030\n\016richt"
-          + "ext_value\030\010 \001(\tH\000\022\022\n\005order\030\007 \001(\005B\003\340A\003\032!\n"
-          + "\tEnumValue\022\024\n\014display_name\030\001 \001(\tB\006\n\004kind"
-          + "\"\352\002\n\013TagTemplate\022\014\n\004name\030\001 \001(\t\022\024\n\014displa"
-          + "y_name\030\002 \001(\t\022\034\n\024is_publicly_readable\030\005 \001"
-          + "(\010\022I\n\006fields\030\003 \003(\01324.google.cloud.dataca"
-          + "talog.v1.TagTemplate.FieldsEntryB\003\340A\002\032\\\n"
-          + "\013FieldsEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\013"
-          + "2-.google.cloud.datacatalog.v1.TagTempla"
-          + "teField:\0028\001:p\352Am\n&datacatalog.googleapis"
-          + ".com/TagTemplate\022Cprojects/{project}/loc"
-          + "ations/{location}/tagTemplates/{tag_temp"
-          + "late}\"\267\002\n\020TagTemplateField\022\021\n\004name\030\006 \001(\t"
-          + "B\003\340A\003\022\024\n\014display_name\030\001 \001(\t\0229\n\004type\030\002 \001("
-          + "\0132&.google.cloud.datacatalog.v1.FieldTyp"
-          + "eB\003\340A\002\022\023\n\013is_required\030\003 \001(\010\022\023\n\013descripti"
-          + "on\030\004 \001(\t\022\r\n\005order\030\005 \001(\005:\205\001\352A\201\001\n+datacata"
-          + "log.googleapis.com/TagTemplateField\022Rpro"
-          + "jects/{project}/locations/{location}/tag"
-          + "Templates/{tag_template}/fields/{field}\""
-          + "\246\003\n\tFieldType\022N\n\016primitive_type\030\001 \001(\01624."
-          + "google.cloud.datacatalog.v1.FieldType.Pr"
-          + "imitiveTypeH\000\022D\n\tenum_type\030\002 \001(\0132/.googl"
-          + "e.cloud.datacatalog.v1.FieldType.EnumTyp"
-          + "eH\000\032\205\001\n\010EnumType\022Q\n\016allowed_values\030\001 \003(\013"
-          + "29.google.cloud.datacatalog.v1.FieldType"
-          + ".EnumType.EnumValue\032&\n\tEnumValue\022\031\n\014disp"
-          + "lay_name\030\001 \001(\tB\003\340A\002\"n\n\rPrimitiveType\022\036\n\032"
-          + "PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBLE\020\001"
-          + "\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004\022\014\n"
-          + "\010RICHTEXT\020\005B\013\n\ttype_declB\306\001\n\037com.google."
-          + "cloud.datacatalog.v1P\001ZAcloud.google.com"
-          + "/go/datacatalog/apiv1/datacatalogpb;data"
-          + "catalogpb\370\001\001\252\002\033Google.Cloud.DataCatalog."
-          + "V1\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Googl"
-          + "e::Cloud::DataCatalog::V1b\006proto3"
+          + "to\"\363\003\n\003Tag\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\025\n\010templat"
+          + "e\030\002 \001(\tB\003\340A\002\022\"\n\025template_display_name\030\005 "
+          + "\001(\tB\003\340A\003\022\020\n\006column\030\004 \001(\tH\000\022A\n\006fields\030\003 \003"
+          + "(\0132,.google.cloud.datacatalog.v1.Tag.Fie"
+          + "ldsEntryB\003\340A\002\022f\n\030dataplex_transfer_statu"
+          + "s\030\007 \001(\0162?.google.cloud.datacatalog.v1.Ta"
+          + "gTemplate.DataplexTransferStatusB\003\340A\003\032T\n"
+          + "\013FieldsEntry\022\013\n\003key\030\001 \001(\t\0224\n\005value\030\002 \001(\013"
+          + "2%.google.cloud.datacatalog.v1.TagField:"
+          + "\0028\001:\201\001\352A~\n\036datacatalog.googleapis.com/Ta"
+          + "g\022\\projects/{project}/locations/{locatio"
+          + "n}/entryGroups/{entry_group}/entries/{en"
+          + "try}/tags/{tag}B\007\n\005scope\"\302\002\n\010TagField\022\031\n"
+          + "\014display_name\030\001 \001(\tB\003\340A\003\022\026\n\014double_value"
+          + "\030\002 \001(\001H\000\022\026\n\014string_value\030\003 \001(\tH\000\022\024\n\nbool"
+          + "_value\030\004 \001(\010H\000\0225\n\017timestamp_value\030\005 \001(\0132"
+          + "\032.google.protobuf.TimestampH\000\022E\n\nenum_va"
+          + "lue\030\006 \001(\0132/.google.cloud.datacatalog.v1."
+          + "TagField.EnumValueH\000\022\030\n\016richtext_value\030\010"
+          + " \001(\tH\000\022\022\n\005order\030\007 \001(\005B\003\340A\003\032!\n\tEnumValue\022"
+          + "\024\n\014display_name\030\001 \001(\tB\006\n\004kind\"\276\004\n\013TagTem"
+          + "plate\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024\n\014display_name"
+          + "\030\002 \001(\t\022\034\n\024is_publicly_readable\030\005 \001(\010\022I\n\006"
+          + "fields\030\003 \003(\01324.google.cloud.datacatalog."
+          + "v1.TagTemplate.FieldsEntryB\003\340A\002\022f\n\030datap"
+          + "lex_transfer_status\030\007 \001(\0162?.google.cloud"
+          + ".datacatalog.v1.TagTemplate.DataplexTran"
+          + "sferStatusB\003\340A\001\032\\\n\013FieldsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022<\n\005value\030\002 \001(\0132-.google.cloud.dataca"
+          + "talog.v1.TagTemplateField:\0028\001\"e\n\026Dataple"
+          + "xTransferStatus\022(\n$DATAPLEX_TRANSFER_STA"
+          + "TUS_UNSPECIFIED\020\000\022\020\n\010MIGRATED\020\001\032\002\010\001\022\017\n\013T"
+          + "RANSFERRED\020\002:p\352Am\n&datacatalog.googleapi"
+          + "s.com/TagTemplate\022Cprojects/{project}/lo"
+          + "cations/{location}/tagTemplates/{tag_tem"
+          + "plate}\"\267\002\n\020TagTemplateField\022\021\n\004name\030\006 \001("
+          + "\tB\003\340A\010\022\024\n\014display_name\030\001 \001(\t\0229\n\004type\030\002 \001"
+          + "(\0132&.google.cloud.datacatalog.v1.FieldTy"
+          + "peB\003\340A\002\022\023\n\013is_required\030\003 \001(\010\022\023\n\013descript"
+          + "ion\030\004 \001(\t\022\r\n\005order\030\005 \001(\005:\205\001\352A\201\001\n+datacat"
+          + "alog.googleapis.com/TagTemplateField\022Rpr"
+          + "ojects/{project}/locations/{location}/ta"
+          + "gTemplates/{tag_template}/fields/{field}"
+          + "\"\246\003\n\tFieldType\022N\n\016primitive_type\030\001 \001(\01624"
+          + ".google.cloud.datacatalog.v1.FieldType.P"
+          + "rimitiveTypeH\000\022D\n\tenum_type\030\002 \001(\0132/.goog"
+          + "le.cloud.datacatalog.v1.FieldType.EnumTy"
+          + "peH\000\032\205\001\n\010EnumType\022Q\n\016allowed_values\030\001 \003("
+          + "\01329.google.cloud.datacatalog.v1.FieldTyp"
+          + "e.EnumType.EnumValue\032&\n\tEnumValue\022\031\n\014dis"
+          + "play_name\030\001 \001(\tB\003\340A\002\"n\n\rPrimitiveType\022\036\n"
+          + "\032PRIMITIVE_TYPE_UNSPECIFIED\020\000\022\n\n\006DOUBLE\020"
+          + "\001\022\n\n\006STRING\020\002\022\010\n\004BOOL\020\003\022\r\n\tTIMESTAMP\020\004\022\014"
+          + "\n\010RICHTEXT\020\005B\013\n\ttype_declB\303\001\n\037com.google"
+          + ".cloud.datacatalog.v1P\001ZAcloud.google.co"
+          + "m/go/datacatalog/apiv1/datacatalogpb;dat"
+          + "acatalogpb\252\002\033Google.Cloud.DataCatalog.V1"
+          + "\312\002\033Google\\Cloud\\DataCatalog\\V1\352\002\036Google:"
+          + ":Cloud::DataCatalog::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -147,7 +155,13 @@ public final class Tags {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_Tag_descriptor,
             new java.lang.String[] {
-              "Name", "Template", "TemplateDisplayName", "Column", "Fields", "Scope",
+              "Name",
+              "Template",
+              "TemplateDisplayName",
+              "Column",
+              "Fields",
+              "DataplexTransferStatus",
+              "Scope",
             });
     internal_static_google_cloud_datacatalog_v1_Tag_FieldsEntry_descriptor =
         internal_static_google_cloud_datacatalog_v1_Tag_descriptor.getNestedTypes().get(0);
@@ -187,7 +201,7 @@ public final class Tags {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_TagTemplate_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "IsPubliclyReadable", "Fields",
+              "Name", "DisplayName", "IsPubliclyReadable", "Fields", "DataplexTransferStatus",
             });
     internal_static_google_cloud_datacatalog_v1_TagTemplate_FieldsEntry_descriptor =
         internal_static_google_cloud_datacatalog_v1_TagTemplate_descriptor.getNestedTypes().get(0);

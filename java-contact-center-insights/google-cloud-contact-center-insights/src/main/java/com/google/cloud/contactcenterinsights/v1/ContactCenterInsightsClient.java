@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -763,6 +763,101 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateAnalysisRule</td>
+ *      <td><p> Creates a analysis rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAnalysisRule(CreateAnalysisRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAnalysisRule(LocationName parent, AnalysisRule analysisRule)
+ *           <li><p> createAnalysisRule(String parent, AnalysisRule analysisRule)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAnalysisRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAnalysisRule</td>
+ *      <td><p> Get a analysis rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAnalysisRule(GetAnalysisRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAnalysisRule(AnalysisRuleName name)
+ *           <li><p> getAnalysisRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAnalysisRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAnalysisRules</td>
+ *      <td><p> Lists analysis rules.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAnalysisRules(ListAnalysisRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAnalysisRules(LocationName parent)
+ *           <li><p> listAnalysisRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAnalysisRulesPagedCallable()
+ *           <li><p> listAnalysisRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAnalysisRule</td>
+ *      <td><p> Updates a analysis rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAnalysisRule(UpdateAnalysisRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAnalysisRule(AnalysisRule analysisRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAnalysisRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAnalysisRule</td>
+ *      <td><p> Deletes a analysis rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAnalysisRule(DeleteAnalysisRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAnalysisRule(AnalysisRuleName name)
+ *           <li><p> deleteAnalysisRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAnalysisRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetEncryptionSpec</td>
  *      <td><p> Gets location-level encryption key specification.</td>
  *      <td>
@@ -783,7 +878,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> InitializeEncryptionSpec</td>
- *      <td><p> Initializes a location-level encryption key specification.  An error will be thrown if the location has resources already created before the initialization. Once the encryption specification is initialized at a location, it is immutable and all newly created resources under the location will be encrypted with the existing specification.</td>
+ *      <td><p> Initializes a location-level encryption key specification. An error will result if the location has resources already created before the initialization. After the encryption specification is initialized at a location, it is immutable and all newly created resources under the location will be encrypted with the existing specification.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -892,6 +987,491 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteViewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryMetrics</td>
+ *      <td><p> Query metrics.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryMetricsAsync(QueryMetricsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryMetricsOperationCallable()
+ *           <li><p> queryMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQaQuestion</td>
+ *      <td><p> Create a QaQuestion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQaQuestion(CreateQaQuestionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createQaQuestion(QaScorecardRevisionName parent, QaQuestion qaQuestion, String qaQuestionId)
+ *           <li><p> createQaQuestion(String parent, QaQuestion qaQuestion, String qaQuestionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQaQuestionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQaQuestion</td>
+ *      <td><p> Gets a QaQuestion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQaQuestion(GetQaQuestionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQaQuestion(QaQuestionName name)
+ *           <li><p> getQaQuestion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQaQuestionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateQaQuestion</td>
+ *      <td><p> Updates a QaQuestion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateQaQuestion(UpdateQaQuestionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateQaQuestion(QaQuestion qaQuestion, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateQaQuestionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQaQuestion</td>
+ *      <td><p> Deletes a QaQuestion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQaQuestion(DeleteQaQuestionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteQaQuestion(QaQuestionName name)
+ *           <li><p> deleteQaQuestion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQaQuestionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQaQuestions</td>
+ *      <td><p> Lists QaQuestions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQaQuestions(ListQaQuestionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQaQuestions(QaScorecardRevisionName parent)
+ *           <li><p> listQaQuestions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQaQuestionsPagedCallable()
+ *           <li><p> listQaQuestionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQaScorecard</td>
+ *      <td><p> Create a QaScorecard.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQaScorecard(CreateQaScorecardRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createQaScorecard(LocationName parent, QaScorecard qaScorecard, String qaScorecardId)
+ *           <li><p> createQaScorecard(String parent, QaScorecard qaScorecard, String qaScorecardId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQaScorecardCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQaScorecard</td>
+ *      <td><p> Gets a QaScorecard.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQaScorecard(GetQaScorecardRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQaScorecard(QaScorecardName name)
+ *           <li><p> getQaScorecard(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQaScorecardCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateQaScorecard</td>
+ *      <td><p> Updates a QaScorecard.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateQaScorecard(UpdateQaScorecardRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateQaScorecard(QaScorecard qaScorecard, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateQaScorecardCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQaScorecard</td>
+ *      <td><p> Deletes a QaScorecard.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQaScorecard(DeleteQaScorecardRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteQaScorecard(QaScorecardName name)
+ *           <li><p> deleteQaScorecard(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQaScorecardCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQaScorecards</td>
+ *      <td><p> Lists QaScorecards.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQaScorecards(ListQaScorecardsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQaScorecards(LocationName parent)
+ *           <li><p> listQaScorecards(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQaScorecardsPagedCallable()
+ *           <li><p> listQaScorecardsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQaScorecardRevision</td>
+ *      <td><p> Creates a QaScorecardRevision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQaScorecardRevision(CreateQaScorecardRevisionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createQaScorecardRevision(QaScorecardName parent, QaScorecardRevision qaScorecardRevision, String qaScorecardRevisionId)
+ *           <li><p> createQaScorecardRevision(String parent, QaScorecardRevision qaScorecardRevision, String qaScorecardRevisionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQaScorecardRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQaScorecardRevision</td>
+ *      <td><p> Gets a QaScorecardRevision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQaScorecardRevision(GetQaScorecardRevisionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQaScorecardRevision(QaScorecardRevisionName name)
+ *           <li><p> getQaScorecardRevision(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQaScorecardRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TuneQaScorecardRevision</td>
+ *      <td><p> Fine tune one or more QaModels.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> tuneQaScorecardRevisionAsync(TuneQaScorecardRevisionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> tuneQaScorecardRevisionAsync(QaScorecardRevisionName parent, String filter, boolean validateOnly)
+ *           <li><p> tuneQaScorecardRevisionAsync(String parent, String filter, boolean validateOnly)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> tuneQaScorecardRevisionOperationCallable()
+ *           <li><p> tuneQaScorecardRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeployQaScorecardRevision</td>
+ *      <td><p> Deploy a QaScorecardRevision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployQaScorecardRevision(DeployQaScorecardRevisionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployQaScorecardRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UndeployQaScorecardRevision</td>
+ *      <td><p> Undeploy a QaScorecardRevision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> undeployQaScorecardRevision(UndeployQaScorecardRevisionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> undeployQaScorecardRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQaScorecardRevision</td>
+ *      <td><p> Deletes a QaScorecardRevision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQaScorecardRevision(DeleteQaScorecardRevisionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteQaScorecardRevision(QaScorecardRevisionName name)
+ *           <li><p> deleteQaScorecardRevision(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQaScorecardRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQaScorecardRevisions</td>
+ *      <td><p> Lists all revisions under the parent QaScorecard.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQaScorecardRevisions(ListQaScorecardRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQaScorecardRevisions(QaScorecardName parent)
+ *           <li><p> listQaScorecardRevisions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQaScorecardRevisionsPagedCallable()
+ *           <li><p> listQaScorecardRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFeedbackLabel</td>
+ *      <td><p> Create feedback label.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFeedbackLabel(CreateFeedbackLabelRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createFeedbackLabel(ConversationName parent, FeedbackLabel feedbackLabel, String feedbackLabelId)
+ *           <li><p> createFeedbackLabel(String parent, FeedbackLabel feedbackLabel, String feedbackLabelId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFeedbackLabelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFeedbackLabels</td>
+ *      <td><p> List feedback labels.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFeedbackLabels(ListFeedbackLabelsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFeedbackLabels(ConversationName parent)
+ *           <li><p> listFeedbackLabels(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFeedbackLabelsPagedCallable()
+ *           <li><p> listFeedbackLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFeedbackLabel</td>
+ *      <td><p> Get feedback label.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFeedbackLabel(GetFeedbackLabelRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFeedbackLabel(FeedbackLabelName name)
+ *           <li><p> getFeedbackLabel(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFeedbackLabelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFeedbackLabel</td>
+ *      <td><p> Update feedback label.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFeedbackLabel(UpdateFeedbackLabelRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateFeedbackLabel(FeedbackLabel feedbackLabel, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFeedbackLabelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFeedbackLabel</td>
+ *      <td><p> Delete feedback label.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFeedbackLabel(DeleteFeedbackLabelRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteFeedbackLabel(FeedbackLabelName name)
+ *           <li><p> deleteFeedbackLabel(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFeedbackLabelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAllFeedbackLabels</td>
+ *      <td><p> List all feedback labels by project number.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAllFeedbackLabels(ListAllFeedbackLabelsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAllFeedbackLabels(LocationName parent)
+ *           <li><p> listAllFeedbackLabels(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAllFeedbackLabelsPagedCallable()
+ *           <li><p> listAllFeedbackLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BulkUploadFeedbackLabels</td>
+ *      <td><p> Upload feedback labels in bulk.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> bulkUploadFeedbackLabelsAsync(BulkUploadFeedbackLabelsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> bulkUploadFeedbackLabelsAsync(LocationName parent)
+ *           <li><p> bulkUploadFeedbackLabelsAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bulkUploadFeedbackLabelsOperationCallable()
+ *           <li><p> bulkUploadFeedbackLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BulkDownloadFeedbackLabels</td>
+ *      <td><p> Download feedback labels in bulk.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> bulkDownloadFeedbackLabelsAsync(BulkDownloadFeedbackLabelsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> bulkDownloadFeedbackLabelsAsync(LocationName parent)
+ *           <li><p> bulkDownloadFeedbackLabelsAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bulkDownloadFeedbackLabelsOperationCallable()
+ *           <li><p> bulkDownloadFeedbackLabelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1404,7 +1984,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   Conversation response = contactCenterInsightsClient.getConversation(name);
    * }
    * }</pre>
@@ -1432,7 +2014,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   Conversation response = contactCenterInsightsClient.getConversation(name);
    * }
    * }</pre>
@@ -1461,7 +2046,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   GetConversationRequest request =
    *       GetConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setView(ConversationView.forNumber(0))
    *           .build();
    *   Conversation response = contactCenterInsightsClient.getConversation(request);
@@ -1491,7 +2079,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   GetConversationRequest request =
    *       GetConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setView(ConversationView.forNumber(0))
    *           .build();
    *   ApiFuture<Conversation> future =
@@ -1701,7 +2292,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   contactCenterInsightsClient.deleteConversation(name);
    * }
    * }</pre>
@@ -1731,7 +2324,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String name =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   contactCenterInsightsClient.deleteConversation(name);
    * }
    * }</pre>
@@ -1761,7 +2357,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   DeleteConversationRequest request =
    *       DeleteConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setForce(true)
    *           .build();
    *   contactCenterInsightsClient.deleteConversation(request);
@@ -1791,7 +2390,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *     ContactCenterInsightsClient.create()) {
    *   DeleteConversationRequest request =
    *       DeleteConversationRequest.newBuilder()
-   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .setName(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setForce(true)
    *           .build();
    *   ApiFuture<Empty> future =
@@ -1819,7 +2421,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   Analysis analysis = Analysis.newBuilder().build();
    *   Analysis response = contactCenterInsightsClient.createAnalysisAsync(parent, analysis).get();
    * }
@@ -1853,7 +2457,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   Analysis analysis = Analysis.newBuilder().build();
    *   Analysis response = contactCenterInsightsClient.createAnalysisAsync(parent, analysis).get();
    * }
@@ -1887,7 +2494,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateAnalysisRequest request =
    *       CreateAnalysisRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setAnalysis(Analysis.newBuilder().build())
    *           .build();
    *   Analysis response = contactCenterInsightsClient.createAnalysisAsync(request).get();
@@ -1919,7 +2528,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateAnalysisRequest request =
    *       CreateAnalysisRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setAnalysis(Analysis.newBuilder().build())
    *           .build();
    *   OperationFuture<Analysis, CreateAnalysisOperationMetadata> future =
@@ -1951,7 +2562,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   CreateAnalysisRequest request =
    *       CreateAnalysisRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setAnalysis(Analysis.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -1980,7 +2593,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   AnalysisName name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
    *   Analysis response = contactCenterInsightsClient.getAnalysis(name);
    * }
    * }</pre>
@@ -2009,7 +2623,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   String name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]").toString();
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *           .toString();
    *   Analysis response = contactCenterInsightsClient.getAnalysis(name);
    * }
    * }</pre>
@@ -2039,7 +2655,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   GetAnalysisRequest request =
    *       GetAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   Analysis response = contactCenterInsightsClient.getAnalysis(request);
@@ -2070,7 +2687,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   GetAnalysisRequest request =
    *       GetAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Analysis> future =
@@ -2098,7 +2716,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   ConversationName parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
    *   for (Analysis element : contactCenterInsightsClient.listAnalyses(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2130,7 +2750,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
-   *   String parent = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
    *   for (Analysis element : contactCenterInsightsClient.listAnalyses(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -2162,7 +2785,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListAnalysesRequest request =
    *       ListAnalysesRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2197,7 +2822,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListAnalysesRequest request =
    *       ListAnalysesRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2233,7 +2860,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   ListAnalysesRequest request =
    *       ListAnalysesRequest.newBuilder()
    *           .setParent(
-   *               ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -2273,7 +2902,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   AnalysisName name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]");
    *   contactCenterInsightsClient.deleteAnalysis(name);
    * }
    * }</pre>
@@ -2302,7 +2932,9 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    * try (ContactCenterInsightsClient contactCenterInsightsClient =
    *     ContactCenterInsightsClient.create()) {
    *   String name =
-   *       AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]").toString();
+   *       AnalysisName.ofProjectLocationConversationAnalysisName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *           .toString();
    *   contactCenterInsightsClient.deleteAnalysis(name);
    * }
    * }</pre>
@@ -2332,7 +2964,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   DeleteAnalysisRequest request =
    *       DeleteAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   contactCenterInsightsClient.deleteAnalysis(request);
@@ -2363,7 +2996,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   DeleteAnalysisRequest request =
    *       DeleteAnalysisRequest.newBuilder()
    *           .setName(
-   *               AnalysisName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
+   *               AnalysisName.ofProjectLocationConversationAnalysisName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[ANALYSIS]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -5829,6 +6463,633 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+   *   AnalysisRule response = contactCenterInsightsClient.createAnalysisRule(parent, analysisRule);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the analysis rule. Required. The location to
+   *     create a analysis rule for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;` or `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
+   * @param analysisRule Required. The analysis rule resource to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule createAnalysisRule(LocationName parent, AnalysisRule analysisRule) {
+    CreateAnalysisRuleRequest request =
+        CreateAnalysisRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAnalysisRule(analysisRule)
+            .build();
+    return createAnalysisRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+   *   AnalysisRule response = contactCenterInsightsClient.createAnalysisRule(parent, analysisRule);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the analysis rule. Required. The location to
+   *     create a analysis rule for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;` or `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
+   * @param analysisRule Required. The analysis rule resource to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule createAnalysisRule(String parent, AnalysisRule analysisRule) {
+    CreateAnalysisRuleRequest request =
+        CreateAnalysisRuleRequest.newBuilder()
+            .setParent(parent)
+            .setAnalysisRule(analysisRule)
+            .build();
+    return createAnalysisRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateAnalysisRuleRequest request =
+   *       CreateAnalysisRuleRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAnalysisRule(AnalysisRule.newBuilder().build())
+   *           .build();
+   *   AnalysisRule response = contactCenterInsightsClient.createAnalysisRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule createAnalysisRule(CreateAnalysisRuleRequest request) {
+    return createAnalysisRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateAnalysisRuleRequest request =
+   *       CreateAnalysisRuleRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAnalysisRule(AnalysisRule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AnalysisRule> future =
+   *       contactCenterInsightsClient.createAnalysisRuleCallable().futureCall(request);
+   *   // Do something.
+   *   AnalysisRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAnalysisRuleRequest, AnalysisRule> createAnalysisRuleCallable() {
+    return stub.createAnalysisRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+   *   AnalysisRule response = contactCenterInsightsClient.getAnalysisRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the AnalysisRule to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule getAnalysisRule(AnalysisRuleName name) {
+    GetAnalysisRuleRequest request =
+        GetAnalysisRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAnalysisRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString();
+   *   AnalysisRule response = contactCenterInsightsClient.getAnalysisRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the AnalysisRule to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule getAnalysisRule(String name) {
+    GetAnalysisRuleRequest request = GetAnalysisRuleRequest.newBuilder().setName(name).build();
+    return getAnalysisRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetAnalysisRuleRequest request =
+   *       GetAnalysisRuleRequest.newBuilder()
+   *           .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+   *           .build();
+   *   AnalysisRule response = contactCenterInsightsClient.getAnalysisRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule getAnalysisRule(GetAnalysisRuleRequest request) {
+    return getAnalysisRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetAnalysisRuleRequest request =
+   *       GetAnalysisRuleRequest.newBuilder()
+   *           .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+   *           .build();
+   *   ApiFuture<AnalysisRule> future =
+   *       contactCenterInsightsClient.getAnalysisRuleCallable().futureCall(request);
+   *   // Do something.
+   *   AnalysisRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleCallable() {
+    return stub.getAnalysisRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists analysis rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AnalysisRule element :
+   *       contactCenterInsightsClient.listAnalysisRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the analysis rules.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAnalysisRulesPagedResponse listAnalysisRules(LocationName parent) {
+    ListAnalysisRulesRequest request =
+        ListAnalysisRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAnalysisRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists analysis rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AnalysisRule element :
+   *       contactCenterInsightsClient.listAnalysisRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the analysis rules.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAnalysisRulesPagedResponse listAnalysisRules(String parent) {
+    ListAnalysisRulesRequest request =
+        ListAnalysisRulesRequest.newBuilder().setParent(parent).build();
+    return listAnalysisRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists analysis rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListAnalysisRulesRequest request =
+   *       ListAnalysisRulesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AnalysisRule element :
+   *       contactCenterInsightsClient.listAnalysisRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAnalysisRulesPagedResponse listAnalysisRules(ListAnalysisRulesRequest request) {
+    return listAnalysisRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists analysis rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListAnalysisRulesRequest request =
+   *       ListAnalysisRulesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AnalysisRule> future =
+   *       contactCenterInsightsClient.listAnalysisRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AnalysisRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesPagedResponse>
+      listAnalysisRulesPagedCallable() {
+    return stub.listAnalysisRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists analysis rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListAnalysisRulesRequest request =
+   *       ListAnalysisRulesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAnalysisRulesResponse response =
+   *         contactCenterInsightsClient.listAnalysisRulesCallable().call(request);
+   *     for (AnalysisRule element : response.getAnalysisRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+      listAnalysisRulesCallable() {
+    return stub.listAnalysisRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   AnalysisRule analysisRule = AnalysisRule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AnalysisRule response =
+   *       contactCenterInsightsClient.updateAnalysisRule(analysisRule, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param analysisRule Required. The new analysis rule.
+   * @param updateMask Optional. The list of fields to be updated. If the update_mask is not
+   *     provided, the update will be applied to all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule updateAnalysisRule(AnalysisRule analysisRule, FieldMask updateMask) {
+    UpdateAnalysisRuleRequest request =
+        UpdateAnalysisRuleRequest.newBuilder()
+            .setAnalysisRule(analysisRule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAnalysisRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateAnalysisRuleRequest request =
+   *       UpdateAnalysisRuleRequest.newBuilder()
+   *           .setAnalysisRule(AnalysisRule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AnalysisRule response = contactCenterInsightsClient.updateAnalysisRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalysisRule updateAnalysisRule(UpdateAnalysisRuleRequest request) {
+    return updateAnalysisRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateAnalysisRuleRequest request =
+   *       UpdateAnalysisRuleRequest.newBuilder()
+   *           .setAnalysisRule(AnalysisRule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AnalysisRule> future =
+   *       contactCenterInsightsClient.updateAnalysisRuleCallable().futureCall(request);
+   *   // Do something.
+   *   AnalysisRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAnalysisRuleRequest, AnalysisRule> updateAnalysisRuleCallable() {
+    return stub.updateAnalysisRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   AnalysisRuleName name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]");
+   *   contactCenterInsightsClient.deleteAnalysisRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the analysis rule to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnalysisRule(AnalysisRuleName name) {
+    DeleteAnalysisRuleRequest request =
+        DeleteAnalysisRuleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAnalysisRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString();
+   *   contactCenterInsightsClient.deleteAnalysisRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the analysis rule to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnalysisRule(String name) {
+    DeleteAnalysisRuleRequest request =
+        DeleteAnalysisRuleRequest.newBuilder().setName(name).build();
+    deleteAnalysisRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteAnalysisRuleRequest request =
+   *       DeleteAnalysisRuleRequest.newBuilder()
+   *           .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+   *           .build();
+   *   contactCenterInsightsClient.deleteAnalysisRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAnalysisRule(DeleteAnalysisRuleRequest request) {
+    deleteAnalysisRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a analysis rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteAnalysisRuleRequest request =
+   *       DeleteAnalysisRuleRequest.newBuilder()
+   *           .setName(AnalysisRuleName.of("[PROJECT]", "[LOCATION]", "[ANALYSIS_RULE]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       contactCenterInsightsClient.deleteAnalysisRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAnalysisRuleRequest, Empty> deleteAnalysisRuleCallable() {
+    return stub.deleteAnalysisRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets location-level encryption key specification.
    *
    * <p>Sample code:
@@ -5944,10 +7205,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initializes a location-level encryption key specification. An error will be thrown if the
-   * location has resources already created before the initialization. Once the encryption
-   * specification is initialized at a location, it is immutable and all newly created resources
-   * under the location will be encrypted with the existing specification.
+   * Initializes a location-level encryption key specification. An error will result if the location
+   * has resources already created before the initialization. After the encryption specification is
+   * initialized at a location, it is immutable and all newly created resources under the location
+   * will be encrypted with the existing specification.
    *
    * <p>Sample code:
    *
@@ -5967,8 +7228,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *
    * @param encryptionSpec Required. The encryption spec used for CMEK encryption. It is required
    *     that the kms key is in the same region as the endpoint. The same key will be used for all
-   *     provisioned resources, if encryption is available. If the kms_key_name is left empty, no
-   *     encryption will be enforced.
+   *     provisioned resources, if encryption is available. If the `kms_key_name` field is left
+   *     empty, no encryption will be enforced.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<InitializeEncryptionSpecResponse, InitializeEncryptionSpecMetadata>
@@ -5980,10 +7241,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initializes a location-level encryption key specification. An error will be thrown if the
-   * location has resources already created before the initialization. Once the encryption
-   * specification is initialized at a location, it is immutable and all newly created resources
-   * under the location will be encrypted with the existing specification.
+   * Initializes a location-level encryption key specification. An error will result if the location
+   * has resources already created before the initialization. After the encryption specification is
+   * initialized at a location, it is immutable and all newly created resources under the location
+   * will be encrypted with the existing specification.
    *
    * <p>Sample code:
    *
@@ -6014,10 +7275,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initializes a location-level encryption key specification. An error will be thrown if the
-   * location has resources already created before the initialization. Once the encryption
-   * specification is initialized at a location, it is immutable and all newly created resources
-   * under the location will be encrypted with the existing specification.
+   * Initializes a location-level encryption key specification. An error will result if the location
+   * has resources already created before the initialization. After the encryption specification is
+   * initialized at a location, it is immutable and all newly created resources under the location
+   * will be encrypted with the existing specification.
    *
    * <p>Sample code:
    *
@@ -6052,10 +7313,10 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Initializes a location-level encryption key specification. An error will be thrown if the
-   * location has resources already created before the initialization. Once the encryption
-   * specification is initialized at a location, it is immutable and all newly created resources
-   * under the location will be encrypted with the existing specification.
+   * Initializes a location-level encryption key specification. An error will result if the location
+   * has resources already created before the initialization. After the encryption specification is
+   * initialized at a location, it is immutable and all newly created resources under the location
+   * will be encrypted with the existing specification.
    *
    * <p>Sample code:
    *
@@ -6687,6 +7948,3581 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     return stub.deleteViewCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query metrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QueryMetricsRequest request =
+   *       QueryMetricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .setMeasureMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   QueryMetricsResponse response = contactCenterInsightsClient.queryMetricsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueryMetricsResponse, QueryMetricsMetadata> queryMetricsAsync(
+      QueryMetricsRequest request) {
+    return queryMetricsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query metrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QueryMetricsRequest request =
+   *       QueryMetricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .setMeasureMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<QueryMetricsResponse, QueryMetricsMetadata> future =
+   *       contactCenterInsightsClient.queryMetricsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QueryMetricsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<QueryMetricsRequest, QueryMetricsResponse, QueryMetricsMetadata>
+      queryMetricsOperationCallable() {
+    return stub.queryMetricsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query metrics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QueryMetricsRequest request =
+   *       QueryMetricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .setMeasureMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.queryMetricsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryMetricsRequest, Operation> queryMetricsCallable() {
+    return stub.queryMetricsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardRevisionName parent =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+   *   QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+   *   String qaQuestionId = "qaQuestionId1774614993";
+   *   QaQuestion response =
+   *       contactCenterInsightsClient.createQaQuestion(parent, qaQuestion, qaQuestionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the QaQuestion.
+   * @param qaQuestion Required. The QaQuestion to create.
+   * @param qaQuestionId Optional. A unique ID for the new question. This ID will become the final
+   *     component of the question's resource name. If no ID is specified, a server-generated ID
+   *     will be used.
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion createQaQuestion(
+      QaScorecardRevisionName parent, QaQuestion qaQuestion, String qaQuestionId) {
+    CreateQaQuestionRequest request =
+        CreateQaQuestionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQaQuestion(qaQuestion)
+            .setQaQuestionId(qaQuestionId)
+            .build();
+    return createQaQuestion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *           .toString();
+   *   QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+   *   String qaQuestionId = "qaQuestionId1774614993";
+   *   QaQuestion response =
+   *       contactCenterInsightsClient.createQaQuestion(parent, qaQuestion, qaQuestionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the QaQuestion.
+   * @param qaQuestion Required. The QaQuestion to create.
+   * @param qaQuestionId Optional. A unique ID for the new question. This ID will become the final
+   *     component of the question's resource name. If no ID is specified, a server-generated ID
+   *     will be used.
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion createQaQuestion(
+      String parent, QaQuestion qaQuestion, String qaQuestionId) {
+    CreateQaQuestionRequest request =
+        CreateQaQuestionRequest.newBuilder()
+            .setParent(parent)
+            .setQaQuestion(qaQuestion)
+            .setQaQuestionId(qaQuestionId)
+            .build();
+    return createQaQuestion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateQaQuestionRequest request =
+   *       CreateQaQuestionRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setQaQuestion(QaQuestion.newBuilder().build())
+   *           .setQaQuestionId("qaQuestionId1774614993")
+   *           .build();
+   *   QaQuestion response = contactCenterInsightsClient.createQaQuestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion createQaQuestion(CreateQaQuestionRequest request) {
+    return createQaQuestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateQaQuestionRequest request =
+   *       CreateQaQuestionRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setQaQuestion(QaQuestion.newBuilder().build())
+   *           .setQaQuestionId("qaQuestionId1774614993")
+   *           .build();
+   *   ApiFuture<QaQuestion> future =
+   *       contactCenterInsightsClient.createQaQuestionCallable().futureCall(request);
+   *   // Do something.
+   *   QaQuestion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQaQuestionRequest, QaQuestion> createQaQuestionCallable() {
+    return stub.createQaQuestionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaQuestionName name =
+   *       QaQuestionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+   *   QaQuestion response = contactCenterInsightsClient.getQaQuestion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaQuestion to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion getQaQuestion(QaQuestionName name) {
+    GetQaQuestionRequest request =
+        GetQaQuestionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getQaQuestion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name =
+   *       QaQuestionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+   *           .toString();
+   *   QaQuestion response = contactCenterInsightsClient.getQaQuestion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaQuestion to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion getQaQuestion(String name) {
+    GetQaQuestionRequest request = GetQaQuestionRequest.newBuilder().setName(name).build();
+    return getQaQuestion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetQaQuestionRequest request =
+   *       GetQaQuestionRequest.newBuilder()
+   *           .setName(
+   *               QaQuestionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[QA_SCORECARD]",
+   *                       "[REVISION]",
+   *                       "[QA_QUESTION]")
+   *                   .toString())
+   *           .build();
+   *   QaQuestion response = contactCenterInsightsClient.getQaQuestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion getQaQuestion(GetQaQuestionRequest request) {
+    return getQaQuestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetQaQuestionRequest request =
+   *       GetQaQuestionRequest.newBuilder()
+   *           .setName(
+   *               QaQuestionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[QA_SCORECARD]",
+   *                       "[REVISION]",
+   *                       "[QA_QUESTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QaQuestion> future =
+   *       contactCenterInsightsClient.getQaQuestionCallable().futureCall(request);
+   *   // Do something.
+   *   QaQuestion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQaQuestionRequest, QaQuestion> getQaQuestionCallable() {
+    return stub.getQaQuestionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaQuestion qaQuestion = QaQuestion.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   QaQuestion response = contactCenterInsightsClient.updateQaQuestion(qaQuestion, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param qaQuestion Required. The QaQuestion to update.
+   * @param updateMask Required. The list of fields to be updated. All possible fields can be
+   *     updated by passing `&#42;`, or a subset of the following updateable fields can be provided:
+   *     <ul>
+   *       <li>`abbreviation`
+   *       <li>`answer_choices`
+   *       <li>`answer_instructions`
+   *       <li>`order`
+   *       <li>`question_body`
+   *       <li>`tags`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion updateQaQuestion(QaQuestion qaQuestion, FieldMask updateMask) {
+    UpdateQaQuestionRequest request =
+        UpdateQaQuestionRequest.newBuilder()
+            .setQaQuestion(qaQuestion)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateQaQuestion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateQaQuestionRequest request =
+   *       UpdateQaQuestionRequest.newBuilder()
+   *           .setQaQuestion(QaQuestion.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   QaQuestion response = contactCenterInsightsClient.updateQaQuestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaQuestion updateQaQuestion(UpdateQaQuestionRequest request) {
+    return updateQaQuestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateQaQuestionRequest request =
+   *       UpdateQaQuestionRequest.newBuilder()
+   *           .setQaQuestion(QaQuestion.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<QaQuestion> future =
+   *       contactCenterInsightsClient.updateQaQuestionCallable().futureCall(request);
+   *   // Do something.
+   *   QaQuestion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionCallable() {
+    return stub.updateQaQuestionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaQuestionName name =
+   *       QaQuestionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]");
+   *   contactCenterInsightsClient.deleteQaQuestion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaQuestion to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaQuestion(QaQuestionName name) {
+    DeleteQaQuestionRequest request =
+        DeleteQaQuestionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteQaQuestion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name =
+   *       QaQuestionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]", "[QA_QUESTION]")
+   *           .toString();
+   *   contactCenterInsightsClient.deleteQaQuestion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaQuestion to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaQuestion(String name) {
+    DeleteQaQuestionRequest request = DeleteQaQuestionRequest.newBuilder().setName(name).build();
+    deleteQaQuestion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteQaQuestionRequest request =
+   *       DeleteQaQuestionRequest.newBuilder()
+   *           .setName(
+   *               QaQuestionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[QA_SCORECARD]",
+   *                       "[REVISION]",
+   *                       "[QA_QUESTION]")
+   *                   .toString())
+   *           .build();
+   *   contactCenterInsightsClient.deleteQaQuestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaQuestion(DeleteQaQuestionRequest request) {
+    deleteQaQuestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaQuestion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteQaQuestionRequest request =
+   *       DeleteQaQuestionRequest.newBuilder()
+   *           .setName(
+   *               QaQuestionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[QA_SCORECARD]",
+   *                       "[REVISION]",
+   *                       "[QA_QUESTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       contactCenterInsightsClient.deleteQaQuestionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQaQuestionRequest, Empty> deleteQaQuestionCallable() {
+    return stub.deleteQaQuestionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaQuestions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardRevisionName parent =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+   *   for (QaQuestion element : contactCenterInsightsClient.listQaQuestions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the questions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaQuestionsPagedResponse listQaQuestions(QaScorecardRevisionName parent) {
+    ListQaQuestionsRequest request =
+        ListQaQuestionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQaQuestions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaQuestions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *           .toString();
+   *   for (QaQuestion element : contactCenterInsightsClient.listQaQuestions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the questions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaQuestionsPagedResponse listQaQuestions(String parent) {
+    ListQaQuestionsRequest request = ListQaQuestionsRequest.newBuilder().setParent(parent).build();
+    return listQaQuestions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaQuestions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaQuestionsRequest request =
+   *       ListQaQuestionsRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (QaQuestion element : contactCenterInsightsClient.listQaQuestions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaQuestionsPagedResponse listQaQuestions(ListQaQuestionsRequest request) {
+    return listQaQuestionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaQuestions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaQuestionsRequest request =
+   *       ListQaQuestionsRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<QaQuestion> future =
+   *       contactCenterInsightsClient.listQaQuestionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QaQuestion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsPagedResponse>
+      listQaQuestionsPagedCallable() {
+    return stub.listQaQuestionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaQuestions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaQuestionsRequest request =
+   *       ListQaQuestionsRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListQaQuestionsResponse response =
+   *         contactCenterInsightsClient.listQaQuestionsCallable().call(request);
+   *     for (QaQuestion element : response.getQaQuestionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsResponse>
+      listQaQuestionsCallable() {
+    return stub.listQaQuestionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+   *   String qaScorecardId = "qaScorecardId167098669";
+   *   QaScorecard response =
+   *       contactCenterInsightsClient.createQaScorecard(parent, qaScorecard, qaScorecardId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the QaScorecard.
+   * @param qaScorecard Required. The QaScorecard to create.
+   * @param qaScorecardId Optional. A unique ID for the new QaScorecard. This ID will become the
+   *     final component of the QaScorecard's resource name. If no ID is specified, a
+   *     server-generated ID will be used.
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard createQaScorecard(
+      LocationName parent, QaScorecard qaScorecard, String qaScorecardId) {
+    CreateQaScorecardRequest request =
+        CreateQaScorecardRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQaScorecard(qaScorecard)
+            .setQaScorecardId(qaScorecardId)
+            .build();
+    return createQaScorecard(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+   *   String qaScorecardId = "qaScorecardId167098669";
+   *   QaScorecard response =
+   *       contactCenterInsightsClient.createQaScorecard(parent, qaScorecard, qaScorecardId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the QaScorecard.
+   * @param qaScorecard Required. The QaScorecard to create.
+   * @param qaScorecardId Optional. A unique ID for the new QaScorecard. This ID will become the
+   *     final component of the QaScorecard's resource name. If no ID is specified, a
+   *     server-generated ID will be used.
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard createQaScorecard(
+      String parent, QaScorecard qaScorecard, String qaScorecardId) {
+    CreateQaScorecardRequest request =
+        CreateQaScorecardRequest.newBuilder()
+            .setParent(parent)
+            .setQaScorecard(qaScorecard)
+            .setQaScorecardId(qaScorecardId)
+            .build();
+    return createQaScorecard(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateQaScorecardRequest request =
+   *       CreateQaScorecardRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQaScorecard(QaScorecard.newBuilder().build())
+   *           .setQaScorecardId("qaScorecardId167098669")
+   *           .build();
+   *   QaScorecard response = contactCenterInsightsClient.createQaScorecard(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard createQaScorecard(CreateQaScorecardRequest request) {
+    return createQaScorecardCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateQaScorecardRequest request =
+   *       CreateQaScorecardRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQaScorecard(QaScorecard.newBuilder().build())
+   *           .setQaScorecardId("qaScorecardId167098669")
+   *           .build();
+   *   ApiFuture<QaScorecard> future =
+   *       contactCenterInsightsClient.createQaScorecardCallable().futureCall(request);
+   *   // Do something.
+   *   QaScorecard response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQaScorecardRequest, QaScorecard> createQaScorecardCallable() {
+    return stub.createQaScorecardCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+   *   QaScorecard response = contactCenterInsightsClient.getQaScorecard(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecard to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard getQaScorecard(QaScorecardName name) {
+    GetQaScorecardRequest request =
+        GetQaScorecardRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getQaScorecard(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString();
+   *   QaScorecard response = contactCenterInsightsClient.getQaScorecard(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecard to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard getQaScorecard(String name) {
+    GetQaScorecardRequest request = GetQaScorecardRequest.newBuilder().setName(name).build();
+    return getQaScorecard(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetQaScorecardRequest request =
+   *       GetQaScorecardRequest.newBuilder()
+   *           .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .build();
+   *   QaScorecard response = contactCenterInsightsClient.getQaScorecard(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard getQaScorecard(GetQaScorecardRequest request) {
+    return getQaScorecardCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetQaScorecardRequest request =
+   *       GetQaScorecardRequest.newBuilder()
+   *           .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .build();
+   *   ApiFuture<QaScorecard> future =
+   *       contactCenterInsightsClient.getQaScorecardCallable().futureCall(request);
+   *   // Do something.
+   *   QaScorecard response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQaScorecardRequest, QaScorecard> getQaScorecardCallable() {
+    return stub.getQaScorecardCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecard qaScorecard = QaScorecard.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   QaScorecard response = contactCenterInsightsClient.updateQaScorecard(qaScorecard, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param qaScorecard Required. The QaScorecard to update.
+   * @param updateMask Required. The list of fields to be updated. All possible fields can be
+   *     updated by passing `&#42;`, or a subset of the following updateable fields can be provided:
+   *     <ul>
+   *       <li>`description`
+   *       <li>`display_name`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard updateQaScorecard(QaScorecard qaScorecard, FieldMask updateMask) {
+    UpdateQaScorecardRequest request =
+        UpdateQaScorecardRequest.newBuilder()
+            .setQaScorecard(qaScorecard)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateQaScorecard(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateQaScorecardRequest request =
+   *       UpdateQaScorecardRequest.newBuilder()
+   *           .setQaScorecard(QaScorecard.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   QaScorecard response = contactCenterInsightsClient.updateQaScorecard(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecard updateQaScorecard(UpdateQaScorecardRequest request) {
+    return updateQaScorecardCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateQaScorecardRequest request =
+   *       UpdateQaScorecardRequest.newBuilder()
+   *           .setQaScorecard(QaScorecard.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<QaScorecard> future =
+   *       contactCenterInsightsClient.updateQaScorecardCallable().futureCall(request);
+   *   // Do something.
+   *   QaScorecard response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardCallable() {
+    return stub.updateQaScorecardCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardName name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+   *   contactCenterInsightsClient.deleteQaScorecard(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecard to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaScorecard(QaScorecardName name) {
+    DeleteQaScorecardRequest request =
+        DeleteQaScorecardRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteQaScorecard(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString();
+   *   contactCenterInsightsClient.deleteQaScorecard(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecard to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaScorecard(String name) {
+    DeleteQaScorecardRequest request = DeleteQaScorecardRequest.newBuilder().setName(name).build();
+    deleteQaScorecard(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteQaScorecardRequest request =
+   *       DeleteQaScorecardRequest.newBuilder()
+   *           .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   contactCenterInsightsClient.deleteQaScorecard(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaScorecard(DeleteQaScorecardRequest request) {
+    deleteQaScorecardCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteQaScorecardRequest request =
+   *       DeleteQaScorecardRequest.newBuilder()
+   *           .setName(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       contactCenterInsightsClient.deleteQaScorecardCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQaScorecardRequest, Empty> deleteQaScorecardCallable() {
+    return stub.deleteQaScorecardCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaScorecards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (QaScorecard element :
+   *       contactCenterInsightsClient.listQaScorecards(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the scorecards.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaScorecardsPagedResponse listQaScorecards(LocationName parent) {
+    ListQaScorecardsRequest request =
+        ListQaScorecardsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQaScorecards(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaScorecards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (QaScorecard element :
+   *       contactCenterInsightsClient.listQaScorecards(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the scorecards.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaScorecardsPagedResponse listQaScorecards(String parent) {
+    ListQaScorecardsRequest request =
+        ListQaScorecardsRequest.newBuilder().setParent(parent).build();
+    return listQaScorecards(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaScorecards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaScorecardsRequest request =
+   *       ListQaScorecardsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (QaScorecard element :
+   *       contactCenterInsightsClient.listQaScorecards(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaScorecardsPagedResponse listQaScorecards(ListQaScorecardsRequest request) {
+    return listQaScorecardsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaScorecards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaScorecardsRequest request =
+   *       ListQaScorecardsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<QaScorecard> future =
+   *       contactCenterInsightsClient.listQaScorecardsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QaScorecard element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsPagedResponse>
+      listQaScorecardsPagedCallable() {
+    return stub.listQaScorecardsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists QaScorecards.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaScorecardsRequest request =
+   *       ListQaScorecardsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListQaScorecardsResponse response =
+   *         contactCenterInsightsClient.listQaScorecardsCallable().call(request);
+   *     for (QaScorecard element : response.getQaScorecardsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsResponse>
+      listQaScorecardsCallable() {
+    return stub.listQaScorecardsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+   *   QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+   *   String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+   *   QaScorecardRevision response =
+   *       contactCenterInsightsClient.createQaScorecardRevision(
+   *           parent, qaScorecardRevision, qaScorecardRevisionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the QaScorecardRevision.
+   * @param qaScorecardRevision Required. The QaScorecardRevision to create.
+   * @param qaScorecardRevisionId Optional. A unique ID for the new QaScorecardRevision. This ID
+   *     will become the final component of the QaScorecardRevision's resource name. If no ID is
+   *     specified, a server-generated ID will be used.
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision createQaScorecardRevision(
+      QaScorecardName parent,
+      QaScorecardRevision qaScorecardRevision,
+      String qaScorecardRevisionId) {
+    CreateQaScorecardRevisionRequest request =
+        CreateQaScorecardRevisionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQaScorecardRevision(qaScorecardRevision)
+            .setQaScorecardRevisionId(qaScorecardRevisionId)
+            .build();
+    return createQaScorecardRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString();
+   *   QaScorecardRevision qaScorecardRevision = QaScorecardRevision.newBuilder().build();
+   *   String qaScorecardRevisionId = "qaScorecardRevisionId1384099944";
+   *   QaScorecardRevision response =
+   *       contactCenterInsightsClient.createQaScorecardRevision(
+   *           parent, qaScorecardRevision, qaScorecardRevisionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the QaScorecardRevision.
+   * @param qaScorecardRevision Required. The QaScorecardRevision to create.
+   * @param qaScorecardRevisionId Optional. A unique ID for the new QaScorecardRevision. This ID
+   *     will become the final component of the QaScorecardRevision's resource name. If no ID is
+   *     specified, a server-generated ID will be used.
+   *     <p>This value should be 4-64 characters and must match the regular expression
+   *     `^[a-z0-9-]{4,64}$`. Valid characters are `[a-z][0-9]-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision createQaScorecardRevision(
+      String parent, QaScorecardRevision qaScorecardRevision, String qaScorecardRevisionId) {
+    CreateQaScorecardRevisionRequest request =
+        CreateQaScorecardRevisionRequest.newBuilder()
+            .setParent(parent)
+            .setQaScorecardRevision(qaScorecardRevision)
+            .setQaScorecardRevisionId(qaScorecardRevisionId)
+            .build();
+    return createQaScorecardRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateQaScorecardRevisionRequest request =
+   *       CreateQaScorecardRevisionRequest.newBuilder()
+   *           .setParent(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .setQaScorecardRevision(QaScorecardRevision.newBuilder().build())
+   *           .setQaScorecardRevisionId("qaScorecardRevisionId1384099944")
+   *           .build();
+   *   QaScorecardRevision response = contactCenterInsightsClient.createQaScorecardRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision createQaScorecardRevision(
+      CreateQaScorecardRevisionRequest request) {
+    return createQaScorecardRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateQaScorecardRevisionRequest request =
+   *       CreateQaScorecardRevisionRequest.newBuilder()
+   *           .setParent(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .setQaScorecardRevision(QaScorecardRevision.newBuilder().build())
+   *           .setQaScorecardRevisionId("qaScorecardRevisionId1384099944")
+   *           .build();
+   *   ApiFuture<QaScorecardRevision> future =
+   *       contactCenterInsightsClient.createQaScorecardRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   QaScorecardRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+      createQaScorecardRevisionCallable() {
+    return stub.createQaScorecardRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardRevisionName name =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+   *   QaScorecardRevision response = contactCenterInsightsClient.getQaScorecardRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecardRevision to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision getQaScorecardRevision(QaScorecardRevisionName name) {
+    GetQaScorecardRevisionRequest request =
+        GetQaScorecardRevisionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getQaScorecardRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *           .toString();
+   *   QaScorecardRevision response = contactCenterInsightsClient.getQaScorecardRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecardRevision to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision getQaScorecardRevision(String name) {
+    GetQaScorecardRevisionRequest request =
+        GetQaScorecardRevisionRequest.newBuilder().setName(name).build();
+    return getQaScorecardRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetQaScorecardRevisionRequest request =
+   *       GetQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   QaScorecardRevision response = contactCenterInsightsClient.getQaScorecardRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision getQaScorecardRevision(GetQaScorecardRevisionRequest request) {
+    return getQaScorecardRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetQaScorecardRevisionRequest request =
+   *       GetQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QaScorecardRevision> future =
+   *       contactCenterInsightsClient.getQaScorecardRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   QaScorecardRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQaScorecardRevisionRequest, QaScorecardRevision>
+      getQaScorecardRevisionCallable() {
+    return stub.getQaScorecardRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fine tune one or more QaModels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardRevisionName parent =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+   *   String filter = "filter-1274492040";
+   *   boolean validateOnly = true;
+   *   TuneQaScorecardRevisionResponse response =
+   *       contactCenterInsightsClient
+   *           .tuneQaScorecardRevisionAsync(parent, filter, validateOnly)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new fine tuning job instance.
+   * @param filter Required. Filter for selecting the feedback labels that needs to be used for
+   *     training. This filter can be used to limit the feedback labels used for tuning to a
+   *     feedback labels created or updated for a specific time-window etc.
+   * @param validateOnly Optional. Run in validate only mode, no fine tuning will actually run. Data
+   *     quality validations like training data distributions will run. Even when set to false, the
+   *     data quality validations will still run but once the validations complete we will proceed
+   *     with the fine tune, if applicable.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuneQaScorecardRevisionResponse, TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionAsync(
+          QaScorecardRevisionName parent, String filter, boolean validateOnly) {
+    TuneQaScorecardRevisionRequest request =
+        TuneQaScorecardRevisionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .setValidateOnly(validateOnly)
+            .build();
+    return tuneQaScorecardRevisionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fine tune one or more QaModels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *           .toString();
+   *   String filter = "filter-1274492040";
+   *   boolean validateOnly = true;
+   *   TuneQaScorecardRevisionResponse response =
+   *       contactCenterInsightsClient
+   *           .tuneQaScorecardRevisionAsync(parent, filter, validateOnly)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new fine tuning job instance.
+   * @param filter Required. Filter for selecting the feedback labels that needs to be used for
+   *     training. This filter can be used to limit the feedback labels used for tuning to a
+   *     feedback labels created or updated for a specific time-window etc.
+   * @param validateOnly Optional. Run in validate only mode, no fine tuning will actually run. Data
+   *     quality validations like training data distributions will run. Even when set to false, the
+   *     data quality validations will still run but once the validations complete we will proceed
+   *     with the fine tune, if applicable.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuneQaScorecardRevisionResponse, TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionAsync(String parent, String filter, boolean validateOnly) {
+    TuneQaScorecardRevisionRequest request =
+        TuneQaScorecardRevisionRequest.newBuilder()
+            .setParent(parent)
+            .setFilter(filter)
+            .setValidateOnly(validateOnly)
+            .build();
+    return tuneQaScorecardRevisionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fine tune one or more QaModels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   TuneQaScorecardRevisionRequest request =
+   *       TuneQaScorecardRevisionRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   TuneQaScorecardRevisionResponse response =
+   *       contactCenterInsightsClient.tuneQaScorecardRevisionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TuneQaScorecardRevisionResponse, TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionAsync(TuneQaScorecardRevisionRequest request) {
+    return tuneQaScorecardRevisionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fine tune one or more QaModels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   TuneQaScorecardRevisionRequest request =
+   *       TuneQaScorecardRevisionRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<TuneQaScorecardRevisionResponse, TuneQaScorecardRevisionMetadata> future =
+   *       contactCenterInsightsClient
+   *           .tuneQaScorecardRevisionOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   TuneQaScorecardRevisionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          TuneQaScorecardRevisionRequest,
+          TuneQaScorecardRevisionResponse,
+          TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionOperationCallable() {
+    return stub.tuneQaScorecardRevisionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fine tune one or more QaModels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   TuneQaScorecardRevisionRequest request =
+   *       TuneQaScorecardRevisionRequest.newBuilder()
+   *           .setParent(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.tuneQaScorecardRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TuneQaScorecardRevisionRequest, Operation>
+      tuneQaScorecardRevisionCallable() {
+    return stub.tuneQaScorecardRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploy a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeployQaScorecardRevisionRequest request =
+   *       DeployQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   QaScorecardRevision response = contactCenterInsightsClient.deployQaScorecardRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision deployQaScorecardRevision(
+      DeployQaScorecardRevisionRequest request) {
+    return deployQaScorecardRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploy a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeployQaScorecardRevisionRequest request =
+   *       DeployQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QaScorecardRevision> future =
+   *       contactCenterInsightsClient.deployQaScorecardRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   QaScorecardRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+      deployQaScorecardRevisionCallable() {
+    return stub.deployQaScorecardRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploy a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UndeployQaScorecardRevisionRequest request =
+   *       UndeployQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   QaScorecardRevision response =
+   *       contactCenterInsightsClient.undeployQaScorecardRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QaScorecardRevision undeployQaScorecardRevision(
+      UndeployQaScorecardRevisionRequest request) {
+    return undeployQaScorecardRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Undeploy a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UndeployQaScorecardRevisionRequest request =
+   *       UndeployQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QaScorecardRevision> future =
+   *       contactCenterInsightsClient.undeployQaScorecardRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   QaScorecardRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+      undeployQaScorecardRevisionCallable() {
+    return stub.undeployQaScorecardRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardRevisionName name =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]");
+   *   contactCenterInsightsClient.deleteQaScorecardRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecardRevision to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaScorecardRevision(QaScorecardRevisionName name) {
+    DeleteQaScorecardRevisionRequest request =
+        DeleteQaScorecardRevisionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteQaScorecardRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name =
+   *       QaScorecardRevisionName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *           .toString();
+   *   contactCenterInsightsClient.deleteQaScorecardRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the QaScorecardRevision to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaScorecardRevision(String name) {
+    DeleteQaScorecardRevisionRequest request =
+        DeleteQaScorecardRevisionRequest.newBuilder().setName(name).build();
+    deleteQaScorecardRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteQaScorecardRevisionRequest request =
+   *       DeleteQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   contactCenterInsightsClient.deleteQaScorecardRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQaScorecardRevision(DeleteQaScorecardRevisionRequest request) {
+    deleteQaScorecardRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QaScorecardRevision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteQaScorecardRevisionRequest request =
+   *       DeleteQaScorecardRevisionRequest.newBuilder()
+   *           .setName(
+   *               QaScorecardRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[QA_SCORECARD]", "[REVISION]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       contactCenterInsightsClient.deleteQaScorecardRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQaScorecardRevisionRequest, Empty>
+      deleteQaScorecardRevisionCallable() {
+    return stub.deleteQaScorecardRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions under the parent QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   QaScorecardName parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]");
+   *   for (QaScorecardRevision element :
+   *       contactCenterInsightsClient.listQaScorecardRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the scorecard revisions. To list all revisions
+   *     of all scorecards, substitute the QaScorecard ID with a '-' character.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaScorecardRevisionsPagedResponse listQaScorecardRevisions(
+      QaScorecardName parent) {
+    ListQaScorecardRevisionsRequest request =
+        ListQaScorecardRevisionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQaScorecardRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions under the parent QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString();
+   *   for (QaScorecardRevision element :
+   *       contactCenterInsightsClient.listQaScorecardRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the scorecard revisions. To list all revisions
+   *     of all scorecards, substitute the QaScorecard ID with a '-' character.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaScorecardRevisionsPagedResponse listQaScorecardRevisions(String parent) {
+    ListQaScorecardRevisionsRequest request =
+        ListQaScorecardRevisionsRequest.newBuilder().setParent(parent).build();
+    return listQaScorecardRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions under the parent QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaScorecardRevisionsRequest request =
+   *       ListQaScorecardRevisionsRequest.newBuilder()
+   *           .setParent(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (QaScorecardRevision element :
+   *       contactCenterInsightsClient.listQaScorecardRevisions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQaScorecardRevisionsPagedResponse listQaScorecardRevisions(
+      ListQaScorecardRevisionsRequest request) {
+    return listQaScorecardRevisionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions under the parent QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaScorecardRevisionsRequest request =
+   *       ListQaScorecardRevisionsRequest.newBuilder()
+   *           .setParent(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<QaScorecardRevision> future =
+   *       contactCenterInsightsClient.listQaScorecardRevisionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QaScorecardRevision element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsPagedResponse>
+      listQaScorecardRevisionsPagedCallable() {
+    return stub.listQaScorecardRevisionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions under the parent QaScorecard.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListQaScorecardRevisionsRequest request =
+   *       ListQaScorecardRevisionsRequest.newBuilder()
+   *           .setParent(QaScorecardName.of("[PROJECT]", "[LOCATION]", "[QA_SCORECARD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListQaScorecardRevisionsResponse response =
+   *         contactCenterInsightsClient.listQaScorecardRevisionsCallable().call(request);
+   *     for (QaScorecardRevision element : response.getQaScorecardRevisionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+      listQaScorecardRevisionsCallable() {
+    return stub.listQaScorecardRevisionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+   *   String feedbackLabelId = "feedbackLabelId-1251198998";
+   *   FeedbackLabel response =
+   *       contactCenterInsightsClient.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the feedback label.
+   * @param feedbackLabel Required. The feedback label to create.
+   * @param feedbackLabelId Optional. The ID of the feedback label to create. If one is not
+   *     specified it will be generated by the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel createFeedbackLabel(
+      ConversationName parent, FeedbackLabel feedbackLabel, String feedbackLabelId) {
+    CreateFeedbackLabelRequest request =
+        CreateFeedbackLabelRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFeedbackLabel(feedbackLabel)
+            .setFeedbackLabelId(feedbackLabelId)
+            .build();
+    return createFeedbackLabel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
+   *   FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+   *   String feedbackLabelId = "feedbackLabelId-1251198998";
+   *   FeedbackLabel response =
+   *       contactCenterInsightsClient.createFeedbackLabel(parent, feedbackLabel, feedbackLabelId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the feedback label.
+   * @param feedbackLabel Required. The feedback label to create.
+   * @param feedbackLabelId Optional. The ID of the feedback label to create. If one is not
+   *     specified it will be generated by the server.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel createFeedbackLabel(
+      String parent, FeedbackLabel feedbackLabel, String feedbackLabelId) {
+    CreateFeedbackLabelRequest request =
+        CreateFeedbackLabelRequest.newBuilder()
+            .setParent(parent)
+            .setFeedbackLabel(feedbackLabel)
+            .setFeedbackLabelId(feedbackLabelId)
+            .build();
+    return createFeedbackLabel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateFeedbackLabelRequest request =
+   *       CreateFeedbackLabelRequest.newBuilder()
+   *           .setParent(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setFeedbackLabelId("feedbackLabelId-1251198998")
+   *           .setFeedbackLabel(FeedbackLabel.newBuilder().build())
+   *           .build();
+   *   FeedbackLabel response = contactCenterInsightsClient.createFeedbackLabel(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel createFeedbackLabel(CreateFeedbackLabelRequest request) {
+    return createFeedbackLabelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   CreateFeedbackLabelRequest request =
+   *       CreateFeedbackLabelRequest.newBuilder()
+   *           .setParent(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setFeedbackLabelId("feedbackLabelId-1251198998")
+   *           .setFeedbackLabel(FeedbackLabel.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FeedbackLabel> future =
+   *       contactCenterInsightsClient.createFeedbackLabelCallable().futureCall(request);
+   *   // Do something.
+   *   FeedbackLabel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateFeedbackLabelRequest, FeedbackLabel>
+      createFeedbackLabelCallable() {
+    return stub.createFeedbackLabelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List feedback labels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ConversationName parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   for (FeedbackLabel element :
+   *       contactCenterInsightsClient.listFeedbackLabels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the feedback labels.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeedbackLabelsPagedResponse listFeedbackLabels(ConversationName parent) {
+    ListFeedbackLabelsRequest request =
+        ListFeedbackLabelsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFeedbackLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List feedback labels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent =
+   *       ConversationName.ofProjectLocationConversationName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *           .toString();
+   *   for (FeedbackLabel element :
+   *       contactCenterInsightsClient.listFeedbackLabels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the feedback labels.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeedbackLabelsPagedResponse listFeedbackLabels(String parent) {
+    ListFeedbackLabelsRequest request =
+        ListFeedbackLabelsRequest.newBuilder().setParent(parent).build();
+    return listFeedbackLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List feedback labels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListFeedbackLabelsRequest request =
+   *       ListFeedbackLabelsRequest.newBuilder()
+   *           .setParent(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (FeedbackLabel element :
+   *       contactCenterInsightsClient.listFeedbackLabels(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeedbackLabelsPagedResponse listFeedbackLabels(
+      ListFeedbackLabelsRequest request) {
+    return listFeedbackLabelsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List feedback labels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListFeedbackLabelsRequest request =
+   *       ListFeedbackLabelsRequest.newBuilder()
+   *           .setParent(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<FeedbackLabel> future =
+   *       contactCenterInsightsClient.listFeedbackLabelsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FeedbackLabel element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsPagedResponse>
+      listFeedbackLabelsPagedCallable() {
+    return stub.listFeedbackLabelsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List feedback labels.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListFeedbackLabelsRequest request =
+   *       ListFeedbackLabelsRequest.newBuilder()
+   *           .setParent(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListFeedbackLabelsResponse response =
+   *         contactCenterInsightsClient.listFeedbackLabelsCallable().call(request);
+   *     for (FeedbackLabel element : response.getFeedbackLabelsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+      listFeedbackLabelsCallable() {
+    return stub.listFeedbackLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   FeedbackLabelName name =
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+   *   FeedbackLabel response = contactCenterInsightsClient.getFeedbackLabel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the feedback label to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel getFeedbackLabel(FeedbackLabelName name) {
+    GetFeedbackLabelRequest request =
+        GetFeedbackLabelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getFeedbackLabel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name =
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *           .toString();
+   *   FeedbackLabel response = contactCenterInsightsClient.getFeedbackLabel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the feedback label to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel getFeedbackLabel(String name) {
+    GetFeedbackLabelRequest request = GetFeedbackLabelRequest.newBuilder().setName(name).build();
+    return getFeedbackLabel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetFeedbackLabelRequest request =
+   *       GetFeedbackLabelRequest.newBuilder()
+   *           .setName(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *                   .toString())
+   *           .build();
+   *   FeedbackLabel response = contactCenterInsightsClient.getFeedbackLabel(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel getFeedbackLabel(GetFeedbackLabelRequest request) {
+    return getFeedbackLabelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   GetFeedbackLabelRequest request =
+   *       GetFeedbackLabelRequest.newBuilder()
+   *           .setName(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FeedbackLabel> future =
+   *       contactCenterInsightsClient.getFeedbackLabelCallable().futureCall(request);
+   *   // Do something.
+   *   FeedbackLabel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelCallable() {
+    return stub.getFeedbackLabelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   FeedbackLabel feedbackLabel = FeedbackLabel.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   FeedbackLabel response =
+   *       contactCenterInsightsClient.updateFeedbackLabel(feedbackLabel, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param feedbackLabel Required. The feedback label to update.
+   * @param updateMask Required. The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel updateFeedbackLabel(
+      FeedbackLabel feedbackLabel, FieldMask updateMask) {
+    UpdateFeedbackLabelRequest request =
+        UpdateFeedbackLabelRequest.newBuilder()
+            .setFeedbackLabel(feedbackLabel)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateFeedbackLabel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateFeedbackLabelRequest request =
+   *       UpdateFeedbackLabelRequest.newBuilder()
+   *           .setFeedbackLabel(FeedbackLabel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   FeedbackLabel response = contactCenterInsightsClient.updateFeedbackLabel(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FeedbackLabel updateFeedbackLabel(UpdateFeedbackLabelRequest request) {
+    return updateFeedbackLabelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UpdateFeedbackLabelRequest request =
+   *       UpdateFeedbackLabelRequest.newBuilder()
+   *           .setFeedbackLabel(FeedbackLabel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FeedbackLabel> future =
+   *       contactCenterInsightsClient.updateFeedbackLabelCallable().futureCall(request);
+   *   // Do something.
+   *   FeedbackLabel response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateFeedbackLabelRequest, FeedbackLabel>
+      updateFeedbackLabelCallable() {
+    return stub.updateFeedbackLabelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   FeedbackLabelName name =
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]");
+   *   contactCenterInsightsClient.deleteFeedbackLabel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the feedback label to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeedbackLabel(FeedbackLabelName name) {
+    DeleteFeedbackLabelRequest request =
+        DeleteFeedbackLabelRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteFeedbackLabel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name =
+   *       FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *               "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *           .toString();
+   *   contactCenterInsightsClient.deleteFeedbackLabel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the feedback label to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeedbackLabel(String name) {
+    DeleteFeedbackLabelRequest request =
+        DeleteFeedbackLabelRequest.newBuilder().setName(name).build();
+    deleteFeedbackLabel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteFeedbackLabelRequest request =
+   *       DeleteFeedbackLabelRequest.newBuilder()
+   *           .setName(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *                   .toString())
+   *           .build();
+   *   contactCenterInsightsClient.deleteFeedbackLabel(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteFeedbackLabel(DeleteFeedbackLabelRequest request) {
+    deleteFeedbackLabelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete feedback label.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteFeedbackLabelRequest request =
+   *       DeleteFeedbackLabelRequest.newBuilder()
+   *           .setName(
+   *               FeedbackLabelName.ofProjectLocationConversationFeedbackLabelName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]", "[FEEDBACK_LABEL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       contactCenterInsightsClient.deleteFeedbackLabelCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFeedbackLabelRequest, Empty> deleteFeedbackLabelCallable() {
+    return stub.deleteFeedbackLabelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all feedback labels by project number.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (FeedbackLabel element :
+   *       contactCenterInsightsClient.listAllFeedbackLabels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of all feedback labels per project.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAllFeedbackLabelsPagedResponse listAllFeedbackLabels(LocationName parent) {
+    ListAllFeedbackLabelsRequest request =
+        ListAllFeedbackLabelsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAllFeedbackLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all feedback labels by project number.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (FeedbackLabel element :
+   *       contactCenterInsightsClient.listAllFeedbackLabels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of all feedback labels per project.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAllFeedbackLabelsPagedResponse listAllFeedbackLabels(String parent) {
+    ListAllFeedbackLabelsRequest request =
+        ListAllFeedbackLabelsRequest.newBuilder().setParent(parent).build();
+    return listAllFeedbackLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all feedback labels by project number.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListAllFeedbackLabelsRequest request =
+   *       ListAllFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (FeedbackLabel element :
+   *       contactCenterInsightsClient.listAllFeedbackLabels(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAllFeedbackLabelsPagedResponse listAllFeedbackLabels(
+      ListAllFeedbackLabelsRequest request) {
+    return listAllFeedbackLabelsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all feedback labels by project number.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListAllFeedbackLabelsRequest request =
+   *       ListAllFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<FeedbackLabel> future =
+   *       contactCenterInsightsClient.listAllFeedbackLabelsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FeedbackLabel element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsPagedResponse>
+      listAllFeedbackLabelsPagedCallable() {
+    return stub.listAllFeedbackLabelsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all feedback labels by project number.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   ListAllFeedbackLabelsRequest request =
+   *       ListAllFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListAllFeedbackLabelsResponse response =
+   *         contactCenterInsightsClient.listAllFeedbackLabelsCallable().call(request);
+   *     for (FeedbackLabel element : response.getFeedbackLabelsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+      listAllFeedbackLabelsCallable() {
+    return stub.listAllFeedbackLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upload feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   BulkUploadFeedbackLabelsResponse response =
+   *       contactCenterInsightsClient.bulkUploadFeedbackLabelsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new feedback labels.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkUploadFeedbackLabelsResponse, BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsAsync(LocationName parent) {
+    BulkUploadFeedbackLabelsRequest request =
+        BulkUploadFeedbackLabelsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return bulkUploadFeedbackLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upload feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   BulkUploadFeedbackLabelsResponse response =
+   *       contactCenterInsightsClient.bulkUploadFeedbackLabelsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new feedback labels.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkUploadFeedbackLabelsResponse, BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsAsync(String parent) {
+    BulkUploadFeedbackLabelsRequest request =
+        BulkUploadFeedbackLabelsRequest.newBuilder().setParent(parent).build();
+    return bulkUploadFeedbackLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upload feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkUploadFeedbackLabelsRequest request =
+   *       BulkUploadFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   BulkUploadFeedbackLabelsResponse response =
+   *       contactCenterInsightsClient.bulkUploadFeedbackLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkUploadFeedbackLabelsResponse, BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsAsync(BulkUploadFeedbackLabelsRequest request) {
+    return bulkUploadFeedbackLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upload feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkUploadFeedbackLabelsRequest request =
+   *       BulkUploadFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<BulkUploadFeedbackLabelsResponse, BulkUploadFeedbackLabelsMetadata> future =
+   *       contactCenterInsightsClient
+   *           .bulkUploadFeedbackLabelsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BulkUploadFeedbackLabelsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BulkUploadFeedbackLabelsRequest,
+          BulkUploadFeedbackLabelsResponse,
+          BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsOperationCallable() {
+    return stub.bulkUploadFeedbackLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upload feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkUploadFeedbackLabelsRequest request =
+   *       BulkUploadFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.bulkUploadFeedbackLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkUploadFeedbackLabelsRequest, Operation>
+      bulkUploadFeedbackLabelsCallable() {
+    return stub.bulkUploadFeedbackLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Download feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   BulkDownloadFeedbackLabelsResponse response =
+   *       contactCenterInsightsClient.bulkDownloadFeedbackLabelsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new feedback labels.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BulkDownloadFeedbackLabelsResponse, BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsAsync(LocationName parent) {
+    BulkDownloadFeedbackLabelsRequest request =
+        BulkDownloadFeedbackLabelsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return bulkDownloadFeedbackLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Download feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   BulkDownloadFeedbackLabelsResponse response =
+   *       contactCenterInsightsClient.bulkDownloadFeedbackLabelsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new feedback labels.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BulkDownloadFeedbackLabelsResponse, BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsAsync(String parent) {
+    BulkDownloadFeedbackLabelsRequest request =
+        BulkDownloadFeedbackLabelsRequest.newBuilder().setParent(parent).build();
+    return bulkDownloadFeedbackLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Download feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkDownloadFeedbackLabelsRequest request =
+   *       BulkDownloadFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMaxDownloadCount(-1858155821)
+   *           .setConversationFilter("conversationFilter1283909083")
+   *           .addAllTemplateQaScorecardId(new ArrayList<String>())
+   *           .build();
+   *   BulkDownloadFeedbackLabelsResponse response =
+   *       contactCenterInsightsClient.bulkDownloadFeedbackLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          BulkDownloadFeedbackLabelsResponse, BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsAsync(BulkDownloadFeedbackLabelsRequest request) {
+    return bulkDownloadFeedbackLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Download feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkDownloadFeedbackLabelsRequest request =
+   *       BulkDownloadFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMaxDownloadCount(-1858155821)
+   *           .setConversationFilter("conversationFilter1283909083")
+   *           .addAllTemplateQaScorecardId(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<BulkDownloadFeedbackLabelsResponse, BulkDownloadFeedbackLabelsMetadata>
+   *       future =
+   *           contactCenterInsightsClient
+   *               .bulkDownloadFeedbackLabelsOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   BulkDownloadFeedbackLabelsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BulkDownloadFeedbackLabelsRequest,
+          BulkDownloadFeedbackLabelsResponse,
+          BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsOperationCallable() {
+    return stub.bulkDownloadFeedbackLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Download feedback labels in bulk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkDownloadFeedbackLabelsRequest request =
+   *       BulkDownloadFeedbackLabelsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMaxDownloadCount(-1858155821)
+   *           .setConversationFilter("conversationFilter1283909083")
+   *           .addAllTemplateQaScorecardId(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.bulkDownloadFeedbackLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkDownloadFeedbackLabelsRequest, Operation>
+      bulkDownloadFeedbackLabelsCallable() {
+    return stub.bulkDownloadFeedbackLabelsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -6952,6 +11788,86 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     }
   }
 
+  public static class ListAnalysisRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAnalysisRulesRequest,
+          ListAnalysisRulesResponse,
+          AnalysisRule,
+          ListAnalysisRulesPage,
+          ListAnalysisRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListAnalysisRulesPagedResponse> createAsync(
+        PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule> context,
+        ApiFuture<ListAnalysisRulesResponse> futureResponse) {
+      ApiFuture<ListAnalysisRulesPage> futurePage =
+          ListAnalysisRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAnalysisRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAnalysisRulesPagedResponse(ListAnalysisRulesPage page) {
+      super(page, ListAnalysisRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAnalysisRulesPage
+      extends AbstractPage<
+          ListAnalysisRulesRequest,
+          ListAnalysisRulesResponse,
+          AnalysisRule,
+          ListAnalysisRulesPage> {
+
+    private ListAnalysisRulesPage(
+        PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule> context,
+        ListAnalysisRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAnalysisRulesPage createEmptyPage() {
+      return new ListAnalysisRulesPage(null, null);
+    }
+
+    @Override
+    protected ListAnalysisRulesPage createPage(
+        PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule> context,
+        ListAnalysisRulesResponse response) {
+      return new ListAnalysisRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAnalysisRulesPage> createPageAsync(
+        PageContext<ListAnalysisRulesRequest, ListAnalysisRulesResponse, AnalysisRule> context,
+        ApiFuture<ListAnalysisRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAnalysisRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAnalysisRulesRequest,
+          ListAnalysisRulesResponse,
+          AnalysisRule,
+          ListAnalysisRulesPage,
+          ListAnalysisRulesFixedSizeCollection> {
+
+    private ListAnalysisRulesFixedSizeCollection(
+        List<ListAnalysisRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAnalysisRulesFixedSizeCollection createEmptyCollection() {
+      return new ListAnalysisRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAnalysisRulesFixedSizeCollection createCollection(
+        List<ListAnalysisRulesPage> pages, int collectionSize) {
+      return new ListAnalysisRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListViewsPagedResponse
       extends AbstractPagedListResponse<
           ListViewsRequest, ListViewsResponse, View, ListViewsPage, ListViewsFixedSizeCollection> {
@@ -7014,6 +11930,420 @@ public class ContactCenterInsightsClient implements BackgroundResource {
     protected ListViewsFixedSizeCollection createCollection(
         List<ListViewsPage> pages, int collectionSize) {
       return new ListViewsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQaQuestionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListQaQuestionsRequest,
+          ListQaQuestionsResponse,
+          QaQuestion,
+          ListQaQuestionsPage,
+          ListQaQuestionsFixedSizeCollection> {
+
+    public static ApiFuture<ListQaQuestionsPagedResponse> createAsync(
+        PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
+        ApiFuture<ListQaQuestionsResponse> futureResponse) {
+      ApiFuture<ListQaQuestionsPage> futurePage =
+          ListQaQuestionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQaQuestionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQaQuestionsPagedResponse(ListQaQuestionsPage page) {
+      super(page, ListQaQuestionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQaQuestionsPage
+      extends AbstractPage<
+          ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion, ListQaQuestionsPage> {
+
+    private ListQaQuestionsPage(
+        PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
+        ListQaQuestionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListQaQuestionsPage createEmptyPage() {
+      return new ListQaQuestionsPage(null, null);
+    }
+
+    @Override
+    protected ListQaQuestionsPage createPage(
+        PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
+        ListQaQuestionsResponse response) {
+      return new ListQaQuestionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQaQuestionsPage> createPageAsync(
+        PageContext<ListQaQuestionsRequest, ListQaQuestionsResponse, QaQuestion> context,
+        ApiFuture<ListQaQuestionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQaQuestionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQaQuestionsRequest,
+          ListQaQuestionsResponse,
+          QaQuestion,
+          ListQaQuestionsPage,
+          ListQaQuestionsFixedSizeCollection> {
+
+    private ListQaQuestionsFixedSizeCollection(
+        List<ListQaQuestionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQaQuestionsFixedSizeCollection createEmptyCollection() {
+      return new ListQaQuestionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQaQuestionsFixedSizeCollection createCollection(
+        List<ListQaQuestionsPage> pages, int collectionSize) {
+      return new ListQaQuestionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQaScorecardsPagedResponse
+      extends AbstractPagedListResponse<
+          ListQaScorecardsRequest,
+          ListQaScorecardsResponse,
+          QaScorecard,
+          ListQaScorecardsPage,
+          ListQaScorecardsFixedSizeCollection> {
+
+    public static ApiFuture<ListQaScorecardsPagedResponse> createAsync(
+        PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard> context,
+        ApiFuture<ListQaScorecardsResponse> futureResponse) {
+      ApiFuture<ListQaScorecardsPage> futurePage =
+          ListQaScorecardsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQaScorecardsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQaScorecardsPagedResponse(ListQaScorecardsPage page) {
+      super(page, ListQaScorecardsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQaScorecardsPage
+      extends AbstractPage<
+          ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard, ListQaScorecardsPage> {
+
+    private ListQaScorecardsPage(
+        PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard> context,
+        ListQaScorecardsResponse response) {
+      super(context, response);
+    }
+
+    private static ListQaScorecardsPage createEmptyPage() {
+      return new ListQaScorecardsPage(null, null);
+    }
+
+    @Override
+    protected ListQaScorecardsPage createPage(
+        PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard> context,
+        ListQaScorecardsResponse response) {
+      return new ListQaScorecardsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQaScorecardsPage> createPageAsync(
+        PageContext<ListQaScorecardsRequest, ListQaScorecardsResponse, QaScorecard> context,
+        ApiFuture<ListQaScorecardsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQaScorecardsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQaScorecardsRequest,
+          ListQaScorecardsResponse,
+          QaScorecard,
+          ListQaScorecardsPage,
+          ListQaScorecardsFixedSizeCollection> {
+
+    private ListQaScorecardsFixedSizeCollection(
+        List<ListQaScorecardsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQaScorecardsFixedSizeCollection createEmptyCollection() {
+      return new ListQaScorecardsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQaScorecardsFixedSizeCollection createCollection(
+        List<ListQaScorecardsPage> pages, int collectionSize) {
+      return new ListQaScorecardsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQaScorecardRevisionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListQaScorecardRevisionsRequest,
+          ListQaScorecardRevisionsResponse,
+          QaScorecardRevision,
+          ListQaScorecardRevisionsPage,
+          ListQaScorecardRevisionsFixedSizeCollection> {
+
+    public static ApiFuture<ListQaScorecardRevisionsPagedResponse> createAsync(
+        PageContext<
+                ListQaScorecardRevisionsRequest,
+                ListQaScorecardRevisionsResponse,
+                QaScorecardRevision>
+            context,
+        ApiFuture<ListQaScorecardRevisionsResponse> futureResponse) {
+      ApiFuture<ListQaScorecardRevisionsPage> futurePage =
+          ListQaScorecardRevisionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQaScorecardRevisionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQaScorecardRevisionsPagedResponse(ListQaScorecardRevisionsPage page) {
+      super(page, ListQaScorecardRevisionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQaScorecardRevisionsPage
+      extends AbstractPage<
+          ListQaScorecardRevisionsRequest,
+          ListQaScorecardRevisionsResponse,
+          QaScorecardRevision,
+          ListQaScorecardRevisionsPage> {
+
+    private ListQaScorecardRevisionsPage(
+        PageContext<
+                ListQaScorecardRevisionsRequest,
+                ListQaScorecardRevisionsResponse,
+                QaScorecardRevision>
+            context,
+        ListQaScorecardRevisionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListQaScorecardRevisionsPage createEmptyPage() {
+      return new ListQaScorecardRevisionsPage(null, null);
+    }
+
+    @Override
+    protected ListQaScorecardRevisionsPage createPage(
+        PageContext<
+                ListQaScorecardRevisionsRequest,
+                ListQaScorecardRevisionsResponse,
+                QaScorecardRevision>
+            context,
+        ListQaScorecardRevisionsResponse response) {
+      return new ListQaScorecardRevisionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQaScorecardRevisionsPage> createPageAsync(
+        PageContext<
+                ListQaScorecardRevisionsRequest,
+                ListQaScorecardRevisionsResponse,
+                QaScorecardRevision>
+            context,
+        ApiFuture<ListQaScorecardRevisionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQaScorecardRevisionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQaScorecardRevisionsRequest,
+          ListQaScorecardRevisionsResponse,
+          QaScorecardRevision,
+          ListQaScorecardRevisionsPage,
+          ListQaScorecardRevisionsFixedSizeCollection> {
+
+    private ListQaScorecardRevisionsFixedSizeCollection(
+        List<ListQaScorecardRevisionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQaScorecardRevisionsFixedSizeCollection createEmptyCollection() {
+      return new ListQaScorecardRevisionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQaScorecardRevisionsFixedSizeCollection createCollection(
+        List<ListQaScorecardRevisionsPage> pages, int collectionSize) {
+      return new ListQaScorecardRevisionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListFeedbackLabelsPagedResponse
+      extends AbstractPagedListResponse<
+          ListFeedbackLabelsRequest,
+          ListFeedbackLabelsResponse,
+          FeedbackLabel,
+          ListFeedbackLabelsPage,
+          ListFeedbackLabelsFixedSizeCollection> {
+
+    public static ApiFuture<ListFeedbackLabelsPagedResponse> createAsync(
+        PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel> context,
+        ApiFuture<ListFeedbackLabelsResponse> futureResponse) {
+      ApiFuture<ListFeedbackLabelsPage> futurePage =
+          ListFeedbackLabelsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListFeedbackLabelsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListFeedbackLabelsPagedResponse(ListFeedbackLabelsPage page) {
+      super(page, ListFeedbackLabelsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListFeedbackLabelsPage
+      extends AbstractPage<
+          ListFeedbackLabelsRequest,
+          ListFeedbackLabelsResponse,
+          FeedbackLabel,
+          ListFeedbackLabelsPage> {
+
+    private ListFeedbackLabelsPage(
+        PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel> context,
+        ListFeedbackLabelsResponse response) {
+      super(context, response);
+    }
+
+    private static ListFeedbackLabelsPage createEmptyPage() {
+      return new ListFeedbackLabelsPage(null, null);
+    }
+
+    @Override
+    protected ListFeedbackLabelsPage createPage(
+        PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel> context,
+        ListFeedbackLabelsResponse response) {
+      return new ListFeedbackLabelsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListFeedbackLabelsPage> createPageAsync(
+        PageContext<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse, FeedbackLabel> context,
+        ApiFuture<ListFeedbackLabelsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListFeedbackLabelsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFeedbackLabelsRequest,
+          ListFeedbackLabelsResponse,
+          FeedbackLabel,
+          ListFeedbackLabelsPage,
+          ListFeedbackLabelsFixedSizeCollection> {
+
+    private ListFeedbackLabelsFixedSizeCollection(
+        List<ListFeedbackLabelsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListFeedbackLabelsFixedSizeCollection createEmptyCollection() {
+      return new ListFeedbackLabelsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListFeedbackLabelsFixedSizeCollection createCollection(
+        List<ListFeedbackLabelsPage> pages, int collectionSize) {
+      return new ListFeedbackLabelsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAllFeedbackLabelsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAllFeedbackLabelsRequest,
+          ListAllFeedbackLabelsResponse,
+          FeedbackLabel,
+          ListAllFeedbackLabelsPage,
+          ListAllFeedbackLabelsFixedSizeCollection> {
+
+    public static ApiFuture<ListAllFeedbackLabelsPagedResponse> createAsync(
+        PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
+            context,
+        ApiFuture<ListAllFeedbackLabelsResponse> futureResponse) {
+      ApiFuture<ListAllFeedbackLabelsPage> futurePage =
+          ListAllFeedbackLabelsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAllFeedbackLabelsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAllFeedbackLabelsPagedResponse(ListAllFeedbackLabelsPage page) {
+      super(page, ListAllFeedbackLabelsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAllFeedbackLabelsPage
+      extends AbstractPage<
+          ListAllFeedbackLabelsRequest,
+          ListAllFeedbackLabelsResponse,
+          FeedbackLabel,
+          ListAllFeedbackLabelsPage> {
+
+    private ListAllFeedbackLabelsPage(
+        PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
+            context,
+        ListAllFeedbackLabelsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAllFeedbackLabelsPage createEmptyPage() {
+      return new ListAllFeedbackLabelsPage(null, null);
+    }
+
+    @Override
+    protected ListAllFeedbackLabelsPage createPage(
+        PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
+            context,
+        ListAllFeedbackLabelsResponse response) {
+      return new ListAllFeedbackLabelsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAllFeedbackLabelsPage> createPageAsync(
+        PageContext<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse, FeedbackLabel>
+            context,
+        ApiFuture<ListAllFeedbackLabelsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAllFeedbackLabelsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAllFeedbackLabelsRequest,
+          ListAllFeedbackLabelsResponse,
+          FeedbackLabel,
+          ListAllFeedbackLabelsPage,
+          ListAllFeedbackLabelsFixedSizeCollection> {
+
+    private ListAllFeedbackLabelsFixedSizeCollection(
+        List<ListAllFeedbackLabelsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAllFeedbackLabelsFixedSizeCollection createEmptyCollection() {
+      return new ListAllFeedbackLabelsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAllFeedbackLabelsFixedSizeCollection createCollection(
+        List<ListAllFeedbackLabelsPage> pages, int collectionSize) {
+      return new ListAllFeedbackLabelsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

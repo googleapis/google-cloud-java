@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,14 +28,14 @@ public interface TerraformBlueprintOrBuilder
    *
    *
    * <pre>
-   * Required. URI of an object in Google Cloud Storage.
+   * URI of an object in Google Cloud Storage.
    * Format: `gs://{bucket}/{object}`
    *
    * URI may also specify an object version for zipped objects.
    * Format: `gs://{bucket}/{object}#{version}`
    * </pre>
    *
-   * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string gcs_source = 1;</code>
    *
    * @return Whether the gcsSource field is set.
    */
@@ -44,14 +44,14 @@ public interface TerraformBlueprintOrBuilder
    *
    *
    * <pre>
-   * Required. URI of an object in Google Cloud Storage.
+   * URI of an object in Google Cloud Storage.
    * Format: `gs://{bucket}/{object}`
    *
    * URI may also specify an object version for zipped objects.
    * Format: `gs://{bucket}/{object}#{version}`
    * </pre>
    *
-   * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string gcs_source = 1;</code>
    *
    * @return The gcsSource.
    */
@@ -60,14 +60,14 @@ public interface TerraformBlueprintOrBuilder
    *
    *
    * <pre>
-   * Required. URI of an object in Google Cloud Storage.
+   * URI of an object in Google Cloud Storage.
    * Format: `gs://{bucket}/{object}`
    *
    * URI may also specify an object version for zipped objects.
    * Format: `gs://{bucket}/{object}#{version}`
    * </pre>
    *
-   * <code>string gcs_source = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string gcs_source = 1;</code>
    *
    * @return The bytes for gcsSource.
    */
@@ -77,12 +77,10 @@ public interface TerraformBlueprintOrBuilder
    *
    *
    * <pre>
-   * Required. URI of a public Git repo.
+   * URI of a public Git repo.
    * </pre>
    *
-   * <code>
-   * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
    *
    * @return Whether the gitSource field is set.
    */
@@ -91,12 +89,10 @@ public interface TerraformBlueprintOrBuilder
    *
    *
    * <pre>
-   * Required. URI of a public Git repo.
+   * URI of a public Git repo.
    * </pre>
    *
-   * <code>
-   * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
    *
    * @return The gitSource.
    */
@@ -105,12 +101,10 @@ public interface TerraformBlueprintOrBuilder
    *
    *
    * <pre>
-   * Required. URI of a public Git repo.
+   * URI of a public Git repo.
    * </pre>
    *
-   * <code>
-   * .google.cloud.config.v1.GitSource git_source = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.config.v1.GitSource git_source = 2;</code>
    */
   com.google.cloud.config.v1.GitSourceOrBuilder getGitSourceOrBuilder();
 

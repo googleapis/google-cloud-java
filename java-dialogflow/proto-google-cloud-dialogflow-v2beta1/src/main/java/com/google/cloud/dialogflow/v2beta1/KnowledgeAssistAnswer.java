@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1800,6 +1800,41 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
          * @return The bytes for title.
          */
         com.google.protobuf.ByteString getTitleBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata of the document.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct metadata = 5;</code>
+         *
+         * @return Whether the metadata field is set.
+         */
+        boolean hasMetadata();
+        /**
+         *
+         *
+         * <pre>
+         * Metadata of the document.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct metadata = 5;</code>
+         *
+         * @return The metadata.
+         */
+        com.google.protobuf.Struct getMetadata();
+        /**
+         *
+         *
+         * <pre>
+         * Metadata of the document.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct metadata = 5;</code>
+         */
+        com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
       }
       /**
        *
@@ -1850,6 +1885,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                       .GenerativeSource.Snippet.Builder.class);
         }
 
+        private int bitField0_;
         public static final int URI_FIELD_NUMBER = 2;
 
         @SuppressWarnings("serial")
@@ -2003,6 +2039,52 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
         }
 
+        public static final int METADATA_FIELD_NUMBER = 5;
+        private com.google.protobuf.Struct metadata_;
+        /**
+         *
+         *
+         * <pre>
+         * Metadata of the document.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct metadata = 5;</code>
+         *
+         * @return Whether the metadata field is set.
+         */
+        @java.lang.Override
+        public boolean hasMetadata() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Metadata of the document.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct metadata = 5;</code>
+         *
+         * @return The metadata.
+         */
+        @java.lang.Override
+        public com.google.protobuf.Struct getMetadata() {
+          return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Metadata of the document.
+         * </pre>
+         *
+         * <code>.google.protobuf.Struct metadata = 5;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+          return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -2027,6 +2109,9 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 4, title_);
           }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(5, getMetadata());
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -2044,6 +2129,9 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           }
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, title_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMetadata());
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -2071,6 +2159,10 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           if (!getUri().equals(other.getUri())) return false;
           if (!getText().equals(other.getText())) return false;
           if (!getTitle().equals(other.getTitle())) return false;
+          if (hasMetadata() != other.hasMetadata()) return false;
+          if (hasMetadata()) {
+            if (!getMetadata().equals(other.getMetadata())) return false;
+          }
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -2088,6 +2180,10 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           hash = (53 * hash) + getText().hashCode();
           hash = (37 * hash) + TITLE_FIELD_NUMBER;
           hash = (53 * hash) + getTitle().hashCode();
+          if (hasMetadata()) {
+            hash = (37 * hash) + METADATA_FIELD_NUMBER;
+            hash = (53 * hash) + getMetadata().hashCode();
+          }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -2249,10 +2345,19 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
           // Construct using
           // com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource.Snippet.newBuilder()
-          private Builder() {}
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+              getMetadataFieldBuilder();
+            }
           }
 
           @java.lang.Override
@@ -2262,6 +2367,11 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             uri_ = "";
             text_ = "";
             title_ = "";
+            metadata_ = null;
+            if (metadataBuilder_ != null) {
+              metadataBuilder_.dispose();
+              metadataBuilder_ = null;
+            }
             return this;
           }
 
@@ -2322,6 +2432,12 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.title_ = title_;
             }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
           }
 
           @java.lang.Override
@@ -2397,6 +2513,9 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
               bitField0_ |= 0x00000004;
               onChanged();
             }
+            if (other.hasMetadata()) {
+              mergeMetadata(other.getMetadata());
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -2441,6 +2560,12 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                       bitField0_ |= 0x00000004;
                       break;
                     } // case 34
+                  case 42:
+                    {
+                      input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 42
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2776,6 +2901,191 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             bitField0_ |= 0x00000004;
             onChanged();
             return this;
+          }
+
+          private com.google.protobuf.Struct metadata_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>
+              metadataBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           *
+           * @return Whether the metadata field is set.
+           */
+          public boolean hasMetadata() {
+            return ((bitField0_ & 0x00000008) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           *
+           * @return The metadata.
+           */
+          public com.google.protobuf.Struct getMetadata() {
+            if (metadataBuilder_ == null) {
+              return metadata_ == null
+                  ? com.google.protobuf.Struct.getDefaultInstance()
+                  : metadata_;
+            } else {
+              return metadataBuilder_.getMessage();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           */
+          public Builder setMetadata(com.google.protobuf.Struct value) {
+            if (metadataBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              metadata_ = value;
+            } else {
+              metadataBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           */
+          public Builder setMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+            if (metadataBuilder_ == null) {
+              metadata_ = builderForValue.build();
+            } else {
+              metadataBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           */
+          public Builder mergeMetadata(com.google.protobuf.Struct value) {
+            if (metadataBuilder_ == null) {
+              if (((bitField0_ & 0x00000008) != 0)
+                  && metadata_ != null
+                  && metadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+                getMetadataBuilder().mergeFrom(value);
+              } else {
+                metadata_ = value;
+              }
+            } else {
+              metadataBuilder_.mergeFrom(value);
+            }
+            if (metadata_ != null) {
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           */
+          public Builder clearMetadata() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            metadata_ = null;
+            if (metadataBuilder_ != null) {
+              metadataBuilder_.dispose();
+              metadataBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           */
+          public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return getMetadataFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           */
+          public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+            if (metadataBuilder_ != null) {
+              return metadataBuilder_.getMessageOrBuilder();
+            } else {
+              return metadata_ == null
+                  ? com.google.protobuf.Struct.getDefaultInstance()
+                  : metadata_;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Metadata of the document.
+           * </pre>
+           *
+           * <code>.google.protobuf.Struct metadata = 5;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>
+              getMetadataFieldBuilder() {
+            if (metadataBuilder_ == null) {
+              metadataBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.Struct,
+                      com.google.protobuf.Struct.Builder,
+                      com.google.protobuf.StructOrBuilder>(
+                      getMetadata(), getParentForChildren(), isClean());
+              metadata_ = null;
+            }
+            return metadataBuilder_;
           }
 
           @java.lang.Override

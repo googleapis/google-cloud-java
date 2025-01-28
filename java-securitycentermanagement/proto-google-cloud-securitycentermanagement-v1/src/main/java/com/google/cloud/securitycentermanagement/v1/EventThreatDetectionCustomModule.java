@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * An event threat detection custom module is a Cloud SCC resource that contains
- * the configuration and enablement state of a custom module, which enables ETD
- * to write certain findings to Cloud SCC.
+ * A Security Command Center resource that contains the configuration and
+ * enablement state of a custom module, which enables Event Threat Detection to
+ * write certain findings to Security Command Center.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule}
@@ -118,11 +118,11 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * State is inherited from an ancestor module. The module will either
-     * be effectively ENABLED or DISABLED based on its closest non-inherited
-     * ancestor module in the CRM hierarchy. Attempting to set a top level
-     * module (module with no parent) to the INHERITED state will result in an
-     * error.
+     * State is inherited from an ancestor module. The module will either be
+     * effectively `ENABLED` or `DISABLED` based on its closest non-inherited
+     * ancestor module in the CRM hierarchy. If you try to set a top-level
+     * module (a module with no parent) to the `INHERITED` state, you receive an
+     * `INVALID_ARGUMENT` error.
      * </pre>
      *
      * <code>INHERITED = 3;</code>
@@ -165,11 +165,11 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * State is inherited from an ancestor module. The module will either
-     * be effectively ENABLED or DISABLED based on its closest non-inherited
-     * ancestor module in the CRM hierarchy. Attempting to set a top level
-     * module (module with no parent) to the INHERITED state will result in an
-     * error.
+     * State is inherited from an ancestor module. The module will either be
+     * effectively `ENABLED` or `DISABLED` based on its closest non-inherited
+     * ancestor module in the CRM hierarchy. If you try to set a top-level
+     * module (a module with no parent) to the `INHERITED` state, you receive an
+     * `INVALID_ARGUMENT` error.
      * </pre>
      *
      * <code>INHERITED = 3;</code>
@@ -275,13 +275,12 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Identifier. The resource name of the ETD custom module.
+   * Identifier. The resource name of the Event Threat Detection custom module,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -304,13 +303,12 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Identifier. The resource name of the ETD custom module.
+   * Identifier. The resource name of the Event Threat Detection custom module,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -336,9 +334,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Config for the module. For the resident module, its config value
-   * is defined at this level. For the inherited module, its config value is
-   * inherited from the ancestor module.
+   * Optional. Configuration for the module. For the resident module, its
+   * configuration value is defined at this level. For the inherited module, its
+   * configuration value is inherited from the ancestor module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -353,9 +351,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Config for the module. For the resident module, its config value
-   * is defined at this level. For the inherited module, its config value is
-   * inherited from the ancestor module.
+   * Optional. Configuration for the module. For the resident module, its
+   * configuration value is defined at this level. For the inherited module, its
+   * configuration value is inherited from the ancestor module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -370,9 +368,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Config for the module. For the resident module, its config value
-   * is defined at this level. For the inherited module, its config value is
-   * inherited from the ancestor module.
+   * Optional. Configuration for the module. For the resident module, its
+   * configuration value is defined at this level. For the inherited module, its
+   * configuration value is inherited from the ancestor module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -393,7 +391,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    * Output only. The closest ancestor module that this module inherits the
    * enablement state from. If empty, indicates that the custom module was
    * created in the requesting parent organization, folder, or project. The
-   * format is the same as the EventThreatDetectionCustomModule resource name.
+   * format is the same as the custom module's resource name.
    * </pre>
    *
    * <code>
@@ -421,7 +419,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    * Output only. The closest ancestor module that this module inherits the
    * enablement state from. If empty, indicates that the custom module was
    * created in the requesting parent organization, folder, or project. The
-   * format is the same as the EventThreatDetectionCustomModule resource name.
+   * format is the same as the custom module's resource name.
    * </pre>
    *
    * <code>
@@ -499,7 +497,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+   * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -522,7 +520,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+   * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
    * </pre>
    *
    * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -550,7 +548,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. The human readable name to be displayed for the module.
+   * Optional. The human-readable name of the module.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -573,7 +571,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. The human readable name to be displayed for the module.
+   * Optional. The human-readable name of the module.
    * </pre>
    *
    * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -601,7 +599,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. The description for the module.
+   * Optional. A description of the module.
    * </pre>
    *
    * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -624,7 +622,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. The description for the module.
+   * Optional. A description of the module.
    * </pre>
    *
    * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1003,9 +1001,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
    *
    *
    * <pre>
-   * An event threat detection custom module is a Cloud SCC resource that contains
-   * the configuration and enablement state of a custom module, which enables ETD
-   * to write certain findings to Cloud SCC.
+   * A Security Command Center resource that contains the configuration and
+   * enablement state of a custom module, which enables Event Threat Detection to
+   * write certain findings to Security Command Center.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule}
@@ -1337,13 +1335,12 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Identifier. The resource name of the ETD custom module.
+     * Identifier. The resource name of the Event Threat Detection custom module,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1365,13 +1362,12 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Identifier. The resource name of the ETD custom module.
+     * Identifier. The resource name of the Event Threat Detection custom module,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1393,13 +1389,12 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Identifier. The resource name of the ETD custom module.
+     * Identifier. The resource name of the Event Threat Detection custom module,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1420,13 +1415,12 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Identifier. The resource name of the ETD custom module.
+     * Identifier. The resource name of the Event Threat Detection custom module,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1443,13 +1437,12 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Identifier. The resource name of the ETD custom module.
+     * Identifier. The resource name of the Event Threat Detection custom module,
+     * in one of the following formats:
      *
-     * Its format is:
-     *
-     *   * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
-     *   * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}`.
+     * * `organizations/{organization}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
+     * * `projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{custom_module}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1478,9 +1471,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1494,9 +1487,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1514,9 +1507,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1538,9 +1531,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1559,9 +1552,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1588,9 +1581,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1609,9 +1602,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1625,9 +1618,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1643,9 +1636,9 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Config for the module. For the resident module, its config value
-     * is defined at this level. For the inherited module, its config value is
-     * inherited from the ancestor module.
+     * Optional. Configuration for the module. For the resident module, its
+     * configuration value is defined at this level. For the inherited module, its
+     * configuration value is inherited from the ancestor module.
      * </pre>
      *
      * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1675,7 +1668,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * Output only. The closest ancestor module that this module inherits the
      * enablement state from. If empty, indicates that the custom module was
      * created in the requesting parent organization, folder, or project. The
-     * format is the same as the EventThreatDetectionCustomModule resource name.
+     * format is the same as the custom module's resource name.
      * </pre>
      *
      * <code>
@@ -1702,7 +1695,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * Output only. The closest ancestor module that this module inherits the
      * enablement state from. If empty, indicates that the custom module was
      * created in the requesting parent organization, folder, or project. The
-     * format is the same as the EventThreatDetectionCustomModule resource name.
+     * format is the same as the custom module's resource name.
      * </pre>
      *
      * <code>
@@ -1729,7 +1722,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * Output only. The closest ancestor module that this module inherits the
      * enablement state from. If empty, indicates that the custom module was
      * created in the requesting parent organization, folder, or project. The
-     * format is the same as the EventThreatDetectionCustomModule resource name.
+     * format is the same as the custom module's resource name.
      * </pre>
      *
      * <code>
@@ -1755,7 +1748,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * Output only. The closest ancestor module that this module inherits the
      * enablement state from. If empty, indicates that the custom module was
      * created in the requesting parent organization, folder, or project. The
-     * format is the same as the EventThreatDetectionCustomModule resource name.
+     * format is the same as the custom module's resource name.
      * </pre>
      *
      * <code>
@@ -1777,7 +1770,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      * Output only. The closest ancestor module that this module inherits the
      * enablement state from. If empty, indicates that the custom module was
      * created in the requesting parent organization, folder, or project. The
-     * format is the same as the EventThreatDetectionCustomModule resource name.
+     * format is the same as the custom module's resource name.
      * </pre>
      *
      * <code>
@@ -1918,7 +1911,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+     * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1940,7 +1933,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+     * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1962,7 +1955,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+     * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1983,7 +1976,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+     * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2000,7 +1993,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+     * Optional. Type for the module. For example, `CONFIGURABLE_BAD_IP`.
      * </pre>
      *
      * <code>string type = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2024,7 +2017,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The human readable name to be displayed for the module.
+     * Optional. The human-readable name of the module.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2046,7 +2039,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The human readable name to be displayed for the module.
+     * Optional. The human-readable name of the module.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2068,7 +2061,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The human readable name to be displayed for the module.
+     * Optional. The human-readable name of the module.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2089,7 +2082,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The human readable name to be displayed for the module.
+     * Optional. The human-readable name of the module.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2106,7 +2099,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The human readable name to be displayed for the module.
+     * Optional. The human-readable name of the module.
      * </pre>
      *
      * <code>string display_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2130,7 +2123,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The description for the module.
+     * Optional. A description of the module.
      * </pre>
      *
      * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2152,7 +2145,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The description for the module.
+     * Optional. A description of the module.
      * </pre>
      *
      * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2174,7 +2167,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The description for the module.
+     * Optional. A description of the module.
      * </pre>
      *
      * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2195,7 +2188,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The description for the module.
+     * Optional. A description of the module.
      * </pre>
      *
      * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2212,7 +2205,7 @@ public final class EventThreatDetectionCustomModule extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. The description for the module.
+     * Optional. A description of the module.
      * </pre>
      *
      * <code>string description = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

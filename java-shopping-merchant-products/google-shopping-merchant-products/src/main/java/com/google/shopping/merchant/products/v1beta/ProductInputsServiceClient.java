@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,7 +300,9 @@ public class ProductInputsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product input resource to delete. Format:
-   *     accounts/{account}/productInputs/{product}
+   *     accounts/{account}/productInputs/{product} where the last section `product` consists of 4
+   *     parts: channel~content_language~feed_label~offer_id example for product name is
+   *     "accounts/123/productInputs/online~en~US~sku123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProductInput(ProductInputName name) {
@@ -334,7 +336,9 @@ public class ProductInputsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product input resource to delete. Format:
-   *     accounts/{account}/productInputs/{product}
+   *     accounts/{account}/productInputs/{product} where the last section `product` consists of 4
+   *     parts: channel~content_language~feed_label~offer_id example for product name is
+   *     "accounts/123/productInputs/online~en~US~sku123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteProductInput(String name) {

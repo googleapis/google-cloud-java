@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,10 @@ public final class SiteSearchEngineProto {
       internal_static_google_cloud_discoveryengine_v1beta_SiteVerificationInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SiteVerificationInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_Sitemap_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_Sitemap_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -106,14 +110,24 @@ public final class SiteSearchEngineProto {
           + "rotobuf.Timestamp\"l\n\025SiteVerificationSta"
           + "te\022\'\n#SITE_VERIFICATION_STATE_UNSPECIFIE"
           + "D\020\000\022\014\n\010VERIFIED\020\001\022\016\n\nUNVERIFIED\020\002\022\014\n\010EXE"
-          + "MPTED\020\003B\234\002\n\'com.google.cloud.discoveryen"
-          + "gine.v1betaB\025SiteSearchEngineProtoP\001ZQcl"
-          + "oud.google.com/go/discoveryengine/apiv1b"
-          + "eta/discoveryenginepb;discoveryenginepb\242"
-          + "\002\017DISCOVERYENGINE\252\002#Google.Cloud.Discove"
-          + "ryEngine.V1Beta\312\002#Google\\Cloud\\Discovery"
-          + "Engine\\V1beta\352\002&Google::Cloud::Discovery"
-          + "Engine::V1betab\006proto3"
+          + "MPTED\020\003\"\373\002\n\007Sitemap\022\r\n\003uri\030\002 \001(\tH\000\022\021\n\004na"
+          + "me\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003:\217\002\352A\213\002\n&disc"
+          + "overyengine.googleapis.com/Sitemap\022cproj"
+          + "ects/{project}/locations/{location}/data"
+          + "Stores/{data_store}/siteSearchEngine/sit"
+          + "emaps/{sitemap}\022|projects/{project}/loca"
+          + "tions/{location}/collections/{collection"
+          + "}/dataStores/{data_store}/siteSearchEngi"
+          + "ne/sitemaps/{sitemap}B\006\n\004feedB\234\002\n\'com.go"
+          + "ogle.cloud.discoveryengine.v1betaB\025SiteS"
+          + "earchEngineProtoP\001ZQcloud.google.com/go/"
+          + "discoveryengine/apiv1beta/discoveryengin"
+          + "epb;discoveryenginepb\242\002\017DISCOVERYENGINE\252"
+          + "\002#Google.Cloud.DiscoveryEngine.V1Beta\312\002#"
+          + "Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&Go"
+          + "ogle::Cloud::DiscoveryEngine::V1betab\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -175,6 +189,14 @@ public final class SiteSearchEngineProto {
             internal_static_google_cloud_discoveryengine_v1beta_SiteVerificationInfo_descriptor,
             new java.lang.String[] {
               "SiteVerificationState", "VerifyTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_Sitemap_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_discoveryengine_v1beta_Sitemap_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_Sitemap_descriptor,
+            new java.lang.String[] {
+              "Uri", "Name", "CreateTime", "Feed",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

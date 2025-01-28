@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -528,6 +528,27 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
   }
 
   @Override
+  public void updateVersion(
+      UpdateVersionRequest request, StreamObserver<Version> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Version) {
+      requests.add(request);
+      responseObserver.onNext(((Version) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Version.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listFiles(
       ListFilesRequest request, StreamObserver<ListFilesResponse> responseObserver) {
     Object response = responses.poll();
@@ -562,6 +583,46 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  File.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFile(DeleteFileRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateFile(UpdateFileRequest request, StreamObserver<File> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof File) {
+      requests.add(request);
+      responseObserver.onNext(((File) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateFile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   File.class.getName(),
                   Exception.class.getName())));
@@ -662,6 +723,107 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteTag, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRule(CreateRuleRequest request, StreamObserver<Rule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Rule) {
+      requests.add(request);
+      responseObserver.onNext(((Rule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Rule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRules(
+      ListRulesRequest request, StreamObserver<ListRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRule(GetRuleRequest request, StreamObserver<Rule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Rule) {
+      requests.add(request);
+      responseObserver.onNext(((Rule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Rule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateRule(UpdateRuleRequest request, StreamObserver<Rule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Rule) {
+      requests.add(request);
+      responseObserver.onNext(((Rule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Rule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRule(DeleteRuleRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -810,6 +972,111 @@ public class MockArtifactRegistryImpl extends ArtifactRegistryImplBase {
                   "Unrecognized response type %s for method UpdateVPCSCConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VPCSCConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updatePackage(
+      UpdatePackageRequest request, StreamObserver<Package> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Package) {
+      requests.add(request);
+      responseObserver.onNext(((Package) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdatePackage, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Package.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAttachments(
+      ListAttachmentsRequest request, StreamObserver<ListAttachmentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAttachmentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAttachmentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAttachments, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAttachmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAttachment(
+      GetAttachmentRequest request, StreamObserver<Attachment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Attachment) {
+      requests.add(request);
+      responseObserver.onNext(((Attachment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAttachment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Attachment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAttachment(
+      CreateAttachmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAttachment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAttachment(
+      DeleteAttachmentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAttachment, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

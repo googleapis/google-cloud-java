@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -651,6 +651,49 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
      * @return The keepEmptyRows.
      */
     boolean getKeepEmptyRows();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The report's sampling level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the samplingLevel field is set.
+     */
+    boolean hasSamplingLevel();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The report's sampling level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for samplingLevel.
+     */
+    int getSamplingLevelValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The report's sampling level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The samplingLevel.
+     */
+    com.google.analytics.data.v1alpha.SamplingLevel getSamplingLevel();
   }
   /**
    *
@@ -678,6 +721,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       metricAggregations_ = java.util.Collections.emptyList();
       orderBys_ = java.util.Collections.emptyList();
       currencyCode_ = "";
+      samplingLevel_ = 0;
     }
 
     @java.lang.Override
@@ -1488,6 +1532,62 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       return keepEmptyRows_;
     }
 
+    public static final int SAMPLING_LEVEL_FIELD_NUMBER = 14;
+    private int samplingLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The report's sampling level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the samplingLevel field is set.
+     */
+    @java.lang.Override
+    public boolean hasSamplingLevel() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The report's sampling level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for samplingLevel.
+     */
+    @java.lang.Override
+    public int getSamplingLevelValue() {
+      return samplingLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The report's sampling level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The samplingLevel.
+     */
+    @java.lang.Override
+    public com.google.analytics.data.v1alpha.SamplingLevel getSamplingLevel() {
+      com.google.analytics.data.v1alpha.SamplingLevel result =
+          com.google.analytics.data.v1alpha.SamplingLevel.forNumber(samplingLevel_);
+      return result == null ? com.google.analytics.data.v1alpha.SamplingLevel.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1542,6 +1642,9 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
       if (keepEmptyRows_ != false) {
         output.writeBool(13, keepEmptyRows_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeEnum(14, samplingLevel_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1599,6 +1702,9 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       if (keepEmptyRows_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, keepEmptyRows_);
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, samplingLevel_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1636,6 +1742,10 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         if (!getCohortSpec().equals(other.getCohortSpec())) return false;
       }
       if (getKeepEmptyRows() != other.getKeepEmptyRows()) return false;
+      if (hasSamplingLevel() != other.hasSamplingLevel()) return false;
+      if (hasSamplingLevel()) {
+        if (samplingLevel_ != other.samplingLevel_) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1687,6 +1797,10 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + KEEP_EMPTY_ROWS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeepEmptyRows());
+      if (hasSamplingLevel()) {
+        hash = (37 * hash) + SAMPLING_LEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + samplingLevel_;
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1893,6 +2007,7 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
           cohortSpecBuilder_ = null;
         }
         keepEmptyRows_ = false;
+        samplingLevel_ = 0;
         return this;
       }
 
@@ -2004,6 +2119,10 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
           result.keepEmptyRows_ = keepEmptyRows_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.samplingLevel_ = samplingLevel_;
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2199,6 +2318,9 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
         if (other.getKeepEmptyRows() != false) {
           setKeepEmptyRows(other.getKeepEmptyRows());
         }
+        if (other.hasSamplingLevel()) {
+          setSamplingLevel(other.getSamplingLevel());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2339,6 +2461,12 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000800;
                   break;
                 } // case 104
+              case 112:
+                {
+                  samplingLevel_ = input.readEnum();
+                  bitField0_ |= 0x00001000;
+                  break;
+                } // case 112
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5267,6 +5395,125 @@ public final class ReportTask extends com.google.protobuf.GeneratedMessageV3
       public Builder clearKeepEmptyRows() {
         bitField0_ = (bitField0_ & ~0x00000800);
         keepEmptyRows_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int samplingLevel_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The report's sampling level.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the samplingLevel field is set.
+       */
+      @java.lang.Override
+      public boolean hasSamplingLevel() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The report's sampling level.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for samplingLevel.
+       */
+      @java.lang.Override
+      public int getSamplingLevelValue() {
+        return samplingLevel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The report's sampling level.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for samplingLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSamplingLevelValue(int value) {
+        samplingLevel_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The report's sampling level.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The samplingLevel.
+       */
+      @java.lang.Override
+      public com.google.analytics.data.v1alpha.SamplingLevel getSamplingLevel() {
+        com.google.analytics.data.v1alpha.SamplingLevel result =
+            com.google.analytics.data.v1alpha.SamplingLevel.forNumber(samplingLevel_);
+        return result == null
+            ? com.google.analytics.data.v1alpha.SamplingLevel.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The report's sampling level.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The samplingLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSamplingLevel(com.google.analytics.data.v1alpha.SamplingLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00001000;
+        samplingLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The report's sampling level.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1alpha.SamplingLevel sampling_level = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSamplingLevel() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        samplingLevel_ = 0;
         onChanged();
         return this;
       }

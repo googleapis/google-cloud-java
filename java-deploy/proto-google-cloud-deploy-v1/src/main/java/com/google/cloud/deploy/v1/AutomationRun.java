@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -331,6 +331,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     PROMOTE_RELEASE_OPERATION(13),
     ADVANCE_ROLLOUT_OPERATION(14),
     REPAIR_ROLLOUT_OPERATION(17),
+    TIMED_PROMOTE_RELEASE_OPERATION(19),
     OPERATION_NOT_SET(0);
     private final int value;
 
@@ -355,6 +356,8 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
           return ADVANCE_ROLLOUT_OPERATION;
         case 17:
           return REPAIR_ROLLOUT_OPERATION;
+        case 19:
+          return TIMED_PROMOTE_RELEASE_OPERATION;
         case 0:
           return OPERATION_NOT_SET;
         default:
@@ -699,9 +702,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The ID of the target that represents the promotion stage that
-   * initiates the `AutomationRun`. The value of this field is the last segment
-   * of a target name.
+   * Output only. The ID of the source target that initiates the
+   * `AutomationRun`. The value of this field is the last segment of a target
+   * name.
    * </pre>
    *
    * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -724,9 +727,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The ID of the target that represents the promotion stage that
-   * initiates the `AutomationRun`. The value of this field is the last segment
-   * of a target name.
+   * Output only. The ID of the source target that initiates the
+   * `AutomationRun`. The value of this field is the last segment of a target
+   * name.
    * </pre>
    *
    * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1225,6 +1228,67 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.RepairRolloutOperation.getDefaultInstance();
   }
 
+  public static final int TIMED_PROMOTE_RELEASE_OPERATION_FIELD_NUMBER = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Promotes a release to a specified 'Target' as defined in a
+   * Timed Promote Release rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the timedPromoteReleaseOperation field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimedPromoteReleaseOperation() {
+    return operationCase_ == 19;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Promotes a release to a specified 'Target' as defined in a
+   * Timed Promote Release rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The timedPromoteReleaseOperation.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TimedPromoteReleaseOperation getTimedPromoteReleaseOperation() {
+    if (operationCase_ == 19) {
+      return (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_;
+    }
+    return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Promotes a release to a specified 'Target' as defined in a
+   * Timed Promote Release rule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TimedPromoteReleaseOperationOrBuilder
+      getTimedPromoteReleaseOperationOrBuilder() {
+    if (operationCase_ == 19) {
+      return (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_;
+    }
+    return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
+  }
+
   public static final int WAIT_UNTIL_TIME_FIELD_NUMBER = 16;
   private com.google.protobuf.Timestamp waitUntilTime_;
   /**
@@ -1349,6 +1413,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
     if (operationCase_ == 17) {
       output.writeMessage(17, (com.google.cloud.deploy.v1.RepairRolloutOperation) operation_);
     }
+    if (operationCase_ == 19) {
+      output.writeMessage(19, (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1415,6 +1482,11 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, (com.google.cloud.deploy.v1.RepairRolloutOperation) operation_);
     }
+    if (operationCase_ == 19) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1472,6 +1544,10 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         break;
       case 17:
         if (!getRepairRolloutOperation().equals(other.getRepairRolloutOperation())) return false;
+        break;
+      case 19:
+        if (!getTimedPromoteReleaseOperation().equals(other.getTimedPromoteReleaseOperation()))
+          return false;
         break;
       case 0:
       default:
@@ -1539,6 +1615,10 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       case 17:
         hash = (37 * hash) + REPAIR_ROLLOUT_OPERATION_FIELD_NUMBER;
         hash = (53 * hash) + getRepairRolloutOperation().hashCode();
+        break;
+      case 19:
+        hash = (37 * hash) + TIMED_PROMOTE_RELEASE_OPERATION_FIELD_NUMBER;
+        hash = (53 * hash) + getTimedPromoteReleaseOperation().hashCode();
         break;
       case 0:
       default:
@@ -1741,6 +1821,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       if (repairRolloutOperationBuilder_ != null) {
         repairRolloutOperationBuilder_.clear();
       }
+      if (timedPromoteReleaseOperationBuilder_ != null) {
+        timedPromoteReleaseOperationBuilder_.clear();
+      }
       waitUntilTime_ = null;
       if (waitUntilTimeBuilder_ != null) {
         waitUntilTimeBuilder_.dispose();
@@ -1834,7 +1917,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.automationId_ = automationId_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.waitUntilTime_ =
             waitUntilTimeBuilder_ == null ? waitUntilTime_ : waitUntilTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
@@ -1853,6 +1936,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (operationCase_ == 17 && repairRolloutOperationBuilder_ != null) {
         result.operation_ = repairRolloutOperationBuilder_.build();
+      }
+      if (operationCase_ == 19 && timedPromoteReleaseOperationBuilder_ != null) {
+        result.operation_ = timedPromoteReleaseOperationBuilder_.build();
       }
     }
 
@@ -1971,6 +2057,11 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         case REPAIR_ROLLOUT_OPERATION:
           {
             mergeRepairRolloutOperation(other.getRepairRolloutOperation());
+            break;
+          }
+        case TIMED_PROMOTE_RELEASE_OPERATION:
+          {
+            mergeTimedPromoteReleaseOperation(other.getTimedPromoteReleaseOperation());
             break;
           }
         case OPERATION_NOT_SET:
@@ -2100,7 +2191,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
             case 130:
               {
                 input.readMessage(getWaitUntilTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 130
             case 138:
@@ -2110,6 +2201,13 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
                 operationCase_ = 17;
                 break;
               } // case 138
+            case 154:
+              {
+                input.readMessage(
+                    getTimedPromoteReleaseOperationFieldBuilder().getBuilder(), extensionRegistry);
+                operationCase_ = 19;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3110,9 +3208,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the target that represents the promotion stage that
-     * initiates the `AutomationRun`. The value of this field is the last segment
-     * of a target name.
+     * Output only. The ID of the source target that initiates the
+     * `AutomationRun`. The value of this field is the last segment of a target
+     * name.
      * </pre>
      *
      * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3134,9 +3232,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the target that represents the promotion stage that
-     * initiates the `AutomationRun`. The value of this field is the last segment
-     * of a target name.
+     * Output only. The ID of the source target that initiates the
+     * `AutomationRun`. The value of this field is the last segment of a target
+     * name.
      * </pre>
      *
      * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3158,9 +3256,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the target that represents the promotion stage that
-     * initiates the `AutomationRun`. The value of this field is the last segment
-     * of a target name.
+     * Output only. The ID of the source target that initiates the
+     * `AutomationRun`. The value of this field is the last segment of a target
+     * name.
      * </pre>
      *
      * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3181,9 +3279,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the target that represents the promotion stage that
-     * initiates the `AutomationRun`. The value of this field is the last segment
-     * of a target name.
+     * Output only. The ID of the source target that initiates the
+     * `AutomationRun`. The value of this field is the last segment of a target
+     * name.
      * </pre>
      *
      * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3200,9 +3298,9 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ID of the target that represents the promotion stage that
-     * initiates the `AutomationRun`. The value of this field is the last segment
-     * of a target name.
+     * Output only. The ID of the source target that initiates the
+     * `AutomationRun`. The value of this field is the last segment of a target
+     * name.
      * </pre>
      *
      * <code>string target_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4766,6 +4864,248 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       return repairRolloutOperationBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TimedPromoteReleaseOperation,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.Builder,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseOperationOrBuilder>
+        timedPromoteReleaseOperationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the timedPromoteReleaseOperation field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimedPromoteReleaseOperation() {
+      return operationCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The timedPromoteReleaseOperation.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseOperation
+        getTimedPromoteReleaseOperation() {
+      if (timedPromoteReleaseOperationBuilder_ == null) {
+        if (operationCase_ == 19) {
+          return (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_;
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
+      } else {
+        if (operationCase_ == 19) {
+          return timedPromoteReleaseOperationBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTimedPromoteReleaseOperation(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseOperation value) {
+      if (timedPromoteReleaseOperationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operation_ = value;
+        onChanged();
+      } else {
+        timedPromoteReleaseOperationBuilder_.setMessage(value);
+      }
+      operationCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTimedPromoteReleaseOperation(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.Builder builderForValue) {
+      if (timedPromoteReleaseOperationBuilder_ == null) {
+        operation_ = builderForValue.build();
+        onChanged();
+      } else {
+        timedPromoteReleaseOperationBuilder_.setMessage(builderForValue.build());
+      }
+      operationCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeTimedPromoteReleaseOperation(
+        com.google.cloud.deploy.v1.TimedPromoteReleaseOperation value) {
+      if (timedPromoteReleaseOperationBuilder_ == null) {
+        if (operationCase_ == 19
+            && operation_
+                != com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance()) {
+          operation_ =
+              com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.newBuilder(
+                      (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          operation_ = value;
+        }
+        onChanged();
+      } else {
+        if (operationCase_ == 19) {
+          timedPromoteReleaseOperationBuilder_.mergeFrom(value);
+        } else {
+          timedPromoteReleaseOperationBuilder_.setMessage(value);
+        }
+      }
+      operationCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearTimedPromoteReleaseOperation() {
+      if (timedPromoteReleaseOperationBuilder_ == null) {
+        if (operationCase_ == 19) {
+          operationCase_ = 0;
+          operation_ = null;
+          onChanged();
+        }
+      } else {
+        if (operationCase_ == 19) {
+          operationCase_ = 0;
+          operation_ = null;
+        }
+        timedPromoteReleaseOperationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.Builder
+        getTimedPromoteReleaseOperationBuilder() {
+      return getTimedPromoteReleaseOperationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.TimedPromoteReleaseOperationOrBuilder
+        getTimedPromoteReleaseOperationOrBuilder() {
+      if ((operationCase_ == 19) && (timedPromoteReleaseOperationBuilder_ != null)) {
+        return timedPromoteReleaseOperationBuilder_.getMessageOrBuilder();
+      } else {
+        if (operationCase_ == 19) {
+          return (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_;
+        }
+        return com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Promotes a release to a specified 'Target' as defined in a
+     * Timed Promote Release rule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.TimedPromoteReleaseOperation timed_promote_release_operation = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TimedPromoteReleaseOperation,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.Builder,
+            com.google.cloud.deploy.v1.TimedPromoteReleaseOperationOrBuilder>
+        getTimedPromoteReleaseOperationFieldBuilder() {
+      if (timedPromoteReleaseOperationBuilder_ == null) {
+        if (!(operationCase_ == 19)) {
+          operation_ = com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.getDefaultInstance();
+        }
+        timedPromoteReleaseOperationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.TimedPromoteReleaseOperation,
+                com.google.cloud.deploy.v1.TimedPromoteReleaseOperation.Builder,
+                com.google.cloud.deploy.v1.TimedPromoteReleaseOperationOrBuilder>(
+                (com.google.cloud.deploy.v1.TimedPromoteReleaseOperation) operation_,
+                getParentForChildren(),
+                isClean());
+        operation_ = null;
+      }
+      operationCase_ = 19;
+      onChanged();
+      return timedPromoteReleaseOperationBuilder_;
+    }
+
     private com.google.protobuf.Timestamp waitUntilTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -4787,7 +5127,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the waitUntilTime field is set.
      */
     public boolean hasWaitUntilTime() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4833,7 +5173,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       } else {
         waitUntilTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4855,7 +5195,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
       } else {
         waitUntilTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4873,7 +5213,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWaitUntilTime(com.google.protobuf.Timestamp value) {
       if (waitUntilTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && waitUntilTime_ != null
             && waitUntilTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getWaitUntilTimeBuilder().mergeFrom(value);
@@ -4884,7 +5224,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
         waitUntilTimeBuilder_.mergeFrom(value);
       }
       if (waitUntilTime_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -4902,7 +5242,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearWaitUntilTime() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       waitUntilTime_ = null;
       if (waitUntilTimeBuilder_ != null) {
         waitUntilTimeBuilder_.dispose();
@@ -4924,7 +5264,7 @@ public final class AutomationRun extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getWaitUntilTimeBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getWaitUntilTimeFieldBuilder().getBuilder();
     }

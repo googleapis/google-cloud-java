@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,6 +129,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * The network endpoint is represented by an IP, Port and Client Destination Port.
+     * </pre>
+     *
+     * <code>GCE_VM_IP_PORTMAP = 22819253;</code>
+     */
+    GCE_VM_IP_PORTMAP(22819253),
+    /**
+     *
+     *
+     * <pre>
      * The network endpoint is represented by fully qualified domain name and port.
      * </pre>
      *
@@ -212,6 +222,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * The network endpoint is represented by an IP, Port and Client Destination Port.
+     * </pre>
+     *
+     * <code>GCE_VM_IP_PORTMAP = 22819253;</code>
+     */
+    public static final int GCE_VM_IP_PORTMAP_VALUE = 22819253;
+    /**
+     *
+     *
+     * <pre>
      * The network endpoint is represented by fully qualified domain name and port.
      * </pre>
      *
@@ -289,6 +309,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           return GCE_VM_IP;
         case 501838375:
           return GCE_VM_IP_PORT;
+        case 22819253:
+          return GCE_VM_IP_PORTMAP;
         case 404154477:
           return INTERNET_FQDN_PORT;
         case 477719963:

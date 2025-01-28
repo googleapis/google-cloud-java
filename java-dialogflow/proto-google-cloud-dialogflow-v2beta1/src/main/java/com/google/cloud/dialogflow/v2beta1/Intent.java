@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -255,7 +255,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -267,7 +267,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -1926,7 +1926,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -1949,7 +1949,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * Output only. The unique identifier of this training phrase.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -2687,7 +2687,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The name.
        */
@@ -2709,7 +2709,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for name.
        */
@@ -2731,7 +2731,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -2752,7 +2752,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2769,7 +2769,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        * Output only. The unique identifier of this training phrase.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -66023,7 +66023,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool ml_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
+   *     google/cloud/dialogflow/v2beta1/intent.proto;l=1153
    * @return The mlEnabled.
    */
   @java.lang.Override
@@ -68637,7 +68637,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
+     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1153
      * @return The mlEnabled.
      */
     @java.lang.Override
@@ -68667,7 +68667,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
+     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1153
      * @param value The mlEnabled to set.
      * @return This builder for chaining.
      */
@@ -68701,7 +68701,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Intent.ml_enabled is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1154
+     *     google/cloud/dialogflow/v2beta1/intent.proto;l=1153
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

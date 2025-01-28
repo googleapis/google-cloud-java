@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -834,6 +834,7 @@ public class SiteSearchEngineServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .addAllUris(new ArrayList<String>())
+            .setSiteCredential("siteCredential-751929602")
             .build();
 
     RecrawlUrisResponse actualResponse = client.recrawlUrisAsync(request).get();
@@ -845,6 +846,7 @@ public class SiteSearchEngineServiceClientTest {
 
     Assert.assertEquals(request.getSiteSearchEngine(), actualRequest.getSiteSearchEngine());
     Assert.assertEquals(request.getUrisList(), actualRequest.getUrisList());
+    Assert.assertEquals(request.getSiteCredential(), actualRequest.getSiteCredential());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -864,6 +866,7 @@ public class SiteSearchEngineServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .addAllUris(new ArrayList<String>())
+              .setSiteCredential("siteCredential-751929602")
               .build();
       client.recrawlUrisAsync(request).get();
       Assert.fail("No exception raised");

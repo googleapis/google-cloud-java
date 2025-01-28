@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceClient.ListLocationsPagedResponse;
 
+import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -36,6 +37,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -43,6 +45,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -122,6 +125,8 @@ public class ReasoningEngineExecutionServiceStubSettings
 
   private final UnaryCallSettings<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineSettings;
+  private final ServerStreamingCallSettings<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -186,6 +191,12 @@ public class ReasoningEngineExecutionServiceStubSettings
   public UnaryCallSettings<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineSettings() {
     return queryReasoningEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamQueryReasoningEngine. */
+  public ServerStreamingCallSettings<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineSettings() {
+    return streamQueryReasoningEngineSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -299,6 +310,8 @@ public class ReasoningEngineExecutionServiceStubSettings
     super(settingsBuilder);
 
     queryReasoningEngineSettings = settingsBuilder.queryReasoningEngineSettings().build();
+    streamQueryReasoningEngineSettings =
+        settingsBuilder.streamQueryReasoningEngineSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -313,6 +326,8 @@ public class ReasoningEngineExecutionServiceStubSettings
     private final UnaryCallSettings.Builder<
             QueryReasoningEngineRequest, QueryReasoningEngineResponse>
         queryReasoningEngineSettings;
+    private final ServerStreamingCallSettings.Builder<StreamQueryReasoningEngineRequest, HttpBody>
+        streamQueryReasoningEngineSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -349,6 +364,7 @@ public class ReasoningEngineExecutionServiceStubSettings
       super(clientContext);
 
       queryReasoningEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamQueryReasoningEngineSettings = ServerStreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -370,6 +386,7 @@ public class ReasoningEngineExecutionServiceStubSettings
       super(settings);
 
       queryReasoningEngineSettings = settings.queryReasoningEngineSettings.toBuilder();
+      streamQueryReasoningEngineSettings = settings.streamQueryReasoningEngineSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -401,6 +418,11 @@ public class ReasoningEngineExecutionServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .queryReasoningEngineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .streamQueryReasoningEngineSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -451,6 +473,12 @@ public class ReasoningEngineExecutionServiceStubSettings
     public UnaryCallSettings.Builder<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
         queryReasoningEngineSettings() {
       return queryReasoningEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamQueryReasoningEngine. */
+    public ServerStreamingCallSettings.Builder<StreamQueryReasoningEngineRequest, HttpBody>
+        streamQueryReasoningEngineSettings() {
+      return streamQueryReasoningEngineSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

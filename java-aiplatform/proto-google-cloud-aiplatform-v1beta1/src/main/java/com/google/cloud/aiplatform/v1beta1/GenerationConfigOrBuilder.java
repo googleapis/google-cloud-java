@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -462,4 +462,189 @@ public interface GenerationConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GenerationConfig.RoutingConfigOrBuilder
       getRoutingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamp will be included in the request to
+   * the model.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the audioTimestamp field is set.
+   */
+  boolean hasAudioTimestamp();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If enabled, audio timestamp will be included in the request to
+   * the model.
+   * </pre>
+   *
+   * <code>optional bool audio_timestamp = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The audioTimestamp.
+   */
+  boolean getAudioTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the responseModalities.
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.GenerationConfig.Modality>
+      getResponseModalitiesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of responseModalities.
+   */
+  int getResponseModalitiesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The responseModalities at the given index.
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfig.Modality getResponseModalities(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for responseModalities.
+   */
+  java.util.List<java.lang.Integer> getResponseModalitiesValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modalities of the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.GenerationConfig.Modality response_modalities = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of responseModalities at the given index.
+   */
+  int getResponseModalitiesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, the media resolution specified will be used.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mediaResolution field is set.
+   */
+  boolean hasMediaResolution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, the media resolution specified will be used.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mediaResolution.
+   */
+  int getMediaResolutionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, the media resolution specified will be used.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.GenerationConfig.MediaResolution media_resolution = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mediaResolution.
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfig.MediaResolution getMediaResolution();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  boolean hasSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.SpeechConfig getSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
 }

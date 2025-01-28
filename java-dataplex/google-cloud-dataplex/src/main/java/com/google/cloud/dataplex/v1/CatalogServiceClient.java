@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,9 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The primary resources offered by this service are EntryGroups, EntryTypes,
- * AspectTypes, Entry and Aspect which collectively allow a data administrator to organize, manage,
- * secure and catalog data across their organization located across cloud projects in a variety of
- * storage systems including Cloud Storage and BigQuery.
+ * AspectTypes, and Entries. They collectively let data administrators organize, manage, secure, and
+ * catalog data located across cloud projects in their organization in a variety of storage systems,
+ * including Cloud Storage and BigQuery.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -77,7 +77,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateEntryType</td>
- *      <td><p> Creates an EntryType</td>
+ *      <td><p> Creates an EntryType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -97,7 +97,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateEntryType</td>
- *      <td><p> Updates a EntryType resource.</td>
+ *      <td><p> Updates an EntryType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -116,7 +116,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteEntryType</td>
- *      <td><p> Deletes a EntryType resource.</td>
+ *      <td><p> Deletes an EntryType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -156,7 +156,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntryType</td>
- *      <td><p> Retrieves a EntryType resource.</td>
+ *      <td><p> Gets an EntryType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -175,7 +175,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateAspectType</td>
- *      <td><p> Creates an AspectType</td>
+ *      <td><p> Creates an AspectType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -195,7 +195,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateAspectType</td>
- *      <td><p> Updates a AspectType resource.</td>
+ *      <td><p> Updates an AspectType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -214,7 +214,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteAspectType</td>
- *      <td><p> Deletes a AspectType resource.</td>
+ *      <td><p> Deletes an AspectType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -254,7 +254,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetAspectType</td>
- *      <td><p> Retrieves a AspectType resource.</td>
+ *      <td><p> Gets an AspectType.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -273,7 +273,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateEntryGroup</td>
- *      <td><p> Creates an EntryGroup</td>
+ *      <td><p> Creates an EntryGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -293,7 +293,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateEntryGroup</td>
- *      <td><p> Updates a EntryGroup resource.</td>
+ *      <td><p> Updates an EntryGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -312,7 +312,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteEntryGroup</td>
- *      <td><p> Deletes a EntryGroup resource.</td>
+ *      <td><p> Deletes an EntryGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -352,7 +352,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntryGroup</td>
- *      <td><p> Retrieves a EntryGroup resource.</td>
+ *      <td><p> Gets an EntryGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -427,7 +427,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListEntries</td>
- *      <td><p> Lists entries within an entry group.</td>
+ *      <td><p> Lists Entries within an EntryGroup.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -447,7 +447,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntry</td>
- *      <td><p> Gets a single entry.</td>
+ *      <td><p> Gets an Entry.
+ * <p>  &#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is changing. For more information, see [Changes to BigQuery metadata stored in Dataplex Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -466,7 +467,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> LookupEntry</td>
- *      <td><p> Looks up a single entry.</td>
+ *      <td><p> Looks up a single Entry by name using the permission on the source system.
+ * <p>  &#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is changing. For more information, see [Changes to BigQuery metadata stored in Dataplex Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -480,7 +482,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchEntries</td>
- *      <td><p> Searches for entries matching given query and scope.</td>
+ *      <td><p> Searches for Entries matching the given query and scope.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -488,12 +490,92 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> searchEntries(LocationName name, String query)
  *           <li><p> searchEntries(String name, String query)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> searchEntriesPagedCallable()
  *           <li><p> searchEntriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateMetadataJob</td>
+ *      <td><p> Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and aspects from a third-party system into Dataplex.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createMetadataJobAsync(CreateMetadataJobRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createMetadataJobAsync(LocationName parent, MetadataJob metadataJob, String metadataJobId)
+ *           <li><p> createMetadataJobAsync(String parent, MetadataJob metadataJob, String metadataJobId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createMetadataJobOperationCallable()
+ *           <li><p> createMetadataJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMetadataJob</td>
+ *      <td><p> Gets a metadata job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMetadataJob(GetMetadataJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMetadataJob(MetadataJobName name)
+ *           <li><p> getMetadataJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMetadataJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMetadataJobs</td>
+ *      <td><p> Lists metadata jobs.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMetadataJobs(ListMetadataJobsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMetadataJobs(LocationName parent)
+ *           <li><p> listMetadataJobs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMetadataJobsPagedCallable()
+ *           <li><p> listMetadataJobsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelMetadataJob</td>
+ *      <td><p> Cancels a metadata job.
+ * <p>  If you cancel a metadata import job that is in progress, the changes in the job might be partially applied. We recommend that you reset the state of the entry groups in your project by running another metadata job that reverts the changes from the canceled job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelMetadataJob(CancelMetadataJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> cancelMetadataJob(MetadataJobName name)
+ *           <li><p> cancelMetadataJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelMetadataJobCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -658,7 +740,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryType
+   * Creates an EntryType.
    *
    * <p>Sample code:
    *
@@ -678,9 +760,9 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the EntryType, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
-   * @param entryType Required. EntryType Resource
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
+   * @param entryType Required. EntryType Resource.
    * @param entryTypeId Required. EntryType identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -697,7 +779,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryType
+   * Creates an EntryType.
    *
    * <p>Sample code:
    *
@@ -717,9 +799,9 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the EntryType, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
-   * @param entryType Required. EntryType Resource
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
+   * @param entryType Required. EntryType Resource.
    * @param entryTypeId Required. EntryType identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -736,7 +818,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryType
+   * Creates an EntryType.
    *
    * <p>Sample code:
    *
@@ -768,7 +850,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryType
+   * Creates an EntryType.
    *
    * <p>Sample code:
    *
@@ -800,7 +882,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryType
+   * Creates an EntryType.
    *
    * <p>Sample code:
    *
@@ -831,7 +913,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryType resource.
+   * Updates an EntryType.
    *
    * <p>Sample code:
    *
@@ -848,7 +930,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param entryType Required. EntryType Resource
+   * @param entryType Required. EntryType Resource.
    * @param updateMask Required. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -864,7 +946,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryType resource.
+   * Updates an EntryType.
    *
    * <p>Sample code:
    *
@@ -895,7 +977,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryType resource.
+   * Updates an EntryType.
    *
    * <p>Sample code:
    *
@@ -926,7 +1008,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryType resource.
+   * Updates an EntryType.
    *
    * <p>Sample code:
    *
@@ -956,7 +1038,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryType resource.
+   * Deletes an EntryType.
    *
    * <p>Sample code:
    *
@@ -984,7 +1066,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryType resource.
+   * Deletes an EntryType.
    *
    * <p>Sample code:
    *
@@ -1011,7 +1093,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryType resource.
+   * Deletes an EntryType.
    *
    * <p>Sample code:
    *
@@ -1041,7 +1123,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryType resource.
+   * Deletes an EntryType.
    *
    * <p>Sample code:
    *
@@ -1071,7 +1153,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryType resource.
+   * Deletes an EntryType.
    *
    * <p>Sample code:
    *
@@ -1119,8 +1201,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the EntryType location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntryTypesPagedResponse listEntryTypes(LocationName parent) {
@@ -1152,8 +1234,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the EntryType location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntryTypesPagedResponse listEntryTypes(String parent) {
@@ -1274,7 +1356,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryType resource.
+   * Gets an EntryType.
    *
    * <p>Sample code:
    *
@@ -1302,7 +1384,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryType resource.
+   * Gets an EntryType.
    *
    * <p>Sample code:
    *
@@ -1329,7 +1411,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryType resource.
+   * Gets an EntryType.
    *
    * <p>Sample code:
    *
@@ -1357,7 +1439,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryType resource.
+   * Gets an EntryType.
    *
    * <p>Sample code:
    *
@@ -1384,7 +1466,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an AspectType
+   * Creates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1404,9 +1486,9 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the AspectType, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
-   * @param aspectType Required. AspectType Resource
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
+   * @param aspectType Required. AspectType Resource.
    * @param aspectTypeId Required. AspectType identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1423,7 +1505,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an AspectType
+   * Creates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1443,9 +1525,9 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the AspectType, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
-   * @param aspectType Required. AspectType Resource
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
+   * @param aspectType Required. AspectType Resource.
    * @param aspectTypeId Required. AspectType identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1462,7 +1544,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an AspectType
+   * Creates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1494,7 +1576,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an AspectType
+   * Creates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1526,7 +1608,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an AspectType
+   * Creates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1557,7 +1639,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a AspectType resource.
+   * Updates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1591,7 +1673,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a AspectType resource.
+   * Updates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1622,7 +1704,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a AspectType resource.
+   * Updates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1653,7 +1735,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a AspectType resource.
+   * Updates an AspectType.
    *
    * <p>Sample code:
    *
@@ -1683,7 +1765,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a AspectType resource.
+   * Deletes an AspectType.
    *
    * <p>Sample code:
    *
@@ -1712,7 +1794,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a AspectType resource.
+   * Deletes an AspectType.
    *
    * <p>Sample code:
    *
@@ -1739,7 +1821,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a AspectType resource.
+   * Deletes an AspectType.
    *
    * <p>Sample code:
    *
@@ -1769,7 +1851,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a AspectType resource.
+   * Deletes an AspectType.
    *
    * <p>Sample code:
    *
@@ -1799,7 +1881,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a AspectType resource.
+   * Deletes an AspectType.
    *
    * <p>Sample code:
    *
@@ -1847,8 +1929,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the AspectType location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAspectTypesPagedResponse listAspectTypes(LocationName parent) {
@@ -1880,8 +1962,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the AspectType location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAspectTypesPagedResponse listAspectTypes(String parent) {
@@ -2002,7 +2084,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a AspectType resource.
+   * Gets an AspectType.
    *
    * <p>Sample code:
    *
@@ -2030,7 +2112,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a AspectType resource.
+   * Gets an AspectType.
    *
    * <p>Sample code:
    *
@@ -2057,7 +2139,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a AspectType resource.
+   * Gets an AspectType.
    *
    * <p>Sample code:
    *
@@ -2085,7 +2167,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a AspectType resource.
+   * Gets an AspectType.
    *
    * <p>Sample code:
    *
@@ -2113,7 +2195,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryGroup
+   * Creates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2135,7 +2217,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the entryGroup, of the form:
    *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
    *     region.
-   * @param entryGroup Required. EntryGroup Resource
+   * @param entryGroup Required. EntryGroup Resource.
    * @param entryGroupId Required. EntryGroup identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2152,7 +2234,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryGroup
+   * Creates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2174,7 +2256,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the entryGroup, of the form:
    *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
    *     region.
-   * @param entryGroup Required. EntryGroup Resource
+   * @param entryGroup Required. EntryGroup Resource.
    * @param entryGroupId Required. EntryGroup identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2191,7 +2273,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryGroup
+   * Creates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2223,7 +2305,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryGroup
+   * Creates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2255,7 +2337,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an EntryGroup
+   * Creates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2286,7 +2368,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryGroup resource.
+   * Updates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2304,7 +2386,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param entryGroup Required. EntryGroup Resource
+   * @param entryGroup Required. EntryGroup Resource.
    * @param updateMask Required. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2320,7 +2402,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryGroup resource.
+   * Updates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2351,7 +2433,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryGroup resource.
+   * Updates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2382,7 +2464,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a EntryGroup resource.
+   * Updates an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2412,7 +2494,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryGroup resource.
+   * Deletes an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2441,7 +2523,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryGroup resource.
+   * Deletes an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2468,7 +2550,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryGroup resource.
+   * Deletes an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2498,7 +2580,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryGroup resource.
+   * Deletes an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2528,7 +2610,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a EntryGroup resource.
+   * Deletes an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2576,8 +2658,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the entryGroup location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntryGroupsPagedResponse listEntryGroups(LocationName parent) {
@@ -2609,8 +2691,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the entryGroup location, of the form:
-   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a GCP
-   *     region.
+   *     `projects/{project_number}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntryGroupsPagedResponse listEntryGroups(String parent) {
@@ -2731,7 +2813,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryGroup resource.
+   * Gets an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2759,7 +2841,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryGroup resource.
+   * Gets an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2786,7 +2868,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryGroup resource.
+   * Gets an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2814,7 +2896,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a EntryGroup resource.
+   * Gets an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -2864,16 +2946,16 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/entryGroups/{entry_group}`.
    * @param entry Required. Entry resource.
    * @param entryId Required. Entry identifier. It has to be unique within an Entry Group.
-   *     <p>Entries corresponding to Google Cloud resources use Entry ID format based on Full
-   *     Resource Names (https://cloud.google.com/apis/design/resource_names#full_resource_name).
-   *     The format is a Full Resource Name of the resource without the prefix double slashes in the
-   *     API Service Name part of Full Resource Name. This allows retrieval of entries using their
-   *     associated resource name.
-   *     <p>For example if the Full Resource Name of a resource is
+   *     <p>Entries corresponding to Google Cloud resources use an Entry ID format based on [full
+   *     resource names](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *     The format is a full resource name of the resource without the prefix double slashes in the
+   *     API service name part of the full resource name. This allows retrieval of entries using
+   *     their associated resource name.
+   *     <p>For example, if the full resource name of a resource is
    *     `//library.googleapis.com/shelves/shelf1/books/book2`, then the suggested entry_id is
    *     `library.googleapis.com/shelves/shelf1/books/book2`.
    *     <p>It is also suggested to follow the same convention for entries corresponding to
-   *     resources from other providers or systems than Google Cloud.
+   *     resources from providers or systems other than Google Cloud.
    *     <p>The maximum size of the field is 4000 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2911,16 +2993,16 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/entryGroups/{entry_group}`.
    * @param entry Required. Entry resource.
    * @param entryId Required. Entry identifier. It has to be unique within an Entry Group.
-   *     <p>Entries corresponding to Google Cloud resources use Entry ID format based on Full
-   *     Resource Names (https://cloud.google.com/apis/design/resource_names#full_resource_name).
-   *     The format is a Full Resource Name of the resource without the prefix double slashes in the
-   *     API Service Name part of Full Resource Name. This allows retrieval of entries using their
-   *     associated resource name.
-   *     <p>For example if the Full Resource Name of a resource is
+   *     <p>Entries corresponding to Google Cloud resources use an Entry ID format based on [full
+   *     resource names](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *     The format is a full resource name of the resource without the prefix double slashes in the
+   *     API service name part of the full resource name. This allows retrieval of entries using
+   *     their associated resource name.
+   *     <p>For example, if the full resource name of a resource is
    *     `//library.googleapis.com/shelves/shelf1/books/book2`, then the suggested entry_id is
    *     `library.googleapis.com/shelves/shelf1/books/book2`.
    *     <p>It is also suggested to follow the same convention for entries corresponding to
-   *     resources from other providers or systems than Google Cloud.
+   *     resources from providers or systems other than Google Cloud.
    *     <p>The maximum size of the field is 4000 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3015,8 +3097,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * @param entry Required. Entry resource.
    * @param updateMask Optional. Mask of fields to update. To update Aspects, the update_mask must
    *     contain the value "aspects".
-   *     <p>If the update_mask is empty, all modifiable fields present in the request will be
-   *     updated.
+   *     <p>If the update_mask is empty, the service will update all modifiable fields present in
+   *     the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Entry updateEntry(Entry entry, FieldMask updateMask) {
@@ -3202,7 +3284,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists entries within an entry group.
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3234,7 +3316,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists entries within an entry group.
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3263,7 +3345,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists entries within an entry group.
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3296,7 +3378,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists entries within an entry group.
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3329,7 +3411,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists entries within an entry group.
+   * Lists Entries within an EntryGroup.
    *
    * <p>Sample code:
    *
@@ -3368,7 +3450,11 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single entry.
+   * Gets an Entry.
+   *
+   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
+   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3396,7 +3482,11 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single entry.
+   * Gets an Entry.
+   *
+   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
+   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3423,7 +3513,11 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single entry.
+   * Gets an Entry.
+   *
+   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
+   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3455,7 +3549,11 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a single entry.
+   * Gets an Entry.
+   *
+   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
+   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3486,7 +3584,11 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a single entry.
+   * Looks up a single Entry by name using the permission on the source system.
+   *
+   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
+   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3519,7 +3621,11 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a single entry.
+   * Looks up a single Entry by name using the permission on the source system.
+   *
+   * <p>&#42;&#42;Caution&#42;&#42;: The BigQuery metadata that is stored in Dataplex Catalog is
+   * changing. For more information, see [Changes to BigQuery metadata stored in Dataplex
+   * Catalog](https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
    *
    * <p>Sample code:
    *
@@ -3551,7 +3657,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches for entries matching given query and scope.
+   * Searches for Entries matching the given query and scope.
    *
    * <p>Sample code:
    *
@@ -3562,7 +3668,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
-   *   String name = "name3373707";
+   *   LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
    *   String query = "query107944136";
    *   for (SearchEntriesResult element :
    *       catalogServiceClient.searchEntries(name, query).iterateAll()) {
@@ -3573,7 +3679,47 @@ public class CatalogServiceClient implements BackgroundResource {
    *
    * @param name Required. The project to which the request should be attributed in the following
    *     form: `projects/{project}/locations/{location}`.
-   * @param query Required. The query against which entries in scope should be matched.
+   * @param query Required. The query against which entries in scope should be matched. The query
+   *     syntax is defined in [Search syntax for Dataplex
+   *     Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchEntriesPagedResponse searchEntries(LocationName name, String query) {
+    SearchEntriesRequest request =
+        SearchEntriesRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setQuery(query)
+            .build();
+    return searchEntries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for Entries matching the given query and scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String query = "query107944136";
+   *   for (SearchEntriesResult element :
+   *       catalogServiceClient.searchEntries(name, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The project to which the request should be attributed in the following
+   *     form: `projects/{project}/locations/{location}`.
+   * @param query Required. The query against which entries in scope should be matched. The query
+   *     syntax is defined in [Search syntax for Dataplex
+   *     Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchEntriesPagedResponse searchEntries(String name, String query) {
@@ -3584,7 +3730,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches for entries matching given query and scope.
+   * Searches for Entries matching the given query and scope.
    *
    * <p>Sample code:
    *
@@ -3597,7 +3743,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   SearchEntriesRequest request =
    *       SearchEntriesRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setQuery("query107944136")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -3619,7 +3765,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches for entries matching given query and scope.
+   * Searches for Entries matching the given query and scope.
    *
    * <p>Sample code:
    *
@@ -3632,7 +3778,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   SearchEntriesRequest request =
    *       SearchEntriesRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setQuery("query107944136")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -3655,7 +3801,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches for entries matching given query and scope.
+   * Searches for Entries matching the given query and scope.
    *
    * <p>Sample code:
    *
@@ -3668,7 +3814,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
    *   SearchEntriesRequest request =
    *       SearchEntriesRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setQuery("query107944136")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -3692,6 +3838,597 @@ public class CatalogServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<SearchEntriesRequest, SearchEntriesResponse> searchEntriesCallable() {
     return stub.searchEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
+   * aspects from a third-party system into Dataplex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   MetadataJob metadataJob = MetadataJob.newBuilder().build();
+   *   String metadataJobId = "metadataJobId-2021530679";
+   *   MetadataJob response =
+   *       catalogServiceClient.createMetadataJobAsync(parent, metadataJob, metadataJobId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @param metadataJob Required. The metadata job resource.
+   * @param metadataJobId Optional. The metadata job ID. If not provided, a unique ID is generated
+   *     with the prefix `metadata-job-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataJob, OperationMetadata> createMetadataJobAsync(
+      LocationName parent, MetadataJob metadataJob, String metadataJobId) {
+    CreateMetadataJobRequest request =
+        CreateMetadataJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMetadataJob(metadataJob)
+            .setMetadataJobId(metadataJobId)
+            .build();
+    return createMetadataJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
+   * aspects from a third-party system into Dataplex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   MetadataJob metadataJob = MetadataJob.newBuilder().build();
+   *   String metadataJobId = "metadataJobId-2021530679";
+   *   MetadataJob response =
+   *       catalogServiceClient.createMetadataJobAsync(parent, metadataJob, metadataJobId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @param metadataJob Required. The metadata job resource.
+   * @param metadataJobId Optional. The metadata job ID. If not provided, a unique ID is generated
+   *     with the prefix `metadata-job-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataJob, OperationMetadata> createMetadataJobAsync(
+      String parent, MetadataJob metadataJob, String metadataJobId) {
+    CreateMetadataJobRequest request =
+        CreateMetadataJobRequest.newBuilder()
+            .setParent(parent)
+            .setMetadataJob(metadataJob)
+            .setMetadataJobId(metadataJobId)
+            .build();
+    return createMetadataJobAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
+   * aspects from a third-party system into Dataplex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateMetadataJobRequest request =
+   *       CreateMetadataJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setMetadataJob(MetadataJob.newBuilder().build())
+   *           .setMetadataJobId("metadataJobId-2021530679")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   MetadataJob response = catalogServiceClient.createMetadataJobAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MetadataJob, OperationMetadata> createMetadataJobAsync(
+      CreateMetadataJobRequest request) {
+    return createMetadataJobOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
+   * aspects from a third-party system into Dataplex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateMetadataJobRequest request =
+   *       CreateMetadataJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setMetadataJob(MetadataJob.newBuilder().build())
+   *           .setMetadataJobId("metadataJobId-2021530679")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<MetadataJob, OperationMetadata> future =
+   *       catalogServiceClient.createMetadataJobOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationCallable() {
+    return stub.createMetadataJobOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
+   * aspects from a third-party system into Dataplex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateMetadataJobRequest request =
+   *       CreateMetadataJobRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setMetadataJob(MetadataJob.newBuilder().build())
+   *           .setMetadataJobId("metadataJobId-2021530679")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       catalogServiceClient.createMetadataJobCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMetadataJobRequest, Operation> createMetadataJobCallable() {
+    return stub.createMetadataJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a metadata job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   MetadataJobName name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]");
+   *   MetadataJob response = catalogServiceClient.getMetadataJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata job, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/metadataJobs/{metadata_job_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetadataJob getMetadataJob(MetadataJobName name) {
+    GetMetadataJobRequest request =
+        GetMetadataJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMetadataJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a metadata job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString();
+   *   MetadataJob response = catalogServiceClient.getMetadataJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata job, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/metadataJobs/{metadata_job_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetadataJob getMetadataJob(String name) {
+    GetMetadataJobRequest request = GetMetadataJobRequest.newBuilder().setName(name).build();
+    return getMetadataJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a metadata job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetMetadataJobRequest request =
+   *       GetMetadataJobRequest.newBuilder()
+   *           .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+   *           .build();
+   *   MetadataJob response = catalogServiceClient.getMetadataJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MetadataJob getMetadataJob(GetMetadataJobRequest request) {
+    return getMetadataJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a metadata job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetMetadataJobRequest request =
+   *       GetMetadataJobRequest.newBuilder()
+   *           .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+   *           .build();
+   *   ApiFuture<MetadataJob> future =
+   *       catalogServiceClient.getMetadataJobCallable().futureCall(request);
+   *   // Do something.
+   *   MetadataJob response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMetadataJobRequest, MetadataJob> getMetadataJobCallable() {
+    return stub.getMetadataJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists metadata jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (MetadataJob element : catalogServiceClient.listMetadataJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMetadataJobsPagedResponse listMetadataJobs(LocationName parent) {
+    ListMetadataJobsRequest request =
+        ListMetadataJobsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMetadataJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists metadata jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (MetadataJob element : catalogServiceClient.listMetadataJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent location, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMetadataJobsPagedResponse listMetadataJobs(String parent) {
+    ListMetadataJobsRequest request =
+        ListMetadataJobsRequest.newBuilder().setParent(parent).build();
+    return listMetadataJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists metadata jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListMetadataJobsRequest request =
+   *       ListMetadataJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (MetadataJob element : catalogServiceClient.listMetadataJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMetadataJobsPagedResponse listMetadataJobs(ListMetadataJobsRequest request) {
+    return listMetadataJobsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists metadata jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListMetadataJobsRequest request =
+   *       ListMetadataJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<MetadataJob> future =
+   *       catalogServiceClient.listMetadataJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MetadataJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
+      listMetadataJobsPagedCallable() {
+    return stub.listMetadataJobsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists metadata jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListMetadataJobsRequest request =
+   *       ListMetadataJobsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListMetadataJobsResponse response =
+   *         catalogServiceClient.listMetadataJobsCallable().call(request);
+   *     for (MetadataJob element : response.getMetadataJobsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsCallable() {
+    return stub.listMetadataJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a metadata job.
+   *
+   * <p>If you cancel a metadata import job that is in progress, the changes in the job might be
+   * partially applied. We recommend that you reset the state of the entry groups in your project by
+   * running another metadata job that reverts the changes from the canceled job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   MetadataJobName name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]");
+   *   catalogServiceClient.cancelMetadataJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the job, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/metadataJobs/{metadata_job_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelMetadataJob(MetadataJobName name) {
+    CancelMetadataJobRequest request =
+        CancelMetadataJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    cancelMetadataJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a metadata job.
+   *
+   * <p>If you cancel a metadata import job that is in progress, the changes in the job might be
+   * partially applied. We recommend that you reset the state of the entry groups in your project by
+   * running another metadata job that reverts the changes from the canceled job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name = MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString();
+   *   catalogServiceClient.cancelMetadataJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the job, in the format
+   *     `projects/{project_id_or_number}/locations/{location_id}/metadataJobs/{metadata_job_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelMetadataJob(String name) {
+    CancelMetadataJobRequest request = CancelMetadataJobRequest.newBuilder().setName(name).build();
+    cancelMetadataJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a metadata job.
+   *
+   * <p>If you cancel a metadata import job that is in progress, the changes in the job might be
+   * partially applied. We recommend that you reset the state of the entry groups in your project by
+   * running another metadata job that reverts the changes from the canceled job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CancelMetadataJobRequest request =
+   *       CancelMetadataJobRequest.newBuilder()
+   *           .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+   *           .build();
+   *   catalogServiceClient.cancelMetadataJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void cancelMetadataJob(CancelMetadataJobRequest request) {
+    cancelMetadataJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a metadata job.
+   *
+   * <p>If you cancel a metadata import job that is in progress, the changes in the job might be
+   * partially applied. We recommend that you reset the state of the entry groups in your project by
+   * running another metadata job that reverts the changes from the canceled job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CancelMetadataJobRequest request =
+   *       CancelMetadataJobRequest.newBuilder()
+   *           .setName(MetadataJobName.of("[PROJECT]", "[LOCATION]", "[METADATAJOB]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       catalogServiceClient.cancelMetadataJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
+    return stub.cancelMetadataJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4255,6 +4992,83 @@ public class CatalogServiceClient implements BackgroundResource {
     protected SearchEntriesFixedSizeCollection createCollection(
         List<SearchEntriesPage> pages, int collectionSize) {
       return new SearchEntriesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMetadataJobsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMetadataJobsRequest,
+          ListMetadataJobsResponse,
+          MetadataJob,
+          ListMetadataJobsPage,
+          ListMetadataJobsFixedSizeCollection> {
+
+    public static ApiFuture<ListMetadataJobsPagedResponse> createAsync(
+        PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob> context,
+        ApiFuture<ListMetadataJobsResponse> futureResponse) {
+      ApiFuture<ListMetadataJobsPage> futurePage =
+          ListMetadataJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMetadataJobsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMetadataJobsPagedResponse(ListMetadataJobsPage page) {
+      super(page, ListMetadataJobsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMetadataJobsPage
+      extends AbstractPage<
+          ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob, ListMetadataJobsPage> {
+
+    private ListMetadataJobsPage(
+        PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob> context,
+        ListMetadataJobsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMetadataJobsPage createEmptyPage() {
+      return new ListMetadataJobsPage(null, null);
+    }
+
+    @Override
+    protected ListMetadataJobsPage createPage(
+        PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob> context,
+        ListMetadataJobsResponse response) {
+      return new ListMetadataJobsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMetadataJobsPage> createPageAsync(
+        PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob> context,
+        ApiFuture<ListMetadataJobsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMetadataJobsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMetadataJobsRequest,
+          ListMetadataJobsResponse,
+          MetadataJob,
+          ListMetadataJobsPage,
+          ListMetadataJobsFixedSizeCollection> {
+
+    private ListMetadataJobsFixedSizeCollection(
+        List<ListMetadataJobsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMetadataJobsFixedSizeCollection createEmptyCollection() {
+      return new ListMetadataJobsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMetadataJobsFixedSizeCollection createCollection(
+        List<ListMetadataJobsPage> pages, int collectionSize) {
+      return new ListMetadataJobsFixedSizeCollection(pages, collectionSize);
     }
   }
 

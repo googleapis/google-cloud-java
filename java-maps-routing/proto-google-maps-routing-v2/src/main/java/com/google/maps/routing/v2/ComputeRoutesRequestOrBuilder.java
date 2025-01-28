@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -597,7 +597,10 @@ public interface ComputeRoutesRequestOrBuilder
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -616,7 +619,10 @@ public interface ComputeRoutesRequestOrBuilder
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -634,7 +640,10 @@ public interface ComputeRoutesRequestOrBuilder
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -654,7 +663,10 @@ public interface ComputeRoutesRequestOrBuilder
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>
@@ -672,7 +684,10 @@ public interface ComputeRoutesRequestOrBuilder
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
    * a `FUEL_EFFICIENT` reference route calculation takes into account various
-   * parameters that would generate an optimal fuel efficient route.
+   * parameters that would generate an optimal fuel efficient route. When using
+   * this feature, look for
+   * [`route_labels`][google.maps.routing.v2.Route.route_labels] on the
+   * resulting routes.
    * </pre>
    *
    * <code>

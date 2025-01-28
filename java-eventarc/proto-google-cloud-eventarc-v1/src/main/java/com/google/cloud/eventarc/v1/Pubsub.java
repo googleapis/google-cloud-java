@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,8 +135,8 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Pub/Sub subscription created and managed by Eventarc
-   * as a transport for the event delivery. Format:
+   * Output only. The name of the Pub/Sub subscription created and managed by
+   * Eventarc as a transport for the event delivery. Format:
    * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
    * </pre>
    *
@@ -160,8 +160,8 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Pub/Sub subscription created and managed by Eventarc
-   * as a transport for the event delivery. Format:
+   * Output only. The name of the Pub/Sub subscription created and managed by
+   * Eventarc as a transport for the event delivery. Format:
    * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
    * </pre>
    *
@@ -685,8 +685,8 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub subscription created and managed by Eventarc
-     * as a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub subscription created and managed by
+     * Eventarc as a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
      * </pre>
      *
@@ -709,8 +709,8 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub subscription created and managed by Eventarc
-     * as a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub subscription created and managed by
+     * Eventarc as a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
      * </pre>
      *
@@ -733,8 +733,8 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub subscription created and managed by Eventarc
-     * as a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub subscription created and managed by
+     * Eventarc as a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
      * </pre>
      *
@@ -756,8 +756,8 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub subscription created and managed by Eventarc
-     * as a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub subscription created and managed by
+     * Eventarc as a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
      * </pre>
      *
@@ -775,8 +775,8 @@ public final class Pubsub extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub subscription created and managed by Eventarc
-     * as a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub subscription created and managed by
+     * Eventarc as a transport for the event delivery. Format:
      * `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_NAME}`.
      * </pre>
      *

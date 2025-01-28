@@ -1,6 +1,6 @@
-# Google Apache Kafka for BigQuery API Client for Java
+# Google Managed Service for Apache Kafka Client for Java
 
-Java idiomatic client for [Apache Kafka for BigQuery API][product-docs].
+Java idiomatic client for [Managed Service for Apache Kafka][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.48.0</version>
+      <version>26.52.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -40,28 +40,26 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-managedkafka:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managedkafka</artifactId>
-  <version>0.8.0</version>
+  <version>0.11.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-managedkafka:0.8.0'
+implementation 'com.google.cloud:google-cloud-managedkafka:0.11.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-managedkafka" % "0.8.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-managedkafka" % "0.11.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -69,14 +67,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Apache Kafka for BigQuery API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Apache Kafka for BigQuery API API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Managed Service for Apache Kafka APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Managed Service for Apache Kafka API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Apache Kafka for BigQuery API [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Apache Kafka for BigQuery API.
+You will need a [Google Cloud Platform Console][developer-console] project with the Managed Service for Apache Kafka [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Managed Service for Apache Kafka.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -86,13 +84,13 @@ You will need to [enable billing][enable-billing] to use Google Apache Kafka for
 You'll need to obtain the `google-cloud-managedkafka` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-managedkafka` as a dependency in your code.
 
-## About Apache Kafka for BigQuery API
+## About Managed Service for Apache Kafka
 
 
-[Apache Kafka for BigQuery API][product-docs] Manage Apache Kafka clusters and resources.
+[Managed Service for Apache Kafka][product-docs] Manage Apache Kafka clusters and resources.
 
-See the [Apache Kafka for BigQuery API client library docs][javadocs] to learn how to
-use this Apache Kafka for BigQuery API Client Library.
+See the [Managed Service for Apache Kafka client library docs][javadocs] to learn how to
+use this Managed Service for Apache Kafka Client Library.
 
 
 
@@ -105,7 +103,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Apache Kafka for BigQuery API uses both gRPC and HTTP/JSON for the transport layer.
+Managed Service for Apache Kafka uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -202,7 +200,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-managedkafka.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-managedkafka/0.7.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-managedkafka/0.11.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ public final class SnoozeProto {
           + "gle.monitoring.v3\032\037google/api/field_beha"
           + "vior.proto\032\031google/api/resource.proto\032!g"
           + "oogle/monitoring/v3/common.proto\"\305\002\n\006Sno"
-          + "oze\022\021\n\004name\030\001 \001(\tB\003\340A\002\022<\n\010criteria\030\003 \001(\013"
+          + "oze\022\021\n\004name\030\001 \001(\tB\003\340A\010\022<\n\010criteria\030\003 \001(\013"
           + "2%.google.monitoring.v3.Snooze.CriteriaB"
           + "\003\340A\002\0229\n\010interval\030\004 \001(\0132\".google.monitori"
           + "ng.v3.TimeIntervalB\003\340A\002\022\031\n\014display_name\030"

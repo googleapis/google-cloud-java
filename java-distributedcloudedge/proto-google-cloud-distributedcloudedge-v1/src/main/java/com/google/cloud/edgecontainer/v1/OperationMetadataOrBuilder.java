@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -264,4 +264,29 @@ public interface OperationMetadataOrBuilder
    * @return The bytes of the warnings at the given index.
    */
   com.google.protobuf.ByteString getWarningsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Machine-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+   *
+   * @return The enum numeric value on the wire for statusReason.
+   */
+  int getStatusReasonValue();
+  /**
+   *
+   *
+   * <pre>
+   * Machine-readable status of the operation, if any.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason status_reason = 9;</code>
+   *
+   * @return The statusReason.
+   */
+  com.google.cloud.edgecontainer.v1.OperationMetadata.StatusReason getStatusReason();
 }

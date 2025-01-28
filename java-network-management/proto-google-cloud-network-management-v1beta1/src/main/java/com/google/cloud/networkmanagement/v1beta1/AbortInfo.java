@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,6 +197,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Aborted because no endpoint with the packet's destination IP is found in
+     * the Google-managed project.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_UNKNOWN_IP = 32;</code>
+     */
+    GOOGLE_MANAGED_SERVICE_UNKNOWN_IP(32),
+    /**
+     *
+     *
+     * <pre>
      * Aborted because the source IP address doesn't belong to any of the
      * subnets of the source VPC network.
      * </pre>
@@ -237,6 +248,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS = 29;</code>
      */
     PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS(29),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because user lacks permission to access Cloud Router configs
+     * required to run the test.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS = 36;</code>
+     */
+    PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS(36),
     /**
      *
      *
@@ -390,6 +412,27 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_PSC_CLOUD_SQL_UNSUPPORTED = 20;</code>
      */
     SOURCE_PSC_CLOUD_SQL_UNSUPPORTED(20),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a Redis Cluster as a source are not supported.
+     * </pre>
+     *
+     * <code>SOURCE_REDIS_CLUSTER_UNSUPPORTED = 34;</code>
+     */
+    SOURCE_REDIS_CLUSTER_UNSUPPORTED(34),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a Redis Instance as a source are not
+     * supported.
+     * </pre>
+     *
+     * <code>SOURCE_REDIS_INSTANCE_UNSUPPORTED = 35;</code>
+     */
+    SOURCE_REDIS_INSTANCE_UNSUPPORTED(35),
     /**
      *
      *
@@ -549,6 +592,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Aborted because no endpoint with the packet's destination IP is found in
+     * the Google-managed project.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_UNKNOWN_IP = 32;</code>
+     */
+    public static final int GOOGLE_MANAGED_SERVICE_UNKNOWN_IP_VALUE = 32;
+    /**
+     *
+     *
+     * <pre>
      * Aborted because the source IP address doesn't belong to any of the
      * subnets of the source VPC network.
      * </pre>
@@ -589,6 +643,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS = 29;</code>
      */
     public static final int PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because user lacks permission to access Cloud Router configs
+     * required to run the test.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS = 36;</code>
+     */
+    public static final int PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS_VALUE = 36;
     /**
      *
      *
@@ -746,6 +811,27 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Aborted because tests with a Redis Cluster as a source are not supported.
+     * </pre>
+     *
+     * <code>SOURCE_REDIS_CLUSTER_UNSUPPORTED = 34;</code>
+     */
+    public static final int SOURCE_REDIS_CLUSTER_UNSUPPORTED_VALUE = 34;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a Redis Instance as a source are not
+     * supported.
+     * </pre>
+     *
+     * <code>SOURCE_REDIS_INSTANCE_UNSUPPORTED = 35;</code>
+     */
+    public static final int SOURCE_REDIS_INSTANCE_UNSUPPORTED_VALUE = 35;
+    /**
+     *
+     *
+     * <pre>
      * Aborted because tests with a forwarding rule as a source are not
      * supported.
      * </pre>
@@ -830,6 +916,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return MISMATCHED_DESTINATION_NETWORK;
         case 2:
           return UNKNOWN_IP;
+        case 32:
+          return GOOGLE_MANAGED_SERVICE_UNKNOWN_IP;
         case 23:
           return SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK;
         case 4:
@@ -838,6 +926,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS;
         case 29:
           return PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS;
+        case 36:
+          return PERMISSION_DENIED_NO_CLOUD_ROUTER_CONFIGS;
         case 5:
           return NO_SOURCE_LOCATION;
         case 6:
@@ -866,6 +956,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT;
         case 20:
           return SOURCE_PSC_CLOUD_SQL_UNSUPPORTED;
+        case 34:
+          return SOURCE_REDIS_CLUSTER_UNSUPPORTED;
+        case 35:
+          return SOURCE_REDIS_INSTANCE_UNSUPPORTED;
         case 21:
           return SOURCE_FORWARDING_RULE_UNSUPPORTED;
         case 22:

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Response message for listing descendant Security Health Analytics custom
- * modules.
+ * Response message for
+ * [SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules].
  * </pre>
  *
  * Protobuf type {@code
@@ -168,7 +168,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -191,7 +192,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -416,8 +418,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
    *
    *
    * <pre>
-   * Response message for listing descendant Security Health Analytics custom
-   * modules.
+   * Response message for
+   * [SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules].
    * </pre>
    *
    * Protobuf type {@code
@@ -1132,7 +1134,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1154,7 +1157,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1176,7 +1180,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1197,7 +1202,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1214,7 +1220,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
      *
      *
      * <pre>
-     * A token identifying a page of results the server should return.
+     * A pagination token. To retrieve the next page of results, call the method
+     * again with this token.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,12 +131,30 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
    *
+   *   * `name`
    *   * `version`
    *
-   *  An example of using a filter:
+   *  Examples of using a filter:
    *
-   *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-   *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
+   *  To filter the results of your request to tags with the name `my-tag` in
+   *  package `my-package` in repository `my-repo` in project "`y-project` in
+   *  the us-central region, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my-tag"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag*"`
+   *
+   *  To filter the results of your request to tags applied to the version
+   *  `1.0` in package `my-package`, append the following filter expression to
+   *  your request:
+   *
+   *   * `version="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/1.0"`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -162,12 +180,30 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
    *
+   *   * `name`
    *   * `version`
    *
-   *  An example of using a filter:
+   *  Examples of using a filter:
    *
-   *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-   *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
+   *  To filter the results of your request to tags with the name `my-tag` in
+   *  package `my-package` in repository `my-repo` in project "`y-project` in
+   *  the us-central region, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my-tag"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag*"`
+   *
+   *  To filter the results of your request to tags applied to the version
+   *  `1.0` in package `my-package`, append the following filter expression to
+   *  your request:
+   *
+   *   * `version="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/1.0"`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -193,7 +229,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The maximum number of tags to return. Maximum page size is 10,000.
+   * The maximum number of tags to return. Maximum page size is 1,000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -793,12 +829,30 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
      *
+     *   * `name`
      *   * `version`
      *
-     *  An example of using a filter:
+     *  Examples of using a filter:
      *
-     *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-     *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
+     *  To filter the results of your request to tags with the name `my-tag` in
+     *  package `my-package` in repository `my-repo` in project "`y-project` in
+     *  the us-central region, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my-tag"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag*"`
+     *
+     *  To filter the results of your request to tags applied to the version
+     *  `1.0` in package `my-package`, append the following filter expression to
+     *  your request:
+     *
+     *   * `version="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/1.0"`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -823,12 +877,30 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
      *
+     *   * `name`
      *   * `version`
      *
-     *  An example of using a filter:
+     *  Examples of using a filter:
      *
-     *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-     *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
+     *  To filter the results of your request to tags with the name `my-tag` in
+     *  package `my-package` in repository `my-repo` in project "`y-project` in
+     *  the us-central region, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my-tag"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag*"`
+     *
+     *  To filter the results of your request to tags applied to the version
+     *  `1.0` in package `my-package`, append the following filter expression to
+     *  your request:
+     *
+     *   * `version="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/1.0"`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -853,12 +925,30 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
      *
+     *   * `name`
      *   * `version`
      *
-     *  An example of using a filter:
+     *  Examples of using a filter:
      *
-     *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-     *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
+     *  To filter the results of your request to tags with the name `my-tag` in
+     *  package `my-package` in repository `my-repo` in project "`y-project` in
+     *  the us-central region, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my-tag"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag*"`
+     *
+     *  To filter the results of your request to tags applied to the version
+     *  `1.0` in package `my-package`, append the following filter expression to
+     *  your request:
+     *
+     *   * `version="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/1.0"`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -882,12 +972,30 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
      *
+     *   * `name`
      *   * `version`
      *
-     *  An example of using a filter:
+     *  Examples of using a filter:
      *
-     *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-     *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
+     *  To filter the results of your request to tags with the name `my-tag` in
+     *  package `my-package` in repository `my-repo` in project "`y-project` in
+     *  the us-central region, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my-tag"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag*"`
+     *
+     *  To filter the results of your request to tags applied to the version
+     *  `1.0` in package `my-package`, append the following filter expression to
+     *  your request:
+     *
+     *   * `version="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/1.0"`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -907,12 +1015,30 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      * An expression for filtering the results of the request. Filter rules are
      * case insensitive. The fields eligible for filtering are:
      *
+     *   * `name`
      *   * `version`
      *
-     *  An example of using a filter:
+     *  Examples of using a filter:
      *
-     *   * `version="projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/1.0"`
-     *   --&gt; Tags that are applied to the version `1.0` in package `pkg1`.
+     *  To filter the results of your request to tags with the name `my-tag` in
+     *  package `my-package` in repository `my-repo` in project "`y-project` in
+     *  the us-central region, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my-tag"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/tags/&#42;tag*"`
+     *
+     *  To filter the results of your request to tags applied to the version
+     *  `1.0` in package `my-package`, append the following filter expression to
+     *  your request:
+     *
+     *   * `version="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/1.0"`
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -936,7 +1062,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return. Maximum page size is 10,000.
+     * The maximum number of tags to return. Maximum page size is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -951,7 +1077,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return. Maximum page size is 10,000.
+     * The maximum number of tags to return. Maximum page size is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -970,7 +1096,7 @@ public final class ListTagsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of tags to return. Maximum page size is 10,000.
+     * The maximum number of tags to return. Maximum page size is 1,000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

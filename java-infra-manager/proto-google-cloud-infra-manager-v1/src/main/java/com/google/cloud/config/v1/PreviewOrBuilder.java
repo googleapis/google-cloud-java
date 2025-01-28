@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -281,13 +281,13 @@ public interface PreviewOrBuilder
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * previewing resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * string service_account = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string service_account = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The serviceAccount.
@@ -297,13 +297,13 @@ public interface PreviewOrBuilder
    *
    *
    * <pre>
-   * Optional. User-specified Service Account (SA) credentials to be used when
+   * Required. User-specified Service Account (SA) credentials to be used when
    * previewing resources.
    * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
-   * string service_account = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string service_account = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for serviceAccount.
@@ -755,6 +755,84 @@ public interface PreviewOrBuilder
    * @return The bytes for tfVersionConstraint.
    */
   com.google.protobuf.ByteString getTfVersionConstraintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identifiy preview during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identifiy preview during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAnnotations(java.lang.String key);
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identifiy preview during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identifiy preview during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary key-value metadata storage e.g. to help client tools
+   * identifiy preview during automation. See
+   * https://google.aip.dev/148#annotations for details on format and size
+   * limitations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
   com.google.cloud.config.v1.Preview.BlueprintCase getBlueprintCase();
 }

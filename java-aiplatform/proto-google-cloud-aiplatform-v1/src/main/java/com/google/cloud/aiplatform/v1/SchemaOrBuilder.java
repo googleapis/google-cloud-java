@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,9 +253,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -267,9 +270,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -281,9 +287,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -296,9 +305,12 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Possible values of the element of Type.STRING with enum format.
-   * For example we can define an Enum Direction as :
+   * Optional. Possible values of the element of primitive type with enum
+   * format. Examples:
+   * 1. We can define direction as :
    * {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+   * 2. We can define apartment number as :
+   * {type:INTEGER, format:enum, enum:["101", "201", "301"]}
    * </pre>
    *
    * <code>repeated string enum = 9 [(.google.api.field_behavior) = OPTIONAL];</code>

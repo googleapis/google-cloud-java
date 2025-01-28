@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -391,7 +391,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * When `true`, the method runs using the user's Google Workspace
+   * Optional. When `true`, the method runs using the user's Google Workspace
    * administrator privileges.
    *
    * The calling user must be a Google Workspace administrator with the
@@ -405,7 +405,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
    * Listing app memberships in a space isn't supported when using admin access.
    * </pre>
    *
-   * <code>bool use_admin_access = 8;</code>
+   * <code>bool use_admin_access = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useAdminAccess.
    */
@@ -1666,7 +1666,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -1680,7 +1680,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Listing app memberships in a space isn't supported when using admin access.
      * </pre>
      *
-     * <code>bool use_admin_access = 8;</code>
+     * <code>bool use_admin_access = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The useAdminAccess.
      */
@@ -1692,7 +1692,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -1706,7 +1706,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Listing app memberships in a space isn't supported when using admin access.
      * </pre>
      *
-     * <code>bool use_admin_access = 8;</code>
+     * <code>bool use_admin_access = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The useAdminAccess to set.
      * @return This builder for chaining.
@@ -1722,7 +1722,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -1736,7 +1736,7 @@ public final class ListMembershipsRequest extends com.google.protobuf.GeneratedM
      * Listing app memberships in a space isn't supported when using admin access.
      * </pre>
      *
-     * <code>bool use_admin_access = 8;</code>
+     * <code>bool use_admin_access = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

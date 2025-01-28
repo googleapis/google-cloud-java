@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,7 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * The top-level message sent by the client to the
- * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]
- * method.
+ * [StreamingDetectIntent][] method.
  *
  * Multiple request messages should be sent in order:
  *
@@ -332,7 +331,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-   *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
+   *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=468
    * @return The singleUtterance.
    */
   @java.lang.Override
@@ -755,8 +754,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * The top-level message sent by the client to the
-   * [Sessions.StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]
-   * method.
+   * [StreamingDetectIntent][] method.
    *
    * Multiple request messages should be sent in order:
    *
@@ -1769,7 +1767,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
+     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=468
      * @return The singleUtterance.
      */
     @java.lang.Override
@@ -1795,7 +1793,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
+     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=468
      * @param value The singleUtterance to set.
      * @return This builder for chaining.
      */
@@ -1825,7 +1823,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
+     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=468
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

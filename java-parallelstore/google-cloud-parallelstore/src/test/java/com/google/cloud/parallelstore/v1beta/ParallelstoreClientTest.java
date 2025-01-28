@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -200,6 +200,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockParallelstore.addResponse(expectedResponse);
 
@@ -250,6 +251,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     mockParallelstore.addResponse(expectedResponse);
 
@@ -300,6 +302,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -364,6 +367,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -428,6 +432,7 @@ public class ParallelstoreClientTest {
             .setEffectiveReservedIpRange("effectiveReservedIpRange106116967")
             .setFileStripeLevel(FileStripeLevel.forNumber(0))
             .setDirectoryStripeLevel(DirectoryStripeLevel.forNumber(0))
+            .setDeploymentType(DeploymentType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()

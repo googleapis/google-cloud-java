@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Request message for listing effective Event Threat Detection custom
- * modules.
+ * Request message for
+ * [SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules].
  * </pre>
  *
  * Protobuf type {@code
@@ -78,11 +78,12 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list effective custom modules. Its format is
-   * `organizations/{organization}/locations/{location}`,
-   * `folders/{folder}/locations/{location}`,
-   * or
-   * `projects/{project}/locations/{location}`
+   * Required. Name of parent to list effective custom modules, in one of the
+   * following formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -107,11 +108,12 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Required. Name of parent to list effective custom modules. Its format is
-   * `organizations/{organization}/locations/{location}`,
-   * `folders/{folder}/locations/{location}`,
-   * or
-   * `projects/{project}/locations/{location}`
+   * Required. Name of parent to list effective custom modules, in one of the
+   * following formats:
+   *
+   * * `organizations/{organization}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -160,7 +162,11 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -183,7 +189,11 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Optional. The value returned by the last call indicating a continuation
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -412,8 +422,8 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
    *
    *
    * <pre>
-   * Request message for listing effective Event Threat Detection custom
-   * modules.
+   * Request message for
+   * [SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListEffectiveEventThreatDetectionCustomModules].
    * </pre>
    *
    * Protobuf type {@code
@@ -656,11 +666,12 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list effective custom modules, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -684,11 +695,12 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list effective custom modules, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -712,11 +724,12 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list effective custom modules, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -739,11 +752,12 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list effective custom modules, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -762,11 +776,12 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Required. Name of parent to list effective custom modules. Its format is
-     * `organizations/{organization}/locations/{location}`,
-     * `folders/{folder}/locations/{location}`,
-     * or
-     * `projects/{project}/locations/{location}`
+     * Required. Name of parent to list effective custom modules, in one of the
+     * following formats:
+     *
+     * * `organizations/{organization}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -848,7 +863,11 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -870,7 +889,11 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -892,7 +915,11 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -913,7 +940,11 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -930,7 +961,11 @@ public final class ListEffectiveEventThreatDetectionCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. The value returned by the last call indicating a continuation
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

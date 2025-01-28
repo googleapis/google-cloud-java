@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,49 @@ public class MockVertexRagServiceImpl extends VertexRagServiceImplBase {
                   "Unrecognized response type %s for method RetrieveContexts, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RetrieveContextsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void augmentPrompt(
+      AugmentPromptRequest request, StreamObserver<AugmentPromptResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AugmentPromptResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AugmentPromptResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AugmentPrompt, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AugmentPromptResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void corroborateContent(
+      CorroborateContentRequest request,
+      StreamObserver<CorroborateContentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CorroborateContentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CorroborateContentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CorroborateContent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CorroborateContentResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

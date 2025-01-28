@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,7 @@ public class PlacesClientHttpJsonTest {
             .setRoutingParameters(RoutingParameters.newBuilder().build())
             .setSearchAlongRouteParameters(
                 SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+            .setIncludePureServiceAreaBusinesses(true)
             .build();
 
     SearchTextResponse actualResponse = client.searchText(request);
@@ -213,6 +214,7 @@ public class PlacesClientHttpJsonTest {
               .setRoutingParameters(RoutingParameters.newBuilder().build())
               .setSearchAlongRouteParameters(
                   SearchTextRequest.SearchAlongRouteParameters.newBuilder().build())
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       client.searchText(request);
       Assert.fail("No exception raised");
@@ -377,6 +379,9 @@ public class PlacesClientHttpJsonTest {
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
             .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
             .setAreaSummary(Place.AreaSummary.newBuilder().build())
+            .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
+            .setPureServiceAreaBusiness(true)
+            .setPriceRange(PriceRange.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -482,6 +487,9 @@ public class PlacesClientHttpJsonTest {
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
             .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
             .setAreaSummary(Place.AreaSummary.newBuilder().build())
+            .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
+            .setPureServiceAreaBusiness(true)
+            .setPriceRange(PriceRange.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -543,6 +551,7 @@ public class PlacesClientHttpJsonTest {
             .setInputOffset(1010406056)
             .setIncludeQueryPredictions(true)
             .setSessionToken("sessionToken-696552189")
+            .setIncludePureServiceAreaBusinesses(true)
             .build();
 
     AutocompletePlacesResponse actualResponse = client.autocompletePlaces(request);
@@ -585,6 +594,7 @@ public class PlacesClientHttpJsonTest {
               .setInputOffset(1010406056)
               .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       client.autocompletePlaces(request);
       Assert.fail("No exception raised");

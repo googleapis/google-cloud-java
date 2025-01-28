@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -613,6 +613,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -681,6 +682,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -747,6 +749,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -800,6 +803,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -941,6 +945,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)

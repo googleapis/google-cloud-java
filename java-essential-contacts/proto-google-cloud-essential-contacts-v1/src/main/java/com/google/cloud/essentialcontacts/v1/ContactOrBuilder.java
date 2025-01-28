@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,11 +195,13 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The validity of the contact. A contact is considered valid if it is the
-   * correct recipient for notifications for a particular resource.
+   * Output only. The validity of the contact. A contact is considered valid if
+   * it is the correct recipient for notifications for a particular resource.
    * </pre>
    *
-   * <code>.google.cloud.essentialcontacts.v1.ValidationState validation_state = 8;</code>
+   * <code>
+   * .google.cloud.essentialcontacts.v1.ValidationState validation_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for validationState.
    */
@@ -208,11 +210,13 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * The validity of the contact. A contact is considered valid if it is the
-   * correct recipient for notifications for a particular resource.
+   * Output only. The validity of the contact. A contact is considered valid if
+   * it is the correct recipient for notifications for a particular resource.
    * </pre>
    *
-   * <code>.google.cloud.essentialcontacts.v1.ValidationState validation_state = 8;</code>
+   * <code>
+   * .google.cloud.essentialcontacts.v1.ValidationState validation_state = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The validationState.
    */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -846,7 +846,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -861,7 +861,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -876,7 +876,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -892,7 +892,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -3034,7 +3034,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3050,7 +3050,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3065,7 +3065,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3081,7 +3081,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3097,7 +3097,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3121,7 +3121,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3144,7 +3144,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3164,7 +3164,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3183,7 +3183,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC
+     * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *

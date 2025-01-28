@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -359,7 +359,7 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The agent to import the entity types into.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -385,7 +385,7 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The agent to import the entity types into.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -605,13 +605,13 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The target entity type to import into.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
-   * If set, there should be only one entity type included in
-   * [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
-   * of which the type should match the type of the target entity type. All
-   * [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
-   * imported entity type will be added to the target entity type.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
+   *  If set, there should be only one entity type included in
+   *  [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
+   *  of which the type should match the type of the target entity type. All
+   *  [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
+   *  imported entity type will be added to the target entity type.
    * </pre>
    *
    * <code>
@@ -637,13 +637,13 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Optional. The target entity type to import into.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
-   * If set, there should be only one entity type included in
-   * [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
-   * of which the type should match the type of the target entity type. All
-   * [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
-   * imported entity type will be added to the target entity type.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
+   *  If set, there should be only one entity type included in
+   *  [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
+   *  of which the type should match the type of the target entity type. All
+   *  [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
+   *  imported entity type will be added to the target entity type.
    * </pre>
    *
    * <code>
@@ -1169,7 +1169,7 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The agent to import the entity types into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1194,7 +1194,7 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The agent to import the entity types into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1219,7 +1219,7 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The agent to import the entity types into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1243,7 +1243,7 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The agent to import the entity types into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1263,7 +1263,7 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The agent to import the entity types into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+     * Format: `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
      * </pre>
      *
      * <code>
@@ -1791,13 +1791,13 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The target entity type to import into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
-     * If set, there should be only one entity type included in
-     * [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
-     * of which the type should match the type of the target entity type. All
-     * [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
-     * imported entity type will be added to the target entity type.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
+     *  If set, there should be only one entity type included in
+     *  [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
+     *  of which the type should match the type of the target entity type. All
+     *  [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
+     *  imported entity type will be added to the target entity type.
      * </pre>
      *
      * <code>
@@ -1822,13 +1822,13 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The target entity type to import into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
-     * If set, there should be only one entity type included in
-     * [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
-     * of which the type should match the type of the target entity type. All
-     * [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
-     * imported entity type will be added to the target entity type.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
+     *  If set, there should be only one entity type included in
+     *  [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
+     *  of which the type should match the type of the target entity type. All
+     *  [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
+     *  imported entity type will be added to the target entity type.
      * </pre>
      *
      * <code>
@@ -1853,13 +1853,13 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The target entity type to import into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
-     * If set, there should be only one entity type included in
-     * [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
-     * of which the type should match the type of the target entity type. All
-     * [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
-     * imported entity type will be added to the target entity type.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
+     *  If set, there should be only one entity type included in
+     *  [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
+     *  of which the type should match the type of the target entity type. All
+     *  [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
+     *  imported entity type will be added to the target entity type.
      * </pre>
      *
      * <code>
@@ -1883,13 +1883,13 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The target entity type to import into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
-     * If set, there should be only one entity type included in
-     * [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
-     * of which the type should match the type of the target entity type. All
-     * [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
-     * imported entity type will be added to the target entity type.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
+     *  If set, there should be only one entity type included in
+     *  [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
+     *  of which the type should match the type of the target entity type. All
+     *  [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
+     *  imported entity type will be added to the target entity type.
      * </pre>
      *
      * <code>
@@ -1909,13 +1909,13 @@ public final class ImportEntityTypesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Optional. The target entity type to import into.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/entity_types/&lt;EntityType ID&gt;`.
-     * If set, there should be only one entity type included in
-     * [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
-     * of which the type should match the type of the target entity type. All
-     * [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
-     * imported entity type will be added to the target entity type.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/entity_types/&lt;EntityTypeID&gt;`.
+     *  If set, there should be only one entity type included in
+     *  [entity_types][google.cloud.dialogflow.cx.v3beta1.ImportEntityTypesRequest.entity_types],
+     *  of which the type should match the type of the target entity type. All
+     *  [entities][google.cloud.dialogflow.cx.v3beta1.EntityType.entities] in the
+     *  imported entity type will be added to the target entity type.
      * </pre>
      *
      * <code>

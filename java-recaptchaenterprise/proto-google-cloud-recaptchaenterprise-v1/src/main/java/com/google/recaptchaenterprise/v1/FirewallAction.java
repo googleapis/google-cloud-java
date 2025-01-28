@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1390,7 +1390,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A redirect action returns a 307 (temporary redirect) response, pointing
-   * the user to a ReCaptcha interstitial page to attach a token.
+   * the user to a reCAPTCHA interstitial page to attach a token.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1.FirewallAction.RedirectAction}
@@ -1586,7 +1586,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A redirect action returns a 307 (temporary redirect) response, pointing
-     * the user to a ReCaptcha interstitial page to attach a token.
+     * the user to a reCAPTCHA interstitial page to attach a token.
      * </pre>
      *
      * Protobuf type {@code google.cloud.recaptchaenterprise.v1.FirewallAction.RedirectAction}
@@ -3462,7 +3462,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will deny access to a given page. The user will get an HTTP
+   * This action denies access to a given page. The user gets an HTTP
    * error code.
    * </pre>
    *
@@ -3478,7 +3478,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will deny access to a given page. The user will get an HTTP
+   * This action denies access to a given page. The user gets an HTTP
    * error code.
    * </pre>
    *
@@ -3497,7 +3497,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will deny access to a given page. The user will get an HTTP
+   * This action denies access to a given page. The user gets an HTTP
    * error code.
    * </pre>
    *
@@ -3516,7 +3516,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * This action injects reCAPTCHA JavaScript code into the HTML page
    * returned by the site backend.
    * </pre>
    *
@@ -3534,7 +3534,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * This action injects reCAPTCHA JavaScript code into the HTML page
    * returned by the site backend.
    * </pre>
    *
@@ -3558,7 +3558,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will inject reCAPTCHA JavaScript code into the HTML page
+   * This action injects reCAPTCHA JavaScript code into the HTML page
    * returned by the site backend.
    * </pre>
    *
@@ -3582,7 +3582,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will redirect the request to a ReCaptcha interstitial to
+   * This action redirects the request to a reCAPTCHA interstitial to
    * attach a token.
    * </pre>
    *
@@ -3598,7 +3598,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will redirect the request to a ReCaptcha interstitial to
+   * This action redirects the request to a reCAPTCHA interstitial to
    * attach a token.
    * </pre>
    *
@@ -3617,7 +3617,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will redirect the request to a ReCaptcha interstitial to
+   * This action redirects the request to a reCAPTCHA interstitial to
    * attach a token.
    * </pre>
    *
@@ -3637,7 +3637,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will transparently serve a different page to an offending
+   * This action transparently serves a different page to an offending
    * user.
    * </pre>
    *
@@ -3654,7 +3654,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will transparently serve a different page to an offending
+   * This action transparently serves a different page to an offending
    * user.
    * </pre>
    *
@@ -3675,7 +3675,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will transparently serve a different page to an offending
+   * This action transparently serves a different page to an offending
    * user.
    * </pre>
    *
@@ -3697,7 +3697,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will set a custom header but allow the request to continue
+   * This action sets a custom header but allow the request to continue
    * to the customer backend.
    * </pre>
    *
@@ -3714,7 +3714,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will set a custom header but allow the request to continue
+   * This action sets a custom header but allow the request to continue
    * to the customer backend.
    * </pre>
    *
@@ -3735,7 +3735,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This action will set a custom header but allow the request to continue
+   * This action sets a custom header but allow the request to continue
    * to the customer backend.
    * </pre>
    *
@@ -4556,7 +4556,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4572,7 +4572,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4599,7 +4599,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4622,7 +4622,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4643,7 +4643,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4679,7 +4679,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4705,7 +4705,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4718,7 +4718,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4741,7 +4741,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will deny access to a given page. The user will get an HTTP
+     * This action denies access to a given page. The user gets an HTTP
      * error code.
      * </pre>
      *
@@ -4781,7 +4781,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4799,7 +4799,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4831,7 +4831,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4857,7 +4857,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4881,7 +4881,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4922,7 +4922,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4950,7 +4950,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4966,7 +4966,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -4992,7 +4992,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will inject reCAPTCHA JavaScript code into the HTML page
+     * This action injects reCAPTCHA JavaScript code into the HTML page
      * returned by the site backend.
      * </pre>
      *
@@ -5038,7 +5038,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5054,7 +5054,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5081,7 +5081,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5105,7 +5105,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5126,7 +5126,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5163,7 +5163,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5189,7 +5189,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5203,7 +5203,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5226,7 +5226,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will redirect the request to a ReCaptcha interstitial to
+     * This action redirects the request to a reCAPTCHA interstitial to
      * attach a token.
      * </pre>
      *
@@ -5267,7 +5267,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5284,7 +5284,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5314,7 +5314,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5339,7 +5339,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5361,7 +5361,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5399,7 +5399,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5426,7 +5426,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5441,7 +5441,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5466,7 +5466,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will transparently serve a different page to an offending
+     * This action transparently serves a different page to an offending
      * user.
      * </pre>
      *
@@ -5509,7 +5509,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5526,7 +5526,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5556,7 +5556,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5581,7 +5581,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5603,7 +5603,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5641,7 +5641,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5668,7 +5668,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5683,7 +5683,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *
@@ -5708,7 +5708,7 @@ public final class FirewallAction extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This action will set a custom header but allow the request to continue
+     * This action sets a custom header but allow the request to continue
      * to the customer backend.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,7 +197,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -211,7 +212,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -225,7 +227,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -240,7 +243,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Locations that could not be reached.
+   * Locations that could not be reached. Only used for queries to the wildcard
+   * location `-`. If non-empty, it indicates that the results are incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3;</code>
@@ -1188,7 +1192,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1203,7 +1208,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1217,7 +1223,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1232,7 +1239,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1247,7 +1255,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1270,7 +1279,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1292,7 +1302,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1311,7 +1322,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>
@@ -1329,7 +1341,8 @@ public final class ListOrdersResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Locations that could not be reached.
+     * Locations that could not be reached. Only used for queries to the wildcard
+     * location `-`. If non-empty, it indicates that the results are incomplete.
      * </pre>
      *
      * <code>repeated string unreachable = 3;</code>

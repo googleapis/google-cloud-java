@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,8 +70,7 @@ public interface MatchIntentResponseOrBuilder
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -85,8 +84,7 @@ public interface MatchIntentResponseOrBuilder
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -100,8 +98,7 @@ public interface MatchIntentResponseOrBuilder
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 2 [(.google.api.resource_reference) = { ... }</code>

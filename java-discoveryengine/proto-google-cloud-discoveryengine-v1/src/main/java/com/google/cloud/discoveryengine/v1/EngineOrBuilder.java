@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,7 +172,7 @@ public interface EngineOrBuilder
    * characters.
    *
    * Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * engine should be 1-63 characters, and valid characters are
    * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -192,7 +192,7 @@ public interface EngineOrBuilder
    * characters.
    *
    * Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * engine should be 1-63 characters, and valid characters are
    * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -521,6 +521,20 @@ public interface EngineOrBuilder
    * <code>.google.cloud.discoveryengine.v1.Engine.CommonConfig common_config = 15;</code>
    */
   com.google.cloud.discoveryengine.v1.Engine.CommonConfigOrBuilder getCommonConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to disable analytics for searches performed on this
+   * engine.
+   * </pre>
+   *
+   * <code>bool disable_analytics = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableAnalytics.
+   */
+  boolean getDisableAnalytics();
 
   com.google.cloud.discoveryengine.v1.Engine.EngineConfigCase getEngineConfigCase();
 

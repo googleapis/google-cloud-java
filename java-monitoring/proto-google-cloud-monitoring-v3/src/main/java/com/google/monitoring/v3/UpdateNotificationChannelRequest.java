@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,10 +69,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The fields to update.
+   * Optional. The fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -84,10 +85,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The fields to update.
+   * Optional. The fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -99,10 +101,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The fields to update.
+   * Optional. The fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -583,10 +586,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -597,10 +601,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -617,10 +622,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -639,10 +645,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -658,10 +665,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -685,10 +693,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -704,10 +713,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       bitField0_ |= 0x00000001;
@@ -718,10 +728,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -736,10 +747,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The fields to update.
+     * Optional. The fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

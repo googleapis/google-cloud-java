@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The annotation that is assigned to the Event. This field can
-   * be left empty to provide reasons that apply to an event without concluding
+   * Optional. The annotation that is assigned to the Event. This field can be
+   * left empty to provide reasons that apply to an event without concluding
    * whether the event is legitimate or fraudulent.
    * </pre>
    *
@@ -75,8 +75,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The annotation that is assigned to the Event. This field can
-   * be left empty to provide reasons that apply to an event without concluding
+   * Optional. The annotation that is assigned to the Event. This field can be
+   * left empty to provide reasons that apply to an event without concluding
    * whether the event is legitimate or fraudulent.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,4 +67,35 @@ public interface ServiceScalingOrBuilder
    * @return The scalingMode.
    */
   com.google.cloud.run.v2.ServiceScaling.ScalingMode getScalingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total instance count for the service in manual scaling mode. This
+   * number of instances is divided among all revisions with specified traffic
+   * based on the percent of traffic they are receiving.
+   * </pre>
+   *
+   * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the manualInstanceCount field is set.
+   */
+  boolean hasManualInstanceCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total instance count for the service in manual scaling mode. This
+   * number of instances is divided among all revisions with specified traffic
+   * based on the percent of traffic they are receiving.
+   * </pre>
+   *
+   * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The manualInstanceCount.
+   */
+  int getManualInstanceCount();
 }

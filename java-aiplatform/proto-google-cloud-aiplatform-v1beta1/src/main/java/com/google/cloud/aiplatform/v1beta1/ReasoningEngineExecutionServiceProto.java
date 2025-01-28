@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,10 @@ public final class ReasoningEngineExecutionServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -50,28 +54,39 @@ public final class ReasoningEngineExecutionServiceProto {
           + "le.cloud.aiplatform.v1beta1\032\034google/api/"
           + "annotations.proto\032\027google/api/client.pro"
           + "to\032\037google/api/field_behavior.proto\032\031goo"
-          + "gle/api/resource.proto\032\034google/protobuf/"
-          + "struct.proto\"\213\001\n\033QueryReasoningEngineReq"
-          + "uest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.g"
-          + "oogleapis.com/ReasoningEngine\022+\n\005input\030\002"
-          + " \001(\0132\027.google.protobuf.StructB\003\340A\001\"F\n\034Qu"
-          + "eryReasoningEngineResponse\022&\n\006output\030\001 \001"
-          + "(\0132\026.google.protobuf.Value2\322\002\n\037Reasoning"
-          + "EngineExecutionService\022\337\001\n\024QueryReasonin"
-          + "gEngine\022<.google.cloud.aiplatform.v1beta"
-          + "1.QueryReasoningEngineRequest\032=.google.c"
-          + "loud.aiplatform.v1beta1.QueryReasoningEn"
-          + "gineResponse\"J\202\323\344\223\002D\"?/v1beta1/{name=pro"
-          + "jects/*/locations/*/reasoningEngines/*}:"
-          + "query:\001*\032M\312A\031aiplatform.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\373\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B$ReasoningEngineExecutionService"
-          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
-          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
-          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
-          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
-          + "::AIPlatform::V1beta1b\006proto3"
+          + "gle/api/httpbody.proto\032\031google/api/resou"
+          + "rce.proto\032\034google/protobuf/struct.proto\""
+          + "\246\001\n\033QueryReasoningEngineRequest\022?\n\004name\030"
+          + "\001 \001(\tB1\340A\002\372A+\n)aiplatform.googleapis.com"
+          + "/ReasoningEngine\022+\n\005input\030\002 \001(\0132\027.google"
+          + ".protobuf.StructB\003\340A\001\022\031\n\014class_method\030\003 "
+          + "\001(\tB\003\340A\001\"F\n\034QueryReasoningEngineResponse"
+          + "\022&\n\006output\030\001 \001(\0132\026.google.protobuf.Value"
+          + "\"\254\001\n!StreamQueryReasoningEngineRequest\022?"
+          + "\n\004name\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.googlea"
+          + "pis.com/ReasoningEngine\022+\n\005input\030\002 \001(\0132\027"
+          + ".google.protobuf.StructB\003\340A\001\022\031\n\014class_me"
+          + "thod\030\003 \001(\tB\003\340A\0012\237\004\n\037ReasoningEngineExecu"
+          + "tionService\022\337\001\n\024QueryReasoningEngine\022<.g"
+          + "oogle.cloud.aiplatform.v1beta1.QueryReas"
+          + "oningEngineRequest\032=.google.cloud.aiplat"
+          + "form.v1beta1.QueryReasoningEngineRespons"
+          + "e\"J\202\323\344\223\002D\"?/v1beta1/{name=projects/*/loc"
+          + "ations/*/reasoningEngines/*}:query:\001*\022\312\001"
+          + "\n\032StreamQueryReasoningEngine\022B.google.cl"
+          + "oud.aiplatform.v1beta1.StreamQueryReason"
+          + "ingEngineRequest\032\024.google.api.HttpBody\"P"
+          + "\202\323\344\223\002J\"E/v1beta1/{name=projects/*/locati"
+          + "ons/*/reasoningEngines/*}:streamQuery:\001*"
+          + "0\001\032M\312A\031aiplatform.googleapis.com\322A.https"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "mB\373\001\n#com.google.cloud.aiplatform.v1beta"
+          + "1B$ReasoningEngineExecutionServiceProtoP"
+          + "\001ZCcloud.google.com/go/aiplatform/apiv1b"
+          + "eta1/aiplatformpb;aiplatformpb\252\002\037Google."
+          + "Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\"
+          + "AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPl"
+          + "atform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -80,6 +95,7 @@ public final class ReasoningEngineExecutionServiceProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.HttpBodyProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -89,7 +105,7 @@ public final class ReasoningEngineExecutionServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineRequest_descriptor,
             new java.lang.String[] {
-              "Name", "Input",
+              "Name", "Input", "ClassMethod",
             });
     internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -98,6 +114,14 @@ public final class ReasoningEngineExecutionServiceProto {
             internal_static_google_cloud_aiplatform_v1beta1_QueryReasoningEngineResponse_descriptor,
             new java.lang.String[] {
               "Output",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_StreamQueryReasoningEngineRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Input", "ClassMethod",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -111,6 +135,7 @@ public final class ReasoningEngineExecutionServiceProto {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.HttpBodyProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -723,7 +723,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
    * @return A list containing the resources.
    */
   @java.lang.Deprecated
@@ -740,7 +740,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
    * @return The count of resources.
    */
   @java.lang.Deprecated
@@ -757,7 +757,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
    * @param index The index of the element to return.
    * @return The resources at the given index.
    */
@@ -775,7 +775,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
    * <code>repeated string resources = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+   *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
    * @param index The index of the value to return.
    * @return The bytes of the resources at the given index.
    */
@@ -1562,7 +1562,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @return A list containing the resources.
      */
     @java.lang.Deprecated
@@ -1580,7 +1580,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @return The count of resources.
      */
     @java.lang.Deprecated
@@ -1597,7 +1597,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @param index The index of the element to return.
      * @return The resources at the given index.
      */
@@ -1615,7 +1615,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @param index The index of the value to return.
      * @return The bytes of the resources at the given index.
      */
@@ -1633,7 +1633,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @param index The index to set the value at.
      * @param value The resources to set.
      * @return This builder for chaining.
@@ -1659,7 +1659,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @param value The resources to add.
      * @return This builder for chaining.
      */
@@ -1684,7 +1684,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @param values The resources to add.
      * @return This builder for chaining.
      */
@@ -1706,7 +1706,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1727,7 +1727,7 @@ public final class ValidationMessage extends com.google.protobuf.GeneratedMessag
      * <code>repeated string resources = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ValidationMessage.resources is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=96
+     *     google/cloud/dialogflow/cx/v3/validation_message.proto;l=95
      * @param value The bytes of the resources to add.
      * @return This builder for chaining.
      */

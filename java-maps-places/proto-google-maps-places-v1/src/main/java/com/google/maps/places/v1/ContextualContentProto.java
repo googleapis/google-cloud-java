@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,11 +90,11 @@ public final class ContextualContentProto {
           + "\n\tend_index\030\002 \001(\005\032a\n+BusinessAvailabilit"
           + "yAttributesJustification\022\017\n\007takeout\030\001 \001("
           + "\010\022\020\n\010delivery\030\002 \001(\010\022\017\n\007dine_in\030\003 \001(\010B\017\n\r"
-          + "justificationB\252\001\n\031com.google.maps.places"
+          + "justificationB\247\001\n\031com.google.maps.places"
           + ".v1B\026ContextualContentProtoP\001Z7cloud.goo"
           + "gle.com/go/maps/places/apiv1/placespb;pl"
-          + "acespb\370\001\001\242\002\006GMPSV1\252\002\025Google.Maps.Places."
-          + "V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
+          + "acespb\242\002\006GMPSV1\252\002\025Google.Maps.Places.V1\312"
+          + "\002\025Google\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

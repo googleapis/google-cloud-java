@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +33,25 @@ public final class DataStoreProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_DataStore_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_DataStore_BillingEstimation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_DataStore_BillingEstimation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_DataStore_ServingConfigDataStore_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_DataStore_ServingConfigDataStore_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_LanguageInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_LanguageInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_NaturalLanguageQueryUnderstandingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_NaturalLanguageQueryUnderstandingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_WorkspaceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_WorkspaceConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,7 +69,7 @@ public final class DataStoreProto {
           + "o\032Dgoogle/cloud/discoveryengine/v1beta/d"
           + "ocument_processing_config.proto\0320google/"
           + "cloud/discoveryengine/v1beta/schema.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\266\007\n\tD"
+          + "o\032\037google/protobuf/timestamp.proto\"\340\r\n\tD"
           + "ataStore\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014display_n"
           + "ame\030\002 \001(\tB\003\340A\002\022U\n\021industry_vertical\030\003 \001("
           + "\01625.google.cloud.discoveryengine.v1beta."
@@ -65,29 +81,64 @@ public final class DataStoreProto {
           + ".ContentConfigB\003\340A\005\0224\n\013create_time\030\004 \001(\013"
           + "2\032.google.protobuf.TimestampB\003\340A\003\022H\n\rlan"
           + "guage_info\030\016 \001(\01321.google.cloud.discover"
-          + "yengine.v1beta.LanguageInfo\022a\n\032document_"
-          + "processing_config\030\033 \001(\0132=.google.cloud.d"
-          + "iscoveryengine.v1beta.DocumentProcessing"
-          + "Config\022D\n\017starting_schema\030\034 \001(\0132+.google"
-          + ".cloud.discoveryengine.v1beta.Schema\"i\n\r"
-          + "ContentConfig\022\036\n\032CONTENT_CONFIG_UNSPECIF"
-          + "IED\020\000\022\016\n\nNO_CONTENT\020\001\022\024\n\020CONTENT_REQUIRE"
-          + "D\020\002\022\022\n\016PUBLIC_WEBSITE\020\003:\311\001\352A\305\001\n(discover"
-          + "yengine.googleapis.com/DataStore\022?projec"
-          + "ts/{project}/locations/{location}/dataSt"
-          + "ores/{data_store}\022Xprojects/{project}/lo"
-          + "cations/{location}/collections/{collecti"
-          + "on}/dataStores/{data_store}\"x\n\014LanguageI"
-          + "nfo\022\025\n\rlanguage_code\030\001 \001(\t\022%\n\030normalized"
-          + "_language_code\030\002 \001(\tB\003\340A\003\022\025\n\010language\030\003 "
-          + "\001(\tB\003\340A\003\022\023\n\006region\030\004 \001(\tB\003\340A\003B\225\002\n\'com.go"
-          + "ogle.cloud.discoveryengine.v1betaB\016DataS"
-          + "toreProtoP\001ZQcloud.google.com/go/discove"
-          + "ryengine/apiv1beta/discoveryenginepb;dis"
-          + "coveryenginepb\242\002\017DISCOVERYENGINE\252\002#Googl"
-          + "e.Cloud.DiscoveryEngine.V1Beta\312\002#Google\\"
-          + "Cloud\\DiscoveryEngine\\V1beta\352\002&Google::C"
-          + "loud::DiscoveryEngine::V1betab\006proto3"
+          + "yengine.v1beta.LanguageInfo\022\206\001\n+natural_"
+          + "language_query_understanding_config\030\" \001("
+          + "\0132L.google.cloud.discoveryengine.v1beta."
+          + "NaturalLanguageQueryUnderstandingConfigB"
+          + "\003\340A\001\022a\n\022billing_estimation\030\027 \001(\0132@.googl"
+          + "e.cloud.discoveryengine.v1beta.DataStore"
+          + ".BillingEstimationB\003\340A\003\022N\n\020workspace_con"
+          + "fig\030\031 \001(\01324.google.cloud.discoveryengine"
+          + ".v1beta.WorkspaceConfig\022a\n\032document_proc"
+          + "essing_config\030\033 \001(\0132=.google.cloud.disco"
+          + "veryengine.v1beta.DocumentProcessingConf"
+          + "ig\022D\n\017starting_schema\030\034 \001(\0132+.google.clo"
+          + "ud.discoveryengine.v1beta.Schema\022m\n\031serv"
+          + "ing_config_data_store\030\036 \001(\0132E.google.clo"
+          + "ud.discoveryengine.v1beta.DataStore.Serv"
+          + "ingConfigDataStoreB\003\340A\001\032\256\002\n\021BillingEstim"
+          + "ation\022\034\n\024structured_data_size\030\001 \001(\003\022\036\n\026u"
+          + "nstructured_data_size\030\002 \001(\003\022\031\n\021website_d"
+          + "ata_size\030\003 \001(\003\022?\n\033structured_data_update"
+          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "A\n\035unstructured_data_update_time\030\005 \001(\0132\032"
+          + ".google.protobuf.Timestamp\022<\n\030website_da"
+          + "ta_update_time\030\006 \001(\0132\032.google.protobuf.T"
+          + "imestamp\0326\n\026ServingConfigDataStore\022\034\n\024di"
+          + "sabled_for_serving\030\001 \001(\010\"\177\n\rContentConfi"
+          + "g\022\036\n\032CONTENT_CONFIG_UNSPECIFIED\020\000\022\016\n\nNO_"
+          + "CONTENT\020\001\022\024\n\020CONTENT_REQUIRED\020\002\022\022\n\016PUBLI"
+          + "C_WEBSITE\020\003\022\024\n\020GOOGLE_WORKSPACE\020\004:\311\001\352A\305\001"
+          + "\n(discoveryengine.googleapis.com/DataSto"
+          + "re\022?projects/{project}/locations/{locati"
+          + "on}/dataStores/{data_store}\022Xprojects/{p"
+          + "roject}/locations/{location}/collections"
+          + "/{collection}/dataStores/{data_store}\"x\n"
+          + "\014LanguageInfo\022\025\n\rlanguage_code\030\001 \001(\t\022%\n\030"
+          + "normalized_language_code\030\002 \001(\tB\003\340A\003\022\025\n\010l"
+          + "anguage\030\003 \001(\tB\003\340A\003\022\023\n\006region\030\004 \001(\tB\003\340A\003\""
+          + "\303\001\n\'NaturalLanguageQueryUnderstandingCon"
+          + "fig\022_\n\004mode\030\001 \001(\0162Q.google.cloud.discove"
+          + "ryengine.v1beta.NaturalLanguageQueryUnde"
+          + "rstandingConfig.Mode\"7\n\004Mode\022\024\n\020MODE_UNS"
+          + "PECIFIED\020\000\022\014\n\010DISABLED\020\001\022\013\n\007ENABLED\020\002\"\346\002"
+          + "\n\017WorkspaceConfig\022G\n\004type\030\001 \001(\01629.google"
+          + ".cloud.discoveryengine.v1beta.WorkspaceC"
+          + "onfig.Type\022\032\n\022dasher_customer_id\030\002 \001(\t\022("
+          + "\n\033super_admin_service_account\030\004 \001(\tB\003\340A\001"
+          + "\022&\n\031super_admin_email_address\030\005 \001(\tB\003\340A\001"
+          + "\"\233\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014GOOGL"
+          + "E_DRIVE\020\001\022\017\n\013GOOGLE_MAIL\020\002\022\020\n\014GOOGLE_SIT"
+          + "ES\020\003\022\023\n\017GOOGLE_CALENDAR\020\004\022\017\n\013GOOGLE_CHAT"
+          + "\020\005\022\021\n\rGOOGLE_GROUPS\020\006\022\017\n\013GOOGLE_KEEP\020\007B\225"
+          + "\002\n\'com.google.cloud.discoveryengine.v1be"
+          + "taB\016DataStoreProtoP\001ZQcloud.google.com/g"
+          + "o/discoveryengine/apiv1beta/discoveryeng"
+          + "inepb;discoveryenginepb\242\002\017DISCOVERYENGIN"
+          + "E\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312"
+          + "\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&"
+          + "Google::Cloud::DiscoveryEngine::V1betab\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -114,8 +165,37 @@ public final class DataStoreProto {
               "ContentConfig",
               "CreateTime",
               "LanguageInfo",
+              "NaturalLanguageQueryUnderstandingConfig",
+              "BillingEstimation",
+              "WorkspaceConfig",
               "DocumentProcessingConfig",
               "StartingSchema",
+              "ServingConfigDataStore",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_DataStore_BillingEstimation_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_DataStore_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1beta_DataStore_BillingEstimation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_DataStore_BillingEstimation_descriptor,
+            new java.lang.String[] {
+              "StructuredDataSize",
+              "UnstructuredDataSize",
+              "WebsiteDataSize",
+              "StructuredDataUpdateTime",
+              "UnstructuredDataUpdateTime",
+              "WebsiteDataUpdateTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_DataStore_ServingConfigDataStore_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_DataStore_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1beta_DataStore_ServingConfigDataStore_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_DataStore_ServingConfigDataStore_descriptor,
+            new java.lang.String[] {
+              "DisabledForServing",
             });
     internal_static_google_cloud_discoveryengine_v1beta_LanguageInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -124,6 +204,22 @@ public final class DataStoreProto {
             internal_static_google_cloud_discoveryengine_v1beta_LanguageInfo_descriptor,
             new java.lang.String[] {
               "LanguageCode", "NormalizedLanguageCode", "Language", "Region",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_NaturalLanguageQueryUnderstandingConfig_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_discoveryengine_v1beta_NaturalLanguageQueryUnderstandingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_NaturalLanguageQueryUnderstandingConfig_descriptor,
+            new java.lang.String[] {
+              "Mode",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_WorkspaceConfig_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_discoveryengine_v1beta_WorkspaceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_WorkspaceConfig_descriptor,
+            new java.lang.String[] {
+              "Type", "DasherCustomerId", "SuperAdminServiceAccount", "SuperAdminEmailAddress",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,18 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_devtools_artifactregistry_v1_Version_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 9:
+        return internalGetAnnotations();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -77,7 +89,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the version, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`.
    * If the package or version ID parts contain slashes, the slashes are
    * escaped.
    * </pre>
@@ -103,7 +115,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the version, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`.
    * If the package or version ID parts contain slashes, the slashes are
    * escaped.
    * </pre>
@@ -402,6 +414,113 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
 
+  public static final int ANNOTATIONS_FIELD_NUMBER = 9;
+
+  private static final class AnnotationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.devtools.artifactregistry.v1.VersionProto
+                .internal_static_google_devtools_artifactregistry_v1_Version_AnnotationsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetAnnotations() {
+    if (annotations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+    }
+    return annotations_;
+  }
+
+  public int getAnnotationsCount() {
+    return internalGetAnnotations().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAnnotations(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAnnotations().getMap().containsKey(key);
+  }
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+    return getAnnotationsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+    return internalGetAnnotations().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client specified annotations.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -434,6 +553,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getMetadata());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 9);
     getUnknownFields().writeTo(output);
   }
 
@@ -460,6 +581,16 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMetadata());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAnnotations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+          AnnotationsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, annotations__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -492,6 +623,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -522,6 +654,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (!internalGetAnnotations().getMap().isEmpty()) {
+      hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAnnotations().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -643,6 +779,28 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_devtools_artifactregistry_v1_Version_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetAnnotations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetMutableAnnotations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -700,6 +858,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
+      internalGetMutableAnnotations().clear();
       return this;
     }
 
@@ -768,6 +927,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -864,6 +1027,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -933,6 +1098,18 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 66
+            case 74:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -958,7 +1135,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the version, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`.
      * If the package or version ID parts contain slashes, the slashes are
      * escaped.
      * </pre>
@@ -983,7 +1160,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the version, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`.
      * If the package or version ID parts contain slashes, the slashes are
      * escaped.
      * </pre>
@@ -1008,7 +1185,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the version, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`.
      * If the package or version ID parts contain slashes, the slashes are
      * escaped.
      * </pre>
@@ -1032,7 +1209,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the version, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`.
      * If the package or version ID parts contain slashes, the slashes are
      * escaped.
      * </pre>
@@ -1052,7 +1229,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the version, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`.
      * If the package or version ID parts contain slashes, the slashes are
      * escaped.
      * </pre>
@@ -2142,6 +2319,179 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAnnotations() {
+      if (annotations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      return annotations_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAnnotations() {
+      if (annotations_ == null) {
+        annotations_ =
+            com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!annotations_.isMutable()) {
+        annotations_ = annotations_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return annotations_;
+    }
+
+    public int getAnnotationsCount() {
+      return internalGetAnnotations().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client specified annotations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAnnotations().getMap().containsKey(key);
+    }
+    /** Use {@link #getAnnotationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+      return getAnnotationsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client specified annotations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+      return internalGetAnnotations().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client specified annotations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client specified annotations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableAnnotations().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client specified annotations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAnnotations().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableAnnotations().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client specified annotations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAnnotations(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Client specified annotations.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
+      return this;
     }
 
     @java.lang.Override

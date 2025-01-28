@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -734,6 +734,19 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The database engine major version of the cluster this backup
    * was created from. Any restored cluster created from this backup will have
    * the same database version.
@@ -762,4 +775,97 @@ public interface BackupOrBuilder
    * @return The databaseVersion.
    */
   com.google.cloud.alloydb.v1.DatabaseVersion getDatabaseVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 25 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 25 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 25 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 25 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 25 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }

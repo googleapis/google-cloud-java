@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -879,21 +879,38 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                     "google.longrunning.Operations.CancelOperation",
                     HttpRule.newBuilder()
                         .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=organizations/*/locations/*/operations/*}:cancel")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
                         .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .build());
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -852,7 +852,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param reasoningEngine Required. The ReasoningEngine which replaces the resource on the server.
-   * @param updateMask Required. Mask specifying which fields to update.
+   * @param updateMask Optional. Mask specifying which fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ReasoningEngine, UpdateReasoningEngineOperationMetadata>

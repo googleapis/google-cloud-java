@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -284,6 +284,56 @@ public final class ReservationServiceGrpc {
       }
     }
     return getUpdateReservationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+          com.google.cloud.bigquery.reservation.v1.Reservation>
+      getFailoverReservationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FailoverReservation",
+      requestType = com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.Reservation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+          com.google.cloud.bigquery.reservation.v1.Reservation>
+      getFailoverReservationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+            com.google.cloud.bigquery.reservation.v1.Reservation>
+        getFailoverReservationMethod;
+    if ((getFailoverReservationMethod = ReservationServiceGrpc.getFailoverReservationMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getFailoverReservationMethod = ReservationServiceGrpc.getFailoverReservationMethod)
+            == null) {
+          ReservationServiceGrpc.getFailoverReservationMethod =
+              getFailoverReservationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+                          com.google.cloud.bigquery.reservation.v1.Reservation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FailoverReservation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.Reservation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("FailoverReservation"))
+                      .build();
+        }
+      }
+    }
+    return getFailoverReservationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1225,6 +1275,25 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    default void failoverReservation(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFailoverReservationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new capacity commitment resource.
      * </pre>
      */
@@ -1721,6 +1790,27 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public void failoverReservation(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFailoverReservationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new capacity commitment resource.
      * </pre>
      */
@@ -2202,6 +2292,23 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation failoverReservation(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFailoverReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new capacity commitment resource.
      * </pre>
      */
@@ -2625,6 +2732,25 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.Reservation>
+        failoverReservation(
+            com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFailoverReservationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new capacity commitment resource.
      * </pre>
      */
@@ -2965,22 +3091,23 @@ public final class ReservationServiceGrpc {
   private static final int METHODID_GET_RESERVATION = 2;
   private static final int METHODID_DELETE_RESERVATION = 3;
   private static final int METHODID_UPDATE_RESERVATION = 4;
-  private static final int METHODID_CREATE_CAPACITY_COMMITMENT = 5;
-  private static final int METHODID_LIST_CAPACITY_COMMITMENTS = 6;
-  private static final int METHODID_GET_CAPACITY_COMMITMENT = 7;
-  private static final int METHODID_DELETE_CAPACITY_COMMITMENT = 8;
-  private static final int METHODID_UPDATE_CAPACITY_COMMITMENT = 9;
-  private static final int METHODID_SPLIT_CAPACITY_COMMITMENT = 10;
-  private static final int METHODID_MERGE_CAPACITY_COMMITMENTS = 11;
-  private static final int METHODID_CREATE_ASSIGNMENT = 12;
-  private static final int METHODID_LIST_ASSIGNMENTS = 13;
-  private static final int METHODID_DELETE_ASSIGNMENT = 14;
-  private static final int METHODID_SEARCH_ASSIGNMENTS = 15;
-  private static final int METHODID_SEARCH_ALL_ASSIGNMENTS = 16;
-  private static final int METHODID_MOVE_ASSIGNMENT = 17;
-  private static final int METHODID_UPDATE_ASSIGNMENT = 18;
-  private static final int METHODID_GET_BI_RESERVATION = 19;
-  private static final int METHODID_UPDATE_BI_RESERVATION = 20;
+  private static final int METHODID_FAILOVER_RESERVATION = 5;
+  private static final int METHODID_CREATE_CAPACITY_COMMITMENT = 6;
+  private static final int METHODID_LIST_CAPACITY_COMMITMENTS = 7;
+  private static final int METHODID_GET_CAPACITY_COMMITMENT = 8;
+  private static final int METHODID_DELETE_CAPACITY_COMMITMENT = 9;
+  private static final int METHODID_UPDATE_CAPACITY_COMMITMENT = 10;
+  private static final int METHODID_SPLIT_CAPACITY_COMMITMENT = 11;
+  private static final int METHODID_MERGE_CAPACITY_COMMITMENTS = 12;
+  private static final int METHODID_CREATE_ASSIGNMENT = 13;
+  private static final int METHODID_LIST_ASSIGNMENTS = 14;
+  private static final int METHODID_DELETE_ASSIGNMENT = 15;
+  private static final int METHODID_SEARCH_ASSIGNMENTS = 16;
+  private static final int METHODID_SEARCH_ALL_ASSIGNMENTS = 17;
+  private static final int METHODID_MOVE_ASSIGNMENT = 18;
+  private static final int METHODID_UPDATE_ASSIGNMENT = 19;
+  private static final int METHODID_GET_BI_RESERVATION = 20;
+  private static final int METHODID_UPDATE_BI_RESERVATION = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3026,6 +3153,12 @@ public final class ReservationServiceGrpc {
         case METHODID_UPDATE_RESERVATION:
           serviceImpl.updateReservation(
               (com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>)
+                  responseObserver);
+          break;
+        case METHODID_FAILOVER_RESERVATION:
+          serviceImpl.failoverReservation(
+              (com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>)
                   responseObserver);
           break;
@@ -3184,6 +3317,13 @@ public final class ReservationServiceGrpc {
                     com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest,
                     com.google.cloud.bigquery.reservation.v1.Reservation>(
                     service, METHODID_UPDATE_RESERVATION)))
+        .addMethod(
+            getFailoverReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+                    com.google.cloud.bigquery.reservation.v1.Reservation>(
+                    service, METHODID_FAILOVER_RESERVATION)))
         .addMethod(
             getCreateCapacityCommitmentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3350,6 +3490,7 @@ public final class ReservationServiceGrpc {
                       .addMethod(getGetReservationMethod())
                       .addMethod(getDeleteReservationMethod())
                       .addMethod(getUpdateReservationMethod())
+                      .addMethod(getFailoverReservationMethod())
                       .addMethod(getCreateCapacityCommitmentMethod())
                       .addMethod(getListCapacityCommitmentsMethod())
                       .addMethod(getGetCapacityCommitmentMethod())

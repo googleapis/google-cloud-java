@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -459,6 +459,43 @@ public interface NetworkOrBuilder
    * @return The bytes for networkFirewallPolicyEnforcementOrder.
    */
   com.google.protobuf.ByteString getNetworkFirewallPolicyEnforcementOrderBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name}
+   * </pre>
+   *
+   * <code>optional string network_profile = 173112472;</code>
+   *
+   * @return Whether the networkProfile field is set.
+   */
+  boolean hasNetworkProfile();
+  /**
+   *
+   *
+   * <pre>
+   * A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name}
+   * </pre>
+   *
+   * <code>optional string network_profile = 173112472;</code>
+   *
+   * @return The networkProfile.
+   */
+  java.lang.String getNetworkProfile();
+  /**
+   *
+   *
+   * <pre>
+   * A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name}
+   * </pre>
+   *
+   * <code>optional string network_profile = 173112472;</code>
+   *
+   * @return The bytes for networkProfile.
+   */
+  com.google.protobuf.ByteString getNetworkProfileBytes();
 
   /**
    *

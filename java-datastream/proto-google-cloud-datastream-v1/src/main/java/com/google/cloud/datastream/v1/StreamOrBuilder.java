@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -500,6 +500,50 @@ public interface StreamOrBuilder
    * @return The bytes for customerManagedEncryptionKey.
    */
   com.google.protobuf.ByteString getCustomerManagedEncryptionKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastRecoveryTime field is set.
+   */
+  boolean hasLastRecoveryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastRecoveryTime.
+   */
+  com.google.protobuf.Timestamp getLastRecoveryTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the stream was recovered, the time of the last recovery.
+   * Note: This field is currently experimental.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp last_recovery_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastRecoveryTimeOrBuilder();
 
   com.google.cloud.datastream.v1.Stream.BackfillStrategyCase getBackfillStrategyCase();
 }

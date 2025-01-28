@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,11 +69,12 @@ public final class CustomFieldMessagesProto {
           + "m_field}*\014customFields2\013customField\"S\n\021C"
           + "ustomFieldOption\022#\n\026custom_field_option_"
           + "id\030\001 \001(\003B\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002"
-          + "B\257\001\n\033com.google.ads.admanager.v1B\030Custom"
+          + "B\314\001\n\033com.google.ads.admanager.v1B\030Custom"
           + "FieldMessagesProtoP\001Z@google.golang.org/"
           + "genproto/googleapis/ads/admanager/v1;adm"
           + "anager\252\002\027Google.Ads.AdManager.V1\312\002\027Googl"
-          + "e\\Ads\\AdManager\\V1b\006proto3"
+          + "e\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdMana"
+          + "ger::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

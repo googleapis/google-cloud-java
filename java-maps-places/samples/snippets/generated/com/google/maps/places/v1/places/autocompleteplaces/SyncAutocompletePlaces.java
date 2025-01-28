@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public class SyncAutocompletePlaces {
               .setInputOffset(1010406056)
               .setIncludeQueryPredictions(true)
               .setSessionToken("sessionToken-696552189")
+              .setIncludePureServiceAreaBusinesses(true)
               .build();
       AutocompletePlacesResponse response = placesClient.autocompletePlaces(request);
     }

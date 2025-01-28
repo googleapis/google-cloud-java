@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1379,8 +1379,8 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response of the updated widget.
-   * Used to provide autocomplete options for a widget.
+   * For `selectionInput` widgets, returns autocomplete suggestions for a
+   * multiselect menu.
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.ActionResponse.UpdatedWidget}
@@ -1758,8 +1758,8 @@ public final class ActionResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response of the updated widget.
-     * Used to provide autocomplete options for a widget.
+     * For `selectionInput` widgets, returns autocomplete suggestions for a
+     * multiselect menu.
      * </pre>
      *
      * Protobuf type {@code google.chat.v1.ActionResponse.UpdatedWidget}

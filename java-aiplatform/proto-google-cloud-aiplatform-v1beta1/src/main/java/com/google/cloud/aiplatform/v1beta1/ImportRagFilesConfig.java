@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,7 +129,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     PARTIAL_FAILURE_GCS_SINK(11),
+    @java.lang.Deprecated
     PARTIAL_FAILURE_BIGQUERY_SINK(12),
     PARTIALFAILURESINK_NOT_SET(0);
     private final int value;
@@ -444,13 +446,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The Cloud Storage path to write partial failures to.
+   * Deprecated. Prefer to use `import_result_gcs_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasPartialFailureGcsSink() {
     return partialFailureSinkCase_ == 11;
   }
@@ -459,13 +467,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The Cloud Storage path to write partial failures to.
+   * Deprecated. Prefer to use `import_result_gcs_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.GcsDestination getPartialFailureGcsSink() {
     if (partialFailureSinkCase_ == 11) {
       return (com.google.cloud.aiplatform.v1beta1.GcsDestination) partialFailureSink_;
@@ -477,11 +491,15 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The Cloud Storage path to write partial failures to.
+   * Deprecated. Prefer to use `import_result_gcs_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
       getPartialFailureGcsSinkOrBuilder() {
     if (partialFailureSinkCase_ == 11) {
@@ -497,18 +515,23 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * The BigQuery destination to write partial failures to. It should be a
    * bigquery table resource name (e.g.
-   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-   * exist, it will be created. If the table does not exist, it will be
-   * created with the expected schema. If the table exists, the schema will be
-   * validated and data will be added to this existing table.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * Deprecated. Prefer to use `import_result_bq_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=523
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasPartialFailureBigquerySink() {
     return partialFailureSinkCase_ == 12;
   }
@@ -518,18 +541,23 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * The BigQuery destination to write partial failures to. It should be a
    * bigquery table resource name (e.g.
-   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-   * exist, it will be created. If the table does not exist, it will be
-   * created with the expected schema. If the table exists, the schema will be
-   * validated and data will be added to this existing table.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * Deprecated. Prefer to use `import_result_bq_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=523
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getPartialFailureBigquerySink() {
     if (partialFailureSinkCase_ == 12) {
       return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) partialFailureSink_;
@@ -542,16 +570,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * The BigQuery destination to write partial failures to. It should be a
    * bigquery table resource name (e.g.
-   * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-   * exist, it will be created. If the table does not exist, it will be
-   * created with the expected schema. If the table exists, the schema will be
-   * validated and data will be added to this existing table.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * Deprecated. Prefer to use `import_result_bq_sink`.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
       getPartialFailureBigquerySinkOrBuilder() {
     if (partialFailureSinkCase_ == 12) {
@@ -569,12 +600,16 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=527
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRagFileChunkingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -585,12 +620,16 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=527
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig() {
     return ragFileChunkingConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()
@@ -603,15 +642,76 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * Specifies the size and overlap of chunks after importing RagFiles.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder
       getRagFileChunkingConfigOrBuilder() {
     return ragFileChunkingConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()
         : ragFileChunkingConfig_;
+  }
+
+  public static final int RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER = 16;
+  private com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+      ragFileTransformationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+   * </code>
+   *
+   * @return Whether the ragFileTransformationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagFileTransformationConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+   * </code>
+   *
+   * @return The ragFileTransformationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+      getRagFileTransformationConfig() {
+    return ragFileTransformationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+        : ragFileTransformationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder
+      getRagFileTransformationConfigOrBuilder() {
+    return ragFileTransformationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+        : ragFileTransformationConfig_;
   }
 
   public static final int RAG_FILE_PARSING_CONFIG_FIELD_NUMBER = 8;
@@ -620,25 +720,31 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the parsing config for RagFiles.
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the ragFileParsingConfig field is set.
    */
   @java.lang.Override
   public boolean hasRagFileParsingConfig() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Specifies the parsing config for RagFiles.
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ragFileParsingConfig.
    */
@@ -652,10 +758,13 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Specifies the parsing config for RagFiles.
+   * Optional. Specifies the parsing config for RagFiles.
+   * RAG will use the default parser if this field is not set.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfigOrBuilder
@@ -720,7 +829,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (importSourceCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getRagFileParsingConfig());
     }
     if (partialFailureSinkCase_ == 11) {
@@ -734,6 +843,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (importSourceCase_ == 13) {
       output.writeMessage(
           13, (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(16, getRagFileTransformationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -772,7 +884,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.aiplatform.v1beta1.JiraSource) importSource_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getRagFileParsingConfig());
     }
@@ -790,6 +902,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, getRagFileTransformationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -810,6 +927,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (hasRagFileChunkingConfig() != other.hasRagFileChunkingConfig()) return false;
     if (hasRagFileChunkingConfig()) {
       if (!getRagFileChunkingConfig().equals(other.getRagFileChunkingConfig())) return false;
+    }
+    if (hasRagFileTransformationConfig() != other.hasRagFileTransformationConfig()) return false;
+    if (hasRagFileTransformationConfig()) {
+      if (!getRagFileTransformationConfig().equals(other.getRagFileTransformationConfig()))
+        return false;
     }
     if (hasRagFileParsingConfig() != other.hasRagFileParsingConfig()) return false;
     if (hasRagFileParsingConfig()) {
@@ -862,6 +984,10 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (hasRagFileChunkingConfig()) {
       hash = (37 * hash) + RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagFileChunkingConfig().hashCode();
+    }
+    if (hasRagFileTransformationConfig()) {
+      hash = (37 * hash) + RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagFileTransformationConfig().hashCode();
     }
     if (hasRagFileParsingConfig()) {
       hash = (37 * hash) + RAG_FILE_PARSING_CONFIG_FIELD_NUMBER;
@@ -1047,6 +1173,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRagFileChunkingConfigFieldBuilder();
+        getRagFileTransformationConfigFieldBuilder();
         getRagFileParsingConfigFieldBuilder();
       }
     }
@@ -1080,6 +1207,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
         ragFileChunkingConfigBuilder_ = null;
+      }
+      ragFileTransformationConfig_ = null;
+      if (ragFileTransformationConfigBuilder_ != null) {
+        ragFileTransformationConfigBuilder_.dispose();
+        ragFileTransformationConfigBuilder_ = null;
       }
       ragFileParsingConfig_ = null;
       if (ragFileParsingConfigBuilder_ != null) {
@@ -1137,13 +1269,20 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ragFileTransformationConfig_ =
+            ragFileTransformationConfigBuilder_ == null
+                ? ragFileTransformationConfig_
+                : ragFileTransformationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.ragFileParsingConfig_ =
             ragFileParsingConfigBuilder_ == null
                 ? ragFileParsingConfig_
                 : ragFileParsingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1226,6 +1365,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (other.hasRagFileChunkingConfig()) {
         mergeRagFileChunkingConfig(other.getRagFileChunkingConfig());
+      }
+      if (other.hasRagFileTransformationConfig()) {
+        mergeRagFileTransformationConfig(other.getRagFileTransformationConfig());
       }
       if (other.hasRagFileParsingConfig()) {
         mergeRagFileParsingConfig(other.getRagFileParsingConfig());
@@ -1329,7 +1471,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             case 40:
               {
                 maxEmbeddingRequestsPerMin_ = input.readInt32();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 40
             case 50:
@@ -1348,7 +1490,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getRagFileParsingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 90:
@@ -1372,6 +1514,13 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 importSourceCase_ = 13;
                 break;
               } // case 106
+            case 130:
+              {
+                input.readMessage(
+                    getRagFileTransformationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2525,13 +2674,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasPartialFailureGcsSink() {
       return partialFailureSinkCase_ == 11;
     }
@@ -2540,13 +2695,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=514
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.GcsDestination getPartialFailureGcsSink() {
       if (partialFailureGcsSinkBuilder_ == null) {
         if (partialFailureSinkCase_ == 11) {
@@ -2565,10 +2726,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setPartialFailureGcsSink(
         com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
       if (partialFailureGcsSinkBuilder_ == null) {
@@ -2588,10 +2753,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setPartialFailureGcsSink(
         com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder builderForValue) {
       if (partialFailureGcsSinkBuilder_ == null) {
@@ -2608,10 +2777,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergePartialFailureGcsSink(
         com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
       if (partialFailureGcsSinkBuilder_ == null) {
@@ -2642,10 +2815,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearPartialFailureGcsSink() {
       if (partialFailureGcsSinkBuilder_ == null) {
         if (partialFailureSinkCase_ == 11) {
@@ -2667,10 +2844,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder
         getPartialFailureGcsSinkBuilder() {
       return getPartialFailureGcsSinkFieldBuilder().getBuilder();
@@ -2680,11 +2861,15 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
         getPartialFailureGcsSinkOrBuilder() {
       if ((partialFailureSinkCase_ == 11) && (partialFailureGcsSinkBuilder_ != null)) {
@@ -2701,9 +2886,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The Cloud Storage path to write partial failures to.
+     * Deprecated. Prefer to use `import_result_gcs_sink`.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GcsDestination partial_failure_gcs_sink = 11 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.GcsDestination,
@@ -2741,19 +2929,24 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=523
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasPartialFailureBigquerySink() {
       return partialFailureSinkCase_ == 12;
     }
@@ -2763,19 +2956,24 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=523
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getPartialFailureBigquerySink() {
       if (partialFailureBigquerySinkBuilder_ == null) {
         if (partialFailureSinkCase_ == 12) {
@@ -2795,16 +2993,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPartialFailureBigquerySink(
         com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
       if (partialFailureBigquerySinkBuilder_ == null) {
@@ -2825,16 +3025,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPartialFailureBigquerySink(
         com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder builderForValue) {
       if (partialFailureBigquerySinkBuilder_ == null) {
@@ -2852,16 +3054,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergePartialFailureBigquerySink(
         com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
       if (partialFailureBigquerySinkBuilder_ == null) {
@@ -2893,16 +3097,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearPartialFailureBigquerySink() {
       if (partialFailureBigquerySinkBuilder_ == null) {
         if (partialFailureSinkCase_ == 12) {
@@ -2925,16 +3131,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder
         getPartialFailureBigquerySinkBuilder() {
       return getPartialFailureBigquerySinkFieldBuilder().getBuilder();
@@ -2945,17 +3153,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
         getPartialFailureBigquerySinkOrBuilder() {
       if ((partialFailureSinkCase_ == 12) && (partialFailureBigquerySinkBuilder_ != null)) {
@@ -2973,14 +3183,15 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * <pre>
      * The BigQuery destination to write partial failures to. It should be a
      * bigquery table resource name (e.g.
-     * "bq://projectId.bqDatasetId.bqTableId"). If the dataset id does not
-     * exist, it will be created. If the table does not exist, it will be
-     * created with the expected schema. If the table exists, the schema will be
-     * validated and data will be added to this existing table.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * Deprecated. Prefer to use `import_result_bq_sink`.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12;
+     * .google.cloud.aiplatform.v1beta1.BigQueryDestination partial_failure_bigquery_sink = 12 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3021,11 +3232,15 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=527
      * @return Whether the ragFileChunkingConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRagFileChunkingConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
@@ -3036,11 +3251,15 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=527
      * @return The ragFileChunkingConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig() {
       if (ragFileChunkingConfigBuilder_ == null) {
         return ragFileChunkingConfig_ == null
@@ -3057,9 +3276,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig value) {
       if (ragFileChunkingConfigBuilder_ == null) {
@@ -3081,9 +3302,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder builderForValue) {
       if (ragFileChunkingConfigBuilder_ == null) {
@@ -3102,9 +3325,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig value) {
       if (ragFileChunkingConfigBuilder_ == null) {
@@ -3132,9 +3357,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRagFileChunkingConfig() {
       bitField0_ = (bitField0_ & ~0x00000080);
       ragFileChunkingConfig_ = null;
@@ -3152,9 +3379,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder
         getRagFileChunkingConfigBuilder() {
       bitField0_ |= 0x00000080;
@@ -3168,9 +3397,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder
         getRagFileChunkingConfigOrBuilder() {
       if (ragFileChunkingConfigBuilder_ != null) {
@@ -3188,7 +3419,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * Specifies the size and overlap of chunks after importing RagFiles.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 4 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3208,6 +3440,218 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       return ragFileChunkingConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+        ragFileTransformationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>
+        ragFileTransformationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     *
+     * @return Whether the ragFileTransformationConfig field is set.
+     */
+    public boolean hasRagFileTransformationConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     *
+     * @return The ragFileTransformationConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+        getRagFileTransformationConfig() {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        return ragFileTransformationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+            : ragFileTransformationConfig_;
+      } else {
+        return ragFileTransformationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     */
+    public Builder setRagFileTransformationConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig value) {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragFileTransformationConfig_ = value;
+      } else {
+        ragFileTransformationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     */
+    public Builder setRagFileTransformationConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder builderForValue) {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        ragFileTransformationConfig_ = builderForValue.build();
+      } else {
+        ragFileTransformationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     */
+    public Builder mergeRagFileTransformationConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig value) {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && ragFileTransformationConfig_ != null
+            && ragFileTransformationConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+                    .getDefaultInstance()) {
+          getRagFileTransformationConfigBuilder().mergeFrom(value);
+        } else {
+          ragFileTransformationConfig_ = value;
+        }
+      } else {
+        ragFileTransformationConfigBuilder_.mergeFrom(value);
+      }
+      if (ragFileTransformationConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     */
+    public Builder clearRagFileTransformationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ragFileTransformationConfig_ = null;
+      if (ragFileTransformationConfigBuilder_ != null) {
+        ragFileTransformationConfigBuilder_.dispose();
+        ragFileTransformationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder
+        getRagFileTransformationConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getRagFileTransformationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder
+        getRagFileTransformationConfigOrBuilder() {
+      if (ragFileTransformationConfigBuilder_ != null) {
+        return ragFileTransformationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragFileTransformationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+            : ragFileTransformationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 16;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>
+        getRagFileTransformationConfigFieldBuilder() {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        ragFileTransformationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig,
+                com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>(
+                getRagFileTransformationConfig(), getParentForChildren(), isClean());
+        ragFileTransformationConfig_ = null;
+      }
+      return ragFileTransformationConfigBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig ragFileParsingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig,
@@ -3218,25 +3662,29 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the ragFileParsingConfig field is set.
      */
     public boolean hasRagFileParsingConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The ragFileParsingConfig.
@@ -3254,10 +3702,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setRagFileParsingConfig(
@@ -3270,7 +3720,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileParsingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3278,10 +3728,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setRagFileParsingConfig(
@@ -3291,7 +3743,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileParsingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3299,16 +3751,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeRagFileParsingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig value) {
       if (ragFileParsingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && ragFileParsingConfig_ != null
             && ragFileParsingConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.getDefaultInstance()) {
@@ -3320,7 +3774,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileParsingConfigBuilder_.mergeFrom(value);
       }
       if (ragFileParsingConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3329,14 +3783,16 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearRagFileParsingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ragFileParsingConfig_ = null;
       if (ragFileParsingConfigBuilder_ != null) {
         ragFileParsingConfigBuilder_.dispose();
@@ -3349,15 +3805,17 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.Builder
         getRagFileParsingConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getRagFileParsingConfigFieldBuilder().getBuilder();
     }
@@ -3365,10 +3823,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfigOrBuilder
@@ -3385,10 +3845,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Specifies the parsing config for RagFiles.
+     * Optional. Specifies the parsing config for RagFiles.
+     * RAG will use the default parser if this field is not set.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileParsingConfig rag_file_parsing_config = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3449,7 +3911,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setMaxEmbeddingRequestsPerMin(int value) {
 
       maxEmbeddingRequestsPerMin_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3470,7 +3932,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxEmbeddingRequestsPerMin() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       maxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;

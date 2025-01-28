@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,7 +111,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * dataCatalogSettingsBuilder
@@ -314,6 +314,22 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
   public OperationCallSettings<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
       importEntriesOperationSettings() {
     return ((DataCatalogStubSettings) getStubSettings()).importEntriesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setConfig. */
+  public UnaryCallSettings<SetConfigRequest, MigrationConfig> setConfigSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).setConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to retrieveConfig. */
+  public UnaryCallSettings<RetrieveConfigRequest, OrganizationConfig> retrieveConfigSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).retrieveConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to retrieveEffectiveConfig. */
+  public UnaryCallSettings<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigSettings() {
+    return ((DataCatalogStubSettings) getStubSettings()).retrieveEffectiveConfigSettings();
   }
 
   public static final DataCatalogSettings create(DataCatalogStubSettings stub) throws IOException {
@@ -629,6 +645,23 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
             ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
         importEntriesOperationSettings() {
       return getStubSettingsBuilder().importEntriesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setConfig. */
+    public UnaryCallSettings.Builder<SetConfigRequest, MigrationConfig> setConfigSettings() {
+      return getStubSettingsBuilder().setConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveConfig. */
+    public UnaryCallSettings.Builder<RetrieveConfigRequest, OrganizationConfig>
+        retrieveConfigSettings() {
+      return getStubSettingsBuilder().retrieveConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveEffectiveConfig. */
+    public UnaryCallSettings.Builder<RetrieveEffectiveConfigRequest, MigrationConfig>
+        retrieveEffectiveConfigSettings() {
+      return getStubSettingsBuilder().retrieveEffectiveConfigSettings();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,7 +109,7 @@ public interface RetrievalOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Retrieval.disable_attribution is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/tool.proto;l=177
+   *     google/cloud/aiplatform/v1beta1/tool.proto;l=253
    * @return The disableAttribution.
    */
   @java.lang.Deprecated

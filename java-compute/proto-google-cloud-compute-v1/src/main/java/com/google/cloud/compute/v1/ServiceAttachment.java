@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1107,6 +1107,39 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int PROPAGATED_CONNECTION_LIMIT_FIELD_NUMBER = 332719230;
+  private int propagatedConnectionLimit_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_limit = 332719230;</code>
+   *
+   * @return Whether the propagatedConnectionLimit field is set.
+   */
+  @java.lang.Override
+  public boolean hasPropagatedConnectionLimit() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+   * </pre>
+   *
+   * <code>optional uint32 propagated_connection_limit = 332719230;</code>
+   *
+   * @return The propagatedConnectionLimit.
+   */
+  @java.lang.Override
+  public int getPropagatedConnectionLimit() {
+    return propagatedConnectionLimit_;
+  }
+
   public static final int PSC_SERVICE_ATTACHMENT_ID_FIELD_NUMBER = 527695214;
   private com.google.cloud.compute.v1.Uint128 pscServiceAttachmentId_;
   /**
@@ -1122,7 +1155,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPscServiceAttachmentId() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1172,7 +1205,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasReconcileConnections() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1207,7 +1240,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1273,7 +1306,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1339,7 +1372,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasTargetService() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1405,7 +1438,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1293831, targetService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1423,10 +1456,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < connectedEndpoints_.size(); i++) {
       output.writeMessage(72223688, connectedEndpoints_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeBool(125493732, reconcileConnections_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     for (int i = 0; i < consumerRejectLists_.size(); i++) {
@@ -1443,6 +1476,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 285818076, connectionPreference_);
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeUInt32(332719230, propagatedConnectionLimit_);
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(363791237, enableProxyProtocol_);
     }
@@ -1455,10 +1491,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(527695214, getPscServiceAttachmentId());
     }
     getUnknownFields().writeTo(output);
@@ -1473,7 +1509,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1293831, targetService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1499,11 +1535,11 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               72223688, connectedEndpoints_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(125493732, reconcileConnections_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     {
@@ -1527,6 +1563,11 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               285818076, connectionPreference_);
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeUInt32Size(
+              332719230, propagatedConnectionLimit_);
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(363791237, enableProxyProtocol_);
@@ -1547,10 +1588,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               527695214, getPscServiceAttachmentId());
@@ -1611,6 +1652,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasProducerForwardingRule() != other.hasProducerForwardingRule()) return false;
     if (hasProducerForwardingRule()) {
       if (!getProducerForwardingRule().equals(other.getProducerForwardingRule())) return false;
+    }
+    if (hasPropagatedConnectionLimit() != other.hasPropagatedConnectionLimit()) return false;
+    if (hasPropagatedConnectionLimit()) {
+      if (getPropagatedConnectionLimit() != other.getPropagatedConnectionLimit()) return false;
     }
     if (hasPscServiceAttachmentId() != other.hasPscServiceAttachmentId()) return false;
     if (hasPscServiceAttachmentId()) {
@@ -1698,6 +1743,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasProducerForwardingRule()) {
       hash = (37 * hash) + PRODUCER_FORWARDING_RULE_FIELD_NUMBER;
       hash = (53 * hash) + getProducerForwardingRule().hashCode();
+    }
+    if (hasPropagatedConnectionLimit()) {
+      hash = (37 * hash) + PROPAGATED_CONNECTION_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getPropagatedConnectionLimit();
     }
     if (hasPscServiceAttachmentId()) {
       hash = (37 * hash) + PSC_SERVICE_ATTACHMENT_ID_FIELD_NUMBER;
@@ -1895,6 +1944,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       name_ = "";
       natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       producerForwardingRule_ = "";
+      propagatedConnectionLimit_ = 0;
       pscServiceAttachmentId_ = null;
       if (pscServiceAttachmentIdBuilder_ != null) {
         pscServiceAttachmentIdBuilder_.dispose();
@@ -2012,27 +2062,31 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.propagatedConnectionLimit_ = propagatedConnectionLimit_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.pscServiceAttachmentId_ =
             pscServiceAttachmentIdBuilder_ == null
                 ? pscServiceAttachmentId_
                 : pscServiceAttachmentIdBuilder_.build();
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.reconcileConnections_ = reconcileConnections_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.region_ = region_;
+        result.reconcileConnections_ = reconcileConnections_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.targetService_ = targetService_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.targetService_ = targetService_;
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2207,6 +2261,9 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00002000;
         onChanged();
       }
+      if (other.hasPropagatedConnectionLimit()) {
+        setPropagatedConnectionLimit(other.getPropagatedConnectionLimit());
+      }
       if (other.hasPscServiceAttachmentId()) {
         mergePscServiceAttachmentId(other.getPscServiceAttachmentId());
       }
@@ -2215,17 +2272,17 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasTargetService()) {
         targetService_ = other.targetService_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2263,7 +2320,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 10350650:
               {
                 targetService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 10350650
             case 26336418:
@@ -2308,13 +2365,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 1003949856:
               {
                 reconcileConnections_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1003949856
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1111570338
             case 1632265458:
@@ -2342,6 +2399,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000002;
                 break;
               } // case -2008422686
+            case -1633213456:
+              {
+                propagatedConnectionLimit_ = input.readUInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case -1633213456
             case -1384637400:
               {
                 enableProxyProtocol_ = input.readBool();
@@ -2378,14 +2441,14 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -645248918
             case -73405582:
               {
                 input.readMessage(
                     getPscServiceAttachmentIdFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -73405582
             default:
@@ -4729,6 +4792,74 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int propagatedConnectionLimit_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_limit = 332719230;</code>
+     *
+     * @return Whether the propagatedConnectionLimit field is set.
+     */
+    @java.lang.Override
+    public boolean hasPropagatedConnectionLimit() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_limit = 332719230;</code>
+     *
+     * @return The propagatedConnectionLimit.
+     */
+    @java.lang.Override
+    public int getPropagatedConnectionLimit() {
+      return propagatedConnectionLimit_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_limit = 332719230;</code>
+     *
+     * @param value The propagatedConnectionLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropagatedConnectionLimit(int value) {
+
+      propagatedConnectionLimit_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
+     * </pre>
+     *
+     * <code>optional uint32 propagated_connection_limit = 332719230;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPropagatedConnectionLimit() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      propagatedConnectionLimit_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.Uint128 pscServiceAttachmentId_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Uint128,
@@ -4747,7 +4878,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the pscServiceAttachmentId field is set.
      */
     public boolean hasPscServiceAttachmentId() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4787,7 +4918,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4807,7 +4938,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4822,7 +4953,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePscServiceAttachmentId(com.google.cloud.compute.v1.Uint128 value) {
       if (pscServiceAttachmentIdBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && pscServiceAttachmentId_ != null
             && pscServiceAttachmentId_
                 != com.google.cloud.compute.v1.Uint128.getDefaultInstance()) {
@@ -4834,7 +4965,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         pscServiceAttachmentIdBuilder_.mergeFrom(value);
       }
       if (pscServiceAttachmentId_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4849,7 +4980,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public Builder clearPscServiceAttachmentId() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       pscServiceAttachmentId_ = null;
       if (pscServiceAttachmentIdBuilder_ != null) {
         pscServiceAttachmentIdBuilder_.dispose();
@@ -4868,7 +4999,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public com.google.cloud.compute.v1.Uint128.Builder getPscServiceAttachmentIdBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getPscServiceAttachmentIdFieldBuilder().getBuilder();
     }
@@ -4930,7 +5061,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasReconcileConnections() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4962,7 +5093,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder setReconcileConnections(boolean value) {
 
       reconcileConnections_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4978,7 +5109,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearReconcileConnections() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       reconcileConnections_ = false;
       onChanged();
       return this;
@@ -4997,7 +5128,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -5060,7 +5191,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5077,7 +5208,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5099,7 +5230,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5117,7 +5248,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5180,7 +5311,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5197,7 +5328,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5219,7 +5350,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5237,7 +5368,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the targetService field is set.
      */
     public boolean hasTargetService() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -5300,7 +5431,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       targetService_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5317,7 +5448,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTargetService() {
       targetService_ = getDefaultInstance().getTargetService();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -5339,7 +5470,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       targetService_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,7 +236,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListResources</td>
- *      <td><p> Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.</td>
+ *      <td><p> Lists [Resources][google.cloud.config.v1.Resource] in a given revision.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1845,7 +1845,7 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+   * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
    *
    * <p>Sample code:
    *
@@ -1879,7 +1879,7 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+   * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
    *
    * <p>Sample code:
    *
@@ -1910,7 +1910,7 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+   * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
    *
    * <p>Sample code:
    *
@@ -1946,7 +1946,7 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+   * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
    *
    * <p>Sample code:
    *
@@ -1982,7 +1982,7 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists [Resource][google.cloud.config.v1.Resource]s in a given revision.
+   * Lists [Resources][google.cloud.config.v1.Resource] in a given revision.
    *
    * <p>Sample code:
    *

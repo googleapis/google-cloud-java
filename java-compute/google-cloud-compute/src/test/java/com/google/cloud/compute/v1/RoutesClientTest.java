@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,8 +165,11 @@ public class RoutesClientTest {
             .setNextHopHub("nextHopHub-1583649601")
             .setNextHopIlb("nextHopIlb-1583648919")
             .setNextHopInstance("nextHopInstance-776074485")
+            .setNextHopInterRegionCost(-1586170733)
             .setNextHopIp("nextHopIp1195840541")
+            .setNextHopMed(-1948800118)
             .setNextHopNetwork("nextHopNetwork2077637880")
+            .setNextHopOrigin("nextHopOrigin1908427548")
             .setNextHopPeering("nextHopPeering-456329718")
             .setNextHopVpnTunnel("nextHopVpnTunnel2134841030")
             .setPriority(-1165461084)

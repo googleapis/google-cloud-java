@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     IN_LIST_FILTER(3),
     NUMERIC_FILTER(4),
     BETWEEN_FILTER(5),
+    EMPTY_FILTER(6),
     ONEFILTER_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           return NUMERIC_FILTER;
         case 5:
           return BETWEEN_FILTER;
+        case 6:
+          return EMPTY_FILTER;
         case 0:
           return ONEFILTER_NOT_SET;
         default:
@@ -375,6 +378,57 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     return com.google.analytics.data.v1alpha.BetweenFilter.getDefaultInstance();
   }
 
+  public static final int EMPTY_FILTER_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+   *
+   * @return Whether the emptyFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmptyFilter() {
+    return oneFilterCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+   *
+   * @return The emptyFilter.
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.EmptyFilter getEmptyFilter() {
+    if (oneFilterCase_ == 6) {
+      return (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_;
+    }
+    return com.google.analytics.data.v1alpha.EmptyFilter.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.EmptyFilterOrBuilder getEmptyFilterOrBuilder() {
+    if (oneFilterCase_ == 6) {
+      return (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_;
+    }
+    return com.google.analytics.data.v1alpha.EmptyFilter.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -403,6 +457,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
     if (oneFilterCase_ == 5) {
       output.writeMessage(5, (com.google.analytics.data.v1alpha.BetweenFilter) oneFilter_);
+    }
+    if (oneFilterCase_ == 6) {
+      output.writeMessage(6, (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -436,6 +493,11 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.analytics.data.v1alpha.BetweenFilter) oneFilter_);
     }
+    if (oneFilterCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -465,6 +527,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getBetweenFilter().equals(other.getBetweenFilter())) return false;
+        break;
+      case 6:
+        if (!getEmptyFilter().equals(other.getEmptyFilter())) return false;
         break;
       case 0:
       default:
@@ -498,6 +563,10 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + BETWEEN_FILTER_FIELD_NUMBER;
         hash = (53 * hash) + getBetweenFilter().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + EMPTY_FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getEmptyFilter().hashCode();
         break;
       case 0:
       default:
@@ -654,6 +723,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (betweenFilterBuilder_ != null) {
         betweenFilterBuilder_.clear();
       }
+      if (emptyFilterBuilder_ != null) {
+        emptyFilterBuilder_.clear();
+      }
       oneFilterCase_ = 0;
       oneFilter_ = null;
       return this;
@@ -712,6 +784,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       if (oneFilterCase_ == 5 && betweenFilterBuilder_ != null) {
         result.oneFilter_ = betweenFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 6 && emptyFilterBuilder_ != null) {
+        result.oneFilter_ = emptyFilterBuilder_.build();
       }
     }
 
@@ -786,6 +861,11 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             mergeBetweenFilter(other.getBetweenFilter());
             break;
           }
+        case EMPTY_FILTER:
+          {
+            mergeEmptyFilter(other.getEmptyFilter());
+            break;
+          }
         case ONEFILTER_NOT_SET:
           {
             break;
@@ -847,6 +927,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
                 oneFilterCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getEmptyFilterFieldBuilder().getBuilder(), extensionRegistry);
+                oneFilterCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1825,6 +1911,215 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       oneFilterCase_ = 5;
       onChanged();
       return betweenFilterBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.analytics.data.v1alpha.EmptyFilter,
+            com.google.analytics.data.v1alpha.EmptyFilter.Builder,
+            com.google.analytics.data.v1alpha.EmptyFilterOrBuilder>
+        emptyFilterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     *
+     * @return Whether the emptyFilter field is set.
+     */
+    @java.lang.Override
+    public boolean hasEmptyFilter() {
+      return oneFilterCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     *
+     * @return The emptyFilter.
+     */
+    @java.lang.Override
+    public com.google.analytics.data.v1alpha.EmptyFilter getEmptyFilter() {
+      if (emptyFilterBuilder_ == null) {
+        if (oneFilterCase_ == 6) {
+          return (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_;
+        }
+        return com.google.analytics.data.v1alpha.EmptyFilter.getDefaultInstance();
+      } else {
+        if (oneFilterCase_ == 6) {
+          return emptyFilterBuilder_.getMessage();
+        }
+        return com.google.analytics.data.v1alpha.EmptyFilter.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     */
+    public Builder setEmptyFilter(com.google.analytics.data.v1alpha.EmptyFilter value) {
+      if (emptyFilterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        oneFilter_ = value;
+        onChanged();
+      } else {
+        emptyFilterBuilder_.setMessage(value);
+      }
+      oneFilterCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     */
+    public Builder setEmptyFilter(
+        com.google.analytics.data.v1alpha.EmptyFilter.Builder builderForValue) {
+      if (emptyFilterBuilder_ == null) {
+        oneFilter_ = builderForValue.build();
+        onChanged();
+      } else {
+        emptyFilterBuilder_.setMessage(builderForValue.build());
+      }
+      oneFilterCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     */
+    public Builder mergeEmptyFilter(com.google.analytics.data.v1alpha.EmptyFilter value) {
+      if (emptyFilterBuilder_ == null) {
+        if (oneFilterCase_ == 6
+            && oneFilter_ != com.google.analytics.data.v1alpha.EmptyFilter.getDefaultInstance()) {
+          oneFilter_ =
+              com.google.analytics.data.v1alpha.EmptyFilter.newBuilder(
+                      (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          oneFilter_ = value;
+        }
+        onChanged();
+      } else {
+        if (oneFilterCase_ == 6) {
+          emptyFilterBuilder_.mergeFrom(value);
+        } else {
+          emptyFilterBuilder_.setMessage(value);
+        }
+      }
+      oneFilterCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     */
+    public Builder clearEmptyFilter() {
+      if (emptyFilterBuilder_ == null) {
+        if (oneFilterCase_ == 6) {
+          oneFilterCase_ = 0;
+          oneFilter_ = null;
+          onChanged();
+        }
+      } else {
+        if (oneFilterCase_ == 6) {
+          oneFilterCase_ = 0;
+          oneFilter_ = null;
+        }
+        emptyFilterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     */
+    public com.google.analytics.data.v1alpha.EmptyFilter.Builder getEmptyFilterBuilder() {
+      return getEmptyFilterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.data.v1alpha.EmptyFilterOrBuilder getEmptyFilterOrBuilder() {
+      if ((oneFilterCase_ == 6) && (emptyFilterBuilder_ != null)) {
+        return emptyFilterBuilder_.getMessageOrBuilder();
+      } else {
+        if (oneFilterCase_ == 6) {
+          return (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_;
+        }
+        return com.google.analytics.data.v1alpha.EmptyFilter.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A filter for empty values such as "(not set)" and "" values.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.analytics.data.v1alpha.EmptyFilter,
+            com.google.analytics.data.v1alpha.EmptyFilter.Builder,
+            com.google.analytics.data.v1alpha.EmptyFilterOrBuilder>
+        getEmptyFilterFieldBuilder() {
+      if (emptyFilterBuilder_ == null) {
+        if (!(oneFilterCase_ == 6)) {
+          oneFilter_ = com.google.analytics.data.v1alpha.EmptyFilter.getDefaultInstance();
+        }
+        emptyFilterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.analytics.data.v1alpha.EmptyFilter,
+                com.google.analytics.data.v1alpha.EmptyFilter.Builder,
+                com.google.analytics.data.v1alpha.EmptyFilterOrBuilder>(
+                (com.google.analytics.data.v1alpha.EmptyFilter) oneFilter_,
+                getParentForChildren(),
+                isClean());
+        oneFilter_ = null;
+      }
+      oneFilterCase_ = 6;
+      onChanged();
+      return emptyFilterBuilder_;
     }
 
     @java.lang.Override

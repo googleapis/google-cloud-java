@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -238,7 +238,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1547
+   *     google/container/v1/cluster_service.proto;l=1649
    * @return The enabled.
    */
   @java.lang.Override
@@ -664,7 +664,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1547
+     *     google/container/v1/cluster_service.proto;l=1649
      * @return The enabled.
      */
     @java.lang.Override
@@ -684,7 +684,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1547
+     *     google/container/v1/cluster_service.proto;l=1649
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -708,7 +708,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1547
+     *     google/container/v1/cluster_service.proto;l=1649
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

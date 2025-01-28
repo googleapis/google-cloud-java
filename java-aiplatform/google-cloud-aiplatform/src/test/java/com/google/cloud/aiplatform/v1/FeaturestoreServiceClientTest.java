@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1870,6 +1870,54 @@ public class FeaturestoreServiceClientTest {
             .build();
     mockFeaturestoreService.addResponse(resultOperation);
 
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+    List<CreateFeatureRequest> requests = new ArrayList<>();
+
+    BatchCreateFeaturesResponse actualResponse =
+        client.batchCreateFeaturesAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateFeaturesRequest actualRequest = ((BatchCreateFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateFeaturesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      List<CreateFeatureRequest> requests = new ArrayList<>();
+      client.batchCreateFeaturesAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchCreateFeaturesTest3() throws Exception {
+    BatchCreateFeaturesResponse expectedResponse =
+        BatchCreateFeaturesResponse.newBuilder().addAllFeatures(new ArrayList<Feature>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateFeaturesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
     String parent = "parent-995424086";
     List<CreateFeatureRequest> requests = new ArrayList<>();
 
@@ -1890,7 +1938,7 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void batchCreateFeaturesExceptionTest2() throws Exception {
+  public void batchCreateFeaturesExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockFeaturestoreService.addException(exception);
 

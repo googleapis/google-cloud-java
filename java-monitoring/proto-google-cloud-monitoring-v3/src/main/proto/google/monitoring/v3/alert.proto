@@ -23,6 +23,7 @@ import "google/monitoring/v3/mutation_record.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/wrappers.proto";
 import "google/rpc/status.proto";
+import "google/type/timeofday.proto";
 
 option csharp_namespace = "Google.Cloud.Monitoring.V3";
 option go_package = "cloud.google.com/go/monitoring/apiv3/v2/monitoringpb;monitoringpb";
@@ -34,7 +35,7 @@ option ruby_package = "Google::Cloud::Monitoring::V3";
 
 // A description of the conditions under which some aspect of your system is
 // considered to be "unhealthy" and the ways to notify people or services about
-// this state. For an overview of alert policies, see
+// this state. For an overview of alerting policies, see
 // [Introduction to Alerting](https://cloud.google.com/monitoring/alerts/).
 //
 message AlertPolicy {
@@ -67,7 +68,7 @@ message AlertPolicy {
     // The content may not exceed 8,192 Unicode characters and may not exceed
     // more than 10,240 bytes when encoded in UTF-8 format, whichever is
     // smaller. This text can be [templatized by using
-    // variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+    // variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
     string content = 1;
 
     // The format of the `content` field. Presently, only the value
@@ -85,7 +86,7 @@ message AlertPolicy {
     // it is common to define textual fields in databases as VARCHAR(255).
     //
     // The contents of the subject line can be [templatized by using
-    // variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+    // variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
     // If this field is missing or empty, a default subject line will be
     // generated.
     string subject = 3 [(google.api.field_behavior) = OPTIONAL];
@@ -323,7 +324,7 @@ message AlertPolicy {
       map<string, string> label_extractors = 2;
     }
 
-    // A condition type that allows alert policies to be defined using
+    // A condition type that allows alerting policies to be defined using
     // [Monitoring Query Language](https://cloud.google.com/monitoring/mql).
     message MonitoringQueryLanguageCondition {
       // [Monitoring Query Language](https://cloud.google.com/monitoring/mql)
@@ -355,7 +356,7 @@ message AlertPolicy {
       EvaluationMissingData evaluation_missing_data = 4;
     }
 
-    // A condition type that allows alert policies to be defined using
+    // A condition type that allows alerting policies to be defined using
     // [Prometheus Query Language
     // (PromQL)](https://prometheus.io/docs/prometheus/latest/querying/basics/).
     //
@@ -414,7 +415,7 @@ message AlertPolicy {
       // Label names [must be
       // valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
       // Label values can be [templatized by using
-      // variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+      // variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
       // The only available variable names are the names of the labels in the
       // PromQL result, including "__name__" and "value". "labels" may be empty.
       map<string, string> labels = 4 [(google.api.field_behavior) = OPTIONAL];
@@ -447,6 +448,115 @@ message AlertPolicy {
       // name](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
       // This field may not exceed 2048 Unicode characters in length.
       string alert_rule = 6 [(google.api.field_behavior) = OPTIONAL];
+
+      // Optional. Whether to disable metric existence validation for this
+      // condition.
+      //
+      // This allows alerting policies to be defined on metrics that do not yet
+      // exist, improving advanced customer workflows such as configuring
+      // alerting policies using Terraform.
+      //
+      // Users with the `monitoring.alertPolicyViewer` role are able to see the
+      // name of the non-existent metric in the alerting policy condition.
+      bool disable_metric_validation = 7
+          [(google.api.field_behavior) = OPTIONAL];
+    }
+
+    // A condition that allows alerting policies to be defined using GoogleSQL.
+    // SQL conditions examine a sliding window of logs using GoogleSQL.
+    // Alert policies with SQL conditions may incur additional billing.
+    message SqlCondition {
+      // Used to schedule the query to run every so many minutes.
+      message Minutes {
+        // Required. Number of minutes between runs. The interval must be
+        // greater than or equal to 5 minutes and less than or equal to 1440
+        // minutes.
+        int32 periodicity = 1 [(google.api.field_behavior) = REQUIRED];
+      }
+
+      // Used to schedule the query to run every so many hours.
+      message Hourly {
+        // Required. The number of hours between runs. Must be greater than or
+        // equal to 1 hour and less than or equal to 48 hours.
+        int32 periodicity = 1 [(google.api.field_behavior) = REQUIRED];
+
+        // Optional. The number of minutes after the hour (in UTC) to run the
+        // query. Must be greater than or equal to 0 minutes and less than or
+        // equal to 59 minutes.  If left unspecified, then an arbitrary offset
+        // is used.
+        optional int32 minute_offset = 2
+            [(google.api.field_behavior) = OPTIONAL];
+      }
+
+      // Used to schedule the query to run every so many days.
+      message Daily {
+        // Required. The number of days between runs. Must be greater than or
+        // equal to 1 day and less than or equal to 31 days.
+        int32 periodicity = 1 [(google.api.field_behavior) = REQUIRED];
+
+        // Optional. The time of day (in UTC) at which the query should run. If
+        // left unspecified, the server picks an arbitrary time of day and runs
+        // the query at the same time each day.
+        google.type.TimeOfDay execution_time = 2
+            [(google.api.field_behavior) = OPTIONAL];
+      }
+
+      // A test that checks if the number of rows in the result set
+      // violates some threshold.
+      message RowCountTest {
+        // Required. The comparison to apply between the number of rows returned
+        // by the query and the threshold.
+        ComparisonType comparison = 1 [(google.api.field_behavior) = REQUIRED];
+
+        // Required. The value against which to compare the row count.
+        int64 threshold = 2 [(google.api.field_behavior) = REQUIRED];
+      }
+
+      // A test that uses an alerting result in a boolean column produced by
+      // the SQL query.
+      message BooleanTest {
+        // Required. The name of the column containing the boolean value. If the
+        // value in a row is NULL, that row is ignored.
+        string column = 1 [(google.api.field_behavior) = REQUIRED];
+      }
+
+      // Required. The Log Analytics SQL query to run, as a string.  The query
+      // must conform to the required shape. Specifically, the query must not
+      // try to filter the input by time.  A filter will automatically be
+      // applied to filter the input so that the query receives all rows
+      // received since the last time the query was run.
+      //
+      // For example, the following query extracts all log entries containing an
+      // HTTP request:
+      //
+      //     SELECT
+      //       timestamp, log_name, severity, http_request, resource, labels
+      //     FROM
+      //       my-project.global._Default._AllLogs
+      //     WHERE
+      //       http_request IS NOT NULL
+      string query = 1 [(google.api.field_behavior) = REQUIRED];
+
+      // The schedule indicates how often the query should be run.
+      oneof schedule {
+        // Schedule the query to execute every so many minutes.
+        Minutes minutes = 2;
+
+        // Schedule the query to execute every so many hours.
+        Hourly hourly = 3;
+
+        // Schedule the query to execute every so many days.
+        Daily daily = 4;
+      }
+
+      // The test to be run against the SQL result set.
+      oneof evaluate {
+        // Test the row count against a threshold.
+        RowCountTest row_count_test = 5;
+
+        // Test the boolean value in the indicated column.
+        BooleanTest boolean_test = 6;
+      }
     }
 
     // Required if the condition exists. The unique resource name for this
@@ -500,6 +610,9 @@ message AlertPolicy {
 
       // A condition that uses the Prometheus query language to define alerts.
       PrometheusQueryLanguageCondition condition_prometheus_query_language = 21;
+
+      // A condition that periodically evaluates a SQL query result.
+      SqlCondition condition_sql = 22;
     }
   }
 
@@ -527,11 +640,23 @@ message AlertPolicy {
   // Control over how the notification channels in `notification_channels`
   // are notified when this alert fires.
   message AlertStrategy {
-    // Control over the rate of notifications sent to this alert policy's
+    // Control over the rate of notifications sent to this alerting policy's
     // notification channels.
     message NotificationRateLimit {
       // Not more than one notification per `period`.
       google.protobuf.Duration period = 1;
+    }
+
+    // Control when notifications will be sent out.
+    enum NotificationPrompt {
+      // No strategy specified. Treated as error.
+      NOTIFICATION_PROMPT_UNSPECIFIED = 0;
+
+      // Notify when an incident is opened.
+      OPENED = 1;
+
+      // Notify when an incident is closed.
+      CLOSED = 3;
     }
 
     // Control over how the notification channels in `notification_channels`
@@ -551,12 +676,19 @@ message AlertPolicy {
       google.protobuf.Duration renotify_interval = 2;
     }
 
-    // Required for alert policies with a `LogMatch` condition.
+    // Required for log-based alerting policies, i.e. policies with a `LogMatch`
+    // condition.
     //
-    // This limit is not implemented for alert policies that are not log-based.
+    // This limit is not implemented for alerting policies that do not have
+    // a LogMatch condition.
     NotificationRateLimit notification_rate_limit = 1;
 
-    // If an alert policy that was active has no data for this long, any open
+    // For log-based alert policies, the notification prompts is always
+    // [OPENED]. For non log-based alert policies, the notification prompts can
+    // be [OPENED] or [OPENED, CLOSED].
+    repeated NotificationPrompt notification_prompts = 2;
+
+    // If an alerting policy that was active has no data for this long, any open
     // incidents will close
     google.protobuf.Duration auto_close = 3;
 
@@ -564,7 +696,7 @@ message AlertPolicy {
     repeated NotificationChannelStrategy notification_channel_strategy = 4;
   }
 
-  // An enumeration of possible severity level for an Alert Policy.
+  // An enumeration of possible severity level for an alerting policy.
   enum Severity {
     // No severity is specified. This is the default value.
     SEVERITY_UNSPECIFIED = 0;
@@ -583,8 +715,8 @@ message AlertPolicy {
     WARNING = 3;
   }
 
-  // Required if the policy exists. The resource name for this policy. The
-  // format is:
+  // Identifier. Required if the policy exists. The resource name for this
+  // policy. The format is:
   //
   //     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
   //
@@ -593,7 +725,7 @@ message AlertPolicy {
   // [alertPolicies.create][google.monitoring.v3.AlertPolicyService.CreateAlertPolicy]
   // method, do not include the `name` field in the alerting policy passed as
   // part of the request.
-  string name = 1;
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // A short name or phrase used to identify the policy in dashboards,
   // notifications, and incidents. To avoid confusion, don't use the same
@@ -653,9 +785,9 @@ message AlertPolicy {
   // a field projection has been specified that strips it out.
   google.protobuf.BoolValue enabled = 17;
 
-  // Read-only description of how the alert policy is invalid. This field is
-  // only set when the alert policy is invalid. An invalid alert policy will not
-  // generate incidents.
+  // Read-only description of how the alerting policy is invalid. This field is
+  // only set when the alerting policy is invalid. An invalid alerting policy
+  // will not generate incidents.
   google.rpc.Status validity = 18;
 
   // Identifies the notification channels to which notifications should be sent
@@ -678,11 +810,11 @@ message AlertPolicy {
   // provided in a call to create or update, this field will be ignored.
   MutationRecord mutation_record = 11;
 
-  // Control over how this alert policy's notification channels are notified.
+  // Control over how this alerting policy's notification channels are notified.
   AlertStrategy alert_strategy = 21;
 
-  // Optional. The severity of an alert policy indicates how important incidents
-  // generated by that policy are. The severity level will be displayed on the
-  // Incident detail page and in notifications.
+  // Optional. The severity of an alerting policy indicates how important
+  // incidents generated by that policy are. The severity level will be
+  // displayed on the Incident detail page and in notifications.
   Severity severity = 22 [(google.api.field_behavior) = OPTIONAL];
 }

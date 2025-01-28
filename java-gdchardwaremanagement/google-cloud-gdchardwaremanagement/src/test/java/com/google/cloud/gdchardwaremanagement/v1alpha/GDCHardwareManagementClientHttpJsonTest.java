@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1174,6 +1174,96 @@ public class GDCHardwareManagementClientHttpJsonTest {
   }
 
   @Test
+  public void deleteSiteTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSiteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SiteName name = SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]");
+
+    client.deleteSiteAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSiteExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SiteName name = SiteName.of("[PROJECT]", "[LOCATION]", "[SITE]");
+      client.deleteSiteAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteSiteTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSiteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-546/locations/location-546/sites/site-546";
+
+    client.deleteSiteAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSiteExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-546/locations/location-546/sites/site-546";
+      client.deleteSiteAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listHardwareGroupsTest() throws Exception {
     HardwareGroup responsesElement = HardwareGroup.newBuilder().build();
     ListHardwareGroupsResponse expectedResponse =
@@ -1816,6 +1906,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1877,6 +1968,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1938,6 +2030,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2008,6 +2101,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2078,6 +2172,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2107,6 +2202,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
+            .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2156,6 +2252,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .setZone(ZoneName.of("[PROJECT]", "[LOCATION]", "[ZONE]").toString())
               .setRequestedInstallationDate(Date.newBuilder().build())
               .setActualInstallationDate(Date.newBuilder().build())
+              .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateHardwareAsync(hardware, updateMask).get();

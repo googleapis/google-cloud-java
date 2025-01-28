@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ package com.google.cloud.contactcenterinsights.v1;
  *
  * <pre>
  * A customer-managed encryption key specification that can be applied to all
- * created resources (e.g. Conversation).
+ * created resources (e.g. `Conversation`).
  * </pre>
  *
  * Protobuf type {@code google.cloud.contactcenterinsights.v1.EncryptionSpec}
@@ -130,8 +130,8 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of customer-managed encryption key that is used to
    * secure a resource and its sub-resources. If empty, the resource is secured
-   * by the default Google encryption key. Only the key in the same location as
-   * this resource is allowed to be used for encryption. Format:
+   * by our default encryption key. Only the key in the same location as this
+   * resource is allowed to be used for encryption. Format:
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
    * </pre>
    *
@@ -157,8 +157,8 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of customer-managed encryption key that is used to
    * secure a resource and its sub-resources. If empty, the resource is secured
-   * by the default Google encryption key. Only the key in the same location as
-   * this resource is allowed to be used for encryption. Format:
+   * by our default encryption key. Only the key in the same location as this
+   * resource is allowed to be used for encryption. Format:
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
    * </pre>
    *
@@ -353,7 +353,7 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A customer-managed encryption key specification that can be applied to all
-   * created resources (e.g. Conversation).
+   * created resources (e.g. `Conversation`).
    * </pre>
    *
    * Protobuf type {@code google.cloud.contactcenterinsights.v1.EncryptionSpec}
@@ -670,8 +670,8 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of customer-managed encryption key that is used to
      * secure a resource and its sub-resources. If empty, the resource is secured
-     * by the default Google encryption key. Only the key in the same location as
-     * this resource is allowed to be used for encryption. Format:
+     * by our default encryption key. Only the key in the same location as this
+     * resource is allowed to be used for encryption. Format:
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
      * </pre>
      *
@@ -696,8 +696,8 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of customer-managed encryption key that is used to
      * secure a resource and its sub-resources. If empty, the resource is secured
-     * by the default Google encryption key. Only the key in the same location as
-     * this resource is allowed to be used for encryption. Format:
+     * by our default encryption key. Only the key in the same location as this
+     * resource is allowed to be used for encryption. Format:
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
      * </pre>
      *
@@ -722,8 +722,8 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of customer-managed encryption key that is used to
      * secure a resource and its sub-resources. If empty, the resource is secured
-     * by the default Google encryption key. Only the key in the same location as
-     * this resource is allowed to be used for encryption. Format:
+     * by our default encryption key. Only the key in the same location as this
+     * resource is allowed to be used for encryption. Format:
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
      * </pre>
      *
@@ -747,8 +747,8 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of customer-managed encryption key that is used to
      * secure a resource and its sub-resources. If empty, the resource is secured
-     * by the default Google encryption key. Only the key in the same location as
-     * this resource is allowed to be used for encryption. Format:
+     * by our default encryption key. Only the key in the same location as this
+     * resource is allowed to be used for encryption. Format:
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
      * </pre>
      *
@@ -768,8 +768,8 @@ public final class EncryptionSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of customer-managed encryption key that is used to
      * secure a resource and its sub-resources. If empty, the resource is secured
-     * by the default Google encryption key. Only the key in the same location as
-     * this resource is allowed to be used for encryption. Format:
+     * by our default encryption key. Only the key in the same location as this
+     * resource is allowed to be used for encryption. Format:
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
      * </pre>
      *

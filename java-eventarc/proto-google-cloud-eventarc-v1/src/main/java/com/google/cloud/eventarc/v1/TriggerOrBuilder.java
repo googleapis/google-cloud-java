@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the trigger. Must be unique within the location of the
-   * project and must be in
+   * Required. The resource name of the trigger. Must be unique within the
+   * location of the project and must be in
    * `projects/{project}/locations/{location}/triggers/{trigger}` format.
    * </pre>
    *
@@ -42,8 +42,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the trigger. Must be unique within the location of the
-   * project and must be in
+   * Required. The resource name of the trigger. Must be unique within the
+   * location of the project and must be in
    * `projects/{project}/locations/{location}/triggers/{trigger}` format.
    * </pre>
    *
@@ -57,8 +57,9 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server-assigned unique identifier for the trigger. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -70,8 +71,9 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. Server-assigned unique identifier for the trigger. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server-assigned unique identifier for the trigger. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -160,8 +162,9 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. The list of filters that applies to event attributes. Only events that
-   * match all the provided filters are sent to the destination.
+   * Required. Unordered list. The list of filters that applies to event
+   * attributes. Only events that match all the provided filters are sent to the
+   * destination.
    * </pre>
    *
    * <code>
@@ -173,8 +176,9 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. The list of filters that applies to event attributes. Only events that
-   * match all the provided filters are sent to the destination.
+   * Required. Unordered list. The list of filters that applies to event
+   * attributes. Only events that match all the provided filters are sent to the
+   * destination.
    * </pre>
    *
    * <code>
@@ -186,8 +190,9 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. The list of filters that applies to event attributes. Only events that
-   * match all the provided filters are sent to the destination.
+   * Required. Unordered list. The list of filters that applies to event
+   * attributes. Only events that match all the provided filters are sent to the
+   * destination.
    * </pre>
    *
    * <code>
@@ -199,8 +204,9 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. The list of filters that applies to event attributes. Only events that
-   * match all the provided filters are sent to the destination.
+   * Required. Unordered list. The list of filters that applies to event
+   * attributes. Only events that match all the provided filters are sent to the
+   * destination.
    * </pre>
    *
    * <code>
@@ -213,8 +219,9 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Required. Unordered list. The list of filters that applies to event attributes. Only events that
-   * match all the provided filters are sent to the destination.
+   * Required. Unordered list. The list of filters that applies to event
+   * attributes. Only events that match all the provided filters are sent to the
+   * destination.
    * </pre>
    *
    * <code>
@@ -230,17 +237,11 @@ public interface TriggerOrBuilder
    * Optional. The IAM service account email associated with the trigger. The
    * service account represents the identity of the trigger.
    *
-   * The principal who calls this API must have the `iam.serviceAccounts.actAs`
-   * permission in the service account. See
-   * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
-   * for more information.
-   *
-   * For Cloud Run destinations, this service account is used to generate
-   * identity tokens when invoking the service. See
-   * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
-   * for information on how to invoke authenticated Cloud Run services.
-   * To create Audit Log triggers, the service account should also
-   * have the `roles/eventarc.eventReceiver` IAM role.
+   * The `iam.serviceAccounts.actAs` permission must be granted on the service
+   * account to allow a principal to impersonate the service account. For more
+   * information, see the
+   * [Roles and permissions](/eventarc/docs/all-roles-permissions) page specific
+   * to the trigger destination.
    * </pre>
    *
    * <code>
@@ -257,17 +258,11 @@ public interface TriggerOrBuilder
    * Optional. The IAM service account email associated with the trigger. The
    * service account represents the identity of the trigger.
    *
-   * The principal who calls this API must have the `iam.serviceAccounts.actAs`
-   * permission in the service account. See
-   * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
-   * for more information.
-   *
-   * For Cloud Run destinations, this service account is used to generate
-   * identity tokens when invoking the service. See
-   * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
-   * for information on how to invoke authenticated Cloud Run services.
-   * To create Audit Log triggers, the service account should also
-   * have the `roles/eventarc.eventReceiver` IAM role.
+   * The `iam.serviceAccounts.actAs` permission must be granted on the service
+   * account to allow a principal to impersonate the service account. For more
+   * information, see the
+   * [Roles and permissions](/eventarc/docs/all-roles-permissions) page specific
+   * to the trigger destination.
    * </pre>
    *
    * <code>
@@ -323,7 +318,7 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. To deliver messages, Eventarc might use other GCP
+   * Optional. To deliver messages, Eventarc might use other Google Cloud
    * products as a transport intermediary. This field contains a reference to
    * that transport intermediary. This information can be used for debugging
    * purposes.
@@ -340,7 +335,7 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. To deliver messages, Eventarc might use other GCP
+   * Optional. To deliver messages, Eventarc might use other Google Cloud
    * products as a transport intermediary. This field contains a reference to
    * that transport intermediary. This information can be used for debugging
    * purposes.
@@ -357,7 +352,7 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. To deliver messages, Eventarc might use other GCP
+   * Optional. To deliver messages, Eventarc might use other Google Cloud
    * products as a transport intermediary. This field contains a reference to
    * that transport intermediary. This information can be used for debugging
    * purposes.
@@ -373,7 +368,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group resources.
+   * Optional. User labels attached to the triggers that can be used to group
+   * resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -383,7 +379,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group resources.
+   * Optional. User labels attached to the triggers that can be used to group
+   * resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -396,7 +393,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group resources.
+   * Optional. User labels attached to the triggers that can be used to group
+   * resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -406,7 +404,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group resources.
+   * Optional. User labels attached to the triggers that can be used to group
+   * resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -420,7 +419,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Optional. User labels attached to the triggers that can be used to group resources.
+   * Optional. User labels attached to the triggers that can be used to group
+   * resources.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -528,8 +528,51 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of other
-   * fields, and might be sent only on create requests to ensure that the
+   * Optional. EventDataContentType specifies the type of payload in MIME
+   * format that is expected from the CloudEvent data field. This is set to
+   * `application/json` if the value is not defined.
+   * </pre>
+   *
+   * <code>string event_data_content_type = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The eventDataContentType.
+   */
+  java.lang.String getEventDataContentType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. EventDataContentType specifies the type of payload in MIME
+   * format that is expected from the CloudEvent data field. This is set to
+   * `application/json` if the value is not defined.
+   * </pre>
+   *
+   * <code>string event_data_content_type = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for eventDataContentType.
+   */
+  com.google.protobuf.ByteString getEventDataContentTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this Trigger satisfies the requirements of
+   * physical zone separation
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields, and might be sent only on create requests to ensure that the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -542,8 +585,8 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of other
-   * fields, and might be sent only on create requests to ensure that the
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields, and might be sent only on create requests to ensure that the
    * client has an up-to-date value before proceeding.
    * </pre>
    *

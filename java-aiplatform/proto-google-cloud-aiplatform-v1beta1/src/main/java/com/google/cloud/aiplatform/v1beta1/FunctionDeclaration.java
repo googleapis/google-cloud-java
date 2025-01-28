@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ package com.google.cloud.aiplatform.v1beta1;
  * <pre>
  * Structured representation of a function declaration as defined by the
  * [OpenAPI 3.0 specification](https://spec.openapis.org/oas/v3.0.3). Included
- * in this declaration are the function name and parameters. This
- * FunctionDeclaration is a representation of a block of code that can be used
- * as a `Tool` by the model and executed by the client.
+ * in this declaration are the function name, description, parameters and
+ * response type. This FunctionDeclaration is a representation of a block of
+ * code that can be used as a `Tool` by the model and executed by the client.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.FunctionDeclaration}
@@ -539,9 +539,9 @@ public final class FunctionDeclaration extends com.google.protobuf.GeneratedMess
    * <pre>
    * Structured representation of a function declaration as defined by the
    * [OpenAPI 3.0 specification](https://spec.openapis.org/oas/v3.0.3). Included
-   * in this declaration are the function name and parameters. This
-   * FunctionDeclaration is a representation of a block of code that can be used
-   * as a `Tool` by the model and executed by the client.
+   * in this declaration are the function name, description, parameters and
+   * response type. This FunctionDeclaration is a representation of a block of
+   * code that can be used as a `Tool` by the model and executed by the client.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FunctionDeclaration}

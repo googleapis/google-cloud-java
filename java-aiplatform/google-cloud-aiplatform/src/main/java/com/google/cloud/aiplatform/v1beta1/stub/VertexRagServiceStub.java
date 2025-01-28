@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,10 @@ import static com.google.cloud.aiplatform.v1beta1.VertexRagServiceClient.ListLoc
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptRequest;
+import com.google.cloud.aiplatform.v1beta1.AugmentPromptResponse;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentRequest;
+import com.google.cloud.aiplatform.v1beta1.CorroborateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest;
 import com.google.cloud.aiplatform.v1beta1.RetrieveContextsResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -47,6 +51,15 @@ public abstract class VertexRagServiceStub implements BackgroundResource {
   public UnaryCallable<RetrieveContextsRequest, RetrieveContextsResponse>
       retrieveContextsCallable() {
     throw new UnsupportedOperationException("Not implemented: retrieveContextsCallable()");
+  }
+
+  public UnaryCallable<AugmentPromptRequest, AugmentPromptResponse> augmentPromptCallable() {
+    throw new UnsupportedOperationException("Not implemented: augmentPromptCallable()");
+  }
+
+  public UnaryCallable<CorroborateContentRequest, CorroborateContentResponse>
+      corroborateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: corroborateContentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

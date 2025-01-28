@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface ListKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project that contains the keys that are
+   * Required. The name of the project that contains the keys that is
    * listed, in the format `projects/{project}`.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface ListKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project that contains the keys that are
+   * Required. The name of the project that contains the keys that is
    * listed, in the format `projects/{project}`.
    * </pre>
    *

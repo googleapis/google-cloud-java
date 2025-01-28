@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -32,10 +33,12 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.AspectType;
+import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
@@ -47,6 +50,7 @@ import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
 import com.google.cloud.dataplex.v1.ListEntriesRequest;
@@ -55,7 +59,10 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -297,6 +304,47 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   ProtoUtils.marshaller(SearchEntriesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateMetadataJobRequest, Operation>
+      createMetadataJobMethodDescriptor =
+          MethodDescriptor.<CreateMetadataJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateMetadataJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateMetadataJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetMetadataJobRequest, MetadataJob>
+      getMetadataJobMethodDescriptor =
+          MethodDescriptor.<GetMetadataJobRequest, MetadataJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetMetadataJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMetadataJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MetadataJob.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsMethodDescriptor =
+          MethodDescriptor.<ListMetadataJobsRequest, ListMetadataJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/ListMetadataJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMetadataJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMetadataJobsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CancelMetadataJobRequest, Empty>
+      cancelMetadataJobMethodDescriptor =
+          MethodDescriptor.<CancelMetadataJobRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CancelMetadataJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelMetadataJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -368,6 +416,15 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesResponse> searchEntriesCallable;
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesPagedResponse>
       searchEntriesPagedCallable;
+  private final UnaryCallable<CreateMetadataJobRequest, Operation> createMetadataJobCallable;
+  private final OperationCallable<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationCallable;
+  private final UnaryCallable<GetMetadataJobRequest, MetadataJob> getMetadataJobCallable;
+  private final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsCallable;
+  private final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
+      listMetadataJobsPagedCallable;
+  private final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -642,6 +699,47 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobTransportSettings =
+        GrpcCallSettings.<CreateMetadataJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(createMetadataJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobTransportSettings =
+        GrpcCallSettings.<GetMetadataJobRequest, MetadataJob>newBuilder()
+            .setMethodDescriptor(getMetadataJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListMetadataJobsRequest, ListMetadataJobsResponse>
+        listMetadataJobsTransportSettings =
+            GrpcCallSettings.<ListMetadataJobsRequest, ListMetadataJobsResponse>newBuilder()
+                .setMethodDescriptor(listMetadataJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobTransportSettings =
+        GrpcCallSettings.<CancelMetadataJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(cancelMetadataJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -798,6 +896,31 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     this.searchEntriesPagedCallable =
         callableFactory.createPagedCallable(
             searchEntriesTransportSettings, settings.searchEntriesSettings(), clientContext);
+    this.createMetadataJobCallable =
+        callableFactory.createUnaryCallable(
+            createMetadataJobTransportSettings,
+            settings.createMetadataJobSettings(),
+            clientContext);
+    this.createMetadataJobOperationCallable =
+        callableFactory.createOperationCallable(
+            createMetadataJobTransportSettings,
+            settings.createMetadataJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getMetadataJobCallable =
+        callableFactory.createUnaryCallable(
+            getMetadataJobTransportSettings, settings.getMetadataJobSettings(), clientContext);
+    this.listMetadataJobsCallable =
+        callableFactory.createUnaryCallable(
+            listMetadataJobsTransportSettings, settings.listMetadataJobsSettings(), clientContext);
+    this.listMetadataJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMetadataJobsTransportSettings, settings.listMetadataJobsSettings(), clientContext);
+    this.cancelMetadataJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelMetadataJobTransportSettings,
+            settings.cancelMetadataJobSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1007,6 +1130,39 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   public UnaryCallable<SearchEntriesRequest, SearchEntriesPagedResponse>
       searchEntriesPagedCallable() {
     return searchEntriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMetadataJobRequest, Operation> createMetadataJobCallable() {
+    return createMetadataJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationCallable() {
+    return createMetadataJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMetadataJobRequest, MetadataJob> getMetadataJobCallable() {
+    return getMetadataJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsCallable() {
+    return listMetadataJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
+      listMetadataJobsPagedCallable() {
+    return listMetadataJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
+    return cancelMetadataJobCallable;
   }
 
   @Override

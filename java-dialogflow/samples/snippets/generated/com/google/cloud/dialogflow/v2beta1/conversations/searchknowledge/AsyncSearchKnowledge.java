@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.cloud.dialogflow.v2beta1.MessageName;
 import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest;
 import com.google.cloud.dialogflow.v2beta1.SearchKnowledgeResponse;
 import com.google.cloud.dialogflow.v2beta1.TextInput;
+import com.google.protobuf.Struct;
 
 public class AsyncSearchKnowledge {
 
@@ -55,6 +56,9 @@ public class AsyncSearchKnowledge {
                   MessageName.ofProjectConversationMessageName(
                           "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
                       .toString())
+              .setEndUserMetadata(Struct.newBuilder().build())
+              .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+              .setExactSearch(true)
               .build();
       ApiFuture<SearchKnowledgeResponse> future =
           conversationsClient.searchKnowledgeCallable().futureCall(request);

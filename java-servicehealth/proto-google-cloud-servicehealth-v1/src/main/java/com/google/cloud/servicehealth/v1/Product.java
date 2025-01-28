@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
 
   private Product() {
     productName_ = "";
+    id_ = "";
   }
 
   @java.lang.Override
@@ -114,6 +115,57 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ID_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier for the product.
+   * </pre>
+   *
+   * <code>string id = 2;</code>
+   *
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier for the product.
+   * </pre>
+   *
+   * <code>string id = 2;</code>
+   *
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -131,6 +183,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -142,6 +197,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -160,6 +218,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.servicehealth.v1.Product) obj;
 
     if (!getProductName().equals(other.getProductName())) return false;
+    if (!getId().equals(other.getId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -173,6 +232,8 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PRODUCT_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getProductName().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -313,6 +374,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       productName_ = "";
+      id_ = "";
       return this;
     }
 
@@ -351,6 +413,9 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.productName_ = productName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
       }
     }
 
@@ -404,6 +469,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -436,6 +506,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -557,6 +633,112 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       productName_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier for the product.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier for the product.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier for the product.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      id_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier for the product.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier for the product.
+     * </pre>
+     *
+     * <code>string id = 2;</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

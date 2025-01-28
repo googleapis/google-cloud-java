@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,9 +74,9 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
    * or
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * </pre>
    *
    * <code>
@@ -102,9 +102,9 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The data store resource name. Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
    * or
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * </pre>
    *
    * <code>
@@ -676,9 +676,9 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -703,9 +703,9 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -730,9 +730,9 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -756,9 +756,9 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>
@@ -778,9 +778,9 @@ public final class ListControlsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The data store resource name. Format:
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}`
+     * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`
      * or
-     * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
      * </pre>
      *
      * <code>

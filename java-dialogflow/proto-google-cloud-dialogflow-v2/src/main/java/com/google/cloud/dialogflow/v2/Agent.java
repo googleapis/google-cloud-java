@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1040,7 +1040,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-   *     google/cloud/dialogflow/v2/agent.proto;l=354
+   *     google/cloud/dialogflow/v2/agent.proto;l=353
    * @return The enum numeric value on the wire for matchMode.
    */
   @java.lang.Override
@@ -1060,7 +1060,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-   *     google/cloud/dialogflow/v2/agent.proto;l=354
+   *     google/cloud/dialogflow/v2/agent.proto;l=353
    * @return The matchMode.
    */
   @java.lang.Override
@@ -2765,7 +2765,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-     *     google/cloud/dialogflow/v2/agent.proto;l=354
+     *     google/cloud/dialogflow/v2/agent.proto;l=353
      * @return The enum numeric value on the wire for matchMode.
      */
     @java.lang.Override
@@ -2785,7 +2785,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-     *     google/cloud/dialogflow/v2/agent.proto;l=354
+     *     google/cloud/dialogflow/v2/agent.proto;l=353
      * @param value The enum numeric value on the wire for matchMode to set.
      * @return This builder for chaining.
      */
@@ -2808,7 +2808,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-     *     google/cloud/dialogflow/v2/agent.proto;l=354
+     *     google/cloud/dialogflow/v2/agent.proto;l=353
      * @return The matchMode.
      */
     @java.lang.Override
@@ -2830,7 +2830,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-     *     google/cloud/dialogflow/v2/agent.proto;l=354
+     *     google/cloud/dialogflow/v2/agent.proto;l=353
      * @param value The matchMode to set.
      * @return This builder for chaining.
      */
@@ -2856,7 +2856,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2.Agent.match_mode is deprecated. See
-     *     google/cloud/dialogflow/v2/agent.proto;l=354
+     *     google/cloud/dialogflow/v2/agent.proto;l=353
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

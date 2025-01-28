@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface EventFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
-   * are supported for filtering.
+   * Required. The name of a CloudEvents attribute. Currently, only a subset of
+   * attributes are supported for filtering. You can [retrieve a specific
+   * provider's supported event
+   * types](/eventarc/docs/list-providers#describe-provider).
    *
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
@@ -43,8 +45,10 @@ public interface EventFilterOrBuilder
    *
    *
    * <pre>
-   * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
-   * are supported for filtering.
+   * Required. The name of a CloudEvents attribute. Currently, only a subset of
+   * attributes are supported for filtering. You can [retrieve a specific
+   * provider's supported event
+   * types](/eventarc/docs/list-providers#describe-provider).
    *
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
@@ -86,8 +90,9 @@ public interface EventFilterOrBuilder
    * <pre>
    * Optional. The operator used for matching the events with the value of the
    * filter. If not specified, only events that have an exact key-value pair
-   * specified in the filter are matched. The only allowed value is
-   * `match-path-pattern`.
+   * specified in the filter are matched. The allowed values are `path_pattern`
+   * and `match-path-pattern`. `path_pattern` is only allowed for GCFv1
+   * triggers.
    * </pre>
    *
    * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -101,8 +106,9 @@ public interface EventFilterOrBuilder
    * <pre>
    * Optional. The operator used for matching the events with the value of the
    * filter. If not specified, only events that have an exact key-value pair
-   * specified in the filter are matched. The only allowed value is
-   * `match-path-pattern`.
+   * specified in the filter are matched. The allowed values are `path_pattern`
+   * and `match-path-pattern`. `path_pattern` is only allowed for GCFv1
+   * triggers.
    * </pre>
    *
    * <code>string operator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,15 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The relative resource name of the scan, of the form:
-   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * Output only. Identifier. The relative resource name of the scan, of the
+   * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -43,13 +45,15 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The relative resource name of the scan, of the form:
-   * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
+   * Output only. Identifier. The relative resource name of the scan, of the
+   * form: `projects/{project}/locations/{location_id}/dataScans/{datascan_id}`,
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -63,7 +67,9 @@ public interface DataScanOrBuilder
    * be different if the scan is deleted and re-created with the same name.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -76,7 +82,9 @@ public interface DataScanOrBuilder
    * be different if the scan is deleted and re-created with the same name.
    * </pre>
    *
-   * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -460,7 +468,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -472,7 +480,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -484,7 +492,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataQualityScan related setting.
+   * Settings for a data quality scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualitySpec data_quality_spec = 100;</code>
@@ -495,7 +503,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -507,7 +515,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -519,7 +527,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * DataProfileScan related setting.
+   * Settings for a data profile scan.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileSpec data_profile_spec = 101;</code>
@@ -530,7 +538,42 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   *
+   * @return Whether the dataDiscoverySpec field is set.
+   */
+  boolean hasDataDiscoverySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   *
+   * @return The dataDiscoverySpec.
+   */
+  com.google.cloud.dataplex.v1.DataDiscoverySpec getDataDiscoverySpec();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for a data discovery scan.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataDiscoverySpec data_discovery_spec = 102;</code>
+   */
+  com.google.cloud.dataplex.v1.DataDiscoverySpecOrBuilder getDataDiscoverySpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -544,7 +587,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -558,7 +601,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data quality scan.
+   * Output only. The result of a data quality scan.
    * </pre>
    *
    * <code>
@@ -571,7 +614,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -585,7 +628,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -599,7 +642,7 @@ public interface DataScanOrBuilder
    *
    *
    * <pre>
-   * Output only. The result of the data profile scan.
+   * Output only. The result of a data profile scan.
    * </pre>
    *
    * <code>
@@ -607,6 +650,47 @@ public interface DataScanOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataProfileResultOrBuilder getDataProfileResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDiscoveryResult field is set.
+   */
+  boolean hasDataDiscoveryResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDiscoveryResult.
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResult getDataDiscoveryResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data discovery scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDiscoveryResult data_discovery_result = 202 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder getDataDiscoveryResultOrBuilder();
 
   com.google.cloud.dataplex.v1.DataScan.SpecCase getSpecCase();
 

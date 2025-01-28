@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -797,6 +797,39 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The publicIpAddress.
+   */
+  java.lang.String getPublicIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for publicIpAddress.
+   */
+  com.google.protobuf.ByteString getPublicIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Reconciling (https://google.aip.dev/128#reconciliation).
    * Set to true if the current state of Instance does not match the user's
    * intended state, and the service is actively updating the resource to
@@ -944,4 +977,161 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder
       getClientConnectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInstanceConfig field is set.
+   */
+  boolean hasPscInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInstanceConfig.
+   */
+  com.google.cloud.alloydb.v1.Instance.PscInstanceConfig getPscInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Instance.PscInstanceConfigOrBuilder getPscInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance-level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance-level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.cloud.alloydb.v1.Instance.InstanceNetworkConfig getNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance-level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Instance.InstanceNetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return A list containing the outboundPublicIpAddresses.
+   */
+  java.util.List<java.lang.String> getOutboundPublicIpAddressesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The count of outboundPublicIpAddresses.
+   */
+  int getOutboundPublicIpAddressesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The outboundPublicIpAddresses at the given index.
+   */
+  java.lang.String getOutboundPublicIpAddresses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the outboundPublicIpAddresses at the given index.
+   */
+  com.google.protobuf.ByteString getOutboundPublicIpAddressesBytes(int index);
 }

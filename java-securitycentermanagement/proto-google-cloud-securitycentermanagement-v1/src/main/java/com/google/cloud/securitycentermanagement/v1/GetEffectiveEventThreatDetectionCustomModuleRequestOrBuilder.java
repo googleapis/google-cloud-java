@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,12 @@ public interface GetEffectiveEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>
@@ -48,13 +47,12 @@ public interface GetEffectiveEventThreatDetectionCustomModuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ETD custom module.
+   * Required. The resource name of the Event Threat Detection custom module, in
+   * one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,7 +108,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * siteSearchEngineServiceSettingsBuilder
@@ -191,6 +191,35 @@ public class SiteSearchEngineServiceSettings
           ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
       listTargetSitesSettings() {
     return ((SiteSearchEngineServiceStubSettings) getStubSettings()).listTargetSitesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSitemap. */
+  public UnaryCallSettings<CreateSitemapRequest, Operation> createSitemapSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).createSitemapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSitemap. */
+  public OperationCallSettings<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .createSitemapOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSitemap. */
+  public UnaryCallSettings<DeleteSitemapRequest, Operation> deleteSitemapSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).deleteSitemapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSitemap. */
+  public OperationCallSettings<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings())
+        .deleteSitemapOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchSitemaps. */
+  public UnaryCallSettings<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsSettings() {
+    return ((SiteSearchEngineServiceStubSettings) getStubSettings()).fetchSitemapsSettings();
   }
 
   /** Returns the object with the settings used for calls to enableAdvancedSiteSearch. */
@@ -447,6 +476,34 @@ public class SiteSearchEngineServiceSettings
             ListTargetSitesRequest, ListTargetSitesResponse, ListTargetSitesPagedResponse>
         listTargetSitesSettings() {
       return getStubSettingsBuilder().listTargetSitesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSitemap. */
+    public UnaryCallSettings.Builder<CreateSitemapRequest, Operation> createSitemapSettings() {
+      return getStubSettingsBuilder().createSitemapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSitemap. */
+    public OperationCallSettings.Builder<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+        createSitemapOperationSettings() {
+      return getStubSettingsBuilder().createSitemapOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSitemap. */
+    public UnaryCallSettings.Builder<DeleteSitemapRequest, Operation> deleteSitemapSettings() {
+      return getStubSettingsBuilder().deleteSitemapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSitemap. */
+    public OperationCallSettings.Builder<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+        deleteSitemapOperationSettings() {
+      return getStubSettingsBuilder().deleteSitemapOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchSitemaps. */
+    public UnaryCallSettings.Builder<FetchSitemapsRequest, FetchSitemapsResponse>
+        fetchSitemapsSettings() {
+      return getStubSettingsBuilder().fetchSitemapsSettings();
     }
 
     /** Returns the builder for the settings used for calls to enableAdvancedSiteSearch. */

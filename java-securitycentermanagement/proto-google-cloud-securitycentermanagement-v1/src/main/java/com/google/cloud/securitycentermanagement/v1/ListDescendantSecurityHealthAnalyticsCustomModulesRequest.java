@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.cloud.securitycentermanagement.v1;
  *
  *
  * <pre>
- * Request message for listing descendant Security Health Analytics custom
- * modules.
+ * Request message for
+ * [SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules].
  * </pre>
  *
  * Protobuf type {@code
@@ -79,7 +79,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
    *
    * <pre>
    * Required. Name of the parent organization, folder, or project in which to
-   * list custom modules, specified in one of the following formats:
+   * list custom modules, in one of the following formats:
    *
    * * `organizations/{organization}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
@@ -109,7 +109,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
    *
    * <pre>
    * Required. Name of the parent organization, folder, or project in which to
-   * list custom modules, specified in one of the following formats:
+   * list custom modules, in one of the following formats:
    *
    * * `organizations/{organization}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
@@ -162,7 +162,11 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results the server should return.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,7 +189,11 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results the server should return.
+   * Optional. A pagination token returned from a previous request. Provide this
+   * token to retrieve the next page of results.
+   *
+   * When paginating, the rest of the request must match the request that
+   * generated the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -414,8 +422,8 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
    *
    *
    * <pre>
-   * Request message for listing descendant Security Health Analytics custom
-   * modules.
+   * Request message for
+   * [SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules][google.cloud.securitycentermanagement.v1.SecurityCenterManagement.ListDescendantSecurityHealthAnalyticsCustomModules].
    * </pre>
    *
    * Protobuf type {@code
@@ -659,7 +667,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      * <pre>
      * Required. Name of the parent organization, folder, or project in which to
-     * list custom modules, specified in one of the following formats:
+     * list custom modules, in one of the following formats:
      *
      * * `organizations/{organization}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
@@ -688,7 +696,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      * <pre>
      * Required. Name of the parent organization, folder, or project in which to
-     * list custom modules, specified in one of the following formats:
+     * list custom modules, in one of the following formats:
      *
      * * `organizations/{organization}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
@@ -717,7 +725,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      * <pre>
      * Required. Name of the parent organization, folder, or project in which to
-     * list custom modules, specified in one of the following formats:
+     * list custom modules, in one of the following formats:
      *
      * * `organizations/{organization}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
@@ -745,7 +753,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      * <pre>
      * Required. Name of the parent organization, folder, or project in which to
-     * list custom modules, specified in one of the following formats:
+     * list custom modules, in one of the following formats:
      *
      * * `organizations/{organization}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
@@ -769,7 +777,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      * <pre>
      * Required. Name of the parent organization, folder, or project in which to
-     * list custom modules, specified in one of the following formats:
+     * list custom modules, in one of the following formats:
      *
      * * `organizations/{organization}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
@@ -855,7 +863,11 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -877,7 +889,11 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -899,7 +915,11 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -920,7 +940,11 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -937,7 +961,11 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesRequest
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A pagination token returned from a previous request. Provide this
+     * token to retrieve the next page of results.
+     *
+     * When paginating, the rest of the request must match the request that
+     * generated the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ public interface NodePoolAutoscalingOrBuilder
    *
    *
    * <pre>
-   * Minimum number of nodes for one location in the NodePool. Must be &gt;= 1 and
-   * &lt;= max_node_count.
+   * Minimum number of nodes for one location in the node pool. Must be greater
+   * than or equal to 0 and less than or equal to max_node_count.
    * </pre>
    *
    * <code>int32 min_node_count = 2;</code>
@@ -55,7 +55,7 @@ public interface NodePoolAutoscalingOrBuilder
    *
    *
    * <pre>
-   * Maximum number of nodes for one location in the NodePool. Must be &gt;=
+   * Maximum number of nodes for one location in the node pool. Must be &gt;=
    * min_node_count. There has to be enough quota to scale up the cluster.
    * </pre>
    *
@@ -107,8 +107,8 @@ public interface NodePoolAutoscalingOrBuilder
    *
    *
    * <pre>
-   * Minimum number of nodes in the node pool. Must be greater than 1 less than
-   * total_max_node_count.
+   * Minimum number of nodes in the node pool. Must be greater than or equal
+   * to 0 and less than or equal to total_max_node_count.
    * The total_*_node_count fields are mutually exclusive with the *_node_count
    * fields.
    * </pre>
@@ -123,7 +123,7 @@ public interface NodePoolAutoscalingOrBuilder
    *
    *
    * <pre>
-   * Maximum number of nodes in the node pool. Must be greater than
+   * Maximum number of nodes in the node pool. Must be greater than or equal to
    * total_min_node_count. There has to be enough quota to scale up the cluster.
    * The total_*_node_count fields are mutually exclusive with the *_node_count
    * fields.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,8 +66,13 @@ public interface DestinationOrBuilder
    *
    *
    * <pre>
-   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * The Cloud Function resource name. Cloud Functions V1 and V2 are
+   * supported.
    * Format: `projects/{project}/locations/{location}/functions/{function}`
+   *
+   * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+   * only supported via the Cloud Functions product. An error will be returned
+   * if the user sets this value.
    * </pre>
    *
    * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -79,8 +84,13 @@ public interface DestinationOrBuilder
    *
    *
    * <pre>
-   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * The Cloud Function resource name. Cloud Functions V1 and V2 are
+   * supported.
    * Format: `projects/{project}/locations/{location}/functions/{function}`
+   *
+   * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+   * only supported via the Cloud Functions product. An error will be returned
+   * if the user sets this value.
    * </pre>
    *
    * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -92,8 +102,13 @@ public interface DestinationOrBuilder
    *
    *
    * <pre>
-   * The Cloud Function resource name. Only Cloud Functions V2 is supported.
+   * The Cloud Function resource name. Cloud Functions V1 and V2 are
+   * supported.
    * Format: `projects/{project}/locations/{location}/functions/{function}`
+   *
+   * This is a read-only field. Creating Cloud Functions V1/V2 triggers is
+   * only supported via the Cloud Functions product. An error will be returned
+   * if the user sets this value.
    * </pre>
    *
    * <code>string cloud_function = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -185,6 +200,88 @@ public interface DestinationOrBuilder
    * @return The bytes for workflow.
    */
   com.google.protobuf.ByteString getWorkflowBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * An HTTP endpoint destination described by an URI.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+   *
+   * @return Whether the httpEndpoint field is set.
+   */
+  boolean hasHttpEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * An HTTP endpoint destination described by an URI.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+   *
+   * @return The httpEndpoint.
+   */
+  com.google.cloud.eventarc.v1.HttpEndpoint getHttpEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * An HTTP endpoint destination described by an URI.
+   * </pre>
+   *
+   * <code>.google.cloud.eventarc.v1.HttpEndpoint http_endpoint = 5;</code>
+   */
+  com.google.cloud.eventarc.v1.HttpEndpointOrBuilder getHttpEndpointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network config is used to configure how Eventarc resolves and
+   * connect to a destination.
+   * This should only be used with HttpEndpoint destination type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network config is used to configure how Eventarc resolves and
+   * connect to a destination.
+   * This should only be used with HttpEndpoint destination type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.cloud.eventarc.v1.NetworkConfig getNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network config is used to configure how Eventarc resolves and
+   * connect to a destination.
+   * This should only be used with HttpEndpoint destination type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.NetworkConfig network_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.eventarc.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
 
   com.google.cloud.eventarc.v1.Destination.DescriptorCase getDescriptorCase();
 }

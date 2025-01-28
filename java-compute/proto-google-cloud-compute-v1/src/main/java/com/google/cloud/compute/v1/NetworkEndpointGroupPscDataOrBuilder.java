@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,31 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    * @return The bytes for consumerPscAddress.
    */
   com.google.protobuf.ByteString getConsumerPscAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * </pre>
+   *
+   * <code>optional int32 producer_port = 410021134;</code>
+   *
+   * @return Whether the producerPort field is set.
+   */
+  boolean hasProducerPort();
+  /**
+   *
+   *
+   * <pre>
+   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * </pre>
+   *
+   * <code>optional int32 producer_port = 410021134;</code>
+   *
+   * @return The producerPort.
+   */
+  int getProducerPort();
 
   /**
    *

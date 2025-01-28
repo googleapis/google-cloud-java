@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,17 +103,17 @@ public final class SpaceEventProto {
           + "{space}/spaceEvents/{space_event}B\t\n\007pay"
           + "load\"L\n\024GetSpaceEventRequest\0224\n\004name\030\001 \001"
           + "(\tB&\340A\002\372A \n\036chat.googleapis.com/SpaceEve"
-          + "nt\"\214\001\n\026ListSpaceEventsRequest\0226\n\006parent\030"
+          + "nt\"\226\001\n\026ListSpaceEventsRequest\0226\n\006parent\030"
           + "\001 \001(\tB&\340A\002\372A \022\036chat.googleapis.com/Space"
-          + "Event\022\021\n\tpage_size\030\005 \001(\005\022\022\n\npage_token\030\006"
-          + " \001(\t\022\023\n\006filter\030\010 \001(\tB\003\340A\002\"d\n\027ListSpaceEv"
-          + "entsResponse\0220\n\014space_events\030\001 \003(\0132\032.goo"
-          + "gle.chat.v1.SpaceEvent\022\027\n\017next_page_toke"
-          + "n\030\002 \001(\tB\232\001\n\022com.google.chat.v1B\017SpaceEve"
-          + "ntProtoP\001Z,cloud.google.com/go/chat/apiv"
-          + "1/chatpb;chatpb\252\002\023Google.Apps.Chat.V1\312\002\023"
-          + "Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat"
-          + "::V1b\006proto3"
+          + "Event\022\026\n\tpage_size\030\005 \001(\005B\003\340A\001\022\027\n\npage_to"
+          + "ken\030\006 \001(\tB\003\340A\001\022\023\n\006filter\030\010 \001(\tB\003\340A\002\"d\n\027L"
+          + "istSpaceEventsResponse\0220\n\014space_events\030\001"
+          + " \003(\0132\032.google.chat.v1.SpaceEvent\022\027\n\017next"
+          + "_page_token\030\002 \001(\tB\232\001\n\022com.google.chat.v1"
+          + "B\017SpaceEventProtoP\001Z,cloud.google.com/go"
+          + "/chat/apiv1/chatpb;chatpb\252\002\023Google.Apps."
+          + "Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::"
+          + "Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

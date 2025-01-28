@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,7 +147,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=580
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=581
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Deprecated
@@ -164,7 +164,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=580
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=581
    * @return The outputConfig.
    */
   @java.lang.Deprecated

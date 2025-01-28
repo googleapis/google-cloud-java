@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.devtools.artifactregistry.v1.stub;
 
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListAttachmentsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.Lis
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRulesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
 
@@ -39,16 +41,23 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.devtools.artifactregistry.v1.Attachment;
 import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
 import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
+import com.google.devtools.artifactregistry.v1.CreateAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.CreateRuleRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
+import com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest;
+import com.google.devtools.artifactregistry.v1.DeleteFileRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
 import com.google.devtools.artifactregistry.v1.DeleteRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
+import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
 import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
@@ -57,6 +66,7 @@ import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.GetRuleRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
 import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
@@ -66,6 +76,8 @@ import com.google.devtools.artifactregistry.v1.ImportAptArtifactsResponse;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsRequest;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsResponse;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
@@ -80,6 +92,8 @@ import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
+import com.google.devtools.artifactregistry.v1.ListRulesRequest;
+import com.google.devtools.artifactregistry.v1.ListRulesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
@@ -91,11 +105,16 @@ import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
 import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
+import com.google.devtools.artifactregistry.v1.Rule;
 import com.google.devtools.artifactregistry.v1.Tag;
+import com.google.devtools.artifactregistry.v1.UpdateFileRequest;
+import com.google.devtools.artifactregistry.v1.UpdatePackageRequest;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.UpdateRuleRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
 import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVersionRequest;
 import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -361,6 +380,17 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateVersionRequest, Version>
+      updateVersionMethodDescriptor =
+          MethodDescriptor.<UpdateVersionRequest, Version>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListFilesRequest, ListFilesResponse>
       listFilesMethodDescriptor =
           MethodDescriptor.<ListFilesRequest, ListFilesResponse>newBuilder()
@@ -375,6 +405,22 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/GetFile")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFileRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(File.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteFileRequest, Operation> deleteFileMethodDescriptor =
+      MethodDescriptor.<DeleteFileRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/DeleteFile")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteFileRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateFileRequest, File> updateFileMethodDescriptor =
+      MethodDescriptor.<UpdateFileRequest, File>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateFile")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateFileRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(File.getDefaultInstance()))
           .build();
 
@@ -416,6 +462,47 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/DeleteTag")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CreateRuleRequest, Rule> createRuleMethodDescriptor =
+      MethodDescriptor.<CreateRuleRequest, Rule>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/CreateRule")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateRuleRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Rule.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListRulesRequest, ListRulesResponse>
+      listRulesMethodDescriptor =
+          MethodDescriptor.<ListRulesRequest, ListRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/ListRules")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetRuleRequest, Rule> getRuleMethodDescriptor =
+      MethodDescriptor.<GetRuleRequest, Rule>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/GetRule")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetRuleRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Rule.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateRuleRequest, Rule> updateRuleMethodDescriptor =
+      MethodDescriptor.<UpdateRuleRequest, Rule>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateRule")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateRuleRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Rule.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteRuleRequest, Empty> deleteRuleMethodDescriptor =
+      MethodDescriptor.<DeleteRuleRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/DeleteRule")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteRuleRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
@@ -489,6 +576,62 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVPCSCConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VPCSCConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdatePackageRequest, Package>
+      updatePackageMethodDescriptor =
+          MethodDescriptor.<UpdatePackageRequest, Package>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/UpdatePackage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdatePackageRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Package.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAttachmentsRequest, ListAttachmentsResponse>
+      listAttachmentsMethodDescriptor =
+          MethodDescriptor.<ListAttachmentsRequest, ListAttachmentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListAttachments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAttachmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAttachmentsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAttachmentRequest, Attachment>
+      getAttachmentMethodDescriptor =
+          MethodDescriptor.<GetAttachmentRequest, Attachment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetAttachment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAttachmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Attachment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateAttachmentRequest, Operation>
+      createAttachmentMethodDescriptor =
+          MethodDescriptor.<CreateAttachmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/CreateAttachment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAttachmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAttachmentRequest, Operation>
+      deleteAttachmentMethodDescriptor =
+          MethodDescriptor.<DeleteAttachmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/DeleteAttachment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAttachmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -567,15 +710,26 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable;
   private final OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
       batchDeleteVersionsOperationCallable;
+  private final UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable;
   private final UnaryCallable<GetFileRequest, File> getFileCallable;
+  private final UnaryCallable<DeleteFileRequest, Operation> deleteFileCallable;
+  private final OperationCallable<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationCallable;
+  private final UnaryCallable<UpdateFileRequest, File> updateFileCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable;
   private final UnaryCallable<GetTagRequest, Tag> getTagCallable;
   private final UnaryCallable<CreateTagRequest, Tag> createTagCallable;
   private final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable;
   private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
+  private final UnaryCallable<CreateRuleRequest, Rule> createRuleCallable;
+  private final UnaryCallable<ListRulesRequest, ListRulesResponse> listRulesCallable;
+  private final UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable;
+  private final UnaryCallable<GetRuleRequest, Rule> getRuleCallable;
+  private final UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable;
+  private final UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -586,6 +740,18 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
       updateProjectSettingsCallable;
   private final UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable;
   private final UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable;
+  private final UnaryCallable<UpdatePackageRequest, Package> updatePackageCallable;
+  private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>
+      listAttachmentsCallable;
+  private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
+      listAttachmentsPagedCallable;
+  private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
+  private final UnaryCallable<CreateAttachmentRequest, Operation> createAttachmentCallable;
+  private final OperationCallable<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationCallable;
+  private final UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable;
+  private final OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -860,6 +1026,16 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
+        GrpcCallSettings.<UpdateVersionRequest, Version>newBuilder()
+            .setMethodDescriptor(updateVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("version.name", String.valueOf(request.getVersion().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListFilesRequest, ListFilesResponse> listFilesTransportSettings =
         GrpcCallSettings.<ListFilesRequest, ListFilesResponse>newBuilder()
             .setMethodDescriptor(listFilesMethodDescriptor)
@@ -877,6 +1053,26 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteFileRequest, Operation> deleteFileTransportSettings =
+        GrpcCallSettings.<DeleteFileRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteFileMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateFileRequest, File> updateFileTransportSettings =
+        GrpcCallSettings.<UpdateFileRequest, File>newBuilder()
+            .setMethodDescriptor(updateFileMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("file.name", String.valueOf(request.getFile().getName()));
                   return builder.build();
                 })
             .build();
@@ -923,6 +1119,56 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
     GrpcCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
         GrpcCallSettings.<DeleteTagRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTagMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateRuleRequest, Rule> createRuleTransportSettings =
+        GrpcCallSettings.<CreateRuleRequest, Rule>newBuilder()
+            .setMethodDescriptor(createRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListRulesRequest, ListRulesResponse> listRulesTransportSettings =
+        GrpcCallSettings.<ListRulesRequest, ListRulesResponse>newBuilder()
+            .setMethodDescriptor(listRulesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetRuleRequest, Rule> getRuleTransportSettings =
+        GrpcCallSettings.<GetRuleRequest, Rule>newBuilder()
+            .setMethodDescriptor(getRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateRuleRequest, Rule> updateRuleTransportSettings =
+        GrpcCallSettings.<UpdateRuleRequest, Rule>newBuilder()
+            .setMethodDescriptor(updateRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rule.name", String.valueOf(request.getRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteRuleRequest, Empty> deleteRuleTransportSettings =
+        GrpcCallSettings.<DeleteRuleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteRuleMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1003,6 +1249,57 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add(
                       "vpcsc_config.name", String.valueOf(request.getVpcscConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdatePackageRequest, Package> updatePackageTransportSettings =
+        GrpcCallSettings.<UpdatePackageRequest, Package>newBuilder()
+            .setMethodDescriptor(updatePackageMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("package.name", String.valueOf(request.getPackage().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAttachmentsRequest, ListAttachmentsResponse>
+        listAttachmentsTransportSettings =
+            GrpcCallSettings.<ListAttachmentsRequest, ListAttachmentsResponse>newBuilder()
+                .setMethodDescriptor(listAttachmentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
+        GrpcCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
+            .setMethodDescriptor(getAttachmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAttachmentRequest, Operation> createAttachmentTransportSettings =
+        GrpcCallSettings.<CreateAttachmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAttachmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAttachmentRequest, Operation> deleteAttachmentTransportSettings =
+        GrpcCallSettings.<DeleteAttachmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAttachmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -1170,6 +1467,9 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
             settings.batchDeleteVersionsOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateVersionTransportSettings, settings.updateVersionSettings(), clientContext);
     this.listFilesCallable =
         callableFactory.createUnaryCallable(
             listFilesTransportSettings, settings.listFilesSettings(), clientContext);
@@ -1179,6 +1479,18 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
     this.getFileCallable =
         callableFactory.createUnaryCallable(
             getFileTransportSettings, settings.getFileSettings(), clientContext);
+    this.deleteFileCallable =
+        callableFactory.createUnaryCallable(
+            deleteFileTransportSettings, settings.deleteFileSettings(), clientContext);
+    this.deleteFileOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteFileTransportSettings,
+            settings.deleteFileOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateFileCallable =
+        callableFactory.createUnaryCallable(
+            updateFileTransportSettings, settings.updateFileSettings(), clientContext);
     this.listTagsCallable =
         callableFactory.createUnaryCallable(
             listTagsTransportSettings, settings.listTagsSettings(), clientContext);
@@ -1197,6 +1509,24 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
     this.deleteTagCallable =
         callableFactory.createUnaryCallable(
             deleteTagTransportSettings, settings.deleteTagSettings(), clientContext);
+    this.createRuleCallable =
+        callableFactory.createUnaryCallable(
+            createRuleTransportSettings, settings.createRuleSettings(), clientContext);
+    this.listRulesCallable =
+        callableFactory.createUnaryCallable(
+            listRulesTransportSettings, settings.listRulesSettings(), clientContext);
+    this.listRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRulesTransportSettings, settings.listRulesSettings(), clientContext);
+    this.getRuleCallable =
+        callableFactory.createUnaryCallable(
+            getRuleTransportSettings, settings.getRuleSettings(), clientContext);
+    this.updateRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateRuleTransportSettings, settings.updateRuleSettings(), clientContext);
+    this.deleteRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteRuleTransportSettings, settings.deleteRuleSettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1226,6 +1556,36 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
             updateVPCSCConfigTransportSettings,
             settings.updateVPCSCConfigSettings(),
             clientContext);
+    this.updatePackageCallable =
+        callableFactory.createUnaryCallable(
+            updatePackageTransportSettings, settings.updatePackageSettings(), clientContext);
+    this.listAttachmentsCallable =
+        callableFactory.createUnaryCallable(
+            listAttachmentsTransportSettings, settings.listAttachmentsSettings(), clientContext);
+    this.listAttachmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAttachmentsTransportSettings, settings.listAttachmentsSettings(), clientContext);
+    this.getAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
+    this.createAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            createAttachmentTransportSettings, settings.createAttachmentSettings(), clientContext);
+    this.createAttachmentOperationCallable =
+        callableFactory.createOperationCallable(
+            createAttachmentTransportSettings,
+            settings.createAttachmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteAttachmentTransportSettings, settings.deleteAttachmentSettings(), clientContext);
+    this.deleteAttachmentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAttachmentTransportSettings,
+            settings.deleteAttachmentOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1443,6 +1803,11 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   }
 
   @Override
+  public UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable() {
+    return updateVersionCallable;
+  }
+
+  @Override
   public UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable() {
     return listFilesCallable;
   }
@@ -1455,6 +1820,22 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<GetFileRequest, File> getFileCallable() {
     return getFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFileRequest, Operation> deleteFileCallable() {
+    return deleteFileCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationCallable() {
+    return deleteFileOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFileRequest, File> updateFileCallable() {
+    return updateFileCallable;
   }
 
   @Override
@@ -1485,6 +1866,36 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     return deleteTagCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRuleRequest, Rule> createRuleCallable() {
+    return createRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRulesRequest, ListRulesResponse> listRulesCallable() {
+    return listRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable() {
+    return listRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRuleRequest, Rule> getRuleCallable() {
+    return getRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable() {
+    return updateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
+    return deleteRuleCallable;
   }
 
   @Override
@@ -1522,6 +1933,49 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
     return updateVPCSCConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePackageRequest, Package> updatePackageCallable() {
+    return updatePackageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse> listAttachmentsCallable() {
+    return listAttachmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
+      listAttachmentsPagedCallable() {
+    return listAttachmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    return getAttachmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAttachmentRequest, Operation> createAttachmentCallable() {
+    return createAttachmentCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationCallable() {
+    return createAttachmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable() {
+    return deleteAttachmentCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationCallable() {
+    return deleteAttachmentOperationCallable;
   }
 
   @Override

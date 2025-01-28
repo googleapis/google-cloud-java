@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
-   * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   * [data_item_view_id][google.cloud.aiplatform.v1.EvaluatedAnnotation.evaluated_data_item_view_id].
    *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
@@ -93,7 +93,7 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
-   * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   * [data_item_view_id][google.cloud.aiplatform.v1.EvaluatedAnnotation.evaluated_data_item_view_id].
    *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
@@ -121,7 +121,7 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
-   * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   * [data_item_view_id][google.cloud.aiplatform.v1.EvaluatedAnnotation.evaluated_data_item_view_id].
    *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
@@ -149,7 +149,7 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
-   * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   * [data_item_view_id][google.cloud.aiplatform.v1.EvaluatedAnnotation.evaluated_data_item_view_id].
    *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in
@@ -177,7 +177,7 @@ public interface EvaluatedAnnotationOrBuilder
    *
    * For false positive, there is one and only one prediction, which doesn't
    * match any ground truth annotation of the corresponding
-   * [data_item_view_id][EvaluatedAnnotation.data_item_view_id].
+   * [data_item_view_id][google.cloud.aiplatform.v1.EvaluatedAnnotation.evaluated_data_item_view_id].
    *
    * For false negative, there are zero or more predictions which are similar to
    * the only ground truth annotation in

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,36 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>MODEL_GARDEN = 4;</code>
      */
     MODEL_GARDEN(4),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Genie.
+     * </pre>
+     *
+     * <code>GENIE = 5;</code>
+     */
+    GENIE(5),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is uploaded by text embedding finetuning pipeline.
+     * </pre>
+     *
+     * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
+     */
+    CUSTOM_TEXT_EMBEDDING(6),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Marketplace.
+     * </pre>
+     *
+     * <code>MARKETPLACE = 7;</code>
+     */
+    MARKETPLACE(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -176,6 +206,36 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
      * <code>MODEL_GARDEN = 4;</code>
      */
     public static final int MODEL_GARDEN_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Genie.
+     * </pre>
+     *
+     * <code>GENIE = 5;</code>
+     */
+    public static final int GENIE_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is uploaded by text embedding finetuning pipeline.
+     * </pre>
+     *
+     * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
+     */
+    public static final int CUSTOM_TEXT_EMBEDDING_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Marketplace.
+     * </pre>
+     *
+     * <code>MARKETPLACE = 7;</code>
+     */
+    public static final int MARKETPLACE_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -211,6 +271,12 @@ public final class VertexModelSourceInfo extends com.google.protobuf.GeneratedMe
           return BQML;
         case 4:
           return MODEL_GARDEN;
+        case 5:
+          return GENIE;
+        case 6:
+          return CUSTOM_TEXT_EMBEDDING;
+        case 7:
+          return MARKETPLACE;
         default:
           return null;
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -763,6 +763,48 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> importEntriesOperationCallable()
  *           <li><p> importEntriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetConfig</td>
+ *      <td><p> Sets the configuration related to the migration to Dataplex for an organization or project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setConfig(SetConfigRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RetrieveConfig</td>
+ *      <td><p> Retrieves the configuration related to the migration from Data Catalog to Dataplex for a specific organization, including all the projects under it which have a separate configuration set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> retrieveConfig(RetrieveConfigRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> retrieveConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RetrieveEffectiveConfig</td>
+ *      <td><p> Retrieves the effective configuration related to the migration from Data Catalog to Dataplex for a specific organization or project. If there is no specific configuration set for the resource, the setting is checked hierarchicahlly through the ancestors of the resource, starting from the resource itself.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> retrieveEffectiveConfig(RetrieveEffectiveConfigRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> retrieveEffectiveConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -5865,6 +5907,170 @@ public class DataCatalogClient implements BackgroundResource {
    */
   public final UnaryCallable<ImportEntriesRequest, Operation> importEntriesCallable() {
     return stub.importEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the configuration related to the migration to Dataplex for an organization or project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   SetConfigRequest request = SetConfigRequest.newBuilder().setName("name3373707").build();
+   *   MigrationConfig response = dataCatalogClient.setConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MigrationConfig setConfig(SetConfigRequest request) {
+    return setConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the configuration related to the migration to Dataplex for an organization or project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   SetConfigRequest request = SetConfigRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<MigrationConfig> future = dataCatalogClient.setConfigCallable().futureCall(request);
+   *   // Do something.
+   *   MigrationConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetConfigRequest, MigrationConfig> setConfigCallable() {
+    return stub.setConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the configuration related to the migration from Data Catalog to Dataplex for a
+   * specific organization, including all the projects under it which have a separate configuration
+   * set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   RetrieveConfigRequest request =
+   *       RetrieveConfigRequest.newBuilder().setName("name3373707").build();
+   *   OrganizationConfig response = dataCatalogClient.retrieveConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OrganizationConfig retrieveConfig(RetrieveConfigRequest request) {
+    return retrieveConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the configuration related to the migration from Data Catalog to Dataplex for a
+   * specific organization, including all the projects under it which have a separate configuration
+   * set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   RetrieveConfigRequest request =
+   *       RetrieveConfigRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<OrganizationConfig> future =
+   *       dataCatalogClient.retrieveConfigCallable().futureCall(request);
+   *   // Do something.
+   *   OrganizationConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RetrieveConfigRequest, OrganizationConfig> retrieveConfigCallable() {
+    return stub.retrieveConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the effective configuration related to the migration from Data Catalog to Dataplex
+   * for a specific organization or project. If there is no specific configuration set for the
+   * resource, the setting is checked hierarchicahlly through the ancestors of the resource,
+   * starting from the resource itself.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   RetrieveEffectiveConfigRequest request =
+   *       RetrieveEffectiveConfigRequest.newBuilder().setName("name3373707").build();
+   *   MigrationConfig response = dataCatalogClient.retrieveEffectiveConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MigrationConfig retrieveEffectiveConfig(RetrieveEffectiveConfigRequest request) {
+    return retrieveEffectiveConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the effective configuration related to the migration from Data Catalog to Dataplex
+   * for a specific organization or project. If there is no specific configuration set for the
+   * resource, the setting is checked hierarchicahlly through the ancestors of the resource,
+   * starting from the resource itself.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+   *   RetrieveEffectiveConfigRequest request =
+   *       RetrieveEffectiveConfigRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<MigrationConfig> future =
+   *       dataCatalogClient.retrieveEffectiveConfigCallable().futureCall(request);
+   *   // Do something.
+   *   MigrationConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigCallable() {
+    return stub.retrieveEffectiveConfigCallable();
   }
 
   @Override

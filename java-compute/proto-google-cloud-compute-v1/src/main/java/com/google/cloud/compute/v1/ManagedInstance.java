@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1278,6 +1278,67 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         : preservedStateFromPolicy_;
   }
 
+  public static final int PROPERTIES_FROM_FLEXIBILITY_POLICY_FIELD_NUMBER = 155525825;
+  private com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+      propertiesFromFlexibilityPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   *
+   * @return Whether the propertiesFromFlexibilityPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasPropertiesFromFlexibilityPolicy() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   *
+   * @return The propertiesFromFlexibilityPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+      getPropertiesFromFlexibilityPolicy() {
+    return propertiesFromFlexibilityPolicy_ == null
+        ? com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+            .getDefaultInstance()
+        : propertiesFromFlexibilityPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
+      getPropertiesFromFlexibilityPolicyOrBuilder() {
+    return propertiesFromFlexibilityPolicy_ == null
+        ? com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+            .getDefaultInstance()
+        : propertiesFromFlexibilityPolicy_;
+  }
+
   public static final int VERSION_FIELD_NUMBER = 351608024;
   private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
   /**
@@ -1293,7 +1354,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasVersion() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1354,13 +1415,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(98661858, getPreservedStateFromConfig());
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(155525825, getPropertiesFromFlexibilityPolicy());
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 174577372, instanceStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178475964, currentAction_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
@@ -1395,13 +1459,18 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               98661858, getPreservedStateFromConfig());
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              155525825, getPropertiesFromFlexibilityPolicy());
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(174577372, instanceStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178475964, currentAction_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
@@ -1466,6 +1535,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (hasPreservedStateFromPolicy()) {
       if (!getPreservedStateFromPolicy().equals(other.getPreservedStateFromPolicy())) return false;
     }
+    if (hasPropertiesFromFlexibilityPolicy() != other.hasPropertiesFromFlexibilityPolicy())
+      return false;
+    if (hasPropertiesFromFlexibilityPolicy()) {
+      if (!getPropertiesFromFlexibilityPolicy().equals(other.getPropertiesFromFlexibilityPolicy()))
+        return false;
+    }
     if (hasVersion() != other.hasVersion()) return false;
     if (hasVersion()) {
       if (!getVersion().equals(other.getVersion())) return false;
@@ -1516,6 +1591,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
     if (hasPreservedStateFromPolicy()) {
       hash = (37 * hash) + PRESERVED_STATE_FROM_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPreservedStateFromPolicy().hashCode();
+    }
+    if (hasPropertiesFromFlexibilityPolicy()) {
+      hash = (37 * hash) + PROPERTIES_FROM_FLEXIBILITY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertiesFromFlexibilityPolicy().hashCode();
     }
     if (hasVersion()) {
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -1665,6 +1744,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         getLastAttemptFieldBuilder();
         getPreservedStateFromConfigFieldBuilder();
         getPreservedStateFromPolicyFieldBuilder();
+        getPropertiesFromFlexibilityPolicyFieldBuilder();
         getVersionFieldBuilder();
       }
     }
@@ -1699,6 +1779,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (preservedStateFromPolicyBuilder_ != null) {
         preservedStateFromPolicyBuilder_.dispose();
         preservedStateFromPolicyBuilder_ = null;
+      }
+      propertiesFromFlexibilityPolicy_ = null;
+      if (propertiesFromFlexibilityPolicyBuilder_ != null) {
+        propertiesFromFlexibilityPolicyBuilder_.dispose();
+        propertiesFromFlexibilityPolicyBuilder_ = null;
       }
       version_ = null;
       if (versionBuilder_ != null) {
@@ -1795,8 +1880,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        result.propertiesFromFlexibilityPolicy_ =
+            propertiesFromFlexibilityPolicyBuilder_ == null
+                ? propertiesFromFlexibilityPolicy_
+                : propertiesFromFlexibilityPolicyBuilder_.build();
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1905,6 +1997,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       if (other.hasPreservedStateFromPolicy()) {
         mergePreservedStateFromPolicy(other.getPreservedStateFromPolicy());
       }
+      if (other.hasPropertiesFromFlexibilityPolicy()) {
+        mergePropertiesFromFlexibilityPolicy(other.getPropertiesFromFlexibilityPolicy());
+      }
       if (other.hasVersion()) {
         mergeVersion(other.getVersion());
       }
@@ -1959,6 +2054,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000080;
                 break;
               } // case 789294866
+            case 1244206602:
+              {
+                input.readMessage(
+                    getPropertiesFromFlexibilityPolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 1244206602
             case 1396618978:
               {
                 instanceStatus_ = input.readStringRequireUtf8();
@@ -1974,7 +2077,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
             case -1482103102:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -1482103102
             case -1233630670:
@@ -3598,6 +3701,222 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       return preservedStateFromPolicyBuilder_;
     }
 
+    private com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+        propertiesFromFlexibilityPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy,
+            com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy.Builder,
+            com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder>
+        propertiesFromFlexibilityPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     *
+     * @return Whether the propertiesFromFlexibilityPolicy field is set.
+     */
+    public boolean hasPropertiesFromFlexibilityPolicy() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     *
+     * @return The propertiesFromFlexibilityPolicy.
+     */
+    public com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+        getPropertiesFromFlexibilityPolicy() {
+      if (propertiesFromFlexibilityPolicyBuilder_ == null) {
+        return propertiesFromFlexibilityPolicy_ == null
+            ? com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+                .getDefaultInstance()
+            : propertiesFromFlexibilityPolicy_;
+      } else {
+        return propertiesFromFlexibilityPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     */
+    public Builder setPropertiesFromFlexibilityPolicy(
+        com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy value) {
+      if (propertiesFromFlexibilityPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        propertiesFromFlexibilityPolicy_ = value;
+      } else {
+        propertiesFromFlexibilityPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     */
+    public Builder setPropertiesFromFlexibilityPolicy(
+        com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy.Builder
+            builderForValue) {
+      if (propertiesFromFlexibilityPolicyBuilder_ == null) {
+        propertiesFromFlexibilityPolicy_ = builderForValue.build();
+      } else {
+        propertiesFromFlexibilityPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     */
+    public Builder mergePropertiesFromFlexibilityPolicy(
+        com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy value) {
+      if (propertiesFromFlexibilityPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && propertiesFromFlexibilityPolicy_ != null
+            && propertiesFromFlexibilityPolicy_
+                != com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+                    .getDefaultInstance()) {
+          getPropertiesFromFlexibilityPolicyBuilder().mergeFrom(value);
+        } else {
+          propertiesFromFlexibilityPolicy_ = value;
+        }
+      } else {
+        propertiesFromFlexibilityPolicyBuilder_.mergeFrom(value);
+      }
+      if (propertiesFromFlexibilityPolicy_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     */
+    public Builder clearPropertiesFromFlexibilityPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      propertiesFromFlexibilityPolicy_ = null;
+      if (propertiesFromFlexibilityPolicyBuilder_ != null) {
+        propertiesFromFlexibilityPolicyBuilder_.dispose();
+        propertiesFromFlexibilityPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy.Builder
+        getPropertiesFromFlexibilityPolicyBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getPropertiesFromFlexibilityPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
+        getPropertiesFromFlexibilityPolicyOrBuilder() {
+      if (propertiesFromFlexibilityPolicyBuilder_ != null) {
+        return propertiesFromFlexibilityPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return propertiesFromFlexibilityPolicy_ == null
+            ? com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy
+                .getDefaultInstance()
+            : propertiesFromFlexibilityPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy properties_from_flexibility_policy = 155525825;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy,
+            com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy.Builder,
+            com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder>
+        getPropertiesFromFlexibilityPolicyFieldBuilder() {
+      if (propertiesFromFlexibilityPolicyBuilder_ == null) {
+        propertiesFromFlexibilityPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy,
+                com.google.cloud.compute.v1.ManagedInstancePropertiesFromFlexibilityPolicy.Builder,
+                com.google.cloud.compute.v1
+                    .ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder>(
+                getPropertiesFromFlexibilityPolicy(), getParentForChildren(), isClean());
+        propertiesFromFlexibilityPolicy_ = null;
+      }
+      return propertiesFromFlexibilityPolicyBuilder_;
+    }
+
     private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ManagedInstanceVersion,
@@ -3616,7 +3935,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3656,7 +3975,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3676,7 +3995,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3691,7 +4010,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && version_ != null
             && version_
                 != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
@@ -3703,7 +4022,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
         versionBuilder_.mergeFrom(value);
       }
       if (version_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3718,7 +4037,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       version_ = null;
       if (versionBuilder_ != null) {
         versionBuilder_.dispose();
@@ -3737,7 +4056,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersion.Builder getVersionBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -86,7 +86,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -100,7 +100,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -113,7 +113,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -126,7 +126,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * List of [Resources][]s.
+   * List of [Resources][google.cloud.config.v1.Resource].
    * </pre>
    *
    * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -727,7 +727,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -743,7 +743,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -759,7 +759,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -775,7 +775,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -797,7 +797,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -817,7 +817,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -839,7 +839,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -861,7 +861,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -880,7 +880,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -900,7 +900,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -920,7 +920,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -939,7 +939,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -958,7 +958,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -970,7 +970,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -986,7 +986,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -1003,7 +1003,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -1016,7 +1016,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>
@@ -1029,7 +1029,7 @@ public final class ListResourcesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * List of [Resources][]s.
+     * List of [Resources][google.cloud.config.v1.Resource].
      * </pre>
      *
      * <code>repeated .google.cloud.config.v1.Resource resources = 1;</code>

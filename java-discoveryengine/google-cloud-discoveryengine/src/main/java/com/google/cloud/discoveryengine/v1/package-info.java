@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,17 +168,17 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
  *     GroundedGenerationServiceClient.create()) {
- *   CheckGroundingRequest request =
- *       CheckGroundingRequest.newBuilder()
- *           .setGroundingConfig(
- *               GroundingConfigName.of("[PROJECT]", "[LOCATION]", "[GROUNDING_CONFIG]")
- *                   .toString())
- *           .setAnswerCandidate("answerCandidate-292402331")
- *           .addAllFacts(new ArrayList<GroundingFact>())
- *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *   GenerateGroundedContentRequest request =
+ *       GenerateGroundedContentRequest.newBuilder()
+ *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+ *           .addAllContents(new ArrayList<GroundedGenerationContent>())
+ *           .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+ *           .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
- *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
+ *   GenerateGroundedContentResponse response =
+ *       groundedGenerationServiceClient.generateGroundedContent(request);
  * }
  * }</pre>
  *
@@ -308,6 +308,7 @@
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .setOneBoxPageSize(1988477988)
  *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")

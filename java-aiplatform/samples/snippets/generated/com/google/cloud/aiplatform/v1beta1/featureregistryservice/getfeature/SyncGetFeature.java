@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.cloud.aiplatform.v1beta1.Feature;
 import com.google.cloud.aiplatform.v1beta1.FeatureName;
 import com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient;
+import com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalySpec;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureRequest;
 
 public class SyncGetFeature {
@@ -42,6 +43,7 @@ public class SyncGetFeature {
                   FeatureName.ofProjectLocationFeatureGroupFeatureName(
                           "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE]")
                       .toString())
+              .setFeatureStatsAndAnomalySpec(FeatureStatsAndAnomalySpec.newBuilder().build())
               .build();
       Feature response = featureRegistryServiceClient.getFeature(request);
     }

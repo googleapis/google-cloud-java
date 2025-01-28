@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   private HealthStatusForNetworkEndpoint() {
     healthState_ = "";
+    ipv6HealthState_ = "";
   }
 
   @java.lang.Override
@@ -68,6 +69,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    * <pre>
    * Health state of the network endpoint determined based on the health checks configured.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * DRAINING
+   * HEALTHY
+   * UNHEALTHY
+   * UNKNOWN
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState}
@@ -83,45 +89,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     UNDEFINED_HEALTH_STATE(0),
-    /**
-     *
-     *
-     * <pre>
-     * Endpoint is being drained.
-     * </pre>
-     *
-     * <code>DRAINING = 480455402;</code>
-     */
+    /** <code>DRAINING = 480455402;</code> */
     DRAINING(480455402),
-    /**
-     *
-     *
-     * <pre>
-     * Endpoint is healthy.
-     * </pre>
-     *
-     * <code>HEALTHY = 439801213;</code>
-     */
+    /** <code>HEALTHY = 439801213;</code> */
     HEALTHY(439801213),
-    /**
-     *
-     *
-     * <pre>
-     * Endpoint is unhealthy.
-     * </pre>
-     *
-     * <code>UNHEALTHY = 462118084;</code>
-     */
+    /** <code>UNHEALTHY = 462118084;</code> */
     UNHEALTHY(462118084),
-    /**
-     *
-     *
-     * <pre>
-     * Health status of the endpoint is unknown.
-     * </pre>
-     *
-     * <code>UNKNOWN = 433141802;</code>
-     */
+    /** <code>UNKNOWN = 433141802;</code> */
     UNKNOWN(433141802),
     UNRECOGNIZED(-1),
     ;
@@ -136,45 +110,13 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATE_VALUE = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Endpoint is being drained.
-     * </pre>
-     *
-     * <code>DRAINING = 480455402;</code>
-     */
+    /** <code>DRAINING = 480455402;</code> */
     public static final int DRAINING_VALUE = 480455402;
-    /**
-     *
-     *
-     * <pre>
-     * Endpoint is healthy.
-     * </pre>
-     *
-     * <code>HEALTHY = 439801213;</code>
-     */
+    /** <code>HEALTHY = 439801213;</code> */
     public static final int HEALTHY_VALUE = 439801213;
-    /**
-     *
-     *
-     * <pre>
-     * Endpoint is unhealthy.
-     * </pre>
-     *
-     * <code>UNHEALTHY = 462118084;</code>
-     */
+    /** <code>UNHEALTHY = 462118084;</code> */
     public static final int UNHEALTHY_VALUE = 462118084;
-    /**
-     *
-     *
-     * <pre>
-     * Health status of the endpoint is unknown.
-     * </pre>
-     *
-     * <code>UNKNOWN = 433141802;</code>
-     */
+    /** <code>UNKNOWN = 433141802;</code> */
     public static final int UNKNOWN_VALUE = 433141802;
 
     public final int getNumber() {
@@ -264,6 +206,128 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * DRAINING
+   * HEALTHY
+   * UNHEALTHY
+   * UNKNOWN
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.HealthStatusForNetworkEndpoint.Ipv6HealthState}
+   */
+  public enum Ipv6HealthState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_HEALTH_STATE = 0;</code>
+     */
+    UNDEFINED_IPV6_HEALTH_STATE(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_HEALTH_STATE = 0;</code>
+     */
+    public static final int UNDEFINED_IPV6_HEALTH_STATE_VALUE = 0;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Ipv6HealthState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Ipv6HealthState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IPV6_HEALTH_STATE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Ipv6HealthState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Ipv6HealthState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Ipv6HealthState>() {
+              public Ipv6HealthState findValueByNumber(int number) {
+                return Ipv6HealthState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final Ipv6HealthState[] VALUES = values();
+
+    public static Ipv6HealthState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Ipv6HealthState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.HealthStatusForNetworkEndpoint.Ipv6HealthState)
   }
 
   private int bitField0_;
@@ -549,6 +613,75 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     }
   }
 
+  public static final int IPV6_HEALTH_STATE_FIELD_NUMBER = 190316614;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6HealthState_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return Whether the ipv6HealthState field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6HealthState() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The ipv6HealthState.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6HealthState() {
+    java.lang.Object ref = ipv6HealthState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6HealthState_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Check the Ipv6HealthState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_health_state = 190316614;</code>
+   *
+   * @return The bytes for ipv6HealthState.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6HealthStateBytes() {
+    java.lang.Object ref = ipv6HealthState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6HealthState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -563,6 +696,9 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 190316614, ipv6HealthState_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(269964030, getForwardingRule());
     }
@@ -587,6 +723,9 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(190316614, ipv6HealthState_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(269964030, getForwardingRule());
@@ -642,6 +781,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     if (hasHealthState()) {
       if (!getHealthState().equals(other.getHealthState())) return false;
     }
+    if (hasIpv6HealthState() != other.hasIpv6HealthState()) return false;
+    if (hasIpv6HealthState()) {
+      if (!getIpv6HealthState().equals(other.getIpv6HealthState())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -672,6 +815,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     if (hasHealthState()) {
       hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getHealthState().hashCode();
+    }
+    if (hasIpv6HealthState()) {
+      hash = (37 * hash) + IPV6_HEALTH_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6HealthState().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -845,6 +992,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         healthCheckServiceBuilder_ = null;
       }
       healthState_ = "";
+      ipv6HealthState_ = "";
       return this;
     }
 
@@ -907,6 +1055,10 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.healthState_ = healthState_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ipv6HealthState_ = ipv6HealthState_;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -974,6 +1126,11 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasIpv6HealthState()) {
+        ipv6HealthState_ = other.ipv6HealthState_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1000,6 +1157,12 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             case 0:
               done = true;
               break;
+            case 1522532914:
+              {
+                ipv6HealthState_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 1522532914
             case -2135255054:
               {
                 input.readMessage(getForwardingRuleFieldBuilder().getBuilder(), extensionRegistry);
@@ -1962,6 +2125,132 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       healthState_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipv6HealthState_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return Whether the ipv6HealthState field is set.
+     */
+    public boolean hasIpv6HealthState() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return The ipv6HealthState.
+     */
+    public java.lang.String getIpv6HealthState() {
+      java.lang.Object ref = ipv6HealthState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6HealthState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return The bytes for ipv6HealthState.
+     */
+    public com.google.protobuf.ByteString getIpv6HealthStateBytes() {
+      java.lang.Object ref = ipv6HealthState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6HealthState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @param value The ipv6HealthState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6HealthState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv6HealthState_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6HealthState() {
+      ipv6HealthState_ = getDefaultInstance().getIpv6HealthState();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Check the Ipv6HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_health_state = 190316614;</code>
+     *
+     * @param value The bytes for ipv6HealthState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6HealthStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv6HealthState_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

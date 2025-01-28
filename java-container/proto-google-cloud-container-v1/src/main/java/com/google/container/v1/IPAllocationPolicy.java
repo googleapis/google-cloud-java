@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -187,7 +187,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1581
+   *     google/container/v1/cluster_service.proto;l=1683
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -213,7 +213,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1581
+   *     google/container/v1/cluster_service.proto;l=1683
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -244,7 +244,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1584
+   *     google/container/v1/cluster_service.proto;l=1686
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -270,7 +270,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1584
+   *     google/container/v1/cluster_service.proto;l=1686
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -301,7 +301,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1587
+   *     google/container/v1/cluster_service.proto;l=1689
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -327,7 +327,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1587
+   *     google/container/v1/cluster_service.proto;l=1689
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -2239,7 +2239,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1581
+     *     google/container/v1/cluster_service.proto;l=1683
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2264,7 +2264,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1581
+     *     google/container/v1/cluster_service.proto;l=1683
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2289,7 +2289,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1581
+     *     google/container/v1/cluster_service.proto;l=1683
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2313,7 +2313,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1581
+     *     google/container/v1/cluster_service.proto;l=1683
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2333,7 +2333,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1581
+     *     google/container/v1/cluster_service.proto;l=1683
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2360,7 +2360,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1584
+     *     google/container/v1/cluster_service.proto;l=1686
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2385,7 +2385,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1584
+     *     google/container/v1/cluster_service.proto;l=1686
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2410,7 +2410,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1584
+     *     google/container/v1/cluster_service.proto;l=1686
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2434,7 +2434,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1584
+     *     google/container/v1/cluster_service.proto;l=1686
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2454,7 +2454,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1584
+     *     google/container/v1/cluster_service.proto;l=1686
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2481,7 +2481,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1587
+     *     google/container/v1/cluster_service.proto;l=1689
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2506,7 +2506,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1587
+     *     google/container/v1/cluster_service.proto;l=1689
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2531,7 +2531,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1587
+     *     google/container/v1/cluster_service.proto;l=1689
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2555,7 +2555,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1587
+     *     google/container/v1/cluster_service.proto;l=1689
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2575,7 +2575,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1587
+     *     google/container/v1/cluster_service.proto;l=1689
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */

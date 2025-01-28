@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,11 +73,11 @@ public final class WebhookProto {
           + "oogle.cloud.dialogflow.v2.SessionEntityT"
           + "ype\"h\n\033OriginalDetectIntentRequest\022\016\n\006so"
           + "urce\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022(\n\007payload\030\003"
-          + " \001(\0132\027.google.protobuf.StructB\225\001\n\036com.go"
+          + " \001(\0132\027.google.protobuf.StructB\222\001\n\036com.go"
           + "ogle.cloud.dialogflow.v2B\014WebhookProtoP\001"
           + "Z>cloud.google.com/go/dialogflow/apiv2/d"
-          + "ialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002\032Googl"
-          + "e.Cloud.Dialogflow.V2b\006proto3"
+          + "ialogflowpb;dialogflowpb\242\002\002DF\252\002\032Google.C"
+          + "loud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,9 @@ import com.google.cloud.aiplatform.v1.NotebookRuntimeTemplate;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeRequest;
 import com.google.cloud.aiplatform.v1.StartNotebookRuntimeResponse;
+import com.google.cloud.aiplatform.v1.StopNotebookRuntimeOperationMetadata;
+import com.google.cloud.aiplatform.v1.StopNotebookRuntimeRequest;
+import com.google.cloud.aiplatform.v1.StopNotebookRuntimeResponse;
 import com.google.cloud.aiplatform.v1.UpdateNotebookRuntimeTemplateRequest;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpgradeNotebookRuntimeRequest;
@@ -191,6 +194,19 @@ public abstract class NotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<StartNotebookRuntimeRequest, Operation> startNotebookRuntimeCallable() {
     throw new UnsupportedOperationException("Not implemented: startNotebookRuntimeCallable()");
+  }
+
+  public OperationCallable<
+          StopNotebookRuntimeRequest,
+          StopNotebookRuntimeResponse,
+          StopNotebookRuntimeOperationMetadata>
+      stopNotebookRuntimeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: stopNotebookRuntimeOperationCallable()");
+  }
+
+  public UnaryCallable<StopNotebookRuntimeRequest, Operation> stopNotebookRuntimeCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopNotebookRuntimeCallable()");
   }
 
   public OperationCallable<

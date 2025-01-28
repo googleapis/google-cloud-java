@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,7 +139,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -163,7 +163,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -187,7 +187,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -212,7 +212,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=129
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
@@ -399,6 +399,57 @@ public interface InputAudioConfigOrBuilder
    * @return The enableAutomaticPunctuation.
    */
   boolean getEnableAutomaticPunctuation();
+
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return A list containing the phraseSets.
+   */
+  java.util.List<java.lang.String> getPhraseSetsList();
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The count of phraseSets.
+   */
+  int getPhraseSetsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the element to return.
+   * @return The phraseSets at the given index.
+   */
+  java.lang.String getPhraseSets(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A collection of phrase set resources to use for speech adaptation.
+   * </pre>
+   *
+   * <code>repeated string phrase_sets = 20 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the phraseSets at the given index.
+   */
+  com.google.protobuf.ByteString getPhraseSetsBytes(int index);
 
   /**
    *

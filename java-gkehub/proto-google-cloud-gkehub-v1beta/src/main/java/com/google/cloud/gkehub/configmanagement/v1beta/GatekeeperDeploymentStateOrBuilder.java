@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,4 +78,31 @@ public interface GatekeeperDeploymentStateOrBuilder
    * @return The gatekeeperAudit.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperAudit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Status of the pod serving the mutation webhook.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for gatekeeperMutation.
+   */
+  int getGatekeeperMutationValue();
+  /**
+   *
+   *
+   * <pre>
+   * Status of the pod serving the mutation webhook.
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState gatekeeper_mutation = 3;
+   * </code>
+   *
+   * @return The gatekeeperMutation.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperMutation();
 }

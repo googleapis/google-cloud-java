@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of EventThreatDetectionCustomModules
+   * The list of custom modules.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of EventThreatDetectionCustomModules
+   * The list of custom modules.
    * </pre>
    *
    * <code>
@@ -54,7 +54,7 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of EventThreatDetectionCustomModules
+   * The list of custom modules.
    * </pre>
    *
    * <code>
@@ -66,7 +66,7 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of EventThreatDetectionCustomModules
+   * The list of custom modules.
    * </pre>
    *
    * <code>
@@ -82,7 +82,7 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of EventThreatDetectionCustomModules
+   * The list of custom modules.
    * </pre>
    *
    * <code>
@@ -96,7 +96,8 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -108,7 +109,8 @@ public interface ListEventThreatDetectionCustomModulesResponseOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * A pagination token. To retrieve the next page of results, call the method
+   * again with this token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

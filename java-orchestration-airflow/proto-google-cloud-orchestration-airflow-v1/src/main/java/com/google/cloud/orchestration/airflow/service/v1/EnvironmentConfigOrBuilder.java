@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,10 +103,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration settings for software inside the environment.
+   * Optional. The configuration settings for software inside the environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.SoftwareConfig software_config = 4;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the softwareConfig field is set.
    */
@@ -115,10 +117,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration settings for software inside the environment.
+   * Optional. The configuration settings for software inside the environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.SoftwareConfig software_config = 4;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The softwareConfig.
    */
@@ -127,10 +131,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration settings for software inside the environment.
+   * Optional. The configuration settings for software inside the environment.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.SoftwareConfig software_config = 4;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.SoftwareConfig software_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.orchestration.airflow.service.v1.SoftwareConfigOrBuilder
       getSoftwareConfigOrBuilder();
@@ -139,10 +145,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration used for the Kubernetes Engine cluster.
+   * Optional. The configuration used for the Kubernetes Engine cluster.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.NodeConfig node_config = 5;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the nodeConfig field is set.
    */
@@ -151,10 +159,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration used for the Kubernetes Engine cluster.
+   * Optional. The configuration used for the Kubernetes Engine cluster.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.NodeConfig node_config = 5;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The nodeConfig.
    */
@@ -163,10 +173,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration used for the Kubernetes Engine cluster.
+   * Optional. The configuration used for the Kubernetes Engine cluster.
    * </pre>
    *
-   * <code>.google.cloud.orchestration.airflow.service.v1.NodeConfig node_config = 5;</code>
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.NodeConfig node_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.orchestration.airflow.service.v1.NodeConfigOrBuilder getNodeConfigOrBuilder();
 
@@ -174,11 +186,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration used for the Private IP Cloud Composer environment.
+   * Optional. The configuration used for the Private IP Cloud Composer
+   * environment.
    * </pre>
    *
    * <code>
-   * .google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig private_environment_config = 7;
+   * .google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privateEnvironmentConfig field is set.
@@ -188,11 +201,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration used for the Private IP Cloud Composer environment.
+   * Optional. The configuration used for the Private IP Cloud Composer
+   * environment.
    * </pre>
    *
    * <code>
-   * .google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig private_environment_config = 7;
+   * .google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privateEnvironmentConfig.
@@ -203,11 +217,12 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
-   * The configuration used for the Private IP Cloud Composer environment.
+   * Optional. The configuration used for the Private IP Cloud Composer
+   * environment.
    * </pre>
    *
    * <code>
-   * .google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig private_environment_config = 7;
+   * .google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfig private_environment_config = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.orchestration.airflow.service.v1.PrivateEnvironmentConfigOrBuilder

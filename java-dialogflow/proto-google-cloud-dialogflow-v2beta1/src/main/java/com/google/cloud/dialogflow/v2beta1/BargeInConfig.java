@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,8 +42,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *   phase.
  *
  * The client provides this configuration in terms of the durations of those
- * two phases. The durations are measured in terms of the audio length from
- * the start of the input audio.
+ * two phases. The durations are measured in terms of the audio length from the
+ * start of the input audio.
  *
  * The flow goes like below:
  *
@@ -401,8 +401,8 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
    *   phase.
    *
    * The client provides this configuration in terms of the durations of those
-   * two phases. The durations are measured in terms of the audio length from
-   * the start of the input audio.
+   * two phases. The durations are measured in terms of the audio length from the
+   * start of the input audio.
    *
    * The flow goes like below:
    *

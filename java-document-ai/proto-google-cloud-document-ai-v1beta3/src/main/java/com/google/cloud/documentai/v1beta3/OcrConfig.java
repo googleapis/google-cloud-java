@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1889,7 +1889,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>bool compute_style_info = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+   *     google/cloud/documentai/v1beta3/document_io.proto;l=166
    * @return The computeStyleInfo.
    */
   @java.lang.Override
@@ -3110,7 +3110,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=166
      * @return The computeStyleInfo.
      */
     @java.lang.Override
@@ -3131,7 +3131,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=166
      * @param value The computeStyleInfo to set.
      * @return This builder for chaining.
      */
@@ -3156,7 +3156,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=166
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -341,6 +341,26 @@
  *       SessionEntityTypeName.ofProjectSessionEntityTypeName(
  *           "[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
  *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SipTrunksClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [SipTrunks][google.cloud.dialogflow.v2beta1.SipTrunk].
+ *
+ * <p>Sample for SipTrunksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SipTrunksClient sipTrunksClient = SipTrunksClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   SipTrunk sipTrunk = SipTrunk.newBuilder().build();
+ *   SipTrunk response = sipTrunksClient.createSipTrunk(parent, sipTrunk);
  * }
  * }</pre>
  *

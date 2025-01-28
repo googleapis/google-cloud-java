@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public interface ResumeEngineRequestOrBuilder
    * <pre>
    * Required. The name of the engine to resume.
    * Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ResumeEngineRequestOrBuilder
    * <pre>
    * Required. The name of the engine to resume.
    * Format:
-   * `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * </pre>
    *
    * <code>

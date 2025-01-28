@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import com.google.cloud.alloydb.v1beta.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1beta.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1beta.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1beta.DeleteUserRequest;
+import com.google.cloud.alloydb.v1beta.ExecuteSqlRequest;
+import com.google.cloud.alloydb.v1beta.ExecuteSqlResponse;
 import com.google.cloud.alloydb.v1beta.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1beta.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse;
@@ -69,10 +71,13 @@ import com.google.cloud.alloydb.v1beta.OperationMetadata;
 import com.google.cloud.alloydb.v1beta.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1beta.RestartInstanceRequest;
 import com.google.cloud.alloydb.v1beta.RestoreClusterRequest;
+import com.google.cloud.alloydb.v1beta.SwitchoverClusterRequest;
 import com.google.cloud.alloydb.v1beta.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1beta.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1beta.UpdateInstanceRequest;
 import com.google.cloud.alloydb.v1beta.UpdateUserRequest;
+import com.google.cloud.alloydb.v1beta.UpgradeClusterRequest;
+import com.google.cloud.alloydb.v1beta.UpgradeClusterResponse;
 import com.google.cloud.alloydb.v1beta.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -131,6 +136,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
   }
 
+  public OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeClusterOperationCallable()");
+  }
+
+  public UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeClusterCallable()");
+  }
+
   public OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteClusterOperationCallable()");
@@ -147,6 +161,16 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<PromoteClusterRequest, Operation> promoteClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: promoteClusterCallable()");
+  }
+
+  public OperationCallable<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: switchoverClusterOperationCallable()");
+  }
+
+  public UnaryCallable<SwitchoverClusterRequest, Operation> switchoverClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: switchoverClusterCallable()");
   }
 
   public OperationCallable<RestoreClusterRequest, Cluster, OperationMetadata>
@@ -255,6 +279,10 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<RestartInstanceRequest, Operation> restartInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: restartInstanceCallable()");
+  }
+
+  public UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeSqlCallable()");
   }
 
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {

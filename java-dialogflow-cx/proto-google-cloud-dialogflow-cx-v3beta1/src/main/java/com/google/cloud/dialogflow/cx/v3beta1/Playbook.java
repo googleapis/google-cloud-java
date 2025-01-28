@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2454,8 +2454,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the playbook.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -2479,8 +2479,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the playbook.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -4069,8 +4069,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4093,8 +4093,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4117,8 +4117,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4140,8 +4140,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4159,8 +4159,8 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the playbook.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>

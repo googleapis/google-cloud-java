@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,11 @@ public interface HardwareInstallationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+   * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
    * Rack 3.
    * </pre>
    *
-   * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The rackLocation.
    */
@@ -41,11 +41,11 @@ public interface HardwareInstallationInfoOrBuilder
    *
    *
    * <pre>
-   * Optional. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
+   * Required. Location of the rack in the site e.g. Floor 2, Room 201, Row 7,
    * Rack 3.
    * </pre>
    *
-   * <code>string rack_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string rack_location = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for rackLocation.
    */

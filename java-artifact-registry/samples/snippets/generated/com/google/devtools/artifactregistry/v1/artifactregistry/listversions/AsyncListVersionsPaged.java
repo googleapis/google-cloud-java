@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public class AsyncListVersionsPaged {
               .setPageToken("pageToken873572522")
               .setView(VersionView.forNumber(0))
               .setOrderBy("orderBy-1207110587")
+              .setFilter("filter-1274492040")
               .build();
       while (true) {
         ListVersionsResponse response = artifactRegistryClient.listVersionsCallable().call(request);

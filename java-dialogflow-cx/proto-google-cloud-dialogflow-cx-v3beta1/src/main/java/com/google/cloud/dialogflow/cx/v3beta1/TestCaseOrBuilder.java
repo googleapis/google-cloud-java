@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,8 +31,7 @@ public interface TestCaseOrBuilder
    * The unique identifier of the test case.
    * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.CreateTestCase]
    * will populate the name automatically. Otherwise use format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
-   * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,8 +46,7 @@ public interface TestCaseOrBuilder
    * The unique identifier of the test case.
    * [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.CreateTestCase]
    * will populate the name automatically. Otherwise use format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;LocationID&gt;/agents/
-   * &lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>

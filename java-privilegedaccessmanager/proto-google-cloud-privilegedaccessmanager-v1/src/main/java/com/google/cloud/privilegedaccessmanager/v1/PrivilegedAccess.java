@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,7 +189,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * GcpIamAccess represents IAM based access control on a Google Cloud
+   * `GcpIamAccess` represents IAM based access control on a Google Cloud
    * resource. Refer to https://cloud.google.com/iam/docs to understand more
    * about IAM.
    * </pre>
@@ -309,7 +309,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IAM Role bindings that are created after a successful grant.
+     * IAM role bindings that are created after a successful grant.
      * </pre>
      *
      * Protobuf type {@code
@@ -672,7 +672,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * IAM Role bindings that are created after a successful grant.
+       * IAM role bindings that are created after a successful grant.
        * </pre>
        *
        * Protobuf type {@code
@@ -1600,7 +1600,7 @@ public final class PrivilegedAccess extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * GcpIamAccess represents IAM based access control on a Google Cloud
+     * `GcpIamAccess` represents IAM based access control on a Google Cloud
      * resource. Refer to https://cloud.google.com/iam/docs to understand more
      * about IAM.
      * </pre>

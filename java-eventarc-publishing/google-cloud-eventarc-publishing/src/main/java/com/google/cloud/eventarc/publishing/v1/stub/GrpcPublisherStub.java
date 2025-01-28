@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsReq
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsResponse;
+import com.google.cloud.eventarc.publishing.v1.PublishRequest;
+import com.google.cloud.eventarc.publishing.v1.PublishResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -69,10 +71,19 @@ public class GrpcPublisherStub extends PublisherStub {
                   ProtoUtils.marshaller(PublishEventsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<PublishRequest, PublishResponse> publishMethodDescriptor =
+      MethodDescriptor.<PublishRequest, PublishResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.eventarc.publishing.v1.Publisher/Publish")
+          .setRequestMarshaller(ProtoUtils.marshaller(PublishRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(PublishResponse.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<
           PublishChannelConnectionEventsRequest, PublishChannelConnectionEventsResponse>
       publishChannelConnectionEventsCallable;
   private final UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable;
+  private final UnaryCallable<PublishRequest, PublishResponse> publishCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -139,6 +150,16 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<PublishRequest, PublishResponse> publishTransportSettings =
+        GrpcCallSettings.<PublishRequest, PublishResponse>newBuilder()
+            .setMethodDescriptor(publishMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("message_bus", String.valueOf(request.getMessageBus()));
+                  return builder.build();
+                })
+            .build();
 
     this.publishChannelConnectionEventsCallable =
         callableFactory.createUnaryCallable(
@@ -148,6 +169,9 @@ public class GrpcPublisherStub extends PublisherStub {
     this.publishEventsCallable =
         callableFactory.createUnaryCallable(
             publishEventsTransportSettings, settings.publishEventsSettings(), clientContext);
+    this.publishCallable =
+        callableFactory.createUnaryCallable(
+            publishTransportSettings, settings.publishSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -167,6 +191,11 @@ public class GrpcPublisherStub extends PublisherStub {
   @Override
   public UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable() {
     return publishEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    return publishCallable;
   }
 
   @Override

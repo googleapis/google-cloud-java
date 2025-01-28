@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,10 @@ package com.google.shopping.merchant.products.v1beta;
  *
  * <pre>
  * The processed product, built from multiple [product
- * inputs][[google.shopping.content.bundles.Products.ProductInput] after
- * applying rules and supplemental data sources. This processed product matches
- * what is shown in your Merchant Center account and in Shopping ads and other
- * surfaces across Google. Each product is built from exactly one primary
+ * inputs][google.shopping.merchant.products.v1main.ProductInput]
+ * after applying rules and supplemental data sources. This processed product
+ * matches what is shown in your Merchant Center account and in Shopping ads and
+ * other surfaces across Google. Each product is built from exactly one primary
  * data source product input, and multiple supplemental data source inputs.
  * After inserting, updating, or deleting a product input, it may take
  * several minutes before the updated processed product can be retrieved.
@@ -92,7 +92,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"`
+   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * section `product` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product name is "accounts/123/products/online~en~US~sku123"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -117,7 +120,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The name of the product.
    * Format:
-   * `"{product.name=accounts/{account}/products/{product}}"`
+   * `"{product.name=accounts/{account}/products/{product}}"` where the last
+   * section `product` consists of 4 parts:
+   * channel~content_language~feed_label~offer_id
+   * example for product name is "accounts/123/products/online~en~US~sku123"
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -941,10 +947,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The processed product, built from multiple [product
-   * inputs][[google.shopping.content.bundles.Products.ProductInput] after
-   * applying rules and supplemental data sources. This processed product matches
-   * what is shown in your Merchant Center account and in Shopping ads and other
-   * surfaces across Google. Each product is built from exactly one primary
+   * inputs][google.shopping.merchant.products.v1main.ProductInput]
+   * after applying rules and supplemental data sources. This processed product
+   * matches what is shown in your Merchant Center account and in Shopping ads and
+   * other surfaces across Google. Each product is built from exactly one primary
    * data source product input, and multiple supplemental data source inputs.
    * After inserting, updating, or deleting a product input, it may take
    * several minutes before the updated processed product can be retrieved.
@@ -1336,7 +1342,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the product.
      * Format:
-     * `"{product.name=accounts/{account}/products/{product}}"`
+     * `"{product.name=accounts/{account}/products/{product}}"` where the last
+     * section `product` consists of 4 parts:
+     * channel~content_language~feed_label~offer_id
+     * example for product name is "accounts/123/products/online~en~US~sku123"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1360,7 +1369,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the product.
      * Format:
-     * `"{product.name=accounts/{account}/products/{product}}"`
+     * `"{product.name=accounts/{account}/products/{product}}"` where the last
+     * section `product` consists of 4 parts:
+     * channel~content_language~feed_label~offer_id
+     * example for product name is "accounts/123/products/online~en~US~sku123"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1384,7 +1396,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the product.
      * Format:
-     * `"{product.name=accounts/{account}/products/{product}}"`
+     * `"{product.name=accounts/{account}/products/{product}}"` where the last
+     * section `product` consists of 4 parts:
+     * channel~content_language~feed_label~offer_id
+     * example for product name is "accounts/123/products/online~en~US~sku123"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1407,7 +1422,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the product.
      * Format:
-     * `"{product.name=accounts/{account}/products/{product}}"`
+     * `"{product.name=accounts/{account}/products/{product}}"` where the last
+     * section `product` consists of 4 parts:
+     * channel~content_language~feed_label~offer_id
+     * example for product name is "accounts/123/products/online~en~US~sku123"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1426,7 +1444,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The name of the product.
      * Format:
-     * `"{product.name=accounts/{account}/products/{product}}"`
+     * `"{product.name=accounts/{account}/products/{product}}"` where the last
+     * section `product` consists of 4 parts:
+     * channel~content_language~feed_label~offer_id
+     * example for product name is "accounts/123/products/online~en~US~sku123"
      * </pre>
      *
      * <code>string name = 1;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -180,7 +180,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListUsable</td>
- *      <td><p> Retrieves an aggregated list of all usable backend services in the specified project in the given region.</td>
+ *      <td><p> Retrieves a list of all usable backend services in the specified project in the given region.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1129,8 +1129,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project in the
-   * given region.
+   * Retrieves a list of all usable backend services in the specified project in the given region.
    *
    * <p>Sample code:
    *
@@ -1167,8 +1166,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project in the
-   * given region.
+   * Retrieves a list of all usable backend services in the specified project in the given region.
    *
    * <p>Sample code:
    *
@@ -1205,8 +1203,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project in the
-   * given region.
+   * Retrieves a list of all usable backend services in the specified project in the given region.
    *
    * <p>Sample code:
    *
@@ -1244,8 +1241,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all usable backend services in the specified project in the
-   * given region.
+   * Retrieves a list of all usable backend services in the specified project in the given region.
    *
    * <p>Sample code:
    *

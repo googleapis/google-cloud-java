@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Name of a Compute Engine forwarding rule.
+   * Name of the forwarding rule.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -40,7 +40,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Name of a Compute Engine forwarding rule.
+   * Name of the forwarding rule.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -53,7 +53,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine forwarding rule.
+   * URI of the forwarding rule.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -65,7 +65,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Compute Engine forwarding rule.
+   * URI of the forwarding rule.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -78,7 +78,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Protocol defined in the forwarding rule that matches the test.
+   * Protocol defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_protocol = 3;</code>
@@ -90,7 +90,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Protocol defined in the forwarding rule that matches the test.
+   * Protocol defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_protocol = 3;</code>
@@ -103,7 +103,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Port range defined in the forwarding rule that matches the test.
+   * Port range defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_port_range = 6;</code>
@@ -115,7 +115,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Port range defined in the forwarding rule that matches the test.
+   * Port range defined in the forwarding rule that matches the packet.
    * </pre>
    *
    * <code>string matched_port_range = 6;</code>
@@ -178,7 +178,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Network URI. Only valid for Internal Load Balancer.
+   * Network URI.
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -190,7 +190,7 @@ public interface ForwardingRuleInfoOrBuilder
    *
    *
    * <pre>
-   * Network URI. Only valid for Internal Load Balancer.
+   * Network URI.
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -198,4 +198,108 @@ public interface ForwardingRuleInfoOrBuilder
    * @return The bytes for networkUri.
    */
   com.google.protobuf.ByteString getNetworkUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Region of the forwarding rule. Set only for regional forwarding rules.
+   * </pre>
+   *
+   * <code>string region = 8;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   *
+   *
+   * <pre>
+   * Region of the forwarding rule. Set only for regional forwarding rules.
+   * </pre>
+   *
+   * <code>string region = 8;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the load balancer the forwarding rule belongs to. Empty for
+   * forwarding rules not related to load balancers (like PSC forwarding rules).
+   * </pre>
+   *
+   * <code>string load_balancer_name = 9;</code>
+   *
+   * @return The loadBalancerName.
+   */
+  java.lang.String getLoadBalancerName();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the load balancer the forwarding rule belongs to. Empty for
+   * forwarding rules not related to load balancers (like PSC forwarding rules).
+   * </pre>
+   *
+   * <code>string load_balancer_name = 9;</code>
+   *
+   * @return The bytes for loadBalancerName.
+   */
+  com.google.protobuf.ByteString getLoadBalancerNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC service attachment this forwarding rule targets (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string psc_service_attachment_uri = 10;</code>
+   *
+   * @return The pscServiceAttachmentUri.
+   */
+  java.lang.String getPscServiceAttachmentUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of the PSC service attachment this forwarding rule targets (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string psc_service_attachment_uri = 10;</code>
+   *
+   * @return The bytes for pscServiceAttachmentUri.
+   */
+  com.google.protobuf.ByteString getPscServiceAttachmentUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target this forwarding rule targets (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 11;</code>
+   *
+   * @return The pscGoogleApiTarget.
+   */
+  java.lang.String getPscGoogleApiTarget();
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target this forwarding rule targets (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 11;</code>
+   *
+   * @return The bytes for pscGoogleApiTarget.
+   */
+  com.google.protobuf.ByteString getPscGoogleApiTargetBytes();
 }

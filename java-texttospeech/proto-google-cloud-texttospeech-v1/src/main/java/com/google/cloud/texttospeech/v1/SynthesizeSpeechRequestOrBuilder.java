@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,4 +146,42 @@ public interface SynthesizeSpeechRequestOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1.AudioConfigOrBuilder getAudioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>optional .google.cloud.texttospeech.v1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   *
+   * @return Whether the advancedVoiceOptions field is set.
+   */
+  boolean hasAdvancedVoiceOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>optional .google.cloud.texttospeech.v1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   *
+   * @return The advancedVoiceOptions.
+   */
+  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions getAdvancedVoiceOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Advanced voice options.
+   * </pre>
+   *
+   * <code>optional .google.cloud.texttospeech.v1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1.AdvancedVoiceOptionsOrBuilder getAdvancedVoiceOptionsOrBuilder();
 }

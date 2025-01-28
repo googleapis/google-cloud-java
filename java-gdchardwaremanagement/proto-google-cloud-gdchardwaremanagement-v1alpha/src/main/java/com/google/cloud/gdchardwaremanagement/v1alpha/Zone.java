@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     ciqUri_ = "";
     globallyUniqueId_ = "";
     subscriptionConfigs_ = java.util.Collections.emptyList();
+    provisioningState_ = 0;
   }
 
   @java.lang.Override
@@ -348,6 +349,190 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Zone.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Valid provisioning states for configurations like MAC addresses.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState}
+   */
+  public enum ProvisioningState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning state is unspecified.
+     * </pre>
+     *
+     * <code>PROVISIONING_STATE_UNSPECIFIED = 0;</code>
+     */
+    PROVISIONING_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is required. Set by Google.
+     * </pre>
+     *
+     * <code>PROVISIONING_REQUIRED = 1;</code>
+     */
+    PROVISIONING_REQUIRED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is in progress. Set by customer.
+     * </pre>
+     *
+     * <code>PROVISIONING_IN_PROGRESS = 2;</code>
+     */
+    PROVISIONING_IN_PROGRESS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is complete. Set by customer.
+     * </pre>
+     *
+     * <code>PROVISIONING_COMPLETE = 3;</code>
+     */
+    PROVISIONING_COMPLETE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning state is unspecified.
+     * </pre>
+     *
+     * <code>PROVISIONING_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROVISIONING_STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is required. Set by Google.
+     * </pre>
+     *
+     * <code>PROVISIONING_REQUIRED = 1;</code>
+     */
+    public static final int PROVISIONING_REQUIRED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is in progress. Set by customer.
+     * </pre>
+     *
+     * <code>PROVISIONING_IN_PROGRESS = 2;</code>
+     */
+    public static final int PROVISIONING_IN_PROGRESS_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is complete. Set by customer.
+     * </pre>
+     *
+     * <code>PROVISIONING_COMPLETE = 3;</code>
+     */
+    public static final int PROVISIONING_COMPLETE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProvisioningState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProvisioningState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROVISIONING_STATE_UNSPECIFIED;
+        case 1:
+          return PROVISIONING_REQUIRED;
+        case 2:
+          return PROVISIONING_IN_PROGRESS;
+        case 3:
+          return PROVISIONING_COMPLETE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProvisioningState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProvisioningState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ProvisioningState>() {
+              public ProvisioningState findValueByNumber(int number) {
+                return ProvisioningState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.Zone.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final ProvisioningState[] VALUES = values();
+
+    public static ProvisioningState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProvisioningState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState)
   }
 
   private int bitField0_;
@@ -1033,6 +1218,49 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     return subscriptionConfigs_.get(index);
   }
 
+  public static final int PROVISIONING_STATE_FIELD_NUMBER = 14;
+  private int provisioningState_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provisioning state for configurations like MAC addresses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for provisioningState.
+   */
+  @java.lang.Override
+  public int getProvisioningStateValue() {
+    return provisioningState_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provisioning state for configurations like MAC addresses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The provisioningState.
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState
+      getProvisioningState() {
+    com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState result =
+        com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState.forNumber(
+            provisioningState_);
+    return result == null
+        ? com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1080,6 +1308,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < subscriptionConfigs_.size(); i++) {
       output.writeMessage(13, subscriptionConfigs_.get(i));
+    }
+    if (provisioningState_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState
+            .PROVISIONING_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, provisioningState_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1133,6 +1367,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, subscriptionConfigs_.get(i));
     }
+    if (provisioningState_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState
+            .PROVISIONING_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, provisioningState_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1169,6 +1409,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getGloballyUniqueId().equals(other.getGloballyUniqueId())) return false;
     if (!getSubscriptionConfigsList().equals(other.getSubscriptionConfigsList())) return false;
+    if (provisioningState_ != other.provisioningState_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1214,6 +1455,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SUBSCRIPTION_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getSubscriptionConfigsList().hashCode();
     }
+    hash = (37 * hash) + PROVISIONING_STATE_FIELD_NUMBER;
+    hash = (53 * hash) + provisioningState_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1423,6 +1666,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         subscriptionConfigsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000400);
+      provisioningState_ = 0;
       return this;
     }
 
@@ -1514,6 +1758,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.globallyUniqueId_ = globallyUniqueId_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.provisioningState_ = provisioningState_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1652,6 +1899,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.provisioningState_ != 0) {
+        setProvisioningStateValue(other.getProvisioningStateValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1766,6 +2016,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 106
+            case 112:
+              {
+                provisioningState_ = input.readEnum();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3919,6 +4175,111 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         subscriptionConfigs_ = null;
       }
       return subscriptionConfigsBuilder_;
+    }
+
+    private int provisioningState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provisioning state for configurations like MAC addresses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for provisioningState.
+     */
+    @java.lang.Override
+    public int getProvisioningStateValue() {
+      return provisioningState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provisioning state for configurations like MAC addresses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for provisioningState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisioningStateValue(int value) {
+      provisioningState_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provisioning state for configurations like MAC addresses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The provisioningState.
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState
+        getProvisioningState() {
+      com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState result =
+          com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState.forNumber(
+              provisioningState_);
+      return result == null
+          ? com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provisioning state for configurations like MAC addresses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The provisioningState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisioningState(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      provisioningState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provisioning state for configurations like MAC addresses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Zone.ProvisioningState provisioning_state = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProvisioningState() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      provisioningState_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

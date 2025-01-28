@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 // [START aiplatform_v1beta1_generated_FeaturestoreService_GetFeature_sync]
 import com.google.cloud.aiplatform.v1beta1.Feature;
 import com.google.cloud.aiplatform.v1beta1.FeatureName;
+import com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalySpec;
 import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceClient;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureRequest;
 
@@ -41,6 +42,7 @@ public class SyncGetFeature {
                   FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                       .toString())
+              .setFeatureStatsAndAnomalySpec(FeatureStatsAndAnomalySpec.newBuilder().build())
               .build();
       Feature response = featurestoreServiceClient.getFeature(request);
     }

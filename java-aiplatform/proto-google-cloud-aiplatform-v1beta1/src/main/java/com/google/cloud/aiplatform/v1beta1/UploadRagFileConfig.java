@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,12 +71,16 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    * Specifies the size and overlap of chunks after uploading RagFile.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=479
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRagFileChunkingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -87,12 +91,16 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    * Specifies the size and overlap of chunks after uploading RagFile.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=479
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig() {
     return ragFileChunkingConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()
@@ -105,15 +113,76 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
    * Specifies the size and overlap of chunks after uploading RagFile.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder
       getRagFileChunkingConfigOrBuilder() {
     return ragFileChunkingConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()
         : ragFileChunkingConfig_;
+  }
+
+  public static final int RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+      ragFileTransformationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+   * </code>
+   *
+   * @return Whether the ragFileTransformationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRagFileTransformationConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+   * </code>
+   *
+   * @return The ragFileTransformationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+      getRagFileTransformationConfig() {
+    return ragFileTransformationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+        : ragFileTransformationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the transformation config for RagFiles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder
+      getRagFileTransformationConfigOrBuilder() {
+    return ragFileTransformationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+        : ragFileTransformationConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,6 +202,9 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getRagFileChunkingConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getRagFileTransformationConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -145,6 +217,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getRagFileChunkingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getRagFileTransformationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,6 +243,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     if (hasRagFileChunkingConfig()) {
       if (!getRagFileChunkingConfig().equals(other.getRagFileChunkingConfig())) return false;
     }
+    if (hasRagFileTransformationConfig() != other.hasRagFileTransformationConfig()) return false;
+    if (hasRagFileTransformationConfig()) {
+      if (!getRagFileTransformationConfig().equals(other.getRagFileTransformationConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -180,6 +262,10 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     if (hasRagFileChunkingConfig()) {
       hash = (37 * hash) + RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRagFileChunkingConfig().hashCode();
+    }
+    if (hasRagFileTransformationConfig()) {
+      hash = (37 * hash) + RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRagFileTransformationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -323,6 +409,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRagFileChunkingConfigFieldBuilder();
+        getRagFileTransformationConfigFieldBuilder();
       }
     }
 
@@ -334,6 +421,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
         ragFileChunkingConfigBuilder_ = null;
+      }
+      ragFileTransformationConfig_ = null;
+      if (ragFileTransformationConfigBuilder_ != null) {
+        ragFileTransformationConfigBuilder_.dispose();
+        ragFileTransformationConfigBuilder_ = null;
       }
       return this;
     }
@@ -378,6 +470,13 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
                 ? ragFileChunkingConfig_
                 : ragFileChunkingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ragFileTransformationConfig_ =
+            ragFileTransformationConfigBuilder_ == null
+                ? ragFileTransformationConfig_
+                : ragFileTransformationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -431,6 +530,9 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       if (other.hasRagFileChunkingConfig()) {
         mergeRagFileChunkingConfig(other.getRagFileChunkingConfig());
       }
+      if (other.hasRagFileTransformationConfig()) {
+        mergeRagFileTransformationConfig(other.getRagFileTransformationConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -464,6 +566,13 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(
+                    getRagFileTransformationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -496,11 +605,15 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=479
      * @return Whether the ragFileChunkingConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRagFileChunkingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -511,11 +624,15 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=479
      * @return The ragFileChunkingConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig getRagFileChunkingConfig() {
       if (ragFileChunkingConfigBuilder_ == null) {
         return ragFileChunkingConfig_ == null
@@ -532,9 +649,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig value) {
       if (ragFileChunkingConfigBuilder_ == null) {
@@ -556,9 +675,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder builderForValue) {
       if (ragFileChunkingConfigBuilder_ == null) {
@@ -577,9 +698,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig value) {
       if (ragFileChunkingConfigBuilder_ == null) {
@@ -607,9 +730,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRagFileChunkingConfig() {
       bitField0_ = (bitField0_ & ~0x00000001);
       ragFileChunkingConfig_ = null;
@@ -627,9 +752,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder
         getRagFileChunkingConfigBuilder() {
       bitField0_ |= 0x00000001;
@@ -643,9 +770,11 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder
         getRagFileChunkingConfigOrBuilder() {
       if (ragFileChunkingConfigBuilder_ != null) {
@@ -663,7 +792,8 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
      * Specifies the size and overlap of chunks after uploading RagFile.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1;
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileChunkingConfig rag_file_chunking_config = 1 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -681,6 +811,218 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
         ragFileChunkingConfig_ = null;
       }
       return ragFileChunkingConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+        ragFileTransformationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>
+        ragFileTransformationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     *
+     * @return Whether the ragFileTransformationConfig field is set.
+     */
+    public boolean hasRagFileTransformationConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     *
+     * @return The ragFileTransformationConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+        getRagFileTransformationConfig() {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        return ragFileTransformationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+            : ragFileTransformationConfig_;
+      } else {
+        return ragFileTransformationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     */
+    public Builder setRagFileTransformationConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig value) {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ragFileTransformationConfig_ = value;
+      } else {
+        ragFileTransformationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     */
+    public Builder setRagFileTransformationConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder builderForValue) {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        ragFileTransformationConfig_ = builderForValue.build();
+      } else {
+        ragFileTransformationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     */
+    public Builder mergeRagFileTransformationConfig(
+        com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig value) {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && ragFileTransformationConfig_ != null
+            && ragFileTransformationConfig_
+                != com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
+                    .getDefaultInstance()) {
+          getRagFileTransformationConfigBuilder().mergeFrom(value);
+        } else {
+          ragFileTransformationConfig_ = value;
+        }
+      } else {
+        ragFileTransformationConfigBuilder_.mergeFrom(value);
+      }
+      if (ragFileTransformationConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     */
+    public Builder clearRagFileTransformationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ragFileTransformationConfig_ = null;
+      if (ragFileTransformationConfigBuilder_ != null) {
+        ragFileTransformationConfigBuilder_.dispose();
+        ragFileTransformationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder
+        getRagFileTransformationConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRagFileTransformationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder
+        getRagFileTransformationConfigOrBuilder() {
+      if (ragFileTransformationConfigBuilder_ != null) {
+        return ragFileTransformationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ragFileTransformationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
+            : ragFileTransformationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the transformation config for RagFiles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagFileTransformationConfig rag_file_transformation_config = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>
+        getRagFileTransformationConfigFieldBuilder() {
+      if (ragFileTransformationConfigBuilder_ == null) {
+        ragFileTransformationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig,
+                com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>(
+                getRagFileTransformationConfig(), getParentForChildren(), isClean());
+        ragFileTransformationConfig_ = null;
+      }
+      return ragFileTransformationConfigBuilder_;
     }
 
     @java.lang.Override

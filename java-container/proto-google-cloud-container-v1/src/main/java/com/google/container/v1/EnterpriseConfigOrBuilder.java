@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface EnterpriseConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface EnterpriseConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>
@@ -52,4 +52,29 @@ public interface EnterpriseConfigOrBuilder
    * @return The clusterTier.
    */
   com.google.container.v1.EnterpriseConfig.ClusterTier getClusterTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * desired_tier specifies the desired tier of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+   *
+   * @return The enum numeric value on the wire for desiredTier.
+   */
+  int getDesiredTierValue();
+  /**
+   *
+   *
+   * <pre>
+   * desired_tier specifies the desired tier of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+   *
+   * @return The desiredTier.
+   */
+  com.google.container.v1.EnterpriseConfig.ClusterTier getDesiredTier();
 }

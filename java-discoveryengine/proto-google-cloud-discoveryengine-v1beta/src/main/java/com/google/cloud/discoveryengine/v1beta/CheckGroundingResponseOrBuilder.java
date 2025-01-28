@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,80 @@ public interface CheckGroundingResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.FactChunk cited_chunks = 3;</code>
    */
   com.google.cloud.discoveryengine.v1beta.FactChunkOrBuilder getCitedChunksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk>
+      getCitedFactsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+      getCitedFacts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  int getCitedFactsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                  .CheckGroundingFactChunkOrBuilder>
+      getCitedFactsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunkOrBuilder
+      getCitedFactsOrBuilder(int index);
 
   /**
    *

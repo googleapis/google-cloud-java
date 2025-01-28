@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,4 +62,43 @@ public interface MonitoringConfigOrBuilder
    */
   com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfigOrBuilder
       getManagedPrometheusConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   *
+   * @return Whether the cloudMonitoringConfig field is set.
+   */
+  boolean hasCloudMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   *
+   * @return The cloudMonitoringConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.CloudMonitoringConfig getCloudMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optionally enable GKE metrics.
+   * Only for Attached Clusters.
+   * </pre>
+   *
+   * <code>.google.cloud.gkemulticloud.v1.CloudMonitoringConfig cloud_monitoring_config = 4;</code>
+   */
+  com.google.cloud.gkemulticloud.v1.CloudMonitoringConfigOrBuilder
+      getCloudMonitoringConfigOrBuilder();
 }

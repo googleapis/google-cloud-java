@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,8 +74,8 @@ public final class ListPlaybookVersionsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The playbook to list versions for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class ListPlaybookVersionsRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The playbook to list versions for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * </pre>
    *
    * <code>
@@ -598,8 +598,8 @@ public final class ListPlaybookVersionsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The playbook to list versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -624,8 +624,8 @@ public final class ListPlaybookVersionsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The playbook to list versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -650,8 +650,8 @@ public final class ListPlaybookVersionsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The playbook to list versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -675,8 +675,8 @@ public final class ListPlaybookVersionsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The playbook to list versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>
@@ -696,8 +696,8 @@ public final class ListPlaybookVersionsRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The playbook to list versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/playbooks/&lt;Playbook ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * AspectSource contains source system related information for the
- * aspect.
+ * Information related to the source system of the aspect.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.AspectSource}
@@ -39,7 +38,9 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private AspectSource() {}
+  private AspectSource() {
+    dataVersion_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -69,7 +70,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The create time of the aspect in the source system.
+   * The time the aspect was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -84,7 +85,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The create time of the aspect in the source system.
+   * The time the aspect was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -99,7 +100,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The create time of the aspect in the source system.
+   * The time the aspect was created in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -115,7 +116,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The update time of the aspect in the source system.
+   * The time the aspect was last updated in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -130,7 +131,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The update time of the aspect in the source system.
+   * The time the aspect was last updated in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -145,7 +146,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The update time of the aspect in the source system.
+   * The time the aspect was last updated in the source system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -153,6 +154,61 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int DATA_VERSION_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The version of the data format used to produce this data. This field is
+   * used to indicated when the underlying data format changes (e.g., schema
+   * modifications, changes to the source URL format definition, etc).
+   * </pre>
+   *
+   * <code>string data_version = 12;</code>
+   *
+   * @return The dataVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getDataVersion() {
+    java.lang.Object ref = dataVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dataVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The version of the data format used to produce this data. This field is
+   * used to indicated when the underlying data format changes (e.g., schema
+   * modifications, changes to the source URL format definition, etc).
+   * </pre>
+   *
+   * <code>string data_version = 12;</code>
+   *
+   * @return The bytes for dataVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDataVersionBytes() {
+    java.lang.Object ref = dataVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dataVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -175,6 +231,9 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, dataVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -189,6 +248,9 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, dataVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -214,6 +276,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getDataVersion().equals(other.getDataVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -233,6 +296,8 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + DATA_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getDataVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -337,8 +402,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * AspectSource contains source system related information for the
-   * aspect.
+   * Information related to the source system of the aspect.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.AspectSource}
@@ -393,6 +457,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      dataVersion_ = "";
       return this;
     }
 
@@ -437,6 +502,9 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataVersion_ = dataVersion_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -492,6 +560,11 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (!other.getDataVersion().isEmpty()) {
+        dataVersion_ = other.dataVersion_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -530,6 +603,12 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 90
+            case 98:
+              {
+                dataVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -559,7 +638,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -573,7 +652,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -593,7 +672,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -615,7 +694,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -634,7 +713,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -661,7 +740,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -680,7 +759,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -694,7 +773,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -712,7 +791,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The create time of the aspect in the source system.
+     * The time the aspect was created in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 10;</code>
@@ -744,7 +823,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -758,7 +837,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -778,7 +857,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -800,7 +879,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -819,7 +898,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -846,7 +925,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -865,7 +944,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -879,7 +958,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -897,7 +976,7 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The update time of the aspect in the source system.
+     * The time the aspect was last updated in the source system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
@@ -917,6 +996,122 @@ public final class AspectSource extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.lang.Object dataVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The version of the data format used to produce this data. This field is
+     * used to indicated when the underlying data format changes (e.g., schema
+     * modifications, changes to the source URL format definition, etc).
+     * </pre>
+     *
+     * <code>string data_version = 12;</code>
+     *
+     * @return The dataVersion.
+     */
+    public java.lang.String getDataVersion() {
+      java.lang.Object ref = dataVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dataVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the data format used to produce this data. This field is
+     * used to indicated when the underlying data format changes (e.g., schema
+     * modifications, changes to the source URL format definition, etc).
+     * </pre>
+     *
+     * <code>string data_version = 12;</code>
+     *
+     * @return The bytes for dataVersion.
+     */
+    public com.google.protobuf.ByteString getDataVersionBytes() {
+      java.lang.Object ref = dataVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dataVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the data format used to produce this data. This field is
+     * used to indicated when the underlying data format changes (e.g., schema
+     * modifications, changes to the source URL format definition, etc).
+     * </pre>
+     *
+     * <code>string data_version = 12;</code>
+     *
+     * @param value The dataVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dataVersion_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the data format used to produce this data. This field is
+     * used to indicated when the underlying data format changes (e.g., schema
+     * modifications, changes to the source URL format definition, etc).
+     * </pre>
+     *
+     * <code>string data_version = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataVersion() {
+      dataVersion_ = getDefaultInstance().getDataVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the data format used to produce this data. This field is
+     * used to indicated when the underlying data format changes (e.g., schema
+     * modifications, changes to the source URL format definition, etc).
+     * </pre>
+     *
+     * <code>string data_version = 12;</code>
+     *
+     * @param value The bytes for dataVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dataVersion_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

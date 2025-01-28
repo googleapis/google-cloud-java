@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     destinationVolume_ = "";
     description_ = "";
     sourceVolume_ = "";
+    clusterLocation_ = "";
+    hybridReplicationType_ = 0;
   }
 
   @java.lang.Override
@@ -156,6 +158,26 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 6;</code>
      */
     ERROR(6),
+    /**
+     *
+     *
+     * <pre>
+     * Replication is waiting for cluster peering to be established.
+     * </pre>
+     *
+     * <code>PENDING_CLUSTER_PEERING = 8;</code>
+     */
+    PENDING_CLUSTER_PEERING(8),
+    /**
+     *
+     *
+     * <pre>
+     * Replication is waiting for SVM peering to be established.
+     * </pre>
+     *
+     * <code>PENDING_SVM_PEERING = 9;</code>
+     */
+    PENDING_SVM_PEERING(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -219,6 +241,26 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 6;</code>
      */
     public static final int ERROR_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Replication is waiting for cluster peering to be established.
+     * </pre>
+     *
+     * <code>PENDING_CLUSTER_PEERING = 8;</code>
+     */
+    public static final int PENDING_CLUSTER_PEERING_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Replication is waiting for SVM peering to be established.
+     * </pre>
+     *
+     * <code>PENDING_SVM_PEERING = 9;</code>
+     */
+    public static final int PENDING_SVM_PEERING_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -256,6 +298,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 6:
           return ERROR;
+        case 8:
+          return PENDING_CLUSTER_PEERING;
+        case 9:
+          return PENDING_SVM_PEERING;
         default:
           return null;
       }
@@ -715,6 +761,26 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>TRANSFERRING = 4;</code>
      */
     TRANSFERRING(4),
+    /**
+     *
+     *
+     * <pre>
+     * Baseline replication is in progress.
+     * </pre>
+     *
+     * <code>BASELINE_TRANSFERRING = 5;</code>
+     */
+    BASELINE_TRANSFERRING(5),
+    /**
+     *
+     *
+     * <pre>
+     * Replication is aborted.
+     * </pre>
+     *
+     * <code>ABORTED = 6;</code>
+     */
+    ABORTED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -769,6 +835,26 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>TRANSFERRING = 4;</code>
      */
     public static final int TRANSFERRING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Baseline replication is in progress.
+     * </pre>
+     *
+     * <code>BASELINE_TRANSFERRING = 5;</code>
+     */
+    public static final int BASELINE_TRANSFERRING_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Replication is aborted.
+     * </pre>
+     *
+     * <code>ABORTED = 6;</code>
+     */
+    public static final int ABORTED_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -804,6 +890,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return STOPPED;
         case 4:
           return TRANSFERRING;
+        case 5:
+          return BASELINE_TRANSFERRING;
+        case 6:
+          return ABORTED;
         default:
           return null;
       }
@@ -855,6 +945,166 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.Replication.MirrorState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid replication type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.netapp.v1.Replication.HybridReplicationType}
+   */
+  public enum HybridReplicationType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified hybrid replication type.
+     * </pre>
+     *
+     * <code>HYBRID_REPLICATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    HYBRID_REPLICATION_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for migration.
+     * </pre>
+     *
+     * <code>MIGRATION = 1;</code>
+     */
+    MIGRATION(1),
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for continuous replication.
+     * </pre>
+     *
+     * <code>CONTINUOUS_REPLICATION = 2;</code>
+     */
+    CONTINUOUS_REPLICATION(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified hybrid replication type.
+     * </pre>
+     *
+     * <code>HYBRID_REPLICATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int HYBRID_REPLICATION_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for migration.
+     * </pre>
+     *
+     * <code>MIGRATION = 1;</code>
+     */
+    public static final int MIGRATION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for continuous replication.
+     * </pre>
+     *
+     * <code>CONTINUOUS_REPLICATION = 2;</code>
+     */
+    public static final int CONTINUOUS_REPLICATION_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static HybridReplicationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static HybridReplicationType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return HYBRID_REPLICATION_TYPE_UNSPECIFIED;
+        case 1:
+          return MIGRATION;
+        case 2:
+          return CONTINUOUS_REPLICATION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<HybridReplicationType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<HybridReplicationType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<HybridReplicationType>() {
+              public HybridReplicationType findValueByNumber(int number) {
+                return HybridReplicationType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.netapp.v1.Replication.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final HybridReplicationType[] VALUES = values();
+
+    public static HybridReplicationType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private HybridReplicationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.Replication.HybridReplicationType)
   }
 
   private int bitField0_;
@@ -1611,6 +1861,156 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int HYBRID_PEERING_DETAILS_FIELD_NUMBER = 16;
+  private com.google.cloud.netapp.v1.HybridPeeringDetails hybridPeeringDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hybrid peering details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the hybridPeeringDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasHybridPeeringDetails() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hybrid peering details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hybridPeeringDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.HybridPeeringDetails getHybridPeeringDetails() {
+    return hybridPeeringDetails_ == null
+        ? com.google.cloud.netapp.v1.HybridPeeringDetails.getDefaultInstance()
+        : hybridPeeringDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Hybrid peering details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.HybridPeeringDetailsOrBuilder
+      getHybridPeeringDetailsOrBuilder() {
+    return hybridPeeringDetails_ == null
+        ? com.google.cloud.netapp.v1.HybridPeeringDetails.getDefaultInstance()
+        : hybridPeeringDetails_;
+  }
+
+  public static final int CLUSTER_LOCATION_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterLocation_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Location of the user cluster.
+   * </pre>
+   *
+   * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clusterLocation.
+   */
+  @java.lang.Override
+  public java.lang.String getClusterLocation() {
+    java.lang.Object ref = clusterLocation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clusterLocation_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Location of the user cluster.
+   * </pre>
+   *
+   * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clusterLocation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClusterLocationBytes() {
+    java.lang.Object ref = clusterLocation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clusterLocation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int HYBRID_REPLICATION_TYPE_FIELD_NUMBER = 19;
+  private int hybridReplicationType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for hybridReplicationType.
+   */
+  @java.lang.Override
+  public int getHybridReplicationTypeValue() {
+    return hybridReplicationType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hybridReplicationType.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.Replication.HybridReplicationType getHybridReplicationType() {
+    com.google.cloud.netapp.v1.Replication.HybridReplicationType result =
+        com.google.cloud.netapp.v1.Replication.HybridReplicationType.forNumber(
+            hybridReplicationType_);
+    return result == null
+        ? com.google.cloud.netapp.v1.Replication.HybridReplicationType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1672,6 +2072,18 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVolume_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, sourceVolume_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(16, getHybridPeeringDetails());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterLocation_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, clusterLocation_);
+    }
+    if (hybridReplicationType_
+        != com.google.cloud.netapp.v1.Replication.HybridReplicationType
+            .HYBRID_REPLICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(19, hybridReplicationType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1740,6 +2152,19 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceVolume_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, sourceVolume_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(16, getHybridPeeringDetails());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterLocation_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, clusterLocation_);
+    }
+    if (hybridReplicationType_
+        != com.google.cloud.netapp.v1.Replication.HybridReplicationType
+            .HYBRID_REPLICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, hybridReplicationType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1785,6 +2210,12 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return false;
     }
     if (!getSourceVolume().equals(other.getSourceVolume())) return false;
+    if (hasHybridPeeringDetails() != other.hasHybridPeeringDetails()) return false;
+    if (hasHybridPeeringDetails()) {
+      if (!getHybridPeeringDetails().equals(other.getHybridPeeringDetails())) return false;
+    }
+    if (!getClusterLocation().equals(other.getClusterLocation())) return false;
+    if (hybridReplicationType_ != other.hybridReplicationType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1836,6 +2267,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SOURCE_VOLUME_FIELD_NUMBER;
     hash = (53 * hash) + getSourceVolume().hashCode();
+    if (hasHybridPeeringDetails()) {
+      hash = (37 * hash) + HYBRID_PEERING_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getHybridPeeringDetails().hashCode();
+    }
+    hash = (37 * hash) + CLUSTER_LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getClusterLocation().hashCode();
+    hash = (37 * hash) + HYBRID_REPLICATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + hybridReplicationType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2003,6 +2442,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getTransferStatsFieldBuilder();
         getDestinationVolumeParametersFieldBuilder();
+        getHybridPeeringDetailsFieldBuilder();
       }
     }
 
@@ -2036,6 +2476,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         destinationVolumeParametersBuilder_ = null;
       }
       sourceVolume_ = "";
+      hybridPeeringDetails_ = null;
+      if (hybridPeeringDetailsBuilder_ != null) {
+        hybridPeeringDetailsBuilder_.dispose();
+        hybridPeeringDetailsBuilder_ = null;
+      }
+      clusterLocation_ = "";
+      hybridReplicationType_ = 0;
       return this;
     }
 
@@ -2124,6 +2571,19 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.sourceVolume_ = sourceVolume_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.hybridPeeringDetails_ =
+            hybridPeeringDetailsBuilder_ == null
+                ? hybridPeeringDetails_
+                : hybridPeeringDetailsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.clusterLocation_ = clusterLocation_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.hybridReplicationType_ = hybridReplicationType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2223,6 +2683,17 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         sourceVolume_ = other.sourceVolume_;
         bitField0_ |= 0x00002000;
         onChanged();
+      }
+      if (other.hasHybridPeeringDetails()) {
+        mergeHybridPeeringDetails(other.getHybridPeeringDetails());
+      }
+      if (!other.getClusterLocation().isEmpty()) {
+        clusterLocation_ = other.clusterLocation_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      if (other.hybridReplicationType_ != 0) {
+        setHybridReplicationTypeValue(other.getHybridReplicationTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2341,6 +2812,25 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    getHybridPeeringDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 130
+            case 146:
+              {
+                clusterLocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 146
+            case 152:
+              {
+                hybridReplicationType_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4211,6 +4701,424 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       sourceVolume_ = value;
       bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.netapp.v1.HybridPeeringDetails hybridPeeringDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.HybridPeeringDetails,
+            com.google.cloud.netapp.v1.HybridPeeringDetails.Builder,
+            com.google.cloud.netapp.v1.HybridPeeringDetailsOrBuilder>
+        hybridPeeringDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the hybridPeeringDetails field is set.
+     */
+    public boolean hasHybridPeeringDetails() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The hybridPeeringDetails.
+     */
+    public com.google.cloud.netapp.v1.HybridPeeringDetails getHybridPeeringDetails() {
+      if (hybridPeeringDetailsBuilder_ == null) {
+        return hybridPeeringDetails_ == null
+            ? com.google.cloud.netapp.v1.HybridPeeringDetails.getDefaultInstance()
+            : hybridPeeringDetails_;
+      } else {
+        return hybridPeeringDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHybridPeeringDetails(com.google.cloud.netapp.v1.HybridPeeringDetails value) {
+      if (hybridPeeringDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hybridPeeringDetails_ = value;
+      } else {
+        hybridPeeringDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHybridPeeringDetails(
+        com.google.cloud.netapp.v1.HybridPeeringDetails.Builder builderForValue) {
+      if (hybridPeeringDetailsBuilder_ == null) {
+        hybridPeeringDetails_ = builderForValue.build();
+      } else {
+        hybridPeeringDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeHybridPeeringDetails(
+        com.google.cloud.netapp.v1.HybridPeeringDetails value) {
+      if (hybridPeeringDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && hybridPeeringDetails_ != null
+            && hybridPeeringDetails_
+                != com.google.cloud.netapp.v1.HybridPeeringDetails.getDefaultInstance()) {
+          getHybridPeeringDetailsBuilder().mergeFrom(value);
+        } else {
+          hybridPeeringDetails_ = value;
+        }
+      } else {
+        hybridPeeringDetailsBuilder_.mergeFrom(value);
+      }
+      if (hybridPeeringDetails_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearHybridPeeringDetails() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      hybridPeeringDetails_ = null;
+      if (hybridPeeringDetailsBuilder_ != null) {
+        hybridPeeringDetailsBuilder_.dispose();
+        hybridPeeringDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.HybridPeeringDetails.Builder
+        getHybridPeeringDetailsBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getHybridPeeringDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.HybridPeeringDetailsOrBuilder
+        getHybridPeeringDetailsOrBuilder() {
+      if (hybridPeeringDetailsBuilder_ != null) {
+        return hybridPeeringDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return hybridPeeringDetails_ == null
+            ? com.google.cloud.netapp.v1.HybridPeeringDetails.getDefaultInstance()
+            : hybridPeeringDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Hybrid peering details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridPeeringDetails hybrid_peering_details = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.HybridPeeringDetails,
+            com.google.cloud.netapp.v1.HybridPeeringDetails.Builder,
+            com.google.cloud.netapp.v1.HybridPeeringDetailsOrBuilder>
+        getHybridPeeringDetailsFieldBuilder() {
+      if (hybridPeeringDetailsBuilder_ == null) {
+        hybridPeeringDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.netapp.v1.HybridPeeringDetails,
+                com.google.cloud.netapp.v1.HybridPeeringDetails.Builder,
+                com.google.cloud.netapp.v1.HybridPeeringDetailsOrBuilder>(
+                getHybridPeeringDetails(), getParentForChildren(), isClean());
+        hybridPeeringDetails_ = null;
+      }
+      return hybridPeeringDetailsBuilder_;
+    }
+
+    private java.lang.Object clusterLocation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the user cluster.
+     * </pre>
+     *
+     * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clusterLocation.
+     */
+    public java.lang.String getClusterLocation() {
+      java.lang.Object ref = clusterLocation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterLocation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the user cluster.
+     * </pre>
+     *
+     * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clusterLocation.
+     */
+    public com.google.protobuf.ByteString getClusterLocationBytes() {
+      java.lang.Object ref = clusterLocation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the user cluster.
+     * </pre>
+     *
+     * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The clusterLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      clusterLocation_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the user cluster.
+     * </pre>
+     *
+     * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClusterLocation() {
+      clusterLocation_ = getDefaultInstance().getClusterLocation();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Location of the user cluster.
+     * </pre>
+     *
+     * <code>string cluster_location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for clusterLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      clusterLocation_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private int hybridReplicationType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for hybridReplicationType.
+     */
+    @java.lang.Override
+    public int getHybridReplicationTypeValue() {
+      return hybridReplicationType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for hybridReplicationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHybridReplicationTypeValue(int value) {
+      hybridReplicationType_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The hybridReplicationType.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.Replication.HybridReplicationType getHybridReplicationType() {
+      com.google.cloud.netapp.v1.Replication.HybridReplicationType result =
+          com.google.cloud.netapp.v1.Replication.HybridReplicationType.forNumber(
+              hybridReplicationType_);
+      return result == null
+          ? com.google.cloud.netapp.v1.Replication.HybridReplicationType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The hybridReplicationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHybridReplicationType(
+        com.google.cloud.netapp.v1.Replication.HybridReplicationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      hybridReplicationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.Replication.HybridReplicationType hybrid_replication_type = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHybridReplicationType() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      hybridReplicationType_ = 0;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,7 +134,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7251
+   *     google/privacy/dlp/v2/dlp.proto;l=7250
    * @return Whether the dataProfileJob field is set.
    */
   @java.lang.Override
@@ -157,7 +157,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7251
+   *     google/privacy/dlp/v2/dlp.proto;l=7250
    * @return The dataProfileJob.
    */
   @java.lang.Override
@@ -1050,7 +1050,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated.
-     *     See google/privacy/dlp/v2/dlp.proto;l=7251
+     *     See google/privacy/dlp/v2/dlp.proto;l=7250
      * @return Whether the dataProfileJob field is set.
      */
     @java.lang.Deprecated
@@ -1072,7 +1072,7 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated.
-     *     See google/privacy/dlp/v2/dlp.proto;l=7251
+     *     See google/privacy/dlp/v2/dlp.proto;l=7250
      * @return The dataProfileJob.
      */
     @java.lang.Deprecated

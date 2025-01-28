@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,4 +118,67 @@ public interface LinkedVpnTunnelsOrBuilder
    * @return The bytes for vpcNetwork.
    */
   com.google.protobuf.ByteString getVpcNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the includeImportRanges.
+   */
+  java.util.List<java.lang.String> getIncludeImportRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of includeImportRanges.
+   */
+  int getIncludeImportRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeImportRanges at the given index.
+   */
+  java.lang.String getIncludeImportRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP ranges allowed to be included during import from hub (does not
+   * control transit connectivity). The only allowed value for now is
+   * "ALL_IPV4_RANGES".
+   * </pre>
+   *
+   * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeImportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getIncludeImportRangesBytes(int index);
 }

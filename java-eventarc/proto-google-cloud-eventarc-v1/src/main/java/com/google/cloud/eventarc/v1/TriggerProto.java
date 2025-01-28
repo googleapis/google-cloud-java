@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,10 @@ public final class TriggerProto {
       internal_static_google_cloud_eventarc_v1_Pubsub_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_Pubsub_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_HttpEndpoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_HttpEndpoint_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -80,60 +84,70 @@ public final class TriggerProto {
       "\n&google/cloud/eventarc/v1/trigger.proto"
           + "\022\030google.cloud.eventarc.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032\037google/protobuf/timestamp.proto\032"
-          + "\025google/rpc/code.proto\"\334\006\n\007Trigger\022\021\n\004na"
-          + "me\030\001 \001(\tB\003\340A\002\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0224\n\013creat"
-          + "e_time\030\005 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\022D\n\revent_filters\030\010 \003"
-          + "(\0132%.google.cloud.eventarc.v1.EventFilte"
-          + "rB\006\340A\006\340A\002\022B\n\017service_account\030\t \001(\tB)\340A\001\372"
-          + "A#\n!iam.googleapis.com/ServiceAccount\022?\n"
-          + "\013destination\030\n \001(\0132%.google.cloud.eventa"
-          + "rc.v1.DestinationB\003\340A\002\022;\n\ttransport\030\013 \001("
-          + "\0132#.google.cloud.eventarc.v1.TransportB\003"
-          + "\340A\001\022B\n\006labels\030\014 \003(\0132-.google.cloud.event"
-          + "arc.v1.Trigger.LabelsEntryB\003\340A\001\022\024\n\007chann"
-          + "el\030\r \001(\tB\003\340A\001\022J\n\nconditions\030\017 \003(\01321.goog"
-          + "le.cloud.eventarc.v1.Trigger.ConditionsE"
-          + "ntryB\003\340A\003\022\021\n\004etag\030c \001(\tB\003\340A\003\032-\n\013LabelsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032[\n\017C"
-          + "onditionsEntry\022\013\n\003key\030\001 \001(\t\0227\n\005value\030\002 \001"
-          + "(\0132(.google.cloud.eventarc.v1.StateCondi"
-          + "tion:\0028\001:s\352Ap\n\037eventarc.googleapis.com/T"
-          + "rigger\022:projects/{project}/locations/{lo"
-          + "cation}/triggers/{trigger}*\010triggers2\007tr"
-          + "igger\"P\n\013EventFilter\022\026\n\tattribute\030\001 \001(\tB"
-          + "\003\340A\002\022\022\n\005value\030\002 \001(\tB\003\340A\002\022\025\n\010operator\030\003 \001"
-          + "(\tB\003\340A\001\"A\n\016StateCondition\022\036\n\004code\030\001 \001(\0162"
-          + "\020.google.rpc.Code\022\017\n\007message\030\002 \001(\t\"\212\002\n\013D"
-          + "estination\0227\n\tcloud_run\030\001 \001(\0132\".google.c"
-          + "loud.eventarc.v1.CloudRunH\000\022J\n\016cloud_fun"
-          + "ction\030\002 \001(\tB0\372A-\n+cloudfunctions.googlea"
-          + "pis.com/CloudFunctionH\000\022,\n\003gke\030\003 \001(\0132\035.g"
-          + "oogle.cloud.eventarc.v1.GKEH\000\022:\n\010workflo"
-          + "w\030\004 \001(\tB&\372A#\n!workflows.googleapis.com/W"
-          + "orkflowH\000B\014\n\ndescriptor\"O\n\tTransport\0222\n\006"
-          + "pubsub\030\001 \001(\0132 .google.cloud.eventarc.v1."
-          + "PubsubH\000B\016\n\014intermediary\"g\n\010CloudRun\0223\n\007"
-          + "service\030\001 \001(\tB\"\340A\002\372A\034\n\032run.googleapis.co"
-          + "m/Service\022\021\n\004path\030\002 \001(\tB\003\340A\001\022\023\n\006region\030\003"
-          + " \001(\tB\003\340A\002\"s\n\003GKE\022\024\n\007cluster\030\001 \001(\tB\003\340A\002\022\025"
-          + "\n\010location\030\002 \001(\tB\003\340A\002\022\026\n\tnamespace\030\003 \001(\t"
-          + "B\003\340A\002\022\024\n\007service\030\004 \001(\tB\003\340A\002\022\021\n\004path\030\005 \001("
-          + "\tB\003\340A\001\"7\n\006Pubsub\022\022\n\005topic\030\001 \001(\tB\003\340A\001\022\031\n\014"
-          + "subscription\030\002 \001(\tB\003\340A\003B\270\003\n\034com.google.c"
-          + "loud.eventarc.v1B\014TriggerProtoP\001Z8cloud."
-          + "google.com/go/eventarc/apiv1/eventarcpb;"
-          + "eventarcpb\352Ak\n+cloudfunctions.googleapis"
-          + ".com/CloudFunction\022<projects/{project}/l"
-          + "ocations/{location}/functions/{function}"
-          + "\352AY\n!iam.googleapis.com/ServiceAccount\0224"
-          + "projects/{project}/serviceAccounts/{serv"
-          + "ice_account}\352A\037\n\032run.googleapis.com/Serv"
-          + "ice\022\001*\352Aa\n!workflows.googleapis.com/Work"
-          + "flow\022<projects/{project}/locations/{loca"
-          + "tion}/workflows/{workflow}b\006proto3"
+          + ".proto\032-google/cloud/eventarc/v1/network"
+          + "_config.proto\032\037google/protobuf/timestamp"
+          + ".proto\032\025google/rpc/code.proto\"\236\007\n\007Trigge"
+          + "r\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0224"
+          + "\n\013create_time\030\005 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\022D\n\revent_filt"
+          + "ers\030\010 \003(\0132%.google.cloud.eventarc.v1.Eve"
+          + "ntFilterB\006\340A\006\340A\002\022B\n\017service_account\030\t \001("
+          + "\tB)\340A\001\372A#\n!iam.googleapis.com/ServiceAcc"
+          + "ount\022?\n\013destination\030\n \001(\0132%.google.cloud"
+          + ".eventarc.v1.DestinationB\003\340A\002\022;\n\ttranspo"
+          + "rt\030\013 \001(\0132#.google.cloud.eventarc.v1.Tran"
+          + "sportB\003\340A\001\022B\n\006labels\030\014 \003(\0132-.google.clou"
+          + "d.eventarc.v1.Trigger.LabelsEntryB\003\340A\001\022\024"
+          + "\n\007channel\030\r \001(\tB\003\340A\001\022J\n\nconditions\030\017 \003(\013"
+          + "21.google.cloud.eventarc.v1.Trigger.Cond"
+          + "itionsEntryB\003\340A\003\022$\n\027event_data_content_t"
+          + "ype\030\020 \001(\tB\003\340A\001\022\032\n\rsatisfies_pzs\030\023 \001(\010B\003\340"
+          + "A\003\022\021\n\004etag\030c \001(\tB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032[\n\017Conditio"
+          + "nsEntry\022\013\n\003key\030\001 \001(\t\0227\n\005value\030\002 \001(\0132(.go"
+          + "ogle.cloud.eventarc.v1.StateCondition:\0028"
+          + "\001:s\352Ap\n\037eventarc.googleapis.com/Trigger\022"
+          + ":projects/{project}/locations/{location}"
+          + "/triggers/{trigger}*\010triggers2\007trigger\"P"
+          + "\n\013EventFilter\022\026\n\tattribute\030\001 \001(\tB\003\340A\002\022\022\n"
+          + "\005value\030\002 \001(\tB\003\340A\002\022\025\n\010operator\030\003 \001(\tB\003\340A\001"
+          + "\"A\n\016StateCondition\022\036\n\004code\030\001 \001(\0162\020.googl"
+          + "e.rpc.Code\022\017\n\007message\030\002 \001(\t\"\221\003\n\013Destinat"
+          + "ion\0227\n\tcloud_run\030\001 \001(\0132\".google.cloud.ev"
+          + "entarc.v1.CloudRunH\000\022J\n\016cloud_function\030\002"
+          + " \001(\tB0\372A-\n+cloudfunctions.googleapis.com"
+          + "/CloudFunctionH\000\022,\n\003gke\030\003 \001(\0132\035.google.c"
+          + "loud.eventarc.v1.GKEH\000\022:\n\010workflow\030\004 \001(\t"
+          + "B&\372A#\n!workflows.googleapis.com/Workflow"
+          + "H\000\022?\n\rhttp_endpoint\030\005 \001(\0132&.google.cloud"
+          + ".eventarc.v1.HttpEndpointH\000\022D\n\016network_c"
+          + "onfig\030\006 \001(\0132\'.google.cloud.eventarc.v1.N"
+          + "etworkConfigB\003\340A\001B\014\n\ndescriptor\"O\n\tTrans"
+          + "port\0222\n\006pubsub\030\001 \001(\0132 .google.cloud.even"
+          + "tarc.v1.PubsubH\000B\016\n\014intermediary\"g\n\010Clou"
+          + "dRun\0223\n\007service\030\001 \001(\tB\"\340A\002\372A\034\n\032run.googl"
+          + "eapis.com/Service\022\021\n\004path\030\002 \001(\tB\003\340A\001\022\023\n\006"
+          + "region\030\003 \001(\tB\003\340A\002\"s\n\003GKE\022\024\n\007cluster\030\001 \001("
+          + "\tB\003\340A\002\022\025\n\010location\030\002 \001(\tB\003\340A\002\022\026\n\tnamespa"
+          + "ce\030\003 \001(\tB\003\340A\002\022\024\n\007service\030\004 \001(\tB\003\340A\002\022\021\n\004p"
+          + "ath\030\005 \001(\tB\003\340A\001\"7\n\006Pubsub\022\022\n\005topic\030\001 \001(\tB"
+          + "\003\340A\001\022\031\n\014subscription\030\002 \001(\tB\003\340A\003\" \n\014HttpE"
+          + "ndpoint\022\020\n\003uri\030\001 \001(\tB\003\340A\002B\261\004\n\034com.google"
+          + ".cloud.eventarc.v1B\014TriggerProtoP\001Z8clou"
+          + "d.google.com/go/eventarc/apiv1/eventarcp"
+          + "b;eventarcpb\352Ak\n+cloudfunctions.googleap"
+          + "is.com/CloudFunction\022<projects/{project}"
+          + "/locations/{location}/functions/{functio"
+          + "n}\352AY\n!iam.googleapis.com/ServiceAccount"
+          + "\0224projects/{project}/serviceAccounts/{se"
+          + "rvice_account}\352A\037\n\032run.googleapis.com/Se"
+          + "rvice\022\001*\352Aa\n!workflows.googleapis.com/Wo"
+          + "rkflow\022<projects/{project}/locations/{lo"
+          + "cation}/workflows/{workflow}\352Av\n(compute"
+          + ".googleapis.com/NetworkAttachment\022Jproje"
+          + "cts/{project}/regions/{region}/networkAt"
+          + "tachments/{networkattachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -141,6 +155,7 @@ public final class TriggerProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.eventarc.v1.NetworkConfigProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.CodeProto.getDescriptor(),
             });
@@ -161,6 +176,8 @@ public final class TriggerProto {
               "Labels",
               "Channel",
               "Conditions",
+              "EventDataContentType",
+              "SatisfiesPzs",
               "Etag",
             });
     internal_static_google_cloud_eventarc_v1_Trigger_LabelsEntry_descriptor =
@@ -201,7 +218,13 @@ public final class TriggerProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_Destination_descriptor,
             new java.lang.String[] {
-              "CloudRun", "CloudFunction", "Gke", "Workflow", "Descriptor",
+              "CloudRun",
+              "CloudFunction",
+              "Gke",
+              "Workflow",
+              "HttpEndpoint",
+              "NetworkConfig",
+              "Descriptor",
             });
     internal_static_google_cloud_eventarc_v1_Transport_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -235,6 +258,14 @@ public final class TriggerProto {
             new java.lang.String[] {
               "Topic", "Subscription",
             });
+    internal_static_google_cloud_eventarc_v1_HttpEndpoint_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_eventarc_v1_HttpEndpoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_HttpEndpoint_descriptor,
+            new java.lang.String[] {
+              "Uri",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -245,6 +276,7 @@ public final class TriggerProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.eventarc.v1.NetworkConfigProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.CodeProto.getDescriptor();
   }

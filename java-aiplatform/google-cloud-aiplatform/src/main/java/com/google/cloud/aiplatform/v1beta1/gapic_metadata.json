@@ -171,6 +171,9 @@
             },
             "UpdateEndpoint": {
               "methods": ["updateEndpoint", "updateEndpoint", "updateEndpointCallable"]
+            },
+            "UpdateEndpointLongRunning": {
+              "methods": ["updateEndpointLongRunningAsync", "updateEndpointLongRunningAsync", "updateEndpointLongRunningOperationCallable", "updateEndpointLongRunningCallable"]
             }
           }
         }
@@ -373,11 +376,20 @@
         "grpc": {
           "libraryClient": "FeatureRegistryServiceClient",
           "rpcs": {
+            "BatchCreateFeatures": {
+              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
+            },
             "CreateFeature": {
               "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
             },
             "CreateFeatureGroup": {
               "methods": ["createFeatureGroupAsync", "createFeatureGroupAsync", "createFeatureGroupAsync", "createFeatureGroupOperationCallable", "createFeatureGroupCallable"]
+            },
+            "CreateFeatureMonitor": {
+              "methods": ["createFeatureMonitorAsync", "createFeatureMonitorAsync", "createFeatureMonitorAsync", "createFeatureMonitorOperationCallable", "createFeatureMonitorCallable"]
+            },
+            "CreateFeatureMonitorJob": {
+              "methods": ["createFeatureMonitorJob", "createFeatureMonitorJob", "createFeatureMonitorJob", "createFeatureMonitorJobCallable"]
             },
             "DeleteFeature": {
               "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
@@ -385,11 +397,20 @@
             "DeleteFeatureGroup": {
               "methods": ["deleteFeatureGroupAsync", "deleteFeatureGroupAsync", "deleteFeatureGroupAsync", "deleteFeatureGroupOperationCallable", "deleteFeatureGroupCallable"]
             },
+            "DeleteFeatureMonitor": {
+              "methods": ["deleteFeatureMonitorAsync", "deleteFeatureMonitorAsync", "deleteFeatureMonitorAsync", "deleteFeatureMonitorOperationCallable", "deleteFeatureMonitorCallable"]
+            },
             "GetFeature": {
               "methods": ["getFeature", "getFeature", "getFeature", "getFeatureCallable"]
             },
             "GetFeatureGroup": {
               "methods": ["getFeatureGroup", "getFeatureGroup", "getFeatureGroup", "getFeatureGroupCallable"]
+            },
+            "GetFeatureMonitor": {
+              "methods": ["getFeatureMonitor", "getFeatureMonitor", "getFeatureMonitor", "getFeatureMonitorCallable"]
+            },
+            "GetFeatureMonitorJob": {
+              "methods": ["getFeatureMonitorJob", "getFeatureMonitorJob", "getFeatureMonitorJob", "getFeatureMonitorJobCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -399,6 +420,12 @@
             },
             "ListFeatureGroups": {
               "methods": ["listFeatureGroups", "listFeatureGroups", "listFeatureGroups", "listFeatureGroupsPagedCallable", "listFeatureGroupsCallable"]
+            },
+            "ListFeatureMonitorJobs": {
+              "methods": ["listFeatureMonitorJobs", "listFeatureMonitorJobs", "listFeatureMonitorJobs", "listFeatureMonitorJobsPagedCallable", "listFeatureMonitorJobsCallable"]
+            },
+            "ListFeatureMonitors": {
+              "methods": ["listFeatureMonitors", "listFeatureMonitors", "listFeatureMonitors", "listFeatureMonitorsPagedCallable", "listFeatureMonitorsCallable"]
             },
             "ListFeatures": {
               "methods": ["listFeatures", "listFeatures", "listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
@@ -461,7 +488,7 @@
           "libraryClient": "FeaturestoreServiceClient",
           "rpcs": {
             "BatchCreateFeatures": {
-              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
+              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
             },
             "BatchReadFeatureValues": {
               "methods": ["batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesOperationCallable", "batchReadFeatureValuesCallable"]
@@ -1054,6 +1081,9 @@
         "grpc": {
           "libraryClient": "ModelGardenServiceClient",
           "rpcs": {
+            "DeployPublisherModel": {
+              "methods": ["deployPublisherModelAsync", "deployPublisherModelOperationCallable", "deployPublisherModelCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1270,6 +1300,9 @@
             "StartNotebookRuntime": {
               "methods": ["startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeOperationCallable", "startNotebookRuntimeCallable"]
             },
+            "StopNotebookRuntime": {
+              "methods": ["stopNotebookRuntimeAsync", "stopNotebookRuntimeAsync", "stopNotebookRuntimeAsync", "stopNotebookRuntimeOperationCallable", "stopNotebookRuntimeCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
@@ -1473,6 +1506,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamQueryReasoningEngine": {
+              "methods": ["streamQueryReasoningEngineCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
@@ -1777,6 +1813,12 @@
         "grpc": {
           "libraryClient": "VertexRagServiceClient",
           "rpcs": {
+            "AugmentPrompt": {
+              "methods": ["augmentPrompt", "augmentPrompt", "augmentPrompt", "augmentPromptCallable"]
+            },
+            "CorroborateContent": {
+              "methods": ["corroborateContent", "corroborateContent", "corroborateContent", "corroborateContentCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },

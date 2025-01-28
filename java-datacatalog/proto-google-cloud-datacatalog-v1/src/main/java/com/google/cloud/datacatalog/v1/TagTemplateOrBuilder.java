@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,13 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format.
+   * Identifier. The resource name of the tag template in URL format.
    *
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,13 +43,13 @@ public interface TagTemplateOrBuilder
    *
    *
    * <pre>
-   * The resource name of the tag template in URL format.
+   * Identifier. The resource name of the tag template in URL format.
    *
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -94,7 +94,7 @@ public interface TagTemplateOrBuilder
    * <pre>
    * Indicates whether tags created with this template are public. Public tags
    * do not require tag template access to appear in
-   * [ListTags][google.cloud.datacatalog.v1.ListTags] API response.
+   * [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags] API response.
    *
    * Additionally, you can search for a public tag by value with a
    * simple search query in addition to using a ``tag:`` predicate.
@@ -223,4 +223,33 @@ public interface TagTemplateOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.TagTemplateField getFieldsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataplexTransferStatus.
+   */
+  int getDataplexTransferStatusValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transfer status of the TagTemplate
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus dataplex_transfer_status = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplexTransferStatus.
+   */
+  com.google.cloud.datacatalog.v1.TagTemplate.DataplexTransferStatus getDataplexTransferStatus();
 }

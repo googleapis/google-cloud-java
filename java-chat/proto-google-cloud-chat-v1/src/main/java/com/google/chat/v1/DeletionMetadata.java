@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,8 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Who deleted the message and how it was deleted.
+   * Who deleted the message and how it was deleted. More values may be added in
+   * the future.
    * </pre>
    *
    * Protobuf enum {@code google.chat.v1.DeletionMetadata.DeletionType}

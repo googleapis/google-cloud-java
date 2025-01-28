@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,6 +95,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     TOOL_NAME_MATCH_INPUT(20),
     TOOL_PARAMETER_KEY_MATCH_INPUT(21),
     TOOL_PARAMETER_KV_MATCH_INPUT(22),
+    TRAJECTORY_EXACT_MATCH_INPUT(33),
+    TRAJECTORY_IN_ORDER_MATCH_INPUT(34),
+    TRAJECTORY_ANY_ORDER_MATCH_INPUT(35),
+    TRAJECTORY_PRECISION_INPUT(37),
+    TRAJECTORY_RECALL_INPUT(38),
+    TRAJECTORY_SINGLE_TOOL_USE_INPUT(39),
     METRICINPUTS_NOT_SET(0);
     private final int value;
 
@@ -159,6 +165,18 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           return TOOL_PARAMETER_KEY_MATCH_INPUT;
         case 22:
           return TOOL_PARAMETER_KV_MATCH_INPUT;
+        case 33:
+          return TRAJECTORY_EXACT_MATCH_INPUT;
+        case 34:
+          return TRAJECTORY_IN_ORDER_MATCH_INPUT;
+        case 35:
+          return TRAJECTORY_ANY_ORDER_MATCH_INPUT;
+        case 37:
+          return TRAJECTORY_PRECISION_INPUT;
+        case 38:
+          return TRAJECTORY_RECALL_INPUT;
+        case 39:
+          return TRAJECTORY_SINGLE_TOOL_USE_INPUT;
         case 0:
           return METRICINPUTS_NOT_SET;
         default:
@@ -1471,6 +1489,356 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     return com.google.cloud.aiplatform.v1beta1.ToolParameterKVMatchInput.getDefaultInstance();
   }
 
+  public static final int TRAJECTORY_EXACT_MATCH_INPUT_FIELD_NUMBER = 33;
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+   * </code>
+   *
+   * @return Whether the trajectoryExactMatchInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrajectoryExactMatchInput() {
+    return metricInputsCase_ == 33;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+   * </code>
+   *
+   * @return The trajectoryExactMatchInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput
+      getTrajectoryExactMatchInput() {
+    if (metricInputsCase_ == 33) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory exact match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInputOrBuilder
+      getTrajectoryExactMatchInputOrBuilder() {
+    if (metricInputsCase_ == 33) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.getDefaultInstance();
+  }
+
+  public static final int TRAJECTORY_IN_ORDER_MATCH_INPUT_FIELD_NUMBER = 34;
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+   * </code>
+   *
+   * @return Whether the trajectoryInOrderMatchInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrajectoryInOrderMatchInput() {
+    return metricInputsCase_ == 34;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+   * </code>
+   *
+   * @return The trajectoryInOrderMatchInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput
+      getTrajectoryInOrderMatchInput() {
+    if (metricInputsCase_ == 34) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory in order match metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInputOrBuilder
+      getTrajectoryInOrderMatchInputOrBuilder() {
+    if (metricInputsCase_ == 34) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.getDefaultInstance();
+  }
+
+  public static final int TRAJECTORY_ANY_ORDER_MATCH_INPUT_FIELD_NUMBER = 35;
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory match any order metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+   * </code>
+   *
+   * @return Whether the trajectoryAnyOrderMatchInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrajectoryAnyOrderMatchInput() {
+    return metricInputsCase_ == 35;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory match any order metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+   * </code>
+   *
+   * @return The trajectoryAnyOrderMatchInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
+      getTrajectoryAnyOrderMatchInput() {
+    if (metricInputsCase_ == 35) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory match any order metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInputOrBuilder
+      getTrajectoryAnyOrderMatchInputOrBuilder() {
+    if (metricInputsCase_ == 35) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.getDefaultInstance();
+  }
+
+  public static final int TRAJECTORY_PRECISION_INPUT_FIELD_NUMBER = 37;
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+   * </code>
+   *
+   * @return Whether the trajectoryPrecisionInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrajectoryPrecisionInput() {
+    return metricInputsCase_ == 37;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+   * </code>
+   *
+   * @return The trajectoryPrecisionInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput
+      getTrajectoryPrecisionInput() {
+    if (metricInputsCase_ == 37) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory precision metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInputOrBuilder
+      getTrajectoryPrecisionInputOrBuilder() {
+    if (metricInputsCase_ == 37) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.getDefaultInstance();
+  }
+
+  public static final int TRAJECTORY_RECALL_INPUT_FIELD_NUMBER = 38;
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+   * </code>
+   *
+   * @return Whether the trajectoryRecallInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrajectoryRecallInput() {
+    return metricInputsCase_ == 38;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+   * </code>
+   *
+   * @return The trajectoryRecallInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput getTrajectoryRecallInput() {
+    if (metricInputsCase_ == 38) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory recall metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInputOrBuilder
+      getTrajectoryRecallInputOrBuilder() {
+    if (metricInputsCase_ == 38) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.getDefaultInstance();
+  }
+
+  public static final int TRAJECTORY_SINGLE_TOOL_USE_INPUT_FIELD_NUMBER = 39;
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+   * </code>
+   *
+   * @return Whether the trajectorySingleToolUseInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrajectorySingleToolUseInput() {
+    return metricInputsCase_ == 39;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+   * </code>
+   *
+   * @return The trajectorySingleToolUseInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
+      getTrajectorySingleToolUseInput() {
+    if (metricInputsCase_ == 39) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input for trajectory single tool use metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInputOrBuilder
+      getTrajectorySingleToolUseInputOrBuilder() {
+    if (metricInputsCase_ == 39) {
+      return (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput) metricInputs_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.getDefaultInstance();
+  }
+
   public static final int LOCATION_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1634,6 +2002,30 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       output.writeMessage(
           29, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_);
     }
+    if (metricInputsCase_ == 33) {
+      output.writeMessage(
+          33, (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 34) {
+      output.writeMessage(
+          34, (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 35) {
+      output.writeMessage(
+          35, (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 37) {
+      output.writeMessage(
+          37, (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 38) {
+      output.writeMessage(
+          38, (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 39) {
+      output.writeMessage(
+          39, (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput) metricInputs_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1772,6 +2164,36 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               29, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_);
     }
+    if (metricInputsCase_ == 33) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33, (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 34) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              34, (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 35) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              35, (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 37) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              37, (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 38) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              38, (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_);
+    }
+    if (metricInputsCase_ == 39) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              39, (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput) metricInputs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1869,6 +2291,29 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         break;
       case 22:
         if (!getToolParameterKvMatchInput().equals(other.getToolParameterKvMatchInput()))
+          return false;
+        break;
+      case 33:
+        if (!getTrajectoryExactMatchInput().equals(other.getTrajectoryExactMatchInput()))
+          return false;
+        break;
+      case 34:
+        if (!getTrajectoryInOrderMatchInput().equals(other.getTrajectoryInOrderMatchInput()))
+          return false;
+        break;
+      case 35:
+        if (!getTrajectoryAnyOrderMatchInput().equals(other.getTrajectoryAnyOrderMatchInput()))
+          return false;
+        break;
+      case 37:
+        if (!getTrajectoryPrecisionInput().equals(other.getTrajectoryPrecisionInput()))
+          return false;
+        break;
+      case 38:
+        if (!getTrajectoryRecallInput().equals(other.getTrajectoryRecallInput())) return false;
+        break;
+      case 39:
+        if (!getTrajectorySingleToolUseInput().equals(other.getTrajectorySingleToolUseInput()))
           return false;
         break;
       case 0:
@@ -1979,6 +2424,30 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 22:
         hash = (37 * hash) + TOOL_PARAMETER_KV_MATCH_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getToolParameterKvMatchInput().hashCode();
+        break;
+      case 33:
+        hash = (37 * hash) + TRAJECTORY_EXACT_MATCH_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTrajectoryExactMatchInput().hashCode();
+        break;
+      case 34:
+        hash = (37 * hash) + TRAJECTORY_IN_ORDER_MATCH_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTrajectoryInOrderMatchInput().hashCode();
+        break;
+      case 35:
+        hash = (37 * hash) + TRAJECTORY_ANY_ORDER_MATCH_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTrajectoryAnyOrderMatchInput().hashCode();
+        break;
+      case 37:
+        hash = (37 * hash) + TRAJECTORY_PRECISION_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTrajectoryPrecisionInput().hashCode();
+        break;
+      case 38:
+        hash = (37 * hash) + TRAJECTORY_RECALL_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTrajectoryRecallInput().hashCode();
+        break;
+      case 39:
+        hash = (37 * hash) + TRAJECTORY_SINGLE_TOOL_USE_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getTrajectorySingleToolUseInput().hashCode();
         break;
       case 0:
       default:
@@ -2192,6 +2661,24 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       if (toolParameterKvMatchInputBuilder_ != null) {
         toolParameterKvMatchInputBuilder_.clear();
       }
+      if (trajectoryExactMatchInputBuilder_ != null) {
+        trajectoryExactMatchInputBuilder_.clear();
+      }
+      if (trajectoryInOrderMatchInputBuilder_ != null) {
+        trajectoryInOrderMatchInputBuilder_.clear();
+      }
+      if (trajectoryAnyOrderMatchInputBuilder_ != null) {
+        trajectoryAnyOrderMatchInputBuilder_.clear();
+      }
+      if (trajectoryPrecisionInputBuilder_ != null) {
+        trajectoryPrecisionInputBuilder_.clear();
+      }
+      if (trajectoryRecallInputBuilder_ != null) {
+        trajectoryRecallInputBuilder_.clear();
+      }
+      if (trajectorySingleToolUseInputBuilder_ != null) {
+        trajectorySingleToolUseInputBuilder_.clear();
+      }
       location_ = "";
       metricInputsCase_ = 0;
       metricInputs_ = null;
@@ -2234,7 +2721,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.location_ = location_;
       }
     }
@@ -2312,6 +2799,24 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       if (metricInputsCase_ == 22 && toolParameterKvMatchInputBuilder_ != null) {
         result.metricInputs_ = toolParameterKvMatchInputBuilder_.build();
       }
+      if (metricInputsCase_ == 33 && trajectoryExactMatchInputBuilder_ != null) {
+        result.metricInputs_ = trajectoryExactMatchInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 34 && trajectoryInOrderMatchInputBuilder_ != null) {
+        result.metricInputs_ = trajectoryInOrderMatchInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 35 && trajectoryAnyOrderMatchInputBuilder_ != null) {
+        result.metricInputs_ = trajectoryAnyOrderMatchInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 37 && trajectoryPrecisionInputBuilder_ != null) {
+        result.metricInputs_ = trajectoryPrecisionInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 38 && trajectoryRecallInputBuilder_ != null) {
+        result.metricInputs_ = trajectoryRecallInputBuilder_.build();
+      }
+      if (metricInputsCase_ == 39 && trajectorySingleToolUseInputBuilder_ != null) {
+        result.metricInputs_ = trajectorySingleToolUseInputBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2363,7 +2868,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       switch (other.getMetricInputsCase()) {
@@ -2483,6 +2988,36 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
             mergeToolParameterKvMatchInput(other.getToolParameterKvMatchInput());
             break;
           }
+        case TRAJECTORY_EXACT_MATCH_INPUT:
+          {
+            mergeTrajectoryExactMatchInput(other.getTrajectoryExactMatchInput());
+            break;
+          }
+        case TRAJECTORY_IN_ORDER_MATCH_INPUT:
+          {
+            mergeTrajectoryInOrderMatchInput(other.getTrajectoryInOrderMatchInput());
+            break;
+          }
+        case TRAJECTORY_ANY_ORDER_MATCH_INPUT:
+          {
+            mergeTrajectoryAnyOrderMatchInput(other.getTrajectoryAnyOrderMatchInput());
+            break;
+          }
+        case TRAJECTORY_PRECISION_INPUT:
+          {
+            mergeTrajectoryPrecisionInput(other.getTrajectoryPrecisionInput());
+            break;
+          }
+        case TRAJECTORY_RECALL_INPUT:
+          {
+            mergeTrajectoryRecallInput(other.getTrajectoryRecallInput());
+            break;
+          }
+        case TRAJECTORY_SINGLE_TOOL_USE_INPUT:
+          {
+            mergeTrajectorySingleToolUseInput(other.getTrajectorySingleToolUseInput());
+            break;
+          }
         case METRICINPUTS_NOT_SET:
           {
             break;
@@ -2517,7 +3052,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 10
             case 18:
@@ -2680,6 +3215,48 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
                 metricInputsCase_ = 29;
                 break;
               } // case 234
+            case 266:
+              {
+                input.readMessage(
+                    getTrajectoryExactMatchInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 33;
+                break;
+              } // case 266
+            case 274:
+              {
+                input.readMessage(
+                    getTrajectoryInOrderMatchInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 34;
+                break;
+              } // case 274
+            case 282:
+              {
+                input.readMessage(
+                    getTrajectoryAnyOrderMatchInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 35;
+                break;
+              } // case 282
+            case 298:
+              {
+                input.readMessage(
+                    getTrajectoryPrecisionInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 37;
+                break;
+              } // case 298
+            case 306:
+              {
+                input.readMessage(
+                    getTrajectoryRecallInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 38;
+                break;
+              } // case 306
+            case 314:
+              {
+                input.readMessage(
+                    getTrajectorySingleToolUseInputFieldBuilder().getBuilder(), extensionRegistry);
+                metricInputsCase_ = 39;
+                break;
+              } // case 314
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7967,6 +8544,1414 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       return toolParameterKvMatchInputBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInputOrBuilder>
+        trajectoryExactMatchInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     *
+     * @return Whether the trajectoryExactMatchInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrajectoryExactMatchInput() {
+      return metricInputsCase_ == 33;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     *
+     * @return The trajectoryExactMatchInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput
+        getTrajectoryExactMatchInput() {
+      if (trajectoryExactMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 33) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 33) {
+          return trajectoryExactMatchInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     */
+    public Builder setTrajectoryExactMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput value) {
+      if (trajectoryExactMatchInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        trajectoryExactMatchInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     */
+    public Builder setTrajectoryExactMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.Builder builderForValue) {
+      if (trajectoryExactMatchInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        trajectoryExactMatchInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     */
+    public Builder mergeTrajectoryExactMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput value) {
+      if (trajectoryExactMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 33
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput
+                    .getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 33) {
+          trajectoryExactMatchInputBuilder_.mergeFrom(value);
+        } else {
+          trajectoryExactMatchInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 33;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     */
+    public Builder clearTrajectoryExactMatchInput() {
+      if (trajectoryExactMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 33) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 33) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        trajectoryExactMatchInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.Builder
+        getTrajectoryExactMatchInputBuilder() {
+      return getTrajectoryExactMatchInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInputOrBuilder
+        getTrajectoryExactMatchInputOrBuilder() {
+      if ((metricInputsCase_ == 33) && (trajectoryExactMatchInputBuilder_ != null)) {
+        return trajectoryExactMatchInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 33) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory exact match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput trajectory_exact_match_input = 33;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInputOrBuilder>
+        getTrajectoryExactMatchInputFieldBuilder() {
+      if (trajectoryExactMatchInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 33)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.getDefaultInstance();
+        }
+        trajectoryExactMatchInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 33;
+      onChanged();
+      return trajectoryExactMatchInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInputOrBuilder>
+        trajectoryInOrderMatchInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     *
+     * @return Whether the trajectoryInOrderMatchInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrajectoryInOrderMatchInput() {
+      return metricInputsCase_ == 34;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     *
+     * @return The trajectoryInOrderMatchInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput
+        getTrajectoryInOrderMatchInput() {
+      if (trajectoryInOrderMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 34) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 34) {
+          return trajectoryInOrderMatchInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     */
+    public Builder setTrajectoryInOrderMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput value) {
+      if (trajectoryInOrderMatchInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        trajectoryInOrderMatchInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     */
+    public Builder setTrajectoryInOrderMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.Builder builderForValue) {
+      if (trajectoryInOrderMatchInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        trajectoryInOrderMatchInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     */
+    public Builder mergeTrajectoryInOrderMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput value) {
+      if (trajectoryInOrderMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 34
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput
+                    .getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput)
+                          metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 34) {
+          trajectoryInOrderMatchInputBuilder_.mergeFrom(value);
+        } else {
+          trajectoryInOrderMatchInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 34;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     */
+    public Builder clearTrajectoryInOrderMatchInput() {
+      if (trajectoryInOrderMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 34) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 34) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        trajectoryInOrderMatchInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.Builder
+        getTrajectoryInOrderMatchInputBuilder() {
+      return getTrajectoryInOrderMatchInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInputOrBuilder
+        getTrajectoryInOrderMatchInputOrBuilder() {
+      if ((metricInputsCase_ == 34) && (trajectoryInOrderMatchInputBuilder_ != null)) {
+        return trajectoryInOrderMatchInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 34) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory in order match metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput trajectory_in_order_match_input = 34;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInputOrBuilder>
+        getTrajectoryInOrderMatchInputFieldBuilder() {
+      if (trajectoryInOrderMatchInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 34)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.getDefaultInstance();
+        }
+        trajectoryInOrderMatchInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 34;
+      onChanged();
+      return trajectoryInOrderMatchInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInputOrBuilder>
+        trajectoryAnyOrderMatchInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     *
+     * @return Whether the trajectoryAnyOrderMatchInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrajectoryAnyOrderMatchInput() {
+      return metricInputsCase_ == 35;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     *
+     * @return The trajectoryAnyOrderMatchInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
+        getTrajectoryAnyOrderMatchInput() {
+      if (trajectoryAnyOrderMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 35) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
+            .getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 35) {
+          return trajectoryAnyOrderMatchInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     */
+    public Builder setTrajectoryAnyOrderMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput value) {
+      if (trajectoryAnyOrderMatchInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        trajectoryAnyOrderMatchInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 35;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     */
+    public Builder setTrajectoryAnyOrderMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.Builder builderForValue) {
+      if (trajectoryAnyOrderMatchInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        trajectoryAnyOrderMatchInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 35;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     */
+    public Builder mergeTrajectoryAnyOrderMatchInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput value) {
+      if (trajectoryAnyOrderMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 35
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
+                    .getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput)
+                          metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 35) {
+          trajectoryAnyOrderMatchInputBuilder_.mergeFrom(value);
+        } else {
+          trajectoryAnyOrderMatchInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 35;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     */
+    public Builder clearTrajectoryAnyOrderMatchInput() {
+      if (trajectoryAnyOrderMatchInputBuilder_ == null) {
+        if (metricInputsCase_ == 35) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 35) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        trajectoryAnyOrderMatchInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.Builder
+        getTrajectoryAnyOrderMatchInputBuilder() {
+      return getTrajectoryAnyOrderMatchInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInputOrBuilder
+        getTrajectoryAnyOrderMatchInputOrBuilder() {
+      if ((metricInputsCase_ == 35) && (trajectoryAnyOrderMatchInputBuilder_ != null)) {
+        return trajectoryAnyOrderMatchInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 35) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory match any order metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput trajectory_any_order_match_input = 35;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInputOrBuilder>
+        getTrajectoryAnyOrderMatchInputFieldBuilder() {
+      if (trajectoryAnyOrderMatchInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 35)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.getDefaultInstance();
+        }
+        trajectoryAnyOrderMatchInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 35;
+      onChanged();
+      return trajectoryAnyOrderMatchInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInputOrBuilder>
+        trajectoryPrecisionInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     *
+     * @return Whether the trajectoryPrecisionInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrajectoryPrecisionInput() {
+      return metricInputsCase_ == 37;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     *
+     * @return The trajectoryPrecisionInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput
+        getTrajectoryPrecisionInput() {
+      if (trajectoryPrecisionInputBuilder_ == null) {
+        if (metricInputsCase_ == 37) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 37) {
+          return trajectoryPrecisionInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     */
+    public Builder setTrajectoryPrecisionInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput value) {
+      if (trajectoryPrecisionInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        trajectoryPrecisionInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 37;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     */
+    public Builder setTrajectoryPrecisionInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.Builder builderForValue) {
+      if (trajectoryPrecisionInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        trajectoryPrecisionInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 37;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     */
+    public Builder mergeTrajectoryPrecisionInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput value) {
+      if (trajectoryPrecisionInputBuilder_ == null) {
+        if (metricInputsCase_ == 37
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput
+                    .getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 37) {
+          trajectoryPrecisionInputBuilder_.mergeFrom(value);
+        } else {
+          trajectoryPrecisionInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 37;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     */
+    public Builder clearTrajectoryPrecisionInput() {
+      if (trajectoryPrecisionInputBuilder_ == null) {
+        if (metricInputsCase_ == 37) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 37) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        trajectoryPrecisionInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.Builder
+        getTrajectoryPrecisionInputBuilder() {
+      return getTrajectoryPrecisionInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInputOrBuilder
+        getTrajectoryPrecisionInputOrBuilder() {
+      if ((metricInputsCase_ == 37) && (trajectoryPrecisionInputBuilder_ != null)) {
+        return trajectoryPrecisionInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 37) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory precision metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput trajectory_precision_input = 37;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInputOrBuilder>
+        getTrajectoryPrecisionInputFieldBuilder() {
+      if (trajectoryPrecisionInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 37)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.getDefaultInstance();
+        }
+        trajectoryPrecisionInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 37;
+      onChanged();
+      return trajectoryPrecisionInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInputOrBuilder>
+        trajectoryRecallInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     *
+     * @return Whether the trajectoryRecallInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrajectoryRecallInput() {
+      return metricInputsCase_ == 38;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     *
+     * @return The trajectoryRecallInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput getTrajectoryRecallInput() {
+      if (trajectoryRecallInputBuilder_ == null) {
+        if (metricInputsCase_ == 38) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 38) {
+          return trajectoryRecallInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     */
+    public Builder setTrajectoryRecallInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput value) {
+      if (trajectoryRecallInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        trajectoryRecallInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 38;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     */
+    public Builder setTrajectoryRecallInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.Builder builderForValue) {
+      if (trajectoryRecallInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        trajectoryRecallInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 38;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     */
+    public Builder mergeTrajectoryRecallInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput value) {
+      if (trajectoryRecallInputBuilder_ == null) {
+        if (metricInputsCase_ == 38
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 38) {
+          trajectoryRecallInputBuilder_.mergeFrom(value);
+        } else {
+          trajectoryRecallInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 38;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     */
+    public Builder clearTrajectoryRecallInput() {
+      if (trajectoryRecallInputBuilder_ == null) {
+        if (metricInputsCase_ == 38) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 38) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        trajectoryRecallInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.Builder
+        getTrajectoryRecallInputBuilder() {
+      return getTrajectoryRecallInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInputOrBuilder
+        getTrajectoryRecallInputOrBuilder() {
+      if ((metricInputsCase_ == 38) && (trajectoryRecallInputBuilder_ != null)) {
+        return trajectoryRecallInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 38) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory recall metric.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput trajectory_recall_input = 38;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInputOrBuilder>
+        getTrajectoryRecallInputFieldBuilder() {
+      if (trajectoryRecallInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 38)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.getDefaultInstance();
+        }
+        trajectoryRecallInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 38;
+      onChanged();
+      return trajectoryRecallInputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInputOrBuilder>
+        trajectorySingleToolUseInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     *
+     * @return Whether the trajectorySingleToolUseInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrajectorySingleToolUseInput() {
+      return metricInputsCase_ == 39;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     *
+     * @return The trajectorySingleToolUseInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
+        getTrajectorySingleToolUseInput() {
+      if (trajectorySingleToolUseInputBuilder_ == null) {
+        if (metricInputsCase_ == 39) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
+            .getDefaultInstance();
+      } else {
+        if (metricInputsCase_ == 39) {
+          return trajectorySingleToolUseInputBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     */
+    public Builder setTrajectorySingleToolUseInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput value) {
+      if (trajectorySingleToolUseInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricInputs_ = value;
+        onChanged();
+      } else {
+        trajectorySingleToolUseInputBuilder_.setMessage(value);
+      }
+      metricInputsCase_ = 39;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     */
+    public Builder setTrajectorySingleToolUseInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.Builder builderForValue) {
+      if (trajectorySingleToolUseInputBuilder_ == null) {
+        metricInputs_ = builderForValue.build();
+        onChanged();
+      } else {
+        trajectorySingleToolUseInputBuilder_.setMessage(builderForValue.build());
+      }
+      metricInputsCase_ = 39;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     */
+    public Builder mergeTrajectorySingleToolUseInput(
+        com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput value) {
+      if (trajectorySingleToolUseInputBuilder_ == null) {
+        if (metricInputsCase_ == 39
+            && metricInputs_
+                != com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
+                    .getDefaultInstance()) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput)
+                          metricInputs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricInputs_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricInputsCase_ == 39) {
+          trajectorySingleToolUseInputBuilder_.mergeFrom(value);
+        } else {
+          trajectorySingleToolUseInputBuilder_.setMessage(value);
+        }
+      }
+      metricInputsCase_ = 39;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     */
+    public Builder clearTrajectorySingleToolUseInput() {
+      if (trajectorySingleToolUseInputBuilder_ == null) {
+        if (metricInputsCase_ == 39) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricInputsCase_ == 39) {
+          metricInputsCase_ = 0;
+          metricInputs_ = null;
+        }
+        trajectorySingleToolUseInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.Builder
+        getTrajectorySingleToolUseInputBuilder() {
+      return getTrajectorySingleToolUseInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInputOrBuilder
+        getTrajectorySingleToolUseInputOrBuilder() {
+      if ((metricInputsCase_ == 39) && (trajectorySingleToolUseInputBuilder_ != null)) {
+        return trajectorySingleToolUseInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricInputsCase_ == 39) {
+          return (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput) metricInputs_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input for trajectory single tool use metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput trajectory_single_tool_use_input = 39;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput,
+            com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.Builder,
+            com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInputOrBuilder>
+        getTrajectorySingleToolUseInputFieldBuilder() {
+      if (trajectorySingleToolUseInputBuilder_ == null) {
+        if (!(metricInputsCase_ == 39)) {
+          metricInputs_ =
+              com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.getDefaultInstance();
+        }
+        trajectorySingleToolUseInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput,
+                com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput.Builder,
+                com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInputOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput) metricInputs_,
+                getParentForChildren(),
+                isClean());
+        metricInputs_ = null;
+      }
+      metricInputsCase_ = 39;
+      onChanged();
+      return trajectorySingleToolUseInputBuilder_;
+    }
+
     private java.lang.Object location_ = "";
     /**
      *
@@ -8038,7 +10023,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       location_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8058,7 +10043,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      */
     public Builder clearLocation() {
       location_ = getDefaultInstance().getLocation();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -8083,7 +10068,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       location_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

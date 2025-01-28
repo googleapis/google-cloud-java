@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,20 +38,20 @@ public final class AcceleratorTypeProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/accelerator"
           + "_type.proto\022\032google.cloud.aiplatform.v1*"
-          + "\263\002\n\017AcceleratorType\022 \n\034ACCELERATOR_TYPE_"
+          + "\316\002\n\017AcceleratorType\022 \n\034ACCELERATOR_TYPE_"
           + "UNSPECIFIED\020\000\022\030\n\020NVIDIA_TESLA_K80\020\001\032\002\010\001\022"
           + "\025\n\021NVIDIA_TESLA_P100\020\002\022\025\n\021NVIDIA_TESLA_V"
           + "100\020\003\022\023\n\017NVIDIA_TESLA_P4\020\004\022\023\n\017NVIDIA_TES"
           + "LA_T4\020\005\022\025\n\021NVIDIA_TESLA_A100\020\010\022\024\n\020NVIDIA"
           + "_A100_80GB\020\t\022\r\n\tNVIDIA_L4\020\013\022\024\n\020NVIDIA_H1"
-          + "00_80GB\020\r\022\n\n\006TPU_V2\020\006\022\n\n\006TPU_V3\020\007\022\016\n\nTPU"
-          + "_V4_POD\020\n\022\022\n\016TPU_V5_LITEPOD\020\014B\322\001\n\036com.go"
-          + "ogle.cloud.aiplatform.v1B\024AcceleratorTyp"
-          + "eProtoP\001Z>cloud.google.com/go/aiplatform"
-          + "/apiv1/aiplatformpb;aiplatformpb\252\002\032Googl"
-          + "e.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIP"
-          + "latform\\V1\352\002\035Google::Cloud::AIPlatform::"
-          + "V1b\006proto3"
+          + "00_80GB\020\r\022\031\n\025NVIDIA_H100_MEGA_80GB\020\016\022\n\n\006"
+          + "TPU_V2\020\006\022\n\n\006TPU_V3\020\007\022\016\n\nTPU_V4_POD\020\n\022\022\n\016"
+          + "TPU_V5_LITEPOD\020\014B\322\001\n\036com.google.cloud.ai"
+          + "platform.v1B\024AcceleratorTypeProtoP\001Z>clo"
+          + "ud.google.com/go/aiplatform/apiv1/aiplat"
+          + "formpb;aiplatformpb\252\002\032Google.Cloud.AIPla"
+          + "tform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035"
+          + "Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

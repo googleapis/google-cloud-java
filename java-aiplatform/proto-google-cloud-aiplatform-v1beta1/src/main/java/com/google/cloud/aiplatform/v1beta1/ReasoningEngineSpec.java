@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1412,7 +1412,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -1427,7 +1428,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -1443,7 +1445,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -1458,7 +1461,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -1473,7 +1477,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Declarations for object class methods.
+   * Optional. Declarations for object class methods in OpenAPI specification
+   * format.
    * </pre>
    *
    * <code>
@@ -2153,7 +2158,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2171,7 +2177,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2189,7 +2196,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2207,7 +2215,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2231,7 +2240,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2252,7 +2262,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2276,7 +2287,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2300,7 +2312,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2321,7 +2334,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2342,7 +2356,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2364,7 +2379,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2385,7 +2401,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2406,7 +2423,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2420,7 +2438,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2438,7 +2457,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2457,7 +2477,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2472,7 +2493,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>
@@ -2487,7 +2509,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Declarations for object class methods.
+     * Optional. Declarations for object class methods in OpenAPI specification
+     * format.
      * </pre>
      *
      * <code>

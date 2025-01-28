@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.samples;
 
 // [START networkmanagement_v1beta1_generated_ReachabilityService_SetIamPolicy_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.networkmanagement.v1beta1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,7 +39,7 @@ public class AsyncSetIamPolicy {
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource("SetIamPolicyRequest1223629066".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

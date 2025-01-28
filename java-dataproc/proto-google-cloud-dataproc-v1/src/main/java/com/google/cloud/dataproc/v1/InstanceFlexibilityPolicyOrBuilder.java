@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,52 @@ public interface InstanceFlexibilityPolicyOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.InstanceFlexibilityPolicy)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the provisioningModelMix field is set.
+   */
+  boolean hasProvisioningModelMix();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The provisioningModelMix.
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
+      getProvisioningModelMix();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how the Group selects the provisioning model to ensure
+   * required reliability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix provisioning_model_mix = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder
+      getProvisioningModelMixOrBuilder();
 
   /**
    *

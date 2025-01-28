@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,12 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the ETD custom module.
+   * Identifier. The resource name of the Event Threat Detection custom module,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -46,13 +45,12 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of the ETD custom module.
+   * Identifier. The resource name of the Event Threat Detection custom module,
+   * in one of the following formats:
    *
-   * Its format is:
-   *
-   *   * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
-   *   * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}`.
+   * * `organizations/{organization}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
+   * * `projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -65,7 +63,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. Config for the effective module.
+   * Output only. Configuration for the effective module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -77,7 +75,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. Config for the effective module.
+   * Output only. Configuration for the effective module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -89,7 +87,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. Config for the effective module.
+   * Output only. Configuration for the effective module.
    * </pre>
    *
    * <code>.google.protobuf.Struct config = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -133,7 +131,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+   * Output only. Type for the module (for example, `CONFIGURABLE_BAD_IP`).
    * </pre>
    *
    * <code>string type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -145,7 +143,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. Type for the module. e.g. CONFIGURABLE_BAD_IP.
+   * Output only. Type for the module (for example, `CONFIGURABLE_BAD_IP`).
    * </pre>
    *
    * <code>string type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -158,7 +156,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The human readable name to be displayed for the module.
+   * Output only. The human-readable name of the module.
    * </pre>
    *
    * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -170,7 +168,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The human readable name to be displayed for the module.
+   * Output only. The human-readable name of the module.
    * </pre>
    *
    * <code>string display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -183,7 +181,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The description for the module.
+   * Output only. A description of the module.
    * </pre>
    *
    * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -195,7 +193,7 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The description for the module.
+   * Output only. A description of the module.
    * </pre>
    *
    * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,4 +173,45 @@ public interface BillingAccountOrBuilder
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The currency in which the billing account is billed and charged,
+   * represented as an ISO 4217 code such as `USD`.
+   *
+   * Billing account currency is determined at the time of billing account
+   * creation and cannot be updated subsequently, so this field should not be
+   * set on update requests. In addition, a subaccount always matches the
+   * currency of its parent billing account, so this field should not be set on
+   * subaccount creation requests. Clients can read this field to determine the
+   * currency of an existing billing account.
+   * </pre>
+   *
+   * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The currencyCode.
+   */
+  java.lang.String getCurrencyCode();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The currency in which the billing account is billed and charged,
+   * represented as an ISO 4217 code such as `USD`.
+   *
+   * Billing account currency is determined at the time of billing account
+   * creation and cannot be updated subsequently, so this field should not be
+   * set on update requests. In addition, a subaccount always matches the
+   * currency of its parent billing account, so this field should not be set on
+   * subaccount creation requests. Clients can read this field to determine the
+   * currency of an existing billing account.
+   * </pre>
+   *
+   * <code>string currency_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for currencyCode.
+   */
+  com.google.protobuf.ByteString getCurrencyCodeBytes();
 }

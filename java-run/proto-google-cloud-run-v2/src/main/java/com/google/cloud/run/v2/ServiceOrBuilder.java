@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -888,7 +888,9 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Optional. Disables IAM permission check for run.routes.invoke for callers
-   * of this service. This setting should not be used with external ingress.
+   * of this service. This feature is available by invitation only. For more
+   * information, visit
+   * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
    * </pre>
    *
    * <code>bool invoker_iam_disabled = 21 [(.google.api.field_behavior) = OPTIONAL];</code>

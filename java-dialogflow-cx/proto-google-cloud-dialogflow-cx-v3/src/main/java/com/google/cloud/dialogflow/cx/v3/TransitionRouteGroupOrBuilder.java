@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,8 @@ public interface TransitionRouteGroupOrBuilder
    * <pre>
    * The unique identifier of the transition route group.
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
-   * populates the name automatically. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * populates the name automatically. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
    * .
    * </pre>
    *
@@ -47,9 +46,8 @@ public interface TransitionRouteGroupOrBuilder
    * <pre>
    * The unique identifier of the transition route group.
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
-   * populates the name automatically. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * populates the name automatically. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/transitionRouteGroups/&lt;TransitionRouteGroupID&gt;`
    * .
    * </pre>
    *

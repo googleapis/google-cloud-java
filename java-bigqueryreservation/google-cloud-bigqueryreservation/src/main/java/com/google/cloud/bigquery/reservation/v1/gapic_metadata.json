@@ -28,6 +28,9 @@
             "DeleteReservation": {
               "methods": ["deleteReservation", "deleteReservation", "deleteReservation", "deleteReservationCallable"]
             },
+            "FailoverReservation": {
+              "methods": ["failoverReservation", "failoverReservationCallable"]
+            },
             "GetBiReservation": {
               "methods": ["getBiReservation", "getBiReservation", "getBiReservation", "getBiReservationCallable"]
             },

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,4 +98,56 @@ public interface DeliverInfoOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Storage Bucket the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string storage_bucket = 4;</code>
+   *
+   * @return The storageBucket.
+   */
+  java.lang.String getStorageBucket();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the Cloud Storage Bucket the packet is delivered to (if
+   * applicable).
+   * </pre>
+   *
+   * <code>string storage_bucket = 4;</code>
+   *
+   * @return The bytes for storageBucket.
+   */
+  com.google.protobuf.ByteString getStorageBucketBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target the packet is delivered to (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 5;</code>
+   *
+   * @return The pscGoogleApiTarget.
+   */
+  java.lang.String getPscGoogleApiTarget();
+  /**
+   *
+   *
+   * <pre>
+   * PSC Google API target the packet is delivered to (if applicable).
+   * </pre>
+   *
+   * <code>string psc_google_api_target = 5;</code>
+   *
+   * @return The bytes for pscGoogleApiTarget.
+   */
+  com.google.protobuf.ByteString getPscGoogleApiTargetBytes();
 }

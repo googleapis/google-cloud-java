@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -337,6 +337,47 @@ public interface CustomJobSpecOrBuilder
    * @return The bytes of the reservedIpRanges at the given index.
    */
   com.google.protobuf.ByteString getReservedIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for CustomJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInterfaceConfig field is set.
+   */
+  boolean hasPscInterfaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for CustomJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInterfaceConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for PSC-I for CustomJob.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder getPscInterfaceConfigOrBuilder();
 
   /**
    *

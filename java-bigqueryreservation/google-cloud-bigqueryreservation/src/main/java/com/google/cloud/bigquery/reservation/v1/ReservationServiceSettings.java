@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,11 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
   /** Returns the object with the settings used for calls to updateReservation. */
   public UnaryCallSettings<UpdateReservationRequest, Reservation> updateReservationSettings() {
     return ((ReservationServiceStubSettings) getStubSettings()).updateReservationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to failoverReservation. */
+  public UnaryCallSettings<FailoverReservationRequest, Reservation> failoverReservationSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).failoverReservationSettings();
   }
 
   /** Returns the object with the settings used for calls to createCapacityCommitment. */
@@ -365,6 +370,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     public UnaryCallSettings.Builder<UpdateReservationRequest, Reservation>
         updateReservationSettings() {
       return getStubSettingsBuilder().updateReservationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverReservation. */
+    public UnaryCallSettings.Builder<FailoverReservationRequest, Reservation>
+        failoverReservationSettings() {
+      return getStubSettingsBuilder().failoverReservationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createCapacityCommitment. */

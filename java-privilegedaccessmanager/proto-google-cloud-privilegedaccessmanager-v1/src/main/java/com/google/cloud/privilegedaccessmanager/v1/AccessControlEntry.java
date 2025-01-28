@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.privilegedaccessmanager.v1;
  *
  *
  * <pre>
- * AccessControlEntry is used to control who can do some operation.
+ * `AccessControlEntry` is used to control who can do some operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.privilegedaccessmanager.v1.AccessControlEntry}
@@ -306,7 +306,7 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * AccessControlEntry is used to control who can do some operation.
+   * `AccessControlEntry` is used to control who can do some operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.privilegedaccessmanager.v1.AccessControlEntry}

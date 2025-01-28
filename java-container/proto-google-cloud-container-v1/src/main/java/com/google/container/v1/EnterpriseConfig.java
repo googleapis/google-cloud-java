@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
 
   private EnterpriseConfig() {
     clusterTier_ = 0;
+    desiredTier_ = 0;
   }
 
   @java.lang.Override
@@ -226,7 +227,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>
@@ -243,7 +244,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. cluster_tier specifies the premium tier of the cluster.
+   * Output only. cluster_tier indicates the effective tier of the cluster.
    * </pre>
    *
    * <code>
@@ -256,6 +257,43 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
   public com.google.container.v1.EnterpriseConfig.ClusterTier getClusterTier() {
     com.google.container.v1.EnterpriseConfig.ClusterTier result =
         com.google.container.v1.EnterpriseConfig.ClusterTier.forNumber(clusterTier_);
+    return result == null
+        ? com.google.container.v1.EnterpriseConfig.ClusterTier.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DESIRED_TIER_FIELD_NUMBER = 2;
+  private int desiredTier_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * desired_tier specifies the desired tier of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+   *
+   * @return The enum numeric value on the wire for desiredTier.
+   */
+  @java.lang.Override
+  public int getDesiredTierValue() {
+    return desiredTier_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * desired_tier specifies the desired tier of the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+   *
+   * @return The desiredTier.
+   */
+  @java.lang.Override
+  public com.google.container.v1.EnterpriseConfig.ClusterTier getDesiredTier() {
+    com.google.container.v1.EnterpriseConfig.ClusterTier result =
+        com.google.container.v1.EnterpriseConfig.ClusterTier.forNumber(desiredTier_);
     return result == null
         ? com.google.container.v1.EnterpriseConfig.ClusterTier.UNRECOGNIZED
         : result;
@@ -280,6 +318,11 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(1, clusterTier_);
     }
+    if (desiredTier_
+        != com.google.container.v1.EnterpriseConfig.ClusterTier.CLUSTER_TIER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, desiredTier_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -293,6 +336,11 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
         != com.google.container.v1.EnterpriseConfig.ClusterTier.CLUSTER_TIER_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, clusterTier_);
+    }
+    if (desiredTier_
+        != com.google.container.v1.EnterpriseConfig.ClusterTier.CLUSTER_TIER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, desiredTier_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -310,6 +358,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     com.google.container.v1.EnterpriseConfig other = (com.google.container.v1.EnterpriseConfig) obj;
 
     if (clusterTier_ != other.clusterTier_) return false;
+    if (desiredTier_ != other.desiredTier_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -323,6 +372,8 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CLUSTER_TIER_FIELD_NUMBER;
     hash = (53 * hash) + clusterTier_;
+    hash = (37 * hash) + DESIRED_TIER_FIELD_NUMBER;
+    hash = (53 * hash) + desiredTier_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,6 +514,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       clusterTier_ = 0;
+      desiredTier_ = 0;
       return this;
     }
 
@@ -501,6 +553,9 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.clusterTier_ = clusterTier_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.desiredTier_ = desiredTier_;
       }
     }
 
@@ -552,6 +607,9 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
       if (other.clusterTier_ != 0) {
         setClusterTierValue(other.getClusterTierValue());
       }
+      if (other.desiredTier_ != 0) {
+        setDesiredTierValue(other.getDesiredTierValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -584,6 +642,12 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 16:
+              {
+                desiredTier_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -608,7 +672,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -625,7 +689,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -645,7 +709,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -666,7 +730,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -689,7 +753,7 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. cluster_tier specifies the premium tier of the cluster.
+     * Output only. cluster_tier indicates the effective tier of the cluster.
      * </pre>
      *
      * <code>
@@ -701,6 +765,98 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearClusterTier() {
       bitField0_ = (bitField0_ & ~0x00000001);
       clusterTier_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int desiredTier_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * desired_tier specifies the desired tier of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+     *
+     * @return The enum numeric value on the wire for desiredTier.
+     */
+    @java.lang.Override
+    public int getDesiredTierValue() {
+      return desiredTier_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * desired_tier specifies the desired tier of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for desiredTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredTierValue(int value) {
+      desiredTier_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * desired_tier specifies the desired tier of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+     *
+     * @return The desiredTier.
+     */
+    @java.lang.Override
+    public com.google.container.v1.EnterpriseConfig.ClusterTier getDesiredTier() {
+      com.google.container.v1.EnterpriseConfig.ClusterTier result =
+          com.google.container.v1.EnterpriseConfig.ClusterTier.forNumber(desiredTier_);
+      return result == null
+          ? com.google.container.v1.EnterpriseConfig.ClusterTier.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * desired_tier specifies the desired tier of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+     *
+     * @param value The desiredTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredTier(com.google.container.v1.EnterpriseConfig.ClusterTier value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      desiredTier_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * desired_tier specifies the desired tier of the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.EnterpriseConfig.ClusterTier desired_tier = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredTier() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      desiredTier_ = 0;
       onChanged();
       return this;
     }

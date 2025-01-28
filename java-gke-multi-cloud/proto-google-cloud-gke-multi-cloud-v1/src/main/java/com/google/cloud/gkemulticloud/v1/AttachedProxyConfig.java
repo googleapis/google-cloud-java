@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,6 +71,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
    * The Kubernetes Secret resource that contains the HTTP(S) proxy
    * configuration. The secret must be a JSON encoded proxy configuration
    * as described in
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+   * for EKS clusters and
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+   * for AKS clusters.
    * </pre>
    *
    * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -88,6 +92,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
    * The Kubernetes Secret resource that contains the HTTP(S) proxy
    * configuration. The secret must be a JSON encoded proxy configuration
    * as described in
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+   * for EKS clusters and
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+   * for AKS clusters.
    * </pre>
    *
    * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -107,6 +115,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
    * The Kubernetes Secret resource that contains the HTTP(S) proxy
    * configuration. The secret must be a JSON encoded proxy configuration
    * as described in
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+   * for EKS clusters and
+   * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+   * for AKS clusters.
    * </pre>
    *
    * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -496,6 +508,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -512,6 +528,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -534,6 +554,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -558,6 +582,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -580,6 +608,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -610,6 +642,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -631,6 +667,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -647,6 +687,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>
@@ -668,6 +712,10 @@ public final class AttachedProxyConfig extends com.google.protobuf.GeneratedMess
      * The Kubernetes Secret resource that contains the HTTP(S) proxy
      * configuration. The secret must be a JSON encoded proxy configuration
      * as described in
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/use-a-proxy#configure-proxy-support
+     * for EKS clusters and
+     * https://cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/use-a-proxy#configure-proxy-support
+     * for AKS clusters.
      * </pre>
      *
      * <code>.google.cloud.gkemulticloud.v1.KubernetesSecret kubernetes_secret = 1;</code>

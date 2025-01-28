@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -283,20 +283,20 @@ public final class SessionProto {
           + "ectIntentResponse\"\000(\0010\001\032x\312A\031dialogflow.g"
           + "oogleapis.com\322AYhttps://www.googleapis.c"
           + "om/auth/cloud-platform,https://www.googl"
-          + "eapis.com/auth/dialogflowB\371\003\n#com.google"
+          + "eapis.com/auth/dialogflowB\366\003\n#com.google"
           + ".cloud.dialogflow.v2beta1B\014SessionProtoP"
           + "\001ZCcloud.google.com/go/dialogflow/apiv2b"
-          + "eta1/dialogflowpb;dialogflowpb\370\001\001\242\002\002DF\252\002"
-          + "\037Google.Cloud.Dialogflow.V2Beta1\352A\321\002\n!di"
-          + "alogflow.googleapis.com/Session\022+project"
-          + "s/{project}/agent/sessions/{session}\022Spr"
-          + "ojects/{project}/agent/environments/{env"
-          + "ironment}/users/{user}/sessions/{session"
-          + "}\022@projects/{project}/locations/{locatio"
-          + "n}/agent/sessions/{session}\022hprojects/{p"
-          + "roject}/locations/{location}/agent/envir"
-          + "onments/{environment}/users/{user}/sessi"
-          + "ons/{session}b\006proto3"
+          + "eta1/dialogflowpb;dialogflowpb\242\002\002DF\252\002\037Go"
+          + "ogle.Cloud.Dialogflow.V2Beta1\352A\321\002\n!dialo"
+          + "gflow.googleapis.com/Session\022+projects/{"
+          + "project}/agent/sessions/{session}\022Sproje"
+          + "cts/{project}/agent/environments/{enviro"
+          + "nment}/users/{user}/sessions/{session}\022@"
+          + "projects/{project}/locations/{location}/"
+          + "agent/sessions/{session}\022hprojects/{proj"
+          + "ect}/locations/{location}/agent/environm"
+          + "ents/{environment}/users/{user}/sessions"
+          + "/{session}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

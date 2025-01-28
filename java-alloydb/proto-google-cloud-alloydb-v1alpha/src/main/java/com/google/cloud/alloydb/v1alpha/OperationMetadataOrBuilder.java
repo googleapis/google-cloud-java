@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,88 @@ public interface OperationMetadataOrBuilder
    */
   com.google.cloud.alloydb.v1alpha.BatchCreateInstancesMetadataOrBuilder
       getBatchCreateInstancesMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the promoteClusterStatus field is set.
+   */
+  boolean hasPromoteClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The promoteClusterStatus.
+   */
+  com.google.cloud.alloydb.v1alpha.PromoteClusterStatus getPromoteClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. PromoteClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.PromoteClusterStatus promote_cluster_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.PromoteClusterStatusOrBuilder getPromoteClusterStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upgradeClusterStatus field is set.
+   */
+  boolean hasUpgradeClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upgradeClusterStatus.
+   */
+  com.google.cloud.alloydb.v1alpha.UpgradeClusterStatus getUpgradeClusterStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.UpgradeClusterStatusOrBuilder getUpgradeClusterStatusOrBuilder();
 
   /**
    *

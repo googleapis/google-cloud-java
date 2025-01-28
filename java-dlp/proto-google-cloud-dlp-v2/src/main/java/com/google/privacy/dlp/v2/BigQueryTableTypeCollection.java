@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Over time new types may be added. Currently VIEW, MATERIALIZED_VIEW,
- * and SNAPSHOT are not supported.
+ * Over time new types may be added. Currently VIEW, MATERIALIZED_VIEW, and
+ * non-BigLake external tables are not supported.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.BigQueryTableTypeCollection}

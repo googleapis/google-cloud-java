@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -467,8 +467,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all pages for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all pages for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTestCasesPagedResponse listTestCases(AgentName parent) {
@@ -499,8 +499,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all pages for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all pages for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTestCasesPagedResponse listTestCases(String parent) {
@@ -628,8 +628,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to delete test cases from. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to delete test cases from. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchDeleteTestCases(AgentName parent) {
@@ -658,8 +658,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to delete test cases from. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to delete test cases from. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchDeleteTestCases(String parent) {
@@ -743,9 +743,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the testcase. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase
-   *     ID&gt;`.
+   * @param name Required. The name of the testcase. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestCase getTestCase(TestCaseName name) {
@@ -772,9 +771,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the testcase. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase
-   *     ID&gt;`.
+   * @param name Required. The name of the testcase. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestCase getTestCase(String name) {
@@ -858,8 +856,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create the test case for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create the test case for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param testCase Required. The test case to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -891,8 +889,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create the test case for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create the test case for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param testCase Required. The test case to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1607,10 +1605,9 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The test case to list results for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/ testCases/&lt;TestCase
-   *     ID&gt;`. Specify a `-` as a wildcard for TestCase ID to list results across multiple test
-   *     cases.
+   * @param parent Required. The test case to list results for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
+   *     Specify a `-` as a wildcard for TestCase ID to list results across multiple test cases.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTestCaseResultsPagedResponse listTestCaseResults(TestCaseName parent) {
@@ -1643,10 +1640,9 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The test case to list results for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/ testCases/&lt;TestCase
-   *     ID&gt;`. Specify a `-` as a wildcard for TestCase ID to list results across multiple test
-   *     cases.
+   * @param parent Required. The test case to list results for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
+   *     Specify a `-` as a wildcard for TestCase ID to list results across multiple test cases.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTestCaseResultsPagedResponse listTestCaseResults(String parent) {
@@ -1789,9 +1785,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the testcase. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase
-   *     ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * @param name Required. The name of the testcase. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;/results/&lt;TestCaseResultID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestCaseResult getTestCaseResult(TestCaseResultName name) {
@@ -1822,9 +1817,8 @@ public class TestCasesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the testcase. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase
-   *     ID&gt;/results/&lt;TestCaseResult ID&gt;`.
+   * @param name Required. The name of the testcase. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;/results/&lt;TestCaseResultID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestCaseResult getTestCaseResult(String name) {

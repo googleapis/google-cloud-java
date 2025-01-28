@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,12 +86,12 @@ public final class AdvancedSettingsProto {
           + "uf.Duration\032\201\001\n\017LoggingSettings\022\"\n\032enabl"
           + "e_stackdriver_logging\030\002 \001(\010\022\"\n\032enable_in"
           + "teraction_logging\030\003 \001(\010\022&\n\036enable_consen"
-          + "t_based_redaction\030\004 \001(\010B\273\001\n!com.google.c"
+          + "t_based_redaction\030\004 \001(\010B\270\001\n!com.google.c"
           + "loud.dialogflow.cx.v3B\025AdvancedSettingsP"
           + "rotoP\001Z1cloud.google.com/go/dialogflow/c"
-          + "x/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud"
-          + ".Dialogflow.Cx.V3\352\002!Google::Cloud::Dialo"
-          + "gflow::CX::V3b\006proto3"
+          + "x/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.Di"
+          + "alogflow.Cx.V3\352\002!Google::Cloud::Dialogfl"
+          + "ow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

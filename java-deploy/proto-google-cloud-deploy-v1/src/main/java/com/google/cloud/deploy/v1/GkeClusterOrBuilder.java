@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ public interface GkeClusterOrBuilder
    *
    * Only specify this option when `cluster` is a [private GKE
    * cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+   * Note that `internal_ip` and `dns_endpoint` cannot both be set to true.
    * </pre>
    *
    * <code>bool internal_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -103,4 +104,18 @@ public interface GkeClusterOrBuilder
    * @return The bytes for proxyUrl.
    */
   com.google.protobuf.ByteString getProxyUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the cluster will be accessed using the DNS endpoint. Note
+   * that `dns_endpoint` and `internal_ip` cannot both be set to true.
+   * </pre>
+   *
+   * <code>bool dns_endpoint = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dnsEndpoint.
+   */
+  boolean getDnsEndpoint();
 }

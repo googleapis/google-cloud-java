@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface ProjectOrBuilder
    *
    * <pre>
    * Output only. Full resource name of the project, for example
-   * `projects/{project_number}`.
+   * `projects/{project}`.
    * Note that when making requests, project number and project id are both
    * acceptable, but the server will always respond in project number.
    * </pre>
@@ -44,7 +44,7 @@ public interface ProjectOrBuilder
    *
    * <pre>
    * Output only. Full resource name of the project, for example
-   * `projects/{project_number}`.
+   * `projects/{project}`.
    * Note that when making requests, project number and project id are both
    * acceptable, but the server will always respond in project number.
    * </pre>

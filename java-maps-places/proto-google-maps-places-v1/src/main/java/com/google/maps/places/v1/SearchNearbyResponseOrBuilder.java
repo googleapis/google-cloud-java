@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,7 @@ public interface SearchNearbyResponseOrBuilder
    *
    * <pre>
    * A list of routing summaries where each entry associates to the
-   * corresponding place in the same index in the places field. If the routing
+   * corresponding place in the same index in the `places` field. If the routing
    * summary is not available for one of the places, it will contain an empty
    * entry. This list should have as many entries as the list of places if
    * requested.
@@ -99,7 +99,7 @@ public interface SearchNearbyResponseOrBuilder
    *
    * <pre>
    * A list of routing summaries where each entry associates to the
-   * corresponding place in the same index in the places field. If the routing
+   * corresponding place in the same index in the `places` field. If the routing
    * summary is not available for one of the places, it will contain an empty
    * entry. This list should have as many entries as the list of places if
    * requested.
@@ -113,7 +113,7 @@ public interface SearchNearbyResponseOrBuilder
    *
    * <pre>
    * A list of routing summaries where each entry associates to the
-   * corresponding place in the same index in the places field. If the routing
+   * corresponding place in the same index in the `places` field. If the routing
    * summary is not available for one of the places, it will contain an empty
    * entry. This list should have as many entries as the list of places if
    * requested.
@@ -127,7 +127,7 @@ public interface SearchNearbyResponseOrBuilder
    *
    * <pre>
    * A list of routing summaries where each entry associates to the
-   * corresponding place in the same index in the places field. If the routing
+   * corresponding place in the same index in the `places` field. If the routing
    * summary is not available for one of the places, it will contain an empty
    * entry. This list should have as many entries as the list of places if
    * requested.
@@ -142,7 +142,7 @@ public interface SearchNearbyResponseOrBuilder
    *
    * <pre>
    * A list of routing summaries where each entry associates to the
-   * corresponding place in the same index in the places field. If the routing
+   * corresponding place in the same index in the `places` field. If the routing
    * summary is not available for one of the places, it will contain an empty
    * entry. This list should have as many entries as the list of places if
    * requested.

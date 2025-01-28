@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,12 @@ public interface MembershipSpecOrBuilder
    *
    *
    * <pre>
-   * Config Sync configuration for the cluster.
+   * Optional. Config Sync configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the configSync field is set.
    */
@@ -40,10 +42,12 @@ public interface MembershipSpecOrBuilder
    *
    *
    * <pre>
-   * Config Sync configuration for the cluster.
+   * Optional. Config Sync configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The configSync.
    */
@@ -52,10 +56,12 @@ public interface MembershipSpecOrBuilder
    *
    *
    * <pre>
-   * Config Sync configuration for the cluster.
+   * Optional. Config Sync configuration for the cluster.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.ConfigSync config_sync = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncOrBuilder getConfigSyncOrBuilder();
 
@@ -63,38 +69,54 @@ public interface MembershipSpecOrBuilder
    *
    *
    * <pre>
-   * Policy Controller configuration for the cluster.
+   * Optional. Policy Controller configuration for the cluster.
+   * Deprecated: Configuring Policy Controller through the configmanagement
+   * feature is no longer recommended. Use the policycontroller feature instead.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
    * @return Whether the policyController field is set.
    */
+  @java.lang.Deprecated
   boolean hasPolicyController();
   /**
    *
    *
    * <pre>
-   * Policy Controller configuration for the cluster.
+   * Optional. Policy Controller configuration for the cluster.
+   * Deprecated: Configuring Policy Controller through the configmanagement
+   * feature is no longer recommended. Use the policycontroller feature instead.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.policy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=100
    * @return The policyController.
    */
+  @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.PolicyController getPolicyController();
   /**
    *
    *
    * <pre>
-   * Policy Controller configuration for the cluster.
+   * Optional. Policy Controller configuration for the cluster.
+   * Deprecated: Configuring Policy Controller through the configmanagement
+   * feature is no longer recommended. Use the policycontroller feature instead.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2;
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.PolicyController policy_controller = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerOrBuilder
       getPolicyControllerOrBuilder();
 
@@ -102,77 +124,109 @@ public interface MembershipSpecOrBuilder
    *
    *
    * <pre>
-   * Binauthz conifguration for the cluster.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is deprecated.
+   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
    * @return Whether the binauthz field is set.
    */
+  @java.lang.Deprecated
   boolean hasBinauthz();
   /**
    *
    *
    * <pre>
-   * Binauthz conifguration for the cluster.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.binauthz is deprecated.
+   *     See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=105
    * @return The binauthz.
    */
+  @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig getBinauthz();
   /**
    *
    *
    * <pre>
-   * Binauthz conifguration for the cluster.
+   * Optional. Binauthz conifguration for the cluster. Deprecated: This field
+   * will be ignored and should not be set.
    * </pre>
    *
-   * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3;</code>
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.BinauthzConfig binauthz = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.BinauthzConfigOrBuilder getBinauthzOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Hierarchy Controller configuration for the cluster.
+   * Optional. Hierarchy Controller configuration for the cluster.
+   * Deprecated: Configuring Hierarchy Controller through the configmanagement
+   * feature is no longer recommended. Use
+   * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
    * @return Whether the hierarchyController field is set.
    */
+  @java.lang.Deprecated
   boolean hasHierarchyController();
   /**
    *
    *
    * <pre>
-   * Hierarchy Controller configuration for the cluster.
+   * Optional. Hierarchy Controller configuration for the cluster.
+   * Deprecated: Configuring Hierarchy Controller through the configmanagement
+   * feature is no longer recommended. Use
+   * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.hierarchy_controller is
+   *     deprecated. See google/cloud/gkehub/v1beta/configmanagement/configmanagement.proto;l=112
    * @return The hierarchyController.
    */
+  @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig
       getHierarchyController();
   /**
    *
    *
    * <pre>
-   * Hierarchy Controller configuration for the cluster.
+   * Optional. Hierarchy Controller configuration for the cluster.
+   * Deprecated: Configuring Hierarchy Controller through the configmanagement
+   * feature is no longer recommended. Use
+   * https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4;
+   * .google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfig hierarchy_controller = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerConfigOrBuilder
       getHierarchyControllerOrBuilder();
 
@@ -180,10 +234,10 @@ public interface MembershipSpecOrBuilder
    *
    *
    * <pre>
-   * Version of ACM installed.
+   * Optional. Version of ACM installed.
    * </pre>
    *
-   * <code>string version = 10;</code>
+   * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The version.
    */
@@ -192,12 +246,78 @@ public interface MembershipSpecOrBuilder
    *
    *
    * <pre>
-   * Version of ACM installed.
+   * Optional. Version of ACM installed.
    * </pre>
    *
-   * <code>string version = 10;</code>
+   * <code>string version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for version.
    */
   com.google.protobuf.ByteString getVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified cluster name used by Config Sync
+   * cluster-name-selector annotation or ClusterSelector, for applying configs
+   * to only a subset of clusters. Omit this field if the cluster's fleet
+   * membership name is used by Config Sync cluster-name-selector annotation or
+   * ClusterSelector. Set this field if a name different from the cluster's
+   * fleet membership name is used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cluster.
+   */
+  java.lang.String getCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified cluster name used by Config Sync
+   * cluster-name-selector annotation or ClusterSelector, for applying configs
+   * to only a subset of clusters. Omit this field if the cluster's fleet
+   * membership name is used by Config Sync cluster-name-selector annotation or
+   * ClusterSelector. Set this field if a name different from the cluster's
+   * fleet membership name is used by Config Sync cluster-name-selector
+   * annotation or ClusterSelector.
+   * </pre>
+   *
+   * <code>string cluster = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for cluster.
+   */
+  com.google.protobuf.ByteString getClusterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for management.
+   */
+  int getManagementValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables automatic Feature management.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management management = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The management.
+   */
+  com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec.Management getManagement();
 }

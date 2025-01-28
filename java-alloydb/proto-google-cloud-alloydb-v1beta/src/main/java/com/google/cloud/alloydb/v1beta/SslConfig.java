@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,7 +78,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL mode not specified. Defaults to ENCRYPTED_ONLY.
+     * SSL mode is not specified. Defaults to ENCRYPTED_ONLY.
      * </pre>
      *
      * <code>SSL_MODE_UNSPECIFIED = 0;</code>
@@ -113,7 +113,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * SSL connections are required. CA verification enforced.
-     * Clients must have certificates signed by a Cluster CA, e.g. via
+     * Clients must have certificates signed by a Cluster CA, for example, using
      * GenerateClientCertificate.
      * </pre>
      *
@@ -148,7 +148,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * SSL mode not specified. Defaults to ENCRYPTED_ONLY.
+     * SSL mode is not specified. Defaults to ENCRYPTED_ONLY.
      * </pre>
      *
      * <code>SSL_MODE_UNSPECIFIED = 0;</code>
@@ -181,7 +181,7 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * SSL connections are required. CA verification enforced.
-     * Clients must have certificates signed by a Cluster CA, e.g. via
+     * Clients must have certificates signed by a Cluster CA, for example, using
      * GenerateClientCertificate.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -556,11 +556,13 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * A web-safe, base64-encoded route token that can be passed to the Navigation
-   * SDK, that allows the Navigation SDK to reconstruct the route during
-   * navigation, and, in the event of rerouting, honor the original intention
-   * when you created the route by calling ComputeRoutes. Customers should treat
-   * this token as an opaque blob. It is not meant for reading or mutating.
+   * An opaque token that can be passed to [Navigation
+   * SDK](https://developers.google.com/maps/documentation/navigation) to
+   * reconstruct the route during navigation, and, in the event of rerouting,
+   * honor the original intention when the route was created. Treat this token
+   * as an opaque blob.  Don't compare its value across requests as its value
+   * may change even if the service returns the exact same route.
+   *
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
    * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -576,11 +578,13 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * A web-safe, base64-encoded route token that can be passed to the Navigation
-   * SDK, that allows the Navigation SDK to reconstruct the route during
-   * navigation, and, in the event of rerouting, honor the original intention
-   * when you created the route by calling ComputeRoutes. Customers should treat
-   * this token as an opaque blob. It is not meant for reading or mutating.
+   * An opaque token that can be passed to [Navigation
+   * SDK](https://developers.google.com/maps/documentation/navigation) to
+   * reconstruct the route during navigation, and, in the event of rerouting,
+   * honor the original intention when the route was created. Treat this token
+   * as an opaque blob.  Don't compare its value across requests as its value
+   * may change even if the service returns the exact same route.
+   *
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
    * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
@@ -592,4 +596,39 @@ public interface RouteOrBuilder
    * @return The bytes for routeToken.
    */
   com.google.protobuf.ByteString getRouteTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   *
+   * @return Whether the polylineDetails field is set.
+   */
+  boolean hasPolylineDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   *
+   * @return The polylineDetails.
+   */
+  com.google.maps.routing.v2.PolylineDetails getPolylineDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about details along the polyline.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.PolylineDetails polyline_details = 14;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetailsOrBuilder getPolylineDetailsOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2603
+   *     google/container/v1/cluster_service.proto;l=2884
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -78,7 +78,7 @@ public interface OperationOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.container.v1.Operation.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2603
+   *     google/container/v1/cluster_service.proto;l=2884
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -180,7 +180,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2617
+   *     google/container/v1/cluster_service.proto;l=2898
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -198,7 +198,7 @@ public interface OperationOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.Operation.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2617
+   *     google/container/v1/cluster_service.proto;l=2898
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated

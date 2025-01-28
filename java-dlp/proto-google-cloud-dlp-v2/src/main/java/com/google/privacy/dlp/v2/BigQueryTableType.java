@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Over time new types may be added. Currently VIEW, MATERIALIZED_VIEW,
- * SNAPSHOT, and non-BigLake external tables are not supported.
+ * Over time new types may be added. Currently VIEW, MATERIALIZED_VIEW, and
+ * non-BigLake external tables are not supported.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.BigQueryTableType}
@@ -60,6 +60,16 @@ public enum BigQueryTableType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE = 2;</code>
    */
   BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE(2),
+  /**
+   *
+   *
+   * <pre>
+   * A snapshot of a BigQuery table.
+   * </pre>
+   *
+   * <code>BIG_QUERY_TABLE_TYPE_SNAPSHOT = 3;</code>
+   */
+  BIG_QUERY_TABLE_TYPE_SNAPSHOT(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -93,6 +103,16 @@ public enum BigQueryTableType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE = 2;</code>
    */
   public static final int BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * A snapshot of a BigQuery table.
+   * </pre>
+   *
+   * <code>BIG_QUERY_TABLE_TYPE_SNAPSHOT = 3;</code>
+   */
+  public static final int BIG_QUERY_TABLE_TYPE_SNAPSHOT_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -124,6 +144,8 @@ public enum BigQueryTableType implements com.google.protobuf.ProtocolMessageEnum
         return BIG_QUERY_TABLE_TYPE_TABLE;
       case 2:
         return BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE;
+      case 3:
+        return BIG_QUERY_TABLE_TYPE_SNAPSHOT;
       default:
         return null;
     }

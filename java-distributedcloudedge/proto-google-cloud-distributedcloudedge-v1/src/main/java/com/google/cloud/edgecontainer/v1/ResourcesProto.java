@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,10 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_Ingress_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_edgecontainer_v1_Cluster_ControlPlaneEncryption_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_Cluster_ControlPlaneEncryption_fieldAccessorTable;
@@ -64,6 +68,10 @@ public final class ResourcesProto {
       internal_static_google_cloud_edgecontainer_v1_Cluster_SurvivabilityConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_Cluster_SurvivabilityConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_edgecontainer_v1_Cluster_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -153,6 +161,10 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_ZoneMetadata_RackTypesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_ConfigData_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_ConfigData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_edgecontainer_v1_Quota_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_Quota_fieldAccessorTable;
@@ -168,6 +180,10 @@ public final class ResourcesProto {
       internal_static_google_cloud_edgecontainer_v1_RecurringTimeWindow_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_edgecontainer_v1_RecurringTimeWindow_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_edgecontainer_v1_MaintenanceExclusionWindow_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_edgecontainer_v1_MaintenanceExclusionWindow_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_edgecontainer_v1_TimeWindow_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -202,7 +218,7 @@ public final class ResourcesProto {
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\036google/protobuf/dura"
           + "tion.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\032\027google/rpc/status.proto\"\212\034\n\007Cluster"
+          + "oto\032\027google/rpc/status.proto\"\354 \n\007Cluster"
           + "\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$edgecontainer.go"
           + "ogleapis.com/Cluster\0224\n\013create_time\030\002 \001("
           + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
@@ -239,192 +255,222 @@ public final class ResourcesProto {
           + "survivability_config\030\030 \001(\0132:.google.clou"
           + "d.edgecontainer.v1.Cluster.Survivability"
           + "ConfigB\003\340A\001\0226\n)external_load_balancer_ip"
-          + "v6_address_pools\030\031 \003(\tB\003\340A\001\032\330\003\n\014ControlP"
-          + "lane\022L\n\006remote\030\001 \001(\0132:.google.cloud.edge"
-          + "container.v1.Cluster.ControlPlane.Remote"
-          + "H\000\022J\n\005local\030\002 \001(\01329.google.cloud.edgecon"
-          + "tainer.v1.Cluster.ControlPlane.LocalH\000\032\010"
-          + "\n\006Remote\032\270\001\n\005Local\022\025\n\rnode_location\030\001 \001("
-          + "\t\022\022\n\nnode_count\030\002 \001(\005\022\026\n\016machine_filter\030"
-          + "\003 \001(\t\022l\n\030shared_deployment_policy\030\004 \001(\0162"
-          + "J.google.cloud.edgecontainer.v1.Cluster."
-          + "ControlPlane.SharedDeploymentPolicy\"_\n\026S"
-          + "haredDeploymentPolicy\022(\n$SHARED_DEPLOYME"
-          + "NT_POLICY_UNSPECIFIED\020\000\022\013\n\007ALLOWED\020\001\022\016\n\n"
-          + "DISALLOWED\020\002B\010\n\006config\032\246\001\n\022SystemAddonsC"
-          + "onfig\022W\n\007ingress\030\001 \001(\0132A.google.cloud.ed"
-          + "gecontainer.v1.Cluster.SystemAddonsConfi"
-          + "g.IngressB\003\340A\001\0327\n\007Ingress\022\025\n\010disabled\030\001 "
-          + "\001(\010B\003\340A\001\022\025\n\010ipv4_vip\030\002 \001(\tB\003\340A\001\032\233\002\n\026Cont"
-          + "rolPlaneEncryption\022:\n\007kms_key\030\001 \001(\tB)\340A\005"
-          + "\372A#\n!cloudkms.googleapis.com/CryptoKey\022P"
-          + "\n\026kms_key_active_version\030\002 \001(\tB0\340A\003\372A*\n("
-          + "cloudkms.googleapis.com/CryptoKeyVersion"
-          + "\022F\n\rkms_key_state\030\003 \001(\0162*.google.cloud.e"
-          + "dgecontainer.v1.KmsKeyStateB\003\340A\003\022+\n\nkms_"
-          + "status\030\004 \001(\0132\022.google.rpc.StatusB\003\340A\003\032\203\006"
-          + "\n\020MaintenanceEvent\022\021\n\004uuid\030\001 \001(\tB\003\340A\003\022\033\n"
-          + "\016target_version\030\002 \001(\tB\003\340A\003\022\026\n\toperation\030"
-          + "\003 \001(\tB\003\340A\003\022O\n\004type\030\004 \001(\0162<.google.cloud."
-          + "edgecontainer.v1.Cluster.MaintenanceEven"
-          + "t.TypeB\003\340A\003\022W\n\010schedule\030\005 \001(\0162@.google.c"
-          + "loud.edgecontainer.v1.Cluster.Maintenanc"
-          + "eEvent.ScheduleB\003\340A\003\022Q\n\005state\030\006 \001(\0162=.go"
-          + "ogle.cloud.edgecontainer.v1.Cluster.Main"
-          + "tenanceEvent.StateB\003\340A\003\0224\n\013create_time\030\007"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n"
-          + "\nstart_time\030\010 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0221\n\010end_time\030\t \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\n \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\"S\n\004T"
-          + "ype\022\024\n\020TYPE_UNSPECIFIED\020\000\022\032\n\026USER_INITIA"
-          + "TED_UPGRADE\020\001\022\031\n\025GOOGLE_DRIVEN_UPGRADE\020\002"
-          + "\"5\n\010Schedule\022\030\n\024SCHEDULE_UNSPECIFIED\020\000\022\017"
-          + "\n\013IMMEDIATELY\020\001\"J\n\005State\022\025\n\021STATE_UNSPEC"
-          + "IFIED\020\000\022\017\n\013RECONCILING\020\001\022\r\n\tSUCCEEDED\020\002\022"
-          + "\n\n\006FAILED\020\003\032Q\n\023SurvivabilityConfig\022:\n\022of"
-          + "fline_reboot_ttl\030\001 \001(\0132\031.google.protobuf"
-          + ".DurationB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"i\n\006Status\022\026\n\022STATU"
-          + "S_UNSPECIFIED\020\000\022\020\n\014PROVISIONING\020\001\022\013\n\007RUN"
-          + "NING\020\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020\004\022\017\n\013RECON"
-          + "CILING\020\005\"H\n\016ReleaseChannel\022\037\n\033RELEASE_CH"
-          + "ANNEL_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\013\n\007REGULAR"
-          + "\020\002:e\352Ab\n$edgecontainer.googleapis.com/Cl"
-          + "uster\022:projects/{project}/locations/{loc"
-          + "ation}/clusters/{cluster}\"b\n\021ClusterNetw"
-          + "orking\022%\n\030cluster_ipv4_cidr_blocks\030\001 \003(\t"
-          + "B\003\340A\002\022&\n\031services_ipv4_cidr_blocks\030\002 \003(\t"
-          + "B\003\340A\002\"6\n\005Fleet\022\024\n\007project\030\001 \001(\tB\003\340A\002\022\027\n\n"
-          + "membership\030\002 \001(\tB\003\340A\003\"$\n\013ClusterUser\022\025\n\010"
-          + "username\030\001 \001(\tB\003\340A\002\"U\n\rAuthorization\022D\n\013"
-          + "admin_users\030\001 \001(\0132*.google.cloud.edgecon"
-          + "tainer.v1.ClusterUserB\003\340A\002\"\345\010\n\010NodePool\022"
-          + ";\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%edgecontainer.goo"
-          + "gleapis.com/NodePool\0224\n\013create_time\030\002 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
-          + "date_time\030\003 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\022C\n\006labels\030\004 \003(\01323.google.cloud."
-          + "edgecontainer.v1.NodePool.LabelsEntry\022\025\n"
-          + "\rnode_location\030\010 \001(\t\022\027\n\nnode_count\030\006 \001(\005"
-          + "B\003\340A\002\022\026\n\016machine_filter\030\007 \001(\t\022_\n\025local_d"
-          + "isk_encryption\030\t \001(\0132;.google.cloud.edge"
-          + "container.v1.NodePool.LocalDiskEncryptio"
-          + "nB\003\340A\001\022\031\n\014node_version\030\n \001(\tB\003\340A\003\022L\n\013nod"
-          + "e_config\030\013 \001(\01322.google.cloud.edgecontai"
-          + "ner.v1.NodePool.NodeConfigB\003\340A\001\032\230\002\n\023Loca"
-          + "lDiskEncryption\022:\n\007kms_key\030\001 \001(\tB)\340A\005\372A#"
-          + "\n!cloudkms.googleapis.com/CryptoKey\022P\n\026k"
-          + "ms_key_active_version\030\002 \001(\tB0\340A\003\372A*\n(clo"
-          + "udkms.googleapis.com/CryptoKeyVersion\022F\n"
-          + "\rkms_key_state\030\003 \001(\0162*.google.cloud.edge"
-          + "container.v1.KmsKeyStateB\003\340A\003\022+\n\nkms_sta"
-          + "tus\030\004 \001(\0132\022.google.rpc.StatusB\003\340A\003\032\220\001\n\nN"
-          + "odeConfig\022S\n\006labels\030\001 \003(\0132>.google.cloud"
-          + ".edgecontainer.v1.NodePool.NodeConfig.La"
-          + "belsEntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:|\352Ay\n%edgec"
-          + "ontainer.googleapis.com/NodePool\022Pprojec"
-          + "ts/{project}/locations/{location}/cluste"
-          + "rs/{cluster}/nodePools/{node_pool}\"\333\003\n\007M"
-          + "achine\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$edgecontai"
-          + "ner.googleapis.com/Machine\0224\n\013create_tim"
-          + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\0224\n\013update_time\030\003 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\022B\n\006labels\030\004 \003(\01322.google."
-          + "cloud.edgecontainer.v1.Machine.LabelsEnt"
-          + "ry\022\023\n\013hosted_node\030\005 \001(\t\022\014\n\004zone\030\006 \001(\t\022\024\n"
-          + "\007version\030\007 \001(\tB\003\340A\003\022\025\n\010disabled\030\010 \001(\010B\003\340"
-          + "A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001:e\352Ab\n$edgecontainer.googleapis"
-          + ".com/Machine\022:projects/{project}/locatio"
-          + "ns/{location}/machines/{machine}\"\371\n\n\rVpn"
-          + "Connection\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*edgeco"
-          + "ntainer.googleapis.com/VpnConnection\0224\n\013"
-          + "create_time\030\002 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022H\n\006labels\030\004 \003(\013"
-          + "28.google.cloud.edgecontainer.v1.VpnConn"
-          + "ection.LabelsEntry\022\026\n\016nat_gateway_ip\030\005 \001"
-          + "(\t\022Y\n\020bgp_routing_mode\030\006 \001(\0162;.google.cl"
-          + "oud.edgecontainer.v1.VpnConnection.BgpRo"
-          + "utingModeB\002\030\001\022:\n\007cluster\030\007 \001(\tB)\372A&\n$edg"
-          + "econtainer.googleapis.com/Cluster\022\013\n\003vpc"
-          + "\030\010 \001(\t\022Q\n\013vpc_project\030\013 \001(\01327.google.clo"
-          + "ud.edgecontainer.v1.VpnConnection.VpcPro"
-          + "jectB\003\340A\001\022 \n\030enable_high_availability\030\t "
-          + "\001(\010\022\023\n\006router\030\014 \001(\tB\003\340A\001\022J\n\007details\030\n \001("
-          + "\01324.google.cloud.edgecontainer.v1.VpnCon"
-          + "nection.DetailsB\003\340A\003\032@\n\nVpcProject\022\022\n\npr"
-          + "oject_id\030\001 \001(\t\022\036\n\017service_account\030\002 \001(\tB"
-          + "\005\030\001\340A\001\032\244\003\n\007Details\022I\n\005state\030\001 \001(\0162:.goog"
-          + "le.cloud.edgecontainer.v1.VpnConnection."
-          + "Details.State\022\r\n\005error\030\002 \001(\t\022V\n\014cloud_ro"
-          + "uter\030\003 \001(\0132@.google.cloud.edgecontainer."
-          + "v1.VpnConnection.Details.CloudRouter\022Q\n\n"
-          + "cloud_vpns\030\004 \003(\0132=.google.cloud.edgecont"
-          + "ainer.v1.VpnConnection.Details.CloudVpn\032"
-          + "\033\n\013CloudRouter\022\014\n\004name\030\001 \001(\t\032\033\n\010CloudVpn"
-          + "\022\017\n\007gateway\030\001 \001(\t\"Z\n\005State\022\025\n\021STATE_UNSP"
-          + "ECIFIED\020\000\022\023\n\017STATE_CONNECTED\020\001\022\024\n\020STATE_"
-          + "CONNECTING\020\002\022\017\n\013STATE_ERROR\020\003\032-\n\013LabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"L\n\016"
-          + "BgpRoutingMode\022 \n\034BGP_ROUTING_MODE_UNSPE"
-          + "CIFIED\020\000\022\014\n\010REGIONAL\020\001\022\n\n\006GLOBAL\020\002:x\352Au\n"
-          + "*edgecontainer.googleapis.com/VpnConnect"
-          + "ion\022Gprojects/{project}/locations/{locat"
-          + "ion}/vpnConnections/{vpn_connection}\"\324\001\n"
-          + "\020LocationMetadata\022\\\n\017available_zones\030\001 \003"
-          + "(\0132C.google.cloud.edgecontainer.v1.Locat"
-          + "ionMetadata.AvailableZonesEntry\032b\n\023Avail"
-          + "ableZonesEntry\022\013\n\003key\030\001 \001(\t\022:\n\005value\030\002 \001"
-          + "(\0132+.google.cloud.edgecontainer.v1.ZoneM"
-          + "etadata:\0028\001\"\273\002\n\014ZoneMetadata\0223\n\005quota\030\001 "
-          + "\003(\0132$.google.cloud.edgecontainer.v1.Quot"
-          + "a\022N\n\nrack_types\030\002 \003(\0132:.google.cloud.edg"
-          + "econtainer.v1.ZoneMetadata.RackTypesEntr"
-          + "y\032f\n\016RackTypesEntry\022\013\n\003key\030\001 \001(\t\022C\n\005valu"
-          + "e\030\002 \001(\01624.google.cloud.edgecontainer.v1."
-          + "ZoneMetadata.RackType:\0028\001\">\n\010RackType\022\031\n"
-          + "\025RACK_TYPE_UNSPECIFIED\020\000\022\010\n\004BASE\020\001\022\r\n\tEX"
-          + "PANSION\020\002\"5\n\005Quota\022\016\n\006metric\030\001 \001(\t\022\r\n\005li"
-          + "mit\030\002 \001(\001\022\r\n\005usage\030\003 \001(\001\"U\n\021MaintenanceP"
-          + "olicy\022@\n\006window\030\001 \001(\01320.google.cloud.edg"
-          + "econtainer.v1.MaintenanceWindow\"a\n\021Maint"
-          + "enanceWindow\022L\n\020recurring_window\030\001 \001(\01322"
-          + ".google.cloud.edgecontainer.v1.Recurring"
-          + "TimeWindow\"d\n\023RecurringTimeWindow\0229\n\006win"
-          + "dow\030\001 \001(\0132).google.cloud.edgecontainer.v"
-          + "1.TimeWindow\022\022\n\nrecurrence\030\002 \001(\t\"j\n\nTime"
-          + "Window\022.\n\nstart_time\030\001 \001(\0132\032.google.prot"
-          + "obuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\"\234\002\n\014ServerConfig\022P\n"
-          + "\010channels\030\001 \003(\01329.google.cloud.edgeconta"
-          + "iner.v1.ServerConfig.ChannelsEntryB\003\340A\003\022"
-          + "=\n\010versions\030\002 \003(\0132&.google.cloud.edgecon"
-          + "tainer.v1.VersionB\003\340A\003\022\034\n\017default_versio"
-          + "n\030\003 \001(\tB\003\340A\003\032]\n\rChannelsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022;\n\005value\030\002 \001(\0132,.google.cloud.edgecon"
-          + "tainer.v1.ChannelConfig:\0028\001\"-\n\rChannelCo"
-          + "nfig\022\034\n\017default_version\030\001 \001(\tB\003\340A\003\"\034\n\007Ve"
-          + "rsion\022\021\n\004name\030\001 \001(\tB\003\340A\003*p\n\013KmsKeyState\022"
-          + "\035\n\031KMS_KEY_STATE_UNSPECIFIED\020\000\022\037\n\033KMS_KE"
-          + "Y_STATE_KEY_AVAILABLE\020\001\022!\n\035KMS_KEY_STATE"
-          + "_KEY_UNAVAILABLE\020\002B\206\004\n!com.google.cloud."
-          + "edgecontainer.v1B\016ResourcesProtoP\001ZGclou"
-          + "d.google.com/go/edgecontainer/apiv1/edge"
-          + "containerpb;edgecontainerpb\252\002\035Google.Clo"
-          + "ud.EdgeContainer.V1\312\002\035Google\\Cloud\\EdgeC"
-          + "ontainer\\V1\352\002 Google::Cloud::EdgeContain"
-          + "er::V1\352Ax\n!cloudkms.googleapis.com/Crypt"
-          + "oKey\022Sprojects/{project}/locations/{loca"
-          + "tion}/keyRings/{key_ring}/cryptoKeys/{cr"
-          + "ypto_key}\352A\246\001\n(cloudkms.googleapis.com/C"
-          + "ryptoKeyVersion\022zprojects/{project}/loca"
-          + "tions/{location}/keyRings/{key_ring}/cry"
-          + "ptoKeys/{crypto_key}/cryptoKeyVersions/{"
-          + "crypto_key_version}b\006proto3"
+          + "v6_address_pools\030\031 \003(\tB\003\340A\001\022U\n\020connectio"
+          + "n_state\030\033 \001(\01326.google.cloud.edgecontain"
+          + "er.v1.Cluster.ConnectionStateB\003\340A\003\032\210\004\n\014C"
+          + "ontrolPlane\022L\n\006remote\030\001 \001(\0132:.google.clo"
+          + "ud.edgecontainer.v1.Cluster.ControlPlane"
+          + ".RemoteH\000\022J\n\005local\030\002 \001(\01329.google.cloud."
+          + "edgecontainer.v1.Cluster.ControlPlane.Lo"
+          + "calH\000\032\010\n\006Remote\032\350\001\n\005Local\022\025\n\rnode_locati"
+          + "on\030\001 \001(\t\022\022\n\nnode_count\030\002 \001(\005\022\026\n\016machine_"
+          + "filter\030\003 \001(\t\022l\n\030shared_deployment_policy"
+          + "\030\004 \001(\0162J.google.cloud.edgecontainer.v1.C"
+          + "luster.ControlPlane.SharedDeploymentPoli"
+          + "cy\022.\n!control_plane_node_storage_schema\030"
+          + "\005 \001(\tB\003\340A\001\"_\n\026SharedDeploymentPolicy\022(\n$"
+          + "SHARED_DEPLOYMENT_POLICY_UNSPECIFIED\020\000\022\013"
+          + "\n\007ALLOWED\020\001\022\016\n\nDISALLOWED\020\002B\010\n\006config\032\276\002"
+          + "\n\022SystemAddonsConfig\022W\n\007ingress\030\001 \001(\0132A."
+          + "google.cloud.edgecontainer.v1.Cluster.Sy"
+          + "stemAddonsConfig.IngressB\003\340A\001\022i\n\021vm_serv"
+          + "ice_config\030\004 \001(\0132I.google.cloud.edgecont"
+          + "ainer.v1.Cluster.SystemAddonsConfig.VMSe"
+          + "rviceConfigB\003\340A\001\0327\n\007Ingress\022\025\n\010disabled\030"
+          + "\001 \001(\010B\003\340A\001\022\025\n\010ipv4_vip\030\002 \001(\tB\003\340A\001\032+\n\017VMS"
+          + "erviceConfig\022\030\n\013vmm_enabled\030\001 \001(\010B\003\340A\001\032\346"
+          + "\002\n\026ControlPlaneEncryption\022:\n\007kms_key\030\001 \001"
+          + "(\tB)\340A\001\372A#\n!cloudkms.googleapis.com/Cryp"
+          + "toKey\022P\n\026kms_key_active_version\030\002 \001(\tB0\340"
+          + "A\003\372A*\n(cloudkms.googleapis.com/CryptoKey"
+          + "Version\022F\n\rkms_key_state\030\003 \001(\0162*.google."
+          + "cloud.edgecontainer.v1.KmsKeyStateB\003\340A\003\022"
+          + "+\n\nkms_status\030\004 \001(\0132\022.google.rpc.StatusB"
+          + "\003\340A\003\022I\n\016resource_state\030\005 \001(\0162,.google.cl"
+          + "oud.edgecontainer.v1.ResourceStateB\003\340A\003\032"
+          + "\203\006\n\020MaintenanceEvent\022\021\n\004uuid\030\001 \001(\tB\003\340A\003\022"
+          + "\033\n\016target_version\030\002 \001(\tB\003\340A\003\022\026\n\toperatio"
+          + "n\030\003 \001(\tB\003\340A\003\022O\n\004type\030\004 \001(\0162<.google.clou"
+          + "d.edgecontainer.v1.Cluster.MaintenanceEv"
+          + "ent.TypeB\003\340A\003\022W\n\010schedule\030\005 \001(\0162@.google"
+          + ".cloud.edgecontainer.v1.Cluster.Maintena"
+          + "nceEvent.ScheduleB\003\340A\003\022Q\n\005state\030\006 \001(\0162=."
+          + "google.cloud.edgecontainer.v1.Cluster.Ma"
+          + "intenanceEvent.StateB\003\340A\003\0224\n\013create_time"
+          + "\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "3\n\nstart_time\030\010 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\0221\n\010end_time\030\t \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\0224\n\013update_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"S\n"
+          + "\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\032\n\026USER_INIT"
+          + "IATED_UPGRADE\020\001\022\031\n\025GOOGLE_DRIVEN_UPGRADE"
+          + "\020\002\"5\n\010Schedule\022\030\n\024SCHEDULE_UNSPECIFIED\020\000"
+          + "\022\017\n\013IMMEDIATELY\020\001\"J\n\005State\022\025\n\021STATE_UNSP"
+          + "ECIFIED\020\000\022\017\n\013RECONCILING\020\001\022\r\n\tSUCCEEDED\020"
+          + "\002\022\n\n\006FAILED\020\003\032Q\n\023SurvivabilityConfig\022:\n\022"
+          + "offline_reboot_ttl\030\001 \001(\0132\031.google.protob"
+          + "uf.DurationB\003\340A\001\032\365\001\n\017ConnectionState\022P\n\005"
+          + "state\030\001 \001(\0162<.google.cloud.edgecontainer"
+          + ".v1.Cluster.ConnectionState.StateB\003\340A\003\0224"
+          + "\n\013update_time\030\002 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\"Z\n\005State\022\025\n\021STATE_UNSPECIFI"
+          + "ED\020\000\022\020\n\014DISCONNECTED\020\001\022\r\n\tCONNECTED\020\002\022\031\n"
+          + "\025CONNECTED_AND_SYNCING\020\003\032-\n\013LabelsEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"i\n\006Statu"
+          + "s\022\026\n\022STATUS_UNSPECIFIED\020\000\022\020\n\014PROVISIONIN"
+          + "G\020\001\022\013\n\007RUNNING\020\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020"
+          + "\004\022\017\n\013RECONCILING\020\005\"H\n\016ReleaseChannel\022\037\n\033"
+          + "RELEASE_CHANNEL_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022"
+          + "\013\n\007REGULAR\020\002:e\352Ab\n$edgecontainer.googlea"
+          + "pis.com/Cluster\022:projects/{project}/loca"
+          + "tions/{location}/clusters/{cluster}\"b\n\021C"
+          + "lusterNetworking\022%\n\030cluster_ipv4_cidr_bl"
+          + "ocks\030\001 \003(\tB\003\340A\002\022&\n\031services_ipv4_cidr_bl"
+          + "ocks\030\002 \003(\tB\003\340A\002\"6\n\005Fleet\022\024\n\007project\030\001 \001("
+          + "\tB\003\340A\002\022\027\n\nmembership\030\002 \001(\tB\003\340A\003\"$\n\013Clust"
+          + "erUser\022\025\n\010username\030\001 \001(\tB\003\340A\002\"U\n\rAuthori"
+          + "zation\022D\n\013admin_users\030\001 \001(\0132*.google.clo"
+          + "ud.edgecontainer.v1.ClusterUserB\003\340A\002\"\322\t\n"
+          + "\010NodePool\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%edgecon"
+          + "tainer.googleapis.com/NodePool\0224\n\013create"
+          + "_time\030\002 \001(\0132\032.google.protobuf.TimestampB"
+          + "\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\022C\n\006labels\030\004 \003(\01323.goo"
+          + "gle.cloud.edgecontainer.v1.NodePool.Labe"
+          + "lsEntry\022\025\n\rnode_location\030\010 \001(\t\022\027\n\nnode_c"
+          + "ount\030\006 \001(\005B\003\340A\002\022\026\n\016machine_filter\030\007 \001(\t\022"
+          + "_\n\025local_disk_encryption\030\t \001(\0132;.google."
+          + "cloud.edgecontainer.v1.NodePool.LocalDis"
+          + "kEncryptionB\003\340A\001\022\031\n\014node_version\030\n \001(\tB\003"
+          + "\340A\003\022L\n\013node_config\030\013 \001(\01322.google.cloud."
+          + "edgecontainer.v1.NodePool.NodeConfigB\003\340A"
+          + "\001\032\343\002\n\023LocalDiskEncryption\022:\n\007kms_key\030\001 \001"
+          + "(\tB)\340A\001\372A#\n!cloudkms.googleapis.com/Cryp"
+          + "toKey\022P\n\026kms_key_active_version\030\002 \001(\tB0\340"
+          + "A\003\372A*\n(cloudkms.googleapis.com/CryptoKey"
+          + "Version\022F\n\rkms_key_state\030\003 \001(\0162*.google."
+          + "cloud.edgecontainer.v1.KmsKeyStateB\003\340A\003\022"
+          + "+\n\nkms_status\030\004 \001(\0132\022.google.rpc.StatusB"
+          + "\003\340A\003\022I\n\016resource_state\030\005 \001(\0162,.google.cl"
+          + "oud.edgecontainer.v1.ResourceStateB\003\340A\003\032"
+          + "\262\001\n\nNodeConfig\022S\n\006labels\030\001 \003(\0132>.google."
+          + "cloud.edgecontainer.v1.NodePool.NodeConf"
+          + "ig.LabelsEntryB\003\340A\001\022 \n\023node_storage_sche"
+          + "ma\030\002 \001(\tB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013LabelsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:|\352Ay\n%edgeco"
+          + "ntainer.googleapis.com/NodePool\022Pproject"
+          + "s/{project}/locations/{location}/cluster"
+          + "s/{cluster}/nodePools/{node_pool}\"\333\003\n\007Ma"
+          + "chine\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$edgecontain"
+          + "er.googleapis.com/Machine\0224\n\013create_time"
+          + "\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "4\n\013update_time\030\003 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\022B\n\006labels\030\004 \003(\01322.google.c"
+          + "loud.edgecontainer.v1.Machine.LabelsEntr"
+          + "y\022\023\n\013hosted_node\030\005 \001(\t\022\014\n\004zone\030\006 \001(\t\022\024\n\007"
+          + "version\030\007 \001(\tB\003\340A\003\022\025\n\010disabled\030\010 \001(\010B\003\340A"
+          + "\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001:e\352Ab\n$edgecontainer.googleapis."
+          + "com/Machine\022:projects/{project}/location"
+          + "s/{location}/machines/{machine}\"\371\n\n\rVpnC"
+          + "onnection\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*edgecon"
+          + "tainer.googleapis.com/VpnConnection\0224\n\013c"
+          + "reate_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\0224\n\013update_time\030\003 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\022H\n\006labels\030\004 \003(\0132"
+          + "8.google.cloud.edgecontainer.v1.VpnConne"
+          + "ction.LabelsEntry\022\026\n\016nat_gateway_ip\030\005 \001("
+          + "\t\022Y\n\020bgp_routing_mode\030\006 \001(\0162;.google.clo"
+          + "ud.edgecontainer.v1.VpnConnection.BgpRou"
+          + "tingModeB\002\030\001\022:\n\007cluster\030\007 \001(\tB)\372A&\n$edge"
+          + "container.googleapis.com/Cluster\022\013\n\003vpc\030"
+          + "\010 \001(\t\022Q\n\013vpc_project\030\013 \001(\01327.google.clou"
+          + "d.edgecontainer.v1.VpnConnection.VpcProj"
+          + "ectB\003\340A\001\022 \n\030enable_high_availability\030\t \001"
+          + "(\010\022\023\n\006router\030\014 \001(\tB\003\340A\001\022J\n\007details\030\n \001(\013"
+          + "24.google.cloud.edgecontainer.v1.VpnConn"
+          + "ection.DetailsB\003\340A\003\032@\n\nVpcProject\022\022\n\npro"
+          + "ject_id\030\001 \001(\t\022\036\n\017service_account\030\002 \001(\tB\005"
+          + "\030\001\340A\001\032\244\003\n\007Details\022I\n\005state\030\001 \001(\0162:.googl"
+          + "e.cloud.edgecontainer.v1.VpnConnection.D"
+          + "etails.State\022\r\n\005error\030\002 \001(\t\022V\n\014cloud_rou"
+          + "ter\030\003 \001(\0132@.google.cloud.edgecontainer.v"
+          + "1.VpnConnection.Details.CloudRouter\022Q\n\nc"
+          + "loud_vpns\030\004 \003(\0132=.google.cloud.edgeconta"
+          + "iner.v1.VpnConnection.Details.CloudVpn\032\033"
+          + "\n\013CloudRouter\022\014\n\004name\030\001 \001(\t\032\033\n\010CloudVpn\022"
+          + "\017\n\007gateway\030\001 \001(\t\"Z\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\023\n\017STATE_CONNECTED\020\001\022\024\n\020STATE_C"
+          + "ONNECTING\020\002\022\017\n\013STATE_ERROR\020\003\032-\n\013LabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"L\n\016B"
+          + "gpRoutingMode\022 \n\034BGP_ROUTING_MODE_UNSPEC"
+          + "IFIED\020\000\022\014\n\010REGIONAL\020\001\022\n\n\006GLOBAL\020\002:x\352Au\n*"
+          + "edgecontainer.googleapis.com/VpnConnecti"
+          + "on\022Gprojects/{project}/locations/{locati"
+          + "on}/vpnConnections/{vpn_connection}\"\324\001\n\020"
+          + "LocationMetadata\022\\\n\017available_zones\030\001 \003("
+          + "\0132C.google.cloud.edgecontainer.v1.Locati"
+          + "onMetadata.AvailableZonesEntry\032b\n\023Availa"
+          + "bleZonesEntry\022\013\n\003key\030\001 \001(\t\022:\n\005value\030\002 \001("
+          + "\0132+.google.cloud.edgecontainer.v1.ZoneMe"
+          + "tadata:\0028\001\"\373\002\n\014ZoneMetadata\0223\n\005quota\030\001 \003"
+          + "(\0132$.google.cloud.edgecontainer.v1.Quota"
+          + "\022N\n\nrack_types\030\002 \003(\0132:.google.cloud.edge"
+          + "container.v1.ZoneMetadata.RackTypesEntry"
+          + "\022>\n\013config_data\030\003 \001(\0132).google.cloud.edg"
+          + "econtainer.v1.ConfigData\032f\n\016RackTypesEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022C\n\005value\030\002 \001(\01624.google."
+          + "cloud.edgecontainer.v1.ZoneMetadata.Rack"
+          + "Type:\0028\001\">\n\010RackType\022\031\n\025RACK_TYPE_UNSPEC"
+          + "IFIED\020\000\022\010\n\004BASE\020\001\022\r\n\tEXPANSION\020\002\"`\n\nConf"
+          + "igData\022(\n available_external_lb_pools_ip"
+          + "v4\030\001 \003(\t\022(\n available_external_lb_pools_"
+          + "ipv6\030\002 \003(\t\"5\n\005Quota\022\016\n\006metric\030\001 \001(\t\022\r\n\005l"
+          + "imit\030\002 \001(\001\022\r\n\005usage\030\003 \001(\001\"\265\001\n\021Maintenanc"
+          + "ePolicy\022@\n\006window\030\001 \001(\01320.google.cloud.e"
+          + "dgecontainer.v1.MaintenanceWindow\022^\n\026mai"
+          + "ntenance_exclusions\030\002 \003(\01329.google.cloud"
+          + ".edgecontainer.v1.MaintenanceExclusionWi"
+          + "ndowB\003\340A\001\"a\n\021MaintenanceWindow\022L\n\020recurr"
+          + "ing_window\030\001 \001(\01322.google.cloud.edgecont"
+          + "ainer.v1.RecurringTimeWindow\"d\n\023Recurrin"
+          + "gTimeWindow\0229\n\006window\030\001 \001(\0132).google.clo"
+          + "ud.edgecontainer.v1.TimeWindow\022\022\n\nrecurr"
+          + "ence\030\002 \001(\t\"m\n\032MaintenanceExclusionWindow"
+          + "\022>\n\006window\030\001 \001(\0132).google.cloud.edgecont"
+          + "ainer.v1.TimeWindowB\003\340A\001\022\017\n\002id\030\002 \001(\tB\003\340A"
+          + "\001\"j\n\nTimeWindow\022.\n\nstart_time\030\001 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022,\n\010end_time\030\002 \001("
+          + "\0132\032.google.protobuf.Timestamp\"\234\002\n\014Server"
+          + "Config\022P\n\010channels\030\001 \003(\01329.google.cloud."
+          + "edgecontainer.v1.ServerConfig.ChannelsEn"
+          + "tryB\003\340A\003\022=\n\010versions\030\002 \003(\0132&.google.clou"
+          + "d.edgecontainer.v1.VersionB\003\340A\003\022\034\n\017defau"
+          + "lt_version\030\003 \001(\tB\003\340A\003\032]\n\rChannelsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.google.clou"
+          + "d.edgecontainer.v1.ChannelConfig:\0028\001\"-\n\r"
+          + "ChannelConfig\022\034\n\017default_version\030\001 \001(\tB\003"
+          + "\340A\003\"\034\n\007Version\022\021\n\004name\030\001 \001(\tB\003\340A\003*p\n\013Kms"
+          + "KeyState\022\035\n\031KMS_KEY_STATE_UNSPECIFIED\020\000\022"
+          + "\037\n\033KMS_KEY_STATE_KEY_AVAILABLE\020\001\022!\n\035KMS_"
+          + "KEY_STATE_KEY_UNAVAILABLE\020\002*s\n\rResourceS"
+          + "tate\022\036\n\032RESOURCE_STATE_UNSPECIFIED\020\000\022\034\n\030"
+          + "RESOURCE_STATE_LOCK_DOWN\020\001\022$\n RESOURCE_S"
+          + "TATE_LOCK_DOWN_PENDING\020\002B\206\004\n!com.google."
+          + "cloud.edgecontainer.v1B\016ResourcesProtoP\001"
+          + "ZGcloud.google.com/go/edgecontainer/apiv"
+          + "1/edgecontainerpb;edgecontainerpb\252\002\035Goog"
+          + "le.Cloud.EdgeContainer.V1\312\002\035Google\\Cloud"
+          + "\\EdgeContainer\\V1\352\002 Google::Cloud::EdgeC"
+          + "ontainer::V1\352Ax\n!cloudkms.googleapis.com"
+          + "/CryptoKey\022Sprojects/{project}/locations"
+          + "/{location}/keyRings/{key_ring}/cryptoKe"
+          + "ys/{crypto_key}\352A\246\001\n(cloudkms.googleapis"
+          + ".com/CryptoKeyVersion\022zprojects/{project"
+          + "}/locations/{location}/keyRings/{key_rin"
+          + "g}/cryptoKeys/{crypto_key}/cryptoKeyVers"
+          + "ions/{crypto_key_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -466,6 +512,7 @@ public final class ResourcesProto {
               "ReleaseChannel",
               "SurvivabilityConfig",
               "ExternalLoadBalancerIpv6AddressPools",
+              "ConnectionState",
             });
     internal_static_google_cloud_edgecontainer_v1_Cluster_ControlPlane_descriptor =
         internal_static_google_cloud_edgecontainer_v1_Cluster_descriptor.getNestedTypes().get(0);
@@ -491,7 +538,11 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_Cluster_ControlPlane_Local_descriptor,
             new java.lang.String[] {
-              "NodeLocation", "NodeCount", "MachineFilter", "SharedDeploymentPolicy",
+              "NodeLocation",
+              "NodeCount",
+              "MachineFilter",
+              "SharedDeploymentPolicy",
+              "ControlPlaneNodeStorageSchema",
             });
     internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_descriptor =
         internal_static_google_cloud_edgecontainer_v1_Cluster_descriptor.getNestedTypes().get(1);
@@ -499,7 +550,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_descriptor,
             new java.lang.String[] {
-              "Ingress",
+              "Ingress", "VmServiceConfig",
             });
     internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_Ingress_descriptor =
         internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_descriptor
@@ -511,13 +562,23 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "Disabled", "Ipv4Vip",
             });
+    internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_descriptor =
+        internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_Cluster_SystemAddonsConfig_VMServiceConfig_descriptor,
+            new java.lang.String[] {
+              "VmmEnabled",
+            });
     internal_static_google_cloud_edgecontainer_v1_Cluster_ControlPlaneEncryption_descriptor =
         internal_static_google_cloud_edgecontainer_v1_Cluster_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_edgecontainer_v1_Cluster_ControlPlaneEncryption_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_Cluster_ControlPlaneEncryption_descriptor,
             new java.lang.String[] {
-              "KmsKey", "KmsKeyActiveVersion", "KmsKeyState", "KmsStatus",
+              "KmsKey", "KmsKeyActiveVersion", "KmsKeyState", "KmsStatus", "ResourceState",
             });
     internal_static_google_cloud_edgecontainer_v1_Cluster_MaintenanceEvent_descriptor =
         internal_static_google_cloud_edgecontainer_v1_Cluster_descriptor.getNestedTypes().get(3);
@@ -544,8 +605,16 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "OfflineRebootTtl",
             });
-    internal_static_google_cloud_edgecontainer_v1_Cluster_LabelsEntry_descriptor =
+    internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_descriptor =
         internal_static_google_cloud_edgecontainer_v1_Cluster_descriptor.getNestedTypes().get(5);
+    internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_Cluster_ConnectionState_descriptor,
+            new java.lang.String[] {
+              "State", "UpdateTime",
+            });
+    internal_static_google_cloud_edgecontainer_v1_Cluster_LabelsEntry_descriptor =
+        internal_static_google_cloud_edgecontainer_v1_Cluster_descriptor.getNestedTypes().get(6);
     internal_static_google_cloud_edgecontainer_v1_Cluster_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_Cluster_LabelsEntry_descriptor,
@@ -607,7 +676,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_NodePool_LocalDiskEncryption_descriptor,
             new java.lang.String[] {
-              "KmsKey", "KmsKeyActiveVersion", "KmsKeyState", "KmsStatus",
+              "KmsKey", "KmsKeyActiveVersion", "KmsKeyState", "KmsStatus", "ResourceState",
             });
     internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_descriptor =
         internal_static_google_cloud_edgecontainer_v1_NodePool_descriptor.getNestedTypes().get(1);
@@ -615,7 +684,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_descriptor,
             new java.lang.String[] {
-              "Labels",
+              "Labels", "NodeStorageSchema",
             });
     internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_LabelsEntry_descriptor =
         internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_descriptor
@@ -751,7 +820,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ZoneMetadata_descriptor,
             new java.lang.String[] {
-              "Quota", "RackTypes",
+              "Quota", "RackTypes", "ConfigData",
             });
     internal_static_google_cloud_edgecontainer_v1_ZoneMetadata_RackTypesEntry_descriptor =
         internal_static_google_cloud_edgecontainer_v1_ZoneMetadata_descriptor
@@ -763,8 +832,16 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_edgecontainer_v1_Quota_descriptor =
+    internal_static_google_cloud_edgecontainer_v1_ConfigData_descriptor =
         getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_edgecontainer_v1_ConfigData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_ConfigData_descriptor,
+            new java.lang.String[] {
+              "AvailableExternalLbPoolsIpv4", "AvailableExternalLbPoolsIpv6",
+            });
+    internal_static_google_cloud_edgecontainer_v1_Quota_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_edgecontainer_v1_Quota_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_Quota_descriptor,
@@ -772,15 +849,15 @@ public final class ResourcesProto {
               "Metric", "Limit", "Usage",
             });
     internal_static_google_cloud_edgecontainer_v1_MaintenancePolicy_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_edgecontainer_v1_MaintenancePolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_MaintenancePolicy_descriptor,
             new java.lang.String[] {
-              "Window",
+              "Window", "MaintenanceExclusions",
             });
     internal_static_google_cloud_edgecontainer_v1_MaintenanceWindow_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_edgecontainer_v1_MaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_MaintenanceWindow_descriptor,
@@ -788,15 +865,23 @@ public final class ResourcesProto {
               "RecurringWindow",
             });
     internal_static_google_cloud_edgecontainer_v1_RecurringTimeWindow_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_edgecontainer_v1_RecurringTimeWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_RecurringTimeWindow_descriptor,
             new java.lang.String[] {
               "Window", "Recurrence",
             });
+    internal_static_google_cloud_edgecontainer_v1_MaintenanceExclusionWindow_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_edgecontainer_v1_MaintenanceExclusionWindow_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_edgecontainer_v1_MaintenanceExclusionWindow_descriptor,
+            new java.lang.String[] {
+              "Window", "Id",
+            });
     internal_static_google_cloud_edgecontainer_v1_TimeWindow_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_edgecontainer_v1_TimeWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_TimeWindow_descriptor,
@@ -804,7 +889,7 @@ public final class ResourcesProto {
               "StartTime", "EndTime",
             });
     internal_static_google_cloud_edgecontainer_v1_ServerConfig_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_edgecontainer_v1_ServerConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ServerConfig_descriptor,
@@ -822,7 +907,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_edgecontainer_v1_ChannelConfig_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_edgecontainer_v1_ChannelConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_ChannelConfig_descriptor,
@@ -830,7 +915,7 @@ public final class ResourcesProto {
               "DefaultVersion",
             });
     internal_static_google_cloud_edgecontainer_v1_Version_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_edgecontainer_v1_Version_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_edgecontainer_v1_Version_descriptor,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,12 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListGoogleApiSourcesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusesPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListPipelinesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -29,29 +34,59 @@ import com.google.cloud.eventarc.v1.Channel;
 import com.google.cloud.eventarc.v1.ChannelConnection;
 import com.google.cloud.eventarc.v1.CreateChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.CreateChannelRequest;
+import com.google.cloud.eventarc.v1.CreateEnrollmentRequest;
+import com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest;
+import com.google.cloud.eventarc.v1.CreateMessageBusRequest;
+import com.google.cloud.eventarc.v1.CreatePipelineRequest;
 import com.google.cloud.eventarc.v1.CreateTriggerRequest;
 import com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.DeleteChannelRequest;
+import com.google.cloud.eventarc.v1.DeleteEnrollmentRequest;
+import com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest;
+import com.google.cloud.eventarc.v1.DeleteMessageBusRequest;
+import com.google.cloud.eventarc.v1.DeletePipelineRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
+import com.google.cloud.eventarc.v1.Enrollment;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetEnrollmentRequest;
+import com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest;
 import com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest;
+import com.google.cloud.eventarc.v1.GetMessageBusRequest;
+import com.google.cloud.eventarc.v1.GetPipelineRequest;
 import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.GoogleApiSource;
 import com.google.cloud.eventarc.v1.GoogleChannelConfig;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
 import com.google.cloud.eventarc.v1.ListChannelsResponse;
+import com.google.cloud.eventarc.v1.ListEnrollmentsRequest;
+import com.google.cloud.eventarc.v1.ListEnrollmentsResponse;
+import com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest;
+import com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse;
+import com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest;
+import com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse;
+import com.google.cloud.eventarc.v1.ListMessageBusesRequest;
+import com.google.cloud.eventarc.v1.ListMessageBusesResponse;
+import com.google.cloud.eventarc.v1.ListPipelinesRequest;
+import com.google.cloud.eventarc.v1.ListPipelinesResponse;
 import com.google.cloud.eventarc.v1.ListProvidersRequest;
 import com.google.cloud.eventarc.v1.ListProvidersResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
+import com.google.cloud.eventarc.v1.MessageBus;
 import com.google.cloud.eventarc.v1.OperationMetadata;
+import com.google.cloud.eventarc.v1.Pipeline;
 import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
+import com.google.cloud.eventarc.v1.UpdateEnrollmentRequest;
+import com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest;
 import com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest;
+import com.google.cloud.eventarc.v1.UpdateMessageBusRequest;
+import com.google.cloud.eventarc.v1.UpdatePipelineRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -220,6 +255,182 @@ public abstract class EventarcStub implements BackgroundResource {
   public UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
       updateGoogleChannelConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateGoogleChannelConfigCallable()");
+  }
+
+  public UnaryCallable<GetMessageBusRequest, MessageBus> getMessageBusCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMessageBusCallable()");
+  }
+
+  public UnaryCallable<ListMessageBusesRequest, ListMessageBusesPagedResponse>
+      listMessageBusesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMessageBusesPagedCallable()");
+  }
+
+  public UnaryCallable<ListMessageBusesRequest, ListMessageBusesResponse>
+      listMessageBusesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMessageBusesCallable()");
+  }
+
+  public UnaryCallable<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsPagedResponse>
+      listMessageBusEnrollmentsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listMessageBusEnrollmentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
+      listMessageBusEnrollmentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMessageBusEnrollmentsCallable()");
+  }
+
+  public OperationCallable<CreateMessageBusRequest, MessageBus, OperationMetadata>
+      createMessageBusOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMessageBusOperationCallable()");
+  }
+
+  public UnaryCallable<CreateMessageBusRequest, Operation> createMessageBusCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMessageBusCallable()");
+  }
+
+  public OperationCallable<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+      updateMessageBusOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMessageBusOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateMessageBusRequest, Operation> updateMessageBusCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMessageBusCallable()");
+  }
+
+  public OperationCallable<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+      deleteMessageBusOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMessageBusOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteMessageBusRequest, Operation> deleteMessageBusCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMessageBusCallable()");
+  }
+
+  public UnaryCallable<GetEnrollmentRequest, Enrollment> getEnrollmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEnrollmentCallable()");
+  }
+
+  public UnaryCallable<ListEnrollmentsRequest, ListEnrollmentsPagedResponse>
+      listEnrollmentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEnrollmentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListEnrollmentsRequest, ListEnrollmentsResponse> listEnrollmentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEnrollmentsCallable()");
+  }
+
+  public OperationCallable<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+      createEnrollmentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEnrollmentOperationCallable()");
+  }
+
+  public UnaryCallable<CreateEnrollmentRequest, Operation> createEnrollmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEnrollmentCallable()");
+  }
+
+  public OperationCallable<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+      updateEnrollmentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEnrollmentOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateEnrollmentRequest, Operation> updateEnrollmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEnrollmentCallable()");
+  }
+
+  public OperationCallable<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+      deleteEnrollmentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEnrollmentOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteEnrollmentRequest, Operation> deleteEnrollmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEnrollmentCallable()");
+  }
+
+  public UnaryCallable<GetPipelineRequest, Pipeline> getPipelineCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPipelineCallable()");
+  }
+
+  public UnaryCallable<ListPipelinesRequest, ListPipelinesPagedResponse>
+      listPipelinesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPipelinesPagedCallable()");
+  }
+
+  public UnaryCallable<ListPipelinesRequest, ListPipelinesResponse> listPipelinesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPipelinesCallable()");
+  }
+
+  public OperationCallable<CreatePipelineRequest, Pipeline, OperationMetadata>
+      createPipelineOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPipelineOperationCallable()");
+  }
+
+  public UnaryCallable<CreatePipelineRequest, Operation> createPipelineCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPipelineCallable()");
+  }
+
+  public OperationCallable<UpdatePipelineRequest, Pipeline, OperationMetadata>
+      updatePipelineOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePipelineOperationCallable()");
+  }
+
+  public UnaryCallable<UpdatePipelineRequest, Operation> updatePipelineCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePipelineCallable()");
+  }
+
+  public OperationCallable<DeletePipelineRequest, Pipeline, OperationMetadata>
+      deletePipelineOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deletePipelineOperationCallable()");
+  }
+
+  public UnaryCallable<DeletePipelineRequest, Operation> deletePipelineCallable() {
+    throw new UnsupportedOperationException("Not implemented: deletePipelineCallable()");
+  }
+
+  public UnaryCallable<GetGoogleApiSourceRequest, GoogleApiSource> getGoogleApiSourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGoogleApiSourceCallable()");
+  }
+
+  public UnaryCallable<ListGoogleApiSourcesRequest, ListGoogleApiSourcesPagedResponse>
+      listGoogleApiSourcesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listGoogleApiSourcesPagedCallable()");
+  }
+
+  public UnaryCallable<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
+      listGoogleApiSourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listGoogleApiSourcesCallable()");
+  }
+
+  public OperationCallable<CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      createGoogleApiSourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createGoogleApiSourceOperationCallable()");
+  }
+
+  public UnaryCallable<CreateGoogleApiSourceRequest, Operation> createGoogleApiSourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: createGoogleApiSourceCallable()");
+  }
+
+  public OperationCallable<UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      updateGoogleApiSourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGoogleApiSourceOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateGoogleApiSourceRequest, Operation> updateGoogleApiSourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateGoogleApiSourceCallable()");
+  }
+
+  public OperationCallable<DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      deleteGoogleApiSourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteGoogleApiSourceOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteGoogleApiSourceRequest, Operation> deleteGoogleApiSourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteGoogleApiSourceCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

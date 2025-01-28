@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,12 +45,12 @@ public final class GeometryProto {
           + "google.maps.places.v1\032\037google/api/field_"
           + "behavior.proto\032\030google/type/latlng.proto"
           + "\"G\n\006Circle\022(\n\006center\030\001 \001(\0132\023.google.type"
-          + ".LatLngB\003\340A\002\022\023\n\006radius\030\002 \001(\001B\003\340A\002B\241\001\n\031co"
+          + ".LatLngB\003\340A\002\022\023\n\006radius\030\002 \001(\001B\003\340A\002B\236\001\n\031co"
           + "m.google.maps.places.v1B\rGeometryProtoP\001"
           + "Z7cloud.google.com/go/maps/places/apiv1/"
-          + "placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025Google.M"
-          + "aps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006p"
-          + "roto3"
+          + "placespb;placespb\242\002\006GMPSV1\252\002\025Google.Maps"
+          + ".Places.V1\312\002\025Google\\Maps\\Places\\V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

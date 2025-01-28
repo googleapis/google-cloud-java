@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,13 +159,12 @@ public final class SessionEntityTypeProto {
           + "sions/*/entityTypes/*}\032x\312A\031dialogflow.go"
           + "ogleapis.com\322AYhttps://www.googleapis.co"
           + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/dialogflowB\320\001\n&com.google."
+          + "apis.com/auth/dialogflowB\315\001\n&com.google."
           + "cloud.dialogflow.cx.v3beta1B\026SessionEnti"
           + "tyTypeProtoP\001Z6cloud.google.com/go/dialo"
-          + "gflow/cx/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\""
-          + "Google.Cloud.Dialogflow.Cx.V3Beta1\352\002&Goo"
-          + "gle::Cloud::Dialogflow::CX::V3beta1b\006pro"
-          + "to3"
+          + "gflow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Goo"
+          + "gle.Cloud.Dialogflow.Cx.V3Beta1\352\002&Google"
+          + "::Cloud::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

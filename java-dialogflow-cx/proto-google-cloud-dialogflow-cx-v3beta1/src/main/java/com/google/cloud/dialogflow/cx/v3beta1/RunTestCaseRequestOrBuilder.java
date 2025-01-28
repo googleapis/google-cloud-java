@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,8 @@ public interface RunTestCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format of test case name to run: `projects/&lt;Project
-   * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case name to run:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>
@@ -43,8 +43,8 @@ public interface RunTestCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format of test case name to run: `projects/&lt;Project
-   * ID&gt;/locations/ &lt;Location ID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format of test case name to run:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * </pre>
    *
    * <code>
@@ -60,8 +60,8 @@ public interface RunTestCaseRequestOrBuilder
    *
    * <pre>
    * Optional. Environment name. If not set, draft environment is assumed.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>
@@ -76,8 +76,8 @@ public interface RunTestCaseRequestOrBuilder
    *
    * <pre>
    * Optional. Environment name. If not set, draft environment is assumed.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/environments/&lt;Environment ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * </pre>
    *
    * <code>

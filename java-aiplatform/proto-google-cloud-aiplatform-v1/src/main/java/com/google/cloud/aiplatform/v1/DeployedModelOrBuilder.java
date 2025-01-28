@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -536,6 +536,146 @@ public interface DeployedModelOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.PrivateEndpointsOrBuilder getPrivateEndpointsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return Whether the fasterDeploymentConfig field is set.
+   */
+  boolean hasFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   *
+   * @return The fasterDeploymentConfig.
+   */
+  com.google.cloud.aiplatform.v1.FasterDeploymentConfig getFasterDeploymentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for faster model deployment.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FasterDeploymentConfig faster_deployment_config = 23;</code>
+   */
+  com.google.cloud.aiplatform.v1.FasterDeploymentConfigOrBuilder
+      getFasterDeploymentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.cloud.aiplatform.v1.DeployedModel.Status getStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Runtime status of the deployed model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.DeployedModel.Status status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.DeployedModel.StatusOrBuilder getStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  int getSystemLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  boolean containsSystemLabels(java.lang.String key);
+  /** Use {@link #getSystemLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getSystemLabels();
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getSystemLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  /* nullable */
+  java.lang.String getSystemLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * System labels to apply to Model Garden deployments.
+   * System labels are managed by Google for internal use only.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; system_labels = 28;</code>
+   */
+  java.lang.String getSystemLabelsOrThrow(java.lang.String key);
 
   com.google.cloud.aiplatform.v1.DeployedModel.PredictionResourcesCase getPredictionResourcesCase();
 }

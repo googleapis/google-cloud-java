@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     controllerRollout_ = "";
     rollbackOfRollout_ = "";
     rolledBackByRollouts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    activeRepairAutomationRun_ = "";
   }
 
   @java.lang.Override
@@ -2245,6 +2246,59 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     return rolledBackByRollouts_.getByteString(index);
   }
 
+  public static final int ACTIVE_REPAIR_AUTOMATION_RUN_FIELD_NUMBER = 28;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object activeRepairAutomationRun_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The AutomationRun actively repairing the rollout.
+   * </pre>
+   *
+   * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The activeRepairAutomationRun.
+   */
+  @java.lang.Override
+  public java.lang.String getActiveRepairAutomationRun() {
+    java.lang.Object ref = activeRepairAutomationRun_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      activeRepairAutomationRun_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The AutomationRun actively repairing the rollout.
+   * </pre>
+   *
+   * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for activeRepairAutomationRun.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getActiveRepairAutomationRunBytes() {
+    java.lang.Object ref = activeRepairAutomationRun_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      activeRepairAutomationRun_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2326,6 +2380,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rolledBackByRollouts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 27, rolledBackByRollouts_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activeRepairAutomationRun_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, activeRepairAutomationRun_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2424,6 +2481,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getRolledBackByRolloutsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activeRepairAutomationRun_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(28, activeRepairAutomationRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2479,6 +2540,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (!getControllerRollout().equals(other.getControllerRollout())) return false;
     if (!getRollbackOfRollout().equals(other.getRollbackOfRollout())) return false;
     if (!getRolledBackByRolloutsList().equals(other.getRolledBackByRolloutsList())) return false;
+    if (!getActiveRepairAutomationRun().equals(other.getActiveRepairAutomationRun())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2554,6 +2616,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ROLLED_BACK_BY_ROLLOUTS_FIELD_NUMBER;
       hash = (53 * hash) + getRolledBackByRolloutsList().hashCode();
     }
+    hash = (37 * hash) + ACTIVE_REPAIR_AUTOMATION_RUN_FIELD_NUMBER;
+    hash = (53 * hash) + getActiveRepairAutomationRun().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2787,6 +2851,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       controllerRollout_ = "";
       rollbackOfRollout_ = "";
       rolledBackByRollouts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      activeRepairAutomationRun_ = "";
       return this;
     }
 
@@ -2911,6 +2976,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00200000) != 0)) {
         rolledBackByRollouts_.makeImmutable();
         result.rolledBackByRollouts_ = rolledBackByRollouts_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.activeRepairAutomationRun_ = activeRepairAutomationRun_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3071,6 +3139,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           ensureRolledBackByRolloutsIsMutable();
           rolledBackByRollouts_.addAll(other.rolledBackByRollouts_);
         }
+        onChanged();
+      }
+      if (!other.getActiveRepairAutomationRun().isEmpty()) {
+        activeRepairAutomationRun_ = other.activeRepairAutomationRun_;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3250,6 +3323,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                 rolledBackByRollouts_.add(s);
                 break;
               } // case 218
+            case 226:
+              {
+                activeRepairAutomationRun_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6791,6 +6870,117 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       ensureRolledBackByRolloutsIsMutable();
       rolledBackByRollouts_.add(value);
       bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object activeRepairAutomationRun_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The AutomationRun actively repairing the rollout.
+     * </pre>
+     *
+     * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The activeRepairAutomationRun.
+     */
+    public java.lang.String getActiveRepairAutomationRun() {
+      java.lang.Object ref = activeRepairAutomationRun_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        activeRepairAutomationRun_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The AutomationRun actively repairing the rollout.
+     * </pre>
+     *
+     * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for activeRepairAutomationRun.
+     */
+    public com.google.protobuf.ByteString getActiveRepairAutomationRunBytes() {
+      java.lang.Object ref = activeRepairAutomationRun_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        activeRepairAutomationRun_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The AutomationRun actively repairing the rollout.
+     * </pre>
+     *
+     * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The activeRepairAutomationRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveRepairAutomationRun(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      activeRepairAutomationRun_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The AutomationRun actively repairing the rollout.
+     * </pre>
+     *
+     * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveRepairAutomationRun() {
+      activeRepairAutomationRun_ = getDefaultInstance().getActiveRepairAutomationRun();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The AutomationRun actively repairing the rollout.
+     * </pre>
+     *
+     * <code>string active_repair_automation_run = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for activeRepairAutomationRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveRepairAutomationRunBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      activeRepairAutomationRun_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }

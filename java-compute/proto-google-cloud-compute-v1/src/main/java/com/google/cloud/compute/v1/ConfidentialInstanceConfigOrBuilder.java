@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,46 @@ public interface ConfidentialInstanceConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.ConfidentialInstanceConfig)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential instance.
+   * Check the ConfidentialInstanceType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_instance_type = 43484717;</code>
+   *
+   * @return Whether the confidentialInstanceType field is set.
+   */
+  boolean hasConfidentialInstanceType();
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential instance.
+   * Check the ConfidentialInstanceType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_instance_type = 43484717;</code>
+   *
+   * @return The confidentialInstanceType.
+   */
+  java.lang.String getConfidentialInstanceType();
+  /**
+   *
+   *
+   * <pre>
+   * Defines the type of technology used by the confidential instance.
+   * Check the ConfidentialInstanceType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_instance_type = 43484717;</code>
+   *
+   * @return The bytes for confidentialInstanceType.
+   */
+  com.google.protobuf.ByteString getConfidentialInstanceTypeBytes();
 
   /**
    *

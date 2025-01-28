@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -393,7 +393,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3712
+   *     google/container/v1/cluster_service.proto;l=4000
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -412,7 +412,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3712
+   *     google/container/v1/cluster_service.proto;l=4000
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated

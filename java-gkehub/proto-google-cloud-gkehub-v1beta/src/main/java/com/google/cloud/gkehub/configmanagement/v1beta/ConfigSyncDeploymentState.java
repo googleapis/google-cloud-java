@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,9 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     monitor_ = 0;
     reconcilerManager_ = 0;
     rootReconciler_ = 0;
+    admissionWebhook_ = 0;
+    resourceGroupControllerManager_ = 0;
+    otelCollector_ = 0;
   }
 
   @java.lang.Override
@@ -294,6 +297,126 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
         : result;
   }
 
+  public static final int ADMISSION_WEBHOOK_FIELD_NUMBER = 7;
+  private int admissionWebhook_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of admission-webhook
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for admissionWebhook.
+   */
+  @java.lang.Override
+  public int getAdmissionWebhookValue() {
+    return admissionWebhook_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of admission-webhook
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+   * </code>
+   *
+   * @return The admissionWebhook.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getAdmissionWebhook() {
+    com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+            admissionWebhook_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int RESOURCE_GROUP_CONTROLLER_MANAGER_FIELD_NUMBER = 8;
+  private int resourceGroupControllerManager_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of resource-group-controller-manager
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for resourceGroupControllerManager.
+   */
+  @java.lang.Override
+  public int getResourceGroupControllerManagerValue() {
+    return resourceGroupControllerManager_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of resource-group-controller-manager
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+   * </code>
+   *
+   * @return The resourceGroupControllerManager.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+      getResourceGroupControllerManager() {
+    com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+            resourceGroupControllerManager_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int OTEL_COLLECTOR_FIELD_NUMBER = 9;
+  private int otelCollector_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of otel-collector
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+   *
+   * @return The enum numeric value on the wire for otelCollector.
+   */
+  @java.lang.Override
+  public int getOtelCollectorValue() {
+    return otelCollector_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Deployment state of otel-collector
+   * </pre>
+   *
+   * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+   *
+   * @return The otelCollector.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getOtelCollector() {
+    com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(otelCollector_);
+    return result == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -344,6 +467,24 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
             .getNumber()) {
       output.writeEnum(6, rootReconciler_);
     }
+    if (admissionWebhook_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, admissionWebhook_);
+    }
+    if (resourceGroupControllerManager_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, resourceGroupControllerManager_);
+    }
+    if (otelCollector_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, otelCollector_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -389,6 +530,25 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, rootReconciler_);
     }
+    if (admissionWebhook_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, admissionWebhook_);
+    }
+    if (resourceGroupControllerManager_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(8, resourceGroupControllerManager_);
+    }
+    if (otelCollector_
+        != com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+            .DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, otelCollector_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -412,6 +572,9 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     if (monitor_ != other.monitor_) return false;
     if (reconcilerManager_ != other.reconcilerManager_) return false;
     if (rootReconciler_ != other.rootReconciler_) return false;
+    if (admissionWebhook_ != other.admissionWebhook_) return false;
+    if (resourceGroupControllerManager_ != other.resourceGroupControllerManager_) return false;
+    if (otelCollector_ != other.otelCollector_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -435,6 +598,12 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     hash = (53 * hash) + reconcilerManager_;
     hash = (37 * hash) + ROOT_RECONCILER_FIELD_NUMBER;
     hash = (53 * hash) + rootReconciler_;
+    hash = (37 * hash) + ADMISSION_WEBHOOK_FIELD_NUMBER;
+    hash = (53 * hash) + admissionWebhook_;
+    hash = (37 * hash) + RESOURCE_GROUP_CONTROLLER_MANAGER_FIELD_NUMBER;
+    hash = (53 * hash) + resourceGroupControllerManager_;
+    hash = (37 * hash) + OTEL_COLLECTOR_FIELD_NUMBER;
+    hash = (53 * hash) + otelCollector_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -584,6 +753,9 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       monitor_ = 0;
       reconcilerManager_ = 0;
       rootReconciler_ = 0;
+      admissionWebhook_ = 0;
+      resourceGroupControllerManager_ = 0;
+      otelCollector_ = 0;
       return this;
     }
 
@@ -642,6 +814,15 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.rootReconciler_ = rootReconciler_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.admissionWebhook_ = admissionWebhook_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.resourceGroupControllerManager_ = resourceGroupControllerManager_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.otelCollector_ = otelCollector_;
       }
     }
 
@@ -713,6 +894,15 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       if (other.rootReconciler_ != 0) {
         setRootReconcilerValue(other.getRootReconcilerValue());
       }
+      if (other.admissionWebhook_ != 0) {
+        setAdmissionWebhookValue(other.getAdmissionWebhookValue());
+      }
+      if (other.resourceGroupControllerManager_ != 0) {
+        setResourceGroupControllerManagerValue(other.getResourceGroupControllerManagerValue());
+      }
+      if (other.otelCollector_ != 0) {
+        setOtelCollectorValue(other.getOtelCollectorValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -775,6 +965,24 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 56:
+              {
+                admissionWebhook_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 64:
+              {
+                resourceGroupControllerManager_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 72:
+              {
+                otelCollector_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1360,6 +1568,303 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     public Builder clearRootReconciler() {
       bitField0_ = (bitField0_ & ~0x00000020);
       rootReconciler_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int admissionWebhook_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of admission-webhook
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for admissionWebhook.
+     */
+    @java.lang.Override
+    public int getAdmissionWebhookValue() {
+      return admissionWebhook_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of admission-webhook
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for admissionWebhook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdmissionWebhookValue(int value) {
+      admissionWebhook_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of admission-webhook
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+     * </code>
+     *
+     * @return The admissionWebhook.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getAdmissionWebhook() {
+      com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+              admissionWebhook_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of admission-webhook
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+     * </code>
+     *
+     * @param value The admissionWebhook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdmissionWebhook(
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      admissionWebhook_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of admission-webhook
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState admission_webhook = 7;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdmissionWebhook() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      admissionWebhook_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int resourceGroupControllerManager_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of resource-group-controller-manager
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for resourceGroupControllerManager.
+     */
+    @java.lang.Override
+    public int getResourceGroupControllerManagerValue() {
+      return resourceGroupControllerManager_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of resource-group-controller-manager
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for resourceGroupControllerManager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceGroupControllerManagerValue(int value) {
+      resourceGroupControllerManager_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of resource-group-controller-manager
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+     * </code>
+     *
+     * @return The resourceGroupControllerManager.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
+        getResourceGroupControllerManager() {
+      com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+              resourceGroupControllerManager_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of resource-group-controller-manager
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+     * </code>
+     *
+     * @param value The resourceGroupControllerManager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceGroupControllerManager(
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      resourceGroupControllerManager_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of resource-group-controller-manager
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.configmanagement.v1beta.DeploymentState resource_group_controller_manager = 8;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceGroupControllerManager() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      resourceGroupControllerManager_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int otelCollector_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of otel-collector
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+     *
+     * @return The enum numeric value on the wire for otelCollector.
+     */
+    @java.lang.Override
+    public int getOtelCollectorValue() {
+      return otelCollector_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of otel-collector
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for otelCollector to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOtelCollectorValue(int value) {
+      otelCollector_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of otel-collector
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+     *
+     * @return The otelCollector.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getOtelCollector() {
+      com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(otelCollector_);
+      return result == null
+          ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of otel-collector
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+     *
+     * @param value The otelCollector to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOtelCollector(
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      otelCollector_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deployment state of otel-collector
+     * </pre>
+     *
+     * <code>.google.cloud.gkehub.configmanagement.v1beta.DeploymentState otel_collector = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOtelCollector() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      otelCollector_ = 0;
       onChanged();
       return this;
     }

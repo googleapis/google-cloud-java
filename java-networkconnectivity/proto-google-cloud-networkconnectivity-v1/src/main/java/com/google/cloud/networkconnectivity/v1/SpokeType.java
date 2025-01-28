@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,6 +80,16 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VPC_NETWORK = 4;</code>
    */
   VPC_NETWORK(4),
+  /**
+   *
+   *
+   * <pre>
+   * Spokes that are backed by a producer VPC network.
+   * </pre>
+   *
+   * <code>PRODUCER_VPC_NETWORK = 7;</code>
+   */
+  PRODUCER_VPC_NETWORK(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -133,6 +143,16 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VPC_NETWORK = 4;</code>
    */
   public static final int VPC_NETWORK_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Spokes that are backed by a producer VPC network.
+   * </pre>
+   *
+   * <code>PRODUCER_VPC_NETWORK = 7;</code>
+   */
+  public static final int PRODUCER_VPC_NETWORK_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -168,6 +188,8 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
         return ROUTER_APPLIANCE;
       case 4:
         return VPC_NETWORK;
+      case 7:
+        return PRODUCER_VPC_NETWORK;
       default:
         return null;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.samples;
 
 // [START networkmanagement_v1beta1_generated_ReachabilityService_DeleteConnectivityTest_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.networkmanagement.v1beta1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1beta1.DeleteConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
 import com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient;
@@ -37,7 +38,9 @@ public class AsyncDeleteConnectivityTestLRO {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       DeleteConnectivityTestRequest request =
-          DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+          DeleteConnectivityTestRequest.newBuilder()
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .build();
       OperationFuture<Empty, OperationMetadata> future =
           reachabilityServiceClient.deleteConnectivityTestOperationCallable().futureCall(request);
       // Do something.

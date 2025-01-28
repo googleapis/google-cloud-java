@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ public final class EngineProto {
           + ".v1beta\032\037google/api/field_behavior.proto"
           + "\032\031google/api/resource.proto\0320google/clou"
           + "d/discoveryengine/v1beta/common.proto\032\037g"
-          + "oogle/protobuf/timestamp.proto\"\207\013\n\006Engin"
+          + "oogle/protobuf/timestamp.proto\"\247\013\n\006Engin"
           + "e\022Z\n\022chat_engine_config\030\013 \001(\0132<.google.c"
           + "loud.discoveryengine.v1beta.Engine.ChatE"
           + "ngineConfigH\000\022^\n\024search_engine_config\030\r "
@@ -84,32 +84,33 @@ public final class EngineProto {
           + "vertical\030\020 \001(\01625.google.cloud.discoverye"
           + "ngine.v1beta.IndustryVertical\022O\n\rcommon_"
           + "config\030\017 \001(\01328.google.cloud.discoveryeng"
-          + "ine.v1beta.Engine.CommonConfig\032\244\001\n\022Searc"
-          + "hEngineConfig\022D\n\013search_tier\030\001 \001(\0162/.goo"
-          + "gle.cloud.discoveryengine.v1beta.SearchT"
-          + "ier\022H\n\016search_add_ons\030\002 \003(\01620.google.clo"
-          + "ud.discoveryengine.v1beta.SearchAddOn\032\227\002"
-          + "\n\020ChatEngineConfig\022o\n\025agent_creation_con"
-          + "fig\030\001 \001(\0132P.google.cloud.discoveryengine"
-          + ".v1beta.Engine.ChatEngineConfig.AgentCre"
-          + "ationConfig\022 \n\030dialogflow_agent_to_link\030"
-          + "\002 \001(\t\032p\n\023AgentCreationConfig\022\020\n\010business"
-          + "\030\001 \001(\t\022\035\n\025default_language_code\030\002 \001(\t\022\026\n"
-          + "\ttime_zone\030\003 \001(\tB\003\340A\002\022\020\n\010location\030\004 \001(\t\032"
-          + "$\n\014CommonConfig\022\024\n\014company_name\030\001 \001(\t\032.\n"
-          + "\022ChatEngineMetadata\022\030\n\020dialogflow_agent\030"
-          + "\001 \001(\t:}\352Az\n%discoveryengine.googleapis.c"
-          + "om/Engine\022Qprojects/{project}/locations/"
-          + "{location}/collections/{collection}/engi"
-          + "nes/{engine}B\017\n\rengine_configB\021\n\017engine_"
-          + "metadataB\222\002\n\'com.google.cloud.discoverye"
-          + "ngine.v1betaB\013EngineProtoP\001ZQcloud.googl"
-          + "e.com/go/discoveryengine/apiv1beta/disco"
-          + "veryenginepb;discoveryenginepb\242\002\017DISCOVE"
-          + "RYENGINE\252\002#Google.Cloud.DiscoveryEngine."
-          + "V1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\V1"
-          + "beta\352\002&Google::Cloud::DiscoveryEngine::V"
-          + "1betab\006proto3"
+          + "ine.v1beta.Engine.CommonConfig\022\036\n\021disabl"
+          + "e_analytics\030\032 \001(\010B\003\340A\001\032\244\001\n\022SearchEngineC"
+          + "onfig\022D\n\013search_tier\030\001 \001(\0162/.google.clou"
+          + "d.discoveryengine.v1beta.SearchTier\022H\n\016s"
+          + "earch_add_ons\030\002 \003(\01620.google.cloud.disco"
+          + "veryengine.v1beta.SearchAddOn\032\227\002\n\020ChatEn"
+          + "gineConfig\022o\n\025agent_creation_config\030\001 \001("
+          + "\0132P.google.cloud.discoveryengine.v1beta."
+          + "Engine.ChatEngineConfig.AgentCreationCon"
+          + "fig\022 \n\030dialogflow_agent_to_link\030\002 \001(\t\032p\n"
+          + "\023AgentCreationConfig\022\020\n\010business\030\001 \001(\t\022\035"
+          + "\n\025default_language_code\030\002 \001(\t\022\026\n\ttime_zo"
+          + "ne\030\003 \001(\tB\003\340A\002\022\020\n\010location\030\004 \001(\t\032$\n\014Commo"
+          + "nConfig\022\024\n\014company_name\030\001 \001(\t\032.\n\022ChatEng"
+          + "ineMetadata\022\030\n\020dialogflow_agent\030\001 \001(\t:}\352"
+          + "Az\n%discoveryengine.googleapis.com/Engin"
+          + "e\022Qprojects/{project}/locations/{locatio"
+          + "n}/collections/{collection}/engines/{eng"
+          + "ine}B\017\n\rengine_configB\021\n\017engine_metadata"
+          + "B\222\002\n\'com.google.cloud.discoveryengine.v1"
+          + "betaB\013EngineProtoP\001ZQcloud.google.com/go"
+          + "/discoveryengine/apiv1beta/discoveryengi"
+          + "nepb;discoveryenginepb\242\002\017DISCOVERYENGINE"
+          + "\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312\002"
+          + "#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&G"
+          + "oogle::Cloud::DiscoveryEngine::V1betab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -137,6 +138,7 @@ public final class EngineProto {
               "SolutionType",
               "IndustryVertical",
               "CommonConfig",
+              "DisableAnalytics",
               "EngineConfig",
               "EngineMetadata",
             });

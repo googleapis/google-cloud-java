@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -470,4 +470,105 @@ public interface HubOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder getSpokeSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy mode of this hub. This field can be either
+   * PRESET or CUSTOM. If unspecified, the
+   * policy_mode defaults to PRESET.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for policyMode.
+   */
+  int getPolicyModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The policy mode of this hub. This field can be either
+   * PRESET or CUSTOM. If unspecified, the
+   * policy_mode defaults to PRESET.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PolicyMode policy_mode = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The policyMode.
+   */
+  com.google.cloud.networkconnectivity.v1.PolicyMode getPolicyMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The topology implemented in this hub. Currently, this field is
+   * only used when policy_mode = PRESET. The available preset topologies are
+   * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+   * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+   * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for presetTopology.
+   */
+  int getPresetTopologyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The topology implemented in this hub. Currently, this field is
+   * only used when policy_mode = PRESET. The available preset topologies are
+   * MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET,
+   * the preset_topology defaults to MESH. When policy_mode = CUSTOM,
+   * the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.PresetTopology preset_topology = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The presetTopology.
+   */
+  com.google.cloud.networkconnectivity.v1.PresetTopology getPresetTopology();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether Private Service Connect transitivity is enabled for the
+   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+   * the hub are made accessible to other VPC spokes attached to the hub.
+   * The default value is false.
+   * </pre>
+   *
+   * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the exportPsc field is set.
+   */
+  boolean hasExportPsc();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether Private Service Connect transitivity is enabled for the
+   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
+   * the hub are made accessible to other VPC spokes attached to the hub.
+   * The default value is false.
+   * </pre>
+   *
+   * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The exportPsc.
+   */
+  boolean getExportPsc();
 }

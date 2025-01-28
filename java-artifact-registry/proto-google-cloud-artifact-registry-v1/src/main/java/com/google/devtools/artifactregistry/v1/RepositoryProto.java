@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,17 +65,33 @@ public final class RepositoryProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -85,6 +101,10 @@ public final class RepositoryProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_PublicRepository_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_fieldAccessorTable;
@@ -92,6 +112,14 @@ public final class RepositoryProto {
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_PublicRepository_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_PublicRepository_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_Repository_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -104,6 +132,10 @@ public final class RepositoryProto {
       internal_static_google_devtools_artifactregistry_v1_Repository_DockerRepositoryConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_Repository_DockerRepositoryConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_Repository_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -179,7 +211,7 @@ public final class RepositoryProto {
           + "EEP\020\002B\020\n\016condition_type\"i\n\027VirtualReposi"
           + "toryConfig\022N\n\021upstream_policies\030\001 \003(\01323."
           + "google.devtools.artifactregistry.v1.Upst"
-          + "reamPolicy\"\315\026\n\026RemoteRepositoryConfig\022i\n"
+          + "reamPolicy\"\315\037\n\026RemoteRepositoryConfig\022i\n"
           + "\021docker_repository\030\002 \001(\0132L.google.devtoo"
           + "ls.artifactregistry.v1.RemoteRepositoryC"
           + "onfig.DockerRepositoryH\000\022g\n\020maven_reposi"
@@ -195,137 +227,190 @@ public final class RepositoryProto {
           + "RemoteRepositoryConfig.AptRepositoryH\000\022c"
           + "\n\016yum_repository\030\007 \001(\0132I.google.devtools"
           + ".artifactregistry.v1.RemoteRepositoryCon"
-          + "fig.YumRepositoryH\000\022\023\n\013description\030\001 \001(\t"
-          + "\022r\n\024upstream_credentials\030\t \001(\0132O.google."
-          + "devtools.artifactregistry.v1.RemoteRepos"
-          + "itoryConfig.UpstreamCredentialsB\003\340A\001\032\277\002\n"
-          + "\023UpstreamCredentials\022\224\001\n\035username_passwo"
-          + "rd_credentials\030\001 \001(\0132k.google.devtools.a"
+          + "fig.YumRepositoryH\000\022o\n\021common_repository"
+          + "\030\016 \001(\0132R.google.devtools.artifactregistr"
+          + "y.v1.RemoteRepositoryConfig.CommonRemote"
+          + "RepositoryH\000\022\023\n\013description\030\001 \001(\t\022r\n\024ups"
+          + "tream_credentials\030\t \001(\0132O.google.devtool"
+          + "s.artifactregistry.v1.RemoteRepositoryCo"
+          + "nfig.UpstreamCredentialsB\003\340A\001\022(\n\033disable"
+          + "_upstream_validation\030\014 \001(\010B\003\340A\004\032\277\002\n\023Upst"
+          + "reamCredentials\022\224\001\n\035username_password_cr"
+          + "edentials\030\001 \001(\0132k.google.devtools.artifa"
+          + "ctregistry.v1.RemoteRepositoryConfig.Ups"
+          + "treamCredentials.UsernamePasswordCredent"
+          + "ialsH\000\032\201\001\n\033UsernamePasswordCredentials\022\020"
+          + "\n\010username\030\001 \001(\t\022P\n\027password_secret_vers"
+          + "ion\030\002 \001(\tB/\372A,\n*secretmanager.googleapis"
+          + ".com/SecretVersionB\r\n\013credentials\032\376\002\n\020Do"
+          + "ckerRepository\022z\n\021public_repository\030\001 \001("
+          + "\0162].google.devtools.artifactregistry.v1."
+          + "RemoteRepositoryConfig.DockerRepository."
+          + "PublicRepositoryH\000\022z\n\021custom_repository\030"
+          + "\003 \001(\0132].google.devtools.artifactregistry"
+          + ".v1.RemoteRepositoryConfig.DockerReposit"
+          + "ory.CustomRepositoryH\000\032\037\n\020CustomReposito"
+          + "ry\022\013\n\003uri\030\001 \001(\t\"E\n\020PublicRepository\022!\n\035P"
+          + "UBLIC_REPOSITORY_UNSPECIFIED\020\000\022\016\n\nDOCKER"
+          + "_HUB\020\001B\n\n\010upstream\032\376\002\n\017MavenRepository\022y"
+          + "\n\021public_repository\030\001 \001(\0162\\.google.devto"
+          + "ols.artifactregistry.v1.RemoteRepository"
+          + "Config.MavenRepository.PublicRepositoryH"
+          + "\000\022y\n\021custom_repository\030\003 \001(\0132\\.google.de"
+          + "vtools.artifactregistry.v1.RemoteReposit"
+          + "oryConfig.MavenRepository.CustomReposito"
+          + "ryH\000\032\037\n\020CustomRepository\022\013\n\003uri\030\001 \001(\t\"H\n"
+          + "\020PublicRepository\022!\n\035PUBLIC_REPOSITORY_U"
+          + "NSPECIFIED\020\000\022\021\n\rMAVEN_CENTRAL\020\001B\n\n\010upstr"
+          + "eam\032\360\002\n\rNpmRepository\022w\n\021public_reposito"
+          + "ry\030\001 \001(\0162Z.google.devtools.artifactregis"
+          + "try.v1.RemoteRepositoryConfig.NpmReposit"
+          + "ory.PublicRepositoryH\000\022w\n\021custom_reposit"
+          + "ory\030\003 \001(\0132Z.google.devtools.artifactregi"
+          + "stry.v1.RemoteRepositoryConfig.NpmReposi"
+          + "tory.CustomRepositoryH\000\032\037\n\020CustomReposit"
+          + "ory\022\013\n\003uri\030\001 \001(\t\"@\n\020PublicRepository\022!\n\035"
+          + "PUBLIC_REPOSITORY_UNSPECIFIED\020\000\022\t\n\005NPMJS"
+          + "\020\001B\n\n\010upstream\032\370\002\n\020PythonRepository\022z\n\021p"
+          + "ublic_repository\030\001 \001(\0162].google.devtools"
+          + ".artifactregistry.v1.RemoteRepositoryCon"
+          + "fig.PythonRepository.PublicRepositoryH\000\022"
+          + "z\n\021custom_repository\030\003 \001(\0132].google.devt"
+          + "ools.artifactregistry.v1.RemoteRepositor"
+          + "yConfig.PythonRepository.CustomRepositor"
+          + "yH\000\032\037\n\020CustomRepository\022\013\n\003uri\030\001 \001(\t\"?\n\020"
+          + "PublicRepository\022!\n\035PUBLIC_REPOSITORY_UN"
+          + "SPECIFIED\020\000\022\010\n\004PYPI\020\001B\n\n\010upstream\032\301\004\n\rAp"
+          + "tRepository\022w\n\021public_repository\030\001 \001(\0132Z"
+          + ".google.devtools.artifactregistry.v1.Rem"
+          + "oteRepositoryConfig.AptRepository.Public"
+          + "RepositoryH\000\022w\n\021custom_repository\030\003 \001(\0132"
+          + "Z.google.devtools.artifactregistry.v1.Re"
+          + "moteRepositoryConfig.AptRepository.Custo"
+          + "mRepositoryH\000\032\220\002\n\020PublicRepository\022\202\001\n\017r"
+          + "epository_base\030\001 \001(\0162i.google.devtools.a"
           + "rtifactregistry.v1.RemoteRepositoryConfi"
-          + "g.UpstreamCredentials.UsernamePasswordCr"
-          + "edentialsH\000\032\201\001\n\033UsernamePasswordCredenti"
-          + "als\022\020\n\010username\030\001 \001(\t\022P\n\027password_secret"
-          + "_version\030\002 \001(\tB/\372A,\n*secretmanager.googl"
-          + "eapis.com/SecretVersionB\r\n\013credentials\032\341"
-          + "\001\n\020DockerRepository\022z\n\021public_repository"
-          + "\030\001 \001(\0162].google.devtools.artifactregistr"
-          + "y.v1.RemoteRepositoryConfig.DockerReposi"
-          + "tory.PublicRepositoryH\000\"E\n\020PublicReposit"
-          + "ory\022!\n\035PUBLIC_REPOSITORY_UNSPECIFIED\020\000\022\016"
-          + "\n\nDOCKER_HUB\020\001B\n\n\010upstream\032\342\001\n\017MavenRepo"
-          + "sitory\022y\n\021public_repository\030\001 \001(\0162\\.goog"
-          + "le.devtools.artifactregistry.v1.RemoteRe"
-          + "positoryConfig.MavenRepository.PublicRep"
-          + "ositoryH\000\"H\n\020PublicRepository\022!\n\035PUBLIC_"
-          + "REPOSITORY_UNSPECIFIED\020\000\022\021\n\rMAVEN_CENTRA"
-          + "L\020\001B\n\n\010upstream\032\326\001\n\rNpmRepository\022w\n\021pub"
-          + "lic_repository\030\001 \001(\0162Z.google.devtools.a"
-          + "rtifactregistry.v1.RemoteRepositoryConfi"
-          + "g.NpmRepository.PublicRepositoryH\000\"@\n\020Pu"
-          + "blicRepository\022!\n\035PUBLIC_REPOSITORY_UNSP"
-          + "ECIFIED\020\000\022\t\n\005NPMJS\020\001B\n\n\010upstream\032\333\001\n\020Pyt"
-          + "honRepository\022z\n\021public_repository\030\001 \001(\016"
-          + "2].google.devtools.artifactregistry.v1.R"
-          + "emoteRepositoryConfig.PythonRepository.P"
-          + "ublicRepositoryH\000\"?\n\020PublicRepository\022!\n"
-          + "\035PUBLIC_REPOSITORY_UNSPECIFIED\020\000\022\010\n\004PYPI"
-          + "\020\001B\n\n\010upstream\032\222\003\n\rAptRepository\022w\n\021publ"
-          + "ic_repository\030\001 \001(\0132Z.google.devtools.ar"
+          + "g.AptRepository.PublicRepository.Reposit"
+          + "oryBase\022\027\n\017repository_path\030\002 \001(\t\"^\n\016Repo"
+          + "sitoryBase\022\037\n\033REPOSITORY_BASE_UNSPECIFIE"
+          + "D\020\000\022\n\n\006DEBIAN\020\001\022\n\n\006UBUNTU\020\002\022\023\n\017DEBIAN_SN"
+          + "APSHOT\020\003\032\037\n\020CustomRepository\022\013\n\003uri\030\001 \001("
+          + "\tB\n\n\010upstream\032\355\004\n\rYumRepository\022w\n\021publi"
+          + "c_repository\030\001 \001(\0132Z.google.devtools.art"
+          + "ifactregistry.v1.RemoteRepositoryConfig."
+          + "YumRepository.PublicRepositoryH\000\022w\n\021cust"
+          + "om_repository\030\003 \001(\0132Z.google.devtools.ar"
           + "tifactregistry.v1.RemoteRepositoryConfig"
-          + ".AptRepository.PublicRepositoryH\000\032\373\001\n\020Pu"
+          + ".YumRepository.CustomRepositoryH\000\032\274\002\n\020Pu"
           + "blicRepository\022\202\001\n\017repository_base\030\001 \001(\016"
           + "2i.google.devtools.artifactregistry.v1.R"
-          + "emoteRepositoryConfig.AptRepository.Publ"
+          + "emoteRepositoryConfig.YumRepository.Publ"
           + "icRepository.RepositoryBase\022\027\n\017repositor"
-          + "y_path\030\002 \001(\t\"I\n\016RepositoryBase\022\037\n\033REPOSI"
-          + "TORY_BASE_UNSPECIFIED\020\000\022\n\n\006DEBIAN\020\001\022\n\n\006U"
-          + "BUNTU\020\002B\n\n\010upstream\032\323\003\n\rYumRepository\022w\n"
-          + "\021public_repository\030\001 \001(\0132Z.google.devtoo"
-          + "ls.artifactregistry.v1.RemoteRepositoryC"
-          + "onfig.YumRepository.PublicRepositoryH\000\032\274"
-          + "\002\n\020PublicRepository\022\202\001\n\017repository_base\030"
-          + "\001 \001(\0162i.google.devtools.artifactregistry"
-          + ".v1.RemoteRepositoryConfig.YumRepository"
-          + ".PublicRepository.RepositoryBase\022\027\n\017repo"
-          + "sitory_path\030\002 \001(\t\"\211\001\n\016RepositoryBase\022\037\n\033"
-          + "REPOSITORY_BASE_UNSPECIFIED\020\000\022\n\n\006CENTOS\020"
-          + "\001\022\020\n\014CENTOS_DEBUG\020\002\022\020\n\014CENTOS_VAULT\020\003\022\021\n"
-          + "\rCENTOS_STREAM\020\004\022\t\n\005ROCKY\020\005\022\010\n\004EPEL\020\006B\n\n"
-          + "\010upstreamB\017\n\rremote_source\"\205\016\n\nRepositor"
-          + "y\022]\n\014maven_config\030\t \001(\0132E.google.devtool"
-          + "s.artifactregistry.v1.Repository.MavenRe"
-          + "positoryConfigH\000\022_\n\rdocker_config\030\021 \001(\0132"
-          + "F.google.devtools.artifactregistry.v1.Re"
-          + "pository.DockerRepositoryConfigH\000\022a\n\031vir"
-          + "tual_repository_config\030\016 \001(\0132<.google.de"
-          + "vtools.artifactregistry.v1.VirtualReposi"
-          + "toryConfigH\001\022_\n\030remote_repository_config"
-          + "\030\017 \001(\0132;.google.devtools.artifactregistr"
-          + "y.v1.RemoteRepositoryConfigH\001\022\014\n\004name\030\001 "
-          + "\001(\t\022K\n\006format\030\002 \001(\01626.google.devtools.ar"
-          + "tifactregistry.v1.Repository.FormatB\003\340A\001"
-          + "\022\023\n\013description\030\003 \001(\t\022K\n\006labels\030\004 \003(\0132;."
-          + "google.devtools.artifactregistry.v1.Repo"
-          + "sitory.LabelsEntry\0224\n\013create_time\030\005 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upda"
-          + "te_time\030\006 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\022\024\n\014kms_key_name\030\010 \001(\t\022G\n\004mode\030\n \001"
-          + "(\01624.google.devtools.artifactregistry.v1"
-          + ".Repository.ModeB\003\340A\001\022c\n\020cleanup_policie"
-          + "s\030\014 \003(\0132D.google.devtools.artifactregist"
-          + "ry.v1.Repository.CleanupPoliciesEntryB\003\340"
-          + "A\001\022\027\n\nsize_bytes\030\r \001(\003B\003\340A\003\022\032\n\rsatisfies"
-          + "_pzs\030\020 \001(\010B\003\340A\003\022#\n\026cleanup_policy_dry_ru"
-          + "n\030\022 \001(\010B\003\340A\001\032\363\001\n\025MavenRepositoryConfig\022!"
-          + "\n\031allow_snapshot_overwrites\030\001 \001(\010\022k\n\016ver"
-          + "sion_policy\030\002 \001(\0162S.google.devtools.arti"
-          + "factregistry.v1.Repository.MavenReposito"
-          + "ryConfig.VersionPolicy\"J\n\rVersionPolicy\022"
-          + "\036\n\032VERSION_POLICY_UNSPECIFIED\020\000\022\013\n\007RELEA"
-          + "SE\020\001\022\014\n\010SNAPSHOT\020\002\0320\n\026DockerRepositoryCo"
-          + "nfig\022\026\n\016immutable_tags\030\001 \001(\010\032-\n\013LabelsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032j\n\024C"
-          + "leanupPoliciesEntry\022\013\n\003key\030\001 \001(\t\022A\n\005valu"
-          + "e\030\002 \001(\01322.google.devtools.artifactregist"
-          + "ry.v1.CleanupPolicy:\0028\001\"o\n\006Format\022\026\n\022FOR"
-          + "MAT_UNSPECIFIED\020\000\022\n\n\006DOCKER\020\001\022\t\n\005MAVEN\020\002"
-          + "\022\007\n\003NPM\020\003\022\007\n\003APT\020\005\022\007\n\003YUM\020\006\022\n\n\006PYTHON\020\010\022"
-          + "\007\n\003KFP\020\t\022\006\n\002GO\020\n\"d\n\004Mode\022\024\n\020MODE_UNSPECI"
-          + "FIED\020\000\022\027\n\023STANDARD_REPOSITORY\020\001\022\026\n\022VIRTU"
-          + "AL_REPOSITORY\020\002\022\025\n\021REMOTE_REPOSITORY\020\003:r"
-          + "\352Ao\n*artifactregistry.googleapis.com/Rep"
-          + "ository\022Aprojects/{project}/locations/{l"
-          + "ocation}/repositories/{repository}B\017\n\rfo"
-          + "rmat_configB\r\n\013mode_config\"\204\001\n\027ListRepos"
-          + "itoriesRequest\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*"
-          + "artifactregistry.googleapis.com/Reposito"
-          + "ry\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\"z\n\030ListRepositoriesResponse\022E\n\014reposit"
-          + "ories\030\001 \003(\0132/.google.devtools.artifactre"
-          + "gistry.v1.Repository\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\"X\n\024GetRepositoryRequest\022@\n\004name\030\001 "
-          + "\001(\tB2\340A\002\372A,\n*artifactregistry.googleapis"
-          + ".com/Repository\"\303\001\n\027CreateRepositoryRequ"
-          + "est\022B\n\006parent\030\001 \001(\tB2\340A\002\372A,\022*artifactreg"
-          + "istry.googleapis.com/Repository\022\032\n\rrepos"
-          + "itory_id\030\002 \001(\tB\003\340A\002\022H\n\nrepository\030\003 \001(\0132"
-          + "/.google.devtools.artifactregistry.v1.Re"
-          + "positoryB\003\340A\002\"\217\001\n\027UpdateRepositoryReques"
-          + "t\022C\n\nrepository\030\001 \001(\0132/.google.devtools."
-          + "artifactregistry.v1.Repository\022/\n\013update"
-          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\""
-          + "[\n\027DeleteRepositoryRequest\022@\n\004name\030\001 \001(\t"
-          + "B2\340A\002\372A,\n*artifactregistry.googleapis.co"
-          + "m/RepositoryB\350\002\n\'com.google.devtools.art"
-          + "ifactregistry.v1B\017RepositoryProtoP\001ZPclo"
-          + "ud.google.com/go/artifactregistry/apiv1/"
-          + "artifactregistrypb;artifactregistrypb\252\002 "
-          + "Google.Cloud.ArtifactRegistry.V1\312\002 Googl"
-          + "e\\Cloud\\ArtifactRegistry\\V1\352\002#Google::Cl"
-          + "oud::ArtifactRegistry::V1\352Ak\n*secretmana"
-          + "ger.googleapis.com/SecretVersion\022=projec"
-          + "ts/{project}/secrets/{secret}/versions/{"
-          + "secret_version}b\006proto3"
+          + "y_path\030\002 \001(\t\"\211\001\n\016RepositoryBase\022\037\n\033REPOS"
+          + "ITORY_BASE_UNSPECIFIED\020\000\022\n\n\006CENTOS\020\001\022\020\n\014"
+          + "CENTOS_DEBUG\020\002\022\020\n\014CENTOS_VAULT\020\003\022\021\n\rCENT"
+          + "OS_STREAM\020\004\022\t\n\005ROCKY\020\005\022\010\n\004EPEL\020\006\032\037\n\020Cust"
+          + "omRepository\022\013\n\003uri\030\001 \001(\tB\n\n\010upstream\032*\n"
+          + "\026CommonRemoteRepository\022\020\n\003uri\030\001 \001(\tB\003\340A"
+          + "\002B\017\n\rremote_source\"\231\024\n\nRepository\022]\n\014mav"
+          + "en_config\030\t \001(\0132E.google.devtools.artifa"
+          + "ctregistry.v1.Repository.MavenRepository"
+          + "ConfigH\000\022_\n\rdocker_config\030\021 \001(\0132F.google"
+          + ".devtools.artifactregistry.v1.Repository"
+          + ".DockerRepositoryConfigH\000\022a\n\031virtual_rep"
+          + "ository_config\030\016 \001(\0132<.google.devtools.a"
+          + "rtifactregistry.v1.VirtualRepositoryConf"
+          + "igH\001\022_\n\030remote_repository_config\030\017 \001(\0132;"
+          + ".google.devtools.artifactregistry.v1.Rem"
+          + "oteRepositoryConfigH\001\022\014\n\004name\030\001 \001(\t\022K\n\006f"
+          + "ormat\030\002 \001(\01626.google.devtools.artifactre"
+          + "gistry.v1.Repository.FormatB\003\340A\001\022\023\n\013desc"
+          + "ription\030\003 \001(\t\022K\n\006labels\030\004 \003(\0132;.google.d"
+          + "evtools.artifactregistry.v1.Repository.L"
+          + "abelsEntry\0224\n\013create_time\030\005 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\0224\n\013update_time\030"
+          + "\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\024"
+          + "\n\014kms_key_name\030\010 \001(\t\022G\n\004mode\030\n \001(\01624.goo"
+          + "gle.devtools.artifactregistry.v1.Reposit"
+          + "ory.ModeB\003\340A\001\022c\n\020cleanup_policies\030\014 \003(\0132"
+          + "D.google.devtools.artifactregistry.v1.Re"
+          + "pository.CleanupPoliciesEntryB\003\340A\001\022\027\n\nsi"
+          + "ze_bytes\030\r \001(\003B\003\340A\003\022\032\n\rsatisfies_pzs\030\020 \001"
+          + "(\010B\003\340A\003\022#\n\026cleanup_policy_dry_run\030\022 \001(\010B"
+          + "\003\340A\001\022w\n\035vulnerability_scanning_config\030\023 "
+          + "\001(\0132K.google.devtools.artifactregistry.v"
+          + "1.Repository.VulnerabilityScanningConfig"
+          + "B\003\340A\001\022&\n\031disallow_unspecified_mode\030\025 \001(\010"
+          + "B\003\340A\001\022\032\n\rsatisfies_pzi\030\026 \001(\010B\003\340A\003\032\363\001\n\025Ma"
+          + "venRepositoryConfig\022!\n\031allow_snapshot_ov"
+          + "erwrites\030\001 \001(\010\022k\n\016version_policy\030\002 \001(\0162S"
+          + ".google.devtools.artifactregistry.v1.Rep"
+          + "ository.MavenRepositoryConfig.VersionPol"
+          + "icy\"J\n\rVersionPolicy\022\036\n\032VERSION_POLICY_U"
+          + "NSPECIFIED\020\000\022\013\n\007RELEASE\020\001\022\014\n\010SNAPSHOT\020\002\032"
+          + "0\n\026DockerRepositoryConfig\022\026\n\016immutable_t"
+          + "ags\030\001 \001(\010\032\307\004\n\033VulnerabilityScanningConfi"
+          + "g\022|\n\021enablement_config\030\001 \001(\0162\\.google.de"
+          + "vtools.artifactregistry.v1.Repository.Vu"
+          + "lnerabilityScanningConfig.EnablementConf"
+          + "igB\003\340A\001\0229\n\020last_enable_time\030\002 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\022z\n\020enablement"
+          + "_state\030\003 \001(\0162[.google.devtools.artifactr"
+          + "egistry.v1.Repository.VulnerabilityScann"
+          + "ingConfig.EnablementStateB\003\340A\003\022$\n\027enable"
+          + "ment_state_reason\030\004 \001(\tB\003\340A\003\"R\n\020Enableme"
+          + "ntConfig\022!\n\035ENABLEMENT_CONFIG_UNSPECIFIE"
+          + "D\020\000\022\r\n\tINHERITED\020\001\022\014\n\010DISABLED\020\002\"y\n\017Enab"
+          + "lementState\022 \n\034ENABLEMENT_STATE_UNSPECIF"
+          + "IED\020\000\022\030\n\024SCANNING_UNSUPPORTED\020\001\022\025\n\021SCANN"
+          + "ING_DISABLED\020\002\022\023\n\017SCANNING_ACTIVE\020\003\032-\n\013L"
+          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\032j\n\024CleanupPoliciesEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "A\n\005value\030\002 \001(\01322.google.devtools.artifac"
+          + "tregistry.v1.CleanupPolicy:\0028\001\"|\n\006Format"
+          + "\022\026\n\022FORMAT_UNSPECIFIED\020\000\022\n\n\006DOCKER\020\001\022\t\n\005"
+          + "MAVEN\020\002\022\007\n\003NPM\020\003\022\007\n\003APT\020\005\022\007\n\003YUM\020\006\022\n\n\006PY"
+          + "THON\020\010\022\007\n\003KFP\020\t\022\006\n\002GO\020\n\022\013\n\007GENERIC\020\013\"d\n\004"
+          + "Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\027\n\023STANDARD_R"
+          + "EPOSITORY\020\001\022\026\n\022VIRTUAL_REPOSITORY\020\002\022\025\n\021R"
+          + "EMOTE_REPOSITORY\020\003:r\352Ao\n*artifactregistr"
+          + "y.googleapis.com/Repository\022Aprojects/{p"
+          + "roject}/locations/{location}/repositorie"
+          + "s/{repository}B\017\n\rformat_configB\r\n\013mode_"
+          + "config\"\260\001\n\027ListRepositoriesRequest\022B\n\006pa"
+          + "rent\030\001 \001(\tB2\340A\002\372A,\022*artifactregistry.goo"
+          + "gleapis.com/Repository\022\021\n\tpage_size\030\002 \001("
+          + "\005\022\022\n\npage_token\030\003 \001(\t\022\023\n\006filter\030\004 \001(\tB\003\340"
+          + "A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"z\n\030ListReposit"
+          + "oriesResponse\022E\n\014repositories\030\001 \003(\0132/.go"
+          + "ogle.devtools.artifactregistry.v1.Reposi"
+          + "tory\022\027\n\017next_page_token\030\002 \001(\t\"X\n\024GetRepo"
+          + "sitoryRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*art"
+          + "ifactregistry.googleapis.com/Repository\""
+          + "\303\001\n\027CreateRepositoryRequest\022B\n\006parent\030\001 "
+          + "\001(\tB2\340A\002\372A,\022*artifactregistry.googleapis"
+          + ".com/Repository\022\032\n\rrepository_id\030\002 \001(\tB\003"
+          + "\340A\002\022H\n\nrepository\030\003 \001(\0132/.google.devtool"
+          + "s.artifactregistry.v1.RepositoryB\003\340A\002\"\217\001"
+          + "\n\027UpdateRepositoryRequest\022C\n\nrepository\030"
+          + "\001 \001(\0132/.google.devtools.artifactregistry"
+          + ".v1.Repository\022/\n\013update_mask\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMask\"[\n\027DeleteReposit"
+          + "oryRequest\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*artifa"
+          + "ctregistry.googleapis.com/RepositoryB\347\003\n"
+          + "\'com.google.devtools.artifactregistry.v1"
+          + "B\017RepositoryProtoP\001ZPcloud.google.com/go"
+          + "/artifactregistry/apiv1/artifactregistry"
+          + "pb;artifactregistrypb\252\002 Google.Cloud.Art"
+          + "ifactRegistry.V1\312\002 Google\\Cloud\\Artifact"
+          + "Registry\\V1\352\002#Google::Cloud::ArtifactReg"
+          + "istry::V1\352Ak\n*secretmanager.googleapis.c"
+          + "om/SecretVersion\022=projects/{project}/sec"
+          + "rets/{secret}/versions/{secret_version}\352"
+          + "A|\n\'servicedirectory.googleapis.com/Serv"
+          + "ice\022Qprojects/{project}/locations/{locat"
+          + "ion}/namespaces/{namespace}/services/{se"
+          + "rvice}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -394,8 +479,10 @@ public final class RepositoryProto {
               "PythonRepository",
               "AptRepository",
               "YumRepository",
+              "CommonRepository",
               "Description",
               "UpstreamCredentials",
+              "DisableUpstreamValidation",
               "RemoteSource",
             });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_UpstreamCredentials_descriptor =
@@ -426,7 +513,17 @@ public final class RepositoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_descriptor,
             new java.lang.String[] {
-              "PublicRepository", "Upstream",
+              "PublicRepository", "CustomRepository", "Upstream",
+            });
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_DockerRepository_CustomRepository_descriptor,
+            new java.lang.String[] {
+              "Uri",
             });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_descriptor =
         internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_descriptor
@@ -436,7 +533,17 @@ public final class RepositoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_descriptor,
             new java.lang.String[] {
-              "PublicRepository", "Upstream",
+              "PublicRepository", "CustomRepository", "Upstream",
+            });
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_MavenRepository_CustomRepository_descriptor,
+            new java.lang.String[] {
+              "Uri",
             });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_descriptor =
         internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_descriptor
@@ -446,7 +553,17 @@ public final class RepositoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_descriptor,
             new java.lang.String[] {
-              "PublicRepository", "Upstream",
+              "PublicRepository", "CustomRepository", "Upstream",
+            });
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_NpmRepository_CustomRepository_descriptor,
+            new java.lang.String[] {
+              "Uri",
             });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_descriptor =
         internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_descriptor
@@ -456,7 +573,17 @@ public final class RepositoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_descriptor,
             new java.lang.String[] {
-              "PublicRepository", "Upstream",
+              "PublicRepository", "CustomRepository", "Upstream",
+            });
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_PythonRepository_CustomRepository_descriptor,
+            new java.lang.String[] {
+              "Uri",
             });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_descriptor =
         internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_descriptor
@@ -466,7 +593,7 @@ public final class RepositoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_descriptor,
             new java.lang.String[] {
-              "PublicRepository", "Upstream",
+              "PublicRepository", "CustomRepository", "Upstream",
             });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_PublicRepository_descriptor =
         internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_descriptor
@@ -478,6 +605,16 @@ public final class RepositoryProto {
             new java.lang.String[] {
               "RepositoryBase", "RepositoryPath",
             });
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_AptRepository_CustomRepository_descriptor,
+            new java.lang.String[] {
+              "Uri",
+            });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_descriptor =
         internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_descriptor
             .getNestedTypes()
@@ -486,7 +623,7 @@ public final class RepositoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_descriptor,
             new java.lang.String[] {
-              "PublicRepository", "Upstream",
+              "PublicRepository", "CustomRepository", "Upstream",
             });
     internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_PublicRepository_descriptor =
         internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_descriptor
@@ -497,6 +634,26 @@ public final class RepositoryProto {
             internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_PublicRepository_descriptor,
             new java.lang.String[] {
               "RepositoryBase", "RepositoryPath",
+            });
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_YumRepository_CustomRepository_descriptor,
+            new java.lang.String[] {
+              "Uri",
+            });
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_descriptor
+            .getNestedTypes()
+            .get(7);
+    internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_RemoteRepositoryConfig_CommonRemoteRepository_descriptor,
+            new java.lang.String[] {
+              "Uri",
             });
     internal_static_google_devtools_artifactregistry_v1_Repository_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -520,6 +677,9 @@ public final class RepositoryProto {
               "SizeBytes",
               "SatisfiesPzs",
               "CleanupPolicyDryRun",
+              "VulnerabilityScanningConfig",
+              "DisallowUnspecifiedMode",
+              "SatisfiesPzi",
               "FormatConfig",
               "ModeConfig",
             });
@@ -543,10 +703,20 @@ public final class RepositoryProto {
             new java.lang.String[] {
               "ImmutableTags",
             });
-    internal_static_google_devtools_artifactregistry_v1_Repository_LabelsEntry_descriptor =
+    internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_descriptor =
         internal_static_google_devtools_artifactregistry_v1_Repository_descriptor
             .getNestedTypes()
             .get(2);
+    internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_Repository_VulnerabilityScanningConfig_descriptor,
+            new java.lang.String[] {
+              "EnablementConfig", "LastEnableTime", "EnablementState", "EnablementStateReason",
+            });
+    internal_static_google_devtools_artifactregistry_v1_Repository_LabelsEntry_descriptor =
+        internal_static_google_devtools_artifactregistry_v1_Repository_descriptor
+            .getNestedTypes()
+            .get(3);
     internal_static_google_devtools_artifactregistry_v1_Repository_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_Repository_LabelsEntry_descriptor,
@@ -556,7 +726,7 @@ public final class RepositoryProto {
     internal_static_google_devtools_artifactregistry_v1_Repository_CleanupPoliciesEntry_descriptor =
         internal_static_google_devtools_artifactregistry_v1_Repository_descriptor
             .getNestedTypes()
-            .get(3);
+            .get(4);
     internal_static_google_devtools_artifactregistry_v1_Repository_CleanupPoliciesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_Repository_CleanupPoliciesEntry_descriptor,
@@ -569,7 +739,7 @@ public final class RepositoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListRepositoriesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_devtools_artifactregistry_v1_ListRepositoriesResponse_descriptor =
         getDescriptor().getMessageTypes().get(8);

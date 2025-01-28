@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ public interface CheckGroundingRequestOrBuilder
    *
    *
    * <pre>
-   * Answer candidate to check. Can have a maximum length of 1024 characters.
+   * Answer candidate to check. It can have a maximum length of 4096 tokens.
    * </pre>
    *
    * <code>string answer_candidate = 2;</code>
@@ -71,7 +71,7 @@ public interface CheckGroundingRequestOrBuilder
    *
    *
    * <pre>
-   * Answer candidate to check. Can have a maximum length of 1024 characters.
+   * Answer candidate to check. It can have a maximum length of 4096 tokens.
    * </pre>
    *
    * <code>string answer_candidate = 2;</code>

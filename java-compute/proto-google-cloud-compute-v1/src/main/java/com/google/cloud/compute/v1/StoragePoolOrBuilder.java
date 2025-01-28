@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -376,7 +376,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Size, in GiB, of the storage pool.
+   * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>
@@ -388,7 +388,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Size, in GiB, of the storage pool.
+   * Size, in GiB, of the storage pool. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_provisioned_capacity_gb = 478537682;</code>

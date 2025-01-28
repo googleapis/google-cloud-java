@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -799,6 +799,25 @@
  *   String project = "project-309310695";
  *   String firewallPolicy = "firewallPolicy1819692626";
  *   FirewallPolicy response = networkFirewallPoliciesClient.get(project, firewallPolicy);
+ * }
+ * }</pre>
+ *
+ * <p>======================= NetworkProfilesClient =======================
+ *
+ * <p>Service Description: The NetworkProfiles API.
+ *
+ * <p>Sample for NetworkProfilesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (NetworkProfilesClient networkProfilesClient = NetworkProfilesClient.create()) {
+ *   String project = "project-309310695";
+ *   String networkProfile = "networkProfile-2013096037";
+ *   NetworkProfile response = networkProfilesClient.get(project, networkProfile);
  * }
  * }</pre>
  *

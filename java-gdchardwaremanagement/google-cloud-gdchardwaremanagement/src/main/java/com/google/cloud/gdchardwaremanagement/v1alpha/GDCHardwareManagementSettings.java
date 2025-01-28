@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ import javax.annotation.Generated;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * gDCHardwareManagementSettingsBuilder
@@ -218,6 +218,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
   public OperationCallSettings<UpdateSiteRequest, Site, OperationMetadata>
       updateSiteOperationSettings() {
     return ((GDCHardwareManagementStubSettings) getStubSettings()).updateSiteOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSite. */
+  public UnaryCallSettings<DeleteSiteRequest, Operation> deleteSiteSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).deleteSiteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSite. */
+  public OperationCallSettings<DeleteSiteRequest, Empty, OperationMetadata>
+      deleteSiteOperationSettings() {
+    return ((GDCHardwareManagementStubSettings) getStubSettings()).deleteSiteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listHardwareGroups. */
@@ -633,6 +644,17 @@ public class GDCHardwareManagementSettings extends ClientSettings<GDCHardwareMan
     public OperationCallSettings.Builder<UpdateSiteRequest, Site, OperationMetadata>
         updateSiteOperationSettings() {
       return getStubSettingsBuilder().updateSiteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSite. */
+    public UnaryCallSettings.Builder<DeleteSiteRequest, Operation> deleteSiteSettings() {
+      return getStubSettingsBuilder().deleteSiteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSite. */
+    public OperationCallSettings.Builder<DeleteSiteRequest, Empty, OperationMetadata>
+        deleteSiteOperationSettings() {
+      return getStubSettingsBuilder().deleteSiteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listHardwareGroups. */

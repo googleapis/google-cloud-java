@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ public interface DeletePageRequestOrBuilder
    *
    * <pre>
    * Required. The name of the page to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface DeletePageRequestOrBuilder
    *
    * <pre>
    * Required. The name of the page to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/Flows/&lt;flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>

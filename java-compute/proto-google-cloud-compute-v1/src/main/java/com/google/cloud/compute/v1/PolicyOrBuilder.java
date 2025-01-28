@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,57 +176,6 @@ public interface PolicyOrBuilder
    * @return The iamOwned.
    */
   boolean getIamOwned();
-
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  java.util.List<com.google.cloud.compute.v1.Rule> getRulesList();
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  com.google.cloud.compute.v1.Rule getRules(int index);
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  int getRulesCount();
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  java.util.List<? extends com.google.cloud.compute.v1.RuleOrBuilder> getRulesOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * This is deprecated and has no effect. Do not use.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.Rule rules = 108873975;</code>
-   */
-  com.google.cloud.compute.v1.RuleOrBuilder getRulesOrBuilder(int index);
 
   /**
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -681,10 +681,10 @@ public final class CloudExadataInfrastructureProperties
    *
    *
    * <pre>
-   * Optional. The number of enabled CPU cores.
+   * Output only. The number of enabled CPU cores.
    * </pre>
    *
-   * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The cpuCount.
    */
@@ -717,10 +717,10 @@ public final class CloudExadataInfrastructureProperties
    *
    *
    * <pre>
-   * Optional. The memory allocated in GBs.
+   * Output only. The memory allocated in GBs.
    * </pre>
    *
-   * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The memorySizeGb.
    */
@@ -753,10 +753,10 @@ public final class CloudExadataInfrastructureProperties
    *
    *
    * <pre>
-   * Optional. The local node storage allocated in GBs.
+   * Output only. The local node storage allocated in GBs.
    * </pre>
    *
-   * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The dbNodeStorageSizeGb.
    */
@@ -3263,10 +3263,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The number of enabled CPU cores.
+     * Output only. The number of enabled CPU cores.
      * </pre>
      *
-     * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The cpuCount.
      */
@@ -3278,10 +3278,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The number of enabled CPU cores.
+     * Output only. The number of enabled CPU cores.
      * </pre>
      *
-     * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The cpuCount to set.
      * @return This builder for chaining.
@@ -3297,10 +3297,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The number of enabled CPU cores.
+     * Output only. The number of enabled CPU cores.
      * </pre>
      *
-     * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 cpu_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -3369,10 +3369,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The memory allocated in GBs.
+     * Output only. The memory allocated in GBs.
      * </pre>
      *
-     * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The memorySizeGb.
      */
@@ -3384,10 +3384,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The memory allocated in GBs.
+     * Output only. The memory allocated in GBs.
      * </pre>
      *
-     * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The memorySizeGb to set.
      * @return This builder for chaining.
@@ -3403,10 +3403,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The memory allocated in GBs.
+     * Output only. The memory allocated in GBs.
      * </pre>
      *
-     * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 memory_size_gb = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -3475,10 +3475,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The local node storage allocated in GBs.
+     * Output only. The local node storage allocated in GBs.
      * </pre>
      *
-     * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The dbNodeStorageSizeGb.
      */
@@ -3490,10 +3490,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The local node storage allocated in GBs.
+     * Output only. The local node storage allocated in GBs.
      * </pre>
      *
-     * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The dbNodeStorageSizeGb to set.
      * @return This builder for chaining.
@@ -3509,10 +3509,10 @@ public final class CloudExadataInfrastructureProperties
      *
      *
      * <pre>
-     * Optional. The local node storage allocated in GBs.
+     * Output only. The local node storage allocated in GBs.
      * </pre>
      *
-     * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>int32 db_node_storage_size_gb = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

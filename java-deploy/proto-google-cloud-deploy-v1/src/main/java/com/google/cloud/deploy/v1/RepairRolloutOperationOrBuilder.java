@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,19 @@ public interface RepairRolloutOperationOrBuilder
    * @return The bytes for rollout.
    */
   com.google.protobuf.ByteString getRolloutBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The index of the current repair action in the repair sequence.
+   * </pre>
+   *
+   * <code>int64 current_repair_phase_index = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The currentRepairPhaseIndex.
+   */
+  long getCurrentRepairPhaseIndex();
 
   /**
    *

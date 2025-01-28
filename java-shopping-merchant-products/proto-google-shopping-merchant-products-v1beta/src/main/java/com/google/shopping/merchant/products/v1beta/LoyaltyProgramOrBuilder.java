@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,4 +210,91 @@ public interface LoyaltyProgramOrBuilder
    * @return The loyaltyPoints.
    */
   long getLoyaltyPoints();
+
+  /**
+   *
+   *
+   * <pre>
+   * A date range during which the item is eligible for member price. If not
+   * specified, the member price is always applicable. The date range is
+   * represented by a pair of ISO 8601 dates separated by a space,
+   * comma, or slash.
+   * </pre>
+   *
+   * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+   *
+   * @return Whether the memberPriceEffectiveDate field is set.
+   */
+  boolean hasMemberPriceEffectiveDate();
+  /**
+   *
+   *
+   * <pre>
+   * A date range during which the item is eligible for member price. If not
+   * specified, the member price is always applicable. The date range is
+   * represented by a pair of ISO 8601 dates separated by a space,
+   * comma, or slash.
+   * </pre>
+   *
+   * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+   *
+   * @return The memberPriceEffectiveDate.
+   */
+  com.google.type.Interval getMemberPriceEffectiveDate();
+  /**
+   *
+   *
+   * <pre>
+   * A date range during which the item is eligible for member price. If not
+   * specified, the member price is always applicable. The date range is
+   * represented by a pair of ISO 8601 dates separated by a space,
+   * comma, or slash.
+   * </pre>
+   *
+   * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+   */
+  com.google.type.IntervalOrBuilder getMemberPriceEffectiveDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The label of the shipping benefit. If the field has value, this offer has
+   * loyalty shipping benefit. If the field value isn't provided, the item is
+   * not eligible for loyalty shipping for the given loyalty tier.
+   * </pre>
+   *
+   * <code>optional string shipping_label = 7;</code>
+   *
+   * @return Whether the shippingLabel field is set.
+   */
+  boolean hasShippingLabel();
+  /**
+   *
+   *
+   * <pre>
+   * The label of the shipping benefit. If the field has value, this offer has
+   * loyalty shipping benefit. If the field value isn't provided, the item is
+   * not eligible for loyalty shipping for the given loyalty tier.
+   * </pre>
+   *
+   * <code>optional string shipping_label = 7;</code>
+   *
+   * @return The shippingLabel.
+   */
+  java.lang.String getShippingLabel();
+  /**
+   *
+   *
+   * <pre>
+   * The label of the shipping benefit. If the field has value, this offer has
+   * loyalty shipping benefit. If the field value isn't provided, the item is
+   * not eligible for loyalty shipping for the given loyalty tier.
+   * </pre>
+   *
+   * <code>optional string shipping_label = 7;</code>
+   *
+   * @return The bytes for shippingLabel.
+   */
+  com.google.protobuf.ByteString getShippingLabelBytes();
 }

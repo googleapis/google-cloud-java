@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.DeleteEntityTypes][].
+ * Request message for
+ * [FeaturestoreService.DeleteEntityType][google.cloud.aiplatform.v1.FeaturestoreService.DeleteEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteEntityTypeRequest}
@@ -314,7 +315,8 @@ public final class DeleteEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.DeleteEntityTypes][].
+   * Request message for
+   * [FeaturestoreService.DeleteEntityType][google.cloud.aiplatform.v1.FeaturestoreService.DeleteEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteEntityTypeRequest}

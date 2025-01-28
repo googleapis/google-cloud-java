@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,6 +129,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -187,6 +188,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -245,6 +247,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -300,6 +303,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -511,6 +515,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -577,6 +582,7 @@ public class GenAiTuningServiceClientTest {
             .setPipelineJob(
                 PipelineJobName.of("[PROJECT]", "[LOCATION]", "[PIPELINE_JOB]").toString())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.texttospeech.v1.SynthesisInput.Builder.class);
   }
 
+  private int bitField0_;
   private int inputSourceCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -75,6 +76,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT(1),
     SSML(2),
+    MULTI_SPEAKER_MARKUP(4),
     INPUTSOURCE_NOT_SET(0);
     private final int value;
 
@@ -97,6 +99,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
           return TEXT;
         case 2:
           return SSML;
+        case 4:
+          return MULTI_SPEAKER_MARKUP;
         case 0:
           return INPUTSOURCE_NOT_SET;
         default:
@@ -265,6 +269,151 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MULTI_SPEAKER_MARKUP_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   *
+   * @return Whether the multiSpeakerMarkup field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiSpeakerMarkup() {
+    return inputSourceCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   *
+   * @return The multiSpeakerMarkup.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.MultiSpeakerMarkup getMultiSpeakerMarkup() {
+    if (inputSourceCase_ == 4) {
+      return (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_;
+    }
+    return com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The multi-speaker input to be synthesized. Only applicable for
+   * multi-speaker synthesis.
+   * </pre>
+   *
+   * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.MultiSpeakerMarkupOrBuilder
+      getMultiSpeakerMarkupOrBuilder() {
+    if (inputSourceCase_ == 4) {
+      return (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_;
+    }
+    return com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance();
+  }
+
+  public static final int CUSTOM_PRONUNCIATIONS_FIELD_NUMBER = 3;
+  private com.google.cloud.texttospeech.v1.CustomPronunciations customPronunciations_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations to be applied to the input. If
+   * this is set, the input will be synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support will be for EFIGS (English, French,
+   * Italian, German, Spanish) languages, as provided in
+   * VoiceSelectionParams. Journey and Instant Clone voices are
+   * not supported yet.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag (entirely or partially).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPronunciations field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomPronunciations() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations to be applied to the input. If
+   * this is set, the input will be synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support will be for EFIGS (English, French,
+   * Italian, German, Spanish) languages, as provided in
+   * VoiceSelectionParams. Journey and Instant Clone voices are
+   * not supported yet.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag (entirely or partially).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPronunciations.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations() {
+    return customPronunciations_ == null
+        ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+        : customPronunciations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations to be applied to the input. If
+   * this is set, the input will be synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support will be for EFIGS (English, French,
+   * Italian, German, Spanish) languages, as provided in
+   * VoiceSelectionParams. Journey and Instant Clone voices are
+   * not supported yet.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag (entirely or partially).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder
+      getCustomPronunciationsOrBuilder() {
+    return customPronunciations_ == null
+        ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+        : customPronunciations_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -285,6 +434,12 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     if (inputSourceCase_ == 2) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputSource_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getCustomPronunciations());
+    }
+    if (inputSourceCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -299,6 +454,15 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
     if (inputSourceCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputSource_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustomPronunciations());
+    }
+    if (inputSourceCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -316,6 +480,10 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.texttospeech.v1.SynthesisInput other =
         (com.google.cloud.texttospeech.v1.SynthesisInput) obj;
 
+    if (hasCustomPronunciations() != other.hasCustomPronunciations()) return false;
+    if (hasCustomPronunciations()) {
+      if (!getCustomPronunciations().equals(other.getCustomPronunciations())) return false;
+    }
     if (!getInputSourceCase().equals(other.getInputSourceCase())) return false;
     switch (inputSourceCase_) {
       case 1:
@@ -323,6 +491,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         break;
       case 2:
         if (!getSsml().equals(other.getSsml())) return false;
+        break;
+      case 4:
+        if (!getMultiSpeakerMarkup().equals(other.getMultiSpeakerMarkup())) return false;
         break;
       case 0:
       default:
@@ -338,6 +509,10 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasCustomPronunciations()) {
+      hash = (37 * hash) + CUSTOM_PRONUNCIATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomPronunciations().hashCode();
+    }
     switch (inputSourceCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -346,6 +521,10 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + SSML_FIELD_NUMBER;
         hash = (53 * hash) + getSsml().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + MULTI_SPEAKER_MARKUP_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiSpeakerMarkup().hashCode();
         break;
       case 0:
       default:
@@ -482,16 +661,33 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.texttospeech.v1.SynthesisInput.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCustomPronunciationsFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (multiSpeakerMarkupBuilder_ != null) {
+        multiSpeakerMarkupBuilder_.clear();
+      }
+      customPronunciations_ = null;
+      if (customPronunciationsBuilder_ != null) {
+        customPronunciationsBuilder_.dispose();
+        customPronunciationsBuilder_ = null;
+      }
       inputSourceCase_ = 0;
       inputSource_ = null;
       return this;
@@ -531,11 +727,23 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.texttospeech.v1.SynthesisInput result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.customPronunciations_ =
+            customPronunciationsBuilder_ == null
+                ? customPronunciations_
+                : customPronunciationsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.texttospeech.v1.SynthesisInput result) {
       result.inputSourceCase_ = inputSourceCase_;
       result.inputSource_ = this.inputSource_;
+      if (inputSourceCase_ == 4 && multiSpeakerMarkupBuilder_ != null) {
+        result.inputSource_ = multiSpeakerMarkupBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -584,6 +792,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.texttospeech.v1.SynthesisInput other) {
       if (other == com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance())
         return this;
+      if (other.hasCustomPronunciations()) {
+        mergeCustomPronunciations(other.getCustomPronunciations());
+      }
       switch (other.getInputSourceCase()) {
         case TEXT:
           {
@@ -597,6 +808,11 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
             inputSourceCase_ = 2;
             inputSource_ = other.inputSource_;
             onChanged();
+            break;
+          }
+        case MULTI_SPEAKER_MARKUP:
+          {
+            mergeMultiSpeakerMarkup(other.getMultiSpeakerMarkup());
             break;
           }
         case INPUTSOURCE_NOT_SET:
@@ -644,6 +860,20 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
                 inputSource_ = s;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getCustomPronunciationsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getMultiSpeakerMarkupFieldBuilder().getBuilder(), extensionRegistry);
+                inputSourceCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -967,6 +1197,537 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       inputSource_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.MultiSpeakerMarkup,
+            com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.Builder,
+            com.google.cloud.texttospeech.v1.MultiSpeakerMarkupOrBuilder>
+        multiSpeakerMarkupBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     *
+     * @return Whether the multiSpeakerMarkup field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiSpeakerMarkup() {
+      return inputSourceCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     *
+     * @return The multiSpeakerMarkup.
+     */
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.MultiSpeakerMarkup getMultiSpeakerMarkup() {
+      if (multiSpeakerMarkupBuilder_ == null) {
+        if (inputSourceCase_ == 4) {
+          return (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_;
+        }
+        return com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance();
+      } else {
+        if (inputSourceCase_ == 4) {
+          return multiSpeakerMarkupBuilder_.getMessage();
+        }
+        return com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     */
+    public Builder setMultiSpeakerMarkup(
+        com.google.cloud.texttospeech.v1.MultiSpeakerMarkup value) {
+      if (multiSpeakerMarkupBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputSource_ = value;
+        onChanged();
+      } else {
+        multiSpeakerMarkupBuilder_.setMessage(value);
+      }
+      inputSourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     */
+    public Builder setMultiSpeakerMarkup(
+        com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.Builder builderForValue) {
+      if (multiSpeakerMarkupBuilder_ == null) {
+        inputSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        multiSpeakerMarkupBuilder_.setMessage(builderForValue.build());
+      }
+      inputSourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     */
+    public Builder mergeMultiSpeakerMarkup(
+        com.google.cloud.texttospeech.v1.MultiSpeakerMarkup value) {
+      if (multiSpeakerMarkupBuilder_ == null) {
+        if (inputSourceCase_ == 4
+            && inputSource_
+                != com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance()) {
+          inputSource_ =
+              com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.newBuilder(
+                      (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          inputSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputSourceCase_ == 4) {
+          multiSpeakerMarkupBuilder_.mergeFrom(value);
+        } else {
+          multiSpeakerMarkupBuilder_.setMessage(value);
+        }
+      }
+      inputSourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     */
+    public Builder clearMultiSpeakerMarkup() {
+      if (multiSpeakerMarkupBuilder_ == null) {
+        if (inputSourceCase_ == 4) {
+          inputSourceCase_ = 0;
+          inputSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputSourceCase_ == 4) {
+          inputSourceCase_ = 0;
+          inputSource_ = null;
+        }
+        multiSpeakerMarkupBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     */
+    public com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.Builder
+        getMultiSpeakerMarkupBuilder() {
+      return getMultiSpeakerMarkupFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.MultiSpeakerMarkupOrBuilder
+        getMultiSpeakerMarkupOrBuilder() {
+      if ((inputSourceCase_ == 4) && (multiSpeakerMarkupBuilder_ != null)) {
+        return multiSpeakerMarkupBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputSourceCase_ == 4) {
+          return (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_;
+        }
+        return com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The multi-speaker input to be synthesized. Only applicable for
+     * multi-speaker synthesis.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.MultiSpeakerMarkup multi_speaker_markup = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.MultiSpeakerMarkup,
+            com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.Builder,
+            com.google.cloud.texttospeech.v1.MultiSpeakerMarkupOrBuilder>
+        getMultiSpeakerMarkupFieldBuilder() {
+      if (multiSpeakerMarkupBuilder_ == null) {
+        if (!(inputSourceCase_ == 4)) {
+          inputSource_ = com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.getDefaultInstance();
+        }
+        multiSpeakerMarkupBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.MultiSpeakerMarkup,
+                com.google.cloud.texttospeech.v1.MultiSpeakerMarkup.Builder,
+                com.google.cloud.texttospeech.v1.MultiSpeakerMarkupOrBuilder>(
+                (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_,
+                getParentForChildren(),
+                isClean());
+        inputSource_ = null;
+      }
+      inputSourceCase_ = 4;
+      onChanged();
+      return multiSpeakerMarkupBuilder_;
+    }
+
+    private com.google.cloud.texttospeech.v1.CustomPronunciations customPronunciations_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.CustomPronunciations,
+            com.google.cloud.texttospeech.v1.CustomPronunciations.Builder,
+            com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder>
+        customPronunciationsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customPronunciations field is set.
+     */
+    public boolean hasCustomPronunciations() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customPronunciations.
+     */
+    public com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations() {
+      if (customPronunciationsBuilder_ == null) {
+        return customPronunciations_ == null
+            ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+            : customPronunciations_;
+      } else {
+        return customPronunciationsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPronunciations(
+        com.google.cloud.texttospeech.v1.CustomPronunciations value) {
+      if (customPronunciationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customPronunciations_ = value;
+      } else {
+        customPronunciationsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPronunciations(
+        com.google.cloud.texttospeech.v1.CustomPronunciations.Builder builderForValue) {
+      if (customPronunciationsBuilder_ == null) {
+        customPronunciations_ = builderForValue.build();
+      } else {
+        customPronunciationsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomPronunciations(
+        com.google.cloud.texttospeech.v1.CustomPronunciations value) {
+      if (customPronunciationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && customPronunciations_ != null
+            && customPronunciations_
+                != com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()) {
+          getCustomPronunciationsBuilder().mergeFrom(value);
+        } else {
+          customPronunciations_ = value;
+        }
+      } else {
+        customPronunciationsBuilder_.mergeFrom(value);
+      }
+      if (customPronunciations_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomPronunciations() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      customPronunciations_ = null;
+      if (customPronunciationsBuilder_ != null) {
+        customPronunciationsBuilder_.dispose();
+        customPronunciationsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.CustomPronunciations.Builder
+        getCustomPronunciationsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getCustomPronunciationsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder
+        getCustomPronunciationsOrBuilder() {
+      if (customPronunciationsBuilder_ != null) {
+        return customPronunciationsBuilder_.getMessageOrBuilder();
+      } else {
+        return customPronunciations_ == null
+            ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+            : customPronunciations_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations to be applied to the input. If
+     * this is set, the input will be synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support will be for EFIGS (English, French,
+     * Italian, German, Spanish) languages, as provided in
+     * VoiceSelectionParams. Journey and Instant Clone voices are
+     * not supported yet.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag (entirely or partially).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.CustomPronunciations,
+            com.google.cloud.texttospeech.v1.CustomPronunciations.Builder,
+            com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder>
+        getCustomPronunciationsFieldBuilder() {
+      if (customPronunciationsBuilder_ == null) {
+        customPronunciationsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.CustomPronunciations,
+                com.google.cloud.texttospeech.v1.CustomPronunciations.Builder,
+                com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder>(
+                getCustomPronunciations(), getParentForChildren(), isClean());
+        customPronunciations_ = null;
+      }
+      return customPronunciationsBuilder_;
     }
 
     @java.lang.Override

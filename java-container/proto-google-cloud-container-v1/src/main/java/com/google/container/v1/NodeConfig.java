@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     nodeGroup_ = "";
     bootDiskKmsKey_ = "";
     secondaryBootDisks_ = java.util.Collections.emptyList();
+    storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    localSsdEncryptionMode_ = 0;
+    effectiveCgroupMode_ = 0;
   }
 
   @java.lang.Override
@@ -93,6 +96,347 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.NodeConfig.class,
             com.google.container.v1.NodeConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * LocalSsdEncryptionMode specifies the method used for encrypting the Local
+   * SSDs attached to the node.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.NodeConfig.LocalSsdEncryptionMode}
+   */
+  public enum LocalSsdEncryptionMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The given node will be encrypted using keys managed by Google
+     * infrastructure and the keys will be deleted when the node is
+     * deleted.
+     * </pre>
+     *
+     * <code>LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The given node will be encrypted using keys managed by Google
+     * infrastructure and the keys will be deleted when the node is
+     * deleted.
+     * </pre>
+     *
+     * <code>STANDARD_ENCRYPTION = 1;</code>
+     */
+    STANDARD_ENCRYPTION(1),
+    /**
+     *
+     *
+     * <pre>
+     * The given node will opt-in for using ephemeral key for
+     * encryption of Local SSDs.
+     * The Local SSDs will not be able to recover data in case of node
+     * crash.
+     * </pre>
+     *
+     * <code>EPHEMERAL_KEY_ENCRYPTION = 2;</code>
+     */
+    EPHEMERAL_KEY_ENCRYPTION(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The given node will be encrypted using keys managed by Google
+     * infrastructure and the keys will be deleted when the node is
+     * deleted.
+     * </pre>
+     *
+     * <code>LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The given node will be encrypted using keys managed by Google
+     * infrastructure and the keys will be deleted when the node is
+     * deleted.
+     * </pre>
+     *
+     * <code>STANDARD_ENCRYPTION = 1;</code>
+     */
+    public static final int STANDARD_ENCRYPTION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The given node will opt-in for using ephemeral key for
+     * encryption of Local SSDs.
+     * The Local SSDs will not be able to recover data in case of node
+     * crash.
+     * </pre>
+     *
+     * <code>EPHEMERAL_KEY_ENCRYPTION = 2;</code>
+     */
+    public static final int EPHEMERAL_KEY_ENCRYPTION_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static LocalSsdEncryptionMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static LocalSsdEncryptionMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return LOCAL_SSD_ENCRYPTION_MODE_UNSPECIFIED;
+        case 1:
+          return STANDARD_ENCRYPTION;
+        case 2:
+          return EPHEMERAL_KEY_ENCRYPTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<LocalSsdEncryptionMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<LocalSsdEncryptionMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LocalSsdEncryptionMode>() {
+              public LocalSsdEncryptionMode findValueByNumber(int number) {
+                return LocalSsdEncryptionMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.NodeConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final LocalSsdEncryptionMode[] VALUES = values();
+
+    public static LocalSsdEncryptionMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private LocalSsdEncryptionMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.NodeConfig.LocalSsdEncryptionMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible effective cgroup modes for the node.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.NodeConfig.EffectiveCgroupMode}
+   */
+  public enum EffectiveCgroupMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * EFFECTIVE_CGROUP_MODE_UNSPECIFIED means the cgroup configuration for the
+     * node pool is unspecified, i.e. the node pool is a Windows node pool.
+     * </pre>
+     *
+     * <code>EFFECTIVE_CGROUP_MODE_UNSPECIFIED = 0;</code>
+     */
+    EFFECTIVE_CGROUP_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V1 means the node pool is configured to use cgroupv1 for the
+     * cgroup configuration.
+     * </pre>
+     *
+     * <code>EFFECTIVE_CGROUP_MODE_V1 = 1;</code>
+     */
+    EFFECTIVE_CGROUP_MODE_V1(1),
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V2 means the node pool is configured to use cgroupv2 for the
+     * cgroup configuration.
+     * </pre>
+     *
+     * <code>EFFECTIVE_CGROUP_MODE_V2 = 2;</code>
+     */
+    EFFECTIVE_CGROUP_MODE_V2(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * EFFECTIVE_CGROUP_MODE_UNSPECIFIED means the cgroup configuration for the
+     * node pool is unspecified, i.e. the node pool is a Windows node pool.
+     * </pre>
+     *
+     * <code>EFFECTIVE_CGROUP_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int EFFECTIVE_CGROUP_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V1 means the node pool is configured to use cgroupv1 for the
+     * cgroup configuration.
+     * </pre>
+     *
+     * <code>EFFECTIVE_CGROUP_MODE_V1 = 1;</code>
+     */
+    public static final int EFFECTIVE_CGROUP_MODE_V1_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V2 means the node pool is configured to use cgroupv2 for the
+     * cgroup configuration.
+     * </pre>
+     *
+     * <code>EFFECTIVE_CGROUP_MODE_V2 = 2;</code>
+     */
+    public static final int EFFECTIVE_CGROUP_MODE_V2_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EffectiveCgroupMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EffectiveCgroupMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EFFECTIVE_CGROUP_MODE_UNSPECIFIED;
+        case 1:
+          return EFFECTIVE_CGROUP_MODE_V1;
+        case 2:
+          return EFFECTIVE_CGROUP_MODE_V2;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EffectiveCgroupMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EffectiveCgroupMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EffectiveCgroupMode>() {
+              public EffectiveCgroupMode findValueByNumber(int number) {
+                return EffectiveCgroupMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.NodeConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final EffectiveCgroupMode[] VALUES = values();
+
+    public static EffectiveCgroupMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EffectiveCgroupMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.NodeConfig.EffectiveCgroupMode)
   }
 
   private int bitField0_;
@@ -2428,6 +2772,70 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return secondaryBootDisks_.get(index);
   }
 
+  public static final int STORAGE_POOLS_FIELD_NUMBER = 49;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList storagePools_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @return A list containing the storagePools.
+   */
+  public com.google.protobuf.ProtocolStringList getStoragePoolsList() {
+    return storagePools_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @return The count of storagePools.
+   */
+  public int getStoragePoolsCount() {
+    return storagePools_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The storagePools at the given index.
+   */
+  public java.lang.String getStoragePools(int index) {
+    return storagePools_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the storagePools at the given index.
+   */
+  public com.google.protobuf.ByteString getStoragePoolsBytes(int index) {
+    return storagePools_.getByteString(index);
+  }
+
   public static final int SECONDARY_BOOT_DISK_UPDATE_STRATEGY_FIELD_NUMBER = 50;
   private com.google.container.v1.SecondaryBootDiskUpdateStrategy secondaryBootDiskUpdateStrategy_;
   /**
@@ -2484,6 +2892,115 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return secondaryBootDiskUpdateStrategy_ == null
         ? com.google.container.v1.SecondaryBootDiskUpdateStrategy.getDefaultInstance()
         : secondaryBootDiskUpdateStrategy_;
+  }
+
+  public static final int LOCAL_SSD_ENCRYPTION_MODE_FIELD_NUMBER = 54;
+  private int localSsdEncryptionMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return Whether the localSsdEncryptionMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalSsdEncryptionMode() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for localSsdEncryptionMode.
+   */
+  @java.lang.Override
+  public int getLocalSsdEncryptionModeValue() {
+    return localSsdEncryptionMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return The localSsdEncryptionMode.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeConfig.LocalSsdEncryptionMode getLocalSsdEncryptionMode() {
+    com.google.container.v1.NodeConfig.LocalSsdEncryptionMode result =
+        com.google.container.v1.NodeConfig.LocalSsdEncryptionMode.forNumber(
+            localSsdEncryptionMode_);
+    return result == null
+        ? com.google.container.v1.NodeConfig.LocalSsdEncryptionMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EFFECTIVE_CGROUP_MODE_FIELD_NUMBER = 55;
+  private int effectiveCgroupMode_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+   * node pool. It is determined by the cgroup mode specified in the
+   * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+   * version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for effectiveCgroupMode.
+   */
+  @java.lang.Override
+  public int getEffectiveCgroupModeValue() {
+    return effectiveCgroupMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+   * node pool. It is determined by the cgroup mode specified in the
+   * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+   * version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveCgroupMode.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeConfig.EffectiveCgroupMode getEffectiveCgroupMode() {
+    com.google.container.v1.NodeConfig.EffectiveCgroupMode result =
+        com.google.container.v1.NodeConfig.EffectiveCgroupMode.forNumber(effectiveCgroupMode_);
+    return result == null
+        ? com.google.container.v1.NodeConfig.EffectiveCgroupMode.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2611,8 +3128,19 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < secondaryBootDisks_.size(); i++) {
       output.writeMessage(48, secondaryBootDisks_.get(i));
     }
+    for (int i = 0; i < storagePools_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 49, storagePools_.getRaw(i));
+    }
     if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(50, getSecondaryBootDiskUpdateStrategy());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeEnum(54, localSsdEncryptionMode_);
+    }
+    if (effectiveCgroupMode_
+        != com.google.container.v1.NodeConfig.EffectiveCgroupMode.EFFECTIVE_CGROUP_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(55, effectiveCgroupMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2779,10 +3307,26 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(48, secondaryBootDisks_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < storagePools_.size(); i++) {
+        dataSize += computeStringSizeNoTag(storagePools_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getStoragePoolsList().size();
+    }
     if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               50, getSecondaryBootDiskUpdateStrategy());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(54, localSsdEncryptionMode_);
+    }
+    if (effectiveCgroupMode_
+        != com.google.container.v1.NodeConfig.EffectiveCgroupMode.EFFECTIVE_CGROUP_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(55, effectiveCgroupMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2893,12 +3437,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (getEnableConfidentialStorage() != other.getEnableConfidentialStorage()) return false;
     if (!getSecondaryBootDisksList().equals(other.getSecondaryBootDisksList())) return false;
+    if (!getStoragePoolsList().equals(other.getStoragePoolsList())) return false;
     if (hasSecondaryBootDiskUpdateStrategy() != other.hasSecondaryBootDiskUpdateStrategy())
       return false;
     if (hasSecondaryBootDiskUpdateStrategy()) {
       if (!getSecondaryBootDiskUpdateStrategy().equals(other.getSecondaryBootDiskUpdateStrategy()))
         return false;
     }
+    if (hasLocalSsdEncryptionMode() != other.hasLocalSsdEncryptionMode()) return false;
+    if (hasLocalSsdEncryptionMode()) {
+      if (localSsdEncryptionMode_ != other.localSsdEncryptionMode_) return false;
+    }
+    if (effectiveCgroupMode_ != other.effectiveCgroupMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3038,10 +3588,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SECONDARY_BOOT_DISKS_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryBootDisksList().hashCode();
     }
+    if (getStoragePoolsCount() > 0) {
+      hash = (37 * hash) + STORAGE_POOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getStoragePoolsList().hashCode();
+    }
     if (hasSecondaryBootDiskUpdateStrategy()) {
       hash = (37 * hash) + SECONDARY_BOOT_DISK_UPDATE_STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryBootDiskUpdateStrategy().hashCode();
     }
+    if (hasLocalSsdEncryptionMode()) {
+      hash = (37 * hash) + LOCAL_SSD_ENCRYPTION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + localSsdEncryptionMode_;
+    }
+    hash = (37 * hash) + EFFECTIVE_CGROUP_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + effectiveCgroupMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3374,11 +3934,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         secondaryBootDisksBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00000020);
+      storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
       secondaryBootDiskUpdateStrategy_ = null;
       if (secondaryBootDiskUpdateStrategyBuilder_ != null) {
         secondaryBootDiskUpdateStrategyBuilder_.dispose();
         secondaryBootDiskUpdateStrategyBuilder_ = null;
       }
+      localSsdEncryptionMode_ = 0;
+      effectiveCgroupMode_ = 0;
       return this;
     }
 
@@ -3617,11 +4180,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         result.enableConfidentialStorage_ = enableConfidentialStorage_;
       }
       if (((from_bitField1_ & 0x00000040) != 0)) {
+        storagePools_.makeImmutable();
+        result.storagePools_ = storagePools_;
+      }
+      if (((from_bitField1_ & 0x00000080) != 0)) {
         result.secondaryBootDiskUpdateStrategy_ =
             secondaryBootDiskUpdateStrategyBuilder_ == null
                 ? secondaryBootDiskUpdateStrategy_
                 : secondaryBootDiskUpdateStrategyBuilder_.build();
         to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.localSsdEncryptionMode_ = localSsdEncryptionMode_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField1_ & 0x00000200) != 0)) {
+        result.effectiveCgroupMode_ = effectiveCgroupMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3882,8 +4456,24 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.storagePools_.isEmpty()) {
+        if (storagePools_.isEmpty()) {
+          storagePools_ = other.storagePools_;
+          bitField1_ |= 0x00000040;
+        } else {
+          ensureStoragePoolsIsMutable();
+          storagePools_.addAll(other.storagePools_);
+        }
+        onChanged();
+      }
       if (other.hasSecondaryBootDiskUpdateStrategy()) {
         mergeSecondaryBootDiskUpdateStrategy(other.getSecondaryBootDiskUpdateStrategy());
+      }
+      if (other.hasLocalSsdEncryptionMode()) {
+        setLocalSsdEncryptionMode(other.getLocalSsdEncryptionMode());
+      }
+      if (other.effectiveCgroupMode_ != 0) {
+        setEffectiveCgroupModeValue(other.getEffectiveCgroupModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4192,14 +4782,33 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 386
+            case 394:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStoragePoolsIsMutable();
+                storagePools_.add(s);
+                break;
+              } // case 394
             case 402:
               {
                 input.readMessage(
                     getSecondaryBootDiskUpdateStrategyFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 402
+            case 432:
+              {
+                localSsdEncryptionMode_ = input.readEnum();
+                bitField1_ |= 0x00000100;
+                break;
+              } // case 432
+            case 440:
+              {
+                effectiveCgroupMode_ = input.readEnum();
+                bitField1_ |= 0x00000200;
+                break;
+              } // case 440
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11235,6 +11844,180 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return secondaryBootDisksBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList storagePools_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureStoragePoolsIsMutable() {
+      if (!storagePools_.isModifiable()) {
+        storagePools_ = new com.google.protobuf.LazyStringArrayList(storagePools_);
+      }
+      bitField1_ |= 0x00000040;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @return A list containing the storagePools.
+     */
+    public com.google.protobuf.ProtocolStringList getStoragePoolsList() {
+      storagePools_.makeImmutable();
+      return storagePools_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @return The count of storagePools.
+     */
+    public int getStoragePoolsCount() {
+      return storagePools_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The storagePools at the given index.
+     */
+    public java.lang.String getStoragePools(int index) {
+      return storagePools_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the storagePools at the given index.
+     */
+    public com.google.protobuf.ByteString getStoragePoolsBytes(int index) {
+      return storagePools_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The storagePools to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStoragePools(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStoragePoolsIsMutable();
+      storagePools_.set(index, value);
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @param value The storagePools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStoragePools(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStoragePoolsIsMutable();
+      storagePools_.add(value);
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @param values The storagePools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllStoragePools(java.lang.Iterable<java.lang.String> values) {
+      ensureStoragePoolsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storagePools_);
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStoragePools() {
+      storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of Storage Pools where boot disks are provisioned.
+     * </pre>
+     *
+     * <code>repeated string storage_pools = 49;</code>
+     *
+     * @param value The bytes of the storagePools to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStoragePoolsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureStoragePoolsIsMutable();
+      storagePools_.add(value);
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
     private com.google.container.v1.SecondaryBootDiskUpdateStrategy
         secondaryBootDiskUpdateStrategy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -11256,7 +12039,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the secondaryBootDiskUpdateStrategy field is set.
      */
     public boolean hasSecondaryBootDiskUpdateStrategy() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      *
@@ -11302,7 +12085,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryBootDiskUpdateStrategyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11324,7 +12107,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryBootDiskUpdateStrategyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11342,7 +12125,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSecondaryBootDiskUpdateStrategy(
         com.google.container.v1.SecondaryBootDiskUpdateStrategy value) {
       if (secondaryBootDiskUpdateStrategyBuilder_ == null) {
-        if (((bitField1_ & 0x00000040) != 0)
+        if (((bitField1_ & 0x00000080) != 0)
             && secondaryBootDiskUpdateStrategy_ != null
             && secondaryBootDiskUpdateStrategy_
                 != com.google.container.v1.SecondaryBootDiskUpdateStrategy.getDefaultInstance()) {
@@ -11354,7 +12137,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         secondaryBootDiskUpdateStrategyBuilder_.mergeFrom(value);
       }
       if (secondaryBootDiskUpdateStrategy_ != null) {
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -11371,7 +12154,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSecondaryBootDiskUpdateStrategy() {
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000080);
       secondaryBootDiskUpdateStrategy_ = null;
       if (secondaryBootDiskUpdateStrategyBuilder_ != null) {
         secondaryBootDiskUpdateStrategyBuilder_.dispose();
@@ -11393,7 +12176,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1.SecondaryBootDiskUpdateStrategy.Builder
         getSecondaryBootDiskUpdateStrategyBuilder() {
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return getSecondaryBootDiskUpdateStrategyFieldBuilder().getBuilder();
     }
@@ -11444,6 +12227,251 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         secondaryBootDiskUpdateStrategy_ = null;
       }
       return secondaryBootDiskUpdateStrategyBuilder_;
+    }
+
+    private int localSsdEncryptionMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which method should be used for encrypting the
+     * Local SSDs attahced to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+     * </code>
+     *
+     * @return Whether the localSsdEncryptionMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocalSsdEncryptionMode() {
+      return ((bitField1_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which method should be used for encrypting the
+     * Local SSDs attahced to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for localSsdEncryptionMode.
+     */
+    @java.lang.Override
+    public int getLocalSsdEncryptionModeValue() {
+      return localSsdEncryptionMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which method should be used for encrypting the
+     * Local SSDs attahced to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for localSsdEncryptionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalSsdEncryptionModeValue(int value) {
+      localSsdEncryptionMode_ = value;
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which method should be used for encrypting the
+     * Local SSDs attahced to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+     * </code>
+     *
+     * @return The localSsdEncryptionMode.
+     */
+    @java.lang.Override
+    public com.google.container.v1.NodeConfig.LocalSsdEncryptionMode getLocalSsdEncryptionMode() {
+      com.google.container.v1.NodeConfig.LocalSsdEncryptionMode result =
+          com.google.container.v1.NodeConfig.LocalSsdEncryptionMode.forNumber(
+              localSsdEncryptionMode_);
+      return result == null
+          ? com.google.container.v1.NodeConfig.LocalSsdEncryptionMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which method should be used for encrypting the
+     * Local SSDs attahced to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+     * </code>
+     *
+     * @param value The localSsdEncryptionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalSsdEncryptionMode(
+        com.google.container.v1.NodeConfig.LocalSsdEncryptionMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000100;
+      localSsdEncryptionMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which method should be used for encrypting the
+     * Local SSDs attahced to the node.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocalSsdEncryptionMode() {
+      bitField1_ = (bitField1_ & ~0x00000100);
+      localSsdEncryptionMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int effectiveCgroupMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+     * node pool. It is determined by the cgroup mode specified in the
+     * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for effectiveCgroupMode.
+     */
+    @java.lang.Override
+    public int getEffectiveCgroupModeValue() {
+      return effectiveCgroupMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+     * node pool. It is determined by the cgroup mode specified in the
+     * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for effectiveCgroupMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveCgroupModeValue(int value) {
+      effectiveCgroupMode_ = value;
+      bitField1_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+     * node pool. It is determined by the cgroup mode specified in the
+     * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveCgroupMode.
+     */
+    @java.lang.Override
+    public com.google.container.v1.NodeConfig.EffectiveCgroupMode getEffectiveCgroupMode() {
+      com.google.container.v1.NodeConfig.EffectiveCgroupMode result =
+          com.google.container.v1.NodeConfig.EffectiveCgroupMode.forNumber(effectiveCgroupMode_);
+      return result == null
+          ? com.google.container.v1.NodeConfig.EffectiveCgroupMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+     * node pool. It is determined by the cgroup mode specified in the
+     * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The effectiveCgroupMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveCgroupMode(
+        com.google.container.v1.NodeConfig.EffectiveCgroupMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000200;
+      effectiveCgroupMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+     * node pool. It is determined by the cgroup mode specified in the
+     * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveCgroupMode() {
+      bitField1_ = (bitField1_ & ~0x00000200);
+      effectiveCgroupMode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

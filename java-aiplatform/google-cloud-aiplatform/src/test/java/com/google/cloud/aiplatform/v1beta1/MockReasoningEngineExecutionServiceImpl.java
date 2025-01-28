@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
+import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceGrpc.ReasoningEngineExecutionServiceImplBase;
 import com.google.protobuf.AbstractMessage;
@@ -77,6 +78,27 @@ public class MockReasoningEngineExecutionServiceImpl
                   "Unrecognized response type %s for method QueryReasoningEngine, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryReasoningEngineResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void streamQueryReasoningEngine(
+      StreamQueryReasoningEngineRequest request, StreamObserver<HttpBody> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof HttpBody) {
+      requests.add(request);
+      responseObserver.onNext(((HttpBody) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StreamQueryReasoningEngine, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  HttpBody.class.getName(),
                   Exception.class.getName())));
     }
   }

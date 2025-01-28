@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -190,6 +190,41 @@ public interface FilterOrBuilder
    * <code>.google.analytics.data.v1alpha.BetweenFilter between_filter = 5;</code>
    */
   com.google.analytics.data.v1alpha.BetweenFilterOrBuilder getBetweenFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+   *
+   * @return Whether the emptyFilter field is set.
+   */
+  boolean hasEmptyFilter();
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+   *
+   * @return The emptyFilter.
+   */
+  com.google.analytics.data.v1alpha.EmptyFilter getEmptyFilter();
+  /**
+   *
+   *
+   * <pre>
+   * A filter for empty values such as "(not set)" and "" values.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.EmptyFilter empty_filter = 6;</code>
+   */
+  com.google.analytics.data.v1alpha.EmptyFilterOrBuilder getEmptyFilterOrBuilder();
 
   com.google.analytics.data.v1alpha.Filter.OneFilterCase getOneFilterCase();
 }

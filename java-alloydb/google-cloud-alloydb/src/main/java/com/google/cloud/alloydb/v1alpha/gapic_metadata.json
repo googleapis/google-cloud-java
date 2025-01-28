@@ -43,6 +43,9 @@
             "DeleteUser": {
               "methods": ["deleteUser", "deleteUser", "deleteUser", "deleteUserCallable"]
             },
+            "ExecuteSql": {
+              "methods": ["executeSql", "executeSql", "executeSql", "executeSqlCallable"]
+            },
             "FailoverInstance": {
               "methods": ["failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceOperationCallable", "failoverInstanceCallable"]
             },
@@ -100,6 +103,9 @@
             "RestoreCluster": {
               "methods": ["restoreClusterAsync", "restoreClusterOperationCallable", "restoreClusterCallable"]
             },
+            "SwitchoverCluster": {
+              "methods": ["switchoverClusterAsync", "switchoverClusterAsync", "switchoverClusterAsync", "switchoverClusterOperationCallable", "switchoverClusterCallable"]
+            },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
             },
@@ -111,6 +117,9 @@
             },
             "UpdateUser": {
               "methods": ["updateUser", "updateUser", "updateUserCallable"]
+            },
+            "UpgradeCluster": {
+              "methods": ["upgradeClusterAsync", "upgradeClusterAsync", "upgradeClusterAsync", "upgradeClusterOperationCallable", "upgradeClusterCallable"]
             }
           }
         }

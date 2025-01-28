@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,12 +139,12 @@ public final class DataStoreConnectionProto {
           + "NED_PHRASE_MATCH_QUERY\020\002\022 \n\034BANNED_PHRAS"
           + "E_MATCH_RESPONSE\020\003*b\n\rDataStoreType\022\037\n\033D"
           + "ATA_STORE_TYPE_UNSPECIFIED\020\000\022\016\n\nPUBLIC_W"
-          + "EB\020\001\022\020\n\014UNSTRUCTURED\020\002\022\016\n\nSTRUCTURED\020\003B\276"
+          + "EB\020\001\022\020\n\014UNSTRUCTURED\020\002\022\016\n\nSTRUCTURED\020\003B\273"
           + "\001\n!com.google.cloud.dialogflow.cx.v3B\030Da"
           + "taStoreConnectionProtoP\001Z1cloud.google.c"
-          + "om/go/dialogflow/cx/apiv3/cxpb;cxpb\370\001\001\242\002"
-          + "\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Go"
-          + "ogle::Cloud::Dialogflow::CX::V3b\006proto3"
+          + "om/go/dialogflow/cx/apiv3/cxpb;cxpb\242\002\002DF"
+          + "\252\002\035Google.Cloud.Dialogflow.Cx.V3\352\002!Googl"
+          + "e::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

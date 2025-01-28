@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,4 +92,90 @@ public interface ListRepositoriesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *
+   *  Examples of using a filter:
+   *
+   * To filter the results of your request to repositories with the name
+   * `my-repo` in project `my-project` in the `us-central` region, append the
+   * following filter expression to your request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/&#42;repo"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/&#42;repo*"`
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *
+   *  Examples of using a filter:
+   *
+   * To filter the results of your request to repositories with the name
+   * `my-repo` in project `my-project` in the `us-central` region, append the
+   * following filter expression to your request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/&#42;repo"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/&#42;repo*"`
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

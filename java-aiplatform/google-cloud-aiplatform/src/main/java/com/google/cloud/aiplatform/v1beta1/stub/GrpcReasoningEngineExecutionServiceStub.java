@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServiceClient.ListLocationsPagedResponse;
 
+import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -25,9 +26,11 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -63,6 +66,17 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   ProtoUtils.marshaller(QueryReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryReasoningEngineResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineMethodDescriptor =
+          MethodDescriptor.<StreamQueryReasoningEngineRequest, HttpBody>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionService/StreamQueryReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamQueryReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -113,6 +127,8 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
 
   private final UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineCallable;
+  private final ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -180,6 +196,17 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<StreamQueryReasoningEngineRequest, HttpBody>
+        streamQueryReasoningEngineTransportSettings =
+            GrpcCallSettings.<StreamQueryReasoningEngineRequest, HttpBody>newBuilder()
+                .setMethodDescriptor(streamQueryReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -237,6 +264,11 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
             queryReasoningEngineTransportSettings,
             settings.queryReasoningEngineSettings(),
             clientContext);
+    this.streamQueryReasoningEngineCallable =
+        callableFactory.createServerStreamingCallable(
+            streamQueryReasoningEngineTransportSettings,
+            settings.streamQueryReasoningEngineSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -270,6 +302,12 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
   public UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineCallable() {
     return queryReasoningEngineCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
+      streamQueryReasoningEngineCallable() {
+    return streamQueryReasoningEngineCallable;
   }
 
   @Override

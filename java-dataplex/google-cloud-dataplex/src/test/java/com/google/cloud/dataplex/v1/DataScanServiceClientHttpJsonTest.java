@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -698,6 +698,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setName(
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -748,6 +749,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setName(
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")

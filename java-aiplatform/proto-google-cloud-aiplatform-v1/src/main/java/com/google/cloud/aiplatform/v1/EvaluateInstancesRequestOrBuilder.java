@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -922,6 +922,79 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1.ToolParameterKVMatchInputOrBuilder
       getToolParameterKvMatchInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+   *
+   * @return Whether the cometInput field is set.
+   */
+  boolean hasCometInput();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+   *
+   * @return The cometInput.
+   */
+  com.google.cloud.aiplatform.v1.CometInput getCometInput();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.CometInput comet_input = 31;</code>
+   */
+  com.google.cloud.aiplatform.v1.CometInputOrBuilder getCometInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+   *
+   * @return Whether the metricxInput field is set.
+   */
+  boolean hasMetricxInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+   *
+   * @return The metricxInput.
+   */
+  com.google.cloud.aiplatform.v1.MetricxInput getMetricxInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.MetricxInput metricx_input = 32;</code>
+   */
+  com.google.cloud.aiplatform.v1.MetricxInputOrBuilder getMetricxInputOrBuilder();
 
   /**
    *

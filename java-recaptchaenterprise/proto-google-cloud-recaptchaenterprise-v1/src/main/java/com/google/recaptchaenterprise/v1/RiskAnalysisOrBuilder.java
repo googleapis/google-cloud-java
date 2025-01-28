@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -175,4 +175,35 @@ public interface RiskAnalysisOrBuilder
    * @return The bytes of the extendedVerdictReasons at the given index.
    */
   com.google.protobuf.ByteString getExtendedVerdictReasonsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+   * keys
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for challenge.
+   */
+  int getChallengeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
+   * keys
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge challenge = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The challenge.
+   */
+  com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge getChallenge();
 }

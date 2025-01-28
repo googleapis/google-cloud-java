@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ public interface ExampleOrBuilder
    *
    * <pre>
    * The unique identifier of the playbook example.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;/examples/&lt;Example ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/examples/&lt;ExampleID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,8 +43,8 @@ public interface ExampleOrBuilder
    *
    * <pre>
    * The unique identifier of the playbook example.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/playbooks/&lt;Playbook ID&gt;/examples/&lt;Example ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/examples/&lt;ExampleID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -380,6 +380,7 @@ public interface ExampleOrBuilder
    * Optional. The language code of the example.
    * If not specified, the agent's default language is used.
    * Note: languages must be enabled in the agent before they can be used.
+   * Note: example's language code is not currently used in dialogflow agents.
    * </pre>
    *
    * <code>string language_code = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -394,6 +395,7 @@ public interface ExampleOrBuilder
    * Optional. The language code of the example.
    * If not specified, the agent's default language is used.
    * Note: languages must be enabled in the agent before they can be used.
+   * Note: example's language code is not currently used in dialogflow agents.
    * </pre>
    *
    * <code>string language_code = 13 [(.google.api.field_behavior) = OPTIONAL];</code>

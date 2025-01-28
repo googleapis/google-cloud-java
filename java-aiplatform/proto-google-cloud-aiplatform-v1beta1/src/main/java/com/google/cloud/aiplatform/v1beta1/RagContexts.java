@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,9 +72,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For vertex RagStore, if the file is imported from Cloud Storage or Google
-     * Drive, source_uri will be original file URI in Cloud Storage or Google
-     * Drive; if file is uploaded, source_uri will be file display name.
+     * If the file is imported from Cloud Storage or Google Drive, source_uri
+     * will be original file URI in Cloud Storage or Google Drive; if file is
+     * uploaded, source_uri will be file display name.
      * </pre>
      *
      * <code>string source_uri = 1;</code>
@@ -86,9 +86,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For vertex RagStore, if the file is imported from Cloud Storage or Google
-     * Drive, source_uri will be original file URI in Cloud Storage or Google
-     * Drive; if file is uploaded, source_uri will be file display name.
+     * If the file is imported from Cloud Storage or Google Drive, source_uri
+     * will be original file URI in Cloud Storage or Google Drive; if file is
+     * uploaded, source_uri will be file display name.
      * </pre>
      *
      * <code>string source_uri = 1;</code>
@@ -96,6 +96,31 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for sourceUri.
      */
     com.google.protobuf.ByteString getSourceUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The file display name.
+     * </pre>
+     *
+     * <code>string source_display_name = 5;</code>
+     *
+     * @return The sourceDisplayName.
+     */
+    java.lang.String getSourceDisplayName();
+    /**
+     *
+     *
+     * <pre>
+     * The file display name.
+     * </pre>
+     *
+     * <code>string source_display_name = 5;</code>
+     *
+     * @return The bytes for sourceDisplayName.
+     */
+    com.google.protobuf.ByteString getSourceDisplayNameBytes();
 
     /**
      *
@@ -130,10 +155,13 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * text vector.
      * </pre>
      *
-     * <code>double distance = 3;</code>
+     * <code>double distance = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
      * @return The distance.
      */
+    @java.lang.Deprecated
     double getDistance();
 
     /**
@@ -144,11 +172,53 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * text vector.
      * </pre>
      *
-     * <code>double sparse_distance = 4;</code>
+     * <code>double sparse_distance = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
      * @return The sparseDistance.
      */
+    @java.lang.Deprecated
     double getSparseDistance();
+
+    /**
+     *
+     *
+     * <pre>
+     * According to the underlying Vector DB and the selected metric type, the
+     * score can be either the distance or the similarity between the query and
+     * the context and its range depends on the metric type.
+     *
+     * For example, if the metric type is COSINE_DISTANCE, it represents the
+     * distance between the query and the context. The larger the distance, the
+     * less relevant the context is to the query. The range is [0, 2], while 0
+     * means the most relevant and 2 means the least relevant.
+     * </pre>
+     *
+     * <code>optional double score = 6;</code>
+     *
+     * @return Whether the score field is set.
+     */
+    boolean hasScore();
+    /**
+     *
+     *
+     * <pre>
+     * According to the underlying Vector DB and the selected metric type, the
+     * score can be either the distance or the similarity between the query and
+     * the context and its range depends on the metric type.
+     *
+     * For example, if the metric type is COSINE_DISTANCE, it represents the
+     * distance between the query and the context. The larger the distance, the
+     * less relevant the context is to the query. The range is [0, 2], while 0
+     * means the most relevant and 2 means the least relevant.
+     * </pre>
+     *
+     * <code>optional double score = 6;</code>
+     *
+     * @return The score.
+     */
+    double getScore();
   }
   /**
    *
@@ -171,6 +241,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
     private Context() {
       sourceUri_ = "";
+      sourceDisplayName_ = "";
       text_ = "";
     }
 
@@ -195,6 +266,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.RagContexts.Context.Builder.class);
     }
 
+    private int bitField0_;
     public static final int SOURCE_URI_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -203,9 +275,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For vertex RagStore, if the file is imported from Cloud Storage or Google
-     * Drive, source_uri will be original file URI in Cloud Storage or Google
-     * Drive; if file is uploaded, source_uri will be file display name.
+     * If the file is imported from Cloud Storage or Google Drive, source_uri
+     * will be original file URI in Cloud Storage or Google Drive; if file is
+     * uploaded, source_uri will be file display name.
      * </pre>
      *
      * <code>string source_uri = 1;</code>
@@ -228,9 +300,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For vertex RagStore, if the file is imported from Cloud Storage or Google
-     * Drive, source_uri will be original file URI in Cloud Storage or Google
-     * Drive; if file is uploaded, source_uri will be file display name.
+     * If the file is imported from Cloud Storage or Google Drive, source_uri
+     * will be original file URI in Cloud Storage or Google Drive; if file is
+     * uploaded, source_uri will be file display name.
      * </pre>
      *
      * <code>string source_uri = 1;</code>
@@ -244,6 +316,57 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         sourceUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_DISPLAY_NAME_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceDisplayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The file display name.
+     * </pre>
+     *
+     * <code>string source_display_name = 5;</code>
+     *
+     * @return The sourceDisplayName.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceDisplayName() {
+      java.lang.Object ref = sourceDisplayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceDisplayName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The file display name.
+     * </pre>
+     *
+     * <code>string source_display_name = 5;</code>
+     *
+     * @return The bytes for sourceDisplayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSourceDisplayNameBytes() {
+      java.lang.Object ref = sourceDisplayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceDisplayName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -311,11 +434,14 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * text vector.
      * </pre>
      *
-     * <code>double distance = 3;</code>
+     * <code>double distance = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
      * @return The distance.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public double getDistance() {
       return distance_;
     }
@@ -330,13 +456,63 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * text vector.
      * </pre>
      *
-     * <code>double sparse_distance = 4;</code>
+     * <code>double sparse_distance = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
      * @return The sparseDistance.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public double getSparseDistance() {
       return sparseDistance_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 6;
+    private double score_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * According to the underlying Vector DB and the selected metric type, the
+     * score can be either the distance or the similarity between the query and
+     * the context and its range depends on the metric type.
+     *
+     * For example, if the metric type is COSINE_DISTANCE, it represents the
+     * distance between the query and the context. The larger the distance, the
+     * less relevant the context is to the query. The range is [0, 2], while 0
+     * means the most relevant and 2 means the least relevant.
+     * </pre>
+     *
+     * <code>optional double score = 6;</code>
+     *
+     * @return Whether the score field is set.
+     */
+    @java.lang.Override
+    public boolean hasScore() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * According to the underlying Vector DB and the selected metric type, the
+     * score can be either the distance or the similarity between the query and
+     * the context and its range depends on the metric type.
+     *
+     * For example, if the metric type is COSINE_DISTANCE, it represents the
+     * distance between the query and the context. The larger the distance, the
+     * less relevant the context is to the query. The range is [0, 2], while 0
+     * means the most relevant and 2 means the least relevant.
+     * </pre>
+     *
+     * <code>optional double score = 6;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public double getScore() {
+      return score_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -365,6 +541,12 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(sparseDistance_) != 0) {
         output.writeDouble(4, sparseDistance_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceDisplayName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sourceDisplayName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeDouble(6, score_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -386,6 +568,12 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(sparseDistance_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, sparseDistance_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceDisplayName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sourceDisplayName_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, score_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -403,11 +591,17 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.RagContexts.Context) obj;
 
       if (!getSourceUri().equals(other.getSourceUri())) return false;
+      if (!getSourceDisplayName().equals(other.getSourceDisplayName())) return false;
       if (!getText().equals(other.getText())) return false;
       if (java.lang.Double.doubleToLongBits(getDistance())
           != java.lang.Double.doubleToLongBits(other.getDistance())) return false;
       if (java.lang.Double.doubleToLongBits(getSparseDistance())
           != java.lang.Double.doubleToLongBits(other.getSparseDistance())) return false;
+      if (hasScore() != other.hasScore()) return false;
+      if (hasScore()) {
+        if (java.lang.Double.doubleToLongBits(getScore())
+            != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -421,6 +615,8 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SOURCE_URI_FIELD_NUMBER;
       hash = (53 * hash) + getSourceUri().hashCode();
+      hash = (37 * hash) + SOURCE_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceDisplayName().hashCode();
       hash = (37 * hash) + TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getText().hashCode();
       hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
@@ -433,6 +629,13 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getSparseDistance()));
+      if (hasScore()) {
+        hash = (37 * hash) + SCORE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getScore()));
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -576,9 +779,11 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         sourceUri_ = "";
+        sourceDisplayName_ = "";
         text_ = "";
         distance_ = 0D;
         sparseDistance_ = 0D;
+        score_ = 0D;
         return this;
       }
 
@@ -619,14 +824,23 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           result.sourceUri_ = sourceUri_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.text_ = text_;
+          result.sourceDisplayName_ = sourceDisplayName_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.distance_ = distance_;
+          result.text_ = text_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.distance_ = distance_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.sparseDistance_ = sparseDistance_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.score_ = score_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -682,9 +896,14 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getSourceDisplayName().isEmpty()) {
+          sourceDisplayName_ = other.sourceDisplayName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         if (!other.getText().isEmpty()) {
           text_ = other.text_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getDistance() != 0D) {
@@ -692,6 +911,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.getSparseDistance() != 0D) {
           setSparseDistance(other.getSparseDistance());
+        }
+        if (other.hasScore()) {
+          setScore(other.getScore());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -728,21 +950,33 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   text_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 25:
                 {
                   distance_ = input.readDouble();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 25
               case 33:
                 {
                   sparseDistance_ = input.readDouble();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 33
+              case 42:
+                {
+                  sourceDisplayName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 42
+              case 49:
+                {
+                  score_ = input.readDouble();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 49
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -767,9 +1001,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * For vertex RagStore, if the file is imported from Cloud Storage or Google
-       * Drive, source_uri will be original file URI in Cloud Storage or Google
-       * Drive; if file is uploaded, source_uri will be file display name.
+       * If the file is imported from Cloud Storage or Google Drive, source_uri
+       * will be original file URI in Cloud Storage or Google Drive; if file is
+       * uploaded, source_uri will be file display name.
        * </pre>
        *
        * <code>string source_uri = 1;</code>
@@ -791,9 +1025,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * For vertex RagStore, if the file is imported from Cloud Storage or Google
-       * Drive, source_uri will be original file URI in Cloud Storage or Google
-       * Drive; if file is uploaded, source_uri will be file display name.
+       * If the file is imported from Cloud Storage or Google Drive, source_uri
+       * will be original file URI in Cloud Storage or Google Drive; if file is
+       * uploaded, source_uri will be file display name.
        * </pre>
        *
        * <code>string source_uri = 1;</code>
@@ -815,9 +1049,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * For vertex RagStore, if the file is imported from Cloud Storage or Google
-       * Drive, source_uri will be original file URI in Cloud Storage or Google
-       * Drive; if file is uploaded, source_uri will be file display name.
+       * If the file is imported from Cloud Storage or Google Drive, source_uri
+       * will be original file URI in Cloud Storage or Google Drive; if file is
+       * uploaded, source_uri will be file display name.
        * </pre>
        *
        * <code>string source_uri = 1;</code>
@@ -838,9 +1072,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * For vertex RagStore, if the file is imported from Cloud Storage or Google
-       * Drive, source_uri will be original file URI in Cloud Storage or Google
-       * Drive; if file is uploaded, source_uri will be file display name.
+       * If the file is imported from Cloud Storage or Google Drive, source_uri
+       * will be original file URI in Cloud Storage or Google Drive; if file is
+       * uploaded, source_uri will be file display name.
        * </pre>
        *
        * <code>string source_uri = 1;</code>
@@ -857,9 +1091,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * For vertex RagStore, if the file is imported from Cloud Storage or Google
-       * Drive, source_uri will be original file URI in Cloud Storage or Google
-       * Drive; if file is uploaded, source_uri will be file display name.
+       * If the file is imported from Cloud Storage or Google Drive, source_uri
+       * will be original file URI in Cloud Storage or Google Drive; if file is
+       * uploaded, source_uri will be file display name.
        * </pre>
        *
        * <code>string source_uri = 1;</code>
@@ -874,6 +1108,112 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         sourceUri_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sourceDisplayName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The file display name.
+       * </pre>
+       *
+       * <code>string source_display_name = 5;</code>
+       *
+       * @return The sourceDisplayName.
+       */
+      public java.lang.String getSourceDisplayName() {
+        java.lang.Object ref = sourceDisplayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceDisplayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The file display name.
+       * </pre>
+       *
+       * <code>string source_display_name = 5;</code>
+       *
+       * @return The bytes for sourceDisplayName.
+       */
+      public com.google.protobuf.ByteString getSourceDisplayNameBytes() {
+        java.lang.Object ref = sourceDisplayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sourceDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The file display name.
+       * </pre>
+       *
+       * <code>string source_display_name = 5;</code>
+       *
+       * @param value The sourceDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceDisplayName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceDisplayName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The file display name.
+       * </pre>
+       *
+       * <code>string source_display_name = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceDisplayName() {
+        sourceDisplayName_ = getDefaultInstance().getSourceDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The file display name.
+       * </pre>
+       *
+       * <code>string source_display_name = 5;</code>
+       *
+       * @param value The bytes for sourceDisplayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceDisplayNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sourceDisplayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -940,7 +1280,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         text_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -957,7 +1297,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearText() {
         text_ = getDefaultInstance().getText();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -979,7 +1319,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         text_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -993,11 +1333,14 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * text vector.
        * </pre>
        *
-       * <code>double distance = 3;</code>
+       * <code>double distance = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
        * @return The distance.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public double getDistance() {
         return distance_;
       }
@@ -1009,15 +1352,18 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * text vector.
        * </pre>
        *
-       * <code>double distance = 3;</code>
+       * <code>double distance = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
        * @param value The distance to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setDistance(double value) {
 
         distance_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1029,12 +1375,15 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * text vector.
        * </pre>
        *
-       * <code>double distance = 3;</code>
+       * <code>double distance = 3 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearDistance() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         distance_ = 0D;
         onChanged();
         return this;
@@ -1049,11 +1398,14 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * text vector.
        * </pre>
        *
-       * <code>double sparse_distance = 4;</code>
+       * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
        * @return The sparseDistance.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public double getSparseDistance() {
         return sparseDistance_;
       }
@@ -1065,15 +1417,18 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * text vector.
        * </pre>
        *
-       * <code>double sparse_distance = 4;</code>
+       * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
+       * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
        * @param value The sparseDistance to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setSparseDistance(double value) {
 
         sparseDistance_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1085,13 +1440,112 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * text vector.
        * </pre>
        *
-       * <code>double sparse_distance = 4;</code>
+       * <code>double sparse_distance = 4 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder clearSparseDistance() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        sparseDistance_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double score_;
+      /**
+       *
+       *
+       * <pre>
+       * According to the underlying Vector DB and the selected metric type, the
+       * score can be either the distance or the similarity between the query and
+       * the context and its range depends on the metric type.
+       *
+       * For example, if the metric type is COSINE_DISTANCE, it represents the
+       * distance between the query and the context. The larger the distance, the
+       * less relevant the context is to the query. The range is [0, 2], while 0
+       * means the most relevant and 2 means the least relevant.
+       * </pre>
+       *
+       * <code>optional double score = 6;</code>
+       *
+       * @return Whether the score field is set.
+       */
+      @java.lang.Override
+      public boolean hasScore() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * According to the underlying Vector DB and the selected metric type, the
+       * score can be either the distance or the similarity between the query and
+       * the context and its range depends on the metric type.
+       *
+       * For example, if the metric type is COSINE_DISTANCE, it represents the
+       * distance between the query and the context. The larger the distance, the
+       * less relevant the context is to the query. The range is [0, 2], while 0
+       * means the most relevant and 2 means the least relevant.
+       * </pre>
+       *
+       * <code>optional double score = 6;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * According to the underlying Vector DB and the selected metric type, the
+       * score can be either the distance or the similarity between the query and
+       * the context and its range depends on the metric type.
+       *
+       * For example, if the metric type is COSINE_DISTANCE, it represents the
+       * distance between the query and the context. The larger the distance, the
+       * less relevant the context is to the query. The range is [0, 2], while 0
+       * means the most relevant and 2 means the least relevant.
+       * </pre>
+       *
+       * <code>optional double score = 6;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(double value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * According to the underlying Vector DB and the selected metric type, the
+       * score can be either the distance or the similarity between the query and
+       * the context and its range depends on the metric type.
+       *
+       * For example, if the metric type is COSINE_DISTANCE, it represents the
+       * distance between the query and the context. The larger the distance, the
+       * less relevant the context is to the query. The range is [0, 2], while 0
+       * means the most relevant and 2 means the least relevant.
+       * </pre>
+       *
+       * <code>optional double score = 6;</code>
        *
        * @return This builder for chaining.
        */
-      public Builder clearSparseDistance() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        sparseDistance_ = 0D;
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        score_ = 0D;
         onChanged();
         return this;
       }

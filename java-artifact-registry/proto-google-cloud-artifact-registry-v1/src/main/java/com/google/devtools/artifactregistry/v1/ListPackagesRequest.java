@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,8 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
   private ListPackagesRequest() {
     parent_ = "";
     pageToken_ = "";
+    filter_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -188,6 +190,196 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *   * `annotations`
+   *
+   * Examples of using a filter:
+   *
+   *  To filter the results of your request to packages with the name
+   *  `my-package` in project `my-project` in the `us-central` region, in
+   *  repository `my-repo`, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+   *
+   *  To filter the results of your request to packages with the annotation
+   *  key-value pair [`external_link`: `external_link_value`], append the
+   *  following filter expression to your request":
+   *
+   *   * `"annotations.external_link:external_link_value"`
+   *
+   *  To filter the results just for a specific annotation key `external_link`,
+   *  append the following filter expression to your request:
+   *
+   *   * `"annotations.external_link"`
+   *
+   *  If the annotation key or value contains special characters, you can escape
+   *  them by surrounding the value with backticks. For example, to filter the
+   *  results of your request to packages with the annotation key-value pair
+   *  [`external.link`:`https://example.com/my-package`], append the following
+   *  filter expression to your request:
+   *
+   *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+   *
+   *  You can also filter with annotations with a wildcard to
+   *  match any number of characters before or after the value:
+   *
+   *   * `` "annotations.*_link:`*example.com*`" ``
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *   * `annotations`
+   *
+   * Examples of using a filter:
+   *
+   *  To filter the results of your request to packages with the name
+   *  `my-package` in project `my-project` in the `us-central` region, in
+   *  repository `my-repo`, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+   *
+   *  To filter the results of your request to packages with the annotation
+   *  key-value pair [`external_link`: `external_link_value`], append the
+   *  following filter expression to your request":
+   *
+   *   * `"annotations.external_link:external_link_value"`
+   *
+   *  To filter the results just for a specific annotation key `external_link`,
+   *  append the following filter expression to your request:
+   *
+   *   * `"annotations.external_link"`
+   *
+   *  If the annotation key or value contains special characters, you can escape
+   *  them by surrounding the value with backticks. For example, to filter the
+   *  results of your request to packages with the annotation key-value pair
+   *  [`external.link`:`https://example.com/my-package`], append the following
+   *  filter expression to your request:
+   *
+   *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+   *
+   *  You can also filter with annotations with a wildcard to
+   *  match any number of characters before or after the value:
+   *
+   *   * `` "annotations.*_link:`*example.com*`" ``
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -211,6 +403,12 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -228,6 +426,12 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -248,6 +452,8 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -265,6 +471,10 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -408,6 +618,8 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      filter_ = "";
+      orderBy_ = "";
       return this;
     }
 
@@ -452,6 +664,12 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.orderBy_ = orderBy_;
       }
     }
 
@@ -514,6 +732,16 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -558,6 +786,18 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -848,6 +1088,438 @@ public final class ListPackagesRequest extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     * Examples of using a filter:
+     *
+     *  To filter the results of your request to packages with the name
+     *  `my-package` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+     *
+     *  To filter the results of your request to packages with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request":
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter the results just for a specific annotation key `external_link`,
+     *  append the following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to packages with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-package`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     * Examples of using a filter:
+     *
+     *  To filter the results of your request to packages with the name
+     *  `my-package` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+     *
+     *  To filter the results of your request to packages with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request":
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter the results just for a specific annotation key `external_link`,
+     *  append the following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to packages with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-package`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     * Examples of using a filter:
+     *
+     *  To filter the results of your request to packages with the name
+     *  `my-package` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+     *
+     *  To filter the results of your request to packages with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request":
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter the results just for a specific annotation key `external_link`,
+     *  append the following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to packages with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-package`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     * Examples of using a filter:
+     *
+     *  To filter the results of your request to packages with the name
+     *  `my-package` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+     *
+     *  To filter the results of your request to packages with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request":
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter the results just for a specific annotation key `external_link`,
+     *  append the following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to packages with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-package`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     * Examples of using a filter:
+     *
+     *  To filter the results of your request to packages with the name
+     *  `my-package` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+     *
+     *  To filter the results of your request to packages with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request":
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter the results just for a specific annotation key `external_link`,
+     *  append the following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to packages with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-package`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field to order the results by.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field to order the results by.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field to order the results by.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      orderBy_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field to order the results by.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+      orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field to order the results by.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      orderBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

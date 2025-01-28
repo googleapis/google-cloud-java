@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,6 +222,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.ServiceScaling.ScalingMode)
   }
 
+  private int bitField0_;
   public static final int MIN_INSTANCE_COUNT_FIELD_NUMBER = 1;
   private int minInstanceCount_ = 0;
   /**
@@ -283,6 +284,45 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int MANUAL_INSTANCE_COUNT_FIELD_NUMBER = 6;
+  private int manualInstanceCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total instance count for the service in manual scaling mode. This
+   * number of instances is divided among all revisions with specified traffic
+   * based on the percent of traffic they are receiving.
+   * </pre>
+   *
+   * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the manualInstanceCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasManualInstanceCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total instance count for the service in manual scaling mode. This
+   * number of instances is divided among all revisions with specified traffic
+   * based on the percent of traffic they are receiving.
+   * </pre>
+   *
+   * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The manualInstanceCount.
+   */
+  @java.lang.Override
+  public int getManualInstanceCount() {
+    return manualInstanceCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -305,6 +345,9 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(3, scalingMode_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(6, manualInstanceCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -321,6 +364,9 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.run.v2.ServiceScaling.ScalingMode.SCALING_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, scalingMode_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, manualInstanceCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -339,6 +385,10 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
 
     if (getMinInstanceCount() != other.getMinInstanceCount()) return false;
     if (scalingMode_ != other.scalingMode_) return false;
+    if (hasManualInstanceCount() != other.hasManualInstanceCount()) return false;
+    if (hasManualInstanceCount()) {
+      if (getManualInstanceCount() != other.getManualInstanceCount()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -354,6 +404,10 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMinInstanceCount();
     hash = (37 * hash) + SCALING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + scalingMode_;
+    if (hasManualInstanceCount()) {
+      hash = (37 * hash) + MANUAL_INSTANCE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getManualInstanceCount();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -496,6 +550,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       minInstanceCount_ = 0;
       scalingMode_ = 0;
+      manualInstanceCount_ = 0;
       return this;
     }
 
@@ -538,6 +593,12 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.scalingMode_ = scalingMode_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.manualInstanceCount_ = manualInstanceCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -591,6 +652,9 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       if (other.scalingMode_ != 0) {
         setScalingModeValue(other.getScalingModeValue());
       }
+      if (other.hasManualInstanceCount()) {
+        setManualInstanceCount(other.getManualInstanceCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -629,6 +693,12 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 48:
+              {
+                manualInstanceCount_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -805,6 +875,86 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     public Builder clearScalingMode() {
       bitField0_ = (bitField0_ & ~0x00000002);
       scalingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int manualInstanceCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. total instance count for the service in manual scaling mode. This
+     * number of instances is divided among all revisions with specified traffic
+     * based on the percent of traffic they are receiving.
+     * </pre>
+     *
+     * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the manualInstanceCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasManualInstanceCount() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. total instance count for the service in manual scaling mode. This
+     * number of instances is divided among all revisions with specified traffic
+     * based on the percent of traffic they are receiving.
+     * </pre>
+     *
+     * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The manualInstanceCount.
+     */
+    @java.lang.Override
+    public int getManualInstanceCount() {
+      return manualInstanceCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. total instance count for the service in manual scaling mode. This
+     * number of instances is divided among all revisions with specified traffic
+     * based on the percent of traffic they are receiving.
+     * </pre>
+     *
+     * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The manualInstanceCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManualInstanceCount(int value) {
+
+      manualInstanceCount_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. total instance count for the service in manual scaling mode. This
+     * number of instances is divided among all revisions with specified traffic
+     * based on the percent of traffic they are receiving.
+     * </pre>
+     *
+     * <code>optional int32 manual_instance_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearManualInstanceCount() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      manualInstanceCount_ = 0;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,7 +100,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CheckOnboardingStatus</td>
- *      <td><p> CheckOnboardingStatus reports the onboarding status for a project/folder/organization. Any findings reported by this API need to be fixed before PAM can be used on the resource.</td>
+ *      <td><p> `CheckOnboardingStatus` reports the onboarding status for a project/folder/organization. Any findings reported by this API need to be fixed before PAM can be used on the resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -192,7 +192,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteEntitlement</td>
- *      <td><p> Deletes a single entitlement. This method can only be called when there are no in-progress (ACTIVE/ACTIVATING/REVOKING) grants under the entitlement.</td>
+ *      <td><p> Deletes a single entitlement. This method can only be called when there are no in-progress (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the entitlement.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -288,7 +288,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateGrant</td>
- *      <td><p> Creates a new grant in a given project and location.</td>
+ *      <td><p> Creates a new grant in a given project/folder/organization and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -513,7 +513,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CheckOnboardingStatus reports the onboarding status for a project/folder/organization. Any
+   * `CheckOnboardingStatus` reports the onboarding status for a project/folder/organization. Any
    * findings reported by this API need to be fixed before PAM can be used on the resource.
    *
    * <p>Sample code:
@@ -545,7 +545,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * CheckOnboardingStatus reports the onboarding status for a project/folder/organization. Any
+   * `CheckOnboardingStatus` reports the onboarding status for a project/folder/organization. Any
    * findings reported by this API need to be fixed before PAM can be used on the resource.
    *
    * <p>Sample code:
@@ -1357,7 +1357,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single entitlement. This method can only be called when there are no in-progress
-   * (ACTIVE/ACTIVATING/REVOKING) grants under the entitlement.
+   * (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the entitlement.
    *
    * <p>Sample code:
    *
@@ -1391,7 +1391,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single entitlement. This method can only be called when there are no in-progress
-   * (ACTIVE/ACTIVATING/REVOKING) grants under the entitlement.
+   * (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the entitlement.
    *
    * <p>Sample code:
    *
@@ -1422,7 +1422,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single entitlement. This method can only be called when there are no in-progress
-   * (ACTIVE/ACTIVATING/REVOKING) grants under the entitlement.
+   * (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the entitlement.
    *
    * <p>Sample code:
    *
@@ -1458,7 +1458,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single entitlement. This method can only be called when there are no in-progress
-   * (ACTIVE/ACTIVATING/REVOKING) grants under the entitlement.
+   * (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the entitlement.
    *
    * <p>Sample code:
    *
@@ -1494,7 +1494,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single entitlement. This method can only be called when there are no in-progress
-   * (ACTIVE/ACTIVATING/REVOKING) grants under the entitlement.
+   * (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the entitlement.
    *
    * <p>Sample code:
    *
@@ -2138,7 +2138,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new grant in a given project and location.
+   * Creates a new grant in a given project/folder/organization and location.
    *
    * <p>Sample code:
    *
@@ -2173,7 +2173,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new grant in a given project and location.
+   * Creates a new grant in a given project/folder/organization and location.
    *
    * <p>Sample code:
    *
@@ -2206,7 +2206,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new grant in a given project and location.
+   * Creates a new grant in a given project/folder/organization and location.
    *
    * <p>Sample code:
    *
@@ -2240,7 +2240,7 @@ public class PrivilegedAccessManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new grant in a given project and location.
+   * Creates a new grant in a given project/folder/organization and location.
    *
    * <p>Sample code:
    *

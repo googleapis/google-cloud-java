@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,7 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     ORACLE_SOURCE_CONFIG(100),
     MYSQL_SOURCE_CONFIG(101),
     POSTGRESQL_SOURCE_CONFIG(102),
+    SQL_SERVER_SOURCE_CONFIG(103),
     SOURCESTREAMCONFIG_NOT_SET(0);
     private final int value;
 
@@ -99,6 +100,8 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
           return MYSQL_SOURCE_CONFIG;
         case 102:
           return POSTGRESQL_SOURCE_CONFIG;
+        case 103:
+          return SQL_SERVER_SOURCE_CONFIG;
         case 0:
           return SOURCESTREAMCONFIG_NOT_SET;
         default:
@@ -327,6 +330,58 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datastream.v1.PostgresqlSourceConfig.getDefaultInstance();
   }
 
+  public static final int SQL_SERVER_SOURCE_CONFIG_FIELD_NUMBER = 103;
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   *
+   * @return Whether the sqlServerSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSqlServerSourceConfig() {
+    return sourceStreamConfigCase_ == 103;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   *
+   * @return The sqlServerSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerSourceConfig getSqlServerSourceConfig() {
+    if (sourceStreamConfigCase_ == 103) {
+      return (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder
+      getSqlServerSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 103) {
+      return (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -356,6 +411,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           102, (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_);
     }
+    if (sourceStreamConfigCase_ == 103) {
+      output.writeMessage(
+          103, (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -382,6 +441,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               102, (com.google.cloud.datastream.v1.PostgresqlSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 103) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              103, (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -411,6 +475,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       case 102:
         if (!getPostgresqlSourceConfig().equals(other.getPostgresqlSourceConfig())) return false;
         break;
+      case 103:
+        if (!getSqlServerSourceConfig().equals(other.getSqlServerSourceConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -439,6 +506,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       case 102:
         hash = (37 * hash) + POSTGRESQL_SOURCE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getPostgresqlSourceConfig().hashCode();
+        break;
+      case 103:
+        hash = (37 * hash) + SQL_SERVER_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlServerSourceConfig().hashCode();
         break;
       case 0:
       default:
@@ -592,6 +663,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       if (postgresqlSourceConfigBuilder_ != null) {
         postgresqlSourceConfigBuilder_.clear();
       }
+      if (sqlServerSourceConfigBuilder_ != null) {
+        sqlServerSourceConfigBuilder_.clear();
+      }
       sourceStreamConfigCase_ = 0;
       sourceStreamConfig_ = null;
       return this;
@@ -647,6 +721,9 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceStreamConfigCase_ == 102 && postgresqlSourceConfigBuilder_ != null) {
         result.sourceStreamConfig_ = postgresqlSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 103 && sqlServerSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = sqlServerSourceConfigBuilder_.build();
       }
     }
 
@@ -716,6 +793,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
             mergePostgresqlSourceConfig(other.getPostgresqlSourceConfig());
             break;
           }
+        case SQL_SERVER_SOURCE_CONFIG:
+          {
+            mergeSqlServerSourceConfig(other.getSqlServerSourceConfig());
+            break;
+          }
         case SOURCESTREAMCONFIG_NOT_SET:
           {
             break;
@@ -774,6 +856,13 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
                 sourceStreamConfigCase_ = 102;
                 break;
               } // case 818
+            case 826:
+              {
+                input.readMessage(
+                    getSqlServerSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                sourceStreamConfigCase_ = 103;
+                break;
+              } // case 826
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1576,6 +1665,230 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessageV3
       sourceStreamConfigCase_ = 102;
       onChanged();
       return postgresqlSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SqlServerSourceConfig,
+            com.google.cloud.datastream.v1.SqlServerSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder>
+        sqlServerSourceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     *
+     * @return Whether the sqlServerSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlServerSourceConfig() {
+      return sourceStreamConfigCase_ == 103;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     *
+     * @return The sqlServerSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SqlServerSourceConfig getSqlServerSourceConfig() {
+      if (sqlServerSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 103) {
+          return (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 103) {
+          return sqlServerSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     */
+    public Builder setSqlServerSourceConfig(
+        com.google.cloud.datastream.v1.SqlServerSourceConfig value) {
+      if (sqlServerSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        sqlServerSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     */
+    public Builder setSqlServerSourceConfig(
+        com.google.cloud.datastream.v1.SqlServerSourceConfig.Builder builderForValue) {
+      if (sqlServerSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        sqlServerSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     */
+    public Builder mergeSqlServerSourceConfig(
+        com.google.cloud.datastream.v1.SqlServerSourceConfig value) {
+      if (sqlServerSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 103
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SqlServerSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 103) {
+          sqlServerSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          sqlServerSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 103;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     */
+    public Builder clearSqlServerSourceConfig() {
+      if (sqlServerSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 103) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 103) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        sqlServerSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SqlServerSourceConfig.Builder
+        getSqlServerSourceConfigBuilder() {
+      return getSqlServerSourceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder
+        getSqlServerSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 103) && (sqlServerSourceConfigBuilder_ != null)) {
+        return sqlServerSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 103) {
+          return (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SqlServerSourceConfig,
+            com.google.cloud.datastream.v1.SqlServerSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder>
+        getSqlServerSourceConfigFieldBuilder() {
+      if (sqlServerSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 103)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SqlServerSourceConfig.getDefaultInstance();
+        }
+        sqlServerSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SqlServerSourceConfig,
+                com.google.cloud.datastream.v1.SqlServerSourceConfig.Builder,
+                com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.SqlServerSourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 103;
+      onChanged();
+      return sqlServerSourceConfigBuilder_;
     }
 
     @java.lang.Override

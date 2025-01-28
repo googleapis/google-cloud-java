@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ import com.google.cloud.datastream.v1.LookupStreamObjectRequest;
 import com.google.cloud.datastream.v1.OperationMetadata;
 import com.google.cloud.datastream.v1.PrivateConnection;
 import com.google.cloud.datastream.v1.Route;
+import com.google.cloud.datastream.v1.RunStreamRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobResponse;
 import com.google.cloud.datastream.v1.StopBackfillJobRequest;
@@ -203,6 +204,14 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<RunStreamRequest, Operation> runStreamMethodDescriptor =
+      MethodDescriptor.<RunStreamRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.datastream.v1.Datastream/RunStream")
+          .setRequestMarshaller(ProtoUtils.marshaller(RunStreamRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<GetStreamObjectRequest, StreamObject>
       getStreamObjectMethodDescriptor =
@@ -398,6 +407,9 @@ public class GrpcDatastreamStub extends DatastreamStub {
   private final UnaryCallable<DeleteStreamRequest, Operation> deleteStreamCallable;
   private final OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable;
+  private final UnaryCallable<RunStreamRequest, Operation> runStreamCallable;
+  private final OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable;
   private final UnaryCallable<GetStreamObjectRequest, StreamObject> getStreamObjectCallable;
   private final UnaryCallable<LookupStreamObjectRequest, StreamObject> lookupStreamObjectCallable;
   private final UnaryCallable<ListStreamObjectsRequest, ListStreamObjectsResponse>
@@ -595,6 +607,16 @@ public class GrpcDatastreamStub extends DatastreamStub {
     GrpcCallSettings<DeleteStreamRequest, Operation> deleteStreamTransportSettings =
         GrpcCallSettings.<DeleteStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteStreamMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RunStreamRequest, Operation> runStreamTransportSettings =
+        GrpcCallSettings.<RunStreamRequest, Operation>newBuilder()
+            .setMethodDescriptor(runStreamMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -861,6 +883,15 @@ public class GrpcDatastreamStub extends DatastreamStub {
             settings.deleteStreamOperationSettings(),
             clientContext,
             operationsStub);
+    this.runStreamCallable =
+        callableFactory.createUnaryCallable(
+            runStreamTransportSettings, settings.runStreamSettings(), clientContext);
+    this.runStreamOperationCallable =
+        callableFactory.createOperationCallable(
+            runStreamTransportSettings,
+            settings.runStreamOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getStreamObjectCallable =
         callableFactory.createUnaryCallable(
             getStreamObjectTransportSettings, settings.getStreamObjectSettings(), clientContext);
@@ -1079,6 +1110,17 @@ public class GrpcDatastreamStub extends DatastreamStub {
   public OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable() {
     return deleteStreamOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunStreamRequest, Operation> runStreamCallable() {
+    return runStreamCallable;
+  }
+
+  @Override
+  public OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable() {
+    return runStreamOperationCallable;
   }
 
   @Override

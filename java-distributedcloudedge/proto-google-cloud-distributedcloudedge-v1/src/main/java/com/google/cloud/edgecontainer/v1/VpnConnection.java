@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -273,12 +273,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It
-     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-     * connection. If this SA is changed during/after a VPN connection is
-     * created, you need to remove the Cloud Router and Cloud VPN resources in
-     * |project_id|. It is in the form of
-     * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+     * Optional. Deprecated: do not use.
      * </pre>
      *
      * <code>
@@ -286,7 +281,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
      * @return The serviceAccount.
      */
     @java.lang.Deprecated
@@ -295,12 +290,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It
-     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-     * connection. If this SA is changed during/after a VPN connection is
-     * created, you need to remove the Cloud Router and Cloud VPN resources in
-     * |project_id|. It is in the form of
-     * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+     * Optional. Deprecated: do not use.
      * </pre>
      *
      * <code>
@@ -308,7 +298,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
      * @return The bytes for serviceAccount.
      */
     @java.lang.Deprecated
@@ -420,12 +410,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It
-     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-     * connection. If this SA is changed during/after a VPN connection is
-     * created, you need to remove the Cloud Router and Cloud VPN resources in
-     * |project_id|. It is in the form of
-     * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+     * Optional. Deprecated: do not use.
      * </pre>
      *
      * <code>
@@ -433,7 +418,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
      * @return The serviceAccount.
      */
     @java.lang.Override
@@ -453,12 +438,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It
-     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-     * connection. If this SA is changed during/after a VPN connection is
-     * created, you need to remove the Cloud Router and Cloud VPN resources in
-     * |project_id|. It is in the form of
-     * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+     * Optional. Deprecated: do not use.
      * </pre>
      *
      * <code>
@@ -466,7 +446,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
      * @return The bytes for serviceAccount.
      */
     @java.lang.Override
@@ -973,12 +953,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It
-       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-       * connection. If this SA is changed during/after a VPN connection is
-       * created, you need to remove the Cloud Router and Cloud VPN resources in
-       * |project_id|. It is in the form of
-       * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+       * Optional. Deprecated: do not use.
        * </pre>
        *
        * <code>
@@ -986,7 +961,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
        * @return The serviceAccount.
        */
       @java.lang.Deprecated
@@ -1005,12 +980,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It
-       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-       * connection. If this SA is changed during/after a VPN connection is
-       * created, you need to remove the Cloud Router and Cloud VPN resources in
-       * |project_id|. It is in the form of
-       * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+       * Optional. Deprecated: do not use.
        * </pre>
        *
        * <code>
@@ -1018,7 +988,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
        * @return The bytes for serviceAccount.
        */
       @java.lang.Deprecated
@@ -1037,12 +1007,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It
-       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-       * connection. If this SA is changed during/after a VPN connection is
-       * created, you need to remove the Cloud Router and Cloud VPN resources in
-       * |project_id|. It is in the form of
-       * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+       * Optional. Deprecated: do not use.
        * </pre>
        *
        * <code>
@@ -1050,7 +1015,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
        * @param value The serviceAccount to set.
        * @return This builder for chaining.
        */
@@ -1068,12 +1033,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It
-       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-       * connection. If this SA is changed during/after a VPN connection is
-       * created, you need to remove the Cloud Router and Cloud VPN resources in
-       * |project_id|. It is in the form of
-       * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+       * Optional. Deprecated: do not use.
        * </pre>
        *
        * <code>
@@ -1081,7 +1041,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1095,12 +1055,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It
-       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
-       * connection. If this SA is changed during/after a VPN connection is
-       * created, you need to remove the Cloud Router and Cloud VPN resources in
-       * |project_id|. It is in the form of
-       * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
+       * Optional. Deprecated: do not use.
        * </pre>
        *
        * <code>
@@ -1108,7 +1063,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
-       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=610
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=680
        * @param value The bytes for serviceAccount to set.
        * @return This builder for chaining.
        */
@@ -4799,7 +4754,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=693
+   *     google/cloud/edgecontainer/v1/resources.proto;l=763
    * @return The enum numeric value on the wire for bgpRoutingMode.
    */
   @java.lang.Override
@@ -4819,7 +4774,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=693
+   *     google/cloud/edgecontainer/v1/resources.proto;l=763
    * @return The bgpRoutingMode.
    */
   @java.lang.Override
@@ -6624,7 +6579,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=693
+     *     google/cloud/edgecontainer/v1/resources.proto;l=763
      * @return The enum numeric value on the wire for bgpRoutingMode.
      */
     @java.lang.Override
@@ -6644,7 +6599,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=693
+     *     google/cloud/edgecontainer/v1/resources.proto;l=763
      * @param value The enum numeric value on the wire for bgpRoutingMode to set.
      * @return This builder for chaining.
      */
@@ -6667,7 +6622,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=693
+     *     google/cloud/edgecontainer/v1/resources.proto;l=763
      * @return The bgpRoutingMode.
      */
     @java.lang.Override
@@ -6691,7 +6646,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=693
+     *     google/cloud/edgecontainer/v1/resources.proto;l=763
      * @param value The bgpRoutingMode to set.
      * @return This builder for chaining.
      */
@@ -6718,7 +6673,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=693
+     *     google/cloud/edgecontainer/v1/resources.proto;l=763
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

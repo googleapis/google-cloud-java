@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   private LoyaltyProgram() {
     programLabel_ = "";
     tierLabel_ = "";
+    shippingLabel_ = "";
   }
 
   @java.lang.Override
@@ -344,6 +345,137 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     return loyaltyPoints_;
   }
 
+  public static final int MEMBER_PRICE_EFFECTIVE_DATE_FIELD_NUMBER = 6;
+  private com.google.type.Interval memberPriceEffectiveDate_;
+  /**
+   *
+   *
+   * <pre>
+   * A date range during which the item is eligible for member price. If not
+   * specified, the member price is always applicable. The date range is
+   * represented by a pair of ISO 8601 dates separated by a space,
+   * comma, or slash.
+   * </pre>
+   *
+   * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+   *
+   * @return Whether the memberPriceEffectiveDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasMemberPriceEffectiveDate() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A date range during which the item is eligible for member price. If not
+   * specified, the member price is always applicable. The date range is
+   * represented by a pair of ISO 8601 dates separated by a space,
+   * comma, or slash.
+   * </pre>
+   *
+   * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+   *
+   * @return The memberPriceEffectiveDate.
+   */
+  @java.lang.Override
+  public com.google.type.Interval getMemberPriceEffectiveDate() {
+    return memberPriceEffectiveDate_ == null
+        ? com.google.type.Interval.getDefaultInstance()
+        : memberPriceEffectiveDate_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A date range during which the item is eligible for member price. If not
+   * specified, the member price is always applicable. The date range is
+   * represented by a pair of ISO 8601 dates separated by a space,
+   * comma, or slash.
+   * </pre>
+   *
+   * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.type.IntervalOrBuilder getMemberPriceEffectiveDateOrBuilder() {
+    return memberPriceEffectiveDate_ == null
+        ? com.google.type.Interval.getDefaultInstance()
+        : memberPriceEffectiveDate_;
+  }
+
+  public static final int SHIPPING_LABEL_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shippingLabel_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The label of the shipping benefit. If the field has value, this offer has
+   * loyalty shipping benefit. If the field value isn't provided, the item is
+   * not eligible for loyalty shipping for the given loyalty tier.
+   * </pre>
+   *
+   * <code>optional string shipping_label = 7;</code>
+   *
+   * @return Whether the shippingLabel field is set.
+   */
+  @java.lang.Override
+  public boolean hasShippingLabel() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The label of the shipping benefit. If the field has value, this offer has
+   * loyalty shipping benefit. If the field value isn't provided, the item is
+   * not eligible for loyalty shipping for the given loyalty tier.
+   * </pre>
+   *
+   * <code>optional string shipping_label = 7;</code>
+   *
+   * @return The shippingLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getShippingLabel() {
+    java.lang.Object ref = shippingLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shippingLabel_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The label of the shipping benefit. If the field has value, this offer has
+   * loyalty shipping benefit. If the field value isn't provided, the item is
+   * not eligible for loyalty shipping for the given loyalty tier.
+   * </pre>
+   *
+   * <code>optional string shipping_label = 7;</code>
+   *
+   * @return The bytes for shippingLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getShippingLabelBytes() {
+    java.lang.Object ref = shippingLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      shippingLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -373,6 +505,12 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt64(5, loyaltyPoints_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(6, getMemberPriceEffectiveDate());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, shippingLabel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -397,6 +535,14 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, loyaltyPoints_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getMemberPriceEffectiveDate());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, shippingLabel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -434,6 +580,14 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     if (hasLoyaltyPoints()) {
       if (getLoyaltyPoints() != other.getLoyaltyPoints()) return false;
     }
+    if (hasMemberPriceEffectiveDate() != other.hasMemberPriceEffectiveDate()) return false;
+    if (hasMemberPriceEffectiveDate()) {
+      if (!getMemberPriceEffectiveDate().equals(other.getMemberPriceEffectiveDate())) return false;
+    }
+    if (hasShippingLabel() != other.hasShippingLabel()) return false;
+    if (hasShippingLabel()) {
+      if (!getShippingLabel().equals(other.getShippingLabel())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -464,6 +618,14 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     if (hasLoyaltyPoints()) {
       hash = (37 * hash) + LOYALTY_POINTS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLoyaltyPoints());
+    }
+    if (hasMemberPriceEffectiveDate()) {
+      hash = (37 * hash) + MEMBER_PRICE_EFFECTIVE_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getMemberPriceEffectiveDate().hashCode();
+    }
+    if (hasShippingLabel()) {
+      hash = (37 * hash) + SHIPPING_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getShippingLabel().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -608,6 +770,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPriceFieldBuilder();
         getCashbackForFutureUseFieldBuilder();
+        getMemberPriceEffectiveDateFieldBuilder();
       }
     }
 
@@ -628,6 +791,12 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         cashbackForFutureUseBuilder_ = null;
       }
       loyaltyPoints_ = 0L;
+      memberPriceEffectiveDate_ = null;
+      if (memberPriceEffectiveDateBuilder_ != null) {
+        memberPriceEffectiveDateBuilder_.dispose();
+        memberPriceEffectiveDateBuilder_ = null;
+      }
+      shippingLabel_ = "";
       return this;
     }
 
@@ -687,6 +856,17 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.loyaltyPoints_ = loyaltyPoints_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.memberPriceEffectiveDate_ =
+            memberPriceEffectiveDateBuilder_ == null
+                ? memberPriceEffectiveDate_
+                : memberPriceEffectiveDateBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.shippingLabel_ = shippingLabel_;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -756,6 +936,14 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLoyaltyPoints()) {
         setLoyaltyPoints(other.getLoyaltyPoints());
       }
+      if (other.hasMemberPriceEffectiveDate()) {
+        mergeMemberPriceEffectiveDate(other.getMemberPriceEffectiveDate());
+      }
+      if (other.hasShippingLabel()) {
+        shippingLabel_ = other.shippingLabel_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -813,6 +1001,19 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(
+                    getMemberPriceEffectiveDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                shippingLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1541,6 +1742,350 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLoyaltyPoints() {
       bitField0_ = (bitField0_ & ~0x00000010);
       loyaltyPoints_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.type.Interval memberPriceEffectiveDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Interval,
+            com.google.type.Interval.Builder,
+            com.google.type.IntervalOrBuilder>
+        memberPriceEffectiveDateBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     *
+     * @return Whether the memberPriceEffectiveDate field is set.
+     */
+    public boolean hasMemberPriceEffectiveDate() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     *
+     * @return The memberPriceEffectiveDate.
+     */
+    public com.google.type.Interval getMemberPriceEffectiveDate() {
+      if (memberPriceEffectiveDateBuilder_ == null) {
+        return memberPriceEffectiveDate_ == null
+            ? com.google.type.Interval.getDefaultInstance()
+            : memberPriceEffectiveDate_;
+      } else {
+        return memberPriceEffectiveDateBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     */
+    public Builder setMemberPriceEffectiveDate(com.google.type.Interval value) {
+      if (memberPriceEffectiveDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        memberPriceEffectiveDate_ = value;
+      } else {
+        memberPriceEffectiveDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     */
+    public Builder setMemberPriceEffectiveDate(com.google.type.Interval.Builder builderForValue) {
+      if (memberPriceEffectiveDateBuilder_ == null) {
+        memberPriceEffectiveDate_ = builderForValue.build();
+      } else {
+        memberPriceEffectiveDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     */
+    public Builder mergeMemberPriceEffectiveDate(com.google.type.Interval value) {
+      if (memberPriceEffectiveDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && memberPriceEffectiveDate_ != null
+            && memberPriceEffectiveDate_ != com.google.type.Interval.getDefaultInstance()) {
+          getMemberPriceEffectiveDateBuilder().mergeFrom(value);
+        } else {
+          memberPriceEffectiveDate_ = value;
+        }
+      } else {
+        memberPriceEffectiveDateBuilder_.mergeFrom(value);
+      }
+      if (memberPriceEffectiveDate_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     */
+    public Builder clearMemberPriceEffectiveDate() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      memberPriceEffectiveDate_ = null;
+      if (memberPriceEffectiveDateBuilder_ != null) {
+        memberPriceEffectiveDateBuilder_.dispose();
+        memberPriceEffectiveDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     */
+    public com.google.type.Interval.Builder getMemberPriceEffectiveDateBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getMemberPriceEffectiveDateFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     */
+    public com.google.type.IntervalOrBuilder getMemberPriceEffectiveDateOrBuilder() {
+      if (memberPriceEffectiveDateBuilder_ != null) {
+        return memberPriceEffectiveDateBuilder_.getMessageOrBuilder();
+      } else {
+        return memberPriceEffectiveDate_ == null
+            ? com.google.type.Interval.getDefaultInstance()
+            : memberPriceEffectiveDate_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A date range during which the item is eligible for member price. If not
+     * specified, the member price is always applicable. The date range is
+     * represented by a pair of ISO 8601 dates separated by a space,
+     * comma, or slash.
+     * </pre>
+     *
+     * <code>optional .google.type.Interval member_price_effective_date = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Interval,
+            com.google.type.Interval.Builder,
+            com.google.type.IntervalOrBuilder>
+        getMemberPriceEffectiveDateFieldBuilder() {
+      if (memberPriceEffectiveDateBuilder_ == null) {
+        memberPriceEffectiveDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Interval,
+                com.google.type.Interval.Builder,
+                com.google.type.IntervalOrBuilder>(
+                getMemberPriceEffectiveDate(), getParentForChildren(), isClean());
+        memberPriceEffectiveDate_ = null;
+      }
+      return memberPriceEffectiveDateBuilder_;
+    }
+
+    private java.lang.Object shippingLabel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The label of the shipping benefit. If the field has value, this offer has
+     * loyalty shipping benefit. If the field value isn't provided, the item is
+     * not eligible for loyalty shipping for the given loyalty tier.
+     * </pre>
+     *
+     * <code>optional string shipping_label = 7;</code>
+     *
+     * @return Whether the shippingLabel field is set.
+     */
+    public boolean hasShippingLabel() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The label of the shipping benefit. If the field has value, this offer has
+     * loyalty shipping benefit. If the field value isn't provided, the item is
+     * not eligible for loyalty shipping for the given loyalty tier.
+     * </pre>
+     *
+     * <code>optional string shipping_label = 7;</code>
+     *
+     * @return The shippingLabel.
+     */
+    public java.lang.String getShippingLabel() {
+      java.lang.Object ref = shippingLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shippingLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The label of the shipping benefit. If the field has value, this offer has
+     * loyalty shipping benefit. If the field value isn't provided, the item is
+     * not eligible for loyalty shipping for the given loyalty tier.
+     * </pre>
+     *
+     * <code>optional string shipping_label = 7;</code>
+     *
+     * @return The bytes for shippingLabel.
+     */
+    public com.google.protobuf.ByteString getShippingLabelBytes() {
+      java.lang.Object ref = shippingLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        shippingLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The label of the shipping benefit. If the field has value, this offer has
+     * loyalty shipping benefit. If the field value isn't provided, the item is
+     * not eligible for loyalty shipping for the given loyalty tier.
+     * </pre>
+     *
+     * <code>optional string shipping_label = 7;</code>
+     *
+     * @param value The shippingLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShippingLabel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      shippingLabel_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The label of the shipping benefit. If the field has value, this offer has
+     * loyalty shipping benefit. If the field value isn't provided, the item is
+     * not eligible for loyalty shipping for the given loyalty tier.
+     * </pre>
+     *
+     * <code>optional string shipping_label = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShippingLabel() {
+      shippingLabel_ = getDefaultInstance().getShippingLabel();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The label of the shipping benefit. If the field has value, this offer has
+     * loyalty shipping benefit. If the field value isn't provided, the item is
+     * not eligible for loyalty shipping for the given loyalty tier.
+     * </pre>
+     *
+     * <code>optional string shipping_label = 7;</code>
+     *
+     * @param value The bytes for shippingLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShippingLabelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      shippingLabel_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,12 +55,12 @@ public final class CustomFieldValueProto {
           + "ue.ValueB\003\340A\002H\000\210\001\001\032r\n\005Value\022\030\n\016dropdown_"
           + "value\030\001 \001(\003H\000\022\026\n\014string_value\030\002 \001(\tH\000\022\026\n"
           + "\014number_value\030\003 \001(\001H\000\022\026\n\014toggle_value\030\004 "
-          + "\001(\010H\000B\007\n\005valueB\010\n\006_valueB\254\001\n\033com.google."
+          + "\001(\010H\000B\007\n\005valueB\010\n\006_valueB\311\001\n\033com.google."
           + "ads.admanager.v1B\025CustomFieldValueProtoP"
           + "\001Z@google.golang.org/genproto/googleapis"
           + "/ads/admanager/v1;admanager\252\002\027Google.Ads"
-          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1b"
-          + "\006proto3"
+          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352"
+          + "\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

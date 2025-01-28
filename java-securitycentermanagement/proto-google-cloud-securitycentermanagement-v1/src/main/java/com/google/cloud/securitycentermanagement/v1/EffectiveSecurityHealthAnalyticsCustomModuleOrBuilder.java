@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,12 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
    *
-   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,12 +45,12 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Identifier. The full resource name of the custom module, specified in one
-   * of the following formats:
+   * Identifier. The full resource name of the custom module, in one of the
+   * following formats:
    *
-   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
-   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{effective_security_health_analytics_custom_module}`
+   * * `organizations/organization/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `folders/folder/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
+   * * `projects/project/{location}/effectiveSecurityHealthAnalyticsCustomModules/{custom_module}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -104,7 +104,7 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The effective state of enablement for the module at the given
+   * Output only. The effective enablement state for the module at the given
    * level of the hierarchy.
    * </pre>
    *
@@ -119,7 +119,7 @@ public interface EffectiveSecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Output only. The effective state of enablement for the module at the given
+   * Output only. The effective enablement state for the module at the given
    * level of the hierarchy.
    * </pre>
    *

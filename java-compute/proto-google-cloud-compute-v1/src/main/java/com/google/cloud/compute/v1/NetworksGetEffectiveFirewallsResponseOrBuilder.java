@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface NetworksGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface NetworksGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface NetworksGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface NetworksGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -83,7 +83,7 @@ public interface NetworksGetEffectiveFirewallsResponseOrBuilder
    *
    *
    * <pre>
-   * Effective firewalls from firewall policy.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>

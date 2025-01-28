@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ package com.google.cloud.securitycentermanagement.v1;
  * settings information such as top-level enablement in addition to individual
  * module settings. Service settings can be configured at the organization,
  * folder, or project level. Service settings at the organization or folder
- * level are inherited by those in child folders and projects.
+ * level are inherited by those in descendant folders and projects.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycentermanagement.v1.SecurityCenterService}
@@ -85,8 +85,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Represents the possible intended states of enablement for a service or
-   * module.
+   * Represents the possible enablement states for a service or module.
    * </pre>
    *
    * Protobuf enum {@code
@@ -107,8 +106,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * State is inherited from the parent resource. Not a valid effective
-     * enablement state.
+     * State is inherited from the parent resource. Valid as an intended
+     * enablement state, but not as an effective enablement state.
      * </pre>
      *
      * <code>INHERITED = 1;</code>
@@ -138,9 +137,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SCC is configured to ingest findings from this service but not enable
-     * this service. Not a valid intended_enablement_state (that is, this is a
-     * readonly state).
+     * Security Command Center is configured to ingest findings from this
+     * service, but not to enable this service. This state indicates that
+     * Security Command Center is misconfigured. You can't set this state
+     * yourself.
      * </pre>
      *
      * <code>INGEST_ONLY = 4;</code>
@@ -163,8 +163,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * State is inherited from the parent resource. Not a valid effective
-     * enablement state.
+     * State is inherited from the parent resource. Valid as an intended
+     * enablement state, but not as an effective enablement state.
      * </pre>
      *
      * <code>INHERITED = 1;</code>
@@ -194,9 +194,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SCC is configured to ingest findings from this service but not enable
-     * this service. Not a valid intended_enablement_state (that is, this is a
-     * readonly state).
+     * Security Command Center is configured to ingest findings from this
+     * service, but not to enable this service. This state indicates that
+     * Security Command Center is misconfigured. You can't set this state
+     * yourself.
      * </pre>
      *
      * <code>INGEST_ONLY = 4;</code>
@@ -303,7 +304,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the module at its level of
+     * Optional. The intended enablement state for the module at its level of
      * the resource hierarchy.
      * </pre>
      *
@@ -318,7 +319,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the module at its level of
+     * Optional. The intended enablement state for the module at its level of
      * the resource hierarchy.
      * </pre>
      *
@@ -336,11 +337,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the module at its level
-     * of the resource hierarchy. If the intended state is set to INHERITED, the
-     * effective state will be inherited from the enablement state of an
-     * ancestor. This state may
-     * differ from the intended enablement state due to billing eligibility or
-     * onboarding status.
+     * of the resource hierarchy. If the intended state is set to `INHERITED`,
+     * the effective state will be inherited from the enablement state of an
+     * ancestor. This state may differ from the intended enablement state due to
+     * billing eligibility or onboarding status.
      * </pre>
      *
      * <code>
@@ -355,11 +355,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the module at its level
-     * of the resource hierarchy. If the intended state is set to INHERITED, the
-     * effective state will be inherited from the enablement state of an
-     * ancestor. This state may
-     * differ from the intended enablement state due to billing eligibility or
-     * onboarding status.
+     * of the resource hierarchy. If the intended state is set to `INHERITED`,
+     * the effective state will be inherited from the enablement state of an
+     * ancestor. This state may differ from the intended enablement state due to
+     * billing eligibility or onboarding status.
      * </pre>
      *
      * <code>
@@ -425,7 +424,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the module at its level of
+     * Optional. The intended enablement state for the module at its level of
      * the resource hierarchy.
      * </pre>
      *
@@ -443,7 +442,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the module at its level of
+     * Optional. The intended enablement state for the module at its level of
      * the resource hierarchy.
      * </pre>
      *
@@ -472,11 +471,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the module at its level
-     * of the resource hierarchy. If the intended state is set to INHERITED, the
-     * effective state will be inherited from the enablement state of an
-     * ancestor. This state may
-     * differ from the intended enablement state due to billing eligibility or
-     * onboarding status.
+     * of the resource hierarchy. If the intended state is set to `INHERITED`,
+     * the effective state will be inherited from the enablement state of an
+     * ancestor. This state may differ from the intended enablement state due to
+     * billing eligibility or onboarding status.
      * </pre>
      *
      * <code>
@@ -494,11 +492,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the module at its level
-     * of the resource hierarchy. If the intended state is set to INHERITED, the
-     * effective state will be inherited from the enablement state of an
-     * ancestor. This state may
-     * differ from the intended enablement state due to billing eligibility or
-     * onboarding status.
+     * of the resource hierarchy. If the intended state is set to `INHERITED`,
+     * the effective state will be inherited from the enablement state of an
+     * ancestor. This state may differ from the intended enablement state due to
+     * billing eligibility or onboarding status.
      * </pre>
      *
      * <code>
@@ -930,7 +927,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. The intended state of enablement for the module at its level of
+       * Optional. The intended enablement state for the module at its level of
        * the resource hierarchy.
        * </pre>
        *
@@ -948,7 +945,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. The intended state of enablement for the module at its level of
+       * Optional. The intended enablement state for the module at its level of
        * the resource hierarchy.
        * </pre>
        *
@@ -969,7 +966,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. The intended state of enablement for the module at its level of
+       * Optional. The intended enablement state for the module at its level of
        * the resource hierarchy.
        * </pre>
        *
@@ -994,7 +991,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. The intended state of enablement for the module at its level of
+       * Optional. The intended enablement state for the module at its level of
        * the resource hierarchy.
        * </pre>
        *
@@ -1020,7 +1017,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Optional. The intended state of enablement for the module at its level of
+       * Optional. The intended enablement state for the module at its level of
        * the resource hierarchy.
        * </pre>
        *
@@ -1043,11 +1040,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Output only. The effective enablement state for the module at its level
-       * of the resource hierarchy. If the intended state is set to INHERITED, the
-       * effective state will be inherited from the enablement state of an
-       * ancestor. This state may
-       * differ from the intended enablement state due to billing eligibility or
-       * onboarding status.
+       * of the resource hierarchy. If the intended state is set to `INHERITED`,
+       * the effective state will be inherited from the enablement state of an
+       * ancestor. This state may differ from the intended enablement state due to
+       * billing eligibility or onboarding status.
        * </pre>
        *
        * <code>
@@ -1065,11 +1061,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Output only. The effective enablement state for the module at its level
-       * of the resource hierarchy. If the intended state is set to INHERITED, the
-       * effective state will be inherited from the enablement state of an
-       * ancestor. This state may
-       * differ from the intended enablement state due to billing eligibility or
-       * onboarding status.
+       * of the resource hierarchy. If the intended state is set to `INHERITED`,
+       * the effective state will be inherited from the enablement state of an
+       * ancestor. This state may differ from the intended enablement state due to
+       * billing eligibility or onboarding status.
        * </pre>
        *
        * <code>
@@ -1090,11 +1085,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Output only. The effective enablement state for the module at its level
-       * of the resource hierarchy. If the intended state is set to INHERITED, the
-       * effective state will be inherited from the enablement state of an
-       * ancestor. This state may
-       * differ from the intended enablement state due to billing eligibility or
-       * onboarding status.
+       * of the resource hierarchy. If the intended state is set to `INHERITED`,
+       * the effective state will be inherited from the enablement state of an
+       * ancestor. This state may differ from the intended enablement state due to
+       * billing eligibility or onboarding status.
        * </pre>
        *
        * <code>
@@ -1119,11 +1113,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Output only. The effective enablement state for the module at its level
-       * of the resource hierarchy. If the intended state is set to INHERITED, the
-       * effective state will be inherited from the enablement state of an
-       * ancestor. This state may
-       * differ from the intended enablement state due to billing eligibility or
-       * onboarding status.
+       * of the resource hierarchy. If the intended state is set to `INHERITED`,
+       * the effective state will be inherited from the enablement state of an
+       * ancestor. This state may differ from the intended enablement state due to
+       * billing eligibility or onboarding status.
        * </pre>
        *
        * <code>
@@ -1149,11 +1142,10 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Output only. The effective enablement state for the module at its level
-       * of the resource hierarchy. If the intended state is set to INHERITED, the
-       * effective state will be inherited from the enablement state of an
-       * ancestor. This state may
-       * differ from the intended enablement state due to billing eligibility or
-       * onboarding status.
+       * of the resource hierarchy. If the intended state is set to `INHERITED`,
+       * the effective state will be inherited from the enablement state of an
+       * ancestor. This state may differ from the intended enablement state due to
+       * billing eligibility or onboarding status.
        * </pre>
        *
        * <code>
@@ -1247,21 +1239,19 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Identifier. The name of the service.
+   * Identifier. The name of the service, in one of the following formats:
    *
-   * Its format is:
+   * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+   * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+   * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
    *
-   *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-   *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-   *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+   * The following values are valid for `{service}`:
    *
-   * The possible values for id {service} are:
-   *
-   *   * container-threat-detection
-   *   * event-threat-detection
-   *   * security-health-analytics
-   *   * vm-threat-detection
-   *   * web-security-scanner
+   * * `container-threat-detection`
+   * * `event-threat-detection`
+   * * `security-health-analytics`
+   * * `vm-threat-detection`
+   * * `web-security-scanner`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1284,21 +1274,19 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Identifier. The name of the service.
+   * Identifier. The name of the service, in one of the following formats:
    *
-   * Its format is:
+   * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+   * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+   * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
    *
-   *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-   *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-   *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+   * The following values are valid for `{service}`:
    *
-   * The possible values for id {service} are:
-   *
-   *   * container-threat-detection
-   *   * event-threat-detection
-   *   * security-health-analytics
-   *   * vm-threat-detection
-   *   * web-security-scanner
+   * * `container-threat-detection`
+   * * `event-threat-detection`
+   * * `security-health-analytics`
+   * * `vm-threat-detection`
+   * * `web-security-scanner`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1324,9 +1312,9 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The intended state of enablement for the service at its level of
-   * the resource hierarchy. A DISABLED state will override all module
-   * enablement_states to DISABLED.
+   * Optional. The intended enablement state for the service at its level of the
+   * resource hierarchy. A `DISABLED` state will override all module enablement
+   * states to `DISABLED`.
    * </pre>
    *
    * <code>
@@ -1343,9 +1331,9 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The intended state of enablement for the service at its level of
-   * the resource hierarchy. A DISABLED state will override all module
-   * enablement_states to DISABLED.
+   * Optional. The intended enablement state for the service at its level of the
+   * resource hierarchy. A `DISABLED` state will override all module enablement
+   * states to `DISABLED`.
    * </pre>
    *
    * <code>
@@ -1373,7 +1361,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. The effective enablement state for the service at its level of
-   * the resource hierarchy. If the intended state is set to INHERITED, the
+   * the resource hierarchy. If the intended state is set to `INHERITED`, the
    * effective state will be inherited from the enablement state of an ancestor.
    * This state may differ from the intended enablement state due to billing
    * eligibility or onboarding status.
@@ -1394,7 +1382,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. The effective enablement state for the service at its level of
-   * the resource hierarchy. If the intended state is set to INHERITED, the
+   * the resource hierarchy. If the intended state is set to `INHERITED`, the
    * effective state will be inherited from the enablement state of an ancestor.
    * This state may differ from the intended enablement state due to billing
    * eligibility or onboarding status.
@@ -1462,8 +1450,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -1491,8 +1479,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -1511,8 +1499,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -1541,8 +1529,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The configurations including the state of enablement for the
-   * service's different modules. The absence of a module in the map implies its
+   * Optional. The module configurations, including the enablement state for the
+   * service's modules. The absence of a module in the map implies that its
    * configuration is inherited from its parents.
    * </pre>
    *
@@ -1573,7 +1561,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. The time the service was last updated. This could be due to an
-   * explicit user update or due to a side effect of another system change such
+   * explicit user update or due to a side effect of another system change, such
    * as billing subscription expiry.
    * </pre>
    *
@@ -1591,7 +1579,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. The time the service was last updated. This could be due to an
-   * explicit user update or due to a side effect of another system change such
+   * explicit user update or due to a side effect of another system change, such
    * as billing subscription expiry.
    * </pre>
    *
@@ -1609,7 +1597,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. The time the service was last updated. This could be due to an
-   * explicit user update or due to a side effect of another system change such
+   * explicit user update or due to a side effect of another system change, such
    * as billing subscription expiry.
    * </pre>
    *
@@ -1627,7 +1615,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Additional service specific configuration. Not all services will
+   * Optional. Additional service-specific configuration. Not all services will
    * utilize this field.
    * </pre>
    *
@@ -1644,7 +1632,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Additional service specific configuration. Not all services will
+   * Optional. Additional service-specific configuration. Not all services will
    * utilize this field.
    * </pre>
    *
@@ -1663,7 +1651,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Additional service specific configuration. Not all services will
+   * Optional. Additional service-specific configuration. Not all services will
    * utilize this field.
    * </pre>
    *
@@ -1926,7 +1914,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
    * settings information such as top-level enablement in addition to individual
    * module settings. Service settings can be configured at the organization,
    * folder, or project level. Service settings at the organization or folder
-   * level are inherited by those in child folders and projects.
+   * level are inherited by those in descendant folders and projects.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycentermanagement.v1.SecurityCenterService}
@@ -2236,21 +2224,19 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Identifier. The name of the service.
+     * Identifier. The name of the service, in one of the following formats:
      *
-     * Its format is:
+     * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+     * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+     * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
      *
-     *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-     *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-     *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+     * The following values are valid for `{service}`:
      *
-     * The possible values for id {service} are:
-     *
-     *   * container-threat-detection
-     *   * event-threat-detection
-     *   * security-health-analytics
-     *   * vm-threat-detection
-     *   * web-security-scanner
+     * * `container-threat-detection`
+     * * `event-threat-detection`
+     * * `security-health-analytics`
+     * * `vm-threat-detection`
+     * * `web-security-scanner`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2272,21 +2258,19 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Identifier. The name of the service.
+     * Identifier. The name of the service, in one of the following formats:
      *
-     * Its format is:
+     * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+     * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+     * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
      *
-     *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-     *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-     *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+     * The following values are valid for `{service}`:
      *
-     * The possible values for id {service} are:
-     *
-     *   * container-threat-detection
-     *   * event-threat-detection
-     *   * security-health-analytics
-     *   * vm-threat-detection
-     *   * web-security-scanner
+     * * `container-threat-detection`
+     * * `event-threat-detection`
+     * * `security-health-analytics`
+     * * `vm-threat-detection`
+     * * `web-security-scanner`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2308,21 +2292,19 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Identifier. The name of the service.
+     * Identifier. The name of the service, in one of the following formats:
      *
-     * Its format is:
+     * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+     * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+     * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
      *
-     *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-     *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-     *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+     * The following values are valid for `{service}`:
      *
-     * The possible values for id {service} are:
-     *
-     *   * container-threat-detection
-     *   * event-threat-detection
-     *   * security-health-analytics
-     *   * vm-threat-detection
-     *   * web-security-scanner
+     * * `container-threat-detection`
+     * * `event-threat-detection`
+     * * `security-health-analytics`
+     * * `vm-threat-detection`
+     * * `web-security-scanner`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2343,21 +2325,19 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Identifier. The name of the service.
+     * Identifier. The name of the service, in one of the following formats:
      *
-     * Its format is:
+     * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+     * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+     * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
      *
-     *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-     *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-     *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+     * The following values are valid for `{service}`:
      *
-     * The possible values for id {service} are:
-     *
-     *   * container-threat-detection
-     *   * event-threat-detection
-     *   * security-health-analytics
-     *   * vm-threat-detection
-     *   * web-security-scanner
+     * * `container-threat-detection`
+     * * `event-threat-detection`
+     * * `security-health-analytics`
+     * * `vm-threat-detection`
+     * * `web-security-scanner`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2374,21 +2354,19 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Identifier. The name of the service.
+     * Identifier. The name of the service, in one of the following formats:
      *
-     * Its format is:
+     * * `organizations/{organization}/locations/{location}/securityCenterServices/{service}`
+     * * `folders/{folder}/locations/{location}/securityCenterServices/{service}`
+     * * `projects/{project}/locations/{location}/securityCenterServices/{service}`
      *
-     *   * organizations/{organization}/locations/{location}/securityCenterServices/{service}
-     *   * folders/{folder}/locations/{location}/securityCenterServices/{service}
-     *   * projects/{project}/locations/{location}/securityCenterServices/{service}
+     * The following values are valid for `{service}`:
      *
-     * The possible values for id {service} are:
-     *
-     *   * container-threat-detection
-     *   * event-threat-detection
-     *   * security-health-analytics
-     *   * vm-threat-detection
-     *   * web-security-scanner
+     * * `container-threat-detection`
+     * * `event-threat-detection`
+     * * `security-health-analytics`
+     * * `vm-threat-detection`
+     * * `web-security-scanner`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2412,9 +2390,9 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the service at its level of
-     * the resource hierarchy. A DISABLED state will override all module
-     * enablement_states to DISABLED.
+     * Optional. The intended enablement state for the service at its level of the
+     * resource hierarchy. A `DISABLED` state will override all module enablement
+     * states to `DISABLED`.
      * </pre>
      *
      * <code>
@@ -2431,9 +2409,9 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the service at its level of
-     * the resource hierarchy. A DISABLED state will override all module
-     * enablement_states to DISABLED.
+     * Optional. The intended enablement state for the service at its level of the
+     * resource hierarchy. A `DISABLED` state will override all module enablement
+     * states to `DISABLED`.
      * </pre>
      *
      * <code>
@@ -2453,9 +2431,9 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the service at its level of
-     * the resource hierarchy. A DISABLED state will override all module
-     * enablement_states to DISABLED.
+     * Optional. The intended enablement state for the service at its level of the
+     * resource hierarchy. A `DISABLED` state will override all module enablement
+     * states to `DISABLED`.
      * </pre>
      *
      * <code>
@@ -2479,9 +2457,9 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the service at its level of
-     * the resource hierarchy. A DISABLED state will override all module
-     * enablement_states to DISABLED.
+     * Optional. The intended enablement state for the service at its level of the
+     * resource hierarchy. A `DISABLED` state will override all module enablement
+     * states to `DISABLED`.
      * </pre>
      *
      * <code>
@@ -2505,9 +2483,9 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The intended state of enablement for the service at its level of
-     * the resource hierarchy. A DISABLED state will override all module
-     * enablement_states to DISABLED.
+     * Optional. The intended enablement state for the service at its level of the
+     * resource hierarchy. A `DISABLED` state will override all module enablement
+     * states to `DISABLED`.
      * </pre>
      *
      * <code>
@@ -2529,7 +2507,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the service at its level of
-     * the resource hierarchy. If the intended state is set to INHERITED, the
+     * the resource hierarchy. If the intended state is set to `INHERITED`, the
      * effective state will be inherited from the enablement state of an ancestor.
      * This state may differ from the intended enablement state due to billing
      * eligibility or onboarding status.
@@ -2550,7 +2528,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the service at its level of
-     * the resource hierarchy. If the intended state is set to INHERITED, the
+     * the resource hierarchy. If the intended state is set to `INHERITED`, the
      * effective state will be inherited from the enablement state of an ancestor.
      * This state may differ from the intended enablement state due to billing
      * eligibility or onboarding status.
@@ -2574,7 +2552,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the service at its level of
-     * the resource hierarchy. If the intended state is set to INHERITED, the
+     * the resource hierarchy. If the intended state is set to `INHERITED`, the
      * effective state will be inherited from the enablement state of an ancestor.
      * This state may differ from the intended enablement state due to billing
      * eligibility or onboarding status.
@@ -2602,7 +2580,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the service at its level of
-     * the resource hierarchy. If the intended state is set to INHERITED, the
+     * the resource hierarchy. If the intended state is set to `INHERITED`, the
      * effective state will be inherited from the enablement state of an ancestor.
      * This state may differ from the intended enablement state due to billing
      * eligibility or onboarding status.
@@ -2630,7 +2608,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The effective enablement state for the service at its level of
-     * the resource hierarchy. If the intended state is set to INHERITED, the
+     * the resource hierarchy. If the intended state is set to `INHERITED`, the
      * effective state will be inherited from the enablement state of an ancestor.
      * This state may differ from the intended enablement state due to billing
      * eligibility or onboarding status.
@@ -2730,8 +2708,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2759,8 +2737,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2779,8 +2757,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2810,8 +2788,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2845,8 +2823,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2874,8 +2852,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2900,8 +2878,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2930,8 +2908,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The configurations including the state of enablement for the
-     * service's different modules. The absence of a module in the map implies its
+     * Optional. The module configurations, including the enablement state for the
+     * service's modules. The absence of a module in the map implies that its
      * configuration is inherited from its parents.
      * </pre>
      *
@@ -2979,7 +2957,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -2997,7 +2975,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3021,7 +2999,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3047,7 +3025,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3070,7 +3048,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3101,7 +3079,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3124,7 +3102,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3142,7 +3120,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3164,7 +3142,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. The time the service was last updated. This could be due to an
-     * explicit user update or due to a side effect of another system change such
+     * explicit user update or due to a side effect of another system change, such
      * as billing subscription expiry.
      * </pre>
      *
@@ -3199,7 +3177,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3215,7 +3193,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3237,7 +3215,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3261,7 +3239,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3282,7 +3260,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3311,7 +3289,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3332,7 +3310,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3348,7 +3326,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *
@@ -3368,7 +3346,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Additional service specific configuration. Not all services will
+     * Optional. Additional service-specific configuration. Not all services will
      * utilize this field.
      * </pre>
      *

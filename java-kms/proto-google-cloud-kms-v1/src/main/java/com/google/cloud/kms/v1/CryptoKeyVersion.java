@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    *
    * The suffix following `HMAC_` corresponds to the hash algorithm being used
    * (eg. SHA256).
+   *
    *
    * For more information, see [Key purposes and algorithms]
    * (https://cloud.google.com/kms/docs/algorithms).

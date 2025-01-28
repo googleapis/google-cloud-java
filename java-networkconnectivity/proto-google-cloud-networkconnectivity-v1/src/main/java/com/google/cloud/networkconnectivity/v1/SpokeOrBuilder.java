@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -441,6 +441,48 @@ public interface SpokeOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder getLinkedVpcNetworkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the linkedProducerVpcNetwork field is set.
+   */
+  boolean hasLinkedProducerVpcNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The linkedProducerVpcNetwork.
+   */
+  com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork getLinkedProducerVpcNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The linked producer VPC that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork linked_producer_vpc_network = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetworkOrBuilder
+      getLinkedProducerVpcNetworkOrBuilder();
 
   /**
    *

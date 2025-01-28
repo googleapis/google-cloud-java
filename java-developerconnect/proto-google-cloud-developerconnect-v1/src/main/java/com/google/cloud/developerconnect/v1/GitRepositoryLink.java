@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     cloneUri_ = "";
     etag_ = "";
     uid_ = "";
+    webhookId_ = "";
   }
 
   @java.lang.Override
@@ -672,6 +673,57 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int WEBHOOK_ID_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webhookId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. External ID of the webhook created for the repository.
+   * </pre>
+   *
+   * <code>string webhook_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The webhookId.
+   */
+  @java.lang.Override
+  public java.lang.String getWebhookId() {
+    java.lang.Object ref = webhookId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      webhookId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. External ID of the webhook created for the repository.
+   * </pre>
+   *
+   * <code>string webhook_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for webhookId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWebhookIdBytes() {
+    java.lang.Object ref = webhookId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      webhookId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -713,6 +765,9 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 9);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, uid_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, webhookId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -767,6 +822,9 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, uid_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, webhookId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -802,6 +860,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     if (getReconciling() != other.getReconciling()) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getUid().equals(other.getUid())) return false;
+    if (!getWebhookId().equals(other.getWebhookId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -843,6 +902,8 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + UID_FIELD_NUMBER;
     hash = (53 * hash) + getUid().hashCode();
+    hash = (37 * hash) + WEBHOOK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getWebhookId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1042,6 +1103,7 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       reconciling_ = false;
       internalGetMutableAnnotations().clear();
       uid_ = "";
+      webhookId_ = "";
       return this;
     }
 
@@ -1113,6 +1175,9 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.webhookId_ = webhookId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1197,6 +1262,11 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
         bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getWebhookId().isEmpty()) {
+        webhookId_ = other.webhookId_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1297,6 +1367,12 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                webhookId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2767,6 +2843,112 @@ public final class GitRepositoryLink extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       uid_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object webhookId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The webhookId.
+     */
+    public java.lang.String getWebhookId() {
+      java.lang.Object ref = webhookId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        webhookId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for webhookId.
+     */
+    public com.google.protobuf.ByteString getWebhookIdBytes() {
+      java.lang.Object ref = webhookId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        webhookId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The webhookId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebhookId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      webhookId_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebhookId() {
+      webhookId_ = getDefaultInstance().getWebhookId();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for webhookId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebhookIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      webhookId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

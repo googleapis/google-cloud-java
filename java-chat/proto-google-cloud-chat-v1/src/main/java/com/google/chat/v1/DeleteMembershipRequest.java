@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,7 +150,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * When `true`, the method runs using the user's Google Workspace
+   * Optional. When `true`, the method runs using the user's Google Workspace
    * administrator privileges.
    *
    * The calling user must be a Google Workspace administrator with the
@@ -163,7 +163,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
    * Deleting app memberships in a space isn't supported using admin access.
    * </pre>
    *
-   * <code>bool use_admin_access = 2;</code>
+   * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useAdminAccess.
    */
@@ -721,7 +721,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -734,7 +734,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * Deleting app memberships in a space isn't supported using admin access.
      * </pre>
      *
-     * <code>bool use_admin_access = 2;</code>
+     * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The useAdminAccess.
      */
@@ -746,7 +746,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -759,7 +759,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * Deleting app memberships in a space isn't supported using admin access.
      * </pre>
      *
-     * <code>bool use_admin_access = 2;</code>
+     * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The useAdminAccess to set.
      * @return This builder for chaining.
@@ -775,7 +775,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * When `true`, the method runs using the user's Google Workspace
+     * Optional. When `true`, the method runs using the user's Google Workspace
      * administrator privileges.
      *
      * The calling user must be a Google Workspace administrator with the
@@ -788,7 +788,7 @@ public final class DeleteMembershipRequest extends com.google.protobuf.Generated
      * Deleting app memberships in a space isn't supported using admin access.
      * </pre>
      *
-     * <code>bool use_admin_access = 2;</code>
+     * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

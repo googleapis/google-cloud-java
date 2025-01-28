@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,8 +34,8 @@ package com.google.cloud.automl.v1;
  * non-terminal symbols defined near the end of this comment. The formats
  * are:
  *
- * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
- * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * #### AutoML Vision
+ * ##### Classification
  *
  * One or more CSV files where each line is a single column:
  *
@@ -51,7 +51,7 @@ package com.google.cloud.automl.v1;
  *     gs://folder/image2.gif
  *     gs://folder/image3.png
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
+ * ##### Object Detection
  *
  * One or more CSV files where each line is a single column:
  *
@@ -66,11 +66,9 @@ package com.google.cloud.automl.v1;
  *     gs://folder/image1.jpeg
  *     gs://folder/image2.gif
  *     gs://folder/image3.png
- *   &lt;/section&gt;
- * &lt;/div&gt;
  *
- * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
- * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * #### AutoML Video Intelligence
+ * ##### Classification
  *
  * One or more CSV files where each line is a single column:
  *
@@ -89,7 +87,7 @@ package com.google.cloud.automl.v1;
  *     gs://folder/video1.mp4,20,60
  *     gs://folder/vid2.mov,0,inf
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+ * ##### Object Tracking
  *
  * One or more CSV files where each line is a single column:
  *
@@ -107,11 +105,9 @@ package com.google.cloud.automl.v1;
  *     gs://folder/video1.mp4,10,40
  *     gs://folder/video1.mp4,20,60
  *     gs://folder/vid2.mov,0,inf
- *   &lt;/section&gt;
- * &lt;/div&gt;
  *
- * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
- * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+ * #### AutoML Natural Language
+ * ##### Classification
  *
  * One or more CSV files where each line is a single column:
  *
@@ -128,7 +124,7 @@ package com.google.cloud.automl.v1;
  *     gs://folder/text2.pdf
  *     gs://folder/text3.tif
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
+ * ##### Sentiment Analysis
  * One or more CSV files where each line is a single column:
  *
  *     GCS_FILE_PATH
@@ -144,7 +140,7 @@ package com.google.cloud.automl.v1;
  *     gs://folder/text2.pdf
  *     gs://folder/text3.tif
  *
- * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
+ * ##### Entity Extraction
  *
  * One or more JSONL (JSON Lines) files that either provide inline text or
  * documents. You can only use one format, either inline text or documents,
@@ -214,11 +210,8 @@ package com.google.cloud.automl.v1;
  *          }
  *        }
  *      }
- *   &lt;/section&gt;
- * &lt;/div&gt;
  *
- * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
- * class="selected"&gt;
+ * #### AutoML Tables
  *
  * See [Preparing your training
  * data](https://cloud.google.com/automl-tables/docs/predict-batch) for more
@@ -264,8 +257,6 @@ package com.google.cloud.automl.v1;
  * input feature column specs must contain values compatible with the
  * column spec's data types. Prediction on all the rows of the table
  * will be attempted.
- *   &lt;/section&gt;
- * &lt;/div&gt;
  *
  * **Input field definitions:**
  *
@@ -626,8 +617,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * non-terminal symbols defined near the end of this comment. The formats
    * are:
    *
-   * &lt;h4&gt;AutoML Vision&lt;/h4&gt;
-   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * #### AutoML Vision
+   * ##### Classification
    *
    * One or more CSV files where each line is a single column:
    *
@@ -643,7 +634,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *     gs://folder/image2.gif
    *     gs://folder/image3.png
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Detection&lt;/h5&gt;
+   * ##### Object Detection
    *
    * One or more CSV files where each line is a single column:
    *
@@ -658,11 +649,9 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *     gs://folder/image1.jpeg
    *     gs://folder/image2.gif
    *     gs://folder/image3.png
-   *   &lt;/section&gt;
-   * &lt;/div&gt;
    *
-   * &lt;h4&gt;AutoML Video Intelligence&lt;/h4&gt;
-   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * #### AutoML Video Intelligence
+   * ##### Classification
    *
    * One or more CSV files where each line is a single column:
    *
@@ -681,7 +670,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *     gs://folder/video1.mp4,20,60
    *     gs://folder/vid2.mov,0,inf
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Object Tracking&lt;/h5&gt;
+   * ##### Object Tracking
    *
    * One or more CSV files where each line is a single column:
    *
@@ -699,11 +688,9 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *     gs://folder/video1.mp4,10,40
    *     gs://folder/video1.mp4,20,60
    *     gs://folder/vid2.mov,0,inf
-   *   &lt;/section&gt;
-   * &lt;/div&gt;
    *
-   * &lt;h4&gt;AutoML Natural Language&lt;/h4&gt;
-   * &lt;div class="ds-selector-tabs"&gt;&lt;section&gt;&lt;h5&gt;Classification&lt;/h5&gt;
+   * #### AutoML Natural Language
+   * ##### Classification
    *
    * One or more CSV files where each line is a single column:
    *
@@ -720,7 +707,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *     gs://folder/text2.pdf
    *     gs://folder/text3.tif
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Sentiment Analysis&lt;/h5&gt;
+   * ##### Sentiment Analysis
    * One or more CSV files where each line is a single column:
    *
    *     GCS_FILE_PATH
@@ -736,7 +723,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *     gs://folder/text2.pdf
    *     gs://folder/text3.tif
    *
-   * &lt;/section&gt;&lt;section&gt;&lt;h5&gt;Entity Extraction&lt;/h5&gt;
+   * ##### Entity Extraction
    *
    * One or more JSONL (JSON Lines) files that either provide inline text or
    * documents. You can only use one format, either inline text or documents,
@@ -806,11 +793,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *          }
    *        }
    *      }
-   *   &lt;/section&gt;
-   * &lt;/div&gt;
    *
-   * &lt;h4&gt;AutoML Tables&lt;/h4&gt;&lt;div class="ui-datasection-main"&gt;&lt;section
-   * class="selected"&gt;
+   * #### AutoML Tables
    *
    * See [Preparing your training
    * data](https://cloud.google.com/automl-tables/docs/predict-batch) for more
@@ -856,8 +840,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    * input feature column specs must contain values compatible with the
    * column spec's data types. Prediction on all the rows of the table
    * will be attempted.
-   *   &lt;/section&gt;
-   * &lt;/div&gt;
    *
    * **Input field definitions:**
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -291,6 +291,68 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         : customVoice_;
   }
 
+  public static final int VOICE_CLONE_FIELD_NUMBER = 5;
+  private com.google.cloud.texttospeech.v1.VoiceCloneParams voiceClone_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a voice clone. If
+   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+   * voice clone matching the specified configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the voiceClone field is set.
+   */
+  @java.lang.Override
+  public boolean hasVoiceClone() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a voice clone. If
+   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+   * voice clone matching the specified configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The voiceClone.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.VoiceCloneParams getVoiceClone() {
+    return voiceClone_ == null
+        ? com.google.cloud.texttospeech.v1.VoiceCloneParams.getDefaultInstance()
+        : voiceClone_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a voice clone. If
+   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+   * voice clone matching the specified configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.VoiceCloneParamsOrBuilder getVoiceCloneOrBuilder() {
+    return voiceClone_ == null
+        ? com.google.cloud.texttospeech.v1.VoiceCloneParams.getDefaultInstance()
+        : voiceClone_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -319,6 +381,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getCustomVoice());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getVoiceClone());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -341,6 +406,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCustomVoice());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getVoiceClone());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -365,6 +433,10 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (hasCustomVoice()) {
       if (!getCustomVoice().equals(other.getCustomVoice())) return false;
     }
+    if (hasVoiceClone() != other.hasVoiceClone()) return false;
+    if (hasVoiceClone()) {
+      if (!getVoiceClone().equals(other.getVoiceClone())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -385,6 +457,10 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (hasCustomVoice()) {
       hash = (37 * hash) + CUSTOM_VOICE_FIELD_NUMBER;
       hash = (53 * hash) + getCustomVoice().hashCode();
+    }
+    if (hasVoiceClone()) {
+      hash = (37 * hash) + VOICE_CLONE_FIELD_NUMBER;
+      hash = (53 * hash) + getVoiceClone().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -528,6 +604,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCustomVoiceFieldBuilder();
+        getVoiceCloneFieldBuilder();
       }
     }
 
@@ -542,6 +619,11 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (customVoiceBuilder_ != null) {
         customVoiceBuilder_.dispose();
         customVoiceBuilder_ = null;
+      }
+      voiceClone_ = null;
+      if (voiceCloneBuilder_ != null) {
+        voiceCloneBuilder_.dispose();
+        voiceCloneBuilder_ = null;
       }
       return this;
     }
@@ -593,6 +675,10 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         result.customVoice_ =
             customVoiceBuilder_ == null ? customVoice_ : customVoiceBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.voiceClone_ = voiceCloneBuilder_ == null ? voiceClone_ : voiceCloneBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -659,6 +745,9 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (other.hasCustomVoice()) {
         mergeCustomVoice(other.getCustomVoice());
       }
+      if (other.hasVoiceClone()) {
+        mergeVoiceClone(other.getVoiceClone());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -709,6 +798,12 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getVoiceCloneFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1315,6 +1410,229 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         customVoice_ = null;
       }
       return customVoiceBuilder_;
+    }
+
+    private com.google.cloud.texttospeech.v1.VoiceCloneParams voiceClone_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.VoiceCloneParams,
+            com.google.cloud.texttospeech.v1.VoiceCloneParams.Builder,
+            com.google.cloud.texttospeech.v1.VoiceCloneParamsOrBuilder>
+        voiceCloneBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the voiceClone field is set.
+     */
+    public boolean hasVoiceClone() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The voiceClone.
+     */
+    public com.google.cloud.texttospeech.v1.VoiceCloneParams getVoiceClone() {
+      if (voiceCloneBuilder_ == null) {
+        return voiceClone_ == null
+            ? com.google.cloud.texttospeech.v1.VoiceCloneParams.getDefaultInstance()
+            : voiceClone_;
+      } else {
+        return voiceCloneBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVoiceClone(com.google.cloud.texttospeech.v1.VoiceCloneParams value) {
+      if (voiceCloneBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        voiceClone_ = value;
+      } else {
+        voiceCloneBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVoiceClone(
+        com.google.cloud.texttospeech.v1.VoiceCloneParams.Builder builderForValue) {
+      if (voiceCloneBuilder_ == null) {
+        voiceClone_ = builderForValue.build();
+      } else {
+        voiceCloneBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVoiceClone(com.google.cloud.texttospeech.v1.VoiceCloneParams value) {
+      if (voiceCloneBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && voiceClone_ != null
+            && voiceClone_
+                != com.google.cloud.texttospeech.v1.VoiceCloneParams.getDefaultInstance()) {
+          getVoiceCloneBuilder().mergeFrom(value);
+        } else {
+          voiceClone_ = value;
+        }
+      } else {
+        voiceCloneBuilder_.mergeFrom(value);
+      }
+      if (voiceClone_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVoiceClone() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      voiceClone_ = null;
+      if (voiceCloneBuilder_ != null) {
+        voiceCloneBuilder_.dispose();
+        voiceCloneBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.VoiceCloneParams.Builder getVoiceCloneBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getVoiceCloneFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.VoiceCloneParamsOrBuilder getVoiceCloneOrBuilder() {
+      if (voiceCloneBuilder_ != null) {
+        return voiceCloneBuilder_.getMessageOrBuilder();
+      } else {
+        return voiceClone_ == null
+            ? com.google.cloud.texttospeech.v1.VoiceCloneParams.getDefaultInstance()
+            : voiceClone_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a voice clone. If
+     * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
+     * voice clone matching the specified configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.VoiceCloneParams voice_clone = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.VoiceCloneParams,
+            com.google.cloud.texttospeech.v1.VoiceCloneParams.Builder,
+            com.google.cloud.texttospeech.v1.VoiceCloneParamsOrBuilder>
+        getVoiceCloneFieldBuilder() {
+      if (voiceCloneBuilder_ == null) {
+        voiceCloneBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.VoiceCloneParams,
+                com.google.cloud.texttospeech.v1.VoiceCloneParams.Builder,
+                com.google.cloud.texttospeech.v1.VoiceCloneParamsOrBuilder>(
+                getVoiceClone(), getParentForChildren(), isClean());
+        voiceClone_ = null;
+      }
+      return voiceCloneBuilder_;
     }
 
     @java.lang.Override

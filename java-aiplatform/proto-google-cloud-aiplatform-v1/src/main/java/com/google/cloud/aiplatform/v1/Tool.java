@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -108,7 +108,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -131,7 +131,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -153,7 +153,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -175,7 +175,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * User should provide a [FunctionResponse][content.part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -817,7 +817,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -843,7 +843,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -868,7 +868,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -893,7 +893,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -925,7 +925,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -954,7 +954,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -986,7 +986,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1018,7 +1018,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1047,7 +1047,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1076,7 +1076,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1105,7 +1105,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1133,7 +1133,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1161,7 +1161,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1183,7 +1183,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1209,7 +1209,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1235,7 +1235,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1258,7 +1258,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1282,7 +1282,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * User should provide a [FunctionResponse][content.part.function_response]
      * for each function call in the next turn. Based on the function responses,
      * Model will generate the final response back to the user.
-     * Maximum 64 function declarations can be provided.
+     * Maximum 128 function declarations can be provided.
      * </pre>
      *
      * <code>

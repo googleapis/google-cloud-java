@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -423,6 +423,57 @@ public interface HealthCheckOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @return A list containing the sourceRegions.
+   */
+  java.util.List<java.lang.String> getSourceRegionsList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @return The count of sourceRegions.
+   */
+  int getSourceRegionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sourceRegions at the given index.
+   */
+  java.lang.String getSourceRegions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+   * </pre>
+   *
+   * <code>repeated string source_regions = 405568475;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sourceRegions at the given index.
+   */
+  com.google.protobuf.ByteString getSourceRegionsBytes(int index);
 
   /**
    * <code>optional .google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>

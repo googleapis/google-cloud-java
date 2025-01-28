@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,11 +31,13 @@ public interface ToolOrBuilder
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
+   * by populating
+   * [FunctionCall][google.cloud.aiplatform.v1beta1.Part.function_call] in the
+   * response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1beta1.Part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -51,11 +53,13 @@ public interface ToolOrBuilder
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
+   * by populating
+   * [FunctionCall][google.cloud.aiplatform.v1beta1.Part.function_call] in the
+   * response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1beta1.Part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -70,11 +74,13 @@ public interface ToolOrBuilder
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
+   * by populating
+   * [FunctionCall][google.cloud.aiplatform.v1beta1.Part.function_call] in the
+   * response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1beta1.Part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -89,11 +95,13 @@ public interface ToolOrBuilder
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
+   * by populating
+   * [FunctionCall][google.cloud.aiplatform.v1beta1.Part.function_call] in the
+   * response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1beta1.Part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -109,11 +117,13 @@ public interface ToolOrBuilder
    * Optional. Function tool type.
    * One or more function declarations to be passed to the model along with the
    * current user query. Model may decide to call a subset of these functions
-   * by populating [FunctionCall][content.part.function_call] in the response.
-   * User should provide a [FunctionResponse][content.part.function_response]
+   * by populating
+   * [FunctionCall][google.cloud.aiplatform.v1beta1.Part.function_call] in the
+   * response. User should provide a
+   * [FunctionResponse][google.cloud.aiplatform.v1beta1.Part.function_response]
    * for each function call in the next turn. Based on the function responses,
    * Model will generate the final response back to the user.
-   * Maximum 64 function declarations can be provided.
+   * Maximum 128 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -177,6 +187,50 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Optional. GoogleSearch tool type.
+   * Tool to support Google Search in Model. Powered by Google.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleSearch field is set.
+   */
+  boolean hasGoogleSearch();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleSearch tool type.
+   * Tool to support Google Search in Model. Powered by Google.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleSearch.
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.GoogleSearch getGoogleSearch();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleSearch tool type.
+   * Tool to support Google Search in Model. Powered by Google.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.GoogleSearch google_search = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.GoogleSearchOrBuilder getGoogleSearchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. GoogleSearchRetrieval tool type.
    * Specialized retrieval tool that is powered by Google search.
    * </pre>
@@ -217,4 +271,51 @@ public interface ToolOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GoogleSearchRetrievalOrBuilder
       getGoogleSearchRetrievalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the codeExecution field is set.
+   */
+  boolean hasCodeExecution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The codeExecution.
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.CodeExecution getCodeExecution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CodeExecution tool type.
+   * Enables the model to execute code as part of generation.
+   * This field is only used by the Gemini Developer API services.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.CodeExecution code_execution = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.CodeExecutionOrBuilder getCodeExecutionOrBuilder();
 }

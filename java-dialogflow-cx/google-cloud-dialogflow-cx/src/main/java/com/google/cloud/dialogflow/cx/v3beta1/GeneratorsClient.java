@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -316,8 +316,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all generators for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all generators for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGeneratorsPagedResponse listGenerators(AgentName parent) {
@@ -348,8 +348,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to list all generators for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to list all generators for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGeneratorsPagedResponse listGenerators(String parent) {
@@ -482,9 +482,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the generator. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/generators/&lt;Generator
-   *     ID&gt;`.
+   * @param name Required. The name of the generator. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Generator getGenerator(GeneratorName name) {
@@ -512,9 +511,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the generator. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/generators/&lt;Generator
-   *     ID&gt;`.
+   * @param name Required. The name of the generator. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Generator getGenerator(String name) {
@@ -600,8 +598,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a generator for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a generator for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param generator Required. The generator to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -633,8 +631,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The agent to create a generator for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param parent Required. The agent to create a generator for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @param generator Required. The generator to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -813,9 +811,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the generator to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/generators/&lt;Generator
-   *     ID&gt;`.
+   * @param name Required. The name of the generator to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteGenerator(GeneratorName name) {
@@ -843,9 +840,8 @@ public class GeneratorsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the generator to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/generators/&lt;Generator
-   *     ID&gt;`.
+   * @param name Required. The name of the generator to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generators/&lt;GeneratorID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteGenerator(String name) {

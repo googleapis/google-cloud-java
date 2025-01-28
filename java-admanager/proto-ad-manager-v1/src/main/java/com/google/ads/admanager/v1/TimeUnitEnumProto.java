@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,12 @@ public final class TimeUnitEnumProto {
           + "UnitEnum\"|\n\010TimeUnit\022\031\n\025TIME_UNIT_UNSPEC"
           + "IFIED\020\000\022\n\n\006MINUTE\020\001\022\010\n\004HOUR\020\002\022\007\n\003DAY\020\003\022\010"
           + "\n\004WEEK\020\004\022\t\n\005MONTH\020\005\022\014\n\010LIFETIME\020\006\022\007\n\003POD"
-          + "\020\007\022\n\n\006STREAM\020\010B\250\001\n\033com.google.ads.admana"
+          + "\020\007\022\n\n\006STREAM\020\010B\305\001\n\033com.google.ads.admana"
           + "ger.v1B\021TimeUnitEnumProtoP\001Z@google.gola"
           + "ng.org/genproto/googleapis/ads/admanager"
           + "/v1;admanager\252\002\027Google.Ads.AdManager.V1\312"
-          + "\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + "\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads:"
+          + ":AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

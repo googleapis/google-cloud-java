@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,41 @@ public interface SourceConfigOrBuilder
    */
   com.google.cloud.datastream.v1.PostgresqlSourceConfigOrBuilder
       getPostgresqlSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   *
+   * @return Whether the sqlServerSourceConfig field is set.
+   */
+  boolean hasSqlServerSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   *
+   * @return The sqlServerSourceConfig.
+   */
+  com.google.cloud.datastream.v1.SqlServerSourceConfig getSqlServerSourceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SqlServerSourceConfig sql_server_source_config = 103;</code>
+   */
+  com.google.cloud.datastream.v1.SqlServerSourceConfigOrBuilder getSqlServerSourceConfigOrBuilder();
 
   com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase getSourceStreamConfigCase();
 }

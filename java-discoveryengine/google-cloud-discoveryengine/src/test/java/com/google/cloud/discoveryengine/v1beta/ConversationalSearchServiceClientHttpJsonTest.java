@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -685,6 +685,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                     .toString())
             .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
             .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+            .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
             .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
             .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
             .setQueryUnderstandingSpec(
@@ -733,6 +734,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
                       .toString())
               .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
               .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+              .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
               .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
               .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
               .setQueryUnderstandingSpec(

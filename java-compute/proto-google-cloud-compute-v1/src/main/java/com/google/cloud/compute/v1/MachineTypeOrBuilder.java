@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,6 +75,46 @@ public interface MachineTypeOrBuilder
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
    */
   com.google.cloud.compute.v1.AcceleratorsOrBuilder getAcceleratorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the machine type.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return Whether the architecture field is set.
+   */
+  boolean hasArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the machine type.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The architecture.
+   */
+  java.lang.String getArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the machine type.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The bytes for architecture.
+   */
+  com.google.protobuf.ByteString getArchitectureBytes();
 
   /**
    *

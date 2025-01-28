@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  * <pre>
  * MySQL database profile.
+ * Next ID: 7.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.MysqlProfile}
@@ -194,11 +195,12 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Password for the MySQL connection.
+   * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+   * with the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>
-   * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+   * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return The password.
@@ -219,11 +221,12 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Password for the MySQL connection.
+   * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+   * with the `secret_manager_stored_password` field.
    * </pre>
    *
    * <code>
-   * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+   * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
    * @return The bytes for password.
@@ -496,6 +499,7 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * MySQL database profile.
+   * Next ID: 7.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.MysqlProfile}
@@ -1015,11 +1019,12 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Password for the MySQL connection.
+     * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+     * with the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>
-     * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @return The password.
@@ -1039,11 +1044,12 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Password for the MySQL connection.
+     * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+     * with the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>
-     * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @return The bytes for password.
@@ -1063,11 +1069,12 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Password for the MySQL connection.
+     * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+     * with the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>
-     * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @param value The password to set.
@@ -1086,11 +1093,12 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Password for the MySQL connection.
+     * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+     * with the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>
-     * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -1105,11 +1113,12 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Password for the MySQL connection.
+     * Optional. Input only. Password for the MySQL connection. Mutually exclusive
+     * with the `secret_manager_stored_password` field.
      * </pre>
      *
      * <code>
-     * string password = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
+     * string password = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
      * @param value The bytes for password to set.

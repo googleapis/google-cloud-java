@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,7 +123,8 @@ public interface ListNotebookExecutionJobsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListNotebookExecutionJobs.next_page_token][] of the previous
+   * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+   * of the previous
    * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
    * call.
    * </pre>
@@ -139,7 +140,8 @@ public interface ListNotebookExecutionJobsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListNotebookExecutionJobs.next_page_token][] of the previous
+   * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListNotebookExecutionJobsResponse.next_page_token]
+   * of the previous
    * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1.NotebookService.ListNotebookExecutionJobs]
    * call.
    * </pre>

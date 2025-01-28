@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,8 +137,8 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
    * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
    * including the
    * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
-   * in a subsequent request.  If unspecified, at most
-   * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+   * in a subsequent request.  If unspecified, at most 100
+   * [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -807,8 +807,8 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
      * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
      * including the
      * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
-     * in a subsequent request.  If unspecified, at most
-     * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+     * in a subsequent request.  If unspecified, at most 100
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -829,8 +829,8 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
      * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
      * including the
      * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
-     * in a subsequent request.  If unspecified, at most
-     * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+     * in a subsequent request.  If unspecified, at most 100
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -855,8 +855,8 @@ public final class ListKeyHandlesRequest extends com.google.protobuf.GeneratedMe
      * [KeyHandles][google.cloud.kms.v1.KeyHandle] can subsequently be obtained by
      * including the
      * [ListKeyHandlesResponse.next_page_token][google.cloud.kms.v1.ListKeyHandlesResponse.next_page_token]
-     * in a subsequent request.  If unspecified, at most
-     * 100 [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
+     * in a subsequent request.  If unspecified, at most 100
+     * [KeyHandles][google.cloud.kms.v1.KeyHandle] will be returned.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

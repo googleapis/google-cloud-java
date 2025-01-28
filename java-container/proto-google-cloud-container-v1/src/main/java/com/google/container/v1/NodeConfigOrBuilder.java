@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1702,6 +1702,57 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @return A list containing the storagePools.
+   */
+  java.util.List<java.lang.String> getStoragePoolsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @return The count of storagePools.
+   */
+  int getStoragePoolsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The storagePools at the given index.
+   */
+  java.lang.String getStoragePools(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of Storage Pools where boot disks are provisioned.
+   * </pre>
+   *
+   * <code>repeated string storage_pools = 49;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the storagePools at the given index.
+   */
+  com.google.protobuf.ByteString getStoragePoolsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Secondary boot disk update strategy.
    * </pre>
    *
@@ -1739,4 +1790,85 @@ public interface NodeConfigOrBuilder
    */
   com.google.container.v1.SecondaryBootDiskUpdateStrategyOrBuilder
       getSecondaryBootDiskUpdateStrategyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return Whether the localSsdEncryptionMode field is set.
+   */
+  boolean hasLocalSsdEncryptionMode();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for localSsdEncryptionMode.
+   */
+  int getLocalSsdEncryptionModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which method should be used for encrypting the
+   * Local SSDs attahced to the node.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.NodeConfig.LocalSsdEncryptionMode local_ssd_encryption_mode = 54;
+   * </code>
+   *
+   * @return The localSsdEncryptionMode.
+   */
+  com.google.container.v1.NodeConfig.LocalSsdEncryptionMode getLocalSsdEncryptionMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+   * node pool. It is determined by the cgroup mode specified in the
+   * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+   * version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for effectiveCgroupMode.
+   */
+  int getEffectiveCgroupModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. effective_cgroup_mode is the cgroup mode actually used by the
+   * node pool. It is determined by the cgroup mode specified in the
+   * LinuxNodeConfig or the default cgroup mode based on the cluster creation
+   * version.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeConfig.EffectiveCgroupMode effective_cgroup_mode = 55 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveCgroupMode.
+   */
+  com.google.container.v1.NodeConfig.EffectiveCgroupMode getEffectiveCgroupMode();
 }

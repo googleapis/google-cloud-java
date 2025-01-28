@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,12 +72,12 @@ public final class OrderServiceProto {
           + ".v1.ListOrdersRequest\032+.google.ads.adman"
           + "ager.v1.ListOrdersResponse\"/\332A\006parent\202\323\344"
           + "\223\002 \022\036/v1/{parent=networks/*}/orders\032\033\312A\030"
-          + "admanager.googleapis.comB\250\001\n\033com.google."
+          + "admanager.googleapis.comB\305\001\n\033com.google."
           + "ads.admanager.v1B\021OrderServiceProtoP\001Z@g"
           + "oogle.golang.org/genproto/googleapis/ads"
           + "/admanager/v1;admanager\252\002\027Google.Ads.AdM"
-          + "anager.V1\312\002\027Google\\Ads\\AdManager\\V1b\006pro"
-          + "to3"
+          + "anager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Go"
+          + "ogle::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

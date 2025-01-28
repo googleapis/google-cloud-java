@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntriesPaged
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryGroupsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListEntryTypesPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataplex.v1.CatalogServiceClient.ListMetadataJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.CatalogServiceClient.SearchEntriesPagedResponse;
 
 import com.google.api.HttpRule;
@@ -40,10 +41,12 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.AspectType;
+import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
+import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
@@ -55,6 +58,7 @@ import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
+import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesRequest;
 import com.google.cloud.dataplex.v1.ListAspectTypesResponse;
 import com.google.cloud.dataplex.v1.ListEntriesRequest;
@@ -63,7 +67,10 @@ import com.google.cloud.dataplex.v1.ListEntryGroupsRequest;
 import com.google.cloud.dataplex.v1.ListEntryGroupsResponse;
 import com.google.cloud.dataplex.v1.ListEntryTypesRequest;
 import com.google.cloud.dataplex.v1.ListEntryTypesResponse;
+import com.google.cloud.dataplex.v1.ListMetadataJobsRequest;
+import com.google.cloud.dataplex.v1.ListMetadataJobsResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
+import com.google.cloud.dataplex.v1.MetadataJob;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -101,6 +108,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
           .add(AspectType.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(EntryGroup.getDescriptor())
+          .add(MetadataJob.getDescriptor())
           .add(EntryType.getDescriptor())
           .build();
 
@@ -958,6 +966,159 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateMetadataJobRequest, Operation>
+      createMetadataJobMethodDescriptor =
+          ApiMethodDescriptor.<CreateMetadataJobRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateMetadataJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateMetadataJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/metadataJobs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMetadataJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMetadataJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "metadataJobId", request.getMetadataJobId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("metadataJob", request.getMetadataJob(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateMetadataJobRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetMetadataJobRequest, MetadataJob>
+      getMetadataJobMethodDescriptor =
+          ApiMethodDescriptor.<GetMetadataJobRequest, MetadataJob>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetMetadataJob")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetMetadataJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/metadataJobs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMetadataJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMetadataJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MetadataJob>newBuilder()
+                      .setDefaultInstance(MetadataJob.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsMethodDescriptor =
+          ApiMethodDescriptor.<ListMetadataJobsRequest, ListMetadataJobsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/ListMetadataJobs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListMetadataJobsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/metadataJobs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMetadataJobsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMetadataJobsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListMetadataJobsResponse>newBuilder()
+                      .setDefaultInstance(ListMetadataJobsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CancelMetadataJobRequest, Empty>
+      cancelMetadataJobMethodDescriptor =
+          ApiMethodDescriptor.<CancelMetadataJobRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CancelMetadataJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelMetadataJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/metadataJobs/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelMetadataJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelMetadataJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1078,6 +1239,15 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesResponse> searchEntriesCallable;
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesPagedResponse>
       searchEntriesPagedCallable;
+  private final UnaryCallable<CreateMetadataJobRequest, Operation> createMetadataJobCallable;
+  private final OperationCallable<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationCallable;
+  private final UnaryCallable<GetMetadataJobRequest, MetadataJob> getMetadataJobCallable;
+  private final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsCallable;
+  private final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
+      listMetadataJobsPagedCallable;
+  private final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1135,21 +1305,38 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                     "google.longrunning.Operations.CancelOperation",
                     HttpRule.newBuilder()
                         .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=organizations/*/locations/*/operations/*}:cancel")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
                         .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .build());
 
@@ -1401,6 +1588,51 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateMetadataJobRequest, Operation> createMetadataJobTransportSettings =
+        HttpJsonCallSettings.<CreateMetadataJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(createMetadataJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetMetadataJobRequest, MetadataJob> getMetadataJobTransportSettings =
+        HttpJsonCallSettings.<GetMetadataJobRequest, MetadataJob>newBuilder()
+            .setMethodDescriptor(getMetadataJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListMetadataJobsRequest, ListMetadataJobsResponse>
+        listMetadataJobsTransportSettings =
+            HttpJsonCallSettings.<ListMetadataJobsRequest, ListMetadataJobsResponse>newBuilder()
+                .setMethodDescriptor(listMetadataJobsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobTransportSettings =
+        HttpJsonCallSettings.<CancelMetadataJobRequest, Empty>newBuilder()
+            .setMethodDescriptor(cancelMetadataJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1560,6 +1792,31 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     this.searchEntriesPagedCallable =
         callableFactory.createPagedCallable(
             searchEntriesTransportSettings, settings.searchEntriesSettings(), clientContext);
+    this.createMetadataJobCallable =
+        callableFactory.createUnaryCallable(
+            createMetadataJobTransportSettings,
+            settings.createMetadataJobSettings(),
+            clientContext);
+    this.createMetadataJobOperationCallable =
+        callableFactory.createOperationCallable(
+            createMetadataJobTransportSettings,
+            settings.createMetadataJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getMetadataJobCallable =
+        callableFactory.createUnaryCallable(
+            getMetadataJobTransportSettings, settings.getMetadataJobSettings(), clientContext);
+    this.listMetadataJobsCallable =
+        callableFactory.createUnaryCallable(
+            listMetadataJobsTransportSettings, settings.listMetadataJobsSettings(), clientContext);
+    this.listMetadataJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMetadataJobsTransportSettings, settings.listMetadataJobsSettings(), clientContext);
+    this.cancelMetadataJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelMetadataJobTransportSettings,
+            settings.cancelMetadataJobSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1599,6 +1856,10 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     methodDescriptors.add(getEntryMethodDescriptor);
     methodDescriptors.add(lookupEntryMethodDescriptor);
     methodDescriptors.add(searchEntriesMethodDescriptor);
+    methodDescriptors.add(createMetadataJobMethodDescriptor);
+    methodDescriptors.add(getMetadataJobMethodDescriptor);
+    methodDescriptors.add(listMetadataJobsMethodDescriptor);
+    methodDescriptors.add(cancelMetadataJobMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1799,6 +2060,39 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   public UnaryCallable<SearchEntriesRequest, SearchEntriesPagedResponse>
       searchEntriesPagedCallable() {
     return searchEntriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMetadataJobRequest, Operation> createMetadataJobCallable() {
+    return createMetadataJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateMetadataJobRequest, MetadataJob, OperationMetadata>
+      createMetadataJobOperationCallable() {
+    return createMetadataJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMetadataJobRequest, MetadataJob> getMetadataJobCallable() {
+    return getMetadataJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsResponse>
+      listMetadataJobsCallable() {
+    return listMetadataJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
+      listMetadataJobsPagedCallable() {
+    return listMetadataJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
+    return cancelMetadataJobCallable;
   }
 
   @Override

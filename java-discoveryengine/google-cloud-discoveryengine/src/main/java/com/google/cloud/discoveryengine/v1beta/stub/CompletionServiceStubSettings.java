@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest;
+import com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsMetadata;
@@ -59,9 +61,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -132,7 +134,7 @@ import org.threeten.bp.Duration;
  *         RetrySettings.newBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
  *             .setRetryDelayMultiplier(1.5)
- *             .setMaxRetryDelay(Duration.ofMillis(5000))
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
  *             .setTotalTimeoutDuration(Duration.ofHours(24))
  *             .build());
  * completionServiceSettingsBuilder
@@ -150,6 +152,8 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
 
   private final UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse>
       completeQuerySettings;
+  private final UnaryCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQuerySettings;
   private final UnaryCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
       importSuggestionDenyListEntriesSettings;
   private final OperationCallSettings<
@@ -182,6 +186,12 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
   /** Returns the object with the settings used for calls to completeQuery. */
   public UnaryCallSettings<CompleteQueryRequest, CompleteQueryResponse> completeQuerySettings() {
     return completeQuerySettings;
+  }
+
+  /** Returns the object with the settings used for calls to advancedCompleteQuery. */
+  public UnaryCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQuerySettings() {
+    return advancedCompleteQuerySettings;
   }
 
   /** Returns the object with the settings used for calls to importSuggestionDenyListEntries. */
@@ -356,6 +366,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     super(settingsBuilder);
 
     completeQuerySettings = settingsBuilder.completeQuerySettings().build();
+    advancedCompleteQuerySettings = settingsBuilder.advancedCompleteQuerySettings().build();
     importSuggestionDenyListEntriesSettings =
         settingsBuilder.importSuggestionDenyListEntriesSettings().build();
     importSuggestionDenyListEntriesOperationSettings =
@@ -379,6 +390,9 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<CompleteQueryRequest, CompleteQueryResponse>
         completeQuerySettings;
+    private final UnaryCallSettings.Builder<
+            AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQuerySettings;
     private final UnaryCallSettings.Builder<ImportSuggestionDenyListEntriesRequest, Operation>
         importSuggestionDenyListEntriesSettings;
     private final OperationCallSettings.Builder<
@@ -426,13 +440,13 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(5000L))
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(5000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(5000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -446,6 +460,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       super(clientContext);
 
       completeQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      advancedCompleteQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importSuggestionDenyListEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importSuggestionDenyListEntriesOperationSettings = OperationCallSettings.newBuilder();
       purgeSuggestionDenyListEntriesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -458,6 +473,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               completeQuerySettings,
+              advancedCompleteQuerySettings,
               importSuggestionDenyListEntriesSettings,
               purgeSuggestionDenyListEntriesSettings,
               importCompletionSuggestionsSettings,
@@ -469,6 +485,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       super(settings);
 
       completeQuerySettings = settings.completeQuerySettings.toBuilder();
+      advancedCompleteQuerySettings = settings.advancedCompleteQuerySettings.toBuilder();
       importSuggestionDenyListEntriesSettings =
           settings.importSuggestionDenyListEntriesSettings.toBuilder();
       importSuggestionDenyListEntriesOperationSettings =
@@ -488,6 +505,7 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               completeQuerySettings,
+              advancedCompleteQuerySettings,
               importSuggestionDenyListEntriesSettings,
               purgeSuggestionDenyListEntriesSettings,
               importCompletionSuggestionsSettings,
@@ -521,6 +539,11 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     private static Builder initDefaults(Builder builder) {
       builder
           .completeQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .advancedCompleteQuerySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -562,13 +585,13 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -589,13 +612,13 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -616,13 +639,13 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -643,13 +666,13 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -674,6 +697,12 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     public UnaryCallSettings.Builder<CompleteQueryRequest, CompleteQueryResponse>
         completeQuerySettings() {
       return completeQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to advancedCompleteQuery. */
+    public UnaryCallSettings.Builder<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQuerySettings() {
+      return advancedCompleteQuerySettings;
     }
 
     /** Returns the builder for the settings used for calls to importSuggestionDenyListEntries. */

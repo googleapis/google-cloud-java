@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.stub.GroundedGenerationServiceStub;
 import com.google.cloud.discoveryengine.v1.stub.GroundedGenerationServiceStubSettings;
@@ -39,17 +40,17 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
  *     GroundedGenerationServiceClient.create()) {
- *   CheckGroundingRequest request =
- *       CheckGroundingRequest.newBuilder()
- *           .setGroundingConfig(
- *               GroundingConfigName.of("[PROJECT]", "[LOCATION]", "[GROUNDING_CONFIG]")
- *                   .toString())
- *           .setAnswerCandidate("answerCandidate-292402331")
- *           .addAllFacts(new ArrayList<GroundingFact>())
- *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *   GenerateGroundedContentRequest request =
+ *       GenerateGroundedContentRequest.newBuilder()
+ *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+ *           .addAllContents(new ArrayList<GroundedGenerationContent>())
+ *           .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+ *           .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
- *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
+ *   GenerateGroundedContentResponse response =
+ *       groundedGenerationServiceClient.generateGroundedContent(request);
  * }
  * }</pre>
  *
@@ -63,6 +64,30 @@ import javax.annotation.Generated;
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamGenerateGroundedContent</td>
+ *      <td><p> Generates grounded content in a streaming fashion.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamGenerateGroundedContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateGroundedContent</td>
+ *      <td><p> Generates grounded content.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateGroundedContent(GenerateGroundedContentRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateGroundedContentCallable()
+ *      </ul>
+ *       </td>
  *    </tr>
  *    <tr>
  *      <td><p> CheckGrounding</td>
@@ -186,6 +211,115 @@ public class GroundedGenerationServiceClient implements BackgroundResource {
 
   public GroundedGenerationServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates grounded content in a streaming fashion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
+   *     GroundedGenerationServiceClient.create()) {
+   *   BidiStream<GenerateGroundedContentRequest, GenerateGroundedContentResponse> bidiStream =
+   *       groundedGenerationServiceClient.streamGenerateGroundedContentCallable().call();
+   *   GenerateGroundedContentRequest request =
+   *       GenerateGroundedContentRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+   *           .addAllContents(new ArrayList<GroundedGenerationContent>())
+   *           .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+   *           .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (GenerateGroundedContentResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      streamGenerateGroundedContentCallable() {
+    return stub.streamGenerateGroundedContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates grounded content.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
+   *     GroundedGenerationServiceClient.create()) {
+   *   GenerateGroundedContentRequest request =
+   *       GenerateGroundedContentRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+   *           .addAllContents(new ArrayList<GroundedGenerationContent>())
+   *           .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+   *           .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .build();
+   *   GenerateGroundedContentResponse response =
+   *       groundedGenerationServiceClient.generateGroundedContent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateGroundedContentResponse generateGroundedContent(
+      GenerateGroundedContentRequest request) {
+    return generateGroundedContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates grounded content.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
+   *     GroundedGenerationServiceClient.create()) {
+   *   GenerateGroundedContentRequest request =
+   *       GenerateGroundedContentRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSystemInstruction(GroundedGenerationContent.newBuilder().build())
+   *           .addAllContents(new ArrayList<GroundedGenerationContent>())
+   *           .setGenerationSpec(GenerateGroundedContentRequest.GenerationSpec.newBuilder().build())
+   *           .setGroundingSpec(GenerateGroundedContentRequest.GroundingSpec.newBuilder().build())
+   *           .putAllUserLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<GenerateGroundedContentResponse> future =
+   *       groundedGenerationServiceClient.generateGroundedContentCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateGroundedContentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
+      generateGroundedContentCallable() {
+    return stub.generateGroundedContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

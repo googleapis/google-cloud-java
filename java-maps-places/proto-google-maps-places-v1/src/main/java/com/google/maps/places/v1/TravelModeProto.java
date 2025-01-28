@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,12 +39,12 @@ public final class TravelModeProto {
       "\n\'google/maps/places/v1/travel_mode.prot"
           + "o\022\025google.maps.places.v1*\\\n\nTravelMode\022\033"
           + "\n\027TRAVEL_MODE_UNSPECIFIED\020\000\022\t\n\005DRIVE\020\001\022\013"
-          + "\n\007BICYCLE\020\002\022\010\n\004WALK\020\003\022\017\n\013TWO_WHEELER\020\004B\243"
+          + "\n\007BICYCLE\020\002\022\010\n\004WALK\020\003\022\017\n\013TWO_WHEELER\020\004B\240"
           + "\001\n\031com.google.maps.places.v1B\017TravelMode"
           + "ProtoP\001Z7cloud.google.com/go/maps/places"
-          + "/apiv1/placespb;placespb\370\001\001\242\002\006GMPSV1\252\002\025G"
-          + "oogle.Maps.Places.V1\312\002\025Google\\Maps\\Place"
-          + "s\\V1b\006proto3"
+          + "/apiv1/placespb;placespb\242\002\006GMPSV1\252\002\025Goog"
+          + "le.Maps.Places.V1\312\002\025Google\\Maps\\Places\\V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

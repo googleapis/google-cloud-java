@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -254,7 +254,7 @@ public class RegionOperationsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param operation Name of the Operations resource to delete.
+   * @param operation Name of the Operations resource to delete, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteRegionOperationResponse delete(
@@ -351,7 +351,7 @@ public class RegionOperationsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation get(String project, String region, String operation) {
@@ -597,7 +597,7 @@ public class RegionOperationsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation wait(String project, String region, String operation) {

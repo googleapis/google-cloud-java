@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1797,9 +1797,9 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * Optional. This checksum is computed by the service, and might be sent on
+   * update and delete requests to ensure the client has an up-to-date value
+   * before proceeding.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1822,9 +1822,9 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of
-   * other fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * Optional. This checksum is computed by the service, and might be sent on
+   * update and delete requests to ensure the client has an up-to-date value
+   * before proceeding.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1853,7 +1853,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *
@@ -1868,7 +1868,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *
@@ -1883,7 +1883,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *
@@ -1899,7 +1899,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicates the class this Entry Type belongs to, for example,
+   * Optional. Indicates the classes this Entry Type belongs to, for example,
    * TABLE, DATABASE, MODEL.
    * </pre>
    *
@@ -3931,9 +3931,9 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of
-     * other fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * Optional. This checksum is computed by the service, and might be sent on
+     * update and delete requests to ensure the client has an up-to-date value
+     * before proceeding.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3955,9 +3955,9 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of
-     * other fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * Optional. This checksum is computed by the service, and might be sent on
+     * update and delete requests to ensure the client has an up-to-date value
+     * before proceeding.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3979,9 +3979,9 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of
-     * other fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * Optional. This checksum is computed by the service, and might be sent on
+     * update and delete requests to ensure the client has an up-to-date value
+     * before proceeding.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4002,9 +4002,9 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of
-     * other fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * Optional. This checksum is computed by the service, and might be sent on
+     * update and delete requests to ensure the client has an up-to-date value
+     * before proceeding.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4021,9 +4021,9 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of
-     * other fields, and may be sent on update and delete requests to ensure the
-     * client has an up-to-date value before proceeding.
+     * Optional. This checksum is computed by the service, and might be sent on
+     * update and delete requests to ensure the client has an up-to-date value
+     * before proceeding.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4055,7 +4055,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4071,7 +4071,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4086,7 +4086,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4102,7 +4102,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4118,7 +4118,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4142,7 +4142,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4165,7 +4165,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4185,7 +4185,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *
@@ -4204,7 +4204,7 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicates the class this Entry Type belongs to, for example,
+     * Optional. Indicates the classes this Entry Type belongs to, for example,
      * TABLE, DATABASE, MODEL.
      * </pre>
      *

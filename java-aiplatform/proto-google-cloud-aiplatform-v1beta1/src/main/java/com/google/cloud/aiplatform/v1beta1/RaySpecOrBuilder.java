@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,68 @@ public interface RaySpecOrBuilder
    * @return The bytes for imageUri.
    */
   com.google.protobuf.ByteString getImageUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.NfsMount> getNfsMountsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NfsMount getNfsMounts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getNfsMountsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder>
+      getNfsMountsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use if you want to mount to any NFS storages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.NfsMount nfs_mounts = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NfsMountOrBuilder getNfsMountsOrBuilder(int index);
 
   /**
    *

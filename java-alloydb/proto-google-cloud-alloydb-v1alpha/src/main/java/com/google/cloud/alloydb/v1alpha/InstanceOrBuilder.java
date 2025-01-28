@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -735,6 +735,48 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Configuration for observability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig observability_config = 26;
+   * </code>
+   *
+   * @return Whether the observabilityConfig field is set.
+   */
+  boolean hasObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for observability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig observability_config = 26;
+   * </code>
+   *
+   * @return The observabilityConfig.
+   */
+  com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig getObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for observability.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig observability_config = 26;
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfigOrBuilder
+      getObservabilityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Read pool instance configuration.
    * This is required if the value of instanceType is READ_POOL.
    * </pre>
@@ -805,7 +847,9 @@ public interface InstanceOrBuilder
    * end-user application.
    * </pre>
    *
-   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The publicIpAddress.
    */
@@ -819,7 +863,9 @@ public interface InstanceOrBuilder
    * end-user application.
    * </pre>
    *
-   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for publicIpAddress.
    */
@@ -1096,7 +1142,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Instance level network configuration.
+   * Optional. Instance-level network configuration.
    * </pre>
    *
    * <code>
@@ -1110,7 +1156,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Instance level network configuration.
+   * Optional. Instance-level network configuration.
    * </pre>
    *
    * <code>
@@ -1124,7 +1170,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Instance level network configuration.
+   * Optional. Instance-level network configuration.
    * </pre>
    *
    * <code>
@@ -1133,4 +1179,107 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfigOrBuilder
       getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiConfig field is set.
+   */
+  boolean hasGeminiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiConfig.
+   */
+  com.google.cloud.alloydb.v1alpha.GeminiInstanceConfig getGeminiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.GeminiInstanceConfig gemini_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.GeminiInstanceConfigOrBuilder getGeminiConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return A list containing the outboundPublicIpAddresses.
+   */
+  java.util.List<java.lang.String> getOutboundPublicIpAddressesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The count of outboundPublicIpAddresses.
+   */
+  int getOutboundPublicIpAddressesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The outboundPublicIpAddresses at the given index.
+   */
+  java.lang.String getOutboundPublicIpAddresses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All outbound public IP addresses configured for the instance.
+   * </pre>
+   *
+   * <code>
+   * repeated string outbound_public_ip_addresses = 34 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the outboundPublicIpAddresses at the given index.
+   */
+  com.google.protobuf.ByteString getOutboundPublicIpAddressesBytes(int index);
 }

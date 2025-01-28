@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,12 +50,12 @@ public final class RouteModifiersProto {
           + "(\010\022\024\n\014avoid_indoor\030\004 \001(\010\0229\n\014vehicle_info"
           + "\030\005 \001(\0132#.google.maps.routing.v2.VehicleI"
           + "nfo\0225\n\013toll_passes\030\006 \003(\0162 .google.maps.r"
-          + "outing.v2.TollPassB\310\001\n\032com.google.maps.r"
+          + "outing.v2.TollPassB\305\001\n\032com.google.maps.r"
           + "outing.v2B\023RouteModifiersProtoP\001Z:cloud."
           + "google.com/go/maps/routing/apiv2/routing"
-          + "pb;routingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Ro"
-          + "uting.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Goog"
-          + "le::Maps::Routing::V2b\006proto3"
+          + "pb;routingpb\242\002\005GMRV2\252\002\026Google.Maps.Routi"
+          + "ng.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Google:"
+          + ":Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

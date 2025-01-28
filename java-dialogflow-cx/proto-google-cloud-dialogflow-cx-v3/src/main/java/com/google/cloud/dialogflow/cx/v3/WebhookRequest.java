@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -787,8 +787,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Always present. The unique identifier of the last matched
      * [intent][google.cloud.dialogflow.cx.v3.Intent].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -802,8 +802,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Always present. The unique identifier of the last matched
      * [intent][google.cloud.dialogflow.cx.v3.Intent].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2024,8 +2024,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Always present. The unique identifier of the last matched
      * [intent][google.cloud.dialogflow.cx.v3.Intent].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2050,8 +2050,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Always present. The unique identifier of the last matched
      * [intent][google.cloud.dialogflow.cx.v3.Intent].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2767,8 +2767,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Always present. The unique identifier of the last matched
        * [intent][google.cloud.dialogflow.cx.v3.Intent].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/intents/&lt;Intent ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2792,8 +2792,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Always present. The unique identifier of the last matched
        * [intent][google.cloud.dialogflow.cx.v3.Intent].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/intents/&lt;Intent ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2817,8 +2817,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Always present. The unique identifier of the last matched
        * [intent][google.cloud.dialogflow.cx.v3.Intent].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/intents/&lt;Intent ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2841,8 +2841,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Always present. The unique identifier of the last matched
        * [intent][google.cloud.dialogflow.cx.v3.Intent].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/intents/&lt;Intent ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2861,8 +2861,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Always present. The unique identifier of the last matched
        * [intent][google.cloud.dialogflow.cx.v3.Intent].
-       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-       * ID&gt;/intents/&lt;Intent ID&gt;`.
+       * Format:
+       * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
        * </pre>
        *
        * <code>string last_matched_intent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -3452,7 +3452,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-     * sentiment).
+     *  sentiment).
      * </pre>
      *
      * <code>float score = 1;</code>
@@ -3526,7 +3526,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-     * sentiment).
+     *  sentiment).
      * </pre>
      *
      * <code>float score = 1;</code>
@@ -3951,7 +3951,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-       * sentiment).
+       *  sentiment).
        * </pre>
        *
        * <code>float score = 1;</code>
@@ -3967,7 +3967,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-       * sentiment).
+       *  sentiment).
        * </pre>
        *
        * <code>float score = 1;</code>
@@ -3987,7 +3987,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
-       * sentiment).
+       *  sentiment).
        * </pre>
        *
        * <code>float score = 1;</code>
@@ -4322,8 +4322,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -4339,8 +4338,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -4369,8 +4367,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
    * input, this field will contain a copy of the intent identifier. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * </pre>
    *
    * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -6249,8 +6246,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -6267,8 +6263,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -6298,8 +6293,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -6329,8 +6323,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -6353,8 +6346,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>
@@ -6375,8 +6367,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
      * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/intents/&lt;Intent ID&gt;`.
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
      * </pre>
      *
      * <code>string trigger_intent = 11 [(.google.api.resource_reference) = { ... }</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -265,12 +265,12 @@ public final class ExperimentProto {
           + "experiments/*}:stop:\001*\032x\312A\031dialogflow.go"
           + "ogleapis.com\322AYhttps://www.googleapis.co"
           + "m/auth/cloud-platform,https://www.google"
-          + "apis.com/auth/dialogflowB\311\001\n&com.google."
+          + "apis.com/auth/dialogflowB\306\001\n&com.google."
           + "cloud.dialogflow.cx.v3beta1B\017ExperimentP"
           + "rotoP\001Z6cloud.google.com/go/dialogflow/c"
-          + "x/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google."
-          + "Cloud.Dialogflow.Cx.V3Beta1\352\002&Google::Cl"
-          + "oud::Dialogflow::CX::V3beta1b\006proto3"
+          + "x/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"Google.Clo"
+          + "ud.Dialogflow.Cx.V3Beta1\352\002&Google::Cloud"
+          + "::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

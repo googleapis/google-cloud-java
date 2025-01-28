@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,12 @@ public final class AppliedLabelProto {
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\"V\n\014AppliedLabel\0225\n\005label\030\001 \001("
           + "\tB&\340A\002\372A \n\036admanager.googleapis.com/Labe"
-          + "l\022\017\n\007negated\030\002 \001(\010B\250\001\n\033com.google.ads.ad"
+          + "l\022\017\n\007negated\030\002 \001(\010B\305\001\n\033com.google.ads.ad"
           + "manager.v1B\021AppliedLabelProtoP\001Z@google."
           + "golang.org/genproto/googleapis/ads/adman"
           + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
-          + ".V1\312\002\027Google\\Ads\\AdManager\\V1b\006proto3"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -235,6 +235,21 @@ public interface SearchRequestOrBuilder
    * @return The offset.
    */
   int getOffset();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of results to return for OneBox.
+   * This applies to each OneBox type individually.
+   * Default number is 10.
+   * </pre>
+   *
+   * <code>int32 one_box_page_size = 47;</code>
+   *
+   * @return The oneBoxPageSize.
+   */
+  int getOneBoxPageSize();
 
   /**
    *

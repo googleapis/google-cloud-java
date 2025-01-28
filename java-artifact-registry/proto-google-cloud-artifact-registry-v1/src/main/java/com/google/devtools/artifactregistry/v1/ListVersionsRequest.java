@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     pageToken_ = "";
     view_ = 0;
     orderBy_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -274,6 +275,145 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *   * `annotations`
+   *
+   *  Examples of using a filter:
+   *
+   *  To filter the results of your request to versions with the name
+   *  `my-version` in project `my-project` in the `us-central` region, in
+   *  repository `my-repo`, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my-version"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version*"`
+   *
+   *  To filter the results of your request to versions with the annotation
+   *  key-value pair [`external_link`: `external_link_value`], append the
+   *  following filter expression to your request:
+   *
+   *   * `"annotations.external_link:external_link_value"`
+   *
+   *  To filter just for a specific annotation key `external_link`, append the
+   *  following filter expression to your request:
+   *
+   *   * `"annotations.external_link"`
+   *
+   *  If the annotation key or value contains special characters, you can escape
+   *  them by surrounding the value with backticks. For example, to filter the
+   *  results of your request to versions with the annotation key-value pair
+   *  [`external.link`:`https://example.com/my-version`], append the following
+   *  filter expression to your request:
+   *
+   *   * `` "annotations.`external.link`:`https://example.com/my-version`" ``
+   *
+   *  You can also filter with annotations with a wildcard to
+   *  match any number of characters before or after the value:
+   *
+   *   * `` "annotations.*_link:`*example.com*`" ``
+   * </pre>
+   *
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *   * `annotations`
+   *
+   *  Examples of using a filter:
+   *
+   *  To filter the results of your request to versions with the name
+   *  `my-version` in project `my-project` in the `us-central` region, in
+   *  repository `my-repo`, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my-version"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version*"`
+   *
+   *  To filter the results of your request to versions with the annotation
+   *  key-value pair [`external_link`: `external_link_value`], append the
+   *  following filter expression to your request:
+   *
+   *   * `"annotations.external_link:external_link_value"`
+   *
+   *  To filter just for a specific annotation key `external_link`, append the
+   *  following filter expression to your request:
+   *
+   *   * `"annotations.external_link"`
+   *
+   *  If the annotation key or value contains special characters, you can escape
+   *  them by surrounding the value with backticks. For example, to filter the
+   *  results of your request to versions with the annotation key-value pair
+   *  [`external.link`:`https://example.com/my-version`], append the following
+   *  filter expression to your request:
+   *
+   *   * `` "annotations.`external.link`:`https://example.com/my-version`" ``
+   *
+   *  You can also filter with annotations with a wildcard to
+   *  match any number of characters before or after the value:
+   *
+   *   * `` "annotations.*_link:`*example.com*`" ``
+   * </pre>
+   *
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -305,6 +445,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -331,6 +474,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, filter_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -352,6 +498,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (view_ != other.view_) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -373,6 +520,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + view_;
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -518,6 +667,7 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       pageToken_ = "";
       view_ = 0;
       orderBy_ = "";
+      filter_ = "";
       return this;
     }
 
@@ -568,6 +718,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.filter_ = filter_;
       }
     }
 
@@ -638,6 +791,11 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -694,6 +852,12 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1172,6 +1336,332 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       orderBy_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     *  Examples of using a filter:
+     *
+     *  To filter the results of your request to versions with the name
+     *  `my-version` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my-version"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version*"`
+     *
+     *  To filter the results of your request to versions with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter just for a specific annotation key `external_link`, append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to versions with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-version`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-version`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     *  Examples of using a filter:
+     *
+     *  To filter the results of your request to versions with the name
+     *  `my-version` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my-version"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version*"`
+     *
+     *  To filter the results of your request to versions with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter just for a specific annotation key `external_link`, append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to versions with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-version`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-version`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     *  Examples of using a filter:
+     *
+     *  To filter the results of your request to versions with the name
+     *  `my-version` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my-version"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version*"`
+     *
+     *  To filter the results of your request to versions with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter just for a specific annotation key `external_link`, append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to versions with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-version`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-version`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     *  Examples of using a filter:
+     *
+     *  To filter the results of your request to versions with the name
+     *  `my-version` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my-version"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version*"`
+     *
+     *  To filter the results of your request to versions with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter just for a specific annotation key `external_link`, append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to versions with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-version`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-version`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An expression for filtering the results of the request. Filter
+     * rules are case insensitive. The fields eligible for filtering are:
+     *
+     *   * `name`
+     *   * `annotations`
+     *
+     *  Examples of using a filter:
+     *
+     *  To filter the results of your request to versions with the name
+     *  `my-version` in project `my-project` in the `us-central` region, in
+     *  repository `my-repo`, append the following filter expression to your
+     *  request:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my-version"`
+     *
+     *  You can also use wildcards to match any number of characters before or
+     *  after the value:
+     *
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/my*"`
+     *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package/versions/&#42;version*"`
+     *
+     *  To filter the results of your request to versions with the annotation
+     *  key-value pair [`external_link`: `external_link_value`], append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link:external_link_value"`
+     *
+     *  To filter just for a specific annotation key `external_link`, append the
+     *  following filter expression to your request:
+     *
+     *   * `"annotations.external_link"`
+     *
+     *  If the annotation key or value contains special characters, you can escape
+     *  them by surrounding the value with backticks. For example, to filter the
+     *  results of your request to versions with the annotation key-value pair
+     *  [`external.link`:`https://example.com/my-version`], append the following
+     *  filter expression to your request:
+     *
+     *   * `` "annotations.`external.link`:`https://example.com/my-version`" ``
+     *
+     *  You can also filter with annotations with a wildcard to
+     *  match any number of characters before or after the value:
+     *
+     *   * `` "annotations.*_link:`*example.com*`" ``
+     * </pre>
+     *
+     * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

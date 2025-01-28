@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -344,6 +344,9 @@ public interface AnswerQueryRequestOrBuilder
    *
    *
    * <pre>
+   * Deprecated: This field is deprecated. Streaming Answer API will be
+   * supported.
+   *
    * Asynchronous mode control.
    *
    * If enabled, the response will be returned with answer/session resource
@@ -355,10 +358,13 @@ public interface AnswerQueryRequestOrBuilder
    * method.
    * </pre>
    *
-   * <code>bool asynchronous_mode = 10;</code>
+   * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is deprecated.
+   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=821
    * @return The asynchronousMode.
    */
+  @java.lang.Deprecated
   boolean getAsynchronousMode();
 
   /**

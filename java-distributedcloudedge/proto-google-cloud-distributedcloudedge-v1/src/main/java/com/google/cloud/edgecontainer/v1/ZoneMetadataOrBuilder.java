@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,4 +176,39 @@ public interface ZoneMetadataOrBuilder
    * </code>
    */
   int getRackTypesValueOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   *
+   * @return Whether the configData field is set.
+   */
+  boolean hasConfigData();
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   *
+   * @return The configData.
+   */
+  com.google.cloud.edgecontainer.v1.ConfigData getConfigData();
+  /**
+   *
+   *
+   * <pre>
+   * Config data for the zone.
+   * </pre>
+   *
+   * <code>.google.cloud.edgecontainer.v1.ConfigData config_data = 3;</code>
+   */
+  com.google.cloud.edgecontainer.v1.ConfigDataOrBuilder getConfigDataOrBuilder();
 }

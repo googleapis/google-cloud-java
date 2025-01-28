@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ package com.google.monitoring.v3;
  * <pre>
  * A description of the conditions under which some aspect of your system is
  * considered to be "unhealthy" and the ways to notify people or services about
- * this state. For an overview of alert policies, see
+ * this state. For an overview of alerting policies, see
  * [Introduction to Alerting](https://cloud.google.com/monitoring/alerts/).
  * </pre>
  *
@@ -281,7 +281,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An enumeration of possible severity level for an Alert Policy.
+   * An enumeration of possible severity level for an alerting policy.
    * </pre>
    *
    * Protobuf enum {@code google.monitoring.v3.AlertPolicy.Severity}
@@ -477,7 +477,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -493,7 +493,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -545,7 +545,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -569,7 +569,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -1601,7 +1601,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -1628,7 +1628,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * The content may not exceed 8,192 Unicode characters and may not exceed
      * more than 10,240 bytes when encoded in UTF-8 format, whichever is
      * smaller. This text can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -1721,7 +1721,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -1756,7 +1756,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * it is common to define textual fields in databases as VARCHAR(255).
      *
      * The contents of the subject line can be [templatized by using
-     * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+     * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
      * If this field is missing or empty, a default subject line will be
      * generated.
      * </pre>
@@ -2343,7 +2343,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2369,7 +2369,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2395,7 +2395,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2420,7 +2420,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2441,7 +2441,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * The content may not exceed 8,192 Unicode characters and may not exceed
        * more than 10,240 bytes when encoded in UTF-8 format, whichever is
        * smaller. This text can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -2591,7 +2591,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2625,7 +2625,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2659,7 +2659,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2692,7 +2692,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -2721,7 +2721,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * it is common to define textual fields in databases as VARCHAR(255).
        *
        * The contents of the subject line can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * If this field is missing or empty, a default subject line will be
        * generated.
        * </pre>
@@ -3537,6 +3537,41 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.monitoring.v3.AlertPolicy.Condition.PrometheusQueryLanguageConditionOrBuilder
         getConditionPrometheusQueryLanguageOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A condition that periodically evaluates a SQL query result.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+     *
+     * @return Whether the conditionSql field is set.
+     */
+    boolean hasConditionSql();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that periodically evaluates a SQL query result.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+     *
+     * @return The conditionSql.
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition getConditionSql();
+    /**
+     *
+     *
+     * <pre>
+     * A condition that periodically evaluates a SQL query result.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+     */
+    com.google.monitoring.v3.AlertPolicy.Condition.SqlConditionOrBuilder getConditionSqlOrBuilder();
 
     com.google.monitoring.v3.AlertPolicy.Condition.ConditionCase getConditionCase();
   }
@@ -13754,7 +13789,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A condition type that allows alert policies to be defined using
+     * A condition type that allows alerting policies to be defined using
      * [Monitoring Query Language](https://cloud.google.com/monitoring/mql).
      * </pre>
      *
@@ -14257,7 +14292,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition type that allows alert policies to be defined using
+       * A condition type that allows alerting policies to be defined using
        * [Monitoring Query Language](https://cloud.google.com/monitoring/mql).
        * </pre>
        *
@@ -15460,7 +15495,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15477,7 +15512,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15497,7 +15532,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15514,7 +15549,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15535,7 +15570,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15640,12 +15675,33 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for alertRule.
        */
       com.google.protobuf.ByteString getAlertRuleBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable metric existence validation for this
+       * condition.
+       *
+       * This allows alerting policies to be defined on metrics that do not yet
+       * exist, improving advanced customer workflows such as configuring
+       * alerting policies using Terraform.
+       *
+       * Users with the `monitoring.alertPolicyViewer` role are able to see the
+       * name of the non-existent metric in the alerting policy condition.
+       * </pre>
+       *
+       * <code>bool disable_metric_validation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disableMetricValidation.
+       */
+      boolean getDisableMetricValidation();
     }
     /**
      *
      *
      * <pre>
-     * A condition type that allows alert policies to be defined using
+     * A condition type that allows alerting policies to be defined using
      * [Prometheus Query Language
      * (PromQL)](https://prometheus.io/docs/prometheus/latest/querying/basics/).
      *
@@ -15959,7 +16015,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -15988,7 +16044,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -16008,7 +16064,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -16035,7 +16091,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * Label names [must be
        * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
        * Label values can be [templatized by using
-       * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+       * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
        * The only available variable names are the names of the labels in the
        * PromQL result, including "__name__" and "value". "labels" may be empty.
        * </pre>
@@ -16203,6 +16259,32 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int DISABLE_METRIC_VALIDATION_FIELD_NUMBER = 7;
+      private boolean disableMetricValidation_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable metric existence validation for this
+       * condition.
+       *
+       * This allows alerting policies to be defined on metrics that do not yet
+       * exist, improving advanced customer workflows such as configuring
+       * alerting policies using Terraform.
+       *
+       * Users with the `monitoring.alertPolicyViewer` role are able to see the
+       * name of the non-existent metric in the alerting policy condition.
+       * </pre>
+       *
+       * <code>bool disable_metric_validation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disableMetricValidation.
+       */
+      @java.lang.Override
+      public boolean getDisableMetricValidation() {
+        return disableMetricValidation_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -16233,6 +16315,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertRule_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 6, alertRule_);
+        }
+        if (disableMetricValidation_ != false) {
+          output.writeBool(7, disableMetricValidation_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -16269,6 +16354,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertRule_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, alertRule_);
         }
+        if (disableMetricValidation_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(7, disableMetricValidation_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -16299,6 +16388,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (!internalGetLabels().equals(other.internalGetLabels())) return false;
         if (!getRuleGroup().equals(other.getRuleGroup())) return false;
         if (!getAlertRule().equals(other.getAlertRule())) return false;
+        if (getDisableMetricValidation() != other.getDisableMetricValidation()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -16328,6 +16418,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getRuleGroup().hashCode();
         hash = (37 * hash) + ALERT_RULE_FIELD_NUMBER;
         hash = (53 * hash) + getAlertRule().hashCode();
+        hash = (37 * hash) + DISABLE_METRIC_VALIDATION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableMetricValidation());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -16443,7 +16535,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A condition type that allows alert policies to be defined using
+       * A condition type that allows alerting policies to be defined using
        * [Prometheus Query Language
        * (PromQL)](https://prometheus.io/docs/prometheus/latest/querying/basics/).
        *
@@ -16559,6 +16651,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableLabels().clear();
           ruleGroup_ = "";
           alertRule_ = "";
+          disableMetricValidation_ = false;
           return this;
         }
 
@@ -16627,6 +16720,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000020) != 0)) {
             result.alertRule_ = alertRule_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.disableMetricValidation_ = disableMetricValidation_;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -16708,6 +16804,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000020;
             onChanged();
           }
+          if (other.getDisableMetricValidation() != false) {
+            setDisableMetricValidation(other.getDisableMetricValidation());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -16777,6 +16876,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000020;
                     break;
                   } // case 50
+                case 56:
+                  {
+                    disableMetricValidation_ = input.readBool();
+                    bitField0_ |= 0x00000040;
+                    break;
+                  } // case 56
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17435,7 +17540,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17464,7 +17569,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17484,7 +17589,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17511,7 +17616,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17544,7 +17649,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17573,7 +17678,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17600,7 +17705,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          * Label names [must be
          * valid](https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels).
          * Label values can be [templatized by using
-         * variables](https://cloud.google.com/monitoring/alerts/doc-variables).
+         * variables](https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars).
          * The only available variable names are the names of the labels in the
          * PromQL result, including "__name__" and "value". "labels" may be empty.
          * </pre>
@@ -17941,6 +18046,86 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private boolean disableMetricValidation_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether to disable metric existence validation for this
+         * condition.
+         *
+         * This allows alerting policies to be defined on metrics that do not yet
+         * exist, improving advanced customer workflows such as configuring
+         * alerting policies using Terraform.
+         *
+         * Users with the `monitoring.alertPolicyViewer` role are able to see the
+         * name of the non-existent metric in the alerting policy condition.
+         * </pre>
+         *
+         * <code>bool disable_metric_validation = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The disableMetricValidation.
+         */
+        @java.lang.Override
+        public boolean getDisableMetricValidation() {
+          return disableMetricValidation_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether to disable metric existence validation for this
+         * condition.
+         *
+         * This allows alerting policies to be defined on metrics that do not yet
+         * exist, improving advanced customer workflows such as configuring
+         * alerting policies using Terraform.
+         *
+         * Users with the `monitoring.alertPolicyViewer` role are able to see the
+         * name of the non-existent metric in the alerting policy condition.
+         * </pre>
+         *
+         * <code>bool disable_metric_validation = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The disableMetricValidation to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisableMetricValidation(boolean value) {
+
+          disableMetricValidation_ = value;
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Whether to disable metric existence validation for this
+         * condition.
+         *
+         * This allows alerting policies to be defined on metrics that do not yet
+         * exist, improving advanced customer workflows such as configuring
+         * alerting policies using Terraform.
+         *
+         * Users with the `monitoring.alertPolicyViewer` role are able to see the
+         * name of the non-existent metric in the alerting policy condition.
+         * </pre>
+         *
+         * <code>bool disable_metric_validation = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisableMetricValidation() {
+          bitField0_ = (bitField0_ & ~0x00000040);
+          disableMetricValidation_ = false;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18010,6 +18195,6503 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface SqlConditionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.SqlCondition)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Log Analytics SQL query to run, as a string.  The query
+       * must conform to the required shape. Specifically, the query must not
+       * try to filter the input by time.  A filter will automatically be
+       * applied to filter the input so that the query receives all rows
+       * received since the last time the query was run.
+       *
+       * For example, the following query extracts all log entries containing an
+       * HTTP request:
+       *
+       *     SELECT
+       *       timestamp, log_name, severity, http_request, resource, labels
+       *     FROM
+       *       my-project.global._Default._AllLogs
+       *     WHERE
+       *       http_request IS NOT NULL
+       * </pre>
+       *
+       * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The query.
+       */
+      java.lang.String getQuery();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Log Analytics SQL query to run, as a string.  The query
+       * must conform to the required shape. Specifically, the query must not
+       * try to filter the input by time.  A filter will automatically be
+       * applied to filter the input so that the query receives all rows
+       * received since the last time the query was run.
+       *
+       * For example, the following query extracts all log entries containing an
+       * HTTP request:
+       *
+       *     SELECT
+       *       timestamp, log_name, severity, http_request, resource, labels
+       *     FROM
+       *       my-project.global._Default._AllLogs
+       *     WHERE
+       *       http_request IS NOT NULL
+       * </pre>
+       *
+       * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for query.
+       */
+      com.google.protobuf.ByteString getQueryBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many minutes.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;</code>
+       *
+       * @return Whether the minutes field is set.
+       */
+      boolean hasMinutes();
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many minutes.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;</code>
+       *
+       * @return The minutes.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes getMinutes();
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many minutes.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;</code>
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.MinutesOrBuilder
+          getMinutesOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many hours.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+       *
+       * @return Whether the hourly field is set.
+       */
+      boolean hasHourly();
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many hours.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+       *
+       * @return The hourly.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly getHourly();
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many hours.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.HourlyOrBuilder
+          getHourlyOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many days.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+       *
+       * @return Whether the daily field is set.
+       */
+      boolean hasDaily();
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many days.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+       *
+       * @return The daily.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily getDaily();
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many days.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.DailyOrBuilder
+          getDailyOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Test the row count against a threshold.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+       * </code>
+       *
+       * @return Whether the rowCountTest field is set.
+       */
+      boolean hasRowCountTest();
+      /**
+       *
+       *
+       * <pre>
+       * Test the row count against a threshold.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+       * </code>
+       *
+       * @return The rowCountTest.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest getRowCountTest();
+      /**
+       *
+       *
+       * <pre>
+       * Test the row count against a threshold.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+       * </code>
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTestOrBuilder
+          getRowCountTestOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Test the boolean value in the indicated column.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+       * </code>
+       *
+       * @return Whether the booleanTest field is set.
+       */
+      boolean hasBooleanTest();
+      /**
+       *
+       *
+       * <pre>
+       * Test the boolean value in the indicated column.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+       * </code>
+       *
+       * @return The booleanTest.
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest getBooleanTest();
+      /**
+       *
+       *
+       * <pre>
+       * Test the boolean value in the indicated column.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+       * </code>
+       */
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTestOrBuilder
+          getBooleanTestOrBuilder();
+
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.ScheduleCase getScheduleCase();
+
+      com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.EvaluateCase getEvaluateCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that allows alerting policies to be defined using GoogleSQL.
+     * SQL conditions examine a sliding window of logs using GoogleSQL.
+     * Alert policies with SQL conditions may incur additional billing.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition}
+     */
+    public static final class SqlCondition extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition)
+        SqlConditionOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use SqlCondition.newBuilder() to construct.
+      private SqlCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SqlCondition() {
+        query_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SqlCondition();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.v3.AlertProto
+            .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.class,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Builder.class);
+      }
+
+      public interface MinutesOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Number of minutes between runs. The interval must be
+         * greater than or equal to 5 minutes and less than or equal to 1440
+         * minutes.
+         * </pre>
+         *
+         * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The periodicity.
+         */
+        int getPeriodicity();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used to schedule the query to run every so many minutes.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes}
+       */
+      public static final class Minutes extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+          MinutesOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Minutes.newBuilder() to construct.
+        private Minutes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Minutes() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Minutes();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.Builder
+                      .class);
+        }
+
+        public static final int PERIODICITY_FIELD_NUMBER = 1;
+        private int periodicity_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Number of minutes between runs. The interval must be
+         * greater than or equal to 5 minutes and less than or equal to 1440
+         * minutes.
+         * </pre>
+         *
+         * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The periodicity.
+         */
+        @java.lang.Override
+        public int getPeriodicity() {
+          return periodicity_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (periodicity_ != 0) {
+            output.writeInt32(1, periodicity_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (periodicity_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, periodicity_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)) {
+            return super.equals(obj);
+          }
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes other =
+              (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) obj;
+
+          if (getPeriodicity() != other.getPeriodicity()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + PERIODICITY_FIELD_NUMBER;
+          hash = (53 * hash) + getPeriodicity();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Used to schedule the query to run every so many minutes.
+         * </pre>
+         *
+         * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.MinutesOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.class,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.Builder
+                        .class);
+          }
+
+          // Construct using
+          // com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            periodicity_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Minutes_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+              getDefaultInstanceForType() {
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes build() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+              buildPartial() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes result =
+                new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.periodicity_ = periodicity_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) {
+              return mergeFrom(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes other) {
+            if (other
+                == com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+                    .getDefaultInstance()) return this;
+            if (other.getPeriodicity() != 0) {
+              setPeriodicity(other.getPeriodicity());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      periodicity_ = input.readInt32();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int periodicity_;
+          /**
+           *
+           *
+           * <pre>
+           * Required. Number of minutes between runs. The interval must be
+           * greater than or equal to 5 minutes and less than or equal to 1440
+           * minutes.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The periodicity.
+           */
+          @java.lang.Override
+          public int getPeriodicity() {
+            return periodicity_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Number of minutes between runs. The interval must be
+           * greater than or equal to 5 minutes and less than or equal to 1440
+           * minutes.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The periodicity to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPeriodicity(int value) {
+
+            periodicity_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Number of minutes between runs. The interval must be
+           * greater than or equal to 5 minutes and less than or equal to 1440
+           * minutes.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPeriodicity() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            periodicity_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+        private static final com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes();
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Minutes> PARSER =
+            new com.google.protobuf.AbstractParser<Minutes>() {
+              @java.lang.Override
+              public Minutes parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Minutes> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Minutes> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface HourlyOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The number of hours between runs. Must be greater than or
+         * equal to 1 hour and less than or equal to 48 hours.
+         * </pre>
+         *
+         * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The periodicity.
+         */
+        int getPeriodicity();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The number of minutes after the hour (in UTC) to run the
+         * query. Must be greater than or equal to 0 minutes and less than or
+         * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+         * is used.
+         * </pre>
+         *
+         * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the minuteOffset field is set.
+         */
+        boolean hasMinuteOffset();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The number of minutes after the hour (in UTC) to run the
+         * query. Must be greater than or equal to 0 minutes and less than or
+         * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+         * is used.
+         * </pre>
+         *
+         * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The minuteOffset.
+         */
+        int getMinuteOffset();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used to schedule the query to run every so many hours.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly}
+       */
+      public static final class Hourly extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly)
+          HourlyOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Hourly.newBuilder() to construct.
+        private Hourly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Hourly() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Hourly();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int PERIODICITY_FIELD_NUMBER = 1;
+        private int periodicity_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The number of hours between runs. Must be greater than or
+         * equal to 1 hour and less than or equal to 48 hours.
+         * </pre>
+         *
+         * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The periodicity.
+         */
+        @java.lang.Override
+        public int getPeriodicity() {
+          return periodicity_;
+        }
+
+        public static final int MINUTE_OFFSET_FIELD_NUMBER = 2;
+        private int minuteOffset_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The number of minutes after the hour (in UTC) to run the
+         * query. Must be greater than or equal to 0 minutes and less than or
+         * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+         * is used.
+         * </pre>
+         *
+         * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the minuteOffset field is set.
+         */
+        @java.lang.Override
+        public boolean hasMinuteOffset() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The number of minutes after the hour (in UTC) to run the
+         * query. Must be greater than or equal to 0 minutes and less than or
+         * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+         * is used.
+         * </pre>
+         *
+         * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The minuteOffset.
+         */
+        @java.lang.Override
+        public int getMinuteOffset() {
+          return minuteOffset_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (periodicity_ != 0) {
+            output.writeInt32(1, periodicity_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeInt32(2, minuteOffset_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (periodicity_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, periodicity_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, minuteOffset_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly)) {
+            return super.equals(obj);
+          }
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly other =
+              (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) obj;
+
+          if (getPeriodicity() != other.getPeriodicity()) return false;
+          if (hasMinuteOffset() != other.hasMinuteOffset()) return false;
+          if (hasMinuteOffset()) {
+            if (getMinuteOffset() != other.getMinuteOffset()) return false;
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + PERIODICITY_FIELD_NUMBER;
+          hash = (53 * hash) + getPeriodicity();
+          if (hasMinuteOffset()) {
+            hash = (37 * hash) + MINUTE_OFFSET_FIELD_NUMBER;
+            hash = (53 * hash) + getMinuteOffset();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Used to schedule the query to run every so many hours.
+         * </pre>
+         *
+         * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly)
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.HourlyOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.class,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.Builder
+                        .class);
+          }
+
+          // Construct using
+          // com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            periodicity_ = 0;
+            minuteOffset_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Hourly_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+              getDefaultInstanceForType() {
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly build() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly buildPartial() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly result =
+                new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.periodicity_ = periodicity_;
+            }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.minuteOffset_ = minuteOffset_;
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) {
+              return mergeFrom(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly other) {
+            if (other
+                == com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+                    .getDefaultInstance()) return this;
+            if (other.getPeriodicity() != 0) {
+              setPeriodicity(other.getPeriodicity());
+            }
+            if (other.hasMinuteOffset()) {
+              setMinuteOffset(other.getMinuteOffset());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      periodicity_ = input.readInt32();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 16:
+                    {
+                      minuteOffset_ = input.readInt32();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int periodicity_;
+          /**
+           *
+           *
+           * <pre>
+           * Required. The number of hours between runs. Must be greater than or
+           * equal to 1 hour and less than or equal to 48 hours.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The periodicity.
+           */
+          @java.lang.Override
+          public int getPeriodicity() {
+            return periodicity_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The number of hours between runs. Must be greater than or
+           * equal to 1 hour and less than or equal to 48 hours.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The periodicity to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPeriodicity(int value) {
+
+            periodicity_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The number of hours between runs. Must be greater than or
+           * equal to 1 hour and less than or equal to 48 hours.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPeriodicity() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            periodicity_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private int minuteOffset_;
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The number of minutes after the hour (in UTC) to run the
+           * query. Must be greater than or equal to 0 minutes and less than or
+           * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+           * is used.
+           * </pre>
+           *
+           * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return Whether the minuteOffset field is set.
+           */
+          @java.lang.Override
+          public boolean hasMinuteOffset() {
+            return ((bitField0_ & 0x00000002) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The number of minutes after the hour (in UTC) to run the
+           * query. Must be greater than or equal to 0 minutes and less than or
+           * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+           * is used.
+           * </pre>
+           *
+           * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The minuteOffset.
+           */
+          @java.lang.Override
+          public int getMinuteOffset() {
+            return minuteOffset_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The number of minutes after the hour (in UTC) to run the
+           * query. Must be greater than or equal to 0 minutes and less than or
+           * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+           * is used.
+           * </pre>
+           *
+           * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The minuteOffset to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMinuteOffset(int value) {
+
+            minuteOffset_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The number of minutes after the hour (in UTC) to run the
+           * query. Must be greater than or equal to 0 minutes and less than or
+           * equal to 59 minutes.  If left unspecified, then an arbitrary offset
+           * is used.
+           * </pre>
+           *
+           * <code>optional int32 minute_offset = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearMinuteOffset() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            minuteOffset_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly)
+        private static final com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly();
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Hourly> PARSER =
+            new com.google.protobuf.AbstractParser<Hourly>() {
+              @java.lang.Override
+              public Hourly parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Hourly> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Hourly> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface DailyOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The number of days between runs. Must be greater than or
+         * equal to 1 day and less than or equal to 31 days.
+         * </pre>
+         *
+         * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The periodicity.
+         */
+        int getPeriodicity();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The time of day (in UTC) at which the query should run. If
+         * left unspecified, the server picks an arbitrary time of day and runs
+         * the query at the same time each day.
+         * </pre>
+         *
+         * <code>
+         * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the executionTime field is set.
+         */
+        boolean hasExecutionTime();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The time of day (in UTC) at which the query should run. If
+         * left unspecified, the server picks an arbitrary time of day and runs
+         * the query at the same time each day.
+         * </pre>
+         *
+         * <code>
+         * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The executionTime.
+         */
+        com.google.type.TimeOfDay getExecutionTime();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The time of day (in UTC) at which the query should run. If
+         * left unspecified, the server picks an arbitrary time of day and runs
+         * the query at the same time each day.
+         * </pre>
+         *
+         * <code>
+         * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.type.TimeOfDayOrBuilder getExecutionTimeOrBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Used to schedule the query to run every so many days.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily}
+       */
+      public static final class Daily extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily)
+          DailyOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use Daily.newBuilder() to construct.
+        private Daily(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Daily() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Daily();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int PERIODICITY_FIELD_NUMBER = 1;
+        private int periodicity_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The number of days between runs. Must be greater than or
+         * equal to 1 day and less than or equal to 31 days.
+         * </pre>
+         *
+         * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The periodicity.
+         */
+        @java.lang.Override
+        public int getPeriodicity() {
+          return periodicity_;
+        }
+
+        public static final int EXECUTION_TIME_FIELD_NUMBER = 2;
+        private com.google.type.TimeOfDay executionTime_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The time of day (in UTC) at which the query should run. If
+         * left unspecified, the server picks an arbitrary time of day and runs
+         * the query at the same time each day.
+         * </pre>
+         *
+         * <code>
+         * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the executionTime field is set.
+         */
+        @java.lang.Override
+        public boolean hasExecutionTime() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The time of day (in UTC) at which the query should run. If
+         * left unspecified, the server picks an arbitrary time of day and runs
+         * the query at the same time each day.
+         * </pre>
+         *
+         * <code>
+         * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The executionTime.
+         */
+        @java.lang.Override
+        public com.google.type.TimeOfDay getExecutionTime() {
+          return executionTime_ == null
+              ? com.google.type.TimeOfDay.getDefaultInstance()
+              : executionTime_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The time of day (in UTC) at which the query should run. If
+         * left unspecified, the server picks an arbitrary time of day and runs
+         * the query at the same time each day.
+         * </pre>
+         *
+         * <code>
+         * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.type.TimeOfDayOrBuilder getExecutionTimeOrBuilder() {
+          return executionTime_ == null
+              ? com.google.type.TimeOfDay.getDefaultInstance()
+              : executionTime_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (periodicity_ != 0) {
+            output.writeInt32(1, periodicity_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(2, getExecutionTime());
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (periodicity_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, periodicity_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getExecutionTime());
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily)) {
+            return super.equals(obj);
+          }
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily other =
+              (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) obj;
+
+          if (getPeriodicity() != other.getPeriodicity()) return false;
+          if (hasExecutionTime() != other.hasExecutionTime()) return false;
+          if (hasExecutionTime()) {
+            if (!getExecutionTime().equals(other.getExecutionTime())) return false;
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + PERIODICITY_FIELD_NUMBER;
+          hash = (53 * hash) + getPeriodicity();
+          if (hasExecutionTime()) {
+            hash = (37 * hash) + EXECUTION_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getExecutionTime().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Used to schedule the query to run every so many days.
+         * </pre>
+         *
+         * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily)
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.DailyOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.class,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.Builder
+                        .class);
+          }
+
+          // Construct using
+          // com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+              getExecutionTimeFieldBuilder();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            periodicity_ = 0;
+            executionTime_ = null;
+            if (executionTimeBuilder_ != null) {
+              executionTimeBuilder_.dispose();
+              executionTimeBuilder_ = null;
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_Daily_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+              getDefaultInstanceForType() {
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily build() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily buildPartial() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily result =
+                new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.periodicity_ = periodicity_;
+            }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.executionTime_ =
+                  executionTimeBuilder_ == null ? executionTime_ : executionTimeBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) {
+              return mergeFrom(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily other) {
+            if (other
+                == com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+                    .getDefaultInstance()) return this;
+            if (other.getPeriodicity() != 0) {
+              setPeriodicity(other.getPeriodicity());
+            }
+            if (other.hasExecutionTime()) {
+              mergeExecutionTime(other.getExecutionTime());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      periodicity_ = input.readInt32();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 18:
+                    {
+                      input.readMessage(
+                          getExecutionTimeFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int periodicity_;
+          /**
+           *
+           *
+           * <pre>
+           * Required. The number of days between runs. Must be greater than or
+           * equal to 1 day and less than or equal to 31 days.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The periodicity.
+           */
+          @java.lang.Override
+          public int getPeriodicity() {
+            return periodicity_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The number of days between runs. Must be greater than or
+           * equal to 1 day and less than or equal to 31 days.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The periodicity to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPeriodicity(int value) {
+
+            periodicity_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The number of days between runs. Must be greater than or
+           * equal to 1 day and less than or equal to 31 days.
+           * </pre>
+           *
+           * <code>int32 periodicity = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPeriodicity() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            periodicity_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private com.google.type.TimeOfDay executionTime_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.TimeOfDay,
+                  com.google.type.TimeOfDay.Builder,
+                  com.google.type.TimeOfDayOrBuilder>
+              executionTimeBuilder_;
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return Whether the executionTime field is set.
+           */
+          public boolean hasExecutionTime() {
+            return ((bitField0_ & 0x00000002) != 0);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The executionTime.
+           */
+          public com.google.type.TimeOfDay getExecutionTime() {
+            if (executionTimeBuilder_ == null) {
+              return executionTime_ == null
+                  ? com.google.type.TimeOfDay.getDefaultInstance()
+                  : executionTime_;
+            } else {
+              return executionTimeBuilder_.getMessage();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setExecutionTime(com.google.type.TimeOfDay value) {
+            if (executionTimeBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              executionTime_ = value;
+            } else {
+              executionTimeBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setExecutionTime(com.google.type.TimeOfDay.Builder builderForValue) {
+            if (executionTimeBuilder_ == null) {
+              executionTime_ = builderForValue.build();
+            } else {
+              executionTimeBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder mergeExecutionTime(com.google.type.TimeOfDay value) {
+            if (executionTimeBuilder_ == null) {
+              if (((bitField0_ & 0x00000002) != 0)
+                  && executionTime_ != null
+                  && executionTime_ != com.google.type.TimeOfDay.getDefaultInstance()) {
+                getExecutionTimeBuilder().mergeFrom(value);
+              } else {
+                executionTime_ = value;
+              }
+            } else {
+              executionTimeBuilder_.mergeFrom(value);
+            }
+            if (executionTime_ != null) {
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder clearExecutionTime() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            executionTime_ = null;
+            if (executionTimeBuilder_ != null) {
+              executionTimeBuilder_.dispose();
+              executionTimeBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.type.TimeOfDay.Builder getExecutionTimeBuilder() {
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return getExecutionTimeFieldBuilder().getBuilder();
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.type.TimeOfDayOrBuilder getExecutionTimeOrBuilder() {
+            if (executionTimeBuilder_ != null) {
+              return executionTimeBuilder_.getMessageOrBuilder();
+            } else {
+              return executionTime_ == null
+                  ? com.google.type.TimeOfDay.getDefaultInstance()
+                  : executionTime_;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The time of day (in UTC) at which the query should run. If
+           * left unspecified, the server picks an arbitrary time of day and runs
+           * the query at the same time each day.
+           * </pre>
+           *
+           * <code>
+           * .google.type.TimeOfDay execution_time = 2 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.TimeOfDay,
+                  com.google.type.TimeOfDay.Builder,
+                  com.google.type.TimeOfDayOrBuilder>
+              getExecutionTimeFieldBuilder() {
+            if (executionTimeBuilder_ == null) {
+              executionTimeBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.type.TimeOfDay,
+                      com.google.type.TimeOfDay.Builder,
+                      com.google.type.TimeOfDayOrBuilder>(
+                      getExecutionTime(), getParentForChildren(), isClean());
+              executionTime_ = null;
+            }
+            return executionTimeBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily)
+        private static final com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily();
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Daily> PARSER =
+            new com.google.protobuf.AbstractParser<Daily>() {
+              @java.lang.Override
+              public Daily parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Daily> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Daily> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface RowCountTestOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The comparison to apply between the number of rows returned
+         * by the query and the threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for comparison.
+         */
+        int getComparisonValue();
+        /**
+         *
+         *
+         * <pre>
+         * Required. The comparison to apply between the number of rows returned
+         * by the query and the threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The comparison.
+         */
+        com.google.monitoring.v3.ComparisonType getComparison();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The value against which to compare the row count.
+         * </pre>
+         *
+         * <code>int64 threshold = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The threshold.
+         */
+        long getThreshold();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A test that checks if the number of rows in the result set
+       * violates some threshold.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest}
+       */
+      public static final class RowCountTest extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+          RowCountTestOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use RowCountTest.newBuilder() to construct.
+        private RowCountTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private RowCountTest() {
+          comparison_ = 0;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new RowCountTest();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.Builder
+                      .class);
+        }
+
+        public static final int COMPARISON_FIELD_NUMBER = 1;
+        private int comparison_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The comparison to apply between the number of rows returned
+         * by the query and the threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for comparison.
+         */
+        @java.lang.Override
+        public int getComparisonValue() {
+          return comparison_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The comparison to apply between the number of rows returned
+         * by the query and the threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The comparison.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.ComparisonType getComparison() {
+          com.google.monitoring.v3.ComparisonType result =
+              com.google.monitoring.v3.ComparisonType.forNumber(comparison_);
+          return result == null ? com.google.monitoring.v3.ComparisonType.UNRECOGNIZED : result;
+        }
+
+        public static final int THRESHOLD_FIELD_NUMBER = 2;
+        private long threshold_ = 0L;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The value against which to compare the row count.
+         * </pre>
+         *
+         * <code>int64 threshold = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The threshold.
+         */
+        @java.lang.Override
+        public long getThreshold() {
+          return threshold_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (comparison_
+              != com.google.monitoring.v3.ComparisonType.COMPARISON_UNSPECIFIED.getNumber()) {
+            output.writeEnum(1, comparison_);
+          }
+          if (threshold_ != 0L) {
+            output.writeInt64(2, threshold_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (comparison_
+              != com.google.monitoring.v3.ComparisonType.COMPARISON_UNSPECIFIED.getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, comparison_);
+          }
+          if (threshold_ != 0L) {
+            size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, threshold_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)) {
+            return super.equals(obj);
+          }
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest other =
+              (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest) obj;
+
+          if (comparison_ != other.comparison_) return false;
+          if (getThreshold() != other.getThreshold()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + COMPARISON_FIELD_NUMBER;
+          hash = (53 * hash) + comparison_;
+          hash = (37 * hash) + THRESHOLD_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getThreshold());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A test that checks if the number of rows in the result set
+         * violates some threshold.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTestOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.class,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.Builder
+                        .class);
+          }
+
+          // Construct using
+          // com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            comparison_ = 0;
+            threshold_ = 0L;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_RowCountTest_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+              getDefaultInstanceForType() {
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest build() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+              buildPartial() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest result =
+                new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.comparison_ = comparison_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.threshold_ = threshold_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest) {
+              return mergeFrom(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest other) {
+            if (other
+                == com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                    .getDefaultInstance()) return this;
+            if (other.comparison_ != 0) {
+              setComparisonValue(other.getComparisonValue());
+            }
+            if (other.getThreshold() != 0L) {
+              setThreshold(other.getThreshold());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      comparison_ = input.readEnum();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 16:
+                    {
+                      threshold_ = input.readInt64();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int comparison_ = 0;
+          /**
+           *
+           *
+           * <pre>
+           * Required. The comparison to apply between the number of rows returned
+           * by the query and the threshold.
+           * </pre>
+           *
+           * <code>
+           * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The enum numeric value on the wire for comparison.
+           */
+          @java.lang.Override
+          public int getComparisonValue() {
+            return comparison_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The comparison to apply between the number of rows returned
+           * by the query and the threshold.
+           * </pre>
+           *
+           * <code>
+           * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for comparison to set.
+           * @return This builder for chaining.
+           */
+          public Builder setComparisonValue(int value) {
+            comparison_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The comparison to apply between the number of rows returned
+           * by the query and the threshold.
+           * </pre>
+           *
+           * <code>
+           * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The comparison.
+           */
+          @java.lang.Override
+          public com.google.monitoring.v3.ComparisonType getComparison() {
+            com.google.monitoring.v3.ComparisonType result =
+                com.google.monitoring.v3.ComparisonType.forNumber(comparison_);
+            return result == null ? com.google.monitoring.v3.ComparisonType.UNRECOGNIZED : result;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The comparison to apply between the number of rows returned
+           * by the query and the threshold.
+           * </pre>
+           *
+           * <code>
+           * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The comparison to set.
+           * @return This builder for chaining.
+           */
+          public Builder setComparison(com.google.monitoring.v3.ComparisonType value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000001;
+            comparison_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The comparison to apply between the number of rows returned
+           * by the query and the threshold.
+           * </pre>
+           *
+           * <code>
+           * .google.monitoring.v3.ComparisonType comparison = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearComparison() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            comparison_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private long threshold_;
+          /**
+           *
+           *
+           * <pre>
+           * Required. The value against which to compare the row count.
+           * </pre>
+           *
+           * <code>int64 threshold = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The threshold.
+           */
+          @java.lang.Override
+          public long getThreshold() {
+            return threshold_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The value against which to compare the row count.
+           * </pre>
+           *
+           * <code>int64 threshold = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The threshold to set.
+           * @return This builder for chaining.
+           */
+          public Builder setThreshold(long value) {
+
+            threshold_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The value against which to compare the row count.
+           * </pre>
+           *
+           * <code>int64 threshold = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearThreshold() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            threshold_ = 0L;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+        private static final com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+                .RowCountTest
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest();
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RowCountTest> PARSER =
+            new com.google.protobuf.AbstractParser<RowCountTest>() {
+              @java.lang.Override
+              public RowCountTest parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<RowCountTest> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<RowCountTest> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface BooleanTestOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the column containing the boolean value. If the
+         * value in a row is NULL, that row is ignored.
+         * </pre>
+         *
+         * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The column.
+         */
+        java.lang.String getColumn();
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the column containing the boolean value. If the
+         * value in a row is NULL, that row is ignored.
+         * </pre>
+         *
+         * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for column.
+         */
+        com.google.protobuf.ByteString getColumnBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A test that uses an alerting result in a boolean column produced by
+       * the SQL query.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest}
+       */
+      public static final class BooleanTest extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+          BooleanTestOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use BooleanTest.newBuilder() to construct.
+        private BooleanTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private BooleanTest() {
+          column_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new BooleanTest();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.Builder
+                      .class);
+        }
+
+        public static final int COLUMN_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object column_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the column containing the boolean value. If the
+         * value in a row is NULL, that row is ignored.
+         * </pre>
+         *
+         * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The column.
+         */
+        @java.lang.Override
+        public java.lang.String getColumn() {
+          java.lang.Object ref = column_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            column_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the column containing the boolean value. If the
+         * value in a row is NULL, that row is ignored.
+         * </pre>
+         *
+         * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for column.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getColumnBytes() {
+          java.lang.Object ref = column_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            column_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, column_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)) {
+            return super.equals(obj);
+          }
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest other =
+              (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest) obj;
+
+          if (!getColumn().equals(other.getColumn())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + COLUMN_FIELD_NUMBER;
+          hash = (53 * hash) + getColumn().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A test that uses an alerting result in a boolean column produced by
+         * the SQL query.
+         * </pre>
+         *
+         * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTestOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.class,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.Builder
+                        .class);
+          }
+
+          // Construct using
+          // com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            column_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.monitoring.v3.AlertProto
+                .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_BooleanTest_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+              getDefaultInstanceForType() {
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest build() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+              buildPartial() {
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest result =
+                new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.column_ = column_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest) {
+              return mergeFrom(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest other) {
+            if (other
+                == com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                    .getDefaultInstance()) return this;
+            if (!other.getColumn().isEmpty()) {
+              column_ = other.column_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      column_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object column_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Required. The name of the column containing the boolean value. If the
+           * value in a row is NULL, that row is ignored.
+           * </pre>
+           *
+           * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The column.
+           */
+          public java.lang.String getColumn() {
+            java.lang.Object ref = column_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              column_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The name of the column containing the boolean value. If the
+           * value in a row is NULL, that row is ignored.
+           * </pre>
+           *
+           * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The bytes for column.
+           */
+          public com.google.protobuf.ByteString getColumnBytes() {
+            java.lang.Object ref = column_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              column_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The name of the column containing the boolean value. If the
+           * value in a row is NULL, that row is ignored.
+           * </pre>
+           *
+           * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The column to set.
+           * @return This builder for chaining.
+           */
+          public Builder setColumn(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            column_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The name of the column containing the boolean value. If the
+           * value in a row is NULL, that row is ignored.
+           * </pre>
+           *
+           * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearColumn() {
+            column_ = getDefaultInstance().getColumn();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. The name of the column containing the boolean value. If the
+           * value in a row is NULL, that row is ignored.
+           * </pre>
+           *
+           * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The bytes for column to set.
+           * @return This builder for chaining.
+           */
+          public Builder setColumnBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            column_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+        private static final com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest();
+        }
+
+        public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<BooleanTest> PARSER =
+            new com.google.protobuf.AbstractParser<BooleanTest>() {
+              @java.lang.Override
+              public BooleanTest parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<BooleanTest> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<BooleanTest> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int scheduleCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object schedule_;
+
+      public enum ScheduleCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        MINUTES(2),
+        HOURLY(3),
+        DAILY(4),
+        SCHEDULE_NOT_SET(0);
+        private final int value;
+
+        private ScheduleCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ScheduleCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ScheduleCase forNumber(int value) {
+          switch (value) {
+            case 2:
+              return MINUTES;
+            case 3:
+              return HOURLY;
+            case 4:
+              return DAILY;
+            case 0:
+              return SCHEDULE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public ScheduleCase getScheduleCase() {
+        return ScheduleCase.forNumber(scheduleCase_);
+      }
+
+      private int evaluateCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object evaluate_;
+
+      public enum EvaluateCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        ROW_COUNT_TEST(5),
+        BOOLEAN_TEST(6),
+        EVALUATE_NOT_SET(0);
+        private final int value;
+
+        private EvaluateCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static EvaluateCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static EvaluateCase forNumber(int value) {
+          switch (value) {
+            case 5:
+              return ROW_COUNT_TEST;
+            case 6:
+              return BOOLEAN_TEST;
+            case 0:
+              return EVALUATE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public EvaluateCase getEvaluateCase() {
+        return EvaluateCase.forNumber(evaluateCase_);
+      }
+
+      public static final int QUERY_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object query_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Log Analytics SQL query to run, as a string.  The query
+       * must conform to the required shape. Specifically, the query must not
+       * try to filter the input by time.  A filter will automatically be
+       * applied to filter the input so that the query receives all rows
+       * received since the last time the query was run.
+       *
+       * For example, the following query extracts all log entries containing an
+       * HTTP request:
+       *
+       *     SELECT
+       *       timestamp, log_name, severity, http_request, resource, labels
+       *     FROM
+       *       my-project.global._Default._AllLogs
+       *     WHERE
+       *       http_request IS NOT NULL
+       * </pre>
+       *
+       * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The query.
+       */
+      @java.lang.Override
+      public java.lang.String getQuery() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          query_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Log Analytics SQL query to run, as a string.  The query
+       * must conform to the required shape. Specifically, the query must not
+       * try to filter the input by time.  A filter will automatically be
+       * applied to filter the input so that the query receives all rows
+       * received since the last time the query was run.
+       *
+       * For example, the following query extracts all log entries containing an
+       * HTTP request:
+       *
+       *     SELECT
+       *       timestamp, log_name, severity, http_request, resource, labels
+       *     FROM
+       *       my-project.global._Default._AllLogs
+       *     WHERE
+       *       http_request IS NOT NULL
+       * </pre>
+       *
+       * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for query.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getQueryBytes() {
+        java.lang.Object ref = query_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          query_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int MINUTES_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many minutes.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;</code>
+       *
+       * @return Whether the minutes field is set.
+       */
+      @java.lang.Override
+      public boolean hasMinutes() {
+        return scheduleCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many minutes.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;</code>
+       *
+       * @return The minutes.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes getMinutes() {
+        if (scheduleCase_ == 2) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) schedule_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many minutes.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.MinutesOrBuilder
+          getMinutesOrBuilder() {
+        if (scheduleCase_ == 2) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) schedule_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+            .getDefaultInstance();
+      }
+
+      public static final int HOURLY_FIELD_NUMBER = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many hours.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+       *
+       * @return Whether the hourly field is set.
+       */
+      @java.lang.Override
+      public boolean hasHourly() {
+        return scheduleCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many hours.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+       *
+       * @return The hourly.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly getHourly() {
+        if (scheduleCase_ == 3) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) schedule_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many hours.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.HourlyOrBuilder
+          getHourlyOrBuilder() {
+        if (scheduleCase_ == 3) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) schedule_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+            .getDefaultInstance();
+      }
+
+      public static final int DAILY_FIELD_NUMBER = 4;
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many days.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+       *
+       * @return Whether the daily field is set.
+       */
+      @java.lang.Override
+      public boolean hasDaily() {
+        return scheduleCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many days.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+       *
+       * @return The daily.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily getDaily() {
+        if (scheduleCase_ == 4) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) schedule_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Schedule the query to execute every so many days.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.DailyOrBuilder
+          getDailyOrBuilder() {
+        if (scheduleCase_ == 4) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) schedule_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+            .getDefaultInstance();
+      }
+
+      public static final int ROW_COUNT_TEST_FIELD_NUMBER = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Test the row count against a threshold.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+       * </code>
+       *
+       * @return Whether the rowCountTest field is set.
+       */
+      @java.lang.Override
+      public boolean hasRowCountTest() {
+        return evaluateCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Test the row count against a threshold.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+       * </code>
+       *
+       * @return The rowCountTest.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+          getRowCountTest() {
+        if (evaluateCase_ == 5) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+              evaluate_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Test the row count against a threshold.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTestOrBuilder
+          getRowCountTestOrBuilder() {
+        if (evaluateCase_ == 5) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+              evaluate_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            .getDefaultInstance();
+      }
+
+      public static final int BOOLEAN_TEST_FIELD_NUMBER = 6;
+      /**
+       *
+       *
+       * <pre>
+       * Test the boolean value in the indicated column.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+       * </code>
+       *
+       * @return Whether the booleanTest field is set.
+       */
+      @java.lang.Override
+      public boolean hasBooleanTest() {
+        return evaluateCase_ == 6;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Test the boolean value in the indicated column.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+       * </code>
+       *
+       * @return The booleanTest.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+          getBooleanTest() {
+        if (evaluateCase_ == 6) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+              evaluate_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            .getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Test the boolean value in the indicated column.
+       * </pre>
+       *
+       * <code>
+       * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTestOrBuilder
+          getBooleanTestOrBuilder() {
+        if (evaluateCase_ == 6) {
+          return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+              evaluate_;
+        }
+        return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            .getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, query_);
+        }
+        if (scheduleCase_ == 2) {
+          output.writeMessage(
+              2, (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) schedule_);
+        }
+        if (scheduleCase_ == 3) {
+          output.writeMessage(
+              3, (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) schedule_);
+        }
+        if (scheduleCase_ == 4) {
+          output.writeMessage(
+              4, (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) schedule_);
+        }
+        if (evaluateCase_ == 5) {
+          output.writeMessage(
+              5,
+              (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest) evaluate_);
+        }
+        if (evaluateCase_ == 6) {
+          output.writeMessage(
+              6,
+              (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest) evaluate_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, query_);
+        }
+        if (scheduleCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) schedule_);
+        }
+        if (scheduleCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3,
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) schedule_);
+        }
+        if (scheduleCase_ == 4) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  4, (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) schedule_);
+        }
+        if (evaluateCase_ == 5) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  5,
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+                      evaluate_);
+        }
+        if (evaluateCase_ == 6) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  6,
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+                      evaluate_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition)) {
+          return super.equals(obj);
+        }
+        com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition other =
+            (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) obj;
+
+        if (!getQuery().equals(other.getQuery())) return false;
+        if (!getScheduleCase().equals(other.getScheduleCase())) return false;
+        switch (scheduleCase_) {
+          case 2:
+            if (!getMinutes().equals(other.getMinutes())) return false;
+            break;
+          case 3:
+            if (!getHourly().equals(other.getHourly())) return false;
+            break;
+          case 4:
+            if (!getDaily().equals(other.getDaily())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getEvaluateCase().equals(other.getEvaluateCase())) return false;
+        switch (evaluateCase_) {
+          case 5:
+            if (!getRowCountTest().equals(other.getRowCountTest())) return false;
+            break;
+          case 6:
+            if (!getBooleanTest().equals(other.getBooleanTest())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getQuery().hashCode();
+        switch (scheduleCase_) {
+          case 2:
+            hash = (37 * hash) + MINUTES_FIELD_NUMBER;
+            hash = (53 * hash) + getMinutes().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + HOURLY_FIELD_NUMBER;
+            hash = (53 * hash) + getHourly().hashCode();
+            break;
+          case 4:
+            hash = (37 * hash) + DAILY_FIELD_NUMBER;
+            hash = (53 * hash) + getDaily().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        switch (evaluateCase_) {
+          case 5:
+            hash = (37 * hash) + ROW_COUNT_TEST_FIELD_NUMBER;
+            hash = (53 * hash) + getRowCountTest().hashCode();
+            break;
+          case 6:
+            hash = (37 * hash) + BOOLEAN_TEST_FIELD_NUMBER;
+            hash = (53 * hash) + getBooleanTest().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that allows alerting policies to be defined using GoogleSQL.
+       * SQL conditions examine a sliding window of logs using GoogleSQL.
+       * Alert policies with SQL conditions may incur additional billing.
+       * </pre>
+       *
+       * Protobuf type {@code google.monitoring.v3.AlertPolicy.Condition.SqlCondition}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.monitoring.v3.AlertPolicy.Condition.SqlCondition)
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlConditionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.class,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Builder.class);
+        }
+
+        // Construct using com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          query_ = "";
+          if (minutesBuilder_ != null) {
+            minutesBuilder_.clear();
+          }
+          if (hourlyBuilder_ != null) {
+            hourlyBuilder_.clear();
+          }
+          if (dailyBuilder_ != null) {
+            dailyBuilder_.clear();
+          }
+          if (rowCountTestBuilder_ != null) {
+            rowCountTestBuilder_.clear();
+          }
+          if (booleanTestBuilder_ != null) {
+            booleanTestBuilder_.clear();
+          }
+          scheduleCase_ = 0;
+          schedule_ = null;
+          evaluateCase_ = 0;
+          evaluate_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.AlertProto
+              .internal_static_google_monitoring_v3_AlertPolicy_Condition_SqlCondition_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition build() {
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition buildPartial() {
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition result =
+              new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.query_ = query_;
+          }
+        }
+
+        private void buildPartialOneofs(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition result) {
+          result.scheduleCase_ = scheduleCase_;
+          result.schedule_ = this.schedule_;
+          if (scheduleCase_ == 2 && minutesBuilder_ != null) {
+            result.schedule_ = minutesBuilder_.build();
+          }
+          if (scheduleCase_ == 3 && hourlyBuilder_ != null) {
+            result.schedule_ = hourlyBuilder_.build();
+          }
+          if (scheduleCase_ == 4 && dailyBuilder_ != null) {
+            result.schedule_ = dailyBuilder_.build();
+          }
+          result.evaluateCase_ = evaluateCase_;
+          result.evaluate_ = this.evaluate_;
+          if (evaluateCase_ == 5 && rowCountTestBuilder_ != null) {
+            result.evaluate_ = rowCountTestBuilder_.build();
+          }
+          if (evaluateCase_ == 6 && booleanTestBuilder_ != null) {
+            result.evaluate_ = booleanTestBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) {
+            return mergeFrom((com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition other) {
+          if (other
+              == com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance())
+            return this;
+          if (!other.getQuery().isEmpty()) {
+            query_ = other.query_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          switch (other.getScheduleCase()) {
+            case MINUTES:
+              {
+                mergeMinutes(other.getMinutes());
+                break;
+              }
+            case HOURLY:
+              {
+                mergeHourly(other.getHourly());
+                break;
+              }
+            case DAILY:
+              {
+                mergeDaily(other.getDaily());
+                break;
+              }
+            case SCHEDULE_NOT_SET:
+              {
+                break;
+              }
+          }
+          switch (other.getEvaluateCase()) {
+            case ROW_COUNT_TEST:
+              {
+                mergeRowCountTest(other.getRowCountTest());
+                break;
+              }
+            case BOOLEAN_TEST:
+              {
+                mergeBooleanTest(other.getBooleanTest());
+                break;
+              }
+            case EVALUATE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    query_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getMinutesFieldBuilder().getBuilder(), extensionRegistry);
+                    scheduleCase_ = 2;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(getHourlyFieldBuilder().getBuilder(), extensionRegistry);
+                    scheduleCase_ = 3;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    input.readMessage(getDailyFieldBuilder().getBuilder(), extensionRegistry);
+                    scheduleCase_ = 4;
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    input.readMessage(
+                        getRowCountTestFieldBuilder().getBuilder(), extensionRegistry);
+                    evaluateCase_ = 5;
+                    break;
+                  } // case 42
+                case 50:
+                  {
+                    input.readMessage(getBooleanTestFieldBuilder().getBuilder(), extensionRegistry);
+                    evaluateCase_ = 6;
+                    break;
+                  } // case 50
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int scheduleCase_ = 0;
+        private java.lang.Object schedule_;
+
+        public ScheduleCase getScheduleCase() {
+          return ScheduleCase.forNumber(scheduleCase_);
+        }
+
+        public Builder clearSchedule() {
+          scheduleCase_ = 0;
+          schedule_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int evaluateCase_ = 0;
+        private java.lang.Object evaluate_;
+
+        public EvaluateCase getEvaluateCase() {
+          return EvaluateCase.forNumber(evaluateCase_);
+        }
+
+        public Builder clearEvaluate() {
+          evaluateCase_ = 0;
+          evaluate_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object query_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Log Analytics SQL query to run, as a string.  The query
+         * must conform to the required shape. Specifically, the query must not
+         * try to filter the input by time.  A filter will automatically be
+         * applied to filter the input so that the query receives all rows
+         * received since the last time the query was run.
+         *
+         * For example, the following query extracts all log entries containing an
+         * HTTP request:
+         *
+         *     SELECT
+         *       timestamp, log_name, severity, http_request, resource, labels
+         *     FROM
+         *       my-project.global._Default._AllLogs
+         *     WHERE
+         *       http_request IS NOT NULL
+         * </pre>
+         *
+         * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The query.
+         */
+        public java.lang.String getQuery() {
+          java.lang.Object ref = query_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            query_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Log Analytics SQL query to run, as a string.  The query
+         * must conform to the required shape. Specifically, the query must not
+         * try to filter the input by time.  A filter will automatically be
+         * applied to filter the input so that the query receives all rows
+         * received since the last time the query was run.
+         *
+         * For example, the following query extracts all log entries containing an
+         * HTTP request:
+         *
+         *     SELECT
+         *       timestamp, log_name, severity, http_request, resource, labels
+         *     FROM
+         *       my-project.global._Default._AllLogs
+         *     WHERE
+         *       http_request IS NOT NULL
+         * </pre>
+         *
+         * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for query.
+         */
+        public com.google.protobuf.ByteString getQueryBytes() {
+          java.lang.Object ref = query_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            query_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Log Analytics SQL query to run, as a string.  The query
+         * must conform to the required shape. Specifically, the query must not
+         * try to filter the input by time.  A filter will automatically be
+         * applied to filter the input so that the query receives all rows
+         * received since the last time the query was run.
+         *
+         * For example, the following query extracts all log entries containing an
+         * HTTP request:
+         *
+         *     SELECT
+         *       timestamp, log_name, severity, http_request, resource, labels
+         *     FROM
+         *       my-project.global._Default._AllLogs
+         *     WHERE
+         *       http_request IS NOT NULL
+         * </pre>
+         *
+         * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQuery(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          query_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Log Analytics SQL query to run, as a string.  The query
+         * must conform to the required shape. Specifically, the query must not
+         * try to filter the input by time.  A filter will automatically be
+         * applied to filter the input so that the query receives all rows
+         * received since the last time the query was run.
+         *
+         * For example, the following query extracts all log entries containing an
+         * HTTP request:
+         *
+         *     SELECT
+         *       timestamp, log_name, severity, http_request, resource, labels
+         *     FROM
+         *       my-project.global._Default._AllLogs
+         *     WHERE
+         *       http_request IS NOT NULL
+         * </pre>
+         *
+         * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearQuery() {
+          query_ = getDefaultInstance().getQuery();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Log Analytics SQL query to run, as a string.  The query
+         * must conform to the required shape. Specifically, the query must not
+         * try to filter the input by time.  A filter will automatically be
+         * applied to filter the input so that the query receives all rows
+         * received since the last time the query was run.
+         *
+         * For example, the following query extracts all log entries containing an
+         * HTTP request:
+         *
+         *     SELECT
+         *       timestamp, log_name, severity, http_request, resource, labels
+         *     FROM
+         *       my-project.global._Default._AllLogs
+         *     WHERE
+         *       http_request IS NOT NULL
+         * </pre>
+         *
+         * <code>string query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for query to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQueryBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          query_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.MinutesOrBuilder>
+            minutesBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         *
+         * @return Whether the minutes field is set.
+         */
+        @java.lang.Override
+        public boolean hasMinutes() {
+          return scheduleCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         *
+         * @return The minutes.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes getMinutes() {
+          if (minutesBuilder_ == null) {
+            if (scheduleCase_ == 2) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+                  schedule_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+                .getDefaultInstance();
+          } else {
+            if (scheduleCase_ == 2) {
+              return minutesBuilder_.getMessage();
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         */
+        public Builder setMinutes(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes value) {
+          if (minutesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            schedule_ = value;
+            onChanged();
+          } else {
+            minutesBuilder_.setMessage(value);
+          }
+          scheduleCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         */
+        public Builder setMinutes(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.Builder
+                builderForValue) {
+          if (minutesBuilder_ == null) {
+            schedule_ = builderForValue.build();
+            onChanged();
+          } else {
+            minutesBuilder_.setMessage(builderForValue.build());
+          }
+          scheduleCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         */
+        public Builder mergeMinutes(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes value) {
+          if (minutesBuilder_ == null) {
+            if (scheduleCase_ == 2
+                && schedule_
+                    != com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+                        .getDefaultInstance()) {
+              schedule_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.newBuilder(
+                          (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+                              schedule_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              schedule_ = value;
+            }
+            onChanged();
+          } else {
+            if (scheduleCase_ == 2) {
+              minutesBuilder_.mergeFrom(value);
+            } else {
+              minutesBuilder_.setMessage(value);
+            }
+          }
+          scheduleCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         */
+        public Builder clearMinutes() {
+          if (minutesBuilder_ == null) {
+            if (scheduleCase_ == 2) {
+              scheduleCase_ = 0;
+              schedule_ = null;
+              onChanged();
+            }
+          } else {
+            if (scheduleCase_ == 2) {
+              scheduleCase_ = 0;
+              schedule_ = null;
+            }
+            minutesBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.Builder
+            getMinutesBuilder() {
+          return getMinutesFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.MinutesOrBuilder
+            getMinutesOrBuilder() {
+          if ((scheduleCase_ == 2) && (minutesBuilder_ != null)) {
+            return minutesBuilder_.getMessageOrBuilder();
+          } else {
+            if (scheduleCase_ == 2) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes)
+                  schedule_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many minutes.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes minutes = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.MinutesOrBuilder>
+            getMinutesFieldBuilder() {
+          if (minutesBuilder_ == null) {
+            if (!(scheduleCase_ == 2)) {
+              schedule_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes
+                      .getDefaultInstance();
+            }
+            minutesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes.Builder,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.MinutesOrBuilder>(
+                    (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Minutes) schedule_,
+                    getParentForChildren(),
+                    isClean());
+            schedule_ = null;
+          }
+          scheduleCase_ = 2;
+          onChanged();
+          return minutesBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.HourlyOrBuilder>
+            hourlyBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         *
+         * @return Whether the hourly field is set.
+         */
+        @java.lang.Override
+        public boolean hasHourly() {
+          return scheduleCase_ == 3;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         *
+         * @return The hourly.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly getHourly() {
+          if (hourlyBuilder_ == null) {
+            if (scheduleCase_ == 3) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) schedule_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+                .getDefaultInstance();
+          } else {
+            if (scheduleCase_ == 3) {
+              return hourlyBuilder_.getMessage();
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         */
+        public Builder setHourly(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly value) {
+          if (hourlyBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            schedule_ = value;
+            onChanged();
+          } else {
+            hourlyBuilder_.setMessage(value);
+          }
+          scheduleCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         */
+        public Builder setHourly(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.Builder
+                builderForValue) {
+          if (hourlyBuilder_ == null) {
+            schedule_ = builderForValue.build();
+            onChanged();
+          } else {
+            hourlyBuilder_.setMessage(builderForValue.build());
+          }
+          scheduleCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         */
+        public Builder mergeHourly(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly value) {
+          if (hourlyBuilder_ == null) {
+            if (scheduleCase_ == 3
+                && schedule_
+                    != com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+                        .getDefaultInstance()) {
+              schedule_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.newBuilder(
+                          (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly)
+                              schedule_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              schedule_ = value;
+            }
+            onChanged();
+          } else {
+            if (scheduleCase_ == 3) {
+              hourlyBuilder_.mergeFrom(value);
+            } else {
+              hourlyBuilder_.setMessage(value);
+            }
+          }
+          scheduleCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         */
+        public Builder clearHourly() {
+          if (hourlyBuilder_ == null) {
+            if (scheduleCase_ == 3) {
+              scheduleCase_ = 0;
+              schedule_ = null;
+              onChanged();
+            }
+          } else {
+            if (scheduleCase_ == 3) {
+              scheduleCase_ = 0;
+              schedule_ = null;
+            }
+            hourlyBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.Builder
+            getHourlyBuilder() {
+          return getHourlyFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.HourlyOrBuilder
+            getHourlyOrBuilder() {
+          if ((scheduleCase_ == 3) && (hourlyBuilder_ != null)) {
+            return hourlyBuilder_.getMessageOrBuilder();
+          } else {
+            if (scheduleCase_ == 3) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) schedule_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many hours.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly hourly = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.HourlyOrBuilder>
+            getHourlyFieldBuilder() {
+          if (hourlyBuilder_ == null) {
+            if (!(scheduleCase_ == 3)) {
+              schedule_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly
+                      .getDefaultInstance();
+            }
+            hourlyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly.Builder,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.HourlyOrBuilder>(
+                    (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Hourly) schedule_,
+                    getParentForChildren(),
+                    isClean());
+            schedule_ = null;
+          }
+          scheduleCase_ = 3;
+          onChanged();
+          return hourlyBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.DailyOrBuilder>
+            dailyBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         *
+         * @return Whether the daily field is set.
+         */
+        @java.lang.Override
+        public boolean hasDaily() {
+          return scheduleCase_ == 4;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         *
+         * @return The daily.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily getDaily() {
+          if (dailyBuilder_ == null) {
+            if (scheduleCase_ == 4) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) schedule_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+                .getDefaultInstance();
+          } else {
+            if (scheduleCase_ == 4) {
+              return dailyBuilder_.getMessage();
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         */
+        public Builder setDaily(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily value) {
+          if (dailyBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            schedule_ = value;
+            onChanged();
+          } else {
+            dailyBuilder_.setMessage(value);
+          }
+          scheduleCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         */
+        public Builder setDaily(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.Builder
+                builderForValue) {
+          if (dailyBuilder_ == null) {
+            schedule_ = builderForValue.build();
+            onChanged();
+          } else {
+            dailyBuilder_.setMessage(builderForValue.build());
+          }
+          scheduleCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         */
+        public Builder mergeDaily(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily value) {
+          if (dailyBuilder_ == null) {
+            if (scheduleCase_ == 4
+                && schedule_
+                    != com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+                        .getDefaultInstance()) {
+              schedule_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.newBuilder(
+                          (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily)
+                              schedule_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              schedule_ = value;
+            }
+            onChanged();
+          } else {
+            if (scheduleCase_ == 4) {
+              dailyBuilder_.mergeFrom(value);
+            } else {
+              dailyBuilder_.setMessage(value);
+            }
+          }
+          scheduleCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         */
+        public Builder clearDaily() {
+          if (dailyBuilder_ == null) {
+            if (scheduleCase_ == 4) {
+              scheduleCase_ = 0;
+              schedule_ = null;
+              onChanged();
+            }
+          } else {
+            if (scheduleCase_ == 4) {
+              scheduleCase_ = 0;
+              schedule_ = null;
+            }
+            dailyBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.Builder
+            getDailyBuilder() {
+          return getDailyFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.DailyOrBuilder
+            getDailyOrBuilder() {
+          if ((scheduleCase_ == 4) && (dailyBuilder_ != null)) {
+            return dailyBuilder_.getMessageOrBuilder();
+          } else {
+            if (scheduleCase_ == 4) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) schedule_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Schedule the query to execute every so many days.
+         * </pre>
+         *
+         * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily daily = 4;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.DailyOrBuilder>
+            getDailyFieldBuilder() {
+          if (dailyBuilder_ == null) {
+            if (!(scheduleCase_ == 4)) {
+              schedule_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily
+                      .getDefaultInstance();
+            }
+            dailyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily.Builder,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.DailyOrBuilder>(
+                    (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Daily) schedule_,
+                    getParentForChildren(),
+                    isClean());
+            schedule_ = null;
+          }
+          scheduleCase_ = 4;
+          onChanged();
+          return dailyBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTestOrBuilder>
+            rowCountTestBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         *
+         * @return Whether the rowCountTest field is set.
+         */
+        @java.lang.Override
+        public boolean hasRowCountTest() {
+          return evaluateCase_ == 5;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         *
+         * @return The rowCountTest.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+            getRowCountTest() {
+          if (rowCountTestBuilder_ == null) {
+            if (evaluateCase_ == 5) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+                  evaluate_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                .getDefaultInstance();
+          } else {
+            if (evaluateCase_ == 5) {
+              return rowCountTestBuilder_.getMessage();
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         */
+        public Builder setRowCountTest(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest value) {
+          if (rowCountTestBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            evaluate_ = value;
+            onChanged();
+          } else {
+            rowCountTestBuilder_.setMessage(value);
+          }
+          evaluateCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         */
+        public Builder setRowCountTest(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.Builder
+                builderForValue) {
+          if (rowCountTestBuilder_ == null) {
+            evaluate_ = builderForValue.build();
+            onChanged();
+          } else {
+            rowCountTestBuilder_.setMessage(builderForValue.build());
+          }
+          evaluateCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         */
+        public Builder mergeRowCountTest(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest value) {
+          if (rowCountTestBuilder_ == null) {
+            if (evaluateCase_ == 5
+                && evaluate_
+                    != com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                        .getDefaultInstance()) {
+              evaluate_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                      .newBuilder(
+                          (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+                              evaluate_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              evaluate_ = value;
+            }
+            onChanged();
+          } else {
+            if (evaluateCase_ == 5) {
+              rowCountTestBuilder_.mergeFrom(value);
+            } else {
+              rowCountTestBuilder_.setMessage(value);
+            }
+          }
+          evaluateCase_ = 5;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         */
+        public Builder clearRowCountTest() {
+          if (rowCountTestBuilder_ == null) {
+            if (evaluateCase_ == 5) {
+              evaluateCase_ = 0;
+              evaluate_ = null;
+              onChanged();
+            }
+          } else {
+            if (evaluateCase_ == 5) {
+              evaluateCase_ = 0;
+              evaluate_ = null;
+            }
+            rowCountTestBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.Builder
+            getRowCountTestBuilder() {
+          return getRowCountTestFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTestOrBuilder
+            getRowCountTestOrBuilder() {
+          if ((evaluateCase_ == 5) && (rowCountTestBuilder_ != null)) {
+            return rowCountTestBuilder_.getMessageOrBuilder();
+          } else {
+            if (evaluateCase_ == 5) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+                  evaluate_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the row count against a threshold.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest row_count_test = 5;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTestOrBuilder>
+            getRowCountTestFieldBuilder() {
+          if (rowCountTestBuilder_ == null) {
+            if (!(evaluateCase_ == 5)) {
+              evaluate_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                      .getDefaultInstance();
+            }
+            rowCountTestBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest
+                        .Builder,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+                        .RowCountTestOrBuilder>(
+                    (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.RowCountTest)
+                        evaluate_,
+                    getParentForChildren(),
+                    isClean());
+            evaluate_ = null;
+          }
+          evaluateCase_ = 5;
+          onChanged();
+          return rowCountTestBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTestOrBuilder>
+            booleanTestBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         *
+         * @return Whether the booleanTest field is set.
+         */
+        @java.lang.Override
+        public boolean hasBooleanTest() {
+          return evaluateCase_ == 6;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         *
+         * @return The booleanTest.
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+            getBooleanTest() {
+          if (booleanTestBuilder_ == null) {
+            if (evaluateCase_ == 6) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+                  evaluate_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                .getDefaultInstance();
+          } else {
+            if (evaluateCase_ == 6) {
+              return booleanTestBuilder_.getMessage();
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         */
+        public Builder setBooleanTest(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest value) {
+          if (booleanTestBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            evaluate_ = value;
+            onChanged();
+          } else {
+            booleanTestBuilder_.setMessage(value);
+          }
+          evaluateCase_ = 6;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         */
+        public Builder setBooleanTest(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.Builder
+                builderForValue) {
+          if (booleanTestBuilder_ == null) {
+            evaluate_ = builderForValue.build();
+            onChanged();
+          } else {
+            booleanTestBuilder_.setMessage(builderForValue.build());
+          }
+          evaluateCase_ = 6;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         */
+        public Builder mergeBooleanTest(
+            com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest value) {
+          if (booleanTestBuilder_ == null) {
+            if (evaluateCase_ == 6
+                && evaluate_
+                    != com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                        .getDefaultInstance()) {
+              evaluate_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                      .newBuilder(
+                          (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+                              evaluate_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              evaluate_ = value;
+            }
+            onChanged();
+          } else {
+            if (evaluateCase_ == 6) {
+              booleanTestBuilder_.mergeFrom(value);
+            } else {
+              booleanTestBuilder_.setMessage(value);
+            }
+          }
+          evaluateCase_ = 6;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         */
+        public Builder clearBooleanTest() {
+          if (booleanTestBuilder_ == null) {
+            if (evaluateCase_ == 6) {
+              evaluateCase_ = 0;
+              evaluate_ = null;
+              onChanged();
+            }
+          } else {
+            if (evaluateCase_ == 6) {
+              evaluateCase_ = 0;
+              evaluate_ = null;
+            }
+            booleanTestBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         */
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.Builder
+            getBooleanTestBuilder() {
+          return getBooleanTestFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTestOrBuilder
+            getBooleanTestOrBuilder() {
+          if ((evaluateCase_ == 6) && (booleanTestBuilder_ != null)) {
+            return booleanTestBuilder_.getMessageOrBuilder();
+          } else {
+            if (evaluateCase_ == 6) {
+              return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+                  evaluate_;
+            }
+            return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                .getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Test the boolean value in the indicated column.
+         * </pre>
+         *
+         * <code>
+         * .google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest boolean_test = 6;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.Builder,
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTestOrBuilder>
+            getBooleanTestFieldBuilder() {
+          if (booleanTestBuilder_ == null) {
+            if (!(evaluateCase_ == 6)) {
+              evaluate_ =
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest
+                      .getDefaultInstance();
+            }
+            booleanTestBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest.Builder,
+                    com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+                        .BooleanTestOrBuilder>(
+                    (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.BooleanTest)
+                        evaluate_,
+                    getParentForChildren(),
+                    isClean());
+            evaluate_ = null;
+          }
+          evaluateCase_ = 6;
+          onChanged();
+          return booleanTestBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.monitoring.v3.AlertPolicy.Condition.SqlCondition)
+      private static final com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition();
+      }
+
+      public static com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SqlCondition> PARSER =
+          new com.google.protobuf.AbstractParser<SqlCondition>() {
+            @java.lang.Override
+            public SqlCondition parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SqlCondition> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SqlCondition> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int conditionCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -18024,6 +24706,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       CONDITION_MATCHED_LOG(20),
       CONDITION_MONITORING_QUERY_LANGUAGE(19),
       CONDITION_PROMETHEUS_QUERY_LANGUAGE(21),
+      CONDITION_SQL(22),
       CONDITION_NOT_SET(0);
       private final int value;
 
@@ -18052,6 +24735,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             return CONDITION_MONITORING_QUERY_LANGUAGE;
           case 21:
             return CONDITION_PROMETHEUS_QUERY_LANGUAGE;
+          case 22:
+            return CONDITION_SQL;
           case 0:
             return CONDITION_NOT_SET;
           default:
@@ -18516,6 +25201,58 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           .getDefaultInstance();
     }
 
+    public static final int CONDITION_SQL_FIELD_NUMBER = 22;
+    /**
+     *
+     *
+     * <pre>
+     * A condition that periodically evaluates a SQL query result.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+     *
+     * @return Whether the conditionSql field is set.
+     */
+    @java.lang.Override
+    public boolean hasConditionSql() {
+      return conditionCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that periodically evaluates a SQL query result.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+     *
+     * @return The conditionSql.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition getConditionSql() {
+      if (conditionCase_ == 22) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A condition that periodically evaluates a SQL query result.
+     * </pre>
+     *
+     * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.Condition.SqlConditionOrBuilder
+        getConditionSqlOrBuilder() {
+      if (conditionCase_ == 22) {
+        return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_;
+      }
+      return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -18559,6 +25296,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
             21,
             (com.google.monitoring.v3.AlertPolicy.Condition.PrometheusQueryLanguageCondition)
                 condition_);
+      }
+      if (conditionCase_ == 22) {
+        output.writeMessage(
+            22, (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -18604,6 +25345,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                 (com.google.monitoring.v3.AlertPolicy.Condition.PrometheusQueryLanguageCondition)
                     condition_);
       }
+      if (conditionCase_ == 22) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                22, (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -18640,6 +25386,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         case 21:
           if (!getConditionPrometheusQueryLanguage()
               .equals(other.getConditionPrometheusQueryLanguage())) return false;
+          break;
+        case 22:
+          if (!getConditionSql().equals(other.getConditionSql())) return false;
           break;
         case 0:
         default:
@@ -18679,6 +25428,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         case 21:
           hash = (37 * hash) + CONDITION_PROMETHEUS_QUERY_LANGUAGE_FIELD_NUMBER;
           hash = (53 * hash) + getConditionPrometheusQueryLanguage().hashCode();
+          break;
+        case 22:
+          hash = (37 * hash) + CONDITION_SQL_FIELD_NUMBER;
+          hash = (53 * hash) + getConditionSql().hashCode();
           break;
         case 0:
         default:
@@ -18843,6 +25596,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (conditionPrometheusQueryLanguageBuilder_ != null) {
           conditionPrometheusQueryLanguageBuilder_.clear();
         }
+        if (conditionSqlBuilder_ != null) {
+          conditionSqlBuilder_.clear();
+        }
         conditionCase_ = 0;
         condition_ = null;
         return this;
@@ -18907,6 +25663,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         }
         if (conditionCase_ == 21 && conditionPrometheusQueryLanguageBuilder_ != null) {
           result.condition_ = conditionPrometheusQueryLanguageBuilder_.build();
+        }
+        if (conditionCase_ == 22 && conditionSqlBuilder_ != null) {
+          result.condition_ = conditionSqlBuilder_.build();
         }
       }
 
@@ -18994,6 +25753,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
               mergeConditionPrometheusQueryLanguage(other.getConditionPrometheusQueryLanguage());
               break;
             }
+          case CONDITION_SQL:
+            {
+              mergeConditionSql(other.getConditionSql());
+              break;
+            }
           case CONDITION_NOT_SET:
             {
               break;
@@ -19074,6 +25838,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   conditionCase_ = 21;
                   break;
                 } // case 170
+              case 178:
+                {
+                  input.readMessage(getConditionSqlFieldBuilder().getBuilder(), extensionRegistry);
+                  conditionCase_ = 22;
+                  break;
+                } // case 178
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20660,6 +27430,222 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return conditionPrometheusQueryLanguageBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition,
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlConditionOrBuilder>
+          conditionSqlBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       *
+       * @return Whether the conditionSql field is set.
+       */
+      @java.lang.Override
+      public boolean hasConditionSql() {
+        return conditionCase_ == 22;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       *
+       * @return The conditionSql.
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition getConditionSql() {
+        if (conditionSqlBuilder_ == null) {
+          if (conditionCase_ == 22) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance();
+        } else {
+          if (conditionCase_ == 22) {
+            return conditionSqlBuilder_.getMessage();
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       */
+      public Builder setConditionSql(
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition value) {
+        if (conditionSqlBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          condition_ = value;
+          onChanged();
+        } else {
+          conditionSqlBuilder_.setMessage(value);
+        }
+        conditionCase_ = 22;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       */
+      public Builder setConditionSql(
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Builder builderForValue) {
+        if (conditionSqlBuilder_ == null) {
+          condition_ = builderForValue.build();
+          onChanged();
+        } else {
+          conditionSqlBuilder_.setMessage(builderForValue.build());
+        }
+        conditionCase_ = 22;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       */
+      public Builder mergeConditionSql(
+          com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition value) {
+        if (conditionSqlBuilder_ == null) {
+          if (conditionCase_ == 22
+              && condition_
+                  != com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition
+                      .getDefaultInstance()) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.newBuilder(
+                        (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            condition_ = value;
+          }
+          onChanged();
+        } else {
+          if (conditionCase_ == 22) {
+            conditionSqlBuilder_.mergeFrom(value);
+          } else {
+            conditionSqlBuilder_.setMessage(value);
+          }
+        }
+        conditionCase_ = 22;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       */
+      public Builder clearConditionSql() {
+        if (conditionSqlBuilder_ == null) {
+          if (conditionCase_ == 22) {
+            conditionCase_ = 0;
+            condition_ = null;
+            onChanged();
+          }
+        } else {
+          if (conditionCase_ == 22) {
+            conditionCase_ = 0;
+            condition_ = null;
+          }
+          conditionSqlBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       */
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Builder
+          getConditionSqlBuilder() {
+        return getConditionSqlFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       */
+      @java.lang.Override
+      public com.google.monitoring.v3.AlertPolicy.Condition.SqlConditionOrBuilder
+          getConditionSqlOrBuilder() {
+        if ((conditionCase_ == 22) && (conditionSqlBuilder_ != null)) {
+          return conditionSqlBuilder_.getMessageOrBuilder();
+        } else {
+          if (conditionCase_ == 22) {
+            return (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_;
+          }
+          return com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A condition that periodically evaluates a SQL query result.
+       * </pre>
+       *
+       * <code>.google.monitoring.v3.AlertPolicy.Condition.SqlCondition condition_sql = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition,
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Builder,
+              com.google.monitoring.v3.AlertPolicy.Condition.SqlConditionOrBuilder>
+          getConditionSqlFieldBuilder() {
+        if (conditionSqlBuilder_ == null) {
+          if (!(conditionCase_ == 22)) {
+            condition_ =
+                com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.getDefaultInstance();
+          }
+          conditionSqlBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition.Builder,
+                  com.google.monitoring.v3.AlertPolicy.Condition.SqlConditionOrBuilder>(
+                  (com.google.monitoring.v3.AlertPolicy.Condition.SqlCondition) condition_,
+                  getParentForChildren(),
+                  isClean());
+          condition_ = null;
+        }
+        conditionCase_ = 22;
+        onChanged();
+        return conditionSqlBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -20733,9 +27719,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -20749,9 +27737,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -20766,9 +27756,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -20782,7 +27774,92 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the notificationPrompts.
+     */
+    java.util.List<com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+        getNotificationPromptsList();
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return The count of notificationPrompts.
+     */
+    int getNotificationPromptsCount();
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The notificationPrompts at the given index.
+     */
+    com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt getNotificationPrompts(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for notificationPrompts.
+     */
+    java.util.List<java.lang.Integer> getNotificationPromptsValueList();
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of notificationPrompts at the given index.
+     */
+    int getNotificationPromptsValue(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -20795,7 +27872,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -20808,7 +27885,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -20905,6 +27982,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private AlertStrategy() {
+      notificationPrompts_ = java.util.Collections.emptyList();
       notificationChannelStrategy_ = java.util.Collections.emptyList();
     }
 
@@ -20927,6 +28005,168 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.monitoring.v3.AlertPolicy.AlertStrategy.class,
               com.google.monitoring.v3.AlertPolicy.AlertStrategy.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Control when notifications will be sent out.
+     * </pre>
+     *
+     * Protobuf enum {@code google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt}
+     */
+    public enum NotificationPrompt implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No strategy specified. Treated as error.
+       * </pre>
+       *
+       * <code>NOTIFICATION_PROMPT_UNSPECIFIED = 0;</code>
+       */
+      NOTIFICATION_PROMPT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is opened.
+       * </pre>
+       *
+       * <code>OPENED = 1;</code>
+       */
+      OPENED(1),
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is closed.
+       * </pre>
+       *
+       * <code>CLOSED = 3;</code>
+       */
+      CLOSED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * No strategy specified. Treated as error.
+       * </pre>
+       *
+       * <code>NOTIFICATION_PROMPT_UNSPECIFIED = 0;</code>
+       */
+      public static final int NOTIFICATION_PROMPT_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is opened.
+       * </pre>
+       *
+       * <code>OPENED = 1;</code>
+       */
+      public static final int OPENED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Notify when an incident is closed.
+       * </pre>
+       *
+       * <code>CLOSED = 3;</code>
+       */
+      public static final int CLOSED_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static NotificationPrompt valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static NotificationPrompt forNumber(int value) {
+        switch (value) {
+          case 0:
+            return NOTIFICATION_PROMPT_UNSPECIFIED;
+          case 1:
+            return OPENED;
+          case 3:
+            return CLOSED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<NotificationPrompt>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<NotificationPrompt>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<NotificationPrompt>() {
+                public NotificationPrompt findValueByNumber(int number) {
+                  return NotificationPrompt.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final NotificationPrompt[] VALUES = values();
+
+      public static NotificationPrompt valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private NotificationPrompt(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt)
     }
 
     public interface NotificationRateLimitOrBuilder
@@ -20973,7 +28213,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over the rate of notifications sent to this alert policy's
+     * Control over the rate of notifications sent to this alerting policy's
      * notification channels.
      * </pre>
      *
@@ -21239,7 +28479,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Control over the rate of notifications sent to this alert policy's
+       * Control over the rate of notifications sent to this alerting policy's
        * notification channels.
        * </pre>
        *
@@ -22946,9 +30186,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -22965,9 +30207,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -22988,9 +30232,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required for alert policies with a `LogMatch` condition.
+     * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+     * condition.
      *
-     * This limit is not implemented for alert policies that are not log-based.
+     * This limit is not implemented for alerting policies that do not have
+     * a LogMatch condition.
      * </pre>
      *
      * <code>
@@ -23006,13 +30252,140 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           : notificationRateLimit_;
     }
 
+    public static final int NOTIFICATION_PROMPTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<java.lang.Integer> notificationPrompts_;
+
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+        notificationPrompts_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer,
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>() {
+              public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt convert(
+                  java.lang.Integer from) {
+                com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt result =
+                    com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt.forNumber(
+                        from);
+                return result == null
+                    ? com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt
+                        .UNRECOGNIZED
+                    : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the notificationPrompts.
+     */
+    @java.lang.Override
+    public java.util.List<com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+        getNotificationPromptsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>(
+          notificationPrompts_, notificationPrompts_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return The count of notificationPrompts.
+     */
+    @java.lang.Override
+    public int getNotificationPromptsCount() {
+      return notificationPrompts_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The notificationPrompts at the given index.
+     */
+    @java.lang.Override
+    public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt
+        getNotificationPrompts(int index) {
+      return notificationPrompts_converter_.convert(notificationPrompts_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for notificationPrompts.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getNotificationPromptsValueList() {
+      return notificationPrompts_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For log-based alert policies, the notification prompts is always
+     * [OPENED]. For non log-based alert policies, the notification prompts can
+     * be [OPENED] or [OPENED, CLOSED].
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of notificationPrompts at the given index.
+     */
+    @java.lang.Override
+    public int getNotificationPromptsValue(int index) {
+      return notificationPrompts_.get(index);
+    }
+
+    private int notificationPromptsMemoizedSerializedSize;
+
     public static final int AUTO_CLOSE_FIELD_NUMBER = 3;
     private com.google.protobuf.Duration autoClose_;
     /**
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -23028,7 +30401,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -23044,7 +30417,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If an alert policy that was active has no data for this long, any open
+     * If an alerting policy that was active has no data for this long, any open
      * incidents will close
      * </pre>
      *
@@ -23159,8 +30532,16 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getNotificationRateLimit());
+      }
+      if (getNotificationPromptsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(notificationPromptsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < notificationPrompts_.size(); i++) {
+        output.writeEnumNoTag(notificationPrompts_.get(i));
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(3, getAutoClose());
@@ -23180,6 +30561,20 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, getNotificationRateLimit());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < notificationPrompts_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                  notificationPrompts_.get(i));
+        }
+        size += dataSize;
+        if (!getNotificationPromptsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        notificationPromptsMemoizedSerializedSize = dataSize;
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAutoClose());
@@ -23209,6 +30604,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (hasNotificationRateLimit()) {
         if (!getNotificationRateLimit().equals(other.getNotificationRateLimit())) return false;
       }
+      if (!notificationPrompts_.equals(other.notificationPrompts_)) return false;
       if (hasAutoClose() != other.hasAutoClose()) return false;
       if (hasAutoClose()) {
         if (!getAutoClose().equals(other.getAutoClose())) return false;
@@ -23229,6 +30625,10 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       if (hasNotificationRateLimit()) {
         hash = (37 * hash) + NOTIFICATION_RATE_LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getNotificationRateLimit().hashCode();
+      }
+      if (getNotificationPromptsCount() > 0) {
+        hash = (37 * hash) + NOTIFICATION_PROMPTS_FIELD_NUMBER;
+        hash = (53 * hash) + notificationPrompts_.hashCode();
       }
       if (hasAutoClose()) {
         hash = (37 * hash) + AUTO_CLOSE_FIELD_NUMBER;
@@ -23396,6 +30796,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           notificationRateLimitBuilder_.dispose();
           notificationRateLimitBuilder_ = null;
         }
+        notificationPrompts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         autoClose_ = null;
         if (autoCloseBuilder_ != null) {
           autoCloseBuilder_.dispose();
@@ -23407,7 +30809,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           notificationChannelStrategy_ = null;
           notificationChannelStrategyBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -23445,11 +30847,16 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.monitoring.v3.AlertPolicy.AlertStrategy result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          notificationPrompts_ = java.util.Collections.unmodifiableList(notificationPrompts_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.notificationPrompts_ = notificationPrompts_;
         if (notificationChannelStrategyBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             notificationChannelStrategy_ =
                 java.util.Collections.unmodifiableList(notificationChannelStrategy_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.notificationChannelStrategy_ = notificationChannelStrategy_;
         } else {
@@ -23467,7 +30874,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   : notificationRateLimitBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.autoClose_ = autoCloseBuilder_ == null ? autoClose_ : autoCloseBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
@@ -23525,6 +30932,16 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         if (other.hasNotificationRateLimit()) {
           mergeNotificationRateLimit(other.getNotificationRateLimit());
         }
+        if (!other.notificationPrompts_.isEmpty()) {
+          if (notificationPrompts_.isEmpty()) {
+            notificationPrompts_ = other.notificationPrompts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureNotificationPromptsIsMutable();
+            notificationPrompts_.addAll(other.notificationPrompts_);
+          }
+          onChanged();
+        }
         if (other.hasAutoClose()) {
           mergeAutoClose(other.getAutoClose());
         }
@@ -23532,7 +30949,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           if (!other.notificationChannelStrategy_.isEmpty()) {
             if (notificationChannelStrategy_.isEmpty()) {
               notificationChannelStrategy_ = other.notificationChannelStrategy_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureNotificationChannelStrategyIsMutable();
               notificationChannelStrategy_.addAll(other.notificationChannelStrategy_);
@@ -23545,7 +30962,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
               notificationChannelStrategyBuilder_.dispose();
               notificationChannelStrategyBuilder_ = null;
               notificationChannelStrategy_ = other.notificationChannelStrategy_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               notificationChannelStrategyBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getNotificationChannelStrategyFieldBuilder()
@@ -23589,10 +31006,29 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureNotificationPromptsIsMutable();
+                  notificationPrompts_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureNotificationPromptsIsMutable();
+                    notificationPrompts_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
               case 26:
                 {
                   input.readMessage(getAutoCloseFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -23640,9 +31076,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23658,9 +31096,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23684,9 +31124,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23711,9 +31153,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23736,9 +31180,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23770,9 +31216,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23793,9 +31241,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23812,9 +31262,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23836,9 +31288,11 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required for alert policies with a `LogMatch` condition.
+       * Required for log-based alerting policies, i.e. policies with a `LogMatch`
+       * condition.
        *
-       * This limit is not implemented for alert policies that are not log-based.
+       * This limit is not implemented for alerting policies that do not have
+       * a LogMatch condition.
        * </pre>
        *
        * <code>
@@ -23863,6 +31317,283 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         return notificationRateLimitBuilder_;
       }
 
+      private java.util.List<java.lang.Integer> notificationPrompts_ =
+          java.util.Collections.emptyList();
+
+      private void ensureNotificationPromptsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          notificationPrompts_ = new java.util.ArrayList<java.lang.Integer>(notificationPrompts_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return A list containing the notificationPrompts.
+       */
+      public java.util.List<com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+          getNotificationPromptsList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer,
+            com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>(
+            notificationPrompts_, notificationPrompts_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return The count of notificationPrompts.
+       */
+      public int getNotificationPromptsCount() {
+        return notificationPrompts_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The notificationPrompts at the given index.
+       */
+      public com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt
+          getNotificationPrompts(int index) {
+        return notificationPrompts_converter_.convert(notificationPrompts_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The notificationPrompts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationPrompts(
+          int index, com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param value The notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNotificationPrompts(
+          com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param values The notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNotificationPrompts(
+          java.lang.Iterable<
+                  ? extends com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt>
+              values) {
+        ensureNotificationPromptsIsMutable();
+        for (com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt value : values) {
+          notificationPrompts_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNotificationPrompts() {
+        notificationPrompts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for notificationPrompts.
+       */
+      public java.util.List<java.lang.Integer> getNotificationPromptsValueList() {
+        return java.util.Collections.unmodifiableList(notificationPrompts_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of notificationPrompts at the given index.
+       */
+      public int getNotificationPromptsValue(int index) {
+        return notificationPrompts_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for notificationPrompts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationPromptsValue(int index, int value) {
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNotificationPromptsValue(int value) {
+        ensureNotificationPromptsIsMutable();
+        notificationPrompts_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * For log-based alert policies, the notification prompts is always
+       * [OPENED]. For non log-based alert policies, the notification prompts can
+       * be [OPENED] or [OPENED, CLOSED].
+       * </pre>
+       *
+       * <code>
+       * repeated .google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationPrompt notification_prompts = 2;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for notificationPrompts to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNotificationPromptsValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureNotificationPromptsIsMutable();
+        for (int value : values) {
+          notificationPrompts_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Duration autoClose_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Duration,
@@ -23873,7 +31604,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23882,13 +31613,13 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the autoClose field is set.
        */
       public boolean hasAutoClose() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23909,7 +31640,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23924,7 +31655,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         } else {
           autoCloseBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -23932,7 +31663,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23944,7 +31675,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
         } else {
           autoCloseBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -23952,7 +31683,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -23960,7 +31691,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeAutoClose(com.google.protobuf.Duration value) {
         if (autoCloseBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
+          if (((bitField0_ & 0x00000004) != 0)
               && autoClose_ != null
               && autoClose_ != com.google.protobuf.Duration.getDefaultInstance()) {
             getAutoCloseBuilder().mergeFrom(value);
@@ -23971,7 +31702,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           autoCloseBuilder_.mergeFrom(value);
         }
         if (autoClose_ != null) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         return this;
@@ -23980,14 +31711,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
        * <code>.google.protobuf.Duration auto_close = 3;</code>
        */
       public Builder clearAutoClose() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         autoClose_ = null;
         if (autoCloseBuilder_ != null) {
           autoCloseBuilder_.dispose();
@@ -24000,14 +31731,14 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
        * <code>.google.protobuf.Duration auto_close = 3;</code>
        */
       public com.google.protobuf.Duration.Builder getAutoCloseBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAutoCloseFieldBuilder().getBuilder();
       }
@@ -24015,7 +31746,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -24034,7 +31765,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If an alert policy that was active has no data for this long, any open
+       * If an alerting policy that was active has no data for this long, any open
        * incidents will close
        * </pre>
        *
@@ -24062,12 +31793,12 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
           notificationChannelStrategy_ = java.util.Collections.emptyList();
 
       private void ensureNotificationChannelStrategyIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           notificationChannelStrategy_ =
               new java.util.ArrayList<
                   com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationChannelStrategy>(
                   notificationChannelStrategy_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -24325,7 +32056,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
       public Builder clearNotificationChannelStrategy() {
         if (notificationChannelStrategyBuilder_ == null) {
           notificationChannelStrategy_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           notificationChannelStrategyBuilder_.clear();
@@ -24480,7 +32211,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
                   com.google.monitoring.v3.AlertPolicy.AlertStrategy
                       .NotificationChannelStrategyOrBuilder>(
                   notificationChannelStrategy_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           notificationChannelStrategy_ = null;
@@ -24561,8 +32292,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required if the policy exists. The resource name for this policy. The
-   * format is:
+   * Identifier. Required if the policy exists. The resource name for this
+   * policy. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    *
@@ -24573,7 +32304,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * part of the request.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -24593,8 +32324,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required if the policy exists. The resource name for this policy. The
-   * format is:
+   * Identifier. Required if the policy exists. The resource name for this
+   * policy. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    *
@@ -24605,7 +32336,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * part of the request.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -25120,9 +32851,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. This field is
-   * only set when the alert policy is invalid. An invalid alert policy will not
-   * generate incidents.
+   * Read-only description of how the alerting policy is invalid. This field is
+   * only set when the alerting policy is invalid. An invalid alerting policy
+   * will not generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -25137,9 +32868,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. This field is
-   * only set when the alert policy is invalid. An invalid alert policy will not
-   * generate incidents.
+   * Read-only description of how the alerting policy is invalid. This field is
+   * only set when the alerting policy is invalid. An invalid alerting policy
+   * will not generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -25154,9 +32885,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read-only description of how the alert policy is invalid. This field is
-   * only set when the alert policy is invalid. An invalid alert policy will not
-   * generate incidents.
+   * Read-only description of how the alerting policy is invalid. This field is
+   * only set when the alerting policy is invalid. An invalid alerting policy
+   * will not generate incidents.
    * </pre>
    *
    * <code>.google.rpc.Status validity = 18;</code>
@@ -25378,7 +33109,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Control over how this alert policy's notification channels are notified.
+   * Control over how this alerting policy's notification channels are notified.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -25393,7 +33124,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Control over how this alert policy's notification channels are notified.
+   * Control over how this alerting policy's notification channels are notified.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -25410,7 +33141,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Control over how this alert policy's notification channels are notified.
+   * Control over how this alerting policy's notification channels are notified.
    * </pre>
    *
    * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -25428,9 +33159,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of an alert policy indicates how important incidents
-   * generated by that policy are. The severity level will be displayed on the
-   * Incident detail page and in notifications.
+   * Optional. The severity of an alerting policy indicates how important
+   * incidents generated by that policy are. The severity level will be
+   * displayed on the Incident detail page and in notifications.
    * </pre>
    *
    * <code>
@@ -25447,9 +33178,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The severity of an alert policy indicates how important incidents
-   * generated by that policy are. The severity level will be displayed on the
-   * Incident detail page and in notifications.
+   * Optional. The severity of an alerting policy indicates how important
+   * incidents generated by that policy are. The severity level will be
+   * displayed on the Incident detail page and in notifications.
    * </pre>
    *
    * <code>
@@ -25790,7 +33521,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A description of the conditions under which some aspect of your system is
    * considered to be "unhealthy" and the ways to notify people or services about
-   * this state. For an overview of alert policies, see
+   * this state. For an overview of alerting policies, see
    * [Introduction to Alerting](https://cloud.google.com/monitoring/alerts/).
    * </pre>
    *
@@ -26266,8 +33997,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26278,7 +34009,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -26297,8 +34028,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26309,7 +34040,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -26328,8 +34059,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26340,7 +34071,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -26358,8 +34089,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26370,7 +34101,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -26384,8 +34115,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required if the policy exists. The resource name for this policy. The
-     * format is:
+     * Identifier. Required if the policy exists. The resource name for this
+     * policy. The format is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
      *
@@ -26396,7 +34127,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      * part of the request.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -27853,9 +35584,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27869,9 +35600,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27889,9 +35620,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27913,9 +35644,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27934,9 +35665,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27963,9 +35694,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -27984,9 +35715,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -28000,9 +35731,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -28018,9 +35749,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read-only description of how the alert policy is invalid. This field is
-     * only set when the alert policy is invalid. An invalid alert policy will not
-     * generate incidents.
+     * Read-only description of how the alerting policy is invalid. This field is
+     * only set when the alerting policy is invalid. An invalid alerting policy
+     * will not generate incidents.
      * </pre>
      *
      * <code>.google.rpc.Status validity = 18;</code>
@@ -28694,7 +36425,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28708,7 +36439,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28728,7 +36459,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28750,7 +36481,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28770,7 +36501,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28798,7 +36529,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28817,7 +36548,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28831,7 +36562,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28849,7 +36580,7 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Control over how this alert policy's notification channels are notified.
+     * Control over how this alerting policy's notification channels are notified.
      * </pre>
      *
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy alert_strategy = 21;</code>
@@ -28876,9 +36607,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28895,9 +36626,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28917,9 +36648,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28938,9 +36669,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>
@@ -28963,9 +36694,9 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The severity of an alert policy indicates how important incidents
-     * generated by that policy are. The severity level will be displayed on the
-     * Incident detail page and in notifications.
+     * Optional. The severity of an alerting policy indicates how important
+     * incidents generated by that policy are. The severity level will be
+     * displayed on the Incident detail page and in notifications.
      * </pre>
      *
      * <code>

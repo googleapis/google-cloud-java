@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -5911,6 +5911,49 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfigOrBuilder
         getServiceAgentAuthConfigOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Config for bearer token auth.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+     * </code>
+     *
+     * @return Whether the bearerTokenConfig field is set.
+     */
+    boolean hasBearerTokenConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Config for bearer token auth.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+     * </code>
+     *
+     * @return The bearerTokenConfig.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+        getBearerTokenConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Config for bearer token auth.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfigOrBuilder
+        getBearerTokenConfigOrBuilder();
+
     com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.AuthConfigCase getAuthConfigCase();
   }
   /**
@@ -7329,6 +7372,57 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for tokenEndpoint.
        */
       com.google.protobuf.ByteString getTokenEndpointBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the scopes.
+       */
+      java.util.List<java.lang.String> getScopesList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of scopes.
+       */
+      int getScopesCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The scopes at the given index.
+       */
+      java.lang.String getScopes(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the scopes at the given index.
+       */
+      com.google.protobuf.ByteString getScopesBytes(int index);
     }
     /**
      *
@@ -7354,6 +7448,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         clientId_ = "";
         clientSecret_ = "";
         tokenEndpoint_ = "";
+        scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
@@ -7725,6 +7820,70 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int SCOPES_FIELD_NUMBER = 5;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList scopes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the scopes.
+       */
+      public com.google.protobuf.ProtocolStringList getScopesList() {
+        return scopes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of scopes.
+       */
+      public int getScopesCount() {
+        return scopes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The scopes at the given index.
+       */
+      public java.lang.String getScopes(int index) {
+        return scopes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The OAuth scopes to grant.
+       * </pre>
+       *
+       * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the scopes at the given index.
+       */
+      public com.google.protobuf.ByteString getScopesBytes(int index) {
+        return scopes_.getByteString(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -7754,6 +7913,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tokenEndpoint_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tokenEndpoint_);
         }
+        for (int i = 0; i < scopes_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, scopes_.getRaw(i));
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -7778,6 +7940,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tokenEndpoint_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tokenEndpoint_);
         }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < scopes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(scopes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getScopesList().size();
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -7799,6 +7969,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (!getClientId().equals(other.getClientId())) return false;
         if (!getClientSecret().equals(other.getClientSecret())) return false;
         if (!getTokenEndpoint().equals(other.getTokenEndpoint())) return false;
+        if (!getScopesList().equals(other.getScopesList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -7818,6 +7989,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getClientSecret().hashCode();
         hash = (37 * hash) + TOKEN_ENDPOINT_FIELD_NUMBER;
         hash = (53 * hash) + getTokenEndpoint().hashCode();
+        if (getScopesCount() > 0) {
+          hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+          hash = (53 * hash) + getScopesList().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -7974,6 +8149,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           clientId_ = "";
           clientSecret_ = "";
           tokenEndpoint_ = "";
+          scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -8026,6 +8202,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.tokenEndpoint_ = tokenEndpoint_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            scopes_.makeImmutable();
+            result.scopes_ = scopes_;
           }
         }
 
@@ -8099,6 +8279,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000008;
             onChanged();
           }
+          if (!other.scopes_.isEmpty()) {
+            if (scopes_.isEmpty()) {
+              scopes_ = other.scopes_;
+              bitField0_ |= 0x00000010;
+            } else {
+              ensureScopesIsMutable();
+              scopes_.addAll(other.scopes_);
+            }
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -8149,6 +8339,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 34
+                case 42:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureScopesIsMutable();
+                    scopes_.add(s);
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8599,6 +8796,180 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private com.google.protobuf.LazyStringArrayList scopes_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureScopesIsMutable() {
+          if (!scopes_.isModifiable()) {
+            scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
+          }
+          bitField0_ |= 0x00000010;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the scopes.
+         */
+        public com.google.protobuf.ProtocolStringList getScopesList() {
+          scopes_.makeImmutable();
+          return scopes_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of scopes.
+         */
+        public int getScopesCount() {
+          return scopes_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The scopes at the given index.
+         */
+        public java.lang.String getScopes(int index) {
+          return scopes_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the scopes at the given index.
+         */
+        public com.google.protobuf.ByteString getScopesBytes(int index) {
+          return scopes_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The scopes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setScopes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureScopesIsMutable();
+          scopes_.set(index, value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The scopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addScopes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureScopesIsMutable();
+          scopes_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The scopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
+          ensureScopesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scopes_);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearScopes() {
+          scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The OAuth scopes to grant.
+         * </pre>
+         *
+         * <code>repeated string scopes = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the scopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addScopesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureScopesIsMutable();
+          scopes_.add(value);
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -8670,7 +9041,45 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public interface ServiceAgentAuthConfigOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig)
-        com.google.protobuf.MessageOrBuilder {}
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicate the auth token type generated from the [Diglogflow
+       * service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * The generated token is sent in the Authorization header.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for serviceAgentAuth.
+       */
+      int getServiceAgentAuthValue();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicate the auth token type generated from the [Diglogflow
+       * service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * The generated token is sent in the Authorization header.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serviceAgentAuth.
+       */
+      com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+              .ServiceAgentAuth
+          getServiceAgentAuth();
+    }
     /**
      *
      *
@@ -8692,7 +9101,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         super(builder);
       }
 
-      private ServiceAgentAuthConfig() {}
+      private ServiceAgentAuthConfig() {
+        serviceAgentAuth_ = 0;
+      }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
@@ -8717,6 +9128,241 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                     .Builder.class);
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Indicate the auth token type generated from the [Diglogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth}
+       */
+      public enum ServiceAgentAuth implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Service agent auth type unspecified. Default to ID_TOKEN.
+         * </pre>
+         *
+         * <code>SERVICE_AGENT_AUTH_UNSPECIFIED = 0;</code>
+         */
+        SERVICE_AGENT_AUTH_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Use [ID
+         * token](https://cloud.google.com/docs/authentication/token-types#id)
+         * generated from service agent. This can be used to access Cloud
+         * Function and Cloud Run after you grant Invoker role to
+         * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`.
+         * </pre>
+         *
+         * <code>ID_TOKEN = 1;</code>
+         */
+        ID_TOKEN(1),
+        /**
+         *
+         *
+         * <pre>
+         * Use [access
+         * token](https://cloud.google.com/docs/authentication/token-types#access)
+         * generated from service agent. This can be used to access other Google
+         * Cloud APIs after you grant required roles to
+         * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`.
+         * </pre>
+         *
+         * <code>ACCESS_TOKEN = 2;</code>
+         */
+        ACCESS_TOKEN(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Service agent auth type unspecified. Default to ID_TOKEN.
+         * </pre>
+         *
+         * <code>SERVICE_AGENT_AUTH_UNSPECIFIED = 0;</code>
+         */
+        public static final int SERVICE_AGENT_AUTH_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Use [ID
+         * token](https://cloud.google.com/docs/authentication/token-types#id)
+         * generated from service agent. This can be used to access Cloud
+         * Function and Cloud Run after you grant Invoker role to
+         * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`.
+         * </pre>
+         *
+         * <code>ID_TOKEN = 1;</code>
+         */
+        public static final int ID_TOKEN_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Use [access
+         * token](https://cloud.google.com/docs/authentication/token-types#access)
+         * generated from service agent. This can be used to access other Google
+         * Cloud APIs after you grant required roles to
+         * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-dialogflow.iam.gserviceaccount.com`.
+         * </pre>
+         *
+         * <code>ACCESS_TOKEN = 2;</code>
+         */
+        public static final int ACCESS_TOKEN_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ServiceAgentAuth valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ServiceAgentAuth forNumber(int value) {
+          switch (value) {
+            case 0:
+              return SERVICE_AGENT_AUTH_UNSPECIFIED;
+            case 1:
+              return ID_TOKEN;
+            case 2:
+              return ACCESS_TOKEN;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ServiceAgentAuth>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<ServiceAgentAuth>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ServiceAgentAuth>() {
+                  public ServiceAgentAuth findValueByNumber(int number) {
+                    return ServiceAgentAuth.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final ServiceAgentAuth[] VALUES = values();
+
+        public static ServiceAgentAuth valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ServiceAgentAuth(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth)
+      }
+
+      public static final int SERVICE_AGENT_AUTH_FIELD_NUMBER = 1;
+      private int serviceAgentAuth_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicate the auth token type generated from the [Diglogflow
+       * service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * The generated token is sent in the Authorization header.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for serviceAgentAuth.
+       */
+      @java.lang.Override
+      public int getServiceAgentAuthValue() {
+        return serviceAgentAuth_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicate the auth token type generated from the [Diglogflow
+       * service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * The generated token is sent in the Authorization header.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serviceAgentAuth.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+              .ServiceAgentAuth
+          getServiceAgentAuth() {
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                .ServiceAgentAuth
+            result =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                    .ServiceAgentAuth.forNumber(serviceAgentAuth_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                .ServiceAgentAuth.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -8731,6 +9377,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (serviceAgentAuth_
+            != com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                .ServiceAgentAuth.SERVICE_AGENT_AUTH_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, serviceAgentAuth_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -8740,6 +9392,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
+        if (serviceAgentAuth_
+            != com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                .ServiceAgentAuth.SERVICE_AGENT_AUTH_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, serviceAgentAuth_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -8758,6 +9416,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig other =
             (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig) obj;
 
+        if (serviceAgentAuth_ != other.serviceAgentAuth_) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -8769,6 +9428,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SERVICE_AGENT_AUTH_FIELD_NUMBER;
+        hash = (53 * hash) + serviceAgentAuth_;
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -8937,6 +9598,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
+          serviceAgentAuth_ = 0;
           return this;
         }
 
@@ -8970,8 +9633,20 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig result =
               new com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig(
                   this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.serviceAgentAuth_ = serviceAgentAuth_;
+          }
         }
 
         @java.lang.Override
@@ -9029,6 +9704,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           if (other
               == com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
                   .getDefaultInstance()) return this;
+          if (other.serviceAgentAuth_ != 0) {
+            setServiceAgentAuthValue(other.getServiceAgentAuthValue());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -9055,6 +9733,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 case 0:
                   done = true;
                   break;
+                case 8:
+                  {
+                    serviceAgentAuth_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9069,6 +9753,134 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           } finally {
             onChanged();
           } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int serviceAgentAuth_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicate the auth token type generated from the [Diglogflow
+         * service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * The generated token is sent in the Authorization header.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for serviceAgentAuth.
+         */
+        @java.lang.Override
+        public int getServiceAgentAuthValue() {
+          return serviceAgentAuth_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicate the auth token type generated from the [Diglogflow
+         * service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * The generated token is sent in the Authorization header.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for serviceAgentAuth to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceAgentAuthValue(int value) {
+          serviceAgentAuth_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicate the auth token type generated from the [Diglogflow
+         * service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * The generated token is sent in the Authorization header.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The serviceAgentAuth.
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                .ServiceAgentAuth
+            getServiceAgentAuth() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                  .ServiceAgentAuth
+              result =
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                      .ServiceAgentAuth.forNumber(serviceAgentAuth_);
+          return result == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                  .ServiceAgentAuth.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicate the auth token type generated from the [Diglogflow
+         * service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * The generated token is sent in the Authorization header.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The serviceAgentAuth to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceAgentAuth(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig
+                    .ServiceAgentAuth
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          serviceAgentAuth_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicate the auth token type generated from the [Diglogflow
+         * service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * The generated token is sent in the Authorization header.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig.ServiceAgentAuth service_agent_auth = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearServiceAgentAuth() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          serviceAgentAuth_ = 0;
+          onChanged();
           return this;
         }
 
@@ -9142,6 +9954,727 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface BearerTokenConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The text token appended to the text `Bearer` to the request
+       * Authorization header.
+       * [Session parameters
+       * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+       * can be used to pass the token dynamically, e.g.
+       * `$session.params.parameter-id`.
+       * </pre>
+       *
+       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The token.
+       */
+      java.lang.String getToken();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The text token appended to the text `Bearer` to the request
+       * Authorization header.
+       * [Session parameters
+       * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+       * can be used to pass the token dynamically, e.g.
+       * `$session.params.parameter-id`.
+       * </pre>
+       *
+       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for token.
+       */
+      com.google.protobuf.ByteString getTokenBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for authentication using bearer token.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig}
+     */
+    public static final class BearerTokenConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+        BearerTokenConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use BearerTokenConfig.newBuilder() to construct.
+      private BearerTokenConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BearerTokenConfig() {
+        token_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BearerTokenConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig.Builder
+                    .class);
+      }
+
+      public static final int TOKEN_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object token_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The text token appended to the text `Bearer` to the request
+       * Authorization header.
+       * [Session parameters
+       * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+       * can be used to pass the token dynamically, e.g.
+       * `$session.params.parameter-id`.
+       * </pre>
+       *
+       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The token.
+       */
+      @java.lang.Override
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The text token appended to the text `Bearer` to the request
+       * Authorization header.
+       * [Session parameters
+       * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+       * can be used to pass the token dynamically, e.g.
+       * `$session.params.parameter-id`.
+       * </pre>
+       *
+       * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for token.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig other =
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig) obj;
+
+        if (!getToken().equals(other.getToken())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getToken().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for authentication using bearer token.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+                      .class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          token_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_BearerTokenConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+            build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig result =
+              new com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.token_ = token_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+                  .getDefaultInstance()) return this;
+          if (!other.getToken().isEmpty()) {
+            token_ = other.token_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    token_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object token_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Required. The text token appended to the text `Bearer` to the request
+         * Authorization header.
+         * [Session parameters
+         * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+         * can be used to pass the token dynamically, e.g.
+         * `$session.params.parameter-id`.
+         * </pre>
+         *
+         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The token.
+         */
+        public java.lang.String getToken() {
+          java.lang.Object ref = token_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            token_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The text token appended to the text `Bearer` to the request
+         * Authorization header.
+         * [Session parameters
+         * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+         * can be used to pass the token dynamically, e.g.
+         * `$session.params.parameter-id`.
+         * </pre>
+         *
+         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for token.
+         */
+        public com.google.protobuf.ByteString getTokenBytes() {
+          java.lang.Object ref = token_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            token_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The text token appended to the text `Bearer` to the request
+         * Authorization header.
+         * [Session parameters
+         * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+         * can be used to pass the token dynamically, e.g.
+         * `$session.params.parameter-id`.
+         * </pre>
+         *
+         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The token to set.
+         * @return This builder for chaining.
+         */
+        public Builder setToken(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          token_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The text token appended to the text `Bearer` to the request
+         * Authorization header.
+         * [Session parameters
+         * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+         * can be used to pass the token dynamically, e.g.
+         * `$session.params.parameter-id`.
+         * </pre>
+         *
+         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearToken() {
+          token_ = getDefaultInstance().getToken();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The text token appended to the text `Bearer` to the request
+         * Authorization header.
+         * [Session parameters
+         * reference](https://cloud.google.com/dialogflow/cx/docs/concept/parameter#session-ref)
+         * can be used to pass the token dynamically, e.g.
+         * `$session.params.parameter-id`.
+         * </pre>
+         *
+         * <code>string token = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for token to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTokenBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          token_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .BearerTokenConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BearerTokenConfig> PARSER =
+          new com.google.protobuf.AbstractParser<BearerTokenConfig>() {
+            @java.lang.Override
+            public BearerTokenConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BearerTokenConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BearerTokenConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int authConfigCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -9154,6 +10687,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       API_KEY_CONFIG(1),
       OAUTH_CONFIG(2),
       SERVICE_AGENT_AUTH_CONFIG(3),
+      BEARER_TOKEN_CONFIG(4),
       AUTHCONFIG_NOT_SET(0);
       private final int value;
 
@@ -9178,6 +10712,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             return OAUTH_CONFIG;
           case 3:
             return SERVICE_AGENT_AUTH_CONFIG;
+          case 4:
+            return BEARER_TOKEN_CONFIG;
           case 0:
             return AUTHCONFIG_NOT_SET;
           default:
@@ -9384,6 +10920,69 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           .getDefaultInstance();
     }
 
+    public static final int BEARER_TOKEN_CONFIG_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Config for bearer token auth.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+     * </code>
+     *
+     * @return Whether the bearerTokenConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasBearerTokenConfig() {
+      return authConfigCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for bearer token auth.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+     * </code>
+     *
+     * @return The bearerTokenConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+        getBearerTokenConfig() {
+      if (authConfigCase_ == 4) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+            authConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for bearer token auth.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfigOrBuilder
+        getBearerTokenConfigOrBuilder() {
+      if (authConfigCase_ == 4) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+            authConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -9412,6 +11011,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(
             3,
             (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig)
+                authConfig_);
+      }
+      if (authConfigCase_ == 4) {
+        output.writeMessage(
+            4,
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
                 authConfig_);
       }
       getUnknownFields().writeTo(output);
@@ -9444,6 +11049,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAgentAuthConfig)
                     authConfig_);
       }
+      if (authConfigCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4,
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+                    authConfig_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9471,6 +11083,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         case 3:
           if (!getServiceAgentAuthConfig().equals(other.getServiceAgentAuthConfig())) return false;
           break;
+        case 4:
+          if (!getBearerTokenConfig().equals(other.getBearerTokenConfig())) return false;
+          break;
         case 0:
         default:
       }
@@ -9497,6 +11112,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         case 3:
           hash = (37 * hash) + SERVICE_AGENT_AUTH_CONFIG_FIELD_NUMBER;
           hash = (53 * hash) + getServiceAgentAuthConfig().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + BEARER_TOKEN_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getBearerTokenConfig().hashCode();
           break;
         case 0:
         default:
@@ -9652,6 +11271,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (serviceAgentAuthConfigBuilder_ != null) {
           serviceAgentAuthConfigBuilder_.clear();
         }
+        if (bearerTokenConfigBuilder_ != null) {
+          bearerTokenConfigBuilder_.clear();
+        }
         authConfigCase_ = 0;
         authConfig_ = null;
         return this;
@@ -9707,6 +11329,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
         if (authConfigCase_ == 3 && serviceAgentAuthConfigBuilder_ != null) {
           result.authConfig_ = serviceAgentAuthConfigBuilder_.build();
+        }
+        if (authConfigCase_ == 4 && bearerTokenConfigBuilder_ != null) {
+          result.authConfig_ = bearerTokenConfigBuilder_.build();
         }
       }
 
@@ -9775,6 +11400,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               mergeServiceAgentAuthConfig(other.getServiceAgentAuthConfig());
               break;
             }
+          case BEARER_TOKEN_CONFIG:
+            {
+              mergeBearerTokenConfig(other.getBearerTokenConfig());
+              break;
+            }
           case AUTHCONFIG_NOT_SET:
             {
               break;
@@ -9825,6 +11455,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                   authConfigCase_ = 3;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getBearerTokenConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  authConfigCase_ = 4;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10610,6 +12247,254 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         authConfigCase_ = 3;
         onChanged();
         return serviceAgentAuthConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfigOrBuilder>
+          bearerTokenConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       *
+       * @return Whether the bearerTokenConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasBearerTokenConfig() {
+        return authConfigCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       *
+       * @return The bearerTokenConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+          getBearerTokenConfig() {
+        if (bearerTokenConfigBuilder_ == null) {
+          if (authConfigCase_ == 4) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+                authConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+              .getDefaultInstance();
+        } else {
+          if (authConfigCase_ == 4) {
+            return bearerTokenConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       */
+      public Builder setBearerTokenConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig value) {
+        if (bearerTokenConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          authConfig_ = value;
+          onChanged();
+        } else {
+          bearerTokenConfigBuilder_.setMessage(value);
+        }
+        authConfigCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       */
+      public Builder setBearerTokenConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig.Builder
+              builderForValue) {
+        if (bearerTokenConfigBuilder_ == null) {
+          authConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          bearerTokenConfigBuilder_.setMessage(builderForValue.build());
+        }
+        authConfigCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       */
+      public Builder mergeBearerTokenConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig value) {
+        if (bearerTokenConfigBuilder_ == null) {
+          if (authConfigCase_ == 4
+              && authConfig_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+                      .getDefaultInstance()) {
+            authConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+                    .newBuilder(
+                        (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                                .BearerTokenConfig)
+                            authConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            authConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (authConfigCase_ == 4) {
+            bearerTokenConfigBuilder_.mergeFrom(value);
+          } else {
+            bearerTokenConfigBuilder_.setMessage(value);
+          }
+        }
+        authConfigCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       */
+      public Builder clearBearerTokenConfig() {
+        if (bearerTokenConfigBuilder_ == null) {
+          if (authConfigCase_ == 4) {
+            authConfigCase_ = 0;
+            authConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (authConfigCase_ == 4) {
+            authConfigCase_ = 0;
+            authConfig_ = null;
+          }
+          bearerTokenConfigBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig.Builder
+          getBearerTokenConfigBuilder() {
+        return getBearerTokenConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfigOrBuilder
+          getBearerTokenConfigOrBuilder() {
+        if ((authConfigCase_ == 4) && (bearerTokenConfigBuilder_ != null)) {
+          return bearerTokenConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (authConfigCase_ == 4) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+                authConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Config for bearer token auth.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig bearer_token_config = 4;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfigOrBuilder>
+          getBearerTokenConfigFieldBuilder() {
+        if (bearerTokenConfigBuilder_ == null) {
+          if (!(authConfigCase_ == 4)) {
+            authConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+                    .getDefaultInstance();
+          }
+          bearerTokenConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig
+                      .Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .BearerTokenConfigOrBuilder>(
+                  (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+                      authConfig_,
+                  getParentForChildren(),
+                  isClean());
+          authConfig_ = null;
+        }
+        authConfigCase_ = 4;
+        onChanged();
+        return bearerTokenConfigBuilder_;
       }
 
       @java.lang.Override
@@ -13356,8 +15241,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the Tool.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -13381,8 +15266,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the Tool.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/tools/&lt;Tool ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -14344,8 +16229,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -14368,8 +16253,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -14392,8 +16277,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -14415,8 +16300,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -14434,8 +16319,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the Tool.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/tools/&lt;Tool ID&gt;`.
+     * Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/tools/&lt;ToolID&gt;`.
      * </pre>
      *
      * <code>string name = 1;</code>

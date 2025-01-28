@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,4 +126,29 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * @return The gcpPublicCidrsAccessEnabled.
    */
   boolean getGcpPublicCidrsAccessEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether master authorized networks is enforced on private endpoint or not.
+   * </pre>
+   *
+   * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+   *
+   * @return Whether the privateEndpointEnforcementEnabled field is set.
+   */
+  boolean hasPrivateEndpointEnforcementEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Whether master authorized networks is enforced on private endpoint or not.
+   * </pre>
+   *
+   * <code>optional bool private_endpoint_enforcement_enabled = 5;</code>
+   *
+   * @return The privateEndpointEnforcementEnabled.
+   */
+  boolean getPrivateEndpointEnforcementEnabled();
 }

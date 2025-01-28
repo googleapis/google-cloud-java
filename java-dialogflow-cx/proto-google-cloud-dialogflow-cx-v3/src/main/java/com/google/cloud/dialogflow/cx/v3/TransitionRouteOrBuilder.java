@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,8 +81,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The unique identifier of an [Intent][google.cloud.dialogflow.cx.v3.Intent].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * Indicates that the transition can only happen when the given intent is
    * matched.
    * At least one of `intent` or `condition` must be specified. When both
@@ -100,8 +100,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The unique identifier of an [Intent][google.cloud.dialogflow.cx.v3.Intent].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/intents/&lt;Intent ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/intents/&lt;IntentID&gt;`.
    * Indicates that the transition can only happen when the given intent is
    * matched.
    * At least one of `intent` or `condition` must be specified. When both
@@ -202,8 +202,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The target page to transition to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>string target_page = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -216,8 +216,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The target page to transition to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>string target_page = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -230,8 +230,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The target page to transition to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
    * </pre>
    *
    * <code>string target_page = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -245,8 +245,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The target flow to transition to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string target_flow = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -259,8 +259,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The target flow to transition to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string target_flow = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -273,8 +273,8 @@ public interface TransitionRouteOrBuilder
    *
    * <pre>
    * The target flow to transition to.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string target_flow = 5 [(.google.api.resource_reference) = { ... }</code>

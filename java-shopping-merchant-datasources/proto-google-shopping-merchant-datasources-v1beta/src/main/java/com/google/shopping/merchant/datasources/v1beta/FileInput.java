@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The file is fetched from the configured
-     * [fetch_uri][google.shopping.content.bundles.DataSources.FileInput.FetchSettings.fetch_uri].
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * </pre>
      *
      * <code>FETCH = 2;</code>
@@ -112,7 +112,7 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The file is fetched from Google Sheets specified in the
-     * [fetch_uri][google.shopping.content.bundles.DataSources.FileInput.FetchSettings.fetch_uri].
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * </pre>
      *
      * <code>GOOGLE_SHEETS = 3;</code>
@@ -147,7 +147,7 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The file is fetched from the configured
-     * [fetch_uri][google.shopping.content.bundles.DataSources.FileInput.FetchSettings.fetch_uri].
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * </pre>
      *
      * <code>FETCH = 2;</code>
@@ -158,7 +158,7 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The file is fetched from Google Sheets specified in the
-     * [fetch_uri][google.shopping.content.bundles.DataSources.FileInput.FetchSettings.fetch_uri].
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * </pre>
      *
      * <code>GOOGLE_SHEETS = 3;</code>
@@ -446,8 +446,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional user name for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional user name for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -461,8 +461,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional user name for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional user name for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -477,8 +477,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional password for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional password for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -492,8 +492,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional password for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional password for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -1042,8 +1042,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional user name for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional user name for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -1068,8 +1068,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional user name for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional user name for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -1099,8 +1099,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional password for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional password for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -1125,8 +1125,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An optional password for [fetch
-     * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+     * Optional. An optional password for
+     * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
      * Used for [submitting data sources through
      * SFTP](https://support.google.com/merchants/answer/13813117).
      * </pre>
@@ -2467,8 +2467,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional user name for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional user name for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2492,8 +2492,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional user name for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional user name for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2517,8 +2517,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional user name for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional user name for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2541,8 +2541,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional user name for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional user name for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2561,8 +2561,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional user name for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional user name for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2588,8 +2588,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional password for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional password for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2613,8 +2613,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional password for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional password for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2638,8 +2638,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional password for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional password for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2662,8 +2662,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional password for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional password for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>
@@ -2682,8 +2682,8 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. An optional password for [fetch
-       * url][google.shopping.content.bundles.DataSources.FileInput.fetch_url].
+       * Optional. An optional password for
+       * [fetch_uri][google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.fetch_uri].
        * Used for [submitting data sources through
        * SFTP](https://support.google.com/merchants/answer/13813117).
        * </pre>

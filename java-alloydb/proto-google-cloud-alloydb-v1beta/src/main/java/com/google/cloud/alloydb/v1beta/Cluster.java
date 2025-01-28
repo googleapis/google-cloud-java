@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     databaseVersion_ = 0;
     network_ = "";
     etag_ = "";
+    subscriptionType_ = 0;
   }
 
   @java.lang.Override
@@ -71,6 +72,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return internalGetLabels();
       case 12:
         return internalGetAnnotations();
+      case 41:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -3012,6 +3015,2197 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PscConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Cluster.PscConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Create an instance that allows connections from Private Service
+     * Connect endpoints to the instance.
+     * </pre>
+     *
+     * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pscEnabled.
+     */
+    boolean getPscEnabled();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PscConfig contains PSC related configuration at a cluster level.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Cluster.PscConfig}
+   */
+  public static final class PscConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Cluster.PscConfig)
+      PscConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PscConfig.newBuilder() to construct.
+    private PscConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PscConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PscConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Cluster_PscConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Cluster_PscConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Cluster.PscConfig.class,
+              com.google.cloud.alloydb.v1beta.Cluster.PscConfig.Builder.class);
+    }
+
+    public static final int PSC_ENABLED_FIELD_NUMBER = 1;
+    private boolean pscEnabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Create an instance that allows connections from Private Service
+     * Connect endpoints to the instance.
+     * </pre>
+     *
+     * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pscEnabled.
+     */
+    @java.lang.Override
+    public boolean getPscEnabled() {
+      return pscEnabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (pscEnabled_ != false) {
+        output.writeBool(1, pscEnabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (pscEnabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, pscEnabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Cluster.PscConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Cluster.PscConfig other =
+          (com.google.cloud.alloydb.v1beta.Cluster.PscConfig) obj;
+
+      if (getPscEnabled() != other.getPscEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PSC_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPscEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.alloydb.v1beta.Cluster.PscConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PscConfig contains PSC related configuration at a cluster level.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Cluster.PscConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Cluster.PscConfig)
+        com.google.cloud.alloydb.v1beta.Cluster.PscConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_PscConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_PscConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Cluster.PscConfig.class,
+                com.google.cloud.alloydb.v1beta.Cluster.PscConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1beta.Cluster.PscConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        pscEnabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_PscConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.PscConfig getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Cluster.PscConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.PscConfig build() {
+        com.google.cloud.alloydb.v1beta.Cluster.PscConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.PscConfig buildPartial() {
+        com.google.cloud.alloydb.v1beta.Cluster.PscConfig result =
+            new com.google.cloud.alloydb.v1beta.Cluster.PscConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.alloydb.v1beta.Cluster.PscConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pscEnabled_ = pscEnabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Cluster.PscConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Cluster.PscConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1beta.Cluster.PscConfig other) {
+        if (other == com.google.cloud.alloydb.v1beta.Cluster.PscConfig.getDefaultInstance())
+          return this;
+        if (other.getPscEnabled() != false) {
+          setPscEnabled(other.getPscEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  pscEnabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean pscEnabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Create an instance that allows connections from Private Service
+       * Connect endpoints to the instance.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The pscEnabled.
+       */
+      @java.lang.Override
+      public boolean getPscEnabled() {
+        return pscEnabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Create an instance that allows connections from Private Service
+       * Connect endpoints to the instance.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The pscEnabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPscEnabled(boolean value) {
+
+        pscEnabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Create an instance that allows connections from Private Service
+       * Connect endpoints to the instance.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPscEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pscEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Cluster.PscConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Cluster.PscConfig)
+    private static final com.google.cloud.alloydb.v1beta.Cluster.PscConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Cluster.PscConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.PscConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PscConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PscConfig>() {
+          @java.lang.Override
+          public PscConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PscConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PscConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Cluster.PscConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface TrialMetadataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Cluster.TrialMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * start time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    boolean hasStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * start time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return The startTime.
+     */
+    com.google.protobuf.Timestamp getStartTime();
+    /**
+     *
+     *
+     * <pre>
+     * start time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * End time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    boolean hasEndTime();
+    /**
+     *
+     *
+     * <pre>
+     * End time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return The endTime.
+     */
+    com.google.protobuf.Timestamp getEndTime();
+    /**
+     *
+     *
+     * <pre>
+     * End time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade time of trial cluster to Standard cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+     *
+     * @return Whether the upgradeTime field is set.
+     */
+    boolean hasUpgradeTime();
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade time of trial cluster to Standard cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+     *
+     * @return The upgradeTime.
+     */
+    com.google.protobuf.Timestamp getUpgradeTime();
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade time of trial cluster to Standard cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUpgradeTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * grace end time of the cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+     *
+     * @return Whether the graceEndTime field is set.
+     */
+    boolean hasGraceEndTime();
+    /**
+     *
+     *
+     * <pre>
+     * grace end time of the cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+     *
+     * @return The graceEndTime.
+     */
+    com.google.protobuf.Timestamp getGraceEndTime();
+    /**
+     *
+     *
+     * <pre>
+     * grace end time of the cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getGraceEndTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information and all metadata related to TRIAL clusters.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Cluster.TrialMetadata}
+   */
+  public static final class TrialMetadata extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Cluster.TrialMetadata)
+      TrialMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TrialMetadata.newBuilder() to construct.
+    private TrialMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TrialMetadata() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TrialMetadata();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Cluster_TrialMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Cluster_TrialMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.class,
+              com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int START_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp startTime_;
+    /**
+     *
+     *
+     * <pre>
+     * start time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * start time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     *
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getStartTime() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * start time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp endTime_;
+    /**
+     *
+     *
+     * <pre>
+     * End time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * End time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     *
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getEndTime() {
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * End time of the trial cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+    }
+
+    public static final int UPGRADE_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp upgradeTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade time of trial cluster to Standard cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+     *
+     * @return Whether the upgradeTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpgradeTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade time of trial cluster to Standard cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+     *
+     * @return The upgradeTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUpgradeTime() {
+      return upgradeTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : upgradeTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade time of trial cluster to Standard cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUpgradeTimeOrBuilder() {
+      return upgradeTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : upgradeTime_;
+    }
+
+    public static final int GRACE_END_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp graceEndTime_;
+    /**
+     *
+     *
+     * <pre>
+     * grace end time of the cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+     *
+     * @return Whether the graceEndTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasGraceEndTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * grace end time of the cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+     *
+     * @return The graceEndTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getGraceEndTime() {
+      return graceEndTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : graceEndTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * grace end time of the cluster.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getGraceEndTimeOrBuilder() {
+      return graceEndTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : graceEndTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getStartTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getEndTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getUpgradeTime());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(4, getGraceEndTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStartTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpgradeTime());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getGraceEndTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata other =
+          (com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata) obj;
+
+      if (hasStartTime() != other.hasStartTime()) return false;
+      if (hasStartTime()) {
+        if (!getStartTime().equals(other.getStartTime())) return false;
+      }
+      if (hasEndTime() != other.hasEndTime()) return false;
+      if (hasEndTime()) {
+        if (!getEndTime().equals(other.getEndTime())) return false;
+      }
+      if (hasUpgradeTime() != other.hasUpgradeTime()) return false;
+      if (hasUpgradeTime()) {
+        if (!getUpgradeTime().equals(other.getUpgradeTime())) return false;
+      }
+      if (hasGraceEndTime() != other.hasGraceEndTime()) return false;
+      if (hasGraceEndTime()) {
+        if (!getGraceEndTime().equals(other.getGraceEndTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStartTime()) {
+        hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getStartTime().hashCode();
+      }
+      if (hasEndTime()) {
+        hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getEndTime().hashCode();
+      }
+      if (hasUpgradeTime()) {
+        hash = (37 * hash) + UPGRADE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getUpgradeTime().hashCode();
+      }
+      if (hasGraceEndTime()) {
+        hash = (37 * hash) + GRACE_END_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getGraceEndTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information and all metadata related to TRIAL clusters.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Cluster.TrialMetadata}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Cluster.TrialMetadata)
+        com.google.cloud.alloydb.v1beta.Cluster.TrialMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_TrialMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_TrialMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.class,
+                com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getStartTimeFieldBuilder();
+          getEndTimeFieldBuilder();
+          getUpgradeTimeFieldBuilder();
+          getGraceEndTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
+          endTimeBuilder_ = null;
+        }
+        upgradeTime_ = null;
+        if (upgradeTimeBuilder_ != null) {
+          upgradeTimeBuilder_.dispose();
+          upgradeTimeBuilder_ = null;
+        }
+        graceEndTime_ = null;
+        if (graceEndTimeBuilder_ != null) {
+          graceEndTimeBuilder_.dispose();
+          graceEndTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Cluster_TrialMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata build() {
+        com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata buildPartial() {
+        com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata result =
+            new com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.upgradeTime_ =
+              upgradeTimeBuilder_ == null ? upgradeTime_ : upgradeTimeBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.graceEndTime_ =
+              graceEndTimeBuilder_ == null ? graceEndTime_ : graceEndTimeBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata other) {
+        if (other == com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.getDefaultInstance())
+          return this;
+        if (other.hasStartTime()) {
+          mergeStartTime(other.getStartTime());
+        }
+        if (other.hasEndTime()) {
+          mergeEndTime(other.getEndTime());
+        }
+        if (other.hasUpgradeTime()) {
+          mergeUpgradeTime(other.getUpgradeTime());
+        }
+        if (other.hasGraceEndTime()) {
+          mergeGraceEndTime(other.getGraceEndTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getUpgradeTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getGraceEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Timestamp startTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          startTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return Whether the startTime field is set.
+       */
+      public boolean hasStartTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       *
+       * @return The startTime.
+       */
+      public com.google.protobuf.Timestamp getStartTime() {
+        if (startTimeBuilder_ == null) {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        } else {
+          return startTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startTime_ = value;
+        } else {
+          startTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (startTimeBuilder_ == null) {
+          startTime_ = builderForValue.build();
+        } else {
+          startTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+        if (startTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
+          } else {
+            startTime_ = value;
+          }
+        } else {
+          startTimeBuilder_.mergeFrom(value);
+        }
+        if (startTime_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public Builder clearStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
+          startTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getStartTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+        if (startTimeBuilder_ != null) {
+          return startTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return startTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : startTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * start time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp start_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getStartTimeFieldBuilder() {
+        if (startTimeBuilder_ == null) {
+          startTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getStartTime(), getParentForChildren(), isClean());
+          startTime_ = null;
+        }
+        return startTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp endTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          endTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       *
+       * @return Whether the endTime field is set.
+       */
+      public boolean hasEndTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       *
+       * @return The endTime.
+       */
+      public com.google.protobuf.Timestamp getEndTime() {
+        if (endTimeBuilder_ == null) {
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        } else {
+          return endTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       */
+      public Builder setEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endTime_ = value;
+        } else {
+          endTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       */
+      public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (endTimeBuilder_ == null) {
+          endTime_ = builderForValue.build();
+        } else {
+          endTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       */
+      public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+        if (endTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && endTime_ != null
+              && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEndTimeBuilder().mergeFrom(value);
+          } else {
+            endTime_ = value;
+          }
+        } else {
+          endTimeBuilder_.mergeFrom(value);
+        }
+        if (endTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       */
+      public Builder clearEndTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
+          endTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getEndTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+        if (endTimeBuilder_ != null) {
+          return endTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * End time of the trial cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp end_time = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getEndTimeFieldBuilder() {
+        if (endTimeBuilder_ == null) {
+          endTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getEndTime(), getParentForChildren(), isClean());
+          endTime_ = null;
+        }
+        return endTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp upgradeTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          upgradeTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       *
+       * @return Whether the upgradeTime field is set.
+       */
+      public boolean hasUpgradeTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       *
+       * @return The upgradeTime.
+       */
+      public com.google.protobuf.Timestamp getUpgradeTime() {
+        if (upgradeTimeBuilder_ == null) {
+          return upgradeTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : upgradeTime_;
+        } else {
+          return upgradeTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       */
+      public Builder setUpgradeTime(com.google.protobuf.Timestamp value) {
+        if (upgradeTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          upgradeTime_ = value;
+        } else {
+          upgradeTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       */
+      public Builder setUpgradeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (upgradeTimeBuilder_ == null) {
+          upgradeTime_ = builderForValue.build();
+        } else {
+          upgradeTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       */
+      public Builder mergeUpgradeTime(com.google.protobuf.Timestamp value) {
+        if (upgradeTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && upgradeTime_ != null
+              && upgradeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getUpgradeTimeBuilder().mergeFrom(value);
+          } else {
+            upgradeTime_ = value;
+          }
+        } else {
+          upgradeTimeBuilder_.mergeFrom(value);
+        }
+        if (upgradeTime_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       */
+      public Builder clearUpgradeTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        upgradeTime_ = null;
+        if (upgradeTimeBuilder_ != null) {
+          upgradeTimeBuilder_.dispose();
+          upgradeTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUpgradeTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getUpgradeTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUpgradeTimeOrBuilder() {
+        if (upgradeTimeBuilder_ != null) {
+          return upgradeTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return upgradeTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : upgradeTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Upgrade time of trial cluster to Standard cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upgrade_time = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getUpgradeTimeFieldBuilder() {
+        if (upgradeTimeBuilder_ == null) {
+          upgradeTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getUpgradeTime(), getParentForChildren(), isClean());
+          upgradeTime_ = null;
+        }
+        return upgradeTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp graceEndTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          graceEndTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       *
+       * @return Whether the graceEndTime field is set.
+       */
+      public boolean hasGraceEndTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       *
+       * @return The graceEndTime.
+       */
+      public com.google.protobuf.Timestamp getGraceEndTime() {
+        if (graceEndTimeBuilder_ == null) {
+          return graceEndTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : graceEndTime_;
+        } else {
+          return graceEndTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       */
+      public Builder setGraceEndTime(com.google.protobuf.Timestamp value) {
+        if (graceEndTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          graceEndTime_ = value;
+        } else {
+          graceEndTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       */
+      public Builder setGraceEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (graceEndTimeBuilder_ == null) {
+          graceEndTime_ = builderForValue.build();
+        } else {
+          graceEndTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       */
+      public Builder mergeGraceEndTime(com.google.protobuf.Timestamp value) {
+        if (graceEndTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && graceEndTime_ != null
+              && graceEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getGraceEndTimeBuilder().mergeFrom(value);
+          } else {
+            graceEndTime_ = value;
+          }
+        } else {
+          graceEndTimeBuilder_.mergeFrom(value);
+        }
+        if (graceEndTime_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       */
+      public Builder clearGraceEndTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        graceEndTime_ = null;
+        if (graceEndTimeBuilder_ != null) {
+          graceEndTimeBuilder_.dispose();
+          graceEndTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getGraceEndTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getGraceEndTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getGraceEndTimeOrBuilder() {
+        if (graceEndTimeBuilder_ != null) {
+          return graceEndTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return graceEndTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : graceEndTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * grace end time of the cluster.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp grace_end_time = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getGraceEndTimeFieldBuilder() {
+        if (graceEndTimeBuilder_ == null) {
+          graceEndTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getGraceEndTime(), getParentForChildren(), isClean());
+          graceEndTime_ = null;
+        }
+        return graceEndTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Cluster.TrialMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Cluster.TrialMetadata)
+    private static final com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TrialMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<TrialMetadata>() {
+          @java.lang.Override
+          public TrialMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TrialMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TrialMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -3024,6 +5218,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BACKUP_SOURCE(15),
     MIGRATION_SOURCE(16),
+    CLOUDSQL_BACKUP_RUN_SOURCE(42),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -3046,6 +5241,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return BACKUP_SOURCE;
         case 16:
           return MIGRATION_SOURCE;
+        case 42:
+          return CLOUDSQL_BACKUP_RUN_SOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -3174,6 +5371,64 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.alloydb.v1beta.MigrationSource) source_;
     }
     return com.google.cloud.alloydb.v1beta.MigrationSource.getDefaultInstance();
+  }
+
+  public static final int CLOUDSQL_BACKUP_RUN_SOURCE_FIELD_NUMBER = 42;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudsqlBackupRunSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudsqlBackupRunSource() {
+    return sourceCase_ == 42;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudsqlBackupRunSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource getCloudsqlBackupRunSource() {
+    if (sourceCase_ == 42) {
+      return (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_;
+    }
+    return com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSourceOrBuilder
+      getCloudsqlBackupRunSourceOrBuilder() {
+    if (sourceCase_ == 42) {
+      return (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_;
+    }
+    return com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -3780,7 +6035,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=574
+   *     google/cloud/alloydb/v1beta/resources.proto;l=622
    * @return The network.
    */
   @java.lang.Override
@@ -3812,7 +6067,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=574
+   *     google/cloud/alloydb/v1beta/resources.proto;l=622
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -4153,7 +6408,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=609
+   *     google/cloud/alloydb/v1beta/resources.proto;l=657
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -4171,7 +6426,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=609
+   *     google/cloud/alloydb/v1beta/resources.proto;l=657
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -4562,6 +6817,65 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int PSC_CONFIG_FIELD_NUMBER = 31;
+  private com.google.cloud.alloydb.v1beta.Cluster.PscConfig pscConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPscConfig() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Cluster.PscConfig getPscConfig() {
+    return pscConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Cluster.PscConfig.getDefaultInstance()
+        : pscConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Cluster.PscConfigOrBuilder getPscConfigOrBuilder() {
+    return pscConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Cluster.PscConfig.getDefaultInstance()
+        : pscConfig_;
+  }
+
   public static final int MAINTENANCE_UPDATE_POLICY_FIELD_NUMBER = 32;
   private com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenanceUpdatePolicy_;
   /**
@@ -4580,7 +6894,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaintenanceUpdatePolicy() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -4640,7 +6954,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaintenanceSchedule() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -4680,6 +6994,291 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return maintenanceSchedule_ == null
         ? com.google.cloud.alloydb.v1beta.MaintenanceSchedule.getDefaultInstance()
         : maintenanceSchedule_;
+  }
+
+  public static final int GEMINI_CONFIG_FIELD_NUMBER = 36;
+  private com.google.cloud.alloydb.v1beta.GeminiClusterConfig geminiConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGeminiConfig() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.GeminiClusterConfig getGeminiConfig() {
+    return geminiConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.GeminiClusterConfig.getDefaultInstance()
+        : geminiConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration parameters related to the Gemini in Databases
+   * add-on.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder getGeminiConfigOrBuilder() {
+    return geminiConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.GeminiClusterConfig.getDefaultInstance()
+        : geminiConfig_;
+  }
+
+  public static final int SUBSCRIPTION_TYPE_FIELD_NUMBER = 38;
+  private int subscriptionType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Subscription type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for subscriptionType.
+   */
+  @java.lang.Override
+  public int getSubscriptionTypeValue() {
+    return subscriptionType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Subscription type of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The subscriptionType.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.SubscriptionType getSubscriptionType() {
+    com.google.cloud.alloydb.v1beta.SubscriptionType result =
+        com.google.cloud.alloydb.v1beta.SubscriptionType.forNumber(subscriptionType_);
+    return result == null ? com.google.cloud.alloydb.v1beta.SubscriptionType.UNRECOGNIZED : result;
+  }
+
+  public static final int TRIAL_METADATA_FIELD_NUMBER = 39;
+  private com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata trialMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the trialMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrialMetadata() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The trialMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata getTrialMetadata() {
+    return trialMetadata_ == null
+        ? com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.getDefaultInstance()
+        : trialMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for free trial clusters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadataOrBuilder
+      getTrialMetadataOrBuilder() {
+    return trialMetadata_ == null
+        ? com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.getDefaultInstance()
+        : trialMetadata_;
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 41;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.alloydb.v1beta.ResourcesProto
+                .internal_static_google_cloud_alloydb_v1beta_Cluster_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * ```
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4780,10 +7379,29 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(30, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeMessage(32, getMaintenanceUpdatePolicy());
+      output.writeMessage(31, getPscConfig());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(32, getMaintenanceUpdatePolicy());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(36, getGeminiConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(37, getMaintenanceSchedule());
+    }
+    if (subscriptionType_
+        != com.google.cloud.alloydb.v1beta.SubscriptionType.SUBSCRIPTION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(38, subscriptionType_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(39, getTrialMetadata());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 41);
+    if (sourceCase_ == 42) {
+      output.writeMessage(42, (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4901,13 +7519,42 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getPscConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               32, getMaintenanceUpdatePolicy());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getGeminiConfig());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(37, getMaintenanceSchedule());
+    }
+    if (subscriptionType_
+        != com.google.cloud.alloydb.v1beta.SubscriptionType.SUBSCRIPTION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(38, subscriptionType_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, getTrialMetadata());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, tags__);
+    }
+    if (sourceCase_ == 42) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              42, (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4988,6 +7635,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!getPrimaryConfig().equals(other.getPrimaryConfig())) return false;
     }
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasPscConfig() != other.hasPscConfig()) return false;
+    if (hasPscConfig()) {
+      if (!getPscConfig().equals(other.getPscConfig())) return false;
+    }
     if (hasMaintenanceUpdatePolicy() != other.hasMaintenanceUpdatePolicy()) return false;
     if (hasMaintenanceUpdatePolicy()) {
       if (!getMaintenanceUpdatePolicy().equals(other.getMaintenanceUpdatePolicy())) return false;
@@ -4996,6 +7647,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasMaintenanceSchedule()) {
       if (!getMaintenanceSchedule().equals(other.getMaintenanceSchedule())) return false;
     }
+    if (hasGeminiConfig() != other.hasGeminiConfig()) return false;
+    if (hasGeminiConfig()) {
+      if (!getGeminiConfig().equals(other.getGeminiConfig())) return false;
+    }
+    if (subscriptionType_ != other.subscriptionType_) return false;
+    if (hasTrialMetadata() != other.hasTrialMetadata()) return false;
+    if (hasTrialMetadata()) {
+      if (!getTrialMetadata().equals(other.getTrialMetadata())) return false;
+    }
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 15:
@@ -5003,6 +7664,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         break;
       case 16:
         if (!getMigrationSource().equals(other.getMigrationSource())) return false;
+        break;
+      case 42:
+        if (!getCloudsqlBackupRunSource().equals(other.getCloudsqlBackupRunSource())) return false;
         break;
       case 0:
       default:
@@ -5098,6 +7762,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasPscConfig()) {
+      hash = (37 * hash) + PSC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPscConfig().hashCode();
+    }
     if (hasMaintenanceUpdatePolicy()) {
       hash = (37 * hash) + MAINTENANCE_UPDATE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenanceUpdatePolicy().hashCode();
@@ -5105,6 +7773,20 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasMaintenanceSchedule()) {
       hash = (37 * hash) + MAINTENANCE_SCHEDULE_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenanceSchedule().hashCode();
+    }
+    if (hasGeminiConfig()) {
+      hash = (37 * hash) + GEMINI_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGeminiConfig().hashCode();
+    }
+    hash = (37 * hash) + SUBSCRIPTION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + subscriptionType_;
+    if (hasTrialMetadata()) {
+      hash = (37 * hash) + TRIAL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getTrialMetadata().hashCode();
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     switch (sourceCase_) {
       case 15:
@@ -5114,6 +7796,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       case 16:
         hash = (37 * hash) + MIGRATION_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getMigrationSource().hashCode();
+        break;
+      case 42:
+        hash = (37 * hash) + CLOUDSQL_BACKUP_RUN_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudsqlBackupRunSource().hashCode();
         break;
       case 0:
       default:
@@ -5246,6 +7932,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return internalGetLabels();
         case 12:
           return internalGetAnnotations();
+        case 41:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -5259,6 +7947,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableLabels();
         case 12:
           return internalGetMutableAnnotations();
+        case 41:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -5299,8 +7989,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getContinuousBackupInfoFieldBuilder();
         getSecondaryConfigFieldBuilder();
         getPrimaryConfigFieldBuilder();
+        getPscConfigFieldBuilder();
         getMaintenanceUpdatePolicyFieldBuilder();
         getMaintenanceScheduleFieldBuilder();
+        getGeminiConfigFieldBuilder();
+        getTrialMetadataFieldBuilder();
       }
     }
 
@@ -5308,11 +8001,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       if (backupSourceBuilder_ != null) {
         backupSourceBuilder_.clear();
       }
       if (migrationSourceBuilder_ != null) {
         migrationSourceBuilder_.clear();
+      }
+      if (cloudsqlBackupRunSourceBuilder_ != null) {
+        cloudsqlBackupRunSourceBuilder_.clear();
       }
       name_ = "";
       displayName_ = "";
@@ -5391,6 +8088,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfigBuilder_ = null;
       }
       satisfiesPzs_ = false;
+      pscConfig_ = null;
+      if (pscConfigBuilder_ != null) {
+        pscConfigBuilder_.dispose();
+        pscConfigBuilder_ = null;
+      }
       maintenanceUpdatePolicy_ = null;
       if (maintenanceUpdatePolicyBuilder_ != null) {
         maintenanceUpdatePolicyBuilder_.dispose();
@@ -5401,6 +8103,18 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         maintenanceScheduleBuilder_.dispose();
         maintenanceScheduleBuilder_ = null;
       }
+      geminiConfig_ = null;
+      if (geminiConfigBuilder_ != null) {
+        geminiConfigBuilder_.dispose();
+        geminiConfigBuilder_ = null;
+      }
+      subscriptionType_ = 0;
+      trialMetadata_ = null;
+      if (trialMetadataBuilder_ != null) {
+        trialMetadataBuilder_.dispose();
+        trialMetadataBuilder_ = null;
+      }
+      internalGetMutableTags().clear();
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -5433,6 +8147,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       buildPartialOneofs(result);
       onBuilt();
       return result;
@@ -5440,125 +8157,152 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.alloydb.v1beta.Cluster result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.uid_ = uid_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.clusterType_ = clusterType_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.databaseVersion_ = databaseVersion_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.networkConfig_ =
             networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.network_ = network_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.initialUser_ =
             initialUserBuilder_ == null ? initialUser_ : initialUserBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.automatedBackupPolicy_ =
             automatedBackupPolicyBuilder_ == null
                 ? automatedBackupPolicy_
                 : automatedBackupPolicyBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.sslConfig_ = sslConfigBuilder_ == null ? sslConfig_ : sslConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.encryptionConfig_ =
             encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.encryptionInfo_ =
             encryptionInfoBuilder_ == null ? encryptionInfo_ : encryptionInfoBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.continuousBackupConfig_ =
             continuousBackupConfigBuilder_ == null
                 ? continuousBackupConfig_
                 : continuousBackupConfigBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.continuousBackupInfo_ =
             continuousBackupInfoBuilder_ == null
                 ? continuousBackupInfo_
                 : continuousBackupInfoBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.secondaryConfig_ =
             secondaryConfigBuilder_ == null ? secondaryConfig_ : secondaryConfigBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.primaryConfig_ =
             primaryConfigBuilder_ == null ? primaryConfig_ : primaryConfigBuilder_.build();
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.pscConfig_ = pscConfigBuilder_ == null ? pscConfig_ : pscConfigBuilder_.build();
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.maintenanceUpdatePolicy_ =
             maintenanceUpdatePolicyBuilder_ == null
                 ? maintenanceUpdatePolicy_
                 : maintenanceUpdatePolicyBuilder_.build();
-        to_bitField0_ |= 0x00002000;
+        to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.maintenanceSchedule_ =
             maintenanceScheduleBuilder_ == null
                 ? maintenanceSchedule_
                 : maintenanceScheduleBuilder_.build();
-        to_bitField0_ |= 0x00004000;
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.geminiConfig_ =
+            geminiConfigBuilder_ == null ? geminiConfig_ : geminiConfigBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.alloydb.v1beta.Cluster result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.subscriptionType_ = subscriptionType_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.trialMetadata_ =
+            trialMetadataBuilder_ == null ? trialMetadata_ : trialMetadataBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5571,6 +8315,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceCase_ == 16 && migrationSourceBuilder_ != null) {
         result.source_ = migrationSourceBuilder_.build();
+      }
+      if (sourceCase_ == 42 && cloudsqlBackupRunSourceBuilder_ != null) {
+        result.source_ = cloudsqlBackupRunSourceBuilder_.build();
       }
     }
 
@@ -5621,17 +8368,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.alloydb.v1beta.Cluster.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -5644,7 +8391,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         mergeDeleteTime(other.getDeleteTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -5659,16 +8406,16 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
@@ -5702,12 +8449,26 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.hasPscConfig()) {
+        mergePscConfig(other.getPscConfig());
+      }
       if (other.hasMaintenanceUpdatePolicy()) {
         mergeMaintenanceUpdatePolicy(other.getMaintenanceUpdatePolicy());
       }
       if (other.hasMaintenanceSchedule()) {
         mergeMaintenanceSchedule(other.getMaintenanceSchedule());
       }
+      if (other.hasGeminiConfig()) {
+        mergeGeminiConfig(other.getGeminiConfig());
+      }
+      if (other.subscriptionType_ != 0) {
+        setSubscriptionTypeValue(other.getSubscriptionTypeValue());
+      }
+      if (other.hasTrialMetadata()) {
+        mergeTrialMetadata(other.getTrialMetadata());
+      }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField1_ |= 0x00000004;
       switch (other.getSourceCase()) {
         case BACKUP_SOURCE:
           {
@@ -5717,6 +8478,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         case MIGRATION_SOURCE:
           {
             mergeMigrationSource(other.getMigrationSource());
+            break;
+          }
+        case CLOUDSQL_BACKUP_RUN_SOURCE:
+          {
+            mergeCloudsqlBackupRunSource(other.getCloudsqlBackupRunSource());
             break;
           }
         case SOURCE_NOT_SET:
@@ -5753,37 +8519,37 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
@@ -5795,31 +8561,31 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 64:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 64
             case 72:
               {
                 databaseVersion_ = input.readEnum();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 72
             case 82:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 82
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 90
             case 98:
@@ -5831,19 +8597,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 98
             case 104:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(getInitialUserFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 114
             case 122:
@@ -5862,86 +8628,126 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getAutomatedBackupPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getSslConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(
                     getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 154
             case 162:
               {
                 input.readMessage(getEncryptionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 162
             case 178:
               {
                 input.readMessage(getSecondaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(getPrimaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 186
             case 192:
               {
                 clusterType_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 192
             case 218:
               {
                 input.readMessage(
                     getContinuousBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(
                     getContinuousBackupInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 226
             case 234:
               {
                 input.readMessage(getNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 234
             case 240:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 240
+            case 250:
+              {
+                input.readMessage(getPscConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 250
             case 258:
               {
                 input.readMessage(
                     getMaintenanceUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 258
+            case 290:
+              {
+                input.readMessage(getGeminiConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 290
             case 298:
               {
                 input.readMessage(
                     getMaintenanceScheduleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 298
+            case 304:
+              {
+                subscriptionType_ = input.readEnum();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 304
+            case 314:
+              {
+                input.readMessage(getTrialMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000002;
+                break;
+              } // case 314
+            case 330:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 330
+            case 338:
+              {
+                input.readMessage(
+                    getCloudsqlBackupRunSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 42;
+                break;
+              } // case 338
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5974,6 +8780,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.alloydb.v1beta.BackupSource,
@@ -6429,6 +9236,238 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return migrationSourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource,
+            com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.Builder,
+            com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSourceOrBuilder>
+        cloudsqlBackupRunSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cloudsqlBackupRunSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudsqlBackupRunSource() {
+      return sourceCase_ == 42;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cloudsqlBackupRunSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource getCloudsqlBackupRunSource() {
+      if (cloudsqlBackupRunSourceBuilder_ == null) {
+        if (sourceCase_ == 42) {
+          return (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_;
+        }
+        return com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 42) {
+          return cloudsqlBackupRunSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudsqlBackupRunSource(
+        com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource value) {
+      if (cloudsqlBackupRunSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        cloudsqlBackupRunSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 42;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudsqlBackupRunSource(
+        com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.Builder builderForValue) {
+      if (cloudsqlBackupRunSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudsqlBackupRunSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 42;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCloudsqlBackupRunSource(
+        com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource value) {
+      if (cloudsqlBackupRunSourceBuilder_ == null) {
+        if (sourceCase_ == 42
+            && source_
+                != com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.newBuilder(
+                      (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 42) {
+          cloudsqlBackupRunSourceBuilder_.mergeFrom(value);
+        } else {
+          cloudsqlBackupRunSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 42;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCloudsqlBackupRunSource() {
+      if (cloudsqlBackupRunSourceBuilder_ == null) {
+        if (sourceCase_ == 42) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 42) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        cloudsqlBackupRunSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.Builder
+        getCloudsqlBackupRunSourceBuilder() {
+      return getCloudsqlBackupRunSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSourceOrBuilder
+        getCloudsqlBackupRunSourceOrBuilder() {
+      if ((sourceCase_ == 42) && (cloudsqlBackupRunSourceBuilder_ != null)) {
+        return cloudsqlBackupRunSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 42) {
+          return (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_;
+        }
+        return com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cluster created from CloudSQL snapshot.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource,
+            com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.Builder,
+            com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSourceOrBuilder>
+        getCloudsqlBackupRunSourceFieldBuilder() {
+      if (cloudsqlBackupRunSourceBuilder_ == null) {
+        if (!(sourceCase_ == 42)) {
+          source_ = com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.getDefaultInstance();
+        }
+        cloudsqlBackupRunSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource,
+                com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource.Builder,
+                com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSourceOrBuilder>(
+                (com.google.cloud.alloydb.v1beta.CloudSQLBackupRunSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 42;
+      onChanged();
+      return cloudsqlBackupRunSourceBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -6506,7 +9545,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6528,7 +9567,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -6555,7 +9594,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6622,7 +9661,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6639,7 +9678,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -6661,7 +9700,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6731,7 +9770,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6749,7 +9788,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -6772,7 +9811,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6797,7 +9836,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -6841,7 +9880,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6862,7 +9901,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6879,7 +9918,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -6890,7 +9929,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -6907,7 +9946,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -6928,7 +9967,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -7000,7 +10039,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -7044,7 +10083,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -7065,7 +10104,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -7082,7 +10121,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -7093,7 +10132,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -7110,7 +10149,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -7131,7 +10170,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -7203,7 +10242,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -7247,7 +10286,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7268,7 +10307,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7285,7 +10324,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && deleteTime_ != null
             && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getDeleteTimeBuilder().mergeFrom(value);
@@ -7296,7 +10335,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         deleteTimeBuilder_.mergeFrom(value);
       }
       if (deleteTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -7313,7 +10352,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       deleteTime_ = null;
       if (deleteTimeBuilder_ != null) {
         deleteTimeBuilder_.dispose();
@@ -7334,7 +10373,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -7403,7 +10442,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return labels_;
     }
@@ -7488,7 +10527,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -7511,7 +10550,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -7531,7 +10570,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -7545,7 +10584,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -7583,7 +10622,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7624,7 +10663,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -7643,7 +10682,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       state_ = 0;
       onChanged();
       return this;
@@ -7689,7 +10728,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setClusterTypeValue(int value) {
       clusterType_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -7738,7 +10777,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       clusterType_ = value.getNumber();
       onChanged();
       return this;
@@ -7760,7 +10799,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterType() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       clusterType_ = 0;
       onChanged();
       return this;
@@ -7806,7 +10845,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDatabaseVersionValue(int value) {
       databaseVersion_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7853,7 +10892,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       databaseVersion_ = value.getNumber();
       onChanged();
       return this;
@@ -7875,7 +10914,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabaseVersion() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       databaseVersion_ = 0;
       onChanged();
       return this;
@@ -7895,7 +10934,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networkConfig field is set.
      */
     public boolean hasNetworkConfig() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>
@@ -7927,7 +10966,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         networkConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7943,7 +10982,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         networkConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7954,7 +10993,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNetworkConfig(com.google.cloud.alloydb.v1beta.Cluster.NetworkConfig value) {
       if (networkConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && networkConfig_ != null
             && networkConfig_
                 != com.google.cloud.alloydb.v1beta.Cluster.NetworkConfig.getDefaultInstance()) {
@@ -7966,7 +11005,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         networkConfigBuilder_.mergeFrom(value);
       }
       if (networkConfig_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -7977,7 +11016,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNetworkConfig() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       networkConfig_ = null;
       if (networkConfigBuilder_ != null) {
         networkConfigBuilder_.dispose();
@@ -7992,7 +11031,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1beta.Cluster.NetworkConfig.Builder getNetworkConfigBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
@@ -8050,7 +11089,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=574
+     *     google/cloud/alloydb/v1beta/resources.proto;l=622
      * @return The network.
      */
     @java.lang.Deprecated
@@ -8081,7 +11120,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=574
+     *     google/cloud/alloydb/v1beta/resources.proto;l=622
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -8112,7 +11151,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=574
+     *     google/cloud/alloydb/v1beta/resources.proto;l=622
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -8122,7 +11161,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8142,13 +11181,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=574
+     *     google/cloud/alloydb/v1beta/resources.proto;l=622
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -8168,7 +11207,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=574
+     *     google/cloud/alloydb/v1beta/resources.proto;l=622
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -8179,7 +11218,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8246,7 +11285,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8263,7 +11302,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -8285,7 +11324,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8310,7 +11349,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return annotations_;
     }
@@ -8403,7 +11442,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -8428,7 +11467,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -8450,7 +11489,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
     /**
@@ -8466,7 +11505,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
 
@@ -8509,7 +11548,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8529,7 +11568,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -8556,7 +11595,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the initialUser field is set.
      */
     public boolean hasInitialUser() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -8602,7 +11641,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         initialUserBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -8625,7 +11664,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         initialUserBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -8643,7 +11682,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInitialUser(com.google.cloud.alloydb.v1beta.UserPassword value) {
       if (initialUserBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && initialUser_ != null
             && initialUser_ != com.google.cloud.alloydb.v1beta.UserPassword.getDefaultInstance()) {
           getInitialUserBuilder().mergeFrom(value);
@@ -8654,7 +11693,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         initialUserBuilder_.mergeFrom(value);
       }
       if (initialUser_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -8672,7 +11711,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInitialUser() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       initialUser_ = null;
       if (initialUserBuilder_ != null) {
         initialUserBuilder_.dispose();
@@ -8694,7 +11733,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1beta.UserPassword.Builder getInitialUserBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getInitialUserFieldBuilder().getBuilder();
     }
@@ -8772,7 +11811,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the automatedBackupPolicy field is set.
      */
     public boolean hasAutomatedBackupPolicy() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -8825,7 +11864,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         automatedBackupPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8851,7 +11890,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         automatedBackupPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8873,7 +11912,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAutomatedBackupPolicy(
         com.google.cloud.alloydb.v1beta.AutomatedBackupPolicy value) {
       if (automatedBackupPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && automatedBackupPolicy_ != null
             && automatedBackupPolicy_
                 != com.google.cloud.alloydb.v1beta.AutomatedBackupPolicy.getDefaultInstance()) {
@@ -8885,7 +11924,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         automatedBackupPolicyBuilder_.mergeFrom(value);
       }
       if (automatedBackupPolicy_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -8906,7 +11945,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.AutomatedBackupPolicy automated_backup_policy = 17;</code>
      */
     public Builder clearAutomatedBackupPolicy() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       automatedBackupPolicy_ = null;
       if (automatedBackupPolicyBuilder_ != null) {
         automatedBackupPolicyBuilder_.dispose();
@@ -8932,7 +11971,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1beta.AutomatedBackupPolicy.Builder
         getAutomatedBackupPolicyBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getAutomatedBackupPolicyFieldBuilder().getBuilder();
     }
@@ -9009,12 +12048,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=609
+     *     google/cloud/alloydb/v1beta/resources.proto;l=657
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
     public boolean hasSslConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -9026,7 +12065,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=609
+     *     google/cloud/alloydb/v1beta/resources.proto;l=657
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -9058,7 +12097,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         sslConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9078,7 +12117,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         sslConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9094,7 +12133,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public Builder mergeSslConfig(com.google.cloud.alloydb.v1beta.SslConfig value) {
       if (sslConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && sslConfig_ != null
             && sslConfig_ != com.google.cloud.alloydb.v1beta.SslConfig.getDefaultInstance()) {
           getSslConfigBuilder().mergeFrom(value);
@@ -9105,7 +12144,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         sslConfigBuilder_.mergeFrom(value);
       }
       if (sslConfig_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -9121,7 +12160,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearSslConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       sslConfig_ = null;
       if (sslConfigBuilder_ != null) {
         sslConfigBuilder_.dispose();
@@ -9141,7 +12180,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public com.google.cloud.alloydb.v1beta.SslConfig.Builder getSslConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getSslConfigFieldBuilder().getBuilder();
     }
@@ -9214,7 +12253,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionConfig field is set.
      */
     public boolean hasEncryptionConfig() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -9266,7 +12305,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9292,7 +12331,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9313,7 +12352,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionConfig(com.google.cloud.alloydb.v1beta.EncryptionConfig value) {
       if (encryptionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && encryptionConfig_ != null
             && encryptionConfig_
                 != com.google.cloud.alloydb.v1beta.EncryptionConfig.getDefaultInstance()) {
@@ -9325,7 +12364,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         encryptionConfigBuilder_.mergeFrom(value);
       }
       if (encryptionConfig_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -9346,7 +12385,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEncryptionConfig() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       encryptionConfig_ = null;
       if (encryptionConfigBuilder_ != null) {
         encryptionConfigBuilder_.dispose();
@@ -9371,7 +12410,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1beta.EncryptionConfig.Builder getEncryptionConfigBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
@@ -9452,7 +12491,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionInfo field is set.
      */
     public boolean hasEncryptionInfo() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -9496,7 +12535,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -9518,7 +12557,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -9535,7 +12574,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionInfo(com.google.cloud.alloydb.v1beta.EncryptionInfo value) {
       if (encryptionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && encryptionInfo_ != null
             && encryptionInfo_
                 != com.google.cloud.alloydb.v1beta.EncryptionInfo.getDefaultInstance()) {
@@ -9547,7 +12586,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         encryptionInfoBuilder_.mergeFrom(value);
       }
       if (encryptionInfo_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -9564,7 +12603,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEncryptionInfo() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       encryptionInfo_ = null;
       if (encryptionInfoBuilder_ != null) {
         encryptionInfoBuilder_.dispose();
@@ -9585,7 +12624,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1beta.EncryptionInfo.Builder getEncryptionInfoBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getEncryptionInfoFieldBuilder().getBuilder();
     }
@@ -9657,7 +12696,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the continuousBackupConfig field is set.
      */
     public boolean hasContinuousBackupConfig() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -9702,7 +12741,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         continuousBackupConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9724,7 +12763,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         continuousBackupConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9742,7 +12781,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeContinuousBackupConfig(
         com.google.cloud.alloydb.v1beta.ContinuousBackupConfig value) {
       if (continuousBackupConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && continuousBackupConfig_ != null
             && continuousBackupConfig_
                 != com.google.cloud.alloydb.v1beta.ContinuousBackupConfig.getDefaultInstance()) {
@@ -9754,7 +12793,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         continuousBackupConfigBuilder_.mergeFrom(value);
       }
       if (continuousBackupConfig_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -9771,7 +12810,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContinuousBackupConfig() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       continuousBackupConfig_ = null;
       if (continuousBackupConfigBuilder_ != null) {
         continuousBackupConfigBuilder_.dispose();
@@ -9793,7 +12832,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1beta.ContinuousBackupConfig.Builder
         getContinuousBackupConfigBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getContinuousBackupConfigFieldBuilder().getBuilder();
     }
@@ -9866,7 +12905,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the continuousBackupInfo field is set.
      */
     public boolean hasContinuousBackupInfo() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -9911,7 +12950,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         continuousBackupInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9933,7 +12972,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         continuousBackupInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9951,7 +12990,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeContinuousBackupInfo(
         com.google.cloud.alloydb.v1beta.ContinuousBackupInfo value) {
       if (continuousBackupInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && continuousBackupInfo_ != null
             && continuousBackupInfo_
                 != com.google.cloud.alloydb.v1beta.ContinuousBackupInfo.getDefaultInstance()) {
@@ -9963,7 +13002,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         continuousBackupInfoBuilder_.mergeFrom(value);
       }
       if (continuousBackupInfo_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -9980,7 +13019,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContinuousBackupInfo() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       continuousBackupInfo_ = null;
       if (continuousBackupInfoBuilder_ != null) {
         continuousBackupInfoBuilder_.dispose();
@@ -10002,7 +13041,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1beta.ContinuousBackupInfo.Builder
         getContinuousBackupInfoBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getContinuousBackupInfoFieldBuilder().getBuilder();
     }
@@ -10073,7 +13112,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the secondaryConfig field is set.
      */
     public boolean hasSecondaryConfig() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -10114,7 +13153,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10134,7 +13173,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         secondaryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10150,7 +13189,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSecondaryConfig(
         com.google.cloud.alloydb.v1beta.Cluster.SecondaryConfig value) {
       if (secondaryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && secondaryConfig_ != null
             && secondaryConfig_
                 != com.google.cloud.alloydb.v1beta.Cluster.SecondaryConfig.getDefaultInstance()) {
@@ -10162,7 +13201,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         secondaryConfigBuilder_.mergeFrom(value);
       }
       if (secondaryConfig_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -10177,7 +13216,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.Cluster.SecondaryConfig secondary_config = 22;</code>
      */
     public Builder clearSecondaryConfig() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       secondaryConfig_ = null;
       if (secondaryConfigBuilder_ != null) {
         secondaryConfigBuilder_.dispose();
@@ -10197,7 +13236,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1beta.Cluster.SecondaryConfig.Builder
         getSecondaryConfigBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getSecondaryConfigFieldBuilder().getBuilder();
     }
@@ -10266,7 +13305,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the primaryConfig field is set.
      */
     public boolean hasPrimaryConfig() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -10310,7 +13349,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -10332,7 +13371,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         primaryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -10349,7 +13388,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePrimaryConfig(com.google.cloud.alloydb.v1beta.Cluster.PrimaryConfig value) {
       if (primaryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && primaryConfig_ != null
             && primaryConfig_
                 != com.google.cloud.alloydb.v1beta.Cluster.PrimaryConfig.getDefaultInstance()) {
@@ -10361,7 +13400,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfigBuilder_.mergeFrom(value);
       }
       if (primaryConfig_ != null) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -10378,7 +13417,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrimaryConfig() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       primaryConfig_ = null;
       if (primaryConfigBuilder_ != null) {
         primaryConfigBuilder_.dispose();
@@ -10399,7 +13438,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.alloydb.v1beta.Cluster.PrimaryConfig.Builder getPrimaryConfigBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return getPrimaryConfigFieldBuilder().getBuilder();
     }
@@ -10483,7 +13522,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -10499,10 +13538,224 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.alloydb.v1beta.Cluster.PscConfig pscConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Cluster.PscConfig,
+            com.google.cloud.alloydb.v1beta.Cluster.PscConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Cluster.PscConfigOrBuilder>
+        pscConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pscConfig field is set.
+     */
+    public boolean hasPscConfig() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pscConfig.
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.PscConfig getPscConfig() {
+      if (pscConfigBuilder_ == null) {
+        return pscConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Cluster.PscConfig.getDefaultInstance()
+            : pscConfig_;
+      } else {
+        return pscConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscConfig(com.google.cloud.alloydb.v1beta.Cluster.PscConfig value) {
+      if (pscConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pscConfig_ = value;
+      } else {
+        pscConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscConfig(
+        com.google.cloud.alloydb.v1beta.Cluster.PscConfig.Builder builderForValue) {
+      if (pscConfigBuilder_ == null) {
+        pscConfig_ = builderForValue.build();
+      } else {
+        pscConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePscConfig(com.google.cloud.alloydb.v1beta.Cluster.PscConfig value) {
+      if (pscConfigBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && pscConfig_ != null
+            && pscConfig_
+                != com.google.cloud.alloydb.v1beta.Cluster.PscConfig.getDefaultInstance()) {
+          getPscConfigBuilder().mergeFrom(value);
+        } else {
+          pscConfig_ = value;
+        }
+      } else {
+        pscConfigBuilder_.mergeFrom(value);
+      }
+      if (pscConfig_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPscConfig() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      pscConfig_ = null;
+      if (pscConfigBuilder_ != null) {
+        pscConfigBuilder_.dispose();
+        pscConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.PscConfig.Builder getPscConfigBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getPscConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.PscConfigOrBuilder getPscConfigOrBuilder() {
+      if (pscConfigBuilder_ != null) {
+        return pscConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pscConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Cluster.PscConfig.getDefaultInstance()
+            : pscConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.PscConfig psc_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Cluster.PscConfig,
+            com.google.cloud.alloydb.v1beta.Cluster.PscConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Cluster.PscConfigOrBuilder>
+        getPscConfigFieldBuilder() {
+      if (pscConfigBuilder_ == null) {
+        pscConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.Cluster.PscConfig,
+                com.google.cloud.alloydb.v1beta.Cluster.PscConfig.Builder,
+                com.google.cloud.alloydb.v1beta.Cluster.PscConfigOrBuilder>(
+                getPscConfig(), getParentForChildren(), isClean());
+        pscConfig_ = null;
+      }
+      return pscConfigBuilder_;
     }
 
     private com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy maintenanceUpdatePolicy_;
@@ -10526,7 +13779,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maintenanceUpdatePolicy field is set.
      */
     public boolean hasMaintenanceUpdatePolicy() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -10573,7 +13826,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceUpdatePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -10596,7 +13849,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceUpdatePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -10615,7 +13868,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMaintenanceUpdatePolicy(
         com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy value) {
       if (maintenanceUpdatePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && maintenanceUpdatePolicy_ != null
             && maintenanceUpdatePolicy_
                 != com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.getDefaultInstance()) {
@@ -10627,7 +13880,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         maintenanceUpdatePolicyBuilder_.mergeFrom(value);
       }
       if (maintenanceUpdatePolicy_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -10645,7 +13898,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMaintenanceUpdatePolicy() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       maintenanceUpdatePolicy_ = null;
       if (maintenanceUpdatePolicyBuilder_ != null) {
         maintenanceUpdatePolicyBuilder_.dispose();
@@ -10668,7 +13921,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.Builder
         getMaintenanceUpdatePolicyBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return getMaintenanceUpdatePolicyFieldBuilder().getBuilder();
     }
@@ -10744,7 +13997,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maintenanceSchedule field is set.
      */
     public boolean hasMaintenanceSchedule() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
@@ -10791,7 +14044,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceScheduleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -10814,7 +14067,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         maintenanceScheduleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -10833,7 +14086,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMaintenanceSchedule(
         com.google.cloud.alloydb.v1beta.MaintenanceSchedule value) {
       if (maintenanceScheduleBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && maintenanceSchedule_ != null
             && maintenanceSchedule_
                 != com.google.cloud.alloydb.v1beta.MaintenanceSchedule.getDefaultInstance()) {
@@ -10845,7 +14098,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         maintenanceScheduleBuilder_.mergeFrom(value);
       }
       if (maintenanceSchedule_ != null) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -10863,7 +14116,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMaintenanceSchedule() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       maintenanceSchedule_ = null;
       if (maintenanceScheduleBuilder_ != null) {
         maintenanceScheduleBuilder_.dispose();
@@ -10886,7 +14139,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1beta.MaintenanceSchedule.Builder
         getMaintenanceScheduleBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return getMaintenanceScheduleFieldBuilder().getBuilder();
     }
@@ -10939,6 +14192,740 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         maintenanceSchedule_ = null;
       }
       return maintenanceScheduleBuilder_;
+    }
+
+    private com.google.cloud.alloydb.v1beta.GeminiClusterConfig geminiConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.GeminiClusterConfig,
+            com.google.cloud.alloydb.v1beta.GeminiClusterConfig.Builder,
+            com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder>
+        geminiConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the geminiConfig field is set.
+     */
+    public boolean hasGeminiConfig() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The geminiConfig.
+     */
+    public com.google.cloud.alloydb.v1beta.GeminiClusterConfig getGeminiConfig() {
+      if (geminiConfigBuilder_ == null) {
+        return geminiConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.GeminiClusterConfig.getDefaultInstance()
+            : geminiConfig_;
+      } else {
+        return geminiConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiConfig(com.google.cloud.alloydb.v1beta.GeminiClusterConfig value) {
+      if (geminiConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        geminiConfig_ = value;
+      } else {
+        geminiConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiConfig(
+        com.google.cloud.alloydb.v1beta.GeminiClusterConfig.Builder builderForValue) {
+      if (geminiConfigBuilder_ == null) {
+        geminiConfig_ = builderForValue.build();
+      } else {
+        geminiConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGeminiConfig(com.google.cloud.alloydb.v1beta.GeminiClusterConfig value) {
+      if (geminiConfigBuilder_ == null) {
+        if (((bitField0_ & 0x80000000) != 0)
+            && geminiConfig_ != null
+            && geminiConfig_
+                != com.google.cloud.alloydb.v1beta.GeminiClusterConfig.getDefaultInstance()) {
+          getGeminiConfigBuilder().mergeFrom(value);
+        } else {
+          geminiConfig_ = value;
+        }
+      } else {
+        geminiConfigBuilder_.mergeFrom(value);
+      }
+      if (geminiConfig_ != null) {
+        bitField0_ |= 0x80000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGeminiConfig() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      geminiConfig_ = null;
+      if (geminiConfigBuilder_ != null) {
+        geminiConfigBuilder_.dispose();
+        geminiConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.GeminiClusterConfig.Builder getGeminiConfigBuilder() {
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return getGeminiConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder getGeminiConfigOrBuilder() {
+      if (geminiConfigBuilder_ != null) {
+        return geminiConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return geminiConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.GeminiClusterConfig.getDefaultInstance()
+            : geminiConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration parameters related to the Gemini in Databases
+     * add-on.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.GeminiClusterConfig,
+            com.google.cloud.alloydb.v1beta.GeminiClusterConfig.Builder,
+            com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder>
+        getGeminiConfigFieldBuilder() {
+      if (geminiConfigBuilder_ == null) {
+        geminiConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.GeminiClusterConfig,
+                com.google.cloud.alloydb.v1beta.GeminiClusterConfig.Builder,
+                com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder>(
+                getGeminiConfig(), getParentForChildren(), isClean());
+        geminiConfig_ = null;
+      }
+      return geminiConfigBuilder_;
+    }
+
+    private int subscriptionType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Subscription type of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for subscriptionType.
+     */
+    @java.lang.Override
+    public int getSubscriptionTypeValue() {
+      return subscriptionType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Subscription type of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for subscriptionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubscriptionTypeValue(int value) {
+      subscriptionType_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Subscription type of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The subscriptionType.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.SubscriptionType getSubscriptionType() {
+      com.google.cloud.alloydb.v1beta.SubscriptionType result =
+          com.google.cloud.alloydb.v1beta.SubscriptionType.forNumber(subscriptionType_);
+      return result == null
+          ? com.google.cloud.alloydb.v1beta.SubscriptionType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Subscription type of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The subscriptionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubscriptionType(com.google.cloud.alloydb.v1beta.SubscriptionType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000001;
+      subscriptionType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Subscription type of the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.SubscriptionType subscription_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubscriptionType() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      subscriptionType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata trialMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata,
+            com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.Builder,
+            com.google.cloud.alloydb.v1beta.Cluster.TrialMetadataOrBuilder>
+        trialMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the trialMetadata field is set.
+     */
+    public boolean hasTrialMetadata() {
+      return ((bitField1_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The trialMetadata.
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata getTrialMetadata() {
+      if (trialMetadataBuilder_ == null) {
+        return trialMetadata_ == null
+            ? com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.getDefaultInstance()
+            : trialMetadata_;
+      } else {
+        return trialMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTrialMetadata(com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata value) {
+      if (trialMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        trialMetadata_ = value;
+      } else {
+        trialMetadataBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTrialMetadata(
+        com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.Builder builderForValue) {
+      if (trialMetadataBuilder_ == null) {
+        trialMetadata_ = builderForValue.build();
+      } else {
+        trialMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeTrialMetadata(com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata value) {
+      if (trialMetadataBuilder_ == null) {
+        if (((bitField1_ & 0x00000002) != 0)
+            && trialMetadata_ != null
+            && trialMetadata_
+                != com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.getDefaultInstance()) {
+          getTrialMetadataBuilder().mergeFrom(value);
+        } else {
+          trialMetadata_ = value;
+        }
+      } else {
+        trialMetadataBuilder_.mergeFrom(value);
+      }
+      if (trialMetadata_ != null) {
+        bitField1_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearTrialMetadata() {
+      bitField1_ = (bitField1_ & ~0x00000002);
+      trialMetadata_ = null;
+      if (trialMetadataBuilder_ != null) {
+        trialMetadataBuilder_.dispose();
+        trialMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.Builder getTrialMetadataBuilder() {
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return getTrialMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Cluster.TrialMetadataOrBuilder
+        getTrialMetadataOrBuilder() {
+      if (trialMetadataBuilder_ != null) {
+        return trialMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return trialMetadata_ == null
+            ? com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.getDefaultInstance()
+            : trialMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata for free trial clusters
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Cluster.TrialMetadata trial_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata,
+            com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.Builder,
+            com.google.cloud.alloydb.v1beta.Cluster.TrialMetadataOrBuilder>
+        getTrialMetadataFieldBuilder() {
+      if (trialMetadataBuilder_ == null) {
+        trialMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata,
+                com.google.cloud.alloydb.v1beta.Cluster.TrialMetadata.Builder,
+                com.google.cloud.alloydb.v1beta.Cluster.TrialMetadataOrBuilder>(
+                getTrialMetadata(), getParentForChildren(), isClean());
+        trialMetadata_ = null;
+      }
+      return trialMetadataBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField1_ |= 0x00000004;
+      return internalGetMutableTags().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField1_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * ```
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 41 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField1_ |= 0x00000004;
+      return this;
     }
 
     @java.lang.Override

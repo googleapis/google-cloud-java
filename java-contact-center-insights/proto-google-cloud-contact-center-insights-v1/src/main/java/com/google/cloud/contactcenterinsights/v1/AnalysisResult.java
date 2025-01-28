@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -444,6 +444,70 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.contactcenterinsights.v1.IssueModelResultOrBuilder
         getIssueModelResultOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
+        getQaScorecardResultsList();
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    com.google.cloud.contactcenterinsights.v1.QaScorecardResult getQaScorecardResults(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    int getQaScorecardResultsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder>
+        getQaScorecardResultsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder
+        getQaScorecardResultsOrBuilder(int index);
   }
   /**
    *
@@ -467,6 +531,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
     private CallAnalysisMetadata() {
       annotations_ = java.util.Collections.emptyList();
       sentiments_ = java.util.Collections.emptyList();
+      qaScorecardResults_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1128,6 +1193,92 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           : issueModelResult_;
     }
 
+    public static final int QA_SCORECARD_RESULTS_FIELD_NUMBER = 10;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
+        qaScorecardResults_;
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
+        getQaScorecardResultsList() {
+      return qaScorecardResults_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder>
+        getQaScorecardResultsOrBuilderList() {
+      return qaScorecardResults_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public int getQaScorecardResultsCount() {
+      return qaScorecardResults_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.QaScorecardResult getQaScorecardResults(
+        int index) {
+      return qaScorecardResults_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Results of scoring QaScorecards.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder
+        getQaScorecardResultsOrBuilder(int index) {
+      return qaScorecardResults_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1156,6 +1307,9 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           output, internalGetPhraseMatchers(), PhraseMatchersDefaultEntryHolder.defaultEntry, 7);
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(8, getIssueModelResult());
+      }
+      for (int i = 0; i < qaScorecardResults_.size(); i++) {
+        output.writeMessage(10, qaScorecardResults_.get(i));
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(11, getSilence());
@@ -1215,6 +1369,11 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getIssueModelResult());
       }
+      for (int i = 0; i < qaScorecardResults_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10, qaScorecardResults_.get(i));
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSilence());
       }
@@ -1249,6 +1408,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       if (hasIssueModelResult()) {
         if (!getIssueModelResult().equals(other.getIssueModelResult())) return false;
       }
+      if (!getQaScorecardResultsList().equals(other.getQaScorecardResultsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1287,6 +1447,10 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
       if (hasIssueModelResult()) {
         hash = (37 * hash) + ISSUE_MODEL_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getIssueModelResult().hashCode();
+      }
+      if (getQaScorecardResultsCount() > 0) {
+        hash = (37 * hash) + QA_SCORECARD_RESULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getQaScorecardResultsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1474,6 +1638,7 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           getSentimentsFieldBuilder();
           getSilenceFieldBuilder();
           getIssueModelResultFieldBuilder();
+          getQaScorecardResultsFieldBuilder();
         }
       }
 
@@ -1508,6 +1673,13 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           issueModelResultBuilder_.dispose();
           issueModelResultBuilder_ = null;
         }
+        if (qaScorecardResultsBuilder_ == null) {
+          qaScorecardResults_ = java.util.Collections.emptyList();
+        } else {
+          qaScorecardResults_ = null;
+          qaScorecardResultsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -1566,6 +1738,15 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           result.sentiments_ = sentiments_;
         } else {
           result.sentiments_ = sentimentsBuilder_.build();
+        }
+        if (qaScorecardResultsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            qaScorecardResults_ = java.util.Collections.unmodifiableList(qaScorecardResults_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.qaScorecardResults_ = qaScorecardResults_;
+        } else {
+          result.qaScorecardResults_ = qaScorecardResultsBuilder_.build();
         }
       }
 
@@ -1717,6 +1898,33 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
         if (other.hasIssueModelResult()) {
           mergeIssueModelResult(other.getIssueModelResult());
         }
+        if (qaScorecardResultsBuilder_ == null) {
+          if (!other.qaScorecardResults_.isEmpty()) {
+            if (qaScorecardResults_.isEmpty()) {
+              qaScorecardResults_ = other.qaScorecardResults_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureQaScorecardResultsIsMutable();
+              qaScorecardResults_.addAll(other.qaScorecardResults_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.qaScorecardResults_.isEmpty()) {
+            if (qaScorecardResultsBuilder_.isEmpty()) {
+              qaScorecardResultsBuilder_.dispose();
+              qaScorecardResultsBuilder_ = null;
+              qaScorecardResults_ = other.qaScorecardResults_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              qaScorecardResultsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getQaScorecardResultsFieldBuilder()
+                      : null;
+            } else {
+              qaScorecardResultsBuilder_.addAllMessages(other.qaScorecardResults_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1822,6 +2030,20 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 66
+              case 82:
+                {
+                  com.google.cloud.contactcenterinsights.v1.QaScorecardResult m =
+                      input.readMessage(
+                          com.google.cloud.contactcenterinsights.v1.QaScorecardResult.parser(),
+                          extensionRegistry);
+                  if (qaScorecardResultsBuilder_ == null) {
+                    ensureQaScorecardResultsIsMutable();
+                    qaScorecardResults_.add(m);
+                  } else {
+                    qaScorecardResultsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
               case 90:
                 {
                   input.readMessage(getSilenceFieldBuilder().getBuilder(), extensionRegistry);
@@ -3782,6 +4004,413 @@ public final class AnalysisResult extends com.google.protobuf.GeneratedMessageV3
           issueModelResult_ = null;
         }
         return issueModelResultBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
+          qaScorecardResults_ = java.util.Collections.emptyList();
+
+      private void ensureQaScorecardResultsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          qaScorecardResults_ =
+              new java.util.ArrayList<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>(
+                  qaScorecardResults_);
+          bitField0_ |= 0x00000080;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.contactcenterinsights.v1.QaScorecardResult,
+              com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder,
+              com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder>
+          qaScorecardResultsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
+          getQaScorecardResultsList() {
+        if (qaScorecardResultsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(qaScorecardResults_);
+        } else {
+          return qaScorecardResultsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public int getQaScorecardResultsCount() {
+        if (qaScorecardResultsBuilder_ == null) {
+          return qaScorecardResults_.size();
+        } else {
+          return qaScorecardResultsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.QaScorecardResult getQaScorecardResults(
+          int index) {
+        if (qaScorecardResultsBuilder_ == null) {
+          return qaScorecardResults_.get(index);
+        } else {
+          return qaScorecardResultsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder setQaScorecardResults(
+          int index, com.google.cloud.contactcenterinsights.v1.QaScorecardResult value) {
+        if (qaScorecardResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQaScorecardResultsIsMutable();
+          qaScorecardResults_.set(index, value);
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder setQaScorecardResults(
+          int index,
+          com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder builderForValue) {
+        if (qaScorecardResultsBuilder_ == null) {
+          ensureQaScorecardResultsIsMutable();
+          qaScorecardResults_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder addQaScorecardResults(
+          com.google.cloud.contactcenterinsights.v1.QaScorecardResult value) {
+        if (qaScorecardResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQaScorecardResultsIsMutable();
+          qaScorecardResults_.add(value);
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder addQaScorecardResults(
+          int index, com.google.cloud.contactcenterinsights.v1.QaScorecardResult value) {
+        if (qaScorecardResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQaScorecardResultsIsMutable();
+          qaScorecardResults_.add(index, value);
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder addQaScorecardResults(
+          com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder builderForValue) {
+        if (qaScorecardResultsBuilder_ == null) {
+          ensureQaScorecardResultsIsMutable();
+          qaScorecardResults_.add(builderForValue.build());
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder addQaScorecardResults(
+          int index,
+          com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder builderForValue) {
+        if (qaScorecardResultsBuilder_ == null) {
+          ensureQaScorecardResultsIsMutable();
+          qaScorecardResults_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder addAllQaScorecardResults(
+          java.lang.Iterable<? extends com.google.cloud.contactcenterinsights.v1.QaScorecardResult>
+              values) {
+        if (qaScorecardResultsBuilder_ == null) {
+          ensureQaScorecardResultsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, qaScorecardResults_);
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder clearQaScorecardResults() {
+        if (qaScorecardResultsBuilder_ == null) {
+          qaScorecardResults_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public Builder removeQaScorecardResults(int index) {
+        if (qaScorecardResultsBuilder_ == null) {
+          ensureQaScorecardResultsIsMutable();
+          qaScorecardResults_.remove(index);
+          onChanged();
+        } else {
+          qaScorecardResultsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder
+          getQaScorecardResultsBuilder(int index) {
+        return getQaScorecardResultsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder
+          getQaScorecardResultsOrBuilder(int index) {
+        if (qaScorecardResultsBuilder_ == null) {
+          return qaScorecardResults_.get(index);
+        } else {
+          return qaScorecardResultsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder>
+          getQaScorecardResultsOrBuilderList() {
+        if (qaScorecardResultsBuilder_ != null) {
+          return qaScorecardResultsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(qaScorecardResults_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder
+          addQaScorecardResultsBuilder() {
+        return getQaScorecardResultsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.contactcenterinsights.v1.QaScorecardResult.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder
+          addQaScorecardResultsBuilder(int index) {
+        return getQaScorecardResultsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.contactcenterinsights.v1.QaScorecardResult.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Results of scoring QaScorecards.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.contactcenterinsights.v1.QaScorecardResult qa_scorecard_results = 10;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder>
+          getQaScorecardResultsBuilderList() {
+        return getQaScorecardResultsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.contactcenterinsights.v1.QaScorecardResult,
+              com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder,
+              com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder>
+          getQaScorecardResultsFieldBuilder() {
+        if (qaScorecardResultsBuilder_ == null) {
+          qaScorecardResultsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.contactcenterinsights.v1.QaScorecardResult,
+                  com.google.cloud.contactcenterinsights.v1.QaScorecardResult.Builder,
+                  com.google.cloud.contactcenterinsights.v1.QaScorecardResultOrBuilder>(
+                  qaScorecardResults_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          qaScorecardResults_ = null;
+        }
+        return qaScorecardResultsBuilder_;
       }
 
       @java.lang.Override

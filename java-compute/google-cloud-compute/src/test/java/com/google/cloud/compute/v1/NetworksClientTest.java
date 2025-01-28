@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -245,6 +245,7 @@ public class NetworksClientTest {
             .setName("name3373707")
             .setNetworkFirewallPolicyEnforcementOrder(
                 "networkFirewallPolicyEnforcementOrder1610545966")
+            .setNetworkProfile("networkProfile-2013096037")
             .addAllPeerings(new ArrayList<NetworkPeering>())
             .setRoutingConfig(NetworkRoutingConfig.newBuilder().build())
             .setSelfLink("selfLink1191800166")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.time_series is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=464
+   *     google/monitoring/v3/metric_service.proto;l=465
    * @return Whether the timeSeries field is set.
    */
   @java.lang.Deprecated
@@ -49,7 +49,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    * <code>.google.monitoring.v3.TimeSeries time_series = 1 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.time_series is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=464
+   *     google/monitoring/v3/metric_service.proto;l=465
    * @return The timeSeries.
    */
   @java.lang.Deprecated
@@ -76,7 +76,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.status is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=467
+   *     google/monitoring/v3/metric_service.proto;l=468
    * @return Whether the status field is set.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface CreateTimeSeriesErrorOrBuilder
    * <code>.google.rpc.Status status = 2 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.CreateTimeSeriesError.status is deprecated. See
-   *     google/monitoring/v3/metric_service.proto;l=467
+   *     google/monitoring/v3/metric_service.proto;l=468
    * @return The status.
    */
   @java.lang.Deprecated

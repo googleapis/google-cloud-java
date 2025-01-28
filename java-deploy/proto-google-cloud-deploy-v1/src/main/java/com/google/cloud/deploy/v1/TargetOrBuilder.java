@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -604,6 +604,111 @@ public interface TargetOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.CustomTargetOrBuilder getCustomTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAssociatedEntitiesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAssociatedEntities(java.lang.String key);
+  /** Use {@link #getAssociatedEntitiesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+      getAssociatedEntities();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.deploy.v1.AssociatedEntities>
+      getAssociatedEntitiesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.deploy.v1.AssociatedEntities getAssociatedEntitiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.deploy.v1.AssociatedEntities defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of entity IDs to their associated entities. Associated
+   * entities allows specifying places other than the deployment target for
+   * specific features. For example, the Gateway API canary can be configured to
+   * deploy the HTTPRoute to a different cluster(s) than the deployment cluster
+   * using associated entities. An entity ID must consist of lower-case letters,
+   * numbers, and hyphens, start with a letter and end with a letter or a
+   * number, and have a max length of 63 characters. In other words, it must
+   * match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.AssociatedEntities&gt; associated_entities = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.AssociatedEntities getAssociatedEntitiesOrThrow(java.lang.String key);
 
   /**
    *

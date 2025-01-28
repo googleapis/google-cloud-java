@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,14 @@ public final class CssProductCommonProto {
       internal_static_google_shopping_css_v1_CssProductStatus_ItemLevelIssue_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_css_v1_CssProductStatus_ItemLevelIssue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_css_v1_HeadlineOfferSubscriptionCost_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_css_v1_HeadlineOfferSubscriptionCost_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_css_v1_HeadlineOfferInstallment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_css_v1_HeadlineOfferInstallment_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -73,7 +81,7 @@ public final class CssProductCommonProto {
           + "mon.proto\022\026google.shopping.css.v1\032\037googl"
           + "e/api/field_behavior.proto\032\037google/proto"
           + "buf/timestamp.proto\032 google/shopping/typ"
-          + "e/types.proto\"\351\020\n\nAttributes\022\025\n\010cpp_link"
+          + "e/types.proto\"\240\022\n\nAttributes\022\025\n\010cpp_link"
           + "\030\001 \001(\tH\000\210\001\001\022\034\n\017cpp_mobile_link\030\002 \001(\tH\001\210\001"
           + "\001\022\035\n\020cpp_ads_redirect\030* \001(\tH\002\210\001\001\022.\n\tlow_"
           + "price\030\003 \001(\0132\033.google.shopping.type.Price"
@@ -114,49 +122,63 @@ public final class CssProductCommonProto {
           + "\210\001\001\022\033\n\016custom_label_0\030. \001(\tH\032\210\001\001\022\033\n\016cust"
           + "om_label_1\030/ \001(\tH\033\210\001\001\022\033\n\016custom_label_2\030"
           + "0 \001(\tH\034\210\001\001\022\033\n\016custom_label_3\0301 \001(\tH\035\210\001\001\022"
-          + "\033\n\016custom_label_4\0302 \001(\tH\036\210\001\001B\013\n\t_cpp_lin"
-          + "kB\022\n\020_cpp_mobile_linkB\023\n\021_cpp_ads_redire"
-          + "ctB\023\n\021_number_of_offersB\033\n\031_headline_off"
-          + "er_conditionB\026\n\024_headline_offer_linkB\035\n\033"
-          + "_headline_offer_mobile_linkB\010\n\006_titleB\r\n"
-          + "\013_image_linkB\016\n\014_descriptionB\010\n\006_brandB\006"
-          + "\n\004_mpnB\007\n\005_gtinB\032\n\030_google_product_categ"
-          + "oryB\010\n\006_adultB\014\n\n_multipackB\014\n\n_is_bundl"
-          + "eB\014\n\n_age_groupB\010\n\006_colorB\t\n\007_genderB\013\n\t"
-          + "_materialB\n\n\010_patternB\007\n\005_sizeB\016\n\014_size_"
-          + "systemB\020\n\016_item_group_idB\010\n\006_pauseB\021\n\017_c"
-          + "ustom_label_0B\021\n\017_custom_label_1B\021\n\017_cus"
-          + "tom_label_2B\021\n\017_custom_label_3B\021\n\017_custo"
-          + "m_label_4\">\n\rCertification\022\014\n\004name\030\001 \001(\t"
-          + "\022\021\n\tauthority\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"V\n\rPro"
-          + "ductDetail\022\024\n\014section_name\030\001 \001(\t\022\026\n\016attr"
-          + "ibute_name\030\002 \001(\t\022\027\n\017attribute_value\030\003 \001("
-          + "\t\"9\n\020ProductDimension\022\022\n\005value\030\001 \001(\001B\003\340A"
-          + "\002\022\021\n\004unit\030\002 \001(\tB\003\340A\002\"6\n\rProductWeight\022\022\n"
-          + "\005value\030\001 \001(\001B\003\340A\002\022\021\n\004unit\030\002 \001(\tB\003\340A\002\"\261\005\n"
-          + "\020CssProductStatus\022X\n\024destination_statuse"
-          + "s\030\003 \003(\0132:.google.shopping.css.v1.CssProd"
-          + "uctStatus.DestinationStatus\022R\n\021item_leve"
-          + "l_issues\030\004 \003(\01327.google.shopping.css.v1."
-          + "CssProductStatus.ItemLevelIssue\0221\n\rcreat"
-          + "ion_date\030\005 \001(\0132\032.google.protobuf.Timesta"
-          + "mp\0224\n\020last_update_date\030\006 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\022:\n\026google_expiration_da"
-          + "te\030\007 \001(\0132\032.google.protobuf.Timestamp\032~\n\021"
-          + "DestinationStatus\022\023\n\013destination\030\001 \001(\t\022\032"
-          + "\n\022approved_countries\030\002 \003(\t\022\031\n\021pending_co"
-          + "untries\030\003 \003(\t\022\035\n\025disapproved_countries\030\004"
-          + " \003(\t\032\311\001\n\016ItemLevelIssue\022\014\n\004code\030\001 \001(\t\022\023\n"
-          + "\013servability\030\002 \001(\t\022\022\n\nresolution\030\003 \001(\t\022\021"
-          + "\n\tattribute\030\004 \001(\t\022\023\n\013destination\030\005 \001(\t\022\023"
-          + "\n\013description\030\006 \001(\t\022\016\n\006detail\030\007 \001(\t\022\025\n\rd"
-          + "ocumentation\030\010 \001(\t\022\034\n\024applicable_countri"
-          + "es\030\t \003(\tB\267\001\n\032com.google.shopping.css.v1B"
-          + "\025CssProductCommonProtoP\001Z2cloud.google.c"
-          + "om/go/shopping/css/apiv1/csspb;csspb\252\002\026G"
-          + "oogle.Shopping.Css.V1\312\002\026Google\\Shopping\\"
-          + "Css\\V1\352\002\031Google::Shopping::Css::V1b\006prot"
-          + "o3"
+          + "\033\n\016custom_label_4\0302 \001(\tH\036\210\001\001\022T\n\032headline"
+          + "_offer_installment\0303 \001(\01320.google.shoppi"
+          + "ng.css.v1.HeadlineOfferInstallment\022_\n he"
+          + "adline_offer_subscription_cost\0304 \001(\01325.g"
+          + "oogle.shopping.css.v1.HeadlineOfferSubsc"
+          + "riptionCostB\013\n\t_cpp_linkB\022\n\020_cpp_mobile_"
+          + "linkB\023\n\021_cpp_ads_redirectB\023\n\021_number_of_"
+          + "offersB\033\n\031_headline_offer_conditionB\026\n\024_"
+          + "headline_offer_linkB\035\n\033_headline_offer_m"
+          + "obile_linkB\010\n\006_titleB\r\n\013_image_linkB\016\n\014_"
+          + "descriptionB\010\n\006_brandB\006\n\004_mpnB\007\n\005_gtinB\032"
+          + "\n\030_google_product_categoryB\010\n\006_adultB\014\n\n"
+          + "_multipackB\014\n\n_is_bundleB\014\n\n_age_groupB\010"
+          + "\n\006_colorB\t\n\007_genderB\013\n\t_materialB\n\n\010_pat"
+          + "ternB\007\n\005_sizeB\016\n\014_size_systemB\020\n\016_item_g"
+          + "roup_idB\010\n\006_pauseB\021\n\017_custom_label_0B\021\n\017"
+          + "_custom_label_1B\021\n\017_custom_label_2B\021\n\017_c"
+          + "ustom_label_3B\021\n\017_custom_label_4\">\n\rCert"
+          + "ification\022\014\n\004name\030\001 \001(\t\022\021\n\tauthority\030\002 \001"
+          + "(\t\022\014\n\004code\030\003 \001(\t\"V\n\rProductDetail\022\024\n\014sec"
+          + "tion_name\030\001 \001(\t\022\026\n\016attribute_name\030\002 \001(\t\022"
+          + "\027\n\017attribute_value\030\003 \001(\t\"9\n\020ProductDimen"
+          + "sion\022\022\n\005value\030\001 \001(\001B\003\340A\002\022\021\n\004unit\030\002 \001(\tB\003"
+          + "\340A\002\"6\n\rProductWeight\022\022\n\005value\030\001 \001(\001B\003\340A\002"
+          + "\022\021\n\004unit\030\002 \001(\tB\003\340A\002\"\261\005\n\020CssProductStatus"
+          + "\022X\n\024destination_statuses\030\003 \003(\0132:.google."
+          + "shopping.css.v1.CssProductStatus.Destina"
+          + "tionStatus\022R\n\021item_level_issues\030\004 \003(\01327."
+          + "google.shopping.css.v1.CssProductStatus."
+          + "ItemLevelIssue\0221\n\rcreation_date\030\005 \001(\0132\032."
+          + "google.protobuf.Timestamp\0224\n\020last_update"
+          + "_date\030\006 \001(\0132\032.google.protobuf.Timestamp\022"
+          + ":\n\026google_expiration_date\030\007 \001(\0132\032.google"
+          + ".protobuf.Timestamp\032~\n\021DestinationStatus"
+          + "\022\023\n\013destination\030\001 \001(\t\022\032\n\022approved_countr"
+          + "ies\030\002 \003(\t\022\031\n\021pending_countries\030\003 \003(\t\022\035\n\025"
+          + "disapproved_countries\030\004 \003(\t\032\311\001\n\016ItemLeve"
+          + "lIssue\022\014\n\004code\030\001 \001(\t\022\023\n\013servability\030\002 \001("
+          + "\t\022\022\n\nresolution\030\003 \001(\t\022\021\n\tattribute\030\004 \001(\t"
+          + "\022\023\n\013destination\030\005 \001(\t\022\023\n\013description\030\006 \001"
+          + "(\t\022\016\n\006detail\030\007 \001(\t\022\025\n\rdocumentation\030\010 \001("
+          + "\t\022\034\n\024applicable_countries\030\t \003(\t\"\237\001\n\035Head"
+          + "lineOfferSubscriptionCost\022:\n\006period\030\001 \001("
+          + "\0162*.google.shopping.css.v1.SubscriptionP"
+          + "eriod\022\025\n\rperiod_length\030\002 \001(\003\022+\n\006amount\030\003"
+          + " \001(\0132\033.google.shopping.type.Price\"\211\001\n\030He"
+          + "adlineOfferInstallment\022\016\n\006months\030\001 \001(\003\022+"
+          + "\n\006amount\030\002 \001(\0132\033.google.shopping.type.Pr"
+          + "ice\0220\n\013downpayment\030\003 \001(\0132\033.google.shoppi"
+          + "ng.type.Price*N\n\022SubscriptionPeriod\022#\n\037S"
+          + "UBSCRIPTION_PERIOD_UNSPECIFIED\020\000\022\t\n\005MONT"
+          + "H\020\001\022\010\n\004YEAR\020\002B\267\001\n\032com.google.shopping.cs"
+          + "s.v1B\025CssProductCommonProtoP\001Z2cloud.goo"
+          + "gle.com/go/shopping/css/apiv1/csspb;cssp"
+          + "b\252\002\026Google.Shopping.Css.V1\312\002\026Google\\Shop"
+          + "ping\\Css\\V1\352\002\031Google::Shopping::Css::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -220,6 +242,8 @@ public final class CssProductCommonProto {
               "CustomLabel2",
               "CustomLabel3",
               "CustomLabel4",
+              "HeadlineOfferInstallment",
+              "HeadlineOfferSubscriptionCost",
             });
     internal_static_google_shopping_css_v1_Certification_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -288,6 +312,22 @@ public final class CssProductCommonProto {
               "Detail",
               "Documentation",
               "ApplicableCountries",
+            });
+    internal_static_google_shopping_css_v1_HeadlineOfferSubscriptionCost_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_shopping_css_v1_HeadlineOfferSubscriptionCost_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_css_v1_HeadlineOfferSubscriptionCost_descriptor,
+            new java.lang.String[] {
+              "Period", "PeriodLength", "Amount",
+            });
+    internal_static_google_shopping_css_v1_HeadlineOfferInstallment_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_shopping_css_v1_HeadlineOfferInstallment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_css_v1_HeadlineOfferInstallment_descriptor,
+            new java.lang.String[] {
+              "Months", "Amount", "Downpayment",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

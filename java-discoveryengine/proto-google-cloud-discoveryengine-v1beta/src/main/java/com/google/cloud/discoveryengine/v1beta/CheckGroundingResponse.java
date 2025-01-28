@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
 
   private CheckGroundingResponse() {
     citedChunks_ = java.util.Collections.emptyList();
+    citedFacts_ = java.util.Collections.emptyList();
     claims_ = java.util.Collections.emptyList();
   }
 
@@ -64,6 +65,703 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
         .ensureFieldAccessorsInitialized(
             com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.class,
             com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Builder.class);
+  }
+
+  public interface CheckGroundingFactChunkOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Text content of the fact chunk. Can be at most 10K characters long.
+     * </pre>
+     *
+     * <code>string chunk_text = 1;</code>
+     *
+     * @return The chunkText.
+     */
+    java.lang.String getChunkText();
+    /**
+     *
+     *
+     * <pre>
+     * Text content of the fact chunk. Can be at most 10K characters long.
+     * </pre>
+     *
+     * <code>string chunk_text = 1;</code>
+     *
+     * @return The bytes for chunkText.
+     */
+    com.google.protobuf.ByteString getChunkTextBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fact chunk for grounding check.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk}
+   */
+  public static final class CheckGroundingFactChunk extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk)
+      CheckGroundingFactChunkOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CheckGroundingFactChunk.newBuilder() to construct.
+    private CheckGroundingFactChunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CheckGroundingFactChunk() {
+      chunkText_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CheckGroundingFactChunk();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.GroundedGenerationServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.GroundedGenerationServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                  .class,
+              com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                  .Builder.class);
+    }
+
+    public static final int CHUNK_TEXT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object chunkText_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Text content of the fact chunk. Can be at most 10K characters long.
+     * </pre>
+     *
+     * <code>string chunk_text = 1;</code>
+     *
+     * @return The chunkText.
+     */
+    @java.lang.Override
+    public java.lang.String getChunkText() {
+      java.lang.Object ref = chunkText_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        chunkText_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text content of the fact chunk. Can be at most 10K characters long.
+     * </pre>
+     *
+     * <code>string chunk_text = 1;</code>
+     *
+     * @return The bytes for chunkText.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getChunkTextBytes() {
+      java.lang.Object ref = chunkText_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        chunkText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chunkText_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, chunkText_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chunkText_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, chunkText_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk other =
+          (com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk)
+              obj;
+
+      if (!getChunkText().equals(other.getChunkText())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CHUNK_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getChunkText().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fact chunk for grounding check.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk)
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunkOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.GroundedGenerationServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.GroundedGenerationServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunk.class,
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunk.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        chunkText_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.GroundedGenerationServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_CheckGroundingResponse_CheckGroundingFactChunk_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+          build() {
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            result =
+                new com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunk(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.chunkText_ = chunkText_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                .CheckGroundingFactChunk) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                      .CheckGroundingFactChunk)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+              other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                .CheckGroundingFactChunk.getDefaultInstance()) return this;
+        if (!other.getChunkText().isEmpty()) {
+          chunkText_ = other.chunkText_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  chunkText_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object chunkText_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the fact chunk. Can be at most 10K characters long.
+       * </pre>
+       *
+       * <code>string chunk_text = 1;</code>
+       *
+       * @return The chunkText.
+       */
+      public java.lang.String getChunkText() {
+        java.lang.Object ref = chunkText_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          chunkText_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the fact chunk. Can be at most 10K characters long.
+       * </pre>
+       *
+       * <code>string chunk_text = 1;</code>
+       *
+       * @return The bytes for chunkText.
+       */
+      public com.google.protobuf.ByteString getChunkTextBytes() {
+        java.lang.Object ref = chunkText_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          chunkText_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the fact chunk. Can be at most 10K characters long.
+       * </pre>
+       *
+       * <code>string chunk_text = 1;</code>
+       *
+       * @param value The chunkText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChunkText(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        chunkText_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the fact chunk. Can be at most 10K characters long.
+       * </pre>
+       *
+       * <code>string chunk_text = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearChunkText() {
+        chunkText_ = getDefaultInstance().getChunkText();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the fact chunk. Can be at most 10K characters long.
+       * </pre>
+       *
+       * <code>string chunk_text = 1;</code>
+       *
+       * @param value The bytes for chunkText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChunkTextBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        chunkText_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk)
+    private static final com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+              .CheckGroundingFactChunk();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunk
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CheckGroundingFactChunk> PARSER =
+        new com.google.protobuf.AbstractParser<CheckGroundingFactChunk>() {
+          @java.lang.Override
+          public CheckGroundingFactChunk parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CheckGroundingFactChunk> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CheckGroundingFactChunk> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public interface ClaimOrBuilder
@@ -1722,6 +2420,102 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
     return citedChunks_.get(index);
   }
 
+  public static final int CITED_FACTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk>
+      citedFacts_;
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk>
+      getCitedFactsList() {
+    return citedFacts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                  .CheckGroundingFactChunkOrBuilder>
+      getCitedFactsOrBuilderList() {
+    return citedFacts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public int getCitedFactsCount() {
+    return citedFacts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+      getCitedFacts(int index) {
+    return citedFacts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of facts cited across all claims in the answer candidate.
+   * These are derived from the facts supplied in the request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+          .CheckGroundingFactChunkOrBuilder
+      getCitedFactsOrBuilder(int index) {
+    return citedFacts_.get(index);
+  }
+
   public static final int CLAIMS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -1825,6 +2619,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
     for (int i = 0; i < claims_.size(); i++) {
       output.writeMessage(4, claims_.get(i));
     }
+    for (int i = 0; i < citedFacts_.size(); i++) {
+      output.writeMessage(6, citedFacts_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1842,6 +2639,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
     }
     for (int i = 0; i < claims_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, claims_.get(i));
+    }
+    for (int i = 0; i < citedFacts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, citedFacts_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1865,6 +2665,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
           != java.lang.Float.floatToIntBits(other.getSupportScore())) return false;
     }
     if (!getCitedChunksList().equals(other.getCitedChunksList())) return false;
+    if (!getCitedFactsList().equals(other.getCitedFactsList())) return false;
     if (!getClaimsList().equals(other.getClaimsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1884,6 +2685,10 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
     if (getCitedChunksCount() > 0) {
       hash = (37 * hash) + CITED_CHUNKS_FIELD_NUMBER;
       hash = (53 * hash) + getCitedChunksList().hashCode();
+    }
+    if (getCitedFactsCount() > 0) {
+      hash = (37 * hash) + CITED_FACTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCitedFactsList().hashCode();
     }
     if (getClaimsCount() > 0) {
       hash = (37 * hash) + CLAIMS_FIELD_NUMBER;
@@ -2039,13 +2844,20 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
         citedChunksBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (citedFactsBuilder_ == null) {
+        citedFacts_ = java.util.Collections.emptyList();
+      } else {
+        citedFacts_ = null;
+        citedFactsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (claimsBuilder_ == null) {
         claims_ = java.util.Collections.emptyList();
       } else {
         claims_ = null;
         claimsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -2093,10 +2905,19 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       } else {
         result.citedChunks_ = citedChunksBuilder_.build();
       }
-      if (claimsBuilder_ == null) {
+      if (citedFactsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
-          claims_ = java.util.Collections.unmodifiableList(claims_);
+          citedFacts_ = java.util.Collections.unmodifiableList(citedFacts_);
           bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.citedFacts_ = citedFacts_;
+      } else {
+        result.citedFacts_ = citedFactsBuilder_.build();
+      }
+      if (claimsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          claims_ = java.util.Collections.unmodifiableList(claims_);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.claims_ = claims_;
       } else {
@@ -2192,11 +3013,38 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
           }
         }
       }
+      if (citedFactsBuilder_ == null) {
+        if (!other.citedFacts_.isEmpty()) {
+          if (citedFacts_.isEmpty()) {
+            citedFacts_ = other.citedFacts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureCitedFactsIsMutable();
+            citedFacts_.addAll(other.citedFacts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.citedFacts_.isEmpty()) {
+          if (citedFactsBuilder_.isEmpty()) {
+            citedFactsBuilder_.dispose();
+            citedFactsBuilder_ = null;
+            citedFacts_ = other.citedFacts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            citedFactsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCitedFactsFieldBuilder()
+                    : null;
+          } else {
+            citedFactsBuilder_.addAllMessages(other.citedFacts_);
+          }
+        }
+      }
       if (claimsBuilder_ == null) {
         if (!other.claims_.isEmpty()) {
           if (claims_.isEmpty()) {
             claims_ = other.claims_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureClaimsIsMutable();
             claims_.addAll(other.claims_);
@@ -2209,7 +3057,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
             claimsBuilder_.dispose();
             claimsBuilder_ = null;
             claims_ = other.claims_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             claimsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getClaimsFieldBuilder()
@@ -2280,6 +3128,23 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
                 }
                 break;
               } // case 34
+            case 50:
+              {
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                        .CheckGroundingFactChunk
+                    m =
+                        input.readMessage(
+                            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                                .CheckGroundingFactChunk.parser(),
+                            extensionRegistry);
+                if (citedFactsBuilder_ == null) {
+                  ensureCitedFactsIsMutable();
+                  citedFacts_.add(m);
+                } else {
+                  citedFactsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2751,15 +3616,471 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       return citedChunksBuilder_;
     }
 
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk>
+        citedFacts_ = java.util.Collections.emptyList();
+
+    private void ensureCitedFactsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        citedFacts_ =
+            new java.util.ArrayList<
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunk>(citedFacts_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk,
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                .Builder,
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                .CheckGroundingFactChunkOrBuilder>
+        citedFactsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk>
+        getCitedFactsList() {
+      if (citedFactsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(citedFacts_);
+      } else {
+        return citedFactsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public int getCitedFactsCount() {
+      if (citedFactsBuilder_ == null) {
+        return citedFacts_.size();
+      } else {
+        return citedFactsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+        getCitedFacts(int index) {
+      if (citedFactsBuilder_ == null) {
+        return citedFacts_.get(index);
+      } else {
+        return citedFactsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder setCitedFacts(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            value) {
+      if (citedFactsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCitedFactsIsMutable();
+        citedFacts_.set(index, value);
+        onChanged();
+      } else {
+        citedFactsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder setCitedFacts(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                .Builder
+            builderForValue) {
+      if (citedFactsBuilder_ == null) {
+        ensureCitedFactsIsMutable();
+        citedFacts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        citedFactsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder addCitedFacts(
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            value) {
+      if (citedFactsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCitedFactsIsMutable();
+        citedFacts_.add(value);
+        onChanged();
+      } else {
+        citedFactsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder addCitedFacts(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            value) {
+      if (citedFactsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCitedFactsIsMutable();
+        citedFacts_.add(index, value);
+        onChanged();
+      } else {
+        citedFactsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder addCitedFacts(
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                .Builder
+            builderForValue) {
+      if (citedFactsBuilder_ == null) {
+        ensureCitedFactsIsMutable();
+        citedFacts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        citedFactsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder addCitedFacts(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                .Builder
+            builderForValue) {
+      if (citedFactsBuilder_ == null) {
+        ensureCitedFactsIsMutable();
+        citedFacts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        citedFactsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder addAllCitedFacts(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                        .CheckGroundingFactChunk>
+            values) {
+      if (citedFactsBuilder_ == null) {
+        ensureCitedFactsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, citedFacts_);
+        onChanged();
+      } else {
+        citedFactsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder clearCitedFacts() {
+      if (citedFactsBuilder_ == null) {
+        citedFacts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        citedFactsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public Builder removeCitedFacts(int index) {
+      if (citedFactsBuilder_ == null) {
+        ensureCitedFactsIsMutable();
+        citedFacts_.remove(index);
+        onChanged();
+      } else {
+        citedFactsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            .Builder
+        getCitedFactsBuilder(int index) {
+      return getCitedFactsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+            .CheckGroundingFactChunkOrBuilder
+        getCitedFactsOrBuilder(int index) {
+      if (citedFactsBuilder_ == null) {
+        return citedFacts_.get(index);
+      } else {
+        return citedFactsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunkOrBuilder>
+        getCitedFactsOrBuilderList() {
+      if (citedFactsBuilder_ != null) {
+        return citedFactsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(citedFacts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            .Builder
+        addCitedFactsBuilder() {
+      return getCitedFactsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+            .Builder
+        addCitedFactsBuilder(int index) {
+      return getCitedFactsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of facts cited across all claims in the answer candidate.
+     * These are derived from the facts supplied in the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk cited_facts = 6;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                .Builder>
+        getCitedFactsBuilderList() {
+      return getCitedFactsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk,
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.CheckGroundingFactChunk
+                .Builder,
+            com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                .CheckGroundingFactChunkOrBuilder>
+        getCitedFactsFieldBuilder() {
+      if (citedFactsBuilder_ == null) {
+        citedFactsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunk,
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunk.Builder,
+                com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse
+                    .CheckGroundingFactChunkOrBuilder>(
+                citedFacts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        citedFacts_ = null;
+      }
+      return citedFactsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim>
         claims_ = java.util.Collections.emptyList();
 
     private void ensureClaimsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         claims_ =
             new java.util.ArrayList<
                 com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim>(claims_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2998,7 +4319,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
     public Builder clearClaims() {
       if (claimsBuilder_ == null) {
         claims_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         claimsBuilder_.clear();
@@ -3138,7 +4459,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
                 com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim,
                 com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.Builder,
                 com.google.cloud.discoveryengine.v1beta.CheckGroundingResponse.ClaimOrBuilder>(
-                claims_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                claims_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         claims_ = null;
       }
       return claimsBuilder_;

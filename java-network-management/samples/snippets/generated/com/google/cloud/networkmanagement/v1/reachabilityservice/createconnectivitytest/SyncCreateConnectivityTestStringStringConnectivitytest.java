@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1.samples;
 
 // [START networkmanagement_v1_generated_ReachabilityService_CreateConnectivityTest_StringStringConnectivitytest_sync]
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
+import com.google.cloud.networkmanagement.v1.ProjectName;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 
 public class SyncCreateConnectivityTestStringStringConnectivitytest {
@@ -33,7 +34,7 @@ public class SyncCreateConnectivityTestStringStringConnectivitytest {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
-      String parent = "parent-995424086";
+      String parent = ProjectName.of("[PROJECT]").toString();
       String testId = "testId-877170355";
       ConnectivityTest resource = ConnectivityTest.newBuilder().build();
       ConnectivityTest response =

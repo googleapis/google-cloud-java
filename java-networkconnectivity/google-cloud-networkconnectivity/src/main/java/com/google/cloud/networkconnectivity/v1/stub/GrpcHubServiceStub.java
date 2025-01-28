@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocat
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.QueryHubStatusPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -62,11 +63,14 @@ import com.google.cloud.networkconnectivity.v1.ListRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListSpokesRequest;
 import com.google.cloud.networkconnectivity.v1.ListSpokesResponse;
 import com.google.cloud.networkconnectivity.v1.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusRequest;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusResponse;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateGroupRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -141,6 +145,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   ProtoUtils.marshaller(ListHubSpokesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHubSpokesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<QueryHubStatusRequest, QueryHubStatusResponse>
+      queryHubStatusMethodDescriptor =
+          MethodDescriptor.<QueryHubStatusRequest, QueryHubStatusResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/QueryHubStatus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryHubStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryHubStatusResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListSpokesRequest, ListSpokesResponse>
@@ -259,6 +274,14 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateGroupRequest, Operation> updateGroupMethodDescriptor =
+      MethodDescriptor.<UpdateGroupRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/UpdateGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -320,6 +343,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<ListHubSpokesRequest, ListHubSpokesResponse> listHubSpokesCallable;
   private final UnaryCallable<ListHubSpokesRequest, ListHubSpokesPagedResponse>
       listHubSpokesPagedCallable;
+  private final UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse> queryHubStatusCallable;
+  private final UnaryCallable<QueryHubStatusRequest, QueryHubStatusPagedResponse>
+      queryHubStatusPagedCallable;
   private final UnaryCallable<ListSpokesRequest, ListSpokesResponse> listSpokesCallable;
   private final UnaryCallable<ListSpokesRequest, ListSpokesPagedResponse> listSpokesPagedCallable;
   private final UnaryCallable<GetSpokeRequest, Spoke> getSpokeCallable;
@@ -349,6 +375,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<GetGroupRequest, Group> getGroupCallable;
   private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
   private final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable;
+  private final UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable;
+  private final OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -460,6 +489,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<QueryHubStatusRequest, QueryHubStatusResponse>
+        queryHubStatusTransportSettings =
+            GrpcCallSettings.<QueryHubStatusRequest, QueryHubStatusResponse>newBuilder()
+                .setMethodDescriptor(queryHubStatusMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListSpokesRequest, ListSpokesResponse> listSpokesTransportSettings =
         GrpcCallSettings.<ListSpokesRequest, ListSpokesResponse>newBuilder()
             .setMethodDescriptor(listSpokesMethodDescriptor)
@@ -591,6 +631,16 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateGroupRequest, Operation> updateGroupTransportSettings =
+        GrpcCallSettings.<UpdateGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("group.name", String.valueOf(request.getGroup().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -685,6 +735,12 @@ public class GrpcHubServiceStub extends HubServiceStub {
     this.listHubSpokesPagedCallable =
         callableFactory.createPagedCallable(
             listHubSpokesTransportSettings, settings.listHubSpokesSettings(), clientContext);
+    this.queryHubStatusCallable =
+        callableFactory.createUnaryCallable(
+            queryHubStatusTransportSettings, settings.queryHubStatusSettings(), clientContext);
+    this.queryHubStatusPagedCallable =
+        callableFactory.createPagedCallable(
+            queryHubStatusTransportSettings, settings.queryHubStatusSettings(), clientContext);
     this.listSpokesCallable =
         callableFactory.createUnaryCallable(
             listSpokesTransportSettings, settings.listSpokesSettings(), clientContext);
@@ -766,6 +822,15 @@ public class GrpcHubServiceStub extends HubServiceStub {
     this.listGroupsPagedCallable =
         callableFactory.createPagedCallable(
             listGroupsTransportSettings, settings.listGroupsSettings(), clientContext);
+    this.updateGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
+    this.updateGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGroupTransportSettings,
+            settings.updateGroupOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -850,6 +915,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
   public UnaryCallable<ListHubSpokesRequest, ListHubSpokesPagedResponse>
       listHubSpokesPagedCallable() {
     return listHubSpokesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse> queryHubStatusCallable() {
+    return queryHubStatusCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryHubStatusRequest, QueryHubStatusPagedResponse>
+      queryHubStatusPagedCallable() {
+    return queryHubStatusPagedCallable;
   }
 
   @Override
@@ -966,6 +1042,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
   @Override
   public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
     return listGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable() {
+    return updateGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationCallable() {
+    return updateGroupOperationCallable;
   }
 
   @Override

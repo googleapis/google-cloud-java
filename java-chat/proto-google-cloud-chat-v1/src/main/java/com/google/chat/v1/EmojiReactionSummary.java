@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,10 +68,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Emoji associated with the reactions.
+   * Output only. Emoji associated with the reactions.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 1;</code>
+   * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the emoji field is set.
    */
@@ -83,10 +83,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Emoji associated with the reactions.
+   * Output only. Emoji associated with the reactions.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 1;</code>
+   * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The emoji.
    */
@@ -98,10 +98,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Emoji associated with the reactions.
+   * Output only. Emoji associated with the reactions.
    * </pre>
    *
-   * <code>.google.chat.v1.Emoji emoji = 1;</code>
+   * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.chat.v1.EmojiOrBuilder getEmojiOrBuilder() {
@@ -114,10 +114,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The total number of reactions using the associated emoji.
+   * Output only. The total number of reactions using the associated emoji.
    * </pre>
    *
-   * <code>optional int32 reaction_count = 2;</code>
+   * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the reactionCount field is set.
    */
@@ -129,10 +129,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The total number of reactions using the associated emoji.
+   * Output only. The total number of reactions using the associated emoji.
    * </pre>
    *
-   * <code>optional int32 reaction_count = 2;</code>
+   * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The reactionCount.
    */
@@ -538,10 +538,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the emoji field is set.
      */
@@ -552,10 +552,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The emoji.
      */
@@ -570,10 +570,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setEmoji(com.google.chat.v1.Emoji value) {
       if (emojiBuilder_ == null) {
@@ -592,10 +592,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setEmoji(com.google.chat.v1.Emoji.Builder builderForValue) {
       if (emojiBuilder_ == null) {
@@ -611,10 +611,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeEmoji(com.google.chat.v1.Emoji value) {
       if (emojiBuilder_ == null) {
@@ -638,10 +638,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearEmoji() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -657,10 +657,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.chat.v1.Emoji.Builder getEmojiBuilder() {
       bitField0_ |= 0x00000001;
@@ -671,10 +671,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.chat.v1.EmojiOrBuilder getEmojiOrBuilder() {
       if (emojiBuilder_ != null) {
@@ -687,10 +687,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Emoji associated with the reactions.
+     * Output only. Emoji associated with the reactions.
      * </pre>
      *
-     * <code>.google.chat.v1.Emoji emoji = 1;</code>
+     * <code>.google.chat.v1.Emoji emoji = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.Emoji,
@@ -713,10 +713,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The total number of reactions using the associated emoji.
+     * Output only. The total number of reactions using the associated emoji.
      * </pre>
      *
-     * <code>optional int32 reaction_count = 2;</code>
+     * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the reactionCount field is set.
      */
@@ -728,10 +728,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The total number of reactions using the associated emoji.
+     * Output only. The total number of reactions using the associated emoji.
      * </pre>
      *
-     * <code>optional int32 reaction_count = 2;</code>
+     * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The reactionCount.
      */
@@ -743,10 +743,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The total number of reactions using the associated emoji.
+     * Output only. The total number of reactions using the associated emoji.
      * </pre>
      *
-     * <code>optional int32 reaction_count = 2;</code>
+     * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The reactionCount to set.
      * @return This builder for chaining.
@@ -762,10 +762,10 @@ public final class EmojiReactionSummary extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The total number of reactions using the associated emoji.
+     * Output only. The total number of reactions using the associated emoji.
      * </pre>
      *
-     * <code>optional int32 reaction_count = 2;</code>
+     * <code>optional int32 reaction_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

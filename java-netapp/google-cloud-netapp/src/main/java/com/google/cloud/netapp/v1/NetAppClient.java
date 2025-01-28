@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,6 +167,21 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteStoragePoolOperationCallable()
  *           <li><p> deleteStoragePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ValidateDirectoryService</td>
+ *      <td><p> ValidateDirectoryService does a connectivity check for a directory service policy attached to the storage pool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceAsync(ValidateDirectoryServiceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceOperationCallable()
+ *           <li><p> validateDirectoryServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -761,6 +776,36 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> reverseReplicationDirectionOperationCallable()
  *           <li><p> reverseReplicationDirectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EstablishPeering</td>
+ *      <td><p> Establish replication peering.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> establishPeeringAsync(EstablishPeeringRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> establishPeeringOperationCallable()
+ *           <li><p> establishPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SyncReplication</td>
+ *      <td><p> Syncs the replication. This will invoke one time volume data transfer from source to destination.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> syncReplicationAsync(SyncReplicationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> syncReplicationOperationCallable()
+ *           <li><p> syncReplicationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1407,9 +1452,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
    * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
-   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -1447,9 +1491,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
    * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
-   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -1929,6 +1972,99 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   netAppClient.validateDirectoryServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> validateDirectoryServiceAsync(
+      ValidateDirectoryServiceRequest request) {
+    return validateDirectoryServiceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.validateDirectoryServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return stub.validateDirectoryServiceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.validateDirectoryServiceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return stub.validateDirectoryServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * This operation will switch the active/replica zone for a regional storagePool.
    *
    * <p>Sample code:
@@ -2312,9 +2448,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
    * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
-   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -2351,9 +2486,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
    * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
-   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -3116,9 +3250,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
    * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
-   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -3156,9 +3289,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
    * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
-   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -3840,9 +3972,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
    * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
-   *     the parent resource. Must contain only letters, numbers, underscore and hyphen, with the
-   *     first character a letter or underscore, the last a letter or underscore or a number, and a
-   *     63 character maximum.
+   *     the parent resource. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter , the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -3880,9 +4011,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
    * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
-   *     the parent resource. Must contain only letters, numbers, underscore and hyphen, with the
-   *     first character a letter or underscore, the last a letter or underscore or a number, and a
-   *     63 character maximum.
+   *     the parent resource. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter , the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -4459,9 +4589,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
    * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
-   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -4498,9 +4627,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
    * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
-   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -5433,9 +5561,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
    * @param replicationId Required. ID of the replication to create. Must be unique within the
-   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -5474,9 +5601,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
    * @param replicationId Required. ID of the replication to create. Must be unique within the
-   *     parent resource. Must contain only letters, numbers, underscore and hyphen, with the first
-   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
-   *     character maximum.
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -6134,6 +6260,203 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   Replication response = netAppClient.establishPeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Replication, OperationMetadata> establishPeeringAsync(
+      EstablishPeeringRequest request) {
+    return establishPeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   OperationFuture<Replication, OperationMetadata> future =
+   *       netAppClient.establishPeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Replication response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return stub.establishPeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.establishPeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return stub.establishPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   Replication response = netAppClient.syncReplicationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Replication, OperationMetadata> syncReplicationAsync(
+      SyncReplicationRequest request) {
+    return syncReplicationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Replication, OperationMetadata> future =
+   *       netAppClient.syncReplicationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Replication response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return stub.syncReplicationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.syncReplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return stub.syncReplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates new backup vault
    *
    * <p>Sample code:
@@ -6157,9 +6480,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupVault Required. A backupVault resource
    * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
-   *     the specified location. Must contain only letters, numbers, underscore and hyphen, with the
-   *     first character a letter or underscore, the last a letter or underscore or a number, and a
-   *     63 character maximum.
+   *     the specified location. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
@@ -6198,9 +6520,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupVault Required. A backupVault resource
    * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
-   *     the specified location. Must contain only letters, numbers, underscore and hyphen, with the
-   *     first character a letter or underscore, the last a letter or underscore or a number, and a
-   *     63 character maximum.
+   *     the specified location. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
@@ -6880,9 +7201,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
    * @param backup Required. A backup resource
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
-   *     specified backupVault. Must contain only letters, numbers, underscore and hyphen, with the
-   *     first character a letter or underscore, the last a letter or underscore or a number, and a
-   *     63 character maximum.
+   *     specified backupVault. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
@@ -6922,9 +7242,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
    * @param backup Required. A backup resource
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
-   *     specified backupVault. Must contain only letters, numbers, underscore and hyphen, with the
-   *     first character a letter or underscore, the last a letter or underscore or a number, and a
-   *     63 character maximum.
+   *     specified backupVault. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
@@ -7615,9 +7934,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupPolicy Required. A backupPolicy resource
    * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
-   *     within the specified location. Must contain only letters, numbers, underscore and hyphen,
-   *     with the first character a letter or underscore, the last a letter or underscore or a
-   *     number, and a 63 character maximum.
+   *     within the specified location. Must contain only letters, numbers and hyphen, with the
+   *     first character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
@@ -7656,9 +7974,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}`
    * @param backupPolicy Required. A backupPolicy resource
    * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
-   *     within the specified location. Must contain only letters, numbers, underscore and hyphen,
-   *     with the first character a letter or underscore, the last a letter or underscore or a
-   *     number, and a 63 character maximum.
+   *     within the specified location. Must contain only letters, numbers and hyphen, with the
+   *     first character a letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(

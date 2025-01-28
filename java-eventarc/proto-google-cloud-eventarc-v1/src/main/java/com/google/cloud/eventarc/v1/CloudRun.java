@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,7 +136,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The relative path on the Cloud Run service the events should be sent to.
+   * Optional. The relative path on the Cloud Run service the events should be
+   * sent to.
    *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -162,7 +163,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The relative path on the Cloud Run service the events should be sent to.
+   * Optional. The relative path on the Cloud Run service the events should be
+   * sent to.
    *
    * The value must conform to the definition of a URI path segment (section 3.3
    * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -764,7 +766,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the Cloud Run service the events should be sent to.
+     * Optional. The relative path on the Cloud Run service the events should be
+     * sent to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -789,7 +792,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the Cloud Run service the events should be sent to.
+     * Optional. The relative path on the Cloud Run service the events should be
+     * sent to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -814,7 +818,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the Cloud Run service the events should be sent to.
+     * Optional. The relative path on the Cloud Run service the events should be
+     * sent to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -838,7 +843,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the Cloud Run service the events should be sent to.
+     * Optional. The relative path on the Cloud Run service the events should be
+     * sent to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".
@@ -858,7 +864,8 @@ public final class CloudRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The relative path on the Cloud Run service the events should be sent to.
+     * Optional. The relative path on the Cloud Run service the events should be
+     * sent to.
      *
      * The value must conform to the definition of a URI path segment (section 3.3
      * of RFC2396). Examples: "/route", "route", "route/subroute".

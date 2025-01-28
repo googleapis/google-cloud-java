@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -234,7 +234,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*/operations/*}")
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -311,7 +311,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
-                                    "/v1/{name=projects/*/locations/*/identity_mapping_stores/*}/operations")
+                                    "/v1/{name=projects/*/locations/*/identityMappingStores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

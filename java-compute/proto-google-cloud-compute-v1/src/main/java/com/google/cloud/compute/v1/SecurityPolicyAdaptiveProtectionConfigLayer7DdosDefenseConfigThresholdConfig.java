@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   private SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig() {
     name_ = "";
+    trafficGranularityConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -154,6 +155,69 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     return autoDeployLoadThreshold_;
   }
 
+  public static final int DETECTION_ABSOLUTE_QPS_FIELD_NUMBER = 383123174;
+  private float detectionAbsoluteQps_ = 0F;
+  /**
+   * <code>optional float detection_absolute_qps = 383123174;</code>
+   *
+   * @return Whether the detectionAbsoluteQps field is set.
+   */
+  @java.lang.Override
+  public boolean hasDetectionAbsoluteQps() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional float detection_absolute_qps = 383123174;</code>
+   *
+   * @return The detectionAbsoluteQps.
+   */
+  @java.lang.Override
+  public float getDetectionAbsoluteQps() {
+    return detectionAbsoluteQps_;
+  }
+
+  public static final int DETECTION_LOAD_THRESHOLD_FIELD_NUMBER = 430499148;
+  private float detectionLoadThreshold_ = 0F;
+  /**
+   * <code>optional float detection_load_threshold = 430499148;</code>
+   *
+   * @return Whether the detectionLoadThreshold field is set.
+   */
+  @java.lang.Override
+  public boolean hasDetectionLoadThreshold() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional float detection_load_threshold = 430499148;</code>
+   *
+   * @return The detectionLoadThreshold.
+   */
+  @java.lang.Override
+  public float getDetectionLoadThreshold() {
+    return detectionLoadThreshold_;
+  }
+
+  public static final int DETECTION_RELATIVE_TO_BASELINE_QPS_FIELD_NUMBER = 291343749;
+  private float detectionRelativeToBaselineQps_ = 0F;
+  /**
+   * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+   *
+   * @return Whether the detectionRelativeToBaselineQps field is set.
+   */
+  @java.lang.Override
+  public boolean hasDetectionRelativeToBaselineQps() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+   *
+   * @return The detectionRelativeToBaselineQps.
+   */
+  @java.lang.Override
+  public float getDetectionRelativeToBaselineQps() {
+    return detectionRelativeToBaselineQps_;
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
 
   @SuppressWarnings("serial")
@@ -171,7 +235,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -220,6 +284,100 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     }
   }
 
+  public static final int TRAFFIC_GRANULARITY_CONFIGS_FIELD_NUMBER = 85367358;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.compute.v1
+              .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
+      trafficGranularityConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.compute.v1
+              .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
+      getTrafficGranularityConfigsList() {
+    return trafficGranularityConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder>
+      getTrafficGranularityConfigsOrBuilderList() {
+    return trafficGranularityConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  @java.lang.Override
+  public int getTrafficGranularityConfigsCount() {
+    return trafficGranularityConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1
+          .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+      getTrafficGranularityConfigs(int index) {
+    return trafficGranularityConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1
+          .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder
+      getTrafficGranularityConfigsOrBuilder(int index) {
+    return trafficGranularityConfigs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -234,7 +392,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -243,8 +401,20 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeFloat(84309694, autoDeployConfidenceThreshold_);
     }
+    for (int i = 0; i < trafficGranularityConfigs_.size(); i++) {
+      output.writeMessage(85367358, trafficGranularityConfigs_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeFloat(291343749, detectionRelativeToBaselineQps_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeFloat(292441667, autoDeployImpactedBaselineThreshold_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeFloat(383123174, detectionAbsoluteQps_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeFloat(430499148, detectionLoadThreshold_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeFloat(522227738, autoDeployLoadThreshold_);
@@ -258,7 +428,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -271,10 +441,29 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
           com.google.protobuf.CodedOutputStream.computeFloatSize(
               84309694, autoDeployConfidenceThreshold_);
     }
+    for (int i = 0; i < trafficGranularityConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              85367358, trafficGranularityConfigs_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeFloatSize(
+              291343749, detectionRelativeToBaselineQps_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(
               292441667, autoDeployImpactedBaselineThreshold_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeFloatSize(383123174, detectionAbsoluteQps_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeFloatSize(
+              430499148, detectionLoadThreshold_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
@@ -326,10 +515,29 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       if (java.lang.Float.floatToIntBits(getAutoDeployLoadThreshold())
           != java.lang.Float.floatToIntBits(other.getAutoDeployLoadThreshold())) return false;
     }
+    if (hasDetectionAbsoluteQps() != other.hasDetectionAbsoluteQps()) return false;
+    if (hasDetectionAbsoluteQps()) {
+      if (java.lang.Float.floatToIntBits(getDetectionAbsoluteQps())
+          != java.lang.Float.floatToIntBits(other.getDetectionAbsoluteQps())) return false;
+    }
+    if (hasDetectionLoadThreshold() != other.hasDetectionLoadThreshold()) return false;
+    if (hasDetectionLoadThreshold()) {
+      if (java.lang.Float.floatToIntBits(getDetectionLoadThreshold())
+          != java.lang.Float.floatToIntBits(other.getDetectionLoadThreshold())) return false;
+    }
+    if (hasDetectionRelativeToBaselineQps() != other.hasDetectionRelativeToBaselineQps())
+      return false;
+    if (hasDetectionRelativeToBaselineQps()) {
+      if (java.lang.Float.floatToIntBits(getDetectionRelativeToBaselineQps())
+          != java.lang.Float.floatToIntBits(other.getDetectionRelativeToBaselineQps()))
+        return false;
+    }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (!getTrafficGranularityConfigsList().equals(other.getTrafficGranularityConfigsList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -357,9 +565,25 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       hash = (37 * hash) + AUTO_DEPLOY_LOAD_THRESHOLD_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getAutoDeployLoadThreshold());
     }
+    if (hasDetectionAbsoluteQps()) {
+      hash = (37 * hash) + DETECTION_ABSOLUTE_QPS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getDetectionAbsoluteQps());
+    }
+    if (hasDetectionLoadThreshold()) {
+      hash = (37 * hash) + DETECTION_LOAD_THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getDetectionLoadThreshold());
+    }
+    if (hasDetectionRelativeToBaselineQps()) {
+      hash = (37 * hash) + DETECTION_RELATIVE_TO_BASELINE_QPS_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getDetectionRelativeToBaselineQps());
+    }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (getTrafficGranularityConfigsCount() > 0) {
+      hash = (37 * hash) + TRAFFIC_GRANULARITY_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTrafficGranularityConfigsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -531,7 +755,17 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       autoDeployExpirationSec_ = 0;
       autoDeployImpactedBaselineThreshold_ = 0F;
       autoDeployLoadThreshold_ = 0F;
+      detectionAbsoluteQps_ = 0F;
+      detectionLoadThreshold_ = 0F;
+      detectionRelativeToBaselineQps_ = 0F;
       name_ = "";
+      if (trafficGranularityConfigsBuilder_ == null) {
+        trafficGranularityConfigs_ = java.util.Collections.emptyList();
+      } else {
+        trafficGranularityConfigs_ = null;
+        trafficGranularityConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -573,11 +807,28 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
               new com.google.cloud.compute.v1
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig(
                   this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig
+            result) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          trafficGranularityConfigs_ =
+              java.util.Collections.unmodifiableList(trafficGranularityConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.trafficGranularityConfigs_ = trafficGranularityConfigs_;
+      } else {
+        result.trafficGranularityConfigs_ = trafficGranularityConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -603,8 +854,20 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.name_ = name_;
+        result.detectionAbsoluteQps_ = detectionAbsoluteQps_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.detectionLoadThreshold_ = detectionLoadThreshold_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.detectionRelativeToBaselineQps_ = detectionRelativeToBaselineQps_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -678,10 +941,46 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       if (other.hasAutoDeployLoadThreshold()) {
         setAutoDeployLoadThreshold(other.getAutoDeployLoadThreshold());
       }
+      if (other.hasDetectionAbsoluteQps()) {
+        setDetectionAbsoluteQps(other.getDetectionAbsoluteQps());
+      }
+      if (other.hasDetectionLoadThreshold()) {
+        setDetectionLoadThreshold(other.getDetectionLoadThreshold());
+      }
+      if (other.hasDetectionRelativeToBaselineQps()) {
+        setDetectionRelativeToBaselineQps(other.getDetectionRelativeToBaselineQps());
+      }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
+      }
+      if (trafficGranularityConfigsBuilder_ == null) {
+        if (!other.trafficGranularityConfigs_.isEmpty()) {
+          if (trafficGranularityConfigs_.isEmpty()) {
+            trafficGranularityConfigs_ = other.trafficGranularityConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureTrafficGranularityConfigsIsMutable();
+            trafficGranularityConfigs_.addAll(other.trafficGranularityConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.trafficGranularityConfigs_.isEmpty()) {
+          if (trafficGranularityConfigsBuilder_.isEmpty()) {
+            trafficGranularityConfigsBuilder_.dispose();
+            trafficGranularityConfigsBuilder_ = null;
+            trafficGranularityConfigs_ = other.trafficGranularityConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            trafficGranularityConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTrafficGranularityConfigsFieldBuilder()
+                    : null;
+          } else {
+            trafficGranularityConfigsBuilder_.addAllMessages(other.trafficGranularityConfigs_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -712,7 +1011,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26989658
             case 557110344:
@@ -727,12 +1026,48 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
                 bitField0_ |= 0x00000001;
                 break;
               } // case 674477557
+            case 682938866:
+              {
+                com.google.cloud.compute.v1
+                        .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                    m =
+                        input.readMessage(
+                            com.google.cloud.compute.v1
+                                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                                .parser(),
+                            extensionRegistry);
+                if (trafficGranularityConfigsBuilder_ == null) {
+                  ensureTrafficGranularityConfigsIsMutable();
+                  trafficGranularityConfigs_.add(m);
+                } else {
+                  trafficGranularityConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 682938866
+            case -1964217299:
+              {
+                detectionRelativeToBaselineQps_ = input.readFloat();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -1964217299
             case -1955433955:
               {
                 autoDeployImpactedBaselineThreshold_ = input.readFloat();
                 bitField0_ |= 0x00000004;
                 break;
               } // case -1955433955
+            case -1229981899:
+              {
+                detectionAbsoluteQps_ = input.readFloat();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -1229981899
+            case -850974107:
+              {
+                detectionLoadThreshold_ = input.readFloat();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -850974107
             case -117145387:
               {
                 autoDeployLoadThreshold_ = input.readFloat();
@@ -934,6 +1269,138 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       return this;
     }
 
+    private float detectionAbsoluteQps_;
+    /**
+     * <code>optional float detection_absolute_qps = 383123174;</code>
+     *
+     * @return Whether the detectionAbsoluteQps field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetectionAbsoluteQps() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional float detection_absolute_qps = 383123174;</code>
+     *
+     * @return The detectionAbsoluteQps.
+     */
+    @java.lang.Override
+    public float getDetectionAbsoluteQps() {
+      return detectionAbsoluteQps_;
+    }
+    /**
+     * <code>optional float detection_absolute_qps = 383123174;</code>
+     *
+     * @param value The detectionAbsoluteQps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDetectionAbsoluteQps(float value) {
+
+      detectionAbsoluteQps_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional float detection_absolute_qps = 383123174;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDetectionAbsoluteQps() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      detectionAbsoluteQps_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float detectionLoadThreshold_;
+    /**
+     * <code>optional float detection_load_threshold = 430499148;</code>
+     *
+     * @return Whether the detectionLoadThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetectionLoadThreshold() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional float detection_load_threshold = 430499148;</code>
+     *
+     * @return The detectionLoadThreshold.
+     */
+    @java.lang.Override
+    public float getDetectionLoadThreshold() {
+      return detectionLoadThreshold_;
+    }
+    /**
+     * <code>optional float detection_load_threshold = 430499148;</code>
+     *
+     * @param value The detectionLoadThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDetectionLoadThreshold(float value) {
+
+      detectionLoadThreshold_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional float detection_load_threshold = 430499148;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDetectionLoadThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      detectionLoadThreshold_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private float detectionRelativeToBaselineQps_;
+    /**
+     * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+     *
+     * @return Whether the detectionRelativeToBaselineQps field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetectionRelativeToBaselineQps() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+     *
+     * @return The detectionRelativeToBaselineQps.
+     */
+    @java.lang.Override
+    public float getDetectionRelativeToBaselineQps() {
+      return detectionRelativeToBaselineQps_;
+    }
+    /**
+     * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+     *
+     * @param value The detectionRelativeToBaselineQps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDetectionRelativeToBaselineQps(float value) {
+
+      detectionRelativeToBaselineQps_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDetectionRelativeToBaselineQps() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      detectionRelativeToBaselineQps_ = 0F;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -947,7 +1414,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1010,7 +1477,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1027,7 +1494,7 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1049,9 +1516,471 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
+    }
+
+    private java.util.List<
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
+        trafficGranularityConfigs_ = java.util.Collections.emptyList();
+
+    private void ensureTrafficGranularityConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        trafficGranularityConfigs_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1
+                    .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>(
+                trafficGranularityConfigs_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig,
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                .Builder,
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder>
+        trafficGranularityConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
+        getTrafficGranularityConfigsList() {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(trafficGranularityConfigs_);
+      } else {
+        return trafficGranularityConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public int getTrafficGranularityConfigsCount() {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        return trafficGranularityConfigs_.size();
+      } else {
+        return trafficGranularityConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public com.google.cloud.compute.v1
+            .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+        getTrafficGranularityConfigs(int index) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        return trafficGranularityConfigs_.get(index);
+      } else {
+        return trafficGranularityConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder setTrafficGranularityConfigs(
+        int index,
+        com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+            value) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTrafficGranularityConfigsIsMutable();
+        trafficGranularityConfigs_.set(index, value);
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder setTrafficGranularityConfigs(
+        int index,
+        com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                .Builder
+            builderForValue) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        ensureTrafficGranularityConfigsIsMutable();
+        trafficGranularityConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder addTrafficGranularityConfigs(
+        com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+            value) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTrafficGranularityConfigsIsMutable();
+        trafficGranularityConfigs_.add(value);
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder addTrafficGranularityConfigs(
+        int index,
+        com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+            value) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTrafficGranularityConfigsIsMutable();
+        trafficGranularityConfigs_.add(index, value);
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder addTrafficGranularityConfigs(
+        com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                .Builder
+            builderForValue) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        ensureTrafficGranularityConfigsIsMutable();
+        trafficGranularityConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder addTrafficGranularityConfigs(
+        int index,
+        com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                .Builder
+            builderForValue) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        ensureTrafficGranularityConfigsIsMutable();
+        trafficGranularityConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder addAllTrafficGranularityConfigs(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.compute.v1
+                        .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
+            values) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        ensureTrafficGranularityConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, trafficGranularityConfigs_);
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder clearTrafficGranularityConfigs() {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        trafficGranularityConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public Builder removeTrafficGranularityConfigs(int index) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        ensureTrafficGranularityConfigsIsMutable();
+        trafficGranularityConfigs_.remove(index);
+        onChanged();
+      } else {
+        trafficGranularityConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public com.google.cloud.compute.v1
+            .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+            .Builder
+        getTrafficGranularityConfigsBuilder(int index) {
+      return getTrafficGranularityConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public com.google.cloud.compute.v1
+            .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder
+        getTrafficGranularityConfigsOrBuilder(int index) {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        return trafficGranularityConfigs_.get(index);
+      } else {
+        return trafficGranularityConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1
+                    .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder>
+        getTrafficGranularityConfigsOrBuilderList() {
+      if (trafficGranularityConfigsBuilder_ != null) {
+        return trafficGranularityConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(trafficGranularityConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public com.google.cloud.compute.v1
+            .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+            .Builder
+        addTrafficGranularityConfigsBuilder() {
+      return getTrafficGranularityConfigsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1
+                  .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public com.google.cloud.compute.v1
+            .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+            .Builder
+        addTrafficGranularityConfigsBuilder(int index) {
+      return getTrafficGranularityConfigsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1
+                  .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig traffic_granularity_configs = 85367358;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                .Builder>
+        getTrafficGranularityConfigsBuilderList() {
+      return getTrafficGranularityConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig,
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                .Builder,
+            com.google.cloud.compute.v1
+                .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder>
+        getTrafficGranularityConfigsFieldBuilder() {
+      if (trafficGranularityConfigsBuilder_ == null) {
+        trafficGranularityConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1
+                    .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig,
+                com.google.cloud.compute.v1
+                    .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder>(
+                trafficGranularityConfigs_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        trafficGranularityConfigs_ = null;
+      }
+      return trafficGranularityConfigsBuilder_;
     }
 
     @java.lang.Override

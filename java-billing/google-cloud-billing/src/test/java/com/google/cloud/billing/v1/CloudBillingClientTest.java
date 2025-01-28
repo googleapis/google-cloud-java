@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,7 @@ public class CloudBillingClientTest {
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
             .setParent("parent-995424086")
+            .setCurrencyCode("currencyCode1004773790")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -140,6 +141,7 @@ public class CloudBillingClientTest {
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
             .setParent("parent-995424086")
+            .setCurrencyCode("currencyCode1004773790")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -273,6 +275,7 @@ public class CloudBillingClientTest {
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
             .setParent("parent-995424086")
+            .setCurrencyCode("currencyCode1004773790")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -319,6 +322,7 @@ public class CloudBillingClientTest {
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
             .setParent("parent-995424086")
+            .setCurrencyCode("currencyCode1004773790")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -365,6 +369,7 @@ public class CloudBillingClientTest {
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
             .setParent("parent-995424086")
+            .setCurrencyCode("currencyCode1004773790")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -408,6 +413,7 @@ public class CloudBillingClientTest {
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
             .setParent("parent-995424086")
+            .setCurrencyCode("currencyCode1004773790")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
@@ -921,6 +927,7 @@ public class CloudBillingClientTest {
             .setDisplayName("displayName1714148973")
             .setMasterBillingAccount("masterBillingAccount1488941620")
             .setParent("parent-995424086")
+            .setCurrencyCode("currencyCode1004773790")
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 

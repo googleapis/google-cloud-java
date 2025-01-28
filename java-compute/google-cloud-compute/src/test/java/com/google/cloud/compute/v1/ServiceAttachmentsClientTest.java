@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,7 @@ public class ServiceAttachmentsClientTest {
             .setName("name3373707")
             .addAllNatSubnets(new ArrayList<String>())
             .setProducerForwardingRule("producerForwardingRule-1240429621")
+            .setPropagatedConnectionLimit(-1814764418)
             .setPscServiceAttachmentId(Uint128.newBuilder().build())
             .setReconcileConnections(true)
             .setRegion("region-934795532")
@@ -282,7 +283,6 @@ public class ServiceAttachmentsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -538,7 +538,6 @@ public class ServiceAttachmentsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1849,6 +1849,69 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for sshServiceAttachment.
      */
     com.google.protobuf.ByteString getSshServiceAttachmentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the pscAllowedProjects.
+     */
+    java.util.List<java.lang.String> getPscAllowedProjectsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of pscAllowedProjects.
+     */
+    int getPscAllowedProjectsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The pscAllowedProjects at the given index.
+     */
+    java.lang.String getPscAllowedProjects(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the pscAllowedProjects at the given index.
+     */
+    com.google.protobuf.ByteString getPscAllowedProjectsBytes(int index);
   }
   /**
    *
@@ -1873,6 +1936,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       caPool_ = "";
       httpServiceAttachment_ = "";
       sshServiceAttachment_ = "";
+      pscAllowedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
@@ -2087,6 +2151,82 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int PSC_ALLOWED_PROJECTS_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList pscAllowedProjects_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the pscAllowedProjects.
+     */
+    public com.google.protobuf.ProtocolStringList getPscAllowedProjectsList() {
+      return pscAllowedProjects_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of pscAllowedProjects.
+     */
+    public int getPscAllowedProjectsCount() {
+      return pscAllowedProjects_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The pscAllowedProjects at the given index.
+     */
+    public java.lang.String getPscAllowedProjects(int index) {
+      return pscAllowedProjects_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional allowed projects for setting up PSC connections.
+     * Instance host project is automatically allowed and does not need to be
+     * included in this list.
+     * </pre>
+     *
+     * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the pscAllowedProjects at the given index.
+     */
+    public com.google.protobuf.ByteString getPscAllowedProjectsBytes(int index) {
+      return pscAllowedProjects_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2113,6 +2253,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sshServiceAttachment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sshServiceAttachment_);
       }
+      for (int i = 0; i < pscAllowedProjects_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 6, pscAllowedProjects_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2134,6 +2278,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sshServiceAttachment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sshServiceAttachment_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pscAllowedProjects_.size(); i++) {
+          dataSize += computeStringSizeNoTag(pscAllowedProjects_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPscAllowedProjectsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2154,6 +2306,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!getCaPool().equals(other.getCaPool())) return false;
       if (!getHttpServiceAttachment().equals(other.getHttpServiceAttachment())) return false;
       if (!getSshServiceAttachment().equals(other.getSshServiceAttachment())) return false;
+      if (!getPscAllowedProjectsList().equals(other.getPscAllowedProjectsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2173,6 +2326,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getHttpServiceAttachment().hashCode();
       hash = (37 * hash) + SSH_SERVICE_ATTACHMENT_FIELD_NUMBER;
       hash = (53 * hash) + getSshServiceAttachment().hashCode();
+      if (getPscAllowedProjectsCount() > 0) {
+        hash = (37 * hash) + PSC_ALLOWED_PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPscAllowedProjectsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2319,6 +2476,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         caPool_ = "";
         httpServiceAttachment_ = "";
         sshServiceAttachment_ = "";
+        pscAllowedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2368,6 +2526,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.sshServiceAttachment_ = sshServiceAttachment_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          pscAllowedProjects_.makeImmutable();
+          result.pscAllowedProjects_ = pscAllowedProjects_;
         }
       }
 
@@ -2439,6 +2601,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000008;
           onChanged();
         }
+        if (!other.pscAllowedProjects_.isEmpty()) {
+          if (pscAllowedProjects_.isEmpty()) {
+            pscAllowedProjects_ = other.pscAllowedProjects_;
+            bitField0_ |= 0x00000010;
+          } else {
+            ensurePscAllowedProjectsIsMutable();
+            pscAllowedProjects_.addAll(other.pscAllowedProjects_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2489,6 +2661,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 50:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePscAllowedProjectsIsMutable();
+                  pscAllowedProjects_.add(s);
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2926,6 +3105,207 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         sshServiceAttachment_ = value;
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList pscAllowedProjects_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensurePscAllowedProjectsIsMutable() {
+        if (!pscAllowedProjects_.isModifiable()) {
+          pscAllowedProjects_ = new com.google.protobuf.LazyStringArrayList(pscAllowedProjects_);
+        }
+        bitField0_ |= 0x00000010;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the pscAllowedProjects.
+       */
+      public com.google.protobuf.ProtocolStringList getPscAllowedProjectsList() {
+        pscAllowedProjects_.makeImmutable();
+        return pscAllowedProjects_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of pscAllowedProjects.
+       */
+      public int getPscAllowedProjectsCount() {
+        return pscAllowedProjects_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The pscAllowedProjects at the given index.
+       */
+      public java.lang.String getPscAllowedProjects(int index) {
+        return pscAllowedProjects_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the pscAllowedProjects at the given index.
+       */
+      public com.google.protobuf.ByteString getPscAllowedProjectsBytes(int index) {
+        return pscAllowedProjects_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The pscAllowedProjects to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPscAllowedProjects(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAllowedProjectsIsMutable();
+        pscAllowedProjects_.set(index, value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The pscAllowedProjects to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPscAllowedProjects(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAllowedProjectsIsMutable();
+        pscAllowedProjects_.add(value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The pscAllowedProjects to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPscAllowedProjects(java.lang.Iterable<java.lang.String> values) {
+        ensurePscAllowedProjectsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pscAllowedProjects_);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPscAllowedProjects() {
+        pscAllowedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional allowed projects for setting up PSC connections.
+       * Instance host project is automatically allowed and does not need to be
+       * included in this list.
+       * </pre>
+       *
+       * <code>repeated string psc_allowed_projects = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the pscAllowedProjects to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPscAllowedProjectsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePscAllowedProjectsIsMutable();
+        pscAllowedProjects_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }

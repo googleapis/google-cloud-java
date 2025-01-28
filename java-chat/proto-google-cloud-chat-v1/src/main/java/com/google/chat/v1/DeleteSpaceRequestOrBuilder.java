@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ public interface DeleteSpaceRequestOrBuilder
    *
    *
    * <pre>
-   * When `true`, the method runs using the user's Google Workspace
+   * Optional. When `true`, the method runs using the user's Google Workspace
    * administrator privileges.
    *
    * The calling user must be a Google Workspace administrator with the
@@ -72,7 +72,7 @@ public interface DeleteSpaceRequestOrBuilder
    * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
    * </pre>
    *
-   * <code>bool use_admin_access = 2;</code>
+   * <code>bool use_admin_access = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The useAdminAccess.
    */

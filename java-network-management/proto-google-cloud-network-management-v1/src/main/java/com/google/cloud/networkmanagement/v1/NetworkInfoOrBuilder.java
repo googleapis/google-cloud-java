@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,7 +78,32 @@ public interface NetworkInfoOrBuilder
    *
    *
    * <pre>
-   * The IP range that matches the test.
+   * URI of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string matched_subnet_uri = 5;</code>
+   *
+   * @return The matchedSubnetUri.
+   */
+  java.lang.String getMatchedSubnetUri();
+  /**
+   *
+   *
+   * <pre>
+   * URI of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string matched_subnet_uri = 5;</code>
+   *
+   * @return The bytes for matchedSubnetUri.
+   */
+  com.google.protobuf.ByteString getMatchedSubnetUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The IP range of the subnet matching the source IP address of the test.
    * </pre>
    *
    * <code>string matched_ip_range = 4;</code>
@@ -90,7 +115,7 @@ public interface NetworkInfoOrBuilder
    *
    *
    * <pre>
-   * The IP range that matches the test.
+   * The IP range of the subnet matching the source IP address of the test.
    * </pre>
    *
    * <code>string matched_ip_range = 4;</code>
@@ -98,4 +123,29 @@ public interface NetworkInfoOrBuilder
    * @return The bytes for matchedIpRange.
    */
   com.google.protobuf.ByteString getMatchedIpRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The region of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   *
+   *
+   * <pre>
+   * The region of the subnet matching the source IP address of the test.
+   * </pre>
+   *
+   * <code>string region = 6;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ public interface InitializeEncryptionSpecRequestOrBuilder
    * Required. The encryption spec used for CMEK encryption. It is required that
    * the kms key is in the same region as the endpoint. The same key will be
    * used for all provisioned resources, if encryption is available. If the
-   * kms_key_name is left empty, no encryption will be enforced.
+   * `kms_key_name` field is left empty, no encryption will be enforced.
    * </pre>
    *
    * <code>
@@ -48,7 +48,7 @@ public interface InitializeEncryptionSpecRequestOrBuilder
    * Required. The encryption spec used for CMEK encryption. It is required that
    * the kms key is in the same region as the endpoint. The same key will be
    * used for all provisioned resources, if encryption is available. If the
-   * kms_key_name is left empty, no encryption will be enforced.
+   * `kms_key_name` field is left empty, no encryption will be enforced.
    * </pre>
    *
    * <code>
@@ -65,7 +65,7 @@ public interface InitializeEncryptionSpecRequestOrBuilder
    * Required. The encryption spec used for CMEK encryption. It is required that
    * the kms key is in the same region as the endpoint. The same key will be
    * used for all provisioned resources, if encryption is available. If the
-   * kms_key_name is left empty, no encryption will be enforced.
+   * `kms_key_name` field is left empty, no encryption will be enforced.
    * </pre>
    *
    * <code>

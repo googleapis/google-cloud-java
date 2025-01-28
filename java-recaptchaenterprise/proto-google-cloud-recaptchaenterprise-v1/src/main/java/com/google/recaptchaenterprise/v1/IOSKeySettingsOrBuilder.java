@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,10 +97,10 @@ public interface IOSKeySettingsOrBuilder
    *
    * <pre>
    * Optional. Apple Developer account details for the app that is protected by
-   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-   * Providing these fields allows reCAPTCHA Enterprise to get a better
-   * assessment of the integrity of your app.
+   * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+   * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+   * these fields allows reCAPTCHA to get a better assessment of the integrity
+   * of your app.
    * </pre>
    *
    * <code>
@@ -115,10 +115,10 @@ public interface IOSKeySettingsOrBuilder
    *
    * <pre>
    * Optional. Apple Developer account details for the app that is protected by
-   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-   * Providing these fields allows reCAPTCHA Enterprise to get a better
-   * assessment of the integrity of your app.
+   * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+   * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+   * these fields allows reCAPTCHA to get a better assessment of the integrity
+   * of your app.
    * </pre>
    *
    * <code>
@@ -133,10 +133,10 @@ public interface IOSKeySettingsOrBuilder
    *
    * <pre>
    * Optional. Apple Developer account details for the app that is protected by
-   * the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks
-   * like Apple App Attest and Apple DeviceCheck to protect your app from abuse.
-   * Providing these fields allows reCAPTCHA Enterprise to get a better
-   * assessment of the integrity of your app.
+   * the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple
+   * App Attest and Apple DeviceCheck to protect your app from abuse. Providing
+   * these fields allows reCAPTCHA to get a better assessment of the integrity
+   * of your app.
    * </pre>
    *
    * <code>

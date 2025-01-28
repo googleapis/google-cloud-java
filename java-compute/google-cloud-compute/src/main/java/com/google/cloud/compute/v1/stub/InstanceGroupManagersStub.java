@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,8 +49,12 @@ import com.google.cloud.compute.v1.PatchInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.PatchPerInstanceConfigsInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.ResumeInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StartInstancesInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StopInstancesInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.SuspendInstancesInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.UpdatePerInstanceConfigsInstanceGroupManagerRequest;
 import javax.annotation.Generated;
 
@@ -235,6 +239,16 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: resizeCallable()");
   }
 
+  public OperationCallable<ResumeInstancesInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<ResumeInstancesInstanceGroupManagerRequest, Operation>
+      resumeInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumeInstancesCallable()");
+  }
+
   public OperationCallable<SetInstanceTemplateInstanceGroupManagerRequest, Operation, Operation>
       setInstanceTemplateOperationCallable() {
     throw new UnsupportedOperationException(
@@ -254,6 +268,36 @@ public abstract class InstanceGroupManagersStub implements BackgroundResource {
   public UnaryCallable<SetTargetPoolsInstanceGroupManagerRequest, Operation>
       setTargetPoolsCallable() {
     throw new UnsupportedOperationException("Not implemented: setTargetPoolsCallable()");
+  }
+
+  public OperationCallable<StartInstancesInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<StartInstancesInstanceGroupManagerRequest, Operation>
+      startInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: startInstancesCallable()");
+  }
+
+  public OperationCallable<StopInstancesInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<StopInstancesInstanceGroupManagerRequest, Operation>
+      stopInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopInstancesCallable()");
+  }
+
+  public OperationCallable<SuspendInstancesInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: suspendInstancesOperationCallable()");
+  }
+
+  public UnaryCallable<SuspendInstancesInstanceGroupManagerRequest, Operation>
+      suspendInstancesCallable() {
+    throw new UnsupportedOperationException("Not implemented: suspendInstancesCallable()");
   }
 
   public OperationCallable<

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.shopping.css.v1.stub.HttpJsonCssProductInputsServiceStub;
 import com.google.shopping.type.CustomAttribute;
@@ -130,6 +131,79 @@ public class CssProductInputsServiceClientHttpJsonTest {
               .setFeedId(-976011428)
               .build();
       client.insertCssProductInput(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCssProductInputTest() throws Exception {
+    CssProductInput expectedResponse =
+        CssProductInput.newBuilder()
+            .setName(CssProductInputName.of("[ACCOUNT]", "[CSS_PRODUCT_INPUT]").toString())
+            .setFinalName("finalName355075361")
+            .setRawProvidedId("rawProvidedId-637295450")
+            .setContentLanguage("contentLanguage810066673")
+            .setFeedLabel("feedLabel-1661895690")
+            .setFreshnessTime(Timestamp.newBuilder().build())
+            .setAttributes(Attributes.newBuilder().build())
+            .addAllCustomAttributes(new ArrayList<CustomAttribute>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CssProductInput cssProductInput =
+        CssProductInput.newBuilder()
+            .setName(CssProductInputName.of("[ACCOUNT]", "[CSS_PRODUCT_INPUT]").toString())
+            .setFinalName("finalName355075361")
+            .setRawProvidedId("rawProvidedId-637295450")
+            .setContentLanguage("contentLanguage810066673")
+            .setFeedLabel("feedLabel-1661895690")
+            .setFreshnessTime(Timestamp.newBuilder().build())
+            .setAttributes(Attributes.newBuilder().build())
+            .addAllCustomAttributes(new ArrayList<CustomAttribute>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CssProductInput actualResponse = client.updateCssProductInput(cssProductInput, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCssProductInputExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CssProductInput cssProductInput =
+          CssProductInput.newBuilder()
+              .setName(CssProductInputName.of("[ACCOUNT]", "[CSS_PRODUCT_INPUT]").toString())
+              .setFinalName("finalName355075361")
+              .setRawProvidedId("rawProvidedId-637295450")
+              .setContentLanguage("contentLanguage810066673")
+              .setFeedLabel("feedLabel-1661895690")
+              .setFreshnessTime(Timestamp.newBuilder().build())
+              .setAttributes(Attributes.newBuilder().build())
+              .addAllCustomAttributes(new ArrayList<CustomAttribute>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCssProductInput(cssProductInput, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

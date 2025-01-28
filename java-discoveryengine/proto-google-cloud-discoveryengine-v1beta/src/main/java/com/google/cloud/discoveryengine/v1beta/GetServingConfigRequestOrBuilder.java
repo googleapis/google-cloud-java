@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface GetServingConfigRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the ServingConfig to get. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface GetServingConfigRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the ServingConfig to get. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>

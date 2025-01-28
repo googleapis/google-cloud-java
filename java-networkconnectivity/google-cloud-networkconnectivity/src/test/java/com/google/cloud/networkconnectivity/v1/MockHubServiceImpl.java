@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,6 +176,27 @@ public class MockHubServiceImpl extends HubServiceImplBase {
                   "Unrecognized response type %s for method ListHubSpokes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListHubSpokesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryHubStatus(
+      QueryHubStatusRequest request, StreamObserver<QueryHubStatusResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryHubStatusResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryHubStatusResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryHubStatus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryHubStatusResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -443,6 +464,26 @@ public class MockHubServiceImpl extends HubServiceImplBase {
                   "Unrecognized response type %s for method ListGroups, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGroupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGroup(UpdateGroupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

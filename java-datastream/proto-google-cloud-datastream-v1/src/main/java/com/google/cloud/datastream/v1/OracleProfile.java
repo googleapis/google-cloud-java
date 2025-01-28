@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  * <pre>
  * Oracle database profile.
+ * Next ID: 10.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.OracleProfile}
@@ -43,6 +44,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     username_ = "";
     password_ = "";
     databaseService_ = "";
+    secretManagerStoredPassword_ = "";
   }
 
   @java.lang.Override
@@ -78,6 +80,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.OracleProfile.Builder.class);
   }
 
+  private int bitField0_;
   public static final int HOSTNAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -206,10 +209,11 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Password for the Oracle connection.
+   * Optional. Password for the Oracle connection. Mutually exclusive with the
+   * `secret_manager_stored_password` field.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The password.
    */
@@ -229,10 +233,11 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Password for the Oracle connection.
+   * Optional. Password for the Oracle connection. Mutually exclusive with the
+   * `secret_manager_stored_password` field.
    * </pre>
    *
-   * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for password.
    */
@@ -406,6 +411,173 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int ORACLE_SSL_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.datastream.v1.OracleSslConfig oracleSslConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the Oracle connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the oracleSslConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOracleSslConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the Oracle connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The oracleSslConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleSslConfig getOracleSslConfig() {
+    return oracleSslConfig_ == null
+        ? com.google.cloud.datastream.v1.OracleSslConfig.getDefaultInstance()
+        : oracleSslConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the Oracle connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleSslConfigOrBuilder getOracleSslConfigOrBuilder() {
+    return oracleSslConfig_ == null
+        ? com.google.cloud.datastream.v1.OracleSslConfig.getDefaultInstance()
+        : oracleSslConfig_;
+  }
+
+  public static final int ORACLE_ASM_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.datastream.v1.OracleAsmConfig oracleAsmConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Oracle ASM connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the oracleAsmConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasOracleAsmConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Oracle ASM connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The oracleAsmConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleAsmConfig getOracleAsmConfig() {
+    return oracleAsmConfig_ == null
+        ? com.google.cloud.datastream.v1.OracleAsmConfig.getDefaultInstance()
+        : oracleAsmConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for Oracle ASM connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.OracleAsmConfigOrBuilder getOracleAsmConfigOrBuilder() {
+    return oracleAsmConfig_ == null
+        ? com.google.cloud.datastream.v1.OracleAsmConfig.getDefaultInstance()
+        : oracleAsmConfig_;
+  }
+
+  public static final int SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretManagerStoredPassword_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  @java.lang.Override
+  public java.lang.String getSecretManagerStoredPassword() {
+    java.lang.Object ref = secretManagerStoredPassword_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secretManagerStoredPassword_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the Oracle
+   * connection password. Mutually exclusive with the `password` field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes() {
+    java.lang.Object ref = secretManagerStoredPassword_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      secretManagerStoredPassword_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -440,6 +612,15 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         internalGetConnectionAttributes(),
         ConnectionAttributesDefaultEntryHolder.defaultEntry,
         6);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getOracleSslConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getOracleAsmConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretManagerStoredPassword_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, secretManagerStoredPassword_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -474,6 +655,16 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, connectionAttributes__);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getOracleSslConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getOracleAsmConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretManagerStoredPassword_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(9, secretManagerStoredPassword_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -496,6 +687,16 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     if (!getPassword().equals(other.getPassword())) return false;
     if (!getDatabaseService().equals(other.getDatabaseService())) return false;
     if (!internalGetConnectionAttributes().equals(other.internalGetConnectionAttributes()))
+      return false;
+    if (hasOracleSslConfig() != other.hasOracleSslConfig()) return false;
+    if (hasOracleSslConfig()) {
+      if (!getOracleSslConfig().equals(other.getOracleSslConfig())) return false;
+    }
+    if (hasOracleAsmConfig() != other.hasOracleAsmConfig()) return false;
+    if (hasOracleAsmConfig()) {
+      if (!getOracleAsmConfig().equals(other.getOracleAsmConfig())) return false;
+    }
+    if (!getSecretManagerStoredPassword().equals(other.getSecretManagerStoredPassword()))
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -522,6 +723,16 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CONNECTION_ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetConnectionAttributes().hashCode();
     }
+    if (hasOracleSslConfig()) {
+      hash = (37 * hash) + ORACLE_SSL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOracleSslConfig().hashCode();
+    }
+    if (hasOracleAsmConfig()) {
+      hash = (37 * hash) + ORACLE_ASM_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getOracleAsmConfig().hashCode();
+    }
+    hash = (37 * hash) + SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER;
+    hash = (53 * hash) + getSecretManagerStoredPassword().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -627,6 +838,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Oracle database profile.
+   * Next ID: 10.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.OracleProfile}
@@ -673,10 +885,20 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.datastream.v1.OracleProfile.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getOracleSslConfigFieldBuilder();
+        getOracleAsmConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -689,6 +911,17 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       password_ = "";
       databaseService_ = "";
       internalGetMutableConnectionAttributes().clear();
+      oracleSslConfig_ = null;
+      if (oracleSslConfigBuilder_ != null) {
+        oracleSslConfigBuilder_.dispose();
+        oracleSslConfigBuilder_ = null;
+      }
+      oracleAsmConfig_ = null;
+      if (oracleAsmConfigBuilder_ != null) {
+        oracleAsmConfigBuilder_.dispose();
+        oracleAsmConfigBuilder_ = null;
+      }
+      secretManagerStoredPassword_ = "";
       return this;
     }
 
@@ -744,6 +977,21 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         result.connectionAttributes_ = internalGetConnectionAttributes();
         result.connectionAttributes_.makeImmutable();
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.oracleSslConfig_ =
+            oracleSslConfigBuilder_ == null ? oracleSslConfig_ : oracleSslConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.oracleAsmConfig_ =
+            oracleAsmConfigBuilder_ == null ? oracleAsmConfig_ : oracleAsmConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.secretManagerStoredPassword_ = secretManagerStoredPassword_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -816,6 +1064,17 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableConnectionAttributes().mergeFrom(other.internalGetConnectionAttributes());
       bitField0_ |= 0x00000020;
+      if (other.hasOracleSslConfig()) {
+        mergeOracleSslConfig(other.getOracleSslConfig());
+      }
+      if (other.hasOracleAsmConfig()) {
+        mergeOracleAsmConfig(other.getOracleAsmConfig());
+      }
+      if (!other.getSecretManagerStoredPassword().isEmpty()) {
+        secretManagerStoredPassword_ = other.secretManagerStoredPassword_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -885,6 +1144,24 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getOracleSslConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getOracleAsmConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                secretManagerStoredPassword_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1174,10 +1451,11 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Password for the Oracle connection.
+     * Optional. Password for the Oracle connection. Mutually exclusive with the
+     * `secret_manager_stored_password` field.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The password.
      */
@@ -1196,10 +1474,11 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Password for the Oracle connection.
+     * Optional. Password for the Oracle connection. Mutually exclusive with the
+     * `secret_manager_stored_password` field.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for password.
      */
@@ -1218,10 +1497,11 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Password for the Oracle connection.
+     * Optional. Password for the Oracle connection. Mutually exclusive with the
+     * `secret_manager_stored_password` field.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The password to set.
      * @return This builder for chaining.
@@ -1239,10 +1519,11 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Password for the Oracle connection.
+     * Optional. Password for the Oracle connection. Mutually exclusive with the
+     * `secret_manager_stored_password` field.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1256,10 +1537,11 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Password for the Oracle connection.
+     * Optional. Password for the Oracle connection. Mutually exclusive with the
+     * `secret_manager_stored_password` field.
      * </pre>
      *
-     * <code>string password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for password to set.
      * @return This builder for chaining.
@@ -1548,6 +1830,532 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableConnectionAttributes().getMutableMap().putAll(values);
       bitField0_ |= 0x00000020;
+      return this;
+    }
+
+    private com.google.cloud.datastream.v1.OracleSslConfig oracleSslConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleSslConfig,
+            com.google.cloud.datastream.v1.OracleSslConfig.Builder,
+            com.google.cloud.datastream.v1.OracleSslConfigOrBuilder>
+        oracleSslConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the oracleSslConfig field is set.
+     */
+    public boolean hasOracleSslConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The oracleSslConfig.
+     */
+    public com.google.cloud.datastream.v1.OracleSslConfig getOracleSslConfig() {
+      if (oracleSslConfigBuilder_ == null) {
+        return oracleSslConfig_ == null
+            ? com.google.cloud.datastream.v1.OracleSslConfig.getDefaultInstance()
+            : oracleSslConfig_;
+      } else {
+        return oracleSslConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOracleSslConfig(com.google.cloud.datastream.v1.OracleSslConfig value) {
+      if (oracleSslConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        oracleSslConfig_ = value;
+      } else {
+        oracleSslConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOracleSslConfig(
+        com.google.cloud.datastream.v1.OracleSslConfig.Builder builderForValue) {
+      if (oracleSslConfigBuilder_ == null) {
+        oracleSslConfig_ = builderForValue.build();
+      } else {
+        oracleSslConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOracleSslConfig(com.google.cloud.datastream.v1.OracleSslConfig value) {
+      if (oracleSslConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && oracleSslConfig_ != null
+            && oracleSslConfig_
+                != com.google.cloud.datastream.v1.OracleSslConfig.getDefaultInstance()) {
+          getOracleSslConfigBuilder().mergeFrom(value);
+        } else {
+          oracleSslConfig_ = value;
+        }
+      } else {
+        oracleSslConfigBuilder_.mergeFrom(value);
+      }
+      if (oracleSslConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOracleSslConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      oracleSslConfig_ = null;
+      if (oracleSslConfigBuilder_ != null) {
+        oracleSslConfigBuilder_.dispose();
+        oracleSslConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.OracleSslConfig.Builder getOracleSslConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getOracleSslConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.OracleSslConfigOrBuilder getOracleSslConfigOrBuilder() {
+      if (oracleSslConfigBuilder_ != null) {
+        return oracleSslConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return oracleSslConfig_ == null
+            ? com.google.cloud.datastream.v1.OracleSslConfig.getDefaultInstance()
+            : oracleSslConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the Oracle connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleSslConfig oracle_ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleSslConfig,
+            com.google.cloud.datastream.v1.OracleSslConfig.Builder,
+            com.google.cloud.datastream.v1.OracleSslConfigOrBuilder>
+        getOracleSslConfigFieldBuilder() {
+      if (oracleSslConfigBuilder_ == null) {
+        oracleSslConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.OracleSslConfig,
+                com.google.cloud.datastream.v1.OracleSslConfig.Builder,
+                com.google.cloud.datastream.v1.OracleSslConfigOrBuilder>(
+                getOracleSslConfig(), getParentForChildren(), isClean());
+        oracleSslConfig_ = null;
+      }
+      return oracleSslConfigBuilder_;
+    }
+
+    private com.google.cloud.datastream.v1.OracleAsmConfig oracleAsmConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleAsmConfig,
+            com.google.cloud.datastream.v1.OracleAsmConfig.Builder,
+            com.google.cloud.datastream.v1.OracleAsmConfigOrBuilder>
+        oracleAsmConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the oracleAsmConfig field is set.
+     */
+    public boolean hasOracleAsmConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The oracleAsmConfig.
+     */
+    public com.google.cloud.datastream.v1.OracleAsmConfig getOracleAsmConfig() {
+      if (oracleAsmConfigBuilder_ == null) {
+        return oracleAsmConfig_ == null
+            ? com.google.cloud.datastream.v1.OracleAsmConfig.getDefaultInstance()
+            : oracleAsmConfig_;
+      } else {
+        return oracleAsmConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOracleAsmConfig(com.google.cloud.datastream.v1.OracleAsmConfig value) {
+      if (oracleAsmConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        oracleAsmConfig_ = value;
+      } else {
+        oracleAsmConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOracleAsmConfig(
+        com.google.cloud.datastream.v1.OracleAsmConfig.Builder builderForValue) {
+      if (oracleAsmConfigBuilder_ == null) {
+        oracleAsmConfig_ = builderForValue.build();
+      } else {
+        oracleAsmConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOracleAsmConfig(com.google.cloud.datastream.v1.OracleAsmConfig value) {
+      if (oracleAsmConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && oracleAsmConfig_ != null
+            && oracleAsmConfig_
+                != com.google.cloud.datastream.v1.OracleAsmConfig.getDefaultInstance()) {
+          getOracleAsmConfigBuilder().mergeFrom(value);
+        } else {
+          oracleAsmConfig_ = value;
+        }
+      } else {
+        oracleAsmConfigBuilder_.mergeFrom(value);
+      }
+      if (oracleAsmConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOracleAsmConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      oracleAsmConfig_ = null;
+      if (oracleAsmConfigBuilder_ != null) {
+        oracleAsmConfigBuilder_.dispose();
+        oracleAsmConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.OracleAsmConfig.Builder getOracleAsmConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getOracleAsmConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.OracleAsmConfigOrBuilder getOracleAsmConfigOrBuilder() {
+      if (oracleAsmConfigBuilder_ != null) {
+        return oracleAsmConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return oracleAsmConfig_ == null
+            ? com.google.cloud.datastream.v1.OracleAsmConfig.getDefaultInstance()
+            : oracleAsmConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for Oracle ASM connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.OracleAsmConfig oracle_asm_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.OracleAsmConfig,
+            com.google.cloud.datastream.v1.OracleAsmConfig.Builder,
+            com.google.cloud.datastream.v1.OracleAsmConfigOrBuilder>
+        getOracleAsmConfigFieldBuilder() {
+      if (oracleAsmConfigBuilder_ == null) {
+        oracleAsmConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.OracleAsmConfig,
+                com.google.cloud.datastream.v1.OracleAsmConfig.Builder,
+                com.google.cloud.datastream.v1.OracleAsmConfigOrBuilder>(
+                getOracleAsmConfig(), getParentForChildren(), isClean());
+        oracleAsmConfig_ = null;
+      }
+      return oracleAsmConfigBuilder_;
+    }
+
+    private java.lang.Object secretManagerStoredPassword_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The secretManagerStoredPassword.
+     */
+    public java.lang.String getSecretManagerStoredPassword() {
+      java.lang.Object ref = secretManagerStoredPassword_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secretManagerStoredPassword_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for secretManagerStoredPassword.
+     */
+    public com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes() {
+      java.lang.Object ref = secretManagerStoredPassword_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        secretManagerStoredPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The secretManagerStoredPassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretManagerStoredPassword(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      secretManagerStoredPassword_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecretManagerStoredPassword() {
+      secretManagerStoredPassword_ = getDefaultInstance().getSecretManagerStoredPassword();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A reference to a Secret Manager resource name storing the Oracle
+     * connection password. Mutually exclusive with the `password` field.
+     * </pre>
+     *
+     * <code>string secret_manager_stored_password = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for secretManagerStoredPassword to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretManagerStoredPasswordBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      secretManagerStoredPassword_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
 

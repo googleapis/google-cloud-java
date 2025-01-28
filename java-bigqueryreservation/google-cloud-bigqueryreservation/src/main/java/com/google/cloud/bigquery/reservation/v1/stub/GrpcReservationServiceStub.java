@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
+import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
@@ -129,6 +130,17 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   "google.cloud.bigquery.reservation.v1.ReservationService/UpdateReservation")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReservationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<FailoverReservationRequest, Reservation>
+      failoverReservationMethodDescriptor =
+          MethodDescriptor.<FailoverReservationRequest, Reservation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/FailoverReservation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FailoverReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
               .build();
 
@@ -325,6 +337,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   private final UnaryCallable<GetReservationRequest, Reservation> getReservationCallable;
   private final UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable;
   private final UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable;
+  private final UnaryCallable<FailoverReservationRequest, Reservation> failoverReservationCallable;
   private final UnaryCallable<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentCallable;
   private final UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
@@ -454,6 +467,16 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add(
                       "reservation.name", String.valueOf(request.getReservation().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<FailoverReservationRequest, Reservation> failoverReservationTransportSettings =
+        GrpcCallSettings.<FailoverReservationRequest, Reservation>newBuilder()
+            .setMethodDescriptor(failoverReservationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -659,6 +682,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
             updateReservationTransportSettings,
             settings.updateReservationSettings(),
             clientContext);
+    this.failoverReservationCallable =
+        callableFactory.createUnaryCallable(
+            failoverReservationTransportSettings,
+            settings.failoverReservationSettings(),
+            clientContext);
     this.createCapacityCommitmentCallable =
         callableFactory.createUnaryCallable(
             createCapacityCommitmentTransportSettings,
@@ -784,6 +812,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   @Override
   public UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
     return updateReservationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FailoverReservationRequest, Reservation> failoverReservationCallable() {
+    return failoverReservationCallable;
   }
 
   @Override

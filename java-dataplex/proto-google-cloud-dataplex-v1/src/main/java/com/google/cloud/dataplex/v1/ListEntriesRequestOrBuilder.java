@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,15 @@ public interface ListEntriesRequestOrBuilder
   com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Number of items to return per page. If there are remaining
+   * results, the service returns a next_page_token. If unspecified, the service
+   * returns at most 10 Entries. The maximum value is 100; values above 100 will
+   * be coerced to 100.
+   * </pre>
+   *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
@@ -66,7 +75,8 @@ public interface ListEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The pagination token returned by a previous request.
+   * Optional. Page token received from a previous `ListEntries` call. Provide
+   * this to retrieve the subsequent page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78,7 +88,8 @@ public interface ListEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The pagination token returned by a previous request.
+   * Optional. Page token received from a previous `ListEntries` call. Provide
+   * this to retrieve the subsequent page.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,20 +102,27 @@ public interface ListEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A filter on the entries to return.
-   * Filters are case-sensitive.
-   * The request can be filtered by the following fields:
-   * entry_type, entry_source.display_name.
-   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-   * according to lexical order)
-   * The logical operators AND, OR, NOT can be used
-   * in the filter. Wildcard "*" can be used, but for entry_type the full
-   * project id or number needs to be provided. Example filter expressions:
-   * "entry_source.display_name=AnExampleDisplayName"
-   * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-   * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-   *  entry_type=projects/another-project/locations/&#42;"
-   * "NOT entry_source.display_name=AnotherExampleDisplayName"
+   * Optional. A filter on the entries to return. Filters are case-sensitive.
+   * You can filter the request by the following fields:
+   *
+   * * entry_type
+   * * entry_source.display_name
+   *
+   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+   * strings according to lexical order.
+   *
+   * You can use the logical operators AND, OR, NOT in the filter.
+   *
+   * You can use Wildcard "*", but for entry_type you need to provide the
+   * full project id or number.
+   *
+   * Example filter expressions:
+   *
+   * * "entry_source.display_name=AnExampleDisplayName"
+   * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+   * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+   * entry_type=projects/another-project/locations/&#42;"
+   * * "NOT entry_source.display_name=AnotherExampleDisplayName"
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -116,20 +134,27 @@ public interface ListEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A filter on the entries to return.
-   * Filters are case-sensitive.
-   * The request can be filtered by the following fields:
-   * entry_type, entry_source.display_name.
-   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;= (strings are compared
-   * according to lexical order)
-   * The logical operators AND, OR, NOT can be used
-   * in the filter. Wildcard "*" can be used, but for entry_type the full
-   * project id or number needs to be provided. Example filter expressions:
-   * "entry_source.display_name=AnExampleDisplayName"
-   * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
-   * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
-   *  entry_type=projects/another-project/locations/&#42;"
-   * "NOT entry_source.display_name=AnotherExampleDisplayName"
+   * Optional. A filter on the entries to return. Filters are case-sensitive.
+   * You can filter the request by the following fields:
+   *
+   * * entry_type
+   * * entry_source.display_name
+   *
+   * The comparison operators are =, !=, &lt;, &gt;, &lt;=, &gt;=. The service compares
+   * strings according to lexical order.
+   *
+   * You can use the logical operators AND, OR, NOT in the filter.
+   *
+   * You can use Wildcard "*", but for entry_type you need to provide the
+   * full project id or number.
+   *
+   * Example filter expressions:
+   *
+   * * "entry_source.display_name=AnExampleDisplayName"
+   * * "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type"
+   * * "entry_type=projects/example-project/locations/us/entryTypes/a* OR
+   * entry_type=projects/another-project/locations/&#42;"
+   * * "NOT entry_source.display_name=AnotherExampleDisplayName"
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

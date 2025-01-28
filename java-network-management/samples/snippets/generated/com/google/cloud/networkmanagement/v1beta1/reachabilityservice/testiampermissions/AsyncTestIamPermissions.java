@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.samples;
 
 // [START networkmanagement_v1beta1_generated_ReachabilityService_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.networkmanagement.v1beta1.ConnectivityTestName;
 import com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -38,7 +39,7 @@ public class AsyncTestIamPermissions {
     try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource("TestIamPermissionsRequest942398222".toString())
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       ApiFuture<TestIamPermissionsResponse> future =

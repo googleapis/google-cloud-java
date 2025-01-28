@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Create EntryType Request
+ * Create EntryType Request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.CreateEntryTypeRequest}
@@ -75,7 +75,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the EntryType, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The resource name of the EntryType, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -181,7 +181,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -198,7 +198,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -217,7 +217,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. EntryType Resource
+   * Required. EntryType Resource.
    * </pre>
    *
    * <code>
@@ -237,8 +237,8 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Only validate the request, but do not perform mutations.
-   * The default is false.
+   * Optional. The service validates the request without performing any
+   * mutations. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -445,7 +445,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Create EntryType Request
+   * Create EntryType Request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.CreateEntryTypeRequest}
@@ -688,7 +688,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the EntryType, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -714,7 +714,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the EntryType, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -740,7 +740,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the EntryType, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -765,7 +765,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the EntryType, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -786,7 +786,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The resource name of the EntryType, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -923,7 +923,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -939,7 +939,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -961,7 +961,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -985,7 +985,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -1006,7 +1006,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -1035,7 +1035,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -1056,7 +1056,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -1072,7 +1072,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -1092,7 +1092,7 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. EntryType Resource
+     * Required. EntryType Resource.
      * </pre>
      *
      * <code>
@@ -1121,8 +1121,8 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Only validate the request, but do not perform mutations.
-     * The default is false.
+     * Optional. The service validates the request without performing any
+     * mutations. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1137,8 +1137,8 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Only validate the request, but do not perform mutations.
-     * The default is false.
+     * Optional. The service validates the request without performing any
+     * mutations. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1157,8 +1157,8 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Only validate the request, but do not perform mutations.
-     * The default is false.
+     * Optional. The service validates the request without performing any
+     * mutations. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2694,6 +2694,887 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface SqlServerObjectIdentifierOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The schema.
+     */
+    java.lang.String getSchema();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for schema.
+     */
+    com.google.protobuf.ByteString getSchemaBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
+     */
+    java.lang.String getTable();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
+     */
+    com.google.protobuf.ByteString getTableBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source object identifier.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier}
+   */
+  public static final class SqlServerObjectIdentifier extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+      SqlServerObjectIdentifierOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SqlServerObjectIdentifier.newBuilder() to construct.
+    private SqlServerObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SqlServerObjectIdentifier() {
+      schema_ = "";
+      table_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SqlServerObjectIdentifier();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SqlServerObjectIdentifier_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SqlServerObjectIdentifier_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier.class,
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                  .Builder.class);
+    }
+
+    public static final int SCHEMA_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object schema_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The schema.
+     */
+    @java.lang.Override
+    public java.lang.String getSchema() {
+      java.lang.Object ref = schema_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schema_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for schema.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSchemaBytes() {
+      java.lang.Object ref = schema_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schema_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
+     */
+    @java.lang.Override
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schema_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schema_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier other =
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier) obj;
+
+      if (!getSchema().equals(other.getSchema())) return false;
+      if (!getTable().equals(other.getTable())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getSchema().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifierOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SqlServerObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SqlServerObjectIdentifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                    .class,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        schema_ = "";
+        table_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SqlServerObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+          build() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+          buildPartial() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier result =
+            new com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.schema_ = schema_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.table_ = table_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier other) {
+        if (other
+            == com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                .getDefaultInstance()) return this;
+        if (!other.getSchema().isEmpty()) {
+          schema_ = other.schema_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  schema_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  table_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object schema_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The schema.
+       */
+      public java.lang.String getSchema() {
+        java.lang.Object ref = schema_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schema_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for schema.
+       */
+      public com.google.protobuf.ByteString getSchemaBytes() {
+        java.lang.Object ref = schema_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          schema_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchema(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schema_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSchema() {
+        schema_ = getDefaultInstance().getSchema();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        schema_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object table_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The table.
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for table.
+       */
+      public com.google.protobuf.ByteString getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTable(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        table_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        table_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+    private static final com.google.cloud.datastream.v1.SourceObjectIdentifier
+            .SqlServerObjectIdentifier
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier();
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SqlServerObjectIdentifier> PARSER =
+        new com.google.protobuf.AbstractParser<SqlServerObjectIdentifier>() {
+          @java.lang.Override
+          public SqlServerObjectIdentifier parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SqlServerObjectIdentifier> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SqlServerObjectIdentifier> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceIdentifierCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2706,6 +3587,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     ORACLE_IDENTIFIER(1),
     MYSQL_IDENTIFIER(2),
     POSTGRESQL_IDENTIFIER(3),
+    SQL_SERVER_IDENTIFIER(4),
     SOURCEIDENTIFIER_NOT_SET(0);
     private final int value;
 
@@ -2730,6 +3612,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return MYSQL_IDENTIFIER;
         case 3:
           return POSTGRESQL_IDENTIFIER;
+        case 4:
+          return SQL_SERVER_IDENTIFIER;
         case 0:
           return SOURCEIDENTIFIER_NOT_SET;
         default:
@@ -2935,6 +3819,69 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         .getDefaultInstance();
   }
 
+  public static final int SQL_SERVER_IDENTIFIER_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+   * </code>
+   *
+   * @return Whether the sqlServerIdentifier field is set.
+   */
+  @java.lang.Override
+  public boolean hasSqlServerIdentifier() {
+    return sourceIdentifierCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+   * </code>
+   *
+   * @return The sqlServerIdentifier.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+      getSqlServerIdentifier() {
+    if (sourceIdentifierCase_ == 4) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SQLServer data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifierOrBuilder
+      getSqlServerIdentifierOrBuilder() {
+    if (sourceIdentifierCase_ == 4) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2967,6 +3914,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
               sourceIdentifier_);
     }
+    if (sourceIdentifierCase_ == 4) {
+      output.writeMessage(
+          4,
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+              sourceIdentifier_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2997,6 +3950,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               (com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
                   sourceIdentifier_);
     }
+    if (sourceIdentifierCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4,
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+                  sourceIdentifier_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3024,6 +3984,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       case 3:
         if (!getPostgresqlIdentifier().equals(other.getPostgresqlIdentifier())) return false;
         break;
+      case 4:
+        if (!getSqlServerIdentifier().equals(other.getSqlServerIdentifier())) return false;
+        break;
       case 0:
       default:
     }
@@ -3050,6 +4013,10 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       case 3:
         hash = (37 * hash) + POSTGRESQL_IDENTIFIER_FIELD_NUMBER;
         hash = (53 * hash) + getPostgresqlIdentifier().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + SQL_SERVER_IDENTIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlServerIdentifier().hashCode();
         break;
       case 0:
       default:
@@ -3203,6 +4170,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       if (postgresqlIdentifierBuilder_ != null) {
         postgresqlIdentifierBuilder_.clear();
       }
+      if (sqlServerIdentifierBuilder_ != null) {
+        sqlServerIdentifierBuilder_.clear();
+      }
       sourceIdentifierCase_ = 0;
       sourceIdentifier_ = null;
       return this;
@@ -3255,6 +4225,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       if (sourceIdentifierCase_ == 3 && postgresqlIdentifierBuilder_ != null) {
         result.sourceIdentifier_ = postgresqlIdentifierBuilder_.build();
+      }
+      if (sourceIdentifierCase_ == 4 && sqlServerIdentifierBuilder_ != null) {
+        result.sourceIdentifier_ = sqlServerIdentifierBuilder_.build();
       }
     }
 
@@ -3320,6 +4293,11 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             mergePostgresqlIdentifier(other.getPostgresqlIdentifier());
             break;
           }
+        case SQL_SERVER_IDENTIFIER:
+          {
+            mergeSqlServerIdentifier(other.getSqlServerIdentifier());
+            break;
+          }
         case SOURCEIDENTIFIER_NOT_SET:
           {
             break;
@@ -3371,6 +4349,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
                 sourceIdentifierCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getSqlServerIdentifierFieldBuilder().getBuilder(), extensionRegistry);
+                sourceIdentifierCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4147,6 +5132,256 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 3;
       onChanged();
       return postgresqlIdentifierBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier.Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier
+                .SqlServerObjectIdentifierOrBuilder>
+        sqlServerIdentifierBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     *
+     * @return Whether the sqlServerIdentifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlServerIdentifier() {
+      return sourceIdentifierCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     *
+     * @return The sqlServerIdentifier.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        getSqlServerIdentifier() {
+      if (sqlServerIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 4) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+            .getDefaultInstance();
+      } else {
+        if (sourceIdentifierCase_ == 4) {
+          return sqlServerIdentifierBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     */
+    public Builder setSqlServerIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier value) {
+      if (sqlServerIdentifierBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceIdentifier_ = value;
+        onChanged();
+      } else {
+        sqlServerIdentifierBuilder_.setMessage(value);
+      }
+      sourceIdentifierCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     */
+    public Builder setSqlServerIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier.Builder
+            builderForValue) {
+      if (sqlServerIdentifierBuilder_ == null) {
+        sourceIdentifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        sqlServerIdentifierBuilder_.setMessage(builderForValue.build());
+      }
+      sourceIdentifierCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     */
+    public Builder mergeSqlServerIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier value) {
+      if (sqlServerIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 4
+            && sourceIdentifier_
+                != com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                    .getDefaultInstance()) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                  .newBuilder(
+                      (com.google.cloud.datastream.v1.SourceObjectIdentifier
+                              .SqlServerObjectIdentifier)
+                          sourceIdentifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceIdentifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceIdentifierCase_ == 4) {
+          sqlServerIdentifierBuilder_.mergeFrom(value);
+        } else {
+          sqlServerIdentifierBuilder_.setMessage(value);
+        }
+      }
+      sourceIdentifierCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     */
+    public Builder clearSqlServerIdentifier() {
+      if (sqlServerIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 4) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceIdentifierCase_ == 4) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+        }
+        sqlServerIdentifierBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier.Builder
+        getSqlServerIdentifierBuilder() {
+      return getSqlServerIdentifierFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifierOrBuilder
+        getSqlServerIdentifierOrBuilder() {
+      if ((sourceIdentifierCase_ == 4) && (sqlServerIdentifierBuilder_ != null)) {
+        return sqlServerIdentifierBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceIdentifierCase_ == 4) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SQLServer data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier sql_server_identifier = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier.Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier
+                .SqlServerObjectIdentifierOrBuilder>
+        getSqlServerIdentifierFieldBuilder() {
+      if (sqlServerIdentifierBuilder_ == null) {
+        if (!(sourceIdentifierCase_ == 4)) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                  .getDefaultInstance();
+        }
+        sqlServerIdentifierBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+                    .Builder,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier
+                    .SqlServerObjectIdentifierOrBuilder>(
+                (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
+                    sourceIdentifier_,
+                getParentForChildren(),
+                isClean());
+        sourceIdentifier_ = null;
+      }
+      sourceIdentifierCase_ = 4;
+      onChanged();
+      return sqlServerIdentifierBuilder_;
     }
 
     @java.lang.Override

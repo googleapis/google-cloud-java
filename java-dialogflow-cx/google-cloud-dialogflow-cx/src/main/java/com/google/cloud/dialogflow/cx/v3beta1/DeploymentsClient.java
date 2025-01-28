@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -263,8 +263,8 @@ public class DeploymentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to
-   *     list all environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     list all environments for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeploymentsPagedResponse listDeployments(EnvironmentName parent) {
@@ -298,8 +298,8 @@ public class DeploymentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to
-   *     list all environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
+   *     list all environments for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeploymentsPagedResponse listDeployments(String parent) {
@@ -441,9 +441,8 @@ public class DeploymentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the
-   *     [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment]. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/deployments/&lt;Deployment ID&gt;`.
+   *     [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment]. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/deployments/&lt;DeploymentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Deployment getDeployment(DeploymentName name) {
@@ -473,9 +472,8 @@ public class DeploymentsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the
-   *     [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment]. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   *     ID&gt;/deployments/&lt;Deployment ID&gt;`.
+   *     [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment]. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/deployments/&lt;DeploymentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Deployment getDeployment(String name) {

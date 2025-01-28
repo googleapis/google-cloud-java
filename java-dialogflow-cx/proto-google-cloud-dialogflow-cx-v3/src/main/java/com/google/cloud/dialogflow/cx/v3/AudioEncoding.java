@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,6 +131,16 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 7;</code>
    */
   AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE(7),
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+   * </pre>
+   *
+   * <code>AUDIO_ENCODING_ALAW = 8;</code>
+   */
+  AUDIO_ENCODING_ALAW(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -232,6 +242,16 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE = 7;</code>
    */
   public static final int AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * 8-bit samples that compand 13-bit audio samples using G.711 PCMU/a-law.
+   * </pre>
+   *
+   * <code>AUDIO_ENCODING_ALAW = 8;</code>
+   */
+  public static final int AUDIO_ENCODING_ALAW_VALUE = 8;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -273,6 +293,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
         return AUDIO_ENCODING_OGG_OPUS;
       case 7:
         return AUDIO_ENCODING_SPEEX_WITH_HEADER_BYTE;
+      case 8:
+        return AUDIO_ENCODING_ALAW;
       default:
         return null;
     }

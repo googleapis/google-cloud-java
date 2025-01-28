@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,9 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the AspectType. This
-   * ID will be different if the AspectType is deleted and re-created with the
-   * same name.
+   * Output only. System generated globally unique ID for the AspectType.
+   * If you delete and recreate the AspectType with the same name, then this ID
+   * will be different.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -73,9 +73,9 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the AspectType. This
-   * ID will be different if the AspectType is deleted and re-created with the
-   * same name.
+   * Output only. System generated globally unique ID for the AspectType.
+   * If you delete and recreate the AspectType with the same name, then this ID
+   * will be different.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -272,9 +272,8 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * The service computes this checksum. The client may send it on update and
+   * delete requests to ensure it has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 8;</code>
@@ -286,9 +285,8 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
+   * The service computes this checksum. The client may send it on update and
+   * delete requests to ensure it has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 8;</code>
@@ -301,7 +299,7 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
-   * Immutable. Authorization defined for this type.
+   * Immutable. Defines the Authorization for this type.
    * </pre>
    *
    * <code>
@@ -315,7 +313,7 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
-   * Immutable. Authorization defined for this type.
+   * Immutable. Defines the Authorization for this type.
    * </pre>
    *
    * <code>
@@ -329,7 +327,7 @@ public interface AspectTypeOrBuilder
    *
    *
    * <pre>
-   * Immutable. Authorization defined for this type.
+   * Immutable. Defines the Authorization for this type.
    * </pre>
    *
    * <code>

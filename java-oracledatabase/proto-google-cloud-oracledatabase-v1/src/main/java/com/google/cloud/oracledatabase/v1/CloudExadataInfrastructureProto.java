@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,10 +87,10 @@ public final class CloudExadataInfrastructureProto {
           + "base.v1.CloudExadataInfrastructureProper"
           + "ties.StateB\003\340A\003\022\022\n\005shape\030\010 \001(\tB\003\340A\002\022\024\n\007o"
           + "ci_url\030\t \001(\tB\003\340A\003\022\026\n\tcpu_count\030\n \001(\005B\003\340A"
-          + "\001\022\032\n\rmax_cpu_count\030\013 \001(\005B\003\340A\003\022\033\n\016memory_"
-          + "size_gb\030\014 \001(\005B\003\340A\001\022\032\n\rmax_memory_gb\030\r \001("
+          + "\003\022\032\n\rmax_cpu_count\030\013 \001(\005B\003\340A\003\022\033\n\016memory_"
+          + "size_gb\030\014 \001(\005B\003\340A\003\022\032\n\rmax_memory_gb\030\r \001("
           + "\005B\003\340A\003\022$\n\027db_node_storage_size_gb\030\016 \001(\005B"
-          + "\003\340A\001\022(\n\033max_db_node_storage_size_gb\030\017 \001("
+          + "\003\340A\003\022(\n\033max_db_node_storage_size_gb\030\017 \001("
           + "\005B\003\340A\003\022!\n\024data_storage_size_tb\030\020 \001(\001B\003\340A"
           + "\003\022 \n\023max_data_storage_tb\030\021 \001(\001B\003\340A\003\022$\n\027a"
           + "ctivated_storage_count\030\022 \001(\005B\003\340A\003\022%\n\030add"

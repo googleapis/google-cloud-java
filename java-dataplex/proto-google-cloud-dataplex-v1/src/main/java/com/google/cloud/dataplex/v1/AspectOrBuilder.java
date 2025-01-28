@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,7 +155,6 @@ public interface AspectOrBuilder
    *
    * <pre>
    * Required. The content of the aspect, according to its aspect type schema.
-   * This will replace `content`.
    * The maximum size of the field is 120KB (encoded as UTF-8).
    * </pre>
    *
@@ -169,7 +168,6 @@ public interface AspectOrBuilder
    *
    * <pre>
    * Required. The content of the aspect, according to its aspect type schema.
-   * This will replace `content`.
    * The maximum size of the field is 120KB (encoded as UTF-8).
    * </pre>
    *
@@ -183,7 +181,6 @@ public interface AspectOrBuilder
    *
    * <pre>
    * Required. The content of the aspect, according to its aspect type schema.
-   * This will replace `content`.
    * The maximum size of the field is 120KB (encoded as UTF-8).
    * </pre>
    *
@@ -192,6 +189,12 @@ public interface AspectOrBuilder
   com.google.protobuf.StructOrBuilder getDataOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Information related to the source system of the aspect.
+   * </pre>
+   *
    * <code>
    * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -200,6 +203,12 @@ public interface AspectOrBuilder
    */
   boolean hasAspectSource();
   /**
+   *
+   *
+   * <pre>
+   * Optional. Information related to the source system of the aspect.
+   * </pre>
+   *
    * <code>
    * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -208,6 +217,12 @@ public interface AspectOrBuilder
    */
   com.google.cloud.dataplex.v1.AspectSource getAspectSource();
   /**
+   *
+   *
+   * <pre>
+   * Optional. Information related to the source system of the aspect.
+   * </pre>
+   *
    * <code>
    * .google.cloud.dataplex.v1.AspectSource aspect_source = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>

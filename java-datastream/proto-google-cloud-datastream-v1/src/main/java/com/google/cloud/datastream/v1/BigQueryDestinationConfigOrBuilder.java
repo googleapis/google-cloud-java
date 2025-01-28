@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -154,5 +154,81 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getDataFreshnessOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The standard mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+   *
+   * @return Whether the merge field is set.
+   */
+  boolean hasMerge();
+  /**
+   *
+   *
+   * <pre>
+   * The standard mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+   *
+   * @return The merge.
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge getMerge();
+  /**
+   *
+   *
+   * <pre>
+   * The standard mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge merge = 301;</code>
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder getMergeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Append only mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+   * </code>
+   *
+   * @return Whether the appendOnly field is set.
+   */
+  boolean hasAppendOnly();
+  /**
+   *
+   *
+   * <pre>
+   * Append only mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+   * </code>
+   *
+   * @return The appendOnly.
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly getAppendOnly();
+  /**
+   *
+   *
+   * <pre>
+   * Append only mode
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly append_only = 302;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder
+      getAppendOnlyOrBuilder();
+
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.DatasetConfigCase getDatasetConfigCase();
+
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.WriteModeCase getWriteModeCase();
 }

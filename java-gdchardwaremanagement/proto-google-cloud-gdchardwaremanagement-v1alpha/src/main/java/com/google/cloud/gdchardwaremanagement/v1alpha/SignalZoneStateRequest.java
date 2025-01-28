@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     name_ = "";
     requestId_ = "";
     stateSignal_ = 0;
+    provisioningStateSignal_ = 0;
   }
 
   @java.lang.Override
@@ -256,6 +257,169 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Valid provisioning state signals for a zone.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal}
+   */
+  public enum ProvisioningStateSignal implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning state signal is unspecified.
+     * </pre>
+     *
+     * <code>PROVISIONING_STATE_SIGNAL_UNSPECIFIED = 0;</code>
+     */
+    PROVISIONING_STATE_SIGNAL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is in progress.
+     * </pre>
+     *
+     * <code>PROVISIONING_IN_PROGRESS = 1;</code>
+     */
+    PROVISIONING_IN_PROGRESS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is complete.
+     * </pre>
+     *
+     * <code>PROVISIONING_COMPLETE = 2;</code>
+     */
+    PROVISIONING_COMPLETE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning state signal is unspecified.
+     * </pre>
+     *
+     * <code>PROVISIONING_STATE_SIGNAL_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROVISIONING_STATE_SIGNAL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is in progress.
+     * </pre>
+     *
+     * <code>PROVISIONING_IN_PROGRESS = 1;</code>
+     */
+    public static final int PROVISIONING_IN_PROGRESS_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Provisioning is complete.
+     * </pre>
+     *
+     * <code>PROVISIONING_COMPLETE = 2;</code>
+     */
+    public static final int PROVISIONING_COMPLETE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProvisioningStateSignal valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProvisioningStateSignal forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROVISIONING_STATE_SIGNAL_UNSPECIFIED;
+        case 1:
+          return PROVISIONING_IN_PROGRESS;
+        case 2:
+          return PROVISIONING_COMPLETE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProvisioningStateSignal>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProvisioningStateSignal>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ProvisioningStateSignal>() {
+              public ProvisioningStateSignal findValueByNumber(int number) {
+                return ProvisioningStateSignal.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final ProvisioningStateSignal[] VALUES = values();
+
+    public static ProvisioningStateSignal valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProvisioningStateSignal(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -376,11 +540,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The state signal to send for this zone.
+   * Optional. The state signal to send for this zone. Either state_signal or
+   * provisioning_state_signal must be set, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for stateSignal.
@@ -393,11 +558,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The state signal to send for this zone.
+   * Optional. The state signal to send for this zone. Either state_signal or
+   * provisioning_state_signal must be set, but not both.
    * </pre>
    *
    * <code>
-   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The stateSignal.
@@ -411,6 +577,54 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     return result == null
         ? com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal
             .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int PROVISIONING_STATE_SIGNAL_FIELD_NUMBER = 4;
+  private int provisioningStateSignal_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The provisioning state signal to send for this zone. Either
+   * state_signal or provisioning_state_signal must be set, but not both.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for provisioningStateSignal.
+   */
+  @java.lang.Override
+  public int getProvisioningStateSignalValue() {
+    return provisioningStateSignal_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The provisioning state signal to send for this zone. Either
+   * state_signal or provisioning_state_signal must be set, but not both.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The provisioningStateSignal.
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+          .ProvisioningStateSignal
+      getProvisioningStateSignal() {
+    com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal
+        result =
+            com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+                .ProvisioningStateSignal.forNumber(provisioningStateSignal_);
+    return result == null
+        ? com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+            .ProvisioningStateSignal.UNRECOGNIZED
         : result;
   }
 
@@ -440,6 +654,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
             .getNumber()) {
       output.writeEnum(3, stateSignal_);
     }
+    if (provisioningStateSignal_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+            .ProvisioningStateSignal.PROVISIONING_STATE_SIGNAL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, provisioningStateSignal_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -461,6 +681,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, stateSignal_);
     }
+    if (provisioningStateSignal_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+            .ProvisioningStateSignal.PROVISIONING_STATE_SIGNAL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, provisioningStateSignal_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -480,6 +706,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (stateSignal_ != other.stateSignal_) return false;
+    if (provisioningStateSignal_ != other.provisioningStateSignal_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -497,6 +724,8 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getRequestId().hashCode();
     hash = (37 * hash) + STATE_SIGNAL_FIELD_NUMBER;
     hash = (53 * hash) + stateSignal_;
+    hash = (37 * hash) + PROVISIONING_STATE_SIGNAL_FIELD_NUMBER;
+    hash = (53 * hash) + provisioningStateSignal_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -642,6 +871,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       name_ = "";
       requestId_ = "";
       stateSignal_ = 0;
+      provisioningStateSignal_ = 0;
       return this;
     }
 
@@ -689,6 +919,9 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.stateSignal_ = stateSignal_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.provisioningStateSignal_ = provisioningStateSignal_;
       }
     }
 
@@ -754,6 +987,9 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
       if (other.stateSignal_ != 0) {
         setStateSignalValue(other.getStateSignalValue());
       }
+      if (other.provisioningStateSignal_ != 0) {
+        setProvisioningStateSignalValue(other.getProvisioningStateSignalValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -798,6 +1034,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                provisioningStateSignal_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1064,11 +1306,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The state signal to send for this zone.
+     * Optional. The state signal to send for this zone. Either state_signal or
+     * provisioning_state_signal must be set, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for stateSignal.
@@ -1081,11 +1324,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The state signal to send for this zone.
+     * Optional. The state signal to send for this zone. Either state_signal or
+     * provisioning_state_signal must be set, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for stateSignal to set.
@@ -1101,11 +1345,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The state signal to send for this zone.
+     * Optional. The state signal to send for this zone. Either state_signal or
+     * provisioning_state_signal must be set, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The stateSignal.
@@ -1125,11 +1370,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The state signal to send for this zone.
+     * Optional. The state signal to send for this zone. Either state_signal or
+     * provisioning_state_signal must be set, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The stateSignal to set.
@@ -1149,11 +1395,12 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The state signal to send for this zone.
+     * Optional. The state signal to send for this zone. Either state_signal or
+     * provisioning_state_signal must be set, but not both.
      * </pre>
      *
      * <code>
-     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignal state_signal = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -1161,6 +1408,121 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
     public Builder clearStateSignal() {
       bitField0_ = (bitField0_ & ~0x00000004);
       stateSignal_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int provisioningStateSignal_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The provisioning state signal to send for this zone. Either
+     * state_signal or provisioning_state_signal must be set, but not both.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for provisioningStateSignal.
+     */
+    @java.lang.Override
+    public int getProvisioningStateSignalValue() {
+      return provisioningStateSignal_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The provisioning state signal to send for this zone. Either
+     * state_signal or provisioning_state_signal must be set, but not both.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for provisioningStateSignal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisioningStateSignalValue(int value) {
+      provisioningStateSignal_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The provisioning state signal to send for this zone. Either
+     * state_signal or provisioning_state_signal must be set, but not both.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The provisioningStateSignal.
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+            .ProvisioningStateSignal
+        getProvisioningStateSignal() {
+      com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal
+          result =
+              com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+                  .ProvisioningStateSignal.forNumber(provisioningStateSignal_);
+      return result == null
+          ? com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+              .ProvisioningStateSignal.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The provisioning state signal to send for this zone. Either
+     * state_signal or provisioning_state_signal must be set, but not both.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The provisioningStateSignal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisioningStateSignal(
+        com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest
+                .ProvisioningStateSignal
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      provisioningStateSignal_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The provisioning state signal to send for this zone. Either
+     * state_signal or provisioning_state_signal must be set, but not both.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal provisioning_state_signal = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProvisioningStateSignal() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      provisioningStateSignal_ = 0;
       onChanged();
       return this;
     }

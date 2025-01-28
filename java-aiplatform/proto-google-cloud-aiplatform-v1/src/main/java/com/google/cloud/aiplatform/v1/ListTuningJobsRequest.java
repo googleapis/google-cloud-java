@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -201,8 +201,9 @@ public final class ListTuningJobsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The standard list page token.
-   * Typically obtained via [ListTuningJob.next_page_token][] of the
-   * previous GenAiTuningService.ListTuningJob][] call.
+   * Typically obtained via
+   * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+   * of the previous GenAiTuningService.ListTuningJob][] call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -226,8 +227,9 @@ public final class ListTuningJobsRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The standard list page token.
-   * Typically obtained via [ListTuningJob.next_page_token][] of the
-   * previous GenAiTuningService.ListTuningJob][] call.
+   * Typically obtained via
+   * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+   * of the previous GenAiTuningService.ListTuningJob][] call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -946,8 +948,9 @@ public final class ListTuningJobsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The standard list page token.
-     * Typically obtained via [ListTuningJob.next_page_token][] of the
-     * previous GenAiTuningService.ListTuningJob][] call.
+     * Typically obtained via
+     * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+     * of the previous GenAiTuningService.ListTuningJob][] call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -970,8 +973,9 @@ public final class ListTuningJobsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The standard list page token.
-     * Typically obtained via [ListTuningJob.next_page_token][] of the
-     * previous GenAiTuningService.ListTuningJob][] call.
+     * Typically obtained via
+     * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+     * of the previous GenAiTuningService.ListTuningJob][] call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -994,8 +998,9 @@ public final class ListTuningJobsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The standard list page token.
-     * Typically obtained via [ListTuningJob.next_page_token][] of the
-     * previous GenAiTuningService.ListTuningJob][] call.
+     * Typically obtained via
+     * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+     * of the previous GenAiTuningService.ListTuningJob][] call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1017,8 +1022,9 @@ public final class ListTuningJobsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The standard list page token.
-     * Typically obtained via [ListTuningJob.next_page_token][] of the
-     * previous GenAiTuningService.ListTuningJob][] call.
+     * Typically obtained via
+     * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+     * of the previous GenAiTuningService.ListTuningJob][] call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1036,8 +1042,9 @@ public final class ListTuningJobsRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The standard list page token.
-     * Typically obtained via [ListTuningJob.next_page_token][] of the
-     * previous GenAiTuningService.ListTuningJob][] call.
+     * Typically obtained via
+     * [ListTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListTuningJobsResponse.next_page_token]
+     * of the previous GenAiTuningService.ListTuningJob][] call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

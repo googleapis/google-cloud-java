@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,7 +248,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.VpnGateway.StackType}
@@ -284,6 +284,16 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      * <code>IPV4_ONLY = 22373798;</code>
      */
     IPV4_ONLY(22373798),
+    /**
+     *
+     *
+     * <pre>
+     * Enable VPN gateway with only IPv6 protocol.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    IPV6_ONLY(79632100),
     UNRECOGNIZED(-1),
     ;
 
@@ -317,6 +327,16 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      * <code>IPV4_ONLY = 22373798;</code>
      */
     public static final int IPV4_ONLY_VALUE = 22373798;
+    /**
+     *
+     *
+     * <pre>
+     * Enable VPN gateway with only IPv6 protocol.
+     * </pre>
+     *
+     * <code>IPV6_ONLY = 79632100;</code>
+     */
+    public static final int IPV6_ONLY_VALUE = 79632100;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -348,6 +368,8 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
           return IPV4_IPV6;
         case 22373798:
           return IPV4_ONLY;
+        case 79632100:
+          return IPV6_ONLY;
         default:
           return null;
       }
@@ -1142,7 +1164,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1158,7 +1180,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -1182,7 +1204,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+   * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -3388,7 +3410,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3403,7 +3425,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3426,7 +3448,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3449,7 +3471,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3471,7 +3493,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -3489,7 +3511,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+     * The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *

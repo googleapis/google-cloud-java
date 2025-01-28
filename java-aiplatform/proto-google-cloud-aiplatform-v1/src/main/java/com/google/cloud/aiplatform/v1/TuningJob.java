@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     state_ = 0;
     experiment_ = "";
+    serviceAccount_ = "";
   }
 
   @java.lang.Override
@@ -1133,6 +1134,69 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         : encryptionSpec_;
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the tuningJob workload runs as.
+   * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+   * project will be used. See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+   *
+   * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 22;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the tuningJob workload runs as.
+   * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+   * project will be used. See
+   * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+   *
+   * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 22;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1193,6 +1257,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(16, getEncryptionSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, serviceAccount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1260,6 +1327,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getEncryptionSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, serviceAccount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1313,6 +1383,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getSourceModelCase().equals(other.getSourceModelCase())) return false;
     switch (sourceModelCase_) {
       case 4:
@@ -1386,6 +1457,8 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
     switch (sourceModelCase_) {
       case 4:
         hash = (37 * hash) + BASE_MODEL_FIELD_NUMBER;
@@ -1628,6 +1701,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
+      serviceAccount_ = "";
       sourceModelCase_ = 0;
       sourceModel_ = null;
       tuningSpecCase_ = 0;
@@ -1722,6 +1796,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1829,6 +1906,11 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00010000;
+        onChanged();
       }
       switch (other.getSourceModelCase()) {
         case BASE_MODEL:
@@ -1984,6 +2066,12 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 130
+            case 178:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4838,6 +4926,142 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the tuningJob workload runs as.
+     * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+     * project will be used. See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+     *
+     * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 22;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the tuningJob workload runs as.
+     * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+     * project will be used. See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+     *
+     * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 22;</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the tuningJob workload runs as.
+     * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+     * project will be used. See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+     *
+     * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 22;</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccount_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the tuningJob workload runs as.
+     * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+     * project will be used. See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+     *
+     * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The service account that the tuningJob workload runs as.
+     * If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the
+     * project will be used. See
+     * https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent
+     *
+     * Users starting the pipeline must have the `iam.serviceAccounts.actAs`
+     * permission on this service account.
+     * </pre>
+     *
+     * <code>string service_account = 22;</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccount_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

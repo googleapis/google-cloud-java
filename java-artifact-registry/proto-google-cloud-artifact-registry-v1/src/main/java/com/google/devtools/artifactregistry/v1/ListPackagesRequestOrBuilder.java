@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,4 +90,142 @@ public interface ListPackagesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *   * `annotations`
+   *
+   * Examples of using a filter:
+   *
+   *  To filter the results of your request to packages with the name
+   *  `my-package` in project `my-project` in the `us-central` region, in
+   *  repository `my-repo`, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+   *
+   *  To filter the results of your request to packages with the annotation
+   *  key-value pair [`external_link`: `external_link_value`], append the
+   *  following filter expression to your request":
+   *
+   *   * `"annotations.external_link:external_link_value"`
+   *
+   *  To filter the results just for a specific annotation key `external_link`,
+   *  append the following filter expression to your request:
+   *
+   *   * `"annotations.external_link"`
+   *
+   *  If the annotation key or value contains special characters, you can escape
+   *  them by surrounding the value with backticks. For example, to filter the
+   *  results of your request to packages with the annotation key-value pair
+   *  [`external.link`:`https://example.com/my-package`], append the following
+   *  filter expression to your request:
+   *
+   *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+   *
+   *  You can also filter with annotations with a wildcard to
+   *  match any number of characters before or after the value:
+   *
+   *   * `` "annotations.*_link:`*example.com*`" ``
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the request. Filter
+   * rules are case insensitive. The fields eligible for filtering are:
+   *
+   *   * `name`
+   *   * `annotations`
+   *
+   * Examples of using a filter:
+   *
+   *  To filter the results of your request to packages with the name
+   *  `my-package` in project `my-project` in the `us-central` region, in
+   *  repository `my-repo`, append the following filter expression to your
+   *  request:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-package"`
+   *
+   *  You can also use wildcards to match any number of characters before or
+   *  after the value:
+   *
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/my-*"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;package"`
+   *   * `name="projects/my-project/locations/us-central1/repositories/my-repo/packages/&#42;pack*"`
+   *
+   *  To filter the results of your request to packages with the annotation
+   *  key-value pair [`external_link`: `external_link_value`], append the
+   *  following filter expression to your request":
+   *
+   *   * `"annotations.external_link:external_link_value"`
+   *
+   *  To filter the results just for a specific annotation key `external_link`,
+   *  append the following filter expression to your request:
+   *
+   *   * `"annotations.external_link"`
+   *
+   *  If the annotation key or value contains special characters, you can escape
+   *  them by surrounding the value with backticks. For example, to filter the
+   *  results of your request to packages with the annotation key-value pair
+   *  [`external.link`:`https://example.com/my-package`], append the following
+   *  filter expression to your request:
+   *
+   *   * `` "annotations.`external.link`:`https://example.com/my-package`" ``
+   *
+   *  You can also filter with annotations with a wildcard to
+   *  match any number of characters before or after the value:
+   *
+   *   * `` "annotations.*_link:`*example.com*`" ``
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field to order the results by.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

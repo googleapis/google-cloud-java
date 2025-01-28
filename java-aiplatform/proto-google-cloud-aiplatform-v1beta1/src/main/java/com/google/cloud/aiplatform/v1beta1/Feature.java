@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     etag_ = "";
     monitoringStats_ = java.util.Collections.emptyList();
     monitoringStatsAnomalies_ = java.util.Collections.emptyList();
+    featureStatsAndAnomaly_ = java.util.Collections.emptyList();
     versionColumnName_ = "";
     pointOfContact_ = "";
   }
@@ -2091,7 +2092,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=171
    * @return Whether the monitoringConfig field is set.
    */
   @java.lang.Override
@@ -2124,7 +2125,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
+   *     google/cloud/aiplatform/v1beta1/feature.proto;l=171
    * @return The monitoringConfig.
    */
   @java.lang.Override
@@ -2392,6 +2393,97 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     return monitoringStatsAnomalies_.get(index);
   }
 
+  public static final int FEATURE_STATS_AND_ANOMALY_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly>
+      featureStatsAndAnomaly_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only applicable for Vertex AI Feature Store.
+   * The list of historical stats and anomalies.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly>
+      getFeatureStatsAndAnomalyList() {
+    return featureStatsAndAnomaly_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only applicable for Vertex AI Feature Store.
+   * The list of historical stats and anomalies.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalyOrBuilder>
+      getFeatureStatsAndAnomalyOrBuilderList() {
+    return featureStatsAndAnomaly_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only applicable for Vertex AI Feature Store.
+   * The list of historical stats and anomalies.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getFeatureStatsAndAnomalyCount() {
+    return featureStatsAndAnomaly_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only applicable for Vertex AI Feature Store.
+   * The list of historical stats and anomalies.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly getFeatureStatsAndAnomaly(
+      int index) {
+    return featureStatsAndAnomaly_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Only applicable for Vertex AI Feature Store.
+   * The list of historical stats and anomalies.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalyOrBuilder
+      getFeatureStatsAndAnomalyOrBuilder(int index) {
+    return featureStatsAndAnomaly_.get(index);
+  }
+
   public static final int VERSION_COLUMN_NAME_FIELD_NUMBER = 106;
 
   @SuppressWarnings("serial")
@@ -2548,6 +2640,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (disableMonitoring_ != false) {
       output.writeBool(12, disableMonitoring_);
     }
+    for (int i = 0; i < featureStatsAndAnomaly_.size(); i++) {
+      output.writeMessage(13, featureStatsAndAnomaly_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106, versionColumnName_);
     }
@@ -2607,6 +2702,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (disableMonitoring_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disableMonitoring_);
     }
+    for (int i = 0; i < featureStatsAndAnomaly_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, featureStatsAndAnomaly_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(106, versionColumnName_);
     }
@@ -2649,6 +2749,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (getDisableMonitoring() != other.getDisableMonitoring()) return false;
     if (!getMonitoringStatsList().equals(other.getMonitoringStatsList())) return false;
     if (!getMonitoringStatsAnomaliesList().equals(other.getMonitoringStatsAnomaliesList()))
+      return false;
+    if (!getFeatureStatsAndAnomalyList().equals(other.getFeatureStatsAndAnomalyList()))
       return false;
     if (!getVersionColumnName().equals(other.getVersionColumnName())) return false;
     if (!getPointOfContact().equals(other.getPointOfContact())) return false;
@@ -2696,6 +2798,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     if (getMonitoringStatsAnomaliesCount() > 0) {
       hash = (37 * hash) + MONITORING_STATS_ANOMALIES_FIELD_NUMBER;
       hash = (53 * hash) + getMonitoringStatsAnomaliesList().hashCode();
+    }
+    if (getFeatureStatsAndAnomalyCount() > 0) {
+      hash = (37 * hash) + FEATURE_STATS_AND_ANOMALY_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureStatsAndAnomalyList().hashCode();
     }
     hash = (37 * hash) + VERSION_COLUMN_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getVersionColumnName().hashCode();
@@ -2869,6 +2975,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         getMonitoringConfigFieldBuilder();
         getMonitoringStatsFieldBuilder();
         getMonitoringStatsAnomaliesFieldBuilder();
+        getFeatureStatsAndAnomalyFieldBuilder();
       }
     }
 
@@ -2911,6 +3018,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         monitoringStatsAnomaliesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000400);
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        featureStatsAndAnomaly_ = java.util.Collections.emptyList();
+      } else {
+        featureStatsAndAnomaly_ = null;
+        featureStatsAndAnomalyBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
       versionColumnName_ = "";
       pointOfContact_ = "";
       return this;
@@ -2968,6 +3082,15 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.monitoringStatsAnomalies_ = monitoringStatsAnomaliesBuilder_.build();
       }
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          featureStatsAndAnomaly_ = java.util.Collections.unmodifiableList(featureStatsAndAnomaly_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.featureStatsAndAnomaly_ = featureStatsAndAnomaly_;
+      } else {
+        result.featureStatsAndAnomaly_ = featureStatsAndAnomalyBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Feature result) {
@@ -3005,10 +3128,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.disableMonitoring_ = disableMonitoring_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.versionColumnName_ = versionColumnName_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.pointOfContact_ = pointOfContact_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3145,14 +3268,41 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        if (!other.featureStatsAndAnomaly_.isEmpty()) {
+          if (featureStatsAndAnomaly_.isEmpty()) {
+            featureStatsAndAnomaly_ = other.featureStatsAndAnomaly_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureFeatureStatsAndAnomalyIsMutable();
+            featureStatsAndAnomaly_.addAll(other.featureStatsAndAnomaly_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.featureStatsAndAnomaly_.isEmpty()) {
+          if (featureStatsAndAnomalyBuilder_.isEmpty()) {
+            featureStatsAndAnomalyBuilder_.dispose();
+            featureStatsAndAnomalyBuilder_ = null;
+            featureStatsAndAnomaly_ = other.featureStatsAndAnomaly_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            featureStatsAndAnomalyBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFeatureStatsAndAnomalyFieldBuilder()
+                    : null;
+          } else {
+            featureStatsAndAnomalyBuilder_.addAllMessages(other.featureStatsAndAnomaly_);
+          }
+        }
+      }
       if (!other.getVersionColumnName().isEmpty()) {
         versionColumnName_ = other.versionColumnName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getPointOfContact().isEmpty()) {
         pointOfContact_ = other.pointOfContact_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3270,16 +3420,30 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 96
+            case 106:
+              {
+                com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.parser(),
+                        extensionRegistry);
+                if (featureStatsAndAnomalyBuilder_ == null) {
+                  ensureFeatureStatsAndAnomalyIsMutable();
+                  featureStatsAndAnomaly_.add(m);
+                } else {
+                  featureStatsAndAnomalyBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
             case 850:
               {
                 versionColumnName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 850
             case 858:
               {
                 pointOfContact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 858
             default:
@@ -4459,7 +4623,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=171
      * @return Whether the monitoringConfig field is set.
      */
     @java.lang.Deprecated
@@ -4491,7 +4655,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Feature.monitoring_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature.proto;l=170
+     *     google/cloud/aiplatform/v1beta1/feature.proto;l=171
      * @return The monitoringConfig.
      */
     @java.lang.Deprecated
@@ -5771,6 +5935,431 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       return monitoringStatsAnomaliesBuilder_;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly>
+        featureStatsAndAnomaly_ = java.util.Collections.emptyList();
+
+    private void ensureFeatureStatsAndAnomalyIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        featureStatsAndAnomaly_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly>(
+                featureStatsAndAnomaly_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly,
+            com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalyOrBuilder>
+        featureStatsAndAnomalyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly>
+        getFeatureStatsAndAnomalyList() {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(featureStatsAndAnomaly_);
+      } else {
+        return featureStatsAndAnomalyBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getFeatureStatsAndAnomalyCount() {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        return featureStatsAndAnomaly_.size();
+      } else {
+        return featureStatsAndAnomalyBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly getFeatureStatsAndAnomaly(
+        int index) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        return featureStatsAndAnomaly_.get(index);
+      } else {
+        return featureStatsAndAnomalyBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFeatureStatsAndAnomaly(
+        int index, com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly value) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFeatureStatsAndAnomalyIsMutable();
+        featureStatsAndAnomaly_.set(index, value);
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFeatureStatsAndAnomaly(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder builderForValue) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        ensureFeatureStatsAndAnomalyIsMutable();
+        featureStatsAndAnomaly_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFeatureStatsAndAnomaly(
+        com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly value) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFeatureStatsAndAnomalyIsMutable();
+        featureStatsAndAnomaly_.add(value);
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFeatureStatsAndAnomaly(
+        int index, com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly value) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFeatureStatsAndAnomalyIsMutable();
+        featureStatsAndAnomaly_.add(index, value);
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFeatureStatsAndAnomaly(
+        com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder builderForValue) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        ensureFeatureStatsAndAnomalyIsMutable();
+        featureStatsAndAnomaly_.add(builderForValue.build());
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addFeatureStatsAndAnomaly(
+        int index,
+        com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder builderForValue) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        ensureFeatureStatsAndAnomalyIsMutable();
+        featureStatsAndAnomaly_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllFeatureStatsAndAnomaly(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly>
+            values) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        ensureFeatureStatsAndAnomalyIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, featureStatsAndAnomaly_);
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearFeatureStatsAndAnomaly() {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        featureStatsAndAnomaly_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeFeatureStatsAndAnomaly(int index) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        ensureFeatureStatsAndAnomalyIsMutable();
+        featureStatsAndAnomaly_.remove(index);
+        onChanged();
+      } else {
+        featureStatsAndAnomalyBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder
+        getFeatureStatsAndAnomalyBuilder(int index) {
+      return getFeatureStatsAndAnomalyFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalyOrBuilder
+        getFeatureStatsAndAnomalyOrBuilder(int index) {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        return featureStatsAndAnomaly_.get(index);
+      } else {
+        return featureStatsAndAnomalyBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalyOrBuilder>
+        getFeatureStatsAndAnomalyOrBuilderList() {
+      if (featureStatsAndAnomalyBuilder_ != null) {
+        return featureStatsAndAnomalyBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(featureStatsAndAnomaly_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder
+        addFeatureStatsAndAnomalyBuilder() {
+      return getFeatureStatsAndAnomalyFieldBuilder()
+          .addBuilder(
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder
+        addFeatureStatsAndAnomalyBuilder(int index) {
+      return getFeatureStatsAndAnomalyFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Only applicable for Vertex AI Feature Store.
+     * The list of historical stats and anomalies.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly feature_stats_and_anomaly = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder>
+        getFeatureStatsAndAnomalyBuilderList() {
+      return getFeatureStatsAndAnomalyFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly,
+            com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalyOrBuilder>
+        getFeatureStatsAndAnomalyFieldBuilder() {
+      if (featureStatsAndAnomalyBuilder_ == null) {
+        featureStatsAndAnomalyBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly,
+                com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalyOrBuilder>(
+                featureStatsAndAnomaly_,
+                ((bitField0_ & 0x00000800) != 0),
+                getParentForChildren(),
+                isClean());
+        featureStatsAndAnomaly_ = null;
+      }
+      return featureStatsAndAnomalyBuilder_;
+    }
+
     private java.lang.Object versionColumnName_ = "";
     /**
      *
@@ -5839,7 +6428,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       versionColumnName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5858,7 +6447,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearVersionColumnName() {
       versionColumnName_ = getDefaultInstance().getVersionColumnName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5882,7 +6471,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       versionColumnName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5952,7 +6541,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pointOfContact_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5970,7 +6559,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPointOfContact() {
       pointOfContact_ = getDefaultInstance().getPointOfContact();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5993,7 +6582,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pointOfContact_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

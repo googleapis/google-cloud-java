@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsReq
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsResponse;
+import com.google.cloud.eventarc.publishing.v1.PublishRequest;
+import com.google.cloud.eventarc.publishing.v1.PublishResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -42,6 +44,10 @@ public abstract class PublisherStub implements BackgroundResource {
 
   public UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: publishEventsCallable()");
+  }
+
+  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    throw new UnsupportedOperationException("Not implemented: publishCallable()");
   }
 
   @Override

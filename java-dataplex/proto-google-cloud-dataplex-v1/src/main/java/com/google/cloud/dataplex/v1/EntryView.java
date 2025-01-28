@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Returns aspects matching custom fields in GetEntryRequest. If the number of
-   * aspects would exceed 100, the first 100 will be returned.
+   * aspects exceeds 100, the first 100 will be returned.
    * </pre>
    *
    * <code>CUSTOM = 3;</code>
@@ -75,7 +75,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Returns all aspects. If the number of aspects would exceed 100, the first
+   * Returns all aspects. If the number of aspects exceeds 100, the first
    * 100 will be returned.
    * </pre>
    *
@@ -121,7 +121,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Returns aspects matching custom fields in GetEntryRequest. If the number of
-   * aspects would exceed 100, the first 100 will be returned.
+   * aspects exceeds 100, the first 100 will be returned.
    * </pre>
    *
    * <code>CUSTOM = 3;</code>
@@ -131,7 +131,7 @@ public enum EntryView implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Returns all aspects. If the number of aspects would exceed 100, the first
+   * Returns all aspects. If the number of aspects exceeds 100, the first
    * 100 will be returned.
    * </pre>
    *

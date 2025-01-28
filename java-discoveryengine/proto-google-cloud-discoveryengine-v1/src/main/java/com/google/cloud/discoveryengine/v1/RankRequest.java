@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,7 +88,7 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the rank service config, such as
-   * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+   * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
    * </pre>
    *
    * <code>
@@ -114,7 +114,7 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The resource name of the rank service config, such as
-   * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+   * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
    * </pre>
    *
    * <code>
@@ -1108,7 +1108,7 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the rank service config, such as
-     * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+     * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
      * </pre>
      *
      * <code>
@@ -1133,7 +1133,7 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the rank service config, such as
-     * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+     * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
      * </pre>
      *
      * <code>
@@ -1158,7 +1158,7 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the rank service config, such as
-     * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+     * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
      * </pre>
      *
      * <code>
@@ -1182,7 +1182,7 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the rank service config, such as
-     * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+     * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
      * </pre>
      *
      * <code>
@@ -1202,7 +1202,7 @@ public final class RankRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The resource name of the rank service config, such as
-     * `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+     * `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
      * </pre>
      *
      * <code>

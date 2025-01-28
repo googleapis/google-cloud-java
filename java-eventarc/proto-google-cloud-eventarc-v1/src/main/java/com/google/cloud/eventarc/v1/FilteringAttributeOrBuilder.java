@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,8 +78,8 @@ public interface FilteringAttributeOrBuilder
    *
    *
    * <pre>
-   * Output only. If true, the triggers for this provider should always specify a filter
-   * on these attributes. Trigger creation will fail otherwise.
+   * Output only. If true, the triggers for this provider should always specify
+   * a filter on these attributes. Trigger creation will fail otherwise.
    * </pre>
    *
    * <code>bool required = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -92,8 +92,8 @@ public interface FilteringAttributeOrBuilder
    *
    *
    * <pre>
-   * Output only. If true, the attribute accepts matching expressions in the Eventarc
-   * PathPattern format.
+   * Output only. If true, the attribute accepts matching expressions in the
+   * Eventarc PathPattern format.
    * </pre>
    *
    * <code>bool path_pattern_supported = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

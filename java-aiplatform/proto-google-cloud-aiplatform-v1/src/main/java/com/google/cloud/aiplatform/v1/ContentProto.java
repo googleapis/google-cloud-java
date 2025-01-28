@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,44 +259,45 @@ public final class ContentProto {
           + "loud.aiplatform.v1.LogprobsResult.Candid"
           + "ate\"g\n\007Segment\022\027\n\npart_index\030\001 \001(\005B\003\340A\003\022"
           + "\030\n\013start_index\030\002 \001(\005B\003\340A\003\022\026\n\tend_index\030\003"
-          + " \001(\005B\003\340A\003\022\021\n\004text\030\004 \001(\tB\003\340A\003\"\302\002\n\016Groundi"
+          + " \001(\005B\003\340A\003\022\021\n\004text\030\004 \001(\tB\003\340A\003\"\336\002\n\016Groundi"
           + "ngChunk\022=\n\003web\030\001 \001(\0132..google.cloud.aipl"
           + "atform.v1.GroundingChunk.WebH\000\022X\n\021retrie"
           + "ved_context\030\002 \001(\0132;.google.cloud.aiplatf"
           + "orm.v1.GroundingChunk.RetrievedContextH\000"
           + "\032=\n\003Web\022\020\n\003uri\030\001 \001(\tH\000\210\001\001\022\022\n\005title\030\002 \001(\t"
-          + "H\001\210\001\001B\006\n\004_uriB\010\n\006_title\032J\n\020RetrievedCont"
+          + "H\001\210\001\001B\006\n\004_uriB\010\n\006_title\032f\n\020RetrievedCont"
           + "ext\022\020\n\003uri\030\001 \001(\tH\000\210\001\001\022\022\n\005title\030\002 \001(\tH\001\210\001"
-          + "\001B\006\n\004_uriB\010\n\006_titleB\014\n\nchunk_type\"\225\001\n\020Gr"
-          + "oundingSupport\0229\n\007segment\030\001 \001(\0132#.google"
-          + ".cloud.aiplatform.v1.SegmentH\000\210\001\001\022\037\n\027gro"
-          + "unding_chunk_indices\030\002 \003(\005\022\031\n\021confidence"
-          + "_scores\030\003 \003(\002B\n\n\010_segment\"\243\003\n\021GroundingM"
-          + "etadata\022\037\n\022web_search_queries\030\001 \003(\tB\003\340A\001"
-          + "\022R\n\022search_entry_point\030\004 \001(\0132,.google.cl"
-          + "oud.aiplatform.v1.SearchEntryPointB\003\340A\001H"
-          + "\000\210\001\001\022D\n\020grounding_chunks\030\005 \003(\0132*.google."
-          + "cloud.aiplatform.v1.GroundingChunk\022M\n\022gr"
-          + "ounding_supports\030\006 \003(\0132,.google.cloud.ai"
-          + "platform.v1.GroundingSupportB\003\340A\001\022V\n\022ret"
-          + "rieval_metadata\030\007 \001(\0132-.google.cloud.aip"
-          + "latform.v1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001"
-          + "\001B\025\n\023_search_entry_pointB\025\n\023_retrieval_m"
-          + "etadata\"H\n\020SearchEntryPoint\022\035\n\020rendered_"
-          + "content\030\001 \001(\tB\003\340A\001\022\025\n\010sdk_blob\030\002 \001(\014B\003\340A"
-          + "\001\"G\n\021RetrievalMetadata\0222\n%google_search_"
-          + "dynamic_retrieval_score\030\002 \001(\002B\003\340A\001*\327\001\n\014H"
-          + "armCategory\022\035\n\031HARM_CATEGORY_UNSPECIFIED"
-          + "\020\000\022\035\n\031HARM_CATEGORY_HATE_SPEECH\020\001\022#\n\037HAR"
-          + "M_CATEGORY_DANGEROUS_CONTENT\020\002\022\034\n\030HARM_C"
-          + "ATEGORY_HARASSMENT\020\003\022#\n\037HARM_CATEGORY_SE"
-          + "XUALLY_EXPLICIT\020\004\022!\n\035HARM_CATEGORY_CIVIC"
-          + "_INTEGRITY\020\005B\312\001\n\036com.google.cloud.aiplat"
-          + "form.v1B\014ContentProtoP\001Z>cloud.google.co"
-          + "m/go/aiplatform/apiv1/aiplatformpb;aipla"
-          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
-          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
-          + "d::AIPlatform::V1b\006proto3"
+          + "\001\022\021\n\004text\030\003 \001(\tH\002\210\001\001B\006\n\004_uriB\010\n\006_titleB\007"
+          + "\n\005_textB\014\n\nchunk_type\"\225\001\n\020GroundingSuppo"
+          + "rt\0229\n\007segment\030\001 \001(\0132#.google.cloud.aipla"
+          + "tform.v1.SegmentH\000\210\001\001\022\037\n\027grounding_chunk"
+          + "_indices\030\002 \003(\005\022\031\n\021confidence_scores\030\003 \003("
+          + "\002B\n\n\010_segment\"\243\003\n\021GroundingMetadata\022\037\n\022w"
+          + "eb_search_queries\030\001 \003(\tB\003\340A\001\022R\n\022search_e"
+          + "ntry_point\030\004 \001(\0132,.google.cloud.aiplatfo"
+          + "rm.v1.SearchEntryPointB\003\340A\001H\000\210\001\001\022D\n\020grou"
+          + "nding_chunks\030\005 \003(\0132*.google.cloud.aiplat"
+          + "form.v1.GroundingChunk\022M\n\022grounding_supp"
+          + "orts\030\006 \003(\0132,.google.cloud.aiplatform.v1."
+          + "GroundingSupportB\003\340A\001\022V\n\022retrieval_metad"
+          + "ata\030\007 \001(\0132-.google.cloud.aiplatform.v1.R"
+          + "etrievalMetadataB\006\340A\001\340A\003H\001\210\001\001B\025\n\023_search"
+          + "_entry_pointB\025\n\023_retrieval_metadata\"H\n\020S"
+          + "earchEntryPoint\022\035\n\020rendered_content\030\001 \001("
+          + "\tB\003\340A\001\022\025\n\010sdk_blob\030\002 \001(\014B\003\340A\001\"G\n\021Retriev"
+          + "alMetadata\0222\n%google_search_dynamic_retr"
+          + "ieval_score\030\002 \001(\002B\003\340A\001*\327\001\n\014HarmCategory\022"
+          + "\035\n\031HARM_CATEGORY_UNSPECIFIED\020\000\022\035\n\031HARM_C"
+          + "ATEGORY_HATE_SPEECH\020\001\022#\n\037HARM_CATEGORY_D"
+          + "ANGEROUS_CONTENT\020\002\022\034\n\030HARM_CATEGORY_HARA"
+          + "SSMENT\020\003\022#\n\037HARM_CATEGORY_SEXUALLY_EXPLI"
+          + "CIT\020\004\022!\n\035HARM_CATEGORY_CIVIC_INTEGRITY\020\005"
+          + "B\312\001\n\036com.google.cloud.aiplatform.v1B\014Con"
+          + "tentProtoP\001Z>cloud.google.com/go/aiplatf"
+          + "orm/apiv1/aiplatformpb;aiplatformpb\252\002\032Go"
+          + "ogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\"
+          + "AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfor"
+          + "m::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -517,7 +518,7 @@ public final class ContentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_GroundingChunk_RetrievedContext_descriptor,
             new java.lang.String[] {
-              "Uri", "Title",
+              "Uri", "Title", "Text",
             });
     internal_static_google_cloud_aiplatform_v1_GroundingSupport_descriptor =
         getDescriptor().getMessageTypes().get(14);

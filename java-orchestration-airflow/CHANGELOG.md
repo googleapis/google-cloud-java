@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.56.0 (2025-01-09)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#11382](https://github.com/googleapis/google-cloud-java/issues/11382)) ([a4fd23c](https://github.com/googleapis/google-cloud-java/commit/a4fd23ce1dfa364959de1e97e3b769996f3c7d0d))
+
+
+## 1.55.0 (2024-12-13)
+
+### Bug Fixes
+
+* A comment for field `data` in message `.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret` is changed ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add examples for kubernetes secret ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#11349](https://github.com/googleapis/google-cloud-java/issues/11349)) ([9bb6334](https://github.com/googleapis/google-cloud-java/commit/9bb6334458fdec53ba9fdec501de534d6516f102))
+
+
+## 1.54.0 (2024-11-18)
+
+* No change
+
+
+## 1.53.0 (2024-10-28)
+
+* No change
+
+
 ## 1.52.0 (2024-10-09)
 
 * No change

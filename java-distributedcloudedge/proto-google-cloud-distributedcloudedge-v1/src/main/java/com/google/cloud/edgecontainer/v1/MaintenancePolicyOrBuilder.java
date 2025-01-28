@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,4 +58,83 @@ public interface MaintenancePolicyOrBuilder
    * <code>.google.cloud.edgecontainer.v1.MaintenanceWindow window = 1;</code>
    */
   com.google.cloud.edgecontainer.v1.MaintenanceWindowOrBuilder getWindowOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow>
+      getMaintenanceExclusionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindow getMaintenanceExclusions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getMaintenanceExclusionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder>
+      getMaintenanceExclusionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Exclusions to automatic maintenance. Non-emergency maintenance
+   * should not occur in these windows. Each exclusion has a unique name and may
+   * be active or expired. The max number of maintenance exclusions allowed at a
+   * given time is 3.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.edgecontainer.v1.MaintenanceExclusionWindow maintenance_exclusions = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.edgecontainer.v1.MaintenanceExclusionWindowOrBuilder
+      getMaintenanceExclusionsOrBuilder(int index);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,131 @@ public interface RagFileParsingConfigOrBuilder
    *
    *
    * <pre>
+   * The Advanced Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser advanced_parser = 3;
+   * </code>
+   *
+   * @return Whether the advancedParser field is set.
+   */
+  boolean hasAdvancedParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Advanced Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser advanced_parser = 3;
+   * </code>
+   *
+   * @return The advancedParser.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser getAdvancedParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Advanced Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParser advanced_parser = 3;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.AdvancedParserOrBuilder
+      getAdvancedParserOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Layout Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser layout_parser = 4;
+   * </code>
+   *
+   * @return Whether the layoutParser field is set.
+   */
+  boolean hasLayoutParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Layout Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser layout_parser = 4;
+   * </code>
+   *
+   * @return The layoutParser.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser getLayoutParser();
+  /**
+   *
+   *
+   * <pre>
+   * The Layout Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParser layout_parser = 4;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LayoutParserOrBuilder
+      getLayoutParserOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return Whether the llmParser field is set.
+   */
+  boolean hasLlmParser();
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return The llmParser.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser getLlmParser();
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.LlmParserOrBuilder
+      getLlmParserOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether to use advanced PDF parsing.
    * </pre>
    *
-   * <code>bool use_advanced_pdf_parsing = 2;</code>
+   * <code>bool use_advanced_pdf_parsing = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagFileParsingConfig.use_advanced_pdf_parsing is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=473
    * @return The useAdvancedPdfParsing.
    */
+  @java.lang.Deprecated
   boolean getUseAdvancedPdfParsing();
+
+  com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.ParserCase getParserCase();
 }

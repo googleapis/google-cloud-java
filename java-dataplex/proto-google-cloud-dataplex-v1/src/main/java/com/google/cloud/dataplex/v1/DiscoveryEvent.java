@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     zoneId_ = "";
     assetId_ = "";
     dataLocation_ = "";
+    datascanId_ = "";
     type_ = 0;
   }
 
@@ -158,6 +159,46 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTITION_DELETED = 7;</code>
      */
     PARTITION_DELETED(7),
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being published.
+     * </pre>
+     *
+     * <code>TABLE_PUBLISHED = 10;</code>
+     */
+    TABLE_PUBLISHED(10),
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being updated.
+     * </pre>
+     *
+     * <code>TABLE_UPDATED = 11;</code>
+     */
+    TABLE_UPDATED(11),
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being skipped in publishing.
+     * </pre>
+     *
+     * <code>TABLE_IGNORED = 12;</code>
+     */
+    TABLE_IGNORED(12),
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being deleted.
+     * </pre>
+     *
+     * <code>TABLE_DELETED = 13;</code>
+     */
+    TABLE_DELETED(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -241,6 +282,46 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTITION_DELETED = 7;</code>
      */
     public static final int PARTITION_DELETED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being published.
+     * </pre>
+     *
+     * <code>TABLE_PUBLISHED = 10;</code>
+     */
+    public static final int TABLE_PUBLISHED_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being updated.
+     * </pre>
+     *
+     * <code>TABLE_UPDATED = 11;</code>
+     */
+    public static final int TABLE_UPDATED_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being skipped in publishing.
+     * </pre>
+     *
+     * <code>TABLE_IGNORED = 12;</code>
+     */
+    public static final int TABLE_IGNORED_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * An event representing a table being deleted.
+     * </pre>
+     *
+     * <code>TABLE_DELETED = 13;</code>
+     */
+    public static final int TABLE_DELETED_VALUE = 13;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -282,6 +363,14 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return PARTITION_UPDATED;
         case 7:
           return PARTITION_DELETED;
+        case 10:
+          return TABLE_PUBLISHED;
+        case 11:
+          return TABLE_UPDATED;
+        case 12:
+          return TABLE_IGNORED;
+        case 13:
+          return TABLE_DELETED;
         default:
           return null;
       }
@@ -490,6 +579,185 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.DiscoveryEvent.EntityType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the published table.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataplex.v1.DiscoveryEvent.TableType}
+   */
+  public enum TableType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * An unspecified table type.
+     * </pre>
+     *
+     * <code>TABLE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    TABLE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * External table type.
+     * </pre>
+     *
+     * <code>EXTERNAL_TABLE = 1;</code>
+     */
+    EXTERNAL_TABLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * BigLake table type.
+     * </pre>
+     *
+     * <code>BIGLAKE_TABLE = 2;</code>
+     */
+    BIGLAKE_TABLE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Object table type for unstructured data.
+     * </pre>
+     *
+     * <code>OBJECT_TABLE = 3;</code>
+     */
+    OBJECT_TABLE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * An unspecified table type.
+     * </pre>
+     *
+     * <code>TABLE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TABLE_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * External table type.
+     * </pre>
+     *
+     * <code>EXTERNAL_TABLE = 1;</code>
+     */
+    public static final int EXTERNAL_TABLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * BigLake table type.
+     * </pre>
+     *
+     * <code>BIGLAKE_TABLE = 2;</code>
+     */
+    public static final int BIGLAKE_TABLE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Object table type for unstructured data.
+     * </pre>
+     *
+     * <code>OBJECT_TABLE = 3;</code>
+     */
+    public static final int OBJECT_TABLE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TableType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TableType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TABLE_TYPE_UNSPECIFIED;
+        case 1:
+          return EXTERNAL_TABLE;
+        case 2:
+          return BIGLAKE_TABLE;
+        case 3:
+          return OBJECT_TABLE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TableType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TableType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TableType>() {
+          public TableType findValueByNumber(int number) {
+            return TableType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DiscoveryEvent.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TableType[] VALUES = values();
+
+    public static TableType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TableType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.DiscoveryEvent.TableType)
   }
 
   public interface ConfigDetailsOrBuilder
@@ -2204,6 +2472,829 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface TableDetailsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DiscoveryEvent.TableDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The fully-qualified resource name of the table resource.
+     * </pre>
+     *
+     * <code>string table = 1;</code>
+     *
+     * @return The table.
+     */
+    java.lang.String getTable();
+    /**
+     *
+     *
+     * <pre>
+     * The fully-qualified resource name of the table resource.
+     * </pre>
+     *
+     * <code>string table = 1;</code>
+     *
+     * @return The bytes for table.
+     */
+    com.google.protobuf.ByteString getTableBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the table resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The type of the table resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+     *
+     * @return The type.
+     */
+    com.google.cloud.dataplex.v1.DiscoveryEvent.TableType getType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the published table.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DiscoveryEvent.TableDetails}
+   */
+  public static final class TableDetails extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DiscoveryEvent.TableDetails)
+      TableDetailsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TableDetails.newBuilder() to construct.
+    private TableDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TableDetails() {
+      table_ = "";
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TableDetails();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DiscoveryEvent_TableDetails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DiscoveryEvent_TableDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.class,
+              com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder.class);
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The fully-qualified resource name of the table resource.
+     * </pre>
+     *
+     * <code>string table = 1;</code>
+     *
+     * @return The table.
+     */
+    @java.lang.Override
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The fully-qualified resource name of the table resource.
+     * </pre>
+     *
+     * <code>string table = 1;</code>
+     *
+     * @return The bytes for table.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of the table resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of the table resource.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DiscoveryEvent.TableType getType() {
+      com.google.cloud.dataplex.v1.DiscoveryEvent.TableType result =
+          com.google.cloud.dataplex.v1.DiscoveryEvent.TableType.forNumber(type_);
+      return result == null
+          ? com.google.cloud.dataplex.v1.DiscoveryEvent.TableType.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, table_);
+      }
+      if (type_
+          != com.google.cloud.dataplex.v1.DiscoveryEvent.TableType.TABLE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, table_);
+      }
+      if (type_
+          != com.google.cloud.dataplex.v1.DiscoveryEvent.TableType.TABLE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails other =
+          (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) obj;
+
+      if (!getTable().equals(other.getTable())) return false;
+      if (type_ != other.type_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the published table.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DiscoveryEvent.TableDetails}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DiscoveryEvent.TableDetails)
+        com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DiscoveryEvent_TableDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DiscoveryEvent_TableDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.class,
+                com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        table_ = "";
+        type_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DiscoveryEvent_TableDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails build() {
+        com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails buildPartial() {
+        com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails result =
+            new com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.table_ = table_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails other) {
+        if (other == com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance())
+          return this;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  table_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object table_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The fully-qualified resource name of the table resource.
+       * </pre>
+       *
+       * <code>string table = 1;</code>
+       *
+       * @return The table.
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The fully-qualified resource name of the table resource.
+       * </pre>
+       *
+       * <code>string table = 1;</code>
+       *
+       * @return The bytes for table.
+       */
+      public com.google.protobuf.ByteString getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The fully-qualified resource name of the table resource.
+       * </pre>
+       *
+       * <code>string table = 1;</code>
+       *
+       * @param value The table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTable(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        table_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The fully-qualified resource name of the table resource.
+       * </pre>
+       *
+       * <code>string table = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The fully-qualified resource name of the table resource.
+       * </pre>
+       *
+       * <code>string table = 1;</code>
+       *
+       * @param value The bytes for table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        table_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The type of the table resource.
+       * </pre>
+       *
+       * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the table resource.
+       * </pre>
+       *
+       * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the table resource.
+       * </pre>
+       *
+       * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DiscoveryEvent.TableType getType() {
+        com.google.cloud.dataplex.v1.DiscoveryEvent.TableType result =
+            com.google.cloud.dataplex.v1.DiscoveryEvent.TableType.forNumber(type_);
+        return result == null
+            ? com.google.cloud.dataplex.v1.DiscoveryEvent.TableType.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the table resource.
+       * </pre>
+       *
+       * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.google.cloud.dataplex.v1.DiscoveryEvent.TableType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of the table resource.
+       * </pre>
+       *
+       * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableType type = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DiscoveryEvent.TableDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DiscoveryEvent.TableDetails)
+    private static final com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails();
+    }
+
+    public static com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TableDetails> PARSER =
+        new com.google.protobuf.AbstractParser<TableDetails>() {
+          @java.lang.Override
+          public TableDetails parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TableDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TableDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface PartitionDetailsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails)
@@ -3636,6 +4727,31 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for type.
      */
     com.google.protobuf.ByteString getTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The human readable issue associated with the action.
+     * </pre>
+     *
+     * <code>string issue = 2;</code>
+     *
+     * @return The issue.
+     */
+    java.lang.String getIssue();
+    /**
+     *
+     *
+     * <pre>
+     * The human readable issue associated with the action.
+     * </pre>
+     *
+     * <code>string issue = 2;</code>
+     *
+     * @return The bytes for issue.
+     */
+    com.google.protobuf.ByteString getIssueBytes();
   }
   /**
    *
@@ -3658,6 +4774,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
 
     private ActionDetails() {
       type_ = "";
+      issue_ = "";
     }
 
     @java.lang.Override
@@ -3734,6 +4851,57 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int ISSUE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object issue_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The human readable issue associated with the action.
+     * </pre>
+     *
+     * <code>string issue = 2;</code>
+     *
+     * @return The issue.
+     */
+    @java.lang.Override
+    public java.lang.String getIssue() {
+      java.lang.Object ref = issue_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        issue_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The human readable issue associated with the action.
+     * </pre>
+     *
+     * <code>string issue = 2;</code>
+     *
+     * @return The bytes for issue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIssueBytes() {
+      java.lang.Object ref = issue_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        issue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3751,6 +4919,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issue_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, issue_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3762,6 +4933,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issue_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, issue_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3780,6 +4954,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails) obj;
 
       if (!getType().equals(other.getType())) return false;
+      if (!getIssue().equals(other.getIssue())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3793,6 +4968,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + ISSUE_FIELD_NUMBER;
+      hash = (53 * hash) + getIssue().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3936,6 +5113,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         type_ = "";
+        issue_ = "";
         return this;
       }
 
@@ -3974,6 +5152,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.issue_ = issue_;
         }
       }
 
@@ -4030,6 +5211,11 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getIssue().isEmpty()) {
+          issue_ = other.issue_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4062,6 +5248,12 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  issue_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4192,6 +5384,112 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object issue_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The human readable issue associated with the action.
+       * </pre>
+       *
+       * <code>string issue = 2;</code>
+       *
+       * @return The issue.
+       */
+      public java.lang.String getIssue() {
+        java.lang.Object ref = issue_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          issue_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The human readable issue associated with the action.
+       * </pre>
+       *
+       * <code>string issue = 2;</code>
+       *
+       * @return The bytes for issue.
+       */
+      public com.google.protobuf.ByteString getIssueBytes() {
+        java.lang.Object ref = issue_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          issue_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The human readable issue associated with the action.
+       * </pre>
+       *
+       * <code>string issue = 2;</code>
+       *
+       * @param value The issue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIssue(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        issue_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The human readable issue associated with the action.
+       * </pre>
+       *
+       * <code>string issue = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIssue() {
+        issue_ = getDefaultInstance().getIssue();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The human readable issue associated with the action.
+       * </pre>
+       *
+       * <code>string issue = 2;</code>
+       *
+       * @param value The bytes for issue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIssueBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        issue_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4269,6 +5567,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     ENTITY(21),
     PARTITION(22),
     ACTION(23),
+    TABLE(24),
     DETAILS_NOT_SET(0);
     private final int value;
 
@@ -4295,6 +5594,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           return PARTITION;
         case 23:
           return ACTION;
+        case 24:
+          return TABLE;
         case 0:
           return DETAILS_NOT_SET;
         default:
@@ -4566,6 +5867,57 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DATASCAN_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object datascanId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The id of the associated datascan for standalone discovery.
+   * </pre>
+   *
+   * <code>string datascan_id = 6;</code>
+   *
+   * @return The datascanId.
+   */
+  @java.lang.Override
+  public java.lang.String getDatascanId() {
+    java.lang.Object ref = datascanId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      datascanId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The id of the associated datascan for standalone discovery.
+   * </pre>
+   *
+   * <code>string datascan_id = 6;</code>
+   *
+   * @return The bytes for datascanId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatascanIdBytes() {
+    java.lang.Object ref = datascanId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      datascanId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TYPE_FIELD_NUMBER = 10;
   private int type_ = 0;
   /**
@@ -4808,6 +6160,57 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails.getDefaultInstance();
   }
 
+  public static final int TABLE_FIELD_NUMBER = 24;
+  /**
+   *
+   *
+   * <pre>
+   * Details about the BigQuery table publishing associated with the event.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+   *
+   * @return Whether the table field is set.
+   */
+  @java.lang.Override
+  public boolean hasTable() {
+    return detailsCase_ == 24;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the BigQuery table publishing associated with the event.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+   *
+   * @return The table.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails getTable() {
+    if (detailsCase_ == 24) {
+      return (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_;
+    }
+    return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the BigQuery table publishing associated with the event.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder getTableOrBuilder() {
+    if (detailsCase_ == 24) {
+      return (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_;
+    }
+    return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4837,6 +6240,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, dataLocation_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datascanId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, datascanId_);
+    }
     if (type_
         != com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.EVENT_TYPE_UNSPECIFIED
             .getNumber()) {
@@ -4854,6 +6260,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
     if (detailsCase_ == 23) {
       output.writeMessage(23, (com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails) details_);
+    }
+    if (detailsCase_ == 24) {
+      output.writeMessage(24, (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4878,6 +6287,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataLocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, dataLocation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datascanId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, datascanId_);
     }
     if (type_
         != com.google.cloud.dataplex.v1.DiscoveryEvent.EventType.EVENT_TYPE_UNSPECIFIED
@@ -4904,6 +6316,11 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               23, (com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails) details_);
     }
+    if (detailsCase_ == 24) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4925,6 +6342,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getZoneId().equals(other.getZoneId())) return false;
     if (!getAssetId().equals(other.getAssetId())) return false;
     if (!getDataLocation().equals(other.getDataLocation())) return false;
+    if (!getDatascanId().equals(other.getDatascanId())) return false;
     if (type_ != other.type_) return false;
     if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
@@ -4939,6 +6357,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         break;
       case 23:
         if (!getAction().equals(other.getAction())) return false;
+        break;
+      case 24:
+        if (!getTable().equals(other.getTable())) return false;
         break;
       case 0:
       default:
@@ -4964,6 +6385,8 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getAssetId().hashCode();
     hash = (37 * hash) + DATA_LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getDataLocation().hashCode();
+    hash = (37 * hash) + DATASCAN_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getDatascanId().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
     switch (detailsCase_) {
@@ -4982,6 +6405,10 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       case 23:
         hash = (37 * hash) + ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getAction().hashCode();
+        break;
+      case 24:
+        hash = (37 * hash) + TABLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTable().hashCode();
         break;
       case 0:
       default:
@@ -5130,6 +6557,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       zoneId_ = "";
       assetId_ = "";
       dataLocation_ = "";
+      datascanId_ = "";
       type_ = 0;
       if (configBuilder_ != null) {
         configBuilder_.clear();
@@ -5142,6 +6570,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (actionBuilder_ != null) {
         actionBuilder_.clear();
+      }
+      if (tableBuilder_ != null) {
+        tableBuilder_.clear();
       }
       detailsCase_ = 0;
       details_ = null;
@@ -5198,6 +6629,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         result.dataLocation_ = dataLocation_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.datascanId_ = datascanId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.type_ = type_;
       }
     }
@@ -5216,6 +6650,9 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (detailsCase_ == 23 && actionBuilder_ != null) {
         result.details_ = actionBuilder_.build();
+      }
+      if (detailsCase_ == 24 && tableBuilder_ != null) {
+        result.details_ = tableBuilder_.build();
       }
     }
 
@@ -5289,6 +6726,11 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getDatascanId().isEmpty()) {
+        datascanId_ = other.datascanId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
@@ -5311,6 +6753,11 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
         case ACTION:
           {
             mergeAction(other.getAction());
+            break;
+          }
+        case TABLE:
+          {
+            mergeTable(other.getTable());
             break;
           }
         case DETAILS_NOT_SET:
@@ -5374,10 +6821,16 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                datascanId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             case 80:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 80
             case 162:
@@ -5404,6 +6857,12 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
                 detailsCase_ = 23;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(getTableFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 24;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5967,6 +7426,112 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object datascanId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The id of the associated datascan for standalone discovery.
+     * </pre>
+     *
+     * <code>string datascan_id = 6;</code>
+     *
+     * @return The datascanId.
+     */
+    public java.lang.String getDatascanId() {
+      java.lang.Object ref = datascanId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        datascanId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The id of the associated datascan for standalone discovery.
+     * </pre>
+     *
+     * <code>string datascan_id = 6;</code>
+     *
+     * @return The bytes for datascanId.
+     */
+    public com.google.protobuf.ByteString getDatascanIdBytes() {
+      java.lang.Object ref = datascanId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        datascanId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The id of the associated datascan for standalone discovery.
+     * </pre>
+     *
+     * <code>string datascan_id = 6;</code>
+     *
+     * @param value The datascanId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatascanId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      datascanId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The id of the associated datascan for standalone discovery.
+     * </pre>
+     *
+     * <code>string datascan_id = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatascanId() {
+      datascanId_ = getDefaultInstance().getDatascanId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The id of the associated datascan for standalone discovery.
+     * </pre>
+     *
+     * <code>string datascan_id = 6;</code>
+     *
+     * @param value The bytes for datascanId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatascanIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      datascanId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private int type_ = 0;
     /**
      *
@@ -5997,7 +7562,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6036,7 +7601,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -6053,7 +7618,7 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       type_ = 0;
       onChanged();
       return this;
@@ -6903,6 +8468,216 @@ public final class DiscoveryEvent extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 23;
       onChanged();
       return actionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails,
+            com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder,
+            com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder>
+        tableBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     *
+     * @return Whether the table field is set.
+     */
+    @java.lang.Override
+    public boolean hasTable() {
+      return detailsCase_ == 24;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     *
+     * @return The table.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails getTable() {
+      if (tableBuilder_ == null) {
+        if (detailsCase_ == 24) {
+          return (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_;
+        }
+        return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 24) {
+          return tableBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     */
+    public Builder setTable(com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails value) {
+      if (tableBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        tableBuilder_.setMessage(value);
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     */
+    public Builder setTable(
+        com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder builderForValue) {
+      if (tableBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        tableBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     */
+    public Builder mergeTable(com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails value) {
+      if (tableBuilder_ == null) {
+        if (detailsCase_ == 24
+            && details_
+                != com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance()) {
+          details_ =
+              com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.newBuilder(
+                      (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 24) {
+          tableBuilder_.mergeFrom(value);
+        } else {
+          tableBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     */
+    public Builder clearTable() {
+      if (tableBuilder_ == null) {
+        if (detailsCase_ == 24) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 24) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        tableBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     */
+    public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder getTableBuilder() {
+      return getTableFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder getTableOrBuilder() {
+      if ((detailsCase_ == 24) && (tableBuilder_ != null)) {
+        return tableBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 24) {
+          return (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_;
+        }
+        return com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the BigQuery table publishing associated with the event.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails table = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails,
+            com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder,
+            com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder>
+        getTableFieldBuilder() {
+      if (tableBuilder_ == null) {
+        if (!(detailsCase_ == 24)) {
+          details_ = com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.getDefaultInstance();
+        }
+        tableBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails,
+                com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails.Builder,
+                com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetailsOrBuilder>(
+                (com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 24;
+      onChanged();
+      return tableBuilder_;
     }
 
     @java.lang.Override
