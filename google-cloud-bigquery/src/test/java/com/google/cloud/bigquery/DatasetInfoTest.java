@@ -62,6 +62,10 @@ public class DatasetInfoTest {
   private static final String STORAGE_BILLING_MODEL = "LOGICAL";
   private static final Long MAX_TIME_TRAVEL_HOURS_5_DAYS = 120L;
   private static final Long MAX_TIME_TRAVEL_HOURS_7_DAYS = 168L;
+  private static final Map<String, String> RESOURCE_TAGS =
+      ImmutableMap.of(
+          "example-key1", "example-value1",
+          "example-key2", "example-value2");
 
   private static final ExternalDatasetReference EXTERNAL_DATASET_REFERENCE =
       ExternalDatasetReference.newBuilder()
@@ -85,6 +89,7 @@ public class DatasetInfoTest {
           .setDefaultPartitionExpirationMs(DEFAULT_PARTITION__EXPIRATION)
           .setStorageBillingModel(STORAGE_BILLING_MODEL)
           .setMaxTimeTravelHours(MAX_TIME_TRAVEL_HOURS_7_DAYS)
+          .setResourceTags(RESOURCE_TAGS)
           .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE =
       DATASET_INFO
@@ -183,6 +188,7 @@ public class DatasetInfoTest {
     assertEquals(
         MAX_TIME_TRAVEL_HOURS_5_DAYS,
         DATASET_INFO_WITH_MAX_TIME_TRAVEL_5_DAYS.getMaxTimeTravelHours());
+    assertEquals(RESOURCE_TAGS, DATASET_INFO.getResourceTags());
   }
 
   @Test
@@ -272,5 +278,6 @@ public class DatasetInfoTest {
     assertEquals(expected.getExternalDatasetReference(), value.getExternalDatasetReference());
     assertEquals(expected.getStorageBillingModel(), value.getStorageBillingModel());
     assertEquals(expected.getMaxTimeTravelHours(), value.getMaxTimeTravelHours());
+    assertEquals(expected.getResourceTags(), value.getResourceTags());
   }
 }
