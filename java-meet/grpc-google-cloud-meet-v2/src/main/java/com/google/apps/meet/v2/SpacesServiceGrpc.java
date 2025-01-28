@@ -267,7 +267,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     default void getSpace(
@@ -280,7 +282,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     default void updateSpace(
@@ -295,6 +299,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     default void endActiveConference(
@@ -359,7 +365,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public void getSpace(
@@ -373,7 +381,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public void updateSpace(
@@ -390,6 +400,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public void endActiveConference(
@@ -438,7 +450,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space getSpace(com.google.apps.meet.v2.GetSpaceRequest request) {
@@ -450,7 +464,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space updateSpace(
@@ -464,6 +480,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public com.google.protobuf.Empty endActiveConference(
@@ -509,7 +527,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Gets a space by `space_id` or `meeting_code`.
+     * Gets details about a meeting space.
+     * For an example, see [Get a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Space>
@@ -522,7 +542,9 @@ public final class SpacesServiceGrpc {
      *
      *
      * <pre>
-     * Updates a space.
+     * Updates details about a meeting space.
+     * For an example, see [Update a meeting
+     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Space>
@@ -536,6 +558,8 @@ public final class SpacesServiceGrpc {
      *
      * <pre>
      * Ends an active conference (if there's one).
+     * For an example, see [End active
+     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

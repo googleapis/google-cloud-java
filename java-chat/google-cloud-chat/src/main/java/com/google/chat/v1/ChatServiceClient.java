@@ -520,7 +520,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateReaction</td>
- *      <td><p> Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example, see [Add a reaction to a message](https://developers.google.com/workspace/chat/create-reactions).
+ *      <td><p> Creates a reaction and adds it to a message. For an example, see [Add a reaction to a message](https://developers.google.com/workspace/chat/create-reactions).
  * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -561,7 +561,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteReaction</td>
- *      <td><p> Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete a reaction](https://developers.google.com/workspace/chat/delete-reactions).
+ *      <td><p> Deletes a reaction to a message. For an example, see [Delete a reaction](https://developers.google.com/workspace/chat/delete-reactions).
  * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -4285,8 +4285,7 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
-   * see [Add a reaction to a
+   * Creates a reaction and adds it to a message. For an example, see [Add a reaction to a
    * message](https://developers.google.com/workspace/chat/create-reactions).
    *
    * <p>Requires [user
@@ -4323,8 +4322,7 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
-   * see [Add a reaction to a
+   * Creates a reaction and adds it to a message. For an example, see [Add a reaction to a
    * message](https://developers.google.com/workspace/chat/create-reactions).
    *
    * <p>Requires [user
@@ -4358,8 +4356,7 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
-   * see [Add a reaction to a
+   * Creates a reaction and adds it to a message. For an example, see [Add a reaction to a
    * message](https://developers.google.com/workspace/chat/create-reactions).
    *
    * <p>Requires [user
@@ -4392,8 +4389,7 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a reaction and adds it to a message. Only unicode emojis are supported. For an example,
-   * see [Add a reaction to a
+   * Creates a reaction and adds it to a message. For an example, see [Add a reaction to a
    * message](https://developers.google.com/workspace/chat/create-reactions).
    *
    * <p>Requires [user
@@ -4612,8 +4608,8 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
-   * a reaction](https://developers.google.com/workspace/chat/delete-reactions).
+   * Deletes a reaction to a message. For an example, see [Delete a
+   * reaction](https://developers.google.com/workspace/chat/delete-reactions).
    *
    * <p>Requires [user
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -4644,8 +4640,8 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
-   * a reaction](https://developers.google.com/workspace/chat/delete-reactions).
+   * Deletes a reaction to a message. For an example, see [Delete a
+   * reaction](https://developers.google.com/workspace/chat/delete-reactions).
    *
    * <p>Requires [user
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -4675,8 +4671,8 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
-   * a reaction](https://developers.google.com/workspace/chat/delete-reactions).
+   * Deletes a reaction to a message. For an example, see [Delete a
+   * reaction](https://developers.google.com/workspace/chat/delete-reactions).
    *
    * <p>Requires [user
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
@@ -4707,8 +4703,8 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a reaction to a message. Only unicode emojis are supported. For an example, see [Delete
-   * a reaction](https://developers.google.com/workspace/chat/delete-reactions).
+   * Deletes a reaction to a message. For an example, see [Delete a
+   * reaction](https://developers.google.com/workspace/chat/delete-reactions).
    *
    * <p>Requires [user
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).

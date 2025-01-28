@@ -107,6 +107,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/meetings.space.created")
           .add("https://www.googleapis.com/auth/meetings.space.readonly")
+          .add("https://www.googleapis.com/auth/meetings.space.settings")
           .build();
 
   private final UnaryCallSettings<CreateSpaceRequest, Space> createSpaceSettings;

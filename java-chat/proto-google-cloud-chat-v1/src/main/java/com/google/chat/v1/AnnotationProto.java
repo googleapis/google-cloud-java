@@ -45,6 +45,10 @@ public final class AnnotationProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_RichLinkMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_CustomEmojiMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_CustomEmojiMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_DriveLinkData_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_DriveLinkData_fieldAccessorTable;
@@ -63,47 +67,52 @@ public final class AnnotationProto {
     java.lang.String[] descriptorData = {
       "\n\037google/chat/v1/annotation.proto\022\016googl"
           + "e.chat.v1\032\031google/api/resource.proto\032\037go"
-          + "ogle/chat/v1/attachment.proto\032\031google/ch"
-          + "at/v1/user.proto\"\274\002\n\nAnnotation\022,\n\004type\030"
-          + "\001 \001(\0162\036.google.chat.v1.AnnotationType\022\030\n"
-          + "\013start_index\030\002 \001(\005H\001\210\001\001\022\016\n\006length\030\003 \001(\005\022"
-          + ";\n\014user_mention\030\004 \001(\0132#.google.chat.v1.U"
-          + "serMentionMetadataH\000\022=\n\rslash_command\030\005 "
-          + "\001(\0132$.google.chat.v1.SlashCommandMetadat"
-          + "aH\000\022>\n\022rich_link_metadata\030\006 \001(\0132 .google"
-          + ".chat.v1.RichLinkMetadataH\000B\n\n\010metadataB"
-          + "\016\n\014_start_index\"\245\001\n\023UserMentionMetadata\022"
-          + "\"\n\004user\030\001 \001(\0132\024.google.chat.v1.User\0226\n\004t"
-          + "ype\030\002 \001(\0162(.google.chat.v1.UserMentionMe"
-          + "tadata.Type\"2\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020"
-          + "\000\022\007\n\003ADD\020\001\022\013\n\007MENTION\020\002\"\350\001\n\024SlashCommand"
-          + "Metadata\022!\n\003bot\030\001 \001(\0132\024.google.chat.v1.U"
-          + "ser\0227\n\004type\030\002 \001(\0162).google.chat.v1.Slash"
-          + "CommandMetadata.Type\022\024\n\014command_name\030\003 \001"
-          + "(\t\022\022\n\ncommand_id\030\004 \001(\003\022\027\n\017triggers_dialo"
-          + "g\030\005 \001(\010\"1\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\007\n"
-          + "\003ADD\020\001\022\n\n\006INVOKE\020\002\"\273\002\n\020RichLinkMetadata\022"
-          + "\013\n\003uri\030\001 \001(\t\022E\n\016rich_link_type\030\002 \001(\0162-.g"
-          + "oogle.chat.v1.RichLinkMetadata.RichLinkT"
-          + "ype\0228\n\017drive_link_data\030\003 \001(\0132\035.google.ch"
-          + "at.v1.DriveLinkDataH\000\022A\n\024chat_space_link"
-          + "_data\030\004 \001(\0132!.google.chat.v1.ChatSpaceLi"
-          + "nkDataH\000\"N\n\014RichLinkType\022\036\n\032RICH_LINK_TY"
-          + "PE_UNSPECIFIED\020\000\022\016\n\nDRIVE_FILE\020\001\022\016\n\nCHAT"
-          + "_SPACE\020\002B\006\n\004data\"X\n\rDriveLinkData\0224\n\016dri"
-          + "ve_data_ref\030\001 \001(\0132\034.google.chat.v1.Drive"
-          + "DataRef\022\021\n\tmime_type\030\002 \001(\t\"\246\001\n\021ChatSpace"
-          + "LinkData\022-\n\005space\030\001 \001(\tB\036\372A\033\n\031chat.googl"
-          + "eapis.com/Space\022/\n\006thread\030\002 \001(\tB\037\372A\034\n\032ch"
-          + "at.googleapis.com/Thread\0221\n\007message\030\003 \001("
-          + "\tB \372A\035\n\033chat.googleapis.com/Message*e\n\016A"
-          + "nnotationType\022\037\n\033ANNOTATION_TYPE_UNSPECI"
-          + "FIED\020\000\022\020\n\014USER_MENTION\020\001\022\021\n\rSLASH_COMMAN"
-          + "D\020\002\022\r\n\tRICH_LINK\020\003B\250\001\n\022com.google.chat.v"
-          + "1B\017AnnotationProtoP\001Z,cloud.google.com/g"
-          + "o/chat/apiv1/chatpb;chatpb\242\002\013DYNAPIProto"
-          + "\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Cha"
-          + "t\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "ogle/chat/v1/attachment.proto\032\035google/ch"
+          + "at/v1/reaction.proto\032\031google/chat/v1/use"
+          + "r.proto\"\202\003\n\nAnnotation\022,\n\004type\030\001 \001(\0162\036.g"
+          + "oogle.chat.v1.AnnotationType\022\030\n\013start_in"
+          + "dex\030\002 \001(\005H\001\210\001\001\022\016\n\006length\030\003 \001(\005\022;\n\014user_m"
+          + "ention\030\004 \001(\0132#.google.chat.v1.UserMentio"
+          + "nMetadataH\000\022=\n\rslash_command\030\005 \001(\0132$.goo"
+          + "gle.chat.v1.SlashCommandMetadataH\000\022>\n\022ri"
+          + "ch_link_metadata\030\006 \001(\0132 .google.chat.v1."
+          + "RichLinkMetadataH\000\022D\n\025custom_emoji_metad"
+          + "ata\030\007 \001(\0132#.google.chat.v1.CustomEmojiMe"
+          + "tadataH\000B\n\n\010metadataB\016\n\014_start_index\"\245\001\n"
+          + "\023UserMentionMetadata\022\"\n\004user\030\001 \001(\0132\024.goo"
+          + "gle.chat.v1.User\0226\n\004type\030\002 \001(\0162(.google."
+          + "chat.v1.UserMentionMetadata.Type\"2\n\004Type"
+          + "\022\024\n\020TYPE_UNSPECIFIED\020\000\022\007\n\003ADD\020\001\022\013\n\007MENTI"
+          + "ON\020\002\"\350\001\n\024SlashCommandMetadata\022!\n\003bot\030\001 \001"
+          + "(\0132\024.google.chat.v1.User\0227\n\004type\030\002 \001(\0162)"
+          + ".google.chat.v1.SlashCommandMetadata.Typ"
+          + "e\022\024\n\014command_name\030\003 \001(\t\022\022\n\ncommand_id\030\004 "
+          + "\001(\003\022\027\n\017triggers_dialog\030\005 \001(\010\"1\n\004Type\022\024\n\020"
+          + "TYPE_UNSPECIFIED\020\000\022\007\n\003ADD\020\001\022\n\n\006INVOKE\020\002\""
+          + "\273\002\n\020RichLinkMetadata\022\013\n\003uri\030\001 \001(\t\022E\n\016ric"
+          + "h_link_type\030\002 \001(\0162-.google.chat.v1.RichL"
+          + "inkMetadata.RichLinkType\0228\n\017drive_link_d"
+          + "ata\030\003 \001(\0132\035.google.chat.v1.DriveLinkData"
+          + "H\000\022A\n\024chat_space_link_data\030\004 \001(\0132!.googl"
+          + "e.chat.v1.ChatSpaceLinkDataH\000\"N\n\014RichLin"
+          + "kType\022\036\n\032RICH_LINK_TYPE_UNSPECIFIED\020\000\022\016\n"
+          + "\nDRIVE_FILE\020\001\022\016\n\nCHAT_SPACE\020\002B\006\n\004data\"H\n"
+          + "\023CustomEmojiMetadata\0221\n\014custom_emoji\030\001 \001"
+          + "(\0132\033.google.chat.v1.CustomEmoji\"X\n\rDrive"
+          + "LinkData\0224\n\016drive_data_ref\030\001 \001(\0132\034.googl"
+          + "e.chat.v1.DriveDataRef\022\021\n\tmime_type\030\002 \001("
+          + "\t\"\246\001\n\021ChatSpaceLinkData\022-\n\005space\030\001 \001(\tB\036"
+          + "\372A\033\n\031chat.googleapis.com/Space\022/\n\006thread"
+          + "\030\002 \001(\tB\037\372A\034\n\032chat.googleapis.com/Thread\022"
+          + "1\n\007message\030\003 \001(\tB \372A\035\n\033chat.googleapis.c"
+          + "om/Message*w\n\016AnnotationType\022\037\n\033ANNOTATI"
+          + "ON_TYPE_UNSPECIFIED\020\000\022\020\n\014USER_MENTION\020\001\022"
+          + "\021\n\rSLASH_COMMAND\020\002\022\r\n\tRICH_LINK\020\003\022\020\n\014CUS"
+          + "TOM_EMOJI\020\004B\250\001\n\022com.google.chat.v1B\017Anno"
+          + "tationProtoP\001Z,cloud.google.com/go/chat/"
+          + "apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Goog"
+          + "le.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026"
+          + "Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -111,6 +120,7 @@ public final class AnnotationProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.chat.v1.AttachmentProto.getDescriptor(),
+              com.google.chat.v1.ReactionProto.getDescriptor(),
               com.google.chat.v1.UserProto.getDescriptor(),
             });
     internal_static_google_chat_v1_Annotation_descriptor = getDescriptor().getMessageTypes().get(0);
@@ -124,6 +134,7 @@ public final class AnnotationProto {
               "UserMention",
               "SlashCommand",
               "RichLinkMetadata",
+              "CustomEmojiMetadata",
               "Metadata",
             });
     internal_static_google_chat_v1_UserMentionMetadata_descriptor =
@@ -150,8 +161,16 @@ public final class AnnotationProto {
             new java.lang.String[] {
               "Uri", "RichLinkType", "DriveLinkData", "ChatSpaceLinkData", "Data",
             });
-    internal_static_google_chat_v1_DriveLinkData_descriptor =
+    internal_static_google_chat_v1_CustomEmojiMetadata_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_chat_v1_CustomEmojiMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_CustomEmojiMetadata_descriptor,
+            new java.lang.String[] {
+              "CustomEmoji",
+            });
+    internal_static_google_chat_v1_DriveLinkData_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_chat_v1_DriveLinkData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_DriveLinkData_descriptor,
@@ -159,7 +178,7 @@ public final class AnnotationProto {
               "DriveDataRef", "MimeType",
             });
     internal_static_google_chat_v1_ChatSpaceLinkData_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_chat_v1_ChatSpaceLinkData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_ChatSpaceLinkData_descriptor,
@@ -173,6 +192,7 @@ public final class AnnotationProto {
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
     com.google.chat.v1.AttachmentProto.getDescriptor();
+    com.google.chat.v1.ReactionProto.getDescriptor();
     com.google.chat.v1.UserProto.getDescriptor();
   }
 
