@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.136.1](https://github.com/googleapis/java-pubsub/compare/v1.136.0...v1.136.1) (2025-01-28)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.52.0 ([0d8c8bf](https://github.com/googleapis/java-pubsub/commit/0d8c8bffc85804d5a64ec0d35893ad9e0062807e))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.46.0 ([#2309](https://github.com/googleapis/java-pubsub/issues/2309)) ([97bd44e](https://github.com/googleapis/java-pubsub/commit/97bd44e04c440320e45c2b4336677d8d266a39a2))
+* Update dependency com.google.cloud:google-cloud-core to v2.49.1 ([#2300](https://github.com/googleapis/java-pubsub/issues/2300)) ([cf2822b](https://github.com/googleapis/java-pubsub/commit/cf2822b7363e13e4730753cbb5ca3510c77f5f55))
+* Update dependency com.google.cloud:google-cloud-core to v2.50.0 ([#2321](https://github.com/googleapis/java-pubsub/issues/2321)) ([5c40bcd](https://github.com/googleapis/java-pubsub/commit/5c40bcd4d401d919b990e6a7d3151660ead76eb0))
+* Update dependency com.google.cloud:google-cloud-storage to v2.47.0 ([#2303](https://github.com/googleapis/java-pubsub/issues/2303)) ([707f842](https://github.com/googleapis/java-pubsub/commit/707f84271559dfe96fa11edffb307df145ceea47))
+* Update dependency com.google.cloud:google-cloud-storage to v2.48.0 ([#2322](https://github.com/googleapis/java-pubsub/issues/2322)) ([93b9419](https://github.com/googleapis/java-pubsub/commit/93b9419d210cedeab03f408dab4c74c9fcf18b59))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#2324](https://github.com/googleapis/java-pubsub/issues/2324)) ([84e8562](https://github.com/googleapis/java-pubsub/commit/84e856250867b2441cceed2315c312bd661c353c))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.29.3 ([#2302](https://github.com/googleapis/java-pubsub/issues/2302)) ([9e90e2c](https://github.com/googleapis/java-pubsub/commit/9e90e2ca26b2aea48563859358dde84640eb40d0))
+* Update dependency org.assertj:assertj-core to v3.27.3 ([#2313](https://github.com/googleapis/java-pubsub/issues/2313)) ([5e80b57](https://github.com/googleapis/java-pubsub/commit/5e80b57d2ffd58e6a0bb9f5e0e78bb46d6fe2530))
+* Update googleapis/sdk-platform-java action to v2.52.0 ([#2320](https://github.com/googleapis/java-pubsub/issues/2320)) ([01dd3de](https://github.com/googleapis/java-pubsub/commit/01dd3deaef392aa51c60d28c1f3cbb81bff2a5cb))
+
+
+### Documentation
+
+* Add samples and tests for ingestion from Kafka sources ([#2315](https://github.com/googleapis/java-pubsub/issues/2315)) ([eea603b](https://github.com/googleapis/java-pubsub/commit/eea603ba3f05be85d58a69cd5c3469e2088a7446))
+
 ## [1.136.0](https://github.com/googleapis/java-pubsub/compare/v1.135.0...v1.136.0) (2025-01-10)
 
 
