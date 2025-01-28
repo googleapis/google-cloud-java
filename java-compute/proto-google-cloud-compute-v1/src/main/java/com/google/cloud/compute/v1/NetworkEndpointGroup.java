@@ -409,7 +409,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint group.
+   * Optional. Metadata defined as annotations on the network endpoint group.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -431,7 +431,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint group.
+   * Optional. Metadata defined as annotations on the network endpoint group.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -444,7 +444,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint group.
+   * Optional. Metadata defined as annotations on the network endpoint group.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -464,7 +464,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint group.
+   * Optional. Metadata defined as annotations on the network endpoint group.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -487,7 +487,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -503,7 +503,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -521,7 +521,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -541,7 +541,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>
@@ -558,7 +558,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>
@@ -577,7 +577,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>
@@ -598,7 +598,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -614,7 +614,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -632,7 +632,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+   * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -717,7 +717,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+   * The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
    * </pre>
    *
    * <code>optional int32 default_port = 423377855;</code>
@@ -732,7 +732,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+   * The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
    * </pre>
    *
    * <code>optional int32 default_port = 423377855;</code>
@@ -1113,6 +1113,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
   public static final int PSC_DATA_FIELD_NUMBER = 71937481;
   private com.google.cloud.compute.v1.NetworkEndpointGroupPscData pscData_;
   /**
+   *
+   *
+   * <pre>
+   * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;</code>
    *
    * @return Whether the pscData field is set.
@@ -1122,6 +1128,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return ((bitField0_ & 0x00000800) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;</code>
    *
    * @return The pscData.
@@ -1133,6 +1145,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
         : pscData_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;</code>
    */
   @java.lang.Override
@@ -1150,7 +1168,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>
@@ -1165,7 +1183,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>
@@ -1188,7 +1206,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>
@@ -2474,7 +2492,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint group.
+     * Optional. Metadata defined as annotations on the network endpoint group.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -2496,7 +2514,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint group.
+     * Optional. Metadata defined as annotations on the network endpoint group.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -2509,7 +2527,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint group.
+     * Optional. Metadata defined as annotations on the network endpoint group.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -2529,7 +2547,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint group.
+     * Optional. Metadata defined as annotations on the network endpoint group.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -2555,7 +2573,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint group.
+     * Optional. Metadata defined as annotations on the network endpoint group.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -2577,7 +2595,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint group.
+     * Optional. Metadata defined as annotations on the network endpoint group.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -2597,7 +2615,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint group.
+     * Optional. Metadata defined as annotations on the network endpoint group.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -2618,7 +2636,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2633,7 +2651,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2654,7 +2672,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2677,7 +2695,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2698,7 +2716,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2727,7 +2745,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2747,7 +2765,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2762,7 +2780,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2782,7 +2800,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;
@@ -2815,7 +2833,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2831,7 +2849,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2853,7 +2871,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2878,7 +2896,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2900,7 +2918,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2932,7 +2950,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2953,7 +2971,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2970,7 +2988,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -2991,7 +3009,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>
@@ -3025,7 +3043,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3040,7 +3058,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3061,7 +3079,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3084,7 +3102,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3105,7 +3123,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3134,7 +3152,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3154,7 +3172,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3169,7 +3187,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3189,7 +3207,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+     * Optional. Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupCloudRun cloud_run = 111060353;
@@ -3337,7 +3355,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+     * The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
      * </pre>
      *
      * <code>optional int32 default_port = 423377855;</code>
@@ -3352,7 +3370,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+     * The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
      * </pre>
      *
      * <code>optional int32 default_port = 423377855;</code>
@@ -3367,7 +3385,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+     * The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
      * </pre>
      *
      * <code>optional int32 default_port = 423377855;</code>
@@ -3386,7 +3404,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+     * The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
      * </pre>
      *
      * <code>optional int32 default_port = 423377855;</code>
@@ -4081,6 +4099,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.NetworkEndpointGroupPscDataOrBuilder>
         pscDataBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      *
@@ -4090,6 +4114,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      *
@@ -4105,6 +4135,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      */
@@ -4122,6 +4158,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      */
@@ -4137,6 +4179,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      */
@@ -4160,6 +4208,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      */
@@ -4174,6 +4228,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      */
@@ -4183,6 +4243,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       return getPscDataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      */
@@ -4196,6 +4262,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;
      * </code>
      */
@@ -4221,7 +4293,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>optional string psc_target_service = 269132134;</code>
@@ -4235,7 +4307,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>optional string psc_target_service = 269132134;</code>
@@ -4257,7 +4329,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>optional string psc_target_service = 269132134;</code>
@@ -4279,7 +4351,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>optional string psc_target_service = 269132134;</code>
@@ -4300,7 +4372,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>optional string psc_target_service = 269132134;</code>
@@ -4317,7 +4389,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
+     * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType is PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>optional string psc_target_service = 269132134;</code>

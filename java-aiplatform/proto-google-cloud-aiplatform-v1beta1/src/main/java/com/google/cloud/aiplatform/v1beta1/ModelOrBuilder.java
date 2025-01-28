@@ -332,6 +332,31 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
+   * The default checkpoint id of a model version.
+   * </pre>
+   *
+   * <code>string default_checkpoint_id = 53;</code>
+   *
+   * @return The defaultCheckpointId.
+   */
+  java.lang.String getDefaultCheckpointId();
+  /**
+   *
+   *
+   * <pre>
+   * The default checkpoint id of a model version.
+   * </pre>
+   *
+   * <code>string default_checkpoint_id = 53;</code>
+   *
+   * @return The bytes for defaultCheckpointId.
+   */
+  com.google.protobuf.ByteString getDefaultCheckpointIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The schemata that describe formats of the Model's predictions and
    * explanations as given and returned via
    * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]

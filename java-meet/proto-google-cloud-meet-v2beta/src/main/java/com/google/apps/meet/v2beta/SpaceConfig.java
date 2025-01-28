@@ -41,6 +41,8 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   private SpaceConfig() {
     accessType_ = 0;
     entryPointAccess_ = 0;
+    moderation_ = 0;
+    attendanceReportGenerationType_ = 0;
   }
 
   @java.lang.Override
@@ -256,7 +258,7 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Entry points that can be used to join a meeting.  Example:
-   * `meet.google.com`, the Embed SDK Web, or a mobile application.
+   * `meet.google.com`, the Meet Embed SDK Web, or a mobile application.
    * </pre>
    *
    * Protobuf enum {@code google.apps.meet.v2beta.SpaceConfig.EntryPointAccess}
@@ -287,8 +289,8 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Only entry points owned by the Google Cloud project that created the
-     * space can be used to join meetings in this space.  Apps can use the Embed
-     * SDK Web or mobile Meet SDKs to create owned entry points.
+     * space can be used to join meetings in this space. Apps can use the Meet
+     * Embed SDK Web or mobile Meet SDKs to create owned entry points.
      * </pre>
      *
      * <code>CREATOR_APP_ONLY = 2;</code>
@@ -322,8 +324,8 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Only entry points owned by the Google Cloud project that created the
-     * space can be used to join meetings in this space.  Apps can use the Embed
-     * SDK Web or mobile Meet SDKs to create owned entry points.
+     * space can be used to join meetings in this space. Apps can use the Meet
+     * Embed SDK Web or mobile Meet SDKs to create owned entry points.
      * </pre>
      *
      * <code>CREATOR_APP_ONLY = 2;</code>
@@ -415,6 +417,5678 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.apps.meet.v2beta.SpaceConfig.EntryPointAccess)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The moderation mode for a meeting. When the moderation mode is on, the
+   * meeting owner has more control over the meeting with features such as
+   * co-host management (see message Member) and feature restrictions (see
+   * message ModerationRestrictions).
+   * </pre>
+   *
+   * Protobuf enum {@code google.apps.meet.v2beta.SpaceConfig.Moderation}
+   */
+  public enum Moderation implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Moderation type is not specified. This is used to indicate the user
+     * hasn't specified any value as the user does not intend to update the
+     * state. Users are not allowed to set the value as unspecified.
+     * </pre>
+     *
+     * <code>MODERATION_UNSPECIFIED = 0;</code>
+     */
+    MODERATION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Moderation is off.
+     * </pre>
+     *
+     * <code>OFF = 1;</code>
+     */
+    OFF(1),
+    /**
+     *
+     *
+     * <pre>
+     * Moderation is on.
+     * </pre>
+     *
+     * <code>ON = 2;</code>
+     */
+    ON(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Moderation type is not specified. This is used to indicate the user
+     * hasn't specified any value as the user does not intend to update the
+     * state. Users are not allowed to set the value as unspecified.
+     * </pre>
+     *
+     * <code>MODERATION_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODERATION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Moderation is off.
+     * </pre>
+     *
+     * <code>OFF = 1;</code>
+     */
+    public static final int OFF_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Moderation is on.
+     * </pre>
+     *
+     * <code>ON = 2;</code>
+     */
+    public static final int ON_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Moderation valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Moderation forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODERATION_UNSPECIFIED;
+        case 1:
+          return OFF;
+        case 2:
+          return ON;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Moderation> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Moderation> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Moderation>() {
+          public Moderation findValueByNumber(int number) {
+            return Moderation.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.apps.meet.v2beta.SpaceConfig.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Moderation[] VALUES = values();
+
+    public static Moderation valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Moderation(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.apps.meet.v2beta.SpaceConfig.Moderation)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible states of whether attendance report is enabled for the meeting
+   * space.
+   * </pre>
+   *
+   * Protobuf enum {@code google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType}
+   */
+  public enum AttendanceReportGenerationType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value specified by user policy.
+     * This should never be returned.
+     * </pre>
+     *
+     * <code>ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Attendance report will be generated and sent to drive/email.
+     * </pre>
+     *
+     * <code>GENERATE_REPORT = 1;</code>
+     */
+    GENERATE_REPORT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Attendance report will not be generated.
+     * </pre>
+     *
+     * <code>DO_NOT_GENERATE = 2;</code>
+     */
+    DO_NOT_GENERATE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value specified by user policy.
+     * This should never be returned.
+     * </pre>
+     *
+     * <code>ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Attendance report will be generated and sent to drive/email.
+     * </pre>
+     *
+     * <code>GENERATE_REPORT = 1;</code>
+     */
+    public static final int GENERATE_REPORT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Attendance report will not be generated.
+     * </pre>
+     *
+     * <code>DO_NOT_GENERATE = 2;</code>
+     */
+    public static final int DO_NOT_GENERATE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AttendanceReportGenerationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AttendanceReportGenerationType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED;
+        case 1:
+          return GENERATE_REPORT;
+        case 2:
+          return DO_NOT_GENERATE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AttendanceReportGenerationType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AttendanceReportGenerationType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AttendanceReportGenerationType>() {
+              public AttendanceReportGenerationType findValueByNumber(int number) {
+                return AttendanceReportGenerationType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.apps.meet.v2beta.SpaceConfig.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final AttendanceReportGenerationType[] VALUES = values();
+
+    public static AttendanceReportGenerationType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AttendanceReportGenerationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType)
+  }
+
+  public interface ModerationRestrictionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send chat messages in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for chatRestriction.
+     */
+    int getChatRestrictionValue();
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send chat messages in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+     * </code>
+     *
+     * @return The chatRestriction.
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+        getChatRestriction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send reactions in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reactionRestriction.
+     */
+    int getReactionRestrictionValue();
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send reactions in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+     * </code>
+     *
+     * @return The reactionRestriction.
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+        getReactionRestriction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to share their screen in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for presentRestriction.
+     */
+    int getPresentRestrictionValue();
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to share their screen in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+     * </code>
+     *
+     * @return The presentRestriction.
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+        getPresentRestriction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines whether to restrict the default role assigned to users as viewer.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for defaultJoinAsViewerType.
+     */
+    int getDefaultJoinAsViewerTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Defines whether to restrict the default role assigned to users as viewer.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+     * </code>
+     *
+     * @return The defaultJoinAsViewerType.
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+        getDefaultJoinAsViewerType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines restrictions for features when the meeting is moderated.
+   * </pre>
+   *
+   * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions}
+   */
+  public static final class ModerationRestrictions extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions)
+      ModerationRestrictionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ModerationRestrictions.newBuilder() to construct.
+    private ModerationRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ModerationRestrictions() {
+      chatRestriction_ = 0;
+      reactionRestriction_ = 0;
+      presentRestriction_ = 0;
+      defaultJoinAsViewerType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ModerationRestrictions();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.class,
+              com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Determines who has permission to use a particular feature.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType}
+     */
+    public enum RestrictionType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value specified by user policy.
+       * This should never be returned.
+       * </pre>
+       *
+       * <code>RESTRICTION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      RESTRICTION_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Meeting owner and co-host have the permission.
+       * </pre>
+       *
+       * <code>HOSTS_ONLY = 1;</code>
+       */
+      HOSTS_ONLY(1),
+      /**
+       *
+       *
+       * <pre>
+       * All Participants have permissions.
+       * </pre>
+       *
+       * <code>NO_RESTRICTION = 2;</code>
+       */
+      NO_RESTRICTION(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value specified by user policy.
+       * This should never be returned.
+       * </pre>
+       *
+       * <code>RESTRICTION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int RESTRICTION_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Meeting owner and co-host have the permission.
+       * </pre>
+       *
+       * <code>HOSTS_ONLY = 1;</code>
+       */
+      public static final int HOSTS_ONLY_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * All Participants have permissions.
+       * </pre>
+       *
+       * <code>NO_RESTRICTION = 2;</code>
+       */
+      public static final int NO_RESTRICTION_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RestrictionType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static RestrictionType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return RESTRICTION_TYPE_UNSPECIFIED;
+          case 1:
+            return HOSTS_ONLY;
+          case 2:
+            return NO_RESTRICTION;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<RestrictionType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<RestrictionType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<RestrictionType>() {
+                public RestrictionType findValueByNumber(int number) {
+                  return RestrictionType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final RestrictionType[] VALUES = values();
+
+      public static RestrictionType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private RestrictionType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * By default users will join as contributors. Hosts can restrict users to
+     * join as viewers.
+     * Note: If an explicit role is set for a users in the Member resource, the
+     * user will join as that role.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType}
+     */
+    public enum DefaultJoinAsViewerType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value specified by user policy.
+       * This should never be returned.
+       * </pre>
+       *
+       * <code>DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED = 0;</code>
+       */
+      DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Users will by default join as viewers.
+       * </pre>
+       *
+       * <code>ON = 1;</code>
+       */
+      ON(1),
+      /**
+       *
+       *
+       * <pre>
+       * Users will by default join as contributors.
+       * </pre>
+       *
+       * <code>OFF = 2;</code>
+       */
+      OFF(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value specified by user policy.
+       * This should never be returned.
+       * </pre>
+       *
+       * <code>DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Users will by default join as viewers.
+       * </pre>
+       *
+       * <code>ON = 1;</code>
+       */
+      public static final int ON_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Users will by default join as contributors.
+       * </pre>
+       *
+       * <code>OFF = 2;</code>
+       */
+      public static final int OFF_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DefaultJoinAsViewerType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DefaultJoinAsViewerType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED;
+          case 1:
+            return ON;
+          case 2:
+            return OFF;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DefaultJoinAsViewerType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DefaultJoinAsViewerType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<DefaultJoinAsViewerType>() {
+                public DefaultJoinAsViewerType findValueByNumber(int number) {
+                  return DefaultJoinAsViewerType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final DefaultJoinAsViewerType[] VALUES = values();
+
+      public static DefaultJoinAsViewerType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DefaultJoinAsViewerType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType)
+    }
+
+    public static final int CHAT_RESTRICTION_FIELD_NUMBER = 1;
+    private int chatRestriction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send chat messages in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for chatRestriction.
+     */
+    @java.lang.Override
+    public int getChatRestrictionValue() {
+      return chatRestriction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send chat messages in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+     * </code>
+     *
+     * @return The chatRestriction.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+        getChatRestriction() {
+      com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType result =
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType.forNumber(
+              chatRestriction_);
+      return result == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int REACTION_RESTRICTION_FIELD_NUMBER = 2;
+    private int reactionRestriction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send reactions in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reactionRestriction.
+     */
+    @java.lang.Override
+    public int getReactionRestrictionValue() {
+      return reactionRestriction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to send reactions in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+     * </code>
+     *
+     * @return The reactionRestriction.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+        getReactionRestriction() {
+      com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType result =
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType.forNumber(
+              reactionRestriction_);
+      return result == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int PRESENT_RESTRICTION_FIELD_NUMBER = 3;
+    private int presentRestriction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to share their screen in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for presentRestriction.
+     */
+    @java.lang.Override
+    public int getPresentRestrictionValue() {
+      return presentRestriction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines who has permission to share their screen in the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+     * </code>
+     *
+     * @return The presentRestriction.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+        getPresentRestriction() {
+      com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType result =
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType.forNumber(
+              presentRestriction_);
+      return result == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int DEFAULT_JOIN_AS_VIEWER_TYPE_FIELD_NUMBER = 4;
+    private int defaultJoinAsViewerType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Defines whether to restrict the default role assigned to users as viewer.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for defaultJoinAsViewerType.
+     */
+    @java.lang.Override
+    public int getDefaultJoinAsViewerTypeValue() {
+      return defaultJoinAsViewerType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines whether to restrict the default role assigned to users as viewer.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+     * </code>
+     *
+     * @return The defaultJoinAsViewerType.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+        getDefaultJoinAsViewerType() {
+      com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+          result =
+              com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+                  .forNumber(defaultJoinAsViewerType_);
+      return result == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (chatRestriction_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .RESTRICTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, chatRestriction_);
+      }
+      if (reactionRestriction_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .RESTRICTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, reactionRestriction_);
+      }
+      if (presentRestriction_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .RESTRICTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, presentRestriction_);
+      }
+      if (defaultJoinAsViewerType_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+              .DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, defaultJoinAsViewerType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (chatRestriction_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .RESTRICTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, chatRestriction_);
+      }
+      if (reactionRestriction_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .RESTRICTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, reactionRestriction_);
+      }
+      if (presentRestriction_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+              .RESTRICTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, presentRestriction_);
+      }
+      if (defaultJoinAsViewerType_
+          != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+              .DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, defaultJoinAsViewerType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions)) {
+        return super.equals(obj);
+      }
+      com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions other =
+          (com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions) obj;
+
+      if (chatRestriction_ != other.chatRestriction_) return false;
+      if (reactionRestriction_ != other.reactionRestriction_) return false;
+      if (presentRestriction_ != other.presentRestriction_) return false;
+      if (defaultJoinAsViewerType_ != other.defaultJoinAsViewerType_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CHAT_RESTRICTION_FIELD_NUMBER;
+      hash = (53 * hash) + chatRestriction_;
+      hash = (37 * hash) + REACTION_RESTRICTION_FIELD_NUMBER;
+      hash = (53 * hash) + reactionRestriction_;
+      hash = (37 * hash) + PRESENT_RESTRICTION_FIELD_NUMBER;
+      hash = (53 * hash) + presentRestriction_;
+      hash = (37 * hash) + DEFAULT_JOIN_AS_VIEWER_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + defaultJoinAsViewerType_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines restrictions for features when the meeting is moderated.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions)
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.class,
+                com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder.class);
+      }
+
+      // Construct using com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        chatRestriction_ = 0;
+        reactionRestriction_ = 0;
+        presentRestriction_ = 0;
+        defaultJoinAsViewerType_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ModerationRestrictions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+          getDefaultInstanceForType() {
+        return com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions build() {
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions buildPartial() {
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions result =
+            new com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.chatRestriction_ = chatRestriction_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.reactionRestriction_ = reactionRestriction_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.presentRestriction_ = presentRestriction_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.defaultJoinAsViewerType_ = defaultJoinAsViewerType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions) {
+          return mergeFrom((com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions other) {
+        if (other
+            == com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDefaultInstance())
+          return this;
+        if (other.chatRestriction_ != 0) {
+          setChatRestrictionValue(other.getChatRestrictionValue());
+        }
+        if (other.reactionRestriction_ != 0) {
+          setReactionRestrictionValue(other.getReactionRestrictionValue());
+        }
+        if (other.presentRestriction_ != 0) {
+          setPresentRestrictionValue(other.getPresentRestrictionValue());
+        }
+        if (other.defaultJoinAsViewerType_ != 0) {
+          setDefaultJoinAsViewerTypeValue(other.getDefaultJoinAsViewerTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  chatRestriction_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  reactionRestriction_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  presentRestriction_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  defaultJoinAsViewerType_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int chatRestriction_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send chat messages in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for chatRestriction.
+       */
+      @java.lang.Override
+      public int getChatRestrictionValue() {
+        return chatRestriction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send chat messages in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for chatRestriction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatRestrictionValue(int value) {
+        chatRestriction_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send chat messages in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+       * </code>
+       *
+       * @return The chatRestriction.
+       */
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+          getChatRestriction() {
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType result =
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+                .forNumber(chatRestriction_);
+        return result == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send chat messages in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+       * </code>
+       *
+       * @param value The chatRestriction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChatRestriction(
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        chatRestriction_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send chat messages in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType chat_restriction = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearChatRestriction() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        chatRestriction_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int reactionRestriction_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send reactions in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for reactionRestriction.
+       */
+      @java.lang.Override
+      public int getReactionRestrictionValue() {
+        return reactionRestriction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send reactions in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for reactionRestriction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReactionRestrictionValue(int value) {
+        reactionRestriction_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send reactions in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+       * </code>
+       *
+       * @return The reactionRestriction.
+       */
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+          getReactionRestriction() {
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType result =
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+                .forNumber(reactionRestriction_);
+        return result == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send reactions in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+       * </code>
+       *
+       * @param value The reactionRestriction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReactionRestriction(
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        reactionRestriction_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to send reactions in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType reaction_restriction = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReactionRestriction() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        reactionRestriction_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int presentRestriction_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to share their screen in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for presentRestriction.
+       */
+      @java.lang.Override
+      public int getPresentRestrictionValue() {
+        return presentRestriction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to share their screen in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for presentRestriction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPresentRestrictionValue(int value) {
+        presentRestriction_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to share their screen in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+       * </code>
+       *
+       * @return The presentRestriction.
+       */
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+          getPresentRestriction() {
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType result =
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+                .forNumber(presentRestriction_);
+        return result == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to share their screen in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+       * </code>
+       *
+       * @param value The presentRestriction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPresentRestriction(
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        presentRestriction_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines who has permission to share their screen in the meeting space.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType present_restriction = 3;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPresentRestriction() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        presentRestriction_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int defaultJoinAsViewerType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to restrict the default role assigned to users as viewer.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for defaultJoinAsViewerType.
+       */
+      @java.lang.Override
+      public int getDefaultJoinAsViewerTypeValue() {
+        return defaultJoinAsViewerType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to restrict the default role assigned to users as viewer.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for defaultJoinAsViewerType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultJoinAsViewerTypeValue(int value) {
+        defaultJoinAsViewerType_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to restrict the default role assigned to users as viewer.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+       * </code>
+       *
+       * @return The defaultJoinAsViewerType.
+       */
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+          getDefaultJoinAsViewerType() {
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+            result =
+                com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+                    .DefaultJoinAsViewerType.forNumber(defaultJoinAsViewerType_);
+        return result == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to restrict the default role assigned to users as viewer.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+       * </code>
+       *
+       * @param value The defaultJoinAsViewerType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDefaultJoinAsViewerType(
+          com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        defaultJoinAsViewerType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to restrict the default role assigned to users as viewer.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType default_join_as_viewer_type = 4;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDefaultJoinAsViewerType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        defaultJoinAsViewerType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions)
+    private static final com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions();
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModerationRestrictions> PARSER =
+        new com.google.protobuf.AbstractParser<ModerationRestrictions>() {
+          @java.lang.Override
+          public ModerationRestrictions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ModerationRestrictions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModerationRestrictions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ArtifactConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for recording.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+     * </code>
+     *
+     * @return Whether the recordingConfig field is set.
+     */
+    boolean hasRecordingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for recording.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+     * </code>
+     *
+     * @return The recordingConfig.
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig getRecordingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for recording.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+     * </code>
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder
+        getRecordingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-transcript.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+     * </code>
+     *
+     * @return Whether the transcriptionConfig field is set.
+     */
+    boolean hasTranscriptionConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-transcript.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+     * </code>
+     *
+     * @return The transcriptionConfig.
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+        getTranscriptionConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-transcript.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+     * </code>
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfigOrBuilder
+        getTranscriptionConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-smart-notes.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+     * </code>
+     *
+     * @return Whether the smartNotesConfig field is set.
+     */
+    boolean hasSmartNotesConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-smart-notes.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+     * </code>
+     *
+     * @return The smartNotesConfig.
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig getSmartNotesConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-smart-notes.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+     * </code>
+     */
+    com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder
+        getSmartNotesConfigOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration related to meeting artifacts potentially generated by this
+   * meeting space.
+   * </pre>
+   *
+   * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig}
+   */
+  public static final class ArtifactConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig)
+      ArtifactConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ArtifactConfig.newBuilder() to construct.
+    private ArtifactConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ArtifactConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ArtifactConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.class,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Determines whether an artifact can be automatically generated in the
+     * meeting space.
+     * </pre>
+     *
+     * Protobuf enum {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType}
+     */
+    public enum AutoGenerationType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value specified by user policy.
+       * This should never be returned.
+       * </pre>
+       *
+       * <code>AUTO_GENERATION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      AUTO_GENERATION_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The artifact is generated automatically.
+       * </pre>
+       *
+       * <code>ON = 1;</code>
+       */
+      ON(1),
+      /**
+       *
+       *
+       * <pre>
+       * The artifact is not generated automatically.
+       * </pre>
+       *
+       * <code>OFF = 2;</code>
+       */
+      OFF(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value specified by user policy.
+       * This should never be returned.
+       * </pre>
+       *
+       * <code>AUTO_GENERATION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int AUTO_GENERATION_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The artifact is generated automatically.
+       * </pre>
+       *
+       * <code>ON = 1;</code>
+       */
+      public static final int ON_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The artifact is not generated automatically.
+       * </pre>
+       *
+       * <code>OFF = 2;</code>
+       */
+      public static final int OFF_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AutoGenerationType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AutoGenerationType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return AUTO_GENERATION_TYPE_UNSPECIFIED;
+          case 1:
+            return ON;
+          case 2:
+            return OFF;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AutoGenerationType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<AutoGenerationType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<AutoGenerationType>() {
+                public AutoGenerationType findValueByNumber(int number) {
+                  return AutoGenerationType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final AutoGenerationType[] VALUES = values();
+
+      public static AutoGenerationType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AutoGenerationType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType)
+    }
+
+    public interface RecordingConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether a meeting space is automatically recorded when someone
+       * with the privilege to record joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for autoRecordingGeneration.
+       */
+      int getAutoRecordingGenerationValue();
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether a meeting space is automatically recorded when someone
+       * with the privilege to record joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+       * </code>
+       *
+       * @return The autoRecordingGeneration.
+       */
+      com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+          getAutoRecordingGeneration();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration related to recording in a meeting space.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig}
+     */
+    public static final class RecordingConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig)
+        RecordingConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use RecordingConfig.newBuilder() to construct.
+      private RecordingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RecordingConfig() {
+        autoRecordingGeneration_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RecordingConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.class,
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder
+                    .class);
+      }
+
+      public static final int AUTO_RECORDING_GENERATION_FIELD_NUMBER = 2;
+      private int autoRecordingGeneration_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether a meeting space is automatically recorded when someone
+       * with the privilege to record joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for autoRecordingGeneration.
+       */
+      @java.lang.Override
+      public int getAutoRecordingGenerationValue() {
+        return autoRecordingGeneration_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether a meeting space is automatically recorded when someone
+       * with the privilege to record joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+       * </code>
+       *
+       * @return The autoRecordingGeneration.
+       */
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+          getAutoRecordingGeneration() {
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType result =
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.forNumber(
+                autoRecordingGeneration_);
+        return result == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (autoRecordingGeneration_
+            != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                .AUTO_GENERATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, autoRecordingGeneration_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (autoRecordingGeneration_
+            != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                .AUTO_GENERATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(2, autoRecordingGeneration_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig)) {
+          return super.equals(obj);
+        }
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig other =
+            (com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig) obj;
+
+        if (autoRecordingGeneration_ != other.autoRecordingGeneration_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + AUTO_RECORDING_GENERATION_FIELD_NUMBER;
+        hash = (53 * hash) + autoRecordingGeneration_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration related to recording in a meeting space.
+       * </pre>
+       *
+       * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig)
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.class,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          autoRecordingGeneration_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_RecordingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+            getDefaultInstanceForType() {
+          return com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig build() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+            buildPartial() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig result =
+              new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.autoRecordingGeneration_ = autoRecordingGeneration_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig) {
+            return mergeFrom(
+                (com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig other) {
+          if (other
+              == com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+                  .getDefaultInstance()) return this;
+          if (other.autoRecordingGeneration_ != 0) {
+            setAutoRecordingGenerationValue(other.getAutoRecordingGenerationValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 16:
+                  {
+                    autoRecordingGeneration_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int autoRecordingGeneration_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether a meeting space is automatically recorded when someone
+         * with the privilege to record joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for autoRecordingGeneration.
+         */
+        @java.lang.Override
+        public int getAutoRecordingGenerationValue() {
+          return autoRecordingGeneration_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether a meeting space is automatically recorded when someone
+         * with the privilege to record joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for autoRecordingGeneration to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAutoRecordingGenerationValue(int value) {
+          autoRecordingGeneration_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether a meeting space is automatically recorded when someone
+         * with the privilege to record joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+         * </code>
+         *
+         * @return The autoRecordingGeneration.
+         */
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+            getAutoRecordingGeneration() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType result =
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.forNumber(
+                  autoRecordingGeneration_);
+          return result == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                  .UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether a meeting space is automatically recorded when someone
+         * with the privilege to record joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+         * </code>
+         *
+         * @param value The autoRecordingGeneration to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAutoRecordingGeneration(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          autoRecordingGeneration_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether a meeting space is automatically recorded when someone
+         * with the privilege to record joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_recording_generation = 2;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAutoRecordingGeneration() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          autoRecordingGeneration_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig)
+      private static final com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig();
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RecordingConfig> PARSER =
+          new com.google.protobuf.AbstractParser<RecordingConfig>() {
+            @java.lang.Override
+            public RecordingConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RecordingConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RecordingConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface TranscriptionConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether the content of a meeting is automatically transcribed
+       * when someone with the privilege to transcribe joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for autoTranscriptionGeneration.
+       */
+      int getAutoTranscriptionGenerationValue();
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether the content of a meeting is automatically transcribed
+       * when someone with the privilege to transcribe joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+       * </code>
+       *
+       * @return The autoTranscriptionGeneration.
+       */
+      com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+          getAutoTranscriptionGeneration();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration related to transcription in a meeting space.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig}
+     */
+    public static final class TranscriptionConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig)
+        TranscriptionConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use TranscriptionConfig.newBuilder() to construct.
+      private TranscriptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TranscriptionConfig() {
+        autoTranscriptionGeneration_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new TranscriptionConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.class,
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.Builder
+                    .class);
+      }
+
+      public static final int AUTO_TRANSCRIPTION_GENERATION_FIELD_NUMBER = 2;
+      private int autoTranscriptionGeneration_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether the content of a meeting is automatically transcribed
+       * when someone with the privilege to transcribe joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for autoTranscriptionGeneration.
+       */
+      @java.lang.Override
+      public int getAutoTranscriptionGenerationValue() {
+        return autoTranscriptionGeneration_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether the content of a meeting is automatically transcribed
+       * when someone with the privilege to transcribe joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+       * </code>
+       *
+       * @return The autoTranscriptionGeneration.
+       */
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+          getAutoTranscriptionGeneration() {
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType result =
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.forNumber(
+                autoTranscriptionGeneration_);
+        return result == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (autoTranscriptionGeneration_
+            != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                .AUTO_GENERATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, autoTranscriptionGeneration_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (autoTranscriptionGeneration_
+            != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                .AUTO_GENERATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(
+                  2, autoTranscriptionGeneration_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig)) {
+          return super.equals(obj);
+        }
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig other =
+            (com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig) obj;
+
+        if (autoTranscriptionGeneration_ != other.autoTranscriptionGeneration_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + AUTO_TRANSCRIPTION_GENERATION_FIELD_NUMBER;
+        hash = (53 * hash) + autoTranscriptionGeneration_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration related to transcription in a meeting space.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig)
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.class,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          autoTranscriptionGeneration_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_TranscriptionConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+            getDefaultInstanceForType() {
+          return com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig build() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+            buildPartial() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig result =
+              new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.autoTranscriptionGeneration_ = autoTranscriptionGeneration_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig) {
+            return mergeFrom(
+                (com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig other) {
+          if (other
+              == com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+                  .getDefaultInstance()) return this;
+          if (other.autoTranscriptionGeneration_ != 0) {
+            setAutoTranscriptionGenerationValue(other.getAutoTranscriptionGenerationValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 16:
+                  {
+                    autoTranscriptionGeneration_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int autoTranscriptionGeneration_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether the content of a meeting is automatically transcribed
+         * when someone with the privilege to transcribe joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for autoTranscriptionGeneration.
+         */
+        @java.lang.Override
+        public int getAutoTranscriptionGenerationValue() {
+          return autoTranscriptionGeneration_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether the content of a meeting is automatically transcribed
+         * when someone with the privilege to transcribe joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for autoTranscriptionGeneration to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAutoTranscriptionGenerationValue(int value) {
+          autoTranscriptionGeneration_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether the content of a meeting is automatically transcribed
+         * when someone with the privilege to transcribe joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+         * </code>
+         *
+         * @return The autoTranscriptionGeneration.
+         */
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+            getAutoTranscriptionGeneration() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType result =
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.forNumber(
+                  autoTranscriptionGeneration_);
+          return result == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                  .UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether the content of a meeting is automatically transcribed
+         * when someone with the privilege to transcribe joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+         * </code>
+         *
+         * @param value The autoTranscriptionGeneration to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAutoTranscriptionGeneration(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          autoTranscriptionGeneration_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether the content of a meeting is automatically transcribed
+         * when someone with the privilege to transcribe joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_transcription_generation = 2;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAutoTranscriptionGeneration() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          autoTranscriptionGeneration_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig)
+      private static final com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig
+              .TranscriptionConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig();
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TranscriptionConfig> PARSER =
+          new com.google.protobuf.AbstractParser<TranscriptionConfig>() {
+            @java.lang.Override
+            public TranscriptionConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TranscriptionConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TranscriptionConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface SmartNotesConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to automatically generate a summary and recap of the
+       * meeting for all invitees in the organization when someone with the
+       * privilege to enable smart notes joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for autoSmartNotesGeneration.
+       */
+      int getAutoSmartNotesGenerationValue();
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to automatically generate a summary and recap of the
+       * meeting for all invitees in the organization when someone with the
+       * privilege to enable smart notes joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+       * </code>
+       *
+       * @return The autoSmartNotesGeneration.
+       */
+      com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+          getAutoSmartNotesGeneration();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration related to smart notes in a meeting space. More
+     * details about smart notes
+     * https://support.google.com/meet/answer/14754931?hl=en.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig}
+     */
+    public static final class SmartNotesConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig)
+        SmartNotesConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use SmartNotesConfig.newBuilder() to construct.
+      private SmartNotesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SmartNotesConfig() {
+        autoSmartNotesGeneration_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SmartNotesConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.class,
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder
+                    .class);
+      }
+
+      public static final int AUTO_SMART_NOTES_GENERATION_FIELD_NUMBER = 2;
+      private int autoSmartNotesGeneration_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to automatically generate a summary and recap of the
+       * meeting for all invitees in the organization when someone with the
+       * privilege to enable smart notes joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for autoSmartNotesGeneration.
+       */
+      @java.lang.Override
+      public int getAutoSmartNotesGenerationValue() {
+        return autoSmartNotesGeneration_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Defines whether to automatically generate a summary and recap of the
+       * meeting for all invitees in the organization when someone with the
+       * privilege to enable smart notes joins the meeting.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+       * </code>
+       *
+       * @return The autoSmartNotesGeneration.
+       */
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+          getAutoSmartNotesGeneration() {
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType result =
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.forNumber(
+                autoSmartNotesGeneration_);
+        return result == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (autoSmartNotesGeneration_
+            != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                .AUTO_GENERATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, autoSmartNotesGeneration_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (autoSmartNotesGeneration_
+            != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                .AUTO_GENERATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(2, autoSmartNotesGeneration_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig)) {
+          return super.equals(obj);
+        }
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig other =
+            (com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig) obj;
+
+        if (autoSmartNotesGeneration_ != other.autoSmartNotesGeneration_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + AUTO_SMART_NOTES_GENERATION_FIELD_NUMBER;
+        hash = (53 * hash) + autoSmartNotesGeneration_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration related to smart notes in a meeting space. More
+       * details about smart notes
+       * https://support.google.com/meet/answer/14754931?hl=en.
+       * </pre>
+       *
+       * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig)
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.class,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          autoSmartNotesGeneration_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.apps.meet.v2beta.ResourceProto
+              .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_SmartNotesConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+            getDefaultInstanceForType() {
+          return com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig build() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+            buildPartial() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig result =
+              new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.autoSmartNotesGeneration_ = autoSmartNotesGeneration_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig) {
+            return mergeFrom(
+                (com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig other) {
+          if (other
+              == com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+                  .getDefaultInstance()) return this;
+          if (other.autoSmartNotesGeneration_ != 0) {
+            setAutoSmartNotesGenerationValue(other.getAutoSmartNotesGenerationValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 16:
+                  {
+                    autoSmartNotesGeneration_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int autoSmartNotesGeneration_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether to automatically generate a summary and recap of the
+         * meeting for all invitees in the organization when someone with the
+         * privilege to enable smart notes joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for autoSmartNotesGeneration.
+         */
+        @java.lang.Override
+        public int getAutoSmartNotesGenerationValue() {
+          return autoSmartNotesGeneration_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether to automatically generate a summary and recap of the
+         * meeting for all invitees in the organization when someone with the
+         * privilege to enable smart notes joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for autoSmartNotesGeneration to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAutoSmartNotesGenerationValue(int value) {
+          autoSmartNotesGeneration_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether to automatically generate a summary and recap of the
+         * meeting for all invitees in the organization when someone with the
+         * privilege to enable smart notes joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+         * </code>
+         *
+         * @return The autoSmartNotesGeneration.
+         */
+        @java.lang.Override
+        public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+            getAutoSmartNotesGeneration() {
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType result =
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType.forNumber(
+                  autoSmartNotesGeneration_);
+          return result == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
+                  .UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether to automatically generate a summary and recap of the
+         * meeting for all invitees in the organization when someone with the
+         * privilege to enable smart notes joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+         * </code>
+         *
+         * @param value The autoSmartNotesGeneration to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAutoSmartNotesGeneration(
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          autoSmartNotesGeneration_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Defines whether to automatically generate a summary and recap of the
+         * meeting for all invitees in the organization when someone with the
+         * privilege to enable smart notes joins the meeting.
+         * </pre>
+         *
+         * <code>
+         * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType auto_smart_notes_generation = 2;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAutoSmartNotesGeneration() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          autoSmartNotesGeneration_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig)
+      private static final com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig();
+      }
+
+      public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SmartNotesConfig> PARSER =
+          new com.google.protobuf.AbstractParser<SmartNotesConfig>() {
+            @java.lang.Override
+            public SmartNotesConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SmartNotesConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SmartNotesConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int RECORDING_CONFIG_FIELD_NUMBER = 1;
+    private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recordingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for recording.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+     * </code>
+     *
+     * @return Whether the recordingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecordingConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for recording.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+     * </code>
+     *
+     * @return The recordingConfig.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+        getRecordingConfig() {
+      return recordingConfig_ == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+              .getDefaultInstance()
+          : recordingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for recording.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder
+        getRecordingConfigOrBuilder() {
+      return recordingConfig_ == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+              .getDefaultInstance()
+          : recordingConfig_;
+    }
+
+    public static final int TRANSCRIPTION_CONFIG_FIELD_NUMBER = 2;
+    private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+        transcriptionConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-transcript.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+     * </code>
+     *
+     * @return Whether the transcriptionConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasTranscriptionConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-transcript.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+     * </code>
+     *
+     * @return The transcriptionConfig.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+        getTranscriptionConfig() {
+      return transcriptionConfig_ == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+              .getDefaultInstance()
+          : transcriptionConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-transcript.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfigOrBuilder
+        getTranscriptionConfigOrBuilder() {
+      return transcriptionConfig_ == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+              .getDefaultInstance()
+          : transcriptionConfig_;
+    }
+
+    public static final int SMART_NOTES_CONFIG_FIELD_NUMBER = 3;
+    private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+        smartNotesConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-smart-notes.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+     * </code>
+     *
+     * @return Whether the smartNotesConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSmartNotesConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-smart-notes.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+     * </code>
+     *
+     * @return The smartNotesConfig.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+        getSmartNotesConfig() {
+      return smartNotesConfig_ == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+              .getDefaultInstance()
+          : smartNotesConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for auto-smart-notes.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder
+        getSmartNotesConfigOrBuilder() {
+      return smartNotesConfig_ == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+              .getDefaultInstance()
+          : smartNotesConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getRecordingConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getTranscriptionConfig());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getSmartNotesConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getRecordingConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTranscriptionConfig());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSmartNotesConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig)) {
+        return super.equals(obj);
+      }
+      com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig other =
+          (com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig) obj;
+
+      if (hasRecordingConfig() != other.hasRecordingConfig()) return false;
+      if (hasRecordingConfig()) {
+        if (!getRecordingConfig().equals(other.getRecordingConfig())) return false;
+      }
+      if (hasTranscriptionConfig() != other.hasTranscriptionConfig()) return false;
+      if (hasTranscriptionConfig()) {
+        if (!getTranscriptionConfig().equals(other.getTranscriptionConfig())) return false;
+      }
+      if (hasSmartNotesConfig() != other.hasSmartNotesConfig()) return false;
+      if (hasSmartNotesConfig()) {
+        if (!getSmartNotesConfig().equals(other.getSmartNotesConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRecordingConfig()) {
+        hash = (37 * hash) + RECORDING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getRecordingConfig().hashCode();
+      }
+      if (hasTranscriptionConfig()) {
+        hash = (37 * hash) + TRANSCRIPTION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getTranscriptionConfig().hashCode();
+      }
+      if (hasSmartNotesConfig()) {
+        hash = (37 * hash) + SMART_NOTES_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSmartNotesConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration related to meeting artifacts potentially generated by this
+     * meeting space.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig)
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.class,
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder.class);
+      }
+
+      // Construct using com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getRecordingConfigFieldBuilder();
+          getTranscriptionConfigFieldBuilder();
+          getSmartNotesConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        recordingConfig_ = null;
+        if (recordingConfigBuilder_ != null) {
+          recordingConfigBuilder_.dispose();
+          recordingConfigBuilder_ = null;
+        }
+        transcriptionConfig_ = null;
+        if (transcriptionConfigBuilder_ != null) {
+          transcriptionConfigBuilder_.dispose();
+          transcriptionConfigBuilder_ = null;
+        }
+        smartNotesConfig_ = null;
+        if (smartNotesConfigBuilder_ != null) {
+          smartNotesConfigBuilder_.dispose();
+          smartNotesConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_SpaceConfig_ArtifactConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig getDefaultInstanceForType() {
+        return com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig build() {
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig buildPartial() {
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig result =
+            new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordingConfig_ =
+              recordingConfigBuilder_ == null ? recordingConfig_ : recordingConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.transcriptionConfig_ =
+              transcriptionConfigBuilder_ == null
+                  ? transcriptionConfig_
+                  : transcriptionConfigBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.smartNotesConfig_ =
+              smartNotesConfigBuilder_ == null
+                  ? smartNotesConfig_
+                  : smartNotesConfigBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig) {
+          return mergeFrom((com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig other) {
+        if (other == com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance())
+          return this;
+        if (other.hasRecordingConfig()) {
+          mergeRecordingConfig(other.getRecordingConfig());
+        }
+        if (other.hasTranscriptionConfig()) {
+          mergeTranscriptionConfig(other.getTranscriptionConfig());
+        }
+        if (other.hasSmartNotesConfig()) {
+          mergeSmartNotesConfig(other.getSmartNotesConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getRecordingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getTranscriptionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getSmartNotesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          recordingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder>
+          recordingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       *
+       * @return Whether the recordingConfig field is set.
+       */
+      public boolean hasRecordingConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       *
+       * @return The recordingConfig.
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+          getRecordingConfig() {
+        if (recordingConfigBuilder_ == null) {
+          return recordingConfig_ == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+                  .getDefaultInstance()
+              : recordingConfig_;
+        } else {
+          return recordingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       */
+      public Builder setRecordingConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig value) {
+        if (recordingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          recordingConfig_ = value;
+        } else {
+          recordingConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       */
+      public Builder setRecordingConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder
+              builderForValue) {
+        if (recordingConfigBuilder_ == null) {
+          recordingConfig_ = builderForValue.build();
+        } else {
+          recordingConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       */
+      public Builder mergeRecordingConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig value) {
+        if (recordingConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && recordingConfig_ != null
+              && recordingConfig_
+                  != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+                      .getDefaultInstance()) {
+            getRecordingConfigBuilder().mergeFrom(value);
+          } else {
+            recordingConfig_ = value;
+          }
+        } else {
+          recordingConfigBuilder_.mergeFrom(value);
+        }
+        if (recordingConfig_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       */
+      public Builder clearRecordingConfig() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recordingConfig_ = null;
+        if (recordingConfigBuilder_ != null) {
+          recordingConfigBuilder_.dispose();
+          recordingConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder
+          getRecordingConfigBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getRecordingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder
+          getRecordingConfigOrBuilder() {
+        if (recordingConfigBuilder_ != null) {
+          return recordingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return recordingConfig_ == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig
+                  .getDefaultInstance()
+              : recordingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for recording.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recording_config = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder>
+          getRecordingConfigFieldBuilder() {
+        if (recordingConfigBuilder_ == null) {
+          recordingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder>(
+                  getRecordingConfig(), getParentForChildren(), isClean());
+          recordingConfig_ = null;
+        }
+        return recordingConfigBuilder_;
+      }
+
+      private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          transcriptionConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.Builder,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfigOrBuilder>
+          transcriptionConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       *
+       * @return Whether the transcriptionConfig field is set.
+       */
+      public boolean hasTranscriptionConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       *
+       * @return The transcriptionConfig.
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+          getTranscriptionConfig() {
+        if (transcriptionConfigBuilder_ == null) {
+          return transcriptionConfig_ == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+                  .getDefaultInstance()
+              : transcriptionConfig_;
+        } else {
+          return transcriptionConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       */
+      public Builder setTranscriptionConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig value) {
+        if (transcriptionConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transcriptionConfig_ = value;
+        } else {
+          transcriptionConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       */
+      public Builder setTranscriptionConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.Builder
+              builderForValue) {
+        if (transcriptionConfigBuilder_ == null) {
+          transcriptionConfig_ = builderForValue.build();
+        } else {
+          transcriptionConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       */
+      public Builder mergeTranscriptionConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig value) {
+        if (transcriptionConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && transcriptionConfig_ != null
+              && transcriptionConfig_
+                  != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+                      .getDefaultInstance()) {
+            getTranscriptionConfigBuilder().mergeFrom(value);
+          } else {
+            transcriptionConfig_ = value;
+          }
+        } else {
+          transcriptionConfigBuilder_.mergeFrom(value);
+        }
+        if (transcriptionConfig_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       */
+      public Builder clearTranscriptionConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        transcriptionConfig_ = null;
+        if (transcriptionConfigBuilder_ != null) {
+          transcriptionConfigBuilder_.dispose();
+          transcriptionConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.Builder
+          getTranscriptionConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getTranscriptionConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfigOrBuilder
+          getTranscriptionConfigOrBuilder() {
+        if (transcriptionConfigBuilder_ != null) {
+          return transcriptionConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return transcriptionConfig_ == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+                  .getDefaultInstance()
+              : transcriptionConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-transcript.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig transcription_config = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.Builder,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfigOrBuilder>
+          getTranscriptionConfigFieldBuilder() {
+        if (transcriptionConfigBuilder_ == null) {
+          transcriptionConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
+                      .Builder,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig
+                      .TranscriptionConfigOrBuilder>(
+                  getTranscriptionConfig(), getParentForChildren(), isClean());
+          transcriptionConfig_ = null;
+        }
+        return transcriptionConfigBuilder_;
+      }
+
+      private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          smartNotesConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder>
+          smartNotesConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       *
+       * @return Whether the smartNotesConfig field is set.
+       */
+      public boolean hasSmartNotesConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       *
+       * @return The smartNotesConfig.
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+          getSmartNotesConfig() {
+        if (smartNotesConfigBuilder_ == null) {
+          return smartNotesConfig_ == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+                  .getDefaultInstance()
+              : smartNotesConfig_;
+        } else {
+          return smartNotesConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       */
+      public Builder setSmartNotesConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig value) {
+        if (smartNotesConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          smartNotesConfig_ = value;
+        } else {
+          smartNotesConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       */
+      public Builder setSmartNotesConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder
+              builderForValue) {
+        if (smartNotesConfigBuilder_ == null) {
+          smartNotesConfig_ = builderForValue.build();
+        } else {
+          smartNotesConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       */
+      public Builder mergeSmartNotesConfig(
+          com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig value) {
+        if (smartNotesConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && smartNotesConfig_ != null
+              && smartNotesConfig_
+                  != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+                      .getDefaultInstance()) {
+            getSmartNotesConfigBuilder().mergeFrom(value);
+          } else {
+            smartNotesConfig_ = value;
+          }
+        } else {
+          smartNotesConfigBuilder_.mergeFrom(value);
+        }
+        if (smartNotesConfig_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       */
+      public Builder clearSmartNotesConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        smartNotesConfig_ = null;
+        if (smartNotesConfigBuilder_ != null) {
+          smartNotesConfigBuilder_.dispose();
+          smartNotesConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder
+          getSmartNotesConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getSmartNotesConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       */
+      public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder
+          getSmartNotesConfigOrBuilder() {
+        if (smartNotesConfigBuilder_ != null) {
+          return smartNotesConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return smartNotesConfig_ == null
+              ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
+                  .getDefaultInstance()
+              : smartNotesConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for auto-smart-notes.
+       * </pre>
+       *
+       * <code>
+       * .google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig smart_notes_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder,
+              com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder>
+          getSmartNotesConfigFieldBuilder() {
+        if (smartNotesConfigBuilder_ == null) {
+          smartNotesConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder,
+                  com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder>(
+                  getSmartNotesConfig(), getParentForChildren(), isClean());
+          smartNotesConfig_ = null;
+        }
+        return smartNotesConfigBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig)
+    private static final com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig();
+    }
+
+    public static com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ArtifactConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ArtifactConfig>() {
+          @java.lang.Override
+          public ArtifactConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ArtifactConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ArtifactConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int ACCESS_TYPE_FIELD_NUMBER = 1;
   private int accessType_ = 0;
   /**
@@ -497,6 +6171,210 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int MODERATION_FIELD_NUMBER = 3;
+  private int moderation_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * The pre-configured moderation mode for the Meeting.
+   * Default: Controlled by the user's policies.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.Moderation moderation = 3;</code>
+   *
+   * @return The enum numeric value on the wire for moderation.
+   */
+  @java.lang.Override
+  public int getModerationValue() {
+    return moderation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * The pre-configured moderation mode for the Meeting.
+   * Default: Controlled by the user's policies.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.Moderation moderation = 3;</code>
+   *
+   * @return The moderation.
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.SpaceConfig.Moderation getModeration() {
+    com.google.apps.meet.v2beta.SpaceConfig.Moderation result =
+        com.google.apps.meet.v2beta.SpaceConfig.Moderation.forNumber(moderation_);
+    return result == null
+        ? com.google.apps.meet.v2beta.SpaceConfig.Moderation.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int MODERATION_RESTRICTIONS_FIELD_NUMBER = 4;
+  private com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderationRestrictions_;
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * When moderation.ON, these restrictions go into effect for the meeting.
+   * When moderation.OFF, will be reset to default ModerationRestrictions.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+   * </code>
+   *
+   * @return Whether the moderationRestrictions field is set.
+   */
+  @java.lang.Override
+  public boolean hasModerationRestrictions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * When moderation.ON, these restrictions go into effect for the meeting.
+   * When moderation.OFF, will be reset to default ModerationRestrictions.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+   * </code>
+   *
+   * @return The moderationRestrictions.
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+      getModerationRestrictions() {
+    return moderationRestrictions_ == null
+        ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDefaultInstance()
+        : moderationRestrictions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * When moderation.ON, these restrictions go into effect for the meeting.
+   * When moderation.OFF, will be reset to default ModerationRestrictions.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictionsOrBuilder
+      getModerationRestrictionsOrBuilder() {
+    return moderationRestrictions_ == null
+        ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDefaultInstance()
+        : moderationRestrictions_;
+  }
+
+  public static final int ATTENDANCE_REPORT_GENERATION_TYPE_FIELD_NUMBER = 6;
+  private int attendanceReportGenerationType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * Whether attendance report is enabled for the meeting space.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for attendanceReportGenerationType.
+   */
+  @java.lang.Override
+  public int getAttendanceReportGenerationTypeValue() {
+    return attendanceReportGenerationType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * Whether attendance report is enabled for the meeting space.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+   * </code>
+   *
+   * @return The attendanceReportGenerationType.
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType
+      getAttendanceReportGenerationType() {
+    com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType result =
+        com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType.forNumber(
+            attendanceReportGenerationType_);
+    return result == null
+        ? com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ARTIFACT_CONFIG_FIELD_NUMBER = 7;
+  private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifactConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * Configuration pertaining to the auto-generated artifacts that the meeting
+   * supports.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+   *
+   * @return Whether the artifactConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasArtifactConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * Configuration pertaining to the auto-generated artifacts that the meeting
+   * supports.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+   *
+   * @return The artifactConfig.
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig getArtifactConfig() {
+    return artifactConfig_ == null
+        ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance()
+        : artifactConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Developer Preview](https://developers.google.com/workspace/preview):
+   * Configuration pertaining to the auto-generated artifacts that the meeting
+   * supports.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfigOrBuilder
+      getArtifactConfigOrBuilder() {
+    return artifactConfig_ == null
+        ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance()
+        : artifactConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -520,6 +6398,22 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(2, entryPointAccess_);
     }
+    if (moderation_
+        != com.google.apps.meet.v2beta.SpaceConfig.Moderation.MODERATION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(3, moderation_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getModerationRestrictions());
+    }
+    if (attendanceReportGenerationType_
+        != com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType
+            .ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, attendanceReportGenerationType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getArtifactConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -538,6 +6432,24 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, entryPointAccess_);
     }
+    if (moderation_
+        != com.google.apps.meet.v2beta.SpaceConfig.Moderation.MODERATION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, moderation_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getModerationRestrictions());
+    }
+    if (attendanceReportGenerationType_
+        != com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType
+            .ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(6, attendanceReportGenerationType_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getArtifactConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -555,6 +6467,16 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
     if (accessType_ != other.accessType_) return false;
     if (entryPointAccess_ != other.entryPointAccess_) return false;
+    if (moderation_ != other.moderation_) return false;
+    if (hasModerationRestrictions() != other.hasModerationRestrictions()) return false;
+    if (hasModerationRestrictions()) {
+      if (!getModerationRestrictions().equals(other.getModerationRestrictions())) return false;
+    }
+    if (attendanceReportGenerationType_ != other.attendanceReportGenerationType_) return false;
+    if (hasArtifactConfig() != other.hasArtifactConfig()) return false;
+    if (hasArtifactConfig()) {
+      if (!getArtifactConfig().equals(other.getArtifactConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -570,6 +6492,18 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + accessType_;
     hash = (37 * hash) + ENTRY_POINT_ACCESS_FIELD_NUMBER;
     hash = (53 * hash) + entryPointAccess_;
+    hash = (37 * hash) + MODERATION_FIELD_NUMBER;
+    hash = (53 * hash) + moderation_;
+    if (hasModerationRestrictions()) {
+      hash = (37 * hash) + MODERATION_RESTRICTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getModerationRestrictions().hashCode();
+    }
+    hash = (37 * hash) + ATTENDANCE_REPORT_GENERATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + attendanceReportGenerationType_;
+    if (hasArtifactConfig()) {
+      hash = (37 * hash) + ARTIFACT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getArtifactConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -699,10 +6633,20 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.apps.meet.v2beta.SpaceConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getModerationRestrictionsFieldBuilder();
+        getArtifactConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -711,6 +6655,18 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       accessType_ = 0;
       entryPointAccess_ = 0;
+      moderation_ = 0;
+      moderationRestrictions_ = null;
+      if (moderationRestrictionsBuilder_ != null) {
+        moderationRestrictionsBuilder_.dispose();
+        moderationRestrictionsBuilder_ = null;
+      }
+      attendanceReportGenerationType_ = 0;
+      artifactConfig_ = null;
+      if (artifactConfigBuilder_ != null) {
+        artifactConfigBuilder_.dispose();
+        artifactConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -753,6 +6709,26 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.entryPointAccess_ = entryPointAccess_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.moderation_ = moderation_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.moderationRestrictions_ =
+            moderationRestrictionsBuilder_ == null
+                ? moderationRestrictions_
+                : moderationRestrictionsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.attendanceReportGenerationType_ = attendanceReportGenerationType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.artifactConfig_ =
+            artifactConfigBuilder_ == null ? artifactConfig_ : artifactConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -806,6 +6782,18 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.entryPointAccess_ != 0) {
         setEntryPointAccessValue(other.getEntryPointAccessValue());
       }
+      if (other.moderation_ != 0) {
+        setModerationValue(other.getModerationValue());
+      }
+      if (other.hasModerationRestrictions()) {
+        mergeModerationRestrictions(other.getModerationRestrictions());
+      }
+      if (other.attendanceReportGenerationType_ != 0) {
+        setAttendanceReportGenerationTypeValue(other.getAttendanceReportGenerationTypeValue());
+      }
+      if (other.hasArtifactConfig()) {
+        mergeArtifactConfig(other.getArtifactConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -844,6 +6832,31 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                moderation_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(
+                    getModerationRestrictionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 48:
+              {
+                attendanceReportGenerationType_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+            case 58:
+              {
+                input.readMessage(getArtifactConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1066,6 +7079,655 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       entryPointAccess_ = 0;
       onChanged();
       return this;
+    }
+
+    private int moderation_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * The pre-configured moderation mode for the Meeting.
+     * Default: Controlled by the user's policies.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.Moderation moderation = 3;</code>
+     *
+     * @return The enum numeric value on the wire for moderation.
+     */
+    @java.lang.Override
+    public int getModerationValue() {
+      return moderation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * The pre-configured moderation mode for the Meeting.
+     * Default: Controlled by the user's policies.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.Moderation moderation = 3;</code>
+     *
+     * @param value The enum numeric value on the wire for moderation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModerationValue(int value) {
+      moderation_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * The pre-configured moderation mode for the Meeting.
+     * Default: Controlled by the user's policies.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.Moderation moderation = 3;</code>
+     *
+     * @return The moderation.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.Moderation getModeration() {
+      com.google.apps.meet.v2beta.SpaceConfig.Moderation result =
+          com.google.apps.meet.v2beta.SpaceConfig.Moderation.forNumber(moderation_);
+      return result == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.Moderation.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * The pre-configured moderation mode for the Meeting.
+     * Default: Controlled by the user's policies.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.Moderation moderation = 3;</code>
+     *
+     * @param value The moderation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModeration(com.google.apps.meet.v2beta.SpaceConfig.Moderation value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      moderation_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * The pre-configured moderation mode for the Meeting.
+     * Default: Controlled by the user's policies.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.Moderation moderation = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModeration() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      moderation_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderationRestrictions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions,
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder,
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictionsOrBuilder>
+        moderationRestrictionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     *
+     * @return Whether the moderationRestrictions field is set.
+     */
+    public boolean hasModerationRestrictions() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     *
+     * @return The moderationRestrictions.
+     */
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+        getModerationRestrictions() {
+      if (moderationRestrictionsBuilder_ == null) {
+        return moderationRestrictions_ == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDefaultInstance()
+            : moderationRestrictions_;
+      } else {
+        return moderationRestrictionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     */
+    public Builder setModerationRestrictions(
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions value) {
+      if (moderationRestrictionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        moderationRestrictions_ = value;
+      } else {
+        moderationRestrictionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     */
+    public Builder setModerationRestrictions(
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder builderForValue) {
+      if (moderationRestrictionsBuilder_ == null) {
+        moderationRestrictions_ = builderForValue.build();
+      } else {
+        moderationRestrictionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     */
+    public Builder mergeModerationRestrictions(
+        com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions value) {
+      if (moderationRestrictionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && moderationRestrictions_ != null
+            && moderationRestrictions_
+                != com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions
+                    .getDefaultInstance()) {
+          getModerationRestrictionsBuilder().mergeFrom(value);
+        } else {
+          moderationRestrictions_ = value;
+        }
+      } else {
+        moderationRestrictionsBuilder_.mergeFrom(value);
+      }
+      if (moderationRestrictions_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     */
+    public Builder clearModerationRestrictions() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      moderationRestrictions_ = null;
+      if (moderationRestrictionsBuilder_ != null) {
+        moderationRestrictionsBuilder_.dispose();
+        moderationRestrictionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder
+        getModerationRestrictionsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getModerationRestrictionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictionsOrBuilder
+        getModerationRestrictionsOrBuilder() {
+      if (moderationRestrictionsBuilder_ != null) {
+        return moderationRestrictionsBuilder_.getMessageOrBuilder();
+      } else {
+        return moderationRestrictions_ == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDefaultInstance()
+            : moderationRestrictions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * When moderation.ON, these restrictions go into effect for the meeting.
+     * When moderation.OFF, will be reset to default ModerationRestrictions.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions,
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder,
+            com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictionsOrBuilder>
+        getModerationRestrictionsFieldBuilder() {
+      if (moderationRestrictionsBuilder_ == null) {
+        moderationRestrictionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions,
+                com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder,
+                com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictionsOrBuilder>(
+                getModerationRestrictions(), getParentForChildren(), isClean());
+        moderationRestrictions_ = null;
+      }
+      return moderationRestrictionsBuilder_;
+    }
+
+    private int attendanceReportGenerationType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Whether attendance report is enabled for the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for attendanceReportGenerationType.
+     */
+    @java.lang.Override
+    public int getAttendanceReportGenerationTypeValue() {
+      return attendanceReportGenerationType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Whether attendance report is enabled for the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for attendanceReportGenerationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAttendanceReportGenerationTypeValue(int value) {
+      attendanceReportGenerationType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Whether attendance report is enabled for the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+     * </code>
+     *
+     * @return The attendanceReportGenerationType.
+     */
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType
+        getAttendanceReportGenerationType() {
+      com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType result =
+          com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType.forNumber(
+              attendanceReportGenerationType_);
+      return result == null
+          ? com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Whether attendance report is enabled for the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+     * </code>
+     *
+     * @param value The attendanceReportGenerationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAttendanceReportGenerationType(
+        com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      attendanceReportGenerationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Whether attendance report is enabled for the meeting space.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAttendanceReportGenerationType() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      attendanceReportGenerationType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifactConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig,
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder,
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfigOrBuilder>
+        artifactConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     *
+     * @return Whether the artifactConfig field is set.
+     */
+    public boolean hasArtifactConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     *
+     * @return The artifactConfig.
+     */
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig getArtifactConfig() {
+      if (artifactConfigBuilder_ == null) {
+        return artifactConfig_ == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance()
+            : artifactConfig_;
+      } else {
+        return artifactConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     */
+    public Builder setArtifactConfig(com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig value) {
+      if (artifactConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        artifactConfig_ = value;
+      } else {
+        artifactConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     */
+    public Builder setArtifactConfig(
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder builderForValue) {
+      if (artifactConfigBuilder_ == null) {
+        artifactConfig_ = builderForValue.build();
+      } else {
+        artifactConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     */
+    public Builder mergeArtifactConfig(
+        com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig value) {
+      if (artifactConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && artifactConfig_ != null
+            && artifactConfig_
+                != com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance()) {
+          getArtifactConfigBuilder().mergeFrom(value);
+        } else {
+          artifactConfig_ = value;
+        }
+      } else {
+        artifactConfigBuilder_.mergeFrom(value);
+      }
+      if (artifactConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     */
+    public Builder clearArtifactConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      artifactConfig_ = null;
+      if (artifactConfigBuilder_ != null) {
+        artifactConfigBuilder_.dispose();
+        artifactConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     */
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder
+        getArtifactConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getArtifactConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     */
+    public com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfigOrBuilder
+        getArtifactConfigOrBuilder() {
+      if (artifactConfigBuilder_ != null) {
+        return artifactConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return artifactConfig_ == null
+            ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance()
+            : artifactConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Developer Preview](https://developers.google.com/workspace/preview):
+     * Configuration pertaining to the auto-generated artifacts that the meeting
+     * supports.
+     * </pre>
+     *
+     * <code>.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig,
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder,
+            com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfigOrBuilder>
+        getArtifactConfigFieldBuilder() {
+      if (artifactConfigBuilder_ == null) {
+        artifactConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig,
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder,
+                com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfigOrBuilder>(
+                getArtifactConfig(), getParentForChildren(), isClean());
+        artifactConfig_ = null;
+      }
+      return artifactConfigBuilder_;
     }
 
     @java.lang.Override

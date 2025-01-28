@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1beta1.stub;
 
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
 
@@ -27,14 +29,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1beta1.Backup;
+import com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.BackupCollection;
 import com.google.cloud.redis.cluster.v1beta1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1beta1.Cluster;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1beta1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -100,6 +114,69 @@ public abstract class CloudRedisClusterStub implements BackgroundResource {
       getClusterCertificateAuthorityCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: getClusterCertificateAuthorityCallable()");
+  }
+
+  public OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rescheduleClusterMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rescheduleClusterMaintenanceCallable()");
+  }
+
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listBackupCollectionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupCollectionsCallable()");
+  }
+
+  public UnaryCallable<GetBackupCollectionRequest, BackupCollection> getBackupCollectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupCollectionCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsCallable()");
+  }
+
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupCallable()");
+  }
+
+  public OperationCallable<DeleteBackupRequest, Empty, Any> deleteBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupCallable()");
+  }
+
+  public OperationCallable<ExportBackupRequest, Backup, Any> exportBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportBackupOperationCallable()");
+  }
+
+  public UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportBackupCallable()");
+  }
+
+  public OperationCallable<BackupClusterRequest, Cluster, Any> backupClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: backupClusterOperationCallable()");
+  }
+
+  public UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: backupClusterCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

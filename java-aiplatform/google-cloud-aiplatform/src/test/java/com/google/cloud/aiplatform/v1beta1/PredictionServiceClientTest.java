@@ -882,6 +882,7 @@ public class PredictionServiceClientTest {
         CountTokensResponse.newBuilder()
             .setTotalTokens(730673909)
             .setTotalBillableCharacters(1242495501)
+            .addAllPromptTokensDetails(new ArrayList<ModalityTokenCount>())
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
@@ -926,6 +927,7 @@ public class PredictionServiceClientTest {
         CountTokensResponse.newBuilder()
             .setTotalTokens(730673909)
             .setTotalBillableCharacters(1242495501)
+            .addAllPromptTokensDetails(new ArrayList<ModalityTokenCount>())
             .build();
     mockPredictionService.addResponse(expectedResponse);
 

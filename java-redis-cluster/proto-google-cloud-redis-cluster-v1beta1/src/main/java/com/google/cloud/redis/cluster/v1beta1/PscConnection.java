@@ -44,6 +44,9 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     forwardingRule_ = "";
     projectId_ = "";
     network_ = "";
+    serviceAttachment_ = "";
+    pscConnectionStatus_ = 0;
+    connectionType_ = 0;
   }
 
   @java.lang.Override
@@ -75,11 +78,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The pscConnectionId.
    */
@@ -99,11 +102,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for pscConnectionId.
    */
@@ -128,11 +131,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The IP allocated on the consumer network for the PSC
-   * forwarding rule.
+   * Required. The IP allocated on the consumer network for the PSC forwarding
+   * rule.
    * </pre>
    *
-   * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The address.
    */
@@ -152,11 +157,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The IP allocated on the consumer network for the PSC
-   * forwarding rule.
+   * Required. The IP allocated on the consumer network for the PSC forwarding
+   * rule.
    * </pre>
    *
-   * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for address.
    */
@@ -181,12 +188,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The URI of the consumer side forwarding rule.
+   * Required. The URI of the consumer side forwarding rule.
    * Example:
    * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
    * </pre>
    *
-   * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The forwardingRule.
    */
@@ -206,12 +215,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The URI of the consumer side forwarding rule.
+   * Required. The URI of the consumer side forwarding rule.
    * Example:
    * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
    * </pre>
    *
-   * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -236,11 +247,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The consumer project_id where the forwarding rule is created
-   * from.
+   * Optional. Project ID of the consumer project where the forwarding rule is
+   * created in.
    * </pre>
    *
-   * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The projectId.
    */
@@ -260,11 +271,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The consumer project_id where the forwarding rule is created
-   * from.
+   * Optional. Project ID of the consumer project where the forwarding rule is
+   * created in.
    * </pre>
    *
-   * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for projectId.
    */
@@ -289,11 +300,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The consumer network where the IP address resides, in the form of
+   * Required. The consumer network where the IP address resides, in the form of
    * projects/{project_id}/global/networks/{network_id}.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The network.
    */
@@ -313,11 +326,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The consumer network where the IP address resides, in the form of
+   * Required. The consumer network where the IP address resides, in the form of
    * projects/{project_id}/global/networks/{network_id}.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for network.
    */
@@ -332,6 +347,153 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SERVICE_ATTACHMENT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAttachment_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Required. The service attachment which is the target of the PSC connection,
+   * in the form of
+   * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+   * </pre>
+   *
+   * <code>
+   * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serviceAttachment.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAttachment() {
+    java.lang.Object ref = serviceAttachment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAttachment_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The service attachment which is the target of the PSC connection,
+   * in the form of
+   * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+   * </pre>
+   *
+   * <code>
+   * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serviceAttachment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAttachmentBytes() {
+    java.lang.Object ref = serviceAttachment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAttachment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PSC_CONNECTION_STATUS_FIELD_NUMBER = 8;
+  private int pscConnectionStatus_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the PSC connection.
+   * Please note that this value is updated periodically.
+   * To get the latest status of a PSC connection, follow
+   * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for pscConnectionStatus.
+   */
+  @java.lang.Override
+  public int getPscConnectionStatusValue() {
+    return pscConnectionStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the PSC connection.
+   * Please note that this value is updated periodically.
+   * To get the latest status of a PSC connection, follow
+   * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pscConnectionStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus getPscConnectionStatus() {
+    com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus result =
+        com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus.forNumber(pscConnectionStatus_);
+    return result == null
+        ? com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CONNECTION_TYPE_FIELD_NUMBER = 10;
+  private int connectionType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the PSC connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for connectionType.
+   */
+  @java.lang.Override
+  public int getConnectionTypeValue() {
+    return connectionType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the PSC connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The connectionType.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1beta1.ConnectionType getConnectionType() {
+    com.google.cloud.redis.cluster.v1beta1.ConnectionType result =
+        com.google.cloud.redis.cluster.v1beta1.ConnectionType.forNumber(connectionType_);
+    return result == null
+        ? com.google.cloud.redis.cluster.v1beta1.ConnectionType.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -363,6 +525,20 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, network_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serviceAttachment_);
+    }
+    if (pscConnectionStatus_
+        != com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus
+            .PSC_CONNECTION_STATUS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, pscConnectionStatus_);
+    }
+    if (connectionType_
+        != com.google.cloud.redis.cluster.v1beta1.ConnectionType.CONNECTION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, connectionType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -387,6 +563,20 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, network_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serviceAttachment_);
+    }
+    if (pscConnectionStatus_
+        != com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus
+            .PSC_CONNECTION_STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, pscConnectionStatus_);
+    }
+    if (connectionType_
+        != com.google.cloud.redis.cluster.v1beta1.ConnectionType.CONNECTION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, connectionType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -408,6 +598,9 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     if (!getForwardingRule().equals(other.getForwardingRule())) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
+    if (!getServiceAttachment().equals(other.getServiceAttachment())) return false;
+    if (pscConnectionStatus_ != other.pscConnectionStatus_) return false;
+    if (connectionType_ != other.connectionType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -429,6 +622,12 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getProjectId().hashCode();
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
+    hash = (37 * hash) + SERVICE_ATTACHMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAttachment().hashCode();
+    hash = (37 * hash) + PSC_CONNECTION_STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + pscConnectionStatus_;
+    hash = (37 * hash) + CONNECTION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + connectionType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -573,6 +772,9 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       forwardingRule_ = "";
       projectId_ = "";
       network_ = "";
+      serviceAttachment_ = "";
+      pscConnectionStatus_ = 0;
+      connectionType_ = 0;
       return this;
     }
 
@@ -623,6 +825,15 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.serviceAttachment_ = serviceAttachment_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.pscConnectionStatus_ = pscConnectionStatus_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.connectionType_ = connectionType_;
       }
     }
 
@@ -697,6 +908,17 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getServiceAttachment().isEmpty()) {
+        serviceAttachment_ = other.serviceAttachment_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.pscConnectionStatus_ != 0) {
+        setPscConnectionStatusValue(other.getPscConnectionStatusValue());
+      }
+      if (other.connectionType_ != 0) {
+        setConnectionTypeValue(other.getConnectionTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -753,6 +975,24 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                serviceAttachment_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 64:
+              {
+                pscConnectionStatus_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+            case 80:
+              {
+                connectionType_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -777,11 +1017,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The pscConnectionId.
      */
@@ -800,11 +1040,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for pscConnectionId.
      */
@@ -823,11 +1063,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The pscConnectionId to set.
      * @return This builder for chaining.
@@ -845,11 +1085,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -863,11 +1103,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for pscConnectionId to set.
      * @return This builder for chaining.
@@ -888,11 +1128,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The IP allocated on the consumer network for the PSC
-     * forwarding rule.
+     * Required. The IP allocated on the consumer network for the PSC forwarding
+     * rule.
      * </pre>
      *
-     * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The address.
      */
@@ -911,11 +1153,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The IP allocated on the consumer network for the PSC
-     * forwarding rule.
+     * Required. The IP allocated on the consumer network for the PSC forwarding
+     * rule.
      * </pre>
      *
-     * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for address.
      */
@@ -934,11 +1178,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The IP allocated on the consumer network for the PSC
-     * forwarding rule.
+     * Required. The IP allocated on the consumer network for the PSC forwarding
+     * rule.
      * </pre>
      *
-     * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The address to set.
      * @return This builder for chaining.
@@ -956,11 +1202,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The IP allocated on the consumer network for the PSC
-     * forwarding rule.
+     * Required. The IP allocated on the consumer network for the PSC forwarding
+     * rule.
      * </pre>
      *
-     * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -974,11 +1222,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The IP allocated on the consumer network for the PSC
-     * forwarding rule.
+     * Required. The IP allocated on the consumer network for the PSC forwarding
+     * rule.
      * </pre>
      *
-     * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for address to set.
      * @return This builder for chaining.
@@ -999,12 +1249,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the consumer side forwarding rule.
+     * Required. The URI of the consumer side forwarding rule.
      * Example:
      * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
      * </pre>
      *
-     * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The forwardingRule.
      */
@@ -1023,12 +1275,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the consumer side forwarding rule.
+     * Required. The URI of the consumer side forwarding rule.
      * Example:
      * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
      * </pre>
      *
-     * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for forwardingRule.
      */
@@ -1047,12 +1301,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the consumer side forwarding rule.
+     * Required. The URI of the consumer side forwarding rule.
      * Example:
      * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
      * </pre>
      *
-     * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The forwardingRule to set.
      * @return This builder for chaining.
@@ -1070,12 +1326,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the consumer side forwarding rule.
+     * Required. The URI of the consumer side forwarding rule.
      * Example:
      * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
      * </pre>
      *
-     * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1089,12 +1347,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the consumer side forwarding rule.
+     * Required. The URI of the consumer side forwarding rule.
      * Example:
      * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
      * </pre>
      *
-     * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for forwardingRule to set.
      * @return This builder for chaining.
@@ -1115,11 +1375,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The consumer project_id where the forwarding rule is created
-     * from.
+     * Optional. Project ID of the consumer project where the forwarding rule is
+     * created in.
      * </pre>
      *
-     * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The projectId.
      */
@@ -1138,11 +1398,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The consumer project_id where the forwarding rule is created
-     * from.
+     * Optional. Project ID of the consumer project where the forwarding rule is
+     * created in.
      * </pre>
      *
-     * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for projectId.
      */
@@ -1161,11 +1421,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The consumer project_id where the forwarding rule is created
-     * from.
+     * Optional. Project ID of the consumer project where the forwarding rule is
+     * created in.
      * </pre>
      *
-     * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -1183,11 +1443,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The consumer project_id where the forwarding rule is created
-     * from.
+     * Optional. Project ID of the consumer project where the forwarding rule is
+     * created in.
      * </pre>
      *
-     * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1201,11 +1461,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The consumer project_id where the forwarding rule is created
-     * from.
+     * Optional. Project ID of the consumer project where the forwarding rule is
+     * created in.
      * </pre>
      *
-     * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
@@ -1226,11 +1486,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The consumer network where the IP address resides, in the form of
+     * Required. The consumer network where the IP address resides, in the form of
      * projects/{project_id}/global/networks/{network_id}.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The network.
      */
@@ -1249,11 +1511,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The consumer network where the IP address resides, in the form of
+     * Required. The consumer network where the IP address resides, in the form of
      * projects/{project_id}/global/networks/{network_id}.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for network.
      */
@@ -1272,11 +1536,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The consumer network where the IP address resides, in the form of
+     * Required. The consumer network where the IP address resides, in the form of
      * projects/{project_id}/global/networks/{network_id}.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -1294,11 +1560,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The consumer network where the IP address resides, in the form of
+     * Required. The consumer network where the IP address resides, in the form of
      * projects/{project_id}/global/networks/{network_id}.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1312,11 +1580,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The consumer network where the IP address resides, in the form of
+     * Required. The consumer network where the IP address resides, in the form of
      * projects/{project_id}/global/networks/{network_id}.
      * </pre>
      *
-     * <code>string network = 5;</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -1328,6 +1598,353 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       network_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The service attachment which is the target of the PSC connection,
+     * in the form of
+     * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+     * </pre>
+     *
+     * <code>
+     * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The serviceAttachment.
+     */
+    public java.lang.String getServiceAttachment() {
+      java.lang.Object ref = serviceAttachment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAttachment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The service attachment which is the target of the PSC connection,
+     * in the form of
+     * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+     * </pre>
+     *
+     * <code>
+     * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for serviceAttachment.
+     */
+    public com.google.protobuf.ByteString getServiceAttachmentBytes() {
+      java.lang.Object ref = serviceAttachment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The service attachment which is the target of the PSC connection,
+     * in the form of
+     * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+     * </pre>
+     *
+     * <code>
+     * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The serviceAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAttachment(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAttachment_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The service attachment which is the target of the PSC connection,
+     * in the form of
+     * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+     * </pre>
+     *
+     * <code>
+     * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAttachment() {
+      serviceAttachment_ = getDefaultInstance().getServiceAttachment();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The service attachment which is the target of the PSC connection,
+     * in the form of
+     * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+     * </pre>
+     *
+     * <code>
+     * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for serviceAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAttachmentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAttachment_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private int pscConnectionStatus_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the PSC connection.
+     * Please note that this value is updated periodically.
+     * To get the latest status of a PSC connection, follow
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for pscConnectionStatus.
+     */
+    @java.lang.Override
+    public int getPscConnectionStatusValue() {
+      return pscConnectionStatus_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the PSC connection.
+     * Please note that this value is updated periodically.
+     * To get the latest status of a PSC connection, follow
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for pscConnectionStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscConnectionStatusValue(int value) {
+      pscConnectionStatus_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the PSC connection.
+     * Please note that this value is updated periodically.
+     * To get the latest status of a PSC connection, follow
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The pscConnectionStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus getPscConnectionStatus() {
+      com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus result =
+          com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus.forNumber(
+              pscConnectionStatus_);
+      return result == null
+          ? com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the PSC connection.
+     * Please note that this value is updated periodically.
+     * To get the latest status of a PSC connection, follow
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The pscConnectionStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscConnectionStatus(
+        com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      pscConnectionStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the PSC connection.
+     * Please note that this value is updated periodically.
+     * To get the latest status of a PSC connection, follow
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscConnectionStatus() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      pscConnectionStatus_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int connectionType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the PSC connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for connectionType.
+     */
+    @java.lang.Override
+    public int getConnectionTypeValue() {
+      return connectionType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the PSC connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for connectionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectionTypeValue(int value) {
+      connectionType_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the PSC connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The connectionType.
+     */
+    @java.lang.Override
+    public com.google.cloud.redis.cluster.v1beta1.ConnectionType getConnectionType() {
+      com.google.cloud.redis.cluster.v1beta1.ConnectionType result =
+          com.google.cloud.redis.cluster.v1beta1.ConnectionType.forNumber(connectionType_);
+      return result == null
+          ? com.google.cloud.redis.cluster.v1beta1.ConnectionType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the PSC connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The connectionType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectionType(com.google.cloud.redis.cluster.v1beta1.ConnectionType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      connectionType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the PSC connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectionType() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      connectionType_ = 0;
       onChanged();
       return this;
     }

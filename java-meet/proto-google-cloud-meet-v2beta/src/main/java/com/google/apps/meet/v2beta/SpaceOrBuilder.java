@@ -29,7 +29,14 @@ public interface SpaceOrBuilder
    *
    * <pre>
    * Immutable. Resource name of the space.
-   * Format: `spaces/{space}`
+   *
+   * Format: `spaces/{space}`.
+   *
+   * `{space}` is the resource identifier for the space. It's a unique,
+   * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *
+   * For more information, see [How Meet identifies a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -42,7 +49,14 @@ public interface SpaceOrBuilder
    *
    * <pre>
    * Immutable. Resource name of the space.
-   * Format: `spaces/{space}`
+   *
+   * Format: `spaces/{space}`.
+   *
+   * `{space}` is the resource identifier for the space. It's a unique,
+   * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *
+   * For more information, see [How Meet identifies a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -55,7 +69,8 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Output only. URI used to join meeting, such as
+   * Output only. URI used to join meetings consisting of
+   * `https://meet.google.com/` followed by the `meeting_code`. For example,
    * `https://meet.google.com/abc-mnop-xyz`.
    * </pre>
    *
@@ -68,7 +83,8 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Output only. URI used to join meeting, such as
+   * Output only. URI used to join meetings consisting of
+   * `https://meet.google.com/` followed by the `meeting_code`. For example,
    * `https://meet.google.com/abc-mnop-xyz`.
    * </pre>
    *
@@ -82,9 +98,13 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Output only. Type friendly code to join the meeting. Format:
-   * `[a-z]+-[a-z]+-[a-z]+` such as `abc-mnop-xyz`. The maximum length is 128
-   * characters. Can ONLY be used as alias of the space ID to get the space.
+   * Output only. Type friendly unique string used to join the meeting.
+   *
+   * Format: `[a-z]+-[a-z]+-[a-z]+`. For example, `abc-mnop-xyz`.
+   *
+   * The maximum length is 128 characters.
+   *
+   * Can only be used as an alias of the space name to get the space.
    * </pre>
    *
    * <code>string meeting_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -96,9 +116,13 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Output only. Type friendly code to join the meeting. Format:
-   * `[a-z]+-[a-z]+-[a-z]+` such as `abc-mnop-xyz`. The maximum length is 128
-   * characters. Can ONLY be used as alias of the space ID to get the space.
+   * Output only. Type friendly unique string used to join the meeting.
+   *
+   * Format: `[a-z]+-[a-z]+-[a-z]+`. For example, `abc-mnop-xyz`.
+   *
+   * The maximum length is 128 characters.
+   *
+   * Can only be used as an alias of the space name to get the space.
    * </pre>
    *
    * <code>string meeting_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -146,7 +170,7 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Active conference if it exists.
+   * Active conference, if it exists.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.ActiveConference active_conference = 6;</code>
@@ -158,7 +182,7 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Active conference if it exists.
+   * Active conference, if it exists.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.ActiveConference active_conference = 6;</code>
@@ -170,7 +194,7 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
-   * Active conference if it exists.
+   * Active conference, if it exists.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.ActiveConference active_conference = 6;</code>

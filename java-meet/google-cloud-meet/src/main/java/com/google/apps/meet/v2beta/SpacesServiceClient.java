@@ -16,14 +16,22 @@
 
 package com.google.apps.meet.v2beta;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.paging.AbstractFixedSizeCollection;
+import com.google.api.gax.paging.AbstractPage;
+import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.apps.meet.v2beta.stub.SpacesServiceStub;
 import com.google.apps.meet.v2beta.stub.SpacesServiceStubSettings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -58,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateSpace</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Creates a space.</td>
+ *      <td><p> Creates a space.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -76,7 +84,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetSpace</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a space by `space_id` or `meeting_code`.</td>
+ *      <td><p> Gets details about a meeting space.
+ * <p>  For an example, see [Get a meeting space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -95,7 +104,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateSpace</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Updates a space.</td>
+ *      <td><p> Updates details about a meeting space.
+ * <p>  For an example, see [Update a meeting space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -113,7 +123,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> EndActiveConference</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Ends an active conference (if there is one).</td>
+ *      <td><p> Ends an active conference (if there's one).
+ * <p>  For an example, see [End active conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -127,6 +138,86 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> endActiveConferenceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateMember</td>
+ *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+ * <p>  This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted, this API response will default to "name,email,role,user".</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createMember(CreateMemberRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createMember(SpaceName parent, Member member)
+ *           <li><p> createMember(String parent, Member member)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createMemberCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMember</td>
+ *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+ * <p>  This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted, this API response will default to "name,email,role,user".</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMember(GetMemberRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMember(MemberName name)
+ *           <li><p> getMember(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMemberCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMembers</td>
+ *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): List members.
+ * <p>  This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted this API response will default to "name,email,role,user".</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMembers(ListMembersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMembers(SpaceName parent)
+ *           <li><p> listMembers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMembersPagedCallable()
+ *           <li><p> listMembersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteMember</td>
+ *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was previously assigned roles in the space.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteMember(DeleteMemberRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteMember(MemberName name)
+ *           <li><p> deleteMember(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteMemberCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -238,7 +329,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Creates a space.
+   * Creates a space.
    *
    * <p>Sample code:
    *
@@ -265,7 +356,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Creates a space.
+   * Creates a space.
    *
    * <p>Sample code:
    *
@@ -291,7 +382,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Creates a space.
+   * Creates a space.
    *
    * <p>Sample code:
    *
@@ -316,8 +407,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a space by
-   * `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -334,6 +427,17 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}` or `spaces/{meetingCode}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>`{meetingCode}` is an alias for the space. It's a typeable, unique character string and
+   *     is non-case sensitive. For example, `abc-mnop-xyz`. The maximum length is 128 characters.
+   *     <p>A `meetingCode` shouldn't be stored long term as it can become dissociated from a
+   *     meeting space and can be reused for different meeting spaces in the future. Generally, a
+   *     `meetingCode` expires 365 days after last use. For more information, see [Learn about
+   *     meeting codes in Google Meet](https://support.google.com/meet/answer/10710509).
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space getSpace(SpaceName name) {
@@ -344,8 +448,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a space by
-   * `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -362,6 +468,17 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}` or `spaces/{meetingCode}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>`{meetingCode}` is an alias for the space. It's a typeable, unique character string and
+   *     is non-case sensitive. For example, `abc-mnop-xyz`. The maximum length is 128 characters.
+   *     <p>A `meetingCode` shouldn't be stored long term as it can become dissociated from a
+   *     meeting space and can be reused for different meeting spaces in the future. Generally, a
+   *     `meetingCode` expires 365 days after last use. For more information, see [Learn about
+   *     meeting codes in Google Meet](https://support.google.com/meet/answer/10710509).
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space getSpace(String name) {
@@ -371,8 +488,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a space by
-   * `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -398,8 +517,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a space by
-   * `space_id` or `meeting_code`.
+   * Gets details about a meeting space.
+   *
+   * <p>For an example, see [Get a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -424,7 +545,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Updates a space.
+   * Updates details about a meeting space.
+   *
+   * <p>For an example, see [Update a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -443,8 +567,9 @@ public class SpacesServiceClient implements BackgroundResource {
    *
    * @param space Required. Space to be updated.
    * @param updateMask Optional. Field mask used to specify the fields to be updated in the space.
-   *     If update_mask isn't provided, it defaults to '&#42;' and updates all fields provided in
-   *     the request, including deleting fields not set in the request.
+   *     If update_mask isn't provided(not set, set with empty paths, or only has "" as paths), it
+   *     defaults to update all fields provided with values in the request. Using "&#42;" as
+   *     update_mask will update all fields, including deleting fields not set in the request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space updateSpace(Space space, FieldMask updateMask) {
@@ -455,7 +580,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Updates a space.
+   * Updates details about a meeting space.
+   *
+   * <p>For an example, see [Update a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -484,7 +612,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Updates a space.
+   * Updates details about a meeting space.
+   *
+   * <p>For an example, see [Update a meeting
+   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -512,8 +643,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Ends an active conference
-   * (if there is one).
+   * Ends an active conference (if there's one).
+   *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -530,6 +663,11 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void endActiveConference(SpaceName name) {
@@ -542,8 +680,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Ends an active conference
-   * (if there is one).
+   * Ends an active conference (if there's one).
+   *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -560,6 +700,11 @@ public class SpacesServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the space.
+   *     <p>Format: `spaces/{space}`.
+   *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
+   *     and is case sensitive. For example, `jQCFfuBOdN5z`.
+   *     <p>For more information, see [How Meet identifies a meeting
+   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void endActiveConference(String name) {
@@ -570,8 +715,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Ends an active conference
-   * (if there is one).
+   * Ends an active conference (if there's one).
+   *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -599,8 +746,10 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Ends an active conference
-   * (if there is one).
+   * Ends an active conference (if there's one).
+   *
+   * <p>For an example, see [End active
+   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -624,6 +773,557 @@ public class SpacesServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable() {
     return stub.endActiveConferenceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   SpaceName parent = SpaceName.of("[SPACE]");
+   *   Member member = Member.newBuilder().build();
+   *   Member response = spacesServiceClient.createMember(parent, member);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: spaces/{space}
+   * @param member Required. The member to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member createMember(SpaceName parent, Member member) {
+    CreateMemberRequest request =
+        CreateMemberRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMember(member)
+            .build();
+    return createMember(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   String parent = SpaceName.of("[SPACE]").toString();
+   *   Member member = Member.newBuilder().build();
+   *   Member response = spacesServiceClient.createMember(parent, member);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: spaces/{space}
+   * @param member Required. The member to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member createMember(String parent, Member member) {
+    CreateMemberRequest request =
+        CreateMemberRequest.newBuilder().setParent(parent).setMember(member).build();
+    return createMember(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   CreateMemberRequest request =
+   *       CreateMemberRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setMember(Member.newBuilder().build())
+   *           .build();
+   *   Member response = spacesServiceClient.createMember(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member createMember(CreateMemberRequest request) {
+    return createMemberCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   CreateMemberRequest request =
+   *       CreateMemberRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setMember(Member.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Member> future = spacesServiceClient.createMemberCallable().futureCall(request);
+   *   // Do something.
+   *   Member response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMemberRequest, Member> createMemberCallable() {
+    return stub.createMemberCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   MemberName name = MemberName.of("[SPACE]", "[MEMBER]");
+   *   Member response = spacesServiceClient.getMember(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format: “spaces/{space}/members/{member}”
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member getMember(MemberName name) {
+    GetMemberRequest request =
+        GetMemberRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMember(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   String name = MemberName.of("[SPACE]", "[MEMBER]").toString();
+   *   Member response = spacesServiceClient.getMember(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format: “spaces/{space}/members/{member}”
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member getMember(String name) {
+    GetMemberRequest request = GetMemberRequest.newBuilder().setName(name).build();
+    return getMember(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   GetMemberRequest request =
+   *       GetMemberRequest.newBuilder()
+   *           .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+   *           .build();
+   *   Member response = spacesServiceClient.getMember(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member getMember(GetMemberRequest request) {
+    return getMemberCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted, this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   GetMemberRequest request =
+   *       GetMemberRequest.newBuilder()
+   *           .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+   *           .build();
+   *   ApiFuture<Member> future = spacesServiceClient.getMemberCallable().futureCall(request);
+   *   // Do something.
+   *   Member response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMemberRequest, Member> getMemberCallable() {
+    return stub.getMemberCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   SpaceName parent = SpaceName.of("[SPACE]");
+   *   for (Member element : spacesServiceClient.listMembers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: spaces/{space}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMembersPagedResponse listMembers(SpaceName parent) {
+    ListMembersRequest request =
+        ListMembersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMembers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   String parent = SpaceName.of("[SPACE]").toString();
+   *   for (Member element : spacesServiceClient.listMembers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: spaces/{space}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMembersPagedResponse listMembers(String parent) {
+    ListMembersRequest request = ListMembersRequest.newBuilder().setParent(parent).build();
+    return listMembers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   ListMembersRequest request =
+   *       ListMembersRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Member element : spacesServiceClient.listMembers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMembersPagedResponse listMembers(ListMembersRequest request) {
+    return listMembersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   ListMembersRequest request =
+   *       ListMembersRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Member> future = spacesServiceClient.listMembersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Member element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMembersRequest, ListMembersPagedResponse>
+      listMembersPagedCallable() {
+    return stub.listMembersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   *
+   * <p>This API supports the `fields` parameter in
+   * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
+   * `fields` parameter is omitted this API response will default to "name,email,role,user".
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   ListMembersRequest request =
+   *       ListMembersRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMembersResponse response = spacesServiceClient.listMembersCallable().call(request);
+   *     for (Member element : response.getMembersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMembersRequest, ListMembersResponse> listMembersCallable() {
+    return stub.listMembersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
+   * previously assigned roles in the space.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   MemberName name = MemberName.of("[SPACE]", "[MEMBER]");
+   *   spacesServiceClient.deleteMember(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format: “spaces/{space}/members/{member}”
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMember(MemberName name) {
+    DeleteMemberRequest request =
+        DeleteMemberRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteMember(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
+   * previously assigned roles in the space.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   String name = MemberName.of("[SPACE]", "[MEMBER]").toString();
+   *   spacesServiceClient.deleteMember(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format: “spaces/{space}/members/{member}”
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMember(String name) {
+    DeleteMemberRequest request = DeleteMemberRequest.newBuilder().setName(name).build();
+    deleteMember(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
+   * previously assigned roles in the space.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   DeleteMemberRequest request =
+   *       DeleteMemberRequest.newBuilder()
+   *           .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+   *           .build();
+   *   spacesServiceClient.deleteMember(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMember(DeleteMemberRequest request) {
+    deleteMemberCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
+   * previously assigned roles in the space.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   DeleteMemberRequest request =
+   *       DeleteMemberRequest.newBuilder()
+   *           .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = spacesServiceClient.deleteMemberCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
+    return stub.deleteMemberCallable();
   }
 
   @Override
@@ -654,5 +1354,78 @@ public class SpacesServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListMembersPagedResponse
+      extends AbstractPagedListResponse<
+          ListMembersRequest,
+          ListMembersResponse,
+          Member,
+          ListMembersPage,
+          ListMembersFixedSizeCollection> {
+
+    public static ApiFuture<ListMembersPagedResponse> createAsync(
+        PageContext<ListMembersRequest, ListMembersResponse, Member> context,
+        ApiFuture<ListMembersResponse> futureResponse) {
+      ApiFuture<ListMembersPage> futurePage =
+          ListMembersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListMembersPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListMembersPagedResponse(ListMembersPage page) {
+      super(page, ListMembersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMembersPage
+      extends AbstractPage<ListMembersRequest, ListMembersResponse, Member, ListMembersPage> {
+
+    private ListMembersPage(
+        PageContext<ListMembersRequest, ListMembersResponse, Member> context,
+        ListMembersResponse response) {
+      super(context, response);
+    }
+
+    private static ListMembersPage createEmptyPage() {
+      return new ListMembersPage(null, null);
+    }
+
+    @Override
+    protected ListMembersPage createPage(
+        PageContext<ListMembersRequest, ListMembersResponse, Member> context,
+        ListMembersResponse response) {
+      return new ListMembersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMembersPage> createPageAsync(
+        PageContext<ListMembersRequest, ListMembersResponse, Member> context,
+        ApiFuture<ListMembersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMembersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMembersRequest,
+          ListMembersResponse,
+          Member,
+          ListMembersPage,
+          ListMembersFixedSizeCollection> {
+
+    private ListMembersFixedSizeCollection(List<ListMembersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMembersFixedSizeCollection createEmptyCollection() {
+      return new ListMembersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMembersFixedSizeCollection createCollection(
+        List<ListMembersPage> pages, int collectionSize) {
+      return new ListMembersFixedSizeCollection(pages, collectionSize);
+    }
   }
 }

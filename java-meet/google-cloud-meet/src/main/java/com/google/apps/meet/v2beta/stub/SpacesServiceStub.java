@@ -16,12 +16,20 @@
 
 package com.google.apps.meet.v2beta.stub;
 
+import static com.google.apps.meet.v2beta.SpacesServiceClient.ListMembersPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.CreateMemberRequest;
 import com.google.apps.meet.v2beta.CreateSpaceRequest;
+import com.google.apps.meet.v2beta.DeleteMemberRequest;
 import com.google.apps.meet.v2beta.EndActiveConferenceRequest;
+import com.google.apps.meet.v2beta.GetMemberRequest;
 import com.google.apps.meet.v2beta.GetSpaceRequest;
+import com.google.apps.meet.v2beta.ListMembersRequest;
+import com.google.apps.meet.v2beta.ListMembersResponse;
+import com.google.apps.meet.v2beta.Member;
 import com.google.apps.meet.v2beta.Space;
 import com.google.apps.meet.v2beta.UpdateSpaceRequest;
 import com.google.protobuf.Empty;
@@ -51,6 +59,26 @@ public abstract class SpacesServiceStub implements BackgroundResource {
 
   public UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable() {
     throw new UnsupportedOperationException("Not implemented: endActiveConferenceCallable()");
+  }
+
+  public UnaryCallable<CreateMemberRequest, Member> createMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMemberCallable()");
+  }
+
+  public UnaryCallable<GetMemberRequest, Member> getMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMemberCallable()");
+  }
+
+  public UnaryCallable<ListMembersRequest, ListMembersPagedResponse> listMembersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMembersPagedCallable()");
+  }
+
+  public UnaryCallable<ListMembersRequest, ListMembersResponse> listMembersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMembersCallable()");
+  }
+
+  public UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMemberCallable()");
   }
 
   @Override

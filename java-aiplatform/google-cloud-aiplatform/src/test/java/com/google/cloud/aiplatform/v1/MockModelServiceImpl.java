@@ -143,6 +143,28 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   }
 
   @Override
+  public void listModelVersionCheckpoints(
+      ListModelVersionCheckpointsRequest request,
+      StreamObserver<ListModelVersionCheckpointsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListModelVersionCheckpointsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListModelVersionCheckpointsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListModelVersionCheckpoints, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListModelVersionCheckpointsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateModel(UpdateModelRequest request, StreamObserver<Model> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Model) {

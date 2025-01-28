@@ -677,5 +677,47 @@ public interface DeployedModelOrBuilder
    */
   java.lang.String getSystemLabelsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speculativeDecodingSpec field is set.
+   */
+  boolean hasSpeculativeDecodingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speculativeDecodingSpec.
+   */
+  com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec getSpeculativeDecodingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.SpeculativeDecodingSpecOrBuilder
+      getSpeculativeDecodingSpecOrBuilder();
+
   com.google.cloud.aiplatform.v1.DeployedModel.PredictionResourcesCase getPredictionResourcesCase();
 }

@@ -43,6 +43,7 @@ public class SyncDeleteBackupVault {
               .setEtag("etag3123477")
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setIgnoreBackupPlanReferences(true)
               .build();
       backupDRClient.deleteBackupVaultAsync(request).get();
     }

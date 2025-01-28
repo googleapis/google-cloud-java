@@ -53,7 +53,7 @@ public interface ParticipantSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session started.
+   * Output only. Timestamp when the user session starts.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -66,7 +66,7 @@ public interface ParticipantSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session started.
+   * Output only. Timestamp when the user session starts.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -79,7 +79,7 @@ public interface ParticipantSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session started.
+   * Output only. Timestamp when the user session starts.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -91,7 +91,7 @@ public interface ParticipantSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session ended. Unset if the user
+   * Output only. Timestamp when the user session ends. Unset if the user
    * session hasn’t ended.
    * </pre>
    *
@@ -105,7 +105,7 @@ public interface ParticipantSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session ended. Unset if the user
+   * Output only. Timestamp when the user session ends. Unset if the user
    * session hasn’t ended.
    * </pre>
    *
@@ -119,7 +119,7 @@ public interface ParticipantSessionOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session ended. Unset if the user
+   * Output only. Timestamp when the user session ends. Unset if the user
    * session hasn’t ended.
    * </pre>
    *

@@ -268,6 +268,19 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
     return ((FeatureRegistryServiceStubSettings) getStubSettings()).listFeatureMonitorsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateFeatureMonitor. */
+  public UnaryCallSettings<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings()).updateFeatureMonitorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateFeatureMonitor. */
+  public OperationCallSettings<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationSettings() {
+    return ((FeatureRegistryServiceStubSettings) getStubSettings())
+        .updateFeatureMonitorOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteFeatureMonitor. */
   public UnaryCallSettings<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorSettings() {
     return ((FeatureRegistryServiceStubSettings) getStubSettings()).deleteFeatureMonitorSettings();
@@ -566,6 +579,19 @@ public class FeatureRegistryServiceSettings extends ClientSettings<FeatureRegist
             ListFeatureMonitorsPagedResponse>
         listFeatureMonitorsSettings() {
       return getStubSettingsBuilder().listFeatureMonitorsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateFeatureMonitor. */
+    public UnaryCallSettings.Builder<UpdateFeatureMonitorRequest, Operation>
+        updateFeatureMonitorSettings() {
+      return getStubSettingsBuilder().updateFeatureMonitorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateFeatureMonitor. */
+    public OperationCallSettings.Builder<
+            UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+        updateFeatureMonitorOperationSettings() {
+      return getStubSettingsBuilder().updateFeatureMonitorOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteFeatureMonitor. */

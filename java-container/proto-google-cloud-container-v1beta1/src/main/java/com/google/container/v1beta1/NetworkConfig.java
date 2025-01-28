@@ -936,7 +936,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1beta1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the cluster is connected. Example:
    * projects/my-project/global/networks/my-network
    * </pre>
@@ -962,7 +962,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
-   * [network][google.container.v1beta1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+   * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the cluster is connected. Example:
    * projects/my-project/global/networks/my-network
    * </pre>
@@ -2353,7 +2353,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1beta1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the cluster is connected. Example:
      * projects/my-project/global/networks/my-network
      * </pre>
@@ -2378,7 +2378,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1beta1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the cluster is connected. Example:
      * projects/my-project/global/networks/my-network
      * </pre>
@@ -2403,7 +2403,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1beta1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the cluster is connected. Example:
      * projects/my-project/global/networks/my-network
      * </pre>
@@ -2427,7 +2427,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1beta1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the cluster is connected. Example:
      * projects/my-project/global/networks/my-network
      * </pre>
@@ -2447,7 +2447,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The relative name of the Google Compute Engine
-     * [network][google.container.v1beta1.NetworkConfig.network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the cluster is connected. Example:
      * projects/my-project/global/networks/my-network
      * </pre>

@@ -23,7 +23,7 @@ package com.google.cloud.gsuiteaddons.v1;
  *
  *
  * <pre>
- * A Google Workspace Add-on deployment
+ * A Google Workspace add-on deployment
  * </pre>
  *
  * Protobuf type {@code google.cloud.gsuiteaddons.v1.Deployment}
@@ -193,7 +193,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Workspace Add-on configuration.
+   * The Google Workspace add-on configuration.
    * </pre>
    *
    * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -208,7 +208,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Workspace Add-on configuration.
+   * The Google Workspace add-on configuration.
    * </pre>
    *
    * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -223,7 +223,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Google Workspace Add-on configuration.
+   * The Google Workspace add-on configuration.
    * </pre>
    *
    * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -490,7 +490,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Workspace Add-on deployment
+   * A Google Workspace add-on deployment
    * </pre>
    *
    * Protobuf type {@code google.cloud.gsuiteaddons.v1.Deployment}
@@ -1038,7 +1038,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1052,7 +1052,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1072,7 +1072,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1094,7 +1094,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1113,7 +1113,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1140,7 +1140,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1159,7 +1159,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1173,7 +1173,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -1191,7 +1191,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Google Workspace Add-on configuration.
+     * The Google Workspace add-on configuration.
      * </pre>
      *
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>

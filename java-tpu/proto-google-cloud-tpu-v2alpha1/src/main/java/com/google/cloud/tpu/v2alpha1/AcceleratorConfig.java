@@ -114,6 +114,36 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>V4 = 7;</code>
      */
     V4(7),
+    /**
+     *
+     *
+     * <pre>
+     * TPU v5lite pod.
+     * </pre>
+     *
+     * <code>V5LITE_POD = 9;</code>
+     */
+    V5LITE_POD(9),
+    /**
+     *
+     *
+     * <pre>
+     * TPU v5.
+     * </pre>
+     *
+     * <code>V5P = 10;</code>
+     */
+    V5P(10),
+    /**
+     *
+     *
+     * <pre>
+     * TPU v6e.
+     * </pre>
+     *
+     * <code>V6E = 11;</code>
+     */
+    V6E(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -157,6 +187,36 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>V4 = 7;</code>
      */
     public static final int V4_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * TPU v5lite pod.
+     * </pre>
+     *
+     * <code>V5LITE_POD = 9;</code>
+     */
+    public static final int V5LITE_POD_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * TPU v5.
+     * </pre>
+     *
+     * <code>V5P = 10;</code>
+     */
+    public static final int V5P_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * TPU v6e.
+     * </pre>
+     *
+     * <code>V6E = 11;</code>
+     */
+    public static final int V6E_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -190,6 +250,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
           return V3;
         case 7:
           return V4;
+        case 9:
+          return V5LITE_POD;
+        case 10:
+          return V5P;
+        case 11:
+          return V6E;
         default:
           return null;
       }

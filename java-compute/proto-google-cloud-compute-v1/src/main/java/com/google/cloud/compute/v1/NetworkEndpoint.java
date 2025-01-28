@@ -110,7 +110,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint.
+   * Optional metadata defined as annotations on the network endpoint.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -132,7 +132,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint.
+   * Optional metadata defined as annotations on the network endpoint.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -145,7 +145,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint.
+   * Optional metadata defined as annotations on the network endpoint.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -165,7 +165,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Metadata defined as annotations on the network endpoint.
+   * Optional metadata defined as annotations on the network endpoint.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -188,7 +188,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * Represents the port number to which PSC consumer sends packets. Optional. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
    * </pre>
    *
    * <code>optional int32 client_destination_port = 123765766;</code>
@@ -203,7 +203,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+   * Represents the port number to which PSC consumer sends packets. Optional. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
    * </pre>
    *
    * <code>optional int32 client_destination_port = 123765766;</code>
@@ -289,7 +289,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+   * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -304,7 +304,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+   * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -327,7 +327,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+   * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -1098,7 +1098,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint.
+     * Optional metadata defined as annotations on the network endpoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -1120,7 +1120,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint.
+     * Optional metadata defined as annotations on the network endpoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -1133,7 +1133,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint.
+     * Optional metadata defined as annotations on the network endpoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -1153,7 +1153,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint.
+     * Optional metadata defined as annotations on the network endpoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -1179,7 +1179,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint.
+     * Optional metadata defined as annotations on the network endpoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -1201,7 +1201,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint.
+     * Optional metadata defined as annotations on the network endpoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -1221,7 +1221,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Metadata defined as annotations on the network endpoint.
+     * Optional metadata defined as annotations on the network endpoint.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 112032548;</code>
@@ -1237,7 +1237,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * Represents the port number to which PSC consumer sends packets. Optional. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
      * </pre>
      *
      * <code>optional int32 client_destination_port = 123765766;</code>
@@ -1252,7 +1252,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * Represents the port number to which PSC consumer sends packets. Optional. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
      * </pre>
      *
      * <code>optional int32 client_destination_port = 123765766;</code>
@@ -1267,7 +1267,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * Represents the port number to which PSC consumer sends packets. Optional. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
      * </pre>
      *
      * <code>optional int32 client_destination_port = 123765766;</code>
@@ -1286,7 +1286,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Represents the port number to which PSC consumer sends packets. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
+     * Represents the port number to which PSC consumer sends packets. Optional. Only valid for network endpoint groups created with GCE_VM_IP_PORTMAP endpoint type.
      * </pre>
      *
      * <code>optional int32 client_destination_port = 123765766;</code>
@@ -1425,7 +1425,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+     * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1439,7 +1439,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+     * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1461,7 +1461,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+     * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1483,7 +1483,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+     * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1504,7 +1504,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+     * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1521,7 +1521,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
+     * The name or a URL of VM instance of this network endpoint. Optional, the field presence depends on the network endpoint type. The field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>

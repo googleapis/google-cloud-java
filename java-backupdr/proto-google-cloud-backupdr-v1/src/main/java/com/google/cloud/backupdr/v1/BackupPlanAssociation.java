@@ -341,10 +341,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Resource type of workload on which backupplan is applied
+   * Required. Immutable. Resource type of workload on which backupplan is
+   * applied
    * </pre>
    *
-   * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The resourceType.
    */
@@ -364,10 +367,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Resource type of workload on which backupplan is applied
+   * Required. Immutable. Resource type of workload on which backupplan is
+   * applied
    * </pre>
    *
-   * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The bytes for resourceType.
    */
@@ -729,11 +735,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * Resource name of data source which will be used as storage location for
-   * backups taken.
-   * Format :
+   * Output only. Resource name of data source which will be used as storage
+   * location for backups taken. Format :
    * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
    * </pre>
    *
@@ -757,11 +760,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * Resource name of data source which will be used as storage location for
-   * backups taken.
-   * Format :
+   * Output only. Resource name of data source which will be used as storage
+   * location for backups taken. Format :
    * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
    * </pre>
    *
@@ -1525,10 +1525,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Resource type of workload on which backupplan is applied
+     * Required. Immutable. Resource type of workload on which backupplan is
+     * applied
      * </pre>
      *
-     * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The resourceType.
      */
@@ -1547,10 +1550,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Resource type of workload on which backupplan is applied
+     * Required. Immutable. Resource type of workload on which backupplan is
+     * applied
      * </pre>
      *
-     * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The bytes for resourceType.
      */
@@ -1569,10 +1575,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Resource type of workload on which backupplan is applied
+     * Required. Immutable. Resource type of workload on which backupplan is
+     * applied
      * </pre>
      *
-     * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The resourceType to set.
      * @return This builder for chaining.
@@ -1590,10 +1599,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Resource type of workload on which backupplan is applied
+     * Required. Immutable. Resource type of workload on which backupplan is
+     * applied
      * </pre>
      *
-     * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1607,10 +1619,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Resource type of workload on which backupplan is applied
+     * Required. Immutable. Resource type of workload on which backupplan is
+     * applied
      * </pre>
      *
-     * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The bytes for resourceType to set.
      * @return This builder for chaining.
@@ -2781,11 +2796,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Output Only.
-     *
-     * Resource name of data source which will be used as storage location for
-     * backups taken.
-     * Format :
+     * Output only. Resource name of data source which will be used as storage
+     * location for backups taken. Format :
      * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
      * </pre>
      *
@@ -2808,11 +2820,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Output Only.
-     *
-     * Resource name of data source which will be used as storage location for
-     * backups taken.
-     * Format :
+     * Output only. Resource name of data source which will be used as storage
+     * location for backups taken. Format :
      * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
      * </pre>
      *
@@ -2835,11 +2844,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Output Only.
-     *
-     * Resource name of data source which will be used as storage location for
-     * backups taken.
-     * Format :
+     * Output only. Resource name of data source which will be used as storage
+     * location for backups taken. Format :
      * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
      * </pre>
      *
@@ -2861,11 +2867,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Output Only.
-     *
-     * Resource name of data source which will be used as storage location for
-     * backups taken.
-     * Format :
+     * Output only. Resource name of data source which will be used as storage
+     * location for backups taken. Format :
      * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
      * </pre>
      *
@@ -2883,11 +2886,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Output Only.
-     *
-     * Resource name of data source which will be used as storage location for
-     * backups taken.
-     * Format :
+     * Output only. Resource name of data source which will be used as storage
+     * location for backups taken. Format :
      * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
      * </pre>
      *

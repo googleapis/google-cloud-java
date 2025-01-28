@@ -64,6 +64,9 @@
             "GetManagementServer": {
               "methods": ["getManagementServer", "getManagementServer", "getManagementServer", "getManagementServerCallable"]
             },
+            "InitializeService": {
+              "methods": ["initializeServiceAsync", "initializeServiceOperationCallable", "initializeServiceCallable"]
+            },
             "ListBackupPlanAssociations": {
               "methods": ["listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociationsPagedCallable", "listBackupPlanAssociationsCallable"]
             },

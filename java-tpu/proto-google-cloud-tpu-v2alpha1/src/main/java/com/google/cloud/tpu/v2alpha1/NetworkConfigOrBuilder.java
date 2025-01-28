@@ -109,4 +109,18 @@ public interface NetworkConfigOrBuilder
    * @return The canIpForward.
    */
   boolean getCanIpForward();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies networking queue count for TPU VM instance's network
+   * interface.
+   * </pre>
+   *
+   * <code>int32 queue_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The queueCount.
+   */
+  int getQueueCount();
 }

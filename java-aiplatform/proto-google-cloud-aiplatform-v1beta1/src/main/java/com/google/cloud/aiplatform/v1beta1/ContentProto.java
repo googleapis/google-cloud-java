@@ -140,6 +140,10 @@ public final class ContentProto {
       internal_static_google_cloud_aiplatform_v1beta1_RetrievalMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_RetrievalMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModalityTokenCount_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModalityTokenCount_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -330,18 +334,23 @@ public final class ContentProto {
           + "t\022\035\n\020rendered_content\030\001 \001(\tB\003\340A\001\022\025\n\010sdk_"
           + "blob\030\002 \001(\014B\003\340A\001\"G\n\021RetrievalMetadata\0222\n%"
           + "google_search_dynamic_retrieval_score\030\002 "
-          + "\001(\002B\003\340A\001*\327\001\n\014HarmCategory\022\035\n\031HARM_CATEGO"
-          + "RY_UNSPECIFIED\020\000\022\035\n\031HARM_CATEGORY_HATE_S"
-          + "PEECH\020\001\022#\n\037HARM_CATEGORY_DANGEROUS_CONTE"
-          + "NT\020\002\022\034\n\030HARM_CATEGORY_HARASSMENT\020\003\022#\n\037HA"
-          + "RM_CATEGORY_SEXUALLY_EXPLICIT\020\004\022!\n\035HARM_"
-          + "CATEGORY_CIVIC_INTEGRITY\020\005B\343\001\n#com.googl"
-          + "e.cloud.aiplatform.v1beta1B\014ContentProto"
-          + "P\001ZCcloud.google.com/go/aiplatform/apiv1"
-          + "beta1/aiplatformpb;aiplatformpb\252\002\037Google"
-          + ".Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud"
-          + "\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIP"
-          + "latform::V1beta1b\006proto3"
+          + "\001(\002B\003\340A\001\"f\n\022ModalityTokenCount\022;\n\010modali"
+          + "ty\030\001 \001(\0162).google.cloud.aiplatform.v1bet"
+          + "a1.Modality\022\023\n\013token_count\030\002 \001(\005*\327\001\n\014Har"
+          + "mCategory\022\035\n\031HARM_CATEGORY_UNSPECIFIED\020\000"
+          + "\022\035\n\031HARM_CATEGORY_HATE_SPEECH\020\001\022#\n\037HARM_"
+          + "CATEGORY_DANGEROUS_CONTENT\020\002\022\034\n\030HARM_CAT"
+          + "EGORY_HARASSMENT\020\003\022#\n\037HARM_CATEGORY_SEXU"
+          + "ALLY_EXPLICIT\020\004\022!\n\035HARM_CATEGORY_CIVIC_I"
+          + "NTEGRITY\020\005*]\n\010Modality\022\030\n\024MODALITY_UNSPE"
+          + "CIFIED\020\000\022\010\n\004TEXT\020\001\022\t\n\005IMAGE\020\002\022\t\n\005VIDEO\020\003"
+          + "\022\t\n\005AUDIO\020\004\022\014\n\010DOCUMENT\020\005B\343\001\n#com.google"
+          + ".cloud.aiplatform.v1beta1B\014ContentProtoP"
+          + "\001ZCcloud.google.com/go/aiplatform/apiv1b"
+          + "eta1/aiplatformpb;aiplatformpb\252\002\037Google."
+          + "Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\"
+          + "AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPl"
+          + "atform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -631,6 +640,14 @@ public final class ContentProto {
             internal_static_google_cloud_aiplatform_v1beta1_RetrievalMetadata_descriptor,
             new java.lang.String[] {
               "GoogleSearchDynamicRetrievalScore",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ModalityTokenCount_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_aiplatform_v1beta1_ModalityTokenCount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModalityTokenCount_descriptor,
+            new java.lang.String[] {
+              "Modality", "TokenCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

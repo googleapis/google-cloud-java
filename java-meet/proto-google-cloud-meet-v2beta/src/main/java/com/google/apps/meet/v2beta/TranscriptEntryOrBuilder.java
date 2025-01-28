@@ -55,7 +55,7 @@ public interface TranscriptEntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Refer to the participant who speaks.
+   * Output only. Refers to the participant who speaks.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface TranscriptEntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Refer to the participant who speaks.
+   * Output only. Refers to the participant who speaks.
    * </pre>
    *
    * <code>

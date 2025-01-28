@@ -98,7 +98,7 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * User who calls in from their phone.
+   * User calling from their phone.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -110,7 +110,7 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * User who calls in from their phone.
+   * User calling from their phone.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -122,7 +122,7 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * User who calls in from their phone.
+   * User calling from their phone.
    * </pre>
    *
    * <code>.google.apps.meet.v2beta.PhoneUser phone_user = 6;</code>
@@ -160,8 +160,7 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the participant joined the meeting for the first
-   * time.
+   * Output only. Time when the participant first joined the meeting.
    * </pre>
    *
    * <code>
@@ -175,8 +174,7 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the participant joined the meeting for the first
-   * time.
+   * Output only. Time when the participant first joined the meeting.
    * </pre>
    *
    * <code>
@@ -190,8 +188,7 @@ public interface ParticipantOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the participant joined the meeting for the first
-   * time.
+   * Output only. Time when the participant first joined the meeting.
    * </pre>
    *
    * <code>
@@ -205,7 +202,7 @@ public interface ParticipantOrBuilder
    *
    * <pre>
    * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it is an active meeting.
+   * This can be null if it's an active meeting.
    * </pre>
    *
    * <code>
@@ -220,7 +217,7 @@ public interface ParticipantOrBuilder
    *
    * <pre>
    * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it is an active meeting.
+   * This can be null if it's an active meeting.
    * </pre>
    *
    * <code>
@@ -235,7 +232,7 @@ public interface ParticipantOrBuilder
    *
    * <pre>
    * Output only. Time when the participant left the meeting for the last time.
-   * This can be null if it is an active meeting.
+   * This can be null if it's an active meeting.
    * </pre>
    *
    * <code>

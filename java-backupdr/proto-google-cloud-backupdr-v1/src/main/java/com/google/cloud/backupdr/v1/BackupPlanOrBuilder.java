@@ -332,8 +332,8 @@ public interface BackupPlanOrBuilder
    *
    * <pre>
    * Required. The resource type to which the `BackupPlan` will be applied.
-   * Examples include, "compute.googleapis.com/Instance" and
-   * "storage.googleapis.com/Bucket".
+   * Examples include, "compute.googleapis.com/Instance",
+   * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
    * </pre>
    *
    * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -346,8 +346,8 @@ public interface BackupPlanOrBuilder
    *
    * <pre>
    * Required. The resource type to which the `BackupPlan` will be applied.
-   * Examples include, "compute.googleapis.com/Instance" and
-   * "storage.googleapis.com/Bucket".
+   * Examples include, "compute.googleapis.com/Instance",
+   * "sqladmin.googleapis.com/Instance", or "alloydb.googleapis.com/Cluster".
    * </pre>
    *
    * <code>string resource_type = 8 [(.google.api.field_behavior) = REQUIRED];</code>

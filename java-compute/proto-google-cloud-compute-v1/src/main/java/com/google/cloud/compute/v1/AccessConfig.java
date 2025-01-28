@@ -837,7 +837,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the security policy associated with this access config.
+   * The resource URL for the security policy associated with this access config.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -852,7 +852,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the security policy associated with this access config.
+   * The resource URL for the security policy associated with this access config.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -875,7 +875,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the security policy associated with this access config.
+   * The resource URL for the security policy associated with this access config.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -2413,7 +2413,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource URL for the security policy associated with this access config.
+     * The resource URL for the security policy associated with this access config.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -2427,7 +2427,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource URL for the security policy associated with this access config.
+     * The resource URL for the security policy associated with this access config.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -2449,7 +2449,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource URL for the security policy associated with this access config.
+     * The resource URL for the security policy associated with this access config.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -2471,7 +2471,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource URL for the security policy associated with this access config.
+     * The resource URL for the security policy associated with this access config.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -2492,7 +2492,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource URL for the security policy associated with this access config.
+     * The resource URL for the security policy associated with this access config.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>
@@ -2509,7 +2509,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource URL for the security policy associated with this access config.
+     * The resource URL for the security policy associated with this access config.
      * </pre>
      *
      * <code>optional string security_policy = 171082513;</code>

@@ -110,7 +110,7 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * The Google Workspace Add-on configuration.
+   * The Google Workspace add-on configuration.
    * </pre>
    *
    * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -122,7 +122,7 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * The Google Workspace Add-on configuration.
+   * The Google Workspace add-on configuration.
    * </pre>
    *
    * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
@@ -134,7 +134,7 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * The Google Workspace Add-on configuration.
+   * The Google Workspace add-on configuration.
    * </pre>
    *
    * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>

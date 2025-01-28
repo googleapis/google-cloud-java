@@ -45,6 +45,7 @@ public class AsyncDeleteBackupVaultLRO {
               .setEtag("etag3123477")
               .setValidateOnly(true)
               .setAllowMissing(true)
+              .setIgnoreBackupPlanReferences(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           backupDRClient.deleteBackupVaultOperationCallable().futureCall(request);

@@ -20,6 +20,7 @@ import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedR
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListReservationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -195,6 +196,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -210,7 +212,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -254,6 +258,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -269,7 +274,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -313,6 +320,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -328,7 +336,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -386,6 +396,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -401,7 +412,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -543,6 +556,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -558,7 +572,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -616,6 +632,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -631,7 +648,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -689,6 +708,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -704,7 +724,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -741,6 +763,82 @@ public class TpuClientTest {
       Node node = Node.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNodeAsync(node, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void performMaintenanceTest() throws Exception {
+    Node expectedResponse =
+        Node.newBuilder()
+            .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+            .setDescription("description-1724546052")
+            .setAcceleratorType("acceleratorType-82462651")
+            .setHealthDescription("healthDescription1231837184")
+            .setRuntimeVersion("runtimeVersion602071520")
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
+            .setCidrBlock("cidrBlock1646183801")
+            .setServiceAccount(ServiceAccount.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setSchedulingConfig(SchedulingConfig.newBuilder().build())
+            .addAllNetworkEndpoints(new ArrayList<NetworkEndpoint>())
+            .putAllLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, String>())
+            .addAllTags(new ArrayList<String>())
+            .setId(3355)
+            .addAllDataDisks(new ArrayList<AttachedDisk>())
+            .addAllSymptoms(new ArrayList<Symptom>())
+            .setQueuedResource("queuedResource94310049")
+            .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
+            .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
+            .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("performMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    PerformMaintenanceRequest request =
+        PerformMaintenanceRequest.newBuilder()
+            .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+            .build();
+
+    Node actualResponse = client.performMaintenanceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PerformMaintenanceRequest actualRequest = ((PerformMaintenanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void performMaintenanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      PerformMaintenanceRequest request =
+          PerformMaintenanceRequest.newBuilder()
+              .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+              .build();
+      client.performMaintenanceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -843,6 +941,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -886,6 +985,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -928,6 +1028,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -986,6 +1087,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -1044,6 +1146,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -1096,6 +1199,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -1147,6 +1251,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -1198,6 +1303,7 @@ public class TpuClientTest {
         QueuedResource.newBuilder()
             .setName(
                 QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
             .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
             .setState(QueuedResourceState.newBuilder().build())
             .setReservationName("reservationName-337941385")
@@ -1234,6 +1340,69 @@ public class TpuClientTest {
     try {
       String name = "name3373707";
       client.resetQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void performMaintenanceQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("performMaintenanceQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockTpu.addResponse(resultOperation);
+
+    PerformMaintenanceQueuedResourceRequest request =
+        PerformMaintenanceQueuedResourceRequest.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .addAllNodeNames(new ArrayList<String>())
+            .build();
+
+    QueuedResource actualResponse = client.performMaintenanceQueuedResourceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PerformMaintenanceQueuedResourceRequest actualRequest =
+        ((PerformMaintenanceQueuedResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getNodeNamesList(), actualRequest.getNodeNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void performMaintenanceQueuedResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      PerformMaintenanceQueuedResourceRequest request =
+          PerformMaintenanceQueuedResourceRequest.newBuilder()
+              .setName(
+                  QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+              .addAllNodeNames(new ArrayList<String>())
+              .build();
+      client.performMaintenanceQueuedResourceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1681,6 +1850,62 @@ public class TpuClientTest {
   }
 
   @Test
+  public void listReservationsTest() throws Exception {
+    Reservation responsesElement = Reservation.newBuilder().build();
+    ListReservationsResponse expectedResponse =
+        ListReservationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReservations(Arrays.asList(responsesElement))
+            .build();
+    mockTpu.addResponse(expectedResponse);
+
+    ListReservationsRequest request =
+        ListReservationsRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListReservationsPagedResponse pagedListResponse = client.listReservations(request);
+
+    List<Reservation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReservationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTpu.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReservationsRequest actualRequest = ((ListReservationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReservationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTpu.addException(exception);
+
+    try {
+      ListReservationsRequest request =
+          ListReservationsRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listReservations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void simulateMaintenanceEventTest() throws Exception {
     Node expectedResponse =
         Node.newBuilder()
@@ -1690,6 +1915,7 @@ public class TpuClientTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -1705,7 +1931,9 @@ public class TpuClientTest {
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setMultisliceNode(true)
+            .setAutocheckpointEnabled(true)
             .setBootDiskConfig(BootDiskConfig.newBuilder().build())
+            .setUpcomingMaintenance(UpcomingMaintenance.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -156,6 +156,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListModelVersionCheckpoints</td>
+ *      <td><p> Lists checkpoints of the specified model version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listModelVersionCheckpoints(ListModelVersionCheckpointsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listModelVersionCheckpoints(ModelName name)
+ *           <li><p> listModelVersionCheckpoints(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listModelVersionCheckpointsPagedCallable()
+ *           <li><p> listModelVersionCheckpointsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> UpdateModel</td>
  *      <td><p> Updates a Model.</td>
  *      <td>
@@ -1232,6 +1252,186 @@ public class ModelServiceClient implements BackgroundResource {
   public final UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
       listModelVersionsCallable() {
     return stub.listModelVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists checkpoints of the specified model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   for (ModelVersionCheckpoint element :
+   *       modelServiceClient.listModelVersionCheckpoints(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model version to list checkpoints for.
+   *     `projects/{project}/locations/{location}/models/{model}{@literal @}{version}` Example:
+   *     `projects/{project}/locations/{location}/models/{model}{@literal @}2` or
+   *     `projects/{project}/locations/{location}/models/{model}{@literal @}golden` If no version ID
+   *     or alias is specified, the latest version will be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelVersionCheckpointsPagedResponse listModelVersionCheckpoints(
+      ModelName name) {
+    ListModelVersionCheckpointsRequest request =
+        ListModelVersionCheckpointsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return listModelVersionCheckpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists checkpoints of the specified model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   for (ModelVersionCheckpoint element :
+   *       modelServiceClient.listModelVersionCheckpoints(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the model version to list checkpoints for.
+   *     `projects/{project}/locations/{location}/models/{model}{@literal @}{version}` Example:
+   *     `projects/{project}/locations/{location}/models/{model}{@literal @}2` or
+   *     `projects/{project}/locations/{location}/models/{model}{@literal @}golden` If no version ID
+   *     or alias is specified, the latest version will be used.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelVersionCheckpointsPagedResponse listModelVersionCheckpoints(String name) {
+    ListModelVersionCheckpointsRequest request =
+        ListModelVersionCheckpointsRequest.newBuilder().setName(name).build();
+    return listModelVersionCheckpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists checkpoints of the specified model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelVersionCheckpointsRequest request =
+   *       ListModelVersionCheckpointsRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ModelVersionCheckpoint element :
+   *       modelServiceClient.listModelVersionCheckpoints(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListModelVersionCheckpointsPagedResponse listModelVersionCheckpoints(
+      ListModelVersionCheckpointsRequest request) {
+    return listModelVersionCheckpointsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists checkpoints of the specified model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelVersionCheckpointsRequest request =
+   *       ListModelVersionCheckpointsRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ModelVersionCheckpoint> future =
+   *       modelServiceClient.listModelVersionCheckpointsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ModelVersionCheckpoint element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsPagedCallable() {
+    return stub.listModelVersionCheckpointsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists checkpoints of the specified model version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ListModelVersionCheckpointsRequest request =
+   *       ListModelVersionCheckpointsRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListModelVersionCheckpointsResponse response =
+   *         modelServiceClient.listModelVersionCheckpointsCallable().call(request);
+   *     for (ModelVersionCheckpoint element : response.getCheckpointsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsCallable() {
+    return stub.listModelVersionCheckpointsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3948,6 +4148,103 @@ public class ModelServiceClient implements BackgroundResource {
     protected ListModelVersionsFixedSizeCollection createCollection(
         List<ListModelVersionsPage> pages, int collectionSize) {
       return new ListModelVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListModelVersionCheckpointsPagedResponse
+      extends AbstractPagedListResponse<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ModelVersionCheckpoint,
+          ListModelVersionCheckpointsPage,
+          ListModelVersionCheckpointsFixedSizeCollection> {
+
+    public static ApiFuture<ListModelVersionCheckpointsPagedResponse> createAsync(
+        PageContext<
+                ListModelVersionCheckpointsRequest,
+                ListModelVersionCheckpointsResponse,
+                ModelVersionCheckpoint>
+            context,
+        ApiFuture<ListModelVersionCheckpointsResponse> futureResponse) {
+      ApiFuture<ListModelVersionCheckpointsPage> futurePage =
+          ListModelVersionCheckpointsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListModelVersionCheckpointsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListModelVersionCheckpointsPagedResponse(ListModelVersionCheckpointsPage page) {
+      super(page, ListModelVersionCheckpointsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListModelVersionCheckpointsPage
+      extends AbstractPage<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ModelVersionCheckpoint,
+          ListModelVersionCheckpointsPage> {
+
+    private ListModelVersionCheckpointsPage(
+        PageContext<
+                ListModelVersionCheckpointsRequest,
+                ListModelVersionCheckpointsResponse,
+                ModelVersionCheckpoint>
+            context,
+        ListModelVersionCheckpointsResponse response) {
+      super(context, response);
+    }
+
+    private static ListModelVersionCheckpointsPage createEmptyPage() {
+      return new ListModelVersionCheckpointsPage(null, null);
+    }
+
+    @Override
+    protected ListModelVersionCheckpointsPage createPage(
+        PageContext<
+                ListModelVersionCheckpointsRequest,
+                ListModelVersionCheckpointsResponse,
+                ModelVersionCheckpoint>
+            context,
+        ListModelVersionCheckpointsResponse response) {
+      return new ListModelVersionCheckpointsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListModelVersionCheckpointsPage> createPageAsync(
+        PageContext<
+                ListModelVersionCheckpointsRequest,
+                ListModelVersionCheckpointsResponse,
+                ModelVersionCheckpoint>
+            context,
+        ApiFuture<ListModelVersionCheckpointsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListModelVersionCheckpointsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ModelVersionCheckpoint,
+          ListModelVersionCheckpointsPage,
+          ListModelVersionCheckpointsFixedSizeCollection> {
+
+    private ListModelVersionCheckpointsFixedSizeCollection(
+        List<ListModelVersionCheckpointsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListModelVersionCheckpointsFixedSizeCollection createEmptyCollection() {
+      return new ListModelVersionCheckpointsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListModelVersionCheckpointsFixedSizeCollection createCollection(
+        List<ListModelVersionCheckpointsPage> pages, int collectionSize) {
+      return new ListModelVersionCheckpointsFixedSizeCollection(pages, collectionSize);
     }
   }
 

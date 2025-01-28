@@ -43,6 +43,7 @@ public class AsyncListMetricDescriptorsPaged {
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setActiveOnly(true)
               .build();
       while (true) {
         ListMetricDescriptorsResponse response =

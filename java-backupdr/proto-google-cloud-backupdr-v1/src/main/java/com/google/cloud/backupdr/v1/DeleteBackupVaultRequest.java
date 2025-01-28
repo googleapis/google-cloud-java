@@ -311,6 +311,25 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
     return allowMissing_;
   }
 
+  public static final int IGNORE_BACKUP_PLAN_REFERENCES_FIELD_NUMBER = 7;
+  private boolean ignoreBackupPlanReferences_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, backupvault deletion will proceed even if there
+   * are backup plans referencing the backupvault. The default is 'false'.
+   * </pre>
+   *
+   * <code>bool ignore_backup_plan_references = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreBackupPlanReferences.
+   */
+  @java.lang.Override
+  public boolean getIgnoreBackupPlanReferences() {
+    return ignoreBackupPlanReferences_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -343,6 +362,9 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
     if (allowMissing_ != false) {
       output.writeBool(6, allowMissing_);
     }
+    if (ignoreBackupPlanReferences_ != false) {
+      output.writeBool(7, ignoreBackupPlanReferences_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -370,6 +392,9 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
     if (allowMissing_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, allowMissing_);
     }
+    if (ignoreBackupPlanReferences_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, ignoreBackupPlanReferences_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -392,6 +417,7 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
     if (!getEtag().equals(other.getEtag())) return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
     if (getAllowMissing() != other.getAllowMissing()) return false;
+    if (getIgnoreBackupPlanReferences() != other.getIgnoreBackupPlanReferences()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -415,6 +441,8 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowMissing());
+    hash = (37 * hash) + IGNORE_BACKUP_PLAN_REFERENCES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreBackupPlanReferences());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -561,6 +589,7 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
       etag_ = "";
       validateOnly_ = false;
       allowMissing_ = false;
+      ignoreBackupPlanReferences_ = false;
       return this;
     }
 
@@ -614,6 +643,9 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.allowMissing_ = allowMissing_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.ignoreBackupPlanReferences_ = ignoreBackupPlanReferences_;
       }
     }
 
@@ -687,6 +719,9 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
       if (other.getAllowMissing() != false) {
         setAllowMissing(other.getAllowMissing());
       }
+      if (other.getIgnoreBackupPlanReferences() != false) {
+        setIgnoreBackupPlanReferences(other.getIgnoreBackupPlanReferences());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -749,6 +784,12 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 56:
+              {
+                ignoreBackupPlanReferences_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1340,6 +1381,65 @@ public final class DeleteBackupVaultRequest extends com.google.protobuf.Generate
     public Builder clearAllowMissing() {
       bitField0_ = (bitField0_ & ~0x00000020);
       allowMissing_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean ignoreBackupPlanReferences_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, backupvault deletion will proceed even if there
+     * are backup plans referencing the backupvault. The default is 'false'.
+     * </pre>
+     *
+     * <code>bool ignore_backup_plan_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ignoreBackupPlanReferences.
+     */
+    @java.lang.Override
+    public boolean getIgnoreBackupPlanReferences() {
+      return ignoreBackupPlanReferences_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, backupvault deletion will proceed even if there
+     * are backup plans referencing the backupvault. The default is 'false'.
+     * </pre>
+     *
+     * <code>bool ignore_backup_plan_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The ignoreBackupPlanReferences to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreBackupPlanReferences(boolean value) {
+
+      ignoreBackupPlanReferences_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, backupvault deletion will proceed even if there
+     * are backup plans referencing the backupvault. The default is 'false'.
+     * </pre>
+     *
+     * <code>bool ignore_backup_plan_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreBackupPlanReferences() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ignoreBackupPlanReferences_ = false;
       onChanged();
       return this;
     }

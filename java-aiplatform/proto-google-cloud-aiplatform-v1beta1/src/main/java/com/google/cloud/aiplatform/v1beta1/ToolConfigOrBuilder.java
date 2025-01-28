@@ -65,4 +65,45 @@ public interface ToolConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FunctionCallingConfigOrBuilder
       getFunctionCallingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retrievalConfig field is set.
+   */
+  boolean hasRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retrievalConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.RetrievalConfig getRetrievalConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Retrieval config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RetrievalConfig retrieval_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RetrievalConfigOrBuilder getRetrievalConfigOrBuilder();
 }

@@ -20,6 +20,7 @@ import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedR
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListReservationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -49,10 +50,14 @@ import com.google.cloud.tpu.v2alpha1.ListNodesRequest;
 import com.google.cloud.tpu.v2alpha1.ListNodesResponse;
 import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesRequest;
 import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesResponse;
+import com.google.cloud.tpu.v2alpha1.ListReservationsRequest;
+import com.google.cloud.tpu.v2alpha1.ListReservationsResponse;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
+import com.google.cloud.tpu.v2alpha1.PerformMaintenanceQueuedResourceRequest;
+import com.google.cloud.tpu.v2alpha1.PerformMaintenanceRequest;
 import com.google.cloud.tpu.v2alpha1.QueuedResource;
 import com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
@@ -134,6 +139,16 @@ public abstract class TpuStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateNodeCallable()");
   }
 
+  public OperationCallable<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<PerformMaintenanceRequest, Operation> performMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
+  }
+
   public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesPagedResponse>
       listQueuedResourcesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listQueuedResourcesPagedCallable()");
@@ -178,6 +193,19 @@ public abstract class TpuStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: resetQueuedResourceCallable()");
   }
 
+  public OperationCallable<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceQueuedResourceOperationCallable()");
+  }
+
+  public UnaryCallable<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceQueuedResourceCallable()");
+  }
+
   public UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentityCallable() {
     throw new UnsupportedOperationException("Not implemented: generateServiceIdentityCallable()");
@@ -214,6 +242,16 @@ public abstract class TpuStub implements BackgroundResource {
   public UnaryCallable<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesCallable() {
     throw new UnsupportedOperationException("Not implemented: getGuestAttributesCallable()");
+  }
+
+  public UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
+      listReservationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReservationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListReservationsRequest, ListReservationsResponse>
+      listReservationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReservationsCallable()");
   }
 
   public OperationCallable<SimulateMaintenanceEventRequest, Node, OperationMetadata>

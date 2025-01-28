@@ -30,7 +30,7 @@ public interface ActiveConferenceOrBuilder
    * <pre>
    * Output only. Reference to 'ConferenceRecord' resource.
    * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-   * is a unique id for each instance of a call within a space.
+   * is a unique ID for each instance of a call within a space.
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface ActiveConferenceOrBuilder
    * <pre>
    * Output only. Reference to 'ConferenceRecord' resource.
    * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-   * is a unique id for each instance of a call within a space.
+   * is a unique ID for each instance of a call within a space.
    * </pre>
    *
    * <code>

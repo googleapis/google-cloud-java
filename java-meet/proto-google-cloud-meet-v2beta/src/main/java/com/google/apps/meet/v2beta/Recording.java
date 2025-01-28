@@ -23,7 +23,6 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * [Developer Preview](https://developers.google.com/workspace/preview).
  * Metadata about a recording created during a conference.
  * </pre>
  *
@@ -298,7 +297,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Recording is saved to Google Drive as an mp4 file. The
+   * Output only. Recording is saved to Google Drive as an MP4 file. The
    * `drive_destination` includes the Drive `fileId` that can be used to
    * download the file using the `files.get` method of the Drive API.
    * </pre>
@@ -317,7 +316,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Recording is saved to Google Drive as an mp4 file. The
+   * Output only. Recording is saved to Google Drive as an MP4 file. The
    * `drive_destination` includes the Drive `fileId` that can be used to
    * download the file using the `files.get` method of the Drive API.
    * </pre>
@@ -339,7 +338,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Recording is saved to Google Drive as an mp4 file. The
+   * Output only. Recording is saved to Google Drive as an MP4 file. The
    * `drive_destination` includes the Drive `fileId` that can be used to
    * download the file using the `files.get` method of the Drive API.
    * </pre>
@@ -772,7 +771,6 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview).
    * Metadata about a recording created during a conference.
    * </pre>
    *
@@ -1067,7 +1065,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1086,7 +1084,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1115,7 +1113,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1141,7 +1139,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1165,7 +1163,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1201,7 +1199,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1230,7 +1228,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1246,7 +1244,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>
@@ -1270,7 +1268,7 @@ public final class Recording extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Recording is saved to Google Drive as an mp4 file. The
+     * Output only. Recording is saved to Google Drive as an MP4 file. The
      * `drive_destination` includes the Drive `fileId` that can be used to
      * download the file using the `files.get` method of the Drive API.
      * </pre>

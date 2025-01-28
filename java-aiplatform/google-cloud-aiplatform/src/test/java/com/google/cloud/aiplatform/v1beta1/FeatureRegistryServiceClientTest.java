@@ -1610,6 +1610,67 @@ public class FeatureRegistryServiceClientTest {
   }
 
   @Test
+  public void updateFeatureMonitorTest() throws Exception {
+    FeatureMonitor expectedResponse =
+        FeatureMonitor.newBuilder()
+            .setName(
+                FeatureMonitorName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]", "[FEATURE_MONITOR]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setFeatureSelectionConfig(FeatureSelectionConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateFeatureMonitorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeatureRegistryService.addResponse(resultOperation);
+
+    FeatureMonitor featureMonitor = FeatureMonitor.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    FeatureMonitor actualResponse =
+        client.updateFeatureMonitorAsync(featureMonitor, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeatureRegistryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateFeatureMonitorRequest actualRequest =
+        ((UpdateFeatureMonitorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(featureMonitor, actualRequest.getFeatureMonitor());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateFeatureMonitorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureRegistryService.addException(exception);
+
+    try {
+      FeatureMonitor featureMonitor = FeatureMonitor.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFeatureMonitorAsync(featureMonitor, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteFeatureMonitorTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =

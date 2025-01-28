@@ -258,14 +258,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * HTTP request headers.
+   *
+   * This map contains the header field names and values.
+   *
    * The user can specify HTTP request headers to send with the job's
-   * HTTP request. This map contains the header field names and
-   * values. Repeated headers are not supported, but a header value can
-   * contain commas. These headers represent a subset of the headers
-   * that will accompany the job's HTTP request. Some HTTP request
-   * headers will be ignored or replaced. A partial list of headers that
-   * will be ignored or replaced is below:
-   * - Host: This will be computed by Cloud Scheduler and derived from
+   * HTTP request. Repeated headers are not supported, but a header value can
+   * contain commas.
+   *
+   * The following headers represent a subset of the headers
+   * that accompany the job's HTTP request. Some HTTP request
+   * headers are ignored or replaced. A partial list of headers that
+   * are ignored or replaced is below:
+   *
+   * * Host: This will be computed by Cloud Scheduler and derived from
    * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
    * * `Content-Length`: This will be computed by Cloud Scheduler.
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -276,6 +282,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
+   *
+   * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+   * following headers are not set by the user, Cloud Scheduler sets default
+   * values:
+   *
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The total size of headers must be less than 80KB.
    * </pre>
@@ -299,14 +314,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * HTTP request headers.
+   *
+   * This map contains the header field names and values.
+   *
    * The user can specify HTTP request headers to send with the job's
-   * HTTP request. This map contains the header field names and
-   * values. Repeated headers are not supported, but a header value can
-   * contain commas. These headers represent a subset of the headers
-   * that will accompany the job's HTTP request. Some HTTP request
-   * headers will be ignored or replaced. A partial list of headers that
-   * will be ignored or replaced is below:
-   * - Host: This will be computed by Cloud Scheduler and derived from
+   * HTTP request. Repeated headers are not supported, but a header value can
+   * contain commas.
+   *
+   * The following headers represent a subset of the headers
+   * that accompany the job's HTTP request. Some HTTP request
+   * headers are ignored or replaced. A partial list of headers that
+   * are ignored or replaced is below:
+   *
+   * * Host: This will be computed by Cloud Scheduler and derived from
    * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
    * * `Content-Length`: This will be computed by Cloud Scheduler.
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -317,6 +338,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
+   *
+   * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+   * following headers are not set by the user, Cloud Scheduler sets default
+   * values:
+   *
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The total size of headers must be less than 80KB.
    * </pre>
@@ -331,14 +361,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * HTTP request headers.
+   *
+   * This map contains the header field names and values.
+   *
    * The user can specify HTTP request headers to send with the job's
-   * HTTP request. This map contains the header field names and
-   * values. Repeated headers are not supported, but a header value can
-   * contain commas. These headers represent a subset of the headers
-   * that will accompany the job's HTTP request. Some HTTP request
-   * headers will be ignored or replaced. A partial list of headers that
-   * will be ignored or replaced is below:
-   * - Host: This will be computed by Cloud Scheduler and derived from
+   * HTTP request. Repeated headers are not supported, but a header value can
+   * contain commas.
+   *
+   * The following headers represent a subset of the headers
+   * that accompany the job's HTTP request. Some HTTP request
+   * headers are ignored or replaced. A partial list of headers that
+   * are ignored or replaced is below:
+   *
+   * * Host: This will be computed by Cloud Scheduler and derived from
    * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
    * * `Content-Length`: This will be computed by Cloud Scheduler.
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -349,6 +385,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
+   *
+   * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+   * following headers are not set by the user, Cloud Scheduler sets default
+   * values:
+   *
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The total size of headers must be less than 80KB.
    * </pre>
@@ -370,14 +415,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * HTTP request headers.
+   *
+   * This map contains the header field names and values.
+   *
    * The user can specify HTTP request headers to send with the job's
-   * HTTP request. This map contains the header field names and
-   * values. Repeated headers are not supported, but a header value can
-   * contain commas. These headers represent a subset of the headers
-   * that will accompany the job's HTTP request. Some HTTP request
-   * headers will be ignored or replaced. A partial list of headers that
-   * will be ignored or replaced is below:
-   * - Host: This will be computed by Cloud Scheduler and derived from
+   * HTTP request. Repeated headers are not supported, but a header value can
+   * contain commas.
+   *
+   * The following headers represent a subset of the headers
+   * that accompany the job's HTTP request. Some HTTP request
+   * headers are ignored or replaced. A partial list of headers that
+   * are ignored or replaced is below:
+   *
+   * * Host: This will be computed by Cloud Scheduler and derived from
    * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
    * * `Content-Length`: This will be computed by Cloud Scheduler.
    * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -388,6 +439,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule as an
    * offset of UTC parsed according to RFC3339.
+   *
+   * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+   * following headers are not set by the user, Cloud Scheduler sets default
+   * values:
+   *
+   * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+   *   can override this default by explicitly setting `Content-Type` to a
+   *   particular media type when creating the job. For example, you can set
+   *   `Content-Type` to `"application/json"`.
    *
    * The total size of headers must be less than 80KB.
    * </pre>
@@ -1368,14 +1428,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * HTTP request headers.
+     *
+     * This map contains the header field names and values.
+     *
      * The user can specify HTTP request headers to send with the job's
-     * HTTP request. This map contains the header field names and
-     * values. Repeated headers are not supported, but a header value can
-     * contain commas. These headers represent a subset of the headers
-     * that will accompany the job's HTTP request. Some HTTP request
-     * headers will be ignored or replaced. A partial list of headers that
-     * will be ignored or replaced is below:
-     * - Host: This will be computed by Cloud Scheduler and derived from
+     * HTTP request. Repeated headers are not supported, but a header value can
+     * contain commas.
+     *
+     * The following headers represent a subset of the headers
+     * that accompany the job's HTTP request. Some HTTP request
+     * headers are ignored or replaced. A partial list of headers that
+     * are ignored or replaced is below:
+     *
+     * * Host: This will be computed by Cloud Scheduler and derived from
      * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
      * * `Content-Length`: This will be computed by Cloud Scheduler.
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -1386,6 +1452,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
+     *
+     * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+     * following headers are not set by the user, Cloud Scheduler sets default
+     * values:
+     *
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The total size of headers must be less than 80KB.
      * </pre>
@@ -1409,14 +1484,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * HTTP request headers.
+     *
+     * This map contains the header field names and values.
+     *
      * The user can specify HTTP request headers to send with the job's
-     * HTTP request. This map contains the header field names and
-     * values. Repeated headers are not supported, but a header value can
-     * contain commas. These headers represent a subset of the headers
-     * that will accompany the job's HTTP request. Some HTTP request
-     * headers will be ignored or replaced. A partial list of headers that
-     * will be ignored or replaced is below:
-     * - Host: This will be computed by Cloud Scheduler and derived from
+     * HTTP request. Repeated headers are not supported, but a header value can
+     * contain commas.
+     *
+     * The following headers represent a subset of the headers
+     * that accompany the job's HTTP request. Some HTTP request
+     * headers are ignored or replaced. A partial list of headers that
+     * are ignored or replaced is below:
+     *
+     * * Host: This will be computed by Cloud Scheduler and derived from
      * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
      * * `Content-Length`: This will be computed by Cloud Scheduler.
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -1427,6 +1508,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
+     *
+     * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+     * following headers are not set by the user, Cloud Scheduler sets default
+     * values:
+     *
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The total size of headers must be less than 80KB.
      * </pre>
@@ -1441,14 +1531,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * HTTP request headers.
+     *
+     * This map contains the header field names and values.
+     *
      * The user can specify HTTP request headers to send with the job's
-     * HTTP request. This map contains the header field names and
-     * values. Repeated headers are not supported, but a header value can
-     * contain commas. These headers represent a subset of the headers
-     * that will accompany the job's HTTP request. Some HTTP request
-     * headers will be ignored or replaced. A partial list of headers that
-     * will be ignored or replaced is below:
-     * - Host: This will be computed by Cloud Scheduler and derived from
+     * HTTP request. Repeated headers are not supported, but a header value can
+     * contain commas.
+     *
+     * The following headers represent a subset of the headers
+     * that accompany the job's HTTP request. Some HTTP request
+     * headers are ignored or replaced. A partial list of headers that
+     * are ignored or replaced is below:
+     *
+     * * Host: This will be computed by Cloud Scheduler and derived from
      * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
      * * `Content-Length`: This will be computed by Cloud Scheduler.
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -1459,6 +1555,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
+     *
+     * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+     * following headers are not set by the user, Cloud Scheduler sets default
+     * values:
+     *
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The total size of headers must be less than 80KB.
      * </pre>
@@ -1480,14 +1585,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * HTTP request headers.
+     *
+     * This map contains the header field names and values.
+     *
      * The user can specify HTTP request headers to send with the job's
-     * HTTP request. This map contains the header field names and
-     * values. Repeated headers are not supported, but a header value can
-     * contain commas. These headers represent a subset of the headers
-     * that will accompany the job's HTTP request. Some HTTP request
-     * headers will be ignored or replaced. A partial list of headers that
-     * will be ignored or replaced is below:
-     * - Host: This will be computed by Cloud Scheduler and derived from
+     * HTTP request. Repeated headers are not supported, but a header value can
+     * contain commas.
+     *
+     * The following headers represent a subset of the headers
+     * that accompany the job's HTTP request. Some HTTP request
+     * headers are ignored or replaced. A partial list of headers that
+     * are ignored or replaced is below:
+     *
+     * * Host: This will be computed by Cloud Scheduler and derived from
      * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
      * * `Content-Length`: This will be computed by Cloud Scheduler.
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -1498,6 +1609,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
+     *
+     * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+     * following headers are not set by the user, Cloud Scheduler sets default
+     * values:
+     *
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The total size of headers must be less than 80KB.
      * </pre>
@@ -1525,14 +1645,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * HTTP request headers.
+     *
+     * This map contains the header field names and values.
+     *
      * The user can specify HTTP request headers to send with the job's
-     * HTTP request. This map contains the header field names and
-     * values. Repeated headers are not supported, but a header value can
-     * contain commas. These headers represent a subset of the headers
-     * that will accompany the job's HTTP request. Some HTTP request
-     * headers will be ignored or replaced. A partial list of headers that
-     * will be ignored or replaced is below:
-     * - Host: This will be computed by Cloud Scheduler and derived from
+     * HTTP request. Repeated headers are not supported, but a header value can
+     * contain commas.
+     *
+     * The following headers represent a subset of the headers
+     * that accompany the job's HTTP request. Some HTTP request
+     * headers are ignored or replaced. A partial list of headers that
+     * are ignored or replaced is below:
+     *
+     * * Host: This will be computed by Cloud Scheduler and derived from
      * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
      * * `Content-Length`: This will be computed by Cloud Scheduler.
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -1543,6 +1669,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
+     *
+     * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+     * following headers are not set by the user, Cloud Scheduler sets default
+     * values:
+     *
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The total size of headers must be less than 80KB.
      * </pre>
@@ -1566,14 +1701,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * HTTP request headers.
+     *
+     * This map contains the header field names and values.
+     *
      * The user can specify HTTP request headers to send with the job's
-     * HTTP request. This map contains the header field names and
-     * values. Repeated headers are not supported, but a header value can
-     * contain commas. These headers represent a subset of the headers
-     * that will accompany the job's HTTP request. Some HTTP request
-     * headers will be ignored or replaced. A partial list of headers that
-     * will be ignored or replaced is below:
-     * - Host: This will be computed by Cloud Scheduler and derived from
+     * HTTP request. Repeated headers are not supported, but a header value can
+     * contain commas.
+     *
+     * The following headers represent a subset of the headers
+     * that accompany the job's HTTP request. Some HTTP request
+     * headers are ignored or replaced. A partial list of headers that
+     * are ignored or replaced is below:
+     *
+     * * Host: This will be computed by Cloud Scheduler and derived from
      * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
      * * `Content-Length`: This will be computed by Cloud Scheduler.
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -1584,6 +1725,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
+     *
+     * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+     * following headers are not set by the user, Cloud Scheduler sets default
+     * values:
+     *
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The total size of headers must be less than 80KB.
      * </pre>
@@ -1605,14 +1755,20 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * HTTP request headers.
+     *
+     * This map contains the header field names and values.
+     *
      * The user can specify HTTP request headers to send with the job's
-     * HTTP request. This map contains the header field names and
-     * values. Repeated headers are not supported, but a header value can
-     * contain commas. These headers represent a subset of the headers
-     * that will accompany the job's HTTP request. Some HTTP request
-     * headers will be ignored or replaced. A partial list of headers that
-     * will be ignored or replaced is below:
-     * - Host: This will be computed by Cloud Scheduler and derived from
+     * HTTP request. Repeated headers are not supported, but a header value can
+     * contain commas.
+     *
+     * The following headers represent a subset of the headers
+     * that accompany the job's HTTP request. Some HTTP request
+     * headers are ignored or replaced. A partial list of headers that
+     * are ignored or replaced is below:
+     *
+     * * Host: This will be computed by Cloud Scheduler and derived from
      * [uri][google.cloud.scheduler.v1.HttpTarget.uri].
      * * `Content-Length`: This will be computed by Cloud Scheduler.
      * * `User-Agent`: This will be set to `"Google-Cloud-Scheduler"`.
@@ -1623,6 +1779,15 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
      * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
      * the unix-cron format, this header will contain the job schedule as an
      * offset of UTC parsed according to RFC3339.
+     *
+     * If the job has a [body][google.cloud.scheduler.v1.HttpTarget.body] and the
+     * following headers are not set by the user, Cloud Scheduler sets default
+     * values:
+     *
+     * * `Content-Type`: This will be set to `"application/octet-stream"`. You
+     *   can override this default by explicitly setting `Content-Type` to a
+     *   particular media type when creating the job. For example, you can set
+     *   `Content-Type` to `"application/json"`.
      *
      * The total size of headers must be less than 80KB.
      * </pre>

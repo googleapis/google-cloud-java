@@ -610,6 +610,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> InitializeService</td>
+ *      <td><p> Initializes the service related config for a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> initializeServiceAsync(InitializeServiceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> initializeServiceOperationCallable()
+ *           <li><p> initializeServiceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -2326,6 +2341,7 @@ public class BackupDRClient implements BackgroundResource {
    *           .setEtag("etag3123477")
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreBackupPlanReferences(true)
    *           .build();
    *   backupDRClient.deleteBackupVaultAsync(request).get();
    * }
@@ -2360,6 +2376,7 @@ public class BackupDRClient implements BackgroundResource {
    *           .setEtag("etag3123477")
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreBackupPlanReferences(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       backupDRClient.deleteBackupVaultOperationCallable().futureCall(request);
@@ -2394,6 +2411,7 @@ public class BackupDRClient implements BackgroundResource {
    *           .setEtag("etag3123477")
    *           .setValidateOnly(true)
    *           .setAllowMissing(true)
+   *           .setIgnoreBackupPlanReferences(true)
    *           .build();
    *   ApiFuture<Operation> future = backupDRClient.deleteBackupVaultCallable().futureCall(request);
    *   // Do something.
@@ -4993,6 +5011,98 @@ public class BackupDRClient implements BackgroundResource {
    */
   public final UnaryCallable<TriggerBackupRequest, Operation> triggerBackupCallable() {
     return stub.triggerBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initializes the service related config for a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitializeServiceRequest request =
+   *       InitializeServiceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setResourceType("resourceType-384364440")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   InitializeServiceResponse response = backupDRClient.initializeServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<InitializeServiceResponse, OperationMetadata> initializeServiceAsync(
+      InitializeServiceRequest request) {
+    return initializeServiceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initializes the service related config for a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitializeServiceRequest request =
+   *       InitializeServiceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setResourceType("resourceType-384364440")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<InitializeServiceResponse, OperationMetadata> future =
+   *       backupDRClient.initializeServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   InitializeServiceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable() {
+    return stub.initializeServiceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Initializes the service related config for a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitializeServiceRequest request =
+   *       InitializeServiceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setResourceType("resourceType-384364440")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = backupDRClient.initializeServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable() {
+    return stub.initializeServiceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

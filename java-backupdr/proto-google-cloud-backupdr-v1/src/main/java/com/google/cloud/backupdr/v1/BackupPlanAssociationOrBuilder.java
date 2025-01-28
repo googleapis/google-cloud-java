@@ -61,10 +61,13 @@ public interface BackupPlanAssociationOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource type of workload on which backupplan is applied
+   * Required. Immutable. Resource type of workload on which backupplan is
+   * applied
    * </pre>
    *
-   * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The resourceType.
    */
@@ -73,10 +76,13 @@ public interface BackupPlanAssociationOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource type of workload on which backupplan is applied
+   * Required. Immutable. Resource type of workload on which backupplan is
+   * applied
    * </pre>
    *
-   * <code>string resource_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string resource_type = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The bytes for resourceType.
    */
@@ -317,11 +323,8 @@ public interface BackupPlanAssociationOrBuilder
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * Resource name of data source which will be used as storage location for
-   * backups taken.
-   * Format :
+   * Output only. Resource name of data source which will be used as storage
+   * location for backups taken. Format :
    * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
    * </pre>
    *
@@ -334,11 +337,8 @@ public interface BackupPlanAssociationOrBuilder
    *
    *
    * <pre>
-   * Output only. Output Only.
-   *
-   * Resource name of data source which will be used as storage location for
-   * backups taken.
-   * Format :
+   * Output only. Resource name of data source which will be used as storage
+   * location for backups taken. Format :
    * projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
    * </pre>
    *
