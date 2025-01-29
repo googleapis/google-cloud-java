@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.47.0](https://github.com/googleapis/java-bigquery/compare/v2.46.0...v2.47.0) (2025-01-29)
+
+
+### Features
+
+* **bigquery:** Support resource tags for datasets in java client ([#3647](https://github.com/googleapis/java-bigquery/issues/3647)) ([01e0b74](https://github.com/googleapis/java-bigquery/commit/01e0b742b9ffeafaa89b080a39d8a66c12c1fd3b))
+
+
+### Bug Fixes
+
+* **bigquery:** Remove ReadAPI bypass in executeSelect() ([#3624](https://github.com/googleapis/java-bigquery/issues/3624)) ([fadd992](https://github.com/googleapis/java-bigquery/commit/fadd992a63fd1bc87c99cc689ed103f05de49a99))
+* Close bq read client ([#3644](https://github.com/googleapis/java-bigquery/issues/3644)) ([8833c97](https://github.com/googleapis/java-bigquery/commit/8833c97d73e3ba8e6a2061bbc55a6254b9e6668e))
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20250112-2.0.0 ([#3651](https://github.com/googleapis/java-bigquery/issues/3651)) ([fd06100](https://github.com/googleapis/java-bigquery/commit/fd06100c4c18b0416d384ec1f6bdfc796b70ad9f))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#3653](https://github.com/googleapis/java-bigquery/issues/3653)) ([1a14342](https://github.com/googleapis/java-bigquery/commit/1a143428c7f584db3dd6e827c2ee8fe980afe18c))
+* Update github/codeql-action action to v2.28.1 ([#3637](https://github.com/googleapis/java-bigquery/issues/3637)) ([858e517](https://github.com/googleapis/java-bigquery/commit/858e51792d98276f10fd780ef6edd0bb4a1b4f54))
+
 ## [2.46.0](https://github.com/googleapis/java-bigquery/compare/v2.45.0...v2.46.0) (2025-01-11)
 
 
