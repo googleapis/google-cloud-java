@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.21.2](https://github.com/googleapis/java-logging/compare/v3.21.1...v3.21.2) (2025-01-29)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#1755](https://github.com/googleapis/java-logging/issues/1755)) ([d404381](https://github.com/googleapis/java-logging/commit/d4043815246423efe542356dc50ba663092b8df0))
+* Update dependency io.opentelemetry:opentelemetry-bom to v1.46.0 ([#1747](https://github.com/googleapis/java-logging/issues/1747)) ([5ef2853](https://github.com/googleapis/java-logging/commit/5ef285387d63b79bff7e43b233c7f9770f378dba))
+* Update googleapis/sdk-platform-java action to v2.52.0 ([#1753](https://github.com/googleapis/java-logging/issues/1753)) ([3dcf86a](https://github.com/googleapis/java-logging/commit/3dcf86adc3e1ef3d5866cd043149808601c213b8))
+
 ## [3.21.1](https://github.com/googleapis/java-logging/compare/v3.21.0...v3.21.1) (2025-01-13)
 
 
