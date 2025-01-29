@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A virtual resource representing metadata for a GA4 property.
+ * A virtual resource representing metadata for a Google Analytics property.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.PropertySummary}
@@ -458,7 +458,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A virtual resource representing metadata for a GA4 property.
+   * A virtual resource representing metadata for a Google Analytics property.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.PropertySummary}

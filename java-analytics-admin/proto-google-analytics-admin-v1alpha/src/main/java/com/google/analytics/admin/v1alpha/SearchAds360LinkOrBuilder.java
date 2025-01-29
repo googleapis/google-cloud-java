@@ -87,9 +87,9 @@ public interface SearchAds360LinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Search Ads 360 into the
-   * GA4 property. After link creation, this can only be updated from the Search
-   * Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Google Analytics property. After link creation, this can only be updated
+   * from the Search Ads 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -104,9 +104,9 @@ public interface SearchAds360LinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Search Ads 360 into the
-   * GA4 property. After link creation, this can only be updated from the Search
-   * Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Google Analytics property. After link creation, this can only be updated
+   * from the Search Ads 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -121,9 +121,9 @@ public interface SearchAds360LinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Search Ads 360 into the
-   * GA4 property. After link creation, this can only be updated from the Search
-   * Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Google Analytics property. After link creation, this can only be updated
+   * from the Search Ads 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -136,11 +136,11 @@ public interface SearchAds360LinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from
-   * the Search Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Search Ads 360 to the
+   * Google Analytics property. This can only be enabled if
+   * campaign_data_sharing_enabled is enabled. After link creation, this can
+   * only be updated from the Search Ads 360 product. If this field is not set
+   * on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -154,11 +154,11 @@ public interface SearchAds360LinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from
-   * the Search Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Search Ads 360 to the
+   * Google Analytics property. This can only be enabled if
+   * campaign_data_sharing_enabled is enabled. After link creation, this can
+   * only be updated from the Search Ads 360 product. If this field is not set
+   * on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -172,11 +172,11 @@ public interface SearchAds360LinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from
-   * the Search Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Search Ads 360 to the
+   * Google Analytics property. This can only be enabled if
+   * campaign_data_sharing_enabled is enabled. After link creation, this can
+   * only be updated from the Search Ads 360 product. If this field is not set
+   * on create, it will be defaulted to true.
    * </pre>
    *
    * <code>

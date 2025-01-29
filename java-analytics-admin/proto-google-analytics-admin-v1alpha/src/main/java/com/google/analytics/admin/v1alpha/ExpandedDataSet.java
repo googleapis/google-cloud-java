@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A resource message representing a GA4 ExpandedDataSet.
+ * A resource message representing an `ExpandedDataSet`.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.ExpandedDataSet}
@@ -748,7 +748,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A resource message representing a GA4 ExpandedDataSet.
+   * A resource message representing an `ExpandedDataSet`.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.ExpandedDataSet}

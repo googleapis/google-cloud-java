@@ -113,6 +113,26 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * CustomDimension resource
+   * </pre>
+   *
+   * <code>CUSTOM_DIMENSION = 11;</code>
+   */
+  CUSTOM_DIMENSION(11),
+  /**
+   *
+   *
+   * <pre>
+   * CustomMetric resource
+   * </pre>
+   *
+   * <code>CUSTOM_METRIC = 12;</code>
+   */
+  CUSTOM_METRIC(12),
+  /**
+   *
+   *
+   * <pre>
    * DataRetentionSettings resource
    * </pre>
    *
@@ -246,6 +266,26 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * CustomDimension resource
+   * </pre>
+   *
+   * <code>CUSTOM_DIMENSION = 11;</code>
+   */
+  public static final int CUSTOM_DIMENSION_VALUE = 11;
+  /**
+   *
+   *
+   * <pre>
+   * CustomMetric resource
+   * </pre>
+   *
+   * <code>CUSTOM_METRIC = 12;</code>
+   */
+  public static final int CUSTOM_METRIC_VALUE = 12;
+  /**
+   *
+   *
+   * <pre>
    * DataRetentionSettings resource
    * </pre>
    *
@@ -333,6 +373,10 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CONVERSION_EVENT;
       case 10:
         return MEASUREMENT_PROTOCOL_SECRET;
+      case 11:
+        return CUSTOM_DIMENSION;
+      case 12:
+        return CUSTOM_METRIC;
       case 13:
         return DATA_RETENTION_SETTINGS;
       case 14:

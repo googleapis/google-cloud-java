@@ -23,7 +23,8 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A link between a GA4 Property and an AdSense for Content ad client.
+ * A link between a Google Analytics property and an AdSense for Content ad
+ * client.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.AdSenseLink}
@@ -127,8 +128,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The AdSense ad client code that the GA4 property is linked to.
-   * Example format: "ca-pub-1234567890"
+   * Immutable. The AdSense ad client code that the Google Analytics property is
+   * linked to. Example format: "ca-pub-1234567890"
    * </pre>
    *
    * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -151,8 +152,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The AdSense ad client code that the GA4 property is linked to.
-   * Example format: "ca-pub-1234567890"
+   * Immutable. The AdSense ad client code that the Google Analytics property is
+   * linked to. Example format: "ca-pub-1234567890"
    * </pre>
    *
    * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -344,7 +345,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A link between a GA4 Property and an AdSense for Content ad client.
+   * A link between a Google Analytics property and an AdSense for Content ad
+   * client.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.AdSenseLink}
@@ -658,8 +660,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The AdSense ad client code that the GA4 property is linked to.
-     * Example format: "ca-pub-1234567890"
+     * Immutable. The AdSense ad client code that the Google Analytics property is
+     * linked to. Example format: "ca-pub-1234567890"
      * </pre>
      *
      * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -681,8 +683,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The AdSense ad client code that the GA4 property is linked to.
-     * Example format: "ca-pub-1234567890"
+     * Immutable. The AdSense ad client code that the Google Analytics property is
+     * linked to. Example format: "ca-pub-1234567890"
      * </pre>
      *
      * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -704,8 +706,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The AdSense ad client code that the GA4 property is linked to.
-     * Example format: "ca-pub-1234567890"
+     * Immutable. The AdSense ad client code that the Google Analytics property is
+     * linked to. Example format: "ca-pub-1234567890"
      * </pre>
      *
      * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -726,8 +728,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The AdSense ad client code that the GA4 property is linked to.
-     * Example format: "ca-pub-1234567890"
+     * Immutable. The AdSense ad client code that the Google Analytics property is
+     * linked to. Example format: "ca-pub-1234567890"
      * </pre>
      *
      * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -744,8 +746,8 @@ public final class AdSenseLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The AdSense ad client code that the GA4 property is linked to.
-     * Example format: "ca-pub-1234567890"
+     * Immutable. The AdSense ad client code that the Google Analytics property is
+     * linked to. Example format: "ca-pub-1234567890"
      * </pre>
      *
      * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A resource message representing a GA4 Audience.
+ * A resource message representing an Audience.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.Audience}
@@ -923,7 +923,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A resource message representing a GA4 Audience.
+   * A resource message representing an Audience.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.Audience}

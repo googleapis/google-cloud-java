@@ -23,7 +23,8 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A link between a GA4 property and a Display &amp; Video 360 advertiser.
+ * A link between a Google Analytics property and a Display &amp; Video 360
+ * advertiser.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink}
@@ -287,9 +288,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Display &amp; Video 360
-   * into the GA4 property. After link creation, this can only be updated from
-   * the Display &amp; Video 360 product. If this field is not set on create, it
-   * will be defaulted to true.
+   * into the Google Analytics property. After link creation, this can only be
+   * updated from the Display &amp; Video 360 product. If this field is not set on
+   * create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -307,9 +308,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Display &amp; Video 360
-   * into the GA4 property. After link creation, this can only be updated from
-   * the Display &amp; Video 360 product. If this field is not set on create, it
-   * will be defaulted to true.
+   * into the Google Analytics property. After link creation, this can only be
+   * updated from the Display &amp; Video 360 product. If this field is not set on
+   * create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -329,9 +330,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Display &amp; Video 360
-   * into the GA4 property. After link creation, this can only be updated from
-   * the Display &amp; Video 360 product. If this field is not set on create, it
-   * will be defaulted to true.
+   * into the Google Analytics property. After link creation, this can only be
+   * updated from the Display &amp; Video 360 product. If this field is not set on
+   * create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -352,10 +353,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-   * is enabled. After link creation, this can only be updated from the Display
-   * &amp; Video 360 product. If this field is not set on create, it will be
-   * defaulted to true.
+   * the Google Analytics property. This can only be enabled if
+   * `campaign_data_sharing_enabled` is true. After link creation, this can
+   * only be updated from the Display &amp; Video 360 product. If this field is not
+   * set on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -373,10 +374,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-   * is enabled. After link creation, this can only be updated from the Display
-   * &amp; Video 360 product. If this field is not set on create, it will be
-   * defaulted to true.
+   * the Google Analytics property. This can only be enabled if
+   * `campaign_data_sharing_enabled` is true. After link creation, this can
+   * only be updated from the Display &amp; Video 360 product. If this field is not
+   * set on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -396,10 +397,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-   * is enabled. After link creation, this can only be updated from the Display
-   * &amp; Video 360 product. If this field is not set on create, it will be
-   * defaulted to true.
+   * the Google Analytics property. This can only be enabled if
+   * `campaign_data_sharing_enabled` is true. After link creation, this can
+   * only be updated from the Display &amp; Video 360 product. If this field is not
+   * set on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -644,7 +645,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * A link between a GA4 property and a Display &amp; Video 360 advertiser.
+   * A link between a Google Analytics property and a Display &amp; Video 360
+   * advertiser.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink}
@@ -1480,9 +1482,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1499,9 +1501,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1524,9 +1526,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1551,9 +1553,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1576,9 +1578,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1608,9 +1610,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1632,9 +1634,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1651,9 +1653,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1674,9 +1676,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Display &amp; Video 360
-     * into the GA4 property. After link creation, this can only be updated from
-     * the Display &amp; Video 360 product. If this field is not set on create, it
-     * will be defaulted to true.
+     * into the Google Analytics property. After link creation, this can only be
+     * updated from the Display &amp; Video 360 product. If this field is not set on
+     * create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1711,10 +1713,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1731,10 +1733,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1757,10 +1759,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1785,10 +1787,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1811,10 +1813,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1844,10 +1846,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1869,10 +1871,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1889,10 +1891,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1913,10 +1915,10 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      *
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-     * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-     * is enabled. After link creation, this can only be updated from the Display
-     * &amp; Video 360 product. If this field is not set on create, it will be
-     * defaulted to true.
+     * the Google Analytics property. This can only be enabled if
+     * `campaign_data_sharing_enabled` is true. After link creation, this can
+     * only be updated from the Display &amp; Video 360 product. If this field is not
+     * set on create, it will be defaulted to true.
      * </pre>
      *
      * <code>

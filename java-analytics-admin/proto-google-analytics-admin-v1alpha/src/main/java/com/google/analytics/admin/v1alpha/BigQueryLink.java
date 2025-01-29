@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A link between a GA4 Property and BigQuery project.
+ * A link between a Google Analytics property and BigQuery project.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.BigQueryLink}
@@ -768,7 +768,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A link between a GA4 Property and BigQuery project.
+   * A link between a Google Analytics property and BigQuery project.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.BigQueryLink}

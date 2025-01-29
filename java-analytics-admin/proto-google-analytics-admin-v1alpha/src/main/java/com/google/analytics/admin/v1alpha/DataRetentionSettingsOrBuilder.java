@@ -55,11 +55,11 @@ public interface DataRetentionSettingsOrBuilder
    *
    *
    * <pre>
-   * The length of time that event-level data is retained.
+   * Required. The length of time that event-level data is retained.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+   * .google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for eventDataRetention.
@@ -69,17 +69,46 @@ public interface DataRetentionSettingsOrBuilder
    *
    *
    * <pre>
-   * The length of time that event-level data is retained.
+   * Required. The length of time that event-level data is retained.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+   * .google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The eventDataRetention.
    */
   com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration
       getEventDataRetention();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The length of time that user-level data is retained.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for userDataRetention.
+   */
+  int getUserDataRetentionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Required. The length of time that user-level data is retained.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The userDataRetention.
+   */
+  com.google.analytics.admin.v1alpha.DataRetentionSettings.RetentionDuration getUserDataRetention();
 
   /**
    *

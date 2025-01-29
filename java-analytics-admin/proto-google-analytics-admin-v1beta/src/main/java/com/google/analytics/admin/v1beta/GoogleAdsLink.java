@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1beta;
  *
  *
  * <pre>
- * A link between a GA4 property and a Google Ads account.
+ * A link between a Google Analytics property and a Google Ads account.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1beta.GoogleAdsLink}
@@ -637,7 +637,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A link between a GA4 property and a Google Ads account.
+   * A link between a Google Analytics property and a Google Ads account.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1beta.GoogleAdsLink}

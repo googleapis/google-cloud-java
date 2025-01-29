@@ -41,6 +41,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
   private DataRetentionSettings() {
     name_ = "";
     eventDataRetention_ = 0;
+    userDataRetention_ = 0;
   }
 
   @java.lang.Override
@@ -109,7 +110,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The data retention time duration is 26 months.
-     * Available to 360 properties only.
+     * Available to 360 properties only. Available for event data only.
      * </pre>
      *
      * <code>TWENTY_SIX_MONTHS = 4;</code>
@@ -120,7 +121,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The data retention time duration is 38 months.
-     * Available to 360 properties only.
+     * Available to 360 properties only. Available for event data only.
      * </pre>
      *
      * <code>THIRTY_EIGHT_MONTHS = 5;</code>
@@ -131,7 +132,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The data retention time duration is 50 months.
-     * Available to 360 properties only.
+     * Available to 360 properties only. Available for event data only.
      * </pre>
      *
      * <code>FIFTY_MONTHS = 6;</code>
@@ -175,7 +176,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The data retention time duration is 26 months.
-     * Available to 360 properties only.
+     * Available to 360 properties only. Available for event data only.
      * </pre>
      *
      * <code>TWENTY_SIX_MONTHS = 4;</code>
@@ -186,7 +187,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The data retention time duration is 38 months.
-     * Available to 360 properties only.
+     * Available to 360 properties only. Available for event data only.
      * </pre>
      *
      * <code>THIRTY_EIGHT_MONTHS = 5;</code>
@@ -197,7 +198,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The data retention time duration is 50 months.
-     * Available to 360 properties only.
+     * Available to 360 properties only. Available for event data only.
      * </pre>
      *
      * <code>FIFTY_MONTHS = 6;</code>
@@ -357,11 +358,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The length of time that event-level data is retained.
+   * Required. The length of time that event-level data is retained.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+   * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for eventDataRetention.
@@ -374,11 +375,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The length of time that event-level data is retained.
+   * Required. The length of time that event-level data is retained.
    * </pre>
    *
    * <code>
-   * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+   * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The eventDataRetention.
@@ -389,6 +390,49 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration result =
         com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration.forNumber(
             eventDataRetention_);
+    return result == null
+        ? com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int USER_DATA_RETENTION_FIELD_NUMBER = 4;
+  private int userDataRetention_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Required. The length of time that user-level data is retained.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for userDataRetention.
+   */
+  @java.lang.Override
+  public int getUserDataRetentionValue() {
+    return userDataRetention_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The length of time that user-level data is retained.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The userDataRetention.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration
+      getUserDataRetention() {
+    com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration result =
+        com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration.forNumber(
+            userDataRetention_);
     return result == null
         ? com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration.UNRECOGNIZED
         : result;
@@ -439,6 +483,12 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     if (resetUserDataOnNewActivity_ != false) {
       output.writeBool(3, resetUserDataOnNewActivity_);
     }
+    if (userDataRetention_
+        != com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration
+            .RETENTION_DURATION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, userDataRetention_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -460,6 +510,12 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     if (resetUserDataOnNewActivity_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, resetUserDataOnNewActivity_);
     }
+    if (userDataRetention_
+        != com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration
+            .RETENTION_DURATION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, userDataRetention_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -478,6 +534,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
 
     if (!getName().equals(other.getName())) return false;
     if (eventDataRetention_ != other.eventDataRetention_) return false;
+    if (userDataRetention_ != other.userDataRetention_) return false;
     if (getResetUserDataOnNewActivity() != other.getResetUserDataOnNewActivity()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -494,6 +551,8 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + EVENT_DATA_RETENTION_FIELD_NUMBER;
     hash = (53 * hash) + eventDataRetention_;
+    hash = (37 * hash) + USER_DATA_RETENTION_FIELD_NUMBER;
+    hash = (53 * hash) + userDataRetention_;
     hash = (37 * hash) + RESET_USER_DATA_ON_NEW_ACTIVITY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getResetUserDataOnNewActivity());
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -638,6 +697,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       name_ = "";
       eventDataRetention_ = 0;
+      userDataRetention_ = 0;
       resetUserDataOnNewActivity_ = false;
       return this;
     }
@@ -682,6 +742,9 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
         result.eventDataRetention_ = eventDataRetention_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userDataRetention_ = userDataRetention_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.resetUserDataOnNewActivity_ = resetUserDataOnNewActivity_;
       }
     }
@@ -740,6 +803,9 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
       if (other.eventDataRetention_ != 0) {
         setEventDataRetentionValue(other.getEventDataRetentionValue());
       }
+      if (other.userDataRetention_ != 0) {
+        setUserDataRetentionValue(other.getUserDataRetentionValue());
+      }
       if (other.getResetUserDataOnNewActivity() != false) {
         setResetUserDataOnNewActivity(other.getResetUserDataOnNewActivity());
       }
@@ -784,9 +850,15 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
             case 24:
               {
                 resetUserDataOnNewActivity_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
+            case 32:
+              {
+                userDataRetention_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -922,11 +994,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The length of time that event-level data is retained.
+     * Required. The length of time that event-level data is retained.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for eventDataRetention.
@@ -939,11 +1011,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The length of time that event-level data is retained.
+     * Required. The length of time that event-level data is retained.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for eventDataRetention to set.
@@ -959,11 +1031,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The length of time that event-level data is retained.
+     * Required. The length of time that event-level data is retained.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The eventDataRetention.
@@ -982,11 +1054,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The length of time that event-level data is retained.
+     * Required. The length of time that event-level data is retained.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The eventDataRetention to set.
@@ -1006,11 +1078,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The length of time that event-level data is retained.
+     * Required. The length of time that event-level data is retained.
      * </pre>
      *
      * <code>
-     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2;
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration event_data_retention = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1018,6 +1090,111 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     public Builder clearEventDataRetention() {
       bitField0_ = (bitField0_ & ~0x00000002);
       eventDataRetention_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int userDataRetention_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The length of time that user-level data is retained.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for userDataRetention.
+     */
+    @java.lang.Override
+    public int getUserDataRetentionValue() {
+      return userDataRetention_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The length of time that user-level data is retained.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for userDataRetention to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserDataRetentionValue(int value) {
+      userDataRetention_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The length of time that user-level data is retained.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The userDataRetention.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration
+        getUserDataRetention() {
+      com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration result =
+          com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration.forNumber(
+              userDataRetention_);
+      return result == null
+          ? com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The length of time that user-level data is retained.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The userDataRetention to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserDataRetention(
+        com.google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      userDataRetention_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The length of time that user-level data is retained.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.DataRetentionSettings.RetentionDuration user_data_retention = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUserDataRetention() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      userDataRetention_ = 0;
       onChanged();
       return this;
     }
@@ -1055,7 +1232,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
     public Builder setResetUserDataOnNewActivity(boolean value) {
 
       resetUserDataOnNewActivity_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1072,7 +1249,7 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResetUserDataOnNewActivity() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       resetUserDataOnNewActivity_ = false;
       onChanged();
       return this;

@@ -150,9 +150,9 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Display &amp; Video 360
-   * into the GA4 property. After link creation, this can only be updated from
-   * the Display &amp; Video 360 product. If this field is not set on create, it
-   * will be defaulted to true.
+   * into the Google Analytics property. After link creation, this can only be
+   * updated from the Display &amp; Video 360 product. If this field is not set on
+   * create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -167,9 +167,9 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Display &amp; Video 360
-   * into the GA4 property. After link creation, this can only be updated from
-   * the Display &amp; Video 360 product. If this field is not set on create, it
-   * will be defaulted to true.
+   * into the Google Analytics property. After link creation, this can only be
+   * updated from the Display &amp; Video 360 product. If this field is not set on
+   * create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -184,9 +184,9 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Display &amp; Video 360
-   * into the GA4 property. After link creation, this can only be updated from
-   * the Display &amp; Video 360 product. If this field is not set on create, it
-   * will be defaulted to true.
+   * into the Google Analytics property. After link creation, this can only be
+   * updated from the Display &amp; Video 360 product. If this field is not set on
+   * create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -200,10 +200,10 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-   * is enabled. After link creation, this can only be updated from the Display
-   * &amp; Video 360 product. If this field is not set on create, it will be
-   * defaulted to true.
+   * the Google Analytics property. This can only be enabled if
+   * `campaign_data_sharing_enabled` is true. After link creation, this can
+   * only be updated from the Display &amp; Video 360 product. If this field is not
+   * set on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -218,10 +218,10 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-   * is enabled. After link creation, this can only be updated from the Display
-   * &amp; Video 360 product. If this field is not set on create, it will be
-   * defaulted to true.
+   * the Google Analytics property. This can only be enabled if
+   * `campaign_data_sharing_enabled` is true. After link creation, this can
+   * only be updated from the Display &amp; Video 360 product. If this field is not
+   * set on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -236,10 +236,10 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into
-   * the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-   * is enabled. After link creation, this can only be updated from the Display
-   * &amp; Video 360 product. If this field is not set on create, it will be
-   * defaulted to true.
+   * the Google Analytics property. This can only be enabled if
+   * `campaign_data_sharing_enabled` is true. After link creation, this can
+   * only be updated from the Display &amp; Video 360 product. If this field is not
+   * set on create, it will be defaulted to true.
    * </pre>
    *
    * <code>

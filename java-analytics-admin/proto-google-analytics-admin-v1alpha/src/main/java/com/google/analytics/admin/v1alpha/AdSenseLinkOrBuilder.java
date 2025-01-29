@@ -57,8 +57,8 @@ public interface AdSenseLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. The AdSense ad client code that the GA4 property is linked to.
-   * Example format: "ca-pub-1234567890"
+   * Immutable. The AdSense ad client code that the Google Analytics property is
+   * linked to. Example format: "ca-pub-1234567890"
    * </pre>
    *
    * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -70,8 +70,8 @@ public interface AdSenseLinkOrBuilder
    *
    *
    * <pre>
-   * Immutable. The AdSense ad client code that the GA4 property is linked to.
-   * Example format: "ca-pub-1234567890"
+   * Immutable. The AdSense ad client code that the Google Analytics property is
+   * linked to. Example format: "ca-pub-1234567890"
    * </pre>
    *
    * <code>string ad_client_code = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

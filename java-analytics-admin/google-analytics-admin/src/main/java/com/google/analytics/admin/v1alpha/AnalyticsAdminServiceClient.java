@@ -37,7 +37,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service Interface for the Analytics Admin API (GA4).
+ * Service Description: Service Interface for the Google Analytics Admin API.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -88,7 +88,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListAccounts</td>
  *      <td><p> Returns all accounts accessible by the caller.
- * <p>  Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.</td>
+ * <p>  Note that these accounts might not currently have GA properties. Soft-deleted (ie: "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -172,7 +172,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetProperty</td>
- *      <td><p> Lookup for a single "GA4" Property.</td>
+ *      <td><p> Lookup for a single GA Property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -192,7 +192,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListProperties</td>
  *      <td><p> Returns child Properties under the specified parent Account.
- * <p>  Only "GA4" properties will be returned. Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.</td>
+ * <p>  Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -207,7 +207,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateProperty</td>
- *      <td><p> Creates an "GA4" property with the specified location and attributes.</td>
+ *      <td><p> Creates a Google Analytics property with the specified location and attributes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -228,7 +228,7 @@ import javax.annotation.Generated;
  *      <td><p> Marks target Property as soft-deleted (ie: "trashed") and returns it.
  * <p>  This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI.
  * <p>  If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772
- * <p>  Returns an error if the target is not found, or is not a GA4 Property.</td>
+ * <p>  Returns an error if the target is not found.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -438,7 +438,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetMeasurementProtocolSecret</td>
- *      <td><p> Lookup for a single "GA4" MeasurementProtocolSecret.</td>
+ *      <td><p> Lookup for a single MeasurementProtocolSecret.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -643,7 +643,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchChangeHistoryEvents</td>
- *      <td><p> Searches through all changes to an account or its children given the specified set of filters.</td>
+ *      <td><p> Searches through all changes to an account or its children given the specified set of filters.
+ * <p>  Only returns the subset of changes supported by the API. The UI may return additional changes.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1632,7 +1633,8 @@ import javax.annotation.Generated;
  *      <td><p> RunAccessReport</td>
  *      <td><p> Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years.
  * <p>  Data Access Reports can be requested for a property. Reports may be requested for any property, but dimensions that aren't related to quota can only be requested on Google Analytics 360 properties. This method is only available to Administrators.
- * <p>  These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).</td>
+ * <p>  These data access records include GA UI Reporting, GA UI Explorations, GA Data API, and other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+ * <p>  To give your feedback on this API, complete the [Google Analytics Access Reports feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform) form.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -3041,7 +3043,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns all accounts accessible by the caller.
    *
-   * <p>Note that these accounts might not currently have GA4 properties. Soft-deleted (ie:
+   * <p>Note that these accounts might not currently have GA properties. Soft-deleted (ie:
    * "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are
    * found.
    *
@@ -3078,7 +3080,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns all accounts accessible by the caller.
    *
-   * <p>Note that these accounts might not currently have GA4 properties. Soft-deleted (ie:
+   * <p>Note that these accounts might not currently have GA properties. Soft-deleted (ie:
    * "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are
    * found.
    *
@@ -3116,7 +3118,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns all accounts accessible by the caller.
    *
-   * <p>Note that these accounts might not currently have GA4 properties. Soft-deleted (ie:
+   * <p>Note that these accounts might not currently have GA properties. Soft-deleted (ie:
    * "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are
    * found.
    *
@@ -3568,7 +3570,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3597,7 +3599,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3625,7 +3627,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3652,7 +3654,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" Property.
+   * Lookup for a single GA Property.
    *
    * <p>Sample code:
    *
@@ -3681,9 +3683,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns child Properties under the specified parent Account.
    *
-   * <p>Only "GA4" properties will be returned. Properties will be excluded if the caller does not
-   * have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty
-   * list if no relevant properties are found.
+   * <p>Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed")
+   * properties are excluded by default. Returns an empty list if no relevant properties are found.
    *
    * <p>Sample code:
    *
@@ -3719,9 +3720,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns child Properties under the specified parent Account.
    *
-   * <p>Only "GA4" properties will be returned. Properties will be excluded if the caller does not
-   * have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty
-   * list if no relevant properties are found.
+   * <p>Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed")
+   * properties are excluded by default. Returns an empty list if no relevant properties are found.
    *
    * <p>Sample code:
    *
@@ -3758,9 +3758,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns child Properties under the specified parent Account.
    *
-   * <p>Only "GA4" properties will be returned. Properties will be excluded if the caller does not
-   * have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty
-   * list if no relevant properties are found.
+   * <p>Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed")
+   * properties are excluded by default. Returns an empty list if no relevant properties are found.
    *
    * <p>Sample code:
    *
@@ -3802,7 +3801,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an "GA4" property with the specified location and attributes.
+   * Creates a Google Analytics property with the specified location and attributes.
    *
    * <p>Sample code:
    *
@@ -3831,7 +3830,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an "GA4" property with the specified location and attributes.
+   * Creates a Google Analytics property with the specified location and attributes.
    *
    * <p>Sample code:
    *
@@ -3858,7 +3857,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates an "GA4" property with the specified location and attributes.
+   * Creates a Google Analytics property with the specified location and attributes.
    *
    * <p>Sample code:
    *
@@ -3894,7 +3893,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -3932,7 +3931,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -3969,7 +3968,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -4007,7 +4006,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not a GA4 Property.
+   * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
    *
@@ -5315,7 +5314,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -5350,7 +5349,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -5383,7 +5382,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -5417,7 +5416,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single "GA4" MeasurementProtocolSecret.
+   * Lookup for a single MeasurementProtocolSecret.
    *
    * <p>Sample code:
    *
@@ -6794,6 +6793,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Searches through all changes to an account or its children given the specified set of filters.
    *
+   * <p>Only returns the subset of changes supported by the API. The UI may return additional
+   * changes.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -6835,6 +6837,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Searches through all changes to an account or its children given the specified set of filters.
    *
+   * <p>Only returns the subset of changes supported by the API. The UI may return additional
+   * changes.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -6875,6 +6880,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Searches through all changes to an account or its children given the specified set of filters.
+   *
+   * <p>Only returns the subset of changes supported by the API. The UI may return additional
+   * changes.
    *
    * <p>Sample code:
    *
@@ -13491,11 +13499,15 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * property, but dimensions that aren't related to quota can only be requested on Google Analytics
    * 360 properties. This method is only available to Administrators.
    *
-   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * <p>These data access records include GA UI Reporting, GA UI Explorations, GA Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
    * linkage. These records don't include property configuration changes like adding a stream or
    * changing a property's time zone. For configuration change history, see
    * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>To give your feedback on this API, complete the [Google Analytics Access Reports
+   * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+   * form.
    *
    * <p>Sample code:
    *
@@ -13543,11 +13555,15 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * property, but dimensions that aren't related to quota can only be requested on Google Analytics
    * 360 properties. This method is only available to Administrators.
    *
-   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * <p>These data access records include GA UI Reporting, GA UI Explorations, GA Data API, and
    * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
    * linkage. These records don't include property configuration changes like adding a stream or
    * changing a property's time zone. For configuration change history, see
    * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>To give your feedback on this API, complete the [Google Analytics Access Reports
+   * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+   * form.
    *
    * <p>Sample code:
    *

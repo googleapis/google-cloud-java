@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A link between a GA4 property and a Search Ads 360 entity.
+ * A link between a Google Analytics property and a Search Ads 360 entity.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.SearchAds360Link}
@@ -183,9 +183,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Search Ads 360 into the
-   * GA4 property. After link creation, this can only be updated from the Search
-   * Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Google Analytics property. After link creation, this can only be updated
+   * from the Search Ads 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -203,9 +203,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Search Ads 360 into the
-   * GA4 property. After link creation, this can only be updated from the Search
-   * Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Google Analytics property. After link creation, this can only be updated
+   * from the Search Ads 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -225,9 +225,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Immutable. Enables the import of campaign data from Search Ads 360 into the
-   * GA4 property. After link creation, this can only be updated from the Search
-   * Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Google Analytics property. After link creation, this can only be updated
+   * from the Search Ads 360 product. If this field is not set on create, it
+   * will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -247,11 +247,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from
-   * the Search Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Search Ads 360 to the
+   * Google Analytics property. This can only be enabled if
+   * campaign_data_sharing_enabled is enabled. After link creation, this can
+   * only be updated from the Search Ads 360 product. If this field is not set
+   * on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -268,11 +268,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from
-   * the Search Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Search Ads 360 to the
+   * Google Analytics property. This can only be enabled if
+   * campaign_data_sharing_enabled is enabled. After link creation, this can
+   * only be updated from the Search Ads 360 product. If this field is not set
+   * on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -291,11 +291,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-   * property. This can only be enabled if campaign_data_sharing_enabled is
-   * enabled. After link creation, this can only be updated from
-   * the Search Ads 360 product.
-   * If this field is not set on create, it will be defaulted to true.
+   * Immutable. Enables the import of cost data from Search Ads 360 to the
+   * Google Analytics property. This can only be enabled if
+   * campaign_data_sharing_enabled is enabled. After link creation, this can
+   * only be updated from the Search Ads 360 product. If this field is not set
+   * on create, it will be defaulted to true.
    * </pre>
    *
    * <code>
@@ -713,7 +713,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A link between a GA4 property and a Search Ads 360 entity.
+   * A link between a Google Analytics property and a Search Ads 360 entity.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.SearchAds360Link}
@@ -1267,9 +1267,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1286,9 +1286,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1311,9 +1311,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1338,9 +1338,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1363,9 +1363,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1395,9 +1395,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1419,9 +1419,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1438,9 +1438,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1461,9 +1461,9 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Immutable. Enables the import of campaign data from Search Ads 360 into the
-     * GA4 property. After link creation, this can only be updated from the Search
-     * Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Google Analytics property. After link creation, this can only be updated
+     * from the Search Ads 360 product. If this field is not set on create, it
+     * will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1497,11 +1497,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1517,11 +1517,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1543,11 +1543,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1571,11 +1571,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1597,11 +1597,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1630,11 +1630,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1655,11 +1655,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1675,11 +1675,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
@@ -1699,11 +1699,11 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-     * property. This can only be enabled if campaign_data_sharing_enabled is
-     * enabled. After link creation, this can only be updated from
-     * the Search Ads 360 product.
-     * If this field is not set on create, it will be defaulted to true.
+     * Immutable. Enables the import of cost data from Search Ads 360 to the
+     * Google Analytics property. This can only be enabled if
+     * campaign_data_sharing_enabled is enabled. After link creation, this can
+     * only be updated from the Search Ads 360 product. If this field is not set
+     * on create, it will be defaulted to true.
      * </pre>
      *
      * <code>
