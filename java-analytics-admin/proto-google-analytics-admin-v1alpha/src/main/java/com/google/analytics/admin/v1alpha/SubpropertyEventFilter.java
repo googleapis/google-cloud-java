@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A resource message representing a GA4 Subproperty event filter.
+ * A resource message representing a Google Analytics subproperty event filter.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.SubpropertyEventFilter}
@@ -472,7 +472,7 @@ public final class SubpropertyEventFilter extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A resource message representing a GA4 Subproperty event filter.
+   * A resource message representing a Google Analytics subproperty event filter.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.SubpropertyEventFilter}

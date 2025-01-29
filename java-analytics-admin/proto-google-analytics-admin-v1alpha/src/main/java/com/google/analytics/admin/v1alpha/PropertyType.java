@@ -23,7 +23,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * Types of Property resources.
+ * Types of `Property` resources.
  * </pre>
  *
  * Protobuf enum {@code google.analytics.admin.v1alpha.PropertyType}
@@ -43,7 +43,7 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Ordinary GA4 property
+   * Ordinary Google Analytics property
    * </pre>
    *
    * <code>PROPERTY_TYPE_ORDINARY = 1;</code>
@@ -53,7 +53,7 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * GA4 subproperty
+   * Google Analytics subproperty
    * </pre>
    *
    * <code>PROPERTY_TYPE_SUBPROPERTY = 2;</code>
@@ -63,7 +63,7 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * GA4 rollup property
+   * Google Analytics rollup property
    * </pre>
    *
    * <code>PROPERTY_TYPE_ROLLUP = 3;</code>
@@ -86,7 +86,7 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Ordinary GA4 property
+   * Ordinary Google Analytics property
    * </pre>
    *
    * <code>PROPERTY_TYPE_ORDINARY = 1;</code>
@@ -96,7 +96,7 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * GA4 subproperty
+   * Google Analytics subproperty
    * </pre>
    *
    * <code>PROPERTY_TYPE_SUBPROPERTY = 2;</code>
@@ -106,7 +106,7 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * GA4 rollup property
+   * Google Analytics rollup property
    * </pre>
    *
    * <code>PROPERTY_TYPE_ROLLUP = 3;</code>

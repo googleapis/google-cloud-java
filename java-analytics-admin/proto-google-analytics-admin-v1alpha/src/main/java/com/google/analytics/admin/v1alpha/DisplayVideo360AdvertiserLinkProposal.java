@@ -23,8 +23,8 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * A proposal for a link between a GA4 property and a Display &amp; Video 360
- * advertiser.
+ * A proposal for a link between a Google Analytics property and a Display &amp;
+ * Video 360 advertiser.
  *
  * A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
  * Google Analytics admins approve inbound proposals while Display &amp; Video 360
@@ -795,8 +795,8 @@ public final class DisplayVideo360AdvertiserLinkProposal
    *
    *
    * <pre>
-   * A proposal for a link between a GA4 property and a Display &amp; Video 360
-   * advertiser.
+   * A proposal for a link between a Google Analytics property and a Display &amp;
+   * Video 360 advertiser.
    *
    * A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
    * Google Analytics admins approve inbound proposals while Display &amp; Video 360

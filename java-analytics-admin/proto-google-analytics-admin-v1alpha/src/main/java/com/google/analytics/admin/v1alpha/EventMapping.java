@@ -72,7 +72,7 @@ public final class EventMapping extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the GA4 event. It must always be set.
+   * Required. Name of the Google Analytics event. It must always be set.
    * The max allowed display name length is 40 UTF-16 code units.
    * </pre>
    *
@@ -96,7 +96,7 @@ public final class EventMapping extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the GA4 event. It must always be set.
+   * Required. Name of the Google Analytics event. It must always be set.
    * The max allowed display name length is 40 UTF-16 code units.
    * </pre>
    *
@@ -734,7 +734,7 @@ public final class EventMapping extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the GA4 event. It must always be set.
+     * Required. Name of the Google Analytics event. It must always be set.
      * The max allowed display name length is 40 UTF-16 code units.
      * </pre>
      *
@@ -757,7 +757,7 @@ public final class EventMapping extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the GA4 event. It must always be set.
+     * Required. Name of the Google Analytics event. It must always be set.
      * The max allowed display name length is 40 UTF-16 code units.
      * </pre>
      *
@@ -780,7 +780,7 @@ public final class EventMapping extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the GA4 event. It must always be set.
+     * Required. Name of the Google Analytics event. It must always be set.
      * The max allowed display name length is 40 UTF-16 code units.
      * </pre>
      *
@@ -802,7 +802,7 @@ public final class EventMapping extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the GA4 event. It must always be set.
+     * Required. Name of the Google Analytics event. It must always be set.
      * The max allowed display name length is 40 UTF-16 code units.
      * </pre>
      *
@@ -820,7 +820,7 @@ public final class EventMapping extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the GA4 event. It must always be set.
+     * Required. Name of the Google Analytics event. It must always be set.
      * The max allowed display name length is 40 UTF-16 code units.
      * </pre>
      *

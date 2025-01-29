@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service Interface for the Analytics Admin API (GA4).
+ * Service Interface for the Google Analytics Admin API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -2717,7 +2717,7 @@ public final class AnalyticsAdminServiceGrpc {
    *
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public interface AsyncService {
@@ -2740,7 +2740,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -2823,7 +2823,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     default void getProperty(
@@ -2838,7 +2838,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -2856,7 +2855,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     default void createProperty(
@@ -2877,7 +2877,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     default void deleteProperty(
@@ -3026,7 +3026,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     default void getMeasurementProtocolSecret(
@@ -3123,6 +3123,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     default void searchChangeHistoryEvents(
@@ -3554,12 +3556,16 @@ public final class AnalyticsAdminServiceGrpc {
      * requested for any property, but dimensions that aren't related to quota can
      * only be requested on Google Analytics 360 properties. This method is only
      * available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     default void runAccessReport(
@@ -3575,7 +3581,7 @@ public final class AnalyticsAdminServiceGrpc {
    * Base class for the server implementation of the service AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public abstract static class AnalyticsAdminServiceImplBase
@@ -3591,7 +3597,7 @@ public final class AnalyticsAdminServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public static final class AnalyticsAdminServiceStub
@@ -3625,7 +3631,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -3718,7 +3724,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     public void getProperty(
@@ -3735,7 +3741,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -3755,7 +3760,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     public void createProperty(
@@ -3778,7 +3784,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     public void deleteProperty(
@@ -3947,7 +3953,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     public void getMeasurementProtocolSecret(
@@ -4056,6 +4062,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     public void searchChangeHistoryEvents(
@@ -4543,12 +4551,16 @@ public final class AnalyticsAdminServiceGrpc {
      * requested for any property, but dimensions that aren't related to quota can
      * only be requested on Google Analytics 360 properties. This method is only
      * available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     public void runAccessReport(
@@ -4566,7 +4578,7 @@ public final class AnalyticsAdminServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public static final class AnalyticsAdminServiceBlockingStub
@@ -4600,7 +4612,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -4674,7 +4686,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     public com.google.analytics.admin.v1beta.Property getProperty(
@@ -4688,7 +4700,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -4704,7 +4715,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     public com.google.analytics.admin.v1beta.Property createProperty(
@@ -4724,7 +4736,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     public com.google.analytics.admin.v1beta.Property deleteProperty(
@@ -4857,7 +4869,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     public com.google.analytics.admin.v1beta.MeasurementProtocolSecret getMeasurementProtocolSecret(
@@ -4945,6 +4957,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     public com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse
@@ -5328,12 +5342,16 @@ public final class AnalyticsAdminServiceGrpc {
      * requested for any property, but dimensions that aren't related to quota can
      * only be requested on Google Analytics 360 properties. This method is only
      * available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     public com.google.analytics.admin.v1beta.RunAccessReportResponse runAccessReport(
@@ -5348,7 +5366,7 @@ public final class AnalyticsAdminServiceGrpc {
    * AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public static final class AnalyticsAdminServiceFutureStub
@@ -5383,7 +5401,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -5463,7 +5481,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5478,7 +5496,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -5495,7 +5512,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5516,7 +5534,7 @@ public final class AnalyticsAdminServiceGrpc {
      * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5658,7 +5676,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -5758,6 +5776,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -6174,12 +6194,16 @@ public final class AnalyticsAdminServiceGrpc {
      * requested for any property, but dimensions that aren't related to quota can
      * only be requested on Google Analytics 360 properties. This method is only
      * available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

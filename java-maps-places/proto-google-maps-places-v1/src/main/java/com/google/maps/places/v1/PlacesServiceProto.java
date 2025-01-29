@@ -273,7 +273,7 @@ public final class PlacesServiceProto {
           + "attableText\022h\n\021structured_format\030\002 \001(\0132M"
           + ".google.maps.places.v1.AutocompletePlace"
           + "sResponse.Suggestion.StructuredFormatB\006\n"
-          + "\004kind2\341\005\n\006Places\022\213\001\n\014SearchNearby\022*.goog"
+          + "\004kind2\222\006\n\006Places\022\213\001\n\014SearchNearby\022*.goog"
           + "le.maps.places.v1.SearchNearbyRequest\032+."
           + "google.maps.places.v1.SearchNearbyRespon"
           + "se\"\"\202\323\344\223\002\034\"\027/v1/places:searchNearby:\001*\022\203"
@@ -291,11 +291,13 @@ public final class PlacesServiceProto {
           + "ces.v1.AutocompletePlacesRequest\0321.googl"
           + "e.maps.places.v1.AutocompletePlacesRespo"
           + "nse\"\"\202\323\344\223\002\034\"\027/v1/places:autocomplete:\001*\032"
-          + "\030\312A\025places.googleapis.comB\243\001\n\031com.google"
-          + ".maps.places.v1B\022PlacesServiceProtoP\001Z7c"
-          + "loud.google.com/go/maps/places/apiv1/pla"
-          + "cespb;placespb\242\002\006GMPSV1\252\002\025Google.Maps.Pl"
-          + "aces.V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
+          + "I\312A\025places.googleapis.com\322A.https://www."
+          + "googleapis.com/auth/cloud-platformB\243\001\n\031c"
+          + "om.google.maps.places.v1B\022PlacesServiceP"
+          + "rotoP\001Z7cloud.google.com/go/maps/places/"
+          + "apiv1/placespb;placespb\242\002\006GMPSV1\252\002\025Googl"
+          + "e.Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -560,6 +562,7 @@ public final class PlacesServiceProto {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
+    registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(

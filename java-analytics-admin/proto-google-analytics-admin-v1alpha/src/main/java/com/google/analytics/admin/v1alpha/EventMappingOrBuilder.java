@@ -28,7 +28,7 @@ public interface EventMappingOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the GA4 event. It must always be set.
+   * Required. Name of the Google Analytics event. It must always be set.
    * The max allowed display name length is 40 UTF-16 code units.
    * </pre>
    *
@@ -41,7 +41,7 @@ public interface EventMappingOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the GA4 event. It must always be set.
+   * Required. Name of the Google Analytics event. It must always be set.
    * The max allowed display name length is 40 UTF-16 code units.
    * </pre>
    *
