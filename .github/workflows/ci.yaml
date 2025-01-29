@@ -112,7 +112,7 @@ jobs:
       run: |
         mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
     - name: Validate gapic-libraries-bom
-      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.52.0
+      uses: googleapis/java-cloud-bom/tests/validate-bom@v26.53.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
   generation-config-check:
