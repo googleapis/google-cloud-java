@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.56.0 (2025-01-29)
+
+### Features
+
+* A new field `ssl_config` is added to message `.google.cloud.datastream.v1.PostgresqlProfile` ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#11410](https://github.com/googleapis/google-cloud-java/issues/11410)) ([34dfd0d](https://github.com/googleapis/google-cloud-java/commit/34dfd0dc9c5ca042aca0778e8d34b2ca072bfeb1))
+
+
 ## 1.55.0 (2025-01-09)
 
 ### Dependencies

@@ -1,5 +1,32 @@
 # Changelog
 
+## 3.58.0 (2025-01-29)
+
+### Features
+
+* add Context Cache to v1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Add machine_spec, data_persistent_disk_spec, network_spec, euc_config, shielded_vm_config to `.google.cloud.aiplatform.v1beta1.NotebookRuntime` ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Add machine_spec, data_persistent_disk_spec, network_spec, euc_config, shielded_vm_config to message `.google.cloud.aiplatform.v1.NotebookRuntime` ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add optimized config in v1 API ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add per-modality token count break downs for GenAI APIs ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add per-modality token count break downs for GenAI APIs ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add retrieval_config to ToolConfig v1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add retrieval_config to ToolConfig v1beta1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Add speculative decoding spec to DeployedModel proto ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* enable FeatureGroup IAM Methods in v1beta1 API version ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* enable FeatureView Service Account in v1 API version ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* enable UpdateFeatureMonitor in v1beta1 API version ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Expose code execution tool API to v1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Model Registry Checkpoint API ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Model Registry Checkpoint API ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Reasoning Engine v1 GAPIC release ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Remove autorater config related visibility v1beta1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#11410](https://github.com/googleapis/google-cloud-java/issues/11410)) ([34dfd0d](https://github.com/googleapis/google-cloud-java/commit/34dfd0dc9c5ca042aca0778e8d34b2ca072bfeb1))
+
+
 ## 3.57.0 (2025-01-09)
 
 ### Features

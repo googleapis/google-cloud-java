@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.28.0 (2025-01-29)
+
+### Features
+
+* add more fuel type enum values ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+
+### Bug Fixes
+
+* add oauth scopes to Places proto ([a3b082e](https://github.com/googleapis/google-cloud-java/commit/a3b082eea5a4ddbb6b3717bf0b8d7c19cdd2fda5))
+* mark Places API client libraries as BETA ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#11410](https://github.com/googleapis/google-cloud-java/issues/11410)) ([34dfd0d](https://github.com/googleapis/google-cloud-java/commit/34dfd0dc9c5ca042aca0778e8d34b2ca072bfeb1))
+
+
 ## 0.27.0 (2025-01-09)
 
 ### Dependencies
