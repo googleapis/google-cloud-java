@@ -82,11 +82,7 @@ public interface ListJobsRequestOrBuilder
    * request the next page of results, page_token must be the value of
    * [next_page_token][google.cloud.scheduler.v1.ListJobsResponse.next_page_token]
    * returned from the previous call to
-   * [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs]. It is an
-   * error to switch the value of
-   * [filter][google.cloud.scheduler.v1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1.ListJobsRequest.order_by] while
-   * iterating through pages.
+   * [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs].
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -103,11 +99,7 @@ public interface ListJobsRequestOrBuilder
    * request the next page of results, page_token must be the value of
    * [next_page_token][google.cloud.scheduler.v1.ListJobsResponse.next_page_token]
    * returned from the previous call to
-   * [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs]. It is an
-   * error to switch the value of
-   * [filter][google.cloud.scheduler.v1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1.ListJobsRequest.order_by] while
-   * iterating through pages.
+   * [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs].
    * </pre>
    *
    * <code>string page_token = 6;</code>

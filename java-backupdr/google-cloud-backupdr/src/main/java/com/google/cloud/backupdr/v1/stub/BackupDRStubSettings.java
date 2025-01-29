@@ -77,6 +77,8 @@ import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
@@ -281,6 +283,10 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   private final OperationCallSettings<
           TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationSettings;
+  private final UnaryCallSettings<InitializeServiceRequest, Operation> initializeServiceSettings;
+  private final OperationCallSettings<
+          InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -1005,6 +1011,18 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     return triggerBackupOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to initializeService. */
+  public UnaryCallSettings<InitializeServiceRequest, Operation> initializeServiceSettings() {
+    return initializeServiceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to initializeService. */
+  public OperationCallSettings<
+          InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationSettings() {
+    return initializeServiceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1192,6 +1210,9 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
         settingsBuilder.deleteBackupPlanAssociationOperationSettings().build();
     triggerBackupSettings = settingsBuilder.triggerBackupSettings().build();
     triggerBackupOperationSettings = settingsBuilder.triggerBackupOperationSettings().build();
+    initializeServiceSettings = settingsBuilder.initializeServiceSettings().build();
+    initializeServiceOperationSettings =
+        settingsBuilder.initializeServiceOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1300,6 +1321,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     private final OperationCallSettings.Builder<
             TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
         triggerBackupOperationSettings;
+    private final UnaryCallSettings.Builder<InitializeServiceRequest, Operation>
+        initializeServiceSettings;
+    private final OperationCallSettings.Builder<
+            InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+        initializeServiceOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1403,6 +1429,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
       deleteBackupPlanAssociationOperationSettings = OperationCallSettings.newBuilder();
       triggerBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       triggerBackupOperationSettings = OperationCallSettings.newBuilder();
+      initializeServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      initializeServiceOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1438,6 +1466,7 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               listBackupPlanAssociationsSettings,
               deleteBackupPlanAssociationSettings,
               triggerBackupSettings,
+              initializeServiceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1496,6 +1525,8 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           settings.deleteBackupPlanAssociationOperationSettings.toBuilder();
       triggerBackupSettings = settings.triggerBackupSettings.toBuilder();
       triggerBackupOperationSettings = settings.triggerBackupOperationSettings.toBuilder();
+      initializeServiceSettings = settings.initializeServiceSettings.toBuilder();
+      initializeServiceOperationSettings = settings.initializeServiceOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1531,6 +1562,7 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               listBackupPlanAssociationsSettings,
               deleteBackupPlanAssociationSettings,
               triggerBackupSettings,
+              initializeServiceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1697,6 +1729,11 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           .triggerBackupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .initializeServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listLocationsSettings()
@@ -2061,6 +2098,31 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .initializeServiceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InitializeServiceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  InitializeServiceResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -2333,6 +2395,19 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
         triggerBackupOperationSettings() {
       return triggerBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to initializeService. */
+    public UnaryCallSettings.Builder<InitializeServiceRequest, Operation>
+        initializeServiceSettings() {
+      return initializeServiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to initializeService. */
+    public OperationCallSettings.Builder<
+            InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+        initializeServiceOperationSettings() {
+      return initializeServiceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

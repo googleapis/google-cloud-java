@@ -212,6 +212,25 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return canIpForward_;
   }
 
+  public static final int QUEUE_COUNT_FIELD_NUMBER = 6;
+  private int queueCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies networking queue count for TPU VM instance's network
+   * interface.
+   * </pre>
+   *
+   * <code>int32 queue_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The queueCount.
+   */
+  @java.lang.Override
+  public int getQueueCount() {
+    return queueCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -238,6 +257,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (canIpForward_ != false) {
       output.writeBool(4, canIpForward_);
     }
+    if (queueCount_ != 0) {
+      output.writeInt32(6, queueCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -259,6 +281,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (canIpForward_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, canIpForward_);
     }
+    if (queueCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, queueCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -278,6 +303,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (getEnableExternalIps() != other.getEnableExternalIps()) return false;
     if (getCanIpForward() != other.getCanIpForward()) return false;
+    if (getQueueCount() != other.getQueueCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -297,6 +323,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableExternalIps());
     hash = (37 * hash) + CAN_IP_FORWARD_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCanIpForward());
+    hash = (37 * hash) + QUEUE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getQueueCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,6 +467,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       subnetwork_ = "";
       enableExternalIps_ = false;
       canIpForward_ = false;
+      queueCount_ = 0;
       return this;
     }
 
@@ -486,6 +515,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.canIpForward_ = canIpForward_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.queueCount_ = queueCount_;
       }
     }
 
@@ -550,6 +582,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getCanIpForward() != false) {
         setCanIpForward(other.getCanIpForward());
       }
+      if (other.getQueueCount() != 0) {
+        setQueueCount(other.getQueueCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -600,6 +635,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 48:
+              {
+                queueCount_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -960,6 +1001,62 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCanIpForward() {
       bitField0_ = (bitField0_ & ~0x00000008);
       canIpForward_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int queueCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies networking queue count for TPU VM instance's network
+     * interface.
+     * </pre>
+     *
+     * <code>int32 queue_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The queueCount.
+     */
+    @java.lang.Override
+    public int getQueueCount() {
+      return queueCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies networking queue count for TPU VM instance's network
+     * interface.
+     * </pre>
+     *
+     * <code>int32 queue_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The queueCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueueCount(int value) {
+
+      queueCount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies networking queue count for TPU VM instance's network
+     * interface.
+     * </pre>
+     *
+     * <code>int32 queue_count = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQueueCount() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      queueCount_ = 0;
       onChanged();
       return this;
     }

@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1.stub;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
@@ -69,6 +70,8 @@ import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest;
+import com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse;
 import com.google.cloud.aiplatform.v1.ListModelVersionsRequest;
 import com.google.cloud.aiplatform.v1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1.ListModelsRequest;
@@ -77,6 +80,7 @@ import com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1.Model;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1.ModelVersionCheckpoint;
 import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetRequest;
 import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetResponse;
@@ -196,6 +200,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final PagedCallSettings<
           ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
       listModelVersionsSettings;
+  private final PagedCallSettings<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsSettings;
   private final UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings;
   private final UnaryCallSettings<UpdateExplanationDatasetRequest, Operation>
       updateExplanationDatasetSettings;
@@ -318,6 +327,53 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             @Override
             public Iterable<Model> extractResources(ListModelVersionsResponse payload) {
               return payload.getModelsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ModelVersionCheckpoint>
+      LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListModelVersionCheckpointsRequest,
+              ListModelVersionCheckpointsResponse,
+              ModelVersionCheckpoint>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelVersionCheckpointsRequest injectToken(
+                ListModelVersionCheckpointsRequest payload, String token) {
+              return ListModelVersionCheckpointsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListModelVersionCheckpointsRequest injectPageSize(
+                ListModelVersionCheckpointsRequest payload, int pageSize) {
+              return ListModelVersionCheckpointsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelVersionCheckpointsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelVersionCheckpointsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ModelVersionCheckpoint> extractResources(
+                ListModelVersionCheckpointsResponse payload) {
+              return payload.getCheckpointsList();
             }
           };
 
@@ -476,6 +532,35 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           };
 
   private static final PagedListResponseFactory<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ListModelVersionCheckpointsPagedResponse>
+      LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelVersionCheckpointsRequest,
+              ListModelVersionCheckpointsResponse,
+              ListModelVersionCheckpointsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelVersionCheckpointsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+                    callable,
+                ListModelVersionCheckpointsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelVersionCheckpointsResponse> futureResponse) {
+              PageContext<
+                      ListModelVersionCheckpointsRequest,
+                      ListModelVersionCheckpointsResponse,
+                      ModelVersionCheckpoint>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_DESC, request, context);
+              return ListModelVersionCheckpointsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListModelEvaluationsRequest,
           ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
@@ -572,6 +657,15 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
       listModelVersionsSettings() {
     return listModelVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listModelVersionCheckpoints. */
+  public PagedCallSettings<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsSettings() {
+    return listModelVersionCheckpointsSettings;
   }
 
   /** Returns the object with the settings used for calls to updateModel. */
@@ -807,6 +901,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     getModelSettings = settingsBuilder.getModelSettings().build();
     listModelsSettings = settingsBuilder.listModelsSettings().build();
     listModelVersionsSettings = settingsBuilder.listModelVersionsSettings().build();
+    listModelVersionCheckpointsSettings =
+        settingsBuilder.listModelVersionCheckpointsSettings().build();
     updateModelSettings = settingsBuilder.updateModelSettings().build();
     updateExplanationDatasetSettings = settingsBuilder.updateExplanationDatasetSettings().build();
     updateExplanationDatasetOperationSettings =
@@ -851,6 +947,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final PagedCallSettings.Builder<
             ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
         listModelVersionsSettings;
+    private final PagedCallSettings.Builder<
+            ListModelVersionCheckpointsRequest,
+            ListModelVersionCheckpointsResponse,
+            ListModelVersionCheckpointsPagedResponse>
+        listModelVersionCheckpointsSettings;
     private final UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings;
     private final UnaryCallSettings.Builder<UpdateExplanationDatasetRequest, Operation>
         updateExplanationDatasetSettings;
@@ -939,6 +1040,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
       listModelVersionsSettings = PagedCallSettings.newBuilder(LIST_MODEL_VERSIONS_PAGE_STR_FACT);
+      listModelVersionCheckpointsSettings =
+          PagedCallSettings.newBuilder(LIST_MODEL_VERSION_CHECKPOINTS_PAGE_STR_FACT);
       updateModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateExplanationDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateExplanationDatasetOperationSettings = OperationCallSettings.newBuilder();
@@ -972,6 +1075,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               getModelSettings,
               listModelsSettings,
               listModelVersionsSettings,
+              listModelVersionCheckpointsSettings,
               updateModelSettings,
               updateExplanationDatasetSettings,
               deleteModelSettings,
@@ -1002,6 +1106,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       getModelSettings = settings.getModelSettings.toBuilder();
       listModelsSettings = settings.listModelsSettings.toBuilder();
       listModelVersionsSettings = settings.listModelVersionsSettings.toBuilder();
+      listModelVersionCheckpointsSettings =
+          settings.listModelVersionCheckpointsSettings.toBuilder();
       updateModelSettings = settings.updateModelSettings.toBuilder();
       updateExplanationDatasetSettings = settings.updateExplanationDatasetSettings.toBuilder();
       updateExplanationDatasetOperationSettings =
@@ -1037,6 +1143,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               getModelSettings,
               listModelsSettings,
               listModelVersionsSettings,
+              listModelVersionCheckpointsSettings,
               updateModelSettings,
               updateExplanationDatasetSettings,
               deleteModelSettings,
@@ -1088,6 +1195,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       builder
           .listModelVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listModelVersionCheckpointsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1377,6 +1489,15 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
         listModelVersionsSettings() {
       return listModelVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listModelVersionCheckpoints. */
+    public PagedCallSettings.Builder<
+            ListModelVersionCheckpointsRequest,
+            ListModelVersionCheckpointsResponse,
+            ListModelVersionCheckpointsPagedResponse>
+        listModelVersionCheckpointsSettings() {
+      return listModelVersionCheckpointsSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateModel. */

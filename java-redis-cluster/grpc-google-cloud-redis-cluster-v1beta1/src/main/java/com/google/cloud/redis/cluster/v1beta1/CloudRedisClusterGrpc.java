@@ -33,11 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `/projects/{project_id}/locations/{location_id}/clusters/{instance_id}`
  * Note that location_id must be a GCP `region`; for example:
  * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
- * We use API version selector for Flex APIs
- * * The versioning strategy is release-based versioning
- * * Our backend CLH only deals with the superset version (called v1main)
- * * Existing backend for Redis Gen1 and MRR is not touched.
- * * More details in go/redis-flex-api-versioning
  * </pre>
  */
 @javax.annotation.Generated(
@@ -338,6 +333,390 @@ public final class CloudRedisClusterGrpc {
     return getGetClusterCertificateAuthorityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleClusterMaintenanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RescheduleClusterMaintenance",
+      requestType =
+          com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleClusterMaintenanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest,
+            com.google.longrunning.Operation>
+        getRescheduleClusterMaintenanceMethod;
+    if ((getRescheduleClusterMaintenanceMethod =
+            CloudRedisClusterGrpc.getRescheduleClusterMaintenanceMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getRescheduleClusterMaintenanceMethod =
+                CloudRedisClusterGrpc.getRescheduleClusterMaintenanceMethod)
+            == null) {
+          CloudRedisClusterGrpc.getRescheduleClusterMaintenanceMethod =
+              getRescheduleClusterMaintenanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RescheduleClusterMaintenance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1
+                                  .RescheduleClusterMaintenanceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier(
+                              "RescheduleClusterMaintenance"))
+                      .build();
+        }
+      }
+    }
+    return getRescheduleClusterMaintenanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>
+      getListBackupCollectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupCollections",
+      requestType = com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>
+      getListBackupCollectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest,
+            com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>
+        getListBackupCollectionsMethod;
+    if ((getListBackupCollectionsMethod = CloudRedisClusterGrpc.getListBackupCollectionsMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListBackupCollectionsMethod = CloudRedisClusterGrpc.getListBackupCollectionsMethod)
+            == null) {
+          CloudRedisClusterGrpc.getListBackupCollectionsMethod =
+              getListBackupCollectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest,
+                          com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBackupCollections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListBackupCollections"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupCollectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest,
+          com.google.cloud.redis.cluster.v1beta1.BackupCollection>
+      getGetBackupCollectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupCollection",
+      requestType = com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.BackupCollection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest,
+          com.google.cloud.redis.cluster.v1beta1.BackupCollection>
+      getGetBackupCollectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest,
+            com.google.cloud.redis.cluster.v1beta1.BackupCollection>
+        getGetBackupCollectionMethod;
+    if ((getGetBackupCollectionMethod = CloudRedisClusterGrpc.getGetBackupCollectionMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetBackupCollectionMethod = CloudRedisClusterGrpc.getGetBackupCollectionMethod)
+            == null) {
+          CloudRedisClusterGrpc.getGetBackupCollectionMethod =
+              getGetBackupCollectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest,
+                          com.google.cloud.redis.cluster.v1beta1.BackupCollection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetBackupCollection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.BackupCollection
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetBackupCollection"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupCollectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>
+      getListBackupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackups",
+      requestType = com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>
+      getListBackupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest,
+            com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>
+        getListBackupsMethod;
+    if ((getListBackupsMethod = CloudRedisClusterGrpc.getListBackupsMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListBackupsMethod = CloudRedisClusterGrpc.getListBackupsMethod) == null) {
+          CloudRedisClusterGrpc.getListBackupsMethod =
+              getListBackupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest,
+                          com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListBackups"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetBackupRequest,
+          com.google.cloud.redis.cluster.v1beta1.Backup>
+      getGetBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackup",
+      requestType = com.google.cloud.redis.cluster.v1beta1.GetBackupRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.Backup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetBackupRequest,
+          com.google.cloud.redis.cluster.v1beta1.Backup>
+      getGetBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.GetBackupRequest,
+            com.google.cloud.redis.cluster.v1beta1.Backup>
+        getGetBackupMethod;
+    if ((getGetBackupMethod = CloudRedisClusterGrpc.getGetBackupMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetBackupMethod = CloudRedisClusterGrpc.getGetBackupMethod) == null) {
+          CloudRedisClusterGrpc.getGetBackupMethod =
+              getGetBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.GetBackupRequest,
+                          com.google.cloud.redis.cluster.v1beta1.Backup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.GetBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.Backup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetBackup"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest,
+          com.google.longrunning.Operation>
+      getDeleteBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBackup",
+      requestType = com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest,
+          com.google.longrunning.Operation>
+      getDeleteBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest,
+            com.google.longrunning.Operation>
+        getDeleteBackupMethod;
+    if ((getDeleteBackupMethod = CloudRedisClusterGrpc.getDeleteBackupMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getDeleteBackupMethod = CloudRedisClusterGrpc.getDeleteBackupMethod) == null) {
+          CloudRedisClusterGrpc.getDeleteBackupMethod =
+              getDeleteBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("DeleteBackup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest,
+          com.google.longrunning.Operation>
+      getExportBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportBackup",
+      requestType = com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest,
+          com.google.longrunning.Operation>
+      getExportBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest,
+            com.google.longrunning.Operation>
+        getExportBackupMethod;
+    if ((getExportBackupMethod = CloudRedisClusterGrpc.getExportBackupMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getExportBackupMethod = CloudRedisClusterGrpc.getExportBackupMethod) == null) {
+          CloudRedisClusterGrpc.getExportBackupMethod =
+              getExportBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ExportBackup"))
+                      .build();
+        }
+      }
+    }
+    return getExportBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest,
+          com.google.longrunning.Operation>
+      getBackupClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BackupCluster",
+      requestType = com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest,
+          com.google.longrunning.Operation>
+      getBackupClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest,
+            com.google.longrunning.Operation>
+        getBackupClusterMethod;
+    if ((getBackupClusterMethod = CloudRedisClusterGrpc.getBackupClusterMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getBackupClusterMethod = CloudRedisClusterGrpc.getBackupClusterMethod) == null) {
+          CloudRedisClusterGrpc.getBackupClusterMethod =
+              getBackupClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BackupCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("BackupCluster"))
+                      .build();
+        }
+      }
+    }
+    return getBackupClusterMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudRedisClusterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudRedisClusterStub> factory =
@@ -395,11 +774,6 @@ public final class CloudRedisClusterGrpc {
    *   `/projects/{project_id}/locations/{location_id}/clusters/{instance_id}`
    * Note that location_id must be a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
-   * We use API version selector for Flex APIs
-   * * The versioning strategy is release-based versioning
-   * * Our backend CLH only deals with the superset version (called v1main)
-   * * Existing backend for Redis Gen1 and MRR is not touched.
-   * * More details in go/redis-flex-api-versioning
    * </pre>
    */
   public interface AsyncService {
@@ -504,6 +878,136 @@ public final class CloudRedisClusterGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetClusterCertificateAuthorityMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    default void rescheduleClusterMaintenance(
+        com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRescheduleClusterMaintenanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    default void listBackupCollections(
+        com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupCollectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    default void getBackupCollection(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.BackupCollection>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupCollectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    default void listBackups(
+        com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    default void getBackup(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.Backup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    default void deleteBackup(
+        com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    default void exportBackup(
+        com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Redis Cluster.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the cluster's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    default void backupCluster(
+        com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBackupClusterMethod(), responseObserver);
+    }
   }
 
   /**
@@ -522,11 +1026,6 @@ public final class CloudRedisClusterGrpc {
    *   `/projects/{project_id}/locations/{location_id}/clusters/{instance_id}`
    * Note that location_id must be a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
-   * We use API version selector for Flex APIs
-   * * The versioning strategy is release-based versioning
-   * * Our backend CLH only deals with the superset version (called v1main)
-   * * Existing backend for Redis Gen1 and MRR is not touched.
-   * * More details in go/redis-flex-api-versioning
    * </pre>
    */
   public abstract static class CloudRedisClusterImplBase
@@ -554,11 +1053,6 @@ public final class CloudRedisClusterGrpc {
    *   `/projects/{project_id}/locations/{location_id}/clusters/{instance_id}`
    * Note that location_id must be a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
-   * We use API version selector for Flex APIs
-   * * The versioning strategy is release-based versioning
-   * * Our backend CLH only deals with the superset version (called v1main)
-   * * Existing backend for Redis Gen1 and MRR is not touched.
-   * * More details in go/redis-flex-api-versioning
    * </pre>
    */
   public static final class CloudRedisClusterStub
@@ -684,6 +1178,151 @@ public final class CloudRedisClusterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public void rescheduleClusterMaintenance(
+        com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRescheduleClusterMaintenanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public void listBackupCollections(
+        com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupCollectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public void getBackupCollection(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.BackupCollection>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupCollectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public void listBackups(
+        com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public void getBackup(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.Backup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public void deleteBackup(
+        com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public void exportBackup(
+        com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Redis Cluster.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the cluster's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public void backupCluster(
+        com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBackupClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -702,11 +1341,6 @@ public final class CloudRedisClusterGrpc {
    *   `/projects/{project_id}/locations/{location_id}/clusters/{instance_id}`
    * Note that location_id must be a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
-   * We use API version selector for Flex APIs
-   * * The versioning strategy is release-based versioning
-   * * Our backend CLH only deals with the superset version (called v1main)
-   * * Existing backend for Redis Gen1 and MRR is not touched.
-   * * More details in go/redis-flex-api-versioning
    * </pre>
    */
   public static final class CloudRedisClusterBlockingStub
@@ -815,6 +1449,125 @@ public final class CloudRedisClusterGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetClusterCertificateAuthorityMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleClusterMaintenance(
+        com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleClusterMaintenanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse
+        listBackupCollections(
+            com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupCollectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.BackupCollection getBackupCollection(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupCollectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse listBackups(
+        com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.Backup getBackup(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportBackup(
+        com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Redis Cluster.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the cluster's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation backupCluster(
+        com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBackupClusterMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -833,11 +1586,6 @@ public final class CloudRedisClusterGrpc {
    *   `/projects/{project_id}/locations/{location_id}/clusters/{instance_id}`
    * Note that location_id must be a GCP `region`; for example:
    * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
-   * We use API version selector for Flex APIs
-   * * The versioning strategy is release-based versioning
-   * * Our backend CLH only deals with the superset version (called v1main)
-   * * Existing backend for Redis Gen1 and MRR is not touched.
-   * * More details in go/redis-flex-api-versioning
    * </pre>
    */
   public static final class CloudRedisClusterFutureStub
@@ -949,6 +1697,131 @@ public final class CloudRedisClusterGrpc {
           getChannel().newCall(getGetClusterCertificateAuthorityMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rescheduleClusterMaintenance(
+            com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRescheduleClusterMaintenanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>
+        listBackupCollections(
+            com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupCollectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.BackupCollection>
+        getBackupCollection(
+            com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupCollectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>
+        listBackups(com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.Backup>
+        getBackup(com.google.cloud.redis.cluster.v1beta1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteBackup(com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportBackup(com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Redis Cluster.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the cluster's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        backupCluster(com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBackupClusterMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -957,6 +1830,14 @@ public final class CloudRedisClusterGrpc {
   private static final int METHODID_DELETE_CLUSTER = 3;
   private static final int METHODID_CREATE_CLUSTER = 4;
   private static final int METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY = 5;
+  private static final int METHODID_RESCHEDULE_CLUSTER_MAINTENANCE = 6;
+  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 7;
+  private static final int METHODID_GET_BACKUP_COLLECTION = 8;
+  private static final int METHODID_LIST_BACKUPS = 9;
+  private static final int METHODID_GET_BACKUP = 10;
+  private static final int METHODID_DELETE_BACKUP = 11;
+  private static final int METHODID_EXPORT_BACKUP = 12;
+  private static final int METHODID_BACKUP_CLUSTER = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1010,6 +1891,52 @@ public final class CloudRedisClusterGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>)
                   responseObserver);
+          break;
+        case METHODID_RESCHEDULE_CLUSTER_MAINTENANCE:
+          serviceImpl.rescheduleClusterMaintenance(
+              (com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_COLLECTIONS:
+          serviceImpl.listBackupCollections(
+              (com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP_COLLECTION:
+          serviceImpl.getBackupCollection(
+              (com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.BackupCollection>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BACKUPS:
+          serviceImpl.listBackups(
+              (com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP:
+          serviceImpl.getBackup(
+              (com.google.cloud.redis.cluster.v1beta1.GetBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.Backup>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP:
+          serviceImpl.deleteBackup(
+              (com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_BACKUP:
+          serviceImpl.exportBackup(
+              (com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BACKUP_CLUSTER:
+          serviceImpl.backupCluster(
+              (com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1067,6 +1994,58 @@ public final class CloudRedisClusterGrpc {
                     com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest,
                     com.google.cloud.redis.cluster.v1beta1.CertificateAuthority>(
                     service, METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY)))
+        .addMethod(
+            getRescheduleClusterMaintenanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_RESCHEDULE_CLUSTER_MAINTENANCE)))
+        .addMethod(
+            getListBackupCollectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest,
+                    com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse>(
+                    service, METHODID_LIST_BACKUP_COLLECTIONS)))
+        .addMethod(
+            getGetBackupCollectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest,
+                    com.google.cloud.redis.cluster.v1beta1.BackupCollection>(
+                    service, METHODID_GET_BACKUP_COLLECTION)))
+        .addMethod(
+            getListBackupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest,
+                    com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse>(
+                    service, METHODID_LIST_BACKUPS)))
+        .addMethod(
+            getGetBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.GetBackupRequest,
+                    com.google.cloud.redis.cluster.v1beta1.Backup>(service, METHODID_GET_BACKUP)))
+        .addMethod(
+            getDeleteBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP)))
+        .addMethod(
+            getExportBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_BACKUP)))
+        .addMethod(
+            getBackupClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BACKUP_CLUSTER)))
         .build();
   }
 
@@ -1124,6 +2103,14 @@ public final class CloudRedisClusterGrpc {
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getGetClusterCertificateAuthorityMethod())
+                      .addMethod(getRescheduleClusterMaintenanceMethod())
+                      .addMethod(getListBackupCollectionsMethod())
+                      .addMethod(getGetBackupCollectionMethod())
+                      .addMethod(getListBackupsMethod())
+                      .addMethod(getGetBackupMethod())
+                      .addMethod(getDeleteBackupMethod())
+                      .addMethod(getExportBackupMethod())
+                      .addMethod(getBackupClusterMethod())
                       .build();
         }
       }

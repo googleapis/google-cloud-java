@@ -50,6 +50,8 @@ import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
@@ -332,6 +334,16 @@ public abstract class BackupDRStub implements BackgroundResource {
 
   public UnaryCallable<TriggerBackupRequest, Operation> triggerBackupCallable() {
     throw new UnsupportedOperationException("Not implemented: triggerBackupCallable()");
+  }
+
+  public OperationCallable<InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: initializeServiceOperationCallable()");
+  }
+
+  public UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable() {
+    throw new UnsupportedOperationException("Not implemented: initializeServiceCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

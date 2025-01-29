@@ -19,6 +19,7 @@ package com.google.cloud.tpu.v2;
 import static com.google.cloud.tpu.v2.TpuClient.ListAcceleratorTypesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListNodesPagedResponse;
+import static com.google.cloud.tpu.v2.TpuClient.ListQueuedResourcesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -186,6 +187,51 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   public OperationCallSettings<UpdateNodeRequest, Node, OperationMetadata>
       updateNodeOperationSettings() {
     return ((TpuStubSettings) getStubSettings()).updateNodeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listQueuedResources. */
+  public PagedCallSettings<
+          ListQueuedResourcesRequest, ListQueuedResourcesResponse, ListQueuedResourcesPagedResponse>
+      listQueuedResourcesSettings() {
+    return ((TpuStubSettings) getStubSettings()).listQueuedResourcesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getQueuedResource. */
+  public UnaryCallSettings<GetQueuedResourceRequest, QueuedResource> getQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).getQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQueuedResource. */
+  public UnaryCallSettings<CreateQueuedResourceRequest, Operation> createQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).createQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQueuedResource. */
+  public OperationCallSettings<CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+      createQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).createQueuedResourceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQueuedResource. */
+  public UnaryCallSettings<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).deleteQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQueuedResource. */
+  public OperationCallSettings<DeleteQueuedResourceRequest, Empty, OperationMetadata>
+      deleteQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).deleteQueuedResourceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resetQueuedResource. */
+  public UnaryCallSettings<ResetQueuedResourceRequest, Operation> resetQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).resetQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resetQueuedResource. */
+  public OperationCallSettings<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).resetQueuedResourceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to generateServiceIdentity. */
@@ -413,6 +459,59 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     public OperationCallSettings.Builder<UpdateNodeRequest, Node, OperationMetadata>
         updateNodeOperationSettings() {
       return getStubSettingsBuilder().updateNodeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listQueuedResources. */
+    public PagedCallSettings.Builder<
+            ListQueuedResourcesRequest,
+            ListQueuedResourcesResponse,
+            ListQueuedResourcesPagedResponse>
+        listQueuedResourcesSettings() {
+      return getStubSettingsBuilder().listQueuedResourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getQueuedResource. */
+    public UnaryCallSettings.Builder<GetQueuedResourceRequest, QueuedResource>
+        getQueuedResourceSettings() {
+      return getStubSettingsBuilder().getQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQueuedResource. */
+    public UnaryCallSettings.Builder<CreateQueuedResourceRequest, Operation>
+        createQueuedResourceSettings() {
+      return getStubSettingsBuilder().createQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQueuedResource. */
+    public OperationCallSettings.Builder<
+            CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+        createQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().createQueuedResourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQueuedResource. */
+    public UnaryCallSettings.Builder<DeleteQueuedResourceRequest, Operation>
+        deleteQueuedResourceSettings() {
+      return getStubSettingsBuilder().deleteQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQueuedResource. */
+    public OperationCallSettings.Builder<DeleteQueuedResourceRequest, Empty, OperationMetadata>
+        deleteQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().deleteQueuedResourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resetQueuedResource. */
+    public UnaryCallSettings.Builder<ResetQueuedResourceRequest, Operation>
+        resetQueuedResourceSettings() {
+      return getStubSettingsBuilder().resetQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resetQueuedResource. */
+    public OperationCallSettings.Builder<
+            ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+        resetQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().resetQueuedResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateServiceIdentity. */

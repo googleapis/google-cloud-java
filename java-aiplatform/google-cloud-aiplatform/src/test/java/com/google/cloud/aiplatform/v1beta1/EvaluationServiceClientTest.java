@@ -108,6 +108,7 @@ public class EvaluationServiceClientTest {
     EvaluateInstancesRequest request =
         EvaluateInstancesRequest.newBuilder()
             .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setAutoraterConfig(AutoraterConfig.newBuilder().build())
             .build();
 
     EvaluateInstancesResponse actualResponse = client.evaluateInstances(request);
@@ -158,6 +159,8 @@ public class EvaluationServiceClientTest {
         request.getToolParameterKeyMatchInput(), actualRequest.getToolParameterKeyMatchInput());
     Assert.assertEquals(
         request.getToolParameterKvMatchInput(), actualRequest.getToolParameterKvMatchInput());
+    Assert.assertEquals(request.getCometInput(), actualRequest.getCometInput());
+    Assert.assertEquals(request.getMetricxInput(), actualRequest.getMetricxInput());
     Assert.assertEquals(
         request.getTrajectoryExactMatchInput(), actualRequest.getTrajectoryExactMatchInput());
     Assert.assertEquals(
@@ -171,6 +174,7 @@ public class EvaluationServiceClientTest {
     Assert.assertEquals(
         request.getTrajectorySingleToolUseInput(), actualRequest.getTrajectorySingleToolUseInput());
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getAutoraterConfig(), actualRequest.getAutoraterConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -186,6 +190,7 @@ public class EvaluationServiceClientTest {
       EvaluateInstancesRequest request =
           EvaluateInstancesRequest.newBuilder()
               .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setAutoraterConfig(AutoraterConfig.newBuilder().build())
               .build();
       client.evaluateInstances(request);
       Assert.fail("No exception raised");

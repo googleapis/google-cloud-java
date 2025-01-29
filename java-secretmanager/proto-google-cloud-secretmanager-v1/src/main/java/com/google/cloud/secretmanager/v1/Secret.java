@@ -1138,8 +1138,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The customer-managed encryption configuration of the Regionalised
-   * Secrets. If no configuration is provided, Google-managed default encryption
+   * Optional. The customer-managed encryption configuration of the regionalized
+   * secrets. If no configuration is provided, Google-managed default encryption
    * is used.
    *
    * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -1163,8 +1163,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The customer-managed encryption configuration of the Regionalised
-   * Secrets. If no configuration is provided, Google-managed default encryption
+   * Optional. The customer-managed encryption configuration of the regionalized
+   * secrets. If no configuration is provided, Google-managed default encryption
    * is used.
    *
    * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -1191,8 +1191,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The customer-managed encryption configuration of the Regionalised
-   * Secrets. If no configuration is provided, Google-managed default encryption
+   * Optional. The customer-managed encryption configuration of the regionalized
+   * secrets. If no configuration is provided, Google-managed default encryption
    * is used.
    *
    * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -4806,8 +4806,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -4830,8 +4830,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -4861,8 +4861,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -4894,8 +4894,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -4924,8 +4924,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -4964,8 +4964,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -4993,8 +4993,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -5018,8 +5018,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption
@@ -5047,8 +5047,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The customer-managed encryption configuration of the Regionalised
-     * Secrets. If no configuration is provided, Google-managed default encryption
+     * Optional. The customer-managed encryption configuration of the regionalized
+     * secrets. If no configuration is provided, Google-managed default encryption
      * is used.
      *
      * Updates to the [Secret][google.cloud.secretmanager.v1.Secret] encryption

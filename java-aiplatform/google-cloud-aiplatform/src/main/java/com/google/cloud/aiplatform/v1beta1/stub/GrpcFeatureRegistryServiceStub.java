@@ -63,6 +63,8 @@ import com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -245,6 +247,17 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                   ProtoUtils.marshaller(ListFeatureMonitorsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateFeatureMonitorRequest, Operation>
+      updateFeatureMonitorMethodDescriptor =
+          MethodDescriptor.<UpdateFeatureMonitorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureRegistryService/UpdateFeatureMonitor")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateFeatureMonitorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteFeatureMonitorRequest, Operation>
       deleteFeatureMonitorMethodDescriptor =
           MethodDescriptor.<DeleteFeatureMonitorRequest, Operation>newBuilder()
@@ -382,6 +395,10 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
       listFeatureMonitorsCallable;
   private final UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsPagedResponse>
       listFeatureMonitorsPagedCallable;
+  private final UnaryCallable<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorCallable;
+  private final OperationCallable<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationCallable;
   private final UnaryCallable<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorCallable;
   private final OperationCallable<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
       deleteFeatureMonitorOperationCallable;
@@ -589,6 +606,18 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorTransportSettings =
+        GrpcCallSettings.<UpdateFeatureMonitorRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateFeatureMonitorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "feature_monitor.name",
+                      String.valueOf(request.getFeatureMonitor().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorTransportSettings =
         GrpcCallSettings.<DeleteFeatureMonitorRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteFeatureMonitorMethodDescriptor)
@@ -804,6 +833,17 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
             listFeatureMonitorsTransportSettings,
             settings.listFeatureMonitorsSettings(),
             clientContext);
+    this.updateFeatureMonitorCallable =
+        callableFactory.createUnaryCallable(
+            updateFeatureMonitorTransportSettings,
+            settings.updateFeatureMonitorSettings(),
+            clientContext);
+    this.updateFeatureMonitorOperationCallable =
+        callableFactory.createOperationCallable(
+            updateFeatureMonitorTransportSettings,
+            settings.updateFeatureMonitorOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteFeatureMonitorCallable =
         callableFactory.createUnaryCallable(
             deleteFeatureMonitorTransportSettings,
@@ -1005,6 +1045,18 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   public UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsPagedResponse>
       listFeatureMonitorsPagedCallable() {
     return listFeatureMonitorsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorCallable() {
+    return updateFeatureMonitorCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationCallable() {
+    return updateFeatureMonitorOperationCallable;
   }
 
   @Override

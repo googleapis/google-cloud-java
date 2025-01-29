@@ -212,6 +212,58 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest,
+          com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>
+      getListModelVersionCheckpointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListModelVersionCheckpoints",
+      requestType = com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest,
+          com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>
+      getListModelVersionCheckpointsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest,
+            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>
+        getListModelVersionCheckpointsMethod;
+    if ((getListModelVersionCheckpointsMethod =
+            ModelServiceGrpc.getListModelVersionCheckpointsMethod)
+        == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getListModelVersionCheckpointsMethod =
+                ModelServiceGrpc.getListModelVersionCheckpointsMethod)
+            == null) {
+          ModelServiceGrpc.getListModelVersionCheckpointsMethod =
+              getListModelVersionCheckpointsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest,
+                          com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListModelVersionCheckpoints"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("ListModelVersionCheckpoints"))
+                      .build();
+        }
+      }
+    }
+    return getListModelVersionCheckpointsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.UpdateModelRequest, com.google.cloud.aiplatform.v1.Model>
       getUpdateModelMethod;
 
@@ -982,6 +1034,22 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    default void listModelVersionCheckpoints(
+        com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListModelVersionCheckpointsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Model.
      * </pre>
      */
@@ -1295,6 +1363,24 @@ public final class ModelServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListModelVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public void listModelVersionCheckpoints(
+        com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListModelVersionCheckpointsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1626,6 +1712,20 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse
+        listModelVersionCheckpoints(
+            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelVersionCheckpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Model.
      * </pre>
      */
@@ -1904,6 +2004,21 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Lists checkpoints of the specified model version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>
+        listModelVersionCheckpoints(
+            com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListModelVersionCheckpointsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Model.
      * </pre>
      */
@@ -2120,20 +2235,21 @@ public final class ModelServiceGrpc {
   private static final int METHODID_GET_MODEL = 1;
   private static final int METHODID_LIST_MODELS = 2;
   private static final int METHODID_LIST_MODEL_VERSIONS = 3;
-  private static final int METHODID_UPDATE_MODEL = 4;
-  private static final int METHODID_UPDATE_EXPLANATION_DATASET = 5;
-  private static final int METHODID_DELETE_MODEL = 6;
-  private static final int METHODID_DELETE_MODEL_VERSION = 7;
-  private static final int METHODID_MERGE_VERSION_ALIASES = 8;
-  private static final int METHODID_EXPORT_MODEL = 9;
-  private static final int METHODID_COPY_MODEL = 10;
-  private static final int METHODID_IMPORT_MODEL_EVALUATION = 11;
-  private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 12;
-  private static final int METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS = 13;
-  private static final int METHODID_GET_MODEL_EVALUATION = 14;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 15;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 16;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 17;
+  private static final int METHODID_LIST_MODEL_VERSION_CHECKPOINTS = 4;
+  private static final int METHODID_UPDATE_MODEL = 5;
+  private static final int METHODID_UPDATE_EXPLANATION_DATASET = 6;
+  private static final int METHODID_DELETE_MODEL = 7;
+  private static final int METHODID_DELETE_MODEL_VERSION = 8;
+  private static final int METHODID_MERGE_VERSION_ALIASES = 9;
+  private static final int METHODID_EXPORT_MODEL = 10;
+  private static final int METHODID_COPY_MODEL = 11;
+  private static final int METHODID_IMPORT_MODEL_EVALUATION = 12;
+  private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 13;
+  private static final int METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS = 14;
+  private static final int METHODID_GET_MODEL_EVALUATION = 15;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 16;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 17;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2173,6 +2289,13 @@ public final class ModelServiceGrpc {
               (com.google.cloud.aiplatform.v1.ListModelVersionsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1.ListModelVersionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_MODEL_VERSION_CHECKPOINTS:
+          serviceImpl.listModelVersionCheckpoints(
+              (com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>)
                   responseObserver);
           break;
         case METHODID_UPDATE_MODEL:
@@ -2300,6 +2423,13 @@ public final class ModelServiceGrpc {
                     com.google.cloud.aiplatform.v1.ListModelVersionsRequest,
                     com.google.cloud.aiplatform.v1.ListModelVersionsResponse>(
                     service, METHODID_LIST_MODEL_VERSIONS)))
+        .addMethod(
+            getListModelVersionCheckpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest,
+                    com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse>(
+                    service, METHODID_LIST_MODEL_VERSION_CHECKPOINTS)))
         .addMethod(
             getUpdateModelMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2447,6 +2577,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getGetModelMethod())
                       .addMethod(getListModelsMethod())
                       .addMethod(getListModelVersionsMethod())
+                      .addMethod(getListModelVersionCheckpointsMethod())
                       .addMethod(getUpdateModelMethod())
                       .addMethod(getUpdateExplanationDatasetMethod())
                       .addMethod(getDeleteModelMethod())

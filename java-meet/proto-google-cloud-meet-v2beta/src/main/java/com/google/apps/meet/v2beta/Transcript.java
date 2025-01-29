@@ -23,7 +23,6 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * [Developer Preview](https://developers.google.com/workspace/preview).
  * Metadata for a transcript generated from a conference. It refers to the ASR
  * (Automatic Speech Recognition) result of user's speech during the conference.
  * </pre>
@@ -768,7 +767,6 @@ public final class Transcript extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview).
    * Metadata for a transcript generated from a conference. It refers to the ASR
    * (Automatic Speech Recognition) result of user's speech during the conference.
    * </pre>

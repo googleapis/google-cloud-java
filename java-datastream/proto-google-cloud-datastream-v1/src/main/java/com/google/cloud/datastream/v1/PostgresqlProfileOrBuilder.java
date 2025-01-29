@@ -138,4 +138,54 @@ public interface PostgresqlProfileOrBuilder
    * @return The bytes for database.
    */
   com.google.protobuf.ByteString getDatabaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the PostgreSQL connection.
+   * In case PostgresqlSslConfig is not set, the connection will use the default
+   * SSL mode, which is `prefer` (i.e. this mode will only use encryption if
+   * enabled from database side, otherwise will use unencrypted communication)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.PostgresqlSslConfig ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sslConfig field is set.
+   */
+  boolean hasSslConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the PostgreSQL connection.
+   * In case PostgresqlSslConfig is not set, the connection will use the default
+   * SSL mode, which is `prefer` (i.e. this mode will only use encryption if
+   * enabled from database side, otherwise will use unencrypted communication)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.PostgresqlSslConfig ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sslConfig.
+   */
+  com.google.cloud.datastream.v1.PostgresqlSslConfig getSslConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the PostgreSQL connection.
+   * In case PostgresqlSslConfig is not set, the connection will use the default
+   * SSL mode, which is `prefer` (i.e. this mode will only use encryption if
+   * enabled from database side, otherwise will use unencrypted communication)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.PostgresqlSslConfig ssl_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.PostgresqlSslConfigOrBuilder getSslConfigOrBuilder();
 }

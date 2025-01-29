@@ -153,7 +153,13 @@ public final class ListConferenceRecordsRequest extends com.google.protobuf.Gene
    * * `start_time`
    * * `end_time`
    *
-   * For example, `space.meeting_code = "abc-mnop-xyz"`.
+   * For example, consider the following filters:
+   *
+   * * `space.name = "spaces/NAME"`
+   * * `space.meeting_code = "abc-mnop-xyz"`
+   * * `start_time&gt;="2024-01-01T00:00:00.000Z" AND
+   * start_time&lt;="2024-01-02T00:00:00.000Z"`
+   * * `end_time IS NULL`
    * </pre>
    *
    * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,7 +191,13 @@ public final class ListConferenceRecordsRequest extends com.google.protobuf.Gene
    * * `start_time`
    * * `end_time`
    *
-   * For example, `space.meeting_code = "abc-mnop-xyz"`.
+   * For example, consider the following filters:
+   *
+   * * `space.name = "spaces/NAME"`
+   * * `space.meeting_code = "abc-mnop-xyz"`
+   * * `start_time&gt;="2024-01-01T00:00:00.000Z" AND
+   * start_time&lt;="2024-01-02T00:00:00.000Z"`
+   * * `end_time IS NULL`
    * </pre>
    *
    * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -775,7 +787,13 @@ public final class ListConferenceRecordsRequest extends com.google.protobuf.Gene
      * * `start_time`
      * * `end_time`
      *
-     * For example, `space.meeting_code = "abc-mnop-xyz"`.
+     * For example, consider the following filters:
+     *
+     * * `space.name = "spaces/NAME"`
+     * * `space.meeting_code = "abc-mnop-xyz"`
+     * * `start_time&gt;="2024-01-01T00:00:00.000Z" AND
+     * start_time&lt;="2024-01-02T00:00:00.000Z"`
+     * * `end_time IS NULL`
      * </pre>
      *
      * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -806,7 +824,13 @@ public final class ListConferenceRecordsRequest extends com.google.protobuf.Gene
      * * `start_time`
      * * `end_time`
      *
-     * For example, `space.meeting_code = "abc-mnop-xyz"`.
+     * For example, consider the following filters:
+     *
+     * * `space.name = "spaces/NAME"`
+     * * `space.meeting_code = "abc-mnop-xyz"`
+     * * `start_time&gt;="2024-01-01T00:00:00.000Z" AND
+     * start_time&lt;="2024-01-02T00:00:00.000Z"`
+     * * `end_time IS NULL`
      * </pre>
      *
      * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -837,7 +861,13 @@ public final class ListConferenceRecordsRequest extends com.google.protobuf.Gene
      * * `start_time`
      * * `end_time`
      *
-     * For example, `space.meeting_code = "abc-mnop-xyz"`.
+     * For example, consider the following filters:
+     *
+     * * `space.name = "spaces/NAME"`
+     * * `space.meeting_code = "abc-mnop-xyz"`
+     * * `start_time&gt;="2024-01-01T00:00:00.000Z" AND
+     * start_time&lt;="2024-01-02T00:00:00.000Z"`
+     * * `end_time IS NULL`
      * </pre>
      *
      * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -867,7 +897,13 @@ public final class ListConferenceRecordsRequest extends com.google.protobuf.Gene
      * * `start_time`
      * * `end_time`
      *
-     * For example, `space.meeting_code = "abc-mnop-xyz"`.
+     * For example, consider the following filters:
+     *
+     * * `space.name = "spaces/NAME"`
+     * * `space.meeting_code = "abc-mnop-xyz"`
+     * * `start_time&gt;="2024-01-01T00:00:00.000Z" AND
+     * start_time&lt;="2024-01-02T00:00:00.000Z"`
+     * * `end_time IS NULL`
      * </pre>
      *
      * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,7 +929,13 @@ public final class ListConferenceRecordsRequest extends com.google.protobuf.Gene
      * * `start_time`
      * * `end_time`
      *
-     * For example, `space.meeting_code = "abc-mnop-xyz"`.
+     * For example, consider the following filters:
+     *
+     * * `space.name = "spaces/NAME"`
+     * * `space.meeting_code = "abc-mnop-xyz"`
+     * * `start_time&gt;="2024-01-01T00:00:00.000Z" AND
+     * start_time&lt;="2024-01-02T00:00:00.000Z"`
+     * * `end_time IS NULL`
      * </pre>
      *
      * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

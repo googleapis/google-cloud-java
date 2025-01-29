@@ -155,7 +155,7 @@ public enum AuthorizationMode implements com.google.protobuf.ProtocolMessageEnum
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.redis.cluster.v1.CloudRedisClusterProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final AuthorizationMode[] VALUES = values();

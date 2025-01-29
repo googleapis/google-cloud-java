@@ -1,0 +1,57 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.parametermanager.v1",
+  "libraryPackage": "com.google.cloud.parametermanager.v1",
+  "services": {
+    "ParameterManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ParameterManagerClient",
+          "rpcs": {
+            "CreateParameter": {
+              "methods": ["createParameter", "createParameter", "createParameter", "createParameterCallable"]
+            },
+            "CreateParameterVersion": {
+              "methods": ["createParameterVersion", "createParameterVersion", "createParameterVersion", "createParameterVersionCallable"]
+            },
+            "DeleteParameter": {
+              "methods": ["deleteParameter", "deleteParameter", "deleteParameter", "deleteParameterCallable"]
+            },
+            "DeleteParameterVersion": {
+              "methods": ["deleteParameterVersion", "deleteParameterVersion", "deleteParameterVersion", "deleteParameterVersionCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetParameter": {
+              "methods": ["getParameter", "getParameter", "getParameter", "getParameterCallable"]
+            },
+            "GetParameterVersion": {
+              "methods": ["getParameterVersion", "getParameterVersion", "getParameterVersion", "getParameterVersionCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListParameterVersions": {
+              "methods": ["listParameterVersions", "listParameterVersions", "listParameterVersions", "listParameterVersionsPagedCallable", "listParameterVersionsCallable"]
+            },
+            "ListParameters": {
+              "methods": ["listParameters", "listParameters", "listParameters", "listParametersPagedCallable", "listParametersCallable"]
+            },
+            "RenderParameterVersion": {
+              "methods": ["renderParameterVersion", "renderParameterVersion", "renderParameterVersion", "renderParameterVersionCallable"]
+            },
+            "UpdateParameter": {
+              "methods": ["updateParameter", "updateParameter", "updateParameterCallable"]
+            },
+            "UpdateParameterVersion": {
+              "methods": ["updateParameterVersion", "updateParameterVersion", "updateParameterVersionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -182,12 +182,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A custom emoji.
+   * A custom emoji.
    * </pre>
    *
-   * <code>
-   * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
    *
    * @return Whether the customEmoji field is set.
    */
@@ -199,12 +197,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A custom emoji.
+   * A custom emoji.
    * </pre>
    *
-   * <code>
-   * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
    *
    * @return The customEmoji.
    */
@@ -219,12 +215,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A custom emoji.
+   * A custom emoji.
    * </pre>
    *
-   * <code>
-   * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
    */
   @java.lang.Override
   public com.google.chat.v1.CustomEmojiOrBuilder getCustomEmojiOrBuilder() {
@@ -784,12 +778,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      *
      * @return Whether the customEmoji field is set.
      */
@@ -801,12 +793,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      *
      * @return The customEmoji.
      */
@@ -828,12 +818,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      */
     public Builder setCustomEmoji(com.google.chat.v1.CustomEmoji value) {
       if (customEmojiBuilder_ == null) {
@@ -852,12 +840,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      */
     public Builder setCustomEmoji(com.google.chat.v1.CustomEmoji.Builder builderForValue) {
       if (customEmojiBuilder_ == null) {
@@ -873,12 +859,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      */
     public Builder mergeCustomEmoji(com.google.chat.v1.CustomEmoji value) {
       if (customEmojiBuilder_ == null) {
@@ -905,12 +889,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      */
     public Builder clearCustomEmoji() {
       if (customEmojiBuilder_ == null) {
@@ -932,12 +914,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      */
     public com.google.chat.v1.CustomEmoji.Builder getCustomEmojiBuilder() {
       return getCustomEmojiFieldBuilder().getBuilder();
@@ -946,12 +926,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      */
     @java.lang.Override
     public com.google.chat.v1.CustomEmojiOrBuilder getCustomEmojiOrBuilder() {
@@ -968,12 +946,10 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A custom emoji.
+     * A custom emoji.
      * </pre>
      *
-     * <code>
-     * .google.chat.v1.CustomEmoji custom_emoji = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.chat.v1.CustomEmoji custom_emoji = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.chat.v1.CustomEmoji,

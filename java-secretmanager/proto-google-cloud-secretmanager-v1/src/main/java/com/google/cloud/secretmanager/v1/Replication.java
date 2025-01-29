@@ -1073,7 +1073,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A replication policy that replicates the
    * [Secret][google.cloud.secretmanager.v1.Secret] payload into the locations
-   * specified in [Secret.replication.user_managed.replicas][]
+   * specified in
+   * [Replication.UserManaged.replicas][google.cloud.secretmanager.v1.Replication.UserManaged.replicas]
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.Replication.UserManaged}
@@ -2532,7 +2533,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A replication policy that replicates the
      * [Secret][google.cloud.secretmanager.v1.Secret] payload into the locations
-     * specified in [Secret.replication.user_managed.replicas][]
+     * specified in
+     * [Replication.UserManaged.replicas][google.cloud.secretmanager.v1.Replication.UserManaged.replicas]
      * </pre>
      *
      * Protobuf type {@code google.cloud.secretmanager.v1.Replication.UserManaged}

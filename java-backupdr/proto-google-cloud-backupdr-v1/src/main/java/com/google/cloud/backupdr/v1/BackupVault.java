@@ -298,7 +298,8 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access restriction not set.
+     * Access restriction not set. If user does not provide any value or pass
+     * this value, it will be changed to WITHIN_ORGANIZATION.
      * </pre>
      *
      * <code>ACCESS_RESTRICTION_UNSPECIFIED = 0;</code>
@@ -335,6 +336,17 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * <code>UNRESTRICTED = 3;</code>
      */
     UNRESTRICTED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Access to or from resources outside your current organization will be
+     * denied except for backup appliance.
+     * </pre>
+     *
+     * <code>WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA = 4;</code>
+     */
+    WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -342,7 +354,8 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access restriction not set.
+     * Access restriction not set. If user does not provide any value or pass
+     * this value, it will be changed to WITHIN_ORGANIZATION.
      * </pre>
      *
      * <code>ACCESS_RESTRICTION_UNSPECIFIED = 0;</code>
@@ -379,6 +392,17 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * <code>UNRESTRICTED = 3;</code>
      */
     public static final int UNRESTRICTED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Access to or from resources outside your current organization will be
+     * denied except for backup appliance.
+     * </pre>
+     *
+     * <code>WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA = 4;</code>
+     */
+    public static final int WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -412,6 +436,8 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
           return WITHIN_ORGANIZATION;
         case 3:
           return UNRESTRICTED;
+        case 4:
+          return WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA;
         default:
           return null;
       }
@@ -1169,8 +1195,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Output only
-   * Immutable after resource creation until resource deletion.
+   * Output only. Immutable after resource creation until resource deletion.
    * </pre>
    *
    * <code>
@@ -1195,8 +1220,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Output only
-   * Immutable after resource creation until resource deletion.
+   * Output only. Immutable after resource creation until resource deletion.
    * </pre>
    *
    * <code>
@@ -1338,8 +1362,6 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
    * Optional. Note: This field is added for future use case and will not be
    * supported in the current release.
    *
-   * Optional.
-   *
    * Access restriction for the backup vault.
    * Default value is WITHIN_ORGANIZATION if not provided during creation.
    * </pre>
@@ -1360,8 +1382,6 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Note: This field is added for future use case and will not be
    * supported in the current release.
-   *
-   * Optional.
    *
    * Access restriction for the backup vault.
    * Default value is WITHIN_ORGANIZATION if not provided during creation.
@@ -3982,8 +4002,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Output only
-     * Immutable after resource creation until resource deletion.
+     * Output only. Immutable after resource creation until resource deletion.
      * </pre>
      *
      * <code>
@@ -4007,8 +4026,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Output only
-     * Immutable after resource creation until resource deletion.
+     * Output only. Immutable after resource creation until resource deletion.
      * </pre>
      *
      * <code>
@@ -4032,8 +4050,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Output only
-     * Immutable after resource creation until resource deletion.
+     * Output only. Immutable after resource creation until resource deletion.
      * </pre>
      *
      * <code>
@@ -4056,8 +4073,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Output only
-     * Immutable after resource creation until resource deletion.
+     * Output only. Immutable after resource creation until resource deletion.
      * </pre>
      *
      * <code>
@@ -4076,8 +4092,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Output only
-     * Immutable after resource creation until resource deletion.
+     * Output only. Immutable after resource creation until resource deletion.
      * </pre>
      *
      * <code>
@@ -4286,8 +4301,6 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * Optional. Note: This field is added for future use case and will not be
      * supported in the current release.
      *
-     * Optional.
-     *
      * Access restriction for the backup vault.
      * Default value is WITHIN_ORGANIZATION if not provided during creation.
      * </pre>
@@ -4308,8 +4321,6 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Note: This field is added for future use case and will not be
      * supported in the current release.
-     *
-     * Optional.
      *
      * Access restriction for the backup vault.
      * Default value is WITHIN_ORGANIZATION if not provided during creation.
@@ -4335,8 +4346,6 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * Optional. Note: This field is added for future use case and will not be
      * supported in the current release.
      *
-     * Optional.
-     *
      * Access restriction for the backup vault.
      * Default value is WITHIN_ORGANIZATION if not provided during creation.
      * </pre>
@@ -4361,8 +4370,6 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Note: This field is added for future use case and will not be
      * supported in the current release.
-     *
-     * Optional.
      *
      * Access restriction for the backup vault.
      * Default value is WITHIN_ORGANIZATION if not provided during creation.
@@ -4391,8 +4398,6 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Note: This field is added for future use case and will not be
      * supported in the current release.
-     *
-     * Optional.
      *
      * Access restriction for the backup vault.
      * Default value is WITHIN_ORGANIZATION if not provided during creation.

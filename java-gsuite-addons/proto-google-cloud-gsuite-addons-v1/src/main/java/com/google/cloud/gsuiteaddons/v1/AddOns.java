@@ -23,7 +23,7 @@ package com.google.cloud.gsuiteaddons.v1;
  *
  *
  * <pre>
- * A Google Workspace Add-on configuration.
+ * A Google Workspace add-on configuration.
  * </pre>
  *
  * Protobuf type {@code google.cloud.gsuiteaddons.v1.AddOns}
@@ -68,7 +68,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration that is common across all Google Workspace Add-ons.
+   * Configuration that is common across all Google Workspace add-ons.
    * </pre>
    *
    * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -83,7 +83,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration that is common across all Google Workspace Add-ons.
+   * Configuration that is common across all Google Workspace add-ons.
    * </pre>
    *
    * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -100,7 +100,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration that is common across all Google Workspace Add-ons.
+   * Configuration that is common across all Google Workspace add-ons.
    * </pre>
    *
    * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -728,7 +728,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Workspace Add-on configuration.
+   * A Google Workspace add-on configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.gsuiteaddons.v1.AddOns}
@@ -1064,7 +1064,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1078,7 +1078,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1098,7 +1098,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1120,7 +1120,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1140,7 +1140,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1167,7 +1167,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1186,7 +1186,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1200,7 +1200,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>
@@ -1218,7 +1218,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that is common across all Google Workspace Add-ons.
+     * Configuration that is common across all Google Workspace add-ons.
      * </pre>
      *
      * <code>.google.apps.script.type.CommonAddOnManifest common = 1;</code>

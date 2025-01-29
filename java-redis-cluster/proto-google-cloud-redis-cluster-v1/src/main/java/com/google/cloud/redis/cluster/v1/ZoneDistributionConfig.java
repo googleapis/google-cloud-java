@@ -69,9 +69,6 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Defines various modes of zone distribution.
-   * Currently supports two modes, can be expanded in future to support more
-   * types of distribution modes.
-   * design doc: go/same-zone-cluster
    * </pre>
    *
    * Protobuf enum {@code google.cloud.redis.cluster.v1.ZoneDistributionConfig.ZoneDistributionMode}

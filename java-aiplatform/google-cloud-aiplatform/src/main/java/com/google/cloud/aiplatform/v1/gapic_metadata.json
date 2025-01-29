@@ -476,6 +476,45 @@
         }
       }
     },
+    "GenAiCacheService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenAiCacheServiceClient",
+          "rpcs": {
+            "CreateCachedContent": {
+              "methods": ["createCachedContent", "createCachedContent", "createCachedContent", "createCachedContentCallable"]
+            },
+            "DeleteCachedContent": {
+              "methods": ["deleteCachedContent", "deleteCachedContent", "deleteCachedContent", "deleteCachedContentCallable"]
+            },
+            "GetCachedContent": {
+              "methods": ["getCachedContent", "getCachedContent", "getCachedContent", "getCachedContentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCachedContents": {
+              "methods": ["listCachedContents", "listCachedContents", "listCachedContents", "listCachedContentsPagedCallable", "listCachedContentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateCachedContent": {
+              "methods": ["updateCachedContent", "updateCachedContent", "updateCachedContentCallable"]
+            }
+          }
+        }
+      }
+    },
     "GenAiTuningService": {
       "clients": {
         "grpc": {
@@ -1024,6 +1063,9 @@
             "ListModelEvaluations": {
               "methods": ["listModelEvaluations", "listModelEvaluations", "listModelEvaluations", "listModelEvaluationsPagedCallable", "listModelEvaluationsCallable"]
             },
+            "ListModelVersionCheckpoints": {
+              "methods": ["listModelVersionCheckpoints", "listModelVersionCheckpoints", "listModelVersionCheckpoints", "listModelVersionCheckpointsPagedCallable", "listModelVersionCheckpointsCallable"]
+            },
             "ListModelVersions": {
               "methods": ["listModelVersions", "listModelVersions", "listModelVersions", "listModelVersionsPagedCallable", "listModelVersionsCallable"]
             },
@@ -1284,6 +1326,75 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReasoningEngineExecutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReasoningEngineExecutionServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryReasoningEngine": {
+              "methods": ["queryReasoningEngine", "queryReasoningEngineCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamQueryReasoningEngine": {
+              "methods": ["streamQueryReasoningEngineCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReasoningEngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReasoningEngineServiceClient",
+          "rpcs": {
+            "CreateReasoningEngine": {
+              "methods": ["createReasoningEngineAsync", "createReasoningEngineAsync", "createReasoningEngineAsync", "createReasoningEngineOperationCallable", "createReasoningEngineCallable"]
+            },
+            "DeleteReasoningEngine": {
+              "methods": ["deleteReasoningEngineAsync", "deleteReasoningEngineAsync", "deleteReasoningEngineAsync", "deleteReasoningEngineOperationCallable", "deleteReasoningEngineCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetReasoningEngine": {
+              "methods": ["getReasoningEngine", "getReasoningEngine", "getReasoningEngine", "getReasoningEngineCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListReasoningEngines": {
+              "methods": ["listReasoningEngines", "listReasoningEngines", "listReasoningEngines", "listReasoningEnginesPagedCallable", "listReasoningEnginesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateReasoningEngine": {
+              "methods": ["updateReasoningEngineAsync", "updateReasoningEngineAsync", "updateReasoningEngineOperationCallable", "updateReasoningEngineCallable"]
             }
           }
         }

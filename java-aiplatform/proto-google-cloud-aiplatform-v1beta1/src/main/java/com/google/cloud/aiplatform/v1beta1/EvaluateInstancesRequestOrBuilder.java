@@ -937,6 +937,79 @@ public interface EvaluateInstancesRequestOrBuilder
    *
    *
    * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometInput comet_input = 31;</code>
+   *
+   * @return Whether the cometInput field is set.
+   */
+  boolean hasCometInput();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometInput comet_input = 31;</code>
+   *
+   * @return The cometInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.CometInput getCometInput();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Input for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometInput comet_input = 31;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CometInputOrBuilder getCometInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxInput metricx_input = 32;</code>
+   *
+   * @return Whether the metricxInput field is set.
+   */
+  boolean hasMetricxInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxInput metricx_input = 32;</code>
+   *
+   * @return The metricxInput.
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricxInput getMetricxInput();
+  /**
+   *
+   *
+   * <pre>
+   * Input for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxInput metricx_input = 32;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricxInputOrBuilder getMetricxInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Input for trajectory exact match metric.
    * </pre>
    *
@@ -1214,6 +1287,47 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autorater config used for evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AutoraterConfig autorater_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoraterConfig field is set.
+   */
+  boolean hasAutoraterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autorater config used for evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AutoraterConfig autorater_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoraterConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.AutoraterConfig getAutoraterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Autorater config used for evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.AutoraterConfig autorater_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.AutoraterConfigOrBuilder getAutoraterConfigOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest.MetricInputsCase
       getMetricInputsCase();

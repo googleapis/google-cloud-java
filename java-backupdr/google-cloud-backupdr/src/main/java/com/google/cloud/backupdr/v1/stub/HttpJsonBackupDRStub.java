@@ -63,6 +63,8 @@ import com.google.cloud.backupdr.v1.GetBackupRequest;
 import com.google.cloud.backupdr.v1.GetBackupVaultRequest;
 import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceRequest;
+import com.google.cloud.backupdr.v1.InitializeServiceResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlansRequest;
@@ -118,6 +120,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
           .add(OperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .add(BackupVault.getDescriptor())
+          .add(InitializeServiceResponse.getDescriptor())
           .add(Backup.getDescriptor())
           .add(DataSource.getDescriptor())
           .add(BackupPlan.getDescriptor())
@@ -515,6 +518,10 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(
+                                fields,
+                                "ignoreBackupPlanReferences",
+                                request.getIgnoreBackupPlanReferences());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
@@ -1196,6 +1203,46 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<InitializeServiceRequest, Operation>
+      initializeServiceMethodDescriptor =
+          ApiMethodDescriptor.<InitializeServiceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/InitializeService")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<InitializeServiceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/serviceConfig}:initialize",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InitializeServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InitializeServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (InitializeServiceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1456,6 +1503,10 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private final UnaryCallable<TriggerBackupRequest, Operation> triggerBackupCallable;
   private final OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationCallable;
+  private final UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable;
+  private final OperationCallable<
+          InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1849,6 +1900,17 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<InitializeServiceRequest, Operation> initializeServiceTransportSettings =
+        HttpJsonCallSettings.<InitializeServiceRequest, Operation>newBuilder()
+            .setMethodDescriptor(initializeServiceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2123,6 +2185,17 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             settings.triggerBackupOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.initializeServiceCallable =
+        callableFactory.createUnaryCallable(
+            initializeServiceTransportSettings,
+            settings.initializeServiceSettings(),
+            clientContext);
+    this.initializeServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            initializeServiceTransportSettings,
+            settings.initializeServiceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2178,6 +2251,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(listBackupPlanAssociationsMethodDescriptor);
     methodDescriptors.add(deleteBackupPlanAssociationMethodDescriptor);
     methodDescriptors.add(triggerBackupMethodDescriptor);
+    methodDescriptors.add(initializeServiceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2456,6 +2530,17 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   public OperationCallable<TriggerBackupRequest, BackupPlanAssociation, OperationMetadata>
       triggerBackupOperationCallable() {
     return triggerBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable() {
+    return initializeServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
+      initializeServiceOperationCallable() {
+    return initializeServiceOperationCallable;
   }
 
   @Override

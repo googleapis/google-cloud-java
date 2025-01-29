@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
@@ -154,6 +155,15 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
           ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
       listModelVersionsSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).listModelVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listModelVersionCheckpoints. */
+  public PagedCallSettings<
+          ListModelVersionCheckpointsRequest,
+          ListModelVersionCheckpointsResponse,
+          ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).listModelVersionCheckpointsSettings();
   }
 
   /** Returns the object with the settings used for calls to updateModel. */
@@ -429,6 +439,15 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
             ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
         listModelVersionsSettings() {
       return getStubSettingsBuilder().listModelVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listModelVersionCheckpoints. */
+    public PagedCallSettings.Builder<
+            ListModelVersionCheckpointsRequest,
+            ListModelVersionCheckpointsResponse,
+            ListModelVersionCheckpointsPagedResponse>
+        listModelVersionCheckpointsSettings() {
+      return getStubSettingsBuilder().listModelVersionCheckpointsSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateModel. */

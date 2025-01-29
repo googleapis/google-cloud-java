@@ -23,7 +23,7 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * Request to get a Participant.
+ * Request to get a participant.
  * </pre>
  *
  * Protobuf type {@code google.apps.meet.v2beta.GetParticipantRequest}
@@ -281,7 +281,7 @@ public final class GetParticipantRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request to get a Participant.
+   * Request to get a participant.
    * </pre>
    *
    * Protobuf type {@code google.apps.meet.v2beta.GetParticipantRequest}

@@ -13,8 +13,14 @@
             "CreateNode": {
               "methods": ["createNodeAsync", "createNodeAsync", "createNodeAsync", "createNodeOperationCallable", "createNodeCallable"]
             },
+            "CreateQueuedResource": {
+              "methods": ["createQueuedResourceAsync", "createQueuedResourceAsync", "createQueuedResourceAsync", "createQueuedResourceOperationCallable", "createQueuedResourceCallable"]
+            },
             "DeleteNode": {
               "methods": ["deleteNodeAsync", "deleteNodeAsync", "deleteNodeAsync", "deleteNodeOperationCallable", "deleteNodeCallable"]
+            },
+            "DeleteQueuedResource": {
+              "methods": ["deleteQueuedResourceAsync", "deleteQueuedResourceAsync", "deleteQueuedResourceAsync", "deleteQueuedResourceOperationCallable", "deleteQueuedResourceCallable"]
             },
             "GenerateServiceIdentity": {
               "methods": ["generateServiceIdentity", "generateServiceIdentityCallable"]
@@ -31,6 +37,9 @@
             "GetNode": {
               "methods": ["getNode", "getNode", "getNode", "getNodeCallable"]
             },
+            "GetQueuedResource": {
+              "methods": ["getQueuedResource", "getQueuedResource", "getQueuedResource", "getQueuedResourceCallable"]
+            },
             "GetRuntimeVersion": {
               "methods": ["getRuntimeVersion", "getRuntimeVersion", "getRuntimeVersion", "getRuntimeVersionCallable"]
             },
@@ -43,8 +52,14 @@
             "ListNodes": {
               "methods": ["listNodes", "listNodes", "listNodes", "listNodesPagedCallable", "listNodesCallable"]
             },
+            "ListQueuedResources": {
+              "methods": ["listQueuedResources", "listQueuedResources", "listQueuedResources", "listQueuedResourcesPagedCallable", "listQueuedResourcesCallable"]
+            },
             "ListRuntimeVersions": {
               "methods": ["listRuntimeVersions", "listRuntimeVersions", "listRuntimeVersions", "listRuntimeVersionsPagedCallable", "listRuntimeVersionsCallable"]
+            },
+            "ResetQueuedResource": {
+              "methods": ["resetQueuedResourceAsync", "resetQueuedResourceAsync", "resetQueuedResourceAsync", "resetQueuedResourceOperationCallable", "resetQueuedResourceCallable"]
             },
             "StartNode": {
               "methods": ["startNodeAsync", "startNodeOperationCallable", "startNodeCallable"]

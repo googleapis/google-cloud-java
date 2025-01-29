@@ -20,6 +20,7 @@ import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedR
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListReservationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -72,11 +73,16 @@ import com.google.cloud.tpu.v2alpha1.ListNodesRequest;
 import com.google.cloud.tpu.v2alpha1.ListNodesResponse;
 import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesRequest;
 import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesResponse;
+import com.google.cloud.tpu.v2alpha1.ListReservationsRequest;
+import com.google.cloud.tpu.v2alpha1.ListReservationsResponse;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
+import com.google.cloud.tpu.v2alpha1.PerformMaintenanceQueuedResourceRequest;
+import com.google.cloud.tpu.v2alpha1.PerformMaintenanceRequest;
 import com.google.cloud.tpu.v2alpha1.QueuedResource;
+import com.google.cloud.tpu.v2alpha1.Reservation;
 import com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
 import com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest;
@@ -193,6 +199,9 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
   private final UnaryCallSettings<UpdateNodeRequest, Operation> updateNodeSettings;
   private final OperationCallSettings<UpdateNodeRequest, Node, OperationMetadata>
       updateNodeOperationSettings;
+  private final UnaryCallSettings<PerformMaintenanceRequest, Operation> performMaintenanceSettings;
+  private final OperationCallSettings<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationSettings;
   private final PagedCallSettings<
           ListQueuedResourcesRequest, ListQueuedResourcesResponse, ListQueuedResourcesPagedResponse>
       listQueuedResourcesSettings;
@@ -212,6 +221,11 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       resetQueuedResourceSettings;
   private final OperationCallSettings<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
       resetQueuedResourceOperationSettings;
+  private final UnaryCallSettings<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceSettings;
+  private final OperationCallSettings<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationSettings;
   private final UnaryCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentitySettings;
   private final PagedCallSettings<
@@ -228,6 +242,9 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       getRuntimeVersionSettings;
   private final UnaryCallSettings<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesSettings;
+  private final PagedCallSettings<
+          ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+      listReservationsSettings;
   private final UnaryCallSettings<SimulateMaintenanceEventRequest, Operation>
       simulateMaintenanceEventSettings;
   private final OperationCallSettings<SimulateMaintenanceEventRequest, Node, OperationMetadata>
@@ -386,6 +403,44 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListReservationsRequest, ListReservationsResponse, Reservation>
+      LIST_RESERVATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReservationsRequest, ListReservationsResponse, Reservation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReservationsRequest injectToken(
+                ListReservationsRequest payload, String token) {
+              return ListReservationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReservationsRequest injectPageSize(
+                ListReservationsRequest payload, int pageSize) {
+              return ListReservationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReservationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReservationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Reservation> extractResources(ListReservationsResponse payload) {
+              return payload.getReservationsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -504,6 +559,25 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+      LIST_RESERVATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListReservationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReservationsRequest, ListReservationsResponse> callable,
+                ListReservationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReservationsResponse> futureResponse) {
+              PageContext<ListReservationsRequest, ListReservationsResponse, Reservation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESERVATIONS_PAGE_STR_DESC, request, context);
+              return ListReservationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -586,6 +660,17 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     return updateNodeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceRequest, Operation> performMaintenanceSettings() {
+    return performMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationSettings() {
+    return performMaintenanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listQueuedResources. */
   public PagedCallSettings<
           ListQueuedResourcesRequest, ListQueuedResourcesResponse, ListQueuedResourcesPagedResponse>
@@ -631,6 +716,19 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     return resetQueuedResourceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to performMaintenanceQueuedResource. */
+  public UnaryCallSettings<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceSettings() {
+    return performMaintenanceQueuedResourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenanceQueuedResource. */
+  public OperationCallSettings<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationSettings() {
+    return performMaintenanceQueuedResourceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to generateServiceIdentity. */
   public UnaryCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentitySettings() {
@@ -668,6 +766,13 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
   public UnaryCallSettings<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesSettings() {
     return getGuestAttributesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listReservations. */
+  public PagedCallSettings<
+          ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+      listReservationsSettings() {
+    return listReservationsSettings;
   }
 
   /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
@@ -785,6 +890,9 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     startNodeOperationSettings = settingsBuilder.startNodeOperationSettings().build();
     updateNodeSettings = settingsBuilder.updateNodeSettings().build();
     updateNodeOperationSettings = settingsBuilder.updateNodeOperationSettings().build();
+    performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
+    performMaintenanceOperationSettings =
+        settingsBuilder.performMaintenanceOperationSettings().build();
     listQueuedResourcesSettings = settingsBuilder.listQueuedResourcesSettings().build();
     getQueuedResourceSettings = settingsBuilder.getQueuedResourceSettings().build();
     createQueuedResourceSettings = settingsBuilder.createQueuedResourceSettings().build();
@@ -796,12 +904,17 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     resetQueuedResourceSettings = settingsBuilder.resetQueuedResourceSettings().build();
     resetQueuedResourceOperationSettings =
         settingsBuilder.resetQueuedResourceOperationSettings().build();
+    performMaintenanceQueuedResourceSettings =
+        settingsBuilder.performMaintenanceQueuedResourceSettings().build();
+    performMaintenanceQueuedResourceOperationSettings =
+        settingsBuilder.performMaintenanceQueuedResourceOperationSettings().build();
     generateServiceIdentitySettings = settingsBuilder.generateServiceIdentitySettings().build();
     listAcceleratorTypesSettings = settingsBuilder.listAcceleratorTypesSettings().build();
     getAcceleratorTypeSettings = settingsBuilder.getAcceleratorTypeSettings().build();
     listRuntimeVersionsSettings = settingsBuilder.listRuntimeVersionsSettings().build();
     getRuntimeVersionSettings = settingsBuilder.getRuntimeVersionSettings().build();
     getGuestAttributesSettings = settingsBuilder.getGuestAttributesSettings().build();
+    listReservationsSettings = settingsBuilder.listReservationsSettings().build();
     simulateMaintenanceEventSettings = settingsBuilder.simulateMaintenanceEventSettings().build();
     simulateMaintenanceEventOperationSettings =
         settingsBuilder.simulateMaintenanceEventOperationSettings().build();
@@ -831,6 +944,10 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     private final UnaryCallSettings.Builder<UpdateNodeRequest, Operation> updateNodeSettings;
     private final OperationCallSettings.Builder<UpdateNodeRequest, Node, OperationMetadata>
         updateNodeOperationSettings;
+    private final UnaryCallSettings.Builder<PerformMaintenanceRequest, Operation>
+        performMaintenanceSettings;
+    private final OperationCallSettings.Builder<PerformMaintenanceRequest, Node, OperationMetadata>
+        performMaintenanceOperationSettings;
     private final PagedCallSettings.Builder<
             ListQueuedResourcesRequest,
             ListQueuedResourcesResponse,
@@ -853,6 +970,11 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     private final OperationCallSettings.Builder<
             ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
         resetQueuedResourceOperationSettings;
+    private final UnaryCallSettings.Builder<PerformMaintenanceQueuedResourceRequest, Operation>
+        performMaintenanceQueuedResourceSettings;
+    private final OperationCallSettings.Builder<
+            PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+        performMaintenanceQueuedResourceOperationSettings;
     private final UnaryCallSettings.Builder<
             GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
         generateServiceIdentitySettings;
@@ -872,6 +994,9 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
         getRuntimeVersionSettings;
     private final UnaryCallSettings.Builder<GetGuestAttributesRequest, GetGuestAttributesResponse>
         getGuestAttributesSettings;
+    private final PagedCallSettings.Builder<
+            ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+        listReservationsSettings;
     private final UnaryCallSettings.Builder<SimulateMaintenanceEventRequest, Operation>
         simulateMaintenanceEventSettings;
     private final OperationCallSettings.Builder<
@@ -927,6 +1052,8 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       startNodeOperationSettings = OperationCallSettings.newBuilder();
       updateNodeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateNodeOperationSettings = OperationCallSettings.newBuilder();
+      performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       listQueuedResourcesSettings =
           PagedCallSettings.newBuilder(LIST_QUEUED_RESOURCES_PAGE_STR_FACT);
       getQueuedResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -936,6 +1063,8 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       deleteQueuedResourceOperationSettings = OperationCallSettings.newBuilder();
       resetQueuedResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetQueuedResourceOperationSettings = OperationCallSettings.newBuilder();
+      performMaintenanceQueuedResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      performMaintenanceQueuedResourceOperationSettings = OperationCallSettings.newBuilder();
       generateServiceIdentitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAcceleratorTypesSettings =
           PagedCallSettings.newBuilder(LIST_ACCELERATOR_TYPES_PAGE_STR_FACT);
@@ -944,6 +1073,7 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
           PagedCallSettings.newBuilder(LIST_RUNTIME_VERSIONS_PAGE_STR_FACT);
       getRuntimeVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getGuestAttributesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listReservationsSettings = PagedCallSettings.newBuilder(LIST_RESERVATIONS_PAGE_STR_FACT);
       simulateMaintenanceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       simulateMaintenanceEventOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -958,17 +1088,20 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
               stopNodeSettings,
               startNodeSettings,
               updateNodeSettings,
+              performMaintenanceSettings,
               listQueuedResourcesSettings,
               getQueuedResourceSettings,
               createQueuedResourceSettings,
               deleteQueuedResourceSettings,
               resetQueuedResourceSettings,
+              performMaintenanceQueuedResourceSettings,
               generateServiceIdentitySettings,
               listAcceleratorTypesSettings,
               getAcceleratorTypeSettings,
               listRuntimeVersionsSettings,
               getRuntimeVersionSettings,
               getGuestAttributesSettings,
+              listReservationsSettings,
               simulateMaintenanceEventSettings,
               listLocationsSettings,
               getLocationSettings);
@@ -990,6 +1123,9 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       startNodeOperationSettings = settings.startNodeOperationSettings.toBuilder();
       updateNodeSettings = settings.updateNodeSettings.toBuilder();
       updateNodeOperationSettings = settings.updateNodeOperationSettings.toBuilder();
+      performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
+      performMaintenanceOperationSettings =
+          settings.performMaintenanceOperationSettings.toBuilder();
       listQueuedResourcesSettings = settings.listQueuedResourcesSettings.toBuilder();
       getQueuedResourceSettings = settings.getQueuedResourceSettings.toBuilder();
       createQueuedResourceSettings = settings.createQueuedResourceSettings.toBuilder();
@@ -1001,12 +1137,17 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       resetQueuedResourceSettings = settings.resetQueuedResourceSettings.toBuilder();
       resetQueuedResourceOperationSettings =
           settings.resetQueuedResourceOperationSettings.toBuilder();
+      performMaintenanceQueuedResourceSettings =
+          settings.performMaintenanceQueuedResourceSettings.toBuilder();
+      performMaintenanceQueuedResourceOperationSettings =
+          settings.performMaintenanceQueuedResourceOperationSettings.toBuilder();
       generateServiceIdentitySettings = settings.generateServiceIdentitySettings.toBuilder();
       listAcceleratorTypesSettings = settings.listAcceleratorTypesSettings.toBuilder();
       getAcceleratorTypeSettings = settings.getAcceleratorTypeSettings.toBuilder();
       listRuntimeVersionsSettings = settings.listRuntimeVersionsSettings.toBuilder();
       getRuntimeVersionSettings = settings.getRuntimeVersionSettings.toBuilder();
       getGuestAttributesSettings = settings.getGuestAttributesSettings.toBuilder();
+      listReservationsSettings = settings.listReservationsSettings.toBuilder();
       simulateMaintenanceEventSettings = settings.simulateMaintenanceEventSettings.toBuilder();
       simulateMaintenanceEventOperationSettings =
           settings.simulateMaintenanceEventOperationSettings.toBuilder();
@@ -1022,17 +1163,20 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
               stopNodeSettings,
               startNodeSettings,
               updateNodeSettings,
+              performMaintenanceSettings,
               listQueuedResourcesSettings,
               getQueuedResourceSettings,
               createQueuedResourceSettings,
               deleteQueuedResourceSettings,
               resetQueuedResourceSettings,
+              performMaintenanceQueuedResourceSettings,
               generateServiceIdentitySettings,
               listAcceleratorTypesSettings,
               getAcceleratorTypeSettings,
               listRuntimeVersionsSettings,
               getRuntimeVersionSettings,
               getGuestAttributesSettings,
+              listReservationsSettings,
               simulateMaintenanceEventSettings,
               listLocationsSettings,
               getLocationSettings);
@@ -1087,6 +1231,11 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .performMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .listQueuedResourcesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -1108,6 +1257,11 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
 
       builder
           .resetQueuedResourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .performMaintenanceQueuedResourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1138,6 +1292,11 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
 
       builder
           .getGuestAttributesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listReservationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1268,6 +1427,29 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
                       .build()));
 
       builder
+          .performMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PerformMaintenanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Node.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createQueuedResourceOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1320,6 +1502,31 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ResetQueuedResourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(QueuedResource.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .performMaintenanceQueuedResourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PerformMaintenanceQueuedResourceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
                   .build())
@@ -1446,6 +1653,18 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       return updateNodeOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceRequest, Operation>
+        performMaintenanceSettings() {
+      return performMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceRequest, Node, OperationMetadata>
+        performMaintenanceOperationSettings() {
+      return performMaintenanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listQueuedResources. */
     public PagedCallSettings.Builder<
             ListQueuedResourcesRequest,
@@ -1500,6 +1719,19 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       return resetQueuedResourceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenanceQueuedResource. */
+    public UnaryCallSettings.Builder<PerformMaintenanceQueuedResourceRequest, Operation>
+        performMaintenanceQueuedResourceSettings() {
+      return performMaintenanceQueuedResourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenanceQueuedResource. */
+    public OperationCallSettings.Builder<
+            PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+        performMaintenanceQueuedResourceOperationSettings() {
+      return performMaintenanceQueuedResourceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to generateServiceIdentity. */
     public UnaryCallSettings.Builder<
             GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
@@ -1541,6 +1773,13 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     public UnaryCallSettings.Builder<GetGuestAttributesRequest, GetGuestAttributesResponse>
         getGuestAttributesSettings() {
       return getGuestAttributesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listReservations. */
+    public PagedCallSettings.Builder<
+            ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+        listReservationsSettings() {
+      return listReservationsSettings;
     }
 
     /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */

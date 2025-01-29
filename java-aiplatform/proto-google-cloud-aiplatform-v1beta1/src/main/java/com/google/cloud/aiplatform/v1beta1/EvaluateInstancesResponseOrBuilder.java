@@ -953,6 +953,79 @@ public interface EvaluateInstancesResponseOrBuilder
    *
    *
    * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+   *
+   * @return Whether the cometResult field is set.
+   */
+  boolean hasCometResult();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+   *
+   * @return The cometResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.CometResult getCometResult();
+  /**
+   *
+   *
+   * <pre>
+   * Translation metrics.
+   * Result for Comet metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CometResult comet_result = 29;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CometResultOrBuilder getCometResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+   *
+   * @return Whether the metricxResult field is set.
+   */
+  boolean hasMetricxResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+   *
+   * @return The metricxResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricxResult getMetricxResult();
+  /**
+   *
+   *
+   * <pre>
+   * Result for Metricx metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MetricxResult metricx_result = 30;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricxResultOrBuilder getMetricxResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Result for trajectory exact match metric.
    * </pre>
    *

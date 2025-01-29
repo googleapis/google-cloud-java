@@ -1632,8 +1632,8 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * fsync every time new commands are appended to the AOF. It has the best
-       * data loss protection at the cost of performance
+       * fsync every time new write commands are appended to the AOF. It has the
+       * best data loss protection at the cost of performance
        * </pre>
        *
        * <code>ALWAYS = 3;</code>
@@ -1678,8 +1678,8 @@ public final class ClusterPersistenceConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * fsync every time new commands are appended to the AOF. It has the best
-       * data loss protection at the cost of performance
+       * fsync every time new write commands are appended to the AOF. It has the
+       * best data loss protection at the cost of performance
        * </pre>
        *
        * <code>ALWAYS = 3;</code>

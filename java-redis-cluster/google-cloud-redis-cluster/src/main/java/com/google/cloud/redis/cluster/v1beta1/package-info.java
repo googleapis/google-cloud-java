@@ -42,15 +42,6 @@
  *   <li>`projects/redpepper-1290/locations/us-central1/clusters/my-redis`
  * </ul>
  *
- * <p>We use API version selector for Flex APIs
- *
- * <ul>
- *   <li>The versioning strategy is release-based versioning
- *   <li>Our backend CLH only deals with the superset version (called v1main)
- *   <li>Existing backend for Redis Gen1 and MRR is not touched.
- *   <li>More details in go/redis-flex-api-versioning
- * </ul>
- *
  * <p>Sample for CloudRedisClusterClient:
  *
  * <pre>{@code

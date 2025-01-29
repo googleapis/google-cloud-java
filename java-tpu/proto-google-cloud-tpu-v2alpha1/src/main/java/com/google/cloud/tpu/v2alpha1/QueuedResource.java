@@ -412,6 +412,36 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          * @return The bytes for nodeIdPrefix.
          */
         com.google.protobuf.ByteString getNodeIdPrefixBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The workload type for the multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for workloadType.
+         */
+        int getWorkloadTypeValue();
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The workload type for the multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The workloadType.
+         */
+        com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType
+            getWorkloadType();
       }
       /**
        *
@@ -436,6 +466,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
         private MultiNodeParams() {
           nodeIdPrefix_ = "";
+          workloadType_ = 0;
         }
 
         @java.lang.Override
@@ -458,6 +489,175 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.class,
                   com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.Builder
                       .class);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The workload type for the multi-node request.
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType}
+         */
+        public enum WorkloadType implements com.google.protobuf.ProtocolMessageEnum {
+          /**
+           *
+           *
+           * <pre>
+           * Not specified.
+           * </pre>
+           *
+           * <code>WORKLOAD_TYPE_UNSPECIFIED = 0;</code>
+           */
+          WORKLOAD_TYPE_UNSPECIFIED(0),
+          /**
+           *
+           *
+           * <pre>
+           * All of the nodes are available most of the time.
+           * Recommended for training workloads.
+           * </pre>
+           *
+           * <code>THROUGHPUT_OPTIMIZED = 1;</code>
+           */
+          THROUGHPUT_OPTIMIZED(1),
+          /**
+           *
+           *
+           * <pre>
+           * Most of the nodes are available all of the time.
+           * Recommended for serving workloads.
+           * </pre>
+           *
+           * <code>AVAILABILITY_OPTIMIZED = 2;</code>
+           */
+          AVAILABILITY_OPTIMIZED(2),
+          UNRECOGNIZED(-1),
+          ;
+
+          /**
+           *
+           *
+           * <pre>
+           * Not specified.
+           * </pre>
+           *
+           * <code>WORKLOAD_TYPE_UNSPECIFIED = 0;</code>
+           */
+          public static final int WORKLOAD_TYPE_UNSPECIFIED_VALUE = 0;
+          /**
+           *
+           *
+           * <pre>
+           * All of the nodes are available most of the time.
+           * Recommended for training workloads.
+           * </pre>
+           *
+           * <code>THROUGHPUT_OPTIMIZED = 1;</code>
+           */
+          public static final int THROUGHPUT_OPTIMIZED_VALUE = 1;
+          /**
+           *
+           *
+           * <pre>
+           * Most of the nodes are available all of the time.
+           * Recommended for serving workloads.
+           * </pre>
+           *
+           * <code>AVAILABILITY_OPTIMIZED = 2;</code>
+           */
+          public static final int AVAILABILITY_OPTIMIZED_VALUE = 2;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static WorkloadType valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static WorkloadType forNumber(int value) {
+            switch (value) {
+              case 0:
+                return WORKLOAD_TYPE_UNSPECIFIED;
+              case 1:
+                return THROUGHPUT_OPTIMIZED;
+              case 2:
+                return AVAILABILITY_OPTIMIZED;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<WorkloadType>
+              internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<WorkloadType>
+              internalValueMap =
+                  new com.google.protobuf.Internal.EnumLiteMap<WorkloadType>() {
+                    public WorkloadType findValueByNumber(int number) {
+                      return WorkloadType.forNumber(number);
+                    }
+                  };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                .getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final WorkloadType[] VALUES = values();
+
+          public static WorkloadType valueOf(
+              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private WorkloadType(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType)
         }
 
         public static final int NODE_COUNT_FIELD_NUMBER = 1;
@@ -539,6 +739,52 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           }
         }
 
+        public static final int WORKLOAD_TYPE_FIELD_NUMBER = 4;
+        private int workloadType_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The workload type for the multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for workloadType.
+         */
+        @java.lang.Override
+        public int getWorkloadTypeValue() {
+          return workloadType_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The workload type for the multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The workloadType.
+         */
+        @java.lang.Override
+        public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                .WorkloadType
+            getWorkloadType() {
+          com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType
+              result =
+                  com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                      .WorkloadType.forNumber(workloadType_);
+          return result == null
+              ? com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                  .WorkloadType.UNRECOGNIZED
+              : result;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -560,6 +806,12 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIdPrefix_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeIdPrefix_);
           }
+          if (workloadType_
+              != com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                  .WorkloadType.WORKLOAD_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(4, workloadType_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -574,6 +826,12 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           }
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIdPrefix_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeIdPrefix_);
+          }
+          if (workloadType_
+              != com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                  .WorkloadType.WORKLOAD_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, workloadType_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -595,6 +853,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
           if (getNodeCount() != other.getNodeCount()) return false;
           if (!getNodeIdPrefix().equals(other.getNodeIdPrefix())) return false;
+          if (workloadType_ != other.workloadType_) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -610,6 +869,8 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           hash = (53 * hash) + getNodeCount();
           hash = (37 * hash) + NODE_ID_PREFIX_FIELD_NUMBER;
           hash = (53 * hash) + getNodeIdPrefix().hashCode();
+          hash = (37 * hash) + WORKLOAD_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + workloadType_;
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -769,6 +1030,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = 0;
             nodeCount_ = 0;
             nodeIdPrefix_ = "";
+            workloadType_ = 0;
             return this;
           }
 
@@ -815,6 +1077,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             }
             if (((from_bitField0_ & 0x00000002) != 0)) {
               result.nodeIdPrefix_ = nodeIdPrefix_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.workloadType_ = workloadType_;
             }
           }
 
@@ -880,6 +1145,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
               bitField0_ |= 0x00000002;
               onChanged();
             }
+            if (other.workloadType_ != 0) {
+              setWorkloadTypeValue(other.getWorkloadTypeValue());
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -918,6 +1186,12 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                       bitField0_ |= 0x00000002;
                       break;
                     } // case 18
+                  case 32:
+                    {
+                      workloadType_ = input.readEnum();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 32
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1118,6 +1392,115 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             nodeIdPrefix_ = value;
             bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private int workloadType_ = 0;
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The workload type for the multi-node request.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The enum numeric value on the wire for workloadType.
+           */
+          @java.lang.Override
+          public int getWorkloadTypeValue() {
+            return workloadType_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The workload type for the multi-node request.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for workloadType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setWorkloadTypeValue(int value) {
+            workloadType_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The workload type for the multi-node request.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The workloadType.
+           */
+          @java.lang.Override
+          public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                  .WorkloadType
+              getWorkloadType() {
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType
+                result =
+                    com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                        .WorkloadType.forNumber(workloadType_);
+            return result == null
+                ? com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                    .WorkloadType.UNRECOGNIZED
+                : result;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The workload type for the multi-node request.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The workloadType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setWorkloadType(
+              com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000004;
+            workloadType_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The workload type for the multi-node request.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.WorkloadType workload_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearWorkloadType() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            workloadType_ = 0;
             onChanged();
             return this;
           }
@@ -7609,6 +7992,55 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the QueuedResource was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the QueuedResource was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the QueuedResource was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
   public static final int TPU_FIELD_NUMBER = 2;
   /**
    *
@@ -7834,7 +8266,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasQueueingPolicy() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -7887,7 +8319,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -8005,10 +8437,10 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     if (tierCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed) tier_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getQueueingPolicy());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getState());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservationName_)) {
@@ -8016,6 +8448,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     }
     if (tierCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.tpu.v2alpha1.QueuedResource.Spot) tier_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(11, getCreateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -8044,10 +8479,10 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed) tier_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getQueueingPolicy());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getState());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservationName_)) {
@@ -8057,6 +8492,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.tpu.v2alpha1.QueuedResource.Spot) tier_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCreateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8075,6 +8513,10 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.tpu.v2alpha1.QueuedResource) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (hasQueueingPolicy() != other.hasQueueingPolicy()) return false;
     if (hasQueueingPolicy()) {
       if (!getQueueingPolicy().equals(other.getQueueingPolicy())) return false;
@@ -8119,6 +8561,10 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
     if (hasQueueingPolicy()) {
       hash = (37 * hash) + QUEUEING_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getQueueingPolicy().hashCode();
@@ -8294,6 +8740,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCreateTimeFieldBuilder();
         getQueueingPolicyFieldBuilder();
         getStateFieldBuilder();
       }
@@ -8304,6 +8751,11 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
       if (tpuBuilder_ != null) {
         tpuBuilder_.clear();
       }
@@ -8372,16 +8824,20 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.queueingPolicy_ =
-            queueingPolicyBuilder_ == null ? queueingPolicy_ : queueingPolicyBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+        result.queueingPolicy_ =
+            queueingPolicyBuilder_ == null ? queueingPolicy_ : queueingPolicyBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.reservationName_ = reservationName_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -8456,6 +8912,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       if (other.hasQueueingPolicy()) {
         mergeQueueingPolicy(other.getQueueingPolicy());
       }
@@ -8464,7 +8923,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getReservationName().isEmpty()) {
         reservationName_ = other.reservationName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       switch (other.getResourceCase()) {
@@ -8552,19 +9011,19 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getQueueingPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 66:
               {
                 reservationName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -8573,6 +9032,12 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                 tierCase_ = 9;
                 break;
               } // case 74
+            case 90:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8734,6 +9199,209 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the QueuedResource was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -9612,7 +10280,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the queueingPolicy field is set.
      */
     public boolean hasQueueingPolicy() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -9653,7 +10321,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       } else {
         queueingPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9673,7 +10341,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       } else {
         queueingPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9689,7 +10357,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeQueueingPolicy(
         com.google.cloud.tpu.v2alpha1.QueuedResource.QueueingPolicy value) {
       if (queueingPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && queueingPolicy_ != null
             && queueingPolicy_
                 != com.google.cloud.tpu.v2alpha1.QueuedResource.QueueingPolicy
@@ -9702,7 +10370,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         queueingPolicyBuilder_.mergeFrom(value);
       }
       if (queueingPolicy_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -9717,7 +10385,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tpu.v2alpha1.QueuedResource.QueueingPolicy queueing_policy = 5;</code>
      */
     public Builder clearQueueingPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       queueingPolicy_ = null;
       if (queueingPolicyBuilder_ != null) {
         queueingPolicyBuilder_.dispose();
@@ -9737,7 +10405,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.tpu.v2alpha1.QueuedResource.QueueingPolicy.Builder
         getQueueingPolicyBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getQueueingPolicyFieldBuilder().getBuilder();
     }
@@ -9806,7 +10474,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -9850,7 +10518,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9872,7 +10540,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9889,7 +10557,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeState(com.google.cloud.tpu.v2alpha1.QueuedResourceState value) {
       if (stateBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && state_ != null
             && state_ != com.google.cloud.tpu.v2alpha1.QueuedResourceState.getDefaultInstance()) {
           getStateBuilder().mergeFrom(value);
@@ -9900,7 +10568,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         stateBuilder_.mergeFrom(value);
       }
       if (state_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -9917,7 +10585,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = null;
       if (stateBuilder_ != null) {
         stateBuilder_.dispose();
@@ -9938,7 +10606,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.tpu.v2alpha1.QueuedResourceState.Builder getStateBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
@@ -10055,7 +10723,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       reservationName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10073,7 +10741,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearReservationName() {
       reservationName_ = getDefaultInstance().getReservationName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -10096,7 +10764,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       reservationName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

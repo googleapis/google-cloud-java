@@ -63,4 +63,93 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The bytes for metricPromptTemplate.
    */
   com.google.protobuf.ByteString getMetricPromptTemplateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the candidate response.
+   * </pre>
+   *
+   * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The candidateResponseFieldName.
+   */
+  java.lang.String getCandidateResponseFieldName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the candidate response.
+   * </pre>
+   *
+   * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for candidateResponseFieldName.
+   */
+  com.google.protobuf.ByteString getCandidateResponseFieldNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the baseline response.
+   * </pre>
+   *
+   * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The baselineResponseFieldName.
+   */
+  java.lang.String getBaselineResponseFieldName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the baseline response.
+   * </pre>
+   *
+   * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for baselineResponseFieldName.
+   */
+  com.google.protobuf.ByteString getBaselineResponseFieldNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pairwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  boolean hasSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pairwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The systemInstruction.
+   */
+  java.lang.String getSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pairwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for systemInstruction.
+   */
+  com.google.protobuf.ByteString getSystemInstructionBytes();
 }

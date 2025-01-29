@@ -30,7 +30,7 @@ public interface ConferenceRecordOrBuilder
    * <pre>
    * Identifier. Resource name of the conference record.
    * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-   * is a unique id for each instance of a call within a space.
+   * is a unique ID for each instance of a call within a space.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -44,7 +44,7 @@ public interface ConferenceRecordOrBuilder
    * <pre>
    * Identifier. Resource name of the conference record.
    * Format: `conferenceRecords/{conference_record}` where `{conference_record}`
-   * is a unique id for each instance of a call within a space.
+   * is a unique ID for each instance of a call within a space.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -57,7 +57,7 @@ public interface ConferenceRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the conference started, always set.
+   * Output only. Timestamp when the conference started. Always set.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -70,7 +70,7 @@ public interface ConferenceRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the conference started, always set.
+   * Output only. Timestamp when the conference started. Always set.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -83,7 +83,7 @@ public interface ConferenceRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp when the conference started, always set.
+   * Output only. Timestamp when the conference started. Always set.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -136,9 +136,9 @@ public interface ConferenceRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. Server enforced expire time for when this conference record
-   * resource is deleted. The resource is deleted 30 days after the conference
-   * ends.
+   * Output only. Server enforced expiration time for when this conference
+   * record resource is deleted. The resource is deleted 30 days after the
+   * conference ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -151,9 +151,9 @@ public interface ConferenceRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. Server enforced expire time for when this conference record
-   * resource is deleted. The resource is deleted 30 days after the conference
-   * ends.
+   * Output only. Server enforced expiration time for when this conference
+   * record resource is deleted. The resource is deleted 30 days after the
+   * conference ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -166,9 +166,9 @@ public interface ConferenceRecordOrBuilder
    *
    *
    * <pre>
-   * Output only. Server enforced expire time for when this conference record
-   * resource is deleted. The resource is deleted 30 days after the conference
-   * ends.
+   * Output only. Server enforced expiration time for when this conference
+   * record resource is deleted. The resource is deleted 30 days after the
+   * conference ends.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];

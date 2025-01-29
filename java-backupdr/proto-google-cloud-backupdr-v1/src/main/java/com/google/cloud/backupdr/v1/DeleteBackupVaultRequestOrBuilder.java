@@ -176,4 +176,18 @@ public interface DeleteBackupVaultRequestOrBuilder
    * @return The allowMissing.
    */
   boolean getAllowMissing();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, backupvault deletion will proceed even if there
+   * are backup plans referencing the backupvault. The default is 'false'.
+   * </pre>
+   *
+   * <code>bool ignore_backup_plan_references = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreBackupPlanReferences.
+   */
+  boolean getIgnoreBackupPlanReferences();
 }

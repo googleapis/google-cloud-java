@@ -50,4 +50,67 @@ public interface CountTokensResponseOrBuilder
    * @return The totalBillableCharacters.
    */
   int getTotalBillableCharacters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount> getPromptTokensDetailsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ModalityTokenCount getPromptTokensDetails(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPromptTokensDetailsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
+      getPromptTokensDetailsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of modalities that were processed in the request input.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.ModalityTokenCount prompt_tokens_details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder getPromptTokensDetailsOrBuilder(
+      int index);
 }

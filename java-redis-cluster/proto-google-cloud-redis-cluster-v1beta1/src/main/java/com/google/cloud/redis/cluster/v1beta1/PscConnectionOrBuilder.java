@@ -28,11 +28,11 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The pscConnectionId.
    */
@@ -41,11 +41,11 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for pscConnectionId.
    */
@@ -55,11 +55,13 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP allocated on the consumer network for the PSC
-   * forwarding rule.
+   * Required. The IP allocated on the consumer network for the PSC forwarding
+   * rule.
    * </pre>
    *
-   * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The address.
    */
@@ -68,11 +70,13 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP allocated on the consumer network for the PSC
-   * forwarding rule.
+   * Required. The IP allocated on the consumer network for the PSC forwarding
+   * rule.
    * </pre>
    *
-   * <code>string address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string address = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for address.
    */
@@ -82,12 +86,14 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The URI of the consumer side forwarding rule.
+   * Required. The URI of the consumer side forwarding rule.
    * Example:
    * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
    * </pre>
    *
-   * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The forwardingRule.
    */
@@ -96,12 +102,14 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The URI of the consumer side forwarding rule.
+   * Required. The URI of the consumer side forwarding rule.
    * Example:
    * projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
    * </pre>
    *
-   * <code>string forwarding_rule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string forwarding_rule = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -111,11 +119,11 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The consumer project_id where the forwarding rule is created
-   * from.
+   * Optional. Project ID of the consumer project where the forwarding rule is
+   * created in.
    * </pre>
    *
-   * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The projectId.
    */
@@ -124,11 +132,11 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The consumer project_id where the forwarding rule is created
-   * from.
+   * Optional. Project ID of the consumer project where the forwarding rule is
+   * created in.
    * </pre>
    *
-   * <code>string project_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string project_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for projectId.
    */
@@ -138,11 +146,13 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * The consumer network where the IP address resides, in the form of
+   * Required. The consumer network where the IP address resides, in the form of
    * projects/{project_id}/global/networks/{network_id}.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The network.
    */
@@ -151,13 +161,112 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * The consumer network where the IP address resides, in the form of
+   * Required. The consumer network where the IP address resides, in the form of
    * projects/{project_id}/global/networks/{network_id}.
    * </pre>
    *
-   * <code>string network = 5;</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The service attachment which is the target of the PSC connection,
+   * in the form of
+   * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+   * </pre>
+   *
+   * <code>
+   * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serviceAttachment.
+   */
+  java.lang.String getServiceAttachment();
+  /**
+   *
+   *
+   * <pre>
+   * Required. The service attachment which is the target of the PSC connection,
+   * in the form of
+   * projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
+   * </pre>
+   *
+   * <code>
+   * string service_attachment = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serviceAttachment.
+   */
+  com.google.protobuf.ByteString getServiceAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the PSC connection.
+   * Please note that this value is updated periodically.
+   * To get the latest status of a PSC connection, follow
+   * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for pscConnectionStatus.
+   */
+  int getPscConnectionStatusValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the PSC connection.
+   * Please note that this value is updated periodically.
+   * To get the latest status of a PSC connection, follow
+   * https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.PscConnectionStatus psc_connection_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pscConnectionStatus.
+   */
+  com.google.cloud.redis.cluster.v1beta1.PscConnectionStatus getPscConnectionStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the PSC connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for connectionType.
+   */
+  int getConnectionTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the PSC connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.ConnectionType connection_type = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The connectionType.
+   */
+  com.google.cloud.redis.cluster.v1beta1.ConnectionType getConnectionType();
 }

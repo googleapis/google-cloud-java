@@ -23,10 +23,9 @@ package com.google.apps.meet.v2beta;
  *
  *
  * <pre>
- * [Developer Preview](https://developers.google.com/workspace/preview).
- * Refers to each unique join/leave session when a user joins a conference from
- * a device. Note that any time a user joins the conference a new unique ID is
- * assigned. That means if a user joins a space multiple times from the same
+ * Refers to each unique join or leave session when a user joins a conference
+ * from a device. Note that any time a user joins the conference a new unique ID
+ * is assigned. That means if a user joins a space multiple times from the same
  * device, they're assigned different IDs, and are also be treated as different
  * participant sessions.
  * </pre>
@@ -126,7 +125,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session started.
+   * Output only. Timestamp when the user session starts.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -142,7 +141,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session started.
+   * Output only. Timestamp when the user session starts.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -158,7 +157,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session started.
+   * Output only. Timestamp when the user session starts.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -175,7 +174,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session ended. Unset if the user
+   * Output only. Timestamp when the user session ends. Unset if the user
    * session hasn’t ended.
    * </pre>
    *
@@ -192,7 +191,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session ended. Unset if the user
+   * Output only. Timestamp when the user session ends. Unset if the user
    * session hasn’t ended.
    * </pre>
    *
@@ -209,7 +208,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Timestamp when the user session ended. Unset if the user
+   * Output only. Timestamp when the user session ends. Unset if the user
    * session hasn’t ended.
    * </pre>
    *
@@ -412,10 +411,9 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview).
-   * Refers to each unique join/leave session when a user joins a conference from
-   * a device. Note that any time a user joins the conference a new unique ID is
-   * assigned. That means if a user joins a space multiple times from the same
+   * Refers to each unique join or leave session when a user joins a conference
+   * from a device. Note that any time a user joins the conference a new unique ID
+   * is assigned. That means if a user joins a space multiple times from the same
    * device, they're assigned different IDs, and are also be treated as different
    * participant sessions.
    * </pre>
@@ -759,7 +757,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -774,7 +772,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -793,7 +791,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -816,7 +814,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -836,7 +834,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -864,7 +862,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -884,7 +882,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -899,7 +897,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -916,7 +914,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session started.
+     * Output only. Timestamp when the user session starts.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -949,7 +947,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -965,7 +963,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -985,7 +983,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -1009,7 +1007,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -1030,7 +1028,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -1059,7 +1057,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -1080,7 +1078,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -1096,7 +1094,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *
@@ -1114,7 +1112,7 @@ public final class ParticipantSession extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Timestamp when the user session ended. Unset if the user
+     * Output only. Timestamp when the user session ends. Unset if the user
      * session hasn’t ended.
      * </pre>
      *

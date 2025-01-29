@@ -278,7 +278,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the security policy associated with this access config.
+   * The resource URL for the security policy associated with this access config.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -290,7 +290,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the security policy associated with this access config.
+   * The resource URL for the security policy associated with this access config.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>
@@ -302,7 +302,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the security policy associated with this access config.
+   * The resource URL for the security policy associated with this access config.
    * </pre>
    *
    * <code>optional string security_policy = 171082513;</code>

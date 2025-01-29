@@ -28,7 +28,7 @@ public interface PhoneUserOrBuilder
    *
    *
    * <pre>
-   * Output only. Partially redacted user's phone number when they call in.
+   * Output only. Partially redacted user's phone number when calling.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,7 +40,7 @@ public interface PhoneUserOrBuilder
    *
    *
    * <pre>
-   * Output only. Partially redacted user's phone number when they call in.
+   * Output only. Partially redacted user's phone number when calling.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

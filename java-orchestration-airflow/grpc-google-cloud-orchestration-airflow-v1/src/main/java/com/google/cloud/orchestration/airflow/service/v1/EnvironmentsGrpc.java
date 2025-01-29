@@ -1426,7 +1426,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     default void listWorkloads(
@@ -1876,7 +1876,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     public void listWorkloads(
@@ -2315,7 +2315,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse listWorkloads(
@@ -2710,7 +2710,7 @@ public final class EnvironmentsGrpc {
      * Lists workloads in a Cloud Composer environment. Workload is a unit that
      * runs a single Composer component.
      * This method is supported for Cloud Composer environments in versions
-     * composer-3.*.*-airflow-*.*.* and newer.
+     * composer-2.*.*-airflow-*.*.* and newer.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -40,6 +40,7 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
 
   private PointwiseMetricSpec() {
     metricPromptTemplate_ = "";
+    systemInstruction_ = "";
   }
 
   @java.lang.Override
@@ -133,6 +134,72 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int SYSTEM_INSTRUCTION_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object systemInstruction_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  @java.lang.Override
+  public boolean hasSystemInstruction() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The systemInstruction.
+   */
+  @java.lang.Override
+  public java.lang.String getSystemInstruction() {
+    java.lang.Object ref = systemInstruction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      systemInstruction_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for systemInstruction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSystemInstructionBytes() {
+    java.lang.Object ref = systemInstruction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      systemInstruction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -150,6 +217,9 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metricPromptTemplate_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, systemInstruction_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -161,6 +231,9 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metricPromptTemplate_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, systemInstruction_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,6 +255,10 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     if (hasMetricPromptTemplate()) {
       if (!getMetricPromptTemplate().equals(other.getMetricPromptTemplate())) return false;
     }
+    if (hasSystemInstruction() != other.hasSystemInstruction()) return false;
+    if (hasSystemInstruction()) {
+      if (!getSystemInstruction().equals(other.getSystemInstruction())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,6 +273,10 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
     if (hasMetricPromptTemplate()) {
       hash = (37 * hash) + METRIC_PROMPT_TEMPLATE_FIELD_NUMBER;
       hash = (53 * hash) + getMetricPromptTemplate().hashCode();
+    }
+    if (hasSystemInstruction()) {
+      hash = (37 * hash) + SYSTEM_INSTRUCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getSystemInstruction().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -338,6 +419,7 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       metricPromptTemplate_ = "";
+      systemInstruction_ = "";
       return this;
     }
 
@@ -378,6 +460,10 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.metricPromptTemplate_ = metricPromptTemplate_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.systemInstruction_ = systemInstruction_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -433,6 +519,11 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasSystemInstruction()) {
+        systemInstruction_ = other.systemInstruction_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -465,6 +556,12 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                systemInstruction_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -606,6 +703,132 @@ public final class PointwiseMetricSpec extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       metricPromptTemplate_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object systemInstruction_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pointwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the systemInstruction field is set.
+     */
+    public boolean hasSystemInstruction() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pointwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The systemInstruction.
+     */
+    public java.lang.String getSystemInstruction() {
+      java.lang.Object ref = systemInstruction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        systemInstruction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pointwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for systemInstruction.
+     */
+    public com.google.protobuf.ByteString getSystemInstructionBytes() {
+      java.lang.Object ref = systemInstruction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        systemInstruction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pointwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The systemInstruction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemInstruction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      systemInstruction_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pointwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSystemInstruction() {
+      systemInstruction_ = getDefaultInstance().getSystemInstruction();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pointwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for systemInstruction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemInstructionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      systemInstruction_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

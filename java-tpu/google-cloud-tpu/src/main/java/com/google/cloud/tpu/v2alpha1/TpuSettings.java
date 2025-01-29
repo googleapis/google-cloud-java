@@ -20,6 +20,7 @@ import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedR
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListReservationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -189,6 +190,17 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     return ((TpuStubSettings) getStubSettings()).updateNodeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceRequest, Operation> performMaintenanceSettings() {
+    return ((TpuStubSettings) getStubSettings()).performMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).performMaintenanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listQueuedResources. */
   public PagedCallSettings<
           ListQueuedResourcesRequest, ListQueuedResourcesResponse, ListQueuedResourcesPagedResponse>
@@ -234,6 +246,20 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     return ((TpuStubSettings) getStubSettings()).resetQueuedResourceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to performMaintenanceQueuedResource. */
+  public UnaryCallSettings<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).performMaintenanceQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenanceQueuedResource. */
+  public OperationCallSettings<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings())
+        .performMaintenanceQueuedResourceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateServiceIdentity. */
   public UnaryCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentitySettings() {
@@ -271,6 +297,13 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   public UnaryCallSettings<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesSettings() {
     return ((TpuStubSettings) getStubSettings()).getGuestAttributesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listReservations. */
+  public PagedCallSettings<
+          ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+      listReservationsSettings() {
+    return ((TpuStubSettings) getStubSettings()).listReservationsSettings();
   }
 
   /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
@@ -457,6 +490,18 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
       return getStubSettingsBuilder().updateNodeOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceRequest, Operation>
+        performMaintenanceSettings() {
+      return getStubSettingsBuilder().performMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceRequest, Node, OperationMetadata>
+        performMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().performMaintenanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listQueuedResources. */
     public PagedCallSettings.Builder<
             ListQueuedResourcesRequest,
@@ -511,6 +556,19 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
       return getStubSettingsBuilder().resetQueuedResourceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenanceQueuedResource. */
+    public UnaryCallSettings.Builder<PerformMaintenanceQueuedResourceRequest, Operation>
+        performMaintenanceQueuedResourceSettings() {
+      return getStubSettingsBuilder().performMaintenanceQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenanceQueuedResource. */
+    public OperationCallSettings.Builder<
+            PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+        performMaintenanceQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().performMaintenanceQueuedResourceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to generateServiceIdentity. */
     public UnaryCallSettings.Builder<
             GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
@@ -552,6 +610,13 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     public UnaryCallSettings.Builder<GetGuestAttributesRequest, GetGuestAttributesResponse>
         getGuestAttributesSettings() {
       return getStubSettingsBuilder().getGuestAttributesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listReservations. */
+    public PagedCallSettings.Builder<
+            ListReservationsRequest, ListReservationsResponse, ListReservationsPagedResponse>
+        listReservationsSettings() {
+      return getStubSettingsBuilder().listReservationsSettings();
     }
 
     /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */

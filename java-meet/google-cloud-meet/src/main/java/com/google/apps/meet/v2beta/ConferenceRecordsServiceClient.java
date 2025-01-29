@@ -66,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetConferenceRecord</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a conference record by conference ID.</td>
+ *      <td><p> Gets a conference record by conference ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListConferenceRecords</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the conference records by start time and in descending order.</td>
+ *      <td><p> Lists the conference records. By default, ordered by start time and in descending order.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -100,7 +100,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetParticipant</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant by participant ID.</td>
+ *      <td><p> Gets a participant by participant ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -119,7 +119,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListParticipants</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the participants in a conference record, by default ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.</td>
+ *      <td><p> Lists the participants in a conference record. By default, ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -139,7 +139,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetParticipantSession</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant session by participant session ID.</td>
+ *      <td><p> Gets a participant session by participant session ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +158,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListParticipantSessions</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the participant sessions of a participant in a conference record, by default ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted this API defaults to `'participantsessions/&#42;, next_page_token'`.</td>
+ *      <td><p> Lists the participant sessions of a participant in a conference record. By default, ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted this API defaults to `'participantsessions/&#42;, next_page_token'`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -178,7 +178,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetRecording</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a recording by recording ID.</td>
+ *      <td><p> Gets a recording by recording ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -197,7 +197,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListRecordings</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the recording resources from the conference record.</td>
+ *      <td><p> Lists the recording resources from the conference record. By default, ordered by start time and in ascending order.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -217,7 +217,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetTranscript</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a transcript by transcript ID.</td>
+ *      <td><p> Gets a transcript by transcript ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -236,7 +236,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListTranscripts</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the set of transcripts from the conference record.</td>
+ *      <td><p> Lists the set of transcripts from the conference record. By default, ordered by start time and in ascending order.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -256,7 +256,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetTranscriptEntry</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Gets a `TranscriptEntry` resource by entry ID.
+ *      <td><p> Gets a `TranscriptEntry` resource by entry ID.
  * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when the Google Docs transcript file is modified after generation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -276,7 +276,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListTranscriptEntries</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview). Lists the structured transcript entries per transcript. By default, ordered by start time and in ascending order.
+ *      <td><p> Lists the structured transcript entries per transcript. By default, ordered by start time and in ascending order.
  * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when the Google Docs transcript file is modified after generation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -408,8 +408,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a conference record
-   * by conference ID.
+   * Gets a conference record by conference ID.
    *
    * <p>Sample code:
    *
@@ -439,8 +438,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a conference record
-   * by conference ID.
+   * Gets a conference record by conference ID.
    *
    * <p>Sample code:
    *
@@ -468,8 +466,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a conference record
-   * by conference ID.
+   * Gets a conference record by conference ID.
    *
    * <p>Sample code:
    *
@@ -498,8 +495,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a conference record
-   * by conference ID.
+   * Gets a conference record by conference ID.
    *
    * <p>Sample code:
    *
@@ -529,8 +525,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the conference
-   * records by start time and in descending order.
+   * Lists the conference records. By default, ordered by start time and in descending order.
    *
    * <p>Sample code:
    *
@@ -565,8 +560,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the conference
-   * records by start time and in descending order.
+   * Lists the conference records. By default, ordered by start time and in descending order.
    *
    * <p>Sample code:
    *
@@ -600,8 +594,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the conference
-   * records by start time and in descending order.
+   * Lists the conference records. By default, ordered by start time and in descending order.
    *
    * <p>Sample code:
    *
@@ -642,8 +635,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant by
-   * participant ID.
+   * Gets a participant by participant ID.
    *
    * <p>Sample code:
    *
@@ -671,8 +663,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant by
-   * participant ID.
+   * Gets a participant by participant ID.
    *
    * <p>Sample code:
    *
@@ -699,8 +690,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant by
-   * participant ID.
+   * Gets a participant by participant ID.
    *
    * <p>Sample code:
    *
@@ -729,8 +719,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant by
-   * participant ID.
+   * Gets a participant by participant ID.
    *
    * <p>Sample code:
    *
@@ -759,10 +748,10 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participants in
-   * a conference record, by default ordered by join time and in descending order. This API supports
-   * `fields` as standard parameters like every other API. However, when the `fields` request
-   * parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.
+   * Lists the participants in a conference record. By default, ordered by join time and in
+   * descending order. This API supports `fields` as standard parameters like every other API.
+   * However, when the `fields` request parameter is omitted, this API defaults to
+   * `'participants/&#42;, next_page_token'`.
    *
    * <p>Sample code:
    *
@@ -795,10 +784,10 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participants in
-   * a conference record, by default ordered by join time and in descending order. This API supports
-   * `fields` as standard parameters like every other API. However, when the `fields` request
-   * parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.
+   * Lists the participants in a conference record. By default, ordered by join time and in
+   * descending order. This API supports `fields` as standard parameters like every other API.
+   * However, when the `fields` request parameter is omitted, this API defaults to
+   * `'participants/&#42;, next_page_token'`.
    *
    * <p>Sample code:
    *
@@ -829,10 +818,10 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participants in
-   * a conference record, by default ordered by join time and in descending order. This API supports
-   * `fields` as standard parameters like every other API. However, when the `fields` request
-   * parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.
+   * Lists the participants in a conference record. By default, ordered by join time and in
+   * descending order. This API supports `fields` as standard parameters like every other API.
+   * However, when the `fields` request parameter is omitted, this API defaults to
+   * `'participants/&#42;, next_page_token'`.
    *
    * <p>Sample code:
    *
@@ -867,10 +856,10 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participants in
-   * a conference record, by default ordered by join time and in descending order. This API supports
-   * `fields` as standard parameters like every other API. However, when the `fields` request
-   * parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.
+   * Lists the participants in a conference record. By default, ordered by join time and in
+   * descending order. This API supports `fields` as standard parameters like every other API.
+   * However, when the `fields` request parameter is omitted, this API defaults to
+   * `'participants/&#42;, next_page_token'`.
    *
    * <p>Sample code:
    *
@@ -905,10 +894,10 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participants in
-   * a conference record, by default ordered by join time and in descending order. This API supports
-   * `fields` as standard parameters like every other API. However, when the `fields` request
-   * parameter is omitted, this API defaults to `'participants/&#42;, next_page_token'`.
+   * Lists the participants in a conference record. By default, ordered by join time and in
+   * descending order. This API supports `fields` as standard parameters like every other API.
+   * However, when the `fields` request parameter is omitted, this API defaults to
+   * `'participants/&#42;, next_page_token'`.
    *
    * <p>Sample code:
    *
@@ -950,8 +939,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant
-   * session by participant session ID.
+   * Gets a participant session by participant session ID.
    *
    * <p>Sample code:
    *
@@ -983,8 +971,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant
-   * session by participant session ID.
+   * Gets a participant session by participant session ID.
    *
    * <p>Sample code:
    *
@@ -1014,8 +1001,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant
-   * session by participant session ID.
+   * Gets a participant session by participant session ID.
    *
    * <p>Sample code:
    *
@@ -1047,8 +1033,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a participant
-   * session by participant session ID.
+   * Gets a participant session by participant session ID.
    *
    * <p>Sample code:
    *
@@ -1081,10 +1066,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participant
-   * sessions of a participant in a conference record, by default ordered by join time and in
-   * descending order. This API supports `fields` as standard parameters like every other API.
-   * However, when the `fields` request parameter is omitted this API defaults to
+   * Lists the participant sessions of a participant in a conference record. By default, ordered by
+   * join time and in descending order. This API supports `fields` as standard parameters like every
+   * other API. However, when the `fields` request parameter is omitted this API defaults to
    * `'participantsessions/&#42;, next_page_token'`.
    *
    * <p>Sample code:
@@ -1120,10 +1104,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participant
-   * sessions of a participant in a conference record, by default ordered by join time and in
-   * descending order. This API supports `fields` as standard parameters like every other API.
-   * However, when the `fields` request parameter is omitted this API defaults to
+   * Lists the participant sessions of a participant in a conference record. By default, ordered by
+   * join time and in descending order. This API supports `fields` as standard parameters like every
+   * other API. However, when the `fields` request parameter is omitted this API defaults to
    * `'participantsessions/&#42;, next_page_token'`.
    *
    * <p>Sample code:
@@ -1156,10 +1139,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participant
-   * sessions of a participant in a conference record, by default ordered by join time and in
-   * descending order. This API supports `fields` as standard parameters like every other API.
-   * However, when the `fields` request parameter is omitted this API defaults to
+   * Lists the participant sessions of a participant in a conference record. By default, ordered by
+   * join time and in descending order. This API supports `fields` as standard parameters like every
+   * other API. However, when the `fields` request parameter is omitted this API defaults to
    * `'participantsessions/&#42;, next_page_token'`.
    *
    * <p>Sample code:
@@ -1196,10 +1178,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participant
-   * sessions of a participant in a conference record, by default ordered by join time and in
-   * descending order. This API supports `fields` as standard parameters like every other API.
-   * However, when the `fields` request parameter is omitted this API defaults to
+   * Lists the participant sessions of a participant in a conference record. By default, ordered by
+   * join time and in descending order. This API supports `fields` as standard parameters like every
+   * other API. However, when the `fields` request parameter is omitted this API defaults to
    * `'participantsessions/&#42;, next_page_token'`.
    *
    * <p>Sample code:
@@ -1235,10 +1216,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the participant
-   * sessions of a participant in a conference record, by default ordered by join time and in
-   * descending order. This API supports `fields` as standard parameters like every other API.
-   * However, when the `fields` request parameter is omitted this API defaults to
+   * Lists the participant sessions of a participant in a conference record. By default, ordered by
+   * join time and in descending order. This API supports `fields` as standard parameters like every
+   * other API. However, when the `fields` request parameter is omitted this API defaults to
    * `'participantsessions/&#42;, next_page_token'`.
    *
    * <p>Sample code:
@@ -1281,8 +1261,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a recording by
-   * recording ID.
+   * Gets a recording by recording ID.
    *
    * <p>Sample code:
    *
@@ -1310,8 +1289,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a recording by
-   * recording ID.
+   * Gets a recording by recording ID.
    *
    * <p>Sample code:
    *
@@ -1338,8 +1316,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a recording by
-   * recording ID.
+   * Gets a recording by recording ID.
    *
    * <p>Sample code:
    *
@@ -1368,8 +1345,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a recording by
-   * recording ID.
+   * Gets a recording by recording ID.
    *
    * <p>Sample code:
    *
@@ -1398,8 +1374,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the recording
-   * resources from the conference record.
+   * Lists the recording resources from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1431,8 +1407,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the recording
-   * resources from the conference record.
+   * Lists the recording resources from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1461,8 +1437,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the recording
-   * resources from the conference record.
+   * Lists the recording resources from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1496,8 +1472,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the recording
-   * resources from the conference record.
+   * Lists the recording resources from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1531,8 +1507,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the recording
-   * resources from the conference record.
+   * Lists the recording resources from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1573,8 +1549,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a transcript by
-   * transcript ID.
+   * Gets a transcript by transcript ID.
    *
    * <p>Sample code:
    *
@@ -1602,8 +1577,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a transcript by
-   * transcript ID.
+   * Gets a transcript by transcript ID.
    *
    * <p>Sample code:
    *
@@ -1630,8 +1604,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a transcript by
-   * transcript ID.
+   * Gets a transcript by transcript ID.
    *
    * <p>Sample code:
    *
@@ -1660,8 +1633,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a transcript by
-   * transcript ID.
+   * Gets a transcript by transcript ID.
    *
    * <p>Sample code:
    *
@@ -1690,8 +1662,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the set of
-   * transcripts from the conference record.
+   * Lists the set of transcripts from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1724,8 +1696,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the set of
-   * transcripts from the conference record.
+   * Lists the set of transcripts from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1755,8 +1727,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the set of
-   * transcripts from the conference record.
+   * Lists the set of transcripts from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1790,8 +1762,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the set of
-   * transcripts from the conference record.
+   * Lists the set of transcripts from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1825,8 +1797,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the set of
-   * transcripts from the conference record.
+   * Lists the set of transcripts from the conference record. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Sample code:
    *
@@ -1867,8 +1839,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a `TranscriptEntry`
-   * resource by entry ID.
+   * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -1903,8 +1874,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a `TranscriptEntry`
-   * resource by entry ID.
+   * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -1937,8 +1907,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a `TranscriptEntry`
-   * resource by entry ID.
+   * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -1973,8 +1942,7 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Gets a `TranscriptEntry`
-   * resource by entry ID.
+   * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -2010,8 +1978,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the structured
-   * transcript entries per transcript. By default, ordered by start time and in ascending order.
+   * Lists the structured transcript entries per transcript. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -2049,8 +2017,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the structured
-   * transcript entries per transcript. By default, ordered by start time and in ascending order.
+   * Lists the structured transcript entries per transcript. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -2086,8 +2054,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the structured
-   * transcript entries per transcript. By default, ordered by start time and in ascending order.
+   * Lists the structured transcript entries per transcript. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -2126,8 +2094,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the structured
-   * transcript entries per transcript. By default, ordered by start time and in ascending order.
+   * Lists the structured transcript entries per transcript. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs
@@ -2165,8 +2133,8 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview). Lists the structured
-   * transcript entries per transcript. By default, ordered by start time and in ascending order.
+   * Lists the structured transcript entries per transcript. By default, ordered by start time and
+   * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
    * transcription found in the Google Docs transcript file. This can occur when the Google Docs

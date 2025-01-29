@@ -607,6 +607,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -673,6 +675,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -737,6 +741,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -788,6 +794,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();
@@ -927,6 +935,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
+            .setOptimizedConfig(FeatureView.OptimizedConfig.newBuilder().build())
+            .setServiceAccountEmail("serviceAccountEmail1825953988")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
             .build();

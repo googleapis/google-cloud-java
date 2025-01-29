@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1.stub;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
@@ -46,6 +47,8 @@ import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsRequest;
+import com.google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse;
 import com.google.cloud.aiplatform.v1.ListModelVersionsRequest;
 import com.google.cloud.aiplatform.v1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1.ListModelsRequest;
@@ -117,6 +120,18 @@ public abstract class ModelServiceStub implements BackgroundResource {
   public UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
       listModelVersionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelVersionsCallable()");
+  }
+
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsPagedResponse>
+      listModelVersionCheckpointsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listModelVersionCheckpointsPagedCallable()");
+  }
+
+  public UnaryCallable<ListModelVersionCheckpointsRequest, ListModelVersionCheckpointsResponse>
+      listModelVersionCheckpointsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listModelVersionCheckpointsCallable()");
   }
 
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {

@@ -250,6 +250,16 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>UNHIDING = 15;</code>
      */
     UNHIDING(15),
+    /**
+     *
+     *
+     * <pre>
+     * TPU node has unknown state after a failed repair.
+     * </pre>
+     *
+     * <code>UNKNOWN = 16;</code>
+     */
+    UNKNOWN(16),
     UNRECOGNIZED(-1),
     ;
 
@@ -405,6 +415,16 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>UNHIDING = 15;</code>
      */
     public static final int UNHIDING_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * TPU node has unknown state after a failed repair.
+     * </pre>
+     *
+     * <code>UNKNOWN = 16;</code>
+     */
+    public static final int UNKNOWN_VALUE = 16;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -460,6 +480,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           return HIDDEN;
         case 15:
           return UNHIDING;
+        case 16:
+          return UNKNOWN;
         default:
           return null;
       }
@@ -1092,7 +1114,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    * <code>string ip_address = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=282
    * @return The ipAddress.
    */
   @java.lang.Override
@@ -1120,7 +1142,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    * <code>string ip_address = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=282
    * @return The bytes for ipAddress.
    */
   @java.lang.Override
@@ -1152,7 +1174,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    * <code>string port = 14 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=286
    * @return The port.
    */
   @java.lang.Override
@@ -1179,7 +1201,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    * <code>string port = 14 [deprecated = true];</code>
    *
    * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-   *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
+   *     google/cloud/tpu/v1/cloud_tpu.proto;l=286
    * @return The bytes for port.
    */
   @java.lang.Override
@@ -3243,7 +3265,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string ip_address = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=282
      * @return The ipAddress.
      */
     @java.lang.Deprecated
@@ -3270,7 +3292,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string ip_address = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=282
      * @return The bytes for ipAddress.
      */
     @java.lang.Deprecated
@@ -3297,7 +3319,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string ip_address = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=282
      * @param value The ipAddress to set.
      * @return This builder for chaining.
      */
@@ -3323,7 +3345,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string ip_address = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=282
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3345,7 +3367,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string ip_address = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.ip_address is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=279
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=282
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
      */
@@ -3373,7 +3395,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string port = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=286
      * @return The port.
      */
     @java.lang.Deprecated
@@ -3399,7 +3421,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string port = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=286
      * @return The bytes for port.
      */
     @java.lang.Deprecated
@@ -3425,7 +3447,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string port = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=286
      * @param value The port to set.
      * @return This builder for chaining.
      */
@@ -3450,7 +3472,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string port = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=286
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3471,7 +3493,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * <code>string port = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.tpu.v1.Node.port is deprecated. See
-     *     google/cloud/tpu/v1/cloud_tpu.proto;l=283
+     *     google/cloud/tpu/v1/cloud_tpu.proto;l=286
      * @param value The bytes for port to set.
      * @return This builder for chaining.
      */

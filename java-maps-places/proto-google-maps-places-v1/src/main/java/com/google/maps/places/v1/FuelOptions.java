@@ -242,6 +242,16 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Diesel plus fuel.
+       * </pre>
+       *
+       * <code>DIESEL_PLUS = 19;</code>
+       */
+      DIESEL_PLUS(19),
+      /**
+       *
+       *
+       * <pre>
        * Regular unleaded.
        * </pre>
        *
@@ -352,7 +362,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * LPG.
+       * Liquefied Petroleum Gas.
        * </pre>
        *
        * <code>LPG = 13;</code>
@@ -378,6 +388,16 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>E85 = 15;</code>
        */
       E85(15),
+      /**
+       *
+       *
+       * <pre>
+       * E 100.
+       * </pre>
+       *
+       * <code>E100 = 20;</code>
+       */
+      E100(20),
       /**
        *
        *
@@ -431,6 +451,16 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>DIESEL = 1;</code>
        */
       public static final int DIESEL_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Diesel plus fuel.
+       * </pre>
+       *
+       * <code>DIESEL_PLUS = 19;</code>
+       */
+      public static final int DIESEL_PLUS_VALUE = 19;
       /**
        *
        *
@@ -545,7 +575,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * LPG.
+       * Liquefied Petroleum Gas.
        * </pre>
        *
        * <code>LPG = 13;</code>
@@ -571,6 +601,16 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>E85 = 15;</code>
        */
       public static final int E85_VALUE = 15;
+      /**
+       *
+       *
+       * <pre>
+       * E 100.
+       * </pre>
+       *
+       * <code>E100 = 20;</code>
+       */
+      public static final int E100_VALUE = 20;
       /**
        *
        *
@@ -630,6 +670,8 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
             return FUEL_TYPE_UNSPECIFIED;
           case 1:
             return DIESEL;
+          case 19:
+            return DIESEL_PLUS;
           case 2:
             return REGULAR_UNLEADED;
           case 3:
@@ -658,6 +700,8 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
             return E80;
           case 15:
             return E85;
+          case 20:
+            return E100;
           case 16:
             return METHANE;
           case 17:

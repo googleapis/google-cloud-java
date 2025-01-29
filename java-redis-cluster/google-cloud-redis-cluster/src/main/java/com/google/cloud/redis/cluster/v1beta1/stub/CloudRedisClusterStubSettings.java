@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1beta1.stub;
 
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
 
@@ -53,14 +55,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1beta1.Backup;
+import com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.BackupCollection;
 import com.google.cloud.redis.cluster.v1beta1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1beta1.Cluster;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1beta1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -173,6 +187,29 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       createClusterOperationSettings;
   private final UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthoritySettings;
+  private final UnaryCallSettings<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceSettings;
+  private final OperationCallSettings<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationSettings;
+  private final PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings;
+  private final UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
+  private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
+  private final UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings;
+  private final OperationCallSettings<DeleteBackupRequest, Empty, Any>
+      deleteBackupOperationSettings;
+  private final UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings;
+  private final OperationCallSettings<ExportBackupRequest, Backup, Any>
+      exportBackupOperationSettings;
+  private final UnaryCallSettings<BackupClusterRequest, Operation> backupClusterSettings;
+  private final OperationCallSettings<BackupClusterRequest, Cluster, Any>
+      backupClusterOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -209,6 +246,79 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
             @Override
             public Iterable<Cluster> extractResources(ListClustersResponse payload) {
               return payload.getClustersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+      LIST_BACKUP_COLLECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupCollectionsRequest injectToken(
+                ListBackupCollectionsRequest payload, String token) {
+              return ListBackupCollectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupCollectionsRequest injectPageSize(
+                ListBackupCollectionsRequest payload, int pageSize) {
+              return ListBackupCollectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupCollectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupCollectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupCollection> extractResources(
+                ListBackupCollectionsResponse payload) {
+              return payload.getBackupCollectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList();
             }
           };
 
@@ -260,6 +370,47 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               PageContext<ListClustersRequest, ListClustersResponse, Cluster> pageContext =
                   PageContext.create(callable, LIST_CLUSTERS_PAGE_STR_DESC, request, context);
               return ListClustersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      LIST_BACKUP_COLLECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupCollectionsRequest,
+              ListBackupCollectionsResponse,
+              ListBackupCollectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupCollectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse> callable,
+                ListBackupCollectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupCollectionsResponse> futureResponse) {
+              PageContext<
+                      ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_COLLECTIONS_PAGE_STR_DESC, request, context);
+              return ListBackupCollectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -327,6 +478,75 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
   public UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthoritySettings() {
     return getClusterCertificateAuthoritySettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleClusterMaintenance. */
+  public UnaryCallSettings<RescheduleClusterMaintenanceRequest, Operation>
+      rescheduleClusterMaintenanceSettings() {
+    return rescheduleClusterMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleClusterMaintenance. */
+  public OperationCallSettings<RescheduleClusterMaintenanceRequest, Cluster, Any>
+      rescheduleClusterMaintenanceOperationSettings() {
+    return rescheduleClusterMaintenanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupCollections. */
+  public PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings() {
+    return listBackupCollectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupCollection. */
+  public UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings() {
+    return getBackupCollectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return getBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return deleteBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, Any> deleteBackupOperationSettings() {
+    return deleteBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings() {
+    return exportBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public OperationCallSettings<ExportBackupRequest, Backup, Any> exportBackupOperationSettings() {
+    return exportBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to backupCluster. */
+  public UnaryCallSettings<BackupClusterRequest, Operation> backupClusterSettings() {
+    return backupClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to backupCluster. */
+  public OperationCallSettings<BackupClusterRequest, Cluster, Any>
+      backupClusterOperationSettings() {
+    return backupClusterOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -461,6 +681,20 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
     getClusterCertificateAuthoritySettings =
         settingsBuilder.getClusterCertificateAuthoritySettings().build();
+    rescheduleClusterMaintenanceSettings =
+        settingsBuilder.rescheduleClusterMaintenanceSettings().build();
+    rescheduleClusterMaintenanceOperationSettings =
+        settingsBuilder.rescheduleClusterMaintenanceOperationSettings().build();
+    listBackupCollectionsSettings = settingsBuilder.listBackupCollectionsSettings().build();
+    getBackupCollectionSettings = settingsBuilder.getBackupCollectionSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    getBackupSettings = settingsBuilder.getBackupSettings().build();
+    deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
+    exportBackupSettings = settingsBuilder.exportBackupSettings().build();
+    exportBackupOperationSettings = settingsBuilder.exportBackupOperationSettings().build();
+    backupClusterSettings = settingsBuilder.backupClusterSettings().build();
+    backupClusterOperationSettings = settingsBuilder.backupClusterOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -484,6 +718,30 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     private final UnaryCallSettings.Builder<
             GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthoritySettings;
+    private final UnaryCallSettings.Builder<RescheduleClusterMaintenanceRequest, Operation>
+        rescheduleClusterMaintenanceSettings;
+    private final OperationCallSettings.Builder<RescheduleClusterMaintenanceRequest, Cluster, Any>
+        rescheduleClusterMaintenanceOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings;
+    private final UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings;
+    private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings;
+    private final OperationCallSettings.Builder<DeleteBackupRequest, Empty, Any>
+        deleteBackupOperationSettings;
+    private final UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings;
+    private final OperationCallSettings.Builder<ExportBackupRequest, Backup, Any>
+        exportBackupOperationSettings;
+    private final UnaryCallSettings.Builder<BackupClusterRequest, Operation> backupClusterSettings;
+    private final OperationCallSettings.Builder<BackupClusterRequest, Cluster, Any>
+        backupClusterOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -534,6 +792,19 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       createClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createClusterOperationSettings = OperationCallSettings.newBuilder();
       getClusterCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleClusterMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleClusterMaintenanceOperationSettings = OperationCallSettings.newBuilder();
+      listBackupCollectionsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKUP_COLLECTIONS_PAGE_STR_FACT);
+      getBackupCollectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+      getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupOperationSettings = OperationCallSettings.newBuilder();
+      exportBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportBackupOperationSettings = OperationCallSettings.newBuilder();
+      backupClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      backupClusterOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -545,6 +816,14 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               deleteClusterSettings,
               createClusterSettings,
               getClusterCertificateAuthoritySettings,
+              rescheduleClusterMaintenanceSettings,
+              listBackupCollectionsSettings,
+              getBackupCollectionSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              deleteBackupSettings,
+              exportBackupSettings,
+              backupClusterSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -563,6 +842,20 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
       getClusterCertificateAuthoritySettings =
           settings.getClusterCertificateAuthoritySettings.toBuilder();
+      rescheduleClusterMaintenanceSettings =
+          settings.rescheduleClusterMaintenanceSettings.toBuilder();
+      rescheduleClusterMaintenanceOperationSettings =
+          settings.rescheduleClusterMaintenanceOperationSettings.toBuilder();
+      listBackupCollectionsSettings = settings.listBackupCollectionsSettings.toBuilder();
+      getBackupCollectionSettings = settings.getBackupCollectionSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      getBackupSettings = settings.getBackupSettings.toBuilder();
+      deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
+      exportBackupSettings = settings.exportBackupSettings.toBuilder();
+      exportBackupOperationSettings = settings.exportBackupOperationSettings.toBuilder();
+      backupClusterSettings = settings.backupClusterSettings.toBuilder();
+      backupClusterOperationSettings = settings.backupClusterOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -574,6 +867,14 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               deleteClusterSettings,
               createClusterSettings,
               getClusterCertificateAuthoritySettings,
+              rescheduleClusterMaintenanceSettings,
+              listBackupCollectionsSettings,
+              getBackupCollectionSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              deleteBackupSettings,
+              exportBackupSettings,
+              backupClusterSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -630,6 +931,46 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
 
       builder
           .getClusterCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .rescheduleClusterMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listBackupCollectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getBackupCollectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .exportBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .backupClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -712,6 +1053,99 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
                       .setTotalTimeoutDuration(Duration.ofMillis(7200000L))
                       .build()));
 
+      builder
+          .rescheduleClusterMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RescheduleClusterMaintenanceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.create(Any.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.create(Any.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.create(Any.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .backupClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BackupClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(ProtoOperationTransformers.MetadataTransformer.create(Any.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -779,6 +1213,78 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     public UnaryCallSettings.Builder<GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthoritySettings() {
       return getClusterCertificateAuthoritySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleClusterMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleClusterMaintenanceRequest, Operation>
+        rescheduleClusterMaintenanceSettings() {
+      return rescheduleClusterMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleClusterMaintenance. */
+    public OperationCallSettings.Builder<RescheduleClusterMaintenanceRequest, Cluster, Any>
+        rescheduleClusterMaintenanceOperationSettings() {
+      return rescheduleClusterMaintenanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupCollections. */
+    public PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings() {
+      return listBackupCollectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupCollection. */
+    public UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings() {
+      return getBackupCollectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, Any>
+        deleteBackupOperationSettings() {
+      return deleteBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings() {
+      return exportBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public OperationCallSettings.Builder<ExportBackupRequest, Backup, Any>
+        exportBackupOperationSettings() {
+      return exportBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to backupCluster. */
+    public UnaryCallSettings.Builder<BackupClusterRequest, Operation> backupClusterSettings() {
+      return backupClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to backupCluster. */
+    public OperationCallSettings.Builder<BackupClusterRequest, Cluster, Any>
+        backupClusterOperationSettings() {
+      return backupClusterOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

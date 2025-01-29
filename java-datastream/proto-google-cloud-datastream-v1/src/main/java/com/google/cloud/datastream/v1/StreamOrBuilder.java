@@ -28,10 +28,12 @@ public interface StreamOrBuilder
    *
    *
    * <pre>
-   * Output only. The stream's name.
+   * Output only. Identifier. The stream's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -40,10 +42,12 @@ public interface StreamOrBuilder
    *
    *
    * <pre>
-   * Output only. The stream's name.
+   * Output only. Identifier. The stream's name.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */

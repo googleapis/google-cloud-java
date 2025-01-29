@@ -107,6 +107,7 @@ public class LlmUtilityServiceClientTest {
         CountTokensResponse.newBuilder()
             .setTotalTokens(730673909)
             .setTotalBillableCharacters(1242495501)
+            .addAllPromptTokensDetails(new ArrayList<ModalityTokenCount>())
             .build();
     mockLlmUtilityService.addResponse(expectedResponse);
 
@@ -151,6 +152,7 @@ public class LlmUtilityServiceClientTest {
         CountTokensResponse.newBuilder()
             .setTotalTokens(730673909)
             .setTotalBillableCharacters(1242495501)
+            .addAllPromptTokensDetails(new ArrayList<ModalityTokenCount>())
             .build();
     mockLlmUtilityService.addResponse(expectedResponse);
 
