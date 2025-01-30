@@ -17,7 +17,7 @@
     <logback.version>1.2.13</logback.version>
     <easymock.version>5.5.0</easymock.version>
     <truth.version>1.4.4</truth.version>
-    <logging.version>3.21.1</logging.version>
+    <logging.version>3.21.2</logging.version>
     <slf4j.version>1.7.36</slf4j.version>
     <google.api-common.version>1.10.1</google.api-common.version>
   </properties>
@@ -68,6 +68,18 @@
         <version>${google-cloud-shared-dependencies.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+      	<!-- remove this dependency after google-cloud-java is released after the cycle of Jan 31st 2025 -->
+      	<groupId>io.opentelemetry</groupId>
+      	<artifactId>opentelemetry-context</artifactId>
+      	<version>1.46.0</version>
+      </dependency>
+      <dependency>
+      	<!-- remove this dependency after google-cloud-java is released after the cycle of Jan 31st 2025 -->
+      	<groupId>io.opentelemetry</groupId>
+      	<artifactId>opentelemetry-api</artifactId>
+      	<version>1.46.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
