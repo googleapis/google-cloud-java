@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.26.0](https://github.com/googleapis/java-datastore/compare/v2.25.4...v2.26.0) (2025-01-29)
+
+
+### Features
+
+* Add firestoreInDatastoreMode for datastore emulator ([#1698](https://github.com/googleapis/java-datastore/issues/1698)) ([50f106d](https://github.com/googleapis/java-datastore/commit/50f106d4c50884ce471a66c00df322270fe4a91c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#1725](https://github.com/googleapis/java-datastore/issues/1725)) ([1cbaf22](https://github.com/googleapis/java-datastore/commit/1cbaf22cf557aec606dce7a5ca5d3ebe620a9339))
+
 ## [2.25.4](https://github.com/googleapis/java-datastore/compare/v2.25.3...v2.25.4) (2025-01-22)
 
 
