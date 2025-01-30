@@ -1,5 +1,5 @@
-gapic_generator_version: 2.51.1
-googleapis_commitish: 1a0e353ac4a372cf7016df4ce0a7d7e609f339b3
+gapic_generator_version: 2.52.0
+googleapis_commitish: 280725e991516d4a0f136268faf5aa6d32d21b54
 libraries_bom_version: 26.53.0
 libraries:
   - api_shortname: datastore
