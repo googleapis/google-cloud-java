@@ -48,21 +48,21 @@ public final class SnoozeProto {
       "\n!google/monitoring/v3/snooze.proto\022\024goo"
           + "gle.monitoring.v3\032\037google/api/field_beha"
           + "vior.proto\032\031google/api/resource.proto\032!g"
-          + "oogle/monitoring/v3/common.proto\"\305\002\n\006Sno"
+          + "oogle/monitoring/v3/common.proto\"\325\002\n\006Sno"
           + "oze\022\021\n\004name\030\001 \001(\tB\003\340A\010\022<\n\010criteria\030\003 \001(\013"
           + "2%.google.monitoring.v3.Snooze.CriteriaB"
           + "\003\340A\002\0229\n\010interval\030\004 \001(\0132\".google.monitori"
           + "ng.v3.TimeIntervalB\003\340A\002\022\031\n\014display_name\030"
-          + "\005 \001(\tB\003\340A\002\032H\n\010Criteria\022<\n\010policies\030\001 \003(\t"
+          + "\005 \001(\tB\003\340A\002\032X\n\010Criteria\022<\n\010policies\030\001 \003(\t"
           + "B*\372A\'\n%monitoring.googleapis.com/AlertPo"
-          + "licy:J\352AG\n monitoring.googleapis.com/Sno"
-          + "oze\022#projects/{project}/snoozes/{snooze}"
-          + "B\306\001\n\030com.google.monitoring.v3B\013SnoozePro"
-          + "toP\001ZAcloud.google.com/go/monitoring/api"
-          + "v3/v2/monitoringpb;monitoringpb\252\002\032Google"
-          + ".Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Moni"
-          + "toring\\V3\352\002\035Google::Cloud::Monitoring::V"
-          + "3b\006proto3"
+          + "licy\022\016\n\006filter\030\002 \001(\t:J\352AG\n monitoring.go"
+          + "ogleapis.com/Snooze\022#projects/{project}/"
+          + "snoozes/{snooze}B\306\001\n\030com.google.monitori"
+          + "ng.v3B\013SnoozeProtoP\001ZAcloud.google.com/g"
+          + "o/monitoring/apiv3/v2/monitoringpb;monit"
+          + "oringpb\252\002\032Google.Cloud.Monitoring.V3\312\002\032G"
+          + "oogle\\Cloud\\Monitoring\\V3\352\002\035Google::Clou"
+          + "d::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,7 +86,7 @@ public final class SnoozeProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_monitoring_v3_Snooze_Criteria_descriptor,
             new java.lang.String[] {
-              "Policies",
+              "Policies", "Filter",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

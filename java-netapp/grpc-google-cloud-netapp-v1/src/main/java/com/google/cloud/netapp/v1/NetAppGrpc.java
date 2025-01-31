@@ -2409,6 +2409,219 @@ public final class NetAppGrpc {
     return getDeleteBackupPolicyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+          com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+      getListQuotaRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListQuotaRules",
+      requestType = com.google.cloud.netapp.v1.ListQuotaRulesRequest.class,
+      responseType = com.google.cloud.netapp.v1.ListQuotaRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+          com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+      getListQuotaRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+            com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+        getListQuotaRulesMethod;
+    if ((getListQuotaRulesMethod = NetAppGrpc.getListQuotaRulesMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getListQuotaRulesMethod = NetAppGrpc.getListQuotaRulesMethod) == null) {
+          NetAppGrpc.getListQuotaRulesMethod =
+              getListQuotaRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+                          com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListQuotaRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListQuotaRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListQuotaRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("ListQuotaRules"))
+                      .build();
+        }
+      }
+    }
+    return getListQuotaRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetQuotaRuleRequest, com.google.cloud.netapp.v1.QuotaRule>
+      getGetQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetQuotaRule",
+      requestType = com.google.cloud.netapp.v1.GetQuotaRuleRequest.class,
+      responseType = com.google.cloud.netapp.v1.QuotaRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetQuotaRuleRequest, com.google.cloud.netapp.v1.QuotaRule>
+      getGetQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.GetQuotaRuleRequest, com.google.cloud.netapp.v1.QuotaRule>
+        getGetQuotaRuleMethod;
+    if ((getGetQuotaRuleMethod = NetAppGrpc.getGetQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getGetQuotaRuleMethod = NetAppGrpc.getGetQuotaRuleMethod) == null) {
+          NetAppGrpc.getGetQuotaRuleMethod =
+              getGetQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.GetQuotaRuleRequest,
+                          com.google.cloud.netapp.v1.QuotaRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.GetQuotaRuleRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.QuotaRule.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("GetQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetQuotaRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateQuotaRuleRequest, com.google.longrunning.Operation>
+      getCreateQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateQuotaRule",
+      requestType = com.google.cloud.netapp.v1.CreateQuotaRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateQuotaRuleRequest, com.google.longrunning.Operation>
+      getCreateQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.CreateQuotaRuleRequest, com.google.longrunning.Operation>
+        getCreateQuotaRuleMethod;
+    if ((getCreateQuotaRuleMethod = NetAppGrpc.getCreateQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getCreateQuotaRuleMethod = NetAppGrpc.getCreateQuotaRuleMethod) == null) {
+          NetAppGrpc.getCreateQuotaRuleMethod =
+              getCreateQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.CreateQuotaRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.CreateQuotaRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("CreateQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateQuotaRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateQuotaRuleRequest, com.google.longrunning.Operation>
+      getUpdateQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateQuotaRule",
+      requestType = com.google.cloud.netapp.v1.UpdateQuotaRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateQuotaRuleRequest, com.google.longrunning.Operation>
+      getUpdateQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.UpdateQuotaRuleRequest, com.google.longrunning.Operation>
+        getUpdateQuotaRuleMethod;
+    if ((getUpdateQuotaRuleMethod = NetAppGrpc.getUpdateQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getUpdateQuotaRuleMethod = NetAppGrpc.getUpdateQuotaRuleMethod) == null) {
+          NetAppGrpc.getUpdateQuotaRuleMethod =
+              getUpdateQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.UpdateQuotaRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.UpdateQuotaRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("UpdateQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateQuotaRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteQuotaRuleRequest, com.google.longrunning.Operation>
+      getDeleteQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteQuotaRule",
+      requestType = com.google.cloud.netapp.v1.DeleteQuotaRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteQuotaRuleRequest, com.google.longrunning.Operation>
+      getDeleteQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.DeleteQuotaRuleRequest, com.google.longrunning.Operation>
+        getDeleteQuotaRuleMethod;
+    if ((getDeleteQuotaRuleMethod = NetAppGrpc.getDeleteQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getDeleteQuotaRuleMethod = NetAppGrpc.getDeleteQuotaRuleMethod) == null) {
+          NetAppGrpc.getDeleteQuotaRuleMethod =
+              getDeleteQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.DeleteQuotaRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.DeleteQuotaRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("DeleteQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteQuotaRuleMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static NetAppStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<NetAppStub> factory =
@@ -3245,6 +3458,77 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteBackupPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    default void listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListQuotaRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    default void getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.QuotaRule> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetQuotaRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    default void createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateQuotaRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    default void updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateQuotaRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    default void deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteQuotaRuleMethod(), responseObserver);
     }
   }
 
@@ -4176,6 +4460,87 @@ public final class NetAppGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public void listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListQuotaRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public void getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.QuotaRule> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public void createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public void updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public void deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -4920,6 +5285,71 @@ public final class NetAppGrpc {
         com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListQuotaRulesResponse listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQuotaRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.QuotaRule getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQuotaRuleMethod(), getCallOptions(), request);
     }
   }
 
@@ -5683,6 +6113,72 @@ public final class NetAppGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBackupPolicyMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+        listQuotaRules(com.google.cloud.netapp.v1.ListQuotaRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListQuotaRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.netapp.v1.QuotaRule>
+        getQuotaRule(com.google.cloud.netapp.v1.GetQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetQuotaRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createQuotaRule(com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateQuotaRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateQuotaRule(com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateQuotaRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteQuotaRule(com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteQuotaRuleMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_STORAGE_POOLS = 0;
@@ -5740,6 +6236,11 @@ public final class NetAppGrpc {
   private static final int METHODID_LIST_BACKUP_POLICIES = 52;
   private static final int METHODID_UPDATE_BACKUP_POLICY = 53;
   private static final int METHODID_DELETE_BACKUP_POLICY = 54;
+  private static final int METHODID_LIST_QUOTA_RULES = 55;
+  private static final int METHODID_GET_QUOTA_RULE = 56;
+  private static final int METHODID_CREATE_QUOTA_RULE = 57;
+  private static final int METHODID_UPDATE_QUOTA_RULE = 58;
+  private static final int METHODID_DELETE_QUOTA_RULE = 59;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6047,6 +6548,32 @@ public final class NetAppGrpc {
         case METHODID_DELETE_BACKUP_POLICY:
           serviceImpl.deleteBackupPolicy(
               (com.google.cloud.netapp.v1.DeleteBackupPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_QUOTA_RULES:
+          serviceImpl.listQuotaRules(
+              (com.google.cloud.netapp.v1.ListQuotaRulesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListQuotaRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_QUOTA_RULE:
+          serviceImpl.getQuotaRule(
+              (com.google.cloud.netapp.v1.GetQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.QuotaRule>) responseObserver);
+          break;
+        case METHODID_CREATE_QUOTA_RULE:
+          serviceImpl.createQuotaRule(
+              (com.google.cloud.netapp.v1.CreateQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_QUOTA_RULE:
+          serviceImpl.updateQuotaRule(
+              (com.google.cloud.netapp.v1.UpdateQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_QUOTA_RULE:
+          serviceImpl.deleteQuotaRule(
+              (com.google.cloud.netapp.v1.DeleteQuotaRuleRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -6411,6 +6938,37 @@ public final class NetAppGrpc {
                 new MethodHandlers<
                     com.google.cloud.netapp.v1.DeleteBackupPolicyRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_POLICY)))
+        .addMethod(
+            getListQuotaRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+                    com.google.cloud.netapp.v1.ListQuotaRulesResponse>(
+                    service, METHODID_LIST_QUOTA_RULES)))
+        .addMethod(
+            getGetQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.GetQuotaRuleRequest,
+                    com.google.cloud.netapp.v1.QuotaRule>(service, METHODID_GET_QUOTA_RULE)))
+        .addMethod(
+            getCreateQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.CreateQuotaRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_QUOTA_RULE)))
+        .addMethod(
+            getUpdateQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.UpdateQuotaRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_QUOTA_RULE)))
+        .addMethod(
+            getDeleteQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.DeleteQuotaRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_QUOTA_RULE)))
         .build();
   }
 
@@ -6515,6 +7073,11 @@ public final class NetAppGrpc {
                       .addMethod(getListBackupPoliciesMethod())
                       .addMethod(getUpdateBackupPolicyMethod())
                       .addMethod(getDeleteBackupPolicyMethod())
+                      .addMethod(getListQuotaRulesMethod())
+                      .addMethod(getGetQuotaRuleMethod())
+                      .addMethod(getCreateQuotaRuleMethod())
+                      .addMethod(getUpdateQuotaRuleMethod())
+                      .addMethod(getDeleteQuotaRuleMethod())
                       .build();
         }
       }

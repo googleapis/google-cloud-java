@@ -132,7 +132,7 @@ public enum DirectoryServiceType implements com.google.protobuf.ProtocolMessageE
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final DirectoryServiceType[] VALUES = values();

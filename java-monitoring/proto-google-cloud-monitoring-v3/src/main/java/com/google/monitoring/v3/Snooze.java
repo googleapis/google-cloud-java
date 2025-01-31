@@ -82,6 +82,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -100,6 +102,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -118,6 +122,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -137,6 +143,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -145,6 +153,57 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes of the policies at the given index.
      */
     com.google.protobuf.ByteString getPoliciesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filter string to match on Alert fields when silencing the
+     * alerts. It follows the standard https://google.aip.dev/160 syntax.
+     * A filter string used to apply the snooze to specific incidents
+     * that have matching filter values.
+     * Filters can be defined for snoozes that apply to one alerting
+     * policy.
+     * Filters must be a string formatted as one or more resource labels with
+     * specific label values. If multiple resource labels are used, then they
+     * must be connected with an AND operator. For example, the following filter
+     * applies the snooze to incidents that have an instance ID of
+     * `1234567890` and a zone of `us-central1-a`:
+     *
+     *     resource.labels.instance_id="1234567890" AND
+     *     resource.labels.zone="us-central1-a"
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The filter.
+     */
+    java.lang.String getFilter();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filter string to match on Alert fields when silencing the
+     * alerts. It follows the standard https://google.aip.dev/160 syntax.
+     * A filter string used to apply the snooze to specific incidents
+     * that have matching filter values.
+     * Filters can be defined for snoozes that apply to one alerting
+     * policy.
+     * Filters must be a string formatted as one or more resource labels with
+     * specific label values. If multiple resource labels are used, then they
+     * must be connected with an AND operator. For example, the following filter
+     * applies the snooze to incidents that have an instance ID of
+     * `1234567890` and a zone of `us-central1-a`:
+     *
+     *     resource.labels.instance_id="1234567890" AND
+     *     resource.labels.zone="us-central1-a"
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
+     */
+    com.google.protobuf.ByteString getFilterBytes();
   }
   /**
    *
@@ -169,6 +228,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
 
     private Criteria() {
       policies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      filter_ = "";
     }
 
     @java.lang.Override
@@ -208,6 +268,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -228,6 +290,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -248,6 +312,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -269,6 +335,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      *
      * There is a limit of 16 policies per snooze. This limit is checked during
      * snooze creation.
+     * Exactly 1 alert policy is required if `filter` is specified at the same
+     * time.
      * </pre>
      *
      * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -278,6 +346,83 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.protobuf.ByteString getPoliciesBytes(int index) {
       return policies_.getByteString(index);
+    }
+
+    public static final int FILTER_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filter string to match on Alert fields when silencing the
+     * alerts. It follows the standard https://google.aip.dev/160 syntax.
+     * A filter string used to apply the snooze to specific incidents
+     * that have matching filter values.
+     * Filters can be defined for snoozes that apply to one alerting
+     * policy.
+     * Filters must be a string formatted as one or more resource labels with
+     * specific label values. If multiple resource labels are used, then they
+     * must be connected with an AND operator. For example, the following filter
+     * applies the snooze to incidents that have an instance ID of
+     * `1234567890` and a zone of `us-central1-a`:
+     *
+     *     resource.labels.instance_id="1234567890" AND
+     *     resource.labels.zone="us-central1-a"
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The filter.
+     */
+    @java.lang.Override
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filter string to match on Alert fields when silencing the
+     * alerts. It follows the standard https://google.aip.dev/160 syntax.
+     * A filter string used to apply the snooze to specific incidents
+     * that have matching filter values.
+     * Filters can be defined for snoozes that apply to one alerting
+     * policy.
+     * Filters must be a string formatted as one or more resource labels with
+     * specific label values. If multiple resource labels are used, then they
+     * must be connected with an AND operator. For example, the following filter
+     * applies the snooze to incidents that have an instance ID of
+     * `1234567890` and a zone of `us-central1-a`:
+     *
+     *     resource.labels.instance_id="1234567890" AND
+     *     resource.labels.zone="us-central1-a"
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     *
+     * @return The bytes for filter.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -297,6 +442,9 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < policies_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, policies_.getRaw(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -313,6 +461,9 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         }
         size += dataSize;
         size += 1 * getPoliciesList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -331,6 +482,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
           (com.google.monitoring.v3.Snooze.Criteria) obj;
 
       if (!getPoliciesList().equals(other.getPoliciesList())) return false;
+      if (!getFilter().equals(other.getFilter())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -346,6 +498,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + POLICIES_FIELD_NUMBER;
         hash = (53 * hash) + getPoliciesList().hashCode();
       }
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -490,6 +644,7 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         policies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        filter_ = "";
         return this;
       }
 
@@ -529,6 +684,9 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           policies_.makeImmutable();
           result.policies_ = policies_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.filter_ = filter_;
         }
       }
 
@@ -589,6 +747,11 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (!other.getFilter().isEmpty()) {
+          filter_ = other.filter_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -622,6 +785,12 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
                   policies_.add(s);
                   break;
                 } // case 10
+              case 18:
+                {
+                  filter_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -661,6 +830,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -682,6 +853,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -702,6 +875,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -723,6 +898,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -744,6 +921,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -773,6 +952,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -801,6 +982,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -826,6 +1009,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -850,6 +1035,8 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
        *
        * There is a limit of 16 policies per snooze. This limit is checked during
        * snooze creation.
+       * Exactly 1 alert policy is required if `filter` is specified at the same
+       * time.
        * </pre>
        *
        * <code>repeated string policies = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -865,6 +1052,177 @@ public final class Snooze extends com.google.protobuf.GeneratedMessageV3
         ensurePoliciesIsMutable();
         policies_.add(value);
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filter_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter string to match on Alert fields when silencing the
+       * alerts. It follows the standard https://google.aip.dev/160 syntax.
+       * A filter string used to apply the snooze to specific incidents
+       * that have matching filter values.
+       * Filters can be defined for snoozes that apply to one alerting
+       * policy.
+       * Filters must be a string formatted as one or more resource labels with
+       * specific label values. If multiple resource labels are used, then they
+       * must be connected with an AND operator. For example, the following filter
+       * applies the snooze to incidents that have an instance ID of
+       * `1234567890` and a zone of `us-central1-a`:
+       *
+       *     resource.labels.instance_id="1234567890" AND
+       *     resource.labels.zone="us-central1-a"
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @return The filter.
+       */
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filter_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter string to match on Alert fields when silencing the
+       * alerts. It follows the standard https://google.aip.dev/160 syntax.
+       * A filter string used to apply the snooze to specific incidents
+       * that have matching filter values.
+       * Filters can be defined for snoozes that apply to one alerting
+       * policy.
+       * Filters must be a string formatted as one or more resource labels with
+       * specific label values. If multiple resource labels are used, then they
+       * must be connected with an AND operator. For example, the following filter
+       * applies the snooze to incidents that have an instance ID of
+       * `1234567890` and a zone of `us-central1-a`:
+       *
+       *     resource.labels.instance_id="1234567890" AND
+       *     resource.labels.zone="us-central1-a"
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @return The bytes for filter.
+       */
+      public com.google.protobuf.ByteString getFilterBytes() {
+        java.lang.Object ref = filter_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filter_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter string to match on Alert fields when silencing the
+       * alerts. It follows the standard https://google.aip.dev/160 syntax.
+       * A filter string used to apply the snooze to specific incidents
+       * that have matching filter values.
+       * Filters can be defined for snoozes that apply to one alerting
+       * policy.
+       * Filters must be a string formatted as one or more resource labels with
+       * specific label values. If multiple resource labels are used, then they
+       * must be connected with an AND operator. For example, the following filter
+       * applies the snooze to incidents that have an instance ID of
+       * `1234567890` and a zone of `us-central1-a`:
+       *
+       *     resource.labels.instance_id="1234567890" AND
+       *     resource.labels.zone="us-central1-a"
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @param value The filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilter(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filter_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter string to match on Alert fields when silencing the
+       * alerts. It follows the standard https://google.aip.dev/160 syntax.
+       * A filter string used to apply the snooze to specific incidents
+       * that have matching filter values.
+       * Filters can be defined for snoozes that apply to one alerting
+       * policy.
+       * Filters must be a string formatted as one or more resource labels with
+       * specific label values. If multiple resource labels are used, then they
+       * must be connected with an AND operator. For example, the following filter
+       * applies the snooze to incidents that have an instance ID of
+       * `1234567890` and a zone of `us-central1-a`:
+       *
+       *     resource.labels.instance_id="1234567890" AND
+       *     resource.labels.zone="us-central1-a"
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilter() {
+        filter_ = getDefaultInstance().getFilter();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The filter string to match on Alert fields when silencing the
+       * alerts. It follows the standard https://google.aip.dev/160 syntax.
+       * A filter string used to apply the snooze to specific incidents
+       * that have matching filter values.
+       * Filters can be defined for snoozes that apply to one alerting
+       * policy.
+       * Filters must be a string formatted as one or more resource labels with
+       * specific label values. If multiple resource labels are used, then they
+       * must be connected with an AND operator. For example, the following filter
+       * applies the snooze to incidents that have an instance ID of
+       * `1234567890` and a zone of `us-central1-a`:
+       *
+       *     resource.labels.instance_id="1234567890" AND
+       *     resource.labels.zone="us-central1-a"
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       *
+       * @param value The bytes for filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        filter_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

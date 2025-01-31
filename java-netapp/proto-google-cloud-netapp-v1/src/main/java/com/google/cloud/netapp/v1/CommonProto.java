@@ -43,21 +43,25 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/netapp/v1/common.proto\022\026g"
           + "oogle.cloud.netapp.v1\032\037google/api/field_"
-          + "behavior.proto\"_\n\020LocationMetadata\022K\n\030su"
-          + "pported_service_levels\030\001 \003(\0162$.google.cl"
-          + "oud.netapp.v1.ServiceLevelB\003\340A\003*_\n\014Servi"
-          + "ceLevel\022\035\n\031SERVICE_LEVEL_UNSPECIFIED\020\000\022\013"
-          + "\n\007PREMIUM\020\001\022\013\n\007EXTREME\020\002\022\014\n\010STANDARD\020\003\022\010"
-          + "\n\004FLEX\020\004*U\n\016EncryptionType\022\037\n\033ENCRYPTION"
-          + "_TYPE_UNSPECIFIED\020\000\022\023\n\017SERVICE_MANAGED\020\001"
-          + "\022\r\n\tCLOUD_KMS\020\002*T\n\024DirectoryServiceType\022"
-          + "&\n\"DIRECTORY_SERVICE_TYPE_UNSPECIFIED\020\000\022"
-          + "\024\n\020ACTIVE_DIRECTORY\020\001B\255\001\n\032com.google.clo"
-          + "ud.netapp.v1B\013CommonProtoP\001Z2cloud.googl"
-          + "e.com/go/netapp/apiv1/netapppb;netapppb\252"
-          + "\002\026Google.Cloud.NetApp.V1\312\002\026Google\\Cloud\\"
-          + "NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006p"
-          + "roto3"
+          + "behavior.proto\"\261\001\n\020LocationMetadata\022K\n\030s"
+          + "upported_service_levels\030\001 \003(\0162$.google.c"
+          + "loud.netapp.v1.ServiceLevelB\003\340A\003\022P\n\032supp"
+          + "orted_flex_performance\030\002 \003(\0162\'.google.cl"
+          + "oud.netapp.v1.FlexPerformanceB\003\340A\003*_\n\014Se"
+          + "rviceLevel\022\035\n\031SERVICE_LEVEL_UNSPECIFIED\020"
+          + "\000\022\013\n\007PREMIUM\020\001\022\013\n\007EXTREME\020\002\022\014\n\010STANDARD\020"
+          + "\003\022\010\n\004FLEX\020\004*n\n\017FlexPerformance\022 \n\034FLEX_P"
+          + "ERFORMANCE_UNSPECIFIED\020\000\022\034\n\030FLEX_PERFORM"
+          + "ANCE_DEFAULT\020\001\022\033\n\027FLEX_PERFORMANCE_CUSTO"
+          + "M\020\002*U\n\016EncryptionType\022\037\n\033ENCRYPTION_TYPE"
+          + "_UNSPECIFIED\020\000\022\023\n\017SERVICE_MANAGED\020\001\022\r\n\tC"
+          + "LOUD_KMS\020\002*T\n\024DirectoryServiceType\022&\n\"DI"
+          + "RECTORY_SERVICE_TYPE_UNSPECIFIED\020\000\022\024\n\020AC"
+          + "TIVE_DIRECTORY\020\001B\255\001\n\032com.google.cloud.ne"
+          + "tapp.v1B\013CommonProtoP\001Z2cloud.google.com"
+          + "/go/netapp/apiv1/netapppb;netapppb\252\002\026Goo"
+          + "gle.Cloud.NetApp.V1\312\002\026Google\\Cloud\\NetAp"
+          + "p\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -71,7 +75,7 @@ public final class CommonProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_LocationMetadata_descriptor,
             new java.lang.String[] {
-              "SupportedServiceLevels",
+              "SupportedServiceLevels", "SupportedFlexPerformance",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

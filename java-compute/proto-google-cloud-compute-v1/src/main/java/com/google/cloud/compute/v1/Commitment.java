@@ -528,6 +528,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     ACCELERATOR_OPTIMIZED_A3(158574526),
     /** <code>ACCELERATOR_OPTIMIZED_A3_MEGA = 156517459;</code> */
     ACCELERATOR_OPTIMIZED_A3_MEGA(156517459),
+    /** <code>ACCELERATOR_OPTIMIZED_A3_ULTRA = 27812811;</code> */
+    ACCELERATOR_OPTIMIZED_A3_ULTRA(27812811),
     /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
     COMPUTE_OPTIMIZED(158349023),
     /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
@@ -589,6 +591,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int ACCELERATOR_OPTIMIZED_A3_VALUE = 158574526;
     /** <code>ACCELERATOR_OPTIMIZED_A3_MEGA = 156517459;</code> */
     public static final int ACCELERATOR_OPTIMIZED_A3_MEGA_VALUE = 156517459;
+    /** <code>ACCELERATOR_OPTIMIZED_A3_ULTRA = 27812811;</code> */
+    public static final int ACCELERATOR_OPTIMIZED_A3_ULTRA_VALUE = 27812811;
     /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
     public static final int COMPUTE_OPTIMIZED_VALUE = 158349023;
     /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
@@ -664,6 +668,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return ACCELERATOR_OPTIMIZED_A3;
         case 156517459:
           return ACCELERATOR_OPTIMIZED_A3_MEGA;
+        case 27812811:
+          return ACCELERATOR_OPTIMIZED_A3_ULTRA;
         case 158349023:
           return COMPUTE_OPTIMIZED;
         case 383246453:

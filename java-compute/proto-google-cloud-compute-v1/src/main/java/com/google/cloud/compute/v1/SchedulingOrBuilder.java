@@ -78,6 +78,31 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+   * </pre>
+   *
+   * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
+   *
+   * @return Whether the hostErrorTimeoutSeconds field is set.
+   */
+  boolean hasHostErrorTimeoutSeconds();
+  /**
+   *
+   *
+   * <pre>
+   * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+   * </pre>
+   *
+   * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
+   *
+   * @return The hostErrorTimeoutSeconds.
+   */
+  int getHostErrorTimeoutSeconds();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the termination action for the instance.
    * Check the InstanceTerminationAction enum for the list of possible values.
    * </pre>

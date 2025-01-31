@@ -1104,6 +1104,104 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListQuotaRules</td>
+ *      <td><p> Returns list of all quota rules in a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQuotaRules(ListQuotaRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQuotaRules(VolumeName parent)
+ *           <li><p> listQuotaRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQuotaRulesPagedCallable()
+ *           <li><p> listQuotaRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQuotaRule</td>
+ *      <td><p> Returns details of the specified quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQuotaRule(GetQuotaRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQuotaRule(QuotaRuleName name)
+ *           <li><p> getQuotaRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQuotaRule</td>
+ *      <td><p> Creates a new quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleAsync(CreateQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleAsync(VolumeName parent, QuotaRule quotaRule, String quotaRuleId)
+ *           <li><p> createQuotaRuleAsync(String parent, QuotaRule quotaRule, String quotaRuleId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleOperationCallable()
+ *           <li><p> createQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateQuotaRule</td>
+ *      <td><p> Updates a quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleAsync(UpdateQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleAsync(QuotaRule quotaRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleOperationCallable()
+ *           <li><p> updateQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQuotaRule</td>
+ *      <td><p> Deletes a quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleAsync(DeleteQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleAsync(QuotaRuleName name)
+ *           <li><p> deleteQuotaRuleAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleOperationCallable()
+ *           <li><p> deleteQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -8632,6 +8730,725 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   for (QuotaRule element : netAppClient.listQuotaRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListQuotaRulesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(VolumeName parent) {
+    ListQuotaRulesRequest request =
+        ListQuotaRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQuotaRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   for (QuotaRule element : netAppClient.listQuotaRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListQuotaRulesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(String parent) {
+    ListQuotaRulesRequest request = ListQuotaRulesRequest.newBuilder().setParent(parent).build();
+    return listQuotaRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (QuotaRule element : netAppClient.listQuotaRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(ListQuotaRulesRequest request) {
+    return listQuotaRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<QuotaRule> future = netAppClient.listQuotaRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QuotaRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    return stub.listQuotaRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListQuotaRulesResponse response = netAppClient.listQuotaRulesCallable().call(request);
+   *     for (QuotaRule element : response.getQuotaRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse>
+      listQuotaRulesCallable() {
+    return stub.listQuotaRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+   *   QuotaRule response = netAppClient.getQuotaRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(QuotaRuleName name) {
+    GetQuotaRuleRequest request =
+        GetQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getQuotaRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString();
+   *   QuotaRule response = netAppClient.getQuotaRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(String name) {
+    GetQuotaRuleRequest request = GetQuotaRuleRequest.newBuilder().setName(name).build();
+    return getQuotaRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetQuotaRuleRequest request =
+   *       GetQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   QuotaRule response = netAppClient.getQuotaRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(GetQuotaRuleRequest request) {
+    return getQuotaRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetQuotaRuleRequest request =
+   *       GetQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QuotaRule> future = netAppClient.getQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    return stub.getQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   String quotaRuleId = "quotaRuleId1476739535";
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateQuotaRuleRequest
+   * @param quotaRule Required. Fields of the to be created quota rule.
+   * @param quotaRuleId Required. ID of the quota rule to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      VolumeName parent, QuotaRule quotaRule, String quotaRuleId) {
+    CreateQuotaRuleRequest request =
+        CreateQuotaRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuotaRule(quotaRule)
+            .setQuotaRuleId(quotaRuleId)
+            .build();
+    return createQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   String quotaRuleId = "quotaRuleId1476739535";
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateQuotaRuleRequest
+   * @param quotaRule Required. Fields of the to be created quota rule.
+   * @param quotaRuleId Required. ID of the quota rule to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      String parent, QuotaRule quotaRule, String quotaRuleId) {
+    CreateQuotaRuleRequest request =
+        CreateQuotaRuleRequest.newBuilder()
+            .setParent(parent)
+            .setQuotaRule(quotaRule)
+            .setQuotaRuleId(quotaRuleId)
+            .build();
+    return createQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      CreateQuotaRuleRequest request) {
+    return createQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   OperationFuture<QuotaRule, OperationMetadata> future =
+   *       netAppClient.createQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    return stub.createQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    return stub.createQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   QuotaRule response = netAppClient.updateQuotaRuleAsync(quotaRule, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param quotaRule Required. The quota rule being updated
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Quota Rule resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> updateQuotaRuleAsync(
+      QuotaRule quotaRule, FieldMask updateMask) {
+    UpdateQuotaRuleRequest request =
+        UpdateQuotaRuleRequest.newBuilder()
+            .setQuotaRule(quotaRule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   QuotaRule response = netAppClient.updateQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> updateQuotaRuleAsync(
+      UpdateQuotaRuleRequest request) {
+    return updateQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   OperationFuture<QuotaRule, OperationMetadata> future =
+   *       netAppClient.updateQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    return stub.updateQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    return stub.updateQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+   *   netAppClient.deleteQuotaRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(QuotaRuleName name) {
+    DeleteQuotaRuleRequest request =
+        DeleteQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString();
+   *   netAppClient.deleteQuotaRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(String name) {
+    DeleteQuotaRuleRequest request = DeleteQuotaRuleRequest.newBuilder().setName(name).build();
+    return deleteQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   netAppClient.deleteQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(
+      DeleteQuotaRuleRequest request) {
+    return deleteQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    return stub.deleteQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    return stub.deleteQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -9504,6 +10321,82 @@ public class NetAppClient implements BackgroundResource {
     protected ListBackupPoliciesFixedSizeCollection createCollection(
         List<ListBackupPoliciesPage> pages, int collectionSize) {
       return new ListBackupPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQuotaRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListQuotaRulesRequest,
+          ListQuotaRulesResponse,
+          QuotaRule,
+          ListQuotaRulesPage,
+          ListQuotaRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListQuotaRulesPagedResponse> createAsync(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ApiFuture<ListQuotaRulesResponse> futureResponse) {
+      ApiFuture<ListQuotaRulesPage> futurePage =
+          ListQuotaRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQuotaRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQuotaRulesPagedResponse(ListQuotaRulesPage page) {
+      super(page, ListQuotaRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQuotaRulesPage
+      extends AbstractPage<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule, ListQuotaRulesPage> {
+
+    private ListQuotaRulesPage(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ListQuotaRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListQuotaRulesPage createEmptyPage() {
+      return new ListQuotaRulesPage(null, null);
+    }
+
+    @Override
+    protected ListQuotaRulesPage createPage(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ListQuotaRulesResponse response) {
+      return new ListQuotaRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQuotaRulesPage> createPageAsync(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ApiFuture<ListQuotaRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQuotaRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQuotaRulesRequest,
+          ListQuotaRulesResponse,
+          QuotaRule,
+          ListQuotaRulesPage,
+          ListQuotaRulesFixedSizeCollection> {
+
+    private ListQuotaRulesFixedSizeCollection(List<ListQuotaRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQuotaRulesFixedSizeCollection createEmptyCollection() {
+      return new ListQuotaRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQuotaRulesFixedSizeCollection createCollection(
+        List<ListQuotaRulesPage> pages, int collectionSize) {
+      return new ListQuotaRulesFixedSizeCollection(pages, collectionSize);
     }
   }
 

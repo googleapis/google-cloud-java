@@ -41,6 +41,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   private LocationMetadata() {
     supportedServiceLevels_ = java.util.Collections.emptyList();
+    supportedFlexPerformance_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -172,6 +173,117 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   private int supportedServiceLevelsMemoizedSerializedSize;
 
+  public static final int SUPPORTED_FLEX_PERFORMANCE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> supportedFlexPerformance_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.netapp.v1.FlexPerformance>
+      supportedFlexPerformance_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.netapp.v1.FlexPerformance>() {
+            public com.google.cloud.netapp.v1.FlexPerformance convert(java.lang.Integer from) {
+              com.google.cloud.netapp.v1.FlexPerformance result =
+                  com.google.cloud.netapp.v1.FlexPerformance.forNumber(from);
+              return result == null
+                  ? com.google.cloud.netapp.v1.FlexPerformance.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the supportedFlexPerformance.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.netapp.v1.FlexPerformance>
+      getSupportedFlexPerformanceList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.netapp.v1.FlexPerformance>(
+        supportedFlexPerformance_, supportedFlexPerformance_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of supportedFlexPerformance.
+   */
+  @java.lang.Override
+  public int getSupportedFlexPerformanceCount() {
+    return supportedFlexPerformance_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedFlexPerformance at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.FlexPerformance getSupportedFlexPerformance(int index) {
+    return supportedFlexPerformance_converter_.convert(supportedFlexPerformance_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for supportedFlexPerformance.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getSupportedFlexPerformanceValueList() {
+    return supportedFlexPerformance_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedFlexPerformance at the given index.
+   */
+  @java.lang.Override
+  public int getSupportedFlexPerformanceValue(int index) {
+    return supportedFlexPerformance_.get(index);
+  }
+
+  private int supportedFlexPerformanceMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -193,6 +305,13 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < supportedServiceLevels_.size(); i++) {
       output.writeEnumNoTag(supportedServiceLevels_.get(i));
+    }
+    if (getSupportedFlexPerformanceList().size() > 0) {
+      output.writeUInt32NoTag(18);
+      output.writeUInt32NoTag(supportedFlexPerformanceMemoizedSerializedSize);
+    }
+    for (int i = 0; i < supportedFlexPerformance_.size(); i++) {
+      output.writeEnumNoTag(supportedFlexPerformance_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -217,6 +336,20 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       supportedServiceLevelsMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < supportedFlexPerformance_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                supportedFlexPerformance_.get(i));
+      }
+      size += dataSize;
+      if (!getSupportedFlexPerformanceList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      supportedFlexPerformanceMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -234,6 +367,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.netapp.v1.LocationMetadata) obj;
 
     if (!supportedServiceLevels_.equals(other.supportedServiceLevels_)) return false;
+    if (!supportedFlexPerformance_.equals(other.supportedFlexPerformance_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -248,6 +382,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (getSupportedServiceLevelsCount() > 0) {
       hash = (37 * hash) + SUPPORTED_SERVICE_LEVELS_FIELD_NUMBER;
       hash = (53 * hash) + supportedServiceLevels_.hashCode();
+    }
+    if (getSupportedFlexPerformanceCount() > 0) {
+      hash = (37 * hash) + SUPPORTED_FLEX_PERFORMANCE_FIELD_NUMBER;
+      hash = (53 * hash) + supportedFlexPerformance_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -391,6 +529,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       supportedServiceLevels_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      supportedFlexPerformance_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -432,6 +572,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.supportedServiceLevels_ = supportedServiceLevels_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        supportedFlexPerformance_ =
+            java.util.Collections.unmodifiableList(supportedFlexPerformance_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.supportedFlexPerformance_ = supportedFlexPerformance_;
     }
 
     private void buildPartial0(com.google.cloud.netapp.v1.LocationMetadata result) {
@@ -493,6 +639,16 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (!other.supportedFlexPerformance_.isEmpty()) {
+        if (supportedFlexPerformance_.isEmpty()) {
+          supportedFlexPerformance_ = other.supportedFlexPerformance_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureSupportedFlexPerformanceIsMutable();
+          supportedFlexPerformance_.addAll(other.supportedFlexPerformance_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -538,6 +694,25 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                 input.popLimit(oldLimit);
                 break;
               } // case 10
+            case 16:
+              {
+                int tmpRaw = input.readEnum();
+                ensureSupportedFlexPerformanceIsMutable();
+                supportedFlexPerformance_.add(tmpRaw);
+                break;
+              } // case 16
+            case 18:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureSupportedFlexPerformanceIsMutable();
+                  supportedFlexPerformance_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -800,6 +975,256 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       ensureSupportedServiceLevelsIsMutable();
       for (int value : values) {
         supportedServiceLevels_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> supportedFlexPerformance_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSupportedFlexPerformanceIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        supportedFlexPerformance_ =
+            new java.util.ArrayList<java.lang.Integer>(supportedFlexPerformance_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the supportedFlexPerformance.
+     */
+    public java.util.List<com.google.cloud.netapp.v1.FlexPerformance>
+        getSupportedFlexPerformanceList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.netapp.v1.FlexPerformance>(
+          supportedFlexPerformance_, supportedFlexPerformance_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of supportedFlexPerformance.
+     */
+    public int getSupportedFlexPerformanceCount() {
+      return supportedFlexPerformance_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedFlexPerformance at the given index.
+     */
+    public com.google.cloud.netapp.v1.FlexPerformance getSupportedFlexPerformance(int index) {
+      return supportedFlexPerformance_converter_.convert(supportedFlexPerformance_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The supportedFlexPerformance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedFlexPerformance(
+        int index, com.google.cloud.netapp.v1.FlexPerformance value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedFlexPerformanceIsMutable();
+      supportedFlexPerformance_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The supportedFlexPerformance to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedFlexPerformance(com.google.cloud.netapp.v1.FlexPerformance value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedFlexPerformanceIsMutable();
+      supportedFlexPerformance_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The supportedFlexPerformance to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedFlexPerformance(
+        java.lang.Iterable<? extends com.google.cloud.netapp.v1.FlexPerformance> values) {
+      ensureSupportedFlexPerformanceIsMutable();
+      for (com.google.cloud.netapp.v1.FlexPerformance value : values) {
+        supportedFlexPerformance_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportedFlexPerformance() {
+      supportedFlexPerformance_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for supportedFlexPerformance.
+     */
+    public java.util.List<java.lang.Integer> getSupportedFlexPerformanceValueList() {
+      return java.util.Collections.unmodifiableList(supportedFlexPerformance_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedFlexPerformance at the given index.
+     */
+    public int getSupportedFlexPerformanceValue(int index) {
+      return supportedFlexPerformance_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for supportedFlexPerformance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedFlexPerformanceValue(int index, int value) {
+      ensureSupportedFlexPerformanceIsMutable();
+      supportedFlexPerformance_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for supportedFlexPerformance to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedFlexPerformanceValue(int value) {
+      ensureSupportedFlexPerformanceIsMutable();
+      supportedFlexPerformance_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Supported flex performance in a location.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for supportedFlexPerformance to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedFlexPerformanceValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureSupportedFlexPerformanceIsMutable();
+      for (int value : values) {
+        supportedFlexPerformance_.add(value);
       }
       onChanged();
       return this;

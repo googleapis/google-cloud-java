@@ -22,6 +22,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedRespo
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -215,6 +216,8 @@ public class NetAppClientTest {
             .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -287,6 +290,8 @@ public class NetAppClientTest {
             .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -359,6 +364,8 @@ public class NetAppClientTest {
             .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -416,6 +423,8 @@ public class NetAppClientTest {
             .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -473,6 +482,8 @@ public class NetAppClientTest {
             .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -677,6 +688,8 @@ public class NetAppClientTest {
             .setAllowAutoTiering(true)
             .setReplicaZone("replicaZone-1063236476")
             .setZone("zone3744684")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4166,6 +4179,8 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4227,6 +4242,8 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4288,6 +4305,8 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4335,6 +4354,8 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4554,6 +4575,8 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChainStorageBytes(1614651561)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5033,6 +5056,442 @@ public class NetAppClientTest {
     try {
       String name = "name3373707";
       client.deleteBackupPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listQuotaRulesTest() throws Exception {
+    QuotaRule responsesElement = QuotaRule.newBuilder().build();
+    ListQuotaRulesResponse expectedResponse =
+        ListQuotaRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQuotaRules(Arrays.asList(responsesElement))
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+
+    ListQuotaRulesPagedResponse pagedListResponse = client.listQuotaRules(parent);
+
+    List<QuotaRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQuotaRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQuotaRulesRequest actualRequest = ((ListQuotaRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQuotaRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+      client.listQuotaRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQuotaRulesTest2() throws Exception {
+    QuotaRule responsesElement = QuotaRule.newBuilder().build();
+    ListQuotaRulesResponse expectedResponse =
+        ListQuotaRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQuotaRules(Arrays.asList(responsesElement))
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListQuotaRulesPagedResponse pagedListResponse = client.listQuotaRules(parent);
+
+    List<QuotaRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQuotaRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListQuotaRulesRequest actualRequest = ((ListQuotaRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listQuotaRulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listQuotaRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQuotaRuleTest() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+
+    QuotaRule actualResponse = client.getQuotaRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQuotaRuleRequest actualRequest = ((GetQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+      client.getQuotaRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQuotaRuleTest2() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockNetApp.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    QuotaRule actualResponse = client.getQuotaRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetQuotaRuleRequest actualRequest = ((GetQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getQuotaRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getQuotaRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQuotaRuleTest() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+    QuotaRule quotaRule = QuotaRule.newBuilder().build();
+    String quotaRuleId = "quotaRuleId1476739535";
+
+    QuotaRule actualResponse = client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQuotaRuleRequest actualRequest = ((CreateQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(quotaRule, actualRequest.getQuotaRule());
+    Assert.assertEquals(quotaRuleId, actualRequest.getQuotaRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+      QuotaRule quotaRule = QuotaRule.newBuilder().build();
+      String quotaRuleId = "quotaRuleId1476739535";
+      client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createQuotaRuleTest2() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    QuotaRule quotaRule = QuotaRule.newBuilder().build();
+    String quotaRuleId = "quotaRuleId1476739535";
+
+    QuotaRule actualResponse = client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateQuotaRuleRequest actualRequest = ((CreateQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(quotaRule, actualRequest.getQuotaRule());
+    Assert.assertEquals(quotaRuleId, actualRequest.getQuotaRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createQuotaRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      QuotaRule quotaRule = QuotaRule.newBuilder().build();
+      String quotaRuleId = "quotaRuleId1476739535";
+      client.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateQuotaRuleTest() throws Exception {
+    QuotaRule expectedResponse =
+        QuotaRule.newBuilder()
+            .setName(
+                QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString())
+            .setTarget("target-880905839")
+            .setDiskLimitMib(-838650976)
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    QuotaRule quotaRule = QuotaRule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    QuotaRule actualResponse = client.updateQuotaRuleAsync(quotaRule, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateQuotaRuleRequest actualRequest = ((UpdateQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(quotaRule, actualRequest.getQuotaRule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      QuotaRule quotaRule = QuotaRule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateQuotaRuleAsync(quotaRule, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteQuotaRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+
+    client.deleteQuotaRuleAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQuotaRuleRequest actualRequest = ((DeleteQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQuotaRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+      client.deleteQuotaRuleAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteQuotaRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQuotaRuleTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetApp.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteQuotaRuleAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetApp.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteQuotaRuleRequest actualRequest = ((DeleteQuotaRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteQuotaRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetApp.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteQuotaRuleAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
