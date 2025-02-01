@@ -313,7 +313,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
     @Override
     public String getAuthenticationType() {
-      throw new IllegalArgumentException("Not supported");
+      return "Unauthenticated";
     }
 
     @Override
