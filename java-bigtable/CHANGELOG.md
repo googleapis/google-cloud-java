@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.51.2](https://github.com/googleapis/java-bigtable/compare/v2.51.1...v2.51.2) (2025-02-03)
+
+
+### Bug Fixes
+
+* Add known conformance test failures ([#2474](https://github.com/googleapis/java-bigtable/issues/2474)) ([15488fe](https://github.com/googleapis/java-bigtable/commit/15488fe6cfe05e84c4b6d65565150ee7277a60e7))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2473](https://github.com/googleapis/java-bigtable/issues/2473)) ([4d6d419](https://github.com/googleapis/java-bigtable/commit/4d6d41988c8e4b92b01851ab7ab52183254e8798))
+
 ## [2.51.1](https://github.com/googleapis/java-bigtable/compare/v2.51.0...v2.51.1) (2025-01-10)
 
 
