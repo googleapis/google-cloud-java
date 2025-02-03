@@ -119,6 +119,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setRagFilesCount(-477680736)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -175,6 +176,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setRagFilesCount(-477680736)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -231,6 +233,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setRagFilesCount(-477680736)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -284,6 +287,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setRagFilesCount(-477680736)
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 
@@ -329,6 +333,7 @@ public class VertexRagDataServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCorpusStatus(CorpusStatus.newBuilder().build())
+            .setRagFilesCount(-477680736)
             .build();
     mockVertexRagDataService.addResponse(expectedResponse);
 

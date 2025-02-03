@@ -400,5 +400,18 @@ public interface RagCorpusOrBuilder
   com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfigOrBuilder
       getVertexAiSearchConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of RagFiles in the RagCorpus.
+   * </pre>
+   *
+   * <code>int32 rag_files_count = 11;</code>
+   *
+   * @return The ragFilesCount.
+   */
+  int getRagFilesCount();
+
   com.google.cloud.aiplatform.v1beta1.RagCorpus.BackendConfigCase getBackendConfigCase();
 }
