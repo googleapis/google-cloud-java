@@ -7,76 +7,79 @@
     ":updateNotScheduled",
     ":automergeDisabled",
     ":ignoreModulesAndTests",
-    ":maintainLockFilesDisabled",
-    ":autodetectPinVersions"
+    ":maintainLockFilesDisabled"
   ],
-  "ignorePaths": [".kokoro/requirements.txt"],
-  "ignoreDeps": ["org.codehaus.mojo:flatten-maven-plugin"],
+  "ignorePaths": [
+    ".kokoro/requirements.txt"
+  ],
+  "ignoreDeps": [
+    "org.codehaus.mojo:flatten-maven-plugin"
+  ],
   "packageRules": [
     {
-      "packagePatterns": [
-        "^com.google.auto.value:"
-      ],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": [
+        "/^com.google.auto.value:/"
+      ]
     },
     {
-      "packagePatterns": [
-        "*"
-      ],
       "semanticCommitType": "deps",
-      "semanticCommitScope": null
+      "semanticCommitScope": null,
+      "matchPackageNames": [
+        "*"
+      ]
     },
     {
-      "packagePatterns": [
-        "^org.apache.maven",
-        "^org.jacoco:",
-        "^org.codehaus.mojo:",
-        "^org.sonatype.plugins:",
-        "^com.coveo:",
-        "^com.google.cloud:google-cloud-shared-config"
-      ],
       "semanticCommitType": "build",
-      "semanticCommitScope": "deps"
+      "semanticCommitScope": "deps",
+      "matchPackageNames": [
+        "/^org.apache.maven/",
+        "/^org.jacoco:/",
+        "/^org.codehaus.mojo:/",
+        "/^org.sonatype.plugins:/",
+        "/^com.coveo:/",
+        "/^com.google.cloud:google-cloud-shared-config/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^com.google.cloud:google-cloud-shared-config",
-        "^com.google.cloud:libraries-bom",
-        "^com.google.cloud.samples:shared-configuration"
-      ],
       "semanticCommitType": "chore",
-      "semanticCommitScope": "deps"
+      "semanticCommitScope": "deps",
+      "matchPackageNames": [
+        "/^com.google.cloud:google-cloud-shared-config/",
+        "/^com.google.cloud:libraries-bom/",
+        "/^com.google.cloud.samples:shared-configuration/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^junit:junit",
-        "^com.google.truth:truth",
-        "^org.mockito:mockito-core",
-        "^org.objenesis:objenesis",
-        "^com.google.cloud:google-cloud-conformance-tests"
-      ],
       "semanticCommitType": "test",
-      "semanticCommitScope": "deps"
+      "semanticCommitScope": "deps",
+      "matchPackageNames": [
+        "/^junit:junit/",
+        "/^com.google.truth:truth/",
+        "/^org.mockito:mockito-core/",
+        "/^org.objenesis:objenesis/",
+        "/^com.google.cloud:google-cloud-conformance-tests/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^com.google.cloud:google-cloud-"
-      ],
-      "ignoreUnstable": false
+      "ignoreUnstable": false,
+      "matchPackageNames": [
+        "/^com.google.cloud:google-cloud-/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^com.fasterxml.jackson.core"
-      ],
-      "groupName": "jackson dependencies"
+      "groupName": "jackson dependencies",
+      "matchPackageNames": [
+        "/^com.fasterxml.jackson.core/"
+      ]
     },
     {
-      "packagePatterns": [
-        "^org.graalvm.buildtools"
-      ],
-      "groupName": "GraalVM native-image dependencies"
+      "groupName": "GraalVM native-image dependencies",
+      "matchPackageNames": [
+        "/^org.graalvm.buildtools/"
+      ]
     }
   ],
-  "semanticCommits": true,
+  "semanticCommits": "enabled",
   "dependencyDashboard": true
 }
