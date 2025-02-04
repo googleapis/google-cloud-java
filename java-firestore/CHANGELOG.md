@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.30.7](https://github.com/googleapis/java-firestore/compare/v3.30.6...v3.30.7) (2025-02-04)
+
+
+### Bug Fixes
+
+* GetAuthenticationType in EmulatorCredentials should not throw. ([#2003](https://github.com/googleapis/java-firestore/issues/2003)) ([29afb41](https://github.com/googleapis/java-firestore/commit/29afb413f1f1f5bdbe7825b13fc3b200e8da211a))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-trace-v1 to v2.57.0 ([#2000](https://github.com/googleapis/java-firestore/issues/2000)) ([c5207bc](https://github.com/googleapis/java-firestore/commit/c5207bcb123130e261493283a345e674fc9d4b4b))
+* Update dependency com.google.cloud:google-cloud-trace to v2.57.0 ([#2001](https://github.com/googleapis/java-firestore/issues/2001)) ([b3917a9](https://github.com/googleapis/java-firestore/commit/b3917a98fb50d4bbf14f9840271f99a296df9c24))
+
 ## [3.30.6](https://github.com/googleapis/java-firestore/compare/v3.30.5...v3.30.6) (2025-01-28)
 
 
