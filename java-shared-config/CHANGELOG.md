@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.14.1](https://github.com/googleapis/java-shared-config/compare/v1.14.0...v1.14.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* Animalsniffer to a profile ([#975](https://github.com/googleapis/java-shared-config/issues/975)) ([83fe0f3](https://github.com/googleapis/java-shared-config/commit/83fe0f3e61afa0b85193ec36a7a5e7d7cdd2230e))
+
+
+### Dependencies
+
+* Update dependency com.puppycrawl.tools:checkstyle to v10.21.2 ([#972](https://github.com/googleapis/java-shared-config/issues/972)) ([8d7c796](https://github.com/googleapis/java-shared-config/commit/8d7c7967660637ec4c4c7823b435bba1b80a0ebb))
+* Update dependency org.graalvm.sdk:graal-sdk to v24.1.2 ([#968](https://github.com/googleapis/java-shared-config/issues/968)) ([d2d5736](https://github.com/googleapis/java-shared-config/commit/d2d57366de4962ca5bde212f36ed5c829412ad79))
+* Update dependency org.graalvm.sdk:nativeimage to v24.1.2 ([#969](https://github.com/googleapis/java-shared-config/issues/969)) ([c8cf518](https://github.com/googleapis/java-shared-config/commit/c8cf518ffe2bc604242964583b3c2fd50c536300))
+
 ## [1.14.0](https://github.com/googleapis/java-shared-config/compare/v1.13.0...v1.14.0) (2025-01-24)
 
 
