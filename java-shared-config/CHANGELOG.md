@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.2](https://github.com/googleapis/java-shared-config/compare/v1.14.1...v1.14.2) (2025-02-05)
+
+
+### Bug Fixes
+
+* Declare Maven plugin versions ([#980](https://github.com/googleapis/java-shared-config/issues/980)) ([3975f66](https://github.com/googleapis/java-shared-config/commit/3975f662d6150064af03a5f1b473b9eea849d906))
+
 ## [1.14.1](https://github.com/googleapis/java-shared-config/compare/v1.14.0...v1.14.1) (2025-02-04)
 
 
