@@ -56,6 +56,14 @@ public final class VendorSettingsProto {
       internal_static_google_cloud_run_v2_NodeSelector_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_NodeSelector_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_BuildConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_BuildConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -93,25 +101,39 @@ public final class VendorSettingsProto {
           + "\030\006 \001(\005B\003\340A\001H\000\210\001\001\"F\n\013ScalingMode\022\034\n\030SCALI"
           + "NG_MODE_UNSPECIFIED\020\000\022\r\n\tAUTOMATIC\020\001\022\n\n\006"
           + "MANUAL\020\002B\030\n\026_manual_instance_count\"(\n\014No"
-          + "deSelector\022\030\n\013accelerator\030\001 \001(\tB\003\340A\002*\263\001\n"
-          + "\016IngressTraffic\022\037\n\033INGRESS_TRAFFIC_UNSPE"
-          + "CIFIED\020\000\022\027\n\023INGRESS_TRAFFIC_ALL\020\001\022!\n\035ING"
-          + "RESS_TRAFFIC_INTERNAL_ONLY\020\002\022*\n&INGRESS_"
-          + "TRAFFIC_INTERNAL_LOAD_BALANCER\020\003\022\030\n\024INGR"
-          + "ESS_TRAFFIC_NONE\020\004*}\n\024ExecutionEnvironme"
-          + "nt\022%\n!EXECUTION_ENVIRONMENT_UNSPECIFIED\020"
-          + "\000\022\036\n\032EXECUTION_ENVIRONMENT_GEN1\020\001\022\036\n\032EXE"
-          + "CUTION_ENVIRONMENT_GEN2\020\002*p\n\035EncryptionK"
-          + "eyRevocationAction\0220\n,ENCRYPTION_KEY_REV"
-          + "OCATION_ACTION_UNSPECIFIED\020\000\022\017\n\013PREVENT_"
-          + "NEW\020\001\022\014\n\010SHUTDOWN\020\002B\240\002\n\027com.google.cloud"
-          + ".run.v2B\023VendorSettingsProtoP\001Z)cloud.go"
-          + "ogle.com/go/run/apiv2/runpb;runpb\352Ac\n)bi"
-          + "naryauthorization.googleapis.com/Policy\022"
-          + "\031projects/{project}/policy\022\033locations/{l"
-          + "ocation}/policy\352A\\\n#networkservices.goog"
-          + "leapis.com/Mesh\0225projects/{project}/loca"
-          + "tions/{location}/meshes/{mesh}b\006proto3"
+          + "deSelector\022\030\n\013accelerator\030\001 \001(\tB\003\340A\002\"\321\003\n"
+          + "\013BuildConfig\0225\n\004name\030\001 \001(\tB\'\340A\003\372A!\n\037clou"
+          + "dbuild.googleapis.com/Build\022\027\n\017source_lo"
+          + "cation\030\002 \001(\t\022\034\n\017function_target\030\003 \001(\tB\003\340"
+          + "A\001\022\026\n\timage_uri\030\004 \001(\tB\003\340A\001\022\027\n\nbase_image"
+          + "\030\005 \001(\tB\003\340A\001\022%\n\030enable_automatic_updates\030"
+          + "\006 \001(\010B\003\340A\001\022A\n\013worker_pool\030\007 \001(\tB,\340A\001\372A&\n"
+          + "$cloudbuild.googleapis.com/WorkerPool\022^\n"
+          + "\025environment_variables\030\010 \003(\0132:.google.cl"
+          + "oud.run.v2.BuildConfig.EnvironmentVariab"
+          + "lesEntryB\003\340A\001\022\034\n\017service_account\030\t \001(\tB\003"
+          + "\340A\001\032;\n\031EnvironmentVariablesEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*\263\001\n\016IngressTraf"
+          + "fic\022\037\n\033INGRESS_TRAFFIC_UNSPECIFIED\020\000\022\027\n\023"
+          + "INGRESS_TRAFFIC_ALL\020\001\022!\n\035INGRESS_TRAFFIC"
+          + "_INTERNAL_ONLY\020\002\022*\n&INGRESS_TRAFFIC_INTE"
+          + "RNAL_LOAD_BALANCER\020\003\022\030\n\024INGRESS_TRAFFIC_"
+          + "NONE\020\004*}\n\024ExecutionEnvironment\022%\n!EXECUT"
+          + "ION_ENVIRONMENT_UNSPECIFIED\020\000\022\036\n\032EXECUTI"
+          + "ON_ENVIRONMENT_GEN1\020\001\022\036\n\032EXECUTION_ENVIR"
+          + "ONMENT_GEN2\020\002*p\n\035EncryptionKeyRevocation"
+          + "Action\0220\n,ENCRYPTION_KEY_REVOCATION_ACTI"
+          + "ON_UNSPECIFIED\020\000\022\017\n\013PREVENT_NEW\020\001\022\014\n\010SHU"
+          + "TDOWN\020\002B\374\002\n\027com.google.cloud.run.v2B\023Ven"
+          + "dorSettingsProtoP\001Z)cloud.google.com/go/"
+          + "run/apiv2/runpb;runpb\352Ac\n)binaryauthoriz"
+          + "ation.googleapis.com/Policy\022\031projects/{p"
+          + "roject}/policy\022\033locations/{location}/pol"
+          + "icy\352A\\\n#networkservices.googleapis.com/M"
+          + "esh\0225projects/{project}/locations/{locat"
+          + "ion}/meshes/{mesh}\352AY\n\037cloudbuild.google"
+          + "apis.com/Build\0226projects/{project}/locat"
+          + "ions/{location}/builds/{build}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -175,6 +197,30 @@ public final class VendorSettingsProto {
             internal_static_google_cloud_run_v2_NodeSelector_descriptor,
             new java.lang.String[] {
               "Accelerator",
+            });
+    internal_static_google_cloud_run_v2_BuildConfig_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_run_v2_BuildConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_BuildConfig_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "SourceLocation",
+              "FunctionTarget",
+              "ImageUri",
+              "BaseImage",
+              "EnableAutomaticUpdates",
+              "WorkerPool",
+              "EnvironmentVariables",
+              "ServiceAccount",
+            });
+    internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_descriptor =
+        internal_static_google_cloud_run_v2_BuildConfig_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_BuildConfig_EnvironmentVariablesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

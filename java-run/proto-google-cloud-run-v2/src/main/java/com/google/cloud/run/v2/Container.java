@@ -52,6 +52,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     volumeMounts_ = java.util.Collections.emptyList();
     workingDir_ = "";
     dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    baseImageUri_ = "";
   }
 
   @java.lang.Override
@@ -836,6 +837,111 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     return dependsOn_.getByteString(index);
   }
 
+  public static final int BASE_IMAGE_URI_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseImageUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Base image for this container. Only supported for services. If set, it
+   * indicates that the service is enrolled into automatic base image update.
+   * </pre>
+   *
+   * <code>string base_image_uri = 13;</code>
+   *
+   * @return The baseImageUri.
+   */
+  @java.lang.Override
+  public java.lang.String getBaseImageUri() {
+    java.lang.Object ref = baseImageUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      baseImageUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Base image for this container. Only supported for services. If set, it
+   * indicates that the service is enrolled into automatic base image update.
+   * </pre>
+   *
+   * <code>string base_image_uri = 13;</code>
+   *
+   * @return The bytes for baseImageUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBaseImageUriBytes() {
+    java.lang.Object ref = baseImageUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      baseImageUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BUILD_INFO_FIELD_NUMBER = 15;
+  private com.google.cloud.run.v2.BuildInfo buildInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The build info of the container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the buildInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasBuildInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The build info of the container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The buildInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.BuildInfo getBuildInfo() {
+    return buildInfo_ == null ? com.google.cloud.run.v2.BuildInfo.getDefaultInstance() : buildInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The build info of the container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.BuildInfoOrBuilder getBuildInfoOrBuilder() {
+    return buildInfo_ == null ? com.google.cloud.run.v2.BuildInfo.getDefaultInstance() : buildInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -885,6 +991,12 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < dependsOn_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, dependsOn_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseImageUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, baseImageUri_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(15, getBuildInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -946,6 +1058,12 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getDependsOnList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseImageUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, baseImageUri_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getBuildInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -982,6 +1100,11 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (!getStartupProbe().equals(other.getStartupProbe())) return false;
     }
     if (!getDependsOnList().equals(other.getDependsOnList())) return false;
+    if (!getBaseImageUri().equals(other.getBaseImageUri())) return false;
+    if (hasBuildInfo() != other.hasBuildInfo()) return false;
+    if (hasBuildInfo()) {
+      if (!getBuildInfo().equals(other.getBuildInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1034,6 +1157,12 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (getDependsOnCount() > 0) {
       hash = (37 * hash) + DEPENDS_ON_FIELD_NUMBER;
       hash = (53 * hash) + getDependsOnList().hashCode();
+    }
+    hash = (37 * hash) + BASE_IMAGE_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getBaseImageUri().hashCode();
+    if (hasBuildInfo()) {
+      hash = (37 * hash) + BUILD_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getBuildInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1184,6 +1313,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         getVolumeMountsFieldBuilder();
         getLivenessProbeFieldBuilder();
         getStartupProbeFieldBuilder();
+        getBuildInfoFieldBuilder();
       }
     }
 
@@ -1233,6 +1363,12 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         startupProbeBuilder_ = null;
       }
       dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      baseImageUri_ = "";
+      buildInfo_ = null;
+      if (buildInfoBuilder_ != null) {
+        buildInfoBuilder_.dispose();
+        buildInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1334,6 +1470,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         dependsOn_.makeImmutable();
         result.dependsOn_ = dependsOn_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.baseImageUri_ = baseImageUri_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.buildInfo_ = buildInfoBuilder_ == null ? buildInfo_ : buildInfoBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1518,6 +1661,14 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.getBaseImageUri().isEmpty()) {
+        baseImageUri_ = other.baseImageUri_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (other.hasBuildInfo()) {
+        mergeBuildInfo(other.getBuildInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1639,6 +1790,18 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 dependsOn_.add(s);
                 break;
               } // case 98
+            case 106:
+              {
+                baseImageUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(getBuildInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4255,6 +4418,320 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object baseImageUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Base image for this container. Only supported for services. If set, it
+     * indicates that the service is enrolled into automatic base image update.
+     * </pre>
+     *
+     * <code>string base_image_uri = 13;</code>
+     *
+     * @return The baseImageUri.
+     */
+    public java.lang.String getBaseImageUri() {
+      java.lang.Object ref = baseImageUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baseImageUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base image for this container. Only supported for services. If set, it
+     * indicates that the service is enrolled into automatic base image update.
+     * </pre>
+     *
+     * <code>string base_image_uri = 13;</code>
+     *
+     * @return The bytes for baseImageUri.
+     */
+    public com.google.protobuf.ByteString getBaseImageUriBytes() {
+      java.lang.Object ref = baseImageUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        baseImageUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base image for this container. Only supported for services. If set, it
+     * indicates that the service is enrolled into automatic base image update.
+     * </pre>
+     *
+     * <code>string base_image_uri = 13;</code>
+     *
+     * @param value The baseImageUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseImageUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      baseImageUri_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base image for this container. Only supported for services. If set, it
+     * indicates that the service is enrolled into automatic base image update.
+     * </pre>
+     *
+     * <code>string base_image_uri = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBaseImageUri() {
+      baseImageUri_ = getDefaultInstance().getBaseImageUri();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Base image for this container. Only supported for services. If set, it
+     * indicates that the service is enrolled into automatic base image update.
+     * </pre>
+     *
+     * <code>string base_image_uri = 13;</code>
+     *
+     * @param value The bytes for baseImageUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseImageUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      baseImageUri_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.run.v2.BuildInfo buildInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.BuildInfo,
+            com.google.cloud.run.v2.BuildInfo.Builder,
+            com.google.cloud.run.v2.BuildInfoOrBuilder>
+        buildInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the buildInfo field is set.
+     */
+    public boolean hasBuildInfo() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The buildInfo.
+     */
+    public com.google.cloud.run.v2.BuildInfo getBuildInfo() {
+      if (buildInfoBuilder_ == null) {
+        return buildInfo_ == null
+            ? com.google.cloud.run.v2.BuildInfo.getDefaultInstance()
+            : buildInfo_;
+      } else {
+        return buildInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBuildInfo(com.google.cloud.run.v2.BuildInfo value) {
+      if (buildInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        buildInfo_ = value;
+      } else {
+        buildInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBuildInfo(com.google.cloud.run.v2.BuildInfo.Builder builderForValue) {
+      if (buildInfoBuilder_ == null) {
+        buildInfo_ = builderForValue.build();
+      } else {
+        buildInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeBuildInfo(com.google.cloud.run.v2.BuildInfo value) {
+      if (buildInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && buildInfo_ != null
+            && buildInfo_ != com.google.cloud.run.v2.BuildInfo.getDefaultInstance()) {
+          getBuildInfoBuilder().mergeFrom(value);
+        } else {
+          buildInfo_ = value;
+        }
+      } else {
+        buildInfoBuilder_.mergeFrom(value);
+      }
+      if (buildInfo_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearBuildInfo() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      buildInfo_ = null;
+      if (buildInfoBuilder_ != null) {
+        buildInfoBuilder_.dispose();
+        buildInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.BuildInfo.Builder getBuildInfoBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getBuildInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.BuildInfoOrBuilder getBuildInfoOrBuilder() {
+      if (buildInfoBuilder_ != null) {
+        return buildInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return buildInfo_ == null
+            ? com.google.cloud.run.v2.BuildInfo.getDefaultInstance()
+            : buildInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The build info of the container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.BuildInfo,
+            com.google.cloud.run.v2.BuildInfo.Builder,
+            com.google.cloud.run.v2.BuildInfoOrBuilder>
+        getBuildInfoFieldBuilder() {
+      if (buildInfoBuilder_ == null) {
+        buildInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.BuildInfo,
+                com.google.cloud.run.v2.BuildInfo.Builder,
+                com.google.cloud.run.v2.BuildInfoOrBuilder>(
+                getBuildInfo(), getParentForChildren(), isClean());
+        buildInfo_ = null;
+      }
+      return buildInfoBuilder_;
     }
 
     @java.lang.Override

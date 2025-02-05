@@ -129,6 +129,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -217,6 +218,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -305,6 +307,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -384,6 +387,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -563,6 +567,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -610,6 +615,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -676,6 +682,7 @@ public class ServicesClientHttpJsonTest {
               .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
               .setUri("uri116076")
               .setSatisfiesPzs(true)
+              .setBuildConfig(BuildConfig.newBuilder().build())
               .setReconciling(true)
               .setEtag("etag3123477")
               .build();
@@ -723,6 +730,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -770,6 +778,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -837,6 +846,7 @@ public class ServicesClientHttpJsonTest {
               .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
               .setUri("uri116076")
               .setSatisfiesPzs(true)
+              .setBuildConfig(BuildConfig.newBuilder().build())
               .setReconciling(true)
               .setEtag("etag3123477")
               .build();
@@ -885,6 +895,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -969,6 +980,7 @@ public class ServicesClientHttpJsonTest {
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();

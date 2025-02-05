@@ -590,7 +590,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The base image used to opt into automatic base image updates.
+     * Optional. The base image to use for the build.
      * </pre>
      *
      * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -602,7 +602,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The base image used to opt into automatic base image updates.
+     * Optional. The base image to use for the build.
      * </pre>
      *
      * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -693,6 +693,35 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * @return The enableAutomaticUpdates.
      */
     boolean getEnableAutomaticUpdates();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. project_descriptor stores the path to the project descriptor
+     * file. When empty, it means that there is no project descriptor file in
+     * the source.
+     * </pre>
+     *
+     * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectDescriptor.
+     */
+    java.lang.String getProjectDescriptor();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. project_descriptor stores the path to the project descriptor
+     * file. When empty, it means that there is no project descriptor file in
+     * the source.
+     * </pre>
+     *
+     * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for projectDescriptor.
+     */
+    com.google.protobuf.ByteString getProjectDescriptorBytes();
   }
   /**
    *
@@ -718,6 +747,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       functionTarget_ = "";
       cacheImageUri_ = "";
       baseImage_ = "";
+      projectDescriptor_ = "";
     }
 
     @java.lang.Override
@@ -930,7 +960,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The base image used to opt into automatic base image updates.
+     * Optional. The base image to use for the build.
      * </pre>
      *
      * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -953,7 +983,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The base image used to opt into automatic base image updates.
+     * Optional. The base image to use for the build.
      * </pre>
      *
      * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1107,6 +1137,61 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       return enableAutomaticUpdates_;
     }
 
+    public static final int PROJECT_DESCRIPTOR_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectDescriptor_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. project_descriptor stores the path to the project descriptor
+     * file. When empty, it means that there is no project descriptor file in
+     * the source.
+     * </pre>
+     *
+     * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectDescriptor.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectDescriptor() {
+      java.lang.Object ref = projectDescriptor_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectDescriptor_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. project_descriptor stores the path to the project descriptor
+     * file. When empty, it means that there is no project descriptor file in
+     * the source.
+     * </pre>
+     *
+     * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for projectDescriptor.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectDescriptorBytes() {
+      java.lang.Object ref = projectDescriptor_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        projectDescriptor_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1140,6 +1225,9 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           5);
       if (enableAutomaticUpdates_ != false) {
         output.writeBool(6, enableAutomaticUpdates_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectDescriptor_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, projectDescriptor_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1175,6 +1263,9 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       if (enableAutomaticUpdates_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableAutomaticUpdates_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectDescriptor_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, projectDescriptor_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1198,6 +1289,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       if (!internalGetEnvironmentVariables().equals(other.internalGetEnvironmentVariables()))
         return false;
       if (getEnableAutomaticUpdates() != other.getEnableAutomaticUpdates()) return false;
+      if (!getProjectDescriptor().equals(other.getProjectDescriptor())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1223,6 +1315,8 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       }
       hash = (37 * hash) + ENABLE_AUTOMATIC_UPDATES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticUpdates());
+      hash = (37 * hash) + PROJECT_DESCRIPTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectDescriptor().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1393,6 +1487,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         baseImage_ = "";
         internalGetMutableEnvironmentVariables().clear();
         enableAutomaticUpdates_ = false;
+        projectDescriptor_ = "";
         return this;
       }
 
@@ -1449,6 +1544,9 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.enableAutomaticUpdates_ = enableAutomaticUpdates_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.projectDescriptor_ = projectDescriptor_;
         }
       }
 
@@ -1526,6 +1624,11 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
         if (other.getEnableAutomaticUpdates() != false) {
           setEnableAutomaticUpdates(other.getEnableAutomaticUpdates());
         }
+        if (!other.getProjectDescriptor().isEmpty()) {
+          projectDescriptor_ = other.projectDescriptor_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1596,6 +1699,12 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 48
+              case 58:
+                {
+                  projectDescriptor_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1978,7 +2087,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. The base image used to opt into automatic base image updates.
+       * Optional. The base image to use for the build.
        * </pre>
        *
        * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2000,7 +2109,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. The base image used to opt into automatic base image updates.
+       * Optional. The base image to use for the build.
        * </pre>
        *
        * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2022,7 +2131,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. The base image used to opt into automatic base image updates.
+       * Optional. The base image to use for the build.
        * </pre>
        *
        * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2043,7 +2152,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. The base image used to opt into automatic base image updates.
+       * Optional. The base image to use for the build.
        * </pre>
        *
        * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2060,7 +2169,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Optional. The base image used to opt into automatic base image updates.
+       * Optional. The base image to use for the build.
        * </pre>
        *
        * <code>string base_image = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2319,6 +2428,122 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       public Builder clearEnableAutomaticUpdates() {
         bitField0_ = (bitField0_ & ~0x00000020);
         enableAutomaticUpdates_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object projectDescriptor_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. project_descriptor stores the path to the project descriptor
+       * file. When empty, it means that there is no project descriptor file in
+       * the source.
+       * </pre>
+       *
+       * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The projectDescriptor.
+       */
+      public java.lang.String getProjectDescriptor() {
+        java.lang.Object ref = projectDescriptor_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectDescriptor_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. project_descriptor stores the path to the project descriptor
+       * file. When empty, it means that there is no project descriptor file in
+       * the source.
+       * </pre>
+       *
+       * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for projectDescriptor.
+       */
+      public com.google.protobuf.ByteString getProjectDescriptorBytes() {
+        java.lang.Object ref = projectDescriptor_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          projectDescriptor_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. project_descriptor stores the path to the project descriptor
+       * file. When empty, it means that there is no project descriptor file in
+       * the source.
+       * </pre>
+       *
+       * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The projectDescriptor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectDescriptor(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        projectDescriptor_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. project_descriptor stores the path to the project descriptor
+       * file. When empty, it means that there is no project descriptor file in
+       * the source.
+       * </pre>
+       *
+       * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectDescriptor() {
+        projectDescriptor_ = getDefaultInstance().getProjectDescriptor();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. project_descriptor stores the path to the project descriptor
+       * file. When empty, it means that there is no project descriptor file in
+       * the source.
+       * </pre>
+       *
+       * <code>string project_descriptor = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for projectDescriptor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectDescriptorBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        projectDescriptor_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }

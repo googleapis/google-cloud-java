@@ -55,14 +55,14 @@ public final class NamespaceProto {
           + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
           + ":n\352Ak\n)servicedirectory.googleapis.com/N"
           + "amespace\022>projects/{project}/locations/{"
-          + "location}/namespaces/{namespace}B\371\001\n$com"
+          + "location}/namespaces/{namespace}B\366\001\n$com"
           + ".google.cloud.servicedirectory.v1B\016Names"
           + "paceProtoP\001ZPcloud.google.com/go/service"
           + "directory/apiv1/servicedirectorypb;servi"
-          + "cedirectorypb\370\001\001\252\002 Google.Cloud.ServiceD"
-          + "irectory.V1\312\002 Google\\Cloud\\ServiceDirect"
-          + "ory\\V1\352\002#Google::Cloud::ServiceDirectory"
-          + "::V1b\006proto3"
+          + "cedirectorypb\252\002 Google.Cloud.ServiceDire"
+          + "ctory.V1\312\002 Google\\Cloud\\ServiceDirectory"
+          + "\\V1\352\002#Google::Cloud::ServiceDirectory::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
