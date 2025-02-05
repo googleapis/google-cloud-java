@@ -51,6 +51,7 @@ branchProtectionRules:
     - "cla/google"
     - "graalvm-presubmit-shared-config-a (java-graalvm-ci-prod)"
     - "graalvm-presubmit-shared-config-b (java-graalvm-ci-prod)"
+    - "Build with Airlock"
 - pattern: java7
   # Can admins overwrite branch protection.
   # Defaults to `true`
