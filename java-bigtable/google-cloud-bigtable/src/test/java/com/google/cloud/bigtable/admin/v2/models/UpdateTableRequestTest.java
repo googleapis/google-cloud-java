@@ -113,4 +113,90 @@ public class UpdateTableRequestTest {
 
     assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
   }
+
+  @Test
+  public void testDisableAutomatedBackup() {
+    UpdateTableRequest request = UpdateTableRequest.of(TABLE_ID).disableAutomatedBackup();
+
+    com.google.bigtable.admin.v2.UpdateTableRequest requestProto =
+        com.google.bigtable.admin.v2.UpdateTableRequest.newBuilder()
+            .setTable(
+                Table.newBuilder()
+                    .setName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+                    .setAutomatedBackupPolicy(
+                        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder()
+                            .build()))
+            .setUpdateMask(FieldMask.newBuilder().addPaths("automated_backup_policy").build())
+            .build();
+
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testSetAutomatedBackup() {
+    UpdateTableRequest request =
+        UpdateTableRequest.of(TABLE_ID)
+            .setAutomatedBackup(Duration.ofHours(24), Duration.ofHours(24));
+
+    com.google.bigtable.admin.v2.UpdateTableRequest requestProto =
+        com.google.bigtable.admin.v2.UpdateTableRequest.newBuilder()
+            .setTable(
+                Table.newBuilder()
+                    .setName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+                    .setAutomatedBackupPolicy(
+                        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder()
+                            .setRetentionPeriod(
+                                com.google.protobuf.Duration.newBuilder().setSeconds(86400))
+                            .setFrequency(
+                                com.google.protobuf.Duration.newBuilder().setSeconds(86400))
+                            .build()))
+            .setUpdateMask(FieldMask.newBuilder().addPaths("automated_backup_policy").build())
+            .build();
+
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testSetAutomatedBackupRetentionPeriod() {
+    UpdateTableRequest request =
+        UpdateTableRequest.of(TABLE_ID).setAutomatedBackupRetentionPeriod(Duration.ofHours(24));
+
+    com.google.bigtable.admin.v2.UpdateTableRequest requestProto =
+        com.google.bigtable.admin.v2.UpdateTableRequest.newBuilder()
+            .setTable(
+                Table.newBuilder()
+                    .setName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+                    .setAutomatedBackupPolicy(
+                        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder()
+                            .setRetentionPeriod(
+                                com.google.protobuf.Duration.newBuilder().setSeconds(86400))
+                            .build()))
+            .setUpdateMask(
+                FieldMask.newBuilder().addPaths("automated_backup_policy.retention_period").build())
+            .build();
+
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testSetAutomatedBackupFrequency() {
+    UpdateTableRequest request =
+        UpdateTableRequest.of(TABLE_ID).setAutomatedBackupFrequency(Duration.ofHours(24));
+
+    com.google.bigtable.admin.v2.UpdateTableRequest requestProto =
+        com.google.bigtable.admin.v2.UpdateTableRequest.newBuilder()
+            .setTable(
+                Table.newBuilder()
+                    .setName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+                    .setAutomatedBackupPolicy(
+                        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder()
+                            .setFrequency(
+                                com.google.protobuf.Duration.newBuilder().setSeconds(86400))
+                            .build()))
+            .setUpdateMask(
+                FieldMask.newBuilder().addPaths("automated_backup_policy.frequency").build())
+            .build();
+
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
 }

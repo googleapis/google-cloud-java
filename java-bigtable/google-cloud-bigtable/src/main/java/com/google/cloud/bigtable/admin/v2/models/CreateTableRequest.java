@@ -100,14 +100,14 @@ public final class CreateTableRequest {
     return this;
   }
 
-  /** Adds split at the specified key to the configuration */
+  /** Adds split at the specified key to the configuration. */
   public CreateTableRequest addSplit(ByteString key) {
     Preconditions.checkNotNull(key);
     requestBuilder.addInitialSplitsBuilder().setKey(key);
     return this;
   }
 
-  /** Add change stream retention period between 1 day and 7 days */
+  /** Add change stream retention period between 1 day and 7 days. */
   public CreateTableRequest addChangeStreamRetention(Duration retention) {
     Preconditions.checkNotNull(retention);
     requestBuilder
@@ -126,6 +126,26 @@ public final class CreateTableRequest {
   /** Configures if the table is deletion protected. */
   public CreateTableRequest setDeletionProtection(boolean deletionProtection) {
     requestBuilder.getTableBuilder().setDeletionProtection(deletionProtection);
+    return this;
+  }
+
+  /** Set an automated backup policy for the table. */
+  public CreateTableRequest setAutomatedBackup(Duration retentionPeriod, Duration frequency) {
+    com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy policy =
+        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder()
+            .setRetentionPeriod(
+                com.google.protobuf.Duration.newBuilder()
+                    .setSeconds(retentionPeriod.getSeconds())
+                    .setNanos(retentionPeriod.getNano())
+                    .build())
+            .setFrequency(
+                com.google.protobuf.Duration.newBuilder()
+                    .setSeconds(frequency.getSeconds())
+                    .setNanos(frequency.getNano())
+                    .build())
+            .build();
+
+    requestBuilder.getTableBuilder().setAutomatedBackupPolicy(policy);
     return this;
   }
 

@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.GcRule;
@@ -67,6 +68,13 @@ public class TableTest {
                                     .setSeconds(1)
                                     .setNanos(99)))
                     .build())
+            .setAutomatedBackupPolicy(
+                com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder()
+                    .setRetentionPeriod(
+                        com.google.protobuf.Duration.newBuilder().setSeconds(1).setNanos(99))
+                    .setFrequency(
+                        com.google.protobuf.Duration.newBuilder().setSeconds(1).setNanos(99))
+                    .build())
             .setDeletionProtection(true)
             .build();
 
@@ -79,6 +87,18 @@ public class TableTest {
             "cluster1", Table.ReplicationState.READY,
             "cluster2", Table.ReplicationState.INITIALIZING);
     assertThat(result.getColumnFamilies()).hasSize(3);
+    assertThat(result.isAutomatedBackupEnabled()).isTrue();
+    assertEquals(
+        result.getAutomatedBackupPolicy().viewConfig(),
+        "{google.bigtable.admin.v2.Table.AutomatedBackupPolicy.retention_period=seconds: 1\n"
+            + //
+            "nanos: 99\n"
+            + //
+            ", google.bigtable.admin.v2.Table.AutomatedBackupPolicy.frequency=seconds: 1\n"
+            + //
+            "nanos: 99\n"
+            + //
+            "}");
     assertThat(result.isDeletionProtected()).isTrue();
 
     for (Entry<String, ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {

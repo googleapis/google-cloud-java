@@ -39,6 +39,10 @@ public class UpdateTableRequest {
   private final com.google.bigtable.admin.v2.UpdateTableRequest.Builder requestBuilder =
       com.google.bigtable.admin.v2.UpdateTableRequest.newBuilder();
 
+  private final com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.Builder
+      automatedPolicyBuilder =
+          com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder();
+
   public static UpdateTableRequest of(String tableId) {
     return new UpdateTableRequest(tableId);
   }
@@ -69,7 +73,7 @@ public class UpdateTableRequest {
     return this;
   }
 
-  /** Disable change stream for table */
+  /** Disable change stream for table. */
   public UpdateTableRequest disableChangeStreamRetention() {
     return addChangeStreamRetention(Duration.ZERO);
   }
@@ -78,6 +82,66 @@ public class UpdateTableRequest {
   public UpdateTableRequest setDeletionProtection(boolean deletionProtection) {
     requestBuilder.getTableBuilder().setDeletionProtection(deletionProtection);
     requestBuilder.getUpdateMaskBuilder().addPaths("deletion_protection");
+    return this;
+  }
+
+  /** Disables table automated backup policy. */
+  public UpdateTableRequest disableAutomatedBackup() {
+    requestBuilder.getTableBuilder().setAutomatedBackupPolicy(automatedPolicyBuilder.build());
+    requestBuilder.getUpdateMaskBuilder().addPaths("automated_backup_policy");
+    return this;
+  }
+
+  /** Set an automated backup policy for the table. */
+  public UpdateTableRequest setAutomatedBackup(Duration retentionPeriod, Duration frequency) {
+    com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy policy =
+        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.newBuilder()
+            .setRetentionPeriod(
+                com.google.protobuf.Duration.newBuilder()
+                    .setSeconds(retentionPeriod.getSeconds())
+                    .setNanos(retentionPeriod.getNano())
+                    .build())
+            .setFrequency(
+                com.google.protobuf.Duration.newBuilder()
+                    .setSeconds(frequency.getSeconds())
+                    .setNanos(frequency.getNano())
+                    .build())
+            .build();
+
+    requestBuilder.getTableBuilder().setAutomatedBackupPolicy(policy);
+    requestBuilder.getUpdateMaskBuilder().addPaths("automated_backup_policy");
+    return this;
+  }
+
+  /** Updates table automated backup policy retention period. */
+  public UpdateTableRequest setAutomatedBackupRetentionPeriod(Duration retention) {
+    requestBuilder
+        .getTableBuilder()
+        .setAutomatedBackupPolicy(
+            automatedPolicyBuilder
+                .setRetentionPeriod(
+                    com.google.protobuf.Duration.newBuilder()
+                        .setSeconds(retention.getSeconds())
+                        .setNanos(retention.getNano())
+                        .build())
+                .build());
+    requestBuilder.getUpdateMaskBuilder().addPaths("automated_backup_policy.retention_period");
+    return this;
+  }
+
+  /** Updates table automated backup policy frequency. */
+  public UpdateTableRequest setAutomatedBackupFrequency(Duration frequency) {
+    requestBuilder
+        .getTableBuilder()
+        .setAutomatedBackupPolicy(
+            automatedPolicyBuilder
+                .setFrequency(
+                    com.google.protobuf.Duration.newBuilder()
+                        .setSeconds(frequency.getSeconds())
+                        .setNanos(frequency.getNano())
+                        .build())
+                .build());
+    requestBuilder.getUpdateMaskBuilder().addPaths("automated_backup_policy.frequency");
     return this;
   }
 

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
@@ -58,7 +59,7 @@ public final class Table {
 
     /**
      * The table is fully created and ready for use after a restore, and is being optimized for
-     * performance. When optimizations are complete, the table will transition to `READY` state.
+     * performance. When optimizations are complete, the table will transition to`READY` state.
      */
     READY_OPTIMIZING(
         com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.READY_OPTIMIZING),
@@ -99,6 +100,39 @@ public final class Table {
     }
   }
 
+  public static class AutomatedBackupPolicy {
+    private final com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy proto;
+
+    /**
+     * Wraps the protobuf. This method is considered an internal implementation detail and not meant
+     * to be used by applications.
+     */
+    @InternalApi
+    public static AutomatedBackupPolicy fromProto(
+        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy proto) {
+      return new AutomatedBackupPolicy(proto);
+    }
+
+    AutomatedBackupPolicy(@Nonnull com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy toProto() {
+      return proto;
+    }
+
+    /** Returns policy config contents as a string. */
+    public String viewConfig() {
+      AutomatedBackupPolicy config = fromProto(proto);
+      return config.proto.getAllFields().toString();
+    }
+  }
+
   private final String id;
   private final String instanceId;
   private final Map<String, ReplicationState> replicationStatesByClusterId;
@@ -106,6 +140,7 @@ public final class Table {
 
   private final Duration changeStreamRetention;
   private final boolean deletionProtection;
+  private static AutomatedBackupPolicy automatedBackupPolicy;
 
   @InternalApi
   public static Table fromProto(@Nonnull com.google.bigtable.admin.v2.Table proto) {
@@ -132,12 +167,19 @@ public final class Table {
               proto.getChangeStreamConfig().getRetentionPeriod().getNanos());
     }
 
+    if (proto.hasAutomatedBackupPolicy()) {
+      automatedBackupPolicy = AutomatedBackupPolicy.fromProto(proto.getAutomatedBackupPolicy());
+    } else {
+      automatedBackupPolicy = null;
+    }
+
     return new Table(
         TableName.parse(proto.getName()),
         replicationStates.build(),
         columnFamilies.build(),
         changeStreamConfig,
-        proto.getDeletionProtection());
+        proto.getDeletionProtection(),
+        automatedBackupPolicy);
   }
 
   private Table(
@@ -145,13 +187,15 @@ public final class Table {
       Map<String, ReplicationState> replicationStatesByClusterId,
       List<ColumnFamily> columnFamilies,
       Duration changeStreamRetention,
-      boolean deletionProtection) {
+      boolean deletionProtection,
+      AutomatedBackupPolicy automatedBackupPolicy) {
     this.instanceId = tableName.getInstance();
     this.id = tableName.getTable();
     this.replicationStatesByClusterId = replicationStatesByClusterId;
     this.columnFamilies = columnFamilies;
     this.changeStreamRetention = changeStreamRetention;
     this.deletionProtection = deletionProtection;
+    Table.automatedBackupPolicy = automatedBackupPolicy;
   }
 
   /** Gets the table's id. */
@@ -181,6 +225,16 @@ public final class Table {
     return deletionProtection;
   }
 
+  /** Returns whether this table has automated backups enabled. */
+  public boolean isAutomatedBackupEnabled() {
+    return automatedBackupPolicy == null ? false : true;
+  }
+
+  /** Returns the automated backup policy config. */
+  public AutomatedBackupPolicy getAutomatedBackupPolicy() {
+    return automatedBackupPolicy;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -195,7 +249,8 @@ public final class Table {
         && Objects.equal(replicationStatesByClusterId, table.replicationStatesByClusterId)
         && Objects.equal(columnFamilies, table.columnFamilies)
         && Objects.equal(changeStreamRetention, table.changeStreamRetention)
-        && Objects.equal(deletionProtection, table.deletionProtection);
+        && Objects.equal(deletionProtection, table.deletionProtection)
+        && Objects.equal(automatedBackupPolicy, Table.automatedBackupPolicy);
   }
 
   @Override
@@ -206,6 +261,7 @@ public final class Table {
         replicationStatesByClusterId,
         columnFamilies,
         changeStreamRetention,
-        deletionProtection);
+        deletionProtection,
+        automatedBackupPolicy);
   }
 }
