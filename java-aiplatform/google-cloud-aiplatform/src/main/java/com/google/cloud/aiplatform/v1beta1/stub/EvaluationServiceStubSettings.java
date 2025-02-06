@@ -28,10 +28,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -41,6 +45,9 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -56,6 +63,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -111,6 +119,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for evaluateDataset:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EvaluationServiceStubSettings.Builder evaluationServiceSettingsBuilder =
+ *     EvaluationServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * evaluationServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -121,6 +155,10 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
 
   private final UnaryCallSettings<EvaluateInstancesRequest, EvaluateInstancesResponse>
       evaluateInstancesSettings;
+  private final UnaryCallSettings<EvaluateDatasetRequest, Operation> evaluateDatasetSettings;
+  private final OperationCallSettings<
+          EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -185,6 +223,18 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
   public UnaryCallSettings<EvaluateInstancesRequest, EvaluateInstancesResponse>
       evaluateInstancesSettings() {
     return evaluateInstancesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to evaluateDataset. */
+  public UnaryCallSettings<EvaluateDatasetRequest, Operation> evaluateDatasetSettings() {
+    return evaluateDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to evaluateDataset. */
+  public OperationCallSettings<
+          EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetOperationSettings() {
+    return evaluateDatasetOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -296,6 +346,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     super(settingsBuilder);
 
     evaluateInstancesSettings = settingsBuilder.evaluateInstancesSettings().build();
+    evaluateDatasetSettings = settingsBuilder.evaluateDatasetSettings().build();
+    evaluateDatasetOperationSettings = settingsBuilder.evaluateDatasetOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -308,6 +360,11 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<EvaluateInstancesRequest, EvaluateInstancesResponse>
         evaluateInstancesSettings;
+    private final UnaryCallSettings.Builder<EvaluateDatasetRequest, Operation>
+        evaluateDatasetSettings;
+    private final OperationCallSettings.Builder<
+            EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+        evaluateDatasetOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -354,6 +411,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       super(clientContext);
 
       evaluateInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      evaluateDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      evaluateDatasetOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -363,6 +422,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               evaluateInstancesSettings,
+              evaluateDatasetSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -375,6 +435,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       super(settings);
 
       evaluateInstancesSettings = settings.evaluateInstancesSettings.toBuilder();
+      evaluateDatasetSettings = settings.evaluateDatasetSettings.toBuilder();
+      evaluateDatasetOperationSettings = settings.evaluateDatasetOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -384,6 +446,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               evaluateInstancesSettings,
+              evaluateDatasetSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -410,6 +473,11 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_15_params"));
 
       builder
+          .evaluateDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -434,6 +502,31 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
+      builder
+          .evaluateDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EvaluateDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(EvaluateDatasetResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  EvaluateDatasetOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -456,6 +549,18 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     public UnaryCallSettings.Builder<EvaluateInstancesRequest, EvaluateInstancesResponse>
         evaluateInstancesSettings() {
       return evaluateInstancesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateDataset. */
+    public UnaryCallSettings.Builder<EvaluateDatasetRequest, Operation> evaluateDatasetSettings() {
+      return evaluateDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateDataset. */
+    public OperationCallSettings.Builder<
+            EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+        evaluateDatasetOperationSettings() {
+      return evaluateDatasetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

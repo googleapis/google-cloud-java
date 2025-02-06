@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -39,6 +40,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -92,6 +94,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for evaluateDataset:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EvaluationServiceSettings.Builder evaluationServiceSettingsBuilder =
+ *     EvaluationServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * evaluationServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -101,6 +129,18 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
   public UnaryCallSettings<EvaluateInstancesRequest, EvaluateInstancesResponse>
       evaluateInstancesSettings() {
     return ((EvaluationServiceStubSettings) getStubSettings()).evaluateInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to evaluateDataset. */
+  public UnaryCallSettings<EvaluateDatasetRequest, Operation> evaluateDatasetSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).evaluateDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to evaluateDataset. */
+  public OperationCallSettings<
+          EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetOperationSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).evaluateDatasetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -230,6 +270,18 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
     public UnaryCallSettings.Builder<EvaluateInstancesRequest, EvaluateInstancesResponse>
         evaluateInstancesSettings() {
       return getStubSettingsBuilder().evaluateInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateDataset. */
+    public UnaryCallSettings.Builder<EvaluateDatasetRequest, Operation> evaluateDatasetSettings() {
+      return getStubSettingsBuilder().evaluateDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateDataset. */
+    public OperationCallSettings.Builder<
+            EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+        evaluateDatasetOperationSettings() {
+      return getStubSettingsBuilder().evaluateDatasetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

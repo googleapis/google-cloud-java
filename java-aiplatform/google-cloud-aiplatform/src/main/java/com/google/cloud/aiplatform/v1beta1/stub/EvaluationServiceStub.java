@@ -20,7 +20,11 @@ import static com.google.cloud.aiplatform.v1beta1.EvaluationServiceClient.ListLo
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -32,6 +36,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -44,9 +50,23 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class EvaluationServiceStub implements BackgroundResource {
 
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
+
   public UnaryCallable<EvaluateInstancesRequest, EvaluateInstancesResponse>
       evaluateInstancesCallable() {
     throw new UnsupportedOperationException("Not implemented: evaluateInstancesCallable()");
+  }
+
+  public OperationCallable<
+          EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: evaluateDatasetOperationCallable()");
+  }
+
+  public UnaryCallable<EvaluateDatasetRequest, Operation> evaluateDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: evaluateDatasetCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

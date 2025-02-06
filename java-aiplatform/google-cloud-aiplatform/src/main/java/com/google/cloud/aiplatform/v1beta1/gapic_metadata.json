@@ -184,6 +184,9 @@
         "grpc": {
           "libraryClient": "EvaluationServiceClient",
           "rpcs": {
+            "EvaluateDataset": {
+              "methods": ["evaluateDatasetAsync", "evaluateDatasetOperationCallable", "evaluateDatasetCallable"]
+            },
             "EvaluateInstances": {
               "methods": ["evaluateInstances", "evaluateInstancesCallable"]
             },

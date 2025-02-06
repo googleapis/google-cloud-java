@@ -24,8 +24,12 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -37,6 +41,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -63,6 +68,17 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   ProtoUtils.marshaller(EvaluateInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EvaluateInstancesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<EvaluateDatasetRequest, Operation>
+      evaluateDatasetMethodDescriptor =
+          MethodDescriptor.<EvaluateDatasetRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.EvaluationService/EvaluateDataset")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EvaluateDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -113,6 +129,10 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
 
   private final UnaryCallable<EvaluateInstancesRequest, EvaluateInstancesResponse>
       evaluateInstancesCallable;
+  private final UnaryCallable<EvaluateDatasetRequest, Operation> evaluateDatasetCallable;
+  private final OperationCallable<
+          EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -177,6 +197,16 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<EvaluateDatasetRequest, Operation> evaluateDatasetTransportSettings =
+        GrpcCallSettings.<EvaluateDatasetRequest, Operation>newBuilder()
+            .setMethodDescriptor(evaluateDatasetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -234,6 +264,15 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
             evaluateInstancesTransportSettings,
             settings.evaluateInstancesSettings(),
             clientContext);
+    this.evaluateDatasetCallable =
+        callableFactory.createUnaryCallable(
+            evaluateDatasetTransportSettings, settings.evaluateDatasetSettings(), clientContext);
+    this.evaluateDatasetOperationCallable =
+        callableFactory.createOperationCallable(
+            evaluateDatasetTransportSettings,
+            settings.evaluateDatasetOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -267,6 +306,18 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
   public UnaryCallable<EvaluateInstancesRequest, EvaluateInstancesResponse>
       evaluateInstancesCallable() {
     return evaluateInstancesCallable;
+  }
+
+  @Override
+  public UnaryCallable<EvaluateDatasetRequest, Operation> evaluateDatasetCallable() {
+    return evaluateDatasetCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
+      evaluateDatasetOperationCallable() {
+    return evaluateDatasetOperationCallable;
   }
 
   @Override

@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -38,6 +39,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -49,6 +51,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -196,6 +199,68 @@ public class EvaluationServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void evaluateDatasetTest() throws Exception {
+    EvaluateDatasetResponse expectedResponse =
+        EvaluateDatasetResponse.newBuilder().setOutputInfo(OutputInfo.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("evaluateDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    EvaluateDatasetRequest request =
+        EvaluateDatasetRequest.newBuilder()
+            .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setDataset(EvaluationDataset.newBuilder().build())
+            .addAllMetrics(new ArrayList<Metric>())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setAutoraterConfig(AutoraterConfig.newBuilder().build())
+            .build();
+
+    EvaluateDatasetResponse actualResponse = client.evaluateDatasetAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EvaluateDatasetRequest actualRequest = ((EvaluateDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getDataset(), actualRequest.getDataset());
+    Assert.assertEquals(request.getMetricsList(), actualRequest.getMetricsList());
+    Assert.assertEquals(request.getOutputConfig(), actualRequest.getOutputConfig());
+    Assert.assertEquals(request.getAutoraterConfig(), actualRequest.getAutoraterConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void evaluateDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      EvaluateDatasetRequest request =
+          EvaluateDatasetRequest.newBuilder()
+              .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setDataset(EvaluationDataset.newBuilder().build())
+              .addAllMetrics(new ArrayList<Metric>())
+              .setOutputConfig(OutputConfig.newBuilder().build())
+              .setAutoraterConfig(AutoraterConfig.newBuilder().build())
+              .build();
+      client.evaluateDatasetAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
