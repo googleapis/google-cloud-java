@@ -728,5 +728,18 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <!-- Profile to use the flatten plugin. This is useful for testing
+        the availability of the dependencies in Airlock. -->
+      <id>flatten</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>flatten-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 </project>
