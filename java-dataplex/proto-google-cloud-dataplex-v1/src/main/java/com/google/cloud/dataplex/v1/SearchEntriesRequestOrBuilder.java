@@ -132,6 +132,7 @@ public interface SearchEntriesRequestOrBuilder
    * <pre>
    * Optional. Specifies the ordering of results.
    * Supported values are:
+   *
    * * `relevance` (default)
    * * `last_modified_timestamp`
    * * `last_modified_timestamp asc`
@@ -148,6 +149,7 @@ public interface SearchEntriesRequestOrBuilder
    * <pre>
    * Optional. Specifies the ordering of results.
    * Supported values are:
+   *
    * * `relevance` (default)
    * * `last_modified_timestamp`
    * * `last_modified_timestamp asc`

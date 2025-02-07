@@ -1875,6 +1875,18 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>INCREMENTAL = 2;</code>
        */
       INCREMENTAL(2),
+      /**
+       *
+       *
+       * <pre>
+       * If entry sync mode is NONE, then the entry-specific fields (apart from
+       * aspects) are not modified and the aspects are modified according to the
+       * aspect_sync_mode
+       * </pre>
+       *
+       * <code>NONE = 3;</code>
+       */
+      NONE(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -1913,6 +1925,18 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * <code>INCREMENTAL = 2;</code>
        */
       public static final int INCREMENTAL_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * If entry sync mode is NONE, then the entry-specific fields (apart from
+       * aspects) are not modified and the aspects are modified according to the
+       * aspect_sync_mode
+       * </pre>
+       *
+       * <code>NONE = 3;</code>
+       */
+      public static final int NONE_VALUE = 3;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -1944,6 +1968,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
             return FULL;
           case 2:
             return INCREMENTAL;
+          case 3:
+            return NONE;
           default:
             return null;
         }

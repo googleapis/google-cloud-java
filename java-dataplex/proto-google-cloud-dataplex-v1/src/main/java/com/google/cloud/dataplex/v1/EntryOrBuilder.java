@@ -267,7 +267,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The resource name of the parent entry.
+   * Optional. Immutable. The resource name of the parent entry, in the format
+   * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
    * </pre>
    *
    * <code>
@@ -281,7 +282,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. The resource name of the parent entry.
+   * Optional. Immutable. The resource name of the parent entry, in the format
+   * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`.
    * </pre>
    *
    * <code>
