@@ -230,7 +230,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
+     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
      * @return The isCloudFunction.
      */
     @java.lang.Deprecated
@@ -578,7 +578,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
+     *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
      * @return The isCloudFunction.
      */
     @java.lang.Override
@@ -1588,7 +1588,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
+       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
        * @return The isCloudFunction.
        */
       @java.lang.Override
@@ -1612,7 +1612,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
+       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
        * @param value The isCloudFunction to set.
        * @return This builder for chaining.
        */
@@ -1640,7 +1640,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.is_cloud_function
-       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=109
+       *     is deprecated. See google/cloud/dialogflow/v2beta1/fulfillment.proto;l=108
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

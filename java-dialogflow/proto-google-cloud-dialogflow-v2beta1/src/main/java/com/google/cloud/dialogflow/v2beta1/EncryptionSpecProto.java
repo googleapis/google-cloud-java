@@ -93,12 +93,11 @@ public final class EncryptionSpecProto {
           + "Spec}:initialize:\001*\032x\312A\031dialogflow.googl"
           + "eapis.com\322AYhttps://www.googleapis.com/a"
           + "uth/cloud-platform,https://www.googleapi"
-          + "s.com/auth/dialogflowB\253\001\n#com.google.clo"
+          + "s.com/auth/dialogflowB\250\001\n#com.google.clo"
           + "ud.dialogflow.v2beta1B\023EncryptionSpecPro"
           + "toP\001ZCcloud.google.com/go/dialogflow/api"
-          + "v2beta1/dialogflowpb;dialogflowpb\370\001\001\242\002\002D"
-          + "F\252\002\037Google.Cloud.Dialogflow.V2Beta1b\006pro"
-          + "to3"
+          + "v2beta1/dialogflowpb;dialogflowpb\242\002\002DF\252\002"
+          + "\037Google.Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

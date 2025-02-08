@@ -488,6 +488,33 @@
         }
       }
     },
+    "PhoneNumbers": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PhoneNumbersClient",
+          "rpcs": {
+            "DeletePhoneNumber": {
+              "methods": ["deletePhoneNumber", "deletePhoneNumber", "deletePhoneNumber", "deletePhoneNumberCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPhoneNumbers": {
+              "methods": ["listPhoneNumbers", "listPhoneNumbers", "listPhoneNumbers", "listPhoneNumbers", "listPhoneNumbersPagedCallable", "listPhoneNumbersCallable"]
+            },
+            "UndeletePhoneNumber": {
+              "methods": ["undeletePhoneNumber", "undeletePhoneNumber", "undeletePhoneNumber", "undeletePhoneNumberCallable"]
+            },
+            "UpdatePhoneNumber": {
+              "methods": ["updatePhoneNumber", "updatePhoneNumber", "updatePhoneNumberCallable"]
+            }
+          }
+        }
+      }
+    },
     "Sessions": {
       "clients": {
         "grpc": {

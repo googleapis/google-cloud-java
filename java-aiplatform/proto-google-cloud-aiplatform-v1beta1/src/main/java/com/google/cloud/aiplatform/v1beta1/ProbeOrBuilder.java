@@ -63,6 +63,117 @@ public interface ProbeOrBuilder
    *
    *
    * <pre>
+   * HttpGetAction probes the health of a container by sending an HTTP GET
+   * request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+   *
+   * @return Whether the httpGet field is set.
+   */
+  boolean hasHttpGet();
+  /**
+   *
+   *
+   * <pre>
+   * HttpGetAction probes the health of a container by sending an HTTP GET
+   * request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+   *
+   * @return The httpGet.
+   */
+  com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction getHttpGet();
+  /**
+   *
+   *
+   * <pre>
+   * HttpGetAction probes the health of a container by sending an HTTP GET
+   * request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Probe.HttpGetActionOrBuilder getHttpGetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * GrpcAction probes the health of a container by sending a gRPC request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+   *
+   * @return Whether the grpc field is set.
+   */
+  boolean hasGrpc();
+  /**
+   *
+   *
+   * <pre>
+   * GrpcAction probes the health of a container by sending a gRPC request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+   *
+   * @return The grpc.
+   */
+  com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction getGrpc();
+  /**
+   *
+   *
+   * <pre>
+   * GrpcAction probes the health of a container by sending a gRPC request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Probe.GrpcActionOrBuilder getGrpcOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * TcpSocketAction probes the health of a container by opening a TCP socket
+   * connection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+   *
+   * @return Whether the tcpSocket field is set.
+   */
+  boolean hasTcpSocket();
+  /**
+   *
+   *
+   * <pre>
+   * TcpSocketAction probes the health of a container by opening a TCP socket
+   * connection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+   *
+   * @return The tcpSocket.
+   */
+  com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction getTcpSocket();
+  /**
+   *
+   *
+   * <pre>
+   * TcpSocketAction probes the health of a container by opening a TCP socket
+   * connection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketActionOrBuilder getTcpSocketOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * How often (in seconds) to perform the probe. Default to 10 seconds.
    * Minimum value is 1. Must be less than timeout_seconds.
    *
@@ -90,6 +201,54 @@ public interface ProbeOrBuilder
    * @return The timeoutSeconds.
    */
   int getTimeoutSeconds();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of consecutive failures before the probe is considered failed.
+   * Defaults to 3. Minimum value is 1.
+   *
+   * Maps to Kubernetes probe argument 'failureThreshold'.
+   * </pre>
+   *
+   * <code>int32 failure_threshold = 7;</code>
+   *
+   * @return The failureThreshold.
+   */
+  int getFailureThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of consecutive successes before the probe is considered successful.
+   * Defaults to 1. Minimum value is 1.
+   *
+   * Maps to Kubernetes probe argument 'successThreshold'.
+   * </pre>
+   *
+   * <code>int32 success_threshold = 8;</code>
+   *
+   * @return The successThreshold.
+   */
+  int getSuccessThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of seconds to wait before starting the probe. Defaults to 0.
+   * Minimum value is 0.
+   *
+   * Maps to Kubernetes probe argument 'initialDelaySeconds'.
+   * </pre>
+   *
+   * <code>int32 initial_delay_seconds = 9;</code>
+   *
+   * @return The initialDelaySeconds.
+   */
+  int getInitialDelaySeconds();
 
   com.google.cloud.aiplatform.v1beta1.Probe.ProbeTypeCase getProbeTypeCase();
 }

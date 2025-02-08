@@ -257,12 +257,12 @@ public final class DocumentProto {
           + "ases/*/documents/*}:reload:\001*\032x\312A\031dialog"
           + "flow.googleapis.com\322AYhttps://www.google"
           + "apis.com/auth/cloud-platform,https://www"
-          + ".googleapis.com/auth/dialogflowB\245\001\n#com."
+          + ".googleapis.com/auth/dialogflowB\242\001\n#com."
           + "google.cloud.dialogflow.v2beta1B\rDocumen"
           + "tProtoP\001ZCcloud.google.com/go/dialogflow"
-          + "/apiv2beta1/dialogflowpb;dialogflowpb\370\001\001"
-          + "\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1b"
-          + "\006proto3"
+          + "/apiv2beta1/dialogflowpb;dialogflowpb\242\002\002"
+          + "DF\252\002\037Google.Cloud.Dialogflow.V2Beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

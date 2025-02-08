@@ -910,6 +910,4169 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface HttpGetActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Probe.HttpGetAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Path to access on the HTTP server.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     *
+     *
+     * <pre>
+     * Path to access on the HTTP server.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString getPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of the port to access on the container.
+     * Number must be in the range 1 to 65535.
+     * </pre>
+     *
+     * <code>int32 port = 2;</code>
+     *
+     * @return The port.
+     */
+    int getPort();
+
+    /**
+     *
+     *
+     * <pre>
+     * Host name to connect to, defaults to the model serving container's IP.
+     * You probably want to set "Host" in httpHeaders instead.
+     * </pre>
+     *
+     * <code>string host = 3;</code>
+     *
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     *
+     *
+     * <pre>
+     * Host name to connect to, defaults to the model serving container's IP.
+     * You probably want to set "Host" in httpHeaders instead.
+     * </pre>
+     *
+     * <code>string host = 3;</code>
+     *
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString getHostBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Scheme to use for connecting to the host.
+     * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+     * </pre>
+     *
+     * <code>string scheme = 4;</code>
+     *
+     * @return The scheme.
+     */
+    java.lang.String getScheme();
+    /**
+     *
+     *
+     * <pre>
+     * Scheme to use for connecting to the host.
+     * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+     * </pre>
+     *
+     * <code>string scheme = 4;</code>
+     *
+     * @return The bytes for scheme.
+     */
+    com.google.protobuf.ByteString getSchemeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader> getHttpHeadersList();
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader getHttpHeaders(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    int getHttpHeadersCount();
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder>
+        getHttpHeadersOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder getHttpHeadersOrBuilder(
+        int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HttpGetAction describes an action based on HTTP Get requests.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.HttpGetAction}
+   */
+  public static final class HttpGetAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Probe.HttpGetAction)
+      HttpGetActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use HttpGetAction.newBuilder() to construct.
+    private HttpGetAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private HttpGetAction() {
+      path_ = "";
+      host_ = "";
+      scheme_ = "";
+      httpHeaders_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HttpGetAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.class,
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.Builder.class);
+    }
+
+    public static final int PATH_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Path to access on the HTTP server.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path to access on the HTTP server.
+     * </pre>
+     *
+     * <code>string path = 1;</code>
+     *
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Number of the port to access on the container.
+     * Number must be in the range 1 to 65535.
+     * </pre>
+     *
+     * <code>int32 port = 2;</code>
+     *
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    public static final int HOST_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object host_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Host name to connect to, defaults to the model serving container's IP.
+     * You probably want to set "Host" in httpHeaders instead.
+     * </pre>
+     *
+     * <code>string host = 3;</code>
+     *
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Host name to connect to, defaults to the model serving container's IP.
+     * You probably want to set "Host" in httpHeaders instead.
+     * </pre>
+     *
+     * <code>string host = 3;</code>
+     *
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCHEME_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object scheme_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Scheme to use for connecting to the host.
+     * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+     * </pre>
+     *
+     * <code>string scheme = 4;</code>
+     *
+     * @return The scheme.
+     */
+    @java.lang.Override
+    public java.lang.String getScheme() {
+      java.lang.Object ref = scheme_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        scheme_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Scheme to use for connecting to the host.
+     * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+     * </pre>
+     *
+     * <code>string scheme = 4;</code>
+     *
+     * @return The bytes for scheme.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSchemeBytes() {
+      java.lang.Object ref = scheme_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        scheme_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HTTP_HEADERS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader> httpHeaders_;
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader>
+        getHttpHeadersList() {
+      return httpHeaders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder>
+        getHttpHeadersOrBuilderList() {
+      return httpHeaders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    @java.lang.Override
+    public int getHttpHeadersCount() {
+      return httpHeaders_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader getHttpHeaders(int index) {
+      return httpHeaders_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Custom headers to set in the request. HTTP allows repeated headers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder getHttpHeadersOrBuilder(
+        int index) {
+      return httpHeaders_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
+      }
+      if (port_ != 0) {
+        output.writeInt32(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scheme_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, scheme_);
+      }
+      for (int i = 0; i < httpHeaders_.size(); i++) {
+        output.writeMessage(5, httpHeaders_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
+      }
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(scheme_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, scheme_);
+      }
+      for (int i = 0; i < httpHeaders_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, httpHeaders_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction other =
+          (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) obj;
+
+      if (!getPath().equals(other.getPath())) return false;
+      if (getPort() != other.getPort()) return false;
+      if (!getHost().equals(other.getHost())) return false;
+      if (!getScheme().equals(other.getScheme())) return false;
+      if (!getHttpHeadersList().equals(other.getHttpHeadersList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + SCHEME_FIELD_NUMBER;
+      hash = (53 * hash) + getScheme().hashCode();
+      if (getHttpHeadersCount() > 0) {
+        hash = (37 * hash) + HTTP_HEADERS_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpHeadersList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction describes an action based on HTTP Get requests.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.HttpGetAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Probe.HttpGetAction)
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpGetActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.class,
+                com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        path_ = "";
+        port_ = 0;
+        host_ = "";
+        scheme_ = "";
+        if (httpHeadersBuilder_ == null) {
+          httpHeaders_ = java.util.Collections.emptyList();
+        } else {
+          httpHeaders_ = null;
+          httpHeadersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction build() {
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction result =
+            new com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction result) {
+        if (httpHeadersBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            httpHeaders_ = java.util.Collections.unmodifiableList(httpHeaders_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.httpHeaders_ = httpHeaders_;
+        } else {
+          result.httpHeaders_ = httpHeadersBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.port_ = port_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.host_ = host_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.scheme_ = scheme_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance())
+          return this;
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getScheme().isEmpty()) {
+          scheme_ = other.scheme_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (httpHeadersBuilder_ == null) {
+          if (!other.httpHeaders_.isEmpty()) {
+            if (httpHeaders_.isEmpty()) {
+              httpHeaders_ = other.httpHeaders_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureHttpHeadersIsMutable();
+              httpHeaders_.addAll(other.httpHeaders_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.httpHeaders_.isEmpty()) {
+            if (httpHeadersBuilder_.isEmpty()) {
+              httpHeadersBuilder_.dispose();
+              httpHeadersBuilder_ = null;
+              httpHeaders_ = other.httpHeaders_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              httpHeadersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getHttpHeadersFieldBuilder()
+                      : null;
+            } else {
+              httpHeadersBuilder_.addAllMessages(other.httpHeaders_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  path_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  port_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  host_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  scheme_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.parser(),
+                          extensionRegistry);
+                  if (httpHeadersBuilder_ == null) {
+                    ensureHttpHeadersIsMutable();
+                    httpHeaders_.add(m);
+                  } else {
+                    httpHeadersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object path_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Path to access on the HTTP server.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to access on the HTTP server.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to access on the HTTP server.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to access on the HTTP server.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Path to access on the HTTP server.
+       * </pre>
+       *
+       * <code>string path = 1;</code>
+       *
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int port_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of the port to access on the container.
+       * Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 2;</code>
+       *
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of the port to access on the container.
+       * Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 2;</code>
+       *
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+
+        port_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of the port to access on the container.
+       * Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object host_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Host name to connect to, defaults to the model serving container's IP.
+       * You probably want to set "Host" in httpHeaders instead.
+       * </pre>
+       *
+       * <code>string host = 3;</code>
+       *
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Host name to connect to, defaults to the model serving container's IP.
+       * You probably want to set "Host" in httpHeaders instead.
+       * </pre>
+       *
+       * <code>string host = 3;</code>
+       *
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Host name to connect to, defaults to the model serving container's IP.
+       * You probably want to set "Host" in httpHeaders instead.
+       * </pre>
+       *
+       * <code>string host = 3;</code>
+       *
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        host_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Host name to connect to, defaults to the model serving container's IP.
+       * You probably want to set "Host" in httpHeaders instead.
+       * </pre>
+       *
+       * <code>string host = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        host_ = getDefaultInstance().getHost();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Host name to connect to, defaults to the model serving container's IP.
+       * You probably want to set "Host" in httpHeaders instead.
+       * </pre>
+       *
+       * <code>string host = 3;</code>
+       *
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        host_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object scheme_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Scheme to use for connecting to the host.
+       * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+       * </pre>
+       *
+       * <code>string scheme = 4;</code>
+       *
+       * @return The scheme.
+       */
+      public java.lang.String getScheme() {
+        java.lang.Object ref = scheme_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          scheme_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Scheme to use for connecting to the host.
+       * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+       * </pre>
+       *
+       * <code>string scheme = 4;</code>
+       *
+       * @return The bytes for scheme.
+       */
+      public com.google.protobuf.ByteString getSchemeBytes() {
+        java.lang.Object ref = scheme_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          scheme_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Scheme to use for connecting to the host.
+       * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+       * </pre>
+       *
+       * <code>string scheme = 4;</code>
+       *
+       * @param value The scheme to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScheme(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scheme_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Scheme to use for connecting to the host.
+       * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+       * </pre>
+       *
+       * <code>string scheme = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScheme() {
+        scheme_ = getDefaultInstance().getScheme();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Scheme to use for connecting to the host.
+       * Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+       * </pre>
+       *
+       * <code>string scheme = 4;</code>
+       *
+       * @param value The bytes for scheme to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        scheme_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader> httpHeaders_ =
+          java.util.Collections.emptyList();
+
+      private void ensureHttpHeadersIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          httpHeaders_ =
+              new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader>(
+                  httpHeaders_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader,
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder,
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder>
+          httpHeadersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader>
+          getHttpHeadersList() {
+        if (httpHeadersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(httpHeaders_);
+        } else {
+          return httpHeadersBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public int getHttpHeadersCount() {
+        if (httpHeadersBuilder_ == null) {
+          return httpHeaders_.size();
+        } else {
+          return httpHeadersBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader getHttpHeaders(int index) {
+        if (httpHeadersBuilder_ == null) {
+          return httpHeaders_.get(index);
+        } else {
+          return httpHeadersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder setHttpHeaders(
+          int index, com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader value) {
+        if (httpHeadersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureHttpHeadersIsMutable();
+          httpHeaders_.set(index, value);
+          onChanged();
+        } else {
+          httpHeadersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder setHttpHeaders(
+          int index, com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder builderForValue) {
+        if (httpHeadersBuilder_ == null) {
+          ensureHttpHeadersIsMutable();
+          httpHeaders_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          httpHeadersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder addHttpHeaders(com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader value) {
+        if (httpHeadersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureHttpHeadersIsMutable();
+          httpHeaders_.add(value);
+          onChanged();
+        } else {
+          httpHeadersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder addHttpHeaders(
+          int index, com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader value) {
+        if (httpHeadersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureHttpHeadersIsMutable();
+          httpHeaders_.add(index, value);
+          onChanged();
+        } else {
+          httpHeadersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder addHttpHeaders(
+          com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder builderForValue) {
+        if (httpHeadersBuilder_ == null) {
+          ensureHttpHeadersIsMutable();
+          httpHeaders_.add(builderForValue.build());
+          onChanged();
+        } else {
+          httpHeadersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder addHttpHeaders(
+          int index, com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder builderForValue) {
+        if (httpHeadersBuilder_ == null) {
+          ensureHttpHeadersIsMutable();
+          httpHeaders_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          httpHeadersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder addAllHttpHeaders(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader>
+              values) {
+        if (httpHeadersBuilder_ == null) {
+          ensureHttpHeadersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, httpHeaders_);
+          onChanged();
+        } else {
+          httpHeadersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder clearHttpHeaders() {
+        if (httpHeadersBuilder_ == null) {
+          httpHeaders_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          httpHeadersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public Builder removeHttpHeaders(int index) {
+        if (httpHeadersBuilder_ == null) {
+          ensureHttpHeadersIsMutable();
+          httpHeaders_.remove(index);
+          onChanged();
+        } else {
+          httpHeadersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder getHttpHeadersBuilder(
+          int index) {
+        return getHttpHeadersFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder getHttpHeadersOrBuilder(
+          int index) {
+        if (httpHeadersBuilder_ == null) {
+          return httpHeaders_.get(index);
+        } else {
+          return httpHeadersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder>
+          getHttpHeadersOrBuilderList() {
+        if (httpHeadersBuilder_ != null) {
+          return httpHeadersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(httpHeaders_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder addHttpHeadersBuilder() {
+        return getHttpHeadersFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder addHttpHeadersBuilder(
+          int index) {
+        return getHttpHeadersFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Custom headers to set in the request. HTTP allows repeated headers.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.aiplatform.v1beta1.Probe.HttpHeader http_headers = 5;</code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder>
+          getHttpHeadersBuilderList() {
+        return getHttpHeadersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader,
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder,
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder>
+          getHttpHeadersFieldBuilder() {
+        if (httpHeadersBuilder_ == null) {
+          httpHeadersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader,
+                  com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder,
+                  com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder>(
+                  httpHeaders_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          httpHeaders_ = null;
+        }
+        return httpHeadersBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Probe.HttpGetAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Probe.HttpGetAction)
+    private static final com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HttpGetAction> PARSER =
+        new com.google.protobuf.AbstractParser<HttpGetAction>() {
+          @java.lang.Override
+          public HttpGetAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<HttpGetAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HttpGetAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GrpcActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Probe.GrpcAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Port number of the gRPC service. Number must be in the range 1 to 65535.
+     * </pre>
+     *
+     * <code>int32 port = 1;</code>
+     *
+     * @return The port.
+     */
+    int getPort();
+
+    /**
+     *
+     *
+     * <pre>
+     * Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+     *
+     * If this is not specified, the default behavior is defined by gRPC.
+     * </pre>
+     *
+     * <code>string service = 2;</code>
+     *
+     * @return The service.
+     */
+    java.lang.String getService();
+    /**
+     *
+     *
+     * <pre>
+     * Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+     *
+     * If this is not specified, the default behavior is defined by gRPC.
+     * </pre>
+     *
+     * <code>string service = 2;</code>
+     *
+     * @return The bytes for service.
+     */
+    com.google.protobuf.ByteString getServiceBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GrpcAction checks the health of a container using a gRPC service.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.GrpcAction}
+   */
+  public static final class GrpcAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Probe.GrpcAction)
+      GrpcActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GrpcAction.newBuilder() to construct.
+    private GrpcAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GrpcAction() {
+      service_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GrpcAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.class,
+              com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.Builder.class);
+    }
+
+    public static final int PORT_FIELD_NUMBER = 1;
+    private int port_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Port number of the gRPC service. Number must be in the range 1 to 65535.
+     * </pre>
+     *
+     * <code>int32 port = 1;</code>
+     *
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    public static final int SERVICE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object service_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+     *
+     * If this is not specified, the default behavior is defined by gRPC.
+     * </pre>
+     *
+     * <code>string service = 2;</code>
+     *
+     * @return The service.
+     */
+    @java.lang.Override
+    public java.lang.String getService() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        service_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service is the name of the service to place in the gRPC
+     * HealthCheckRequest (see
+     * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+     *
+     * If this is not specified, the default behavior is defined by gRPC.
+     * </pre>
+     *
+     * <code>string service = 2;</code>
+     *
+     * @return The bytes for service.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceBytes() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        service_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (port_ != 0) {
+        output.writeInt32(1, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, service_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(service_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, service_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction other =
+          (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) obj;
+
+      if (getPort() != other.getPort()) return false;
+      if (!getService().equals(other.getService())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction checks the health of a container using a gRPC service.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.GrpcAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Probe.GrpcAction)
+        com.google.cloud.aiplatform.v1beta1.Probe.GrpcActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.class,
+                com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        port_ = 0;
+        service_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction build() {
+        com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction result =
+            new com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.port_ = port_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.service_ = service_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance())
+          return this;
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        if (!other.getService().isEmpty()) {
+          service_ = other.service_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  port_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  service_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int port_;
+      /**
+       *
+       *
+       * <pre>
+       * Port number of the gRPC service. Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 1;</code>
+       *
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Port number of the gRPC service. Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 1;</code>
+       *
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+
+        port_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Port number of the gRPC service. Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object service_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Service is the name of the service to place in the gRPC
+       * HealthCheckRequest (see
+       * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+       *
+       * If this is not specified, the default behavior is defined by gRPC.
+       * </pre>
+       *
+       * <code>string service = 2;</code>
+       *
+       * @return The service.
+       */
+      public java.lang.String getService() {
+        java.lang.Object ref = service_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          service_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Service is the name of the service to place in the gRPC
+       * HealthCheckRequest (see
+       * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+       *
+       * If this is not specified, the default behavior is defined by gRPC.
+       * </pre>
+       *
+       * <code>string service = 2;</code>
+       *
+       * @return The bytes for service.
+       */
+      public com.google.protobuf.ByteString getServiceBytes() {
+        java.lang.Object ref = service_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          service_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Service is the name of the service to place in the gRPC
+       * HealthCheckRequest (see
+       * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+       *
+       * If this is not specified, the default behavior is defined by gRPC.
+       * </pre>
+       *
+       * <code>string service = 2;</code>
+       *
+       * @param value The service to set.
+       * @return This builder for chaining.
+       */
+      public Builder setService(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        service_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Service is the name of the service to place in the gRPC
+       * HealthCheckRequest (see
+       * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+       *
+       * If this is not specified, the default behavior is defined by gRPC.
+       * </pre>
+       *
+       * <code>string service = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearService() {
+        service_ = getDefaultInstance().getService();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Service is the name of the service to place in the gRPC
+       * HealthCheckRequest (see
+       * https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+       *
+       * If this is not specified, the default behavior is defined by gRPC.
+       * </pre>
+       *
+       * <code>string service = 2;</code>
+       *
+       * @param value The bytes for service to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        service_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Probe.GrpcAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Probe.GrpcAction)
+    private static final com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GrpcAction> PARSER =
+        new com.google.protobuf.AbstractParser<GrpcAction>() {
+          @java.lang.Override
+          public GrpcAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GrpcAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GrpcAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface TcpSocketActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of the port to access on the container.
+     * Number must be in the range 1 to 65535.
+     * </pre>
+     *
+     * <code>int32 port = 1;</code>
+     *
+     * @return The port.
+     */
+    int getPort();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional: Host name to connect to, defaults to the model serving
+     * container's IP.
+     * </pre>
+     *
+     * <code>string host = 2;</code>
+     *
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     *
+     *
+     * <pre>
+     * Optional: Host name to connect to, defaults to the model serving
+     * container's IP.
+     * </pre>
+     *
+     * <code>string host = 2;</code>
+     *
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString getHostBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TcpSocketAction probes the health of a container by opening a TCP socket
+   * connection.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction}
+   */
+  public static final class TcpSocketAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction)
+      TcpSocketActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TcpSocketAction.newBuilder() to construct.
+    private TcpSocketAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TcpSocketAction() {
+      host_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TcpSocketAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.class,
+              com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.Builder.class);
+    }
+
+    public static final int PORT_FIELD_NUMBER = 1;
+    private int port_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Number of the port to access on the container.
+     * Number must be in the range 1 to 65535.
+     * </pre>
+     *
+     * <code>int32 port = 1;</code>
+     *
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    public static final int HOST_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object host_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional: Host name to connect to, defaults to the model serving
+     * container's IP.
+     * </pre>
+     *
+     * <code>string host = 2;</code>
+     *
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional: Host name to connect to, defaults to the model serving
+     * container's IP.
+     * </pre>
+     *
+     * <code>string host = 2;</code>
+     *
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (port_ != 0) {
+        output.writeInt32(1, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, host_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, port_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, host_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction other =
+          (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) obj;
+
+      if (getPort() != other.getPort()) return false;
+      if (!getHost().equals(other.getHost())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction)
+        com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.class,
+                com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        port_ = 0;
+        host_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction build() {
+        com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction result =
+            new com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.port_ = port_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.host_ = host_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance())
+          return this;
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  port_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  host_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int port_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of the port to access on the container.
+       * Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 1;</code>
+       *
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of the port to access on the container.
+       * Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 1;</code>
+       *
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+
+        port_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of the port to access on the container.
+       * Number must be in the range 1 to 65535.
+       * </pre>
+       *
+       * <code>int32 port = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object host_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional: Host name to connect to, defaults to the model serving
+       * container's IP.
+       * </pre>
+       *
+       * <code>string host = 2;</code>
+       *
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional: Host name to connect to, defaults to the model serving
+       * container's IP.
+       * </pre>
+       *
+       * <code>string host = 2;</code>
+       *
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional: Host name to connect to, defaults to the model serving
+       * container's IP.
+       * </pre>
+       *
+       * <code>string host = 2;</code>
+       *
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        host_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional: Host name to connect to, defaults to the model serving
+       * container's IP.
+       * </pre>
+       *
+       * <code>string host = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        host_ = getDefaultInstance().getHost();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional: Host name to connect to, defaults to the model serving
+       * container's IP.
+       * </pre>
+       *
+       * <code>string host = 2;</code>
+       *
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        host_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction)
+    private static final com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TcpSocketAction> PARSER =
+        new com.google.protobuf.AbstractParser<TcpSocketAction>() {
+          @java.lang.Override
+          public TcpSocketAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TcpSocketAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TcpSocketAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface HttpHeaderOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Probe.HttpHeader)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The header field name.
+     * This will be canonicalized upon output, so case-variant names will be
+     * understood as the same header.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * The header field name.
+     * This will be canonicalized upon output, so case-variant names will be
+     * understood as the same header.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The header field value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The value.
+     */
+    java.lang.String getValue();
+    /**
+     *
+     *
+     * <pre>
+     * The header field value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString getValueBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HttpHeader describes a custom header to be used in HTTP probes
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.HttpHeader}
+   */
+  public static final class HttpHeader extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Probe.HttpHeader)
+      HttpHeaderOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use HttpHeader.newBuilder() to construct.
+    private HttpHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private HttpHeader() {
+      name_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new HttpHeader();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.class,
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The header field name.
+     * This will be canonicalized upon output, so case-variant names will be
+     * understood as the same header.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The header field name.
+     * This will be canonicalized upon output, so case-variant names will be
+     * understood as the same header.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The header field value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The header field value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     *
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader other =
+          (com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getValue().equals(other.getValue())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpHeader describes a custom header to be used in HTTP probes
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Probe.HttpHeader}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Probe.HttpHeader)
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpHeaderOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.class,
+                com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        value_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader build() {
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader result =
+            new com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  value_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The header field name.
+       * This will be canonicalized upon output, so case-variant names will be
+       * understood as the same header.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field name.
+       * This will be canonicalized upon output, so case-variant names will be
+       * understood as the same header.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field name.
+       * This will be canonicalized upon output, so case-variant names will be
+       * understood as the same header.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field name.
+       * This will be canonicalized upon output, so case-variant names will be
+       * understood as the same header.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field name.
+       * This will be canonicalized upon output, so case-variant names will be
+       * understood as the same header.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The header field value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @return The value.
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The header field value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Probe.HttpHeader)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Probe.HttpHeader)
+    private static final com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<HttpHeader> PARSER =
+        new com.google.protobuf.AbstractParser<HttpHeader>() {
+          @java.lang.Override
+          public HttpHeader parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<HttpHeader> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<HttpHeader> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.HttpHeader getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int probeTypeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -920,6 +5083,9 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     EXEC(1),
+    HTTP_GET(4),
+    GRPC(5),
+    TCP_SOCKET(6),
     PROBETYPE_NOT_SET(0);
     private final int value;
 
@@ -940,6 +5106,12 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return EXEC;
+        case 4:
+          return HTTP_GET;
+        case 5:
+          return GRPC;
+        case 6:
+          return TCP_SOCKET;
         case 0:
           return PROBETYPE_NOT_SET;
         default:
@@ -1007,6 +5179,166 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.Probe.ExecAction.getDefaultInstance();
   }
 
+  public static final int HTTP_GET_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * HttpGetAction probes the health of a container by sending an HTTP GET
+   * request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+   *
+   * @return Whether the httpGet field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpGet() {
+    return probeTypeCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HttpGetAction probes the health of a container by sending an HTTP GET
+   * request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+   *
+   * @return The httpGet.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction getHttpGet() {
+    if (probeTypeCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HttpGetAction probes the health of a container by sending an HTTP GET
+   * request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetActionOrBuilder getHttpGetOrBuilder() {
+    if (probeTypeCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance();
+  }
+
+  public static final int GRPC_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * GrpcAction probes the health of a container by sending a gRPC request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+   *
+   * @return Whether the grpc field is set.
+   */
+  @java.lang.Override
+  public boolean hasGrpc() {
+    return probeTypeCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GrpcAction probes the health of a container by sending a gRPC request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+   *
+   * @return The grpc.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction getGrpc() {
+    if (probeTypeCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GrpcAction probes the health of a container by sending a gRPC request.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe.GrpcActionOrBuilder getGrpcOrBuilder() {
+    if (probeTypeCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance();
+  }
+
+  public static final int TCP_SOCKET_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * TcpSocketAction probes the health of a container by opening a TCP socket
+   * connection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+   *
+   * @return Whether the tcpSocket field is set.
+   */
+  @java.lang.Override
+  public boolean hasTcpSocket() {
+    return probeTypeCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TcpSocketAction probes the health of a container by opening a TCP socket
+   * connection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+   *
+   * @return The tcpSocket.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction getTcpSocket() {
+    if (probeTypeCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TcpSocketAction probes the health of a container by opening a TCP socket
+   * connection.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketActionOrBuilder
+      getTcpSocketOrBuilder() {
+    if (probeTypeCase_ == 6) {
+      return (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance();
+  }
+
   public static final int PERIOD_SECONDS_FIELD_NUMBER = 2;
   private int periodSeconds_ = 0;
   /**
@@ -1049,6 +5381,69 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     return timeoutSeconds_;
   }
 
+  public static final int FAILURE_THRESHOLD_FIELD_NUMBER = 7;
+  private int failureThreshold_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Number of consecutive failures before the probe is considered failed.
+   * Defaults to 3. Minimum value is 1.
+   *
+   * Maps to Kubernetes probe argument 'failureThreshold'.
+   * </pre>
+   *
+   * <code>int32 failure_threshold = 7;</code>
+   *
+   * @return The failureThreshold.
+   */
+  @java.lang.Override
+  public int getFailureThreshold() {
+    return failureThreshold_;
+  }
+
+  public static final int SUCCESS_THRESHOLD_FIELD_NUMBER = 8;
+  private int successThreshold_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Number of consecutive successes before the probe is considered successful.
+   * Defaults to 1. Minimum value is 1.
+   *
+   * Maps to Kubernetes probe argument 'successThreshold'.
+   * </pre>
+   *
+   * <code>int32 success_threshold = 8;</code>
+   *
+   * @return The successThreshold.
+   */
+  @java.lang.Override
+  public int getSuccessThreshold() {
+    return successThreshold_;
+  }
+
+  public static final int INITIAL_DELAY_SECONDS_FIELD_NUMBER = 9;
+  private int initialDelaySeconds_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Number of seconds to wait before starting the probe. Defaults to 0.
+   * Minimum value is 0.
+   *
+   * Maps to Kubernetes probe argument 'initialDelaySeconds'.
+   * </pre>
+   *
+   * <code>int32 initial_delay_seconds = 9;</code>
+   *
+   * @return The initialDelaySeconds.
+   */
+  @java.lang.Override
+  public int getInitialDelaySeconds() {
+    return initialDelaySeconds_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1072,6 +5467,25 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     if (timeoutSeconds_ != 0) {
       output.writeInt32(3, timeoutSeconds_);
     }
+    if (probeTypeCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_);
+    }
+    if (probeTypeCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_);
+    }
+    if (probeTypeCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_);
+    }
+    if (failureThreshold_ != 0) {
+      output.writeInt32(7, failureThreshold_);
+    }
+    if (successThreshold_ != 0) {
+      output.writeInt32(8, successThreshold_);
+    }
+    if (initialDelaySeconds_ != 0) {
+      output.writeInt32(9, initialDelaySeconds_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1092,6 +5506,30 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     if (timeoutSeconds_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, timeoutSeconds_);
     }
+    if (probeTypeCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_);
+    }
+    if (probeTypeCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_);
+    }
+    if (probeTypeCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_);
+    }
+    if (failureThreshold_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, failureThreshold_);
+    }
+    if (successThreshold_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, successThreshold_);
+    }
+    if (initialDelaySeconds_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, initialDelaySeconds_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1110,10 +5548,22 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
 
     if (getPeriodSeconds() != other.getPeriodSeconds()) return false;
     if (getTimeoutSeconds() != other.getTimeoutSeconds()) return false;
+    if (getFailureThreshold() != other.getFailureThreshold()) return false;
+    if (getSuccessThreshold() != other.getSuccessThreshold()) return false;
+    if (getInitialDelaySeconds() != other.getInitialDelaySeconds()) return false;
     if (!getProbeTypeCase().equals(other.getProbeTypeCase())) return false;
     switch (probeTypeCase_) {
       case 1:
         if (!getExec().equals(other.getExec())) return false;
+        break;
+      case 4:
+        if (!getHttpGet().equals(other.getHttpGet())) return false;
+        break;
+      case 5:
+        if (!getGrpc().equals(other.getGrpc())) return false;
+        break;
+      case 6:
+        if (!getTcpSocket().equals(other.getTcpSocket())) return false;
         break;
       case 0:
       default:
@@ -1133,10 +5583,28 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getPeriodSeconds();
     hash = (37 * hash) + TIMEOUT_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getTimeoutSeconds();
+    hash = (37 * hash) + FAILURE_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + getFailureThreshold();
+    hash = (37 * hash) + SUCCESS_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + getSuccessThreshold();
+    hash = (37 * hash) + INITIAL_DELAY_SECONDS_FIELD_NUMBER;
+    hash = (53 * hash) + getInitialDelaySeconds();
     switch (probeTypeCase_) {
       case 1:
         hash = (37 * hash) + EXEC_FIELD_NUMBER;
         hash = (53 * hash) + getExec().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + HTTP_GET_FIELD_NUMBER;
+        hash = (53 * hash) + getHttpGet().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + GRPC_FIELD_NUMBER;
+        hash = (53 * hash) + getGrpc().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + TCP_SOCKET_FIELD_NUMBER;
+        hash = (53 * hash) + getTcpSocket().hashCode();
         break;
       case 0:
       default:
@@ -1284,8 +5752,20 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       if (execBuilder_ != null) {
         execBuilder_.clear();
       }
+      if (httpGetBuilder_ != null) {
+        httpGetBuilder_.clear();
+      }
+      if (grpcBuilder_ != null) {
+        grpcBuilder_.clear();
+      }
+      if (tcpSocketBuilder_ != null) {
+        tcpSocketBuilder_.clear();
+      }
       periodSeconds_ = 0;
       timeoutSeconds_ = 0;
+      failureThreshold_ = 0;
+      successThreshold_ = 0;
+      initialDelaySeconds_ = 0;
       probeTypeCase_ = 0;
       probeType_ = null;
       return this;
@@ -1325,11 +5805,20 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Probe result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.periodSeconds_ = periodSeconds_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.timeoutSeconds_ = timeoutSeconds_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.failureThreshold_ = failureThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.successThreshold_ = successThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.initialDelaySeconds_ = initialDelaySeconds_;
       }
     }
 
@@ -1338,6 +5827,15 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       result.probeType_ = this.probeType_;
       if (probeTypeCase_ == 1 && execBuilder_ != null) {
         result.probeType_ = execBuilder_.build();
+      }
+      if (probeTypeCase_ == 4 && httpGetBuilder_ != null) {
+        result.probeType_ = httpGetBuilder_.build();
+      }
+      if (probeTypeCase_ == 5 && grpcBuilder_ != null) {
+        result.probeType_ = grpcBuilder_.build();
+      }
+      if (probeTypeCase_ == 6 && tcpSocketBuilder_ != null) {
+        result.probeType_ = tcpSocketBuilder_.build();
       }
     }
 
@@ -1392,10 +5890,34 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       if (other.getTimeoutSeconds() != 0) {
         setTimeoutSeconds(other.getTimeoutSeconds());
       }
+      if (other.getFailureThreshold() != 0) {
+        setFailureThreshold(other.getFailureThreshold());
+      }
+      if (other.getSuccessThreshold() != 0) {
+        setSuccessThreshold(other.getSuccessThreshold());
+      }
+      if (other.getInitialDelaySeconds() != 0) {
+        setInitialDelaySeconds(other.getInitialDelaySeconds());
+      }
       switch (other.getProbeTypeCase()) {
         case EXEC:
           {
             mergeExec(other.getExec());
+            break;
+          }
+        case HTTP_GET:
+          {
+            mergeHttpGet(other.getHttpGet());
+            break;
+          }
+        case GRPC:
+          {
+            mergeGrpc(other.getGrpc());
+            break;
+          }
+        case TCP_SOCKET:
+          {
+            mergeTcpSocket(other.getTcpSocket());
             break;
           }
         case PROBETYPE_NOT_SET:
@@ -1438,15 +5960,51 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 periodSeconds_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 16
             case 24:
               {
                 timeoutSeconds_ = input.readInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 24
+            case 34:
+              {
+                input.readMessage(getHttpGetFieldBuilder().getBuilder(), extensionRegistry);
+                probeTypeCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getGrpcFieldBuilder().getBuilder(), extensionRegistry);
+                probeTypeCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getTcpSocketFieldBuilder().getBuilder(), extensionRegistry);
+                probeTypeCase_ = 6;
+                break;
+              } // case 50
+            case 56:
+              {
+                failureThreshold_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 64:
+              {
+                successThreshold_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 72:
+              {
+                initialDelaySeconds_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1690,6 +6248,656 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       return execBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction,
+            com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.Builder,
+            com.google.cloud.aiplatform.v1beta1.Probe.HttpGetActionOrBuilder>
+        httpGetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     *
+     * @return Whether the httpGet field is set.
+     */
+    @java.lang.Override
+    public boolean hasHttpGet() {
+      return probeTypeCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     *
+     * @return The httpGet.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction getHttpGet() {
+      if (httpGetBuilder_ == null) {
+        if (probeTypeCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance();
+      } else {
+        if (probeTypeCase_ == 4) {
+          return httpGetBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     */
+    public Builder setHttpGet(com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction value) {
+      if (httpGetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        probeType_ = value;
+        onChanged();
+      } else {
+        httpGetBuilder_.setMessage(value);
+      }
+      probeTypeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     */
+    public Builder setHttpGet(
+        com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.Builder builderForValue) {
+      if (httpGetBuilder_ == null) {
+        probeType_ = builderForValue.build();
+        onChanged();
+      } else {
+        httpGetBuilder_.setMessage(builderForValue.build());
+      }
+      probeTypeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     */
+    public Builder mergeHttpGet(com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction value) {
+      if (httpGetBuilder_ == null) {
+        if (probeTypeCase_ == 4
+            && probeType_
+                != com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance()) {
+          probeType_ =
+              com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          probeType_ = value;
+        }
+        onChanged();
+      } else {
+        if (probeTypeCase_ == 4) {
+          httpGetBuilder_.mergeFrom(value);
+        } else {
+          httpGetBuilder_.setMessage(value);
+        }
+      }
+      probeTypeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     */
+    public Builder clearHttpGet() {
+      if (httpGetBuilder_ == null) {
+        if (probeTypeCase_ == 4) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+          onChanged();
+        }
+      } else {
+        if (probeTypeCase_ == 4) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+        }
+        httpGetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.Builder getHttpGetBuilder() {
+      return getHttpGetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.HttpGetActionOrBuilder getHttpGetOrBuilder() {
+      if ((probeTypeCase_ == 4) && (httpGetBuilder_ != null)) {
+        return httpGetBuilder_.getMessageOrBuilder();
+      } else {
+        if (probeTypeCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HttpGetAction probes the health of a container by sending an HTTP GET
+     * request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction http_get = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction,
+            com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.Builder,
+            com.google.cloud.aiplatform.v1beta1.Probe.HttpGetActionOrBuilder>
+        getHttpGetFieldBuilder() {
+      if (httpGetBuilder_ == null) {
+        if (!(probeTypeCase_ == 4)) {
+          probeType_ = com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.getDefaultInstance();
+        }
+        httpGetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction,
+                com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction.Builder,
+                com.google.cloud.aiplatform.v1beta1.Probe.HttpGetActionOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.Probe.HttpGetAction) probeType_,
+                getParentForChildren(),
+                isClean());
+        probeType_ = null;
+      }
+      probeTypeCase_ = 4;
+      onChanged();
+      return httpGetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction,
+            com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.Builder,
+            com.google.cloud.aiplatform.v1beta1.Probe.GrpcActionOrBuilder>
+        grpcBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     *
+     * @return Whether the grpc field is set.
+     */
+    @java.lang.Override
+    public boolean hasGrpc() {
+      return probeTypeCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     *
+     * @return The grpc.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction getGrpc() {
+      if (grpcBuilder_ == null) {
+        if (probeTypeCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance();
+      } else {
+        if (probeTypeCase_ == 5) {
+          return grpcBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     */
+    public Builder setGrpc(com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction value) {
+      if (grpcBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        probeType_ = value;
+        onChanged();
+      } else {
+        grpcBuilder_.setMessage(value);
+      }
+      probeTypeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     */
+    public Builder setGrpc(
+        com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.Builder builderForValue) {
+      if (grpcBuilder_ == null) {
+        probeType_ = builderForValue.build();
+        onChanged();
+      } else {
+        grpcBuilder_.setMessage(builderForValue.build());
+      }
+      probeTypeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     */
+    public Builder mergeGrpc(com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction value) {
+      if (grpcBuilder_ == null) {
+        if (probeTypeCase_ == 5
+            && probeType_
+                != com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance()) {
+          probeType_ =
+              com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          probeType_ = value;
+        }
+        onChanged();
+      } else {
+        if (probeTypeCase_ == 5) {
+          grpcBuilder_.mergeFrom(value);
+        } else {
+          grpcBuilder_.setMessage(value);
+        }
+      }
+      probeTypeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     */
+    public Builder clearGrpc() {
+      if (grpcBuilder_ == null) {
+        if (probeTypeCase_ == 5) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+          onChanged();
+        }
+      } else {
+        if (probeTypeCase_ == 5) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+        }
+        grpcBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.Builder getGrpcBuilder() {
+      return getGrpcFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.GrpcActionOrBuilder getGrpcOrBuilder() {
+      if ((probeTypeCase_ == 5) && (grpcBuilder_ != null)) {
+        return grpcBuilder_.getMessageOrBuilder();
+      } else {
+        if (probeTypeCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GrpcAction probes the health of a container by sending a gRPC request.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.GrpcAction grpc = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction,
+            com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.Builder,
+            com.google.cloud.aiplatform.v1beta1.Probe.GrpcActionOrBuilder>
+        getGrpcFieldBuilder() {
+      if (grpcBuilder_ == null) {
+        if (!(probeTypeCase_ == 5)) {
+          probeType_ = com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.getDefaultInstance();
+        }
+        grpcBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction,
+                com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction.Builder,
+                com.google.cloud.aiplatform.v1beta1.Probe.GrpcActionOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.Probe.GrpcAction) probeType_,
+                getParentForChildren(),
+                isClean());
+        probeType_ = null;
+      }
+      probeTypeCase_ = 5;
+      onChanged();
+      return grpcBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction,
+            com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.Builder,
+            com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketActionOrBuilder>
+        tcpSocketBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     *
+     * @return Whether the tcpSocket field is set.
+     */
+    @java.lang.Override
+    public boolean hasTcpSocket() {
+      return probeTypeCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     *
+     * @return The tcpSocket.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction getTcpSocket() {
+      if (tcpSocketBuilder_ == null) {
+        if (probeTypeCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance();
+      } else {
+        if (probeTypeCase_ == 6) {
+          return tcpSocketBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     */
+    public Builder setTcpSocket(com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction value) {
+      if (tcpSocketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        probeType_ = value;
+        onChanged();
+      } else {
+        tcpSocketBuilder_.setMessage(value);
+      }
+      probeTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     */
+    public Builder setTcpSocket(
+        com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.Builder builderForValue) {
+      if (tcpSocketBuilder_ == null) {
+        probeType_ = builderForValue.build();
+        onChanged();
+      } else {
+        tcpSocketBuilder_.setMessage(builderForValue.build());
+      }
+      probeTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     */
+    public Builder mergeTcpSocket(com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction value) {
+      if (tcpSocketBuilder_ == null) {
+        if (probeTypeCase_ == 6
+            && probeType_
+                != com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance()) {
+          probeType_ =
+              com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          probeType_ = value;
+        }
+        onChanged();
+      } else {
+        if (probeTypeCase_ == 6) {
+          tcpSocketBuilder_.mergeFrom(value);
+        } else {
+          tcpSocketBuilder_.setMessage(value);
+        }
+      }
+      probeTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     */
+    public Builder clearTcpSocket() {
+      if (tcpSocketBuilder_ == null) {
+        if (probeTypeCase_ == 6) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+          onChanged();
+        }
+      } else {
+        if (probeTypeCase_ == 6) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+        }
+        tcpSocketBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.Builder getTcpSocketBuilder() {
+      return getTcpSocketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketActionOrBuilder
+        getTcpSocketOrBuilder() {
+      if ((probeTypeCase_ == 6) && (tcpSocketBuilder_ != null)) {
+        return tcpSocketBuilder_.getMessageOrBuilder();
+      } else {
+        if (probeTypeCase_ == 6) {
+          return (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TcpSocketAction probes the health of a container by opening a TCP socket
+     * connection.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction tcp_socket = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction,
+            com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.Builder,
+            com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketActionOrBuilder>
+        getTcpSocketFieldBuilder() {
+      if (tcpSocketBuilder_ == null) {
+        if (!(probeTypeCase_ == 6)) {
+          probeType_ =
+              com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.getDefaultInstance();
+        }
+        tcpSocketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction,
+                com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction.Builder,
+                com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketActionOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.Probe.TcpSocketAction) probeType_,
+                getParentForChildren(),
+                isClean());
+        probeType_ = null;
+      }
+      probeTypeCase_ = 6;
+      onChanged();
+      return tcpSocketBuilder_;
+    }
+
     private int periodSeconds_;
     /**
      *
@@ -1727,7 +6935,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     public Builder setPeriodSeconds(int value) {
 
       periodSeconds_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1746,7 +6954,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeriodSeconds() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       periodSeconds_ = 0;
       onChanged();
       return this;
@@ -1789,7 +6997,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeoutSeconds(int value) {
 
       timeoutSeconds_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1808,8 +7016,194 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSeconds() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       timeoutSeconds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int failureThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of consecutive failures before the probe is considered failed.
+     * Defaults to 3. Minimum value is 1.
+     *
+     * Maps to Kubernetes probe argument 'failureThreshold'.
+     * </pre>
+     *
+     * <code>int32 failure_threshold = 7;</code>
+     *
+     * @return The failureThreshold.
+     */
+    @java.lang.Override
+    public int getFailureThreshold() {
+      return failureThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of consecutive failures before the probe is considered failed.
+     * Defaults to 3. Minimum value is 1.
+     *
+     * Maps to Kubernetes probe argument 'failureThreshold'.
+     * </pre>
+     *
+     * <code>int32 failure_threshold = 7;</code>
+     *
+     * @param value The failureThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailureThreshold(int value) {
+
+      failureThreshold_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of consecutive failures before the probe is considered failed.
+     * Defaults to 3. Minimum value is 1.
+     *
+     * Maps to Kubernetes probe argument 'failureThreshold'.
+     * </pre>
+     *
+     * <code>int32 failure_threshold = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFailureThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      failureThreshold_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int successThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of consecutive successes before the probe is considered successful.
+     * Defaults to 1. Minimum value is 1.
+     *
+     * Maps to Kubernetes probe argument 'successThreshold'.
+     * </pre>
+     *
+     * <code>int32 success_threshold = 8;</code>
+     *
+     * @return The successThreshold.
+     */
+    @java.lang.Override
+    public int getSuccessThreshold() {
+      return successThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of consecutive successes before the probe is considered successful.
+     * Defaults to 1. Minimum value is 1.
+     *
+     * Maps to Kubernetes probe argument 'successThreshold'.
+     * </pre>
+     *
+     * <code>int32 success_threshold = 8;</code>
+     *
+     * @param value The successThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuccessThreshold(int value) {
+
+      successThreshold_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of consecutive successes before the probe is considered successful.
+     * Defaults to 1. Minimum value is 1.
+     *
+     * Maps to Kubernetes probe argument 'successThreshold'.
+     * </pre>
+     *
+     * <code>int32 success_threshold = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSuccessThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      successThreshold_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int initialDelaySeconds_;
+    /**
+     *
+     *
+     * <pre>
+     * Number of seconds to wait before starting the probe. Defaults to 0.
+     * Minimum value is 0.
+     *
+     * Maps to Kubernetes probe argument 'initialDelaySeconds'.
+     * </pre>
+     *
+     * <code>int32 initial_delay_seconds = 9;</code>
+     *
+     * @return The initialDelaySeconds.
+     */
+    @java.lang.Override
+    public int getInitialDelaySeconds() {
+      return initialDelaySeconds_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of seconds to wait before starting the probe. Defaults to 0.
+     * Minimum value is 0.
+     *
+     * Maps to Kubernetes probe argument 'initialDelaySeconds'.
+     * </pre>
+     *
+     * <code>int32 initial_delay_seconds = 9;</code>
+     *
+     * @param value The initialDelaySeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInitialDelaySeconds(int value) {
+
+      initialDelaySeconds_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Number of seconds to wait before starting the probe. Defaults to 0.
+     * Minimum value is 0.
+     *
+     * Maps to Kubernetes probe argument 'initialDelaySeconds'.
+     * </pre>
+     *
+     * <code>int32 initial_delay_seconds = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInitialDelaySeconds() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      initialDelaySeconds_ = 0;
       onChanged();
       return this;
     }

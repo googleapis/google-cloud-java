@@ -1504,7 +1504,57 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
             public interface ControlPointOrBuilder
                 extends
                 // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint)
-                com.google.protobuf.MessageOrBuilder {}
+                com.google.protobuf.MessageOrBuilder {
+
+              /**
+               *
+               *
+               * <pre>
+               * Optional. Can be one of:
+               * 1. The numerical field value.
+               * 2. The duration spec for freshness:
+               * The value must be formatted as an XSD `dayTimeDuration` value
+               * (a restricted subset of an ISO 8601 duration value). The
+               * pattern for this is: `[nD][T[nH][nM][nS]]`.
+               * </pre>
+               *
+               * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The attributeValue.
+               */
+              java.lang.String getAttributeValue();
+              /**
+               *
+               *
+               * <pre>
+               * Optional. Can be one of:
+               * 1. The numerical field value.
+               * 2. The duration spec for freshness:
+               * The value must be formatted as an XSD `dayTimeDuration` value
+               * (a restricted subset of an ISO 8601 duration value). The
+               * pattern for this is: `[nD][T[nH][nM][nS]]`.
+               * </pre>
+               *
+               * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The bytes for attributeValue.
+               */
+              com.google.protobuf.ByteString getAttributeValueBytes();
+
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The value between -1 to 1 by which to boost the score
+               * if the attribute_value evaluates to the value specified above.
+               * </pre>
+               *
+               * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The boostAmount.
+               */
+              float getBoostAmount();
+            }
             /**
              *
              *
@@ -1527,7 +1577,9 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 super(builder);
               }
 
-              private ControlPoint() {}
+              private ControlPoint() {
+                attributeValue_ = "";
+              }
 
               @java.lang.Override
               @SuppressWarnings({"unused"})
@@ -1554,6 +1606,86 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                             .Builder.class);
               }
 
+              public static final int ATTRIBUTE_VALUE_FIELD_NUMBER = 1;
+
+              @SuppressWarnings("serial")
+              private volatile java.lang.Object attributeValue_ = "";
+              /**
+               *
+               *
+               * <pre>
+               * Optional. Can be one of:
+               * 1. The numerical field value.
+               * 2. The duration spec for freshness:
+               * The value must be formatted as an XSD `dayTimeDuration` value
+               * (a restricted subset of an ISO 8601 duration value). The
+               * pattern for this is: `[nD][T[nH][nM][nS]]`.
+               * </pre>
+               *
+               * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The attributeValue.
+               */
+              @java.lang.Override
+              public java.lang.String getAttributeValue() {
+                java.lang.Object ref = attributeValue_;
+                if (ref instanceof java.lang.String) {
+                  return (java.lang.String) ref;
+                } else {
+                  com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                  java.lang.String s = bs.toStringUtf8();
+                  attributeValue_ = s;
+                  return s;
+                }
+              }
+              /**
+               *
+               *
+               * <pre>
+               * Optional. Can be one of:
+               * 1. The numerical field value.
+               * 2. The duration spec for freshness:
+               * The value must be formatted as an XSD `dayTimeDuration` value
+               * (a restricted subset of an ISO 8601 duration value). The
+               * pattern for this is: `[nD][T[nH][nM][nS]]`.
+               * </pre>
+               *
+               * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The bytes for attributeValue.
+               */
+              @java.lang.Override
+              public com.google.protobuf.ByteString getAttributeValueBytes() {
+                java.lang.Object ref = attributeValue_;
+                if (ref instanceof java.lang.String) {
+                  com.google.protobuf.ByteString b =
+                      com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                  attributeValue_ = b;
+                  return b;
+                } else {
+                  return (com.google.protobuf.ByteString) ref;
+                }
+              }
+
+              public static final int BOOST_AMOUNT_FIELD_NUMBER = 2;
+              private float boostAmount_ = 0F;
+              /**
+               *
+               *
+               * <pre>
+               * Optional. The value between -1 to 1 by which to boost the score
+               * if the attribute_value evaluates to the value specified above.
+               * </pre>
+               *
+               * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+               *
+               * @return The boostAmount.
+               */
+              @java.lang.Override
+              public float getBoostAmount() {
+                return boostAmount_;
+              }
+
               private byte memoizedIsInitialized = -1;
 
               @java.lang.Override
@@ -1569,6 +1701,12 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
               @java.lang.Override
               public void writeTo(com.google.protobuf.CodedOutputStream output)
                   throws java.io.IOException {
+                if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributeValue_)) {
+                  com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attributeValue_);
+                }
+                if (java.lang.Float.floatToRawIntBits(boostAmount_) != 0) {
+                  output.writeFloat(2, boostAmount_);
+                }
                 getUnknownFields().writeTo(output);
               }
 
@@ -1578,6 +1716,13 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 if (size != -1) return size;
 
                 size = 0;
+                if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributeValue_)) {
+                  size +=
+                      com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attributeValue_);
+                }
+                if (java.lang.Float.floatToRawIntBits(boostAmount_) != 0) {
+                  size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, boostAmount_);
+                }
                 size += getUnknownFields().getSerializedSize();
                 memoizedSize = size;
                 return size;
@@ -1602,6 +1747,9 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                                 .ControlPoint)
                             obj;
 
+                if (!getAttributeValue().equals(other.getAttributeValue())) return false;
+                if (java.lang.Float.floatToIntBits(getBoostAmount())
+                    != java.lang.Float.floatToIntBits(other.getBoostAmount())) return false;
                 if (!getUnknownFields().equals(other.getUnknownFields())) return false;
                 return true;
               }
@@ -1613,6 +1761,10 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 }
                 int hash = 41;
                 hash = (19 * hash) + getDescriptor().hashCode();
+                hash = (37 * hash) + ATTRIBUTE_VALUE_FIELD_NUMBER;
+                hash = (53 * hash) + getAttributeValue().hashCode();
+                hash = (37 * hash) + BOOST_AMOUNT_FIELD_NUMBER;
+                hash = (53 * hash) + java.lang.Float.floatToIntBits(getBoostAmount());
                 hash = (29 * hash) + getUnknownFields().hashCode();
                 memoizedHashCode = hash;
                 return hash;
@@ -1788,6 +1940,9 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                 @java.lang.Override
                 public Builder clear() {
                   super.clear();
+                  bitField0_ = 0;
+                  attributeValue_ = "";
+                  boostAmount_ = 0F;
                   return this;
                 }
 
@@ -1829,8 +1984,24 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                           new com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest
                               .SearchConfig.BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec
                               .ControlPoint(this);
+                  if (bitField0_ != 0) {
+                    buildPartial0(result);
+                  }
                   onBuilt();
                   return result;
+                }
+
+                private void buildPartial0(
+                    com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig
+                            .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
+                        result) {
+                  int from_bitField0_ = bitField0_;
+                  if (((from_bitField0_ & 0x00000001) != 0)) {
+                    result.attributeValue_ = attributeValue_;
+                  }
+                  if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.boostAmount_ = boostAmount_;
+                  }
                 }
 
                 @java.lang.Override
@@ -1893,6 +2064,14 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                       == com.google.cloud.dialogflow.v2beta1.SearchKnowledgeRequest.SearchConfig
                           .BoostSpecs.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint
                           .getDefaultInstance()) return this;
+                  if (!other.getAttributeValue().isEmpty()) {
+                    attributeValue_ = other.attributeValue_;
+                    bitField0_ |= 0x00000001;
+                    onChanged();
+                  }
+                  if (other.getBoostAmount() != 0F) {
+                    setBoostAmount(other.getBoostAmount());
+                  }
                   this.mergeUnknownFields(other.getUnknownFields());
                   onChanged();
                   return this;
@@ -1919,6 +2098,18 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                         case 0:
                           done = true;
                           break;
+                        case 10:
+                          {
+                            attributeValue_ = input.readStringRequireUtf8();
+                            bitField0_ |= 0x00000001;
+                            break;
+                          } // case 10
+                        case 21:
+                          {
+                            boostAmount_ = input.readFloat();
+                            bitField0_ |= 0x00000002;
+                            break;
+                          } // case 21
                         default:
                           {
                             if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1933,6 +2124,200 @@ public final class SearchKnowledgeRequest extends com.google.protobuf.GeneratedM
                   } finally {
                     onChanged();
                   } // finally
+                  return this;
+                }
+
+                private int bitField0_;
+
+                private java.lang.Object attributeValue_ = "";
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. Can be one of:
+                 * 1. The numerical field value.
+                 * 2. The duration spec for freshness:
+                 * The value must be formatted as an XSD `dayTimeDuration` value
+                 * (a restricted subset of an ISO 8601 duration value). The
+                 * pattern for this is: `[nD][T[nH][nM][nS]]`.
+                 * </pre>
+                 *
+                 * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+                 * </code>
+                 *
+                 * @return The attributeValue.
+                 */
+                public java.lang.String getAttributeValue() {
+                  java.lang.Object ref = attributeValue_;
+                  if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    attributeValue_ = s;
+                    return s;
+                  } else {
+                    return (java.lang.String) ref;
+                  }
+                }
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. Can be one of:
+                 * 1. The numerical field value.
+                 * 2. The duration spec for freshness:
+                 * The value must be formatted as an XSD `dayTimeDuration` value
+                 * (a restricted subset of an ISO 8601 duration value). The
+                 * pattern for this is: `[nD][T[nH][nM][nS]]`.
+                 * </pre>
+                 *
+                 * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+                 * </code>
+                 *
+                 * @return The bytes for attributeValue.
+                 */
+                public com.google.protobuf.ByteString getAttributeValueBytes() {
+                  java.lang.Object ref = attributeValue_;
+                  if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    attributeValue_ = b;
+                    return b;
+                  } else {
+                    return (com.google.protobuf.ByteString) ref;
+                  }
+                }
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. Can be one of:
+                 * 1. The numerical field value.
+                 * 2. The duration spec for freshness:
+                 * The value must be formatted as an XSD `dayTimeDuration` value
+                 * (a restricted subset of an ISO 8601 duration value). The
+                 * pattern for this is: `[nD][T[nH][nM][nS]]`.
+                 * </pre>
+                 *
+                 * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+                 * </code>
+                 *
+                 * @param value The attributeValue to set.
+                 * @return This builder for chaining.
+                 */
+                public Builder setAttributeValue(java.lang.String value) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  attributeValue_ = value;
+                  bitField0_ |= 0x00000001;
+                  onChanged();
+                  return this;
+                }
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. Can be one of:
+                 * 1. The numerical field value.
+                 * 2. The duration spec for freshness:
+                 * The value must be formatted as an XSD `dayTimeDuration` value
+                 * (a restricted subset of an ISO 8601 duration value). The
+                 * pattern for this is: `[nD][T[nH][nM][nS]]`.
+                 * </pre>
+                 *
+                 * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+                 * </code>
+                 *
+                 * @return This builder for chaining.
+                 */
+                public Builder clearAttributeValue() {
+                  attributeValue_ = getDefaultInstance().getAttributeValue();
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  onChanged();
+                  return this;
+                }
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. Can be one of:
+                 * 1. The numerical field value.
+                 * 2. The duration spec for freshness:
+                 * The value must be formatted as an XSD `dayTimeDuration` value
+                 * (a restricted subset of an ISO 8601 duration value). The
+                 * pattern for this is: `[nD][T[nH][nM][nS]]`.
+                 * </pre>
+                 *
+                 * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+                 * </code>
+                 *
+                 * @param value The bytes for attributeValue to set.
+                 * @return This builder for chaining.
+                 */
+                public Builder setAttributeValueBytes(com.google.protobuf.ByteString value) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  checkByteStringIsUtf8(value);
+                  attributeValue_ = value;
+                  bitField0_ |= 0x00000001;
+                  onChanged();
+                  return this;
+                }
+
+                private float boostAmount_;
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. The value between -1 to 1 by which to boost the score
+                 * if the attribute_value evaluates to the value specified above.
+                 * </pre>
+                 *
+                 * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+                 *
+                 * @return The boostAmount.
+                 */
+                @java.lang.Override
+                public float getBoostAmount() {
+                  return boostAmount_;
+                }
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. The value between -1 to 1 by which to boost the score
+                 * if the attribute_value evaluates to the value specified above.
+                 * </pre>
+                 *
+                 * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+                 *
+                 * @param value The boostAmount to set.
+                 * @return This builder for chaining.
+                 */
+                public Builder setBoostAmount(float value) {
+
+                  boostAmount_ = value;
+                  bitField0_ |= 0x00000002;
+                  onChanged();
+                  return this;
+                }
+                /**
+                 *
+                 *
+                 * <pre>
+                 * Optional. The value between -1 to 1 by which to boost the score
+                 * if the attribute_value evaluates to the value specified above.
+                 * </pre>
+                 *
+                 * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+                 *
+                 * @return This builder for chaining.
+                 */
+                public Builder clearBoostAmount() {
+                  bitField0_ = (bitField0_ & ~0x00000002);
+                  boostAmount_ = 0F;
+                  onChanged();
                   return this;
                 }
 

@@ -159,8 +159,9 @@ public final class ListNotebookExecutionJobsResponse extends com.google.protobuf
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListNotebookExecutionJobs.page_token][] to obtain that
-   * page.
+   * Pass to
+   * [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -184,8 +185,9 @@ public final class ListNotebookExecutionJobsResponse extends com.google.protobuf
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListNotebookExecutionJobs.page_token][] to obtain that
-   * page.
+   * Pass to
+   * [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -1043,8 +1045,9 @@ public final class ListNotebookExecutionJobsResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListNotebookExecutionJobs.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1067,8 +1070,9 @@ public final class ListNotebookExecutionJobsResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListNotebookExecutionJobs.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1091,8 +1095,9 @@ public final class ListNotebookExecutionJobsResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListNotebookExecutionJobs.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1114,8 +1119,9 @@ public final class ListNotebookExecutionJobsResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListNotebookExecutionJobs.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1133,8 +1139,9 @@ public final class ListNotebookExecutionJobsResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListNotebookExecutionJobs.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListNotebookExecutionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

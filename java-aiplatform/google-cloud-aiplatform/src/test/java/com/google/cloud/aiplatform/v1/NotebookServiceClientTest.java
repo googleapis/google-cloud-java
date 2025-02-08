@@ -135,6 +135,7 @@ public class NotebookServiceClientTest {
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -216,6 +217,7 @@ public class NotebookServiceClientTest {
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -297,6 +299,7 @@ public class NotebookServiceClientTest {
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -358,6 +361,7 @@ public class NotebookServiceClientTest {
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -599,6 +603,7 @@ public class NotebookServiceClientTest {
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .build();
     mockNotebookService.addResponse(expectedResponse);
 
@@ -664,6 +669,7 @@ public class NotebookServiceClientTest {
             .setEucConfig(NotebookEucConfig.newBuilder().build())
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -754,6 +760,7 @@ public class NotebookServiceClientTest {
             .setEucConfig(NotebookEucConfig.newBuilder().build())
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -841,6 +848,7 @@ public class NotebookServiceClientTest {
             .setEucConfig(NotebookEucConfig.newBuilder().build())
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -931,6 +939,7 @@ public class NotebookServiceClientTest {
             .setEucConfig(NotebookEucConfig.newBuilder().build())
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -1018,6 +1027,7 @@ public class NotebookServiceClientTest {
             .setEucConfig(NotebookEucConfig.newBuilder().build())
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
@@ -1082,6 +1092,7 @@ public class NotebookServiceClientTest {
             .setEucConfig(NotebookEucConfig.newBuilder().build())
             .setShieldedVmConfig(ShieldedVmConfig.newBuilder().build())
             .addAllNetworkTags(new ArrayList<String>())
+            .setSoftwareConfig(NotebookSoftwareConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)

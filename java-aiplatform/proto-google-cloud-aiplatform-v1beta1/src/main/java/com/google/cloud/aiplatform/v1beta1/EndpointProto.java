@@ -68,6 +68,10 @@ public final class EndpointProto {
       internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -124,7 +128,7 @@ public final class EndpointProto {
           + ".com/Endpoint\022<projects/{project}/locati"
           + "ons/{location}/endpoints/{endpoint}\022Mpro"
           + "jects/{project}/locations/{location}/pub"
-          + "lishers/{publisher}/models/{model}\"\243\t\n\rD"
+          + "lishers/{publisher}/models/{model}\"\355\t\n\rD"
           + "eployedModel\022R\n\023dedicated_resources\030\007 \001("
           + "\01323.google.cloud.aiplatform.v1beta1.Dedi"
           + "catedResourcesH\000\022R\n\023automatic_resources\030"
@@ -145,33 +149,41 @@ public final class EndpointProto {
           + "d.aiplatform.v1beta1.PrivateEndpointsB\003\340"
           + "A\003\022Y\n\030faster_deployment_config\030\027 \001(\01327.g"
           + "oogle.cloud.aiplatform.v1beta1.FasterDep"
-          + "loymentConfig\022J\n\006status\030\032 \001(\01325.google.c"
-          + "loud.aiplatform.v1beta1.DeployedModel.St"
-          + "atusB\003\340A\003\022W\n\rsystem_labels\030\034 \003(\0132@.googl"
-          + "e.cloud.aiplatform.v1beta1.DeployedModel"
-          + ".SystemLabelsEntry\032\177\n\006Status\022\024\n\007message\030"
-          + "\001 \001(\tB\003\340A\003\0229\n\020last_update_time\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\022$\n\027availab"
-          + "le_replica_count\030\003 \001(\005B\003\340A\003\0323\n\021SystemLab"
-          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "B\026\n\024prediction_resources\"\217\001\n\020PrivateEndp"
-          + "oints\022\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020"
-          + "explain_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_ht"
-          + "tp_uri\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment\030"
-          + "\004 \001(\tB\003\340A\003\"\241\001\n#PredictRequestResponseLog"
-          + "gingConfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_"
-          + "rate\030\002 \001(\001\022R\n\024bigquery_destination\030\003 \001(\013"
-          + "24.google.cloud.aiplatform.v1beta1.BigQu"
-          + "eryDestination\"N\n\026ClientConnectionConfig"
-          + "\0224\n\021inference_timeout\030\001 \001(\0132\031.google.pro"
-          + "tobuf.Duration\"5\n\026FasterDeploymentConfig"
-          + "\022\033\n\023fast_tryout_enabled\030\002 \001(\010B\344\001\n#com.go"
-          + "ogle.cloud.aiplatform.v1beta1B\rEndpointP"
-          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
-          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
-          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
-          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
-          + ":AIPlatform::V1beta1b\006proto3"
+          + "loymentConfig\022H\n\017rollout_options\030\031 \001(\0132/"
+          + ".google.cloud.aiplatform.v1beta1.Rollout"
+          + "Options\022J\n\006status\030\032 \001(\01325.google.cloud.a"
+          + "iplatform.v1beta1.DeployedModel.StatusB\003"
+          + "\340A\003\022W\n\rsystem_labels\030\034 \003(\0132@.google.clou"
+          + "d.aiplatform.v1beta1.DeployedModel.Syste"
+          + "mLabelsEntry\032\177\n\006Status\022\024\n\007message\030\001 \001(\tB"
+          + "\003\340A\003\0229\n\020last_update_time\030\002 \001(\0132\032.google."
+          + "protobuf.TimestampB\003\340A\003\022$\n\027available_rep"
+          + "lica_count\030\003 \001(\005B\003\340A\003\0323\n\021SystemLabelsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\026\n\024pr"
+          + "ediction_resources\"\217\001\n\020PrivateEndpoints\022"
+          + "\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020explai"
+          + "n_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_uri"
+          + "\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment\030\004 \001(\tB"
+          + "\003\340A\003\"\241\001\n#PredictRequestResponseLoggingCo"
+          + "nfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030\002"
+          + " \001(\001\022R\n\024bigquery_destination\030\003 \001(\01324.goo"
+          + "gle.cloud.aiplatform.v1beta1.BigQueryDes"
+          + "tination\"N\n\026ClientConnectionConfig\0224\n\021in"
+          + "ference_timeout\030\001 \001(\0132\031.google.protobuf."
+          + "Duration\"5\n\026FasterDeploymentConfig\022\033\n\023fa"
+          + "st_tryout_enabled\030\002 \001(\010\"\367\001\n\016RolloutOptio"
+          + "ns\022\"\n\030max_unavailable_replicas\030\003 \001(\005H\000\022$"
+          + "\n\032max_unavailable_percentage\030\004 \001(\005H\000\022\034\n\022"
+          + "max_surge_replicas\030\005 \001(\005H\001\022\036\n\024max_surge_"
+          + "percentage\030\006 \001(\005H\001\022\037\n\027previous_deployed_"
+          + "model\030\001 \001(\t\022\034\n\017revision_number\030\002 \001(\005B\003\340A"
+          + "\003B\021\n\017max_unavailableB\013\n\tmax_surgeB\344\001\n#co"
+          + "m.google.cloud.aiplatform.v1beta1B\rEndpo"
+          + "intProtoP\001ZCcloud.google.com/go/aiplatfo"
+          + "rm/apiv1beta1/aiplatformpb;aiplatformpb\252"
+          + "\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goog"
+          + "le\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cl"
+          + "oud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -251,6 +263,7 @@ public final class EndpointProto {
               "EnableAccessLogging",
               "PrivateEndpoints",
               "FasterDeploymentConfig",
+              "RolloutOptions",
               "Status",
               "SystemLabels",
               "PredictionResources",
@@ -306,6 +319,21 @@ public final class EndpointProto {
             internal_static_google_cloud_aiplatform_v1beta1_FasterDeploymentConfig_descriptor,
             new java.lang.String[] {
               "FastTryoutEnabled",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RolloutOptions_descriptor,
+            new java.lang.String[] {
+              "MaxUnavailableReplicas",
+              "MaxUnavailablePercentage",
+              "MaxSurgeReplicas",
+              "MaxSurgePercentage",
+              "PreviousDeployedModel",
+              "RevisionNumber",
+              "MaxUnavailable",
+              "MaxSurge",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

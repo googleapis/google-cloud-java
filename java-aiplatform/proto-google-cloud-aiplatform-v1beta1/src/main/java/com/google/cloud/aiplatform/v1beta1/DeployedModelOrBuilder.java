@@ -577,6 +577,41 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * Options for configuring rolling deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+   *
+   * @return Whether the rolloutOptions field is set.
+   */
+  boolean hasRolloutOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options for configuring rolling deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+   *
+   * @return The rolloutOptions.
+   */
+  com.google.cloud.aiplatform.v1beta1.RolloutOptions getRolloutOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Options for configuring rolling deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RolloutOptionsOrBuilder getRolloutOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Runtime status of the deployed model.
    * </pre>
    *

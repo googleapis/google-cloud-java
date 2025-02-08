@@ -1844,6 +1844,63 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     return networkTags_.getByteString(index);
   }
 
+  public static final int SOFTWARE_CONFIG_FIELD_NUMBER = 31;
+  private com.google.cloud.aiplatform.v1.NotebookSoftwareConfig softwareConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Software config of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the softwareConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSoftwareConfig() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Software config of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The softwareConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NotebookSoftwareConfig getSoftwareConfig() {
+    return softwareConfig_ == null
+        ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+        : softwareConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Software config of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder
+      getSoftwareConfigOrBuilder() {
+    return softwareConfig_ == null
+        ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+        : softwareConfig_;
+  }
+
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 28;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
   /**
@@ -1861,7 +1918,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public boolean hasEncryptionSpec() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -2021,7 +2078,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < networkTags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, networkTags_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(28, getEncryptionSpec());
     }
     if (satisfiesPzs_ != false) {
@@ -2029,6 +2086,9 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(30, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(31, getSoftwareConfig());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(32, getShieldedVmConfig());
@@ -2129,7 +2189,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 2 * getNetworkTagsList().size();
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getEncryptionSpec());
     }
     if (satisfiesPzs_ != false) {
@@ -2137,6 +2197,9 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getSoftwareConfig());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getShieldedVmConfig());
@@ -2211,6 +2274,10 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       if (!getShieldedVmConfig().equals(other.getShieldedVmConfig())) return false;
     }
     if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
+    if (hasSoftwareConfig() != other.hasSoftwareConfig()) return false;
+    if (hasSoftwareConfig()) {
+      if (!getSoftwareConfig().equals(other.getSoftwareConfig())) return false;
+    }
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
@@ -2297,6 +2364,10 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     if (getNetworkTagsCount() > 0) {
       hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTagsList().hashCode();
+    }
+    if (hasSoftwareConfig()) {
+      hash = (37 * hash) + SOFTWARE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSoftwareConfig().hashCode();
     }
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
@@ -2480,6 +2551,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         getIdleShutdownConfigFieldBuilder();
         getEucConfigFieldBuilder();
         getShieldedVmConfigFieldBuilder();
+        getSoftwareConfigFieldBuilder();
         getEncryptionSpecFieldBuilder();
       }
     }
@@ -2551,6 +2623,11 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         shieldedVmConfigBuilder_ = null;
       }
       networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
+        softwareConfigBuilder_ = null;
+      }
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -2690,14 +2767,19 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         result.networkTags_ = networkTags_;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.encryptionSpec_ =
-            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        result.softwareConfig_ =
+            softwareConfigBuilder_ == null ? softwareConfig_ : softwareConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2836,6 +2918,9 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
           networkTags_.addAll(other.networkTags_);
         }
         onChanged();
+      }
+      if (other.hasSoftwareConfig()) {
+        mergeSoftwareConfig(other.getSoftwareConfig());
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
@@ -3017,21 +3102,27 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             case 226:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 226
             case 232:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 232
             case 240:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 240
+            case 250:
+              {
+                input.readMessage(getSoftwareConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 250
             case 258:
               {
                 input.readMessage(
@@ -6804,6 +6895,214 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1.NotebookSoftwareConfig softwareConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder>
+        softwareConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the softwareConfig field is set.
+     */
+    public boolean hasSoftwareConfig() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The softwareConfig.
+     */
+    public com.google.cloud.aiplatform.v1.NotebookSoftwareConfig getSoftwareConfig() {
+      if (softwareConfigBuilder_ == null) {
+        return softwareConfig_ == null
+            ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+            : softwareConfig_;
+      } else {
+        return softwareConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSoftwareConfig(com.google.cloud.aiplatform.v1.NotebookSoftwareConfig value) {
+      if (softwareConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        softwareConfig_ = value;
+      } else {
+        softwareConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSoftwareConfig(
+        com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder builderForValue) {
+      if (softwareConfigBuilder_ == null) {
+        softwareConfig_ = builderForValue.build();
+      } else {
+        softwareConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeSoftwareConfig(
+        com.google.cloud.aiplatform.v1.NotebookSoftwareConfig value) {
+      if (softwareConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && softwareConfig_ != null
+            && softwareConfig_
+                != com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()) {
+          getSoftwareConfigBuilder().mergeFrom(value);
+        } else {
+          softwareConfig_ = value;
+        }
+      } else {
+        softwareConfigBuilder_.mergeFrom(value);
+      }
+      if (softwareConfig_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSoftwareConfig() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
+        softwareConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder
+        getSoftwareConfigBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getSoftwareConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder
+        getSoftwareConfigOrBuilder() {
+      if (softwareConfigBuilder_ != null) {
+        return softwareConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return softwareConfig_ == null
+            ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+            : softwareConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Software config of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder>
+        getSoftwareConfigFieldBuilder() {
+      if (softwareConfigBuilder_ == null) {
+        softwareConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.NotebookSoftwareConfig,
+                com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder,
+                com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder>(
+                getSoftwareConfig(), getParentForChildren(), isClean());
+        softwareConfig_ = null;
+      }
+      return softwareConfigBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.EncryptionSpec,
@@ -6824,7 +7123,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -6868,7 +7167,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -6890,7 +7189,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -6907,7 +7206,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
@@ -6919,7 +7218,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         encryptionSpecBuilder_.mergeFrom(value);
       }
       if (encryptionSpec_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -6936,7 +7235,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -6957,7 +7256,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -7040,7 +7339,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7056,7 +7355,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -7093,7 +7392,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7109,7 +7408,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       satisfiesPzi_ = false;
       onChanged();
       return this;
