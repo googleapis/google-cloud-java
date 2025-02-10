@@ -388,4 +388,71 @@ public interface TopicOrBuilder
    */
   com.google.pubsub.v1.IngestionDataSourceSettingsOrBuilder
       getIngestionDataSourceSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.pubsub.v1.MessageTransform> getMessageTransformsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.MessageTransform getMessageTransforms(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getMessageTransformsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.pubsub.v1.MessageTransformOrBuilder>
+      getMessageTransformsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.MessageTransformOrBuilder getMessageTransformsOrBuilder(int index);
 }

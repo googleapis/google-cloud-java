@@ -516,6 +516,7 @@ public class TopicAdminClient implements BackgroundResource {
    *           .setSatisfiesPzs(true)
    *           .setMessageRetentionDuration(Duration.newBuilder().build())
    *           .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+   *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
    *           .build();
    *   Topic response = topicAdminClient.createTopic(request);
    * }
@@ -552,6 +553,7 @@ public class TopicAdminClient implements BackgroundResource {
    *           .setSatisfiesPzs(true)
    *           .setMessageRetentionDuration(Duration.newBuilder().build())
    *           .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+   *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
    *           .build();
    *   ApiFuture<Topic> future = topicAdminClient.createTopicCallable().futureCall(request);
    *   // Do something.

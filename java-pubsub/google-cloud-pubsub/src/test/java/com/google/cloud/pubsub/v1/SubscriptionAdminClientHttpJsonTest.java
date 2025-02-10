@@ -49,6 +49,7 @@ import com.google.pubsub.v1.DeadLetterPolicy;
 import com.google.pubsub.v1.ExpirationPolicy;
 import com.google.pubsub.v1.ListSnapshotsResponse;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
+import com.google.pubsub.v1.MessageTransform;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
@@ -133,6 +134,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -202,6 +204,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -271,6 +274,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -340,6 +344,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -409,6 +414,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -471,6 +477,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -533,6 +540,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -557,6 +565,7 @@ public class SubscriptionAdminClientHttpJsonTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -607,6 +616,7 @@ public class SubscriptionAdminClientHttpJsonTest {
               .setTopicMessageRetentionDuration(Duration.newBuilder().build())
               .setAnalyticsHubSubscriptionInfo(
                   Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+              .addAllMessageTransforms(new ArrayList<MessageTransform>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSubscription(subscription, updateMask);

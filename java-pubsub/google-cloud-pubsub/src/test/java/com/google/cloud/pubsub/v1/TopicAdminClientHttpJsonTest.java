@@ -50,6 +50,7 @@ import com.google.pubsub.v1.ListTopicSnapshotsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.MessageStoragePolicy;
+import com.google.pubsub.v1.MessageTransform;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
@@ -117,6 +118,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -168,6 +170,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -219,6 +222,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -232,6 +236,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -271,6 +276,7 @@ public class TopicAdminClientHttpJsonTest {
               .setSatisfiesPzs(true)
               .setMessageRetentionDuration(Duration.newBuilder().build())
               .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+              .addAllMessageTransforms(new ArrayList<MessageTransform>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTopic(topic, updateMask);
@@ -380,6 +386,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -431,6 +438,7 @@ public class TopicAdminClientHttpJsonTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockService.addResponse(expectedResponse);
 

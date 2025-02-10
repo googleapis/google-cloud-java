@@ -42,6 +42,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     kmsKeyName_ = "";
     state_ = 0;
+    messageTransforms_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -771,6 +772,92 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         : ingestionDataSourceSettings_;
   }
 
+  public static final int MESSAGE_TRANSFORMS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.pubsub.v1.MessageTransform> messageTransforms_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.pubsub.v1.MessageTransform> getMessageTransformsList() {
+    return messageTransforms_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.pubsub.v1.MessageTransformOrBuilder>
+      getMessageTransformsOrBuilderList() {
+    return messageTransforms_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMessageTransformsCount() {
+    return messageTransforms_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.MessageTransform getMessageTransforms(int index) {
+    return messageTransforms_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages published to the topic.
+   * Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.MessageTransformOrBuilder getMessageTransformsOrBuilder(int index) {
+    return messageTransforms_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -810,6 +897,9 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10, getIngestionDataSourceSettings());
+    }
+    for (int i = 0; i < messageTransforms_.size(); i++) {
+      output.writeMessage(13, messageTransforms_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -859,6 +949,10 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getIngestionDataSourceSettings());
     }
+    for (int i = 0; i < messageTransforms_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, messageTransforms_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -896,6 +990,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       if (!getIngestionDataSourceSettings().equals(other.getIngestionDataSourceSettings()))
         return false;
     }
+    if (!getMessageTransformsList().equals(other.getMessageTransformsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -934,6 +1029,10 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     if (hasIngestionDataSourceSettings()) {
       hash = (37 * hash) + INGESTION_DATA_SOURCE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getIngestionDataSourceSettings().hashCode();
+    }
+    if (getMessageTransformsCount() > 0) {
+      hash = (37 * hash) + MESSAGE_TRANSFORMS_FIELD_NUMBER;
+      hash = (53 * hash) + getMessageTransformsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1098,6 +1197,7 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         getSchemaSettingsFieldBuilder();
         getMessageRetentionDurationFieldBuilder();
         getIngestionDataSourceSettingsFieldBuilder();
+        getMessageTransformsFieldBuilder();
       }
     }
 
@@ -1130,6 +1230,13 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         ingestionDataSourceSettingsBuilder_.dispose();
         ingestionDataSourceSettingsBuilder_ = null;
       }
+      if (messageTransformsBuilder_ == null) {
+        messageTransforms_ = java.util.Collections.emptyList();
+      } else {
+        messageTransforms_ = null;
+        messageTransformsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1155,11 +1262,24 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.pubsub.v1.Topic buildPartial() {
       com.google.pubsub.v1.Topic result = new com.google.pubsub.v1.Topic(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.pubsub.v1.Topic result) {
+      if (messageTransformsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          messageTransforms_ = java.util.Collections.unmodifiableList(messageTransforms_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.messageTransforms_ = messageTransforms_;
+      } else {
+        result.messageTransforms_ = messageTransformsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.pubsub.v1.Topic result) {
@@ -1285,6 +1405,33 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       if (other.hasIngestionDataSourceSettings()) {
         mergeIngestionDataSourceSettings(other.getIngestionDataSourceSettings());
       }
+      if (messageTransformsBuilder_ == null) {
+        if (!other.messageTransforms_.isEmpty()) {
+          if (messageTransforms_.isEmpty()) {
+            messageTransforms_ = other.messageTransforms_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureMessageTransformsIsMutable();
+            messageTransforms_.addAll(other.messageTransforms_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.messageTransforms_.isEmpty()) {
+          if (messageTransformsBuilder_.isEmpty()) {
+            messageTransformsBuilder_.dispose();
+            messageTransformsBuilder_ = null;
+            messageTransforms_ = other.messageTransforms_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            messageTransformsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMessageTransformsFieldBuilder()
+                    : null;
+          } else {
+            messageTransformsBuilder_.addAllMessages(other.messageTransforms_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1374,6 +1521,19 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 106:
+              {
+                com.google.pubsub.v1.MessageTransform m =
+                    input.readMessage(
+                        com.google.pubsub.v1.MessageTransform.parser(), extensionRegistry);
+                if (messageTransformsBuilder_ == null) {
+                  ensureMessageTransformsIsMutable();
+                  messageTransforms_.add(m);
+                } else {
+                  messageTransformsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2874,6 +3034,414 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         ingestionDataSourceSettings_ = null;
       }
       return ingestionDataSourceSettingsBuilder_;
+    }
+
+    private java.util.List<com.google.pubsub.v1.MessageTransform> messageTransforms_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMessageTransformsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        messageTransforms_ =
+            new java.util.ArrayList<com.google.pubsub.v1.MessageTransform>(messageTransforms_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.pubsub.v1.MessageTransform,
+            com.google.pubsub.v1.MessageTransform.Builder,
+            com.google.pubsub.v1.MessageTransformOrBuilder>
+        messageTransformsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.pubsub.v1.MessageTransform> getMessageTransformsList() {
+      if (messageTransformsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(messageTransforms_);
+      } else {
+        return messageTransformsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getMessageTransformsCount() {
+      if (messageTransformsBuilder_ == null) {
+        return messageTransforms_.size();
+      } else {
+        return messageTransformsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.MessageTransform getMessageTransforms(int index) {
+      if (messageTransformsBuilder_ == null) {
+        return messageTransforms_.get(index);
+      } else {
+        return messageTransformsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMessageTransforms(int index, com.google.pubsub.v1.MessageTransform value) {
+      if (messageTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMessageTransformsIsMutable();
+        messageTransforms_.set(index, value);
+        onChanged();
+      } else {
+        messageTransformsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMessageTransforms(
+        int index, com.google.pubsub.v1.MessageTransform.Builder builderForValue) {
+      if (messageTransformsBuilder_ == null) {
+        ensureMessageTransformsIsMutable();
+        messageTransforms_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        messageTransformsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMessageTransforms(com.google.pubsub.v1.MessageTransform value) {
+      if (messageTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMessageTransformsIsMutable();
+        messageTransforms_.add(value);
+        onChanged();
+      } else {
+        messageTransformsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMessageTransforms(int index, com.google.pubsub.v1.MessageTransform value) {
+      if (messageTransformsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMessageTransformsIsMutable();
+        messageTransforms_.add(index, value);
+        onChanged();
+      } else {
+        messageTransformsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMessageTransforms(
+        com.google.pubsub.v1.MessageTransform.Builder builderForValue) {
+      if (messageTransformsBuilder_ == null) {
+        ensureMessageTransformsIsMutable();
+        messageTransforms_.add(builderForValue.build());
+        onChanged();
+      } else {
+        messageTransformsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMessageTransforms(
+        int index, com.google.pubsub.v1.MessageTransform.Builder builderForValue) {
+      if (messageTransformsBuilder_ == null) {
+        ensureMessageTransformsIsMutable();
+        messageTransforms_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        messageTransformsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllMessageTransforms(
+        java.lang.Iterable<? extends com.google.pubsub.v1.MessageTransform> values) {
+      if (messageTransformsBuilder_ == null) {
+        ensureMessageTransformsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, messageTransforms_);
+        onChanged();
+      } else {
+        messageTransformsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMessageTransforms() {
+      if (messageTransformsBuilder_ == null) {
+        messageTransforms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        messageTransformsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeMessageTransforms(int index) {
+      if (messageTransformsBuilder_ == null) {
+        ensureMessageTransformsIsMutable();
+        messageTransforms_.remove(index);
+        onChanged();
+      } else {
+        messageTransformsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.MessageTransform.Builder getMessageTransformsBuilder(int index) {
+      return getMessageTransformsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.MessageTransformOrBuilder getMessageTransformsOrBuilder(int index) {
+      if (messageTransformsBuilder_ == null) {
+        return messageTransforms_.get(index);
+      } else {
+        return messageTransformsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.pubsub.v1.MessageTransformOrBuilder>
+        getMessageTransformsOrBuilderList() {
+      if (messageTransformsBuilder_ != null) {
+        return messageTransformsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(messageTransforms_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.MessageTransform.Builder addMessageTransformsBuilder() {
+      return getMessageTransformsFieldBuilder()
+          .addBuilder(com.google.pubsub.v1.MessageTransform.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.MessageTransform.Builder addMessageTransformsBuilder(int index) {
+      return getMessageTransformsFieldBuilder()
+          .addBuilder(index, com.google.pubsub.v1.MessageTransform.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Transforms to be applied to messages published to the topic.
+     * Transforms are applied in the order specified.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.pubsub.v1.MessageTransform message_transforms = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.pubsub.v1.MessageTransform.Builder>
+        getMessageTransformsBuilderList() {
+      return getMessageTransformsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.pubsub.v1.MessageTransform,
+            com.google.pubsub.v1.MessageTransform.Builder,
+            com.google.pubsub.v1.MessageTransformOrBuilder>
+        getMessageTransformsFieldBuilder() {
+      if (messageTransformsBuilder_ == null) {
+        messageTransformsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.pubsub.v1.MessageTransform,
+                com.google.pubsub.v1.MessageTransform.Builder,
+                com.google.pubsub.v1.MessageTransformOrBuilder>(
+                messageTransforms_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        messageTransforms_ = null;
+      }
+      return messageTransformsBuilder_;
     }
 
     @java.lang.Override

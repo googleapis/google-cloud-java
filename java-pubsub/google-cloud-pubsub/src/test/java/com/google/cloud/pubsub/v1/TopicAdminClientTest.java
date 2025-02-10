@@ -53,6 +53,7 @@ import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.MessageStoragePolicy;
+import com.google.pubsub.v1.MessageTransform;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -131,6 +132,7 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -176,6 +178,7 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -221,6 +224,7 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -347,6 +351,7 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 
@@ -392,6 +397,7 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .setIngestionDataSourceSettings(IngestionDataSourceSettings.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockPublisher.addResponse(expectedResponse);
 

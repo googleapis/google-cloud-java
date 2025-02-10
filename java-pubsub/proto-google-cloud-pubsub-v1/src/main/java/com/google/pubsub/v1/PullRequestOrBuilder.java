@@ -72,7 +72,7 @@ public interface PullRequestOrBuilder
    * </code>
    *
    * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=1840
+   *     google/pubsub/v1/pubsub.proto;l=1907
    * @return The returnImmediately.
    */
   @java.lang.Deprecated

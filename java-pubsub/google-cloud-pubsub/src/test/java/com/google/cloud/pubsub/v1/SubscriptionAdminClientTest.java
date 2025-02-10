@@ -59,6 +59,7 @@ import com.google.pubsub.v1.ListSnapshotsRequest;
 import com.google.pubsub.v1.ListSnapshotsResponse;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
+import com.google.pubsub.v1.MessageTransform;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.ProjectName;
@@ -159,6 +160,7 @@ public class SubscriptionAdminClientTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -225,6 +227,7 @@ public class SubscriptionAdminClientTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -291,6 +294,7 @@ public class SubscriptionAdminClientTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -357,6 +361,7 @@ public class SubscriptionAdminClientTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -423,6 +428,7 @@ public class SubscriptionAdminClientTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -479,6 +485,7 @@ public class SubscriptionAdminClientTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
@@ -535,6 +542,7 @@ public class SubscriptionAdminClientTest {
             .setTopicMessageRetentionDuration(Duration.newBuilder().build())
             .setAnalyticsHubSubscriptionInfo(
                 Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+            .addAllMessageTransforms(new ArrayList<MessageTransform>())
             .build();
     mockSubscriber.addResponse(expectedResponse);
 

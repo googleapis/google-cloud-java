@@ -880,6 +880,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setTopicMessageRetentionDuration(Duration.newBuilder().build())
    *           .setAnalyticsHubSubscriptionInfo(
    *               Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+   *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
    *           .build();
    *   Subscription response = subscriptionAdminClient.createSubscription(request);
    * }
@@ -1145,6 +1146,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setTopicMessageRetentionDuration(Duration.newBuilder().build())
    *           .setAnalyticsHubSubscriptionInfo(
    *               Subscription.AnalyticsHubSubscriptionInfo.newBuilder().build())
+   *           .addAllMessageTransforms(new ArrayList<MessageTransform>())
    *           .build();
    *   ApiFuture<Subscription> future =
    *       subscriptionAdminClient.createSubscriptionCallable().futureCall(request);

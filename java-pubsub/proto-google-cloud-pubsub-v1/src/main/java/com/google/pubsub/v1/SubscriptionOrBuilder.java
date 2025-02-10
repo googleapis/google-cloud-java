@@ -788,4 +788,71 @@ public interface SubscriptionOrBuilder
    */
   com.google.pubsub.v1.Subscription.AnalyticsHubSubscriptionInfoOrBuilder
       getAnalyticsHubSubscriptionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages before they are delivered to
+   * subscribers. Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.pubsub.v1.MessageTransform> getMessageTransformsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages before they are delivered to
+   * subscribers. Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.MessageTransform getMessageTransforms(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages before they are delivered to
+   * subscribers. Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getMessageTransformsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages before they are delivered to
+   * subscribers. Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.pubsub.v1.MessageTransformOrBuilder>
+      getMessageTransformsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transforms to be applied to messages before they are delivered to
+   * subscribers. Transforms are applied in the order specified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.pubsub.v1.MessageTransform message_transforms = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.MessageTransformOrBuilder getMessageTransformsOrBuilder(int index);
 }

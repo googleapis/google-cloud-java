@@ -197,11 +197,11 @@ public final class SchemaProto {
           + "alidateMessage:\001*\032p\312A\025pubsub.googleapis."
           + "com\322AUhttps://www.googleapis.com/auth/cl"
           + "oud-platform,https://www.googleapis.com/"
-          + "auth/pubsubB\252\001\n\024com.google.pubsub.v1B\013Sc"
+          + "auth/pubsubB\247\001\n\024com.google.pubsub.v1B\013Sc"
           + "hemaProtoP\001Z2cloud.google.com/go/pubsub/"
-          + "apiv1/pubsubpb;pubsubpb\370\001\001\252\002\026Google.Clou"
-          + "d.PubSub.V1\312\002\026Google\\Cloud\\PubSub\\V1\352\002\031G"
-          + "oogle::Cloud::PubSub::V1b\006proto3"
+          + "apiv1/pubsubpb;pubsubpb\252\002\026Google.Cloud.P"
+          + "ubSub.V1\312\002\026Google\\Cloud\\PubSub\\V1\352\002\031Goog"
+          + "le::Cloud::PubSub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
