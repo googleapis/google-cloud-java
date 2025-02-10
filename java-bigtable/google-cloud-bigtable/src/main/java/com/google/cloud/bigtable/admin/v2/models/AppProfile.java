@@ -274,7 +274,7 @@ public final class AppProfile {
     public static MultiClusterRoutingPolicy withRowAffinity() {
       return new MultiClusterRoutingPolicy(
           MultiClusterRoutingUseAny.newBuilder()
-              .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.getDefaultInstance())
+              .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.newBuilder().build())
               .build());
     }
 
@@ -294,7 +294,7 @@ public final class AppProfile {
       return new MultiClusterRoutingPolicy(
           MultiClusterRoutingUseAny.newBuilder()
               .addAllClusterIds(clusterIds)
-              .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.getDefaultInstance())
+              .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.newBuilder().build())
               .build());
     }
 

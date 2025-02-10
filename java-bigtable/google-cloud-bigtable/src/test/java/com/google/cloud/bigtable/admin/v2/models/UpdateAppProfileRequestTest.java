@@ -172,7 +172,7 @@ public class UpdateAppProfileRequestTest {
                         .setMultiClusterRoutingUseAny(
                             MultiClusterRoutingUseAny.newBuilder()
                                 .setRowAffinity(
-                                    MultiClusterRoutingUseAny.RowAffinity.getDefaultInstance())))
+                                    MultiClusterRoutingUseAny.RowAffinity.newBuilder().build())))
                 .setUpdateMask(FieldMask.newBuilder().addPaths("multi_cluster_routing_use_any"))
                 .build());
   }

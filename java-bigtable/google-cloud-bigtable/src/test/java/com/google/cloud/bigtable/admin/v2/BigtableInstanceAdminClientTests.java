@@ -1053,7 +1053,8 @@ public class BigtableInstanceAdminClientTests {
                             .newBuilder()
                             .setRowAffinity(
                                 com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                                    .RowAffinity.getDefaultInstance())))
+                                    .RowAffinity.newBuilder()
+                                    .build())))
             .build();
 
     com.google.bigtable.admin.v2.AppProfile expectedResponse =
@@ -1064,7 +1065,8 @@ public class BigtableInstanceAdminClientTests {
                 com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
                     .setRowAffinity(
                         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                            .RowAffinity.getDefaultInstance()))
+                            .RowAffinity.newBuilder()
+                            .build()))
             .build();
 
     Mockito.when(mockCreateAppProfileCallable.futureCall(expectedRequest))
@@ -1100,7 +1102,8 @@ public class BigtableInstanceAdminClientTests {
                             .addClusterIds("cluster-id-2")
                             .setRowAffinity(
                                 com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                                    .RowAffinity.getDefaultInstance())))
+                                    .RowAffinity.newBuilder()
+                                    .build())))
             .build();
 
     com.google.bigtable.admin.v2.AppProfile expectedResponse =
@@ -1113,7 +1116,8 @@ public class BigtableInstanceAdminClientTests {
                     .addClusterIds("cluster-id-2")
                     .setRowAffinity(
                         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                            .RowAffinity.getDefaultInstance()))
+                            .RowAffinity.newBuilder()
+                            .build()))
             .build();
 
     Mockito.when(mockCreateAppProfileCallable.futureCall(expectedRequest))
@@ -1150,7 +1154,8 @@ public class BigtableInstanceAdminClientTests {
                             .addClusterIds("cluster-id-2")
                             .setRowAffinity(
                                 com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                                    .RowAffinity.getDefaultInstance())))
+                                    .RowAffinity.newBuilder()
+                                    .build())))
             .build();
 
     com.google.bigtable.admin.v2.AppProfile expectedResponse =
@@ -1163,7 +1168,8 @@ public class BigtableInstanceAdminClientTests {
                     .addClusterIds("cluster-id-2")
                     .setRowAffinity(
                         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                            .RowAffinity.getDefaultInstance()))
+                            .RowAffinity.newBuilder()
+                            .build()))
             .build();
 
     Mockito.when(mockCreateAppProfileCallable.futureCall(expectedRequest))

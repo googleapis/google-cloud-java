@@ -111,7 +111,7 @@ public class CreateAppProfileRequestTest {
     assertThat(wrapper.toProto("my-project").getAppProfile().getMultiClusterRoutingUseAny())
         .isEqualTo(
             MultiClusterRoutingUseAny.newBuilder()
-                .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.getDefaultInstance())
+                .setRowAffinity(MultiClusterRoutingUseAny.RowAffinity.newBuilder().build())
                 .build());
   }
 }

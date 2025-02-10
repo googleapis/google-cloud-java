@@ -303,7 +303,8 @@ public class AppProfileTest {
                     com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
                         .setRowAffinity(
                             com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                                .RowAffinity.getDefaultInstance())
+                                .RowAffinity.newBuilder()
+                                .build())
                         .build())
                 .setEtag("my-etag")
                 .build());
@@ -329,7 +330,8 @@ public class AppProfileTest {
                         .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
                         .setRowAffinity(
                             com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
-                                .RowAffinity.getDefaultInstance())
+                                .RowAffinity.newBuilder()
+                                .build())
                         .build())
                 .setEtag("my-etag")
                 .build());
