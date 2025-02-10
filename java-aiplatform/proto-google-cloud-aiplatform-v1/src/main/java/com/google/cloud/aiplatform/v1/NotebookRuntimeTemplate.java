@@ -257,7 +257,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
-   *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
+   *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=74
    * @return The isDefault.
    */
   @java.lang.Override
@@ -473,7 +473,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    * <code>string service_account = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
-   *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
+   *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=109
    * @return The serviceAccount.
    */
   @java.lang.Override
@@ -514,7 +514,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
    * <code>string service_account = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
-   *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
+   *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=109
    * @return The bytes for serviceAccount.
    */
   @java.lang.Override
@@ -1134,6 +1134,63 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
         : encryptionSpec_;
   }
 
+  public static final int SOFTWARE_CONFIG_FIELD_NUMBER = 24;
+  private com.google.cloud.aiplatform.v1.NotebookSoftwareConfig softwareConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The notebook software configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the softwareConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSoftwareConfig() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The notebook software configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The softwareConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NotebookSoftwareConfig getSoftwareConfig() {
+    return softwareConfig_ == null
+        ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+        : softwareConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The notebook software configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder
+      getSoftwareConfigOrBuilder() {
+    return softwareConfig_ == null
+        ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+        : softwareConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1202,6 +1259,9 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(23, getEncryptionSpec());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(24, getSoftwareConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1281,6 +1341,9 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getEncryptionSpec());
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getSoftwareConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1341,6 +1404,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
+    if (hasSoftwareConfig() != other.hasSoftwareConfig()) return false;
+    if (hasSoftwareConfig()) {
+      if (!getSoftwareConfig().equals(other.getSoftwareConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1410,6 +1477,10 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
+    if (hasSoftwareConfig()) {
+      hash = (37 * hash) + SOFTWARE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSoftwareConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1585,6 +1656,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
         getUpdateTimeFieldBuilder();
         getShieldedVmConfigFieldBuilder();
         getEncryptionSpecFieldBuilder();
+        getSoftwareConfigFieldBuilder();
       }
     }
 
@@ -1645,6 +1717,11 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
+      }
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
+        softwareConfigBuilder_ = null;
       }
       return this;
     }
@@ -1757,6 +1834,11 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.softwareConfig_ =
+            softwareConfigBuilder_ == null ? softwareConfig_ : softwareConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1876,6 +1958,9 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (other.hasSoftwareConfig()) {
+        mergeSoftwareConfig(other.getSoftwareConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2021,6 +2106,12 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
                 bitField0_ |= 0x00020000;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(getSoftwareConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2383,7 +2474,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
-     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
+     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=74
      * @return The isDefault.
      */
     @java.lang.Override
@@ -2405,7 +2496,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
-     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
+     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=74
      * @param value The isDefault to set.
      * @return This builder for chaining.
      */
@@ -2431,7 +2522,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.is_default is deprecated. See
-     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=73
+     *     google/cloud/aiplatform/v1/notebook_runtime.proto;l=74
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3112,7 +3203,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * <code>string service_account = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
-     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=109
      * @return The serviceAccount.
      */
     @java.lang.Deprecated
@@ -3152,7 +3243,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * <code>string service_account = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
-     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=109
      * @return The bytes for serviceAccount.
      */
     @java.lang.Deprecated
@@ -3192,7 +3283,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * <code>string service_account = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
-     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=109
      * @param value The serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -3231,7 +3322,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * <code>string service_account = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
-     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=109
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3266,7 +3357,7 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
      * <code>string service_account = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.NotebookRuntimeTemplate.service_account is deprecated.
-     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=108
+     *     See google/cloud/aiplatform/v1/notebook_runtime.proto;l=109
      * @param value The bytes for serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -5092,6 +5183,214 @@ public final class NotebookRuntimeTemplate extends com.google.protobuf.Generated
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.NotebookSoftwareConfig softwareConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder>
+        softwareConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the softwareConfig field is set.
+     */
+    public boolean hasSoftwareConfig() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The softwareConfig.
+     */
+    public com.google.cloud.aiplatform.v1.NotebookSoftwareConfig getSoftwareConfig() {
+      if (softwareConfigBuilder_ == null) {
+        return softwareConfig_ == null
+            ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+            : softwareConfig_;
+      } else {
+        return softwareConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSoftwareConfig(com.google.cloud.aiplatform.v1.NotebookSoftwareConfig value) {
+      if (softwareConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        softwareConfig_ = value;
+      } else {
+        softwareConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSoftwareConfig(
+        com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder builderForValue) {
+      if (softwareConfigBuilder_ == null) {
+        softwareConfig_ = builderForValue.build();
+      } else {
+        softwareConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSoftwareConfig(
+        com.google.cloud.aiplatform.v1.NotebookSoftwareConfig value) {
+      if (softwareConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && softwareConfig_ != null
+            && softwareConfig_
+                != com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()) {
+          getSoftwareConfigBuilder().mergeFrom(value);
+        } else {
+          softwareConfig_ = value;
+        }
+      } else {
+        softwareConfigBuilder_.mergeFrom(value);
+      }
+      if (softwareConfig_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSoftwareConfig() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      softwareConfig_ = null;
+      if (softwareConfigBuilder_ != null) {
+        softwareConfigBuilder_.dispose();
+        softwareConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder
+        getSoftwareConfigBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getSoftwareConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder
+        getSoftwareConfigOrBuilder() {
+      if (softwareConfigBuilder_ != null) {
+        return softwareConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return softwareConfig_ == null
+            ? com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.getDefaultInstance()
+            : softwareConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The notebook software configuration of the notebook runtime.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder,
+            com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder>
+        getSoftwareConfigFieldBuilder() {
+      if (softwareConfigBuilder_ == null) {
+        softwareConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.NotebookSoftwareConfig,
+                com.google.cloud.aiplatform.v1.NotebookSoftwareConfig.Builder,
+                com.google.cloud.aiplatform.v1.NotebookSoftwareConfigOrBuilder>(
+                getSoftwareConfig(), getParentForChildren(), isClean());
+        softwareConfig_ = null;
+      }
+      return softwareConfigBuilder_;
     }
 
     @java.lang.Override

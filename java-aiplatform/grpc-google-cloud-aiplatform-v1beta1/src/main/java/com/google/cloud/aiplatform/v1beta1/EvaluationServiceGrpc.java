@@ -84,6 +84,52 @@ public final class EvaluationServiceGrpc {
     return getEvaluateInstancesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest,
+          com.google.longrunning.Operation>
+      getEvaluateDatasetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EvaluateDataset",
+      requestType = com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest,
+          com.google.longrunning.Operation>
+      getEvaluateDatasetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest,
+            com.google.longrunning.Operation>
+        getEvaluateDatasetMethod;
+    if ((getEvaluateDatasetMethod = EvaluationServiceGrpc.getEvaluateDatasetMethod) == null) {
+      synchronized (EvaluationServiceGrpc.class) {
+        if ((getEvaluateDatasetMethod = EvaluationServiceGrpc.getEvaluateDatasetMethod) == null) {
+          EvaluationServiceGrpc.getEvaluateDatasetMethod =
+              getEvaluateDatasetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EvaluateDataset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EvaluationServiceMethodDescriptorSupplier("EvaluateDataset"))
+                      .build();
+        }
+      }
+    }
+    return getEvaluateDatasetMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EvaluationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceStub> factory =
@@ -148,6 +194,20 @@ public final class EvaluationServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getEvaluateInstancesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluates a dataset based on a set of given metrics.
+     * </pre>
+     */
+    default void evaluateDataset(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEvaluateDatasetMethod(), responseObserver);
+    }
   }
 
   /**
@@ -201,6 +261,22 @@ public final class EvaluationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluates a dataset based on a set of given metrics.
+     * </pre>
+     */
+    public void evaluateDataset(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEvaluateDatasetMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -234,6 +310,19 @@ public final class EvaluationServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEvaluateInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluates a dataset based on a set of given metrics.
+     * </pre>
+     */
+    public com.google.longrunning.Operation evaluateDataset(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEvaluateDatasetMethod(), getCallOptions(), request);
     }
   }
 
@@ -269,9 +358,23 @@ public final class EvaluationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getEvaluateInstancesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluates a dataset based on a set of given metrics.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        evaluateDataset(com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEvaluateDatasetMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_EVALUATE_INSTANCES = 0;
+  private static final int METHODID_EVALUATE_DATASET = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -296,6 +399,11 @@ public final class EvaluationServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse>)
                   responseObserver);
+          break;
+        case METHODID_EVALUATE_DATASET:
+          serviceImpl.evaluateDataset(
+              (com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -322,6 +430,12 @@ public final class EvaluationServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest,
                     com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse>(
                     service, METHODID_EVALUATE_INSTANCES)))
+        .addMethod(
+            getEvaluateDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EVALUATE_DATASET)))
         .build();
   }
 
@@ -374,6 +488,7 @@ public final class EvaluationServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new EvaluationServiceFileDescriptorSupplier())
                       .addMethod(getEvaluateInstancesMethod())
+                      .addMethod(getEvaluateDatasetMethod())
                       .build();
         }
       }

@@ -42,6 +42,9 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
     subnetIp_ = "";
     command_ = "";
     passphrase_ = "";
+    peerVolumeName_ = "";
+    peerClusterName_ = "";
+    peerSvmName_ = "";
   }
 
   @java.lang.Override
@@ -280,6 +283,165 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int PEER_VOLUME_NAME_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerVolumeName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source volume to be peered with the
+   * destination volume.
+   * </pre>
+   *
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The peerVolumeName.
+   */
+  @java.lang.Override
+  public java.lang.String getPeerVolumeName() {
+    java.lang.Object ref = peerVolumeName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      peerVolumeName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source volume to be peered with the
+   * destination volume.
+   * </pre>
+   *
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for peerVolumeName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPeerVolumeNameBytes() {
+    java.lang.Object ref = peerVolumeName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      peerVolumeName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PEER_CLUSTER_NAME_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerClusterName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source cluster to be peered with the
+   * destination cluster.
+   * </pre>
+   *
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The peerClusterName.
+   */
+  @java.lang.Override
+  public java.lang.String getPeerClusterName() {
+    java.lang.Object ref = peerClusterName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      peerClusterName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source cluster to be peered with the
+   * destination cluster.
+   * </pre>
+   *
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for peerClusterName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPeerClusterNameBytes() {
+    java.lang.Object ref = peerClusterName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      peerClusterName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PEER_SVM_NAME_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerSvmName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source vserver svm to be peered with the
+   * destination vserver svm.
+   * </pre>
+   *
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The peerSvmName.
+   */
+  @java.lang.Override
+  public java.lang.String getPeerSvmName() {
+    java.lang.Object ref = peerSvmName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      peerSvmName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source vserver svm to be peered with the
+   * destination vserver svm.
+   * </pre>
+   *
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for peerSvmName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPeerSvmNameBytes() {
+    java.lang.Object ref = peerSvmName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      peerSvmName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -306,6 +468,15 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passphrase_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, passphrase_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerVolumeName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, peerVolumeName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerClusterName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, peerClusterName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerSvmName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, peerSvmName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -326,6 +497,15 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(passphrase_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, passphrase_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerVolumeName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, peerVolumeName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerClusterName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, peerClusterName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(peerSvmName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, peerSvmName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -350,6 +530,9 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
       if (!getCommandExpiryTime().equals(other.getCommandExpiryTime())) return false;
     }
     if (!getPassphrase().equals(other.getPassphrase())) return false;
+    if (!getPeerVolumeName().equals(other.getPeerVolumeName())) return false;
+    if (!getPeerClusterName().equals(other.getPeerClusterName())) return false;
+    if (!getPeerSvmName().equals(other.getPeerSvmName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -371,6 +554,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + PASSPHRASE_FIELD_NUMBER;
     hash = (53 * hash) + getPassphrase().hashCode();
+    hash = (37 * hash) + PEER_VOLUME_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPeerVolumeName().hashCode();
+    hash = (37 * hash) + PEER_CLUSTER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPeerClusterName().hashCode();
+    hash = (37 * hash) + PEER_SVM_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPeerSvmName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -527,6 +716,9 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
         commandExpiryTimeBuilder_ = null;
       }
       passphrase_ = "";
+      peerVolumeName_ = "";
+      peerClusterName_ = "";
+      peerSvmName_ = "";
       return this;
     }
 
@@ -579,6 +771,15 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.passphrase_ = passphrase_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.peerVolumeName_ = peerVolumeName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.peerClusterName_ = peerClusterName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.peerSvmName_ = peerSvmName_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -647,6 +848,21 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getPeerVolumeName().isEmpty()) {
+        peerVolumeName_ = other.peerVolumeName_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getPeerClusterName().isEmpty()) {
+        peerClusterName_ = other.peerClusterName_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getPeerSvmName().isEmpty()) {
+        peerSvmName_ = other.peerSvmName_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -698,6 +914,24 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                peerVolumeName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                peerClusterName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                peerSvmName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1248,6 +1482,339 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       passphrase_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object peerVolumeName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source volume to be peered with the
+     * destination volume.
+     * </pre>
+     *
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The peerVolumeName.
+     */
+    public java.lang.String getPeerVolumeName() {
+      java.lang.Object ref = peerVolumeName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        peerVolumeName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source volume to be peered with the
+     * destination volume.
+     * </pre>
+     *
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for peerVolumeName.
+     */
+    public com.google.protobuf.ByteString getPeerVolumeNameBytes() {
+      java.lang.Object ref = peerVolumeName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        peerVolumeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source volume to be peered with the
+     * destination volume.
+     * </pre>
+     *
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The peerVolumeName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerVolumeName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      peerVolumeName_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source volume to be peered with the
+     * destination volume.
+     * </pre>
+     *
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeerVolumeName() {
+      peerVolumeName_ = getDefaultInstance().getPeerVolumeName();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source volume to be peered with the
+     * destination volume.
+     * </pre>
+     *
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for peerVolumeName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerVolumeNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      peerVolumeName_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object peerClusterName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source cluster to be peered with the
+     * destination cluster.
+     * </pre>
+     *
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The peerClusterName.
+     */
+    public java.lang.String getPeerClusterName() {
+      java.lang.Object ref = peerClusterName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        peerClusterName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source cluster to be peered with the
+     * destination cluster.
+     * </pre>
+     *
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for peerClusterName.
+     */
+    public com.google.protobuf.ByteString getPeerClusterNameBytes() {
+      java.lang.Object ref = peerClusterName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        peerClusterName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source cluster to be peered with the
+     * destination cluster.
+     * </pre>
+     *
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The peerClusterName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerClusterName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      peerClusterName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source cluster to be peered with the
+     * destination cluster.
+     * </pre>
+     *
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeerClusterName() {
+      peerClusterName_ = getDefaultInstance().getPeerClusterName();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source cluster to be peered with the
+     * destination cluster.
+     * </pre>
+     *
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for peerClusterName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerClusterNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      peerClusterName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object peerSvmName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source vserver svm to be peered with the
+     * destination vserver svm.
+     * </pre>
+     *
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The peerSvmName.
+     */
+    public java.lang.String getPeerSvmName() {
+      java.lang.Object ref = peerSvmName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        peerSvmName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source vserver svm to be peered with the
+     * destination vserver svm.
+     * </pre>
+     *
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for peerSvmName.
+     */
+    public com.google.protobuf.ByteString getPeerSvmNameBytes() {
+      java.lang.Object ref = peerSvmName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        peerSvmName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source vserver svm to be peered with the
+     * destination vserver svm.
+     * </pre>
+     *
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The peerSvmName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerSvmName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      peerSvmName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source vserver svm to be peered with the
+     * destination vserver svm.
+     * </pre>
+     *
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeerSvmName() {
+      peerSvmName_ = getDefaultInstance().getPeerSvmName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the user's local source vserver svm to be peered with the
+     * destination vserver svm.
+     * </pre>
+     *
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for peerSvmName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerSvmNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      peerSvmName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

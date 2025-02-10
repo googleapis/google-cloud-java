@@ -752,6 +752,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * perspective. It is used for identifying the same message under one
    * participant.
    *
+   * For BatchCreateMessages API only:
    * Given two messages under the same participant:
    * * If send time are different regardless of whether the content of the
    * messages are exactly the same, the conversation will regard them as
@@ -782,6 +783,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * perspective. It is used for identifying the same message under one
    * participant.
    *
+   * For BatchCreateMessages API only:
    * Given two messages under the same participant:
    * * If send time are different regardless of whether the content of the
    * messages are exactly the same, the conversation will regard them as
@@ -814,6 +816,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * perspective. It is used for identifying the same message under one
    * participant.
    *
+   * For BatchCreateMessages API only:
    * Given two messages under the same participant:
    * * If send time are different regardless of whether the content of the
    * messages are exactly the same, the conversation will regard them as
@@ -3858,6 +3861,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -3887,6 +3891,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -3922,6 +3927,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -3959,6 +3965,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -3993,6 +4000,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -4035,6 +4043,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -4069,6 +4078,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -4098,6 +4108,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as
@@ -4131,6 +4142,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * perspective. It is used for identifying the same message under one
      * participant.
      *
+     * For BatchCreateMessages API only:
      * Given two messages under the same participant:
      * * If send time are different regardless of whether the content of the
      * messages are exactly the same, the conversation will regard them as

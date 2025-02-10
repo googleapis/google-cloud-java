@@ -734,7 +734,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. For a deleted resource, the time after which it will be
-   * permamently deleted.
+   * permanently deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -751,7 +751,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. For a deleted resource, the time after which it will be
-   * permamently deleted.
+   * permanently deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -768,7 +768,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. For a deleted resource, the time after which it will be
-   * permamently deleted.
+   * permanently deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1039,7 +1039,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Set the launch stage to a preview stage on input to allow use of preview
    * features in that stage. On read (or output), describes whether the resource
    * uses preview features.
-   * &lt;p&gt;
+   *
    * For example, if ALPHA is provided as input, but only BETA and GA-level
    * features are used, this field will be BETA on output.
    * </pre>
@@ -1064,7 +1064,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Set the launch stage to a preview stage on input to allow use of preview
    * features in that stage. On read (or output), describes whether the resource
    * uses preview features.
-   * &lt;p&gt;
+   *
    * For example, if ALPHA is provided as input, but only BETA and GA-level
    * features are used, this field will be BETA on output.
    * </pre>
@@ -1984,6 +1984,62 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int BUILD_CONFIG_FIELD_NUMBER = 41;
+  private com.google.cloud.run.v2.BuildConfig buildConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building a Cloud Run function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the buildConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBuildConfig() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building a Cloud Run function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The buildConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.BuildConfig getBuildConfig() {
+    return buildConfig_ == null
+        ? com.google.cloud.run.v2.BuildConfig.getDefaultInstance()
+        : buildConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building a Cloud Run function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.BuildConfigOrBuilder getBuildConfigOrBuilder() {
+    return buildConfig_ == null
+        ? com.google.cloud.run.v2.BuildConfig.getDefaultInstance()
+        : buildConfig_;
+  }
+
   public static final int RECONCILING_FIELD_NUMBER = 98;
   private boolean reconciling_ = false;
   /**
@@ -1997,7 +2053,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * will asynchronously perform all necessary steps to bring the Service to the
    * desired serving state. This process is called reconciliation.
    * While reconciliation is in process, `observed_generation`,
-   * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
+   * `latest_ready_revision`, `traffic_statuses`, and `uri` will have transient
    * values that might mismatch the intended state: Once reconciliation is over
    * (and this field is false), there are two possible outcomes: reconciliation
    * succeeded and the serving state matches the Service, or there was an error,
@@ -2185,6 +2241,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       output.writeBool(38, satisfiesPzs_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(41, getBuildConfig());
+    }
     if (reconciling_ != false) {
       output.writeBool(98, reconciling_);
     }
@@ -2322,6 +2381,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, satisfiesPzs_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, getBuildConfig());
+    }
     if (reconciling_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(98, reconciling_);
     }
@@ -2399,6 +2461,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!getTrafficStatusesList().equals(other.getTrafficStatusesList())) return false;
     if (!getUri().equals(other.getUri())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasBuildConfig() != other.hasBuildConfig()) return false;
+    if (hasBuildConfig()) {
+      if (!getBuildConfig().equals(other.getBuildConfig())) return false;
+    }
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2506,6 +2572,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getUri().hashCode();
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasBuildConfig()) {
+      hash = (37 * hash) + BUILD_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBuildConfig().hashCode();
+    }
     hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
@@ -2689,6 +2759,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         getTerminalConditionFieldBuilder();
         getConditionsFieldBuilder();
         getTrafficStatusesFieldBuilder();
+        getBuildConfigFieldBuilder();
       }
     }
 
@@ -2779,6 +2850,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x20000000);
       uri_ = "";
       satisfiesPzs_ = false;
+      buildConfig_ = null;
+      if (buildConfigBuilder_ != null) {
+        buildConfigBuilder_.dispose();
+        buildConfigBuilder_ = null;
+      }
       reconciling_ = false;
       etag_ = "";
       return this;
@@ -2961,12 +3037,19 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial1(com.google.cloud.run.v2.Service result) {
       int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.buildConfig_ =
+            buildConfigBuilder_ == null ? buildConfig_ : buildConfigBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
         result.etag_ = etag_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -3214,12 +3297,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.hasBuildConfig()) {
+        mergeBuildConfig(other.getBuildConfig());
+      }
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3477,16 +3563,22 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x80000000;
                 break;
               } // case 304
+            case 330:
+              {
+                input.readMessage(getBuildConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 330
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 794
             default:
@@ -5034,7 +5126,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5051,7 +5143,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5074,7 +5166,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5099,7 +5191,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5121,7 +5213,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5151,7 +5243,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5173,7 +5265,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5190,7 +5282,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5211,7 +5303,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. For a deleted resource, the time after which it will be
-     * permamently deleted.
+     * permanently deleted.
      * </pre>
      *
      * <code>
@@ -5781,7 +5873,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Set the launch stage to a preview stage on input to allow use of preview
      * features in that stage. On read (or output), describes whether the resource
      * uses preview features.
-     * &lt;p&gt;
+     *
      * For example, if ALPHA is provided as input, but only BETA and GA-level
      * features are used, this field will be BETA on output.
      * </pre>
@@ -5806,7 +5898,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Set the launch stage to a preview stage on input to allow use of preview
      * features in that stage. On read (or output), describes whether the resource
      * uses preview features.
-     * &lt;p&gt;
+     *
      * For example, if ALPHA is provided as input, but only BETA and GA-level
      * features are used, this field will be BETA on output.
      * </pre>
@@ -5834,7 +5926,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Set the launch stage to a preview stage on input to allow use of preview
      * features in that stage. On read (or output), describes whether the resource
      * uses preview features.
-     * &lt;p&gt;
+     *
      * For example, if ALPHA is provided as input, but only BETA and GA-level
      * features are used, this field will be BETA on output.
      * </pre>
@@ -5860,7 +5952,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Set the launch stage to a preview stage on input to allow use of preview
      * features in that stage. On read (or output), describes whether the resource
      * uses preview features.
-     * &lt;p&gt;
+     *
      * For example, if ALPHA is provided as input, but only BETA and GA-level
      * features are used, this field will be BETA on output.
      * </pre>
@@ -5891,7 +5983,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Set the launch stage to a preview stage on input to allow use of preview
      * features in that stage. On read (or output), describes whether the resource
      * uses preview features.
-     * &lt;p&gt;
+     *
      * For example, if ALPHA is provided as input, but only BETA and GA-level
      * features are used, this field will be BETA on output.
      * </pre>
@@ -9013,6 +9105,209 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.run.v2.BuildConfig buildConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.BuildConfig,
+            com.google.cloud.run.v2.BuildConfig.Builder,
+            com.google.cloud.run.v2.BuildConfigOrBuilder>
+        buildConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the buildConfig field is set.
+     */
+    public boolean hasBuildConfig() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The buildConfig.
+     */
+    public com.google.cloud.run.v2.BuildConfig getBuildConfig() {
+      if (buildConfigBuilder_ == null) {
+        return buildConfig_ == null
+            ? com.google.cloud.run.v2.BuildConfig.getDefaultInstance()
+            : buildConfig_;
+      } else {
+        return buildConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuildConfig(com.google.cloud.run.v2.BuildConfig value) {
+      if (buildConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        buildConfig_ = value;
+      } else {
+        buildConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuildConfig(com.google.cloud.run.v2.BuildConfig.Builder builderForValue) {
+      if (buildConfigBuilder_ == null) {
+        buildConfig_ = builderForValue.build();
+      } else {
+        buildConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBuildConfig(com.google.cloud.run.v2.BuildConfig value) {
+      if (buildConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000001) != 0)
+            && buildConfig_ != null
+            && buildConfig_ != com.google.cloud.run.v2.BuildConfig.getDefaultInstance()) {
+          getBuildConfigBuilder().mergeFrom(value);
+        } else {
+          buildConfig_ = value;
+        }
+      } else {
+        buildConfigBuilder_.mergeFrom(value);
+      }
+      if (buildConfig_ != null) {
+        bitField1_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBuildConfig() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      buildConfig_ = null;
+      if (buildConfigBuilder_ != null) {
+        buildConfigBuilder_.dispose();
+        buildConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.BuildConfig.Builder getBuildConfigBuilder() {
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return getBuildConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.BuildConfigOrBuilder getBuildConfigOrBuilder() {
+      if (buildConfigBuilder_ != null) {
+        return buildConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return buildConfig_ == null
+            ? com.google.cloud.run.v2.BuildConfig.getDefaultInstance()
+            : buildConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building a Cloud Run function.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.BuildConfig build_config = 41 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.BuildConfig,
+            com.google.cloud.run.v2.BuildConfig.Builder,
+            com.google.cloud.run.v2.BuildConfigOrBuilder>
+        getBuildConfigFieldBuilder() {
+      if (buildConfigBuilder_ == null) {
+        buildConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.BuildConfig,
+                com.google.cloud.run.v2.BuildConfig.Builder,
+                com.google.cloud.run.v2.BuildConfigOrBuilder>(
+                getBuildConfig(), getParentForChildren(), isClean());
+        buildConfig_ = null;
+      }
+      return buildConfigBuilder_;
+    }
+
     private boolean reconciling_;
     /**
      *
@@ -9025,7 +9320,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * will asynchronously perform all necessary steps to bring the Service to the
      * desired serving state. This process is called reconciliation.
      * While reconciliation is in process, `observed_generation`,
-     * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
+     * `latest_ready_revision`, `traffic_statuses`, and `uri` will have transient
      * values that might mismatch the intended state: Once reconciliation is over
      * (and this field is false), there are two possible outcomes: reconciliation
      * succeeded and the serving state matches the Service, or there was an error,
@@ -9061,7 +9356,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * will asynchronously perform all necessary steps to bring the Service to the
      * desired serving state. This process is called reconciliation.
      * While reconciliation is in process, `observed_generation`,
-     * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
+     * `latest_ready_revision`, `traffic_statuses`, and `uri` will have transient
      * values that might mismatch the intended state: Once reconciliation is over
      * (and this field is false), there are two possible outcomes: reconciliation
      * succeeded and the serving state matches the Service, or there was an error,
@@ -9086,7 +9381,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9101,7 +9396,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * will asynchronously perform all necessary steps to bring the Service to the
      * desired serving state. This process is called reconciliation.
      * While reconciliation is in process, `observed_generation`,
-     * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
+     * `latest_ready_revision`, `traffic_statuses`, and `uri` will have transient
      * values that might mismatch the intended state: Once reconciliation is over
      * (and this field is false), there are two possible outcomes: reconciliation
      * succeeded and the serving state matches the Service, or there was an error,
@@ -9123,7 +9418,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       reconciling_ = false;
       onChanged();
       return this;
@@ -9194,7 +9489,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9212,7 +9507,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -9235,7 +9530,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -1212,4 +1212,109 @@ public class MockNetAppImpl extends NetAppImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listQuotaRules(
+      ListQuotaRulesRequest request, StreamObserver<ListQuotaRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListQuotaRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListQuotaRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListQuotaRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListQuotaRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getQuotaRule(
+      GetQuotaRuleRequest request, StreamObserver<QuotaRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QuotaRule) {
+      requests.add(request);
+      responseObserver.onNext(((QuotaRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetQuotaRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QuotaRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createQuotaRule(
+      CreateQuotaRuleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateQuotaRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateQuotaRule(
+      UpdateQuotaRuleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateQuotaRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteQuotaRule(
+      DeleteQuotaRuleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteQuotaRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -593,7 +593,7 @@ public interface JobOrBuilder
    * Set the launch stage to a preview stage on input to allow use of preview
    * features in that stage. On read (or output), describes whether the resource
    * uses preview features.
-   * &lt;p&gt;
+   *
    * For example, if ALPHA is provided as input, but only BETA and GA-level
    * features are used, this field will be BETA on output.
    * </pre>
@@ -614,7 +614,7 @@ public interface JobOrBuilder
    * Set the launch stage to a preview stage on input to allow use of preview
    * features in that stage. On read (or output), describes whether the resource
    * uses preview features.
-   * &lt;p&gt;
+   *
    * For example, if ALPHA is provided as input, but only BETA and GA-level
    * features are used, this field will be BETA on output.
    * </pre>

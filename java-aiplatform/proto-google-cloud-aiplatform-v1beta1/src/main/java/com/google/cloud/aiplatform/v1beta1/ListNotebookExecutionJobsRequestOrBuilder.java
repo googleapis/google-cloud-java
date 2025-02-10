@@ -123,7 +123,8 @@ public interface ListNotebookExecutionJobsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListNotebookExecutionJobs.next_page_token][] of the previous
+   * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsResponse.next_page_token]
+   * of the previous
    * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1beta1.NotebookService.ListNotebookExecutionJobs]
    * call.
    * </pre>
@@ -139,7 +140,8 @@ public interface ListNotebookExecutionJobsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListNotebookExecutionJobs.next_page_token][] of the previous
+   * [ListNotebookExecutionJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListNotebookExecutionJobsResponse.next_page_token]
+   * of the previous
    * [NotebookService.ListNotebookExecutionJobs][google.cloud.aiplatform.v1beta1.NotebookService.ListNotebookExecutionJobs]
    * call.
    * </pre>

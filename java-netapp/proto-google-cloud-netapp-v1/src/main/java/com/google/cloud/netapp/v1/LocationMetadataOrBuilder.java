@@ -96,4 +96,77 @@ public interface LocationMetadataOrBuilder
    * @return The enum numeric value on the wire of supportedServiceLevels at the given index.
    */
   int getSupportedServiceLevelsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the supportedFlexPerformance.
+   */
+  java.util.List<com.google.cloud.netapp.v1.FlexPerformance> getSupportedFlexPerformanceList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of supportedFlexPerformance.
+   */
+  int getSupportedFlexPerformanceCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedFlexPerformance at the given index.
+   */
+  com.google.cloud.netapp.v1.FlexPerformance getSupportedFlexPerformance(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for supportedFlexPerformance.
+   */
+  java.util.List<java.lang.Integer> getSupportedFlexPerformanceValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Supported flex performance in a location.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.FlexPerformance supported_flex_performance = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedFlexPerformance at the given index.
+   */
+  int getSupportedFlexPerformanceValue(int index);
 }

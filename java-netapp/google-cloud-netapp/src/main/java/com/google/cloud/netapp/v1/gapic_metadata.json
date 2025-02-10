@@ -25,6 +25,9 @@
             "CreateKmsConfig": {
               "methods": ["createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigOperationCallable", "createKmsConfigCallable"]
             },
+            "CreateQuotaRule": {
+              "methods": ["createQuotaRuleAsync", "createQuotaRuleAsync", "createQuotaRuleAsync", "createQuotaRuleOperationCallable", "createQuotaRuleCallable"]
+            },
             "CreateReplication": {
               "methods": ["createReplicationAsync", "createReplicationAsync", "createReplicationAsync", "createReplicationOperationCallable", "createReplicationCallable"]
             },
@@ -51,6 +54,9 @@
             },
             "DeleteKmsConfig": {
               "methods": ["deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigOperationCallable", "deleteKmsConfigCallable"]
+            },
+            "DeleteQuotaRule": {
+              "methods": ["deleteQuotaRuleAsync", "deleteQuotaRuleAsync", "deleteQuotaRuleAsync", "deleteQuotaRuleOperationCallable", "deleteQuotaRuleCallable"]
             },
             "DeleteReplication": {
               "methods": ["deleteReplicationAsync", "deleteReplicationAsync", "deleteReplicationAsync", "deleteReplicationOperationCallable", "deleteReplicationCallable"]
@@ -88,6 +94,9 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetQuotaRule": {
+              "methods": ["getQuotaRule", "getQuotaRule", "getQuotaRule", "getQuotaRuleCallable"]
+            },
             "GetReplication": {
               "methods": ["getReplication", "getReplication", "getReplication", "getReplicationCallable"]
             },
@@ -117,6 +126,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListQuotaRules": {
+              "methods": ["listQuotaRules", "listQuotaRules", "listQuotaRules", "listQuotaRulesPagedCallable", "listQuotaRulesCallable"]
             },
             "ListReplications": {
               "methods": ["listReplications", "listReplications", "listReplications", "listReplicationsPagedCallable", "listReplicationsCallable"]
@@ -162,6 +174,9 @@
             },
             "UpdateKmsConfig": {
               "methods": ["updateKmsConfigAsync", "updateKmsConfigAsync", "updateKmsConfigOperationCallable", "updateKmsConfigCallable"]
+            },
+            "UpdateQuotaRule": {
+              "methods": ["updateQuotaRuleAsync", "updateQuotaRuleAsync", "updateQuotaRuleOperationCallable", "updateQuotaRuleCallable"]
             },
             "UpdateReplication": {
               "methods": ["updateReplicationAsync", "updateReplicationAsync", "updateReplicationOperationCallable", "updateReplicationCallable"]

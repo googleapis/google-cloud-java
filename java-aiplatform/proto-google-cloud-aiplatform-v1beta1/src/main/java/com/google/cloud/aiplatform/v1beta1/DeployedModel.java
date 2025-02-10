@@ -2048,6 +2048,56 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         : fasterDeploymentConfig_;
   }
 
+  public static final int ROLLOUT_OPTIONS_FIELD_NUMBER = 25;
+  private com.google.cloud.aiplatform.v1beta1.RolloutOptions rolloutOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Options for configuring rolling deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+   *
+   * @return Whether the rolloutOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRolloutOptions() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for configuring rolling deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+   *
+   * @return The rolloutOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RolloutOptions getRolloutOptions() {
+    return rolloutOptions_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RolloutOptions.getDefaultInstance()
+        : rolloutOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for configuring rolling deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RolloutOptionsOrBuilder getRolloutOptionsOrBuilder() {
+    return rolloutOptions_ == null
+        ? com.google.cloud.aiplatform.v1beta1.RolloutOptions.getDefaultInstance()
+        : rolloutOptions_;
+  }
+
   public static final int STATUS_FIELD_NUMBER = 26;
   private com.google.cloud.aiplatform.v1beta1.DeployedModel.Status status_;
   /**
@@ -2065,7 +2115,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -2274,6 +2324,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(23, getFasterDeploymentConfig());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(25, getRolloutOptions());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(26, getStatus());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -2338,6 +2391,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(23, getFasterDeploymentConfig());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getRolloutOptions());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getStatus());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -2389,6 +2445,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasFasterDeploymentConfig() != other.hasFasterDeploymentConfig()) return false;
     if (hasFasterDeploymentConfig()) {
       if (!getFasterDeploymentConfig().equals(other.getFasterDeploymentConfig())) return false;
+    }
+    if (hasRolloutOptions() != other.hasRolloutOptions()) return false;
+    if (hasRolloutOptions()) {
+      if (!getRolloutOptions().equals(other.getRolloutOptions())) return false;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
@@ -2451,6 +2511,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (hasFasterDeploymentConfig()) {
       hash = (37 * hash) + FASTER_DEPLOYMENT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getFasterDeploymentConfig().hashCode();
+    }
+    if (hasRolloutOptions()) {
+      hash = (37 * hash) + ROLLOUT_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRolloutOptions().hashCode();
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -2642,6 +2706,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         getExplanationSpecFieldBuilder();
         getPrivateEndpointsFieldBuilder();
         getFasterDeploymentConfigFieldBuilder();
+        getRolloutOptionsFieldBuilder();
         getStatusFieldBuilder();
       }
     }
@@ -2683,6 +2748,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (fasterDeploymentConfigBuilder_ != null) {
         fasterDeploymentConfigBuilder_.dispose();
         fasterDeploymentConfigBuilder_ = null;
+      }
+      rolloutOptions_ = null;
+      if (rolloutOptionsBuilder_ != null) {
+        rolloutOptionsBuilder_.dispose();
+        rolloutOptionsBuilder_ = null;
       }
       status_ = null;
       if (statusBuilder_ != null) {
@@ -2776,10 +2846,15 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        result.rolloutOptions_ =
+            rolloutOptionsBuilder_ == null ? rolloutOptions_ : rolloutOptionsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.systemLabels_ = internalGetSystemLabels();
         result.systemLabels_.makeImmutable();
       }
@@ -2889,11 +2964,14 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (other.hasFasterDeploymentConfig()) {
         mergeFasterDeploymentConfig(other.getFasterDeploymentConfig());
       }
+      if (other.hasRolloutOptions()) {
+        mergeRolloutOptions(other.getRolloutOptions());
+      }
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
       internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
           {
@@ -3038,10 +3116,16 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 186
+            case 202:
+              {
+                input.readMessage(getRolloutOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 202
             case 210:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 210
             case 226:
@@ -3053,7 +3137,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableSystemLabels()
                     .getMutableMap()
                     .put(systemLabels__.getKey(), systemLabels__.getValue());
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 226
             default:
@@ -5490,6 +5574,194 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       return fasterDeploymentConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.RolloutOptions rolloutOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RolloutOptions,
+            com.google.cloud.aiplatform.v1beta1.RolloutOptions.Builder,
+            com.google.cloud.aiplatform.v1beta1.RolloutOptionsOrBuilder>
+        rolloutOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     *
+     * @return Whether the rolloutOptions field is set.
+     */
+    public boolean hasRolloutOptions() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     *
+     * @return The rolloutOptions.
+     */
+    public com.google.cloud.aiplatform.v1beta1.RolloutOptions getRolloutOptions() {
+      if (rolloutOptionsBuilder_ == null) {
+        return rolloutOptions_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RolloutOptions.getDefaultInstance()
+            : rolloutOptions_;
+      } else {
+        return rolloutOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     */
+    public Builder setRolloutOptions(com.google.cloud.aiplatform.v1beta1.RolloutOptions value) {
+      if (rolloutOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rolloutOptions_ = value;
+      } else {
+        rolloutOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     */
+    public Builder setRolloutOptions(
+        com.google.cloud.aiplatform.v1beta1.RolloutOptions.Builder builderForValue) {
+      if (rolloutOptionsBuilder_ == null) {
+        rolloutOptions_ = builderForValue.build();
+      } else {
+        rolloutOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     */
+    public Builder mergeRolloutOptions(com.google.cloud.aiplatform.v1beta1.RolloutOptions value) {
+      if (rolloutOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && rolloutOptions_ != null
+            && rolloutOptions_
+                != com.google.cloud.aiplatform.v1beta1.RolloutOptions.getDefaultInstance()) {
+          getRolloutOptionsBuilder().mergeFrom(value);
+        } else {
+          rolloutOptions_ = value;
+        }
+      } else {
+        rolloutOptionsBuilder_.mergeFrom(value);
+      }
+      if (rolloutOptions_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     */
+    public Builder clearRolloutOptions() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      rolloutOptions_ = null;
+      if (rolloutOptionsBuilder_ != null) {
+        rolloutOptionsBuilder_.dispose();
+        rolloutOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RolloutOptions.Builder getRolloutOptionsBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getRolloutOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RolloutOptionsOrBuilder
+        getRolloutOptionsOrBuilder() {
+      if (rolloutOptionsBuilder_ != null) {
+        return rolloutOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return rolloutOptions_ == null
+            ? com.google.cloud.aiplatform.v1beta1.RolloutOptions.getDefaultInstance()
+            : rolloutOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for configuring rolling deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RolloutOptions rollout_options = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RolloutOptions,
+            com.google.cloud.aiplatform.v1beta1.RolloutOptions.Builder,
+            com.google.cloud.aiplatform.v1beta1.RolloutOptionsOrBuilder>
+        getRolloutOptionsFieldBuilder() {
+      if (rolloutOptionsBuilder_ == null) {
+        rolloutOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RolloutOptions,
+                com.google.cloud.aiplatform.v1beta1.RolloutOptions.Builder,
+                com.google.cloud.aiplatform.v1beta1.RolloutOptionsOrBuilder>(
+                getRolloutOptions(), getParentForChildren(), isClean());
+        rolloutOptions_ = null;
+      }
+      return rolloutOptionsBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.DeployedModel.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.DeployedModel.Status,
@@ -5510,7 +5782,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5554,7 +5826,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5576,7 +5848,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5593,7 +5865,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStatus(com.google.cloud.aiplatform.v1beta1.DeployedModel.Status value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.aiplatform.v1beta1.DeployedModel.Status.getDefaultInstance()) {
@@ -5605,7 +5877,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5622,7 +5894,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -5643,7 +5915,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.DeployedModel.Status.Builder getStatusBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -5715,7 +5987,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (!systemLabels_.isMutable()) {
         systemLabels_ = systemLabels_.copy();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return systemLabels_;
     }
@@ -5804,7 +6076,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearSystemLabels() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableSystemLabels().getMutableMap().clear();
       return this;
     }
@@ -5828,7 +6100,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSystemLabels() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableSystemLabels().getMutableMap();
     }
     /**
@@ -5849,7 +6121,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableSystemLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return this;
     }
     /**
@@ -5864,7 +6136,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllSystemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSystemLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 

@@ -1520,6 +1520,62 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         : healthProbe_;
   }
 
+  public static final int LIVENESS_PROBE_FIELD_NUMBER = 14;
+  private com.google.cloud.aiplatform.v1beta1.Probe livenessProbe_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes liveness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the livenessProbe field is set.
+   */
+  @java.lang.Override
+  public boolean hasLivenessProbe() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes liveness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The livenessProbe.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Probe getLivenessProbe() {
+    return livenessProbe_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+        : livenessProbe_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes liveness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder getLivenessProbeOrBuilder() {
+    return livenessProbe_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+        : livenessProbe_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1569,6 +1625,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getHealthProbe());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(14, getLivenessProbe());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1625,6 +1684,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getHealthProbe());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLivenessProbe());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1661,6 +1723,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (hasHealthProbe() != other.hasHealthProbe()) return false;
     if (hasHealthProbe()) {
       if (!getHealthProbe().equals(other.getHealthProbe())) return false;
+    }
+    if (hasLivenessProbe() != other.hasLivenessProbe()) return false;
+    if (hasLivenessProbe()) {
+      if (!getLivenessProbe().equals(other.getLivenessProbe())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1712,6 +1778,10 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (hasHealthProbe()) {
       hash = (37 * hash) + HEALTH_PROBE_FIELD_NUMBER;
       hash = (53 * hash) + getHealthProbe().hashCode();
+    }
+    if (hasLivenessProbe()) {
+      hash = (37 * hash) + LIVENESS_PROBE_FIELD_NUMBER;
+      hash = (53 * hash) + getLivenessProbe().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1862,6 +1932,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         getDeploymentTimeoutFieldBuilder();
         getStartupProbeFieldBuilder();
         getHealthProbeFieldBuilder();
+        getLivenessProbeFieldBuilder();
       }
     }
 
@@ -1910,6 +1981,11 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       if (healthProbeBuilder_ != null) {
         healthProbeBuilder_.dispose();
         healthProbeBuilder_ = null;
+      }
+      livenessProbe_ = null;
+      if (livenessProbeBuilder_ != null) {
+        livenessProbeBuilder_.dispose();
+        livenessProbeBuilder_ = null;
       }
       return this;
     }
@@ -2016,6 +2092,11 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         result.healthProbe_ =
             healthProbeBuilder_ == null ? healthProbe_ : healthProbeBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.livenessProbe_ =
+            livenessProbeBuilder_ == null ? livenessProbe_ : livenessProbeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2194,6 +2275,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       if (other.hasHealthProbe()) {
         mergeHealthProbe(other.getHealthProbe());
       }
+      if (other.hasLivenessProbe()) {
+        mergeLivenessProbe(other.getLivenessProbe());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2316,6 +2400,12 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000800;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getLivenessProbeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6900,6 +6990,210 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         healthProbe_ = null;
       }
       return healthProbeBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Probe livenessProbe_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe,
+            com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+            com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>
+        livenessProbeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the livenessProbe field is set.
+     */
+    public boolean hasLivenessProbe() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The livenessProbe.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe getLivenessProbe() {
+      if (livenessProbeBuilder_ == null) {
+        return livenessProbe_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+            : livenessProbe_;
+      } else {
+        return livenessProbeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setLivenessProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
+      if (livenessProbeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        livenessProbe_ = value;
+      } else {
+        livenessProbeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setLivenessProbe(
+        com.google.cloud.aiplatform.v1beta1.Probe.Builder builderForValue) {
+      if (livenessProbeBuilder_ == null) {
+        livenessProbe_ = builderForValue.build();
+      } else {
+        livenessProbeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeLivenessProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
+      if (livenessProbeBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && livenessProbe_ != null
+            && livenessProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
+          getLivenessProbeBuilder().mergeFrom(value);
+        } else {
+          livenessProbe_ = value;
+        }
+      } else {
+        livenessProbeBuilder_.mergeFrom(value);
+      }
+      if (livenessProbe_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearLivenessProbe() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      livenessProbe_ = null;
+      if (livenessProbeBuilder_ != null) {
+        livenessProbeBuilder_.dispose();
+        livenessProbeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Probe.Builder getLivenessProbeBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getLivenessProbeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder getLivenessProbeOrBuilder() {
+      if (livenessProbeBuilder_ != null) {
+        return livenessProbeBuilder_.getMessageOrBuilder();
+      } else {
+        return livenessProbe_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()
+            : livenessProbe_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Specification for Kubernetes liveness probe.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Probe,
+            com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+            com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>
+        getLivenessProbeFieldBuilder() {
+      if (livenessProbeBuilder_ == null) {
+        livenessProbeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Probe,
+                com.google.cloud.aiplatform.v1beta1.Probe.Builder,
+                com.google.cloud.aiplatform.v1beta1.ProbeOrBuilder>(
+                getLivenessProbe(), getParentForChildren(), isClean());
+        livenessProbe_ = null;
+      }
+      return livenessProbeBuilder_;
     }
 
     @java.lang.Override

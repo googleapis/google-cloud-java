@@ -48,12 +48,12 @@ public final class HumanAgentAssistantEventProto {
           + "nAgentAssistantEvent\022\024\n\014conversation\030\001 \001"
           + "(\t\022\023\n\013participant\030\003 \001(\t\022M\n\022suggestion_re"
           + "sults\030\005 \003(\01321.google.cloud.dialogflow.v2"
-          + "beta1.SuggestionResultB\265\001\n#com.google.cl"
+          + "beta1.SuggestionResultB\262\001\n#com.google.cl"
           + "oud.dialogflow.v2beta1B\035HumanAgentAssist"
           + "antEventProtoP\001ZCcloud.google.com/go/dia"
           + "logflow/apiv2beta1/dialogflowpb;dialogfl"
-          + "owpb\370\001\001\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V"
-          + "2Beta1b\006proto3"
+          + "owpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

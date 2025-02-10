@@ -117,7 +117,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate.is_default is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/notebook_runtime.proto;l=73
+   *     See google/cloud/aiplatform/v1beta1/notebook_runtime.proto;l=74
    * @return The isDefault.
    */
   @java.lang.Deprecated
@@ -281,7 +281,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * <code>string service_account = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate.service_account is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/notebook_runtime.proto;l=108
+   *     deprecated. See google/cloud/aiplatform/v1beta1/notebook_runtime.proto;l=109
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
@@ -311,7 +311,7 @@ public interface NotebookRuntimeTemplateOrBuilder
    * <code>string service_account = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate.service_account is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/notebook_runtime.proto;l=108
+   *     deprecated. See google/cloud/aiplatform/v1beta1/notebook_runtime.proto;l=109
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated
@@ -752,4 +752,45 @@ public interface NotebookRuntimeTemplateOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 23;</code>
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The notebook software configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the softwareConfig field is set.
+   */
+  boolean hasSoftwareConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The notebook software configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The softwareConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig getSoftwareConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The notebook software configuration of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig software_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfigOrBuilder getSoftwareConfigOrBuilder();
 }

@@ -188,7 +188,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The number of tokens to group together when evaluating
-       * semantic similarity.
+       * semantic similarity. THIS FIELD IS NOT YET USED.
        * </pre>
        *
        * <code>bool semantic_chunking_group_size = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -204,7 +204,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. The percentile of cosine dissimilarity that must be exceeded
        * between a group of tokens and the next. The smaller this number is, the
-       * more chunks will be generated.
+       * more chunks will be generated. THIS FIELD IS NOT YET USED.
        * </pre>
        *
        * <code>int32 breakpoint_percentile_threshold = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -303,7 +303,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. The number of tokens to group together when evaluating
-       * semantic similarity.
+       * semantic similarity. THIS FIELD IS NOT YET USED.
        * </pre>
        *
        * <code>bool semantic_chunking_group_size = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -324,7 +324,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. The percentile of cosine dissimilarity that must be exceeded
        * between a group of tokens and the next. The smaller this number is, the
-       * more chunks will be generated.
+       * more chunks will be generated. THIS FIELD IS NOT YET USED.
        * </pre>
        *
        * <code>int32 breakpoint_percentile_threshold = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -900,7 +900,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. The number of tokens to group together when evaluating
-         * semantic similarity.
+         * semantic similarity. THIS FIELD IS NOT YET USED.
          * </pre>
          *
          * <code>bool semantic_chunking_group_size = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -917,7 +917,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. The number of tokens to group together when evaluating
-         * semantic similarity.
+         * semantic similarity. THIS FIELD IS NOT YET USED.
          * </pre>
          *
          * <code>bool semantic_chunking_group_size = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -938,7 +938,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. The number of tokens to group together when evaluating
-         * semantic similarity.
+         * semantic similarity. THIS FIELD IS NOT YET USED.
          * </pre>
          *
          * <code>bool semantic_chunking_group_size = 3 [(.google.api.field_behavior) = OPTIONAL];
@@ -960,7 +960,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. The percentile of cosine dissimilarity that must be exceeded
          * between a group of tokens and the next. The smaller this number is, the
-         * more chunks will be generated.
+         * more chunks will be generated. THIS FIELD IS NOT YET USED.
          * </pre>
          *
          * <code>
@@ -979,7 +979,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. The percentile of cosine dissimilarity that must be exceeded
          * between a group of tokens and the next. The smaller this number is, the
-         * more chunks will be generated.
+         * more chunks will be generated. THIS FIELD IS NOT YET USED.
          * </pre>
          *
          * <code>
@@ -1002,7 +1002,7 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Optional. The percentile of cosine dissimilarity that must be exceeded
          * between a group of tokens and the next. The smaller this number is, the
-         * more chunks will be generated.
+         * more chunks will be generated. THIS FIELD IS NOT YET USED.
          * </pre>
          *
          * <code>

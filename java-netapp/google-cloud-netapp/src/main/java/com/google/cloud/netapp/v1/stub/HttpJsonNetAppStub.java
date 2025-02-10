@@ -22,6 +22,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedRespo
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -56,6 +57,7 @@ import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
+import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
@@ -65,6 +67,7 @@ import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
+import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
@@ -76,6 +79,7 @@ import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
+import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
@@ -91,6 +95,8 @@ import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
+import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
+import com.google.cloud.netapp.v1.ListQuotaRulesResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
 import com.google.cloud.netapp.v1.ListReplicationsResponse;
 import com.google.cloud.netapp.v1.ListSnapshotsRequest;
@@ -100,6 +106,7 @@ import com.google.cloud.netapp.v1.ListStoragePoolsResponse;
 import com.google.cloud.netapp.v1.ListVolumesRequest;
 import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
+import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
@@ -114,6 +121,7 @@ import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
+import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
@@ -146,6 +154,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
       TypeRegistry.newBuilder()
           .add(StoragePool.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(QuotaRule.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(BackupPolicy.getDescriptor())
           .add(Volume.getDescriptor())
@@ -2291,6 +2300,199 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse>
+      listQuotaRulesMethodDescriptor =
+          ApiMethodDescriptor.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListQuotaRules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListQuotaRulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/volumes/*}/quotaRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQuotaRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQuotaRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListQuotaRulesResponse>newBuilder()
+                      .setDefaultInstance(ListQuotaRulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetQuotaRuleRequest, QuotaRule>
+      getQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetQuotaRule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/quotaRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QuotaRule>newBuilder()
+                      .setDefaultInstance(QuotaRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateQuotaRuleRequest, Operation>
+      createQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<CreateQuotaRuleRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateQuotaRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/volumes/*}/quotaRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "quotaRuleId", request.getQuotaRuleId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("quotaRule", request.getQuotaRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateQuotaRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateQuotaRuleRequest, Operation>
+      updateQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<UpdateQuotaRuleRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateQuotaRule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{quotaRule.name=projects/*/locations/*/volumes/*/quotaRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "quotaRule.name", request.getQuotaRule().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("quotaRule", request.getQuotaRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateQuotaRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteQuotaRuleRequest, Operation>
+      deleteQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteQuotaRuleRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteQuotaRule")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/quotaRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteQuotaRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2518,6 +2720,19 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyCallable;
   private final OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable;
+  private final UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable;
+  private final UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable;
+  private final OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable;
+  private final UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable;
+  private final OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable;
+  private final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable;
+  private final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -3217,6 +3432,62 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListQuotaRulesRequest, ListQuotaRulesResponse>
+        listQuotaRulesTransportSettings =
+            HttpJsonCallSettings.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+                .setMethodDescriptor(listQuotaRulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+            .setMethodDescriptor(getQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<CreateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(createQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<UpdateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("quota_rule.name", String.valueOf(request.getQuotaRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<DeleteQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -3697,6 +3968,42 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.deleteBackupPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listQuotaRulesCallable =
+        callableFactory.createUnaryCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.listQuotaRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.getQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            getQuotaRuleTransportSettings, settings.getQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            createQuotaRuleTransportSettings, settings.createQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            createQuotaRuleTransportSettings,
+            settings.createQuotaRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateQuotaRuleTransportSettings, settings.updateQuotaRuleSettings(), clientContext);
+    this.updateQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateQuotaRuleTransportSettings,
+            settings.updateQuotaRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteQuotaRuleTransportSettings, settings.deleteQuotaRuleSettings(), clientContext);
+    this.deleteQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteQuotaRuleTransportSettings,
+            settings.deleteQuotaRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -3769,6 +4076,11 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(listBackupPoliciesMethodDescriptor);
     methodDescriptors.add(updateBackupPolicyMethodDescriptor);
     methodDescriptors.add(deleteBackupPolicyMethodDescriptor);
+    methodDescriptors.add(listQuotaRulesMethodDescriptor);
+    methodDescriptors.add(getQuotaRuleMethodDescriptor);
+    methodDescriptors.add(createQuotaRuleMethodDescriptor);
+    methodDescriptors.add(updateQuotaRuleMethodDescriptor);
+    methodDescriptors.add(deleteQuotaRuleMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -4327,6 +4639,55 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationCallable() {
     return deleteBackupPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable() {
+    return listQuotaRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    return listQuotaRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    return getQuotaRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    return createQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    return createQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    return updateQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    return updateQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    return deleteQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    return deleteQuotaRuleOperationCallable;
   }
 
   @Override

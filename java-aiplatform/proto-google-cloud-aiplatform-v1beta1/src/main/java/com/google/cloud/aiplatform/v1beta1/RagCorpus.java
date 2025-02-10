@@ -671,6 +671,24 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig.getDefaultInstance();
   }
 
+  public static final int RAG_FILES_COUNT_FIELD_NUMBER = 11;
+  private int ragFilesCount_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The number of RagFiles in the RagCorpus.
+   * </pre>
+   *
+   * <code>int32 rag_files_count = 11;</code>
+   *
+   * @return The ragFilesCount.
+   */
+  @java.lang.Override
+  public int getRagFilesCount() {
+    return ragFilesCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -717,6 +735,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           10, (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_);
     }
+    if (ragFilesCount_ != 0) {
+      output.writeInt32(11, ragFilesCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -761,6 +782,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.aiplatform.v1beta1.VertexAiSearchConfig) backendConfig_);
     }
+    if (ragFilesCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, ragFilesCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -800,6 +824,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasCorpusStatus()) {
       if (!getCorpusStatus().equals(other.getCorpusStatus())) return false;
     }
+    if (getRagFilesCount() != other.getRagFilesCount()) return false;
     if (!getBackendConfigCase().equals(other.getBackendConfigCase())) return false;
     switch (backendConfigCase_) {
       case 9:
@@ -848,6 +873,8 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CORPUS_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getCorpusStatus().hashCode();
     }
+    hash = (37 * hash) + RAG_FILES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getRagFilesCount();
     switch (backendConfigCase_) {
       case 9:
         hash = (37 * hash) + VECTOR_DB_CONFIG_FIELD_NUMBER;
@@ -1047,6 +1074,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       if (vertexAiSearchConfigBuilder_ != null) {
         vertexAiSearchConfigBuilder_.clear();
       }
+      ragFilesCount_ = 0;
       backendConfigCase_ = 0;
       backendConfig_ = null;
       return this;
@@ -1122,6 +1150,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         result.corpusStatus_ =
             corpusStatusBuilder_ == null ? corpusStatus_ : corpusStatusBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.ragFilesCount_ = ragFilesCount_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1211,6 +1242,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCorpusStatus()) {
         mergeCorpusStatus(other.getCorpusStatus());
+      }
+      if (other.getRagFilesCount() != 0) {
+        setRagFilesCount(other.getRagFilesCount());
       }
       switch (other.getBackendConfigCase()) {
         case VECTOR_DB_CONFIG:
@@ -1317,6 +1351,12 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
                 backendConfigCase_ = 10;
                 break;
               } // case 82
+            case 88:
+              {
+                ragFilesCount_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3196,6 +3236,59 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       backendConfigCase_ = 10;
       onChanged();
       return vertexAiSearchConfigBuilder_;
+    }
+
+    private int ragFilesCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of RagFiles in the RagCorpus.
+     * </pre>
+     *
+     * <code>int32 rag_files_count = 11;</code>
+     *
+     * @return The ragFilesCount.
+     */
+    @java.lang.Override
+    public int getRagFilesCount() {
+      return ragFilesCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of RagFiles in the RagCorpus.
+     * </pre>
+     *
+     * <code>int32 rag_files_count = 11;</code>
+     *
+     * @param value The ragFilesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRagFilesCount(int value) {
+
+      ragFilesCount_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of RagFiles in the RagCorpus.
+     * </pre>
+     *
+     * <code>int32 rag_files_count = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRagFilesCount() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ragFilesCount_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

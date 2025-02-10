@@ -563,4 +563,72 @@ public interface ContainerOrBuilder
    * @return The bytes of the dependsOn at the given index.
    */
   com.google.protobuf.ByteString getDependsOnBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Base image for this container. Only supported for services. If set, it
+   * indicates that the service is enrolled into automatic base image update.
+   * </pre>
+   *
+   * <code>string base_image_uri = 13;</code>
+   *
+   * @return The baseImageUri.
+   */
+  java.lang.String getBaseImageUri();
+  /**
+   *
+   *
+   * <pre>
+   * Base image for this container. Only supported for services. If set, it
+   * indicates that the service is enrolled into automatic base image update.
+   * </pre>
+   *
+   * <code>string base_image_uri = 13;</code>
+   *
+   * @return The bytes for baseImageUri.
+   */
+  com.google.protobuf.ByteString getBaseImageUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The build info of the container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the buildInfo field is set.
+   */
+  boolean hasBuildInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The build info of the container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The buildInfo.
+   */
+  com.google.cloud.run.v2.BuildInfo getBuildInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The build info of the container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.BuildInfo build_info = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.run.v2.BuildInfoOrBuilder getBuildInfoOrBuilder();
 }

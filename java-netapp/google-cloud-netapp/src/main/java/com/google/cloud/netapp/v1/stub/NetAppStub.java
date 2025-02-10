@@ -22,6 +22,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedRespo
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -43,6 +44,7 @@ import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
+import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
@@ -52,6 +54,7 @@ import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
+import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
@@ -63,6 +66,7 @@ import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
+import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
@@ -78,6 +82,8 @@ import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
+import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
+import com.google.cloud.netapp.v1.ListQuotaRulesResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
 import com.google.cloud.netapp.v1.ListReplicationsResponse;
 import com.google.cloud.netapp.v1.ListSnapshotsRequest;
@@ -87,6 +93,7 @@ import com.google.cloud.netapp.v1.ListStoragePoolsResponse;
 import com.google.cloud.netapp.v1.ListVolumesRequest;
 import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
+import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
@@ -101,6 +108,7 @@ import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
+import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
@@ -601,6 +609,46 @@ public abstract class NetAppStub implements BackgroundResource {
 
   public UnaryCallable<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteBackupPolicyCallable()");
+  }
+
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listQuotaRulesPagedCallable()");
+  }
+
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listQuotaRulesCallable()");
+  }
+
+  public UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getQuotaRuleCallable()");
+  }
+
+  public OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createQuotaRuleOperationCallable()");
+  }
+
+  public UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createQuotaRuleCallable()");
+  }
+
+  public OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateQuotaRuleOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateQuotaRuleCallable()");
+  }
+
+  public OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteQuotaRuleOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteQuotaRuleCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

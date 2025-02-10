@@ -724,6 +724,7 @@ public class ParticipantsClientTest {
             .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
             .setDtmfParameters(DtmfParameters.newBuilder().build())
             .setDebuggingInfo(CloudConversationDebuggingInfo.newBuilder().build())
+            .setSpeechModel("speechModel1755725671")
             .build();
     mockParticipants.addResponse(expectedResponse);
     StreamingAnalyzeContentRequest request =

@@ -106,6 +106,7 @@ public class ConversationsClientTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -156,6 +157,7 @@ public class ConversationsClientTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -206,6 +208,7 @@ public class ConversationsClientTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -388,6 +391,7 @@ public class ConversationsClientTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -437,6 +441,7 @@ public class ConversationsClientTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -484,6 +489,7 @@ public class ConversationsClientTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 
@@ -534,6 +540,7 @@ public class ConversationsClientTest {
             .setPhoneNumber(ConversationPhoneNumber.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
             .build();
     mockConversations.addResponse(expectedResponse);
 

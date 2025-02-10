@@ -43,6 +43,7 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
     exportFull_ = "";
     protocol_ = 0;
     instructions_ = "";
+    ipAddress_ = "";
   }
 
   @java.lang.Override
@@ -254,6 +255,61 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IP_ADDRESS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. IP Address.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The ipAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getIpAddress() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. IP Address.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpAddressBytes() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -280,6 +336,9 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instructions_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instructions_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ipAddress_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -301,6 +360,9 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instructions_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instructions_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ipAddress_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -320,6 +382,7 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
     if (!getExportFull().equals(other.getExportFull())) return false;
     if (protocol_ != other.protocol_) return false;
     if (!getInstructions().equals(other.getInstructions())) return false;
+    if (!getIpAddress().equals(other.getIpAddress())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -339,6 +402,8 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + protocol_;
     hash = (37 * hash) + INSTRUCTIONS_FIELD_NUMBER;
     hash = (53 * hash) + getInstructions().hashCode();
+    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getIpAddress().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -482,6 +547,7 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
       exportFull_ = "";
       protocol_ = 0;
       instructions_ = "";
+      ipAddress_ = "";
       return this;
     }
 
@@ -529,6 +595,9 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.instructions_ = instructions_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.ipAddress_ = ipAddress_;
       }
     }
 
@@ -595,6 +664,11 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getIpAddress().isEmpty()) {
+        ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -645,6 +719,12 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                ipAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1068,6 +1148,122 @@ public final class MountOption extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       instructions_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. IP Address.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The ipAddress.
+     */
+    public java.lang.String getIpAddress() {
+      java.lang.Object ref = ipAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. IP Address.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for ipAddress.
+     */
+    public com.google.protobuf.ByteString getIpAddressBytes() {
+      java.lang.Object ref = ipAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. IP Address.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipAddress_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. IP Address.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpAddress() {
+      ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. IP Address.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipAddress_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

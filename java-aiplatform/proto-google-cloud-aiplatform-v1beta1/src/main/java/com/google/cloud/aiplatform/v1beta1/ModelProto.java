@@ -84,6 +84,22 @@ public final class ModelProto {
       internal_static_google_cloud_aiplatform_v1beta1_Probe_ExecAction_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Probe_ExecAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -172,7 +188,7 @@ public final class ModelProto {
           + "urce\022\033\n\016base_model_uri\030\001 \001(\tB\003\340A\002\"{\n\017Pre"
           + "dictSchemata\022 \n\023instance_schema_uri\030\001 \001("
           + "\tB\003\340A\005\022\"\n\025parameters_schema_uri\030\002 \001(\tB\003\340"
-          + "A\005\022\"\n\025prediction_schema_uri\030\003 \001(\tB\003\340A\005\"\254"
+          + "A\005\022\"\n\025prediction_schema_uri\030\003 \001(\tB\003\340A\005\"\361"
           + "\004\n\022ModelContainerSpec\022\031\n\timage_uri\030\001 \001(\t"
           + "B\006\340A\002\340A\005\022\024\n\007command\030\002 \003(\tB\003\340A\005\022\021\n\004args\030\003"
           + " \003(\tB\003\340A\005\0229\n\003env\030\004 \003(\0132\'.google.cloud.ai"
@@ -186,25 +202,42 @@ public final class ModelProto {
           + "ory_size_mb\030\013 \001(\003B\003\340A\005\022B\n\rstartup_probe\030"
           + "\014 \001(\0132&.google.cloud.aiplatform.v1beta1."
           + "ProbeB\003\340A\005\022A\n\014health_probe\030\r \001(\0132&.googl"
-          + "e.cloud.aiplatform.v1beta1.ProbeB\003\340A\005\"\036\n"
-          + "\004Port\022\026\n\016container_port\030\003 \001(\005\"\230\002\n\017ModelS"
-          + "ourceInfo\022U\n\013source_type\030\001 \001(\0162@.google."
-          + "cloud.aiplatform.v1beta1.ModelSourceInfo"
-          + ".ModelSourceType\022\014\n\004copy\030\002 \001(\010\"\237\001\n\017Model"
-          + "SourceType\022!\n\035MODEL_SOURCE_TYPE_UNSPECIF"
-          + "IED\020\000\022\n\n\006AUTOML\020\001\022\n\n\006CUSTOM\020\002\022\010\n\004BQML\020\003\022"
-          + "\020\n\014MODEL_GARDEN\020\004\022\t\n\005GENIE\020\005\022\031\n\025CUSTOM_T"
-          + "EXT_EMBEDDING\020\006\022\017\n\013MARKETPLACE\020\007\"\250\001\n\005Pro"
-          + "be\022A\n\004exec\030\001 \001(\01321.google.cloud.aiplatfo"
-          + "rm.v1beta1.Probe.ExecActionH\000\022\026\n\016period_"
-          + "seconds\030\002 \001(\005\022\027\n\017timeout_seconds\030\003 \001(\005\032\035"
-          + "\n\nExecAction\022\017\n\007command\030\001 \003(\tB\014\n\nprobe_t"
-          + "ypeB\341\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\nModelProtoP\001ZCcloud.google.com/go/a"
-          + "iplatform/apiv1beta1/aiplatformpb;aiplat"
-          + "formpb\252\002\037Google.Cloud.AIPlatform.V1Beta1"
-          + "\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goo"
-          + "gle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "e.cloud.aiplatform.v1beta1.ProbeB\003\340A\005\022C\n"
+          + "\016liveness_probe\030\016 \001(\0132&.google.cloud.aip"
+          + "latform.v1beta1.ProbeB\003\340A\005\"\036\n\004Port\022\026\n\016co"
+          + "ntainer_port\030\003 \001(\005\"\230\002\n\017ModelSourceInfo\022U"
+          + "\n\013source_type\030\001 \001(\0162@.google.cloud.aipla"
+          + "tform.v1beta1.ModelSourceInfo.ModelSourc"
+          + "eType\022\014\n\004copy\030\002 \001(\010\"\237\001\n\017ModelSourceType\022"
+          + "!\n\035MODEL_SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n\006AU"
+          + "TOML\020\001\022\n\n\006CUSTOM\020\002\022\010\n\004BQML\020\003\022\020\n\014MODEL_GA"
+          + "RDEN\020\004\022\t\n\005GENIE\020\005\022\031\n\025CUSTOM_TEXT_EMBEDDI"
+          + "NG\020\006\022\017\n\013MARKETPLACE\020\007\"\364\005\n\005Probe\022A\n\004exec\030"
+          + "\001 \001(\01321.google.cloud.aiplatform.v1beta1."
+          + "Probe.ExecActionH\000\022H\n\010http_get\030\004 \001(\01324.g"
+          + "oogle.cloud.aiplatform.v1beta1.Probe.Htt"
+          + "pGetActionH\000\022A\n\004grpc\030\005 \001(\01321.google.clou"
+          + "d.aiplatform.v1beta1.Probe.GrpcActionH\000\022"
+          + "L\n\ntcp_socket\030\006 \001(\01326.google.cloud.aipla"
+          + "tform.v1beta1.Probe.TcpSocketActionH\000\022\026\n"
+          + "\016period_seconds\030\002 \001(\005\022\027\n\017timeout_seconds"
+          + "\030\003 \001(\005\022\031\n\021failure_threshold\030\007 \001(\005\022\031\n\021suc"
+          + "cess_threshold\030\010 \001(\005\022\035\n\025initial_delay_se"
+          + "conds\030\t \001(\005\032\035\n\nExecAction\022\017\n\007command\030\001 \003"
+          + "(\t\032\222\001\n\rHttpGetAction\022\014\n\004path\030\001 \001(\t\022\014\n\004po"
+          + "rt\030\002 \001(\005\022\014\n\004host\030\003 \001(\t\022\016\n\006scheme\030\004 \001(\t\022G"
+          + "\n\014http_headers\030\005 \003(\01321.google.cloud.aipl"
+          + "atform.v1beta1.Probe.HttpHeader\032+\n\nGrpcA"
+          + "ction\022\014\n\004port\030\001 \001(\005\022\017\n\007service\030\002 \001(\t\032-\n\017"
+          + "TcpSocketAction\022\014\n\004port\030\001 \001(\005\022\014\n\004host\030\002 "
+          + "\001(\t\032)\n\nHttpHeader\022\014\n\004name\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\tB\014\n\nprobe_typeB\341\001\n#com.google.clou"
+          + "d.aiplatform.v1beta1B\nModelProtoP\001ZCclou"
+          + "d.google.com/go/aiplatform/apiv1beta1/ai"
+          + "platformpb;aiplatformpb\252\002\037Google.Cloud.A"
+          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
+          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -341,6 +374,7 @@ public final class ModelProto {
               "SharedMemorySizeMb",
               "StartupProbe",
               "HealthProbe",
+              "LivenessProbe",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Port_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -364,7 +398,16 @@ public final class ModelProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Probe_descriptor,
             new java.lang.String[] {
-              "Exec", "PeriodSeconds", "TimeoutSeconds", "ProbeType",
+              "Exec",
+              "HttpGet",
+              "Grpc",
+              "TcpSocket",
+              "PeriodSeconds",
+              "TimeoutSeconds",
+              "FailureThreshold",
+              "SuccessThreshold",
+              "InitialDelaySeconds",
+              "ProbeType",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Probe_ExecAction_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Probe_descriptor.getNestedTypes().get(0);
@@ -373,6 +416,38 @@ public final class ModelProto {
             internal_static_google_cloud_aiplatform_v1beta1_Probe_ExecAction_descriptor,
             new java.lang.String[] {
               "Command",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_Probe_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpGetAction_descriptor,
+            new java.lang.String[] {
+              "Path", "Port", "Host", "Scheme", "HttpHeaders",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_Probe_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Probe_GrpcAction_descriptor,
+            new java.lang.String[] {
+              "Port", "Service",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_Probe_descriptor.getNestedTypes().get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Probe_TcpSocketAction_descriptor,
+            new java.lang.String[] {
+              "Port", "Host",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_Probe_descriptor.getNestedTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Probe_HttpHeader_descriptor,
+            new java.lang.String[] {
+              "Name", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

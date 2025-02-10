@@ -1229,4 +1229,45 @@ public interface ModelContainerSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ProbeOrBuilder getHealthProbeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes liveness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the livenessProbe field is set.
+   */
+  boolean hasLivenessProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes liveness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The livenessProbe.
+   */
+  com.google.cloud.aiplatform.v1.Probe getLivenessProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Specification for Kubernetes liveness probe.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Probe liveness_probe = 14 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ProbeOrBuilder getLivenessProbeOrBuilder();
 }

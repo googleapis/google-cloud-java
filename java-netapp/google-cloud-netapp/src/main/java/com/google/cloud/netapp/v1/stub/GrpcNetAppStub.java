@@ -22,6 +22,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedRespo
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -48,6 +49,7 @@ import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
+import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
@@ -57,6 +59,7 @@ import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
+import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
@@ -68,6 +71,7 @@ import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
+import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
@@ -83,6 +87,8 @@ import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
+import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
+import com.google.cloud.netapp.v1.ListQuotaRulesResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
 import com.google.cloud.netapp.v1.ListReplicationsResponse;
 import com.google.cloud.netapp.v1.ListSnapshotsRequest;
@@ -92,6 +98,7 @@ import com.google.cloud.netapp.v1.ListStoragePoolsResponse;
 import com.google.cloud.netapp.v1.ListVolumesRequest;
 import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
+import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
@@ -106,6 +113,7 @@ import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
+import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
@@ -675,6 +683,56 @@ public class GrpcNetAppStub extends NetAppStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse>
+      listQuotaRulesMethodDescriptor =
+          MethodDescriptor.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListQuotaRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListQuotaRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListQuotaRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetQuotaRuleRequest, QuotaRule>
+      getQuotaRuleMethodDescriptor =
+          MethodDescriptor.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetQuotaRule")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QuotaRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateQuotaRuleRequest, Operation>
+      createQuotaRuleMethodDescriptor =
+          MethodDescriptor.<CreateQuotaRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateQuotaRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateQuotaRuleRequest, Operation>
+      updateQuotaRuleMethodDescriptor =
+          MethodDescriptor.<UpdateQuotaRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateQuotaRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteQuotaRuleRequest, Operation>
+      deleteQuotaRuleMethodDescriptor =
+          MethodDescriptor.<DeleteQuotaRuleRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteQuotaRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteQuotaRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -853,6 +911,19 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyCallable;
   private final OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable;
+  private final UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable;
+  private final UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable;
+  private final OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable;
+  private final UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable;
+  private final OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable;
+  private final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable;
+  private final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1468,6 +1539,57 @@ public class GrpcNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListQuotaRulesRequest, ListQuotaRulesResponse>
+        listQuotaRulesTransportSettings =
+            GrpcCallSettings.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+                .setMethodDescriptor(listQuotaRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleTransportSettings =
+        GrpcCallSettings.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+            .setMethodDescriptor(getQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleTransportSettings =
+        GrpcCallSettings.<CreateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(createQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleTransportSettings =
+        GrpcCallSettings.<UpdateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("quota_rule.name", String.valueOf(request.getQuotaRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleTransportSettings =
+        GrpcCallSettings.<DeleteQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteQuotaRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1943,6 +2065,42 @@ public class GrpcNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             deleteBackupPolicyTransportSettings,
             settings.deleteBackupPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listQuotaRulesCallable =
+        callableFactory.createUnaryCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.listQuotaRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.getQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            getQuotaRuleTransportSettings, settings.getQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            createQuotaRuleTransportSettings, settings.createQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            createQuotaRuleTransportSettings,
+            settings.createQuotaRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateQuotaRuleTransportSettings, settings.updateQuotaRuleSettings(), clientContext);
+    this.updateQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateQuotaRuleTransportSettings,
+            settings.updateQuotaRuleOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteQuotaRuleTransportSettings, settings.deleteQuotaRuleSettings(), clientContext);
+    this.deleteQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteQuotaRuleTransportSettings,
+            settings.deleteQuotaRuleOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -2512,6 +2670,55 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationCallable() {
     return deleteBackupPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable() {
+    return listQuotaRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    return listQuotaRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    return getQuotaRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    return createQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    return createQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    return updateQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    return updateQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    return deleteQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    return deleteQuotaRuleOperationCallable;
   }
 
   @Override

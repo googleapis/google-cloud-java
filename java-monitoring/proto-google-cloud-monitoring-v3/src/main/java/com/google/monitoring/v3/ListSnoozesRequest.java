@@ -145,10 +145,8 @@ public final class ListSnoozesRequest extends com.google.protobuf.GeneratedMessa
    *
    * For example:
    *
-   *     ```
    *     interval.start_time &gt; "2022-03-11T00:00:00-08:00" AND
    *         interval.end_time &lt; "2022-03-12T00:00:00-08:00"
-   *     ```
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -179,10 +177,8 @@ public final class ListSnoozesRequest extends com.google.protobuf.GeneratedMessa
    *
    * For example:
    *
-   *     ```
    *     interval.start_time &gt; "2022-03-11T00:00:00-08:00" AND
    *         interval.end_time &lt; "2022-03-12T00:00:00-08:00"
-   *     ```
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -838,10 +834,8 @@ public final class ListSnoozesRequest extends com.google.protobuf.GeneratedMessa
      *
      * For example:
      *
-     *     ```
      *     interval.start_time &gt; "2022-03-11T00:00:00-08:00" AND
      *         interval.end_time &lt; "2022-03-12T00:00:00-08:00"
-     *     ```
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -871,10 +865,8 @@ public final class ListSnoozesRequest extends com.google.protobuf.GeneratedMessa
      *
      * For example:
      *
-     *     ```
      *     interval.start_time &gt; "2022-03-11T00:00:00-08:00" AND
      *         interval.end_time &lt; "2022-03-12T00:00:00-08:00"
-     *     ```
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -904,10 +896,8 @@ public final class ListSnoozesRequest extends com.google.protobuf.GeneratedMessa
      *
      * For example:
      *
-     *     ```
      *     interval.start_time &gt; "2022-03-11T00:00:00-08:00" AND
      *         interval.end_time &lt; "2022-03-12T00:00:00-08:00"
-     *     ```
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -936,10 +926,8 @@ public final class ListSnoozesRequest extends com.google.protobuf.GeneratedMessa
      *
      * For example:
      *
-     *     ```
      *     interval.start_time &gt; "2022-03-11T00:00:00-08:00" AND
      *         interval.end_time &lt; "2022-03-12T00:00:00-08:00"
-     *     ```
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -964,10 +952,8 @@ public final class ListSnoozesRequest extends com.google.protobuf.GeneratedMessa
      *
      * For example:
      *
-     *     ```
      *     interval.start_time &gt; "2022-03-11T00:00:00-08:00" AND
      *         interval.end_time &lt; "2022-03-12T00:00:00-08:00"
-     *     ```
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

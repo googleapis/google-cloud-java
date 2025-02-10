@@ -299,4 +299,47 @@ public interface ConversationOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the telephonyConnectionInfo field is set.
+   */
+  boolean hasTelephonyConnectionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The telephonyConnectionInfo.
+   */
+  com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo
+      getTelephonyConnectionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The telephony connection information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo telephony_connection_info = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfoOrBuilder
+      getTelephonyConnectionInfoOrBuilder();
 }

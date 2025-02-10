@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.aiplatform.v1beta1.EvaluationServiceGrpc.EvaluationServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -76,6 +77,27 @@ public class MockEvaluationServiceImpl extends EvaluationServiceImplBase {
                   "Unrecognized response type %s for method EvaluateInstances, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EvaluateInstancesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void evaluateDataset(
+      EvaluateDatasetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EvaluateDataset, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

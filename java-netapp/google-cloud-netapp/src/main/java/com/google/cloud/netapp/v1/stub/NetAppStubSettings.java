@@ -22,6 +22,7 @@ import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedRespo
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -70,6 +71,7 @@ import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.CreateBackupRequest;
 import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
+import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
@@ -79,6 +81,7 @@ import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
 import com.google.cloud.netapp.v1.DeleteBackupRequest;
 import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
+import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
@@ -90,6 +93,7 @@ import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
 import com.google.cloud.netapp.v1.GetBackupVaultRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
+import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
@@ -105,6 +109,8 @@ import com.google.cloud.netapp.v1.ListBackupsRequest;
 import com.google.cloud.netapp.v1.ListBackupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
+import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
+import com.google.cloud.netapp.v1.ListQuotaRulesResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
 import com.google.cloud.netapp.v1.ListReplicationsResponse;
 import com.google.cloud.netapp.v1.ListSnapshotsRequest;
@@ -114,6 +120,7 @@ import com.google.cloud.netapp.v1.ListStoragePoolsResponse;
 import com.google.cloud.netapp.v1.ListVolumesRequest;
 import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
+import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
@@ -128,6 +135,7 @@ import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
+import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
@@ -384,6 +392,19 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<DeleteBackupPolicyRequest, Operation> deleteBackupPolicySettings;
   private final OperationCallSettings<DeleteBackupPolicyRequest, Empty, OperationMetadata>
       deleteBackupPolicyOperationSettings;
+  private final PagedCallSettings<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+      listQuotaRulesSettings;
+  private final UnaryCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings;
+  private final UnaryCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings;
+  private final OperationCallSettings<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationSettings;
+  private final UnaryCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings;
+  private final OperationCallSettings<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationSettings;
+  private final UnaryCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings;
+  private final OperationCallSettings<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -717,6 +738,41 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule>
+      LIST_QUOTA_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListQuotaRulesRequest injectToken(ListQuotaRulesRequest payload, String token) {
+              return ListQuotaRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListQuotaRulesRequest injectPageSize(
+                ListQuotaRulesRequest payload, int pageSize) {
+              return ListQuotaRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListQuotaRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListQuotaRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<QuotaRule> extractResources(ListQuotaRulesResponse payload) {
+              return payload.getQuotaRulesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -918,6 +974,23 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       PageContext.create(
                           callable, LIST_BACKUP_POLICIES_PAGE_STR_DESC, request, context);
               return ListBackupPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+      LIST_QUOTA_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListQuotaRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> callable,
+                ListQuotaRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListQuotaRulesResponse> futureResponse) {
+              PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> pageContext =
+                  PageContext.create(callable, LIST_QUOTA_RULES_PAGE_STR_DESC, request, context);
+              return ListQuotaRulesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1454,6 +1527,51 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return deleteBackupPolicyOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listQuotaRules. */
+  public PagedCallSettings<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+      listQuotaRulesSettings() {
+    return listQuotaRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getQuotaRule. */
+  public UnaryCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings() {
+    return getQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createQuotaRule. */
+  public UnaryCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings() {
+    return createQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createQuotaRule. */
+  public OperationCallSettings<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationSettings() {
+    return createQuotaRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateQuotaRule. */
+  public UnaryCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings() {
+    return updateQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateQuotaRule. */
+  public OperationCallSettings<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationSettings() {
+    return updateQuotaRuleOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteQuotaRule. */
+  public UnaryCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings() {
+    return deleteQuotaRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteQuotaRule. */
+  public OperationCallSettings<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationSettings() {
+    return deleteQuotaRuleOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1685,6 +1803,14 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteBackupPolicySettings = settingsBuilder.deleteBackupPolicySettings().build();
     deleteBackupPolicyOperationSettings =
         settingsBuilder.deleteBackupPolicyOperationSettings().build();
+    listQuotaRulesSettings = settingsBuilder.listQuotaRulesSettings().build();
+    getQuotaRuleSettings = settingsBuilder.getQuotaRuleSettings().build();
+    createQuotaRuleSettings = settingsBuilder.createQuotaRuleSettings().build();
+    createQuotaRuleOperationSettings = settingsBuilder.createQuotaRuleOperationSettings().build();
+    updateQuotaRuleSettings = settingsBuilder.updateQuotaRuleSettings().build();
+    updateQuotaRuleOperationSettings = settingsBuilder.updateQuotaRuleOperationSettings().build();
+    deleteQuotaRuleSettings = settingsBuilder.deleteQuotaRuleSettings().build();
+    deleteQuotaRuleOperationSettings = settingsBuilder.deleteQuotaRuleOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1895,6 +2021,24 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
         deleteBackupPolicyOperationSettings;
     private final PagedCallSettings.Builder<
+            ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+        listQuotaRulesSettings;
+    private final UnaryCallSettings.Builder<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings;
+    private final UnaryCallSettings.Builder<CreateQuotaRuleRequest, Operation>
+        createQuotaRuleSettings;
+    private final OperationCallSettings.Builder<
+            CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        createQuotaRuleOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateQuotaRuleRequest, Operation>
+        updateQuotaRuleSettings;
+    private final OperationCallSettings.Builder<
+            UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        updateQuotaRuleOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteQuotaRuleRequest, Operation>
+        deleteQuotaRuleSettings;
+    private final OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+        deleteQuotaRuleOperationSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -2041,6 +2185,14 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       updateBackupPolicyOperationSettings = OperationCallSettings.newBuilder();
       deleteBackupPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBackupPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listQuotaRulesSettings = PagedCallSettings.newBuilder(LIST_QUOTA_RULES_PAGE_STR_FACT);
+      getQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
+      updateQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
+      deleteQuotaRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteQuotaRuleOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -2101,6 +2253,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               listBackupPoliciesSettings,
               updateBackupPolicySettings,
               deleteBackupPolicySettings,
+              listQuotaRulesSettings,
+              getQuotaRuleSettings,
+              createQuotaRuleSettings,
+              updateQuotaRuleSettings,
+              deleteQuotaRuleSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -2210,6 +2367,14 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteBackupPolicySettings = settings.deleteBackupPolicySettings.toBuilder();
       deleteBackupPolicyOperationSettings =
           settings.deleteBackupPolicyOperationSettings.toBuilder();
+      listQuotaRulesSettings = settings.listQuotaRulesSettings.toBuilder();
+      getQuotaRuleSettings = settings.getQuotaRuleSettings.toBuilder();
+      createQuotaRuleSettings = settings.createQuotaRuleSettings.toBuilder();
+      createQuotaRuleOperationSettings = settings.createQuotaRuleOperationSettings.toBuilder();
+      updateQuotaRuleSettings = settings.updateQuotaRuleSettings.toBuilder();
+      updateQuotaRuleOperationSettings = settings.updateQuotaRuleOperationSettings.toBuilder();
+      deleteQuotaRuleSettings = settings.deleteQuotaRuleSettings.toBuilder();
+      deleteQuotaRuleOperationSettings = settings.deleteQuotaRuleOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -2270,6 +2435,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               listBackupPoliciesSettings,
               updateBackupPolicySettings,
               deleteBackupPolicySettings,
+              listQuotaRulesSettings,
+              getQuotaRuleSettings,
+              createQuotaRuleSettings,
+              updateQuotaRuleSettings,
+              deleteQuotaRuleSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -2573,6 +2743,31 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .deleteBackupPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listQuotaRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteQuotaRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -3449,6 +3644,78 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createQuotaRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateQuotaRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(QuotaRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateQuotaRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateQuotaRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(QuotaRule.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteQuotaRuleOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteQuotaRuleRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -4003,6 +4270,51 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
         deleteBackupPolicyOperationSettings() {
       return deleteBackupPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listQuotaRules. */
+    public PagedCallSettings.Builder<
+            ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+        listQuotaRulesSettings() {
+      return listQuotaRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getQuotaRule. */
+    public UnaryCallSettings.Builder<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings() {
+      return getQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createQuotaRule. */
+    public UnaryCallSettings.Builder<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings() {
+      return createQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createQuotaRule. */
+    public OperationCallSettings.Builder<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        createQuotaRuleOperationSettings() {
+      return createQuotaRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateQuotaRule. */
+    public UnaryCallSettings.Builder<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings() {
+      return updateQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateQuotaRule. */
+    public OperationCallSettings.Builder<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        updateQuotaRuleOperationSettings() {
+      return updateQuotaRuleOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQuotaRule. */
+    public UnaryCallSettings.Builder<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings() {
+      return deleteQuotaRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQuotaRule. */
+    public OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+        deleteQuotaRuleOperationSettings() {
+      return deleteQuotaRuleOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

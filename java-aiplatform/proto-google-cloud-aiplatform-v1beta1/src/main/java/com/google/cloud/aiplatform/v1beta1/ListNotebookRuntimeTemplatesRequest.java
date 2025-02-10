@@ -151,6 +151,8 @@ public final class ListNotebookRuntimeTemplatesRequest
    *     * A key including a space must be quoted. `labels."a key"`.
    *   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
    *   [USER_DEFINED, ONE_CLICK].
+   *   * `machineType` supports = and !=.
+   *   * `acceleratorType` supports = and !=.
    *
    * Some examples:
    *
@@ -158,6 +160,8 @@ public final class ListNotebookRuntimeTemplatesRequest
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
    *   * `notebookRuntimeType=USER_DEFINED`
+   *   * `machineType=e2-standard-4`
+   *   * `acceleratorType=NVIDIA_TESLA_T4`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -194,6 +198,8 @@ public final class ListNotebookRuntimeTemplatesRequest
    *     * A key including a space must be quoted. `labels."a key"`.
    *   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
    *   [USER_DEFINED, ONE_CLICK].
+   *   * `machineType` supports = and !=.
+   *   * `acceleratorType` supports = and !=.
    *
    * Some examples:
    *
@@ -201,6 +207,8 @@ public final class ListNotebookRuntimeTemplatesRequest
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
    *   * `notebookRuntimeType=USER_DEFINED`
+   *   * `machineType=e2-standard-4`
+   *   * `acceleratorType=NVIDIA_TESLA_T4`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1050,6 +1058,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *     * A key including a space must be quoted. `labels."a key"`.
      *   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
      *   [USER_DEFINED, ONE_CLICK].
+     *   * `machineType` supports = and !=.
+     *   * `acceleratorType` supports = and !=.
      *
      * Some examples:
      *
@@ -1057,6 +1067,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
      *   * `notebookRuntimeType=USER_DEFINED`
+     *   * `machineType=e2-standard-4`
+     *   * `acceleratorType=NVIDIA_TESLA_T4`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1092,6 +1104,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *     * A key including a space must be quoted. `labels."a key"`.
      *   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
      *   [USER_DEFINED, ONE_CLICK].
+     *   * `machineType` supports = and !=.
+     *   * `acceleratorType` supports = and !=.
      *
      * Some examples:
      *
@@ -1099,6 +1113,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
      *   * `notebookRuntimeType=USER_DEFINED`
+     *   * `machineType=e2-standard-4`
+     *   * `acceleratorType=NVIDIA_TESLA_T4`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1134,6 +1150,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *     * A key including a space must be quoted. `labels."a key"`.
      *   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
      *   [USER_DEFINED, ONE_CLICK].
+     *   * `machineType` supports = and !=.
+     *   * `acceleratorType` supports = and !=.
      *
      * Some examples:
      *
@@ -1141,6 +1159,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
      *   * `notebookRuntimeType=USER_DEFINED`
+     *   * `machineType=e2-standard-4`
+     *   * `acceleratorType=NVIDIA_TESLA_T4`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1175,6 +1195,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *     * A key including a space must be quoted. `labels."a key"`.
      *   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
      *   [USER_DEFINED, ONE_CLICK].
+     *   * `machineType` supports = and !=.
+     *   * `acceleratorType` supports = and !=.
      *
      * Some examples:
      *
@@ -1182,6 +1204,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
      *   * `notebookRuntimeType=USER_DEFINED`
+     *   * `machineType=e2-standard-4`
+     *   * `acceleratorType=NVIDIA_TESLA_T4`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1212,6 +1236,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *     * A key including a space must be quoted. `labels."a key"`.
      *   * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum:
      *   [USER_DEFINED, ONE_CLICK].
+     *   * `machineType` supports = and !=.
+     *   * `acceleratorType` supports = and !=.
      *
      * Some examples:
      *
@@ -1219,6 +1245,8 @@ public final class ListNotebookRuntimeTemplatesRequest
      *   * `displayName="myDisplayName"`
      *   * `labels.myKey="myValue"`
      *   * `notebookRuntimeType=USER_DEFINED`
+     *   * `machineType=e2-standard-4`
+     *   * `acceleratorType=NVIDIA_TESLA_T4`
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

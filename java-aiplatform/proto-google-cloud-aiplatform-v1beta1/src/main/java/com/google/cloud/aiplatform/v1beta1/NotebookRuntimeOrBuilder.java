@@ -952,6 +952,47 @@ public interface NotebookRuntimeOrBuilder
    *
    *
    * <pre>
+   * Output only. Software config of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the softwareConfig field is set.
+   */
+  boolean hasSoftwareConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Software config of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The softwareConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig getSoftwareConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Software config of the notebook runtime.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig software_config = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfigOrBuilder getSoftwareConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Customer-managed encryption key spec for the notebook runtime.
    * </pre>
    *

@@ -123,4 +123,33 @@ public interface MountOptionOrBuilder
    * @return The bytes for instructions.
    */
   com.google.protobuf.ByteString getInstructionsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. IP Address.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The ipAddress.
+   */
+  java.lang.String getIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. IP Address.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  com.google.protobuf.ByteString getIpAddressBytes();
 }

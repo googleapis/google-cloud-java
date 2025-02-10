@@ -301,6 +301,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= PhoneNumbersClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [PhoneNumbers][google.cloud.dialogflow.v2beta1.PhoneNumber].
+ *
+ * <p>Sample for PhoneNumbersClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PhoneNumbersClient phoneNumbersClient = PhoneNumbersClient.create()) {
+ *   PhoneNumber phoneNumber = PhoneNumber.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   PhoneNumber response = phoneNumbersClient.updatePhoneNumber(phoneNumber, updateMask);
+ * }
+ * }</pre>
+ *
  * <p>======================= SessionsClient =======================
  *
  * <p>Service Description: A service used for session interactions.

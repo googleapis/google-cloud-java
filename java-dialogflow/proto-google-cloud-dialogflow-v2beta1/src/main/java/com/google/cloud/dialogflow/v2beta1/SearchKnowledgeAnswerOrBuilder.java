@@ -151,7 +151,7 @@ public interface SearchKnowledgeAnswerOrBuilder
    * Records/&lt;Answer Record ID&gt;`
    * </pre>
    *
-   * <code>string answer_record = 5;</code>
+   * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The answerRecord.
    */
@@ -165,7 +165,7 @@ public interface SearchKnowledgeAnswerOrBuilder
    * Records/&lt;Answer Record ID&gt;`
    * </pre>
    *
-   * <code>string answer_record = 5;</code>
+   * <code>string answer_record = 5 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for answerRecord.
    */

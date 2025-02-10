@@ -148,6 +148,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    * evaluation, or
    * * exclude `null` rows from the `evaluated_count`, by setting
    * `ignore_nulls = true`.
+   *
+   * This field is not set for rule SqlAssertion.
    * </pre>
    *
    * <code>int64 evaluated_count = 9;</code>
@@ -165,9 +167,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The number of rows which passed a rule evaluation.
-   *
-   * This field is only valid for row-level type rules.
+   * This field is not set for rule SqlAssertion.
    * </pre>
    *
    * <code>int64 passed_count = 8;</code>
@@ -1067,6 +1067,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
      * `ignore_nulls = true`.
+     *
+     * This field is not set for rule SqlAssertion.
      * </pre>
      *
      * <code>int64 evaluated_count = 9;</code>
@@ -1091,6 +1093,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
      * `ignore_nulls = true`.
+     *
+     * This field is not set for rule SqlAssertion.
      * </pre>
      *
      * <code>int64 evaluated_count = 9;</code>
@@ -1119,6 +1123,8 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * evaluation, or
      * * exclude `null` rows from the `evaluated_count`, by setting
      * `ignore_nulls = true`.
+     *
+     * This field is not set for rule SqlAssertion.
      * </pre>
      *
      * <code>int64 evaluated_count = 9;</code>
@@ -1137,9 +1143,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows which passed a rule evaluation.
-     *
-     * This field is only valid for row-level type rules.
+     * This field is not set for rule SqlAssertion.
      * </pre>
      *
      * <code>int64 passed_count = 8;</code>
@@ -1154,9 +1158,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows which passed a rule evaluation.
-     *
-     * This field is only valid for row-level type rules.
+     * This field is not set for rule SqlAssertion.
      * </pre>
      *
      * <code>int64 passed_count = 8;</code>
@@ -1175,9 +1177,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The number of rows which passed a rule evaluation.
-     *
-     * This field is only valid for row-level type rules.
+     * This field is not set for rule SqlAssertion.
      * </pre>
      *
      * <code>int64 passed_count = 8;</code>

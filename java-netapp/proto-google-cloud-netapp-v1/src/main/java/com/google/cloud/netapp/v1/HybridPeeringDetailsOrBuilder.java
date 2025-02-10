@@ -144,4 +144,85 @@ public interface HybridPeeringDetailsOrBuilder
    * @return The bytes for passphrase.
    */
   com.google.protobuf.ByteString getPassphraseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source volume to be peered with the
+   * destination volume.
+   * </pre>
+   *
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The peerVolumeName.
+   */
+  java.lang.String getPeerVolumeName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source volume to be peered with the
+   * destination volume.
+   * </pre>
+   *
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for peerVolumeName.
+   */
+  com.google.protobuf.ByteString getPeerVolumeNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source cluster to be peered with the
+   * destination cluster.
+   * </pre>
+   *
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The peerClusterName.
+   */
+  java.lang.String getPeerClusterName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source cluster to be peered with the
+   * destination cluster.
+   * </pre>
+   *
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for peerClusterName.
+   */
+  com.google.protobuf.ByteString getPeerClusterNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source vserver svm to be peered with the
+   * destination vserver svm.
+   * </pre>
+   *
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The peerSvmName.
+   */
+  java.lang.String getPeerSvmName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the user's local source vserver svm to be peered with the
+   * destination vserver svm.
+   * </pre>
+   *
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for peerSvmName.
+   */
+  com.google.protobuf.ByteString getPeerSvmNameBytes();
 }
