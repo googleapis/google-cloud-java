@@ -62,6 +62,62 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int PREDEPLOY_JOB_FIELD_NUMBER = 3;
+  private com.google.cloud.deploy.v1.Job predeployJob_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the predeployJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredeployJob() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The predeployJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Job getPredeployJob() {
+    return predeployJob_ == null
+        ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
+        : predeployJob_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.JobOrBuilder getPredeployJobOrBuilder() {
+    return predeployJob_ == null
+        ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
+        : predeployJob_;
+  }
+
   public static final int DEPLOY_JOB_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.Job deployJob_;
   /**
@@ -78,7 +134,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDeployJob() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -127,7 +183,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasVerifyJob() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -158,62 +214,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.deploy.v1.JobOrBuilder getVerifyJobOrBuilder() {
     return verifyJob_ == null ? com.google.cloud.deploy.v1.Job.getDefaultInstance() : verifyJob_;
-  }
-
-  public static final int PREDEPLOY_JOB_FIELD_NUMBER = 3;
-  private com.google.cloud.deploy.v1.Job predeployJob_;
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The predeploy Job, which is the first job on the phase.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the predeployJob field is set.
-   */
-  @java.lang.Override
-  public boolean hasPredeployJob() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The predeploy Job, which is the first job on the phase.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The predeployJob.
-   */
-  @java.lang.Override
-  public com.google.cloud.deploy.v1.Job getPredeployJob() {
-    return predeployJob_ == null
-        ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
-        : predeployJob_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The predeploy Job, which is the first job on the phase.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.deploy.v1.JobOrBuilder getPredeployJobOrBuilder() {
-    return predeployJob_ == null
-        ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
-        : predeployJob_;
   }
 
   public static final int POSTDEPLOY_JOB_FIELD_NUMBER = 4;
@@ -286,13 +286,13 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(1, getDeployJob());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(2, getVerifyJob());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getPredeployJob());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -307,13 +307,13 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDeployJob());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getVerifyJob());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPredeployJob());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -335,6 +335,10 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.deploy.v1.DeploymentJobs other =
         (com.google.cloud.deploy.v1.DeploymentJobs) obj;
 
+    if (hasPredeployJob() != other.hasPredeployJob()) return false;
+    if (hasPredeployJob()) {
+      if (!getPredeployJob().equals(other.getPredeployJob())) return false;
+    }
     if (hasDeployJob() != other.hasDeployJob()) return false;
     if (hasDeployJob()) {
       if (!getDeployJob().equals(other.getDeployJob())) return false;
@@ -342,10 +346,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     if (hasVerifyJob() != other.hasVerifyJob()) return false;
     if (hasVerifyJob()) {
       if (!getVerifyJob().equals(other.getVerifyJob())) return false;
-    }
-    if (hasPredeployJob() != other.hasPredeployJob()) return false;
-    if (hasPredeployJob()) {
-      if (!getPredeployJob().equals(other.getPredeployJob())) return false;
     }
     if (hasPostdeployJob() != other.hasPostdeployJob()) return false;
     if (hasPostdeployJob()) {
@@ -362,6 +362,10 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasPredeployJob()) {
+      hash = (37 * hash) + PREDEPLOY_JOB_FIELD_NUMBER;
+      hash = (53 * hash) + getPredeployJob().hashCode();
+    }
     if (hasDeployJob()) {
       hash = (37 * hash) + DEPLOY_JOB_FIELD_NUMBER;
       hash = (53 * hash) + getDeployJob().hashCode();
@@ -369,10 +373,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     if (hasVerifyJob()) {
       hash = (37 * hash) + VERIFY_JOB_FIELD_NUMBER;
       hash = (53 * hash) + getVerifyJob().hashCode();
-    }
-    if (hasPredeployJob()) {
-      hash = (37 * hash) + PREDEPLOY_JOB_FIELD_NUMBER;
-      hash = (53 * hash) + getPredeployJob().hashCode();
     }
     if (hasPostdeployJob()) {
       hash = (37 * hash) + POSTDEPLOY_JOB_FIELD_NUMBER;
@@ -518,9 +518,9 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPredeployJobFieldBuilder();
         getDeployJobFieldBuilder();
         getVerifyJobFieldBuilder();
-        getPredeployJobFieldBuilder();
         getPostdeployJobFieldBuilder();
       }
     }
@@ -529,6 +529,11 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      predeployJob_ = null;
+      if (predeployJobBuilder_ != null) {
+        predeployJobBuilder_.dispose();
+        predeployJobBuilder_ = null;
+      }
       deployJob_ = null;
       if (deployJobBuilder_ != null) {
         deployJobBuilder_.dispose();
@@ -538,11 +543,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       if (verifyJobBuilder_ != null) {
         verifyJobBuilder_.dispose();
         verifyJobBuilder_ = null;
-      }
-      predeployJob_ = null;
-      if (predeployJobBuilder_ != null) {
-        predeployJobBuilder_.dispose();
-        predeployJobBuilder_ = null;
       }
       postdeployJob_ = null;
       if (postdeployJobBuilder_ != null) {
@@ -587,16 +587,16 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.deployJob_ = deployJobBuilder_ == null ? deployJob_ : deployJobBuilder_.build();
+        result.predeployJob_ =
+            predeployJobBuilder_ == null ? predeployJob_ : predeployJobBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.verifyJob_ = verifyJobBuilder_ == null ? verifyJob_ : verifyJobBuilder_.build();
+        result.deployJob_ = deployJobBuilder_ == null ? deployJob_ : deployJobBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.predeployJob_ =
-            predeployJobBuilder_ == null ? predeployJob_ : predeployJobBuilder_.build();
+        result.verifyJob_ = verifyJobBuilder_ == null ? verifyJob_ : verifyJobBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -652,14 +652,14 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.deploy.v1.DeploymentJobs other) {
       if (other == com.google.cloud.deploy.v1.DeploymentJobs.getDefaultInstance()) return this;
+      if (other.hasPredeployJob()) {
+        mergePredeployJob(other.getPredeployJob());
+      }
       if (other.hasDeployJob()) {
         mergeDeployJob(other.getDeployJob());
       }
       if (other.hasVerifyJob()) {
         mergeVerifyJob(other.getVerifyJob());
-      }
-      if (other.hasPredeployJob()) {
-        mergePredeployJob(other.getPredeployJob());
       }
       if (other.hasPostdeployJob()) {
         mergePostdeployJob(other.getPostdeployJob());
@@ -693,19 +693,19 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getDeployJobFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getVerifyJobFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPredeployJobFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 34:
@@ -733,6 +733,209 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private com.google.cloud.deploy.v1.Job predeployJob_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Job,
+            com.google.cloud.deploy.v1.Job.Builder,
+            com.google.cloud.deploy.v1.JobOrBuilder>
+        predeployJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the predeployJob field is set.
+     */
+    public boolean hasPredeployJob() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The predeployJob.
+     */
+    public com.google.cloud.deploy.v1.Job getPredeployJob() {
+      if (predeployJobBuilder_ == null) {
+        return predeployJob_ == null
+            ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
+            : predeployJob_;
+      } else {
+        return predeployJobBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPredeployJob(com.google.cloud.deploy.v1.Job value) {
+      if (predeployJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predeployJob_ = value;
+      } else {
+        predeployJobBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPredeployJob(com.google.cloud.deploy.v1.Job.Builder builderForValue) {
+      if (predeployJobBuilder_ == null) {
+        predeployJob_ = builderForValue.build();
+      } else {
+        predeployJobBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePredeployJob(com.google.cloud.deploy.v1.Job value) {
+      if (predeployJobBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && predeployJob_ != null
+            && predeployJob_ != com.google.cloud.deploy.v1.Job.getDefaultInstance()) {
+          getPredeployJobBuilder().mergeFrom(value);
+        } else {
+          predeployJob_ = value;
+        }
+      } else {
+        predeployJobBuilder_.mergeFrom(value);
+      }
+      if (predeployJob_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPredeployJob() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      predeployJob_ = null;
+      if (predeployJobBuilder_ != null) {
+        predeployJobBuilder_.dispose();
+        predeployJobBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Job.Builder getPredeployJobBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getPredeployJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.JobOrBuilder getPredeployJobOrBuilder() {
+      if (predeployJobBuilder_ != null) {
+        return predeployJobBuilder_.getMessageOrBuilder();
+      } else {
+        return predeployJob_ == null
+            ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
+            : predeployJob_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The predeploy Job, which is the first job on the phase.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Job,
+            com.google.cloud.deploy.v1.Job.Builder,
+            com.google.cloud.deploy.v1.JobOrBuilder>
+        getPredeployJobFieldBuilder() {
+      if (predeployJobBuilder_ == null) {
+        predeployJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.Job,
+                com.google.cloud.deploy.v1.Job.Builder,
+                com.google.cloud.deploy.v1.JobOrBuilder>(
+                getPredeployJob(), getParentForChildren(), isClean());
+        predeployJob_ = null;
+      }
+      return predeployJobBuilder_;
+    }
+
     private com.google.cloud.deploy.v1.Job deployJob_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.Job,
@@ -753,7 +956,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployJob field is set.
      */
     public boolean hasDeployJob() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -797,7 +1000,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       } else {
         deployJobBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -818,7 +1021,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       } else {
         deployJobBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -835,7 +1038,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeployJob(com.google.cloud.deploy.v1.Job value) {
       if (deployJobBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && deployJob_ != null
             && deployJob_ != com.google.cloud.deploy.v1.Job.getDefaultInstance()) {
           getDeployJobBuilder().mergeFrom(value);
@@ -846,7 +1049,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         deployJobBuilder_.mergeFrom(value);
       }
       if (deployJob_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -863,7 +1066,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeployJob() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       deployJob_ = null;
       if (deployJobBuilder_ != null) {
         deployJobBuilder_.dispose();
@@ -884,7 +1087,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.Job.Builder getDeployJobBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeployJobFieldBuilder().getBuilder();
     }
@@ -956,7 +1159,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the verifyJob field is set.
      */
     public boolean hasVerifyJob() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1000,7 +1203,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       } else {
         verifyJobBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1021,7 +1224,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       } else {
         verifyJobBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1038,7 +1241,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVerifyJob(com.google.cloud.deploy.v1.Job value) {
       if (verifyJobBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && verifyJob_ != null
             && verifyJob_ != com.google.cloud.deploy.v1.Job.getDefaultInstance()) {
           getVerifyJobBuilder().mergeFrom(value);
@@ -1049,7 +1252,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         verifyJobBuilder_.mergeFrom(value);
       }
       if (verifyJob_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1066,7 +1269,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearVerifyJob() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       verifyJob_ = null;
       if (verifyJobBuilder_ != null) {
         verifyJobBuilder_.dispose();
@@ -1087,7 +1290,7 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.deploy.v1.Job.Builder getVerifyJobBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getVerifyJobFieldBuilder().getBuilder();
     }
@@ -1137,209 +1340,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         verifyJob_ = null;
       }
       return verifyJobBuilder_;
-    }
-
-    private com.google.cloud.deploy.v1.Job predeployJob_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.deploy.v1.Job,
-            com.google.cloud.deploy.v1.Job.Builder,
-            com.google.cloud.deploy.v1.JobOrBuilder>
-        predeployJobBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return Whether the predeployJob field is set.
-     */
-    public boolean hasPredeployJob() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     *
-     * @return The predeployJob.
-     */
-    public com.google.cloud.deploy.v1.Job getPredeployJob() {
-      if (predeployJobBuilder_ == null) {
-        return predeployJob_ == null
-            ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
-            : predeployJob_;
-      } else {
-        return predeployJobBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setPredeployJob(com.google.cloud.deploy.v1.Job value) {
-      if (predeployJobBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        predeployJob_ = value;
-      } else {
-        predeployJobBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setPredeployJob(com.google.cloud.deploy.v1.Job.Builder builderForValue) {
-      if (predeployJobBuilder_ == null) {
-        predeployJob_ = builderForValue.build();
-      } else {
-        predeployJobBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder mergePredeployJob(com.google.cloud.deploy.v1.Job value) {
-      if (predeployJobBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
-            && predeployJob_ != null
-            && predeployJob_ != com.google.cloud.deploy.v1.Job.getDefaultInstance()) {
-          getPredeployJobBuilder().mergeFrom(value);
-        } else {
-          predeployJob_ = value;
-        }
-      } else {
-        predeployJobBuilder_.mergeFrom(value);
-      }
-      if (predeployJob_ != null) {
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder clearPredeployJob() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      predeployJob_ = null;
-      if (predeployJobBuilder_ != null) {
-        predeployJobBuilder_.dispose();
-        predeployJobBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.Job.Builder getPredeployJobBuilder() {
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return getPredeployJobFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.deploy.v1.JobOrBuilder getPredeployJobOrBuilder() {
-      if (predeployJobBuilder_ != null) {
-        return predeployJobBuilder_.getMessageOrBuilder();
-      } else {
-        return predeployJob_ == null
-            ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
-            : predeployJob_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The predeploy Job, which is the first job on the phase.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.deploy.v1.Job,
-            com.google.cloud.deploy.v1.Job.Builder,
-            com.google.cloud.deploy.v1.JobOrBuilder>
-        getPredeployJobFieldBuilder() {
-      if (predeployJobBuilder_ == null) {
-        predeployJobBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.deploy.v1.Job,
-                com.google.cloud.deploy.v1.Job.Builder,
-                com.google.cloud.deploy.v1.JobOrBuilder>(
-                getPredeployJob(), getParentForChildren(), isClean());
-        predeployJob_ = null;
-      }
-      return predeployJobBuilder_;
     }
 
     private com.google.cloud.deploy.v1.Job postdeployJob_;

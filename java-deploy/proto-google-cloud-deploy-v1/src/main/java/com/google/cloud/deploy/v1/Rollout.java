@@ -935,12 +935,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Rollout`. Format is
+   * Identifier. Name of the `Rollout`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -960,12 +960,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Rollout`. Format is
+   * Identifier. Name of the `Rollout`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1041,11 +1041,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the `Rollout` for user purposes. Max length is 255
+   * Optional. Description of the `Rollout` for user purposes. Max length is 255
    * characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -1065,11 +1065,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the `Rollout` for user purposes. Max length is 255
+   * Optional. Description of the `Rollout` for user purposes. Max length is 255
    * characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -1117,12 +1117,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -1141,12 +1143,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -1156,12 +1160,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -1178,12 +1184,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -3353,12 +3361,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is
+     * Identifier. Name of the `Rollout`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -3377,12 +3385,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is
+     * Identifier. Name of the `Rollout`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -3401,12 +3409,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is
+     * Identifier. Name of the `Rollout`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3424,12 +3432,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is
+     * Identifier. Name of the `Rollout`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -3443,12 +3451,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is
+     * Identifier. Name of the `Rollout`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3575,11 +3583,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Rollout` for user purposes. Max length is 255
+     * Optional. Description of the `Rollout` for user purposes. Max length is 255
      * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -3598,11 +3606,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Rollout` for user purposes. Max length is 255
+     * Optional. Description of the `Rollout` for user purposes. Max length is 255
      * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -3621,11 +3629,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Rollout` for user purposes. Max length is 255
+     * Optional. Description of the `Rollout` for user purposes. Max length is 255
      * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3643,11 +3651,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Rollout` for user purposes. Max length is 255
+     * Optional. Description of the `Rollout` for user purposes. Max length is 255
      * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3661,11 +3669,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Rollout` for user purposes. Max length is 255
+     * Optional. Description of the `Rollout` for user purposes. Max length is 255
      * characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3713,12 +3721,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -3737,12 +3747,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -3752,12 +3764,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -3774,12 +3788,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -3802,12 +3818,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -3826,12 +3844,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3848,12 +3868,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);

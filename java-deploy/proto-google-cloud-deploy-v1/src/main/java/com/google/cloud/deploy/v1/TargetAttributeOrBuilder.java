@@ -28,14 +28,14 @@ public interface TargetAttributeOrBuilder
    *
    *
    * <pre>
-   * ID of the `Target`. The value of this field could be one of the
+   * Optional. ID of the `Target`. The value of this field could be one of the
    * following:
    *
    * * The last segment of a target name
    * * "*", all targets in a location
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The id.
    */
@@ -44,14 +44,14 @@ public interface TargetAttributeOrBuilder
    *
    *
    * <pre>
-   * ID of the `Target`. The value of this field could be one of the
+   * Optional. ID of the `Target`. The value of this field could be one of the
    * following:
    *
    * * The last segment of a target name
    * * "*", all targets in a location
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for id.
    */

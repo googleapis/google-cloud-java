@@ -28,13 +28,13 @@ public interface CustomTargetTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `CustomTargetType`. Format is
+   * Identifier. Name of the `CustomTargetType`. Format is
    * `projects/{project}/locations/{location}/customTargetTypes/{customTargetType}`.
    * The `customTargetType` component must match
    * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,13 +43,13 @@ public interface CustomTargetTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `CustomTargetType`. Format is
+   * Identifier. Name of the `CustomTargetType`. Format is
    * `projects/{project}/locations/{location}/customTargetTypes/{customTargetType}`.
    * The `customTargetType` component must match
    * `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -427,11 +427,13 @@ public interface CustomTargetTypeOrBuilder
    *
    *
    * <pre>
-   * Configures render and deploy for the `CustomTargetType` using Skaffold
-   * custom actions.
+   * Optional. Configures render and deploy for the `CustomTargetType` using
+   * Skaffold custom actions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CustomTargetSkaffoldActions custom_actions = 10;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetSkaffoldActions custom_actions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the customActions field is set.
    */
@@ -440,11 +442,13 @@ public interface CustomTargetTypeOrBuilder
    *
    *
    * <pre>
-   * Configures render and deploy for the `CustomTargetType` using Skaffold
-   * custom actions.
+   * Optional. Configures render and deploy for the `CustomTargetType` using
+   * Skaffold custom actions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CustomTargetSkaffoldActions custom_actions = 10;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetSkaffoldActions custom_actions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The customActions.
    */
@@ -453,11 +457,13 @@ public interface CustomTargetTypeOrBuilder
    *
    *
    * <pre>
-   * Configures render and deploy for the `CustomTargetType` using Skaffold
-   * custom actions.
+   * Optional. Configures render and deploy for the `CustomTargetType` using
+   * Skaffold custom actions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CustomTargetSkaffoldActions custom_actions = 10;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CustomTargetSkaffoldActions custom_actions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.CustomTargetSkaffoldActionsOrBuilder getCustomActionsOrBuilder();
 

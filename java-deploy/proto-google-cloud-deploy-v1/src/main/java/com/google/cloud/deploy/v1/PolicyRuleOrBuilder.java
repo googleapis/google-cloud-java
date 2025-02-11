@@ -28,10 +28,12 @@ public interface PolicyRuleOrBuilder
    *
    *
    * <pre>
-   * Rollout restrictions.
+   * Optional. Rollout restrictions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the rolloutRestriction field is set.
    */
@@ -40,10 +42,12 @@ public interface PolicyRuleOrBuilder
    *
    *
    * <pre>
-   * Rollout restrictions.
+   * Optional. Rollout restrictions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The rolloutRestriction.
    */
@@ -52,10 +56,12 @@ public interface PolicyRuleOrBuilder
    *
    *
    * <pre>
-   * Rollout restrictions.
+   * Optional. Rollout restrictions.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.RolloutRestriction rollout_restriction = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.RolloutRestrictionOrBuilder getRolloutRestrictionOrBuilder();
 

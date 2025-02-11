@@ -28,14 +28,14 @@ public interface DeliveryPipelineAttributeOrBuilder
    *
    *
    * <pre>
-   * ID of the `DeliveryPipeline`. The value of this field could be one of the
-   * following:
+   * Optional. ID of the `DeliveryPipeline`. The value of this field could be
+   * one of the following:
    *
    * * The last segment of a pipeline name
    * * "*", all delivery pipelines in a location
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The id.
    */
@@ -44,14 +44,14 @@ public interface DeliveryPipelineAttributeOrBuilder
    *
    *
    * <pre>
-   * ID of the `DeliveryPipeline`. The value of this field could be one of the
-   * following:
+   * Optional. ID of the `DeliveryPipeline`. The value of this field could be
+   * one of the following:
    *
    * * The last segment of a pipeline name
    * * "*", all delivery pipelines in a location
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for id.
    */

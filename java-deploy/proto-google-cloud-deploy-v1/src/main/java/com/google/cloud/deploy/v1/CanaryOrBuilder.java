@@ -75,10 +75,12 @@ public interface CanaryOrBuilder
    *
    *
    * <pre>
-   * Configures the progressive based deployment for a Target.
+   * Optional. Configures the progressive based deployment for a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CanaryDeployment canary_deployment = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CanaryDeployment canary_deployment = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the canaryDeployment field is set.
    */
@@ -87,10 +89,12 @@ public interface CanaryOrBuilder
    *
    *
    * <pre>
-   * Configures the progressive based deployment for a Target.
+   * Optional. Configures the progressive based deployment for a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CanaryDeployment canary_deployment = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CanaryDeployment canary_deployment = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The canaryDeployment.
    */
@@ -99,10 +103,12 @@ public interface CanaryOrBuilder
    *
    *
    * <pre>
-   * Configures the progressive based deployment for a Target.
+   * Optional. Configures the progressive based deployment for a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CanaryDeployment canary_deployment = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CanaryDeployment canary_deployment = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.CanaryDeploymentOrBuilder getCanaryDeploymentOrBuilder();
 
@@ -110,12 +116,14 @@ public interface CanaryOrBuilder
    *
    *
    * <pre>
-   * Configures the progressive based deployment for a Target, but allows
-   * customizing at the phase level where a phase represents each of the
-   * percentage deployments.
+   * Optional. Configures the progressive based deployment for a Target, but
+   * allows customizing at the phase level where a phase represents each of
+   * the percentage deployments.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CustomCanaryDeployment custom_canary_deployment = 3;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CustomCanaryDeployment custom_canary_deployment = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the customCanaryDeployment field is set.
    */
@@ -124,12 +132,14 @@ public interface CanaryOrBuilder
    *
    *
    * <pre>
-   * Configures the progressive based deployment for a Target, but allows
-   * customizing at the phase level where a phase represents each of the
-   * percentage deployments.
+   * Optional. Configures the progressive based deployment for a Target, but
+   * allows customizing at the phase level where a phase represents each of
+   * the percentage deployments.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CustomCanaryDeployment custom_canary_deployment = 3;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CustomCanaryDeployment custom_canary_deployment = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The customCanaryDeployment.
    */
@@ -138,12 +148,14 @@ public interface CanaryOrBuilder
    *
    *
    * <pre>
-   * Configures the progressive based deployment for a Target, but allows
-   * customizing at the phase level where a phase represents each of the
-   * percentage deployments.
+   * Optional. Configures the progressive based deployment for a Target, but
+   * allows customizing at the phase level where a phase represents each of
+   * the percentage deployments.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.CustomCanaryDeployment custom_canary_deployment = 3;</code>
+   * <code>
+   * .google.cloud.deploy.v1.CustomCanaryDeployment custom_canary_deployment = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.CustomCanaryDeploymentOrBuilder getCustomCanaryDeploymentOrBuilder();
 

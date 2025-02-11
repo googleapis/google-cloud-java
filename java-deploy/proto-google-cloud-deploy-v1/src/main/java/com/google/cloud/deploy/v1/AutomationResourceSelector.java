@@ -72,10 +72,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.deploy.v1.TargetAttribute> getTargetsList() {
@@ -85,10 +87,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.deploy.v1.TargetAttributeOrBuilder>
@@ -99,10 +103,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getTargetsCount() {
@@ -112,10 +118,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.TargetAttribute getTargets(int index) {
@@ -125,10 +133,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Contains attributes about a target.
+   * Optional. Contains attributes about a target.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.TargetAttributeOrBuilder getTargetsOrBuilder(int index) {
@@ -547,10 +557,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.deploy.v1.TargetAttribute> getTargetsList() {
       if (targetsBuilder_ == null) {
@@ -563,10 +575,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getTargetsCount() {
       if (targetsBuilder_ == null) {
@@ -579,10 +593,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.TargetAttribute getTargets(int index) {
       if (targetsBuilder_ == null) {
@@ -595,10 +611,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTargets(int index, com.google.cloud.deploy.v1.TargetAttribute value) {
       if (targetsBuilder_ == null) {
@@ -617,10 +635,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setTargets(
         int index, com.google.cloud.deploy.v1.TargetAttribute.Builder builderForValue) {
@@ -637,10 +657,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTargets(com.google.cloud.deploy.v1.TargetAttribute value) {
       if (targetsBuilder_ == null) {
@@ -659,10 +681,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTargets(int index, com.google.cloud.deploy.v1.TargetAttribute value) {
       if (targetsBuilder_ == null) {
@@ -681,10 +705,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTargets(com.google.cloud.deploy.v1.TargetAttribute.Builder builderForValue) {
       if (targetsBuilder_ == null) {
@@ -700,10 +726,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addTargets(
         int index, com.google.cloud.deploy.v1.TargetAttribute.Builder builderForValue) {
@@ -720,10 +748,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllTargets(
         java.lang.Iterable<? extends com.google.cloud.deploy.v1.TargetAttribute> values) {
@@ -740,10 +770,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearTargets() {
       if (targetsBuilder_ == null) {
@@ -759,10 +791,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeTargets(int index) {
       if (targetsBuilder_ == null) {
@@ -778,10 +812,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.TargetAttribute.Builder getTargetsBuilder(int index) {
       return getTargetsFieldBuilder().getBuilder(index);
@@ -790,10 +826,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.TargetAttributeOrBuilder getTargetsOrBuilder(int index) {
       if (targetsBuilder_ == null) {
@@ -806,10 +844,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.deploy.v1.TargetAttributeOrBuilder>
         getTargetsOrBuilderList() {
@@ -823,10 +863,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.TargetAttribute.Builder addTargetsBuilder() {
       return getTargetsFieldBuilder()
@@ -836,10 +878,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.TargetAttribute.Builder addTargetsBuilder(int index) {
       return getTargetsFieldBuilder()
@@ -849,10 +893,12 @@ public final class AutomationResourceSelector extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Contains attributes about a target.
+     * Optional. Contains attributes about a target.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.TargetAttribute targets = 1;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.TargetAttribute targets = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.deploy.v1.TargetAttribute.Builder>
         getTargetsBuilderList() {

@@ -5499,12 +5499,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is
+   * Identifier. Name of the `Release`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -5524,12 +5524,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is
+   * Identifier. Name of the `Release`. Format is
    * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -5605,10 +5605,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the `Release`. Max length is 255 characters.
+   * Optional. Description of the `Release`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -5628,10 +5628,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Description of the `Release`. Max length is 255 characters.
+   * Optional. Description of the `Release`. Max length is 255 characters.
    * </pre>
    *
-   * <code>string description = 3;</code>
+   * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -5679,12 +5679,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -5703,12 +5705,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -5718,12 +5722,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -5740,12 +5746,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User annotations. These attributes can only be set and used by the
-   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-   * for more details such as format and size limitations.
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Cloud Deploy. See
+   * https://google.aip.dev/128#annotations for more details such as format and
+   * size limitations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 4;</code>
+   * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -6088,10 +6096,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+   * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+   * configuration.
    * </pre>
    *
-   * <code>string skaffold_config_uri = 17;</code>
+   * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The skaffoldConfigUri.
    */
@@ -6111,10 +6120,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+   * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+   * configuration.
    * </pre>
    *
-   * <code>string skaffold_config_uri = 17;</code>
+   * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for skaffoldConfigUri.
    */
@@ -6139,10 +6149,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Filepath of the Skaffold config inside of the config URI.
+   * Optional. Filepath of the Skaffold config inside of the config URI.
    * </pre>
    *
-   * <code>string skaffold_config_path = 9;</code>
+   * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The skaffoldConfigPath.
    */
@@ -6162,10 +6172,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Filepath of the Skaffold config inside of the config URI.
+   * Optional. Filepath of the Skaffold config inside of the config URI.
    * </pre>
    *
-   * <code>string skaffold_config_path = 9;</code>
+   * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for skaffoldConfigPath.
    */
@@ -6190,10 +6200,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.deploy.v1.BuildArtifact> getBuildArtifactsList() {
@@ -6203,10 +6215,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.deploy.v1.BuildArtifactOrBuilder>
@@ -6217,10 +6231,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getBuildArtifactsCount() {
@@ -6230,10 +6246,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.BuildArtifact getBuildArtifacts(int index) {
@@ -6243,10 +6261,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of artifacts to pass through to Skaffold command.
+   * Optional. List of artifacts to pass through to Skaffold command.
    * </pre>
    *
-   * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+   * <code>
+   * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.BuildArtifactOrBuilder getBuildArtifactsOrBuilder(int index) {
@@ -8212,12 +8232,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is
+     * Identifier. Name of the `Release`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -8236,12 +8256,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is
+     * Identifier. Name of the `Release`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -8260,12 +8280,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is
+     * Identifier. Name of the `Release`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -8283,12 +8303,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is
+     * Identifier. Name of the `Release`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -8302,12 +8322,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Release`. Format is
+     * Identifier. Name of the `Release`. Format is
      * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
      * The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -8434,10 +8454,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Release`. Max length is 255 characters.
+     * Optional. Description of the `Release`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -8456,10 +8476,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Release`. Max length is 255 characters.
+     * Optional. Description of the `Release`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -8478,10 +8498,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Release`. Max length is 255 characters.
+     * Optional. Description of the `Release`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -8499,10 +8519,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Release`. Max length is 255 characters.
+     * Optional. Description of the `Release`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -8516,10 +8536,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Description of the `Release`. Max length is 255 characters.
+     * Optional. Description of the `Release`. Max length is 255 characters.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -8567,12 +8587,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -8591,12 +8613,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -8606,12 +8630,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -8628,12 +8654,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -8656,12 +8684,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -8680,12 +8710,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -8702,12 +8734,14 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User annotations. These attributes can only be set and used by the
-     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
-     * for more details such as format and size limitations.
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Cloud Deploy. See
+     * https://google.aip.dev/128#annotations for more details such as format and
+     * size limitations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 4;</code>
+     * <code>map&lt;string, string&gt; annotations = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -9615,10 +9649,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+     * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+     * configuration.
      * </pre>
      *
-     * <code>string skaffold_config_uri = 17;</code>
+     * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The skaffoldConfigUri.
      */
@@ -9637,10 +9672,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+     * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+     * configuration.
      * </pre>
      *
-     * <code>string skaffold_config_uri = 17;</code>
+     * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for skaffoldConfigUri.
      */
@@ -9659,10 +9695,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+     * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+     * configuration.
      * </pre>
      *
-     * <code>string skaffold_config_uri = 17;</code>
+     * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The skaffoldConfigUri to set.
      * @return This builder for chaining.
@@ -9680,10 +9717,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+     * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+     * configuration.
      * </pre>
      *
-     * <code>string skaffold_config_uri = 17;</code>
+     * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -9697,10 +9735,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage URI of tar.gz archive containing Skaffold configuration.
+     * Optional. Cloud Storage URI of tar.gz archive containing Skaffold
+     * configuration.
      * </pre>
      *
-     * <code>string skaffold_config_uri = 17;</code>
+     * <code>string skaffold_config_uri = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for skaffoldConfigUri to set.
      * @return This builder for chaining.
@@ -9721,10 +9760,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Filepath of the Skaffold config inside of the config URI.
+     * Optional. Filepath of the Skaffold config inside of the config URI.
      * </pre>
      *
-     * <code>string skaffold_config_path = 9;</code>
+     * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The skaffoldConfigPath.
      */
@@ -9743,10 +9782,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Filepath of the Skaffold config inside of the config URI.
+     * Optional. Filepath of the Skaffold config inside of the config URI.
      * </pre>
      *
-     * <code>string skaffold_config_path = 9;</code>
+     * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for skaffoldConfigPath.
      */
@@ -9765,10 +9804,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Filepath of the Skaffold config inside of the config URI.
+     * Optional. Filepath of the Skaffold config inside of the config URI.
      * </pre>
      *
-     * <code>string skaffold_config_path = 9;</code>
+     * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The skaffoldConfigPath to set.
      * @return This builder for chaining.
@@ -9786,10 +9825,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Filepath of the Skaffold config inside of the config URI.
+     * Optional. Filepath of the Skaffold config inside of the config URI.
      * </pre>
      *
-     * <code>string skaffold_config_path = 9;</code>
+     * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -9803,10 +9842,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Filepath of the Skaffold config inside of the config URI.
+     * Optional. Filepath of the Skaffold config inside of the config URI.
      * </pre>
      *
-     * <code>string skaffold_config_path = 9;</code>
+     * <code>string skaffold_config_path = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for skaffoldConfigPath to set.
      * @return This builder for chaining.
@@ -9843,10 +9882,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.deploy.v1.BuildArtifact> getBuildArtifactsList() {
       if (buildArtifactsBuilder_ == null) {
@@ -9859,10 +9900,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getBuildArtifactsCount() {
       if (buildArtifactsBuilder_ == null) {
@@ -9875,10 +9918,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.BuildArtifact getBuildArtifacts(int index) {
       if (buildArtifactsBuilder_ == null) {
@@ -9891,10 +9936,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBuildArtifacts(int index, com.google.cloud.deploy.v1.BuildArtifact value) {
       if (buildArtifactsBuilder_ == null) {
@@ -9913,10 +9960,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBuildArtifacts(
         int index, com.google.cloud.deploy.v1.BuildArtifact.Builder builderForValue) {
@@ -9933,10 +9982,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBuildArtifacts(com.google.cloud.deploy.v1.BuildArtifact value) {
       if (buildArtifactsBuilder_ == null) {
@@ -9955,10 +10006,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBuildArtifacts(int index, com.google.cloud.deploy.v1.BuildArtifact value) {
       if (buildArtifactsBuilder_ == null) {
@@ -9977,10 +10030,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBuildArtifacts(
         com.google.cloud.deploy.v1.BuildArtifact.Builder builderForValue) {
@@ -9997,10 +10052,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addBuildArtifacts(
         int index, com.google.cloud.deploy.v1.BuildArtifact.Builder builderForValue) {
@@ -10017,10 +10074,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllBuildArtifacts(
         java.lang.Iterable<? extends com.google.cloud.deploy.v1.BuildArtifact> values) {
@@ -10037,10 +10096,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearBuildArtifacts() {
       if (buildArtifactsBuilder_ == null) {
@@ -10056,10 +10117,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeBuildArtifacts(int index) {
       if (buildArtifactsBuilder_ == null) {
@@ -10075,10 +10138,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.BuildArtifact.Builder getBuildArtifactsBuilder(int index) {
       return getBuildArtifactsFieldBuilder().getBuilder(index);
@@ -10087,10 +10152,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.BuildArtifactOrBuilder getBuildArtifactsOrBuilder(int index) {
       if (buildArtifactsBuilder_ == null) {
@@ -10103,10 +10170,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.deploy.v1.BuildArtifactOrBuilder>
         getBuildArtifactsOrBuilderList() {
@@ -10120,10 +10189,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.BuildArtifact.Builder addBuildArtifactsBuilder() {
       return getBuildArtifactsFieldBuilder()
@@ -10133,10 +10204,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.BuildArtifact.Builder addBuildArtifactsBuilder(int index) {
       return getBuildArtifactsFieldBuilder()
@@ -10146,10 +10219,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of artifacts to pass through to Skaffold command.
+     * Optional. List of artifacts to pass through to Skaffold command.
      * </pre>
      *
-     * <code>repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10;</code>
+     * <code>
+     * repeated .google.cloud.deploy.v1.BuildArtifact build_artifacts = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.deploy.v1.BuildArtifact.Builder>
         getBuildArtifactsBuilderList() {

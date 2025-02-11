@@ -2037,7 +2037,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/targets/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/customTargetTypes/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/customTargetTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/deployPolicies/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2077,7 +2078,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                           })
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/targets/*}:getIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/customTargetTypes/*}:getIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/customTargetTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/deployPolicies/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

@@ -28,11 +28,12 @@ public interface StrategyOrBuilder
    *
    *
    * <pre>
-   * Standard deployment strategy executes a single deploy and allows
-   * verifying the deployment.
+   * Optional. Standard deployment strategy executes a single deploy and
+   * allows verifying the deployment.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+   * <code>.google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the standard field is set.
    */
@@ -41,11 +42,12 @@ public interface StrategyOrBuilder
    *
    *
    * <pre>
-   * Standard deployment strategy executes a single deploy and allows
-   * verifying the deployment.
+   * Optional. Standard deployment strategy executes a single deploy and
+   * allows verifying the deployment.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+   * <code>.google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The standard.
    */
@@ -54,11 +56,12 @@ public interface StrategyOrBuilder
    *
    *
    * <pre>
-   * Standard deployment strategy executes a single deploy and allows
-   * verifying the deployment.
+   * Optional. Standard deployment strategy executes a single deploy and
+   * allows verifying the deployment.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Standard standard = 1;</code>
+   * <code>.google.cloud.deploy.v1.Standard standard = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.StandardOrBuilder getStandardOrBuilder();
 
@@ -66,11 +69,12 @@ public interface StrategyOrBuilder
    *
    *
    * <pre>
-   * Canary deployment strategy provides progressive percentage based
-   * deployments to a Target.
+   * Optional. Canary deployment strategy provides progressive percentage
+   * based deployments to a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the canary field is set.
    */
@@ -79,11 +83,12 @@ public interface StrategyOrBuilder
    *
    *
    * <pre>
-   * Canary deployment strategy provides progressive percentage based
-   * deployments to a Target.
+   * Optional. Canary deployment strategy provides progressive percentage
+   * based deployments to a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The canary.
    */
@@ -92,11 +97,12 @@ public interface StrategyOrBuilder
    *
    *
    * <pre>
-   * Canary deployment strategy provides progressive percentage based
-   * deployments to a Target.
+   * Optional. Canary deployment strategy provides progressive percentage
+   * based deployments to a Target.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   * <code>.google.cloud.deploy.v1.Canary canary = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.CanaryOrBuilder getCanaryOrBuilder();
 

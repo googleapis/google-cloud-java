@@ -28,13 +28,13 @@ public interface CloudRunConfigOrBuilder
    *
    *
    * <pre>
-   * Whether Cloud Deploy should update the traffic stanza in a Cloud Run
-   * Service on the user's behalf to facilitate traffic splitting. This is
+   * Optional. Whether Cloud Deploy should update the traffic stanza in a Cloud
+   * Run Service on the user's behalf to facilitate traffic splitting. This is
    * required to be true for CanaryDeployments, but optional for
    * CustomCanaryDeployments.
    * </pre>
    *
-   * <code>bool automatic_traffic_control = 1;</code>
+   * <code>bool automatic_traffic_control = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The automaticTrafficControl.
    */

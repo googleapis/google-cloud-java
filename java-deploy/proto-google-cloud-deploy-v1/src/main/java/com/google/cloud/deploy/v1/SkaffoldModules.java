@@ -3231,10 +3231,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Remote git repository containing the Skaffold Config modules.
+   * Optional. Remote git repository containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the git field is set.
    */
@@ -3246,10 +3248,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Remote git repository containing the Skaffold Config modules.
+   * Optional. Remote git repository containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The git.
    */
@@ -3264,10 +3268,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Remote git repository containing the Skaffold Config modules.
+   * Optional. Remote git repository containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSourceOrBuilder getGitOrBuilder() {
@@ -3282,10 +3288,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the Skaffold Config modules.
+   * Optional. Cloud Storage bucket containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the googleCloudStorage field is set.
@@ -3298,10 +3305,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the Skaffold Config modules.
+   * Optional. Cloud Storage bucket containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The googleCloudStorage.
@@ -3317,10 +3325,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the Skaffold Config modules.
+   * Optional. Cloud Storage bucket containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3337,11 +3346,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Cloud Build V2 repository containing the Skaffold Config modules.
+   * Optional. Cloud Build V2 repository containing the Skaffold Config
+   * modules.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the googleCloudBuildRepo field is set.
@@ -3354,11 +3364,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Cloud Build V2 repository containing the Skaffold Config modules.
+   * Optional. Cloud Build V2 repository containing the Skaffold Config
+   * modules.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The googleCloudBuildRepo.
@@ -3375,11 +3386,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Cloud Build V2 repository containing the Skaffold Config modules.
+   * Optional. Cloud Build V2 repository containing the Skaffold Config
+   * modules.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -4067,10 +4079,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the git field is set.
      */
@@ -4082,10 +4096,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The git.
      */
@@ -4107,10 +4123,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGit(com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource value) {
       if (gitBuilder_ == null) {
@@ -4129,10 +4147,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGit(
         com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource.Builder builderForValue) {
@@ -4149,10 +4169,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeGit(com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource value) {
       if (gitBuilder_ == null) {
@@ -4183,10 +4205,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearGit() {
       if (gitBuilder_ == null) {
@@ -4208,10 +4232,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource.Builder getGitBuilder() {
       return getGitFieldBuilder().getBuilder();
@@ -4220,10 +4246,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSourceOrBuilder getGitOrBuilder() {
@@ -4240,10 +4268,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Remote git repository containing the Skaffold Config modules.
+     * Optional. Remote git repository containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource,
@@ -4279,10 +4309,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the googleCloudStorage field is set.
@@ -4295,10 +4326,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The googleCloudStorage.
@@ -4321,10 +4353,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGoogleCloudStorage(
@@ -4345,10 +4378,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGoogleCloudStorage(
@@ -4366,10 +4400,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeGoogleCloudStorage(
@@ -4402,10 +4437,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearGoogleCloudStorage() {
@@ -4428,10 +4464,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource.Builder
@@ -4442,10 +4479,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -4464,10 +4502,11 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Storage bucket containing the Skaffold Config modules.
+     * Optional. Cloud Storage bucket containing the Skaffold Config modules.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+     * <code>
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4504,11 +4543,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the googleCloudBuildRepo field is set.
@@ -4521,11 +4561,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The googleCloudBuildRepo.
@@ -4551,11 +4592,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGoogleCloudBuildRepo(
@@ -4576,11 +4618,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGoogleCloudBuildRepo(
@@ -4598,11 +4641,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeGoogleCloudBuildRepo(
@@ -4635,11 +4679,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearGoogleCloudBuildRepo() {
@@ -4662,11 +4707,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource.Builder
@@ -4677,11 +4723,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -4701,11 +4748,12 @@ public final class SkaffoldModules extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Cloud Build V2 repository containing the Skaffold Config modules.
+     * Optional. Cloud Build V2 repository containing the Skaffold Config
+     * modules.
      * </pre>
      *
      * <code>
-     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+     * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

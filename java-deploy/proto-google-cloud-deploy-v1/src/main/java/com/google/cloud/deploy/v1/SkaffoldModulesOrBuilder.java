@@ -79,10 +79,12 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Remote git repository containing the Skaffold Config modules.
+   * Optional. Remote git repository containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the git field is set.
    */
@@ -91,10 +93,12 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Remote git repository containing the Skaffold Config modules.
+   * Optional. Remote git repository containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The git.
    */
@@ -103,10 +107,12 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Remote git repository containing the Skaffold Config modules.
+   * Optional. Remote git repository containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource git = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSourceOrBuilder getGitOrBuilder();
 
@@ -114,10 +120,11 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the Skaffold Config modules.
+   * Optional. Cloud Storage bucket containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the googleCloudStorage field is set.
@@ -127,10 +134,11 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the Skaffold Config modules.
+   * Optional. Cloud Storage bucket containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The googleCloudStorage.
@@ -140,10 +148,11 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage bucket containing the Skaffold Config modules.
+   * Optional. Cloud Storage bucket containing the Skaffold Config modules.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3;
+   * <code>
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource google_cloud_storage = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSourceOrBuilder
@@ -153,11 +162,12 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Cloud Build V2 repository containing the Skaffold Config modules.
+   * Optional. Cloud Build V2 repository containing the Skaffold Config
+   * modules.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the googleCloudBuildRepo field is set.
@@ -167,11 +177,12 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Cloud Build V2 repository containing the Skaffold Config modules.
+   * Optional. Cloud Build V2 repository containing the Skaffold Config
+   * modules.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The googleCloudBuildRepo.
@@ -181,11 +192,12 @@ public interface SkaffoldModulesOrBuilder
    *
    *
    * <pre>
-   * Cloud Build V2 repository containing the Skaffold Config modules.
+   * Optional. Cloud Build V2 repository containing the Skaffold Config
+   * modules.
    * </pre>
    *
    * <code>
-   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4;
+   * .google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource google_cloud_build_repo = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSourceOrBuilder

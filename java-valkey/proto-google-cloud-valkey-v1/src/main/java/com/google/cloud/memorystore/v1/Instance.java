@@ -835,11 +835,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance is in standalone mode.
+     * Deprecated: Use CLUSTER_DISABLED instead.
      * </pre>
      *
-     * <code>STANDALONE = 1;</code>
+     * <code>STANDALONE = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     STANDALONE(1),
     /**
      *
@@ -851,6 +852,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>CLUSTER = 2;</code>
      */
     CLUSTER(2),
+    /**
+     *
+     *
+     * <pre>
+     * Cluster mode is disabled for the instance.
+     * </pre>
+     *
+     * <code>CLUSTER_DISABLED = 4;</code>
+     */
+    CLUSTER_DISABLED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -868,12 +879,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance is in standalone mode.
+     * Deprecated: Use CLUSTER_DISABLED instead.
      * </pre>
      *
-     * <code>STANDALONE = 1;</code>
+     * <code>STANDALONE = 1 [deprecated = true];</code>
      */
-    public static final int STANDALONE_VALUE = 1;
+    @java.lang.Deprecated public static final int STANDALONE_VALUE = 1;
     /**
      *
      *
@@ -884,6 +895,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>CLUSTER = 2;</code>
      */
     public static final int CLUSTER_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Cluster mode is disabled for the instance.
+     * </pre>
+     *
+     * <code>CLUSTER_DISABLED = 4;</code>
+     */
+    public static final int CLUSTER_DISABLED_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -915,6 +936,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return STANDALONE;
         case 2:
           return CLUSTER;
+        case 4:
+          return CLUSTER_DISABLED;
         default:
           return null;
       }

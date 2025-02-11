@@ -28,6 +28,47 @@ public interface DeploymentJobsOrBuilder
    *
    *
    * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the predeployJob field is set.
+   */
+  boolean hasPredeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The predeployJob.
+   */
+  com.google.cloud.deploy.v1.Job getPredeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The predeploy Job, which is the first job on the phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.JobOrBuilder getPredeployJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The deploy Job. This is the deploy job in the phase.
    * </pre>
    *
@@ -99,47 +140,6 @@ public interface DeploymentJobsOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.JobOrBuilder getVerifyJobOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The predeploy Job, which is the first job on the phase.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return Whether the predeployJob field is set.
-   */
-  boolean hasPredeployJob();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The predeploy Job, which is the first job on the phase.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
-   * @return The predeployJob.
-   */
-  com.google.cloud.deploy.v1.Job getPredeployJob();
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The predeploy Job, which is the first job on the phase.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.deploy.v1.Job predeploy_job = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.cloud.deploy.v1.JobOrBuilder getPredeployJobOrBuilder();
 
   /**
    *

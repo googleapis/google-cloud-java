@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.batch.v1.CancelJobRequest;
+import com.google.cloud.batch.v1.CancelJobResponse;
 import com.google.cloud.batch.v1.CreateJobRequest;
 import com.google.cloud.batch.v1.DeleteJobRequest;
 import com.google.cloud.batch.v1.GetJobRequest;
@@ -84,6 +86,14 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CancelJobRequest, Operation> cancelJobMethodDescriptor =
+      MethodDescriptor.<CancelJobRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.batch.v1.BatchService/CancelJob")
+          .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
       listJobsMethodDescriptor =
           MethodDescriptor.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -134,6 +144,9 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable;
   private final OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable;
+  private final UnaryCallable<CancelJobRequest, Operation> cancelJobCallable;
+  private final OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
@@ -216,6 +229,16 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CancelJobRequest, Operation> cancelJobTransportSettings =
+        GrpcCallSettings.<CancelJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
@@ -282,6 +305,15 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
             settings.deleteJobOperationSettings(),
             clientContext,
             operationsStub);
+    this.cancelJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
+    this.cancelJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelJobTransportSettings,
+            settings.cancelJobOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
@@ -334,6 +366,17 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   public OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable() {
     return deleteJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    return cancelJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    return cancelJobOperationCallable;
   }
 
   @Override

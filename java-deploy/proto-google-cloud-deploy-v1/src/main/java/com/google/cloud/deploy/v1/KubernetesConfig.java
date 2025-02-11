@@ -4785,10 +4785,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Kubernetes Gateway API service mesh configuration.
+   * Optional. Kubernetes Gateway API service mesh configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the gatewayServiceMesh field is set.
@@ -4801,10 +4802,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Kubernetes Gateway API service mesh configuration.
+   * Optional. Kubernetes Gateway API service mesh configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The gatewayServiceMesh.
@@ -4820,10 +4822,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Kubernetes Gateway API service mesh configuration.
+   * Optional. Kubernetes Gateway API service mesh configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -4840,10 +4843,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Kubernetes Service networking configuration.
+   * Optional. Kubernetes Service networking configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the serviceNetworking field is set.
    */
@@ -4855,10 +4860,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Kubernetes Service networking configuration.
+   * Optional. Kubernetes Service networking configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The serviceNetworking.
    */
@@ -4873,10 +4880,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Kubernetes Service networking configuration.
+   * Optional. Kubernetes Service networking configuration.
    * </pre>
    *
-   * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;</code>
+   * <code>
+   * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworkingOrBuilder
@@ -5320,10 +5329,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the gatewayServiceMesh field is set.
@@ -5336,10 +5346,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The gatewayServiceMesh.
@@ -5363,10 +5374,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGatewayServiceMesh(
@@ -5387,10 +5399,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setGatewayServiceMesh(
@@ -5408,10 +5421,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeGatewayServiceMesh(
@@ -5445,10 +5459,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearGatewayServiceMesh() {
@@ -5471,10 +5486,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.Builder
@@ -5485,10 +5501,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -5508,10 +5525,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Gateway API service mesh configuration.
+     * Optional. Kubernetes Gateway API service mesh configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh gateway_service_mesh = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5548,10 +5566,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the serviceNetworking field is set.
@@ -5564,10 +5583,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The serviceNetworking.
@@ -5590,10 +5610,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setServiceNetworking(
@@ -5614,10 +5635,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setServiceNetworking(
@@ -5635,10 +5657,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeServiceNetworking(
@@ -5672,10 +5695,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearServiceNetworking() {
@@ -5698,10 +5722,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking.Builder
@@ -5712,10 +5737,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -5734,10 +5760,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Kubernetes Service networking configuration.
+     * Optional. Kubernetes Service networking configuration.
      * </pre>
      *
-     * <code>.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2;
+     * <code>
+     * .google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking service_networking = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

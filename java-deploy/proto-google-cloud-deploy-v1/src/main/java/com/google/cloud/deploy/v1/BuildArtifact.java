@@ -72,10 +72,10 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Image name in Skaffold configuration.
+   * Optional. Image name in Skaffold configuration.
    * </pre>
    *
-   * <code>string image = 3;</code>
+   * <code>string image = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The image.
    */
@@ -95,10 +95,10 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Image name in Skaffold configuration.
+   * Optional. Image name in Skaffold configuration.
    * </pre>
    *
-   * <code>string image = 3;</code>
+   * <code>string image = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for image.
    */
@@ -123,12 +123,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Image tag to use. This will generally be the full path to an image, such
-   * as "gcr.io/my-project/busybox:1.2.3" or
+   * Optional. Image tag to use. This will generally be the full path to an
+   * image, such as "gcr.io/my-project/busybox:1.2.3" or
    * "gcr.io/my-project/busybox&#64;sha256:abc123".
    * </pre>
    *
-   * <code>string tag = 2;</code>
+   * <code>string tag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The tag.
    */
@@ -148,12 +148,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Image tag to use. This will generally be the full path to an image, such
-   * as "gcr.io/my-project/busybox:1.2.3" or
+   * Optional. Image tag to use. This will generally be the full path to an
+   * image, such as "gcr.io/my-project/busybox:1.2.3" or
    * "gcr.io/my-project/busybox&#64;sha256:abc123".
    * </pre>
    *
-   * <code>string tag = 2;</code>
+   * <code>string tag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for tag.
    */
@@ -539,10 +539,10 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image name in Skaffold configuration.
+     * Optional. Image name in Skaffold configuration.
      * </pre>
      *
-     * <code>string image = 3;</code>
+     * <code>string image = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The image.
      */
@@ -561,10 +561,10 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image name in Skaffold configuration.
+     * Optional. Image name in Skaffold configuration.
      * </pre>
      *
-     * <code>string image = 3;</code>
+     * <code>string image = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for image.
      */
@@ -583,10 +583,10 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image name in Skaffold configuration.
+     * Optional. Image name in Skaffold configuration.
      * </pre>
      *
-     * <code>string image = 3;</code>
+     * <code>string image = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The image to set.
      * @return This builder for chaining.
@@ -604,10 +604,10 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image name in Skaffold configuration.
+     * Optional. Image name in Skaffold configuration.
      * </pre>
      *
-     * <code>string image = 3;</code>
+     * <code>string image = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -621,10 +621,10 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image name in Skaffold configuration.
+     * Optional. Image name in Skaffold configuration.
      * </pre>
      *
-     * <code>string image = 3;</code>
+     * <code>string image = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for image to set.
      * @return This builder for chaining.
@@ -645,12 +645,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image tag to use. This will generally be the full path to an image, such
-     * as "gcr.io/my-project/busybox:1.2.3" or
+     * Optional. Image tag to use. This will generally be the full path to an
+     * image, such as "gcr.io/my-project/busybox:1.2.3" or
      * "gcr.io/my-project/busybox&#64;sha256:abc123".
      * </pre>
      *
-     * <code>string tag = 2;</code>
+     * <code>string tag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The tag.
      */
@@ -669,12 +669,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image tag to use. This will generally be the full path to an image, such
-     * as "gcr.io/my-project/busybox:1.2.3" or
+     * Optional. Image tag to use. This will generally be the full path to an
+     * image, such as "gcr.io/my-project/busybox:1.2.3" or
      * "gcr.io/my-project/busybox&#64;sha256:abc123".
      * </pre>
      *
-     * <code>string tag = 2;</code>
+     * <code>string tag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for tag.
      */
@@ -693,12 +693,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image tag to use. This will generally be the full path to an image, such
-     * as "gcr.io/my-project/busybox:1.2.3" or
+     * Optional. Image tag to use. This will generally be the full path to an
+     * image, such as "gcr.io/my-project/busybox:1.2.3" or
      * "gcr.io/my-project/busybox&#64;sha256:abc123".
      * </pre>
      *
-     * <code>string tag = 2;</code>
+     * <code>string tag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The tag to set.
      * @return This builder for chaining.
@@ -716,12 +716,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image tag to use. This will generally be the full path to an image, such
-     * as "gcr.io/my-project/busybox:1.2.3" or
+     * Optional. Image tag to use. This will generally be the full path to an
+     * image, such as "gcr.io/my-project/busybox:1.2.3" or
      * "gcr.io/my-project/busybox&#64;sha256:abc123".
      * </pre>
      *
-     * <code>string tag = 2;</code>
+     * <code>string tag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -735,12 +735,12 @@ public final class BuildArtifact extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Image tag to use. This will generally be the full path to an image, such
-     * as "gcr.io/my-project/busybox:1.2.3" or
+     * Optional. Image tag to use. This will generally be the full path to an
+     * image, such as "gcr.io/my-project/busybox:1.2.3" or
      * "gcr.io/my-project/busybox&#64;sha256:abc123".
      * </pre>
      *
-     * <code>string tag = 2;</code>
+     * <code>string tag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for tag to set.
      * @return This builder for chaining.
