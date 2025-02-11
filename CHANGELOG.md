@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.52.0](https://github.com/googleapis/google-cloud-java/compare/v1.51.0...v1.52.0) (2025-02-11)
+
+
+### Features
+
+* [aiplatform] A new field `response_id` is added to message `.google.cloud.aiplatform.v1.GenerateContentResponse` ([8791ef3](https://github.com/googleapis/google-cloud-java/commit/8791ef355f3fa958841aa43e6c5c55db062f7688))
+* [aiplatform] Add additional Probe options to v1 model.proto ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [aiplatform] add Notebooks Runtime Software Configuration ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [aiplatform] add Notebooks Runtime Software Configuration ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [aiplatform] Add rag_files_count to RagCorpus to count number of associated files ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [aiplatform] Add RolloutOptions to DeployedModel in v1beta1 endpoint.proto, add additional Probe options in v1beta1 model.proto ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [aiplatform] EvaluateDataset API v1beta1 initial release ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [batch] promote cancel job API to GA ([8791ef3](https://github.com/googleapis/google-cloud-java/commit/8791ef355f3fa958841aa43e6c5c55db062f7688))
+* [compute] Update Compute Engine API to revision 20250119 ([#981](https://github.com/googleapis/google-cloud-java/issues/981)) ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [dataplex] Added value `NONE` to  the `SyncMode` enum ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [dialogflow] add PhoneNumbers API ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [netapp] add support for Quota Rule apis ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [run] add BuildConfig to Services for configuring Run functions ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [valkey] add Instance.Mode.CLUSTER_DISABLED value, and deprecate STANDALONE ([8791ef3](https://github.com/googleapis/google-cloud-java/commit/8791ef355f3fa958841aa43e6c5c55db062f7688))
+* [valkey] add Instance.Mode.CLUSTER_DISABLED value, and deprecate STANDALONE ([8791ef3](https://github.com/googleapis/google-cloud-java/commit/8791ef355f3fa958841aa43e6c5c55db062f7688))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.48.1 ([#11422](https://github.com/googleapis/google-cloud-java/issues/11422)) ([ce9929e](https://github.com/googleapis/google-cloud-java/commit/ce9929e3b4f5b783f3f52247f07409684ef2a84a))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#11426](https://github.com/googleapis/google-cloud-java/issues/11426)) ([afdc294](https://github.com/googleapis/google-cloud-java/commit/afdc2944304a077ce4cbdd8c7675f1ca707b2be0))
+
+
+### Documentation
+
+* [document-ai] mark fields as unused ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* [monitoring] remove extra fenced code block markers ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+
 ## [1.51.0](https://github.com/googleapis/google-cloud-java/compare/v1.50.0...v1.51.0) (2025-01-29)
 
 
