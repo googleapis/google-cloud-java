@@ -18,9 +18,13 @@ again.
 ## Code reviews
 
 All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+use GitHub pull requests for this purpose. Consult the
+[GitHub Help: about pull requests](https://help.github.com/articles/about-pull-requests/)
+article for more  information on using pull requests. If you do not have
+permission to create a branch, then fork the repository and submit a pull
+request from the forked repository. Consult
+[Github Help: about forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#about-forks)
+article for more information.
 
 ## Community Guidelines
 
